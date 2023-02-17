@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client", "node"],
+    "typeRoots": ["node_modules/@types"],
+    "composite": true,
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "es2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*.json",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "src/**/*.tsx",
+    "assets/worklets/**/*.js"
+  ],
+  "files": [
+    "tailwind.config-colors.json",
+    "tailwind.config-shadow.js",
+    "tailwind.config-spacing.js",
+    "tailwind.config-font-size.js",
+    "tailwind.config-grid.js",
+    "tailwind.config-width.js",
+    "tailwind.config-height.js",
+    "tailwind.config.js"
+  ],
+  "extends": "./tsconfig.paths.json"
+}
