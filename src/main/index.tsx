@@ -4,7 +4,7 @@ import { MotionConfig } from "framer-motion";
 import { Router } from "./Router";
 import { Source } from "./Source";
 import { Provider } from "@state/Provider";
-import { Boundary } from "@components/Boundary";
+import { Boundary } from "@components/boundary";
 import { MOTION_CONFIG } from "@constants/animation";
 
 const root = document.getElementById("root");

@@ -13,9 +13,9 @@ type TProps = {
 } & SVGAttributes<SVGElement>;
 export const GlitchFilter: FC<TProps> = ({
   children,
-  ...props
+  ...props 
 }) => (
-  <svg viewBox="0 0 294 268" {...props}>
+  <svg viewBox="0 0 360 280" {...props}>
     <defs>
       <filter
         id={GLITCH_FILTER_I_I}

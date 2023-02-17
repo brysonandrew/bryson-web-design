@@ -6,8 +6,8 @@ const Root = styled.svg``;
 type TProps = SVGAttributes<SVGElement>;
 export const Typescript: FC<TProps> = (props) => (
   <svg
-    width="22px"
-    height="22px"
+    width="20px"
+    height="20px"
     fill="#007ACC"
     viewBox="0 0 256.000000 256.000000"
     {...props}

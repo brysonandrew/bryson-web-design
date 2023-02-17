@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 
 export const PANEL_CLASS =
-  "relative py-2 px-4 shadow-white-sm rounded-md w-full";
+  "relative py-2 px-4 shadow-white-sm rounded-xs w-full";
 
 export const CENTER = "flex items-center justify-center";
 export const CENTER_CHILD =
@@ -14,7 +14,7 @@ export const ROW_SPACE =
 export const COL = "flex flex-col";
 
 export const LABEL =
-  "flex items-center px-1 py-0.5 bg-black-light rounded-lg border-white-sm disabled:opacity-20 disabled:cursor-not-allowed";
+  "flex items-center px-1 py-0.5 bg-black-light rounded-xs border-white-sm disabled:opacity-20 disabled:cursor-not-allowed";
 
 export const XXXXXXL = "h-12 w-12";
 export const XXXXXXL_H = "h-12";

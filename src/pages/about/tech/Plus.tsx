@@ -1,4 +1,4 @@
-import COLORS from "../../../tailwind.config-colors.json";
+import COLORS from "../../../../tailwind.config-colors.json";
 
 export const Plus = () => (
   <li className="relative flex items-center justify-center h-6 w-6 z-40">

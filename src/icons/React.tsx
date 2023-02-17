@@ -7,8 +7,8 @@ type TProps = SVGAttributes<SVGElement>;
 export const React: FC<TProps> = (props) => (
   <Root
     xmlns="http://www.w3.org/2000/svg"
-    width="22px"
-    height="22px"
+    width="20px"
+    height="20px"
     viewBox="-11.5 -10.23174 23 20.46348"
   >
     <title>React Logo</title>

@@ -1,7 +1,7 @@
 export type TItem = {
   title: string;
   description: string;
-  time: Date;
+  time?: Date;
   tags?: string[];
 };
 
@@ -9,7 +9,6 @@ export const ITEMS: TItem[] = [
   {
     title: "Insight Factory",
     description: "Process Management System",
-    time: new Date(2022, 9, 1),
   },
   {
     title: "Canvas",
