@@ -10,7 +10,7 @@ export const Item: FC<TItem> = ({
   title,
   href,
 }) => (
-  <Root className="p-2 rounded-xs">
+  <Root className="p-2 rounded-xs shrink-0">
     <Anchor
       className="flex items-center"
       href={href}

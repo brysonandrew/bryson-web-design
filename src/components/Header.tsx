@@ -10,7 +10,6 @@ import { Title } from "./Title";
 
 const Root = styled(motion.header)``;
 const Right = styled(motion.div)``;
-const Main = styled(motion.h1)``;
 const Sub = styled(motion.h2)``;
 
 export const Header = () => {
@@ -34,7 +33,7 @@ export const Header = () => {
         <div className="p-2" />
         <Sub
           style={{ scale, x: xx }}
-          className="relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
+          className="hidden md:flex relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
         >
           <Typewriter wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
             {(content) => <>{content}</>}

@@ -14,7 +14,7 @@ export const Item: FC<TItem> = ({
 }) => (
   <Root className="relative">
     <Date
-      className="absolute left-full text-teal top-1/2 text-xxxs uppercase whitespace-nowrap"
+      className="hidden md:flex absolute left-full text-teal top-1/2 text-xxxs uppercase whitespace-nowrap"
       style={{ x: 60, y: "-50%" }}
     >
       {`— ${
