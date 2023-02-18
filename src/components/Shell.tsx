@@ -14,9 +14,5 @@ export const Shell: FC<TProps> = ({ children }) => {
       window.scrollTo(0, 0);
     }
   }, []);
-  return ( 
-    <Root className="bg-black">
-      {children}
-    </Root>
-  );
+  return <Root className="bg-black">{children}</Root>;
 };

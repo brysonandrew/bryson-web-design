@@ -25,6 +25,5 @@ export const About = () => (
       </div>
       <div className="py-40" />
     </Mid>
-    <Screen />
   </Root>
 );
