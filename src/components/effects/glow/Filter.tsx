@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import { GLOW_ID, HEIGHT, OVERHANG, WIDTH } from "./config";
 import COLORS from "../../../../tailwind.config-colors.json";
-const x = OVERHANG * 10;
 export const Filter: FC = () => (
   // const glitch = resolveRandomGlitch();
   // const [currGlitch, setGlitch] = useState(glitch);

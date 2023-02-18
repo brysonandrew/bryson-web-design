@@ -21,6 +21,6 @@ export const Index = () => {
       <Root id="#about">
         <About />
       </Root>
-    </Shell> 
+    </Shell>
   );
 };

@@ -4,7 +4,8 @@ import type {
   FormEvent,
   FocusEvent,
 } from "react";
-import { HTMLMotionProps, motion } from "framer-motion";
+import type { HTMLMotionProps} from "framer-motion";
+import { motion } from "framer-motion";
 import { Shell } from "@components/Shell";
 import emailjs from "@emailjs/browser";
 import styled from "@emotion/styled";

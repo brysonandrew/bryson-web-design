@@ -1,16 +1,14 @@
 import type { FC } from "react";
-import type { MotionValue } from "framer-motion";
 import { motion } from "framer-motion";
+import type { MotionValue } from "framer-motion";
 import styled from "@emotion/styled";
 import {
   OVERHANG,
   HEIGHT_AND_OVERHANG,
   WIDTH_AND_OVERHANG,
-  GLITCH_ID,
 } from "@components/effects/glitch/config";
-import COLORS from "../../../../../tailwind.config-colors.json";
 import { GLOW_ID } from "@components/effects/glow/config";
-import { LIGHTING_ID } from "@components/effects/lighting/config";
+import COLORS from "../../../../../tailwind.config-colors.json";
 
 const Root = styled(motion.g)``;
 

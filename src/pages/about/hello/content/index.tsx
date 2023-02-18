@@ -29,10 +29,12 @@ export const Content = () => {
   const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
   const scale2 = useTransform(scrollY, [25, 200], [1, 0.8]);
-  const scale3 = useTransform(scrollY, [0, 200], [1, 0.8]);
 
   return (
-    <Root className="flex w-full brightness-75" style={{ opacity }}>
+    <Root
+      className="flex w-full bg-black"
+      style={{ opacity }}
+    >
       <Svg
         width={WIDTH}
         height={HEIGHT}
