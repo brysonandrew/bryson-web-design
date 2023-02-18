@@ -5,7 +5,6 @@ import {
   useSpring,
 } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Image } from "@components/Image";
 
 export interface PhotoMetadata {
   aspectRatio: string;

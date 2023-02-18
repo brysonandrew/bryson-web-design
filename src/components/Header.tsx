@@ -6,7 +6,7 @@ import {
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
 import { Link } from "react-router-dom";
-import { Title } from "./Title";
+import { Title } from "./text/Title";
 
 const Root = styled(motion.header)``;
 const Right = styled(motion.div)``;

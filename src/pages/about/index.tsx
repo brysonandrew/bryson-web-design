@@ -1,4 +1,3 @@
-import { Screen } from "@components/Screen";
 import { Tech } from "@pages/about/tech";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";

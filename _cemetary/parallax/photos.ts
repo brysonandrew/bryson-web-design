@@ -1,8 +1,9 @@
-import type { PhotoMetadata } from "@pages/work";
 
 const vertical = "2/3";
 const horizontal = "3/2";
-
+export interface PhotoMetadata {
+  aspectRatio: string;
+}
 export const londonPhotosMetadata: PhotoMetadata[] = [
   { aspectRatio: horizontal },
   { aspectRatio: vertical },

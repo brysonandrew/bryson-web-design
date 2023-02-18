@@ -18,12 +18,7 @@
     "jsx": "react-jsx",
     "allowJs": true
   },
-  "include": [
-    "src/**/*.json",
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.tsx",
-  ],
+  "include": ["src/**/*.json", "src/**/*.ts", "src/**/*.js", "src/**/*.tsx"],
   "files": [
     "tailwind.config-colors.json",
     "tailwind.config-shadow.js",
