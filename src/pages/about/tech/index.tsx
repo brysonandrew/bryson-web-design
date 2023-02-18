@@ -1,11 +1,11 @@
 import type { FC } from "react";
 import { Fragment } from "react";
 import { Text } from "@components/text";
-import type { TItem } from "./constants";
-import { ITEMS } from "./constants";
+import type { TItem } from "../../../constants/tech";
+import { ITEMS } from "../../../constants/tech";
 import { Item } from "./Item";
-import { Plus } from "./Plus";
-import type { TBaseChildren, TChildren } from "@t/index";
+import { Plus } from "../../../icons/Plus";
+import type { TBaseChildren } from "@t/index";
 import { Typewriter } from "@components/typewriter";
 const TEXT_CLASS =
   "absolute right-full whitespace-nowrap -translate-x-12";
@@ -39,7 +39,11 @@ export const Tech: FC<TProps> = ({ children }) => (
           <ul className="flex items-center justify-evenly w-full">
             {ITEMS.map((item: TItem, index: number) => (
               <Fragment key={item.title}>
-                {index !== 0 && <Plus />}
+                {index !== 0 && (
+                  <li className="h-6 w-6">
+                    <Plus />
+                  </li>
+                )}
                 <Item {...item} />
               </Fragment>
             ))}

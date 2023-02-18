@@ -39,7 +39,6 @@ export const Header = () => {
           style={{ scale, x: xx }}
           className="relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
         >
-          {/* Servicing Your Frontend's Needs */}
           <Typewriter wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
             {(content) => <>{content}</>}
           </Typewriter>

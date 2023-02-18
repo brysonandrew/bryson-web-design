@@ -9,8 +9,6 @@ const Content = styled(motion.div)`
   min-height: calc(100vh + 200px);
 `;
 
-const Background = styled(motion.div)``;
-
 const Mid = styled(motion.section)`
   max-width: 480px;
 `;
@@ -21,10 +19,6 @@ export const About = () => (
       <Hello />
       <div className="py-44" />
       <div className="relative z-20 px-2 py-4">
-        {/* <Background
-          className="absolute inset-0 bg-teal-005"
-          // style={{ opacity, scale }}
-        /> */}
         <Tech>
           <Timeline />
         </Tech>
