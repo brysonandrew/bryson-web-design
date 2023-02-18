@@ -1,8 +1,9 @@
-import { FC, useEffect } from "react";
+import type { FC} from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { useLocation } from "react-router";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 
 const Root = styled(motion.div)``;
 

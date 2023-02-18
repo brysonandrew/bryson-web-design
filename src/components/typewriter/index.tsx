@@ -1,8 +1,8 @@
-import { FC, useEffect, useRef } from "react";
-import { useState } from "react";
+import type { FC } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Writer } from "./Writer";
 import type { TBaseChildren, TChildren } from "@t/index";
-import { TItemsConfig } from "./useItems";
+import type { TItemsConfig } from "./useItems";
 import { AnimatePresence, motion } from "framer-motion";
 
 export type TBaseProps = TItemsConfig & {

@@ -1,6 +1,7 @@
-import {
+import type {
   ChangeEvent,
-  FormEvent,
+  FormEvent} from "react";
+import {
   useRef,
   useState,
 } from "react";

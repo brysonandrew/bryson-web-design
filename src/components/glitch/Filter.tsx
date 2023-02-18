@@ -1,4 +1,5 @@
-import { FC, useState } from "react";
+import type { FC} from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInterval } from "@hooks/useInterval";
 import { GLITCH_ID, resolveRandomGlitch } from "./config";

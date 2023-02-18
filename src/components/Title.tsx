@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { MotionValue, motion } from "framer-motion";
+import type { FC } from "react";
+import type { MotionValue} from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
 
@@ -9,8 +10,7 @@ type TProps = {
   scale: MotionValue<number> | number;
   x: MotionValue<number> | number;
 };
-export const Title: FC<TProps> = ({ scale, x }) => {
-  return (
+export const Title: FC<TProps> = ({ scale, x }) => (
     <Root
       className="relative z-10 grow-0 text-xl uppercase leading-none"
       style={{ scale, x }}
@@ -20,4 +20,3 @@ export const Title: FC<TProps> = ({ scale, x }) => {
       </Typewriter>
     </Root>
   );
-};

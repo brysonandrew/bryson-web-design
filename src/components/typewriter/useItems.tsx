@@ -28,9 +28,7 @@ const resolveItems = ({ wip }: TItemsConfig) => {
 };
 
 export const useItems = ({ wip }: TItemsConfig) => {
-  const items = useMemo(() => {
-    return resolveItems({ wip });
-  }, []);
+  const items = useMemo(() => resolveItems({ wip }), []);
 
   return items;
 };

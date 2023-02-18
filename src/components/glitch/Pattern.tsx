@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import type { TChildren } from "@t/index";
 import { PATTERN_ID } from "./config";
 import COLORS from "../../../tailwind.config-colors.json";
