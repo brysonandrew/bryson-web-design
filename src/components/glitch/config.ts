@@ -6,6 +6,11 @@ export const IMAGE_WIDTH = 360;
 export const WIDTH = 600;
 export const HEIGHT = 280;
 
+export const OVERHANG = 10;
+
+export const WIDTH_AND_OVERHANG = WIDTH - OVERHANG * 2;
+export const HEIGHT_AND_OVERHANG = HEIGHT - OVERHANG * 2;
+
 export const resolveRandomGlitch = () => {
   const count = ~~(Math.random() * 6) + 4;
   return {

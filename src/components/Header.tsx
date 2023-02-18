@@ -5,9 +5,11 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
+import { Link } from "react-router-dom";
+import { Title } from "./Title";
 
 const Root = styled(motion.header)``;
-const Title = styled(motion.div)``;
+const Right = styled(motion.div)``;
 const Main = styled(motion.h1)``;
 const Sub = styled(motion.h2)``;
 
@@ -20,15 +22,10 @@ export const Header = () => {
 
   return (
     <Root className="flex items-center fixed w-full top-0 left-0 pt-4 pb-5 px-8 z-40">
-      <Main
-        className="relative z-10 grow-0 text-xl uppercase leading-none"
-        style={{ scale, x }}
-      >
-        <Typewriter wip="brysona.dev">
-          {(content) => content}
-        </Typewriter>
-      </Main>
-      <Title
+      <Link to="/">
+        <Title {...{ scale, x }} />
+      </Link>
+      <Right
         className="flex items-center grow"
         style={{ opacity }}
       >
@@ -43,18 +40,18 @@ export const Header = () => {
             {(content) => <>{content}</>}
           </Typewriter>
         </Sub>
-      </Title>
+      </Right>
       <div className="flex items-center mt-1">
-        <a
-          href="mailto:andrewbryson12@gmail.com"
+        <Link
+          to="/contact"
           className="relative flex items-center justify-center pl-2 py-1"
         >
           <h6 className="uppercase text-xxxs">
             <Typewriter wip="contact">
-              {(content) => content}
+              {(content) => <>{content}</>}
             </Typewriter>
           </h6>
-        </a>
+        </Link>
       </div>
     </Root>
   );

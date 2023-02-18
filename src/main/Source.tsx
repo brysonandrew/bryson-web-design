@@ -4,15 +4,19 @@ import { useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { Work } from "@pages/work";
-
 import { amsterdamPhotosMetadata } from "@constants/photos";
 import { Workshop } from "@pages/workshop";
+import { Contact } from "@pages/contact";
 
 export const Source = () => {
   const element = useRoutes([
     {
       path: "/",
       element: <Index />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
     },
     {
       path: "/workshop",

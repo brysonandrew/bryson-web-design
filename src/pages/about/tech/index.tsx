@@ -35,12 +35,12 @@ export const Tech: FC<TProps> = ({ children }) => (
         delay={2000}
         wip={[
           "I use",
-          <div className="px-2" />,
-          <ul className="flex items-center justify-evenly w-full">
+          <div key="x" className="px-2" />,
+          <ul key="y" className="flex items-center justify-evenly w-full">
             {ITEMS.map((item: TItem, index: number) => (
               <Fragment key={item.title}>
                 {index !== 0 && (
-                  <li className="h-6 w-6">
+                  <li className="h-4 w-4">
                     <Plus />
                   </li>
                 )}

@@ -63,6 +63,7 @@ export const Typewriter: FC<TTypewriterProps> = ({
               onDone={handleDone}
             />
             <motion.div
+              key="placeholder"
               className="absolute bg-teal-02"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1.4, opacity: 1 }}

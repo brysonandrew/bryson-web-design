@@ -27,7 +27,7 @@ export const ITEMS: TItem[] = [
   },
   {
     title: "Stock Portfolio",
-    description: "Investment UI",
+    description: "Investment Manager",
     time: new Date(2020, 11, 1),
   },
 ];

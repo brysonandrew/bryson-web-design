@@ -293,6 +293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^3.10.0":
+  version: 3.10.0
+  resolution: "@emailjs/browser@npm:3.10.0"
+  checksum: e54784bb938b333dc2ba3d68ddf1c7322071651372da9a23ee0f5a9eb444c6b6a65155aec9c4570f3db7bac4926e30627b052ea90f0994e7be57298b9964b781
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.10.5, @emotion/babel-plugin@npm:^11.10.6":
   version: 11.10.6
   resolution: "@emotion/babel-plugin@npm:11.10.6"
@@ -1356,6 +1363,7 @@ __metadata:
   resolution: "brysona.dev@workspace:."
   dependencies:
     "@babel/core": ^7.20.12
+    "@emailjs/browser": ^3.10.0
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
@@ -1369,6 +1377,7 @@ __metadata:
     "@vitejs/plugin-react": ^3.0.1
     autoprefixer: ^10.4.8
     clsx: ^1.2.1
+    emailjs: ^4.0.1
     eslint: ^8.21.0
     framer-motion: 9.0.2
     postcss: ^8.4.16
@@ -1692,6 +1701,18 @@ __metadata:
   version: 1.4.302
   resolution: "electron-to-chromium@npm:1.4.302"
   checksum: aa764494f9a5b6916ba9f311c0204b2c73449addba18cc55d43e84e8c4465732af9cd6560a8efeb32f3c5a928299030e41352e5b3a081e9e56b086d5be618f45
+  languageName: node
+  linkType: hard
+
+"emailjs@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "emailjs@npm:4.0.1"
+  peerDependencies:
+    typescript: ">=4.3.5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: ea03a36fd069574591ed14f6cdaacf114ce2542a36eeca9bb3f76920fb6f80a48d41612dca2b342268d0e35294712cfaae2b9a26ea2c1fc28e82b85bf85bc8af
   languageName: node
   linkType: hard
 

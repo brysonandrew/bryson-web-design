@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import { About } from "./about";
-import { Header } from "./about/Header";
-import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { Shell } from "@components/Shell";
+import { About } from "./about";
+import { Header } from "@components/Header";
 
 const Root = styled(motion.div)``;
 
@@ -15,11 +16,11 @@ export const Index = () => {
     }
   }, []);
   return (
-    <Root className="bg-black">
+    <Shell>
       <Header />
-      <div id="#about">
+      <Root id="#about">
         <About />
-      </div>
-    </Root>
+      </Root>
+    </Shell> 
   );
 };

@@ -47,24 +47,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html * {
-  color-scheme: light;
-}
-
-html.dark * {
-  color-scheme: dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
 html,
 body {
-  font-family: GALS, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: GALS, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 18px;
   background-color: #111;
   color: rgb(207 250 254);
@@ -116,26 +102,26 @@ ul {
 input,
 textarea,
 select {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 input:disabled,
 textarea:disabled,
 select:disabled {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   cursor: not-allowed;
 }
 
 html.dark input,
 html.dark textarea,
 html.dark select {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 html.dark input:disabled,
 html.dark textarea:disabled,
 html.dark select:disabled {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
   cursor: not-allowed;
 }
 

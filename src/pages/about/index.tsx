@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Hello } from "./hello";
 import { Timeline } from "./timeline";
 
-const Content = styled(motion.div)`
+const Root = styled(motion.div)`
   min-height: calc(100vh + 200px);
 `;
 
@@ -14,7 +14,7 @@ const Mid = styled(motion.section)`
 `;
 
 export const About = () => (
-  <Content>
+  <Root>
     <Mid className="relative my-0 mx-auto">
       <Hello />
       <div className="py-44" />
@@ -26,5 +26,5 @@ export const About = () => (
       <div className="py-40" />
     </Mid>
     <Screen />
-  </Content>
+  </Root>
 );
