@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Writer } from "./Writer";
 import type { TBaseChildren, TChildren } from "@t/index";
 import { TItemsConfig } from "./useItems";
+import { AnimatePresence, motion } from "framer-motion";
 
 export type TBaseProps = TItemsConfig & {
   throttle?: number;
@@ -52,14 +53,27 @@ export const Typewriter: FC<TTypewriterProps> = ({
 
   return (
     <>
-      {!isDone && (
-        <Writer
-          throttle={throttle}
-          wip={wip}
-          onUpdate={handleUpdate}
-          onDone={handleDone}
-        />
-      )}
+      <AnimatePresence>
+        {!isDone && (
+          <>
+            <Writer
+              throttle={throttle}
+              wip={wip}
+              onUpdate={handleUpdate}
+              onDone={handleDone}
+            />
+            <motion.div
+              className="absolute bg-teal-02"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1.4, opacity: 1 }}
+              exit={{ scale: 1, opacity: 0 }}
+            >
+              <div className="invisible">{wip}</div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
       <>{children(content)}</>
     </>
   );
