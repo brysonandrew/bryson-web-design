@@ -13,7 +13,7 @@
   "teal-bright": "rgb(207 250 254)",
   "teal-bright-005": "rgba(207, 250, 254, 0.05)",
   "yellow": "#ffc82c",
-  "black-dark": "#000",
+  "black-dark": "#000", 
   "black": "#111",
   "black-light": "#161616",
   "black-lighter": "#222",

@@ -1,5 +1,7 @@
-type TBaseChildren = JSX.Element | null
-export type TChildrenElement = TBaseChildren | TBaseChildren[];
+export type TBaseChildren = JSX.Element | null | string;
+export type TChildrenElement =
+  | TBaseChildren
+  | TBaseChildren[];
 export type TChildren = string | TChildrenElement | null;
 export type TError = any | unknown;
 export type TEmptyRecord = Record<string, unknown>;
@@ -29,7 +31,7 @@ export type TTrackRefValue =
   | DelayNode
   | AudioNode
   | AudioWorkletNode
-  | BiquadFilterNode ;
+  | BiquadFilterNode;
 
 export type TTrackRef = Record<string, TTrackRefValue>;
 

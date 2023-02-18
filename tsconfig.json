@@ -23,7 +23,6 @@
     "src/**/*.ts",
     "src/**/*.js",
     "src/**/*.tsx",
-    "assets/worklets/**/*.js"
   ],
   "files": [
     "tailwind.config-colors.json",

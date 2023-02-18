@@ -33,7 +33,6 @@ export const GlitchFilter: FC<TProps> = ({
           values="0.10"
           result="grey"
         />
-
         <feMorphology
           operator="dilate"
           radius={`${MORPH_RADIUS * 1.4} 0`}
@@ -82,18 +81,18 @@ export const GlitchFilter: FC<TProps> = ({
         primitiveUnits="userSpaceOnUse"
         colorInterpolationFilters="linearRGB"
       >
-        <feColorMatrix
+        {/* <feColorMatrix
           in="SourceGraphic"
           type="saturate"
           values="0.10"
           result="grey"
-        />
+        /> */}
         <feMorphology
           operator="dilate"
           radius={`${MORPH_RADIUS * 1.2} 0`}
           x="0%"
           y="0%"
-          in="grey"
+          in="SourceGraphic"
           width="100%"
           height="100%"
           result="morphology1"

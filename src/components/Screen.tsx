@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const Root = styled(motion.div)``;
 
-export const PrivacyScreen = () => {
+export const Screen = () => {
   const isPresent = useIsPresent();
 
   return (

@@ -1,9 +1,9 @@
-import { Hello } from "@components/hello";
-import { PrivacyScreen } from "@components/PrivacyScreen";
+import { Screen } from "@components/Screen";
 import { Tech } from "@pages/about/tech";
-import { Timeline } from "@components/timeline";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
+import { Hello } from "./hello";
+import { Timeline } from "./timeline";
 
 const Content = styled(motion.div)`
   min-height: calc(100vh + 200px);
@@ -16,10 +16,10 @@ const Mid = styled(motion.section)`
 `;
 
 export const About = () => (
-  <Content id="#about">
+  <Content>
     <Mid className="relative my-0 mx-auto">
       <Hello />
-      <div className="py-40" />
+      <div className="py-44" />
       <div className="relative z-20 px-2 py-4">
         {/* <Background
           className="absolute inset-0 bg-teal-005"
@@ -31,6 +31,6 @@ export const About = () => (
       </div>
       <div className="py-40" />
     </Mid>
-    <PrivacyScreen />
+    <Screen />
   </Content>
 );

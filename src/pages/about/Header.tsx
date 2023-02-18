@@ -4,6 +4,7 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
+import { Typewriter } from "@components/typewriter";
 
 const Root = styled(motion.header)``;
 const Title = styled(motion.div)``;
@@ -23,7 +24,9 @@ export const Header = () => {
         className="relative z-10 grow-0 text-xl uppercase leading-none"
         style={{ scale, x }}
       >
-        brysona.dev
+        <Typewriter wip="brysona.dev">
+          {(content) => content}
+        </Typewriter>
       </Main>
       <Title
         className="flex items-center grow"
@@ -37,29 +40,21 @@ export const Header = () => {
           className="relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
         >
           {/* Servicing Your Frontend's Needs */}
-          sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs
+          <Typewriter wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
+            {(content) => <>{content}</>}
+          </Typewriter>
         </Sub>
       </Title>
       <div className="flex items-center mt-1">
-        {/* <Link
-          to="/work"
-          className={clsx(
-            BUTTON,
-            "flex items-center text-teal",
-          )}
-        >
-          <Work />
-          <div className="p-1" />
-          <span>Work</span>
-        </Link>
-        <div className="px-2" /> */}
         <a
           href="mailto:andrewbryson12@gmail.com"
           className="relative flex items-center justify-center pl-2 py-1"
         >
-          {/* <Email className={clsx(XS, "text-teal")} />
-          <div className="p-1" /> */}
-          <h6 className="uppercase text-xxxs">contact</h6>
+          <h6 className="uppercase text-xxxs">
+            <Typewriter wip="contact">
+              {(content) => content}
+            </Typewriter>
+          </h6>
         </a>
       </div>
     </Root>
