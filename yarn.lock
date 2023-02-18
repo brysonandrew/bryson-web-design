@@ -1377,7 +1377,6 @@ __metadata:
     "@vitejs/plugin-react": ^3.0.1
     autoprefixer: ^10.4.8
     clsx: ^1.2.1
-    emailjs: ^4.0.1
     eslint: ^8.21.0
     framer-motion: 9.0.2
     postcss: ^8.4.16
@@ -1701,18 +1700,6 @@ __metadata:
   version: 1.4.302
   resolution: "electron-to-chromium@npm:1.4.302"
   checksum: aa764494f9a5b6916ba9f311c0204b2c73449addba18cc55d43e84e8c4465732af9cd6560a8efeb32f3c5a928299030e41352e5b3a081e9e56b086d5be618f45
-  languageName: node
-  linkType: hard
-
-"emailjs@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "emailjs@npm:4.0.1"
-  peerDependencies:
-    typescript: ">=4.3.5"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: ea03a36fd069574591ed14f6cdaacf114ce2542a36eeca9bb3f76920fb6f80a48d41612dca2b342268d0e35294712cfaae2b9a26ea2c1fc28e82b85bf85bc8af
   languageName: node
   linkType: hard
 
@@ -3636,8 +3623,8 @@ __metadata:
   linkType: hard
 
 "rollup@npm:^3.10.0":
-  version: 3.16.0
-  resolution: "rollup@npm:3.16.0"
+  version: 3.17.0
+  resolution: "rollup@npm:3.17.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -3645,7 +3632,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 239178a83317fc4d0f8adb9f8db7be7d560e4f84653ec63baadba9cd66a8d6cbb0d9b2b6b3160fd5413457f645874571b6a9ec5fe573e02facb4ff7776c828b9
+  checksum: 1111d8faf72caa255732f01c298b5b8e02f3cf1a8905ff3b98a8b4899c7b62639f32bc50a872b09910ac22a0665f2299af5c41754aadd678ab04172610a86a92
   languageName: node
   linkType: hard
 
