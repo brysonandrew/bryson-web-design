@@ -1,39 +1,34 @@
+import { useRef, useState } from "react";
 import type {
   ChangeEvent,
-  FormEvent} from "react";
-import {
-  useRef,
-  useState,
+  FormEvent,
+  FocusEvent,
 } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { Shell } from "@components/Shell";
 import emailjs from "@emailjs/browser";
-import { Header } from "./Header";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 import clsx from "clsx";
+import { Header } from "./Header";
+import { Text } from "./Text";
+import { Textarea } from "./Textarea";
+import type { TSendingState } from "./config";
+import {
+  INPUT_CLASS,
+  resolveButtonValue,
+  INIT_STATE,
+} from "./config";
 import { ELEVATED } from "@styles/neu";
-
-type TSendingState = "idle" | "sending" | "sent" | "error";
-
-const LABEL_CLASS = "w-full px-4 py-1";
-const INPUT_CLASS = "px-2 py-1 w-full";
 
 const Root = styled(motion.header)``;
 const Form = styled(motion.form)`
   max-width: 512px;
 `;
-const Label = styled(motion.label)``;
-const Line = styled(motion.hr)``;
 const Input = styled(motion.input)``;
-const Textarea = styled(motion.textarea)``;
 
 export const Contact = () => {
-  const init = {
-    from_email: "",
-    from_name: "",
-    message: "",
-  };
-  const [state, setState] = useState(init);
+  const [focus, setFocus] = useState<string | null>(null);
+  const [state, setState] = useState(INIT_STATE);
   const [sendingState, setSendingState] =
     useState<TSendingState>("idle");
 
@@ -51,14 +46,8 @@ export const Contact = () => {
         ref.current,
         import.meta.env.VITE_EMAIL_PUBLIC_KEY,
       );
-      console.log(
-        "🚀 ~ file: index.tsx:44 ~ sendEmail ~ result",
-        result,
-      );
+      console.log(result);
       setSendingState("sent");
-
-      // if (result === "ok") {
-      // }
     } catch (error) {
       console.error(error);
       setSendingState("error");
@@ -75,17 +64,53 @@ export const Contact = () => {
     });
   };
   const isDisabled = sendingState !== "idle";
-  const resolveButtonValue = () => {
-    switch (sendingState) {
-      case "sending":
-        return "Sending...";
-      case "sent":
-        return "Thanks for the message 🎉";
-      case "error":
-        return "Something went wrong ⚠️";
-      default:
-        return "Send";
+
+  const handleFocus = (
+    event: FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement,
+      Element
+    >,
+  ) => {
+    const target = event.currentTarget;
+    console.log(
+      "🚀 ~ file: index.tsx:65 ~ handleFocus ~ target",
+      target,
+    );
+    if (!target) return;
+    setFocus((target as any).name);
+  };
+  const handleBlur = (
+    event: FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement,
+      Element
+    >,
+  ) => {
+    const target = event.currentTarget;
+    console.log(
+      "🚀 ~ file: index.tsx:65 ~ handleFocus ~ target",
+      target,
+    );
+    if (!target) return;
+    if (focus === (target as any).name) {
+      setFocus(null);
     }
+  };
+
+  const focusHandlers: Pick<
+    HTMLMotionProps<"input">,
+    "onChange" | "onBlur" | "onFocus"
+  > = {
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    onChange: handleChange,
+  };
+  const textareaFocusHandlers: Pick<
+    HTMLMotionProps<"textarea">,
+    "onChange" | "onBlur" | "onFocus"
+  > = {
+    onBlur: handleBlur,
+    onFocus: handleFocus,
+    onChange: handleChange,
   };
   return (
     <Shell>
@@ -103,95 +128,55 @@ export const Contact = () => {
           onSubmit={isDisabled ? () => null : sendEmail}
         >
           <div className="py-4" />
-          <Label
-            className={clsx(LABEL_CLASS, ELEVATED)}
-            initial={false}
-            animate="animate"
-            whileFocus="focus"
-          >
-            <div className="flex items-center">
-              <h4 className="whitespace-nowrap text-teal">
-                name
-              </h4>
-              <div className="p-1" />
-              <Input
-                className={INPUT_CLASS}
-                disabled={isDisabled}
-                type="text"
-                name="from_name"
-                placeholder=""
-                value={state.from_name}
-                onChange={handleChange}
-              />
-            </div>
-            <Line
-              className="w-full h-px bg-teal"
-              variants={{
-                animate: { scaleX: 0 },
-                focus: { scaleX: 1 },
-              }}
-            />
-          </Label>
+          <Text
+            title="name"
+            autoFocus
+            className={INPUT_CLASS}
+            disabled={isDisabled}
+            name="from_name"
+            placeholder=""
+            value={state.from_name}
+            isFocused={"from_name" === focus}
+            {...focusHandlers}
+          />
           <div className="py-4" />
-          <Label
-            className={clsx(LABEL_CLASS, ELEVATED)}
-            initial={false}
-            animate="animate"
-            whileFocus="focus"
-          >
-            <div className="flex items-center">
-              <h4 className="whitespace-nowrap text-teal">
-                email
-              </h4>
-              <div className="p-1" />
-              <Input
-                className={INPUT_CLASS}
-                disabled={isDisabled}
-                type="email"
-                name="from_email"
-                placeholder=""
-                value={state.from_email}
-                onChange={handleChange}
-              />
-            </div>
-            <Line
-              className="w-full h-px bg-teal"
-              variants={{
-                animate: { scaleX: 0 },
-                focus: { scaleX: 1 },
-              }}
-            />
-          </Label>
+          <Text
+            title="email"
+            className={INPUT_CLASS}
+            disabled={isDisabled}
+            type="email"
+            name="from_email"
+            placeholder=""
+            value={state.from_email}
+            isFocused={"from_email" === focus}
+            {...focusHandlers}
+          />
           <div className="py-4" />
-          <Label
-            className={clsx(LABEL_CLASS, ELEVATED)}
-            initial={false}
-            animate="animate"
-            whileFocus="focus"
-          >
-            <div className="flex items-start">
-              <h4 className="whitespace-nowrap text-teal">
-                message
-              </h4>
-              <div className="p-1" />
-              <Textarea
-                className={clsx(INPUT_CLASS)}
-                name="message"
-                disabled={isDisabled}
-                style={{ marginTop: -4 }}
-                value={state.message}
-                onChange={handleChange}
-                rows={4}
-                cols={50}
-              />
-            </div>
-          </Label>
+          <Textarea
+            title="message"
+            className={clsx(INPUT_CLASS)}
+            name="message"
+            disabled={isDisabled}
+            style={{ marginTop: -4 }}
+            value={state.message}
+            rows={4}
+            cols={50}
+            isFocused={"message" === focus}
+            {...textareaFocusHandlers}
+          />
           <div className="py-8" />
           <Input
-            className="w-full py-2 px-4 flex items-center justify-center hover:underline"
+            className={clsx(
+              "w-full py-2 px-4 flex items-center justify-center cursor-pointer shadow-teal-fade-sm",
+              ELEVATED,
+            )}
+            style={{
+              opacity: sendingState === "idle" ? 0.5 : 1,
+            }}
+            whileHover={{ opacity: 1 }}
             type="submit"
             disabled={isDisabled}
-            value={resolveButtonValue()}
+            value={resolveButtonValue(sendingState)}
           />
         </Form>
       </Root>

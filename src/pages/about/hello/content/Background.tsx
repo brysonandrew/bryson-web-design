@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { MotionValue, motion } from "framer-motion";
+import type { FC } from "react";
+import type { MotionValue} from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import {
   HEIGHT_AND_OVERHANG,
@@ -11,8 +12,7 @@ import {
 const Root = styled(motion.rect)``;
 
 type TProps = { scale: MotionValue<number> };
-export const Background: FC<TProps> = ({ scale }) => {
-  return (
+export const Background: FC<TProps> = ({ scale }) => (
     <Root
       x={0}
       y={0}
@@ -23,4 +23,3 @@ export const Background: FC<TProps> = ({ scale }) => {
       style={{ scale }}
     />
   );
-};

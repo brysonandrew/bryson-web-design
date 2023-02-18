@@ -6,6 +6,8 @@ import {
 import styled from "@emotion/styled";
 import { Filter as GlitchFilter } from "@components/effects/glitch/Filter";
 import { Filter as LightingFilter } from "@components/effects/lighting/Filter";
+import { Filter as GlowFilter } from "@components/effects/glow/Filter";
+
 import { Pattern } from "@components/effects/glitch/Pattern";
 import {
   WIDTH,
@@ -30,7 +32,7 @@ export const Content = () => {
   const scale3 = useTransform(scrollY, [0, 200], [1, 0.8]);
 
   return (
-    <Root className="flex w-full" style={{ opacity }}>
+    <Root className="flex w-full brightness-75" style={{ opacity }}>
       <Svg
         width={WIDTH}
         height={HEIGHT}
@@ -40,6 +42,7 @@ export const Content = () => {
           <Pattern />
           <GlitchFilter />
           <LightingFilter />
+          <GlowFilter />
         </defs>
         <Lights scale={scale} />
         <Background scale={scale2} />

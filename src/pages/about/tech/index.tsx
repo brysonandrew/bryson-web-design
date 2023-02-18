@@ -34,7 +34,7 @@ export const Tech: FC<TProps> = ({ children }) => (
       <Typewriter
         delay={2000}
         wip={[
-          "I use",
+          "using",
           <div key="x" className="hidden sm:flex px-2" />,
           <ul
             key="y"
@@ -62,7 +62,7 @@ export const Tech: FC<TProps> = ({ children }) => (
     </div>
     <div className="py-8" />
     <div className="relative flex items-start">
-      <Typewriter delay={2600} wip={["To make", children]}>
+      <Typewriter delay={2600} wip={["making", children]}>
         {(items) => items.map(renderItems)}
       </Typewriter>
     </div>
