@@ -20,6 +20,7 @@ export type TAction =
     };
 
 export type TState = {
+  mode: "instant" | "stagger";
   isThreshold: boolean;
 };
 

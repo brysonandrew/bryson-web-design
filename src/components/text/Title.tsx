@@ -16,7 +16,7 @@ export const Title: FC<TProps> = ({ scale, x }) => (
     className="relative z-10 grow-0 text-xl uppercase leading-none"
     style={{ scale, x }}
   >
-    <Typewriter wip="brysona.dev">
+    <Typewriter delay={100} wip="brysona.dev">
       {(content) => <>{content}</>}
     </Typewriter>
   </Root>

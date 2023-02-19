@@ -45,8 +45,8 @@ export const Tech: FC<TProps> = ({ children }) => (
                 {index !== 0 && (
                   <>
                     <li className="p-1" />
-                    <li className="h-4 w-4">
-                      <Plus />
+                    <li>
+                      <Plus classValue="h-4.5 w-4.5 mt-1 text-teal-bright" />
                     </li>
                     <li className="p-1" />
                   </>

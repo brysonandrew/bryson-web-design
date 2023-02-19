@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import type { FC } from "react";
 import type { TItem } from "./constants";
 import { motion } from "framer-motion";
+import COLORS from "@tailwind/config-colors.json";
+import { Link } from "@icons/Link";
 
 const Root = styled.li``;
 const Row = styled.div``;
@@ -11,6 +13,7 @@ export const Item: FC<TItem> = ({
   title,
   description,
   time,
+  href,
 }) => (
   <Root className="relative">
     <Date
@@ -26,10 +29,27 @@ export const Item: FC<TItem> = ({
             }).format(time)
       }`}
     </Date>
-    <Row className="flex items-center justify-between">
-      <h2 className="text-md">{title}</h2>
-      <div className="px-2" />
-      <h3 className="text-sm">{description}</h3>
+    <Row
+      className="flex flex-col bg-black px-4 py-2 rounded-sm shadow-teal-bright-fade-sm"
+      style={{
+        filter: `drop-shadow(0px 0px 1px ${COLORS["teal-bright-fade"]})`,
+      }}
+    >
+      <div className="flex items-center justify-between">
+        <h2 className="text-md">{title}</h2>
+        <div className="p-1" />
+        <a
+          className="text-teal-bright-fade hover:text-teal-bright"
+          href={href}
+          target="_blank"
+        >
+          <Link classValue="w-4 w-h" title={href} />
+        </a>
+      </div>
+      <div className="p-0.5" />
+      <h3 className="text-md text-teal-bright-m20">
+        {description}
+      </h3>
     </Row>
   </Root>
 );

@@ -4,6 +4,9 @@ import { Writer } from "./Writer";
 import type { TBaseChildren, TChildren } from "@t/index";
 import type { TItemsConfig } from "./useItems";
 import { AnimatePresence, motion } from "framer-motion";
+import { STATE } from "@state/constants";
+
+const isDisabled = STATE.mode === "instant";
 
 export type TBaseProps = TItemsConfig & {
   throttle?: number;
@@ -14,10 +17,11 @@ export type TTypewriterProps = TBaseProps & {
 };
 export const Typewriter: FC<TTypewriterProps> = ({
   throttle,
-  delay,
+  delay: initDelay,
   wip,
   children,
 }) => {
+  const delay = isDisabled ? 0 : initDelay;
   const isDelay = typeof delay === "number";
   const [content, setContent] = useState<TBaseChildren[]>(
     [],
@@ -36,6 +40,8 @@ export const Typewriter: FC<TTypewriterProps> = ({
       }, delay);
     }
   }, [delay]);
+
+  // if (isDisabled) return <>{wip}</>;
 
   const handleUpdate = (next: TBaseChildren) => {
     setContent((prev) => {

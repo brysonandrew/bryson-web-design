@@ -11,6 +11,9 @@ const Root = styled(motion.div)``;
 export const Index = () => {
   const location = useLocation();
   useEffect(() => {
+    console.log(location)
+    console.log(location.hash)
+
     if (!location.hash) {
       window.scrollTo(0, 0);
     }

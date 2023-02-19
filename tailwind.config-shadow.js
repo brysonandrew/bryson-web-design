@@ -15,6 +15,7 @@ module.exports = {
   "pink-02-sm": `0 0 1px 1px ${COLORS["pink-02"]}`,
   "pink-01-sm": `0 0 1px 1px ${COLORS["pink-01"]}`,
   "pink-purple": `${PINK}, ${PURPLE}`,
+
   purple: PURPLE,
   "purple-sm": `0 0 1px 1px ${COLORS.purple}`,
   "purple-08-sm": `0 0 1px 1px ${COLORS["purple-08"]}`,
@@ -27,6 +28,9 @@ module.exports = {
 
   "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
   "teal-fade-sm": `0 0 1px 1px ${COLORS["teal-fade"]}`,
+
+  "teal-bright-sm": `0 0 1px 1px ${COLORS["teal-bright"]}`,
+  "teal-bright-fade-sm": `0 0 1px 1px ${COLORS["teal-bright-fade"]}`,
 
   "blue-md": `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}, 0 0 1px 3px ${COLORS.blue}`,
   blue: `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}`,

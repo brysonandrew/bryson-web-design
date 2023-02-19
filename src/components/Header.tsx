@@ -35,7 +35,7 @@ export const Header = () => {
           style={{ scale, x: xx }}
           className="hidden md:flex relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
         >
-          <Typewriter wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
+          <Typewriter delay={150} wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
             {(content) => <>{content}</>}
           </Typewriter>
         </Sub>
@@ -46,7 +46,7 @@ export const Header = () => {
           className="relative flex items-center justify-center pl-2 py-1"
         >
           <h6 className="uppercase text-xxxs">
-            <Typewriter wip="contact">
+            <Typewriter delay={200} wip="contact">
               {(content) => <>{content}</>}
             </Typewriter>
           </h6>

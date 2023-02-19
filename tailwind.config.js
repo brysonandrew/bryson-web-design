@@ -13,7 +13,6 @@ module.exports = {
     join(__dirname, "./src/**/*.ts"),
     join(__dirname, "./src/**/*.tsx"),
   ],
-  darkMode: "class",
   theme: {
     colors: COLORS,
     fontSize: FONT_SIZE,
