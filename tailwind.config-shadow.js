@@ -31,6 +31,7 @@ module.exports = {
 
   "teal-bright-sm": `0 0 1px 1px ${COLORS["teal-bright"]}`,
   "teal-bright-fade-sm": `0 0 1px 1px ${COLORS["teal-bright-fade"]}`,
+  "teal-bright-01-sm": `0 0 1px 1px ${COLORS["teal-bright-01"]}`,
 
   "blue-md": `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}, 0 0 1px 3px ${COLORS.blue}`,
   blue: `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}`,
@@ -78,5 +79,7 @@ module.exports = {
 
   "light-sm": `0 0 4px 1px rgba(255,255,255,0.2)`,
   black: `0 0 1px 1px ${COLORS.white}, 0 0 1px 2px ${COLORS.black}`,
-  "black-sm": `0 0 1px 1px ${COLORS.black}`,
+  "black-005-sm": `0 0 1px 1px ${COLORS["black-005"]}`,
+  "black-01-sm": `0 0 1px 1px ${COLORS["black-01"]}`,
+  "black-sm": `0 0 1px 1px ${COLORS.black}`
 };

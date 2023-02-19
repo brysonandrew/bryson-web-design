@@ -4,6 +4,8 @@ import type { TItem } from "./constants";
 import { motion } from "framer-motion";
 import COLORS from "@tailwind/config-colors.json";
 import { Link } from "@icons/Link";
+import clsx from "clsx";
+import { BACKGROUND_CLASS, BACKGROUND_DARK_CLASS } from "@styles/backgrounds";
 
 const Root = styled.li``;
 const Row = styled.div``;
@@ -30,10 +32,13 @@ export const Item: FC<TItem> = ({
       }`}
     </Date>
     <Row
-      className="flex flex-col bg-black px-4 py-2 rounded-sm shadow-teal-bright-fade-sm"
-      style={{
-        filter: `drop-shadow(0px 0px 1px ${COLORS["teal-bright-fade"]})`,
-      }}
+      className={clsx(
+        "flex flex-col px-3 py-2 rounded-sm",
+        BACKGROUND_DARK_CLASS,
+      )}
+      // style={{
+      //   filter: `drop-shadow(0px 0px 1px ${COLORS["teal-bright-fade"]})`,
+      // }}
     >
       <div className="flex items-center justify-between">
         <h2 className="text-md">{title}</h2>

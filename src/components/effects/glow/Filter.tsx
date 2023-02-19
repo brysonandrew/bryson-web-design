@@ -1,22 +1,13 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import { GLOW_ID, HEIGHT, OVERHANG, WIDTH } from "./config";
-import COLORS from "../../../../tailwind.config-colors.json";
+import COLORS from "@tailwind/config-colors.json";
+
 export const Filter: FC = () => (
-  // const glitch = resolveRandomGlitch();
-  // const [currGlitch, setGlitch] = useState(glitch);
-
-  // useInterval(() => {
-  //   const glitch = resolveRandomGlitch();
-  //   setGlitch(glitch);
-  // }, (currGlitch.duration + currGlitch.delay) * 1000);
-
-  // const baseFrequency = currGlitch.duration * 0.1;
-
   <filter
     id={GLOW_ID}
-    x={-0}
-    y={-0}
+    x={0}
+    y={0}
     height={HEIGHT}
     width={WIDTH}
     filterUnits="userSpaceOnUse"

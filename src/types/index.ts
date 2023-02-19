@@ -7,6 +7,8 @@ export type TError = any | unknown;
 export type TEmptyRecord = Record<string, unknown>;
 export type TAnyRecord = Record<string, any>;
 
+export type TChildrenProps = { children: TChildren }
+
 export type TAdsr = {
   attack?: number;
   release?: number;

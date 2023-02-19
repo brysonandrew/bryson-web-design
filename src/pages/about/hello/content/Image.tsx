@@ -6,9 +6,10 @@ import {
   WIDTH,
   HEIGHT,
   OVERHANG,
-  GLITCH_ID,
   IMAGE_WIDTH,
+  GLITCH_GREEN_ID,
 } from "@components/effects/glitch/config";
+
 const Root = styled(motion.image)``;
 
 type TProps = {
@@ -22,7 +23,9 @@ export const Image: FC<TProps> = ({ scale }) => (
     height={HEIGHT - OVERHANG}
     preserveAspectRatio="xMidYMid slice"
     xlinkHref="/mugshot2.png"
-    filter={`url(#${GLITCH_ID})`}
-    style={{ scale }}
+    filter={`url(#${GLITCH_GREEN_ID})`}
+    style={{
+      scale,
+    }}
   />
 );

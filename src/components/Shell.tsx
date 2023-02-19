@@ -4,12 +4,7 @@ import styled from "@emotion/styled";
 import { useResetScroll } from "../hooks/useResetScroll";
 import type { TChildren } from "../types";
 import { Pattern } from "./effects/glitch/Pattern";
-import {
-  PATTERN_ID,
-  GLITCH_ID,
-} from "./effects/glitch/config";
-import { GLOW_ID } from "./effects/glow/config";
-import { LIGHTING_ID } from "./effects/lighting/config";
+import { PATTERN_ID } from "./effects/glitch/config";
 
 const Root = styled(motion.div)``;
 const Svg = styled(motion.svg)``;
@@ -36,7 +31,6 @@ export const Shell: FC<TProps> = ({ children }) => {
           width="100%"
           height="100%"
           fill={`url(#${PATTERN_ID})`}
-          
           style={{ scale: 1 }}
         />
       </Svg>

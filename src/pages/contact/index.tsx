@@ -4,7 +4,7 @@ import type {
   FormEvent,
   FocusEvent,
 } from "react";
-import type { HTMLMotionProps} from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import { Shell } from "@components/Shell";
 import emailjs from "@emailjs/browser";
@@ -13,7 +13,7 @@ import clsx from "clsx";
 import { Header } from "./Header";
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
-import type { TSendingState } from "./config";
+import { LABEL_CLASS, TSendingState } from "./config";
 import {
   INPUT_CLASS,
   resolveButtonValue,
@@ -116,13 +116,15 @@ export const Contact = () => {
   return (
     <Shell>
       <Header />
-      <div className="py-20" />
+      <div className="py-16" />
       <Root className="flex flex-col">
-        <h2 className="inline my-0 mx-auto">
+        <h2
+          className="inline my-0 mx-auto text-lg"
+          style={{ lineHeight: 2, letterSpacing: 2 }}
+        >
           Send me a message
         </h2>
-        <div className="py-4" />
-        <div className="py-4" />
+        <div className="py-6" />
         <Form
           className="flex flex-col w-full my-0 mx-auto"
           ref={ref}
@@ -166,21 +168,23 @@ export const Contact = () => {
             {...textareaFocusHandlers}
           />
           <div className="py-8" />
-          <Input
-            className={clsx(
-              "w-full py-2 px-4 flex items-center justify-center cursor-pointer shadow-teal-fade-sm",
-              ELEVATED,
-            )}
-            style={{
-              opacity: sendingState === "idle" ? 0.5 : 1,
-            }}
-            whileHover={{ opacity: 1 }}
-            type="submit"
-            disabled={isDisabled}
-            value={resolveButtonValue(sendingState)}
-          />
+          <label className={LABEL_CLASS}>
+            <Input
+              className={clsx(
+                "w-full flex items-center justify-center cursor-pointer",
+              )}
+              type="submit"
+              value={resolveButtonValue(sendingState)}
+              style={{
+                opacity: sendingState === "idle" ? 0.5 : 1,
+              }}
+              whileHover={{ opacity: 1 }}
+              disabled={isDisabled}
+            />
+          </label>
         </Form>
       </Root>
+      <div className="py-6" />
     </Shell>
   );
 };

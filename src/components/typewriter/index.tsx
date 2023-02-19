@@ -1,10 +1,14 @@
-import type { FC } from "react";
 import { useState, useEffect, useRef } from "react";
-import { Writer } from "./Writer";
-import type { TBaseChildren, TChildren } from "@t/index";
-import type { TItemsConfig } from "./useItems";
-import { AnimatePresence, motion } from "framer-motion";
+import type { FC } from "react";
+import { AnimatePresence } from "framer-motion";
+import type {
+  TBaseChildren,
+  TChildren,
+  TChildrenProps,
+} from "@t/index";
 import { STATE } from "@state/constants";
+import { Writer } from "./Writer";
+import type { TItemsConfig } from "./useItems";
 
 const isDisabled = STATE.mode === "instant";
 
@@ -12,10 +16,12 @@ export type TBaseProps = TItemsConfig & {
   throttle?: number;
 };
 export type TTypewriterProps = TBaseProps & {
+  Placeholder?: FC<TChildrenProps>;
   delay?: number;
   children(content: TBaseChildren[]): TChildren;
 };
 export const Typewriter: FC<TTypewriterProps> = ({
+  Placeholder,
   throttle,
   delay: initDelay,
   wip,
@@ -40,8 +46,6 @@ export const Typewriter: FC<TTypewriterProps> = ({
       }, delay);
     }
   }, [delay]);
-
-  // if (isDisabled) return <>{wip}</>;
 
   const handleUpdate = (next: TBaseChildren) => {
     setContent((prev) => {
@@ -68,15 +72,11 @@ export const Typewriter: FC<TTypewriterProps> = ({
               onUpdate={handleUpdate}
               onDone={handleDone}
             />
-            <motion.div
-              key="placeholder"
-              className="absolute bg-teal-02"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1.2, opacity: 1 }}
-              exit={{ scale: 1, opacity: 0 }}
-            >
-              <div className="invisible">{wip}</div>
-            </motion.div>
+            {Placeholder && (
+              <Placeholder>
+                <div className="invisible">{wip}</div>
+              </Placeholder>
+            )}
           </>
         )}
       </AnimatePresence>

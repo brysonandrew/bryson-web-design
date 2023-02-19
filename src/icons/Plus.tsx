@@ -1,5 +1,6 @@
-import clsx, { ClassValue } from "clsx";
-import { FC } from "react";
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
+import type { FC } from "react";
 
 type TProps = {
   classValue?: ClassValue;

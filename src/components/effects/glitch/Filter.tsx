@@ -1,4 +1,4 @@
-import type { FC} from "react";
+import type { FC } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInterval } from "@hooks/useInterval";
@@ -36,10 +36,16 @@ export const Filter: FC = () => {
         radius="0.1"
         result="fatty"
       />
+      <feOffset
+        in="SourceGraphic"
+        dx="10"
+        dy="10"
+        result="offset"
+      />
       <motion.feDisplacementMap
         in2="fatty"
-        in="SourceGraphic"
-        scale="20"
+        in="offset"
+        scale="10"
         xChannelSelector="R"
         yChannelSelector="G"
         result="displacement"

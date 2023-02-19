@@ -1,6 +1,7 @@
-import COLORS from "../../../tailwind.config-colors.json";
+import COLORS from "@tailwind/config-colors.json";
 
-export const LABEL_CLASS = "relative w-full px-4 py-1";
+export const LABEL_CLASS =
+  "relative w-full px-4 py-2 bg-black-08 shadow-neu-black";
 export const INPUT_CLASS = "px-2 py-1 w-full";
 
 export const textShadow = {

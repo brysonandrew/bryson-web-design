@@ -1,4 +1,6 @@
 export const GLITCH_ID = "_GLITCH_ID";
+export const GLITCH_GREEN_ID = "_GLITCH_GREEN_ID";
+
 export const PATTERN_ID = "_PATTERN_ID";
 
 export const IMAGE_WIDTH = 360;
@@ -18,8 +20,10 @@ export const resolveRandomGlitch = () => {
       0,
       ...[...Array(count)].map((_, i, { length }) => {
         let x = Math.sin(((i - 1) / length) * Math.PI);
-        x *= 10 * Math.random();
-        return parseInt(x.toFixed(0));
+        x *= 5 * Math.random();
+        x = parseInt(x.toFixed(0));
+        x = Math.abs(x);
+        return x;
       }),
       0,
     ],
