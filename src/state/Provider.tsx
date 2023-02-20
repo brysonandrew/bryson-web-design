@@ -1,4 +1,4 @@
-import { useReducer, useRef } from "react";
+import { useReducer } from "react";
 import type { FC } from "react";
 import type { TReducer } from "./types";
 import { reducer } from ".";

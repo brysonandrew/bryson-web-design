@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { FC } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../types";
@@ -13,18 +13,20 @@ type TProps = {
 export const Shell: FC<TProps> = ({ children }) => {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const xy = { cursorX, cursorY };
+
+  const xy = { x: cursorX, y: cursorY };
 
   return (
     <Root
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-black" 
+      className="bg-black"
     >
       <Background {...xy} />
       {children}
-      <Cursor {...xy}></Cursor>
+      <Cursor x={cursorX} y={cursorY} />
     </Root>
   );
 };
+ 

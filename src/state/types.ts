@@ -1,3 +1,4 @@
+import { MotionValue } from "framer-motion";
 import type {
   Dispatch,
   Reducer,
@@ -9,7 +10,16 @@ export type TContext = TState & {
   dispatch: TDispatch;
 };
 
+export type TMotionValuePair = [
+  x: MotionValue,
+  y: MotionValue,
+];
+
 export type TAction =
+  | {
+      type: "add-motion-value";
+      value: { pair: TMotionValuePair; index: number };
+    }
   | {
       type: "threshold-reached";
       value: null;
@@ -22,6 +32,7 @@ export type TAction =
 export type TState = {
   mode: "instant" | "stagger";
   isThreshold: boolean;
+  motionValuePairs: TMotionValuePair[];
 };
 
 export type TActionType = null;

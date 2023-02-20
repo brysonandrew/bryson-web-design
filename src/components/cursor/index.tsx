@@ -1,40 +1,60 @@
-import type { FC } from "react";
-import type { MotionValue } from "framer-motion";
+import { FC, useRef } from "react";
+import { useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import clsx from "clsx";
-import { CURSOR_CLASS } from "./config";
 import { TChildren } from "@t/index";
 import { useEventListener } from "@hooks/useEventListener";
 import { NOOP } from "@constants/functions";
+import { TXY } from "@t/position";
+import { TrailMotionValue } from "./TrailMotionValue";
+import { useContext } from "@state/Context";
+import { TMotionValuePair } from "@state/types";
+
+const TRAIL_SIZE = 10;
 
 export const DEFAULT_CURSOR = 14;
 export const DEFAULT_CURSOR_05 = DEFAULT_CURSOR * 0.5;
 
 const Root = styled(motion.div)``;
 
-export type TCursorProps = {
+export type TCursorProps = TXY & {
   children?: TChildren;
   size?: number;
   onTap?(event: PointerEvent): void;
-  cursorX: MotionValue<number>;
-  cursorY: MotionValue<number>;
 };
 export const Cursor: FC<TCursorProps> = ({
-  cursorX,
-  cursorY,
+  x,
+  y,
   size = DEFAULT_CURSOR,
   onTap,
   children,
 }) => {
+  const { motionValuePairs } = useContext();
+  console.log(motionValuePairs);
+  const trailRef = useRef<[x: number, y: number][]>([]);
+  const { scrollX, scrollY } = useScroll();
+
   const handleMove = (event: MouseEvent) => {
-    cursorX?.set(
-      event.pageX,
-      // - size * 0.5
-    );
-    cursorY?.set(
-      event.pageY,
-      //  - size * 0.5
+    const nextX = event.pageX - scrollX.get();
+    const nextY = event.pageY - scrollY.get();
+    // trailRef.current.push([nextX, nextY]);
+    // trailRef.current = trailRef.current.slice(-TRAIL_SIZE);
+    x.set(nextX);
+    y.set(nextY);
+    motionValuePairs.forEach(
+      (
+        [motionValueX, motionValueY]: TMotionValuePair,
+        index,
+      ) => {
+        // if (!trailRef.current[index]) {
+        // console.log(trailRef.current);
+        // console.log(index);
+        //   return;
+        // }
+        // const [x, y] = trailRef.current[index];
+        // motionValueX.set(x);
+        // motionValueY.set(y);
+      },
     );
   };
 
@@ -45,19 +65,24 @@ export const Cursor: FC<TCursorProps> = ({
   );
 
   return (
-    <Root
-      className={clsx(
-        CURSOR_CLASS,
-        "top-0 left-0 pointer-events-none",
-      )}
-      style={{
-        x: cursorX,
-        y: cursorY,
-        width: size,
-        height: size,
-      }}
-    >
-      {children}
-    </Root>
+    <>
+      {/* {[...Array(TRAIL_SIZE)].map((_, index) => (
+        <TrailMotionValue key={`${index}`} index={index} />
+      ))} */}
+    </>
+    // <Root
+    //   className={clsx(
+    //     CURSOR_CLASS,
+    //     "top-0 left-0 pointer-events-none",
+    //   )}
+    //   style={{
+    //     x,
+    //     y,
+    //     width: size,
+    //     height: size,
+    //   }}
+    // >
+    //   {children}
+    // </Root>
   );
 };

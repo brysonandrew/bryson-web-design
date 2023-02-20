@@ -2,9 +2,16 @@ import type { TState, TReducerAction } from "./types";
 
 export const reducer = (
   state: TState,
-  { type, value }: TReducerAction
+  { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "add-motion-value": {
+      state.motionValuePairs[value.index] = value.pair;
+      return {
+        ...state,
+        motionValuePairs: [...state.motionValuePairs],
+      };
+    }
     case "threshold-reached": {
       return {
         ...state,
