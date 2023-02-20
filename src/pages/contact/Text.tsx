@@ -37,7 +37,7 @@ export const Text: FC<TProps> = ({
   ...props
 }) => (
   <Root
-    className={clsx("pb-1", LABEL_CLASS, ELEVATED)}
+    className={clsx("pb-2", LABEL_CLASS, ELEVATED)}
     initial={false}
     animate={isFocused ? "focus" : "animate"}
   >

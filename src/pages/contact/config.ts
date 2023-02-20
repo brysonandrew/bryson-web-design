@@ -2,7 +2,7 @@ import COLORS from "@tailwind/config-colors.json";
 
 export const LABEL_CLASS =
   "relative w-full px-4 py-2 bg-black-08 shadow-neu-black";
-export const INPUT_CLASS = "px-2 py-1 w-full";
+export const INPUT_CLASS = "px-2 py-1 w-full tracking-wide";
 
 export const textShadow = {
   on: `0 0 10px ${COLORS["teal-bright-04"]}, 0 0 20px ${COLORS["teal-bright-02"]},
