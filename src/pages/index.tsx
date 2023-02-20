@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import { useLocation } from "react-router";
 import { Shell } from "@components/Shell";
-import { About } from "./about";
 import { Header } from "@components/Header";
+import { About } from "./about";
 
 const Root = styled(motion.div)``;
 

@@ -3,6 +3,7 @@ export const GLITCH_GREEN_ID = "_GLITCH_GREEN_ID";
 
 export const PATTERN_ID = "_PATTERN_ID";
 
+
 export const IMAGE_WIDTH = 360;
 
 export const WIDTH = 600;

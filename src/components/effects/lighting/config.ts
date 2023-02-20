@@ -1,4 +1,5 @@
 export const LIGHTING_ID = "_LIGHTING_ID";
+export const SPOTLIGHT_ID = "_SPOTLIGHT_ID";
 
 export const IMAGE_WIDTH = 360;
 

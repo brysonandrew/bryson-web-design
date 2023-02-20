@@ -21,9 +21,7 @@ export const Header = () => {
 
   return (
     <Root className="flex items-center fixed w-full top-0 left-0 pt-4 pb-5 px-8 z-40">
-      <Link to="/">
-        <Title {...{ scale, x }} />
-      </Link>
+      <Title {...{ scale, x }} />
       <Right
         className="flex items-center grow"
         style={{ opacity }}
@@ -35,7 +33,10 @@ export const Header = () => {
           style={{ scale, x: xx }}
           className="hidden md:flex relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
         >
-          <Typewriter delay={150} wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs">
+          <Typewriter
+            delay={150}
+            wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs"
+          >
             {(content) => <>{content}</>}
           </Typewriter>
         </Sub>

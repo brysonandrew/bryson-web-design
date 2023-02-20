@@ -19,7 +19,6 @@ import {
   resolveButtonValue,
   INIT_STATE,
 } from "./config";
-import { ELEVATED } from "@styles/neu";
 
 const Root = styled(motion.header)``;
 const Form = styled(motion.form)`
@@ -35,9 +34,9 @@ export const Contact = () => {
 
   const ref = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = async (e: FormEvent) => {
+  const sendEmail = async (event: FormEvent) => {
     setSendingState("sending");
-    e.preventDefault();
+    event.preventDefault();
 
     if (ref.current === null) return;
     try {
@@ -47,7 +46,6 @@ export const Contact = () => {
         ref.current,
         import.meta.env.VITE_EMAIL_PUBLIC_KEY,
       );
-      console.log(result);
       setSendingState("sent");
     } catch (error) {
       console.error(error);
@@ -73,12 +71,8 @@ export const Contact = () => {
     >,
   ) => {
     const target = event.currentTarget;
-    console.log(
-      "🚀 ~ file: index.tsx:65 ~ handleFocus ~ target",
-      target,
-    );
     if (!target) return;
-    setFocus((target as any).name);
+    setFocus(target.name);
   };
   const handleBlur = (
     event: FocusEvent<
@@ -87,12 +81,8 @@ export const Contact = () => {
     >,
   ) => {
     const target = event.currentTarget;
-    console.log(
-      "🚀 ~ file: index.tsx:65 ~ handleFocus ~ target",
-      target,
-    );
     if (!target) return;
-    if (focus === (target as any).name) {
+    if (focus === target.name) {
       setFocus(null);
     }
   };

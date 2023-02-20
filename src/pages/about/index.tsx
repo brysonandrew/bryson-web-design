@@ -22,7 +22,7 @@ export const About = () => (
           <Timeline />
         </Tech>
       </div>
-      <div className="py-28" />
+      <div className="py-20" />
     </Mid>
   </Root>
 );

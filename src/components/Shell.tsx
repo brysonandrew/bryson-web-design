@@ -1,40 +1,30 @@
 import type { FC } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import styled from "@emotion/styled";
-import { useResetScroll } from "../hooks/useResetScroll";
 import type { TChildren } from "../types";
-import { Pattern } from "./effects/glitch/Pattern";
-import { PATTERN_ID } from "./effects/glitch/config";
+import { Background } from "./Background";
+import { Cursor } from "./cursor";
 
 const Root = styled(motion.div)``;
-const Svg = styled(motion.svg)``;
 
-type TProps = { children: TChildren };
+type TProps = {
+  children: TChildren;
+};
 export const Shell: FC<TProps> = ({ children }) => {
-  useResetScroll();
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+  const xy = { cursorX, cursorY };
+
   return (
     <Root
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-black"
+      className="bg-black" 
     >
-      <Svg
-        className="fixed inset-0"
-        width="100%"
-        height="100%"
-      >
-        <Pattern />
-        <motion.rect
-          x={0}
-          y={0}
-          width="100%"
-          height="100%"
-          fill={`url(#${PATTERN_ID})`}
-          style={{ scale: 1 }}
-        />
-      </Svg>
+      <Background {...xy} />
       {children}
+      <Cursor {...xy}></Cursor>
     </Root>
   );
 };
