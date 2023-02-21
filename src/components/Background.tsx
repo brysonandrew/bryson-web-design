@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import { TXY } from "@t/position";
+import type { TXY } from "@t/position";
 import { Pattern } from "./effects/glitch/Pattern";
 import { PATTERN_ID } from "./effects/glitch/config";
 import { Spotlight } from "./effects/lighting/Spotlight";
@@ -10,8 +10,7 @@ import { SPOTLIGHT_ID } from "./effects/lighting/config";
 const Root = styled(motion.svg)``;
 
 type TProps = TXY;
-export const Background: FC<TProps> = (props) => {
-  return (
+export const Background: FC<TProps> = (props) => (
     <Root
       className="fixed inset-0"
       width="100%"
@@ -32,4 +31,3 @@ export const Background: FC<TProps> = (props) => {
       />
     </Root>
   );
-};

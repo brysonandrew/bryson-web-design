@@ -1,14 +1,13 @@
-import { FC, useRef } from "react";
-import { useScroll } from "framer-motion";
-import { motion } from "framer-motion";
+import type { FC } from "react";
+import { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 import styled from "@emotion/styled";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 import { useEventListener } from "@hooks/useEventListener";
 import { NOOP } from "@constants/functions";
-import { TXY } from "@t/position";
-import { TrailMotionValue } from "./TrailMotionValue";
+import type { TXY } from "@t/position";
 import { useContext } from "@state/Context";
-import { TMotionValuePair } from "@state/types";
+import type { TMotionValuePair } from "@state/types";
 
 const TRAIL_SIZE = 10;
 

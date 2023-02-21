@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../types";

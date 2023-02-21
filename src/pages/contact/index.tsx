@@ -13,8 +13,9 @@ import clsx from "clsx";
 import { Header } from "./Header";
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
-import { LABEL_CLASS, TSendingState } from "./config";
+import type { TSendingState } from "./config";
 import {
+  LABEL_CLASS,
   INPUT_CLASS,
   resolveButtonValue,
   INIT_STATE,

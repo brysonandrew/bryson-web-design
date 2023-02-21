@@ -1,11 +1,12 @@
 import type { FC } from "react";
-import { MotionStyle, motion } from "framer-motion";
+import type { MotionStyle} from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
 import { GLITCH_ID } from "@components/effects/glitch/config";
 import clsx from "clsx";
 import { BACKGROUND_CLASS } from "@styles/backgrounds";
-import { TChildrenProps } from "@t/index";
+import type { TChildrenProps } from "@t/index";
 
 const Root = styled(motion.div)``;
 
