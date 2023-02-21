@@ -17,7 +17,7 @@ if (root)
             <Router history={history}>
               <Source />
             </Router>
-          </Boundary>
+          </Boundary> 
         </MotionConfig>
       </Provider>
     </StrictMode>,
