@@ -1,4 +1,6 @@
 export const GLITCH_ID = "_GLITCH_ID";
+export const GLITCH_WITH_LINE_ID = "_GLITCH_WITH_LINE_ID";
+
 export const GLITCH_GREEN_ID = "_GLITCH_GREEN_ID";
 
 export const PATTERN_ID = "_PATTERN_ID";

@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { Workshop } from "@pages/workshop";
 import { Contact } from "@pages/contact";
+import { Glitch } from "@pages/glitch";
 
 export const Source = () => {
   const element = useRoutes([
@@ -19,6 +20,10 @@ export const Source = () => {
     {
       path: "/workshop",
       element: <Workshop />,
+    },
+    {
+      path: "/glitch",
+      element: <Glitch />,
     },
     {
       path: "*",

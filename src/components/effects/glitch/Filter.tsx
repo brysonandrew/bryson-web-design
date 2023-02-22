@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInterval } from "@hooks/useInterval";
 import { GLITCH_ID, resolveRandomGlitch } from "./config";
 
-export const Filter: FC = () => {
+export const Filter: FC<any> = () => {
   const glitch = resolveRandomGlitch();
   const [currGlitch, setGlitch] = useState(glitch);
 

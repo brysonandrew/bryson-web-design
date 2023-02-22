@@ -41,7 +41,7 @@ export const Header = () => {
           </Typewriter>
         </Sub>
       </Right>
-      <div className="flex items-center mt-1">
+      <div className="flex items-center mt-0.5">
         <Link
           to="/contact"
           className="relative flex items-center justify-center pl-2 py-1"
