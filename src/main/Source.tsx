@@ -6,6 +6,7 @@ import { cloneElement } from "react";
 import { Workshop } from "@pages/workshop";
 import { Contact } from "@pages/contact";
 import { Glitch } from "@pages/glitch";
+import { Edges } from "@pages/edges";
 
 export const Source = () => {
   const element = useRoutes([
@@ -20,6 +21,10 @@ export const Source = () => {
     {
       path: "/workshop",
       element: <Workshop />,
+    },
+    {
+      path: "/edges",
+      element: <Edges />,
     },
     {
       path: "/glitch",
