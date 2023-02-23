@@ -7,7 +7,7 @@ import {
   HEIGHT,
   OVERHANG,
   IMAGE_WIDTH,
-  GLITCH_GREEN_ID,
+  GLITCH_ID,
 } from "@components/effects/glitch/_cemetary/config";
 
 const Root = styled(motion.image)``;
@@ -23,7 +23,7 @@ export const Image: FC<TProps> = ({ scale }) => (
     height={HEIGHT - OVERHANG}
     preserveAspectRatio="xMidYMid slice"
     xlinkHref="/mugshot2.png"
-    filter={`url(#${GLITCH_GREEN_ID})`}
+    filter={`url(#${GLITCH_ID})`}
     style={{
       scale,
     }}

@@ -17,3 +17,4 @@ export const Filters: FC = () => (
     </feMerge>
   </>
 );
+ 

@@ -1,16 +1,27 @@
 import type { FC } from "react";
-import { Shape as FragmentShape } from "./Shape";
-import { FRAGMENT_ARR } from "./config";
+import {
+  Shape as FragmentShape,
+  TFragmentShape,
+} from "./Shape";
 
-type TProps = { duration: number };
-export const Shapes: FC<TProps> = ({ duration }) => (
+type TProps = { items: TFragmentShape[]; s: number };
+export const Shapes: FC<TProps> = ({ items, s }) => (
   <>
-    {FRAGMENT_ARR.map((_, index) => (
-      <FragmentShape
-        key={`${index}`}
-        index={index}
-        duration={duration * index}
-      />
-    ))}
+    {items.map(
+      (
+        item: TFragmentShape,
+        index,
+        { length },
+        duration = s / length,
+      ) => (
+        <FragmentShape
+          key={`${index}`}
+          index={index}
+          duration={duration}
+          delay={index * duration}
+          {...item}
+        />
+      ),
+    )}
   </>
 );

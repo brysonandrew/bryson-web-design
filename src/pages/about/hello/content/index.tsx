@@ -4,7 +4,7 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
-import { Filter as GlowFilter } from "@components/effects/glow/Filter";
+import { Filter as GlitchFilter } from "@components/effects/glitch/_cemetary/Filter";
 
 import {
   WIDTH,
@@ -39,7 +39,7 @@ export const Content = () => {
         fill="none"
       >
         <defs>
-          <GlowFilter />
+          <GlitchFilter />
         </defs>
         <rect
           x1={OVERHANG}

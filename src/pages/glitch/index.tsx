@@ -21,9 +21,8 @@ export const Glitch = () => (
         y="0%"
         width="100%"
         height="100%"
-        xlinkHref="/synthwave.jpg"
-        // xlinkHref="/mugshot2.png"
-
+        // xlinkHref="/synthwave.jpg"
+        xlinkHref="/mugshot2.png"
         filter={`url(#${GLITCH_FILTER_ID})`}
       />
     </svg>

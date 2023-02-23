@@ -12,11 +12,13 @@ export const Shape: FC<TProps> = ({ index, duration }) => {
       y="0%"
       width="100%"
       height={`${height}%`}
+      // fill="none"
+      // stroke="none"
     >
       <animate
         attributeName="y"
         values="0;100%;0"
-        dur={`${duration * 8}s`}
+        dur={`${duration}s`}
         repeatCount="indefinite"
       />
     </motion.rect>
