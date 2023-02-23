@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { TChildren } from "@t/index";
 import { PATTERN_ID } from "./config";
-import COLORS from "../../../../tailwind.config-colors.json";
+import COLORS from "@tailwind/config-colors.json";
 
 type TProps = {
   children?: TChildren;

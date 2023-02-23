@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
-import { GLOW_ID, HEIGHT, OVERHANG, WIDTH } from "./config";
+import { GLOW_ID, HEIGHT, WIDTH } from "./config";
 import COLORS from "@tailwind/config-colors.json";
 
 export const Filter: FC = () => (

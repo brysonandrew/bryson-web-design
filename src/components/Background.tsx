@@ -2,10 +2,10 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TXY } from "@t/position";
-import { Pattern } from "./effects/glitch/Pattern";
-import { PATTERN_ID } from "./effects/glitch/config";
+import { PATTERN_ID } from "./effects/glitch/_cemetary/config";
 import { Spotlight } from "./effects/lighting/Spotlight";
 import { SPOTLIGHT_ID } from "./effects/lighting/config";
+import { Pattern } from "./effects/glitch/_cemetary/Pattern";
 
 const Root = styled(motion.svg)``;
 

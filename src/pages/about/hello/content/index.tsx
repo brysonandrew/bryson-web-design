@@ -4,16 +4,15 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
-import { Filter as GlitchFilter } from "@components/effects/glitch/Filter";
-import { Green as GlitchGreenFilter } from "@components/effects/glitch/Green";
 import { Filter as GlowFilter } from "@components/effects/glow/Filter";
+
 import {
   WIDTH,
   HEIGHT,
   OVERHANG,
   WIDTH_AND_OVERHANG,
   HEIGHT_AND_OVERHANG,
-} from "@components/effects/glitch/config";
+} from "@components/effects/glitch/_cemetary/config";
 
 import { Text } from "./Text";
 import { Image } from "./Image";
@@ -40,8 +39,6 @@ export const Content = () => {
         fill="none"
       >
         <defs>
-          <GlitchFilter />
-          <GlitchGreenFilter />
           <GlowFilter />
         </defs>
         <rect
@@ -51,8 +48,6 @@ export const Content = () => {
           height={HEIGHT_AND_OVERHANG}
           rx="4"
           ry="4"
-          // strokeWidth="3"
-          //stroke={COLORS["teal-bright-fade"]}
           fill={COLORS["black-04"]}
         />
         <Image scale={scale} />

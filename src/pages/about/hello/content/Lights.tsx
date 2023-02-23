@@ -6,7 +6,7 @@ import {
   OVERHANG,
   HEIGHT_AND_OVERHANG,
   WIDTH_AND_OVERHANG,
-} from "@components/effects/glitch/config";
+} from "@components/effects/glitch/_cemetary/config";
 import { GLOW_ID } from "@components/effects/glow/config";
 import COLORS from "../../../../../tailwind.config-colors.json";
 

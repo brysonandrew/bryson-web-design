@@ -4,7 +4,7 @@ import type { TChildren } from "@t/index";
 import { SPOTLIGHT_ID } from "./config";
 import type { TXY } from "@t/position";
 import { useContext } from "@state/Context";
-import { TMotionValuePair } from "@state/types";
+import type { TMotionValuePair } from "@state/types";
 
 type TProps = TXY & {
   children?: TChildren;

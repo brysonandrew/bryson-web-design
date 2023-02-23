@@ -6,7 +6,7 @@ import {
   WIDTH,
   HEIGHT,
   PATTERN_ID,
-} from "@components/effects/glitch/config";
+} from "@components/effects/glitch/_cemetary/config";
 
 const Root = styled(motion.rect)``;
 
