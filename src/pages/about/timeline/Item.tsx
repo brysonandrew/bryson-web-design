@@ -36,7 +36,7 @@ export const Item: FC<TItem> = ({
       </Date>
       <Row
         className={clsx(
-          "flex flex-col px-3 py-2 rounded-sm",
+          "px-3 py-2 rounded-sm",
           BACKGROUND_DARK_CLASS,
         )}
       >

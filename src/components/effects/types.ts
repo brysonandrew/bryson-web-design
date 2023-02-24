@@ -7,6 +7,6 @@ export type TFilterChildrenProps<T extends string> = {
 
 export type TFilterProps = TFilterChildrenProps<string> & {
   id: string;
-  source?: "SourceGraphic" | "BackgroundGraphic";
+  source?: "SourceGraphic";
   result?: string;
 };

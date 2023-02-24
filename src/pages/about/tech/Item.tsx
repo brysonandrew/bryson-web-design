@@ -12,7 +12,7 @@ export const Item: FC<TItem> = ({ icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
   return (
     <Root
-      className="relative rounded-xs shrink-0"
+      className="relative rounded-xs shrink-0 mt-2"
       {...handlers}
     >
       {isSelected && <Select />}

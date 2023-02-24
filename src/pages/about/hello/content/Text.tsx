@@ -22,17 +22,18 @@ export const Text: FC<TProps> = (style) => (
         style={{ lineHeight: 2.025, letterSpacing: 2 }}
       >
         <Typewriter
-          Placeholder={({ children }: TChildrenProps) => (
-            <motion.div
-              key="placeholder"
-              className="absolute left-2 top-2 bg-teal-005"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1.2, opacity: 1 }}
-              exit={{ scale: 1, opacity: 0 }}
-            >
-              {children}
-            </motion.div>
-          )}
+          // Placeholder={({ children }: TChildrenProps) => (
+          //   <motion.div
+          //     key="placeholder"
+          //     className="text-lg absolute bg-teal-005"
+          //     initial={{ scale: 0.8, opacity: 0 }}
+          //     animate={{ scale: 1.2, opacity: 1 }}
+          //     exit={{ scale: 1, opacity: 0 }}
+          //     style={{ lineHeight: 2.025, letterSpacing: 2 }}
+          //   >
+          //     {children}
+          //   </motion.div>
+          // )}
           delay={600}
           wip="Hi, my name is Andrew and I make websites and
             web applications"

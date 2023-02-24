@@ -7,8 +7,8 @@ import { Item } from "./Item";
 import { Plus } from "../../../components/icons/Plus";
 import type { TBaseChildren } from "@t/index";
 import { Typewriter } from "@components/typewriter";
-const TEXT_CLASS =
-  "absolute right-full whitespace-nowrap -translate-x-12";
+
+const TEXT_CLASS = "absolute top-0 right-full whitespace-nowrap mr-12 mt-4";
 
 const renderItems = (
   item: TBaseChildren,
@@ -30,7 +30,7 @@ type TProps = {
 };
 export const Tech: FC<TProps> = ({ children }) => (
   <div className="relative flex flex-col">
-    <div className="relative flex items-center justify-between w-full">
+    <div className="relative flex w-full">
       <Typewriter
         delay={2000}
         wip={[

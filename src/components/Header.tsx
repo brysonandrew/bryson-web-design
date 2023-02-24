@@ -32,7 +32,7 @@ export const Header = () => {
           <div className="p-2" />
           <Sub
             style={{ scale, x: xx }}
-            className="hidden md:flex relative text-sm text-teal mt-1 whitespace-nowrap leading-none"
+            className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none"
           >
             <Typewriter
               delay={150}

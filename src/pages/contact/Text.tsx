@@ -47,7 +47,9 @@ export const Text: FC<TProps> = ({
       animate={isFocused ? "focus" : "animate"}
       {...handlers}
     >
-      {isSelected && <Select />}
+      {isSelected && (
+        <Select classValue="shadow-teal-bright-fade-sm" />
+      )}
       <motion.div className="flex items-center">
         <Name
           className="whitespace-nowrap text-teal"
@@ -62,7 +64,7 @@ export const Text: FC<TProps> = ({
         >
           {title}
         </Name>
-        <div className="p-1" />
+        <div className="p-1.5" />
         <Input
           className={INPUT_CLASS}
           type="text"

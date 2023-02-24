@@ -14,13 +14,10 @@ import {
   SELECT_LAYOUT_ID,
   CURSOR_SIZE,
 } from "./config";
-import { Filter as Sobel } from "@components/effects/sobel/Filter";
-import { Filter as Displacement } from "@components/effects/displacement/Filter";
-import { Filter as Edges } from "@components/effects/edges/Filter";
+import { ID } from "@components/effects/displacement";
+import { MOTION_CONFIG } from "@constants/animation";
 
 const Select = styled(motion.div)``;
-
-const ID = "GLITCH_ID";
 
 export type TCursorProps = {
   children?: TChildren;
@@ -33,11 +30,15 @@ export const Cursor: FC<TCursorProps> = ({
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  const { selectId } = useContext();
+  const { isCursorReady, selectId, dispatch } =
+    useContext();
 
   const { scrollX, scrollY } = useScroll();
 
   const handleMove = (event: MouseEvent) => {
+    if (!isCursorReady) {
+      dispatch({ type: "cursor-ready", value: null });
+    }
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
     cursorX.set(nextX - CURSOR_SIZE_HALF);
@@ -49,7 +50,7 @@ export const Cursor: FC<TCursorProps> = ({
     children && onTap ? "pointerdown" : null,
     onTap ?? NOOP,
   );
-  if (selectId === null) {
+  if (selectId === null && isCursorReady) {
     return (
       <Select
         layoutId={SELECT_LAYOUT_ID}
@@ -59,9 +60,8 @@ export const Cursor: FC<TCursorProps> = ({
           left: cursorX,
           width: CURSOR_SIZE,
           height: CURSOR_SIZE,
-          // filter: `url(#${ID})`,
         }}
-        className="fixed shadow-teal-sm z-50 pointer-events-none"
+        className="fixed bg-gray z-40 pointer-events-none"
       />
     );
   } else {

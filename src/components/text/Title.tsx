@@ -25,7 +25,7 @@ export const Title: FC<TProps> = ({ scale, x }) => {
   const handleResetScroll = useResetScroll();
   return (
     <Root
-      className="relative grow-0 z-10"
+      className="relative grow-0 z-10 top-0.5"
       style={{ scale, x }}
       onTap={handleResetScroll}
       {...handlers}

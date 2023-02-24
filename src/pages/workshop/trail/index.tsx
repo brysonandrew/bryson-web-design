@@ -1,4 +1,3 @@
-import { Background } from "@components/Background";
 import { Cursor } from "@components/cursor/trail";
 import styled from "@emotion/styled";
 

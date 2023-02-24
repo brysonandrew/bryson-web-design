@@ -22,3 +22,4 @@ export const Shell: FC<TProps> = ({ children }) => (
     <Cursor />
   </Root>
 );
+ 

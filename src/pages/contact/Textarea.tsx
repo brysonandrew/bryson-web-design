@@ -33,7 +33,9 @@ export const Textarea: FC<TProps> = ({
       animate={isFocused ? "focus" : "animate"}
       {...handlers}
     >
-      {isSelected && <Select />}
+      {isSelected && (
+        <Select classValue="shadow-teal-fade-sm" />
+      )}
       <div className="flex items-start">
         <Name
           className="whitespace-nowrap text-teal"
@@ -48,7 +50,7 @@ export const Textarea: FC<TProps> = ({
         >
           {title}
         </Name>
-        <div className="p-1" />
+        <div className="p-1.5" />
         <Input {...props} autoComplete="off" />
       </div>
       <Gradient
