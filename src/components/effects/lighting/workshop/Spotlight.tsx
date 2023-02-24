@@ -22,7 +22,7 @@ export const Spotlight: FC<TProps> = (props) => {
             specularExponent="80"
             lighting-color="#FFF"
           >
-            <motion.fePointLight
+            <motion.feSpotLight
               x={x}
               y={y}
               z="220"

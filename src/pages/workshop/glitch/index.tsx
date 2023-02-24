@@ -11,13 +11,15 @@ export const Glitch = () => (
     <div className="py-2">
       <h2 className="text-center">Glitch</h2>
     </div>
+    <svg width="0" height="0">
+      <GlitchFilter  />
+    </svg>
     <svg
       width="100%"
       height="100%"
       viewBox="0 0 1920 1080"
       preserveAspectRatio="xMidYMid slice"
     >
-      <GlitchFilter />
       <image
         x="0%"
         y="0%"

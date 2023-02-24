@@ -8,19 +8,19 @@ import {
   resolveRandomFragments,
   resolveRandomGlitch,
 } from "./config";
-import { Shapes as SweepShapes } from "./sweep/Shapes";
-import { Filters as SweepFilters } from "./sweep/Filters";
-import { Filters as FragmentFilters } from "./fragment/Filters";
-import { Shapes as FragmentShapes } from "./fragment/Shapes";
+import { Shapes as SweepShapes } from "../sweep/Shapes";
+import { Filters as SweepFilters } from "../sweep/Filters";
+import { Filters as FragmentFilters } from "../fragment/Filters";
+import { Shapes as FragmentShapes } from "../fragment/Shapes";
 
-import { SWEEPS_RESULT } from "./sweep/config";
-import { FRAGMENTS_RESULT } from "./fragment/config";
-import { TFragmentShape } from "./fragment/Shape";
-import { TFilterChildrenProps } from "../types";
+import { SWEEPS_RESULT } from "../sweep/config";
+import { FRAGMENTS_RESULT } from "../fragment/config";
+import type { TFragmentShape } from "../fragment/Shape";
+import type { TFilterChildrenProps } from "../types";
 
 export const ID = "GlitchId";
 type TProps = TFilterChildrenProps<typeof ID>;
-export const Glitch: FC<TProps> = ({ children }) => {
+export const Glitch: FC<TProps> = () => {
   const glitch = resolveRandomGlitch();
   const [currGlitch, setGlitch] = useState(glitch);
   const [currFragments, setFragments] = useState<
@@ -49,52 +49,57 @@ export const Glitch: FC<TProps> = ({ children }) => {
         items={currFragments}
         s={currGlitch.delay}
       />
-      <filter id={ID}>
-        <Displacement
-          baseFrequency={baseFrequency}
-          repeatDelay={currGlitch.delay}
-          duration={currGlitch.duration}
-          numOctaves={currGlitch.keyframes}
-        >
-          {(noiseId) => (
-            <>
-              <SweepFilters />
-              <feComposite
-                in={noiseId}
-                in2={SWEEPS_RESULT}
-                operator="arithmetic"
-                k1="0"
-                k2="0.4"
-                k3="0.4"
-                k4="0"
-                result={GLITCH_SWEEPS_ID}
-              />
-              <FragmentFilters />
-              <feComposite
-                in={noiseId}
-                in2={FRAGMENTS_RESULT}
-                operator="arithmetic"
-                k1="0"
-                k2="0.4"
-                k3="0.4"
-                k4="0"
-                result={GLITCH_FRAGMENTS_ID}
-              />
-              <feComposite
-                in={GLITCH_SWEEPS_ID}
-                in2={GLITCH_FRAGMENTS_ID}
-                operator="arithmetic"
-                k1="0"
-                k2="1"
-                k3="1"
-                k4="0"
-                result="glitch"
-              />
-            </>
-          )}
-        </Displacement>
-      </filter>
-      {children && children(ID)}
+      <Displacement
+        filterId={ID}
+        baseFrequency={`0 ${baseFrequency}`}
+        animate={{ numOctaves: currGlitch.keyframes }}
+        scale={400}
+        transition={{
+          repeat: Infinity,
+          repeatDelay: currGlitch.delay,
+          duration: currGlitch.duration,
+        }}
+      >
+        {(noiseId) => (
+          <>
+            <SweepFilters
+              id={noiseId}
+              result="SweepFilters"
+            />
+            <feComposite
+              in={noiseId}
+              in2={SWEEPS_RESULT}
+              operator="arithmetic"
+              k1="0"
+              k2="0.4"
+              k3="0.4"
+              k4="0"
+              result={GLITCH_SWEEPS_ID}
+            />
+            <FragmentFilters />
+            <feComposite
+              in={noiseId}
+              in2={FRAGMENTS_RESULT}
+              operator="arithmetic"
+              k1="0"
+              k2="0.4"
+              k3="0.4"
+              k4="0"
+              result={GLITCH_FRAGMENTS_ID}
+            />
+            <feComposite
+              in={GLITCH_SWEEPS_ID}
+              in2={GLITCH_FRAGMENTS_ID}
+              operator="arithmetic"
+              k1="0"
+              k2="1"
+              k3="1"
+              k4="0"
+              result="glitch"
+            />
+          </>
+        )}
+      </Displacement>
     </>
   );
 };

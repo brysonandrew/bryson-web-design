@@ -1,14 +1,15 @@
-import { FC } from "react";
-import { TFilterChildrenProps } from "../types";
+import type { FC } from "react";
+import type { TFilterChildrenProps } from "../types";
+import { HEIGHT, WIDTH } from "../constants";
 
-export const ID = "ShadowText";
+export const ID = "ShadowTextId";
 
 export const ShadowText: FC<
   TFilterChildrenProps<typeof ID>
 > = ({ children }) => (
-  <filter id={ID}>
+  <filter id={ID} x={0} y={0} height={HEIGHT} width={WIDTH}>
     <feGaussianBlur
-      in="SourceAlpha"
+      in="SourceGraphic"
       stdDeviation="3"
       result="blurredAlpha"
     />

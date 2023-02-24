@@ -1,53 +1,32 @@
-import { FC } from "react";
-import { motion } from "framer-motion";
-import { INTENSITY } from "./config";
-import { TBaseNoiseProps } from "./config";
-import { TFilterChildrenProps } from "../types";
+import type { FC } from "react";
+import type { TFilterChildrenProps } from "../types";
+import { Filter } from "./Filter";
+import type { TDisplacementProps } from "./config";
 
 export const ID = "DisplacementId";
 type TChildrenProps = TFilterChildrenProps<typeof ID>;
-type TProps = TChildrenProps &
-  TBaseNoiseProps & {
-    numOctaves: number[];
-  };
+type TProps = TChildrenProps & TDisplacementProps;
 export const Displacement: FC<TProps> = ({
-  baseFrequency,
-  numOctaves,
+  external,
   children,
-  ...turbulenceTransition
+  filterId = ID,
+  ...props
 }) => (
-  <filter id={ID}>
-    <motion.feTurbulence
-      type="turbulence"
-      in="SourceGraphic"
-      baseFrequency={`0 ${baseFrequency}`}
-      animate={{ numOctaves }}
-      transition={{
-        repeat: Infinity,
-        ...turbulenceTransition,
-      }}
-      result="turbulence"
-    />
-    <motion.feMorphology
-      in="turbulence"
-      operator="erode"
-      radius="0.1"
-      result="skinny"
-    />
-    <feOffset
-      in="SourceGraphic"
-      dx={INTENSITY}
-      dy={INTENSITY}
-      result="offset"
-    />
-    <feDisplacementMap
-      in2="skinny"
-      in="offset"
-      scale={INTENSITY}
-      xChannelSelector="R"
-      yChannelSelector="G"
-      result={ID}
-    />
-    {children && children(ID)}
-  </filter>
+  <>
+    <filter
+      id={filterId}
+      x="-50%"
+      y="-50%"
+      height="150%"
+      width="150%"
+    >
+      <Filter
+        {...props}
+        id={filterId}
+        source="SourceGraphic"
+      />
+      {children && children(ID)}
+    </filter>
+    {external && external(ID)}
+  </>
 );

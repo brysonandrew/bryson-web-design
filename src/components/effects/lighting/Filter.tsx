@@ -1,30 +1,25 @@
 import type { FC } from "react";
-import { motion } from "framer-motion";
-import { LIGHTING_ID } from "./config";
+import type { TFilterProps } from "../types";
+import { HEIGHT, WIDTH } from "../constants";
 
-
-export const Filter: FC = () => (
-  // const glitch = resolveRandomGlitch();
-  // const [currGlitch, setGlitch] = useState(glitch);
-
-  // useInterval(() => {
-  //   const glitch = resolveRandomGlitch();
-  //   setGlitch(glitch);
-  // }, (currGlitch.duration + currGlitch.delay) * 1000);
-
-  // const baseFrequency = currGlitch.duration * 0.1;
-
-  <filter id={LIGHTING_ID}>
-    <motion.feSpecularLighting
+export const Filter: FC<TFilterProps> = ({
+  children,
+  id,
+  result = id,
+  source = id,
+}) => (
+  <>
+    <feSpecularLighting
+      in={source ?? id}
       result="spotlight"
-      specularConstant="1.5"
+      specularConstant="1"
       specularExponent="80"
-      lighting-color="#FFF"
+      lightingColor="#FFF"
     >
-      <motion.fePointLight x="50" y="50" z="220" />
-    </motion.feSpecularLighting>
-    <motion.feComposite
-      in="SourceGraphic"
+      <fePointLight x={WIDTH / 2} y={HEIGHT / 2} z="1000" />
+    </feSpecularLighting>
+    <feComposite
+      in={source}
       in2="spotlight"
       operator="arithmetic"
       k1="0"
@@ -32,5 +27,6 @@ export const Filter: FC = () => (
       k3="1"
       k4="0"
     />
-  </filter>
+    {children ? children(result ?? id) : null}
+  </>
 );

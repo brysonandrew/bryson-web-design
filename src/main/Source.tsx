@@ -9,6 +9,9 @@ import { Glitch } from "@pages/workshop/glitch";
 import { Edges } from "@pages/workshop/edges";
 import { Sobel } from "@pages/workshop/sobel";
 import { Phase } from "@pages/workshop/phase";
+import { Lighting } from "@pages/workshop/lighting";
+import { Displacement } from "@pages/workshop/displacement";
+import { ShadowText } from "@pages/workshop/shadow-text";
 
 export const Source = () => {
   const element = useRoutes([
@@ -37,8 +40,20 @@ export const Source = () => {
       element: <Glitch />,
     },
     {
-      path: "workshop/phase",
+      path: "/workshop/phase",
       element: <Phase />,
+    },
+    {
+      path: "/workshop/lighting",
+      element: <Lighting />,
+    },
+    {
+      path: "/workshop/displacement",
+      element: <Displacement />,
+    },
+    {
+      path: "/workshop/shadow-text",
+      element: <ShadowText />,
     },
     {
       path: "*",

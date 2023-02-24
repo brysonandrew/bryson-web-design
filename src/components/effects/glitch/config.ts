@@ -1,4 +1,3 @@
-
 export const GLOW_ID = "GLOW_ID";
 export const GLITCH_FILTER_ID = "GLITCH_FILTER_ID";
 
@@ -7,8 +6,8 @@ export const GLITCH_FRAGMENTS_ID = "GLITCH_FRAGMENTS_ID";
 
 export const IMAGE_WIDTH = 360;
 
-export const WIDTH = 600;
-export const HEIGHT = 280;
+export const WIDTH = 1920;
+export const HEIGHT = 1080;
 
 export const OVERHANG = 10;
 
@@ -20,8 +19,6 @@ const MAX_COUNT = 10;
 
 const MAX_TOTAL = (MAX_COUNT + 2) * MAX_COUNT;
 
-// const FRAGMENTS_CACHE: TFragmentShape[] =
-
 export const resolveRandomGlitch = () => {
   const count = ~~(
     Math.random() * MAX_COUNT +
@@ -31,7 +28,7 @@ export const resolveRandomGlitch = () => {
     0,
     ...[...Array(count)].map((_, i, { length }) => {
       let x = Math.sin(((i - 1) / length) * Math.PI);
-      x *= MAX_COUNT * Math.random();
+      x *= MIN_COUNT + MAX_COUNT * Math.random();
       return parseInt(x.toFixed(0));
     }),
     0,

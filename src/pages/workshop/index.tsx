@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TModule } from "@t/index";
+import type { TModule } from "@t/index";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 

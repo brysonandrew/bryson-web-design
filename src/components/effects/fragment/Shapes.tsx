@@ -1,7 +1,8 @@
 import type { FC } from "react";
+import type {
+  TFragmentShape} from "./Shape";
 import {
-  Shape as FragmentShape,
-  TFragmentShape,
+  Shape as FragmentShape
 } from "./Shape";
 
 type TProps = { items: TFragmentShape[]; s: number };

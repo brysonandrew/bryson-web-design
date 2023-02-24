@@ -21,8 +21,7 @@ export const Shape: FC<TProps> = ({
   height,
   delay,
   duration,
-}) => {
-  return (
+}) => (
     <motion.rect
       id={`${FRAGMENT_ID}-${index}`}
       x={`${x}%`}
@@ -33,4 +32,3 @@ export const Shape: FC<TProps> = ({
       // stroke="none"
     />
   );
-};

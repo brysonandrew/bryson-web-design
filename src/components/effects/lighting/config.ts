@@ -3,8 +3,8 @@ export const SPOTLIGHT_ID = "_SPOTLIGHT_ID";
 
 export const IMAGE_WIDTH = 360;
 
-export const WIDTH = 600;
-export const HEIGHT = 280;
+export const WIDTH = 1920;
+export const HEIGHT = 1080;
 
 export const OVERHANG = 10;
 

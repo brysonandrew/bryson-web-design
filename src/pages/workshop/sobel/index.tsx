@@ -2,8 +2,7 @@ import styled from "@emotion/styled";
 import { Sobel as SobelFilter } from "@components/effects/sobel";
 const Root = styled.div``;
 
-export const Sobel = () => {
-  return (
+export const Sobel = () => (
     <Root className="relative w-screen h-screen bg-purple-dark">
       <div className="inline-flex fixed top-0 left-0 py-1 px-2 z-0 bg-black-05">
         <h2 className="text-center">Sobel</h2>
@@ -34,4 +33,3 @@ export const Sobel = () => {
       </svg>
     </Root>
   );
-};

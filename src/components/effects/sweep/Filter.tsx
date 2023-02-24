@@ -3,21 +3,22 @@ import { SWEEP_ID, SWEEP_RESULT } from "./config";
 
 type TProps = {
   index: number;
+  source: string;
 };
-export const Filter: FC<TProps> = ({ index }) => (
+export const Filter: FC<TProps> = ({ index, source }) => (
   <>
     <feImage
-      result="rect"
+      result={`rect-${index}`}
       xlinkHref={`#${SWEEP_ID}-${index}`}
     />
     <feGaussianBlur
       stdDeviation="40 40"
-      in="SourceGraphic"
-      result="blur"
+      in={source}
+      result={`blur-${index}`}
     />
     <feComposite
-      in="blur"
-      in2="rect"
+      in={`blur-${index}`}
+      in2={`rect-${index}`}
       operator="in"
       result={`${SWEEP_RESULT}-${index}`}
     />
