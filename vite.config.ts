@@ -19,7 +19,7 @@ export default defineConfig({
       },
     }),
     viteCommonjs({
-      include: ["windi.config-shadow.js"],
+      include: ["./windi.config-shadow.js"],
       exclude: [],
       skipPreBuild: false,
     }),

@@ -1,8 +1,9 @@
 import COLORS from "@windi/config-colors.json";
 
 export const LABEL_CLASS =
-  "relative w-full px-4 py-2 bg-black-08 shadow-neu-black";
-export const INPUT_CLASS = "px-2 py-1 w-full tracking-wide";
+  "relative w-full pl-4 bg-black-08 shadow-neu-black";
+export const INPUT_CLASS =
+  "text-white text-lg px-4 pt-2 pb-1 w-full tracking-wide";
 
 export const textShadow = {
   on: `0 0 10px ${COLORS["teal-bright-04"]}, 0 0 20px ${COLORS["teal-bright-02"]},
@@ -23,6 +24,8 @@ export const resolveButtonValue = (
   sendingState: TSendingState,
 ) => {
   switch (sendingState) {
+    case "idle":
+      return "Send";
     case "sending":
       return "Sending...";
     case "sent":

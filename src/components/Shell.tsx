@@ -21,7 +21,7 @@ export const Shell: FC<TProps> = ({ children }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="bg-black flex flex-col items-center"
+      className="bg-black"
     >
       <Background {...xy} />
       {children}
@@ -29,4 +29,3 @@ export const Shell: FC<TProps> = ({ children }) => {
     </Root>
   );
 };
- 

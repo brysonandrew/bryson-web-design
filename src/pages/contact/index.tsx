@@ -21,7 +21,7 @@ import {
   INIT_STATE,
 } from "./config";
 
-const Root = styled(motion.header)``;
+const Root = styled(motion.div)``;
 const Form = styled(motion.form)`
   max-width: 512px;
 `;
@@ -159,19 +159,21 @@ export const Contact = () => {
             {...textareaFocusHandlers}
           />
           <div className="py-8" />
-          <label className={LABEL_CLASS}>
+          <label className={clsx("px-4 py-2", LABEL_CLASS)}>
             <Input
               className={clsx(
-                "w-full flex items-center justify-center cursor-pointer",
+                "absolute inset-0 cursor-pointer",
               )}
               type="submit"
-              value={resolveButtonValue(sendingState)}
               style={{
                 opacity: sendingState === "idle" ? 0.5 : 1,
               }}
               whileHover={{ opacity: 1 }}
               disabled={isDisabled}
             />
+            <div className="text-center">
+              {resolveButtonValue(sendingState)}
+            </div>
           </label>
         </Form>
       </Root>

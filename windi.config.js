@@ -1,8 +1,6 @@
 /** @type {import('windicss').Config} */
 const { join } = require("path");
 const  { defineConfig } =  require('windicss/helpers')
-const  plugin =  require('windicss/plugin')
-const  colors =  require('windicss/colors')
 
 const SPACING = require("./windi.config-spacing.js");
 const COLORS = require("./windi.config-colors.json");
@@ -10,7 +8,7 @@ const FONT_SIZE = require("./windi.config-font-size.js");
 const GRID = require("./windi.config-grid.js");
 const WIDTH = require("./windi.config-width.js");
 const HEIGHT = require("./windi.config-height.js");
-const SHADOW = require("./windi.config-shadow.js/index.js");
+const SHADOW = require("./windi.config-shadow.js");
 
 module.exports = defineConfig({
   content: [
@@ -18,11 +16,8 @@ module.exports = defineConfig({
     join(__dirname, "./src/**/*.tsx"),
   ],
   theme: {
-    colors: {...COLORS,
-    // windiColor:colors.blue
-  },
-    fontSize: FONT_SIZE,
     extend: {
+      fontSize: FONT_SIZE,
       spacing: SPACING,
       backgroundColor: {
         current: "currentColor",
@@ -31,10 +26,11 @@ module.exports = defineConfig({
       ...WIDTH,
       ...HEIGHT,
       ...GRID,
-
+      colors: COLORS
     },
   },
   plugins: [
+    // formPlugin
   //   plugin(({ addUtilities }) => {
   //     const newUtilities = {
   //       '.skew-10deg': {
