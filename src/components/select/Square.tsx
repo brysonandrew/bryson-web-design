@@ -2,7 +2,8 @@ import type { FC } from "react";
 import type { MotionStyle } from "framer-motion";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import { ClassValue, clsx } from "clsx";
+import type { ClassValue} from "clsx";
+import { clsx } from "clsx";
 import {
   CURSOR_SIZE,
   SELECT_LAYOUT_ID,

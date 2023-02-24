@@ -1,5 +1,4 @@
-export const Ghost = () => {
-  return (
+export const Ghost = () => (
     <svg
       className="container"
       xmlns="http://www.w3.org/2000/svg"
@@ -302,4 +301,3 @@ export const Ghost = () => {
       </g>
     </svg>
   );
-};
