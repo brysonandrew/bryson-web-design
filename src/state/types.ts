@@ -22,7 +22,7 @@ export type TAction =
     }
   | {
       type: "cursor-ready";
-      value: null;
+      value: boolean;
     }
   | {
       type: "add-motion-value";

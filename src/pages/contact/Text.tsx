@@ -11,7 +11,7 @@ import {
   INPUT_CLASS,
 } from "./config";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Select } from "@components/Select";
+import { Border as Select } from "@components/select/Border";
 
 const Root = styled(motion.label)``;
 const Line = styled(motion.hr)``;

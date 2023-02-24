@@ -14,7 +14,7 @@ export const reducer = (
     case "cursor-ready": {
       return {
         ...state,
-        isCursorReady: true,
+        isCursorReady: value,
       };
     }
     case "add-motion-value": {

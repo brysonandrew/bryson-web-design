@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "./constants";
-import { Select } from "@components/Select";
+import { Border as Select } from "@components/select/Border";
 
 const Root = styled.li``;
 const Row = styled.div``;
@@ -36,7 +36,7 @@ export const Item: FC<TItem> = ({
       </Date>
       <Row
         className={clsx(
-          "px-3 py-2 rounded-sm",
+          "pl-2.5 pr-0 pt-0 pb-2.5 rounded-sm",
           BACKGROUND_DARK_CLASS,
         )}
       >
@@ -44,16 +44,15 @@ export const Item: FC<TItem> = ({
           <h2 className="text-md">{title}</h2>
           <div className="p-1" />
           <motion.a
-            className="relative pt-2 pb-2.5 px-3 text-teal-bright-fade hover:text-teal-bright"
+            className="relative p-2 text-teal-bright-fade hover:text-teal-bright"
             href={href}
             target="_blank"
             {...handlers}
           >
             {isSelected && <Select />}
-            <Link classValue="w-4 w-h" title={href} />
+            <Link classValue="w-4 h-4" title={href} />
           </motion.a>
         </div>
-        <div className="p-0.5" />
         <h3 className="text-md text-teal-bright-m20">
           {description}
         </h3>

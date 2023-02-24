@@ -99,7 +99,7 @@ export const Cursor: FC<TCursorProps> = ({
       trailRef.current.length >= COUNT &&
       !isCursorReady
     ) {
-      dispatch({ type: "cursor-ready", value: null });
+      dispatch({ type: "cursor-ready", value: true });
     }
   };
 

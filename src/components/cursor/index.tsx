@@ -1,23 +1,12 @@
-import type { FC } from "react";
-import {
-  motion,
-  useMotionValue,
-  useScroll,
-} from "framer-motion";
-import type { TChildren } from "@t/index";
-import { useEventListener } from "@hooks/useEventListener";
+import { Square as Select } from "@components/select/Square";
 import { NOOP } from "@constants/functions";
+import { useEventListener } from "@hooks/useEventListener";
 import { useContext } from "@state/Context";
-import styled from "@emotion/styled";
-import {
-  CURSOR_SIZE_HALF,
-  SELECT_LAYOUT_ID,
-  CURSOR_SIZE,
-} from "./config";
+import type { TChildren } from "@t/index";
+import { useMotionValue, useScroll } from "framer-motion";
+import type { FC } from "react";
+import { CURSOR_SIZE_HALF } from "./config";
 import { ID } from "@components/effects/displacement";
-import { MOTION_CONFIG } from "@constants/animation";
-
-const Select = styled(motion.div)``;
 
 export type TCursorProps = {
   children?: TChildren;
@@ -37,7 +26,7 @@ export const Cursor: FC<TCursorProps> = ({
 
   const handleMove = (event: MouseEvent) => {
     if (!isCursorReady) {
-      dispatch({ type: "cursor-ready", value: null });
+      dispatch({ type: "cursor-ready", value: true });
     }
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
@@ -53,15 +42,15 @@ export const Cursor: FC<TCursorProps> = ({
   if (selectId === null && isCursorReady) {
     return (
       <Select
-        layoutId={SELECT_LAYOUT_ID}
         style={{
-          mixBlendMode: "difference",
-          top: cursorY,
           left: cursorX,
-          width: CURSOR_SIZE,
-          height: CURSOR_SIZE,
+          top: cursorY,
+          // width: 200,
+          // height: 200,
+          backdropFilter:
+            // `blur(2px)`,
+            `url(#${ID})`,
         }}
-        className="fixed bg-gray z-40 pointer-events-none"
       />
     );
   } else {

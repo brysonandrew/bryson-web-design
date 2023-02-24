@@ -7,7 +7,7 @@ import { ELEVATED } from "@styles/neu";
 import { LABEL_CLASS, textShadow } from "./config";
 import { MOTION_CONFIG } from "@constants/animation";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Select } from "@components/Select";
+import { Border as Select } from "@components/select/Border";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)``;

@@ -6,8 +6,7 @@ import styled from "@emotion/styled";
 import { Typewriter } from "../typewriter";
 import { useResetScroll } from "@hooks/useResetScroll";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { SELECT_LAYOUT_ID } from "@components/cursor/config";
-import { Select } from "@components/Select";
+import { Border as Select } from "@components/select/Border";
 
 const TITLE_ID = "TITLE_ID";
 

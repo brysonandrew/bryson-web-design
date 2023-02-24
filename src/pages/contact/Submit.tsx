@@ -6,7 +6,7 @@ import type { TSendingState } from "./config";
 import { LABEL_CLASS, resolveButtonValue } from "./config";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { SELECT_LAYOUT_ID } from "@components/cursor/config";
-import { Select } from "@components/Select";
+import { Border as Select } from "@components/select/Border";
 
 const SUBMIT_ID = "SUBMIT_ID";
 

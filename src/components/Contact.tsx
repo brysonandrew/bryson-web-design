@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Select } from "./Select";
+import { Border as Select } from "./select/Border";
 
 const CONTACT_ID = "CONTACT_ID";
 
