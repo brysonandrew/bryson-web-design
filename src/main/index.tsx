@@ -6,6 +6,10 @@ import { Source } from "./Source";
 import { Provider } from "@state/Provider";
 import { Boundary } from "@components/boundary";
 import { MOTION_CONFIG } from "@constants/animation";
+import "virtual:windi.css";
+
+import "@styles/fonts.css";
+import "@styles/globals.css";
 
 const root = document.getElementById("root");
 if (root)
@@ -17,7 +21,7 @@ if (root)
             <Router history={history}>
               <Source />
             </Router>
-          </Boundary> 
+          </Boundary>
         </MotionConfig>
       </Provider>
     </StrictMode>,

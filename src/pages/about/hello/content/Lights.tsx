@@ -8,7 +8,7 @@ import {
   WIDTH_AND_OVERHANG,
 } from "@components/effects/glitch/_cemetary/config";
 import { GLOW_ID } from "@components/effects/glitch/config";
-import COLORS from "../../../../../tailwind.config-colors.json";
+import COLORS from "../../../../../windi.config-colors.json";
 
 const Root = styled(motion.g)``;
 

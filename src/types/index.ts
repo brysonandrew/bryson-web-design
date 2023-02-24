@@ -9,6 +9,12 @@ export type TAnyRecord = Record<string, any>;
 
 export type TChildrenProps = { children: TChildren }
 
+export type TModule = {
+  default: string;
+};
+export type TImportLookup = Record<string, () => Promise<TModule>>;
+
+
 export type TAdsr = {
   attack?: number;
   release?: number;

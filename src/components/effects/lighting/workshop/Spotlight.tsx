@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import type { TChildren } from "@t/index";
-import { SPOTLIGHT_ID } from "./config";
+import { SPOTLIGHT_ID } from "../config";
 import type { TXY } from "@t/position";
 import { useContext } from "@state/Context";
 import type { TMotionValuePair } from "@state/types";

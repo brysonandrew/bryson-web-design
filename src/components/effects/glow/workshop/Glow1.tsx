@@ -1,4 +1,5 @@
-export const R = () => (
+
+export const Glow1 = () => (
   <filter
     id="R"
     x="-20%"

@@ -17,7 +17,7 @@ import {
 import { Text } from "./Text";
 import { Image } from "./Image";
 
-import COLORS from "@tailwind/config-colors.json";
+import COLORS from "@windi/config-colors.json";
 
 const Root = styled(motion.div)`
   max-width: 600px;

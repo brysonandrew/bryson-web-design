@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import type { FC } from "react";
 import type { TItem } from "./constants";
 import { motion } from "framer-motion";
-import COLORS from "@tailwind/config-colors.json";
-import { Link } from "@icons/Link";
+import COLORS from "@windi/config-colors.json";
+import { Link } from "@components/icons/Link";
 import clsx from "clsx";
 import { BACKGROUND_CLASS, BACKGROUND_DARK_CLASS } from "@styles/backgrounds";
 

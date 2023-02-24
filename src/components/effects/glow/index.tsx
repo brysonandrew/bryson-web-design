@@ -1,9 +1,12 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import { GLOW_ID, HEIGHT, WIDTH } from "../glitch/config";
-import COLORS from "@tailwind/config-colors.json";
+import COLORS from "@windi/config-colors.json";
+import { TFilterChildrenProps } from "../types";
 
-export const Filter: FC = () => (
+export const ID = "EdgesId";
+type TProps = TFilterChildrenProps<typeof ID>;
+export const Filter: FC<TProps> = ({ children }) => (
   <filter
     id={GLOW_ID}
     x={0}
@@ -37,5 +40,6 @@ export const Filter: FC = () => (
       <feMergeNode in="glow" />
       <feMergeNode in="SourceGraphic" />
     </feMerge>
+    {children && children(ID)}
   </filter>
 );

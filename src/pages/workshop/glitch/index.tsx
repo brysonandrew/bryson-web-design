@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
-import { Glitch as GlitchFilter } from "@components/effects/glitch";
-import { GLITCH_FILTER_ID } from "@components/effects/glitch/config";
+import {
+  Glitch as GlitchFilter,
+  ID,
+} from "@components/effects/glitch";
 
 const Root = styled.div``;
 
@@ -23,7 +25,7 @@ export const Glitch = () => (
         height="100%"
         // xlinkHref="/synthwave.jpg"
         xlinkHref="/mugshot2.png"
-        filter={`url(#${GLITCH_FILTER_ID})`}
+        filter={`url(#${ID})`}
       />
     </svg>
   </Root>

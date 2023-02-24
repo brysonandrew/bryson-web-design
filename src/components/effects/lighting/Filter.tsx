@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import { LIGHTING_ID } from "./config";
 
+
 export const Filter: FC = () => (
   // const glitch = resolveRandomGlitch();
   // const [currGlitch, setGlitch] = useState(glitch);

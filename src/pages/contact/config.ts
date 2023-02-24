@@ -1,4 +1,4 @@
-import COLORS from "@tailwind/config-colors.json";
+import COLORS from "@windi/config-colors.json";
 
 export const LABEL_CLASS =
   "relative w-full px-4 py-2 bg-black-08 shadow-neu-black";

@@ -4,7 +4,7 @@ import { Text } from "@components/text";
 import type { TItem } from "../../../constants/tech";
 import { ITEMS } from "../../../constants/tech";
 import { Item } from "./Item";
-import { Plus } from "../../../icons/Plus";
+import { Plus } from "../../../components/icons/Plus";
 import type { TBaseChildren } from "@t/index";
 import { Typewriter } from "@components/typewriter";
 const TEXT_CLASS =

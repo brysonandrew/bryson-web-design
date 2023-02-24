@@ -1,14 +1,13 @@
 import { useState } from "react";
 import type { FC } from "react";
 import { useInterval } from "@hooks/useInterval";
-import { Noise } from "./noise";
+import { Displacement } from "../displacement";
 import {
   GLITCH_FRAGMENTS_ID,
   GLITCH_SWEEPS_ID,
   resolveRandomFragments,
   resolveRandomGlitch,
 } from "./config";
-import { GLITCH_FILTER_ID } from "./config";
 import { Shapes as SweepShapes } from "./sweep/Shapes";
 import { Filters as SweepFilters } from "./sweep/Filters";
 import { Filters as FragmentFilters } from "./fragment/Filters";
@@ -17,8 +16,11 @@ import { Shapes as FragmentShapes } from "./fragment/Shapes";
 import { SWEEPS_RESULT } from "./sweep/config";
 import { FRAGMENTS_RESULT } from "./fragment/config";
 import { TFragmentShape } from "./fragment/Shape";
+import { TFilterChildrenProps } from "../types";
 
-export const Glitch: FC = () => {
+export const ID = "GlitchId";
+type TProps = TFilterChildrenProps<typeof ID>;
+export const Glitch: FC<TProps> = ({ children }) => {
   const glitch = resolveRandomGlitch();
   const [currGlitch, setGlitch] = useState(glitch);
   const [currFragments, setFragments] = useState<
@@ -47,12 +49,12 @@ export const Glitch: FC = () => {
         items={currFragments}
         s={currGlitch.delay}
       />
-      <filter id={GLITCH_FILTER_ID}>
-        <Noise
+      <filter id={ID}>
+        <Displacement
           baseFrequency={baseFrequency}
           repeatDelay={currGlitch.delay}
           duration={currGlitch.duration}
-          keyframes={currGlitch.keyframes}
+          numOctaves={currGlitch.keyframes}
         >
           {(noiseId) => (
             <>
@@ -90,8 +92,9 @@ export const Glitch: FC = () => {
               />
             </>
           )}
-        </Noise>
+        </Displacement>
       </filter>
+      {children && children(ID)}
     </>
   );
 };

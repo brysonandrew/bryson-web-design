@@ -18,7 +18,7 @@ export const Text: FC<TProps> = (style) => (
   >
     <div className="absolute w-5/12 h-1/2">
       <div
-        className="relative text-lg w-full rounded-xs text-teal-bright"
+        className="relative text-lg w-full rounded-xs text-teal-bright w-60"
         style={{ lineHeight: 2.025, letterSpacing: 2 }}
       >
         <Typewriter

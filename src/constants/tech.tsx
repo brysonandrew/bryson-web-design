@@ -1,5 +1,5 @@
-import { React } from "@icons/React";
-import { Typescript } from "@icons/Typescript";
+import { React } from "@components/icons/React";
+import { Typescript } from "@components/icons/Typescript";
 
 export type TItem = {
   title: string;

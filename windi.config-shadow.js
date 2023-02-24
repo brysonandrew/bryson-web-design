@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-const COLORS = require("./tailwind.config-colors.json");
+/** @type {import('windicss').Config} */
+const COLORS = require("./windi.config-colors.json");
 
 const PINK = `0 0 1px 1px ${COLORS.pink}, 0 0 1px 2px ${COLORS.pink}`;
 const PURPLE = `0 0 1px 1px ${COLORS.purple}, 0 0 1px 2px ${COLORS.purple}`;

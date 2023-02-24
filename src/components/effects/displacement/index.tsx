@@ -1,22 +1,22 @@
-import { motion } from "framer-motion";
 import { FC } from "react";
+import { motion } from "framer-motion";
 import { INTENSITY } from "./config";
 import { TBaseNoiseProps } from "./config";
-import { TChildren } from "@t/index";
+import { TFilterChildrenProps } from "../types";
 
-export const RESULT_ID = "DISPLACEMENT_RESULT_ID";
-
-type TProps = TBaseNoiseProps & {
-  numOctaves: number[];
-  children(result: typeof RESULT_ID): TChildren;
-};
+export const ID = "DisplacementId";
+type TChildrenProps = TFilterChildrenProps<typeof ID>;
+type TProps = TChildrenProps &
+  TBaseNoiseProps & {
+    numOctaves: number[];
+  };
 export const Displacement: FC<TProps> = ({
   baseFrequency,
   numOctaves,
   children,
   ...turbulenceTransition
 }) => (
-  <>
+  <filter id={ID}>
     <motion.feTurbulence
       type="turbulence"
       in="SourceGraphic"
@@ -46,8 +46,8 @@ export const Displacement: FC<TProps> = ({
       scale={INTENSITY}
       xChannelSelector="R"
       yChannelSelector="G"
-      result={RESULT_ID}
+      result={ID}
     />
-    {children(RESULT_ID)}
-  </>
+    {children && children(ID)}
+  </filter>
 );

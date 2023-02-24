@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TXY } from "@t/position";
 import { PATTERN_ID } from "./effects/glitch/_cemetary/config";
-import { Spotlight } from "./effects/lighting/Spotlight";
+import { Spotlight } from "./effects/lighting/workshop/Spotlight";
 import { SPOTLIGHT_ID } from "./effects/lighting/config";
 import { Pattern } from "./effects/glitch/_cemetary/Pattern";
 

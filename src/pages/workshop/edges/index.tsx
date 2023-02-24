@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import { EDGES_ID } from "@components/effects/edges";
-import { Filter as EdgesFilter } from "@components/effects/edges/Filter";
+import {
+  Edges as EdgesFilter,
+} from "@components/effects/edges";
 const Root = styled.div``;
 
 export const Edges = () => {
@@ -19,15 +20,18 @@ export const Edges = () => {
         viewBox="0 0 1920 1080"
         preserveAspectRatio="xMidYMid slice"
       >
-        <EdgesFilter />
-        <image
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          xlinkHref="/synthwave.jpg"
-          //xlinkHref="/mugshot2.png"
-          filter={`url(#${EDGES_ID})`}
+        <EdgesFilter
+          external={(id) => (
+            <image
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              xlinkHref="/synthwave.jpg"
+              //xlinkHref="/mugshot2.png"
+              filter={`url(#${id})`}
+            />
+          )}
         />
       </svg>
     </Root>

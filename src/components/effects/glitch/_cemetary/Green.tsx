@@ -6,7 +6,7 @@ import {
   GLITCH_GREEN_ID,
   resolveRandomGlitch,
 } from "./config";
-import COLORS from "@tailwind/config-colors.json";
+import COLORS from "@windi/config-colors.json";
 const INTENSITY = 10;
 
 export const Green: FC = () => {

@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('windicss').Config} */
 
 module.exports = {
   screens: {

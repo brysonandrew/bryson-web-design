@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { SOBEL_ID } from "@components/effects/sobel";
-import { Filter as SobelFilter } from "@components/effects/sobel/Filter";
+import { Sobel as SobelFilter } from "@components/effects/sobel";
 const Root = styled.div``;
 
 export const Sobel = () => {
@@ -19,15 +18,18 @@ export const Sobel = () => {
         viewBox="0 0 1920 1080"
         preserveAspectRatio="xMidYMid slice"
       >
-        <SobelFilter />
-        <image
-          filter={`url(#${SOBEL_ID})`}
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-         //xlinkHref="/mugshot2.png"
-          xlinkHref="/synthwave.jpg"
+        <SobelFilter
+          external={(filterId) => (
+            <image
+              filter={`url(#${filterId})`}
+              x="0%"
+              y="0%"
+              width="100%"
+              height="100%"
+              //xlinkHref="/mugshot2.png"
+              xlinkHref="/synthwave.jpg"
+            />
+          )}
         />
       </svg>
     </Root>

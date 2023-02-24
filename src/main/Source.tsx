@@ -1,13 +1,14 @@
 import { NotFound404 } from "@components/not-found-404";
-import { Index } from "src/pages";
+import { Index } from "@pages/index";
 import { useLocation, useRoutes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { Workshop } from "@pages/workshop";
 import { Contact } from "@pages/contact";
-import { Glitch } from "@pages/glitch";
-import { Edges } from "@pages/edges";
-import { Sobel } from "@pages/sobel";
+import { Glitch } from "@pages/workshop/glitch";
+import { Edges } from "@pages/workshop/edges";
+import { Sobel } from "@pages/workshop/sobel";
+import { Phase } from "@pages/workshop/phase";
 
 export const Source = () => {
   const element = useRoutes([
@@ -24,16 +25,20 @@ export const Source = () => {
       element: <Workshop />,
     },
     {
-      path: "/edges",
+      path: "/workshop/edges",
       element: <Edges />,
     },
     {
-      path: "/sobel",
+      path: "/workshop/sobel",
       element: <Sobel />,
     },
     {
-      path: "/glitch",
+      path: "/workshop/glitch",
       element: <Glitch />,
+    },
+    {
+      path: "workshop/phase",
+      element: <Phase />,
     },
     {
       path: "*",

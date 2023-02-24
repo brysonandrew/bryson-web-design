@@ -12,7 +12,7 @@
       "@state/*": ["src/state/*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
-      "@tailwind/*": ["tailwind.*"]
+      "@windi/*": ["windi.*"]
     }
   }
 }
