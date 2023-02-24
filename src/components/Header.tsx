@@ -5,8 +5,8 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
-import { Link } from "react-router-dom";
 import { Title } from "./text/Title";
+import { Contact } from "./Contact";
 
 const Root = styled(motion.header)``;
 const Right = styled(motion.div)``;
@@ -43,18 +43,9 @@ export const Header = () => {
           </Sub>
         </Right>
       </div>
-      <div className="flex items-center mt-0.5">
-        <Link
-          to="/contact"
-          className="relative flex items-center justify-center pl-2 py-1"
-        >
-          <h6 className="uppercase text-xxxs">
-            <Typewriter delay={200} wip="contact">
-              {(content) => <>{content}</>}
-            </Typewriter>
-          </h6>
-        </Link>
-      </div>
+      <ul className="flex items-center mt-0.5">
+        <Contact />
+      </ul>
     </Root>
   );
 };

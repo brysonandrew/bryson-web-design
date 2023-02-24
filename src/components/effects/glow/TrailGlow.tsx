@@ -12,53 +12,46 @@ type TProps = {
 export const TrailGlow: FC<TProps> = ({
   id,
   motionValuePairs,
-}) => {
-  return (
-    <filter
-      id={id}
-      x="0%"
-      y="0%"
-      width="100%"
-      height="100%"
-    >
-      {motionValuePairs.map(
-        (_: TMotionValuePair, index: number) => {
-          if (index === 0) return null;
+}) => (
+  <filter id={id} x="0%" y="0%" width="100%" height="100%">
+    {motionValuePairs.map(
+      (_: TMotionValuePair, index: number) => {
+        if (index === 0) return null;
+        const prev =
+          index === 0 ? "SourceGraphic" : `${index - 1}`;
+        const curr = `${index}`;
 
-          const prev = `${index - 1}`;
-          const curr = `${index}`;
-
-          return (
-            <Fragment key={curr}>
-              <feImage
-                in={`#${index}`}
-                result={`circle-${index}`}
-              />
-              <feComposite
-                in2={prev}
-                in={`circle-${index}`}
-                operator="lighter"
-                result={`shape-${index}`}
-              />
-              <motion.feMorphology
-                in={`shape-${index}`}
-                operator="erode"
-                radius="10"
-                result={`fatty-${index}`}
-              />
-              <feGaussianBlur
-                in={`fatty-${index}`}
-                stdDeviation="1000"
-                result={
-                  curr
-                  // `blur-${index}`
-                }
-              />
-              {/* <motion.feFlood
+        return (
+          <Fragment key={curr}>
+            <feImage
+              in={`#${index}`}
+              result={`image-${index}`}
+            />
+            <feComposite
+              in2={prev}
+              in={`image-${index}`}
+              operator="lighter"
+              result={`shape-${index}`}
+            />
+            <motion.feMorphology
+              in={`shape-${index}`}
+              operator="erode"
+              radius="10"
+              result={`fatty-${index}`}
+            />
+            <feGaussianBlur
+              in={`fatty-${index}`}
+              stdDeviation="1000"
+              result={
+                curr
+                // `blur-${index}`
+              }
+            />
+            {/* <motion.feFlood
                 floodColor={COLORS["teal-bright"]}
                 result={`flood-${index}`}
               /> */}
-              {/* <feComposite
+            {/* <feComposite
                 in2={`blur-${index}`}
                 in={`flood-${index}`}
                 operator="arithmetic"
@@ -68,10 +61,9 @@ export const TrailGlow: FC<TProps> = ({
                 k4="0"
                 result={curr}
               /> */}
-            </Fragment>
-          );
-        },
-      )}
-    </filter>
-  );
-};
+          </Fragment>
+        );
+      },
+    )}
+  </filter>
+);

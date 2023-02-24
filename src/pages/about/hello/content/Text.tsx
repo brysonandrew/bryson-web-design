@@ -38,7 +38,7 @@ export const Text: FC<TProps> = (style) => (
             web applications"
         >
           {(content) => (
-            <div className={clsx("pl-4 pr-2 pt-2 pb-3")}>
+            <div className={clsx("pl-4 pr-2 pt-5 pb-3")}>
               {content}
             </div>
           )}

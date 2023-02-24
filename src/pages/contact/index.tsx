@@ -4,8 +4,8 @@ import type {
   FormEvent,
   FocusEvent,
 } from "react";
-import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { Shell } from "@components/Shell";
 import emailjs from "@emailjs/browser";
 import styled from "@emotion/styled";
@@ -14,12 +14,8 @@ import { Header } from "./Header";
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
 import type { TSendingState } from "./config";
-import {
-  LABEL_CLASS,
-  INPUT_CLASS,
-  resolveButtonValue,
-  INIT_STATE,
-} from "./config";
+import { INPUT_CLASS, INIT_STATE } from "./config";
+import { Submit } from "./Submit";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)`
@@ -159,22 +155,7 @@ export const Contact = () => {
             {...textareaFocusHandlers}
           />
           <div className="py-8" />
-          <label className={clsx("px-4 py-2", LABEL_CLASS)}>
-            <Input
-              className={clsx(
-                "absolute inset-0 cursor-pointer",
-              )}
-              type="submit"
-              style={{
-                opacity: sendingState === "idle" ? 0.5 : 1,
-              }}
-              whileHover={{ opacity: 1 }}
-              disabled={isDisabled}
-            />
-            <div className="text-center">
-              {resolveButtonValue(sendingState)}
-            </div>
-          </label>
+          <Submit sendingState={sendingState} />
         </Form>
       </Root>
       <div className="py-6" />

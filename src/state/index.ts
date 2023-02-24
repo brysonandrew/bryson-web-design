@@ -5,6 +5,12 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "select-id": {
+      return {
+        ...state,
+        selectId: value,
+      };
+    }
     case "cursor-ready": {
       return {
         ...state,

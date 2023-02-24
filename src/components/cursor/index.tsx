@@ -1,26 +1,26 @@
-import { useRef } from "react";
 import type { FC } from "react";
 import {
-  useAnimationFrame,
+  motion,
+  useMotionValue,
   useScroll,
 } from "framer-motion";
 import type { TChildren } from "@t/index";
 import { useEventListener } from "@hooks/useEventListener";
 import { NOOP } from "@constants/functions";
 import { useContext } from "@state/Context";
-import type { TMotionValuePair } from "@state/types";
-import { TrailMotionValue } from "./TrailMotionValue";
-import { Background } from "@components/Background";
+import styled from "@emotion/styled";
+import {
+  CURSOR_SIZE_HALF,
+  SELECT_LAYOUT_ID,
+  CURSOR_SIZE,
+} from "./config";
+import { Filter as Sobel } from "@components/effects/sobel/Filter";
+import { Filter as Displacement } from "@components/effects/displacement/Filter";
+import { Filter as Edges } from "@components/effects/edges/Filter";
 
-export const TRAIL_SIZE = 11;
-const STRIDE = 2;
-const COUNT = TRAIL_SIZE * STRIDE;
+const Select = styled(motion.div)``;
 
-type TMouse = {
-  isMoving: boolean;
-  timeout: ReturnType<typeof setTimeout> | null;
-  stride: number;
-};
+const ID = "GLITCH_ID";
 
 export type TCursorProps = {
   children?: TChildren;
@@ -30,87 +30,41 @@ export const Cursor: FC<TCursorProps> = ({
   onTap,
   children,
 }) => {
-  const { dispatch, motionValuePairs, isCursorReady } =
-    useContext();
-  const trailRef = useRef<[x: number, y: number][]>([]);
-  const pointerRef = useRef<TMouse>({
-    isMoving: false,
-    timeout: null,
-    stride: 0,
-  });
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  const { selectId } = useContext();
 
   const { scrollX, scrollY } = useScroll();
 
-  const resolveOffset = (index: number) =>
-    COUNT - index * pointerRef.current.stride - 1;
-
-  const updateTrail = () => {
-    motionValuePairs.forEach(
-      (
-        [motionValueX, motionValueY]: TMotionValuePair,
-        index,
-      ) => {
-        const offset = resolveOffset(index);
-
-        const value = trailRef.current[offset];
-        if (typeof value === "undefined") {
-          return;
-        }
-        const [x, y] = value;
-        motionValueX.set(x);
-        motionValueY.set(y);
-      },
-    );
-  };
-
   const handleMove = (event: MouseEvent) => {
-    if (pointerRef.current.timeout) {
-      clearTimeout(pointerRef.current.timeout);
-    }
-    pointerRef.current.isMoving = true;
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
-    trailRef.current.push([nextX, nextY]);
-    trailRef.current = trailRef.current.slice(-COUNT);
-
-    if (pointerRef.current.stride < STRIDE) {
-      pointerRef.current.stride++;
-      updateTrail();
-    }
-
-    pointerRef.current.isMoving = false;
-
-    if (
-      trailRef.current.length >= COUNT &&
-      !isCursorReady
-    ) {
-      dispatch({ type: "cursor-ready", value: null });
-    }
+    cursorX.set(nextX - CURSOR_SIZE_HALF);
+    cursorY.set(nextY - CURSOR_SIZE_HALF);
   };
-
-  useAnimationFrame(() => {
-    if (
-      !pointerRef.current.isMoving &&
-      pointerRef.current.stride > 0
-    ) {
-      pointerRef.current.stride--;
-      updateTrail();
-    }
-  });
 
   useEventListener("pointermove", handleMove);
   useEventListener(
     children && onTap ? "pointerdown" : null,
     onTap ?? NOOP,
   );
-  return (
-    <>
-      {isCursorReady && (
-        <Background motionValuePairs={motionValuePairs} />
-      )}
-      {[...Array(TRAIL_SIZE)].map((_, index) => (
-        <TrailMotionValue key={`${index}`} index={index} />
-      ))}
-    </>
-  );
+  if (selectId === null) {
+    return (
+      <Select
+        layoutId={SELECT_LAYOUT_ID}
+        style={{
+          mixBlendMode: "difference",
+          top: cursorY,
+          left: cursorX,
+          width: CURSOR_SIZE,
+          height: CURSOR_SIZE,
+          // filter: `url(#${ID})`,
+        }}
+        className="fixed shadow-teal-sm z-50 pointer-events-none"
+      />
+    );
+  } else {
+    return null;
+  }
 };

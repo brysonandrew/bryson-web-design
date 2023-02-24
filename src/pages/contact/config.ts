@@ -24,8 +24,6 @@ export const resolveButtonValue = (
   sendingState: TSendingState,
 ) => {
   switch (sendingState) {
-    case "idle":
-      return "Send";
     case "sending":
       return "Sending...";
     case "sent":

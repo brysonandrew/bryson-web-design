@@ -5,7 +5,7 @@ import { INTENSITY, TURBULANCE_DEFAULTS } from "./config";
 import type { TDisplacementProps } from "./config";
 
 const BASE_ANIMATION = {
-  dur: "10s",
+  dur: "6s",
   repeatCount: "indefinite",
   // restart: "always",
   // repeatDur: "1s",
@@ -26,13 +26,14 @@ export const Filter: FC<
     <motion.feTurbulence
       {...TURBULANCE_DEFAULTS}
       type="turbulence"
+      //type='fractalNoise'
       in={source}
       result={`${id}-turbulence`}
       {...props}
     >
       <animate
         attributeName="baseFrequency"
-        values="0 2;0 10;0 2"
+        values="0 4;0 10;0 4"
         {...BASE_ANIMATION}
       />
       {/* <animate
@@ -59,19 +60,23 @@ export const Filter: FC<
       />
     </motion.feMorphology>
     <feOffset
-      in="SourceGraphic"
+      in={source}
       dx={-intensity * 0.5}
       dy={-intensity * 0.5}
       result="offset"
     >
       <animate
         attributeName="dx"
-        values={`0;${-intensity * 0.5};0`}
+        values={`${-intensity * 0.25};${-intensity * 0.5};${
+          -intensity * 0.25
+        }`}
         {...BASE_ANIMATION}
       />
       <animate
         attributeName="dy"
-        values={`0;${-intensity * 0.5};0`}
+        values={`${-intensity * 0.25};${-intensity * 0.5};${
+          -intensity * 0.25
+        }`}
         {...BASE_ANIMATION}
       />
     </feOffset>
@@ -85,7 +90,9 @@ export const Filter: FC<
     >
       <animate
         attributeName="scale"
-        values={`0;${intensity};0`}
+        values={`${intensity * 0.5};${intensity};${
+          intensity * 0.5
+        }`}
         {...BASE_ANIMATION}
       />
     </feDisplacementMap>

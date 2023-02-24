@@ -16,10 +16,14 @@ export type TMotionValuePair = [
 ];
 
 export type TAction =
-| {
-  type: "cursor-ready";
-  value: null
-}
+  | {
+      type: "select-id";
+      value: null | string;
+    }
+  | {
+      type: "cursor-ready";
+      value: null;
+    }
   | {
       type: "add-motion-value";
       value: { pair: TMotionValuePair; index: number };
@@ -34,7 +38,8 @@ export type TAction =
     };
 
 export type TState = {
-  isCursorReady: boolean
+  isCursorReady: boolean;
+  selectId: null | string;
   mode: "instant" | "stagger";
   isThreshold: boolean;
   motionValuePairs: TMotionValuePair[];

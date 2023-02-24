@@ -6,6 +6,8 @@ import clsx from "clsx";
 import { ELEVATED } from "@styles/neu";
 import { LABEL_CLASS, textShadow } from "./config";
 import { MOTION_CONFIG } from "@constants/animation";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
+import { Select } from "@components/Select";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)``;
@@ -21,37 +23,43 @@ export const Textarea: FC<TProps> = ({
   title,
   isFocused,
   ...props
-}) => (
-  <Root
-    className={clsx(LABEL_CLASS, ELEVATED)}
-    initial={false}
-    animate={isFocused ? "focus" : "animate"}
-  >
-    <div className="flex items-start">
-      <Name
-        className="whitespace-nowrap text-teal"
+}) => {
+  const { handlers, isSelected } = useSelectHandlers(title);
+
+  return (
+    <Root
+      className={clsx(LABEL_CLASS, ELEVATED)}
+      initial={false}
+      animate={isFocused ? "focus" : "animate"}
+      {...handlers}
+    >
+      {isSelected && <Select />}
+      <div className="flex items-start">
+        <Name
+          className="whitespace-nowrap text-teal"
+          variants={{
+            animate: {
+              textShadow: textShadow.off,
+            },
+            focus: {
+              textShadow: textShadow.on,
+            },
+          }}
+        >
+          {title}
+        </Name>
+        <div className="p-1" />
+        <Input {...props} autoComplete="off" />
+      </div>
+      <Gradient
+        className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-teal-01 h-1/2 opacity-50"
         variants={{
-          animate: {
-            textShadow: textShadow.off,
-          },
-          focus: {
-            textShadow: textShadow.on,
-          },
+          animate: { scaleX: 0 },
+          focus: { scaleX: 1 },
         }}
-      >
-        {title}
-      </Name>
-      <div className="p-1" />
-      <Input {...props} />
-    </div>
-    <Gradient
-      className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-teal-01 h-1/2"
-      variants={{
-        animate: { scaleX: 0 },
-        focus: { scaleX: 1 },
-      }}
-      style={{ originX: 0 }}
-      transition={{ ...MOTION_CONFIG, duration: 1 }}
-    />
-  </Root>
-);
+        style={{ originX: 0 }}
+        transition={{ ...MOTION_CONFIG, duration: 1 }}
+      />
+    </Root>
+  );
+};
