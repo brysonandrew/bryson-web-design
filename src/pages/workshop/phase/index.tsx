@@ -3,6 +3,7 @@ import {
   Displacement,
   ID,
 } from "@components/effects/displacement";
+import { Filter as EdgesFilter } from "@components/effects/edges/Filter";
 
 const Root = styled.div``;
 
@@ -12,7 +13,11 @@ export const Phase = () => (
       <h2 className="text-center">Phase</h2>
     </div>
     <svg width="0" height="0">
-      <Displacement />
+      <Displacement>
+        {(filterId) => (
+          <EdgesFilter id={filterId} result="SobelFilter" />
+        )}
+      </Displacement>
     </svg>
     <svg
       width="100%"

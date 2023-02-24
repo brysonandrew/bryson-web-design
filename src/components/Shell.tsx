@@ -11,11 +11,6 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
-
-  const xy = { x: cursorX, y: cursorY };
-
   return (
     <Root
       initial={{ opacity: 0 }}
@@ -23,9 +18,9 @@ export const Shell: FC<TProps> = ({ children }) => {
       exit={{ opacity: 0 }}
       className="bg-black"
     >
-      <Background {...xy} />
+      <Background  />
       {children}
-      <Cursor x={cursorX} y={cursorY} />
+      <Cursor />
     </Root>
   );
 };

@@ -83,12 +83,12 @@ export const Filter: FC<TFilterProps> = ({
       radius="1"
       result="black-stroke"
     >
-      <animate
+      {/* <animate
         attributeName="radius"
         values="1;0;1"
         dur={`${DURATION}s`}
         repeatCount="indefinite"
-      />
+      /> */}
     </feMorphology>
     {/* <!-- Layer 3: Create a shadow to go at the back --> */}
     <feGaussianBlur in="alpha-mask" stdDeviation="10" />
@@ -113,12 +113,12 @@ export const Filter: FC<TFilterProps> = ({
       radius="0"
       result="morph"
     >
-      <animate
+      {/* <animate
         attributeName="radius"
         values="0;8;0"
         dur={`2s`}
         repeatCount="indefinite"
-      />
+      /> */}
     </feMorphology>
     <feComposite
       in2="outline"
