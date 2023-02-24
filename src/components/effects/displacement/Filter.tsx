@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TFilterProps } from "../types";
-import { TURBULANCE_DEFAULTS } from "./config";
-import { TDisplacementProps } from "./config";
-import { INTENSITY } from "./config";
+import { INTENSITY, TURBULANCE_DEFAULTS } from "./config";
+import type { TDisplacementProps } from "./config";
 
 const BASE_ANIMATION = {
   dur: "10s",

@@ -5,6 +5,12 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "cursor-ready": {
+      return {
+        ...state,
+        isCursorReady: true,
+      };
+    }
     case "add-motion-value": {
       state.motionValuePairs[value.index] = value.pair;
       return {

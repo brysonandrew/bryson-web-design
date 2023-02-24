@@ -1,4 +1,5 @@
-import { FC, Fragment } from "react";
+import type { FC} from "react";
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import type { TChildren } from "@t/index";
 import { useContext } from "@state/Context";

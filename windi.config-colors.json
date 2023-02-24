@@ -111,5 +111,7 @@
   "white-04": "rgba(255,255,255,0.4)",
   "white-light": "#fff",
 
-  "current": "currentColor"
+  "current": "currentColor",
+
+  "transparent": "rgba(0,0,0,0)"
 }

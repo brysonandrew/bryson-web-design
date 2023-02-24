@@ -1,17 +1,18 @@
-import { FC, Fragment } from "react";
-import { motion } from "framer-motion";
-import type { TChildren } from "@t/index";
-import { useContext } from "@state/Context";
 import type { TMotionValuePair } from "@state/types";
+import type { TChildren } from "@t/index";
+import { motion } from "framer-motion";
+import type { FC } from "react";
+import { Fragment } from "react";
 
 type TProps = {
   id: string;
+  motionValuePairs: TMotionValuePair[];
   children?: TChildren;
 };
-export const TrailGlow: FC<TProps> = ({ id }) => {
-  const { motionValuePairs } = useContext();
-  if (!motionValuePairs) return null;
-
+export const TrailGlow: FC<TProps> = ({
+  id,
+  motionValuePairs,
+}) => {
   return (
     <filter
       id={id}
@@ -21,11 +22,12 @@ export const TrailGlow: FC<TProps> = ({ id }) => {
       height="100%"
     >
       {motionValuePairs.map(
-        ([x, y]: TMotionValuePair, index: number) => {
-          const prev = `${
-            index < 1 ? "SourceAlpha" : index - 1
-          }`;
+        (_: TMotionValuePair, index: number) => {
+          if (index === 0) return null;
+
+          const prev = `${index - 1}`;
           const curr = `${index}`;
+
           return (
             <Fragment key={curr}>
               <feImage
@@ -35,22 +37,18 @@ export const TrailGlow: FC<TProps> = ({ id }) => {
               <feComposite
                 in2={prev}
                 in={`circle-${index}`}
-                operator="arithmetic"
-                k1="0"
-                k2="1"
-                k3="1"
-                k4="0"
+                operator="lighter"
                 result={`shape-${index}`}
               />
               <motion.feMorphology
                 in={`shape-${index}`}
-                operator="dilate"
-                radius="1"
+                operator="erode"
+                radius="10"
                 result={`fatty-${index}`}
               />
               <feGaussianBlur
                 in={`fatty-${index}`}
-                stdDeviation="10"
+                stdDeviation="1000"
                 result={
                   curr
                   // `blur-${index}`

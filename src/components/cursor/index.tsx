@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import type { FC } from "react";
 import {
-  motion,
   useAnimationFrame,
   useScroll,
 } from "framer-motion";
@@ -11,13 +10,11 @@ import { NOOP } from "@constants/functions";
 import { useContext } from "@state/Context";
 import type { TMotionValuePair } from "@state/types";
 import { TrailMotionValue } from "./TrailMotionValue";
+import { Background } from "@components/Background";
 
-export const TRAIL_SIZE = 22;
-const STRIDE = 22;
+export const TRAIL_SIZE = 11;
+const STRIDE = 2;
 const COUNT = TRAIL_SIZE * STRIDE;
-
-export const DEFAULT_CURSOR = 14;
-export const DEFAULT_CURSOR_05 = DEFAULT_CURSOR * 0.5;
 
 type TMouse = {
   isMoving: boolean;
@@ -33,7 +30,8 @@ export const Cursor: FC<TCursorProps> = ({
   onTap,
   children,
 }) => {
-  const { motionValuePairs } = useContext();
+  const { dispatch, motionValuePairs, isCursorReady } =
+    useContext();
   const trailRef = useRef<[x: number, y: number][]>([]);
   const pointerRef = useRef<TMouse>({
     isMoving: false,
@@ -44,7 +42,7 @@ export const Cursor: FC<TCursorProps> = ({
   const { scrollX, scrollY } = useScroll();
 
   const resolveOffset = (index: number) =>
-    COUNT - index * pointerRef.current.stride;
+    COUNT - index * pointerRef.current.stride - 1;
 
   const updateTrail = () => {
     motionValuePairs.forEach(
@@ -53,8 +51,8 @@ export const Cursor: FC<TCursorProps> = ({
         index,
       ) => {
         const offset = resolveOffset(index);
-        const value = trailRef.current[offset];
 
+        const value = trailRef.current[offset];
         if (typeof value === "undefined") {
           return;
         }
@@ -77,12 +75,17 @@ export const Cursor: FC<TCursorProps> = ({
 
     if (pointerRef.current.stride < STRIDE) {
       pointerRef.current.stride++;
+      updateTrail();
     }
-    updateTrail();
 
-    pointerRef.current.timeout = setTimeout(() => {
-      pointerRef.current.isMoving = false;
-    }, 0);
+    pointerRef.current.isMoving = false;
+
+    if (
+      trailRef.current.length >= COUNT &&
+      !isCursorReady
+    ) {
+      dispatch({ type: "cursor-ready", value: null });
+    }
   };
 
   useAnimationFrame(() => {
@@ -100,20 +103,11 @@ export const Cursor: FC<TCursorProps> = ({
     children && onTap ? "pointerdown" : null,
     onTap ?? NOOP,
   );
-
   return (
     <>
-      {/* <ul className="fixed inset-0">
-        {motionValuePairs.map(([x, y], index) => (
-          <motion.li
-            key={`${index}`}
-            className="fixed"
-            style={{ x, y }}
-          >
-            <div className="bg-green h-5 w-5 rounded-full" />
-          </motion.li>
-        ))}
-      </ul> */}
+      {isCursorReady && (
+        <Background motionValuePairs={motionValuePairs} />
+      )}
       {[...Array(TRAIL_SIZE)].map((_, index) => (
         <TrailMotionValue key={`${index}`} index={index} />
       ))}
