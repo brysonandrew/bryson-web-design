@@ -3,6 +3,8 @@ import type { FC } from "react";
 import { useInterval } from "@hooks/useInterval";
 import { Noise } from "./noise";
 import {
+  GLITCH_FRAGMENTS_ID,
+  GLITCH_SWEEPS_ID,
   resolveRandomFragments,
   resolveRandomGlitch,
 } from "./config";
@@ -54,7 +56,7 @@ export const Glitch: FC = () => {
         >
           {(noiseId) => (
             <>
-              {/* <SweepFilters />
+              <SweepFilters />
               <feComposite
                 in={noiseId}
                 in2={SWEEPS_RESULT}
@@ -63,7 +65,7 @@ export const Glitch: FC = () => {
                 k2="0.4"
                 k3="0.4"
                 k4="0"
-                result="glitch-sweeps"
+                result={GLITCH_SWEEPS_ID}
               />
               <FragmentFilters />
               <feComposite
@@ -74,21 +76,21 @@ export const Glitch: FC = () => {
                 k2="0.4"
                 k3="0.4"
                 k4="0"
-                result="glitch-fragments"
-              /> */}
+                result={GLITCH_FRAGMENTS_ID}
+              />
+              <feComposite
+                in={GLITCH_SWEEPS_ID}
+                in2={GLITCH_FRAGMENTS_ID}
+                operator="arithmetic"
+                k1="0"
+                k2="1"
+                k3="1"
+                k4="0"
+                result="glitch"
+              />
             </>
           )}
         </Noise>
-        {/* <feComposite
-          in="glitch-sweeps"
-          in2="glitch-fragments"
-          operator="arithmetic"
-          k1="0"
-          k2="1"
-          k3="1"
-          k4="0"
-          result="glitch"
-        /> */}
       </filter>
     </>
   );

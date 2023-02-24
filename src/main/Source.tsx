@@ -7,6 +7,7 @@ import { Workshop } from "@pages/workshop";
 import { Contact } from "@pages/contact";
 import { Glitch } from "@pages/glitch";
 import { Edges } from "@pages/edges";
+import { Sobel } from "@pages/sobel";
 
 export const Source = () => {
   const element = useRoutes([
@@ -25,6 +26,10 @@ export const Source = () => {
     {
       path: "/edges",
       element: <Edges />,
+    },
+    {
+      path: "/sobel",
+      element: <Sobel />,
     },
     {
       path: "/glitch",

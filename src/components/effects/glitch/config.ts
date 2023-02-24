@@ -1,7 +1,9 @@
-import { TFragmentShape } from "./fragment/Shape";
 
-export const GLOW_ID = "_GLOW_ID";
+export const GLOW_ID = "GLOW_ID";
 export const GLITCH_FILTER_ID = "GLITCH_FILTER_ID";
+
+export const GLITCH_SWEEPS_ID = "GLITCH_SWEEPS_ID";
+export const GLITCH_FRAGMENTS_ID = "GLITCH_FRAGMENTS_ID";
 
 export const IMAGE_WIDTH = 360;
 
