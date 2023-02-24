@@ -15,7 +15,7 @@ export const Shell: FC<TProps> = ({ children }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="bg-black"
+    className="bg-black overflow-hidden w-full"
   >
     <Background />
     {children}

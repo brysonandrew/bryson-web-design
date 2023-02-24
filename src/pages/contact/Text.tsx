@@ -12,6 +12,7 @@ import {
 } from "./config";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
+import { Gradient } from "./Gradient";
 
 const Root = styled(motion.label)``;
 const Line = styled(motion.hr)``;
@@ -72,15 +73,7 @@ export const Text: FC<TProps> = ({
           {...props}
         />
       </motion.div>
-      <Line
-        className="absolute left-0 top-full w-full h-px bg-teal-04"
-        variants={{
-          animate: { scaleX: 0 },
-          focus: { scaleX: 1 },
-        }}
-        style={{ originX: 0 }}
-        transition={{ ...MOTION_CONFIG, duration: 1 }}
-      />
+      <Gradient />
     </Root>
   );
 };

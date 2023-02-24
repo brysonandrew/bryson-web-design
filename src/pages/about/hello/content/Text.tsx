@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { MotionStyle} from "framer-motion";
+import type { MotionStyle } from "framer-motion";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
@@ -18,7 +18,7 @@ export const Text: FC<TProps> = (style) => (
   >
     <div className="absolute w-5/12 h-1/2">
       <div
-        className="relative text-lg w-full rounded-xs text-teal-bright w-60"
+        className="relative text-xs mt-4 md:mt-0 md:text-lg w-full rounded-xs text-teal-bright w-60"
         style={{ lineHeight: 2.025, letterSpacing: 2 }}
       >
         <Typewriter

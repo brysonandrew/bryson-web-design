@@ -16,13 +16,13 @@ export const About = () => (
   <Root>
     <Mid className="relative my-0 mx-auto">
       <Hello />
-      <div className="py-44" />
+      <div className="py-42" />
       <div className="relative z-20 px-2 py-4">
         <Tech>
           <Timeline />
         </Tech>
       </div>
-      <div className="py-20" />
+      <div className="py-32" />
     </Mid>
   </Root>
 );

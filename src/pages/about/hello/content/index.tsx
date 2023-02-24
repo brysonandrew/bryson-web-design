@@ -21,9 +21,7 @@ import {
   ID,
 } from "@components/effects/displacement";
 
-const Root = styled(motion.div)`
-  max-width: 600px;
-`;
+const Root = styled(motion.div)``;
 
 const Svg = styled(motion.svg)``;
 
@@ -38,11 +36,14 @@ export const Content = () => {
         <Displacement />
       </svg>
       <Root
-        className="flex w-full"
-        style={{ opacity, filter: `url(#${ID})` }}
+        className="relative"
+        style={{
+          opacity,
+          filter: `url(#${ID})`,
+        }}
       >
         <Svg
-          width={WIDTH}
+          width="100%"
           height={HEIGHT}
           viewBox={`${0} ${0} ${WIDTH} ${HEIGHT}`}
         >

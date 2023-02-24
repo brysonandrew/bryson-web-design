@@ -1,17 +1,16 @@
-import type { FC } from "react";
+import { Border as Select } from "@components/select/Border";
+import styled from "@emotion/styled";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
+import { ELEVATED } from "@styles/neu";
+import clsx from "clsx";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
-import styled from "@emotion/styled";
-import clsx from "clsx";
-import { ELEVATED } from "@styles/neu";
+import type { FC } from "react";
 import { LABEL_CLASS, textShadow } from "./config";
-import { MOTION_CONFIG } from "@constants/animation";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Border as Select } from "@components/select/Border";
+import { Gradient } from "./Gradient";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)``;
-const Gradient = styled(motion.div)``;
 
 const Name = styled(motion.h4)``;
 
@@ -53,15 +52,7 @@ export const Textarea: FC<TProps> = ({
         <div className="p-1.5" />
         <Input {...props} autoComplete="off" />
       </div>
-      <Gradient
-        className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-teal-01 h-1/2 opacity-50"
-        variants={{
-          animate: { scaleX: 0 },
-          focus: { scaleX: 1 },
-        }}
-        style={{ originX: 0 }}
-        transition={{ ...MOTION_CONFIG, duration: 1 }}
-      />
+      <Gradient />
     </Root>
   );
 };

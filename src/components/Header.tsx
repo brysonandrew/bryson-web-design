@@ -20,7 +20,7 @@ export const Header = () => {
   const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
 
   return (
-    <Root className="flex items-center justify-between fixed w-full top-0 left-0 pt-4 pb-5 px-8 z-40">
+    <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
       <div className="flex items-center">
         <Title {...{ scale, x }} />
         <Right

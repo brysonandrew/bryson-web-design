@@ -5,7 +5,7 @@ import { Header } from "@components/Header";
 import { About } from "./about";
 
 const Root = styled(motion.div)``;
-
+ 
 export const Index = () => (
   <Shell>
     <Header />
