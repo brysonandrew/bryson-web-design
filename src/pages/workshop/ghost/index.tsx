@@ -4,8 +4,6 @@ import { Defs } from "./defs";
 import { FILTER_ID } from "./constants";
 import { resolveUrlId } from "@utils/resolveUrlId";
 
-import "./styles.css";
-
 const Root = styled.div``;
 
 export const Ghost = () => (
@@ -19,7 +17,6 @@ export const Ghost = () => (
       viewBox="0 0 800 400"
     >
       <Defs />
-      
     </svg>
     <svg
       width="100%"

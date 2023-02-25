@@ -14,9 +14,7 @@ export const Router: FC<TProps> = ({
   ...props
 }) => (
   <_Router>
-    <div className="flex justify-center w-full h-full">
-      <Source />
-    </div>
+    <Source />
     <Cursor />
   </_Router>
 );

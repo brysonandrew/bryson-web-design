@@ -4,7 +4,6 @@
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
 }
 
 html,
@@ -14,11 +13,6 @@ body {
   font-size: 18px;
   background-color: #111;
   color: rgb(207 250 254);
-}
-
-#root {
-  width: 100%;
-  height: 100%;
 }
 
 .--panel {
