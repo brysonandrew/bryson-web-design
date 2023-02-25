@@ -5,8 +5,7 @@ import type { FC } from "react";
 
 const Root = styled(motion.div)``;
 
-export const Gradient: FC = () => {
-  return (
+export const Gradient: FC = () => (
     <Root
       className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-teal-01 h-1/2 opacity-10"
       variants={{
@@ -17,4 +16,3 @@ export const Gradient: FC = () => {
       transition={{ ...MOTION_CONFIG, duration: 1 }}
     />
   );
-};

@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../types";
-import { Cursor } from "./cursor";
 import { Background } from "./Background";
 
 const Root = styled(motion.div)``;
@@ -19,7 +18,5 @@ export const Shell: FC<TProps> = ({ children }) => (
   >
     <Background />
     {children}
-    <Cursor />
   </Root>
 );
- 

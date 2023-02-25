@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type { RouterProps } from "react-router";
 import { BrowserRouter as _Router } from "react-router-dom";
 import { Source } from "./Source";
-
+import { Cursor } from "@components/cursor";
 
 type TProps = Partial<RouterProps> & {
   history: History;
@@ -14,6 +14,9 @@ export const Router: FC<TProps> = ({
   ...props
 }) => (
   <_Router>
-    <Source />
+    <div className="flex justify-center w-full h-full">
+      <Source />
+    </div>
+    <Cursor />
   </_Router>
 );

@@ -16,6 +16,11 @@ body {
   color: rgb(207 250 254);
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 .--panel {
   background-color: #111;
   border: 1px solid rgb(207, 250, 254, 0.2);

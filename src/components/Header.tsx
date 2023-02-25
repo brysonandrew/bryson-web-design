@@ -5,7 +5,7 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
-import { Title } from "./text/Title";
+import { MainTitle } from "./text/MainTitle";
 import { Contact } from "./Contact";
 
 const Root = styled(motion.header)``;
@@ -22,7 +22,7 @@ export const Header = () => {
   return (
     <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
       <div className="flex items-center">
-        <Title {...{ scale, x }} />
+        <MainTitle {...{ scale, x }} />
         <Right
           className="flex items-center grow"
           style={{ opacity }}

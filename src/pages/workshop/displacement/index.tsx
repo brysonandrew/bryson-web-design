@@ -4,10 +4,10 @@ import {
   ID,
 } from "@components/effects/displacement";
 import { Filter as SobelFilter } from "@components/effects/sobel/Filter";
-import { Filter as LightingFilter } from "@components/effects/lighting/Filter";
 import { Filters as SweepFilters } from "@components/effects/sweep/Filters";
 import { Shapes as SweepShapes } from "@components/effects/sweep/Shapes";
 import { SWEEP_ARR } from "@components/effects/sweep/config";
+import { resolveUrlId } from "@utils/resolveUrlId";
 
 const Root = styled.div``;
 
@@ -30,7 +30,7 @@ export const Displacement = () => (
         height="100%"
         xlinkHref="/synthwave.jpg"
         //xlinkHref="/mugshot2.png"
-        filter={`url(#${ID})`}
+        filter={resolveUrlId(ID)}
       />
     </svg>
     <svg width="0" height="0">

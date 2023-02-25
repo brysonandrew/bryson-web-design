@@ -12,6 +12,7 @@
       "@state/*": ["src/state/*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"],
       "@windi/*": ["windi.*"]
     }
   }

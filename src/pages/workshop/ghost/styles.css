@@ -4,6 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: auto;
+
 }
 
 html {
@@ -30,17 +32,16 @@ body {
 
 body {
   position: relative;
-  overflow: hidden;
   text-align: center;
-  background: linear-gradient(
-    0deg,
-    rgba(19, 0, 34, 0.3),
-    rgba(19, 0, 34, 0.9) 35%,
-    rgba(19, 0, 34, 1) 50%,
-    rgba(19, 0, 34, 0.9) 65%,
-    rgba(19, 0, 34, 0.3)
-  );
-  /* url(https://assets.codepen.io/100347/fedm_bgpattern-warped.svg) center no-repeat, rgb(19, 0, 34); */
+  /* background: linear-gradient(
+      0deg,
+      rgba(19, 0, 34, 0.3),
+      rgba(19, 0, 34, 0.9) 35%,
+      rgba(19, 0, 34, 1) 50%,
+      rgba(19, 0, 34, 0.9) 65%,
+      rgba(19, 0, 34, 0.3)
+    ),
+    url(https://assets.codepen.io/100347/fedm_bgpattern-warped.svg) center no-repeat, rgb(19, 0, 34); */
   background-size: 100%;
   display: flex;
 }
@@ -51,10 +52,10 @@ body {
   height: 400px;
   margin: auto;
 }
-
+/* 
 .displacement {
-  /* filter: url("#dm-filter"); */
-}
+  filter: url("#dm-filter");
+} */
 
 .corben {
   display: block;

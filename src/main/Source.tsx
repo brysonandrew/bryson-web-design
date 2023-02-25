@@ -13,6 +13,7 @@ import { Lighting } from "@pages/workshop/lighting";
 import { Displacement } from "@pages/workshop/displacement";
 import { ShadowText } from "@pages/workshop/shadow-text";
 import { Trail } from "@pages/workshop/trail";
+import { Ghost } from "@pages/workshop/ghost";
 
 export const Source = () => {
   const element = useRoutes([
@@ -39,6 +40,10 @@ export const Source = () => {
     {
       path: "/workshop/glitch",
       element: <Glitch />,
+    },
+    {
+      path: "/workshop/ghost",
+      element: <Ghost />,
     },
     {
       path: "/workshop/phase",

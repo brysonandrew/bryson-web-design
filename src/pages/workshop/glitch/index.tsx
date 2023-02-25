@@ -3,16 +3,16 @@ import {
   Glitch as GlitchFilter,
   ID,
 } from "@components/effects/glitch";
+import { Title } from "@components/text/Title";
+import { resolveUrlId } from "@utils/resolveUrlId";
 
 const Root = styled.div``;
 
 export const Glitch = () => (
   <Root className="relative w-screen h-screen">
-    <div className="py-2">
-      <h2 className="text-center">Glitch</h2>
-    </div>
+    <Title>Glitch</Title>
     <svg width="0" height="0">
-      <GlitchFilter  />
+      <GlitchFilter />
     </svg>
     <svg
       width="100%"
@@ -25,9 +25,9 @@ export const Glitch = () => (
         y="0%"
         width="100%"
         height="100%"
-        // xlinkHref="/synthwave.jpg"
-        xlinkHref="/mugshot2.png"
-        filter={`url(#${ID})`}
+        xlinkHref="/synthwave.jpg"
+        //xlinkHref="/mugshot2.png"
+        filter={resolveUrlId(ID)}
       />
     </svg>
   </Root>
