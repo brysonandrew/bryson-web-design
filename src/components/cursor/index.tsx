@@ -10,10 +10,12 @@ import {
   useScroll,
 } from "framer-motion";
 import { FC, useEffect, useRef } from "react";
-import { CURSOR_SIZE_HALF } from "./config";
-import { ID } from "@components/effects/displacement";
-import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
+import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { useCursorAppear } from "@hooks/useCursorAppear";
+import { Pool } from "@components/effects/pool";
+import { resolveUrlId } from "@utils/resolveUrlId";
+
+const ID = "ID";
 
 export type TCursorProps = {
   children?: TChildren;
@@ -76,31 +78,32 @@ export const Cursor: FC<TCursorProps> = ({
     onTap ?? NOOP,
   );
 
-  if (selectId === null) {
-    return (
-      <AnimatePresence>
-        {isCursorReady && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <Select
-              style={{
-                left: cursorX,
-                top: cursorY,
-                // width: 200,
-                // height: 200,
-                backdropFilter:
-                  // `blur(2px)`,
-                  `url(#${ID})`,
-              }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    );
-  } else {
-    return null;
-  }
+  return (
+    <>
+      <svg width="0%" height="0%" viewBox="0 0 100 100">
+        <Pool id={ID} intensity={20} />
+      </svg>
+      {selectId === null && (
+        <AnimatePresence>
+          {isCursorReady && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Select
+                style={{
+                  left: cursorX,
+                  top: cursorY,
+                  width: CURSOR_SIZE,
+                  height: CURSOR_SIZE,
+                  backdropFilter: resolveUrlId(ID),
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
+    </>
+  );
 };

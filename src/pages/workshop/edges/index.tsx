@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Edges as EdgesFilter } from "@components/effects/edges";
+import { resolveUrlId } from "@utils/resolveUrlId";
 const Root = styled.div``;
 
 export const Edges = () => (
@@ -26,7 +27,7 @@ export const Edges = () => (
             height="100%"
             xlinkHref="/synthwave.jpg"
             //xlinkHref="/mugshot2.png"
-            filter={`url(#${id})`}
+            filter={resolveUrlId(id)}
           />
         )}
       />

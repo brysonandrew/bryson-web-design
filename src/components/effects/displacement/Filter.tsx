@@ -86,7 +86,7 @@ export const Filter: FC<
       scale={intensity}
       xChannelSelector="R"
       yChannelSelector="G"
-      result={result}
+      result={"DISPLACEMENT"}
     >
       <animate
         attributeName="scale"
@@ -96,29 +96,17 @@ export const Filter: FC<
         {...BASE_ANIMATION}
       />
     </feDisplacementMap>
-    {/* <feGaussianBlur
-        in={`${id}-map`}
-        stdDeviation="10 0"
-      /> */}
-    {/* <feFlood
-        floodColor="#000"
-        in={`${id}-turbulence`}
-        result={`${id}-flood`}
-      />
-      <feComposite
-        in={`${id}-flood`}
-        in2={`${id}-map`}
-        operator="xor"
-        result={id}
-      /> */}
-    {/* <feComposite
-            in2="SourceGraphic"
-            in={filterId}
-            operator="arithmetic"
-            k1="0"
-            k2="1"
-            k3="1"
-          /> */}
+{/*  
+    <feComposite
+      in="DISPLACEMENT"
+      in2="BLUR"
+      result={result}
+      operator="arithmetic"
+      k1="0"
+      k2="0.1"
+      k3="0.8"
+      k4="0"
+    /> */}
     {children && children(result)}
   </>
 );

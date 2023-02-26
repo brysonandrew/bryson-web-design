@@ -20,6 +20,7 @@ import {
   Displacement,
   ID,
 } from "@components/effects/displacement";
+import { resolveUrlId } from "@utils/resolveUrlId";
 
 const Root = styled(motion.div)``;
 
@@ -39,7 +40,7 @@ export const Content = () => {
         className="relative"
         style={{
           opacity,
-          filter: `url(#${ID})`,
+          filter: resolveUrlId(ID),
         }}
       >
         <Svg

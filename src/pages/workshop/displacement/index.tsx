@@ -48,11 +48,16 @@ export const Displacement = () => (
                 result="SweepFiltersId"
               >
                 {(sweepsId) => (
-                  <feMerge>
-                    <feMergeNode in={displacementId} />
-                    <feMergeNode in={sweepsId} />
-                    {/* <feMergeNode in="SourceGraphic" /> */}
-                  </feMerge>
+                  <feComposite
+                    in={sweepsId}
+                    in2={displacementId}
+                    operator="in"
+                  />
+                  // <feMerge>
+                  //   <feMergeNode in={displacementId} />
+                  //   <feMergeNode in={sweepsId} />
+                  //   {/* <feMergeNode in="SourceGraphic" /> */}
+                  // </feMerge>
                   // <feComposite
                   // in={displacementId}
                   // in2={sweepsId}

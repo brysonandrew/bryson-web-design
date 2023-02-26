@@ -14,6 +14,7 @@ import { Displacement } from "@pages/workshop/displacement";
 import { ShadowText } from "@pages/workshop/shadow-text";
 import { Trail } from "@pages/workshop/trail";
 import { Ghost } from "@pages/workshop/ghost";
+import { Pool } from "@pages/workshop/pool";
 
 export const Source = () => {
   const element = useRoutes([
@@ -64,6 +65,10 @@ export const Source = () => {
     {
       path: "/workshop/trail",
       element: <Trail />,
+    },
+    {
+      path: "/workshop/pool",
+      element: <Pool />,
     },
     {
       path: "*",

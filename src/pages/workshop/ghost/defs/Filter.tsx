@@ -2,14 +2,16 @@ import styled from "@emotion/styled";
 import {
   FILTER_ID,
   MASK_BLUR_ID,
+  MASK_DISPLACE_ID,
   MASK_TEXT_ID,
 } from "../constants";
 import { resolveHash } from "src/utils/resolveUrlId";
 const Root = styled.filter``;
 
-export const Filter = () => (
+type TConfig = { id: string };
+export const Filter = ({ id }: TConfig) => (
   <Root
-    id={FILTER_ID}
+    id={id}
     x="0"
     y="0"
     width="100%"
@@ -95,7 +97,7 @@ export const Filter = () => (
     </feMerge>
 
     {/* <!-- A bitmap that will be the displacment map. Href value will be set by javascript, bcs. CORS and this way we can decide wether to feed a WebP image to newer browsers. --> */}
-    <feImage
+    {/* <feImage
       id="feimage-map"
       href=""
       data-map="https://assets.codepen.io/100347/fedm_vertical-map"
@@ -112,7 +114,8 @@ export const Filter = () => (
         dur="10s"
         repeatCount="1000"
       />
-    </feImage>
+    </feImage> */}
+    {/* <feTurbulence type="turbulence" result="MAP" /> */}
 
     {/* <!-- A linear gradient. We will use it as a mask to fade out the text at the bottom --> */}
     <feImage
@@ -138,7 +141,7 @@ export const Filter = () => (
 
     {/* <!-- And one last SVG image containing a linear gradient from rgba(128, 0, 128, 1) to rgba(128, 0, 128, 0). We will merge this with the animated displacement image, so that the displacement effect will increase gradually form zero at the top to its full extend at the end of the gradient. --> */}
     <feImage
-      href="#mask-displace"
+      href={resolveHash(MASK_DISPLACE_ID)}
       x="0"
       y="40%"
       width="100%"
@@ -148,20 +151,21 @@ export const Filter = () => (
     />
 
     {/* <!-- Merging the animated image and the gradient.  --> */}
-    <feMerge result="MERGE_MASK">
+    {/* <feMerge result="MERGE_MASK">
       <feMergeNode in="MAP" />
       <feMergeNode in="MASK_DISPLACE" />
-    </feMerge>
+    </feMerge> */}
 
     {/* <!-- Using the output of the merge to create a displacement map filter primitive: --> */}
     <feDisplacementMap
       in="MERGE_ALL"
-      in2="MERGE_MASK"
+      in2="MASK_DISPLACE"
       result="DISPLACE_MERGE"
       scale="-300"
       xChannelSelector="R"
       yChannelSelector="B"
     />
+
     <feGaussianBlur
       in="DISPLACE_MERGE"
       stdDeviation="6"
@@ -171,19 +175,24 @@ export const Filter = () => (
     <feComposite
       in2="MASK_BLUR"
       in="BLUR_DISPLACE"
-      operator="in"
+      operator="lighter"
       result="COMP_DISPLACE"
     />
-    <feComposite
+
+    {/* <feMerge result="MERGE">
+      <feMergeNode in="COMP_DISPLACE" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge> */}
+    {/* <feComposite
       in2="MASK_TEXT"
       in="SourceGraphic"
       operator="in"
       result="COMP_SOURCE"
-    />
+    /> */}
 
-    <feMerge result="MERGE">
+    {/* <feMerge result="MERGE">
       <feMergeNode in="COMP_DISPLACE" />
       <feMergeNode in="COMP_SOURCE" />
-    </feMerge>
+    </feMerge> */}
   </Root>
 );

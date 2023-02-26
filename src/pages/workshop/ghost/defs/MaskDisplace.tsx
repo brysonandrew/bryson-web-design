@@ -12,7 +12,7 @@ export const MaskDisplace = () => (
       height="100"
     >
       <linearGradient
-        id="gradient"
+        id={GRADIENT_ID}
         x1="0"
         x2="0"
         y1="0"

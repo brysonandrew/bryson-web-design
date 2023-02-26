@@ -16,6 +16,7 @@ export const Shell: FC<TProps> = ({ children }) => (
     exit={{ opacity: 0 }}
     className="bg-black overflow-hidden w-full"
   >
+    
     <Background />
     {children}
   </Root>

@@ -21,8 +21,8 @@ export const Phase = () => (
         y="0"
         width={SIZE}
         height={SIZE}
-        //xlinkHref="/synthwave.jpg"
-        xlinkHref="/mugshot2.png"
+        xlinkHref="/synthwave.jpg"
+        //xlinkHref="/mugshot2.png"
         filter={`url(#${ID})`}
       />
     </svg>

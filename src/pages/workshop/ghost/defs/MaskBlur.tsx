@@ -15,7 +15,7 @@ export const MaskBlur = () => (
     height="100"
   >
     <linearGradient
-      id={resolveHash(GRADIENT_ID)}
+      id={(GRADIENT_ID)}
       x1="0"
       x2="0"
       y1="0"
