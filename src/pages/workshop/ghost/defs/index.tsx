@@ -3,7 +3,7 @@ import { Filter } from "./Filter";
 import { MaskBlur } from "./MaskBlur";
 import { MaskDisplace } from "./MaskDisplace";
 import { MaskText } from "./MaskText";
-import { FC } from "react";
+import type { FC } from "react";
 
 const Root = styled.defs``;
 

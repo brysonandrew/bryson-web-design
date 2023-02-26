@@ -3,8 +3,7 @@ import { Pool as PoolFilter } from "@components/effects/pool";
 
 const ID = "ID";
 
-export const Pool = () => {
-  return (
+export const Pool = () => (
     <>
       <svg width="0%" height="0%">
         <PoolFilter id={ID} />
@@ -28,4 +27,3 @@ export const Pool = () => {
       </svg>
     </>
   );
-};

@@ -9,7 +9,8 @@ import {
   useMotionValue,
   useScroll,
 } from "framer-motion";
-import { FC, useEffect, useRef } from "react";
+import type { FC} from "react";
+import { useEffect, useRef } from "react";
 import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { useCursorAppear } from "@hooks/useCursorAppear";
 import { Pool } from "@components/effects/pool";

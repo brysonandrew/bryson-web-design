@@ -1,11 +1,8 @@
-  
-  const G_ID = "G_ID";
-const D_ID = "D_ID";
+const G_ID = "G_ID"; const D_ID = "D_ID";
 
-const RG_ID = "RG_ID";
-const RD_ID = "RD_ID";
+const RG_ID = "RG_ID"; const RD_ID = "RD_ID";
 
-  <!-- {/* <feImage
+<feImage
             href={resolveHash(RD_ID)}
             x="0"
             y="0"
@@ -81,4 +78,4 @@ const RD_ID = "RD_ID";
           width="100%"
           height="100%"
           fill={resolveUrlId(D_ID)}
-        /> */} -->
+        /> */}

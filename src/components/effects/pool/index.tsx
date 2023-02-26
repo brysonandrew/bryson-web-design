@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 const BASE_ANIMATION = {
   dur: "6s",
@@ -12,8 +12,7 @@ type TProps = {
 export const Pool: FC<TProps> = ({
   id,
   intensity = 120,
-}) => {
-  return (
+}) => (
     <filter
       id={id}
       x="0"
@@ -84,4 +83,3 @@ export const Pool: FC<TProps> = ({
       </feGaussianBlur>
     </filter>
   );
-};
