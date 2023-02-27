@@ -1,34 +1,19 @@
 import type { FC } from "react";
-import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { ELEVATED } from "@styles/neu";
-import { MOTION_CONFIG } from "@constants/animation";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import {
   LABEL_CLASS,
-  textShadow,
   INPUT_CLASS,
+  INPUT_LABEL_CLASS,
 } from "./config";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Border as Select } from "@components/select/Border";
 import { Gradient } from "./Gradient";
+import { Name } from "./Name";
 
 const Root = styled(motion.label)``;
-const Line = styled(motion.hr)``;
-const Input = styled(motion.input)`
-  &::-webkit-autofill,
-  ::-webkit-autofill:hover,
-  ::-webkit-autofill:focus,
-  ::-webkit-autofill:active {
-    background-color: #111 !important;
-  }
-  &::-internal-autofill-selected {
-    background-color: #111 !important;
-  }
-`;
-
-const Name = styled(motion.h4)``;
+const Input = styled(motion.input)``;
 
 type TProps = HTMLMotionProps<"input"> & {
   title: string;
@@ -40,39 +25,30 @@ export const Text: FC<TProps> = ({
   ...props
 }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
-
+  const isValue = Boolean(props.value);
   return (
     <Root
-      className={clsx("pb-2", LABEL_CLASS, ELEVATED)}
+      className={clsx("pb-2", LABEL_CLASS)}
       initial={false}
-      animate={isFocused ? "focus" : "animate"}
+      animate={
+        isFocused ? "focus" : isValue ? "value" : "animate"
+      }
       {...handlers}
     >
-      {isSelected && (
+      {/* {isSelected && (
         <Select classValue="shadow-teal-bright-fade-sm" />
-      )}
-      <motion.div className="flex items-center">
-        <Name
-          className="whitespace-nowrap text-teal"
-          variants={{
-            animate: {
-              textShadow: textShadow.off,
-            },
-            focus: {
-              textShadow: textShadow.on,
-            },
-          }}
-        >
-          {title}
-        </Name>
-        <div className="p-1.5" />
+      )} */}
+      <div className="flex items-center">
+        <div className={INPUT_LABEL_CLASS}>
+          <Name>{title}</Name>
+        </div>
         <Input
           className={INPUT_CLASS}
           type="text"
           autoComplete="off"
           {...props}
         />
-      </motion.div>
+      </div>
       <Gradient />
     </Root>
   );

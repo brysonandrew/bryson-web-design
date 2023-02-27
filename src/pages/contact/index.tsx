@@ -121,30 +121,32 @@ export const Contact = () => {
           <Text
             title="name"
             autoFocus
-            className={INPUT_CLASS}
+            className={clsx(INPUT_CLASS, "pt-1.25")}
             disabled={isDisabled}
             name="from_name"
             placeholder=""
             value={state.from_name}
             isFocused={"from_name" === focus}
+            required
             {...focusHandlers}
           />
           <div className="py-4" />
           <Text
             title="email"
-            className={INPUT_CLASS}
+            className={clsx(INPUT_CLASS, "pt-1.25")}
             disabled={isDisabled}
             type="email"
             name="from_email"
             placeholder=""
             value={state.from_email}
             isFocused={"from_email" === focus}
+            required
             {...focusHandlers}
           />
           <div className="py-4" />
           <Textarea
             title="message"
-            className={clsx(INPUT_CLASS)}
+            className={clsx(INPUT_CLASS, "pt-1.5")}
             name="message"
             disabled={isDisabled}
             style={{ marginTop: -4 }}
@@ -152,6 +154,7 @@ export const Contact = () => {
             rows={4}
             cols={50}
             isFocused={"message" === focus}
+            required
             {...textareaFocusHandlers}
           />
           <div className="py-8" />

@@ -1,8 +1,11 @@
 import type { FC } from "react";
-import type { MotionStyle } from "framer-motion";
+import type {
+  HTMLMotionProps,
+  MotionStyle,
+} from "framer-motion";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import type { ClassValue} from "clsx";
+import type { ClassValue } from "clsx";
 import { clsx } from "clsx";
 import {
   CURSOR_SIZE,
@@ -11,13 +14,14 @@ import {
 
 const Root = styled(motion.div)``;
 
-type TProps = {
+type TProps = HTMLMotionProps<"div"> & {
   classValue?: ClassValue;
   style?: MotionStyle;
 };
 export const Square: FC<TProps> = ({
   classValue,
   style,
+  ...props
 }) => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
@@ -30,8 +34,9 @@ export const Square: FC<TProps> = ({
       ...style,
     }}
     className={clsx(
-      "fixed shadow-teal-sm z-40 pointer-events-none",
+      "fixed shadow-teal-sm z-40 pointer-events-none cursor-crosshair",
       classValue,
     )}
+    {...props}
   />
 );

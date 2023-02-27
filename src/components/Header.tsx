@@ -27,8 +27,8 @@ export const Header = () => {
           className="flex items-center grow"
           style={{ opacity }}
         >
-          <motion.div className="absolute left-0 bottom-0 w-full shadow-teal-fade-sm" />
-          <motion.div className="absolute w-full inset-0 bg-black-dark border-teal-fade backdrop-blur-lg" />
+          <motion.div className="absolute left-0 bottom-0 w-full shadow-teal-04-sm" />
+          <motion.div className="absolute w-full inset-0 bg-black-dark border-teal-04 backdrop-blur-lg" />
           <div className="p-2" />
           <Sub
             style={{ scale, x: xx }}

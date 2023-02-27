@@ -6,13 +6,12 @@ import clsx from "clsx";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { LABEL_CLASS, textShadow } from "./config";
+import { INPUT_LABEL_CLASS, LABEL_CLASS } from "./config";
 import { Gradient } from "./Gradient";
+import { Name } from "./Name";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)``;
-
-const Name = styled(motion.h4)``;
 
 type TProps = HTMLMotionProps<"textarea"> & {
   title: string;
@@ -24,32 +23,25 @@ export const Textarea: FC<TProps> = ({
   ...props
 }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
+  console.log(props);
+  const isValue = Boolean(props.value);
 
   return (
     <Root
-      className={clsx(LABEL_CLASS, ELEVATED)}
+      className={clsx(LABEL_CLASS)}
       initial={false}
-      animate={isFocused ? "focus" : "animate"}
+      animate={
+        isFocused ? "focus" : isValue ? "value" : "animate"
+      }
       {...handlers}
     >
-      {isSelected && (
-        <Select classValue="shadow-teal-fade-sm" />
-      )}
+      {/* {isSelected && (
+        <Select classValue="shadow-teal-04-sm" />
+      )} */}
       <div className="flex items-start">
-        <Name
-          className="whitespace-nowrap text-teal"
-          variants={{
-            animate: {
-              textShadow: textShadow.off,
-            },
-            focus: {
-              textShadow: textShadow.on,
-            },
-          }}
-        >
-          {title}
-        </Name>
-        <div className="p-1.5" />
+        <div className={INPUT_LABEL_CLASS}>
+          <Name>{title}</Name>
+        </div>
         <Input {...props} autoComplete="off" />
       </div>
       <Gradient />

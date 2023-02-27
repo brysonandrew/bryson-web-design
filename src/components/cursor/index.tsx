@@ -1,20 +1,19 @@
+import type { FC } from "react";
+import {
+  AnimatePresence,
+  useMotionValue,
+  useScroll,
+} from "framer-motion";
 import { Square as Select } from "@components/select/Square";
 import { NOOP } from "@constants/functions";
 import { useEventListener } from "@hooks/useEventListener";
 import { useContext } from "@state/Context";
 import type { TChildren } from "@t/index";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useScroll,
-} from "framer-motion";
-import type { FC} from "react";
-import { useEffect, useRef } from "react";
-import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { useCursorAppear } from "@hooks/useCursorAppear";
 import { Pool } from "@components/effects/pool";
 import { resolveUrlId } from "@utils/resolveUrlId";
+import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
+import { usePointerEnterLeave } from "./usePointerEnterLeave";
 
 const ID = "ID";
 
@@ -26,7 +25,6 @@ export const Cursor: FC<TCursorProps> = ({
   onTap,
   children,
 }) => {
-  const docRef = useRef<HTMLElement | null>(null);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
@@ -35,44 +33,31 @@ export const Cursor: FC<TCursorProps> = ({
 
   const { scrollX, scrollY } = useScroll();
 
-  useEffect(() => {
-    docRef.current = document.documentElement;
-  }, []);
-
   const toggleCursor = (isReady: boolean) => {
     dispatch({ type: "cursor-ready", value: isReady });
   };
-  const cursorOn = (_: MouseEvent) => {
+  const cursorOn = (_: PointerEvent) => {
     toggleCursor(true);
   };
-  const cursorOff = (_: MouseEvent) => {
+  const cursorOff = (_: PointerEvent) => {
     toggleCursor(false);
   };
-  const handleMove = (event: MouseEvent) => {
+  const handleMove = (event: PointerEvent) => {
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
     cursorX.set(nextX - CURSOR_SIZE_HALF);
     cursorY.set(nextY - CURSOR_SIZE_HALF);
   };
 
-  useCursorAppear(isCursorReady);
+  const isHidden = isCursorReady || selectId === null;
+  useCursorAppear(isHidden);
 
   useEventListener<"pointermove">(
     "pointermove",
     handleMove,
   );
 
-  useEventListener<"pointerenter", HTMLElement>(
-    "pointerenter",
-    cursorOn,
-    docRef,
-  );
-
-  useEventListener<"pointerleave", HTMLElement>(
-    "pointerleave",
-    cursorOff,
-    docRef,
-  );
+  usePointerEnterLeave({ cursorOn, cursorOff });
 
   useEventListener(
     children && onTap ? "pointerdown" : null,
@@ -87,21 +72,18 @@ export const Cursor: FC<TCursorProps> = ({
       {selectId === null && (
         <AnimatePresence>
           {isCursorReady && (
-            <motion.div
+            <Select
+              style={{
+                left: cursorX,
+                top: cursorY,
+                width: CURSOR_SIZE,
+                height: CURSOR_SIZE,
+                backdropFilter: resolveUrlId(ID),
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-            >
-              <Select
-                style={{
-                  left: cursorX,
-                  top: cursorY,
-                  width: CURSOR_SIZE,
-                  height: CURSOR_SIZE,
-                  backdropFilter: resolveUrlId(ID),
-                }}
-              />
-            </motion.div>
+            />
           )}
         </AnimatePresence>
       )}

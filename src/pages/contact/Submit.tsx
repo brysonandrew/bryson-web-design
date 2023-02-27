@@ -1,12 +1,11 @@
+import { Border as Select } from "@components/select/Border";
 import styled from "@emotion/styled";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TSendingState } from "./config";
 import { LABEL_CLASS, resolveButtonValue } from "./config";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { SELECT_LAYOUT_ID } from "@components/cursor/config";
-import { Border as Select } from "@components/select/Border";
 
 const SUBMIT_ID = "SUBMIT_ID";
 
@@ -24,12 +23,12 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
 
   return (
     <Root
-      className={clsx("px-4 py-2", LABEL_CLASS)}
+      className={clsx("px-4 py-2 cursor-crosshair", LABEL_CLASS)}
       {...handlers}
     >
       {isSelected && <Select />}
       <Input
-        className={clsx("absolute inset-0 cursor-pointer")}
+        className={clsx("absolute inset-0")}
         type="submit"
         style={{
           opacity: sendingState === "idle" ? 0.5 : 1,

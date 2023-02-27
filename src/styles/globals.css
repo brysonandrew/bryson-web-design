@@ -48,16 +48,12 @@ a {
   text-decoration: none;
 }
 
-button,
-a {
-  cursor: none;
-}
-
 ul {
   padding: 0;
   list-style: none;
 }
 
+label,
 input,
 textarea,
 select {
@@ -67,6 +63,7 @@ select {
   background-color: rgba(0, 0, 0, 1);
 }
 
+label:disabled,
 input:disabled,
 textarea:disabled,
 select:disabled {
@@ -74,6 +71,7 @@ select:disabled {
   cursor: not-allowed;
 }
 
+label:focus,
 textarea:focus,
 input:focus {
   outline: none;
@@ -98,10 +96,16 @@ hr {
   background-color: rgba(45, 212, 191, 0.9);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input::-webkit-autofill,
+::-webkit-autofill:hover,
+::-webkit-autofill:focus,
+::-webkit-autofill:active {
+  background-color: #111 !important;
+  -webkit-box-shadow: 0 0 0 30px #111 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}
+input::-internal-autofill-selected {
+  background-color: #111 !important;
   -webkit-box-shadow: 0 0 0 30px #111 inset !important;
   -webkit-text-fill-color: #fff !important;
 }
