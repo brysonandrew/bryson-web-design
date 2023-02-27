@@ -4,4 +4,5 @@ export type TProcessor = {
   items: TBaseChildren[];
   index: number;
   count: number;
+  elapsed: number;
 };

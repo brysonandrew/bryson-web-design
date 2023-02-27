@@ -31,7 +31,7 @@ export const MainTitle: FC<TProps> = ({ scale, x }) => {
     >
       {isSelected && <Select />}
       <Link className="flex relative px-3 pt-2 pb-3" to="/">
-        <Typewriter delay={100} wip="brysona.dev">
+        <Typewriter throttle={5} delay={100} wip="brysona.dev">
           {(content) => (
             <H1 className="text-xl uppercase leading-none">
               {content}
