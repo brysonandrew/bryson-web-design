@@ -23,7 +23,6 @@ export const Textarea: FC<TProps> = ({
   ...props
 }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
-  console.log(props);
   const isValue = Boolean(props.value);
 
   return (

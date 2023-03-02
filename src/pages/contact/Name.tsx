@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { textShadow } from "./config";
@@ -10,8 +10,7 @@ const Root = styled(motion.h4)``;
 type TProps = {
   children: TChildren;
 };
-export const Name: FC<TProps> = ({ children }) => {
-  return (
+export const Name: FC<TProps> = ({ children }) => (
     <Root
       className="whitespace-nowrap"
       variants={{
@@ -32,4 +31,3 @@ export const Name: FC<TProps> = ({ children }) => {
       {children}
     </Root>
   );
-};

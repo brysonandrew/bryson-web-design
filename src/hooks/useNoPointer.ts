@@ -5,11 +5,11 @@ export const useNoPointer = () => {
     null,
   );
   useEffect(() => {
-    const isPointer =
+    const isNoPointer =
       window.matchMedia("(pointer: none)").matches ||
       window.matchMedia("(hover: none)").matches ||
       window.matchMedia("(any-hover: none)").matches;
-    setPointer(isPointer);
+    setPointer(!isNoPointer);
   }, []);
 
   return isPointer;

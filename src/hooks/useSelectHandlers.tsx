@@ -12,9 +12,7 @@ export const useSelectHandlers = (title: string) => {
     onHoverEnd: handleSelectEnd,
   };
 
-  useEffect(() => {
-    return handleSelectEnd;
-  }, []);
+  useEffect(() => handleSelectEnd, []);
 
   return { isSelected: selectId === title, handlers };
 };
