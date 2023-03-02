@@ -4,6 +4,7 @@ import type { FC } from "react";
 import { Pattern } from "./effects/glitch/_cemetary/Pattern";
 import { PATTERN_ID } from "./effects/glitch/_cemetary/config";
 const Root = styled(motion.svg)``;
+
 export const Background: FC = () => (
   <>
     <Root

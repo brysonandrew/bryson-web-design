@@ -3,18 +3,15 @@ import type { RouterProps } from "react-router";
 import { BrowserRouter as _Router } from "react-router-dom";
 import { Source } from "./Source";
 import { Cursor } from "@components/cursor";
+import { useNoPointer } from "@hooks/useNoPointer";
 
-type TProps = Partial<RouterProps> & {
-  history: History;
-  children: JSX.Element;
+type TProps = Partial<RouterProps>;
+export const Router: FC<TProps> = () => {
+  const isPointer = useNoPointer();
+  return (
+    <_Router>
+      <Source />
+      {isPointer && <Cursor />}
+    </_Router>
+  );
 };
-export const Router: FC<TProps> = ({
-  history,
-  children,
-  ...props
-}) => (
-  <_Router>
-    <Source />
-    <Cursor />
-  </_Router>
-);
