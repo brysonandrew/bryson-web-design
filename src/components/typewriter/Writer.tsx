@@ -2,21 +2,19 @@ import type { TBaseChildren } from "@t/index";
 import { useAnimationFrame } from "framer-motion";
 import type { FC } from "react";
 import { useRef } from "react";
-import type { TBaseProps } from ".";
 import type { TProcessor } from "./types";
-import { useItems } from "./useItems";
 
-type TProps = TBaseProps & {
+type TProps = {
+  items: TBaseChildren[];
   onUpdate(next: TBaseChildren): void;
   onDone(): void;
 };
 export const Writer: FC<TProps> = ({
-  wip,
+  items,
   onUpdate,
   onDone,
 }) => {
   const elapsedRef = useRef<number>(0);
-  const items = useItems({ wip });
   const ref = useRef<TProcessor>({
     items,
     index: 0,

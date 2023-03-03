@@ -8,21 +8,18 @@ import type {
 } from "@t/index";
 import { STATE } from "@state/constants";
 import { Writer } from "./Writer";
-import type { TItemsConfig } from "./useItems";
+import { useItems } from "./useItems";
 
 const isDisabled = STATE.mode === "instant";
 
-export type TBaseProps = TItemsConfig & {
-  throttle?: number;
-};
-export type TTypewriterProps = TBaseProps & {
+export type TTypewriterProps = {
   Placeholder?: FC<TChildrenProps>;
   delay?: number;
+  wip: TBaseChildren | TBaseChildren[];
   children(content: TBaseChildren[]): TChildren;
 };
 export const Typewriter: FC<TTypewriterProps> = ({
   Placeholder,
-  throttle,
   delay: initDelay,
   wip,
   children,
@@ -37,7 +34,13 @@ export const Typewriter: FC<TTypewriterProps> = ({
     typeof setTimeout
   > | null>(null);
   const handleStart = () => setDone(false);
-  const handleDone = () => setDone(true);
+  const handleDone = () => {
+    if (!content) {
+      setContent(items);
+    }
+    setDone(true);
+  };
+  const items = useItems({ wip });
 
   useEffect(() => {
     if (isDelay) {
@@ -67,8 +70,7 @@ export const Typewriter: FC<TTypewriterProps> = ({
         {!isDone && (
           <>
             <Writer
-              throttle={throttle}
-              wip={wip}
+              items={items}
               onUpdate={handleUpdate}
               onDone={handleDone}
             />
