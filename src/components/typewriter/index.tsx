@@ -35,7 +35,7 @@ export const Typewriter: FC<TTypewriterProps> = ({
   > | null>(null);
   const handleStart = () => setDone(false);
   const handleDone = () => {
-    if (!content) {
+    if (content.length === 0) {
       setContent(items);
     }
     setDone(true);
