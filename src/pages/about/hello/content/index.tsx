@@ -36,8 +36,8 @@ export const Content = () => {
       <svg width="0" height="0">
         <Displacement />
       </svg>
-      <Root
-        className="relative"
+      <Root 
+        className="relative w-full"
         style={{
           opacity,
           filter: resolveUrlId(ID),
@@ -46,7 +46,7 @@ export const Content = () => {
         <Svg
           width="100%"
           height={HEIGHT}
-          viewBox={`${0} ${0} ${WIDTH} ${HEIGHT}`}
+          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         >
           <rect
             x1={OVERHANG}

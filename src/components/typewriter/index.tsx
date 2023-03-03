@@ -64,6 +64,11 @@ export const Typewriter: FC<TTypewriterProps> = ({
     });
   };
 
+  // console.log(wip)
+  // console.log(items)
+  // console.log(content)
+  // console.log(isDone)
+
   return (
     <>
       <AnimatePresence>

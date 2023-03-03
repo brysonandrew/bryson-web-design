@@ -13,8 +13,6 @@ export const Contact = () => {
   const { handlers, isSelected } =
     useSelectHandlers(CONTACT_ID);
 
-    
-
   return (
     <Root className="relative" {...handlers}>
       <Link
