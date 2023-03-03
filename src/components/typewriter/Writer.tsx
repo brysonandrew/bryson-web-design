@@ -24,13 +24,31 @@ export const Writer: FC<TProps> = ({
     count: items.length,
   });
 
-  useAnimationFrame((timestamp: number) => {
-    if (ref.current.index < ref.current.count) {
+  useAnimationFrame((timestamp: number, delta: number) => {
+    if (
+      ref.current.index < ref.current.count &&
+      delta < 120
+    ) {
       if (timestamp > elapsedRef.current) {
-        elapsedRef.current += 1000 / 60;
-        const next = ref.current.items[ref.current.index];
-        onUpdate(next);
-        ref.current.index = ~~elapsedRef.current;
+        if (
+          typeof ref.current.items[ref.current.index] ===
+          "string"
+        ) {
+          const nextIndex = ~~(timestamp / 60);
+          elapsedRef.current = timestamp;
+          const next = ref.current.items
+            .slice(ref.current.index, nextIndex)
+            .join("");
+          onUpdate(next);
+          ref.current.index = nextIndex;
+        } else {
+          elapsedRef.current += 1000 / 60;
+          const next = ref.current.items[ref.current.index];
+          const nextIndex = ref.current.index + 1;
+
+          onUpdate(next);
+          ref.current.index = nextIndex;
+        }
       }
     } else {
       onDone();
