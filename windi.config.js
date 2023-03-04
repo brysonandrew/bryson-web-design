@@ -16,17 +16,17 @@ module.exports = defineConfig({
     join(__dirname, "./src/**/*.tsx"),
   ],
   theme: {
+    colors: COLORS,
+    boxShadow: SHADOW,
     extend: {
       fontSize: FONT_SIZE,
       spacing: SPACING,
       backgroundColor: {
         current: "currentColor",
       },
-      boxShadow: SHADOW,
       ...WIDTH,
       ...HEIGHT,
       ...GRID,
-      colors: COLORS
     },
   },
   plugins: [

@@ -1,21 +1,25 @@
 import { React } from "@components/icons/React";
 import { Typescript } from "@components/icons/Typescript";
+import type { TBaseIconProps } from "@t/icons";
+import type { FC } from "react";
 
 export type TItem = {
   title: string;
   href: string;
-  icon: JSX.Element;
+  Icon: FC<TBaseIconProps>;
 };
 
-export const ITEMS: TItem[] = [
-  {
-    title: "React.js",
+export const TECH = {
+  REACT: {
+    title: "React",
     href: "https://reactjs.org/",
-    icon: <React />,
+    Icon: React,
   },
-  {
+  TYPESCRIPT: {
     title: "Typescript",
     href: "https://www.typescriptlang.org/",
-    icon: <Typescript />,
+    Icon: Typescript,
   },
-];
+};
+
+// export const ITEMS: TItem[] = [TECH.REACT, TECH.TYPESCRIPT];

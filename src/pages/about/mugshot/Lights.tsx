@@ -8,13 +8,12 @@ import {
   WIDTH_AND_OVERHANG,
 } from "@components/effects/glitch/_cemetary/config";
 import { GLOW_ID } from "@components/effects/glitch/config";
-import COLORS from "../../../../../windi.config-colors.json";
-
-const Root = styled(motion.g)``;
-
-const Fluoro = styled(motion.line)``;
+import COLORS from "../../../../windi.config-colors.json";
 
 const INDENT = OVERHANG * 2.8;
+
+const Root = styled(motion.g)``;
+const Fluoro = styled(motion.line)``;
 
 type TProps = {
   scale: MotionValue<number>;

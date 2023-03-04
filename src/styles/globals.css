@@ -15,17 +15,6 @@ body {
   color: rgb(207 250 254);
 }
 
-.--panel {
-  background-color: #111;
-  border: 1px solid rgb(207, 250, 254, 0.2);
-}
-
-.--panel2 {
-  background-color: #161616;
-  border: 1px solid rgb(207, 250, 254, 0.2);
-  border-radius: 1px;
-}
-
 h1,
 p,
 strong {

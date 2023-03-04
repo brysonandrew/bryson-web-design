@@ -2,13 +2,14 @@ import type { FC } from "react";
 import { Fragment } from "react";
 import { Text } from "@components/text";
 import type { TItem } from "../../../constants/tech";
-import { ITEMS } from "../../../constants/tech";
 import { Item } from "./Item";
 import { Plus } from "../../../components/icons/Plus";
 import type { TBaseChildren } from "@t/index";
 import { Typewriter } from "@components/typewriter";
 
-const TEXT_CLASS = "absolute top-0 right-full whitespace-nowrap mr-12 mt-4";
+const TEXT_CLASS =
+  "md:absolute md:top-0 right-full whitespace-nowrap mr-12 my-4";
+const SECTION_CLASS = "relative flex flex-col";
 
 const renderItems = (
   item: TBaseChildren,
@@ -29,18 +30,18 @@ type TProps = {
   children: TBaseChildren;
 };
 export const Tech: FC<TProps> = ({ children }) => (
-  <div className="relative flex flex-col">
-    <div className="relative flex w-full">
+  <>
+    <div className={SECTION_CLASS}>
       <Typewriter
         delay={2000}
         wip={[
           "using",
-          <div key="x" className="hidden sm:flex px-2" />,
+          <div key="gap" className="hidden sm:flex px-2" />,
           <ul
-            key="y"
+            key="list"
             className="flex items-center justify-evenly w-full"
           >
-            {ITEMS.map((item: TItem, index: number) => (
+            {/* {ITEMS.map((item: TItem, index: number) => (
               <Fragment key={item.title}>
                 {index !== 0 && (
                   <>
@@ -53,7 +54,7 @@ export const Tech: FC<TProps> = ({ children }) => (
                 )}
                 <Item {...item} />
               </Fragment>
-            ))}
+            ))} */}
           </ul>,
         ]}
       >
@@ -61,10 +62,10 @@ export const Tech: FC<TProps> = ({ children }) => (
       </Typewriter>
     </div>
     <div className="py-8" />
-    <div className="relative flex items-start">
+    <div className={SECTION_CLASS}>
       <Typewriter delay={2600} wip={["making", children]}>
         {(items) => items.map(renderItems)}
       </Typewriter>
     </div>
-  </div>
+  </>
 );

@@ -6,12 +6,12 @@ import { Cursor } from "@components/cursor";
 import { useNoPointer } from "@hooks/useNoPointer";
 
 type TProps = Partial<RouterProps>;
-export const Router: FC<TProps> = () => {
-  const isPointer = useNoPointer();
-  return (
+export const Router: FC<TProps> = () => 
+  // const isPointer = useNoPointer();
+   (
     <_Router> 
       <Source />
-      {isPointer && <Cursor />}
+      {/* {isPointer && <Cursor />} */}
     </_Router>
-  );
-};
+  )
+;

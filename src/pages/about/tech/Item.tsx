@@ -1,18 +1,19 @@
-import { Border as  Select } from "@components/select/Border";
+import { Border as Select } from "@components/select/Border";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "../../../constants/tech";
+import { LG, XL, XXXXL } from "@styles/style";
 
-const Root = styled(motion.li)``;
+const Root = styled(motion.div)``;
 const Anchor = styled.a``;
 
-export const Item: FC<TItem> = ({ icon, title, href }) => {
+export const Item: FC<TItem> = ({ Icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
   return (
     <Root
-      className="relative rounded-xs shrink-0 mt-2"
+      className="inline-flex relative rounded-xs mt-2"
       {...handlers}
     >
       {isSelected && <Select />}
@@ -21,9 +22,9 @@ export const Item: FC<TItem> = ({ icon, title, href }) => {
         href={href}
         target="_blank"
       >
-        {icon}
-        <div className="p-1" />
-        <h3 className="text-md">{title}</h3>
+        <Icon classValue={XXXXL} />
+        <div className="p-2" />
+        <h3 className="text-2xl">{title}</h3>
       </Anchor>
     </Root>
   );

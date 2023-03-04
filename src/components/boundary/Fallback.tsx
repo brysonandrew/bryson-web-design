@@ -14,17 +14,13 @@ export const Fallback: FC<TFallbackProps> = (props) => (
         Something went wrong
       </h1>
       <button
-        className="p-3 pt-1 m-2 mt-3 text-4xl bg-red-500 bg-opacity-50 border-red-600 border-solid rounded border-1 focus:outline-teal"
+        className="p-4 py-2 m-2 mt-3 text-4xl bg-opacity-50 border-solid rounded border-1 focus:outline-teal"
         type="reset"
-        onClick={props.reset}
+        onClick={() => {
+          window.location.reload();
+        }}
       >
-        <p>
-          Try again
-          {
-            // FIXME: This has weird padding for some reason.
-            //<Reload className="!m-0 !mx-0 !mr-0 !b-0 !bx-0 !br-0" />
-          }
-        </p>
+        <p>Try again</p>
       </button>
       <code className="m-2">{props.error.toString()}</code>
     </div>

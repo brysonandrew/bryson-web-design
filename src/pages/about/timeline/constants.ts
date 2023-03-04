@@ -27,7 +27,8 @@ export const ITEMS: TItem[] = [
   {
     title: "Buzzcast",
     description: "Virtual Event Platform",
-    href: "https://www.buzzcast.info/#/",
+    // href: "https://www.buzzcast.info/#/",
+    href: "https://github.com/TheBuzzCast",
     time: new Date(2021, 2, 1),
   },
   // {
