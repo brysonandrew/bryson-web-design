@@ -13,12 +13,12 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
   return (
     <Root
-      className="inline-flex relative rounded-xs mt-2"
+      className="inline-flex relative rounded-xs mt-2 ml-2 bg-teal-bright-02 rounded-md"
       {...handlers}
     >
       {isSelected && <Select />}
       <Anchor
-        className="relative flex items-center pt-2 pb-3 px-3"
+        className="relative flex items-center pt-2 pb-2 px-2"
         href={href}
         target="_blank"
       >

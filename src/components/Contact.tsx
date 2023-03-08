@@ -17,7 +17,7 @@ export const Contact = () => {
     <Root className="relative" {...handlers}>
       <Link
         to="/contact"
-        className="flex items-center justify-center  px-2 pt-1 pb-1.5"
+        className="flex items-center justify-center px-2 pt-1 pb-1.5"
       >
         {isSelected && <Select />}
         <h6 className="uppercase text-xxxs">

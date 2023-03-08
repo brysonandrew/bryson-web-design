@@ -1,20 +1,20 @@
-import styled from "@emotion/styled";
-import type { HTMLMotionProps } from "framer-motion";
+import { Fragment } from "react";
+import type { FC } from "react";
 import {
   motion,
   useScroll,
   useTransform,
 } from "framer-motion";
-import type { FC } from "react";
-import { Fragment } from "react";
+import type { HTMLMotionProps } from "framer-motion";
+import styled from "@emotion/styled";
 import { Text } from "../Text";
 import { DELAY, DELAY_2, FULL, GAP_1 } from "../constants";
 import { Main } from "./Main";
 import { GROUPS } from "./constants";
+import { Blinders } from "../Blinders";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
-const Blinder = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
 export const Clients: FC<TProps> = () => {
@@ -41,17 +41,10 @@ export const Clients: FC<TProps> = () => {
 
   return (
     <Root className="flex flex-col items-start">
-      <Text>To build my clients</Text>
+      <Text>To build for my clients</Text>
       <div className="py-2" />
       <div className="relative overflow-hidden w-full h-full">
-        <Blinder
-          className="absolute left-0 w-20 h-full bg-gradient-to-r from-black-dark z-10"
-          style={{ opacity: opacityBlinders }}
-        />
-        <Blinder
-          className="absolute right-0 w-20 h-full bg-gradient-to-l from-black-dark z-10"
-          style={{ opacity: opacityBlinders }}
-        />
+        <Blinders opacity={opacityBlinders} />
         <ul>
           {GROUPS.map((projects, index: number) => (
             <li

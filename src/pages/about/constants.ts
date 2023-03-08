@@ -2,7 +2,7 @@ export const HEADER_OFFSET_Y = 180;
 
 export const GAP_1 = 295;
 
-export const GAP_2 = GAP_1 + 295;
+export const GAP_2 = GAP_1 + 100;
 
 export const FULL = ["0%", "-100%"];
 export const DELAY = 20;

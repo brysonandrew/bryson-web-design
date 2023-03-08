@@ -1,8 +1,9 @@
-import { Header } from "@components/Header";
+import { Header } from "./Header";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { About } from "./about";
 import { HEADER_OFFSET_Y } from "./about/constants";
+import { About } from "./about";
+import { Footer } from "./Footer";
 
 const Root = styled(motion.div)``;
 
@@ -15,5 +16,6 @@ export const Index = () => (
     >
       <About />
     </Root>
+    <Footer />
   </>
 );

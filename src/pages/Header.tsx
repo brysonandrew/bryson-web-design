@@ -5,8 +5,8 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
-import { MainTitle } from "./text/MainTitle";
-import { Contact } from "./Contact";
+import { MainTitle } from "../components/text/MainTitle";
+import { Contact } from "../components/Contact";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -15,6 +15,7 @@ const Border = styled(motion.div)``;
 
 const Right = styled(motion.div)``;
 const Sub = styled(motion.h2)``;
+const List = styled(motion.ul)``;
 
 export const Header = () => {
   const { scrollY } = useScroll();
@@ -28,9 +29,10 @@ export const Header = () => {
   );
   const scaleBackground = useTransform(
     scrollY,
-    [0, 100],
-    [0, 2],
+    [0, 100, 100, 500],
+    [0, 2, 2, 6],
   );
+
 
   return (
     <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
@@ -43,7 +45,10 @@ export const Header = () => {
         className="absolute w-full top-full left-0 w-full h-full from-black-dark bg-gradient-to-b border-teal-04 backdrop-blur-lg"
       />
       <Background className="absolute w-full inset-0 bg-black-dark border-teal-04 backdrop-blur-lg" />
-      <Border style={{scaleX: opacity}} className="absolute bottom-0 left-0 w-full shadow-" />
+      <Border
+        style={{ scaleX: opacity }}
+        className="absolute bottom-0 left-0 w-full shadow-"
+      />
       <div className="flex items-center">
         <MainTitle {...{ scale: scaleText, x: xMain }} />
         <Right
@@ -64,9 +69,11 @@ export const Header = () => {
           </Sub>
         </Right>
       </div>
-      <ul className="flex items-center mt-0.5">
+      <List
+        className="flex items-center mt-0.5"
+      >
         <Contact />
-      </ul>
+      </List>
     </Root>
   );
 };

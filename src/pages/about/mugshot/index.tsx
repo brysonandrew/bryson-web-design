@@ -19,11 +19,9 @@ const Image = styled(motion.image)``;
 
 export const Mugshot = () => {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, (v) => {
-    return v > DELTA * 1.5
+  const opacity = useTransform(scrollY, (v) => v > DELTA * 1.5
       ? 0
-      : 1 - Math.abs(Math.sin((v / DELTA) * Math.PI));
-  });
+      : 1 - Math.abs(Math.sin((v / DELTA) * Math.PI)));
 
   return (
     <Svg

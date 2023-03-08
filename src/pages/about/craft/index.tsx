@@ -20,10 +20,9 @@ import { Blinders } from "../Blinders";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
-const Blinder = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
-export const Reviews: FC<TProps> = () => {
+export const Craft: FC<TProps> = () => {
   const { scrollY } = useScroll();
   const x = useTransform(scrollY, [GAP_1, GAP_2], FULL);
   const x1 = useTransform(
@@ -47,7 +46,7 @@ export const Reviews: FC<TProps> = () => {
 
   return (
     <Root className="flex flex-col items-start">
-      <Text>Driven by feedback</Text>
+      <Text>Inspired by craft</Text>
       <div className="py-2" />
       <div className="relative overflow-hidden w-full h-full">
         <Blinders opacity={opacityBlinders} />

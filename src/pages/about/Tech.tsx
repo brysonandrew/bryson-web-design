@@ -14,11 +14,11 @@ type TProps = HTMLMotionProps<"div">;
 export const Tech: FC<TProps> = () => (
   <Root className="inline-flex flex-col items-start">
     <Item {...TECH.REACT} />
-    {/* <div className="p-1" /> */}
+    <div className="p-1" />
     <div className="flex items-center justify-center w-full">
       <Plus classValue={clsx(XL, "text-teal-bright")} />
     </div>
-    {/* <div className="p-1" /> */}
+    <div className="p-0.5" />
     <Item {...TECH.TYPESCRIPT} />
   </Root>
 );
