@@ -1,7 +1,7 @@
 import { Border as Select } from "@components/select/Border";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { XXXXL } from "@styles/style";
+import { XXL, XXXXL } from "@styles/style";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "../../../constants/tech";
@@ -22,7 +22,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
         href={href}
         target="_blank"
       >
-        <Icon classValue={XXXXL} />
+        <Icon classValue={XXL} />
         <div className="p-2" />
         <h3 className="text-2xl">{title}</h3>
       </Anchor>

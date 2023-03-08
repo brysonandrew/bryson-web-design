@@ -2,22 +2,17 @@ import { Tech } from "./tech";
 import { Intro } from "./Intro";
 import { Clients } from "./clients";
 import { Mugshot } from "./mugshot";
-import { HEADER_OFFSET_Y } from "./constants";
+import { HEADER_OFFSET_Y, DELAY } from "./constants";
 import { Reviews } from "./reviews";
 import { Ending } from "./ending";
 
 export const About = () => (
   <>
     <div
-      className="sticky"
-      style={{ bottom: 0, top: HEADER_OFFSET_Y }}
+      className="absolute right-0"
+      style={{top: HEADER_OFFSET_Y + DELAY }}
     >
-      <div
-        className="absolute right-0"
-        style={{ top: HEADER_OFFSET_Y / 8 }}
-      >
-        <Mugshot />
-      </div>
+      <Mugshot />
     </div>
     <div className="relative">
       <Intro />

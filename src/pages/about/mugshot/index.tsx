@@ -19,16 +19,12 @@ const Image = styled(motion.image)``;
 
 export const Mugshot = () => {
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, (v) => v > DELTA * 1.5
-      ? 0
-      : 1 - Math.abs(Math.sin((v / DELTA) * Math.PI)));
 
   return (
     <Svg
       width={WIDTH}
       height={HEIGHT}
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-      style={{ opacity }}
     >
       <defs>
         <Displacement />

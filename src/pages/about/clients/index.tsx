@@ -43,13 +43,13 @@ export const Clients: FC<TProps> = () => {
     <Root className="flex flex-col items-start">
       <Text>To build for my clients</Text>
       <div className="py-2" />
-      <div className="relative overflow-hidden w-full h-full">
+      <div className="relative overflow-hidden w-full">
         <Blinders opacity={opacityBlinders} />
         <ul>
           {GROUPS.map((projects, index: number) => (
             <li
               key={`group-${index}`}
-              className="relative flex w-full overflow-hidden"
+              className="relative flex overflow-hidden w-full"
             >
               <List
                 className="inline-flex"

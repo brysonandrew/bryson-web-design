@@ -44,11 +44,9 @@ export const Footer = () => {
       <Background className="absolute w-full inset-0 bg-black-dark border-teal-04 backdrop-blur-lg" />
       <Border
         style={{ scaleX: opacity }}
-        className="absolute bottom-0 left-0 w-full shadow-"
+        className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"
       />
-      <Sub
-        className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none"
-      >
+      <Sub className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none">
         <Typewriter delay={150} wip="ᴅᴇᴠᴠɪɴɢ sɪɴᴄᴇ 2014">
           {(content) => <>{content}</>}
         </Typewriter>

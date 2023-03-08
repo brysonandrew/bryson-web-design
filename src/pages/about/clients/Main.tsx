@@ -12,7 +12,9 @@ export const Main: FC<TProps> = ({ index }) => (
         .split("")
         .map((letter, index) => (
           <li key={`letter-${index}`}>
-            <TextXl>{letter}</TextXl>
+            <TextXl
+            
+            >{letter}</TextXl>
           </li>
         ))}
     </ul>

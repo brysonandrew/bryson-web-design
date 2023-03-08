@@ -29,10 +29,9 @@ export const Header = () => {
   );
   const scaleBackground = useTransform(
     scrollY,
-    [0, 100, 100, 500],
-    [0, 2, 2, 6],
+    [0, 100],
+    [0, 2],
   );
-
 
   return (
     <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
@@ -47,7 +46,7 @@ export const Header = () => {
       <Background className="absolute w-full inset-0 bg-black-dark border-teal-04 backdrop-blur-lg" />
       <Border
         style={{ scaleX: opacity }}
-        className="absolute bottom-0 left-0 w-full shadow-"
+        className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08"
       />
       <div className="flex items-center">
         <MainTitle {...{ scale: scaleText, x: xMain }} />
@@ -69,9 +68,7 @@ export const Header = () => {
           </Sub>
         </Right>
       </div>
-      <List
-        className="flex items-center mt-0.5"
-      >
+      <List className="flex items-center mt-0.5">
         <Contact />
       </List>
     </Root>
