@@ -4,16 +4,26 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { Text } from "../Text";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
+import { Border as Select } from "@components/select/Border";
 
 const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
-export const Ending: FC<TProps> = () => (
-  <Root className="flex flex-col items-start">
-    <Link to="/contact">
-      <Text>
-        Get in touch if you would like to collaborate
-      </Text>
-    </Link>
-  </Root>
-);
+export const Ending: FC<TProps> = () => {
+  const { handlers, isSelected } =
+    useSelectHandlers("ending");
+  return (
+    <Root
+      className="relative flex flex-col items-start"
+      {...handlers}
+    >
+      <Link to="/contact" className="px-1 py-2 bg-teal-01">
+        {isSelected && <Select />}
+        <Text>
+          Get in touch if you would like to collaborate
+        </Text>
+      </Link>
+    </Root>
+  );
+};

@@ -1,11 +1,10 @@
-import { Tech } from "./Tech";
+import { Tech } from "./tech";
 import { Intro } from "./Intro";
 import { Clients } from "./clients";
 import { Mugshot } from "./mugshot";
 import { HEADER_OFFSET_Y } from "./constants";
 import { Reviews } from "./reviews";
 import { Ending } from "./ending";
-import { Craft } from "./craft";
 
 export const About = () => (
   <>
@@ -15,7 +14,7 @@ export const About = () => (
     >
       <div
         className="absolute right-0"
-        style={{ top: HEADER_OFFSET_Y / 4 }}
+        style={{ top: HEADER_OFFSET_Y / 8 }}
       >
         <Mugshot />
       </div>

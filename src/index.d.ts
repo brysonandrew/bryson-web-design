@@ -1,3 +1,5 @@
+import "vite/client";
+
 type MemoryInfo = {
   jsHeapSizeLimit: number; // 4294705152;
   totalJSHeapSize: number; //  37725333;
