@@ -28,7 +28,7 @@ export const Sub = () => {
       <div className="p-2" />
       <Text
         style={{ scale, x }}
-        className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none"
+        className="hidden relative text-sm text-teal whitespace-nowrap leading-none md:flex"
       >
         {isInit ? (
           <Typewriter wip={text}>

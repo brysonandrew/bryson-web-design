@@ -24,7 +24,7 @@ export const Header = () => {
   const scaleY = useTransform(scrollY, [0, 100], [0, 2]);
 
   return (
-    <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
+    <Root className="flex bg-black  items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
       <BackgroundFade
         style={{
           scaleY,
@@ -34,10 +34,7 @@ export const Header = () => {
         className="absolute w-full top-full left-0 w-full h-full from-current bg-gradient-to-b border-teal-04 backdrop-blur-lg"
       />
       <Background className="absolute w-full inset-0 bg-current border-teal-04 backdrop-blur-lg" />
-      <Border
-        style={{ scaleX: opacity }}
-        className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08"
-      />
+      <Border className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08" />
       <div className="flex items-center">
         <MainTitle {...{ scale, x }} />
         <Sub />
