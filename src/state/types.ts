@@ -17,6 +17,10 @@ export type TMotionValuePair = [
 
 export type TAction =
   | {
+      type: "init";
+      value: null;
+    }
+  | {
       type: "select-id";
       value: null | string;
     }
@@ -38,6 +42,7 @@ export type TAction =
     };
 
 export type TState = {
+  isInit: boolean;
   isCursorReady: boolean;
   selectId: null | string;
   mode: "instant" | "stagger";

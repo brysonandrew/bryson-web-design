@@ -4,12 +4,14 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Border as Select } from "./select/Border";
+import { useContext } from "@state/Context";
 
 const CONTACT_ID = "CONTACT_ID";
 
 const Root = styled(motion.li)``;
 
 export const Contact = () => {
+  const { isInit } = useContext();
   const { handlers, isSelected } =
     useSelectHandlers(CONTACT_ID);
 
@@ -21,9 +23,15 @@ export const Contact = () => {
       >
         {isSelected && <Select />}
         <h6 className="uppercase text-xxxs">
-          <Typewriter delay={200} wip="contact">
-            {(content) => <>{content}</>}
-          </Typewriter>
+          <>
+            {isInit ? (
+              <Typewriter wip="contact">
+                {(content) => <>{content}</>}
+              </Typewriter>
+            ) : (
+              "contact"
+            )}
+          </>
         </h6>
       </Link>
     </Root>

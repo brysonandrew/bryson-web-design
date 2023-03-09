@@ -7,6 +7,7 @@ import { Typewriter } from "../typewriter";
 import { useResetScroll } from "@hooks/useResetScroll";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
+import { useContext } from "@state/Context";
 
 const TITLE_ID = "TITLE_ID";
 
@@ -18,8 +19,10 @@ type TProps = {
   x: MotionValue<number> | number;
 };
 export const MainTitle: FC<TProps> = ({ scale, x }) => {
+  const { isInit } = useContext();
   const { handlers, isSelected } =
     useSelectHandlers(TITLE_ID);
+  const linkText = "brysona.dev";
 
   const handleResetScroll = useResetScroll();
   return (
@@ -31,13 +34,15 @@ export const MainTitle: FC<TProps> = ({ scale, x }) => {
     >
       {isSelected && <Select />}
       <Link className="flex relative px-3 pt-2 pb-3" to="/">
-        <Typewriter delay={100} wip="brysona.dev">
-          {(content) => (
-            <H1 className="text-xl uppercase leading-none">
-              {content}
-            </H1>
+        <H1 className="text-xl uppercase leading-none">
+          {isInit ? (
+            <Typewriter wip={linkText}>
+              {(content) => <>{content}</>}
+            </Typewriter>
+          ) : (
+            linkText
           )}
-        </Typewriter>
+        </H1>
       </Link>
     </Root>
   );

@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import type { FC } from "react";
 import type { TReducer } from "./types";
 import { reducer } from ".";
@@ -16,6 +16,10 @@ export const Provider: FC<TProviderProps> = ({
     ...STATE,
   });
   const { isThreshold } = state;
+
+  useEffect(() => {
+    dispatch({ type: "init", value: null });
+  }, []);
 
   useScrollThreshold({
     isThreshold,

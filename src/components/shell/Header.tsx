@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
 import { Contact } from "@components/Contact";
 import { MainTitle } from "@components/text/MainTitle";
+import { useContext } from "@state/Context";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -19,6 +20,8 @@ const List = styled(motion.ul)``;
 
 export const Header = () => {
   const { scrollY } = useScroll();
+  const { isInit } = useContext();
+
   const opacity = useTransform(scrollY, [0, 40], [1, 0]);
   const xMain = useTransform(scrollY, [0, 100], [0, -28]);
   const xSub = useTransform(scrollY, [0, 100], [0, -100]);
@@ -32,6 +35,8 @@ export const Header = () => {
     [0, 100],
     [0, 2],
   );
+
+  const text = "sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs";
 
   return (
     <Root className="flex items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
@@ -59,12 +64,13 @@ export const Header = () => {
             style={{ scale: scaleText, x: xSub }}
             className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none"
           >
-            <Typewriter
-              delay={150}
-              wip="sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs"
-            >
-              {(content) => <>{content}</>}
-            </Typewriter>
+            {isInit ? (
+              <Typewriter wip={text}>
+                {(content) => <>{content}</>}
+              </Typewriter>
+            ) : (
+              <>{text}</>
+            )}
           </Sub>
         </Right>
       </div>

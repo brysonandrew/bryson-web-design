@@ -24,9 +24,10 @@ export const Square: FC<TProps> = ({
   ...props
 }) => (
   <Root
+    initial={false}
     layoutId={SELECT_LAYOUT_ID}
+    layout="size"
     style={{
-      mixBlendMode: "difference",
       y: 0,
       x: 0,
       width: CURSOR_SIZE,

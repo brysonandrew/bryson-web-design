@@ -5,6 +5,7 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
+import { useContext } from "@state/Context";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
@@ -13,6 +14,7 @@ const Border = styled(motion.div)``;
 const Sub = styled(motion.h2)``;
 
 export const Footer = () => {
+  const { isInit } = useContext();
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 40], [1, 0]);
   const scaleBackground = useTransform(
@@ -21,8 +23,10 @@ export const Footer = () => {
     [0, 4],
   );
 
+  const subText = "ᴅᴇᴠᴠɪɴɢ sɪɴᴄᴇ 2014";
+
   return (
-    <Root className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40">
+    <Root className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40 pointer-events-none">
       <BackgroundFade
         style={{
           scaleY: scaleBackground,
@@ -37,9 +41,13 @@ export const Footer = () => {
         className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"
       />
       <Sub className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none">
-        <Typewriter delay={150} wip="ᴅᴇᴠᴠɪɴɢ sɪɴᴄᴇ 2014">
-          {(content) => <>{content}</>}
-        </Typewriter>
+        {isInit ? (
+          <Typewriter wip={subText}>
+            {(content) => <>{content}</>}
+          </Typewriter>
+        ) : (
+          <>{subText}</>
+        )}
       </Sub>
     </Root>
   );

@@ -13,9 +13,9 @@ export const About = () => (
   <>
     <Intro />
     <Mugshot />
-    <Space />
-    <Tech />
     <Space2 />
+    <Tech />
+    <Space4 />
     <Clients />
     <Space2 />
     <Reviews />

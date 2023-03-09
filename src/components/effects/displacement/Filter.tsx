@@ -5,10 +5,8 @@ import { INTENSITY, TURBULANCE_DEFAULTS } from "./config";
 import type { TDisplacementProps } from "./config";
 
 const BASE_ANIMATION = {
-  dur: "6s",
   repeatCount: "indefinite",
-  // restart: "always",
-  // repeatDur: "1s",
+  dur: "10s",
 };
 
 export const Filter: FC<
@@ -26,26 +24,20 @@ export const Filter: FC<
     <motion.feTurbulence
       {...TURBULANCE_DEFAULTS}
       type="turbulence"
-      //type='fractalNoise'
       in={source}
       result={`${id}-turbulence`}
       {...props}
     >
       <animate
         attributeName="baseFrequency"
-        values="0 4;0 10;0 4"
-        {...BASE_ANIMATION}
-      />
-      {/* <animate
-        attributeName="numOctaves"
-        values="0;4;0"
+        values="0 1;0 2;0 1"
         {...BASE_ANIMATION}
       />
       <animate
-        attributeName="seed"
-        values="0;4;0"
+        attributeName="numOctaves"
+        values="4;0;4"
         {...BASE_ANIMATION}
-      /> */}
+      />
     </motion.feTurbulence>
     <motion.feMorphology
       in={`${id}-turbulence`}
@@ -96,7 +88,7 @@ export const Filter: FC<
         {...BASE_ANIMATION}
       />
     </feDisplacementMap>
-{/*  
+    {/*  
     <feComposite
       in="DISPLACEMENT"
       in2="BLUR"
