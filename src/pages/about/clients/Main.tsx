@@ -6,7 +6,7 @@ type TProps = {
   index: number;
 };
 export const Main: FC<TProps> = ({ index }) => (
-  <li className="absolute left-full top-0 uppercase px-0 py-2 m-1 whitespace-nowrap">
+  <li className="absolute left-full top-0 uppercase pl-3 py-2 m-1 whitespace-nowrap">
     <ul className="flex align-items justify-between w-full">
       {GENERIC_ITEMS[index]
         .split("")
