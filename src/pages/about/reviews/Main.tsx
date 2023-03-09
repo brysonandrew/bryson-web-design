@@ -10,12 +10,14 @@ export const Main: FC<TProps> = ({ index }) => (
     <ul>
       <li className="whitespace-normal w-mid">
         <TextSm>
-          <span className="text-gray">
+          <span className="text-slate">
             {REVIEWS[index].short}
           </span>
           <>
             <span> - </span>
-            <span className="text-teal`">{REVIEWS[index].source}</span>
+            <span className="text-teal`">
+              {REVIEWS[index].source}
+            </span>
           </>
         </TextSm>
       </li>
