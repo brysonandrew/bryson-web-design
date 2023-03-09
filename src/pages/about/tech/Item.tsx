@@ -23,10 +23,9 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
         href={href}
         target="_blank"
       >
-        <TextLg>{title}</TextLg>
         <Icon classValue={XXXXL} />
         <div className="p-2" />
-        <h3 className="text-2xl">{title}</h3>
+        <TextLg>{title}</TextLg>
       </Anchor>
     </Root>
   );
