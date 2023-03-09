@@ -35,7 +35,7 @@ export const Filter: FC<
       />
       <animate
         attributeName="numOctaves"
-        values="4;0;4"
+        values="2;0;2"
         {...BASE_ANIMATION}
       />
     </motion.feTurbulence>

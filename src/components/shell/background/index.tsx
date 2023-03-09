@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Pattern } from "./pattern/Pattern";
 import { PATTERN_ID } from "./pattern/config";
+import { resolveUrlId } from "@utils/resolveUrlId";
 const Root = styled(motion.svg)``;
 
 export const Background: FC = () => (
@@ -20,7 +21,7 @@ export const Background: FC = () => (
         y="0"
         width="100%"
         height="100%"
-        fill={`url(#${PATTERN_ID})`}
+        fill={resolveUrlId(PATTERN_ID)}
       />
     </Root>
   </>

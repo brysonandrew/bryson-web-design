@@ -33,9 +33,9 @@ export const Footer = () => {
           originY: "100%",
           originX: 0,
         }}
-        className="absolute w-full bottom-full left-0 w-full h-full from-transparent bg-gradient-to-t border-teal-04 backdrop-blur-lg"
+        className="absolute w-full bottom-full left-0 w-full h-full from-current bg-gradient-to-t border-current"
       />
-      <Background className="absolute w-full inset-0 bg-black-dark border-teal-04 backdrop-blur-lg" />
+      <Background className="absolute w-full inset-0 bg-current border-teal-04 backdrop-blur-lg" />
       <Border
         style={{ scaleX: opacity }}
         className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"

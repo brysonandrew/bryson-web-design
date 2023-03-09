@@ -8,7 +8,7 @@ import styled from "@emotion/styled";
 import clsx from "clsx";
 
 const CLASS =
-  "absolute top-0 h-full from-black-dark z-10 pointer-events-none";
+  "absolute top-0 h-full from-current z-10 pointer-events-none";
 
 const Blinder = styled(motion.div)``;
 

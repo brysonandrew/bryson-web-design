@@ -22,7 +22,7 @@ import {
   CURSOR_SIZE,
 } from "../config";
 import { TrailMotionValue } from "./TrailMotionValue";
-import { BackgroundWithTrail } from "@components/background/BackgroundWithTrail";
+import { BackgroundWithTrail } from "@components/shell/background/BackgroundWithTrail";
 
 const Select = styled(motion.div)``;
 
