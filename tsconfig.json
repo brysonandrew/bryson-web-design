@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "composite": true,
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "es2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowJs": true
+  },
+  "include": ["src/**/*.json", "src/**/*.ts", "src/**/*.js", "src/**/*.tsx"],
+  "files": [
+    "windi.config-colors.json",
+    "windi.config-shadow.js",
+    "windi.config-spacing.js",
+    "windi.config-font-size.js",
+    "windi.config-grid.js",
+    "windi.config-width.js",
+    "windi.config-height.js",
+    "windi.config.js"
+  ],
+  "extends": "./tsconfig.paths.json"
+}

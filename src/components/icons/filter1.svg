@@ -1,0 +1,27 @@
+<svg width="400px" height="300px">
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link"/>
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link"/>
+<style lang="en" type="text/css" id="dark-mode-custom-style"/>
+<style lang="en" type="text/css" id="dark-mode-native-style"/>
+<style lang="en" type="text/css" id="dark-mode-native-sheet"/>
+<defs>
+<filter id="Shadow">
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" nodeId="blurredAlpha"/>
+<feOffset in="blurredAlpha" dx="2" dy="1" nodeId="offsetBlurredAlpha"/>
+<feDiffuseLighting in="blurredAlpha" diffuseConstant=".5" nodeId="bumpMapDiffuse">
+<feDistantLight/>
+</feDiffuseLighting>
+<feComposite in="bumpMapDiffuse" in2="SourcePaint" operator="arithmetic" k1="1" nodeId="litPaint"/>
+<feSpecularLighting in="blurredAlpha" specularConstant=".5" specularExponent="10" lightColor="feDistantLight" nodeId="bumpMapSpecular">
+<feDistantLight/>
+</feSpecularLighting>
+<feComposite in="litPaint" in2="bumpMapSpecular" operator="arithmetic" k2="1" k3="1" nodeId="litPaint"/>
+<feComposite in="litPaint" in2="SourceAlpha" operator="in" nodeId="litPaint"/>
+<feMerge>
+<feMergeNode in="litPaint"/>
+<feMergeNode in="offsetBlurredAlpha"/>
+</feMerge>
+</filter>
+</defs>
+<text style="font-size:36; fill:red; filter:url(#Shadow)" x="10" y="250">Shadowed Text</text>
+</svg>

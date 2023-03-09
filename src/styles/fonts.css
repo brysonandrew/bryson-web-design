@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
+
+@font-face {
+  font-family: "REZ";
+  src: url("/fonts/REZ.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GALS";
+  src: url("/fonts/GALS.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GALSB";
+  src: url("/fonts/GALSB.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gabriele Bad";
+  src: url("/fonts/gabriele-bad.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gabriele Br";
+  src: url("/fonts/gabriele-br.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gabriele D";
+  src: url("/fonts/gabriele-d.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gabriele L";
+  src: url("/fonts/gabriele-l.ttf") format("truetype");
+}
