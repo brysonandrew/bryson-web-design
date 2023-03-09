@@ -5,30 +5,20 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
-import { MainTitle } from "@components/text/MainTitle";
-import { Contact } from "@components/Contact";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
 const BackgroundFade = styled(motion.div)``;
 const Border = styled(motion.div)``;
-const Right = styled(motion.div)``;
 const Sub = styled(motion.h2)``;
 
 export const Footer = () => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 40], [1, 0]);
-  const xMain = useTransform(scrollY, [0, 100], [0, -28]);
-  const xSub = useTransform(scrollY, [0, 100], [0, -100]);
-  const scaleText = useTransform(
-    scrollY,
-    [0, 100],
-    [1, 0.7],
-  );
   const scaleBackground = useTransform(
     scrollY,
     [0, 100],
-    [0, 2],
+    [0, 4],
   );
 
   return (

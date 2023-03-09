@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  padding: 0;
+  space: 0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,7 +38,7 @@ a {
 }
 
 ul {
-  padding: 0;
+  space: 0;
   list-style: none;
 }
 
@@ -48,7 +48,7 @@ textarea,
 select {
   font-family: GALS, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  padding: 0;
+  space: 0;
   background-color: rgba(0, 0, 0, 1);
 }
 

@@ -5,8 +5,8 @@ import {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
-import { MainTitle } from "../components/text/MainTitle";
-import { Contact } from "../components/Contact";
+import { Contact } from "@components/Contact";
+import { MainTitle } from "@components/text/MainTitle";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;

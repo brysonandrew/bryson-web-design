@@ -11,7 +11,6 @@ const SUBMIT_ID = "SUBMIT_ID";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.input)``;
-const Selected = styled(motion.div)``;
 
 type TProps = {
   sendingState: TSendingState;

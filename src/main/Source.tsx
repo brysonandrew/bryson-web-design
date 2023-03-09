@@ -1,4 +1,4 @@
-import { NotFound404 } from "@components/not-found-404";
+import { NotFound404 } from "@pages/not-found-404";
 import { Contact } from "@pages/contact";
 import { Index } from "@pages/index";
 import { AnimatePresence } from "framer-motion";

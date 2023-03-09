@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["vite/client", "node"],
+    "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "composite": true,
     "experimentalDecorators": true,

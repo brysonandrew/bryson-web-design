@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { Pattern } from "./effects/glitch/_cemetary/Pattern";
-import { PATTERN_ID } from "./effects/glitch/_cemetary/config";
+import { Pattern } from "./pattern/Pattern";
+import { PATTERN_ID } from "./pattern/config";
 const Root = styled(motion.svg)``;
 
 export const Background: FC = () => (

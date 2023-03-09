@@ -6,7 +6,7 @@ import {
 } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
-import { Text } from "../Text";
+import { Text } from "../../../components/text/Text";
 import {
   DELAY,
   DELAY_2,
@@ -16,7 +16,7 @@ import {
 } from "../constants";
 import { Main } from "./Main";
 import { REVIEWS } from "./constants";
-import { Blinders } from "../Blinders";
+import { Blinders } from "../../../components/blinders/Blinders";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;

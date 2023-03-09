@@ -13,7 +13,7 @@ const Root = styled(motion.p)`
 type TProps = HTMLMotionProps<"p"> & {
   classValue?: ClassValue;
 };
-export const Text: FC<TProps> = ({
+export const TextXl: FC<TProps> = ({
   classValue,
   style,
   children,
@@ -21,11 +21,11 @@ export const Text: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-teal-bright text-left text-2xl px-3",
+      "text-black text-left text-2xl px-2 tracking-widest sm:text-3xl xl:text-4xl xl:px-4",
       classValue,
     )}
     style={{
-      letterSpacing: 2,
+      lineHeight: 1,
       ...style,
     }}
     {...props}

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import {
   LABEL_CLASS,
   INPUT_CLASS,
@@ -24,7 +23,6 @@ export const Text: FC<TProps> = ({
   isFocused,
   ...props
 }) => {
-  const { handlers, isSelected } = useSelectHandlers(title);
   const isValue = Boolean(props.value);
   return (
     <Root
@@ -33,11 +31,7 @@ export const Text: FC<TProps> = ({
       animate={
         isFocused ? "focus" : isValue ? "value" : "animate"
       }
-      {...handlers}
     >
-      {/* {isSelected && (
-        <Select classValue="shadow-teal-bright-fade-sm" />
-      )} */}
       <div className="flex items-center">
         <div className={INPUT_LABEL_CLASS}>
           <Name>{title}</Name>

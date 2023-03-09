@@ -4,7 +4,7 @@ export const LABEL_CLASS =
   "relative w-full pl-4 pt-1 shadow-neu-black";
 export const INPUT_LABEL_CLASS = "flex items-start w-20";
 export const INPUT_CLASS =
-  "text-white text-md px-4 pb-1 w-full tracking-wide";
+  "text-white text-md px-4 pb-1 w-full tracking-widest";
 
 export const textShadow = {
   on: `0 0 10px ${COLORS["teal-bright-04"]}, 0 0 20px ${COLORS["teal-bright-02"]},

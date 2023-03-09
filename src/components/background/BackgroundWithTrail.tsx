@@ -1,11 +1,11 @@
+import { TrailGlow } from "@components/effects/glow/TrailGlow";
 import styled from "@emotion/styled";
 import type { TMotionValuePair } from "@state/types";
 import COLORS from "@windi/config-colors.json";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { Pattern } from "./effects/glitch/_cemetary/Pattern";
-import { PATTERN_ID } from "./effects/glitch/_cemetary/config";
-import { TrailGlow } from "./effects/glow/TrailGlow";
+import { Pattern } from "./pattern/Pattern";
+import { PATTERN_ID } from "./pattern/config";
 
 const ID = "TrailGlowId";
 

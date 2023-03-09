@@ -61,7 +61,7 @@ export const columnStartEnd = css`
 `;
 
 export const spaceCss = css`
-  padding: ${GAP}px;
+  Space: ${GAP}px;
 `;
 
 export const Space = styled.div`
@@ -69,7 +69,7 @@ export const Space = styled.div`
 `;
 
 export const halfSpaceCss = css`
-  padding: ${GAP_05}px;
+  Space: ${GAP_05}px;
 `;
 
 export const HalfSpace = styled.div`

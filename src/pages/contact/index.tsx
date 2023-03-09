@@ -6,16 +6,17 @@ import type {
 } from "react";
 import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
-import { Shell } from "@components/Shell";
 import emailjs from "@emailjs/browser";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { Header } from "./Header";
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
 import type { TSendingState } from "./config";
 import { INPUT_CLASS, INIT_STATE } from "./config";
 import { Submit } from "./Submit";
+import { Shell } from "@components/shell";
+import { Space4 } from "@components/spaces/Space4";
+import { Space2 } from "@components/spaces/Space2";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)`
@@ -102,22 +103,21 @@ export const Contact = () => {
   };
   return (
     <Shell>
-      <Header />
-      <div className="py-16" />
-      <Root className="flex flex-col">
+      <Space2 />
+      <Root className="flex flex-col px-4">
         <h2
-          className="inline my-0 mx-auto text-lg"
-          style={{ lineHeight: 2, letterSpacing: 2 }}
+          className="inline my-0 mx-auto text-lg tracking-widest"
+          style={{ lineHeight: 2 }}
         >
           Send me a message
         </h2>
-        <div className="py-6" />
+        <Space2 />
         <Form
           className="flex flex-col w-full my-0 mx-auto"
           ref={ref}
           onSubmit={isDisabled ? () => null : sendEmail}
         >
-          <div className="py-4" />
+          <Space2 />
           <Text
             title="name"
             autoFocus
@@ -130,7 +130,7 @@ export const Contact = () => {
             required
             {...focusHandlers}
           />
-          <div className="py-4" />
+          <Space2 />
           <Text
             title="email"
             className={clsx(INPUT_CLASS, "pt-1.25")}
@@ -143,7 +143,7 @@ export const Contact = () => {
             required
             {...focusHandlers}
           />
-          <div className="py-4" />
+          <Space2 />
           <Textarea
             title="message"
             className={clsx(INPUT_CLASS, "pt-1.5")}
@@ -157,11 +157,10 @@ export const Contact = () => {
             required
             {...textareaFocusHandlers}
           />
-          <div className="py-8" />
+          <Space2 />
           <Submit sendingState={sendingState} />
         </Form>
       </Root>
-      <div className="py-6" />
     </Shell>
   );
 };

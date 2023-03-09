@@ -5,20 +5,22 @@ import type {
   MotionValue,
 } from "framer-motion";
 import styled from "@emotion/styled";
+import clsx from "clsx";
+const CLASS = "absolute w-20 h-full from-black-dark z-10 pointer-events-none";
 
 const Blinder = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div"> & {
-  opacity: MotionValue<number>;
+  opacity?: MotionValue<number>;
 };
 export const Blinders: FC<TProps> = ({ opacity }) => (
   <>
     <Blinder
-      className="absolute left-0 w-20 h-full bg-gradient-to-r from-black-dark z-10"
+      className={clsx(CLASS, "left-0 bg-gradient-to-r")}
       style={{ opacity }}
     />
     <Blinder
-      className="absolute right-0 w-20 h-full bg-gradient-to-l from-black-dark z-10"
+      className={clsx(CLASS, "right-0 bg-gradient-to-l")}
       style={{ opacity }}
     />
   </>

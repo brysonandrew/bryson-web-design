@@ -2,29 +2,25 @@ import { Tech } from "./tech";
 import { Intro } from "./Intro";
 import { Clients } from "./clients";
 import { Mugshot } from "./mugshot";
-import { HEADER_OFFSET_Y, DELAY } from "./constants";
 import { Reviews } from "./reviews";
 import { Ending } from "./ending";
+import { Space } from "@components/spaces/Space";
+import { Space2 } from "@components/spaces/Space2";
+import { Space4 } from "@components/spaces/Space4";
+import { Space16 } from "@components/spaces/Space16";
 
 export const About = () => (
   <>
-    <div
-      className="absolute right-0"
-      style={{top: HEADER_OFFSET_Y + DELAY }}
-    >
-      <Mugshot />
-    </div>
-    <div className="relative">
-      <Intro />
-      <div className="py-1.5" />
-      <Tech />
-      <div className="py-3" />
-      <Clients />
-      <div className="py-3" />
-      <Reviews />
-      <div className="py-6" />
-      <Ending />
-      <div className="py-18" />
-    </div>
+    <Intro />
+    <Mugshot />
+    <Space />
+    <Tech />
+    <Space2 />
+    <Clients />
+    <Space2 />
+    <Reviews />
+    <Space4 />
+    <Ending />
+    <Space16 />
   </>
 );

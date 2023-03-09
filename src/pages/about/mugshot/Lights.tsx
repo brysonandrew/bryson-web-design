@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import type { MotionValue } from "framer-motion";
 import styled from "@emotion/styled";
 import {
-  OVERHANG,
+  GLOW_ID,
   HEIGHT_AND_OVERHANG,
+  OVERHANG,
   WIDTH_AND_OVERHANG,
-} from "@components/effects/glitch/_cemetary/config";
-import { GLOW_ID } from "@components/effects/glitch/config";
+} from "@components/effects/glitch/config";
 import COLORS from "../../../../windi.config-colors.json";
 
 const INDENT = OVERHANG * 2.8;

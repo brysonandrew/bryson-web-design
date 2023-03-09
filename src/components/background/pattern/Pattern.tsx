@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { TChildren } from "@t/index";
-import { PATTERN_ID } from "./config";
 import COLORS from "@windi/config-colors.json";
+import { PATTERN_ID } from "./config";
 
 type TProps = {
   children?: TChildren;

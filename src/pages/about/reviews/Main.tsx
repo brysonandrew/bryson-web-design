@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { REVIEWS } from "./constants";
-import { TextSm } from "../TextSm";
+import { TextSm } from "@components/text/TextSm";
 
 type TProps = {
   index: number;

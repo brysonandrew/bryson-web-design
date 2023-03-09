@@ -5,6 +5,7 @@ import { XXL, XXXXL } from "@styles/style";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "../../../constants/tech";
+import { TextLg } from "@components/text/TextLg";
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -24,7 +25,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
       >
         <Icon classValue={XXL} />
         <div className="p-2" />
-        <h3 className="text-2xl">{title}</h3>
+        <TextLg>{title}</TextLg>
       </Anchor>
     </Root>
   );
