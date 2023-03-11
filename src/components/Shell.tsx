@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../types";
-import { Background } from "./background";
 import { Header } from "./shell/header";
 import { Footer } from "./shell/Footer";
 import { BlindersOut } from "./blinders/BlindersOut";

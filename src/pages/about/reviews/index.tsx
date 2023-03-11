@@ -46,7 +46,7 @@ export const Reviews: FC<TProps> = () => {
 
   return (
     <Root className="flex flex-col items-start">
-      <Text>Driven by feedback</Text>
+      <Text>For businesses</Text>
       <div className="py-2" />
       <div className="relative overflow-hidden w-full h-full">
         <Blinders opacity={opacityBlinders} />
