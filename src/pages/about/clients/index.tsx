@@ -41,7 +41,7 @@ export const Clients: FC<TProps> = () => {
 
   return (
     <Root className="flex flex-col items-start">
-      <Text>To build for my clients</Text>
+      <Text>To build</Text>
       <div className="py-2" />
       <div className="relative overflow-hidden w-full">
         <Blinders opacity={opacityBlinders} />

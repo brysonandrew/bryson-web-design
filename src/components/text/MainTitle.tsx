@@ -34,7 +34,10 @@ export const MainTitle: FC<TProps> = ({ scale, x }) => {
     >
       {isSelected && <Select />}
       <Link className="flex relative px-3 pt-2 pb-3" to="/">
-        <H1 className="text-teal-bright text-xl uppercase leading-none">
+        <H1
+          className="text-teal-bright text-xl uppercase leading-none"
+          style={{ letterSpacing: 2}}
+        >
           {isInit ? (
             <Typewriter wip={linkText}>
               {(content) => <>{content}</>}
