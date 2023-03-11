@@ -22,7 +22,10 @@ export const Contact = () => {
         className="flex items-center justify-center px-2 pt-1 pb-1.5"
       >
         {isSelected && <Select />}
-        <h6 className="text-teal-bright uppercase text-xxxs">
+        <h6
+          className="text-teal-bright uppercase text-xxxs"
+          style={{ letterSpacing: 4 }}
+        >
           <>
             {isInit ? (
               <Typewriter wip="contact">

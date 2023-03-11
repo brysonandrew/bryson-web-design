@@ -1,7 +1,8 @@
 import type { FC } from "react";
 import type { TFilterProps } from "../types";
 import { HEIGHT, WIDTH } from "../constants";
-import { MotionValue, motion } from "framer-motion";
+import type { MotionValue} from "framer-motion";
+import { motion } from "framer-motion";
 
 type TProps = {
   cursorX?: MotionValue<number>;
@@ -14,8 +15,7 @@ export const Filter: FC<TProps & TFilterProps> = ({
   cursorY,
   result = id,
   source = id,
-}) => {
-  return (
+}) => (
     <>
       <feSpecularLighting
         in={source ?? id}
@@ -41,4 +41,3 @@ export const Filter: FC<TProps & TFilterProps> = ({
       {children ? children(result ?? id) : null}
     </>
   );
-};

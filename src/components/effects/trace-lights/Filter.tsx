@@ -1,7 +1,8 @@
 import type { FC } from "react";
 import type { TFilterProps } from "../types";
 import { HEIGHT, WIDTH } from "../constants";
-import { MotionValue, motion } from "framer-motion";
+import type { MotionValue} from "framer-motion";
+import { motion } from "framer-motion";
 
 type TProps = {
   cursorX: MotionValue<number>;

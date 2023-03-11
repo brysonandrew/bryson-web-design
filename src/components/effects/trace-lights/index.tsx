@@ -2,7 +2,8 @@ import type { FC } from "react";
 import type { TFilterChildrenProps } from "../types";
 import { HEIGHT, WIDTH } from "../constants";
 import { Filter } from "./Filter";
-import { MotionValue, motion } from "framer-motion";
+import type { MotionValue} from "framer-motion";
+import { motion } from "framer-motion";
 
 export const ID = "LightingId";
 
