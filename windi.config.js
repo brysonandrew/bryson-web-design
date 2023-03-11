@@ -17,8 +17,8 @@ module.exports = defineConfig({
   ],
   theme: {
     colors: COLORS,
-    boxShadow: SHADOW,
     extend: {
+      boxShadow: SHADOW,
       fontSize: FONT_SIZE,
       spacing: SPACING,
       backgroundColor: {

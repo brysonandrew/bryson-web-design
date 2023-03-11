@@ -4,10 +4,11 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
-import { Contact } from "@components/Contact";
 import { MainTitle } from "@components/text/MainTitle";
-import { Sub } from "./Sub";
 import { useLocation } from "react-router";
+import { Sub } from "./Sub";
+import { Item } from "./right/Item";
+import { Fragment } from "react";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -43,7 +44,18 @@ export const Header = () => {
       </div>
       {!pathname.includes("/contact") && (
         <List className="flex items-center mt-0.5">
-          <Contact />
+          {["showcase", "contact"].map((item, index) => {
+            const to = `/${item}`;
+            if (pathname === to) return null;
+            return (
+              <Fragment key={item}>
+                {index !== 0 && (
+                  <li key={`${index}`} className="p-2" />
+                )}
+                <Item to={to}>{item}</Item>
+              </Fragment>
+            );
+          })}
         </List>
       )}
     </Root>

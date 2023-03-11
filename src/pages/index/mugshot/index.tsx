@@ -23,7 +23,7 @@ const Svg = styled(motion.svg)``;
 const Image = styled(motion.image)``;
 
 export const Mugshot = () => (
-  <Root className="absolute w-64 right-0 top-36 sm:-right-14 md:-right-16 md:w-72 lg:-right-18 lg:top-40 lg:w-80 xl:top-32">
+  <Root className="absolute w-64 right-0 top-36 sm:-right-14 md:-right-16 md:w-72 lg:-right-18 lg:top-40 lg:w-80 xl:top-26">
     <Svg
       width="100%"
       height="100%"

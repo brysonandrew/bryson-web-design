@@ -6,7 +6,7 @@ import {
 import styled from "@emotion/styled";
 import { Typewriter } from "@components/typewriter";
 import { MainTitle } from "./text/MainTitle";
-import { Contact } from "./Contact";
+import { Contact } from "./shell/header/right/Contact";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;

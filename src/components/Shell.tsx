@@ -5,7 +5,7 @@ import type { TChildren } from "../types";
 import { Header } from "./shell/header";
 import { Footer } from "./shell/Footer";
 import { BlindersOut } from "./blinders/BlindersOut";
-import { HEADER_OFFSET_Y } from "@pages/about/constants";
+import { HEADER_OFFSET_Y } from "@pages/index/constants";
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -14,13 +14,7 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => (
-  <Root
-    // key="Root"
-    className="text-black-dark-04 overflow-hidden"
-    // initial={{ opacity: 0, x: "0%" }}
-    // animate={{ opacity: 1, x: "0%" }}
-    // exit={{ opacity: 0, x: "0%" }}
-  >
+  <Root className="relative text-black-dark-04 overflow-hidden z-10">
     <Header />
     <Content
       key="Content"
@@ -29,9 +23,9 @@ export const Shell: FC<TProps> = ({ children }) => (
         paddingTop: HEADER_OFFSET_Y,
         minHeight: "100vh",
       }}
-      initial={{ opacity: 0, x: "-8%" }}
-      animate={{ opacity: 1, x: "0%" }}
-      exit={{ opacity: 0, x: "8%" }}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 20 }}
     >
       {children}
       <BlindersOut />

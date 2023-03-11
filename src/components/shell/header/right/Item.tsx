@@ -3,22 +3,24 @@ import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Border as Select } from "./select/Border";
+import { Border as Select } from "../../../select/Border";
 import { useContext } from "@state/Context";
-
-const CONTACT_ID = "CONTACT_ID";
+import { FC } from "react";
 
 const Root = styled(motion.li)``;
 
-export const Contact = () => {
+type TProp = {
+  to: string;
+  children: string;
+};
+export const Item: FC<TProp> = ({ to, children }) => {
   const { isInit } = useContext();
-  const { handlers, isSelected } =
-    useSelectHandlers(CONTACT_ID);
+  const { handlers, isSelected } = useSelectHandlers(to);
 
   return (
     <Root className="relative" {...handlers}>
       <Link
-        to="/contact"
+        to={to}
         className="flex items-center justify-center px-2 pt-1 pb-1.5"
       >
         {isSelected && <Select />}
@@ -28,11 +30,11 @@ export const Contact = () => {
         >
           <>
             {isInit ? (
-              <Typewriter wip="contact">
+              <Typewriter wip={children}>
                 {(content) => <>{content}</>}
               </Typewriter>
             ) : (
-              "contact"
+              children
             )}
           </>
         </h6>
