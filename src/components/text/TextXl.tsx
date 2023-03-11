@@ -21,8 +21,8 @@ export const TextXl: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-black text-left text-2xl px-2 tracking-widest sm:text-3xl xl:text-4xl xl:px-4",
-      classValue,
+      "text-black text-left px-2 tracking-widest xl:px-4",
+      classValue ?? "text-2xl sm:text-3xl xl:text-4xl ",
     )}
     style={{
       lineHeight: 1,

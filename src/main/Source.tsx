@@ -10,7 +10,7 @@ export const Source = () => {
   const element = useRoutes([
     {
       path: "/",
-      element: <Index />,
+      element: <Index />, 
     },
     {
       path: "/contact",
@@ -70,7 +70,7 @@ export const Source = () => {
   if (!element) return null;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {cloneElement(element, {
         key: location.pathname,
       })}
