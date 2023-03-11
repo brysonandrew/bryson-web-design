@@ -12,8 +12,6 @@ export const Dev: FC<TProps> = (props) => (
     viewBox="-11.5 -10.23174 23 20.46348"
   >
     <title>Dev Icon</title>
-    <text>
-      
-    </text>
+    <text></text>
   </Root>
 );

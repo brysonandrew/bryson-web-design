@@ -1,10 +1,6 @@
 import COLORS from "@windi/config-colors.json";
 
 export const NEON_ID = "NEON_ID";
-const BASE_ANIMATION = {
-  repeatCount: "indefinite",
-  dur: "2s",
-};
 
 export const Neon = () => (
   <svg width="0" height="0">
