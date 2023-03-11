@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../types";
-import { Background } from "./shell/background";
+import { Background } from "./background";
 import { Header } from "./shell/header";
 import { Footer } from "./shell/Footer";
 import { BlindersOut } from "./blinders/BlindersOut";
@@ -15,7 +15,6 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => (
   <div className="text-black-dark-04">
-    <Background />
     <Header />
     <Root
       className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-mid lg:w-1/2 xl:w-2/3"
@@ -25,7 +24,6 @@ export const Shell: FC<TProps> = ({ children }) => (
       }}
     >
       {children}
-
       <BlindersOut />
     </Root>
     <Footer />

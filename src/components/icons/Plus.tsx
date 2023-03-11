@@ -12,7 +12,7 @@ export const Plus: FC<TProps> = ({ classValue }) => (
     viewBox="0 0 24 24"
     width="24"
     height="24"
-    fill="currentColor"
+    stroke="currentColor"
   >
     <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
   </svg>

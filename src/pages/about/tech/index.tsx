@@ -12,11 +12,11 @@ const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
 export const Tech: FC<TProps> = () => (
-  <Root className="inline-flex flex-col items-start xl:flex-row xl:items-center">
+  <Root className="inline-flex flex-col items-start text-teal-bright xl:flex-row xl:items-center">
     <Item {...TECH.REACT} />
     <div className="p-1" />
     <div className="flex items-center justify-center w-full xl:pt-3">
-      <Plus classValue={clsx(XL, "text-teal-bright")} />
+      <Plus classValue={clsx(XL)} />
     </div>
     <div className="p-0.5" />
     <Item {...TECH.TYPESCRIPT} />

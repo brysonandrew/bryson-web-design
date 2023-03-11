@@ -7,14 +7,14 @@ import { MotionValue, motion } from "framer-motion";
 export const ID = "LightingId";
 
 type TProps = {
-  cursorX?: MotionValue<number>;
-  cursorY?: MotionValue<number>;
+  cursorX: MotionValue<number>;
+  cursorY: MotionValue<number>;
 };
-export const Lighting: FC<
+export const TraceLights: FC<
   TFilterChildrenProps<typeof ID> & TProps
 > = ({ children, external, cursorX, cursorY }) => (
   <>
-    <filter
+    <motion.filter
       id={ID}
       x={0}
       y={0}
@@ -29,7 +29,7 @@ export const Lighting: FC<
         cursorY={cursorY}
       />
       {children ? children(ID) : null}
-    </filter>
+    </motion.filter>
     {external ? external(ID) : null}
   </>
 );

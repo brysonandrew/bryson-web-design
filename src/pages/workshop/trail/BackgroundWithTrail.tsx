@@ -4,8 +4,8 @@ import type { TMotionValuePair } from "@state/types";
 import COLORS from "@windi/config-colors.json";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { Pattern } from "./pattern/Pattern";
-import { PATTERN_ID } from "./pattern/config";
+import { Pattern } from "../../../components/background/pattern";
+import { PATTERN_ID } from "../phase/config";
 
 const ID = "TrailGlowId";
 

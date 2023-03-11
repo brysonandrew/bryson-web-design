@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 
 const Root = styled(motion.p)`
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;
 `;
 

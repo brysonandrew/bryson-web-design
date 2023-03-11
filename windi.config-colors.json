@@ -5,6 +5,10 @@
   "teal-dark-02": "rgba(22, 106, 96, 0.2)",
   "teal-dark-01": "rgba(22, 106, 96, 0.1)",
 
+  "teal-darker-08": "rgba(11, 53, 48, 0.8)",
+  "teal-darker-02": "rgba(11, 53, 48, 0.2)",
+  "teal-darker-01": "rgba(11, 53, 48, 0.1)",
+
   "teal": "rgb(45 212 191)",
   "teal-08": "rgba(45, 212, 191, 0.8)",
   "teal-04": "rgba(45, 212, 191, 0.4)",

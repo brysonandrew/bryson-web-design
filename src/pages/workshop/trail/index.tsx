@@ -1,4 +1,4 @@
-import { Cursor } from "@components/cursor/trail";
+import { Cursor } from "@pages/workshop/trail/trail";
 import styled from "@emotion/styled";
 
 const Root = styled.div``;

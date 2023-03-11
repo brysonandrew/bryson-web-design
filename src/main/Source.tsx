@@ -4,6 +4,7 @@ import { Index } from "@pages/index";
 import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
+import { Lighting } from "@pages/workshop/lighting";
 
 export const Source = () => {
   const element = useRoutes([
@@ -39,10 +40,10 @@ export const Source = () => {
     //   path: "/workshop/phase",
     //   element: <Phase />,
     // },
-    // {
-    //   path: "/workshop/lighting",
-    //   element: <Lighting />,
-    // },
+    {
+      path: "/workshop/lighting",
+      element: <Lighting />,
+    },
     // {
     //   path: "/workshop/displacement",
     //   element: <Displacement />,

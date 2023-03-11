@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import { Contact } from "@components/Contact";
 import { MainTitle } from "@components/text/MainTitle";
 import { Sub } from "./Sub";
+import { useLocation } from "react-router";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -18,10 +19,11 @@ const List = styled(motion.ul)``;
 export const Header = () => {
   const { scrollY } = useScroll();
 
-  const opacity = useTransform(scrollY, [0, 40], [1, 0]);
   const x = useTransform(scrollY, [0, 100], [0, -28]);
   const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
   const scaleY = useTransform(scrollY, [0, 100], [0, 2]);
+
+  const { pathname } = useLocation();
 
   return (
     <Root className="flex bg-black  items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
@@ -39,9 +41,11 @@ export const Header = () => {
         <MainTitle {...{ scale, x }} />
         <Sub />
       </div>
-      <List className="flex items-center mt-0.5">
-        <Contact />
-      </List>
+      {!pathname.includes("/contact") && (
+        <List className="flex items-center mt-0.5">
+          <Contact />
+        </List>
+      )}
     </Root>
   );
 };

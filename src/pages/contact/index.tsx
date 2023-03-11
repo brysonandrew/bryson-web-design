@@ -16,14 +16,17 @@ import { INPUT_CLASS, INIT_STATE } from "./config";
 import { Submit } from "./Submit";
 import { Space2 } from "@components/spaces/Space2";
 import { Shell } from "@components/Shell";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
+import { Border } from "@components/select/Border";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)`
   max-width: 512px;
 `;
-const Input = styled(motion.input)``;
 
 export const Contact = () => {
+  const { handlers, isSelected } =
+    useSelectHandlers("CONTACT_FORM");
   const [focus, setFocus] = useState<string | null>(null);
   const [state, setState] = useState(INIT_STATE);
   const [sendingState, setSendingState] =
@@ -105,7 +108,7 @@ export const Contact = () => {
       <Space2 />
       <Root className="flex flex-col px-4">
         <h2
-          className="inline my-0 mx-auto text-lg tracking-widest"
+          className="inline my-0 mx-auto text-lg tracking-widest text-teal-bright"
           style={{ lineHeight: 2 }}
         >
           Send me a message
@@ -117,45 +120,51 @@ export const Contact = () => {
           onSubmit={isDisabled ? () => null : sendEmail}
         >
           <Space2 />
-          <Text
-            title="name"
-            autoFocus
-            className={clsx(INPUT_CLASS, "pt-1.25")}
-            disabled={isDisabled}
-            name="from_name"
-            placeholder=""
-            value={state.from_name}
-            isFocused={"from_name" === focus}
-            required
-            {...focusHandlers}
-          />
-          <Space2 />
-          <Text
-            title="email"
-            className={clsx(INPUT_CLASS, "pt-1.25")}
-            disabled={isDisabled}
-            type="email"
-            name="from_email"
-            placeholder=""
-            value={state.from_email}
-            isFocused={"from_email" === focus}
-            required
-            {...focusHandlers}
-          />
-          <Space2 />
-          <Textarea
-            title="message"
-            className={clsx(INPUT_CLASS, "pt-1.5")}
-            name="message"
-            disabled={isDisabled}
-            style={{ marginTop: -4 }}
-            value={state.message}
-            rows={4}
-            cols={50}
-            isFocused={"message" === focus}
-            required
-            {...textareaFocusHandlers}
-          />
+          <motion.div
+            className="relative flex flex-col w-full p-2"
+            {...handlers}
+          >
+            {isSelected && <Border />}
+            <Text
+              title="name"
+              autoFocus
+              className={clsx(INPUT_CLASS, "pt-1.25")}
+              disabled={isDisabled}
+              name="from_name"
+              placeholder=""
+              value={state.from_name}
+              isFocused={"from_name" === focus}
+              required
+              {...focusHandlers}
+            />
+            <Space2 />
+            <Text
+              title="email"
+              className={clsx(INPUT_CLASS, "pt-1.25")}
+              disabled={isDisabled}
+              type="email"
+              name="from_email"
+              placeholder=""
+              value={state.from_email}
+              isFocused={"from_email" === focus}
+              required
+              {...focusHandlers}
+            />
+            <Space2 />
+            <Textarea
+              title="message"
+              className={clsx(INPUT_CLASS, "pt-1.5")}
+              name="message"
+              disabled={isDisabled}
+              style={{ marginTop: -4 }}
+              value={state.message}
+              rows={4}
+              cols={50}
+              isFocused={"message" === focus}
+              required
+              {...textareaFocusHandlers}
+            />
+          </motion.div>
           <Space2 />
           <Submit sendingState={sendingState} />
         </Form>

@@ -6,7 +6,7 @@ import type {
 } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-const CLASS = "absolute w-20 h-full from-black z-10 pointer-events-none";
+const CLASS = "absolute w-20 h-full from-current z-10 pointer-events-none";
 
 const Blinder = styled(motion.div)``;
 

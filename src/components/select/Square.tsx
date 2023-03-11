@@ -35,9 +35,18 @@ export const Square: FC<TProps> = ({
       ...style,
     }}
     className={clsx(
-      "fixed shadow-teal-sm z-40 pointer-events-none cursor-crosshair",
+      "fixed shadow-teal-md z-40 pointer-events-none cursor-crosshair",
       classValue,
     )}
+    animate={{
+      opacity: [1, 0.4],
+    }}
+    transition={{
+      repeat: Infinity,
+      repeatDelay: 0.4,
+      repeatType: "reverse",
+      duration: 2,
+    }}
     {...props}
   />
 );

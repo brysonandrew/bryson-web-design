@@ -15,7 +15,7 @@ export const Border: FC<TProps> = ({ classValue }) => (
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
       "absolute inset-0 pointer-events-none rounded-sm",
-      classValue ?? "shadow-teal-bright-sm",
+      classValue ?? "shadow-teal-sm",
     )}
   />
 );

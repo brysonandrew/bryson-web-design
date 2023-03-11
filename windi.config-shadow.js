@@ -26,8 +26,13 @@ module.exports = {
   "purple-002-sm": `0 0 1px 1px ${COLORS["purple-002"]}`,
   "purple-005-sm": `0 0 1px 1px ${COLORS["purple-005"]}`,
 
+
+  "teal-md": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}, 0 0 1px 3px ${COLORS.teal}`,
+
   "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
   "teal-fade-sm": `0 0 1px 1px ${COLORS["teal-fade"]}`,
+
+  "teal-bright-md": `0 0 1px 1px ${COLORS["teal-bright"]}, 0 0 1px 2px ${COLORS["teal-bright"]}, 0 0 1px 3px ${COLORS["teal-bright"]}`,
 
   "teal-bright-sm": `0 0 1px 1px ${COLORS["teal-bright"]}`,
   "teal-bright-fade-sm": `0 0 1px 1px ${COLORS["teal-bright-fade"]}`,

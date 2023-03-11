@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import { resolveUrlId } from "@utils/resolveUrlId";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { Pattern } from "./pattern/Pattern";
-import { PATTERN_ID } from "./pattern/config";
-import { resolveUrlId } from "@utils/resolveUrlId";
+import { PATTERN_ID, Pattern } from "./pattern";
+import { Neon, NEON_ID } from "./neon";
+
 const Root = styled(motion.svg)``;
+const Rect = styled(motion.rect)``;
 
 export const Background: FC = () => (
   <>
@@ -14,14 +16,16 @@ export const Background: FC = () => (
       height="100%"
     >
       <defs>
-        <Pattern />
+        <Pattern /> 
+        <Neon/>
       </defs>
-      <motion.rect
+      <Rect 
         x="0"
         y="0"
         width="100%"
         height="100%"
         fill={resolveUrlId(PATTERN_ID)}
+        filter={resolveUrlId(NEON_ID)}
       />
     </Root>
   </>

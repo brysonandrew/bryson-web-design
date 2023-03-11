@@ -16,13 +16,13 @@ export const Lighting = () => (
     >
       <LightingFilter
         external={(filterId) => (
-          <image 
-            x="0%" 
+          <image
+            x="0%"
             y="0%"
             width="100%"
             height="100%"
-            //xlinkHref="/synthwave.jpg"
-            xlinkHref="/mugshot2.png"
+            xlinkHref="/synthwave.jpg"
+            //xlinkHref="/mugshot2.png"
             filter={`url(#${filterId})`}
           />
         )}

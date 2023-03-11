@@ -12,7 +12,7 @@ import { NOOP } from "@constants/functions";
 import { useContext } from "@state/Context";
 import type { TMotionValuePair } from "@state/types";
 import styled from "@emotion/styled";
-import type { TMouse } from "../config";
+import type { TMouse } from "../../../../components/cursor/config";
 import {
   TRAIL_SIZE,
   COUNT,
@@ -20,9 +20,9 @@ import {
   SELECT_LAYOUT_ID,
   CURSOR_SIZE_HALF,
   CURSOR_SIZE,
-} from "../config";
+} from "../../../../components/cursor/config";
 import { TrailMotionValue } from "./TrailMotionValue";
-import { BackgroundWithTrail } from "@components/shell/background/BackgroundWithTrail";
+import { BackgroundWithTrail } from "@pages/workshop/trail/BackgroundWithTrail";
 
 const Select = styled(motion.div)``;
 
