@@ -17,10 +17,6 @@ export const Source = () => {
       element: <Showcase />,
     },
     {
-      path: "/showcase/*",
-      element: <Showcase />,
-    },
-    {
       path: "/contact",
       element: <Contact />,
     },
@@ -66,7 +62,7 @@ export const Source = () => {
     // },
     // {
     //   path: "/workshop/pool",
-    //   element: <Pool />,1
+    //   element: <Pool />,
     // },
     {
       path: "*",

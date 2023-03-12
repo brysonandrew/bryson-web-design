@@ -10,7 +10,7 @@ type TProps = Partial<RouterProps>;
 export const Router: FC<TProps> = () => {
   const isPointer = useNoPointer();
   return (
-    <_Router>
+    <_Router >
       <Background />
       <Source />
       {isPointer && <Cursor />}

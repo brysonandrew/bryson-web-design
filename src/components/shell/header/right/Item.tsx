@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Border as Select } from "../../../select/Border";
 import { useContext } from "@state/Context";
-import { FC } from "react";
+import type { FC } from "react";
 
 const Root = styled(motion.li)``;
 
