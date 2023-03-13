@@ -1,32 +1,25 @@
 import { Background as Select } from "@components/select/Background";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Container } from "@pages/showcase/Containers";
+import { Container } from "@pages/showcase/full/Container";
 import {
   ITEM_HEIGHT,
   SELECTED_PATH,
 } from "@pages/showcase/config";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-type TPreserveY = {
-  timeout: ReturnType<typeof setTimeout> | null;
-  y: number;
-};
+const Title = styled(motion.div)``;
 
 const Root = styled(motion.li)``;
 type TProps = {
-  isSelectedItem?: boolean;
+  name: string;
   children: string;
 };
-export const Item: FC<TProps> = ({
-  isSelectedItem,
-  children,
-}) => {
+export const Item: FC<TProps> = ({ name, children }) => {
   const { isSelected, handlers } =
-    useSelectHandlers(children);
+    useSelectHandlers(name);
 
   return (
     <Root
@@ -35,16 +28,17 @@ export const Item: FC<TProps> = ({
     >
       {
         <Link
-          to={`/showcase?${SELECTED_PATH}=${children
+          to={`/showcase?${SELECTED_PATH}=${name
             .toLowerCase()
             .replace(/\s/g, "-")}`}
           className="relative rounded-md w-full"
           style={{ height: ITEM_HEIGHT }}
         >
-          <Container
-            id={children}
-            classValue="absolute"
-          />
+          <Container id={name} classValue="absolute">
+            <Title className="whitespace-nowrap" layout>
+              {children}
+            </Title>
+          </Container>
           {isSelected && <Select />}
         </Link>
       }

@@ -20,9 +20,7 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border } from "@components/select/Border";
 
 const Root = styled(motion.div)``;
-const Form = styled(motion.form)`
-  max-width: 512px;
-`;
+const Form = styled(motion.form)``;
 
 export const Contact = () => {
   const { handlers, isSelected } =

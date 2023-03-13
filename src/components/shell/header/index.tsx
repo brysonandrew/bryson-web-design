@@ -46,7 +46,9 @@ export const Header = () => {
         <Sub />
       </div>
       <List className="flex items-center mt-0.5">
-        {["showcase", "contact"].map((item, index) => {
+        {[
+          //"showcase", 
+          "contact"].map((item, index) => {
           const to = `/${item}`;
           if (
             pathname === to &&

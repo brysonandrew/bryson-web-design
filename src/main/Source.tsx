@@ -13,13 +13,31 @@ export const Source = () => {
       element: <Index />,
     },
     {
-      path: "/showcase",
-      element: <Showcase />,
-    },
-    {
       path: "/contact",
       element: <Contact />,
     },
+    {
+      path: "*",
+      element: <NotFound404 />,
+    },
+  ]);
+  const location = useLocation();
+
+  if (!element) return null;
+
+  return (
+    <AnimatePresence mode="wait">
+      {cloneElement(element, {
+        key: location.pathname,
+      })}
+    </AnimatePresence>
+  );
+};
+
+       // {
+    //   path: "/showcase",
+    //   element: <Showcase />,
+    // },
     // {
     //   path: "/workshop",
     //   element: <Workshop />,
@@ -44,6 +62,7 @@ export const Source = () => {
     //   path: "/workshop/phase",
     //   element: <Phase />,
     // },
+
     // {
     //   path: "/workshop/lighting",
     //   element: <Lighting />,
@@ -64,20 +83,3 @@ export const Source = () => {
     //   path: "/workshop/pool",
     //   element: <Pool />,
     // },
-    {
-      path: "*",
-      element: <NotFound404 />,
-    },
-  ]);
-  const location = useLocation();
-
-  if (!element) return null;
-
-  return (
-    <AnimatePresence mode="wait">
-      {cloneElement(element, {
-        key: location.pathname,
-      })}
-    </AnimatePresence>
-  );
-};
