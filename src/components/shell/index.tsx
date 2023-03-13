@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../../types";
-import { HEADER_OFFSET_Y } from "@pages/about/constants";
+import { HEADER_OFFSET_Y } from "@pages/index/constants";
 import { Footer } from "./Footer";
 import { Header } from "./header";
 import { BlindersOut } from "@components/blinders/BlindersOut";

@@ -8,7 +8,7 @@ import { Mugshot } from "./mugshot";
 import { Reviews } from "./reviews";
 import { Tech } from "./tech";
 
-export const About = () => (
+export const Content = () => (
   <>
     <Intro />
     <Mugshot />

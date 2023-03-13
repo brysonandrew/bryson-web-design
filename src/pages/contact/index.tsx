@@ -20,9 +20,7 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border } from "@components/select/Border";
 
 const Root = styled(motion.div)``;
-const Form = styled(motion.form)`
-  max-width: 512px;
-`;
+const Form = styled(motion.form)``;
 
 export const Contact = () => {
   const { handlers, isSelected } =
@@ -105,7 +103,6 @@ export const Contact = () => {
   };
   return (
     <Shell>
-      <Space2 />
       <Root className="flex flex-col px-4">
         <h2
           className="inline my-0 mx-auto text-lg tracking-widest text-teal-bright"

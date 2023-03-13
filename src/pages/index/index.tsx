@@ -1,8 +1,8 @@
 import { Shell } from "@components/Shell";
-import { About } from "./about";
+import { Content } from "./Content";
 
 export const Index = () => (
   <Shell>
-    <About />
+    <Content />
   </Shell>
 );

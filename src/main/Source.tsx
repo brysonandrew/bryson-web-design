@@ -4,7 +4,7 @@ import { Index } from "@pages/index";
 import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
-import { Lighting } from "@pages/workshop/lighting";
+import { Showcase } from "@pages/showcase";
 
 export const Source = () => {
   const element = useRoutes([
@@ -16,6 +16,28 @@ export const Source = () => {
       path: "/contact",
       element: <Contact />,
     },
+    {
+      path: "*",
+      element: <NotFound404 />,
+    },
+  ]);
+  const location = useLocation();
+
+  if (!element) return null;
+
+  return (
+    <AnimatePresence mode="wait">
+      {cloneElement(element, {
+        key: location.pathname,
+      })}
+    </AnimatePresence>
+  );
+};
+
+       // {
+    //   path: "/showcase",
+    //   element: <Showcase />,
+    // },
     // {
     //   path: "/workshop",
     //   element: <Workshop />,
@@ -40,10 +62,11 @@ export const Source = () => {
     //   path: "/workshop/phase",
     //   element: <Phase />,
     // },
-    {
-      path: "/workshop/lighting",
-      element: <Lighting />,
-    },
+
+    // {
+    //   path: "/workshop/lighting",
+    //   element: <Lighting />,
+    // },
     // {
     //   path: "/workshop/displacement",
     //   element: <Displacement />,
@@ -60,20 +83,3 @@ export const Source = () => {
     //   path: "/workshop/pool",
     //   element: <Pool />,
     // },
-    {
-      path: "*",
-      element: <NotFound404 />,
-    },
-  ]);
-  const location = useLocation();
-
-  if (!element) return null;
-
-  return (
-    <AnimatePresence>
-      {cloneElement(element, {
-        key: location.pathname,
-      })}
-    </AnimatePresence>
-  );
-};
