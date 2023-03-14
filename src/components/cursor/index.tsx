@@ -14,10 +14,8 @@ import { Pool } from "@components/effects/pool";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { usePointerEnterLeave } from "./usePointerEnterLeave";
-import { Background } from "@components/background";
 
 const POOL_ID = "POOL_ID";
-const TRACE_LIGHT_ID = "TRACE_LIGHT_ID";
 
 export type TCursorProps = {
   children?: TChildren;
