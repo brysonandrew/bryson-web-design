@@ -11,7 +11,15 @@ export const ITEM_DESCRIPTION_LOOKUP: Record<
   HoldToSkip: "HoldToSkip",
 };
 
-export const resolveMedia = (path: string) => {
+export type TMedia = {
+  file: string;
+  name: string;
+  key: string;
+};
+
+export type TMediaRecord = Record<string, TMedia[]>
+
+export const resolveMedia = (path: string): TMedia => {
   const parts = path.split("/");
   const count = parts.length;
   const file = parts[count - 1];

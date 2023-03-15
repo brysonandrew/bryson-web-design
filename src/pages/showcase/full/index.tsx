@@ -1,9 +1,19 @@
 import type { FC } from "react";
 import { Content } from "./Content";
+import { TMediaRecord } from "../config";
 
 type TProps = {
+  mediaRecord: TMediaRecord;
   selectedPath: string;
 };
-export const Full: FC<TProps> = ({ selectedPath }) => {
-  return <Content selectedPath={selectedPath} />;
+export const Full: FC<TProps> = ({
+  mediaRecord,
+  selectedPath,
+}) => {
+  return (
+    <Content
+      mediaRecord={mediaRecord}
+      selectedPath={selectedPath}
+    />
+  );
 };

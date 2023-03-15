@@ -8,16 +8,18 @@ import { Space } from "@components/spaces/Space";
 const Root = styled(motion.ul)``;
 
 type TProps = {
-  paths: string[];
+  keys: string[];
   isSelectedItem?: boolean;
 };
-export const List: FC<TProps> = ({ paths }) => {
+export const List: FC<TProps> = ({ keys }) => {
+  console.log("🚀 ~ file: index.tsx:15 ~ keys:", keys)
+  
   return (
     <Root className="text-teal">
-      {paths.map((path: string, index: number) => (
-        <Fragment key={path}>
+      {keys.map((key: string, index: number) => (
+        <Fragment key={key}>
           {index !== 0 && <Space />}
-          <Item path={path} />
+          <Item path={key}>{key}</Item>
         </Fragment>
       ))}
     </Root>

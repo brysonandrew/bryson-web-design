@@ -10,14 +10,17 @@ import {
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
+import { TChildren } from "@t/index";
+import { kebabToTitle } from "@utils/format";
 
 const Title = styled(motion.div)``;
 
 const Root = styled(motion.li)``;
 type TProps = {
   path: string;
+  children: string;
 };
-export const Item: FC<TProps> = ({ path }) => {
+export const Item: FC<TProps> = ({ path, children }) => {
   const { isSelected, handlers } = useSelectHandlers(path);
   const { name, file, key } = resolveMedia(path);
 
@@ -34,7 +37,7 @@ export const Item: FC<TProps> = ({ path }) => {
         >
           <Container id={name} classValue="absolute">
             <Title className="whitespace-nowrap" layout>
-              {key}
+              {kebabToTitle(children)}
             </Title>
           </Container>
           {isSelected && <Select />}

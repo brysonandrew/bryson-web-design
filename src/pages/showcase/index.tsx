@@ -7,41 +7,58 @@ const screenFiles = import.meta.glob(
   "./screens/**/*.{jpg,png}",
 );
 import { useEffect, useState } from "react";
+import {
+  TMedia,
+  TMediaRecord,
+  resolveMedia,
+} from "./config";
+import { TModule } from "@t/index";
 
 export const Showcase = () => {
-  const [screens, setScreens] = useState<any[] | null>(
-    null,
-  );
+  const [mediaRecord, setMediaRecord] =
+    useState<TMediaRecord | null>(null);
 
   const handleLoad = async () => {
     const values = Object.values(screenFiles);
 
-    const results = [];
+    const mediaRecord: TMediaRecord = {};
 
     for await (const resolver of values) {
-      const v = await resolver();
-      results.push(v);
+      const v = (await resolver()) as TModule;
+
+      const media = resolveMedia(v.default);
+
+      mediaRecord[media.name] = [...(mediaRecord[media.name] ?? []), media];
     }
-    setScreens(results);
+    setMediaRecord(mediaRecord);
   };
 
   useEffect(() => {
     handleLoad();
   }, []);
 
+
   const selectedPath = useSelectedItem();
   const isSelectedItem = selectedPath !== null;
 
-  if (!screens) return null;
-  const paths = screens.map((v) => v.default);
+  if (!mediaRecord) return null;
+
+  console.log(mediaRecord);
+  const keys = Object.keys(mediaRecord)
 
   return (
     <Shell>
-      <List paths={paths} isSelectedItem={isSelectedItem} />
+      <List
+        keys={keys}
+        isSelectedItem={isSelectedItem}
+      />
       <Space16 />
       <>
         {isSelectedItem && (
-          <Full selectedPath={selectedPath} />
+          <Full
+            mediaRecord={mediaRecord}
+            selectedPath={selectedPath}
+          />
         )}
       </>
     </Shell>
