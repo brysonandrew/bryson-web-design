@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { cloneElement } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
 import { Showcase } from "@pages/showcase";
+import { Gallery } from "@pages/workshop/gallery";
 
 export const Source = () => {
   const element = useRoutes([
@@ -19,6 +20,10 @@ export const Source = () => {
     {
       path: "/showcase",
       element: <Showcase />,
+    },
+    {
+      path: "/gallery",
+      element: <Gallery />,
     },
     {
       path: "*",

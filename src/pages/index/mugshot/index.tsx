@@ -38,7 +38,7 @@ export const Mugshot = () => (
         width="100%"
         height="100%"
         xlinkHref="/mugshot2.png"
-        filter={`contrast(175%) opacity(50%) ${resolveUrlId(
+        filter={`contrast(220%) opacity(70%) ${resolveUrlId(
           ID,
         )}`}
       />

@@ -1,33 +1,29 @@
 {
   "compilerOptions": {
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types"],
-    "composite": true,
+    "types": ["vite/client"],
     "experimentalDecorators": true,
     "target": "ESNext",
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "dom"],
+    "useDefineForClassFields": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "es2020",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
+    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "allowJs": true
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*.json", "src/**/*.ts", "src/**/*.js", "src/**/*.tsx"],
-  "files": [
-    "windi.config-colors.json",
-    "windi.config-shadow.js",
-    "windi.config-spacing.js",
-    "windi.config-font-size.js",
-    "windi.config-grid.js",
-    "windi.config-width.js",
-    "windi.config-height.js",
-    "windi.config.js"
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.glsl",
   ],
   "extends": "./tsconfig.paths.json"
 }

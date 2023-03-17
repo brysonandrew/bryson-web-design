@@ -12,8 +12,6 @@ type TProps = {
   isSelectedItem?: boolean;
 };
 export const List: FC<TProps> = ({ keys }) => {
-  console.log("🚀 ~ file: index.tsx:15 ~ keys:", keys)
-  
   return (
     <Root className="text-teal">
       {keys.map((key: string, index: number) => (

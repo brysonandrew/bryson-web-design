@@ -8,7 +8,6 @@ const screenFiles = import.meta.glob(
 );
 import { useEffect, useState } from "react";
 import {
-  TMedia,
   TMediaRecord,
   resolveMedia,
 } from "./config";
@@ -28,7 +27,10 @@ export const Showcase = () => {
 
       const media = resolveMedia(v.default);
 
-      mediaRecord[media.name] = [...(mediaRecord[media.name] ?? []), media];
+      mediaRecord[media.name] = [
+        ...(mediaRecord[media.name] ?? []),
+        media,
+      ];
     }
     setMediaRecord(mediaRecord);
   };
@@ -37,22 +39,17 @@ export const Showcase = () => {
     handleLoad();
   }, []);
 
-
   const selectedPath = useSelectedItem();
   const isSelectedItem = selectedPath !== null;
 
   if (!mediaRecord) return null;
 
-  console.log(mediaRecord);
-  const keys = Object.keys(mediaRecord)
+  const keys = Object.keys(mediaRecord);
 
   return (
-    <Shell>
-      <List
-        keys={keys}
-        isSelectedItem={isSelectedItem}
-      />
-      <Space16 />
+    <>
+      {/* <List keys={keys} isSelectedItem={isSelectedItem} />
+      <Space16 /> */}
       <>
         {isSelectedItem && (
           <Full
@@ -61,6 +58,6 @@ export const Showcase = () => {
           />
         )}
       </>
-    </Shell>
+    </>
   );
-};
+}; 

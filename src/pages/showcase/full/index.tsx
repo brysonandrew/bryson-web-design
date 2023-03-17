@@ -1,6 +1,7 @@
 import type { FC } from "react";
-import { Content } from "./Content";
 import { TMediaRecord } from "../config";
+import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
+import { Content } from "./Content";
 
 type TProps = {
   mediaRecord: TMediaRecord;
@@ -10,6 +11,7 @@ export const Full: FC<TProps> = ({
   mediaRecord,
   selectedPath,
 }) => {
+ // useFreezeScrollBar();
   return (
     <Content
       mediaRecord={mediaRecord}
