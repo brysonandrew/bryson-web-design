@@ -17,13 +17,10 @@ export type TMedia = {
   key: string;
 };
 
-export type TMediaRecord = Record<string, TMedia[]>
+export type TMediaRecord = Record<string, TMedia[]>;
 
 export const resolveMedia = (path: string): TMedia => {
-  const parts = path.split("/");
-  const count = parts.length;
-  const file = parts[count - 1];
-  const name = parts[count - 2];
+  const [name, file] = path.split("/");
   const key = `${name}-${file}`.toLowerCase();
   return { file, name, key };
 };

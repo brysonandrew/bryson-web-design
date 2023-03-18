@@ -1,5 +1,4 @@
 import { TMedia } from "@pages/showcase/config";
-import type { MotionValue } from "framer-motion";
 import type {
   Dispatch,
   Reducer,
@@ -8,26 +7,25 @@ import type {
   MutableRefObject,
 } from "react";
 
-export type TContext = TState & {
-  items: TMedia[];
-  scrollArea: HTMLDivElement;
-  posRef: MutableRefObject<{left:number,top:number}>
-  dispatch: TDispatch;
+export type TPos = { left: number; top: number };
+
+export type TState = {
+  zoom: number;
+  offset: number;
 };
 
-export type TMotionValuePair = [
-  x: MotionValue,
-  y: MotionValue,
-];
+export type TContext = TState & {
+  items: TMedia[];
+  count: number;
+  pageCount: number;
+  scrollArea: HTMLDivElement;
+  posRef: MutableRefObject<TPos>;
+  dispatch: TDispatch;
+};
 
 export type TAction = {
   type: "";
   value: null;
-};
-
-export type TState = {
-  zoom: number;
-  parentOffset: number;
 };
 
 export type TActionType = null;

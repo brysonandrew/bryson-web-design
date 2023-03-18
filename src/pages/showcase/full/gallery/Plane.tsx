@@ -1,12 +1,18 @@
-import * as THREE from "three";
 import { forwardRef, useRef } from "react";
-import { extend, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import "./effects/CustomMaterial";
-import { useBlock } from "./block/useBlock";
-import { CustomMaterial } from "./effects/CustomMaterial";
+import { useBlock } from "./heads-up-display/block/useBlock";
 import { useContext } from "./state/Context";
+import { MathUtils, LinearFilter } from "three";
 
-extend({ CustomMaterial });
+type TMaterialConfig = {
+  scale: number;
+  shift: number;
+};
+const MATERIAL_CONFIG: TMaterialConfig = {
+  scale: 0,
+  shift: 0,
+};
 
 type TProps = {
   color?: string;
@@ -31,23 +37,21 @@ export const Plane = forwardRef<THREE.Mesh, TProps>(
     ref,
   ) => {
     const { viewportWidth, offsetFactor } = useBlock();
-    const { items, posRef } = useContext();
+    const { posRef, pageCount } = useContext();
 
-    const material = useRef<{
-      scale: number;
-      shift: number;
-    } | null>(null);
-    let last: number = posRef.current.top ?? 0;
+    const material =
+      useRef<TMaterialConfig>(MATERIAL_CONFIG);
+
+    let last: number = posRef.current.top;
     useFrame(() => {
       if (material.current) {
-        material.current.scale = THREE.MathUtils.lerp(
+        material.current.scale = MathUtils.lerp(
           material.current.scale,
           offsetFactor -
-            (posRef.current.top ?? 0) /
-              ((items.length - 1) * viewportWidth),
+            posRef.current.top / (pageCount * viewportWidth),
           0.1,
         );
-        material.current.shift = THREE.MathUtils.lerp(
+        material.current.shift = MathUtils.lerp(
           material.current.shift,
           -(posRef.current.top - last) / shift,
           0.1,
@@ -62,7 +66,7 @@ export const Plane = forwardRef<THREE.Mesh, TProps>(
           ref={material}
           color={color}
           map={map}
-          map-minFilter={THREE.LinearFilter}
+          mapMinFilter={LinearFilter}
           transparent
           opacity={opacity}
         />

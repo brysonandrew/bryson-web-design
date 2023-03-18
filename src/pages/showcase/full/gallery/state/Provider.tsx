@@ -1,34 +1,32 @@
-import {
-  MutableRefObject,
-  useEffect,
-  useReducer,
-  useRef,
-} from "react";
-import type { FC } from "react";
-import type { TReducer } from "./types";
+import { TMedia } from "@pages/showcase/config";
+import { TChildren } from "@t/index";
+import type { FC, MutableRefObject } from "react";
+import { useReducer } from "react";
 import { reducer } from ".";
 import { Context } from "./Context";
 import { STATE } from "./constants";
-import { useScrollThreshold } from "@hooks/useScrollThreshold";
-import { TMedia } from "@pages/showcase/config";
+import type { TPos, TReducer } from "./types";
 
 type TProviderProps = {
   items: TMedia[];
+  count: number;
+  pageCount: number;
   scrollArea: HTMLDivElement;
-  posRef: any;
-  children: JSX.Element | JSX.Element[];
-
+  posRef: MutableRefObject<TPos>;
+  children: TChildren;
 };
 export const Provider: FC<TProviderProps> = ({
   items,
+  count,
+  pageCount,
   posRef,
   scrollArea,
   children,
 }) => {
-
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
+  const [state, dispatch] = useReducer<TReducer>(
+    reducer,
+    STATE,
+  );
 
   return (
     <Context.Provider
@@ -37,7 +35,9 @@ export const Provider: FC<TProviderProps> = ({
         ...state,
         scrollArea,
         items,
-        posRef
+        count,
+        pageCount,
+        posRef,
       }}
     >
       {children}

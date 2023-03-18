@@ -27,7 +27,6 @@ export const Content: FC<TProps> = ({
       // classValue="fixed text-teal-bright"
       style={{ top: HEADER_SIZE_Y }}
     >
- 
       <div className="flex items-center justify-between h-6">
         <Title className="whitespace-nowrap" layout>
           {kebabToTitle(selectedPath)}

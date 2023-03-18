@@ -1,17 +1,11 @@
-import { Shell } from "@components/Shell";
-import { Space16 } from "@components/spaces/Space16";
-import { List } from "./list";
+import { useEffect, useState } from "react";
+import { TModule } from "@t/index";
 import { useSelectedItem } from "./useSelectedItem";
 import { Full } from "./full";
 const screenFiles = import.meta.glob(
-  "./screens/**/*.{jpg,png}",
+  "../../../assets/screens/**/*.{jpg,png}",
 );
-import { useEffect, useState } from "react";
-import {
-  TMediaRecord,
-  resolveMedia,
-} from "./config";
-import { TModule } from "@t/index";
+import { TMediaRecord, resolveMedia } from "./config";
 
 export const Showcase = () => {
   const [mediaRecord, setMediaRecord] =
@@ -36,7 +30,7 @@ export const Showcase = () => {
   };
 
   useEffect(() => {
-    handleLoad();
+    void handleLoad();
   }, []);
 
   const selectedPath = useSelectedItem();
@@ -60,4 +54,4 @@ export const Showcase = () => {
       </>
     </>
   );
-}; 
+};
