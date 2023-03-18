@@ -11,7 +11,6 @@ export const Full: FC<TProps> = ({
   mediaRecord,
   selectedPath,
 }) => {
-  useFreezeScrollBar();
   return (
     <Content
       mediaRecord={mediaRecord}

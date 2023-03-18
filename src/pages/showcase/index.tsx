@@ -6,6 +6,8 @@ const screenFiles = import.meta.glob(
   "../../../assets/screens/**/*.{jpg,png}",
 );
 import { TMediaRecord, resolveMedia } from "./config";
+import { Space16 } from "@components/spaces/Space16";
+import { List } from "./list";
 
 export const Showcase = () => {
   const [mediaRecord, setMediaRecord] =
@@ -42,8 +44,8 @@ export const Showcase = () => {
 
   return (
     <>
-      {/* <List keys={keys} isSelectedItem={isSelectedItem} />
-      <Space16 /> */}
+      <List keys={keys} isSelectedItem={isSelectedItem} />
+      <Space16 />
       <>
         {isSelectedItem && (
           <Full

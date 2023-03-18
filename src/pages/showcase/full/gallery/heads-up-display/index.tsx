@@ -4,8 +4,8 @@ import {
   useThree,
   createPortal,
 } from "@react-three/fiber";
-import { Marker } from "../Marker";
-import { DotMap } from "./DotMap";
+import { Marker } from "./Marker";
+import { Dots } from "./dots";
 import { Scene } from "three";
 
 export const HeadsUpDisplay: FC = () => {
@@ -20,7 +20,7 @@ export const HeadsUpDisplay: FC = () => {
 
   return createPortal(
     <>
-      <DotMap />
+      <Dots />
       <Marker />
     </>,
     scene,

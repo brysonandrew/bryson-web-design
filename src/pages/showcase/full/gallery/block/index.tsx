@@ -1,9 +1,9 @@
 import { useFrame } from "@react-three/fiber";
 import { FC, useRef } from "react";
-import { useBlock, OffsetContext } from "./useBlock";
+import { useBlock } from "./useBlock";
 import { Group, MathUtils } from "three";
 import { TChildren } from "@t/index";
-import { useContext } from "../../state/Context";
+import { useContext } from "../state/Context";
 
 type TProps = {
   factor: number;
@@ -34,10 +34,8 @@ export const Block: FC<TProps> = ({
   const x = sectionWidth * offset * factor;
 
   return (
-    <OffsetContext.Provider value={offset}>
-      <group {...props} position={[x, 0, 0]}>
-        <group ref={ref}>{children}</group>
-      </group>
-    </OffsetContext.Provider>
+    <group {...props} position={[x, 0, 0]}>
+      <group ref={ref}>{children}</group>
+    </group>
   );
 };

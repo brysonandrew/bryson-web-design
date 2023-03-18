@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useBlock } from "./block/useBlock";
-import { Rect } from "../Rect";
-import { useContext } from "../state/Context";
+import { useBlock } from "../../block/useBlock";
+import { Rect } from "../../Rect";
+import { useContext } from "../../state/Context";
 
 export const Dot = () => {
   const [isHovered, setHovered] = useState(false);
@@ -21,7 +21,7 @@ export const Dot = () => {
       scale={0.15}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
-      onTap={() => {
+      onClick={() => {
         const x = offset * sectionWidth * zoom;
         posRef.current.left = x;
       }}

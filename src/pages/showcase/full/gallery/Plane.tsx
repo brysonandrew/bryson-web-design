@@ -1,7 +1,7 @@
 import { forwardRef, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import "./effects/CustomMaterial";
-import { useBlock } from "./heads-up-display/block/useBlock";
+import { useBlock } from "./block/useBlock";
 import { useContext } from "./state/Context";
 import { MathUtils, LinearFilter } from "three";
 
@@ -9,6 +9,7 @@ type TMaterialConfig = {
   scale: number;
   shift: number;
 };
+
 const MATERIAL_CONFIG: TMaterialConfig = {
   scale: 0,
   shift: 0,
@@ -27,13 +28,13 @@ type TProps = {
 export const Plane = forwardRef<THREE.Mesh, TProps>(
   (
     {
-      color = "white",
+      color = "gray",
       shift = 100,
       opacity = 1,
       args,
       map,
       ...props
-    },
+    }, 
     ref,
   ) => {
     const { viewportWidth, offsetFactor } = useBlock();

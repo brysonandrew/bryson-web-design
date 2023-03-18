@@ -4,10 +4,31 @@ import { FC, useRef, useState } from "react";
 import { Main } from "./Main";
 import { Provider } from "./state/Provider";
 import { TPos } from "./state/types";
+import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
 
 const POS: TPos = { left: 0, top: 0 };
 
-const Root = styled.div``;
+const Root = styled.div`
+  margin: 0;
+  padding: 0;
+  /* background: #2d2d30; */
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    black
+    /* #0d0d10,
+    #1d1d20,
+    #212125 */
+  );
+
+  overflow: hidden;
+  font-weight: 200;
+  color: #e0e0e0;
+  font-size: 0.6rem;
+  user-select: none;
+`;
+
 const ScrollArea = styled.div``;
 
 type TProps = {
@@ -18,6 +39,11 @@ export const Gallery: FC<TProps> = ({
   mediaRecord,
   selectedPath,
 }) => {
+  const items = mediaRecord[selectedPath];
+  const count = items.length;
+  const pageCount = count - 1;
+  useFreezeScrollBar();
+
   const posRef = useRef(POS);
   const [scrollArea, setScrollArea] =
     useState<HTMLDivElement | null>(null);
@@ -28,11 +54,8 @@ export const Gallery: FC<TProps> = ({
     }
   };
 
-  const items = mediaRecord[selectedPath];
-  const count = items.length;
-  const pageCount = count - 1;
   return (
-    <Root className="h-screen w-screen overflow-scroll">
+    <Root className="h-screen w-screen overflow-hidden">
       {scrollArea && (
         <Provider
           items={items}

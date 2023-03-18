@@ -4,19 +4,18 @@ import { FC } from "react";
 type TProps = any & {
   scale: number;
 };
-export const Rect: FC<TProps> = ({
-  scale,
-  ...props
-}: any) => {
+export const Rect: FC<TProps> = ({ scale, ...props }) => {
+  const points = [
+    -0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0,
+    -0.5, 0.5, 0,
+  ];
   return (
     <group scale={scale}>
       <Line
-        points={[
-          -0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, -0.5,
-          -0.5, 0, -0.5, 0.5, 0,
-        ]}
-        color="white"
-        linewidth={1}
+        points={points}
+        color="gray"
+        linewidth={2}
+        segments={false}
         position={[0, 0, 0]}
       />
       <mesh {...props} raycast={meshBounds}>
