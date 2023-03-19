@@ -118,7 +118,7 @@ export const Contact = () => {
         >
           <Space2 />
           <motion.div
-            className="relative flex flex-col w-full p-2"
+            className="relative flex flex-col w-full p-2 bg-black-dark"
             {...handlers}
           >
             {isSelected && <Border />}
@@ -165,6 +165,7 @@ export const Contact = () => {
           <Space2 />
           <Submit sendingState={sendingState} />
         </Form>
+        <div className="py-12"/>
       </Root>
     </Shell>
   );

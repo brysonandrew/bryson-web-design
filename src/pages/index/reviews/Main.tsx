@@ -6,21 +6,17 @@ type TProps = {
   index: number;
 };
 export const Main: FC<TProps> = ({ index }) => (
-  <li className="absolute left-full top-0 uppercase px-1 py-2 m-1 whitespace-nowrap">
-    <ul>
-      <li className="whitespace-normal w-mid">
-        <TextSm>
-          <span className="text-slate">
-            {REVIEWS[index].short}
-          </span>
-          <>
-            <span> - </span>
-            <span className="text-teal`">
-              {REVIEWS[index].source}
-            </span>
-          </>
-        </TextSm>
-      </li>
-    </ul>
+  <li className="absolute left-full top-0 uppercase px-1 py-2 m-1 w-mid lg:w-mid-lg xl:w-mid-xl">
+    <TextSm> 
+      <span className="text-slate">
+        {REVIEWS[index].short}
+      </span>
+      <>
+        <span> - </span>
+        <span className="text-teal`">
+          {REVIEWS[index].source}
+        </span>
+      </>
+    </TextSm>
   </li>
 );

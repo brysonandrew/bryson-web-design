@@ -1505,6 +1505,7 @@ __metadata:
     three: ^0.150.1
     typescript: ^4.9.4
     vite: ^4.1.4
+    vite-plugin-restart: ^0.3.1
     vite-plugin-windicss: ^1.8.10
     vite-tsconfig-paths: ^3.5.0
     webgl-strict-types: ^1.0.5
@@ -4105,6 +4106,17 @@ __metadata:
   version: 3.10.0
   resolution: "utility-types@npm:3.10.0"
   checksum: 8f274415c6196ab62883b8bd98c9d2f8829b58016e4269aaa1ebd84184ac5dda7dc2ca45800c0d5e0e0650966ba063bf9a412aaeaea6850ca4440a391283d5c8
+  languageName: node
+  linkType: hard
+
+"vite-plugin-restart@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "vite-plugin-restart@npm:0.3.1"
+  dependencies:
+    micromatch: ^4.0.5
+  peerDependencies:
+    vite: ^2.9.0 || ^3.0.0 || ^4.0.0
+  checksum: ef961ca163c26b3a038499f52297c38bf862f874b92cec997a252af8983337450f79d8782efbd5c00d7d06d789a894ea696a82e3f8b29bee43d06e681ee12730
   languageName: node
   linkType: hard
 

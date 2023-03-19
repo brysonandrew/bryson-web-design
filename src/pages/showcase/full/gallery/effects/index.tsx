@@ -1,26 +1,36 @@
-import { EffectComposer } from "@react-three/postprocessing";
+import { extend } from "@react-three/fiber";
+import {
+  EffectComposer,
+  Vignette,
+} from "@react-three/postprocessing";
 import { FC } from "react";
 import { Scene } from "three";
+import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
+
+extend({
+  // EffectComposer,
+  FilmPass,
+  // RenderPass,
+  // UnrealBloomPass,
+  // WaterPass,
+  // EffectPass,
+});
 
 type TProps = { scene: Scene };
 export const Effects: FC<TProps> = () => {
   return (
     <>
       <EffectComposer autoClear>
-        <></>
+        <Vignette
+          eskil={false}
+          darkness={1.4}
+          offset={0.4}
+        />
       </EffectComposer>
     </>
   );
 };
 
-// extend({
-//   // EffectComposer,
-//   FilmPass,
-//   RenderPass,
-//   UnrealBloomPass,
-//   WaterPass,
-//   EffectPass,
-// });
 // const { posRef } = useContext();
 // const { gl, size, camera } = useThree();
 // const composer = useRef<any | null>(null);

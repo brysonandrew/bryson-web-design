@@ -28,12 +28,14 @@ export const Image: FC<TProps> = ({ texture, index }) => {
     const n =
       (offsetFactor - scrollOffset) *
       (offsetFactor > scrollOffset ? 1 : -1);
-    const scale =
-      Math.sin(
-        n * Math.PI * 2 * pageCount + Math.PI * 0.5,
-      ) * 0.075 + 0.5;
 
-    console.log(scale);
+    const total = n * pageCount;
+
+    const scale =
+      Math.sin(total * Math.PI * 2 + Math.PI * 0.5) *
+        0.075 +
+      0.5;
+
     ref.current.scale.setScalar(scale);
   });
 
