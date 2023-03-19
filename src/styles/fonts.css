@@ -14,23 +14,3 @@
   font-family: "GALSB";
   src: url("/fonts/GALSB.ttf") format("truetype");
 }
-
-@font-face {
-  font-family: "Gabriele Bad";
-  src: url("/fonts/gabriele-bad.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gabriele Br";
-  src: url("/fonts/gabriele-br.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gabriele D";
-  src: url("/fonts/gabriele-d.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gabriele L";
-  src: url("/fonts/gabriele-l.ttf") format("truetype");
-}
