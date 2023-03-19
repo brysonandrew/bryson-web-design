@@ -9,9 +9,6 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-    rollupOptions: {
-      external: [/^node:.*/, "@react-three/postprocessing"],
-    },
   },
   plugins: [
     windiCss(),
