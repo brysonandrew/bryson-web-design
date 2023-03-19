@@ -18,7 +18,7 @@ export const Shell: FC<TProps> = ({ children }) => (
     <Header />
     <Content
       key="Content"
-      className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-mid lg:w-1/2 xl:w-2/3"
+      className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
       style={{
         paddingTop: HEADER_OFFSET_Y,
         minHeight: "100vh",

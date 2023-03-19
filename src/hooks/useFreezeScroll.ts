@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 
-export const useFreezeScrollBar = (
-  isDisabled = false,
-) => {
+export const useFreezeScrollBar = (isDisabled = false) => {
   useEffect(() => {
     const setOverflow = (next: "hidden" | "unset") => {
       document.documentElement.style.overflow = next;
+      document.body.style.overflowX = next;
     };
-    
+
     if (isDisabled) {
       setOverflow("unset");
     } else {

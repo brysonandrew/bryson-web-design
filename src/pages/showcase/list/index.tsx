@@ -4,26 +4,20 @@ import { Item } from "./item";
 import type { FC } from "react";
 import { Fragment } from "react";
 import { Space } from "@components/spaces/Space";
-import { pascalToTitle } from "@utils/format";
-import * as components from "../components";
 
 const Root = styled(motion.ul)``;
 
 type TProps = {
+  keys: string[];
   isSelectedItem?: boolean;
 };
-export const List: FC<TProps> = () => {
-  const itemKeys = Object.keys(components);
-  return (
+export const List: FC<TProps> = ({ keys }) => (
     <Root className="text-teal">
-      {itemKeys.map((name: string, index: number) => (
-        <Fragment key={name}>
+      {keys.map((key: string, index: number) => (
+        <Fragment key={key}>
           {index !== 0 && <Space />}
-          <Item name={pascalToTitle(name)}>
-            {pascalToTitle(name)}
-          </Item>
+          <Item path={key}>{key}</Item>
         </Fragment>
       ))}
     </Root>
   );
-};

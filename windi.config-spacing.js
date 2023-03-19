@@ -1,6 +1,5 @@
 module.exports = {
   icon: "24px",
-  mid: "512px",
   px: "1px",
   0: "0",
   0.125: "0.03375rem",

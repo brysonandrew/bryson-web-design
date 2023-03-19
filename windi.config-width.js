@@ -18,7 +18,13 @@ module.exports = {
     "8/12": "75%",
   },
   width: {
+    "mid": "512px",
+    "mid-lg": "684px",
+    "mid-xl": "756px",
+    "mid-xxl": "900px",
     "core": "512px",
+    "core-lg": "768px",
+    "core-xl": "1100px",
     "left-menu": "280px",
   },
 };
