@@ -100,12 +100,13 @@ declare module "phenomenon";
 
 declare namespace JSX {
   interface IntrinsicElements {
-    customMaterial: any
+    customMaterial: any;
     colorShiftMaterial: any;
     rectAreaLightHelper: any;
     simulationMaterial: any;
     dofPointsMaterial: any;
     shaderMaterial2: any;
+    filmPass: any;
   }
 }
 
@@ -116,24 +117,26 @@ interface AudioWorkletProcessor {
   process(
     inputs: Float32Array[][],
     outputs: Float32Array[][],
-    parameters: Record<string, Float32Array>
+    parameters: Record<string, Float32Array>,
   ): boolean;
 }
 
 declare const AudioWorkletProcessor: {
   prototype: AudioWorkletProcessor;
-  new (options?: AudioWorkletNodeOptions): AudioWorkletProcessor;
+  new (
+    options?: AudioWorkletNodeOptions,
+  ): AudioWorkletProcessor;
 };
 
 interface AudioParamMap {
-  get(name:string): any;
+  get(name: string): any;
 }
 
 declare function registerProcessor(
   name: string,
   processorCtor: (new (
-    options?: AudioWorkletNodeOptions
+    options?: AudioWorkletNodeOptions,
   ) => AudioWorkletProcessor) & {
     parameterDescriptors?: AudioParamDescriptor[];
-  }
+  },
 ): void;

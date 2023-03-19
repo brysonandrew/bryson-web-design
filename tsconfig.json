@@ -23,7 +23,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.glsl",
+    "src/**/*.glsl", "_cemetary/gallery_4/building",
   ],
   "extends": "./tsconfig.paths.json"
 }

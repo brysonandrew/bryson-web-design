@@ -17,6 +17,14 @@ export type TMotionValuePair = [
 
 export type TAction =
   | {
+      type: "start-page-transition";
+      value: null;
+    }
+  | {
+      type: "end-page-transition";
+      value: null;
+    }
+  | {
       type: "init";
       value: null;
     }

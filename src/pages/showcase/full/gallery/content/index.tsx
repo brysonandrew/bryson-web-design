@@ -10,14 +10,16 @@ export const Content: FC = () => {
 
   const textures: Texture[] = useTexture([
     ...items.map(
-      ({ name, file }) => `/screens/${name}/${file}`,
+      ({ name, file }) =>
+        `../../../../../../src/screens/${name}/${file}`,
     ),
   ]);
+  
   return (
     <>
       {textures.map((texture, index) => (
         <Block key={texture.uuid} factor={1} index={index}>
-          <Image index={index} texture={texture} />
+          <Image key={texture.uuid} texture={texture} index={index} />
         </Block>
       ))}
     </>

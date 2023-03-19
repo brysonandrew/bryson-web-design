@@ -4,7 +4,7 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Container } from "@pages/showcase/full/Container";
 import {
   ITEM_HEIGHT,
-  SELECTED_PATH,
+  SELECTED_KEY,
   resolveMedia,
 } from "@pages/showcase/config";
 import { motion } from "framer-motion";
@@ -31,7 +31,7 @@ export const Item: FC<TProps> = ({ path, children }) => {
     >
       {
         <Link
-          to={`/showcase?${SELECTED_PATH}=${path}`}
+          to={`/showcase?${SELECTED_KEY}=${path}`}
           className="relative rounded-md w-full"
           style={{ height: ITEM_HEIGHT }}
         >

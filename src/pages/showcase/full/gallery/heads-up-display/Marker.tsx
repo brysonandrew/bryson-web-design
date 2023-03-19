@@ -62,7 +62,7 @@ export const Marker = () => {
 
   const dragHandlers = useDrag(
     ({ movement: [x], down }) => {
-      const next = x * 2 * count;
+      const next = x * 4 * count;
       if (down) {
         posRef.current.top = next;
       } else {

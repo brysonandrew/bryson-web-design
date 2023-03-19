@@ -9,24 +9,11 @@ import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
 const POS: TPos = { left: 0, top: 0 };
 
 const Root = styled.div`
-  margin: 0;
-  padding: 0;
-  /* background: #2d2d30; */
-
   background: linear-gradient(
     to bottom,
     transparent,
     black
-    /* #0d0d10,
-    #1d1d20,
-    #212125 */
   );
-
-  overflow: hidden;
-  font-weight: 200;
-  color: #e0e0e0;
-  font-size: 0.6rem;
-  user-select: none;
 `;
 
 const ScrollArea = styled.div``;

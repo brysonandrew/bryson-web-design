@@ -12,7 +12,7 @@ type TProps = {
 };
 export const Image: FC<TProps> = ({ texture, index }) => {
   const ref = useRef<Group | null>(null);
-  const { posRef, pageCount } = useContext();
+  const { posRef, pageCount, count } = useContext();
   const {
     contentMaxWidth: w,
     viewportWidth,
@@ -25,11 +25,15 @@ export const Image: FC<TProps> = ({ texture, index }) => {
       posRef.current.top /
         (viewportWidth * pageCount - viewportWidth) +
       1 / pageCount / 2;
-    const scale = 1;
-    // 1 -
-    // (offsetFactor - scrollOffset) *
-    //   (offsetFactor > scrollOffset ? 1 : -1);
+    const n =
+      (offsetFactor - scrollOffset) *
+      (offsetFactor > scrollOffset ? 1 : -1);
+    const scale =
+      Math.sin(
+        n * Math.PI * 2 * pageCount + Math.PI * 0.5,
+      ) * 0.075 + 0.5;
 
+    console.log(scale);
     ref.current.scale.setScalar(scale);
   });
 
@@ -42,18 +46,16 @@ export const Image: FC<TProps> = ({ texture, index }) => {
         aspect={1.5}
         scale={[w, w / 1.5, 1]}
         frustumCulled={false}
-        color="red"
       />
       <Text
         anchorX="left"
         position={[-w / 2, -w / 1.5 / 2 - 0.25, 0]}
-        scale={0.2}
-        color="gray"
+        scale={1.5}
+        color="white"
       >
-        {`${index}`.padStart(2, "0")}
+        0{index}
       </Text>
       <Shadow
-        color="red"
         scale={[w * 1.2, 1, 1]}
         rotation={[0.75, 0, 0]}
         position={[0, -w / 2, 0]}

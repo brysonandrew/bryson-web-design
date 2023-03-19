@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { TModule } from "@t/index";
+import type { TModule } from "@t/index";
 import { useSelectedItem } from "./useSelectedItem";
 import { Full } from "./full";
 const screenFiles = import.meta.glob(
-  "../../../assets/screens/**/*.{jpg,png}",
+  "../../screens/**/*.{jpg,png}",
 );
-import { TMediaRecord, resolveMedia } from "./config";
+import type { TMediaRecord} from "./config";
+import { resolveMedia } from "./config";
 import { Space16 } from "@components/spaces/Space16";
 import { List } from "./list";
 

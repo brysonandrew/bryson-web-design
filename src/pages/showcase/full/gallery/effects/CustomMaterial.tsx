@@ -32,9 +32,9 @@ export class CustomMaterial extends ShaderMaterial {
       }`,
       uniforms: {
         tex: { value: null },
-        hasTexture: { value: 0 },
-        scale: { value: 0 },
-        shift: { value: 0 },
+        hasTexture: { value: 1 },
+        scale: { value: 1 },
+        shift: { value: 100 },
         opacity: { value: 1 },
         color: { value: new Color("white") },
       },

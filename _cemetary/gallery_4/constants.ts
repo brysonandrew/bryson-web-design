@@ -1,0 +1,1 @@
+export const YEAR_COUNT = 6;

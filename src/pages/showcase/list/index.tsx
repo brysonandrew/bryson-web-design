@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { Item } from "./item";
-import { FC } from "react";
+import type { FC } from "react";
 import { Fragment } from "react";
 import { Space } from "@components/spaces/Space";
 
@@ -11,8 +11,7 @@ type TProps = {
   keys: string[];
   isSelectedItem?: boolean;
 };
-export const List: FC<TProps> = ({ keys }) => {
-  return (
+export const List: FC<TProps> = ({ keys }) => (
     <Root className="text-teal">
       {keys.map((key: string, index: number) => (
         <Fragment key={key}>
@@ -22,4 +21,3 @@ export const List: FC<TProps> = ({ keys }) => {
       ))}
     </Root>
   );
-};

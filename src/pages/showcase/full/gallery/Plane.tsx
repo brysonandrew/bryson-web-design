@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import "./effects/CustomMaterial";
 import { useBlock } from "./block/useBlock";
 import { useContext } from "./state/Context";
-import { MathUtils, LinearFilter } from "three";
+import { MathUtils, LinearFilter, Texture } from "three";
 
 type TMaterialConfig = {
   scale: number;
@@ -17,13 +17,13 @@ const MATERIAL_CONFIG: TMaterialConfig = {
 
 type TProps = {
   color?: string;
-  shift: number;
-  aspect: number;
+  shift?: number;
   opacity?: number;
+  aspect: number;
   scale: [number, number, number];
   frustumCulled: boolean;
-  args: any;
-  map: any;
+  args: [w: number, h: number, segX: number, segY: number];
+  map: Texture;
 };
 export const Plane = forwardRef<THREE.Mesh, TProps>(
   (
@@ -34,7 +34,7 @@ export const Plane = forwardRef<THREE.Mesh, TProps>(
       args,
       map,
       ...props
-    }, 
+    },
     ref,
   ) => {
     const { viewportWidth, offsetFactor } = useBlock();
@@ -49,7 +49,8 @@ export const Plane = forwardRef<THREE.Mesh, TProps>(
         material.current.scale = MathUtils.lerp(
           material.current.scale,
           offsetFactor -
-            posRef.current.top / (pageCount * viewportWidth),
+            posRef.current.top /
+              (pageCount * viewportWidth),
           0.1,
         );
         material.current.shift = MathUtils.lerp(

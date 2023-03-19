@@ -42,6 +42,18 @@ export const reducer = (
         isThreshold: false,
       };
     }
+    case "start-page-transition": {
+      return {
+        ...state,
+        isPageTransitioning: true,
+      };
+    }
+    case "end-page-transition": {
+      return {
+        ...state,
+        isPageTransitioning: false,
+      };
+    }
     default: {
       console.error(type);
       throw new Error(`Action type invalid. ${type}`);
