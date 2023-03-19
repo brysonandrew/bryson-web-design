@@ -238,7 +238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3":
+"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.21.0":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
@@ -1495,6 +1495,7 @@ __metadata:
   resolution: "brysona.dev@workspace:."
   dependencies:
     "@babel/core": ^7.20.12
+    "@babel/runtime": ^7.21.0
     "@emailjs/browser": ^3.10.0
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/react": ^11.10.0
