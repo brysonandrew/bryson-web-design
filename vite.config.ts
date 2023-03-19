@@ -4,11 +4,13 @@ import react from "@vitejs/plugin-react";
 import windiCss from "vite-plugin-windicss";
 import viteRestart from "vite-plugin-restart";
 
-
 export default defineConfig({
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      external: [/^node:.*/, "@react-three/postprocessing"],
     },
   },
   plugins: [
@@ -21,8 +23,7 @@ export default defineConfig({
     }),
     paths(),
     viteRestart({
-      restart:
-        "windi.config-*",
+      restart: "windi.config-*",
     }),
   ],
   server: {
