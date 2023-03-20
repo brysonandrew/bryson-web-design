@@ -8,7 +8,9 @@ import { Shell } from "./Shell";
 
 type TProps = HTMLMotionProps<"div">;
 export const Reviews: FC<TProps> = () => {
-  const { tier } = useDetectGPU();
+  const { tier, isMobile } = useDetectGPU();
+  if (isMobile) return <Shell />;
+
   switch (tier) {
     case 3: {
       return (
