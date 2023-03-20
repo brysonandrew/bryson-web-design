@@ -1,6 +1,7 @@
 /**  @author vergil Wang */
 
-import { IUniform, Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, UniformsUtils, Vector2 } from "three"
+import type { IUniform} from "three";
+import { Mesh, OrthographicCamera, PlaneGeometry, Scene, ShaderMaterial, UniformsUtils, Vector2 } from "three"
 import { Pass } from "three/examples/jsm/postprocessing/Pass"
 
 type TShader = {

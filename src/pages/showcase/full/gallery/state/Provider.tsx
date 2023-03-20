@@ -1,5 +1,5 @@
-import { TMedia } from "@pages/showcase/config";
-import { TChildren } from "@t/index";
+import type { TMedia } from "@pages/showcase/config";
+import type { TChildren } from "@t/index";
 import type { FC, MutableRefObject } from "react";
 import { useReducer } from "react";
 import { reducer } from ".";

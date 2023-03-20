@@ -1,7 +1,8 @@
+import type {
+  ReflectorProps} from "@react-three/drei";
 import {
   Reflector,
   useTexture,
-  ReflectorProps,
   useAspect,
 } from "@react-three/drei";
 import sample1 from "./SurfaceImperfections003_1K_var1.jpeg";
@@ -9,7 +10,7 @@ import sample2 from "./SurfaceImperfections003_1K_Normal.jpeg";
 import { W, H } from "../constants";
 import { useRef } from "react";
 import type { Mesh, PlaneGeometry } from "three";
-import { MeshReflectorMaterial } from "@react-three/drei/materials/MeshReflectorMaterial";
+import type { MeshReflectorMaterial } from "@react-three/drei/materials/MeshReflectorMaterial";
 
 type TReflectivePlaneProps = ReflectorProps;
 export const ReflectivePlane = (

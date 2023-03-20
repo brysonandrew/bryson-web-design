@@ -1,4 +1,5 @@
-import { FC, Suspense } from "react";
+import type { FC} from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Content } from "./content";
 import { HeadsUpDisplay } from "./heads-up-display";

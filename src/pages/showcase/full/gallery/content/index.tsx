@@ -1,9 +1,9 @@
 import { useTexture } from "@react-three/drei";
 import { Block } from "../block";
 import { Image } from "./Image";
-import { FC } from "react";
+import type { FC } from "react";
 import { useContext } from "../state/Context";
-import { Texture } from "three";
+import type { Texture } from "three";
 
 export const Content: FC = () => {
   const { items } = useContext();

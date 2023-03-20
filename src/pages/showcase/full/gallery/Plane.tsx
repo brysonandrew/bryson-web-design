@@ -3,7 +3,8 @@ import { useFrame } from "@react-three/fiber";
 import "./effects/CustomMaterial";
 import { useBlock } from "./block/useBlock";
 import { useContext } from "./state/Context";
-import { MathUtils, LinearFilter, Texture } from "three";
+import type { Texture } from "three";
+import { MathUtils, LinearFilter } from "three";
 
 type TMaterialConfig = {
   scale: number;

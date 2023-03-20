@@ -3,8 +3,8 @@ import {
   EffectComposer,
   Vignette,
 } from "@react-three/postprocessing";
-import { FC } from "react";
-import { Scene } from "three";
+import type { FC } from "react";
+import type { Scene } from "three";
 import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 
 extend({
@@ -17,8 +17,7 @@ extend({
 });
 
 type TProps = { scene: Scene };
-export const Effects: FC<TProps> = () => {
-  return (
+export const Effects: FC<TProps> = () => (
     <>
       <EffectComposer autoClear>
         <Vignette
@@ -29,7 +28,6 @@ export const Effects: FC<TProps> = () => {
       </EffectComposer>
     </>
   );
-};
 
 // const { posRef } = useContext();
 // const { gl, size, camera } = useThree();

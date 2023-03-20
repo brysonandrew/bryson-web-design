@@ -1,8 +1,10 @@
 import { useFrame } from "@react-three/fiber";
-import { FC, useRef } from "react";
+import type { FC} from "react";
+import { useRef } from "react";
 import { useBlock } from "./useBlock";
-import { Group, MathUtils } from "three";
-import { TChildren } from "@t/index";
+import type { Group} from "three";
+import { MathUtils } from "three";
+import type { TChildren } from "@t/index";
 import { useContext } from "../state/Context";
 
 type TProps = {

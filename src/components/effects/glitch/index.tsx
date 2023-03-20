@@ -52,13 +52,13 @@ export const Glitch: FC<TProps> = () => {
       <Displacement
         filterId={ID}
         baseFrequency={`0 ${baseFrequency}`}
-        animate={{ numOctaves: currGlitch.keyframes }}
+        // animate={{ numOctaves: currGlitch.keyframes }}
         scale={400}
-        transition={{
-          repeat: Infinity,
-          repeatDelay: currGlitch.delay,
-          duration: currGlitch.duration,
-        }}
+        // transition={{
+        //   repeat: Infinity,
+        //   repeatDelay: currGlitch.delay,
+        //   duration: currGlitch.duration,
+        // }}
       >
         {(noiseId) => (
           <>
