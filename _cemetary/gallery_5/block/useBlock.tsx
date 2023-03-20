@@ -2,7 +2,7 @@ import { useThree } from "@react-three/fiber";
 import { useContext as useMainContext } from "../state/Context";
 
 export const useBlock = () => {
-  const { count, pageCount, zoom, posRef, offset } =
+  const { count, pageCount, zoom, posRef } =
     useMainContext();
 
   const { size } = useThree();
@@ -13,14 +13,11 @@ export const useBlock = () => {
     canvasWidth * (mobile ? 0.7 : 0.5);
   const sectionWidth =
     canvasWidth * ((pageCount - 1) / (count - 1));
-  const offsetFactor = (offset + 0.5) / count;
 
   return {
     zoom,
-    offset,
     viewportWidth,
     contentMaxWidth,
     sectionWidth,
-    offsetFactor,
   };
 };

@@ -18,9 +18,7 @@ type TProps = {
 export const Content: FC<TProps> = ({
   mediaRecord,
   selectedPath,
-}) => {
-  const items = mediaRecord[selectedPath];
-  return (
+}) => (
     <Container
       id={selectedPath}
       classValue="absolute top-0 left-0 screen-width screen-height z-10 text-teal-bright"
@@ -44,17 +42,3 @@ export const Content: FC<TProps> = ({
       />
     </Container>
   );
-};
-{
-  /* <div className="p-2" />
-      <ul className="flex items-center justify-center w-full grow">
-        {items.map(({ file, name, key }) => (
-          <li key={key}>
-            <img
-              src={`screens/${name}/${file}`}
-              alt={selectedPath}
-            />
-          </li>
-        ))}
-      </ul> */
-}

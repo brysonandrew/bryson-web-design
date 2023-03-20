@@ -1,17 +1,14 @@
-import type {
-  ThreeEvent} from "@react-three/fiber";
-import {
-  useFrame,
-  useThree,
-} from "@react-three/fiber";
+import type { ThreeEvent } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { useBlock } from "../block/useBlock";
 import { Rect } from "../Rect";
 import { useContext } from "../state/Context";
-import type { Group} from "three";
+import type { Group } from "three";
 import { MathUtils } from "three";
 import { clamp } from "three/src/math/MathUtils";
+import { motion } from "framer-motion-3d";
 
 const PADDING = 100;
 
@@ -90,12 +87,12 @@ export const Marker = () => {
   return (
     <group ref={ref} position={[0, 0, 2]}>
       <Rect
-        {...handlers}
         onPointerOver={(e: ThreeEvent<PointerEvent>) => {
           set(true);
-          e.stopPropagation();
+          //e.stopPropagation();
         }}
         onPointerOut={() => set(false)}
+        {...handlers}
       />
     </group>
   );
