@@ -1,6 +1,5 @@
 import { FC, Fragment, useRef, useState } from "react";
 import {
-  AnimatePresence,
   motion,
   useScroll,
   useTransform,
@@ -21,10 +20,6 @@ import { REVIEWS } from "./constants";
 import { Blinders } from "../../../components/blinders/Blinders";
 import clsx from "clsx";
 import { Review } from "./Review";
-import { Border } from "@components/select/Border";
-import { SELECT_LAYOUT_ID } from "@components/cursor/config";
-import { Background } from "@components/select/Background";
-import { MOTION_CONFIG } from "@constants/animation";
 import { useOutsideClick } from "@hooks/useOutsideClick";
 
 const Root = styled(motion.div)``;
