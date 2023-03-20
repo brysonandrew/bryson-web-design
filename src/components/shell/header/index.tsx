@@ -4,7 +4,7 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
-import { MainTitle } from "@components/text/MainTitle";
+import { Main } from "@components/text/main";
 import { useLocation } from "react-router";
 import { Sub } from "./Sub";
 import { Item } from "./right/Item";
@@ -70,7 +70,7 @@ export const Header = () => {
         className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08"
       />
       <div className="flex items-center">
-        <MainTitle {...{ scale, x }} />
+        <Main {...{ scale, x }} />
         <Sub />
       </div>
       <List className="flex items-center mt-0.5">

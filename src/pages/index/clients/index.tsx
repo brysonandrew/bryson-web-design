@@ -1,80 +1,24 @@
-import { Fragment } from "react";
-import type { FC } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { useDetectGPU } from "@react-three/drei";
 import type { HTMLMotionProps } from "framer-motion";
-import styled from "@emotion/styled";
-import { Text } from "@components/text/Text";
-import {
-  DELAY,
-  DELAY_2,
-  FULL,
-  GAP_1,
-  ROLLING_TEXT_CLASS,
-} from "../constants";
-import { Main } from "./Main";
-import { GROUPS } from "./constants";
-import { Blinders } from "@components/blinders/Blinders";
+import type { FC } from "react";
 
-const Root = styled(motion.div)``;
-const List = styled(motion.ul)``;
+import type { TChildrenProps } from "./Motion";
+import { Motion } from "./Motion";
+import { Shell } from "./Shell";
 
 type TProps = HTMLMotionProps<"div">;
 export const Clients: FC<TProps> = () => {
-  const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, GAP_1], FULL);
-  const x1 = useTransform(
-    scrollY,
-    [DELAY, GAP_1 + DELAY],
-    FULL,
-  );
-  const x2 = useTransform(
-    scrollY,
-    [DELAY_2, GAP_1 + DELAY_2],
-    FULL,
-  );
-
-  const xs = [x, x1, x2];
-
-  const opacityBlinders = useTransform(
-    scrollY,
-    [DELAY_2, GAP_1 + DELAY_2],
-    [1, 0],
-  );
-
-  return (
-    <Root className="flex flex-col items-start">
-      <Text>To build</Text>
-      <div className="py-2" />
-      <div className="relative overflow-hidden w-full">
-        <Blinders opacity={opacityBlinders} />
-        <ul>
-          {GROUPS.map((projects, index: number) => (
-            <li
-              key={`group-${index}`}
-              className="relative flex overflow-hidden w-full"
-            >
-              <List
-                className="inline-flex"
-                style={{ x: xs[index] }}
-              >
-                {projects.map((p, index) => (
-                  <Fragment key={p}>
-                    {index !== 0 && <li className="p-1" />}
-                    <li className={ROLLING_TEXT_CLASS}>
-                      <Text>{p}</Text>
-                    </li>
-                  </Fragment>
-                ))}
-                <Main index={index} />
-              </List>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Root>
-  );
+  const { tier } = useDetectGPU();
+  switch (tier) {
+    case 3: {
+      return (
+        <Motion>
+          {(props: TChildrenProps) => <Shell {...props} />}
+        </Motion>
+      );
+    }
+    default: {
+      return <Shell />;
+    }
+  }
 };

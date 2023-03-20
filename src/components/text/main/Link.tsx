@@ -1,0 +1,30 @@
+import { Border as Select } from "@components/select/Border";
+import styled from "@emotion/styled";
+import { useResetScroll } from "@hooks/useResetScroll";
+import { useSelectHandlers } from "@hooks/useSelectHandlers";
+import { motion } from "framer-motion";
+import type { FC } from "react";
+import { Link as _Link } from "react-router-dom";
+import { Title } from "./Title";
+
+const TITLE_ID = "TITLE_ID";
+
+const Root = styled(motion.div)``;
+
+export const Link: FC = () => {
+  const { handlers, isSelected } =
+    useSelectHandlers(TITLE_ID);
+  const handleResetScroll = useResetScroll();
+
+  return (
+    <Root onTap={handleResetScroll} {...handlers}>
+      <_Link
+        className="flex relative px-3 pt-2 pb-3"
+        to="/"
+      >
+        {isSelected && <Select />}
+        <Title />
+      </_Link>
+    </Root>
+  );
+};

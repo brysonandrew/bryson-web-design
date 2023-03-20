@@ -6,16 +6,11 @@ import { Review } from "./Review";
 import styled from "@emotion/styled";
 import { Text } from "@components/text/Text";
 import { motion } from "framer-motion";
-import { FC, Fragment, useRef, useState } from "react";
-import {
-  DELAY,
-  DELAY_2,
-  FULL,
-  GAP_2,
-  ROLLING_TEXT_CLASS,
-} from "../constants";
+import type { FC} from "react";
+import { Fragment, useRef, useState } from "react";
+import { ROLLING_TEXT_CLASS } from "../constants";
 import { useOutsideClick } from "@hooks/useOutsideClick";
-import { TChildrenProps } from "./Motion";
+import type { TChildrenProps } from "./Motion";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -62,11 +57,9 @@ export const Shell: FC<TProps> = ({
                 <List
                   className="inline-flex"
                   style={{
-                    x: (xs ?? [
-                      "-100%",
-                      "-100%",
-                      "-100%",
-                    ])[index],
+                    x: (xs ?? ["-100%", "-100%", "-100%"])[
+                      index
+                    ],
                   }}
                 >
                   <li className={ROLLING_TEXT_CLASS}>
