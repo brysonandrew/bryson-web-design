@@ -4,7 +4,6 @@ const COLORS = require("./windi.config-colors.json");
 const PINK = `0 0 1px 1px ${COLORS.pink}, 0 0 1px 2px ${COLORS.pink}`;
 const PURPLE = `0 0 1px 1px ${COLORS.purple}, 0 0 1px 2px ${COLORS.purple}`;
 module.exports = {
-  // "neu-black": `-4px -4px 9px ${COLORS["black-light"]}, 4px 4px 9px ${COLORS["black-light"]}`,
   "neu-black": `3px 3px 5px rgb(28 28 28 / 50%), -3px -3px 5px rgb(44 44 44 / 50%)`,
   pink: PINK,
   "pink-md": `0 0 1px 1px ${COLORS.pink}, 0 0 1px 2px ${COLORS.pink}, 0 0 1px 3px ${COLORS.pink}`,
@@ -28,8 +27,11 @@ module.exports = {
 
   "teal-md": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}, 0 0 1px 3px ${COLORS.teal}`,
   "teal": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}`,
-  "teal-04-sm": `0 0 1px 1px ${COLORS["teal-04"]}, 0 0 1px 2px ${COLORS["teal-04"]}`,
+  "teal-02": `0 0 1px 1px ${COLORS["teal-02"]}, 0 0 1px 2px ${COLORS["teal-02"]}`,
+  "teal-04": `0 0 1px 1px ${COLORS["teal-04"]}, 0 0 1px 2px ${COLORS["teal-04"]}`,
   "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
+  "teal-01-sm": `0 0 1px 1px ${COLORS["teal-01"]}`,
+  "teal-02-sm": `0 0 1px 1px ${COLORS["teal-02"]}`,
   "teal-04-sm": `0 0 1px 1px ${COLORS["teal-04"]}`,
   "teal": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}`,
 

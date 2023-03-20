@@ -287,6 +287,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@braintree/browser-detection@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "@braintree/browser-detection@npm:1.14.0"
+  checksum: f737df107cb6f8e37e679a928629bd157a56500426dcbb0a634e5dcc4fa66051bc537cb0bb039dadfdccea17fc0b31f9ddac9ee8043938f3ed62fdbac2915372
+  languageName: node
+  linkType: hard
+
 "@chevrotain/cst-dts-gen@npm:10.5.0":
   version: 10.5.0
   resolution: "@chevrotain/cst-dts-gen@npm:10.5.0"
@@ -1496,6 +1503,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.12
     "@babel/runtime": ^7.21.0
+    "@braintree/browser-detection": ^1.14.0
     "@emailjs/browser": ^3.10.0
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/react": ^11.10.0

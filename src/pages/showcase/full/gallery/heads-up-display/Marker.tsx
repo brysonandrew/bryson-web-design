@@ -1,5 +1,6 @@
+import type {
+  ThreeEvent} from "@react-three/fiber";
 import {
-  ThreeEvent,
   useFrame,
   useThree,
 } from "@react-three/fiber";
@@ -8,7 +9,8 @@ import { useDrag } from "@use-gesture/react";
 import { useBlock } from "../block/useBlock";
 import { Rect } from "../Rect";
 import { useContext } from "../state/Context";
-import { Group, MathUtils } from "three";
+import type { Group} from "three";
+import { MathUtils } from "three";
 import { clamp } from "three/src/math/MathUtils";
 
 const PADDING = 100;

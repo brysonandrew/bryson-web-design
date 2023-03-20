@@ -1,4 +1,4 @@
-import { TMedia } from "@pages/showcase/config";
+import type { TMedia } from "@pages/showcase/config";
 import type {
   Dispatch,
   Reducer,

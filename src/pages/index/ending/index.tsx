@@ -3,7 +3,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
-import { Text } from "../../../components/text/Text";
+import { Text } from "@components/text/Text";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
 

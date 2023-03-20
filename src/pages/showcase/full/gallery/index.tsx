@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import { TMediaRecord } from "@pages/showcase/config";
-import { FC, useRef, useState } from "react";
+import type { TMediaRecord } from "@pages/showcase/config";
+import type { FC} from "react";
+import { useRef, useState } from "react";
 import { Main } from "./Main";
 import { Provider } from "./state/Provider";
-import { TPos } from "./state/types";
+import type { TPos } from "./state/types";
 import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
 
 const POS: TPos = { left: 0, top: 0 };

@@ -1,5 +1,5 @@
 import { Line, meshBounds } from "@react-three/drei";
-import { FC } from "react";
+import type { FC } from "react";
 
 type TProps = any & {
   scale: number;

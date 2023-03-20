@@ -11,6 +11,9 @@ import {
   CURSOR_SIZE,
   SELECT_LAYOUT_ID,
 } from "../cursor/config";
+import { resolveUrlId } from "@utils/resolveUrlId";
+import { POOL_ID } from "@components/cursor";
+import { useDomCondition } from "@hooks/useDomCondition";
 
 const Root = styled(motion.div)``;
 
@@ -22,31 +25,43 @@ export const Square: FC<TProps> = ({
   classValue,
   style,
   ...props
-}) => (
-  <Root
-    initial={false}
-    layoutId={SELECT_LAYOUT_ID}
-    layout="size"
-    style={{
-      y: 0,
-      x: 0,
-      width: CURSOR_SIZE,
-      height: CURSOR_SIZE,
-      ...style,
-    }}
-    className={clsx(
-      "fixed shadow-teal-md z-40 pointer-events-none cursor-crosshair",
-      classValue,
-    )}
-    animate={{
-      opacity: [1, 0.4],
-    }}
-    transition={{
-      repeat: Infinity,
-      repeatDelay: 0.4,
-      repeatType: "reverse",
-      duration: 2,
-    }}
-    {...props}
-  />
-);
+}) => {
+  const isChrome = useDomCondition(
+    () => window.navigator.userAgent.search("Chrome") > 0,
+  );
+
+  return (
+    <Root
+      initial={false}
+      layoutId={SELECT_LAYOUT_ID}
+      layout="size"
+      style={{
+        y: 0,
+        x: 0,
+        width: CURSOR_SIZE,
+        height: CURSOR_SIZE,
+        backdropFilter: isChrome
+          ? resolveUrlId(POOL_ID)
+          : "invert(100%)",
+        ...(isChrome
+          ? { filter: resolveUrlId(POOL_ID) }
+          : {}),
+        ...style,
+      }}
+      className={clsx(
+        "fixed shadow-teal-md z-40 pointer-events-none cursor-crosshair",
+        classValue,
+      )}
+      animate={{
+        opacity: [1, 0.4],
+      }}
+      transition={{
+        repeat: Infinity,
+        repeatDelay: 0.4,
+        repeatType: "reverse",
+        duration: 2,
+      }}
+      {...props}
+    />
+  );
+};

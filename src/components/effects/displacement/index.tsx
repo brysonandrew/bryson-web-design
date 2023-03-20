@@ -6,6 +6,7 @@ import type { TDisplacementProps } from "./config";
 export const ID = "DisplacementId";
 type TChildrenProps = TFilterChildrenProps<typeof ID>;
 type TProps = TChildrenProps & TDisplacementProps;
+
 export const Displacement: FC<TProps> = ({
   external,
   children,

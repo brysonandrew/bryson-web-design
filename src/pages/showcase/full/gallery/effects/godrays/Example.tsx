@@ -1,5 +1,6 @@
 import { EffectComposer } from "@react-three/postprocessing";
-import { FC, useState } from "react";
+import type { FC} from "react";
+import { useState } from "react";
 import { GodRaysPass } from ".";
 
 export const Example: FC = () => {

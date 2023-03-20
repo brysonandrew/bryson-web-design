@@ -71,7 +71,8 @@ hr {
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: rgba(45, 212, 191, 0.1);
+  /* background-color: rgba(45, 212, 191, 0.1); */
+  background-color: black;
 }
 
 ::-webkit-scrollbar-thumb {

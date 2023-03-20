@@ -1,8 +1,9 @@
 import { Shadow, Text } from "@react-three/drei";
-import { FC, useRef } from "react";
+import type { FC} from "react";
+import { useRef } from "react";
 import { Plane } from "../Plane";
 import { useBlock } from "../block/useBlock";
-import { Group, Texture } from "three";
+import type { Group, Texture } from "three";
 import { useContext } from "../state/Context";
 import { useFrame } from "@react-three/fiber";
 

@@ -23,13 +23,13 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
 
   return (
     <Root
-      className={clsx("relative p-2 flex w-full")}
+      className={clsx("relative p-2 flex w-full cursor-pointer")}
       {...handlers}
     >
       {isSelected && <Select />}
       <Decoration
         className={clsx(
-          "px-4 py-2 cursor-crosshair",
+          "px-4 py-2 pointer-events-none",
           LABEL_CLASS,
         )}
       >

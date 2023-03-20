@@ -1,11 +1,11 @@
-import type { FC } from "react";
-import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import type { TChildren } from "../types";
-import { Header } from "./shell/header";
-import { Footer } from "./shell/Footer";
-import { BlindersOut } from "./blinders/BlindersOut";
 import { HEADER_OFFSET_Y } from "@pages/index/constants";
+import { motion } from "framer-motion";
+import type { FC } from "react";
+import type { TChildren } from "../types";
+import { BlindersOut } from "./blinders/BlindersOut";
+import { Footer } from "./shell/Footer";
+import { Header } from "./shell/header";
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;

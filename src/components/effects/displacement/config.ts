@@ -2,13 +2,14 @@ import type {
   Transition,
   SVGMotionProps,
 } from "framer-motion";
+import type { SVGProps } from "react";
 
 type TTransition = Pick<
   Transition,
   "repeat" | "repeatDelay" | "repeatType" | "delay"
 >;
 type TTurbulance = Omit<
-  SVGMotionProps<SVGFETurbulenceElement>,
+  SVGProps<SVGFETurbulenceElement>,
   "children" | "result"
 > & {
   baseFrequency?: number | `${number} ${number}`;

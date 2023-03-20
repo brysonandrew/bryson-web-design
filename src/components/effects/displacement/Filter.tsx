@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TFilterProps } from "../types";
 import { INTENSITY, TURBULANCE_DEFAULTS } from "./config";
@@ -21,7 +20,7 @@ export const Filter: FC<
   ...props
 }) => (
   <>
-    <motion.feTurbulence
+    <feTurbulence
       {...TURBULANCE_DEFAULTS}
       type="turbulence"
       in={source}
@@ -38,8 +37,8 @@ export const Filter: FC<
         values="2;0;2"
         {...BASE_ANIMATION}
       />
-    </motion.feTurbulence>
-    <motion.feMorphology
+    </feTurbulence>
+    <feMorphology
       in={`${id}-turbulence`}
       operator="erode"
       radius="6"
@@ -50,7 +49,7 @@ export const Filter: FC<
         values="6;8;6"
         {...BASE_ANIMATION}
       />
-    </motion.feMorphology>
+    </feMorphology>
     <feOffset
       in={source}
       dx={-intensity * 0.5}
@@ -88,17 +87,6 @@ export const Filter: FC<
         {...BASE_ANIMATION}
       />
     </feDisplacementMap>
-    {/*  
-    <feComposite
-      in="DISPLACEMENT"
-      in2="BLUR"
-      result={result}
-      operator="arithmetic"
-      k1="0"
-      k2="0.1"
-      k3="0.8"
-      k4="0"
-    /> */}
     {children && children(result)}
   </>
 );
