@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from "react";
+import { FC, Fragment, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -25,6 +25,7 @@ import { Border } from "@components/select/Border";
 import { SELECT_LAYOUT_ID } from "@components/cursor/config";
 import { Background } from "@components/select/Background";
 import { MOTION_CONFIG } from "@constants/animation";
+import { useOutsideClick } from "@hooks/useOutsideClick";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -37,6 +38,9 @@ export const Reviews: FC<TProps> = () => {
 
   const handleHoverStart = (id: number) => setLong(id);
   const handleHoverEnd = () => setLong(null);
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  useOutsideClick({ ref, handler: handleHoverEnd });
 
   const { scrollY } = useScroll();
   const x = useTransform(scrollY, [GAP_1, GAP_2], FULL);
@@ -61,6 +65,7 @@ export const Reviews: FC<TProps> = () => {
 
   return (
     <Root
+      ref={ref}
       className="relative flex flex-col items-start z-10"
       onHoverEnd={handleHoverEnd}
     >
@@ -84,6 +89,7 @@ export const Reviews: FC<TProps> = () => {
                   "relative flex w-full overflow-hidden",
                 )}
                 onHoverStart={() => handleHoverStart(index)}
+                onTap={() => handleHoverStart(index)}
               >
                 <List
                   className="inline-flex"

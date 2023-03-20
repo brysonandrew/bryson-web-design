@@ -24,7 +24,7 @@ export const Typewriter: FC<TTypewriterProps> = ({
   wip,
   children,
 }) => {
-  const delay = isDisabled ? 0 : initDelay;
+  const delay = initDelay;
   const isDelay = typeof delay === "number";
   const [content, setContent] = useState<TBaseChildren[]>(
     [],

@@ -34,12 +34,7 @@ export const Main: FC<TProps> = ({
         className="absolute top-2 bottom-2 shadow-teal left-0 w-1 h-full bg-teal-bright"
         animate={{ opacity: isActive ? 1 : 0.2 }}
       />
-      <>
-        {/* {index !== 0 && (
-          <motion.div className="absolute right-0 top-0.5 w-full shadow-teal-02-sm" />
-        )} */}
-        <Review index={index} type="short" />
-      </>
+      <Review index={index} type="short" />
     </Root>
   );
 };

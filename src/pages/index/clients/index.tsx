@@ -17,7 +17,7 @@ import {
 } from "../constants";
 import { Main } from "./Main";
 import { GROUPS } from "./constants";
-import { Blinders } from "../../../components/blinders/Blinders";
+import { Blinders } from "@components/blinders/Blinders";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;

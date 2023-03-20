@@ -1,13 +1,12 @@
-import type { FC } from "react";
-import type { MotionValue } from "framer-motion";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Border as Select } from "@components/select/Border";
 import styled from "@emotion/styled";
-import { Typewriter } from "../typewriter";
 import { useResetScroll } from "@hooks/useResetScroll";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Border as Select } from "@components/select/Border";
 import { useContext } from "@state/Context";
+import type { MotionValue } from "framer-motion";
+import { motion } from "framer-motion";
+import type { FC } from "react";
+import { Link } from "react-router-dom";
 
 const TITLE_ID = "TITLE_ID";
 
@@ -36,15 +35,9 @@ export const MainTitle: FC<TProps> = ({ scale, x }) => {
       <Link className="flex relative px-3 pt-2 pb-3" to="/">
         <H1
           className="text-teal-bright text-xl uppercase leading-none"
-          style={{ letterSpacing: 2}}
+          style={{ letterSpacing: 2 }}
         >
-          {isInit ? (
-            <Typewriter wip={linkText}>
-              {(content) => <>{content}</>}
-            </Typewriter>
-          ) : (
-            linkText
-          )}
+          {linkText}
         </H1>
       </Link>
     </Root>

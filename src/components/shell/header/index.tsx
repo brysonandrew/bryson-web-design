@@ -9,28 +9,50 @@ import { useLocation } from "react-router";
 import { Sub } from "./Sub";
 import { Item } from "./right/Item";
 import { Fragment } from "react";
-import { useSearchParams } from "react-router-dom";
 import { useSelectedItem } from "@pages/showcase/useSelectedItem";
+import {
+  HEADER_TRANSITION,
+  HEADER_TRANSITION_EXIT,
+} from "@constants/animation";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
 const BackgroundFade = styled(motion.div)``;
 const Border = styled(motion.div)``;
-
 const List = styled(motion.ul)``;
 
 export const Header = () => {
   const { scrollY } = useScroll();
-
   const x = useTransform(scrollY, [0, 100], [0, -28]);
+  const backgroundOpacity = useTransform(
+    scrollY,
+    [0, 40],
+    [1, 0.4],
+  );
   const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
+  const borderOpacity = useTransform(
+    scrollY,
+    [0, 100],
+    [1, 0.2],
+  );
+  const height = useTransform(scrollY, [0, 100], [100, 60]);
   const scaleY = useTransform(scrollY, [0, 100], [0, 2]);
-
   const { pathname } = useLocation();
   const isShowCase = useSelectedItem();
 
   return (
-    <Root className="flex bg-black  items-center justify-between fixed top-0 left-0 w-full px-4 pt-4 pb-5 z-40">
+    <Root
+      className="flex items-center justify-between fixed top-0 left-0 w-full h-20 px-4 pt-4 pb-5 z-40"
+      style={{ height }}
+      initial={{ opacity: 0, y: "-100%" }}
+      animate={{ opacity: 1, y: "0%" }}
+      exit={{
+        opacity: 0,
+        y: "-100%",
+        transition: HEADER_TRANSITION_EXIT,
+      }}
+      transition={HEADER_TRANSITION}
+    >
       <BackgroundFade
         style={{
           scaleY,
@@ -39,8 +61,14 @@ export const Header = () => {
         }}
         className="absolute w-full top-full left-0 w-full h-full from-current bg-gradient-to-b border-teal-04 backdrop-blur-lg pointer-events-none"
       />
-      <Background className="absolute w-full inset-0 bg-current border-teal-04 backdrop-blur-lg" />
-      <Border className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08" />
+      <Background
+        style={{ opacity: backgroundOpacity }}
+        className="absolute bg-black-dark inset-0"
+      />
+      <Border
+        style={{ opacity: borderOpacity }}
+        className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08"
+      />
       <div className="flex items-center">
         <MainTitle {...{ scale, x }} />
         <Sub />
