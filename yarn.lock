@@ -1521,6 +1521,7 @@ __metadata:
     "@vite/vitejs-client": ^2.2.10
     "@vitejs/plugin-react": ^3.1.0
     clsx: ^1.2.1
+    detect-gpu: ^5.0.16
     eslint: ^8.21.0
     framer-motion: ^10.3.2
     framer-motion-3d: ^10.3.2
@@ -1785,7 +1786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-gpu@npm:^5.0.14":
+"detect-gpu@npm:^5.0.14, detect-gpu@npm:^5.0.16":
   version: 5.0.16
   resolution: "detect-gpu@npm:5.0.16"
   dependencies:
