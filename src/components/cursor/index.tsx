@@ -10,7 +10,6 @@ import { useEventListener } from "@hooks/useEventListener";
 import { useContext } from "@state/Context";
 import type { TChildren } from "@t/index";
 import { useCursorAppear } from "@hooks/useCursorAppear";
-import { Pool } from "@components/effects/pool";
 import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { usePointerEnterLeave } from "./usePointerEnterLeave";
 
@@ -35,12 +34,23 @@ export const Cursor: FC<TCursorProps> = ({
   const toggleCursor = (isReady: boolean) => {
     dispatch({ type: "cursor-ready", value: isReady });
   };
+
+  const load = () => {
+    if (!isCursorReady) {
+      cursorX.set((window.innerWidth + CURSOR_SIZE) * 0.5);
+      cursorY.set((window.innerHeight + CURSOR_SIZE) * 0.5);
+      toggleCursor(true);
+    }
+  };
+
   const cursorOn = (_: PointerEvent) => {
     toggleCursor(true);
   };
+
   const cursorOff = (_: PointerEvent) => {
     toggleCursor(false);
   };
+
   const handleMove = (event: PointerEvent) => {
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
@@ -56,7 +66,7 @@ export const Cursor: FC<TCursorProps> = ({
     handleMove,
   );
 
-  usePointerEnterLeave({ cursorOn, cursorOff });
+  usePointerEnterLeave({ cursorOn, cursorOff, load });
 
   useEventListener(
     children && onTap ? "pointerdown" : null,
