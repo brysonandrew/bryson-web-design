@@ -23,7 +23,7 @@ export const Shell: FC<TProps> = ({ children }) => (
       }}
     >
       {children}
-      <BlindersOut />
+      <BlindersOut /> 
     </Root>
     <Footer />
   </div>

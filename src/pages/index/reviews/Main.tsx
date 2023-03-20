@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { HTMLMotionProps, motion } from "framer-motion";
+import type { HTMLMotionProps} from "framer-motion";
+import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Review } from "./Review";
 
@@ -16,8 +17,7 @@ export const Main: FC<TProps> = ({
   isActive,
   isLong,
   ...props
-}) => {
-  return (
+}) => (
     <Root
       className={clsx(
         "absolute left-full top-0 uppercase px-1 py-2 m-1 w-mid lg:w-mid-lg xl:w-mid-xl",
@@ -37,4 +37,3 @@ export const Main: FC<TProps> = ({
       <Review index={index} type="short" />
     </Root>
   );
-};

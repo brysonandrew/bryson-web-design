@@ -1,8 +1,9 @@
 import { useDetectGPU } from "@react-three/drei";
 import type { HTMLMotionProps } from "framer-motion";
-import { FC } from "react";
+import type { FC } from "react";
 
-import { Motion, TChildrenProps } from "./Motion";
+import type { TChildrenProps } from "./Motion";
+import { Motion } from "./Motion";
 import { Shell } from "./Shell";
 
 type TProps = HTMLMotionProps<"div">;

@@ -1,8 +1,10 @@
 import { TextSm } from "@components/text/TextSm";
-import { FC, Fragment } from "react";
+import type { FC} from "react";
+import { Fragment } from "react";
 import { REVIEWS } from "./constants";
 import styled from "@emotion/styled";
-import { HTMLMotionProps, motion } from "framer-motion";
+import type { HTMLMotionProps} from "framer-motion";
+import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "@constants/animation";
 
 const Long = styled(motion.div)``;
