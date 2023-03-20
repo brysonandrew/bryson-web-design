@@ -29,7 +29,7 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
       {isSelected && <Select />}
       <Decoration
         className={clsx(
-          "px-4 py-2 cursor-crosshair",
+          "px-4 py-2 pointer-events-none",
           LABEL_CLASS,
         )}
       >
