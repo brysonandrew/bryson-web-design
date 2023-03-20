@@ -8,6 +8,7 @@ import {
   FOOTER_TRANSITION,
   FOOTER_TRANSITION_EXIT,
 } from "@constants/animation";
+import { useContext } from "@state/Context";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
@@ -16,6 +17,7 @@ const Border = styled(motion.div)``;
 const Sub = styled(motion.h2)``;
 
 export const Footer = () => {
+  const { isInit } = useContext();
   const { scrollY } = useScroll();
   const scaleBackground = useTransform(
     scrollY,
@@ -39,17 +41,21 @@ export const Footer = () => {
   );
   const subText = "ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ ᴡᴇʙ sɪɴᴄᴇ 2014";
 
+  const initAnimation = {
+    initial: { opacity: 0, y: "100%" },
+    animate: { opacity: 1, y: "0%" },
+    exit: {
+      opacity: 0,
+      y: "100%",
+      transition: FOOTER_TRANSITION_EXIT,
+    },
+    transition: FOOTER_TRANSITION,
+  };
+
   return (
     <Root
       className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40 pointer-events-none"
-      initial={{ opacity: 0, y: "100%" }}
-      animate={{ opacity: 1, y: "0%" }}
-      exit={{
-        opacity: 0,
-        y: "100%",
-        transition: FOOTER_TRANSITION_EXIT,
-      }}
-      transition={FOOTER_TRANSITION}
+      {...(isInit ? initAnimation : {})}
     >
       <BackgroundFade
         style={{
