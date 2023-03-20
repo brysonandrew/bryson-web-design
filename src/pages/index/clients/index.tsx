@@ -8,7 +8,13 @@ import {
 import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
 import { Text } from "@components/text/Text";
-import { DELAY, DELAY_2, FULL, GAP_1 } from "../constants";
+import {
+  DELAY,
+  DELAY_2,
+  FULL,
+  GAP_1,
+  ROLLING_TEXT_CLASS,
+} from "../constants";
 import { Main } from "./Main";
 import { GROUPS } from "./constants";
 import { Blinders } from "../../../components/blinders/Blinders";
@@ -58,7 +64,7 @@ export const Clients: FC<TProps> = () => {
                 {projects.map((p, index) => (
                   <Fragment key={p}>
                     {index !== 0 && <li className="p-1" />}
-                    <li className="uppercase bg-white bg-opacity-20 py-2 m-1 whitespace-nowrap opacity-20">
+                    <li className={ROLLING_TEXT_CLASS}>
                       <Text>{p}</Text>
                     </li>
                   </Fragment>

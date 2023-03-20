@@ -1,6 +1,6 @@
 export const MOTION_CONFIG = {
   transition: {
-    ease: "linear",
+    ease: "easeIn",
     duration: 0.2,
   },
 };

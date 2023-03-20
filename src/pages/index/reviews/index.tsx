@@ -1,5 +1,6 @@
-import type { FC } from "react";
+import { FC, Fragment, useState } from "react";
 import {
+  AnimatePresence,
   motion,
   useScroll,
   useTransform,
@@ -13,16 +14,30 @@ import {
   FULL,
   GAP_1,
   GAP_2,
+  ROLLING_TEXT_CLASS,
 } from "../constants";
 import { Main } from "./Main";
 import { REVIEWS } from "./constants";
 import { Blinders } from "../../../components/blinders/Blinders";
+import clsx from "clsx";
+import { Review } from "./Review";
+import { Border } from "@components/select/Border";
+import { SELECT_LAYOUT_ID } from "@components/cursor/config";
+import { Background } from "@components/select/Background";
+import { MOTION_CONFIG } from "@constants/animation";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
+const Item = styled(motion.li)``;
 
 type TProps = HTMLMotionProps<"div">;
 export const Reviews: FC<TProps> = () => {
+  const [long, setLong] = useState<number | null>(null);
+  const isLong = typeof long === "number";
+
+  const handleHoverStart = (id: number) => setLong(id);
+  const handleHoverEnd = () => setLong(null);
+
   const { scrollY } = useScroll();
   const x = useTransform(scrollY, [GAP_1, GAP_2], FULL);
   const x1 = useTransform(
@@ -45,29 +60,48 @@ export const Reviews: FC<TProps> = () => {
   );
 
   return (
-    <Root className="flex flex-col items-start">
+    <Root
+      className="relative flex flex-col items-start z-10"
+      onHoverEnd={handleHoverEnd}
+    >
       <Text>For businesses</Text>
       <div className="py-2" />
-      <div className="relative overflow-hidden w-full h-full">
-        <Blinders opacity={opacityBlinders} />
-        <ul>
+      <Blinders opacity={opacityBlinders} />
+      <div className={clsx("relative w-full h-full")}>
+        {isLong ? (
+          <Review
+            layoutId={`${long}`}
+            index={long}
+            type="long"
+            onHoverEnd={handleHoverEnd}
+          />
+        ) : null}
+        <motion.ul>
           {REVIEWS.map((review, index: number) => (
-            <li
-              key={`group-${index}`}
-              className="relative flex w-full overflow-hidden"
-            >
-              <List
-                className="inline-flex"
-                style={{ x: xs[index] }}
+            <Fragment key={`group-${index}`}>
+              <Item
+                className={clsx(
+                  "relative flex w-full overflow-hidden",
+                )}
+                onHoverStart={() => handleHoverStart(index)}
               >
-                <li className="uppercase bg-white bg-opacity-20 py-2 m-1 whitespace-nowrap opacity-20">
-                  <Text>{review.long}</Text>
-                </li>
-                <Main index={index} />
-              </List>
-            </li>
+                <List
+                  className="inline-flex"
+                  style={{ x: xs[index] }}
+                >
+                  <li className={ROLLING_TEXT_CLASS}>
+                    <Text>{review.long}</Text>
+                  </li>
+                  <Main
+                    isActive={index === long}
+                    isLong={isLong}
+                    index={index}
+                  />
+                </List>
+              </Item>
+            </Fragment>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </Root>
   );
