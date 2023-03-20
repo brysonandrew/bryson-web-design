@@ -23,7 +23,7 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
 
   return (
     <Root
-      className={clsx("relative p-2 flex w-full")}
+      className={clsx("relative p-2 flex w-full cursor-pointer")}
       {...handlers}
     >
       {isSelected && <Select />}

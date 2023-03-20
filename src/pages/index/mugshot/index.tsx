@@ -1,14 +1,5 @@
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import {
-  DELTA,
-  GAP_1,
-  HEADER_OFFSET_Y,
-} from "../constants";
 import {
   Displacement,
   ID,

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
-import { SELECT_LAYOUT_ID } from "../cursor/config";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import type { FC } from "react";
+import { SELECT_LAYOUT_ID } from "../cursor/config";
 
 const Root = styled(motion.div)``;
 
@@ -15,7 +15,7 @@ export const Border: FC<TProps> = ({ classValue }) => (
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
       "absolute inset-0 pointer-events-none rounded-sm",
-      classValue ?? "shadow-teal-sm",
+      classValue ?? "shadow-teal-04-sm",
     )}
   />
 );

@@ -23,7 +23,7 @@ export const Footer = () => {
     [0, 4],
   );
 
-  const subText = "ᴅᴇᴠᴠɪɴɢ sɪɴᴄᴇ 2014";
+  const subText = "ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ ᴡᴇʙ sɪɴᴄᴇ 2014";
 
   return (
     <Root className="flex bg-black items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40 pointer-events-none">

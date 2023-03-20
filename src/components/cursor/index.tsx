@@ -11,11 +11,10 @@ import { useContext } from "@state/Context";
 import type { TChildren } from "@t/index";
 import { useCursorAppear } from "@hooks/useCursorAppear";
 import { Pool } from "@components/effects/pool";
-import { resolveUrlId } from "@utils/resolveUrlId";
 import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { usePointerEnterLeave } from "./usePointerEnterLeave";
 
-const POOL_ID = "POOL_ID";
+export const POOL_ID = "POOL_ID";
 
 export type TCursorProps = {
   children?: TChildren;
@@ -66,28 +65,19 @@ export const Cursor: FC<TCursorProps> = ({
 
   return (
     <>
-
-      <svg width="0%" height="0%" viewBox="0 0 100 100">
-        <Pool id={POOL_ID} intensity={10} />
-      </svg>
-
       {selectId === null && (
         <AnimatePresence>
           {isCursorReady && (
-            <>
-              <Select
-                style={{
-                  left: cursorX,
-                  top: cursorY,
-                  width: CURSOR_SIZE,
-                  height: CURSOR_SIZE,
-                  backdropFilter: resolveUrlId(POOL_ID),
-                  originX: "50%",
-                  originY: "50%",
-                  filter: resolveUrlId(POOL_ID),
-                }}
-              />
-            </>
+            <Select
+              style={{
+                left: cursorX,
+                top: cursorY,
+                width: CURSOR_SIZE,
+                height: CURSOR_SIZE,
+                originX: "50%",
+                originY: "50%",
+              }}
+            />
           )}
         </AnimatePresence>
       )}
