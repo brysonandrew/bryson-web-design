@@ -6,12 +6,10 @@ import {
   IMG_KEY,
   ITEM_HEIGHT,
   SELECTED_KEY,
-  resolveMedia,
 } from "@pages/showcase/config";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
-import { TChildren } from "@t/index";
 import { kebabToTitle } from "@utils/format";
 
 const Title = styled(motion.div)``;
@@ -26,7 +24,7 @@ export const Item: FC<TProps> = ({ name, children }) => {
 
   return (
     <Root
-      className="flex relative shadow-teal-04-sm bg-teal-005"
+      className="flex relative shadow-teal-01-sm bg-teal-005"
       {...handlers}
     >
       <Link
@@ -34,13 +32,13 @@ export const Item: FC<TProps> = ({ name, children }) => {
         className="relative rounded-md w-full"
         style={{ height: ITEM_HEIGHT }}
       >
-        <Container id={name} classValue="flex items-center justify-center absolute inset-0 text-2xl">
+        <Container id={name} classValue="flex justify-center absolute inset-0 pl-4 text-lg">
           <Title className="whitespace-nowrap" layout>
             {kebabToTitle(children)}
           </Title>
         </Container>
         {isSelected && <Select />}
       </Link>
-    </Root>
+    </Root> 
   );
 };
