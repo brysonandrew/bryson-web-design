@@ -5,10 +5,11 @@ import { Full } from "./full";
 const screenFiles = import.meta.glob(
   "../../screens/**/*.{jpg,png}",
 );
-import type { TMediaRecord} from "./config";
+import { EXCLUDED_KEYS, TMediaRecord } from "./config";
 import { resolveMedia } from "./config";
 import { Space16 } from "@components/spaces/Space16";
 import { List } from "./list";
+import { Shell } from "@components/Shell";
 
 export const Showcase = () => {
   const [mediaRecord, setMediaRecord] =
@@ -20,14 +21,18 @@ export const Showcase = () => {
     const mediaRecord: TMediaRecord = {};
 
     for await (const resolver of values) {
-      const v = (await resolver()) as TModule;
+      const value = await resolver();
 
-      const media = resolveMedia(v.default);
+      const media = resolveMedia(
+        (value as TModule).default,
+      );
 
-      mediaRecord[media.name] = [
-        ...(mediaRecord[media.name] ?? []),
-        media,
-      ];
+      if (!EXCLUDED_KEYS.includes(media.img)) {
+        mediaRecord[media.name] = [
+          ...(mediaRecord[media.name] ?? []),
+          media,
+        ];
+      }
     }
     setMediaRecord(mediaRecord);
   };
@@ -41,11 +46,11 @@ export const Showcase = () => {
 
   if (!mediaRecord) return null;
 
-  const keys = Object.keys(mediaRecord);
+  const names = Object.keys(mediaRecord);
 
   return (
-    <>
-      <List keys={keys} isSelectedItem={isSelectedItem} />
+    <Shell>
+      <List names={names} isSelectedItem={isSelectedItem} />
       <Space16 />
       <>
         {isSelectedItem && (
@@ -55,6 +60,6 @@ export const Showcase = () => {
           />
         )}
       </>
-    </>
+    </Shell>
   );
 };

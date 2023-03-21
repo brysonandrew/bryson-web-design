@@ -81,7 +81,7 @@ export const Header = () => {
       </div>
       <List className="flex items-center mt-0.5">
         {[
-          // "showcase",
+        //  "showcase",
           "contact",
         ].map((item, index) => {
           const to = `/${item}`;

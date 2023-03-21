@@ -12,7 +12,7 @@ export const Dots = () => {
           factor={1 / count / 2}
           index={index}
         >
-          <Dot />
+          <Dot index={index} />
         </Block>
       ))}
     </>

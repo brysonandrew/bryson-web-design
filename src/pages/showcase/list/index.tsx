@@ -8,16 +8,16 @@ import { Space } from "@components/spaces/Space";
 const Root = styled(motion.ul)``;
 
 type TProps = {
-  keys: string[];
+  names: string[];
   isSelectedItem?: boolean;
 };
-export const List: FC<TProps> = ({ keys }) => (
-    <Root className="text-teal">
-      {keys.map((key: string, index: number) => (
-        <Fragment key={key}>
-          {index !== 0 && <Space />}
-          <Item path={key}>{key}</Item>
-        </Fragment>
-      ))}
-    </Root>
-  );
+export const List: FC<TProps> = ({ names }) => (
+  <Root className="text-teal">
+    {names.map((name: string, index: number) => (
+      <Fragment key={name}>
+        {index !== 0 && <Space />}
+        <Item name={name}>{name}</Item>
+      </Fragment>
+    ))}
+  </Root>
+);

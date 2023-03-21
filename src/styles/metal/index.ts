@@ -127,6 +127,18 @@ export const metalRadialCss = css`
   filter: brightness(100%);
 `;
 
+export const metalRadialDarkCss = css`
+  background-image: ${METAL_RADIAL_GRADIENT};
+  ${metalConicalCss}
+  filter: brightness(20%);
+`;
+
+export const metalRadialDarkestCss = css`
+  background-image: ${METAL_RADIAL_GRADIENT};
+  ${metalConicalCss}
+  filter: brightness(10%);
+`;
+
 export const metalLinearCss = css`
   background-color: hsla(0, 0%, 90%, 1);
   background-image: linear-gradient(

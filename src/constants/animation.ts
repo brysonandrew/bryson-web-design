@@ -1,3 +1,15 @@
+export const PRESENCE_OPACITY_SHIFT = {
+  initial: { opacity: 0, x: -20 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 20 },
+};
+
+export const PRESENCE_OPACITY = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
 export const MOTION_CONFIG = {
   transition: {
     ease: "easeIn",

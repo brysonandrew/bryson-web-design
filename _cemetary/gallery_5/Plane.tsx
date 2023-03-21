@@ -17,6 +17,7 @@ const MATERIAL_CONFIG: TMaterialConfig = {
 };
 
 type TProps = {
+  index: number;
   color?: string;
   shift?: number;
   opacity?: number;
@@ -29,6 +30,7 @@ type TProps = {
 export const Plane = forwardRef<THREE.Mesh, TProps>(
   (
     {
+      index,
       color = "gray",
       shift = 100,
       opacity = 1,
@@ -38,8 +40,9 @@ export const Plane = forwardRef<THREE.Mesh, TProps>(
     },
     ref,
   ) => {
-    const { viewportWidth, offsetFactor } = useBlock();
-    const { posRef, pageCount } = useContext();
+    const { viewportWidth } = useBlock();
+    const { posRef, pageCount, count } = useContext();
+    const offsetFactor = (index + 0.5) / count;
 
     const material =
       useRef<TMaterialConfig>(MATERIAL_CONFIG);

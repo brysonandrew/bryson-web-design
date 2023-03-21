@@ -35,7 +35,7 @@ export const Shell: FC<TProps> = ({
                     index
                   ],
                 }}
-              >
+              > 
                 {projects.map((p, index) => (
                   <Fragment key={p}>
                     {index !== 0 && <li className="p-1" />}
@@ -46,7 +46,7 @@ export const Shell: FC<TProps> = ({
                 ))}
                 <Main index={index} />
               </List>
-            </li>
+            </li> 
           ))}
         </ul>
       </div>

@@ -16,7 +16,7 @@ export const Rect: FC<TProps> = ({ scale, ...props }) => {
         color="gray"
         linewidth={2}
         segments={false}
-        position={[0, 0, 0]}
+        position={[0, 0, 100]}
       />
       <mesh {...props} raycast={meshBounds}>
         <planeGeometry />

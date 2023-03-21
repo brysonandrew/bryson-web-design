@@ -72,6 +72,7 @@ export const Contact = () => {
     if (!target) return;
     setFocus(target.name);
   };
+
   const handleBlur = (
     event: FocusEvent<
       HTMLInputElement | HTMLTextAreaElement,
@@ -93,6 +94,7 @@ export const Contact = () => {
     onFocus: handleFocus,
     onChange: handleChange,
   };
+
   const textareaFocusHandlers: Pick<
     HTMLMotionProps<"textarea">,
     "onChange" | "onBlur" | "onFocus"
@@ -101,6 +103,7 @@ export const Contact = () => {
     onFocus: handleFocus,
     onChange: handleChange,
   };
+
   return (
     <Shell>
       <Root className="flex flex-col px-4">

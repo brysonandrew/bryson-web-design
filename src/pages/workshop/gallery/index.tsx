@@ -10,5 +10,6 @@ export const Gallery = () => (
       ),
     }}
     selectedPath={NAME}
+    base="gallery"
   />
 );

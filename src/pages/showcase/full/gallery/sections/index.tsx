@@ -1,0 +1,66 @@
+import { useRef } from "react";
+import type { FC } from "react";
+import {
+  motion,
+  useTransform,
+  useVelocity,
+} from "framer-motion";
+import { Section } from "./Section";
+import { Marker } from "./Marker";
+import type { TBaseProps } from "../types";
+import styled from "@emotion/styled";
+import { PRESENCE_OPACITY } from "@constants/animation";
+import {
+  CONTENT_OFFSET_SIZE,
+  HEADER_SIZE,
+} from "./constants";
+import { resolveUrlId } from "@utils/resolveUrlId";
+import { ID } from "@components/effects/displacement";
+import { Image } from "./image";
+import { TMedia } from "@pages/showcase/config";
+
+export const Root = styled(motion.div)``;
+
+type TProps = TBaseProps;
+export const Sections: FC<TProps> = (props) => {
+  const { items, count, motionX, width } = props;
+  const left = useTransform(
+    motionX,
+    (v) => `${(-v * count * 100) / width + 50}vw`,
+  );
+  const ref = useRef<HTMLDivElement>(null);
+
+
+  return (
+    <Root
+      key="Sections"
+      ref={ref}
+      className="bg-black-95 backdrop-blur-xl min-h-screen mx-auto"
+      style={{ width, left }}
+      {...PRESENCE_OPACITY}
+    >
+      <Marker itemWidth={width / count} />
+      <motion.ul
+        className="absolute flex"
+        style={{ left, top: HEADER_SIZE }}
+      >
+        {items.map((item: TMedia, index: number) => {
+          return (
+            <Section
+              key={item.key}
+              root={ref}
+              style={{
+                left: `${-index * 100}vw`,
+                x: "-50%",
+                width,
+                height: `calc(100vh - ${CONTENT_OFFSET_SIZE}px)`,
+              }}
+            >
+              <Image item={item} motionX={motionX} />
+            </Section>
+          );
+        })}
+      </motion.ul>
+    </Root>
+  );
+};

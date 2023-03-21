@@ -15,7 +15,7 @@ export const Router: FC<TProps> = () => {
       <Filters />
       <Background />
       <Source />
-      {isPointer && <Cursor />}
+      {/* {isPointer && <Cursor />} */}
     </_Router>
   );
 };

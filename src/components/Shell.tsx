@@ -6,6 +6,7 @@ import type { TChildren } from "../types";
 import { BlindersOut } from "./blinders/BlindersOut";
 import { Footer } from "./shell/Footer";
 import { Header } from "./shell/header";
+import { PRESENCE_OPACITY_SHIFT } from "@constants/animation";
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -23,9 +24,7 @@ export const Shell: FC<TProps> = ({ children }) => (
         paddingTop: HEADER_OFFSET_Y,
         minHeight: "100vh",
       }}
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 20 }}
+      {...PRESENCE_OPACITY_SHIFT}
     >
       {children}
       <BlindersOut />

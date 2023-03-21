@@ -14,7 +14,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
   return (
     <Root
-      className="inline-flex relative rounded-xs mt-2 ml-2 rounded-md"
+      className="inline-flex relative rounded-xs rounded-md"
       {...handlers}
     >
       {isSelected && <Select />}
