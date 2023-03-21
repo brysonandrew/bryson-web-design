@@ -4,6 +4,11 @@ export const PADDING = 28;
 export const PADDING_05 = PADDING / 2;
 export const GAP = 8;
 export const GAP_05 = GAP / 2;
+ 
+export const HEADER_SIZE = 0;
+export const FOOTER_SIZE = 80;
+export const CONTENT_OFFSET_SIZE =
+  HEADER_SIZE + FOOTER_SIZE;
 
 type TItemProps = {
   name: string;

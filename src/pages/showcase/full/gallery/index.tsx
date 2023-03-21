@@ -1,5 +1,8 @@
 import type { FC } from "react";
-import { useMotionValue } from "framer-motion";
+import {
+  AnimatePresence,
+  useMotionValue,
+} from "framer-motion";
 import styled from "@emotion/styled";
 import type {
   TMedia,
@@ -9,17 +12,19 @@ import { Footer } from "./footer";
 import { Sections } from "./sections";
 import { useArrowKeys } from "./useArrowKeys";
 import { useWindowSize } from "@hooks/useWindowSize";
-import type { TBaseProps } from "./types";
+import type { TBase, TBaseProps } from "./types";
 
 const Root = styled.div``;
 
 type TProps = {
   mediaRecord: TMediaRecord;
   selectedPath: string;
+  base?: TBase;
 };
 export const Gallery: FC<TProps> = ({
   mediaRecord,
   selectedPath,
+  base = "showcase",
 }) => {
   const items: TMedia[] = mediaRecord[selectedPath];
   const count = items.length;
@@ -38,11 +43,14 @@ export const Gallery: FC<TProps> = ({
     items,
     count,
     motionX,
+    base,
   };
 
   return (
-    <Root className="h-screen w-full overflow-hidden">
-      {!windowSize.isResizing && <Sections {...props} />}
+    <Root className="relative h-screen w-full overflow-hidden">
+      <AnimatePresence>
+        {!windowSize.isResizing && <Sections {...props} />}
+      </AnimatePresence>
       <Footer {...props} />
     </Root>
   );

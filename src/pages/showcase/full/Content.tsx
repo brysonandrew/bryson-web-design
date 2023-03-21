@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import type { TMediaRecord } from "../config";
 import { kebabToTitle } from "@utils/format";
 import { Gallery } from "./gallery";
+import { useFreezeScrollBar } from "@hooks/useFreezeScroll";
+import { HEADER_SIZE } from "./gallery/sections/constants";
 
 const Title = styled(motion.div)``;
 
@@ -18,21 +20,27 @@ type TProps = {
 export const Content: FC<TProps> = ({
   mediaRecord,
   selectedPath,
-}) => (
+}) => {
+  useFreezeScrollBar();
+  return (
     <Container
       id={selectedPath}
-      classValue="absolute top-0 left-0 screen-width screen-height z-10 text-teal-bright"
-      style={{ top: HEADER_SIZE_Y }}
+      classValue="fixed top-0 left-0 screen-width screen-height z-10 text-teal-bright"
+      style={{ zIndex: 99 }}
     >
-      <div className="flex items-center justify-between h-6">
-        <Title className="whitespace-nowrap" layout>
+      <div
+        className="absolute left-18 top-10 flex items-center justify-between z-10"
+        style={{ height: HEADER_SIZE }}
+      >
+        <Title className="whitespace-nowrap">
           {kebabToTitle(selectedPath)}
         </Title>
-        <div className="p-1 shrink-0" />
-        <Link
-          className="relative left-6 p-6"
-          to="/showcase"
-        >
+      </div>
+      <div
+        className="absolute top-10 right-18 flex items-center justify-between z-10"
+        style={{ height: HEADER_SIZE }}
+      >
+        <Link className="relative" to="/showcase">
           <Cross />
         </Link>
       </div>
@@ -42,3 +50,4 @@ export const Content: FC<TProps> = ({
       />
     </Container>
   );
+};

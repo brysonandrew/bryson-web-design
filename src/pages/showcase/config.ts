@@ -12,6 +12,9 @@ export const ITEM_DESCRIPTION_LOOKUP: Record<
   HoldToSkip: "HoldToSkip",
 };
 
+export const EXCLUDED_KEYS = ["preview", "logo"]
+
+
 export type TMedia = {
   img: string;
   file: string;
@@ -22,7 +25,8 @@ export type TMedia = {
 export type TMediaRecord = Record<string, TMedia[]>;
 
 export const resolveMedia = (path: string): TMedia => {
-  const [name, file] = path.split("/");
+  const parts = path.split("/");
+  const [name, file] = parts.slice(-2);
   const [img] = file.split(".");
 
   const key = `${name}-${img}`.toLowerCase();
