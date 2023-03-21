@@ -13,7 +13,6 @@ type TProp = {
   children: string;
 };
 export const Item: FC<TProp> = ({ to, children }) => {
-  const { isInit } = useContext();
   const { handlers, isSelected } = useSelectHandlers(to);
 
   return (

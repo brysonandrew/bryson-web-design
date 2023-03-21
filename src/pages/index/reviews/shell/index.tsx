@@ -1,5 +1,6 @@
 import { Blinders } from "@components/blinders/Blinders";
 import { Text } from "@components/text/Text";
+import { Intro } from "@components/text/Intro";
 import styled from "@emotion/styled";
 import { useOutsideClick } from "@hooks/useOutsideClick";
 import clsx from "clsx";
@@ -30,7 +31,7 @@ export const Shell: FC<TProps> = ({
       ref={ref}
       className="relative flex flex-col items-start z-10"
     >
-      <Text>For businesses</Text>
+      <Intro>For businesses</Intro>
       <div className="py-2" />
       <Blinders opacity={opacityBlinders} />
       <div className={clsx("relative w-full h-full")}>

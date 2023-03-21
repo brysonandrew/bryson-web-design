@@ -24,7 +24,7 @@ export const Ending: FC<TProps> = () => {
       >
         {isSelected && <Select />}
         <Text>
-         👋 Get in touch if you would like to collaborate
+          👉 Get in touch if you would like to collaborate
         </Text>
       </Link>
     </Root>

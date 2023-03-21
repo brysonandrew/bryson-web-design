@@ -9,12 +9,12 @@ import {
   FOOTER_TRANSITION_EXIT,
 } from "@constants/animation";
 import { useContext } from "@state/Context";
+import { Sub } from "@components/text/Sub";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
 const BackgroundFade = styled(motion.div)``;
 const Border = styled(motion.div)``;
-const Sub = styled(motion.h2)``;
 
 export const Footer = () => {
   const { isInit } = useContext();
@@ -73,12 +73,7 @@ export const Footer = () => {
         style={{ opacity: borderOpacity }}
         className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"
       />
-      <Sub
-        style={{ opacity: subOpacity }}
-        className="hidden md:flex relative text-sm text-teal whitespace-nowrap leading-none"
-      >
-        {subText}
-      </Sub>
+      <Sub classValue="px-3">{subText}</Sub>
     </Root>
   );
 };

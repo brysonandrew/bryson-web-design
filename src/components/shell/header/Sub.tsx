@@ -4,11 +4,11 @@ import {
   useTransform,
 } from "framer-motion";
 import styled from "@emotion/styled";
+import { Sub as _Sub } from "@components/text/Sub";
 
-const text = "sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs" as const;
+const text = "" as const;
 
 const Root = styled(motion.div)``;
-const Text = styled(motion.h2)``;
 
 export const Sub = () => {
   const { scrollY } = useScroll();
@@ -22,13 +22,13 @@ export const Sub = () => {
       className="flex items-center grow"
       style={{ opacity }}
     >
-      <div className="p-2" />
-      <Text
+      <div className="p-1" />
+      <_Sub
         style={{ scale, x }}
-        className="hidden relative text-sm text-teal whitespace-nowrap leading-none md:flex"
+        classValue="relative md:flex"
       >
-        {text}
-      </Text>
+        sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs
+      </_Sub>
     </Root>
   );
 };
