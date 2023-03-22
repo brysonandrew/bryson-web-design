@@ -26,7 +26,7 @@ export const Review: FC<TProps> = ({
   if (Array.isArray(content)) {
     return (
       <Long
-        className="absolute inset-0 left-2 bg-black-dark py-4 overflow-y-auto overflow-x-hidden z-10"
+        className="absolute inset-0 left-2 bg-black-dark p-4 overflow-y-auto overflow-x-hidden z-10"
         {...props}
       >
         <motion.ul
