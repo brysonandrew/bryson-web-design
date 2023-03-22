@@ -29,7 +29,7 @@ export const HEADER_TRANSITION_EXIT = {
 
 export const MUGSHOT_TRANSITION = {
   ...MOTION_CONFIG,
-  duration: 1,
+  duration: 0.6,
   delay: MOTION_CONFIG.transition.duration * 1.5,
 };
 

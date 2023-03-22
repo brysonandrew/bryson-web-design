@@ -24,16 +24,13 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
   const { isMobile, tier } = useDetectGPU();
   const { key, name, file } = item;
   const velocity = useVelocity(motionX);
-  // const acceleration = useVelocity(velocity);
+  const acceleration = useVelocity(velocity);
   const v = useTransform(
     velocity,
     (v) => Math.abs(v * 10) + 10,
   );
-  const bf = useMotionTemplate`0 ${v}`;
-  const brightness = useTransform(
-    velocity,
-    (v) => 1 - Math.min(1, Math.abs(v) / 600),
-  );
+  const turbulence = useMotionTemplate`0 ${acceleration}`;
+  const blur = useMotionTemplate`${velocity} 0`;
 
   return (
     <>
@@ -48,9 +45,9 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
           >
             <>
               <motion.feTurbulence
-                baseFrequency={bf}
-                numOctaves={v}
-                seed={v}
+                baseFrequency={turbulence}
+                numOctaves="4"
+                seed="2"
                 type="fractalNoise"
                 in="SourceGraphic"
                 result={`${id}-turbulence`}
@@ -75,20 +72,10 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
                 yChannelSelector="G"
                 result="DISPLACEMENT"
               />
-              <feComponentTransfer in="DISPLACEMENT">
-                <motion.feFuncR
-                  type="linear"
-                  slope={brightness}
-                />
-                <motion.feFuncG
-                  type="linear"
-                  slope={brightness}
-                />
-                <motion.feFuncB
-                  type="linear"
-                  slope={brightness}
-                />
-              </feComponentTransfer>
+              <motion.feGaussianBlur
+                in="DISPLACEMENT"
+                stdDeviation={blur}
+              />
             </>
           </motion.filter>
         </svg>
