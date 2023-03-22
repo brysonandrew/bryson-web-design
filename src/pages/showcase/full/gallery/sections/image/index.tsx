@@ -1,4 +1,3 @@
-import { TURBULANCE_DEFAULTS } from "@components/effects/displacement/config";
 import styled from "@emotion/styled";
 import type { TMedia } from "@pages/showcase/config";
 import { useDetectGPU } from "@react-three/drei";
