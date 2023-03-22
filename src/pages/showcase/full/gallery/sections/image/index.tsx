@@ -77,7 +77,7 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
       </svg>
       <Root
         className="absolute left-1/2 top-1/2 max-w-full max-h-full shadow-teal-dark-02"
-        src={`../../../../../../../src/screens/${name}/${file}`}
+        src={`/screens/${name}/${file}`}
         alt={key}
         onPointerDown={(e) => e.preventDefault()}
         style={{

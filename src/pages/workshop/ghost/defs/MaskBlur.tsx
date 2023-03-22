@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  resolveHash,
-  resolveUrlId,
-} from "src/utils/resolveUrlId";
+import { resolveUrlId } from "@utils/resolveUrlId";
 import { GRADIENT_ID, MASK_BLUR_ID } from "../constants";
 
 const Root = styled.defs``;
@@ -15,7 +12,7 @@ export const MaskBlur = () => (
     height="100"
   >
     <linearGradient
-      id={(GRADIENT_ID)}
+      id={GRADIENT_ID}
       x1="0"
       x2="0"
       y1="0"

@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import type { TMedia } from "./config";
 import { resolveMedia } from "./config";
 const screenFiles = import.meta.glob(
-  "../../screens/**/*.{jpg,png}",
+  "../../../assets/screens/**/*.{jpg,png}",
 );
 
 export const useMediaFromKey = (key: string) => {
+  console.log(screenFiles)
   const [mediaItems, setMediaItems] = useState<
     TMedia[] | null
   >(null);

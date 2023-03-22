@@ -42,19 +42,19 @@ export const Sections: FC<TProps> = (props) => {
         style={{ left, top: HEADER_SIZE }}
       >
         {items.map((item: TMedia, index: number) => (
-            <Section
-              key={item.key}
-              root={ref}
-              style={{
-                left: `${-index * 100}vw`,
-                x: "-50%",
-                width,
-                height: `calc(100vh - ${CONTENT_OFFSET_SIZE}px)`,
-              }}
-            >
-              <Image item={item} motionX={motionX} />
-            </Section>
-          ))}
+          <Section
+            key={item.key}
+            root={ref}
+            style={{
+              left: `${-index * 100}vw`,
+              x: "-50%",
+              width,
+              height: `calc(100vh - ${CONTENT_OFFSET_SIZE}px)`,
+            }}
+          >
+            <Image item={item} motionX={motionX} />
+          </Section>
+        ))}
       </motion.ul>
     </Root>
   );
