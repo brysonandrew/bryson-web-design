@@ -3,10 +3,8 @@ import type { FC } from "react";
 import {
   motion,
   useTransform,
-  useVelocity,
 } from "framer-motion";
 import { Section } from "./Section";
-import { Marker } from "./Marker";
 import type { TBaseProps } from "../types";
 import styled from "@emotion/styled";
 import { PRESENCE_OPACITY } from "@constants/animation";
@@ -36,7 +34,6 @@ export const Sections: FC<TProps> = (props) => {
       style={{ width, left }}
       {...PRESENCE_OPACITY}
     >
-      <Marker itemWidth={width / count} />
       <motion.ul
         className="absolute flex"
         style={{ left, top: HEADER_SIZE }}
