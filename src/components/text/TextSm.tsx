@@ -18,8 +18,8 @@ export const TextSm: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-left text-xs uppercase whitespace-normal sm:text-md xl:text-lg",
-      classValue ?? "text-teal-bright px-4",
+      "text-left text-xs uppercase text-teal-bright whitespace-normal sm:text-md xl:text-lg",
+      classValue ?? "px-4",
     )}
     style={{
       ...style,

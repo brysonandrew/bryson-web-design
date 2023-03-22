@@ -8,7 +8,7 @@ import { useWindowSize } from "@hooks/useWindowSize";
 import { useMediaFromKey } from "@pages/showcase/useMediaFromKey";
 import { Footer } from "./footer";
 import { Sections } from "./sections";
-import { useArrowKeys } from "./useArrowKeys";
+import { useKeys } from "./useKeys";
 import type { TBase, TBaseProps } from "./types";
 
 const Root = styled.div``;
@@ -26,7 +26,7 @@ export const Gallery: FC<TProps> = ({
 
   const count = mediaItems?.length ?? 0;
 
-  useArrowKeys({ count });
+  useKeys({ count });
 
   const windowSize = useWindowSize();
 
@@ -50,6 +50,6 @@ export const Gallery: FC<TProps> = ({
         {!windowSize.isResizing && <Sections {...props} />}
       </AnimatePresence>
       <Footer {...props} />
-    </Root>
+    </Root> 
   );
 };

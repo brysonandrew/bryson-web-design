@@ -23,7 +23,7 @@ export const Item: FC<TProps> = ({ title, time, href }) => {
 
   return (
     <Root
-      className="flex relative shadow-teal-01-sm bg-teal-005"
+      className="flex relative shadow-teal-01-sm"
       {...handlers}
     >
       <InternalLink

@@ -6,7 +6,7 @@ import { useSearchParams } from "react-router-dom";
 type TConfig = {
   count: number;
 };
-export const useArrowKeys = ({ count }: TConfig) => {
+export const useKeys = ({ count }: TConfig) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -15,7 +15,7 @@ export const useArrowKeys = ({ count }: TConfig) => {
     handlers: {
       onKeyDown: (event) => {
         const currImg = searchParams.get(IMG_KEY);
-        if (event.repeat || currImg === null) return;
+        if (currImg === null) return;
         if (event.key === "ArrowRight") {
           const next = +currImg + 1;
           searchParams.set(IMG_KEY, `${next % count}`);
@@ -26,6 +26,9 @@ export const useArrowKeys = ({ count }: TConfig) => {
           next = next === -1 ? count - 1 : next;
           searchParams.set(IMG_KEY, `${next}`);
           navigate(`${pathname}?${searchParams}`);
+        }
+        if (event.key === "Escape") {
+          navigate(pathname);
         }
       },
     },

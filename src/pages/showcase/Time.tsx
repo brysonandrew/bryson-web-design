@@ -1,17 +1,18 @@
-import { TextXs } from "@components/text/TextXs";
+import { TextSm } from "@components/text/TextSm";
 import type { FC } from "react";
 
 type TProps = { time?: Date };
 export const Time: FC<TProps> = ({ time }) => {
-  if (!time) return <TextXs>Present</TextXs>;
+  if (!time)
+    return <TextSm classValue="px-0">Present</TextSm>;
   return (
-    <TextXs>
+    <TextSm classValue="px-0">
       {typeof time === "undefined"
         ? "Present"
         : new Intl.DateTimeFormat("en-UK", {
             month: "short",
             year: "numeric",
           }).format(time)}
-    </TextXs>
+    </TextSm>
   );
 };

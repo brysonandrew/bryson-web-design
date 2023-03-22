@@ -3,6 +3,7 @@ import { kebabToTitle } from "@utils/format";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { HEADER_SIZE } from "./gallery/sections/constants";
+import { TextSm } from "@components/text/TextSm";
 
 const Text = styled(motion.div)``;
 
@@ -15,9 +16,9 @@ export const Title: FC<TProps> = ({ children }) => {
       className="absolute left-18 top-10 flex items-center justify-between z-10"
       style={{ height: HEADER_SIZE }}
     >
-      <Text className="whitespace-nowrap">
+      <TextSm >
         {kebabToTitle(children)}
-      </Text>
+      </TextSm>
     </div>
   );
 };

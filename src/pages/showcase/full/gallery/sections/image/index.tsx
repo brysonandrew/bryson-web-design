@@ -55,7 +55,7 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
             <motion.feMorphology
               in={`${id}-turbulence`}
               operator="dilate"
-              radius={v}
+              radius="10"
               result={`${id}-morph`}
             />
             <motion.feOffset
