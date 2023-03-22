@@ -24,7 +24,7 @@ export const Bar: FC<TProps> = ({ classValue }) => (
       },
     }}
     className={clsx(
-      "absolute left-0.5 -top-1 w-2 h-full mt-4 pointer-events-none rounded-sm",
+      "absolute left-0.5 -top-1 w-2 h-full mt-4 pointer-events-none rounded-sm cursor-default",
       classValue ?? "bg-teal-bright-08",
     )}
   />
