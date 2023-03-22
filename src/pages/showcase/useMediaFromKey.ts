@@ -6,7 +6,6 @@ const screenFiles = import.meta.glob(
 );
 
 export const useMediaFromKey = (key: string) => {
-  console.log(screenFiles)
   const [mediaItems, setMediaItems] = useState<
     TMedia[] | null
   >(null);
