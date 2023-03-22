@@ -31,6 +31,10 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
     (v) => Math.abs(v * 10) + 10,
   );
   const bf = useMotionTemplate`0 ${v}`;
+  const brightness = useTransform(
+    velocity,
+    (v) => 1 - Math.min(1, Math.abs(v) / 600),
+  );
 
   return (
     <>
@@ -70,8 +74,22 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
                 scale={intensity}
                 xChannelSelector="R"
                 yChannelSelector="G"
-                result={"DISPLACEMENT"}
+                result="DISPLACEMENT"
               />
+              <feComponentTransfer in="DISPLACEMENT">
+                <motion.feFuncR
+                  type="linear"
+                  slope={brightness}
+                />
+                <motion.feFuncG
+                  type="linear"
+                  slope={brightness}
+                />
+                <motion.feFuncB
+                  type="linear"
+                  slope={brightness}
+                />
+              </feComponentTransfer>
             </>
           </motion.filter>
         </svg>

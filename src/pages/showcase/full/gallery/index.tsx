@@ -22,7 +22,6 @@ export const Gallery: FC<TProps> = ({
   base = "showcase",
 }) => {
   const mediaItems = useMediaFromKey(selectedPath);
-  console.log("🚀 ~ file: index.tsx:25 ~ mediaItems:", mediaItems)
   const motionX = useMotionValue(0);
 
   const count = mediaItems?.length ?? 0;
@@ -51,6 +50,6 @@ export const Gallery: FC<TProps> = ({
         {!windowSize.isResizing && <Sections {...props} />}
       </AnimatePresence>
       <Footer {...props} />
-    </Root> 
+    </Root>
   );
 };

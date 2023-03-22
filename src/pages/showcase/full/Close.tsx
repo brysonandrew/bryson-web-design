@@ -6,7 +6,7 @@ import { HEADER_SIZE } from "./gallery/sections/constants";
 export const Close: FC = () => {
   return (
     <div
-      className="absolute top-10 right-18 flex items-center justify-between z-10"
+      className="absolute top-10 right-9 lg:right-18 flex items-center justify-between z-10"
       style={{ height: HEADER_SIZE }}
     >
       <Link

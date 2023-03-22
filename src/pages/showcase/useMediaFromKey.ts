@@ -6,7 +6,6 @@ const screenFiles = import.meta.glob(
 );
 
 export const useMediaFromKey = (key: string) => {
-  console.log(screenFiles)
   const [mediaItems, setMediaItems] = useState<
     TMedia[] | null
   >(null);
@@ -14,7 +13,7 @@ export const useMediaFromKey = (key: string) => {
   const handleLoad = async () => {
     const mediaItems = Object.keys(screenFiles).reduce(
       (a: TMedia[], v: string) => {
-        if (v.includes(key)) {
+        if (v.includes(`/${key}/`) && !v.includes(`${key}/preview`)) {
           const next = resolveMedia(v);
           a.push(next);
         }
