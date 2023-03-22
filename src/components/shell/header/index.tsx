@@ -15,6 +15,7 @@ import {
   HEADER_TRANSITION_EXIT,
 } from "@constants/animation";
 import { useContext } from "@state/Context";
+import clsx from "clsx";
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -79,21 +80,18 @@ export const Header = () => {
         <Main {...{ scale, x }} />
         <Sub />
       </div>
-      <List className="flex items-center mt-0.5">
-        {[
-        //  "showcase",
-          "contact",
-        ].map((item, index) => {
+      <List className={clsx("flex flex-col md:flex-row items-center mt-0.5")}>
+        {["showcase", "contact"].map((item, index) => {
           const to = `/${item}`;
           if (
-            pathname === to ||
-            (pathname === "/showcase" && !isShowCase)
+            pathname === to 
+            // (pathname === "/showcase" && !isShowCase)
           )
             return null;
           return (
             <Fragment key={item}>
               {index !== 0 && (
-                <li key={`${index}`} className="p-2" />
+                <li key={`${index}`} className="p-0.25 md:p-2" />
               )}
               <Item to={to}>{item}</Item>
             </Fragment>

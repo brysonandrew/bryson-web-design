@@ -5,13 +5,12 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const Root = styled(motion.p)`
+const Root = styled(motion.h5)`
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
-  /* font-family: Didito */
 `;
 
-type TProps = HTMLMotionProps<"p"> & {
+type TProps = HTMLMotionProps<"h5"> & {
   classValue?: ClassValue;
 };
 export const Text: FC<TProps> = ({

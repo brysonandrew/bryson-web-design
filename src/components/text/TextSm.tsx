@@ -5,9 +5,9 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const Root = styled(motion.p)``;
+const Root = styled(motion.h6)``;
 
-type TProps = HTMLMotionProps<"p"> & {
+type TProps = HTMLMotionProps<"h6"> & {
   classValue?: ClassValue;
 };
 export const TextSm: FC<TProps> = ({
@@ -18,8 +18,8 @@ export const TextSm: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-left text-xs px-4 uppercase whitespace-normal sm:text-md xl:text-lg",
-      classValue ?? "text-teal-bright",
+      "text-left text-xs uppercase text-teal-bright whitespace-normal sm:text-md xl:text-lg",
+      classValue ?? "px-4",
     )}
     style={{
       ...style,

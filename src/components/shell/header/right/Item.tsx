@@ -13,13 +13,13 @@ type TProp = {
   children: string;
 };
 export const Item: FC<TProp> = ({ to, children }) => {
-  const { isInit } = useContext();
   const { handlers, isSelected } = useSelectHandlers(to);
 
   return (
     <Root className="relative" {...handlers}>
       <Link
         to={to}
+        
         className="flex items-center justify-center px-2 pt-1 pb-1.5"
       >
         {isSelected && <Select />}

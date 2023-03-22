@@ -1,5 +1,6 @@
 import { Blinders } from "@components/blinders/Blinders";
 import { Text } from "@components/text/Text";
+import { Intro } from "@components/text/Intro";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import type { FC} from "react";
@@ -18,7 +19,7 @@ export const Shell: FC<TProps> = ({
   opacityBlinders,
 }) => (
     <Root className="flex flex-col items-start">
-      <Text>To build</Text>
+      <Intro>To build</Intro>
       <div className="py-2" />
       <div className="relative overflow-hidden w-full">
         <Blinders opacity={opacityBlinders} />

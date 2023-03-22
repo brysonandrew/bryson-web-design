@@ -11,3 +11,4 @@ export type TBaseProps = {
   motionX: MotionValue;
   base: TBase;
 };
+ 

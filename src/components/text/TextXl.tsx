@@ -5,12 +5,12 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const Root = styled(motion.p)`
+const Root = styled(motion.h3)`
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 `;
 
-type TProps = HTMLMotionProps<"p"> & {
+type TProps = HTMLMotionProps<"h3"> & {
   classValue?: ClassValue;
 };
 export const TextXl: FC<TProps> = ({
@@ -21,8 +21,8 @@ export const TextXl: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-black text-left px-2 tracking-widest xl:px-4",
-      classValue ?? "text-2xl sm:text-3xl xl:text-4xl ",
+      "text-black text-left px-2 tracking-widest text-2xl sm:text-3xl xl:text-4xl xl:px-4",
+      classValue,
     )}
     style={{
       lineHeight: 1,

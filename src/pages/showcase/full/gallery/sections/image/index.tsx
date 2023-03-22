@@ -1,9 +1,10 @@
 import { TURBULANCE_DEFAULTS } from "@components/effects/displacement/config";
 import styled from "@emotion/styled";
-import { TMedia } from "@pages/showcase/config";
+import type { TMedia } from "@pages/showcase/config";
 import { resolveUrlId } from "@utils/resolveUrlId";
+import type {
+  MotionValue} from "framer-motion";
 import {
-  MotionValue,
   motion,
   useMotionTemplate,
   useTransform,
@@ -54,7 +55,7 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
             <motion.feMorphology
               in={`${id}-turbulence`}
               operator="dilate"
-              radius={v}
+              radius="10"
               result={`${id}-morph`}
             />
             <motion.feOffset

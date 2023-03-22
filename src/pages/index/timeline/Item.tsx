@@ -5,7 +5,7 @@ import { BACKGROUND_DARK_CLASS } from "@styles/backgrounds";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import type { TItem } from "./constants";
+import type { TItem } from "../../../constants/showcase";
 import { Border as Select } from "@components/select/Border";
 
 const Root = styled.li``;

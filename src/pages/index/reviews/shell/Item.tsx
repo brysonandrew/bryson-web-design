@@ -1,8 +1,9 @@
 import { Text } from "@components/text/Text";
 import styled from "@emotion/styled";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 import clsx from "clsx";
-import { HTMLMotionProps, motion } from "framer-motion";
+import type { HTMLMotionProps} from "framer-motion";
+import { motion } from "framer-motion";
 import type { FC } from "react";
 import { ROLLING_TEXT_CLASS } from "../../constants";
 import { Main } from "../Main";
