@@ -5,7 +5,7 @@ import {
   MASK_DISPLACE_ID,
   MASK_TEXT_ID,
 } from "../constants";
-import { resolveHash } from "src/utils/resolveUrlId";
+import { resolveHash } from "@utils/resolveUrlId";
 const Root = styled.filter``;
 
 type TConfig = { id: string };

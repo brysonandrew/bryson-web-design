@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { resolveUrlId } from "src/utils/resolveUrlId";
+import { resolveUrlId } from "@utils/resolveUrlId";
 import { GRADIENT_ID, MASK_TEXT_ID } from "../constants";
 
 const Root = styled.svg``;
