@@ -8,6 +8,7 @@ import { Showcase } from "@pages/showcase";
 import { Gallery } from "@pages/workshop/gallery";
 
 export const Source = () => {
+  const location = useLocation();
   const element = useRoutes([
     {
       path: "/",
@@ -30,17 +31,10 @@ export const Source = () => {
       element: <NotFound404 />,
     },
   ]);
-  const location = useLocation();
-
   if (!element) return null;
 
-  return (
-    <AnimatePresence mode="wait">
-      {cloneElement(element, {
-        key: location.pathname,
-      })}
-    </AnimatePresence>
-  );
+  return element
+  
 };
 
 // {

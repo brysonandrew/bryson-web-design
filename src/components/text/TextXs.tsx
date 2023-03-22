@@ -10,7 +10,7 @@ const Root = styled(motion.h6)``;
 type TProps = HTMLMotionProps<"h6"> & {
   classValue?: ClassValue;
 };
-export const TextSm: FC<TProps> = ({
+export const TextXs: FC<TProps> = ({
   classValue,
   style,
   children,
@@ -18,8 +18,8 @@ export const TextSm: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-left text-xs uppercase whitespace-normal sm:text-md xl:text-lg",
-      classValue ?? "text-teal-bright px-4",
+      "md:flex text-teal text-xxxs uppercase whitespace-nowrap",
+      classValue ?? "text-teal-bright",
     )}
     style={{
       ...style,

@@ -4,35 +4,33 @@ import {
   useMotionValue,
 } from "framer-motion";
 import styled from "@emotion/styled";
-import type {
-  TMedia,
-  TMediaRecord,
-} from "@pages/showcase/config";
+import { useWindowSize } from "@hooks/useWindowSize";
+import { useMediaFromKey } from "@pages/showcase/useMediaFromKey";
 import { Footer } from "./footer";
 import { Sections } from "./sections";
 import { useArrowKeys } from "./useArrowKeys";
-import { useWindowSize } from "@hooks/useWindowSize";
 import type { TBase, TBaseProps } from "./types";
 
 const Root = styled.div``;
 
 type TProps = {
-  mediaRecord: TMediaRecord;
   selectedPath: string;
   base?: TBase;
 };
 export const Gallery: FC<TProps> = ({
-  mediaRecord,
   selectedPath,
   base = "showcase",
 }) => {
-  const items: TMedia[] = mediaRecord[selectedPath];
-  const count = items.length;
+  const mediaItems = useMediaFromKey(selectedPath);
   const motionX = useMotionValue(0);
+
+  const count = mediaItems?.length ?? 0;
+
   useArrowKeys({ count });
 
   const windowSize = useWindowSize();
-  if (!windowSize) return null;
+
+  if (!windowSize || mediaItems === null) return null;
 
   const width = windowSize.width * 0.7;
   const itemWidth = width / count;
@@ -40,14 +38,14 @@ export const Gallery: FC<TProps> = ({
   const props: TBaseProps = {
     width,
     itemWidth,
-    items,
+    items: mediaItems,
     count,
     motionX,
     base,
   };
 
   return (
-    <Root className="relative h-screen w-full overflow-hidden">
+    <Root className="relative h-screen w-full overflow-hidden bg-black-05 backdrop-blur-lg">
       <AnimatePresence>
         {!windowSize.isResizing && <Sections {...props} />}
       </AnimatePresence>

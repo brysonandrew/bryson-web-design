@@ -83,8 +83,8 @@ export const Header = () => {
         {["showcase", "contact"].map((item, index) => {
           const to = `/${item}`;
           if (
-            pathname === to ||
-            (pathname === "/showcase" && !isShowCase)
+            pathname === to 
+            // (pathname === "/showcase" && !isShowCase)
           )
             return null;
           return (

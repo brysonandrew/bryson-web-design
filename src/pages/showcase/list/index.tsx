@@ -4,19 +4,20 @@ import { Item } from "./item";
 import type { FC } from "react";
 import { Fragment } from "react";
 import { Space } from "@components/spaces/Space";
+import type { TItem } from "@constants/showcase";
+import { ITEMS } from "@constants/showcase";
 
 const Root = styled(motion.ul)``;
 
 type TProps = {
-  names: string[];
   isSelectedItem?: boolean;
 };
-export const List: FC<TProps> = ({ names }) => (
+export const List: FC<TProps> = () => (
   <Root className="text-teal">
-    {names.map((name: string, index: number) => (
-      <Fragment key={name}>
+    {ITEMS.map((item: TItem, index: number) => (
+      <Fragment key={item.title}>
         {index !== 0 && <Space />}
-        <Item name={name}>{name}</Item>
+        <Item {...item}/>
       </Fragment>
     ))}
   </Root>

@@ -13,7 +13,6 @@ export const ITEMS: TItem[] = [
     description: "Process Management System",
     href: "https://www.insightfactory.ai/",
     tags: ["React", "Typescript", "Framer Motion", "d3.js", "d3-dag"],
-    time: new Date(2022, 8, 1),
   },
   {
     title: "Canvas",

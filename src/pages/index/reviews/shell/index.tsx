@@ -43,8 +43,7 @@ export const Shell: FC<TProps> = ({
           />
         ) : null}
         <motion.ul>
-          {REVIEWS.map((review, index: number) => {
-            return (
+          {REVIEWS.map((review, index: number) => (
               <Item
                 key={`group-${index}`}
                 xs={xs}
@@ -55,8 +54,7 @@ export const Shell: FC<TProps> = ({
               >
                 {review.long}
               </Item>
-            );
-          })}
+            ))}
         </motion.ul>
       </div>
     </Root>

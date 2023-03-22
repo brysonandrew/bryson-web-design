@@ -19,6 +19,7 @@ export const Item: FC<TProp> = ({ to, children }) => {
     <Root className="relative" {...handlers}>
       <Link
         to={to}
+        
         className="flex items-center justify-center px-2 pt-1 pb-1.5"
       >
         {isSelected && <Select />}

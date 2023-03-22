@@ -14,10 +14,8 @@ import {
   CONTENT_OFFSET_SIZE,
   HEADER_SIZE,
 } from "./constants";
-import { resolveUrlId } from "@utils/resolveUrlId";
-import { ID } from "@components/effects/displacement";
 import { Image } from "./image";
-import { TMedia } from "@pages/showcase/config";
+import type { TMedia } from "@pages/showcase/config";
 
 export const Root = styled(motion.div)``;
 
@@ -29,7 +27,6 @@ export const Sections: FC<TProps> = (props) => {
     (v) => `${(-v * count * 100) / width + 50}vw`,
   );
   const ref = useRef<HTMLDivElement>(null);
-
 
   return (
     <Root
@@ -44,8 +41,7 @@ export const Sections: FC<TProps> = (props) => {
         className="absolute flex"
         style={{ left, top: HEADER_SIZE }}
       >
-        {items.map((item: TMedia, index: number) => {
-          return (
+        {items.map((item: TMedia, index: number) => (
             <Section
               key={item.key}
               root={ref}
@@ -58,8 +54,7 @@ export const Sections: FC<TProps> = (props) => {
             >
               <Image item={item} motionX={motionX} />
             </Section>
-          );
-        })}
+          ))}
       </motion.ul>
     </Root>
   );

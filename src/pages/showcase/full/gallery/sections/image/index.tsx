@@ -1,9 +1,10 @@
 import { TURBULANCE_DEFAULTS } from "@components/effects/displacement/config";
 import styled from "@emotion/styled";
-import { TMedia } from "@pages/showcase/config";
+import type { TMedia } from "@pages/showcase/config";
 import { resolveUrlId } from "@utils/resolveUrlId";
+import type {
+  MotionValue} from "framer-motion";
 import {
-  MotionValue,
   motion,
   useMotionTemplate,
   useTransform,
