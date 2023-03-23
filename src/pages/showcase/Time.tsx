@@ -7,12 +7,14 @@ export const Time: FC<TProps> = ({ time }) => {
     return <TextSm classValue="px-0">Present</TextSm>;
   return (
     <TextSm classValue="px-0">
-      {typeof time === "undefined"
-        ? "Present"
-        : new Intl.DateTimeFormat("en-UK", {
-            month: "short",
-            year: "numeric",
-          }).format(time)}
+      <span className="truncate">
+        {typeof time === "undefined"
+          ? "Present"
+          : new Intl.DateTimeFormat("en-UK", {
+              month: "short",
+              year: "numeric",
+            }).format(time)}
+      </span>
     </TextSm>
   );
 };

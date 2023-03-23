@@ -16,7 +16,7 @@ export const ITEMS: TItem[] = [
   },
   {
     title: "Canvas",
-    description: "Cryptocurrency Layer 2 Blockchain Portal",
+    description: "Blockchain Portal",
     tags: ["React", "Typescript", "Metamask SDK"],
     href: "https://canvas.co/",
     time: new Date(2022, 8, 1),

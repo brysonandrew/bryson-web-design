@@ -13,11 +13,16 @@ import { Link as InternalLink } from "react-router-dom";
 import { titleToKebab } from "@utils/format";
 import type { TItem } from "@constants/showcase";
 import { Time } from "../../Time";
+import { Text } from "@components/text/Text";
 import { TextSm } from "@components/text/TextSm";
 
 const Root = styled(motion.li)``;
 type TProps = TItem;
-export const Item: FC<TProps> = ({ title, time, href }) => {
+export const Item: FC<TProps> = ({
+  title,
+  time,
+  description,
+}) => {
   const { isSelected, handlers } = useSelectHandlers(title);
   const key = titleToKebab(title);
 
@@ -33,15 +38,25 @@ export const Item: FC<TProps> = ({ title, time, href }) => {
       >
         <Container
           id={key}
-          classValue="flex items-center justify-between absolute inset-0 px-4 text-lg"
+          classValue="flex items-center justify-between absolute inset-0 px-4 text-lg w-full"
         >
-          <>
-            <TextSm classValue="px-0" layout>{title}</TextSm>
+          <div className="flex items-center">
+            <TextSm classValue="px-0" layout>
+              <span className="truncate">
+                {title}
+              </span>
+            </TextSm>
             <div className="p-1" />
-            <div>
-              <Time time={time} />
-            </div>
-          </>
+            <TextSm classValue="text-gray" layout>
+              <span className="truncate">
+                {description}
+              </span>
+            </TextSm>
+          </div>
+          <div className="p-1" />
+          <div className="absolute top-0 right-0 py-2 px-4 bg-black">
+            <Time time={time} />
+          </div>
         </Container>
         {isSelected && <Select />}
       </InternalLink>
