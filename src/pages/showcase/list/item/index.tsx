@@ -41,16 +41,16 @@ export const Item: FC<TProps> = ({
           classValue="flex items-center justify-between absolute inset-0 px-4 text-lg w-full"
         >
           <div className="flex items-center">
-            <TextSm classValue="px-0" layout>
-              <span className="truncate">
+            <TextSm classValue="px-0">
+              <motion.span className="truncate" layout>
                 {title}
-              </span>
+              </motion.span>
             </TextSm>
             <div className="p-1" />
             <TextSm classValue="text-gray" layout>
-              <span className="truncate">
+              <motion.span className="truncate" layout>
                 {description}
-              </span>
+              </motion.span>
             </TextSm>
           </div>
           <div className="p-1" />
