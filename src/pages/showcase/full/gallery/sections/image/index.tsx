@@ -27,10 +27,14 @@ export const Image: FC<TProps> = ({ item, motionX }) => {
   const acceleration = useVelocity(velocity);
   const v = useTransform(
     velocity,
-    (v) => Math.abs(v * 10) + 10,
+    (v) => Math.abs(v),
   );
-  const turbulence = useMotionTemplate`0 ${acceleration}`;
-  const blur = useMotionTemplate`${velocity} 0`;
+  const a = useTransform(
+    acceleration,
+    (v) => Math.abs(v),
+  );
+  const turbulence = useMotionTemplate`0 ${a}`;
+  const blur = useMotionTemplate`${v} 0`;
 
   return (
     <>
