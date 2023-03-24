@@ -10,11 +10,13 @@ import {
 } from "@constants/animation";
 import { useContext } from "@state/Context";
 import { Sub } from "@components/text/Sub";
+import { Sound } from "./Sound";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
 const BackgroundFade = styled(motion.div)``;
 const Border = styled(motion.div)``;
+const Button = styled(motion.button)``;
 
 export const Footer = () => {
   const { isInit } = useContext();
@@ -34,11 +36,6 @@ export const Footer = () => {
     [0, 100],
     [1, 0.2],
   );
-  const subOpacity = useTransform(
-    scrollY,
-    [0, 100],
-    [1, 0],
-  );
   const subText = "ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ ᴡᴇʙ sɪɴᴄᴇ 2014";
 
   const initAnimation = {
@@ -54,26 +51,29 @@ export const Footer = () => {
 
   return (
     <Root
-      className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40 pointer-events-none"
+      className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40"
       {...(isInit ? initAnimation : {})}
     >
-      <BackgroundFade
-        style={{
-          scaleY: scaleBackground,
-          originY: "100%",
-          originX: 0,
-        }}
-        className="absolute w-full bottom-full left-0 w-full h-full from-current bg-gradient-to-t border-current"
-      />
-      <Background
-        style={{ opacity: backgroundOpacity }}
-        className="absolute w-full inset-0 bg-black-dark"
-      />
-      <Border
-        style={{ opacity: borderOpacity }}
-        className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"
-      />
-      <Sub classValue="px-3">{subText}</Sub>
+      <div className="relative">
+        <BackgroundFade
+          style={{
+            scaleY: scaleBackground,
+            originY: "100%",
+            originX: 0,
+          }}
+          className="absolute w-full bottom-full left-0 w-full h-full from-current bg-gradient-to-t border-current"
+        />
+        <Background
+          style={{ opacity: backgroundOpacity }}
+          className="absolute w-full inset-0 bg-black-dark"
+        />
+        <Border
+          style={{ opacity: borderOpacity }}
+          className="absolute top-0 left-0 h-px w-full bg-teal-bright-08"
+        />
+        <Sub classValue="px-3">{subText}</Sub>
+      </div>
+      <Sound />
     </Root>
   );
 };

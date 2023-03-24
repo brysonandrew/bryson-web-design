@@ -18,12 +18,6 @@ export const Full: FC<TProps> = ({ selectedPath }) => {
     >
       <Title>{selectedPath}</Title>
       <Close />
-      {/* {href && (
-                <>
-                  <div className="p-1" />
-                  <Link href={href} />
-                </>
-              )} */}
       <Gallery selectedPath={selectedPath} />
     </Container>
   );

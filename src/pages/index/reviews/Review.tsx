@@ -23,6 +23,7 @@ export const Review: FC<TProps> = ({
   const review = REVIEWS[index];
   const { author, project } = review;
   const content = review[type];
+  
   if (Array.isArray(content)) {
     return (
       <Long

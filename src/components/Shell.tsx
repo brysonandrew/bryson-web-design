@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TChildren } from "../types";
 import { BlindersOut } from "./blinders/BlindersOut";
-import { Footer } from "./shell/Footer";
+import { Footer } from "./shell/footer";
 import { Header } from "./shell/header";
 import { PRESENCE_OPACITY_SHIFT } from "@constants/animation";
 

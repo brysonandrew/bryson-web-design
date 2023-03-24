@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link as _Link } from "react-router-dom";
 import { Title } from "./Title";
+import { useOffSound } from "@hooks/sounds/useOffSound";
 
 const TITLE_ID = "TITLE_ID";
 
@@ -15,12 +16,14 @@ export const Link: FC = () => {
   const { handlers, isSelected } =
     useSelectHandlers(TITLE_ID);
   const handleResetScroll = useResetScroll();
+  const handleClick = useOffSound();
 
   return (
     <Root onTap={handleResetScroll} {...handlers}>
       <_Link
         className="flex relative px-3 pt-2 pb-3"
         to="/"
+        onClick={handleClick}
       >
         {isSelected && <Select />}
         <Title />

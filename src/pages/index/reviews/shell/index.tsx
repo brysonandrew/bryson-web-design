@@ -11,6 +11,13 @@ import type { TChildrenProps } from "../Motion";
 import { Review } from "../Review";
 import { REVIEWS } from "../constants";
 import { Item } from "./Item";
+import {
+  TMultiOptions,
+  useSynthMulti,
+} from "react-synthwave";
+import { useContext } from "@state/Context";
+import { useOnSound } from "@hooks/sounds/useOnSound";
+import { useOffSound } from "@hooks/sounds/useOffSound";
 
 const Root = styled(motion.div)``;
 
@@ -21,8 +28,22 @@ export const Shell: FC<TProps> = ({
 }) => {
   const [long, setLong] = useState<number | null>(null);
   const isLong = typeof long === "number";
-  const closeLong = () => setLong(null);
-  const openLong = setLong;
+
+  const handleOnSound = useOnSound();
+  const handleOffSound = useOffSound();
+
+  const closeLong = async () => {
+    if (isLong) {
+      handleOffSound();
+      setLong(null);
+    }
+  };
+
+  const handleOpen = async (next: number) => {
+    setLong(next);
+    handleOnSound();
+  };
+
   const ref = useRef<HTMLDivElement | null>(null);
   useOutsideClick({ ref, handler: closeLong });
 
@@ -44,17 +65,17 @@ export const Shell: FC<TProps> = ({
         ) : null}
         <motion.ul>
           {REVIEWS.map((review, index: number) => (
-              <Item
-                key={`group-${index}`}
-                xs={xs}
-                isActive={index === long}
-                isLong={isLong}
-                index={index}
-                onTap={() => openLong(index)}
-              >
-                {review.long}
-              </Item>
-            ))}
+            <Item
+              key={`group-${index}`}
+              xs={xs}
+              isActive={index === long}
+              isLong={isLong}
+              index={index}
+              onTap={() => handleOpen(index)}
+            >
+              {review.long}
+            </Item>
+          ))}
         </motion.ul>
       </div>
     </Root>

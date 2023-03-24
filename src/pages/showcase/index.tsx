@@ -10,7 +10,7 @@ export const Showcase = () => {
 
   return (
     <Shell>
-      <List isSelectedItem={isSelectedItem} />
+      <List selectedPath={selectedPath} />
       <Space16 />
       <>
         {isSelectedItem && (
@@ -20,3 +20,4 @@ export const Showcase = () => {
     </Shell>
   );
 }; 
+ 
