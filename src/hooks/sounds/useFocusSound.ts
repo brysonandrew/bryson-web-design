@@ -4,7 +4,7 @@ import {
 } from "react-synthwave";
 import { useContext } from "@state/Context";
 
-export const useMoveSound = () => {
+export const useFocusSound = () => {
   const { context, isSound } = useContext();
   const { play } = useSynthMulti(context);
 
@@ -13,18 +13,18 @@ export const useMoveSound = () => {
     await context.resume();
     const filter = new BiquadFilterNode(context, {
       frequency: 4000,
-      type: "bandpass",
+      type: "highpass",
     });
     const gain = new GainNode(context, { gain: 0.2 });
     const opts: TMultiOptions = {
       type: "sine",
-      midi: 60,
-      count: 40,
-      spread: 10,
-      stagger: 0.1,
-      decay: 0.4,
+      midi: 90,
+      count: 4,
+      spread: 2,
+      stagger: 0.2,
+      decay: 0.1,
       start: context.currentTime,
-      end: context.currentTime + 0.2,
+      end: context.currentTime + 0.1,
       output: filter,
     };
     filter.connect(gain);

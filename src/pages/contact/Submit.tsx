@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TSendingState } from "./config";
 import { LABEL_CLASS, resolveButtonValue } from "./config";
+import { useMoveSound } from "@hooks/sounds/useMoveSound";
 
 const SUBMIT_ID = "SUBMIT_ID";
 
@@ -20,10 +21,12 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
   const { handlers, isSelected } =
     useSelectHandlers(SUBMIT_ID);
   const isDisabled = sendingState !== "idle";
+  const handleMoveSound = useMoveSound()
 
   return (
     <Root
       className={clsx("relative p-2 flex w-full cursor-pointer")}
+      onTap={handleMoveSound}
       {...handlers}
     >
       {isSelected && <Select />}

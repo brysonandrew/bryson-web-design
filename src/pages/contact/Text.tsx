@@ -10,6 +10,7 @@ import {
 } from "./config";
 import { Gradient } from "./Gradient";
 import { Name } from "./Name";
+import { useFocusSound } from "@hooks/sounds/useFocusSound";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.input)``;
@@ -24,6 +25,8 @@ export const Text: FC<TProps> = ({
   ...props
 }) => {
   const isValue = Boolean(props.value);
+  const handleFocusSound = useFocusSound();
+
   return (
     <Root
       className={clsx("pb-2", LABEL_CLASS)}
@@ -37,10 +40,11 @@ export const Text: FC<TProps> = ({
           <Name>{title}</Name>
         </div>
         <Input
+          {...props}
           className={INPUT_CLASS}
           type="text"
           autoComplete="off"
-          {...props}
+          onFocus={handleFocusSound}
         />
       </div>
       <Gradient />

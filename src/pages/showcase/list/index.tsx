@@ -10,14 +10,14 @@ import { ITEMS } from "@constants/showcase";
 const Root = styled(motion.ul)``;
 
 type TProps = {
-  isSelectedItem?: boolean;
+  selectedPath: string | null;
 };
-export const List: FC<TProps> = () => (
+export const List: FC<TProps> = ({selectedPath}) => (
   <Root className="text-teal">
     {ITEMS.map((item: TItem, index: number) => (
       <Fragment key={item.title}>
         {index !== 0 && <Space />}
-        <Item {...item}/>
+        <Item {...item} selectedPath={selectedPath}/>
       </Fragment>
     ))}
   </Root>
