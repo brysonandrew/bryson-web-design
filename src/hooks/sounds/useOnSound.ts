@@ -15,7 +15,7 @@ export const useOnSound = () => {
       frequency: 2000,
       type: "bandpass",
     });
-    const gain = new GainNode(context, { gain: 0.075 });
+    const gain = new GainNode(context, { gain: 0.05 });
 
     const opts: TMultiOptions = {
       type: "triangle",

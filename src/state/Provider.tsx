@@ -5,6 +5,7 @@ import { reducer } from ".";
 import { Context } from "./Context";
 import { STATE } from "./constants";
 import { useScrollThreshold } from "@hooks/useScrollThreshold";
+import { useDetectGPU } from "@react-three/drei";
 
 type TProviderProps = {
   children: JSX.Element | JSX.Element[];
@@ -12,8 +13,11 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
+  const { isMobile } = useDetectGPU();
+
   const [state, dispatch] = useReducer<TReducer>(reducer, {
     ...STATE,
+    isSound: !isMobile,
   });
   const { isThreshold } = state;
 

@@ -20,6 +20,7 @@ export const useMoveSound = () => {
       type: "sine",
       midi: 60,
       count: 40,
+      attack: 0.1,
       spread: 10,
       stagger: 0.1,
       decay: 0.4,
