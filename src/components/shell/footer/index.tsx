@@ -11,14 +11,15 @@ import {
 import { useContext } from "@state/Context";
 import { Sub } from "@components/text/Sub";
 import { Sound } from "./Sound";
+import { useDetectGPU } from "@react-three/drei";
 
 const Root = styled(motion.footer)``;
 const Background = styled(motion.div)``;
 const BackgroundFade = styled(motion.div)``;
 const Border = styled(motion.div)``;
-const Button = styled(motion.button)``;
 
 export const Footer = () => {
+  const { isMobile } = useDetectGPU();
   const { isInit } = useContext();
   const { scrollY } = useScroll();
   const scaleBackground = useTransform(
@@ -73,7 +74,7 @@ export const Footer = () => {
         />
         <Sub classValue="px-3">{subText}</Sub>
       </div>
-      <Sound />
+      {!isMobile && <Sound />}
     </Root>
   );
 };
