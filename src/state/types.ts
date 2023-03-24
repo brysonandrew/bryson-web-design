@@ -29,6 +29,10 @@ export type TAction =
       value: null;
     }
   | {
+      type: "toggle-sound";
+      value: null;
+    }
+  | {
       type: "select-id";
       value: null | string;
     }
@@ -52,6 +56,8 @@ export type TAction =
 export type TState = {
   isInit: boolean;
   isCursorReady: boolean;
+  isSound: boolean;
+  context: AudioContext;
   selectId: null | string;
   mode: "instant" | "stagger";
   isThreshold: boolean;

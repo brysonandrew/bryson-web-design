@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { TChildren } from "../../types";
 import { HEADER_OFFSET_Y } from "@pages/index/constants";
-import { Footer } from "./Footer";
+import { Footer } from "./footer";
 import { Header } from "./header";
 import { BlindersOut } from "@components/blinders/BlindersOut";
 import { useDetectGPU } from "@react-three/drei";

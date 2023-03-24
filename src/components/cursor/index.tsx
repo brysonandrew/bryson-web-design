@@ -35,13 +35,13 @@ export const Cursor: FC<TCursorProps> = ({
     dispatch({ type: "cursor-ready", value: isReady });
   };
 
-  const load = () => {
-    if (!isCursorReady) {
-      cursorX.set((window.innerWidth + CURSOR_SIZE) * 0.5);
-      cursorY.set((window.innerHeight + CURSOR_SIZE) * 0.5);
-      toggleCursor(true);
-    }
-  };
+  // const load = () => {
+  //   if (!isCursorReady) {
+  //     cursorX.set((window.innerWidth + CURSOR_SIZE) * 0.5);
+  //     cursorY.set((window.innerHeight + CURSOR_SIZE) * 0.5);
+  //     toggleCursor(true);
+  //   }
+  // };
 
   const cursorOn = (_: PointerEvent) => {
     toggleCursor(true);
@@ -58,15 +58,15 @@ export const Cursor: FC<TCursorProps> = ({
     cursorY.set(nextY - CURSOR_SIZE_HALF);
   };
 
-  const isHidden = isCursorReady || selectId === null;
-  useCursorAppear(isHidden);
+  //const isHidden = isCursorReady || selectId === null;
+  //useCursorAppear(isHidden);
 
   useEventListener<"pointermove">(
     "pointermove",
     handleMove,
   );
 
-  usePointerEnterLeave({ cursorOn, cursorOff, load });
+  usePointerEnterLeave({ cursorOn, cursorOff });
 
   useEventListener(
     children && onTap ? "pointerdown" : null,

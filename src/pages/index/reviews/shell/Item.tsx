@@ -9,8 +9,6 @@ import { ROLLING_TEXT_CLASS } from "../../constants";
 import { Main } from "../Main";
 import type { TChildrenProps } from "../Motion";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Border } from "@components/select/Border";
-import { Background } from "@components/select/Background";
 import { Bar } from "@components/select/Bar";
 
 const Root = styled(motion.li)``;

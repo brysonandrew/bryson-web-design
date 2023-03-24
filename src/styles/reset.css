@@ -157,11 +157,11 @@ del {
   text-decoration: line-through;
 }
 
-abbr[title],
+/* abbr[title],
 dfn[title] {
   border-bottom: 1px dotted #000;
   cursor: none;
-}
+} */
 
 table {
   border-collapse: collapse;
@@ -241,12 +241,12 @@ samp {
 }
 
 /* hand cursor on clickable elements */
-input[type="button"],
+/* input[type="button"],
 input[type="submit"],
 input[type="file"],
 button {
   cursor: none;
-}
+} */
 
 /* Remove upper-shadow on text input on Safari */
 

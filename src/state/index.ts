@@ -17,6 +17,12 @@ export const reducer = (
         selectId: value,
       };
     }
+    case "toggle-sound": {
+      return {
+        ...state,
+        isSound: !state.isSound,
+      };
+    }
     case "cursor-ready": {
       return {
         ...state,

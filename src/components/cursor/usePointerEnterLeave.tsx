@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react";
 export type TConfig = {
   cursorOn(event: PointerEvent): void;
   cursorOff(event: PointerEvent): void;
-  load(): void;
+  // load(): void;
 };
 export const usePointerEnterLeave = ({
   cursorOff,
   cursorOn,
-  load,
+  // load,
 }: TConfig) => {
   const docRef = useRef<HTMLElement | null>(null);
 
@@ -17,9 +17,9 @@ export const usePointerEnterLeave = ({
     docRef.current = document.documentElement;
   }, []);
 
-  useEffect(() => {
-    void load();
-  }, []);
+  // useEffect(() => {
+  //   void load();
+  // }, []);
 
   useEventListener<"pointerenter", HTMLElement>(
     "pointerenter",
