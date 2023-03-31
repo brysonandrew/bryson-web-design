@@ -2,9 +2,7 @@ import type { TModule } from "@t/index";
 import { useState, useEffect } from "react";
 import type { TMediaRecord } from "./config";
 import { resolveMedia, EXCLUDED_KEYS } from "./config";
-const screenFiles = import.meta.glob(
-  "/screens/**/*.{jpg,png}",
-);
+const screenFiles = import.meta.glob("/screens/**/*.png");
 
 export const useMediaRecordFromFiles = () => {
   const [mediaRecord, setMediaRecord] =

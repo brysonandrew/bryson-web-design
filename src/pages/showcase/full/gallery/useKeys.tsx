@@ -26,23 +26,25 @@ export const useKeys = ({ count }: TConfig) => {
         const { currImg, count } = ref.current;
 
         if (currImg === null) return;
-        if (event.key === "ArrowRight") {
-          handleMoveSound();
-          const next = +currImg + 1;
-          const n = next % +count;
-          searchParams.set(IMG_KEY, `${n}`);
-          navigate(`${pathname}?${searchParams}`);
-        }
         if (event.key === "ArrowLeft") {
           handleMoveSound();
           let next = +currImg - 1;
-          next = next === -1 ? count - 1 : next;
+          next = next === 0 ? count : next;
           searchParams.set(IMG_KEY, `${next}`);
           navigate(`${pathname}?${searchParams}`);
+          return;
+        }
+        if (event.key === "ArrowRight") {
+          handleMoveSound();
+          const n = +currImg % count;
+          searchParams.set(IMG_KEY, `${n + 1}`);
+          navigate(`${pathname}?${searchParams}`);
+          return;
         }
         if (event.key === "Escape") {
           handleOffSound();
           navigate(pathname);
+          return;
         }
       },
     },

@@ -1,4 +1,3 @@
-import type { TMedia } from "@pages/showcase/config";
 import type {
   Dispatch,
   Reducer,
@@ -15,7 +14,6 @@ export type TState = {
 };
 
 export type TContext = TState & {
-  items: TMedia[];
   count: number;
   pageCount: number;
   scrollArea: HTMLDivElement;
