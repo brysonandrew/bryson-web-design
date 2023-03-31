@@ -1,5 +1,6 @@
+import type {
+  TMultiOptions} from "react-synthwave";
 import {
-  TMultiOptions,
   useSynthMulti,
 } from "react-synthwave";
 import { useContext } from "@state/Context";

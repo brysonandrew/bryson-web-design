@@ -9,8 +9,7 @@ export const Text: FC<TProps> = ({
   title,
   time,
   description,
-}) => {
-  return (
+}) => (
     <>
       <div className="flex items-center">
         <TextSm classValue="px-0">
@@ -31,4 +30,3 @@ export const Text: FC<TProps> = ({
       </div>
     </>
   );
-};
