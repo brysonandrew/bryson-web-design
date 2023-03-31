@@ -1,5 +1,3 @@
-import type { TMedia } from "@pages/showcase/config";
-import type { TChildren } from "@t/index";
 import type { FC, MutableRefObject } from "react";
 import { useReducer } from "react";
 import { reducer } from ".";
@@ -8,7 +6,6 @@ import { STATE } from "./constants";
 import type { TPos, TReducer } from "./types";
 
 type TProviderProps = {
-  items: TMedia[];
   count: number;
   pageCount: number;
   scrollArea: HTMLDivElement;
@@ -16,7 +13,6 @@ type TProviderProps = {
   children: TChildren;
 };
 export const Provider: FC<TProviderProps> = ({
-  items,
   count,
   pageCount,
   posRef,

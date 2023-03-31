@@ -76,7 +76,7 @@ export const Button: FC<TProps> = ({
             },
           }}
         >
-          {name}
+          {name.replace(/x/, "")}
         </motion.span>
       </Link>
     </Root>

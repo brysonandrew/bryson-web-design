@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Background as Select } from "@components/select/Background";
 import styled from "@emotion/styled";
@@ -12,9 +12,9 @@ import {
 import { Link as InternalLink } from "react-router-dom";
 import { titleToKebab } from "@utils/format";
 import type { TItem } from "@constants/showcase";
-import { Text } from "./Text";
 import { useOnSound } from "@hooks/sounds/useOnSound";
 import { MOTION_CONFIG } from "@constants/animation";
+import { Text } from "./Text";
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
@@ -32,7 +32,7 @@ export const Item: FC<TProps> = (props) => {
       {...handlers}
     >
       <InternalLink
-        to={`/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${0}`}
+        to={`/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`}
         onClick={handleOnSound}
         className="relative rounded-md w-full"
         style={{ height: ITEM_HEIGHT }}
