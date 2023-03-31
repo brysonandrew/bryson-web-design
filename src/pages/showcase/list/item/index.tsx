@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Background as Select } from "@components/select/Background";
 import styled from "@emotion/styled";
