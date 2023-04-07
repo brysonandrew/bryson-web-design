@@ -44,6 +44,7 @@ export const Item: FC<TProps> = (props) => {
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
+              className="inline-flex"
                 key="SELECTED_ITEM_TEXT_KEY"
                 initial={{ opacity: 0 }}
                 animate={{
