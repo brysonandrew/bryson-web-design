@@ -14,7 +14,7 @@ import { titleToKebab } from "@utils/format";
 import { useOnSound } from "@hooks/sounds/useOnSound";
 import { MOTION_CONFIG } from "@constants/animation";
 import { Text } from "./Text";
-import { TItem } from "@t/showcase";
+import type { TItem } from "@t/showcase";
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {

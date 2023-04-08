@@ -5,6 +5,7 @@ import windiCss from "vite-plugin-windicss";
 import viteRestart from "vite-plugin-restart";
 
 export default defineConfig({
+
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,

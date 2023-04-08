@@ -1,5 +1,5 @@
 import { Background } from "@components/background";
-import { Filters } from "./Filters";
+import { Filters } from "../components/Filters";
 import type { TChildren } from "@t/index";
 import type { FC} from "react";
 import { useEffect } from "react";
