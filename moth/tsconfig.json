@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "useDefineForClassFields": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "es2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/**/*.glsl"],
+  "extends": "./tsconfig.paths.json"
+}

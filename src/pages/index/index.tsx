@@ -9,22 +9,26 @@ import { Mugshot } from "./mugshot";
 import { Reviews } from "./reviews";
 import { Tech } from "./tech";
 import { Shell } from "@components/Shell";
+import { Shell as MainShell } from "@main/Shell";
+
 import { Suspense } from "react";
 
 export const Index = () => (
   <Suspense fallback={null}>
-    <Shell>
-      <Intro />
-      <Mugshot />
-      <Space2 />
-      <Tech />
-      <Space3 />
-      <Clients />
-      <Space2 />
-      <Reviews />
-      <Space4 />
-      <Ending />
-      <Space16 />
-    </Shell>
+    <MainShell>
+      <Shell>
+        <Intro />
+        <Mugshot />
+        <Space2 />
+        <Tech />
+        <Space3 />
+        <Clients />
+        <Space2 />
+        <Reviews />
+        <Space4 />
+        <Ending />
+        <Space16 />
+      </Shell>
+    </MainShell>
   </Suspense>
 );
