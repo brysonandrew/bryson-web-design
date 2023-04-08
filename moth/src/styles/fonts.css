@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+@font-face {
+  font-family: "REZ";
+  src: url("/fonts/REZ.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Valorax";
+  src: url("/fonts/Valorax.otf") format("truetype");
+}

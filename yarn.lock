@@ -894,8 +894,8 @@ __metadata:
   linkType: hard
 
 "@react-three/drei@npm:^9.57.3":
-  version: 9.60.0
-  resolution: "@react-three/drei@npm:9.60.0"
+  version: 9.64.0
+  resolution: "@react-three/drei@npm:9.64.0"
   dependencies:
     "@babel/runtime": ^7.11.2
     "@react-spring/three": ~9.6.1
@@ -925,7 +925,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: d87b9d52cecf372bce9a92f16fc9a6f82d069850258811e9f530219991bc0b4c1a5c5d0ee57b0c6b2384ba11c815dc9a938666fa78987522789bc54568f6701b
+  checksum: 47e4167e6e7c2dd0e3f8949509f4bef4b4f42bf71ebc01b4edbcb098fad0339eb972fd6006f7bd3fefdea938d9f86e1a782efdcad66a5304eb2c1dae682cc372
   languageName: node
   linkType: hard
 
@@ -1523,6 +1523,7 @@ __metadata:
     react-router: ^6.3.0
     react-router-dom: ^6.3.0
     react-synthwave: ^1.2.6
+    svg-pathdata: ^6.0.3
     three: ^0.150.1
     typescript: ^4.9.4
     vite: ^4.1.4
@@ -1568,11 +1569,11 @@ __metadata:
   linkType: hard
 
 "camera-controls@npm:^2.3.1":
-  version: 2.3.3
-  resolution: "camera-controls@npm:2.3.3"
+  version: 2.3.4
+  resolution: "camera-controls@npm:2.3.4"
   peerDependencies:
     three: ">=0.126.1"
-  checksum: 4e6ac54968050c1e8a68f9eedcd2d6fdb88230fd8449ab0ca2550a997afab1730816cefb555e750f52f92d0bfc64f6547e1de11a16a7be32797b5b79fa946ac8
+  checksum: 5715e4a09c770b67ae65cf379dd9d08119bffa872c220ccc51a9987bdaf0f70f3d5e3382ab6f6562c9226db0ae2a96f21914faa06ba85c39765a1379f4c634e6
   languageName: node
   linkType: hard
 
@@ -1779,7 +1780,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-gpu@npm:^5.0.14, detect-gpu@npm:^5.0.16":
+"detect-gpu@npm:^5.0.14":
+  version: 5.0.18
+  resolution: "detect-gpu@npm:5.0.18"
+  dependencies:
+    webgl-constants: ^1.1.1
+  checksum: af3c778f0fb0ca32a20757d51061acfda019b4be8a9f1968ea57fb145b4c906f4554c9d9b12feee1e421637cb31cdfc88af17c2ce58af2c552baef4e69ace915
+  languageName: node
+  linkType: hard
+
+"detect-gpu@npm:^5.0.16":
   version: 5.0.17
   resolution: "detect-gpu@npm:5.0.17"
   dependencies:
@@ -2187,21 +2197,42 @@ __metadata:
   linkType: hard
 
 "framer-motion-3d@npm:^10.3.2":
-  version: 10.10.0
-  resolution: "framer-motion-3d@npm:10.10.0"
+  version: 10.11.2
+  resolution: "framer-motion-3d@npm:10.11.2"
   dependencies:
-    framer-motion: ^10.10.0
+    framer-motion: ^10.11.2
     react-merge-refs: ^2.0.1
   peerDependencies:
     "@react-three/fiber": ^8.2.2
     react: ">=18.0"
     react-dom: ">=18.0"
     three: ">=0.133"
-  checksum: 1a5fb377264b69a625e05e636d74a5c7cf6012557386ce074b058aac3b82eb06a2d319041ba497b86698af6e8b06f51bec3baf613b12a9f2f1f3c1b0a8ad5c7c
+  checksum: 174449ff6a31c74f7b1d1795c73ff8a76517a8e4a3fe0b3dae0bc19210399bfb112a8a86b381ed65bfb5eee32eeb602cc2770c773e5ea2196090e910f5b2037d
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.10.0, framer-motion@npm:^10.3.2":
+"framer-motion@npm:^10.11.2":
+  version: 10.11.2
+  resolution: "framer-motion@npm:10.11.2"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 7444d145dd6317172b047a9904227e6f515978060b19949a67c74d40b2ead7c2191a6899ab534845f0b33b7b36cb08bd2a1e28697c57242ec2b686ff02512830
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^10.3.2":
   version: 10.10.0
   resolution: "framer-motion@npm:10.10.0"
   dependencies:
@@ -3270,11 +3301,11 @@ __metadata:
   linkType: hard
 
 "postprocessing@npm:^6.30.1":
-  version: 6.30.1
-  resolution: "postprocessing@npm:6.30.1"
+  version: 6.30.2
+  resolution: "postprocessing@npm:6.30.2"
   peerDependencies:
-    three: ">= 0.138.0 < 0.151.0"
-  checksum: 050afe302123f670a9be0d952387aef9f1e1b42e64d5959f1ae5da26cc819bcbae126bce19612634fc2042c64b5efa814e666bed032de767acfeb579ad9610ce
+    three: ">= 0.138.0 < 0.152.0"
+  checksum: abbca976ad5738ccb3a7e7efad7d2c81319fa1c30cc890c20c59b8df36cb5f43ed7af76d8be960664670bb1b04c088a1fb5183faacb2bbe6f0e14318150fa37e
   languageName: node
   linkType: hard
 
@@ -3849,6 +3880,13 @@ __metadata:
   peerDependencies:
     react: ">=17.0"
   checksum: 173a56c8df8f401098697b640567f80d756849bbee02928a5283f25b94e9aef74fa58c48c974a073e3a57f6f5c0d51dcf19f410bfe0a81cc70c232d759f25c93
+  languageName: node
+  linkType: hard
+
+"svg-pathdata@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "svg-pathdata@npm:6.0.3"
+  checksum: f0e55be50c654be5d259d70945ed7e5354bf78e51c6039b4045d9f7c49d703a0c33dda36751815aec2824d046c417c35226e7491246ffff3e9164735ea428446
   languageName: node
   linkType: hard
 

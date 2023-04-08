@@ -1,0 +1,49 @@
+import { MOTH_NAME } from "@constants/index";
+import { useMothContext } from "@state/Context";
+import type { FC } from "react";
+import { useRef } from "react";
+import { Body } from "./Body";
+import { Kill } from "./Kill";
+import { useKeyControl } from "./key-control/useKeyControl";
+import type { TCurrent } from "./types";
+import { useMothRef } from "./useMothRef";
+
+export const Moth: FC = () => {
+  const {
+    moth,
+    spots,
+    meshes,
+    level,
+    blades,
+    controls,
+    inventory,
+    activeSpecial,
+    specials,
+  } = useMothContext();
+  const current: TCurrent = {
+    moth,
+    spots,
+    meshes,
+    level,
+    blades,
+    controls,
+    inventory,
+    activeSpecial,
+    specials,
+  };
+  const keyRef = useRef<TCurrent>(current);
+  keyRef.current = current;
+
+  useKeyControl({ keyRef });
+
+  const resolveRef = useMothRef();
+
+  return (
+    <group rotation={[0, Math.PI, 0]}>
+      <group name={MOTH_NAME} ref={resolveRef}>
+        <Body />
+      </group> 
+      {moth && <Kill moth={moth} />}
+    </group>
+  ); 
+};
