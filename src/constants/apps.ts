@@ -1,13 +1,7 @@
-export type TItem = {
-  title: string;
-  description: string;
-  time?: Date;
-  tags?: string[];
-  href?: string;
-  category?: string;
-};
+import { TItem } from "@t/showcase";
 
-export const ITEMS: TItem[] = [
+
+export const APP_ITEMS: TItem[] = [
   {
     title: "Insight Factory",
     description: "Process Management System",

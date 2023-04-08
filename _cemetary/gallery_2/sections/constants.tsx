@@ -1,5 +1,3 @@
-import { NotFound404 } from "@pages/not-found-404";
-import { TRequireOnlyOne } from "@t/utils";
 import type { FC } from "react";
 
 export const WIDTH = 512;

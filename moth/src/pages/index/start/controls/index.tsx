@@ -14,7 +14,7 @@ export const Controls: FC = () => {
 
   return (
     <Root
-      className={clsx("absolute top-2 left-4")}
+      className={clsx("absolute top-0 left-0 py-2 px-4")}
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       whileHover={{ opacity: 1 }}

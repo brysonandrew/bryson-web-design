@@ -1,5 +1,5 @@
 import { TextSm } from "@components/text/TextSm";
-import type { TItem } from "@constants/showcase";
+import type { TItem } from "@constants/apps";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Time } from "../../Time";

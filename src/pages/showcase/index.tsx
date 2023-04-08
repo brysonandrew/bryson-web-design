@@ -3,6 +3,9 @@ import { Full } from "./full";
 import { Space16 } from "@components/spaces/Space16";
 import { List } from "./list";
 import { Shell } from "@components/Shell";
+import { APP_ITEMS } from "@constants/apps";
+import { Space } from "@components/spaces/Space";
+import { GAME_ITEMS } from "@constants/games";
 
 export const Showcase = () => {
   const selectedPath = useSelectedItem();
@@ -10,7 +13,18 @@ export const Showcase = () => {
 
   return (
     <Shell>
-      <List selectedPath={selectedPath} />
+      <List
+        header="Apps"
+        items={APP_ITEMS}
+        selectedPath={selectedPath}
+      />
+      <Space />
+      <List
+        header="Games"
+        items={GAME_ITEMS}
+        selectedPath={selectedPath}
+      />
+
       <Space16 />
       <>
         {isSelectedItem && (
@@ -19,5 +33,4 @@ export const Showcase = () => {
       </>
     </Shell>
   );
-}; 
- 
+};

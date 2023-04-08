@@ -11,17 +11,17 @@ import {
 } from "@pages/showcase/config";
 import { Link as InternalLink } from "react-router-dom";
 import { titleToKebab } from "@utils/format";
-import type { TItem } from "@constants/showcase";
 import { useOnSound } from "@hooks/sounds/useOnSound";
 import { MOTION_CONFIG } from "@constants/animation";
 import { Text } from "./Text";
+import { TItem } from "@t/showcase";
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
   selectedPath: string | null;
 };
 export const Item: FC<TProps> = (props) => {
-  const { title, selectedPath } = props;
+  const { title, selectedPath, altTo } = props;
   const { isSelected, handlers } = useSelectHandlers(title);
   const key = titleToKebab(title);
   const handleOnSound = useOnSound();
@@ -32,7 +32,11 @@ export const Item: FC<TProps> = (props) => {
       {...handlers}
     >
       <InternalLink
-        to={`/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`}
+        to={
+          altTo
+            ? altTo
+            : `/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`
+        }
         onClick={handleOnSound}
         className="relative rounded-md w-full"
         style={{ height: ITEM_HEIGHT }}
@@ -44,7 +48,7 @@ export const Item: FC<TProps> = (props) => {
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
-              className="inline-flex"
+                className="inline-flex"
                 key="SELECTED_ITEM_TEXT_KEY"
                 initial={{ opacity: 0 }}
                 animate={{
