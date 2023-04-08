@@ -1,4 +1,4 @@
-import { TItem } from "@t/showcase";
+import type { TItem } from "@t/showcase";
 
 export const LIBRARIES_ITEMS: TItem[] = [
   {

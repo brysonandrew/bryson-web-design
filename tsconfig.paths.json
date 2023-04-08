@@ -13,7 +13,7 @@
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
-      "@moth/*": ["moth/*"],
+      // "@moth/*": ["moth/*"],
       "@windi/*": ["windi.*"]
     }
   }
