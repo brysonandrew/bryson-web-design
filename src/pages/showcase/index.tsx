@@ -6,6 +6,7 @@ import { Shell } from "@components/Shell";
 import { APP_ITEMS } from "@constants/apps";
 import { Space } from "@components/spaces/Space";
 import { GAME_ITEMS } from "@constants/games";
+import { LIBRARIES_ITEMS } from "@constants/libraries";
 
 export const Showcase = () => {
   const selectedPath = useSelectedItem();
@@ -24,7 +25,12 @@ export const Showcase = () => {
         items={GAME_ITEMS}
         selectedPath={selectedPath}
       />
-
+    <Space />
+      <List
+        header="Libraries"
+        items={LIBRARIES_ITEMS}
+        selectedPath={selectedPath}
+      />
       <Space16 />
       <>
         {isSelectedItem && (
