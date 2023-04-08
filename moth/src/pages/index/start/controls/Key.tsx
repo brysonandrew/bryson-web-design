@@ -18,8 +18,7 @@ const Root = styled(motion.h6)``;
 type TProps = {
   children: string;
 };
-export const Key: FC<TProps> = ({ children }) => {
-  return (
+export const Key: FC<TProps> = ({ children }) => (
     <>
       {LOOKUP[children] ? (
         <Root className="py-0.5 px-1 shadow-teal-02">
@@ -32,4 +31,3 @@ export const Key: FC<TProps> = ({ children }) => {
       )}
     </>
   );
-};

@@ -1,7 +1,8 @@
 import { Background } from "@components/background";
 import { Filters } from "./Filters";
-import { TChildren } from "@t/index";
-import { FC, useEffect } from "react";
+import type { TChildren } from "@t/index";
+import type { FC} from "react";
+import { useEffect } from "react";
 
 type TProps = {
   children: TChildren;

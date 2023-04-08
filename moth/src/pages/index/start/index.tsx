@@ -38,17 +38,16 @@ export const Start: FC = () => {
 
   return (
     <Root
-      className={clsx(CENTER, "bg-red w-screen h-screen")}
+      className={clsx(CENTER, "w-screen h-screen")}
       // onTap={play}
     >
-      <video
-        className={clsx(
-          "absolute inset-0 w-full h-full object-cover",
-        )}
+      <motion.video
+        className={clsx("absolute w-full h-full")}
         autoPlay
         src="/video/moth.mp4"
         muted
         loop
+        style={{ objectFit:"cover" }}
       />
       <div className="relative flex flex-col items-center">
         <h1
@@ -76,7 +75,7 @@ export const Start: FC = () => {
           [ Enter ]
         </motion.button>
       </div>
-      {/* <Controls /> */}
+      <Controls />
     </Root>
   );
 };
