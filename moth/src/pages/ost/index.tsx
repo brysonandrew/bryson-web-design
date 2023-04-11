@@ -40,6 +40,10 @@ export const Ost = () => {
           tracks["jiri-prozniak"].play();
           break;
         }
+        case "erick-hayden": {
+          tracks["erick-hayden"].play();
+          break;
+        }
         case "super-power": {
           tracks["super-power"].play();
           break;
@@ -70,6 +74,14 @@ export const Ost = () => {
         }
         case "nautilus": {
           tracks.nautilus.play();
+          break;
+        }
+        case "waste": {
+          tracks.waste.play();
+          break;
+        }
+        case "demons": {
+          tracks.demons.play();
           break;
         }
         default: {

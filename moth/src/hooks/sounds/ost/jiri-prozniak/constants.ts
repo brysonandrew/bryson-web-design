@@ -1,3 +1,23 @@
+//verse
+// rozpływasz się pod światłami
+// a twoja walka nic dla mnie nie znaczy
+// kaczy blachowicz
+// pewnego dnia umrzesz ze swoim światłem, błagając o litość (soldic)
+
+//chorus
+//módlcie się za mnie, a ja będę się modlił za was
+//Chciałbym, żebyś był zasadowy, chciałbyś, żebym był kwaśny
+
+// obracający się łokieć zawsze w niebie
+//Wiesz, że tam jest, ale zawsze jesteś zajebiście naćpany
+//Mogę ci pomóc żebrać więcej niż solidic
+//Bądź dobrym chłopcem, a będziesz mógł żyć bez strachu
+
+// a teraz patrzysz w lewo, w prawo i na środek
+// nie wiesz, gdzie potrzebujesz takiego mężczyzny jak ja
+// wiedziałeś to przez cały czas, nadchodzi latające kolano
+// ostatni gwóźdź do trumny, jesteś twardym facetem
+
 export const VERSE = [
   3, //E
   1, //C
