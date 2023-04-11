@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Chakra+Petch&display=swap");
+
+@font-face {
+  font-family: "REZ";
+  src: url("/fonts/REZ.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GALS";
+  src: url("/fonts/GALS.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GALSB";
+  src: url("/fonts/GALSB.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Valorax";
+  src: url("/fonts/Valorax.otf") format("opentype");
+}

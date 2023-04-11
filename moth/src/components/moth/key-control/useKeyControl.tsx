@@ -15,7 +15,7 @@ import { useSpecials as useSpecialsRun } from "./run/useSpecials";
 
 import type { MutableRefObject } from "react";
 import { useRef } from "react";
-import { useLoop } from "@moth-hooks/sounds/koolasuchas/useLoop";
+import { usePlay } from "@moth-hooks/sounds/ost/koolasuchas/usePlay";
 import { useSpeech } from "@moth-components/speech/useSpeech";
 import type { TDirectionsSounds } from "@moth-hooks/sounds/directions";
 import { useDirections as useSoundDirections } from "@moth-hooks/sounds/directions";
@@ -35,7 +35,7 @@ type TConfig = {
 };
 export const useKeyControl = ({ keyRef }: TConfig) => {
   const loopRef = useRef(false);
-  const { play } = useLoop();
+  const { play } = usePlay();
   const handleDirectionsOn = useDirectionsOn({ keyRef });
   const handleAbilitiesOn = useAbilitiesOn({ keyRef });
   const handleSpecialsOn = useSpecialsOn({ keyRef });

@@ -1,0 +1,15 @@
+export const TRACKS = [
+  "super-power",
+  "erick-hayden",
+  "waste",
+  "eukaryotchii",
+  "blade",
+  "velociraptor",
+  "demons",
+  "rhynchocephalia",
+  "wind-race",
+  "koolasuchas",
+  "brachyurazoa",
+  "cordyceptaera",
+  "nautilus",
+] as const;
