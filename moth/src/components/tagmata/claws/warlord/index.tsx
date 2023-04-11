@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Left } from "./Left";
 import { Right } from "./Right";
-import type { TBaseTagmataProps } from "@components/tagmata/types";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 
 export const Warlord: FC<TBaseTagmataProps> = (props) => (
   <>

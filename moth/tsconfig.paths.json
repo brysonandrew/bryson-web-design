@@ -2,14 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@constants/*": ["src/constants/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "@moth-components/*": ["src/components/*"],
+      "@moth-constants/*": ["src/constants/*"],
+      "@moth-hooks/*": ["src/hooks/*"],
       "@icons/*": ["src/icons/*"],
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
       "@pages/*": ["src/pages/*"],
-      "@state/*": ["src/state/*"],
+      "@moth-state/*": ["src/state/*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],

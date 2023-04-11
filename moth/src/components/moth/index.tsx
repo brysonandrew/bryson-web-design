@@ -1,5 +1,5 @@
-import { MOTH_NAME } from "@constants/index";
-import { useMothContext } from "@state/Context";
+import { MOTH_NAME } from "@moth-constants/index";
+import { useMothContext } from "@moth-state/Context";
 import type { FC } from "react";
 import { useRef } from "react";
 import { Body } from "./Body";

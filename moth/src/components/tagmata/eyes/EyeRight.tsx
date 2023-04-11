@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { EYE_RIGHT_NAME } from "@components/moth/constants";
+import { EYE_RIGHT_NAME } from "@moth-components/moth/constants";
 import type { TBaseTagmataProps } from "../types";
 import { DoubleSide } from "three";
 

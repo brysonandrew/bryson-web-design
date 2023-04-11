@@ -1,5 +1,5 @@
 import { useFrame } from "@react-three/fiber";
-import type { TSource } from "@state/types";
+import type { TSource } from "@moth-state/types";
 
 type TConfig = TSource;
 export const useLeftToRight = (props: TConfig) => {

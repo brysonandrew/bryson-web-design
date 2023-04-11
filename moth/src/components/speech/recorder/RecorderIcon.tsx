@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import clsx from "clsx";
 import type { TVariant } from "./config";
 import { RECORDER_ICON_ANIMATION } from "./config";
-import { SM } from "@constants/styles";
+import { SM } from "@moth-constants/styles";
 
 const Root = styled(motion.i)``;
 

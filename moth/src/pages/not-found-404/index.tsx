@@ -1,7 +1,7 @@
-import { Shell } from "@components/shell";
-import { Space } from "@components/spaces/Space";
-import { TextLg } from "@components/text/TextLg";
-import { TextXl } from "@components/text/TextXl";
+import { Shell } from "@moth-components/shell";
+import { Space } from "@moth-components/spaces/Space";
+import { TextLg } from "@moth-components/text/TextLg";
+import { TextXl } from "@moth-components/text/TextXl";
 import clsx from "clsx";
 
 export const NotFound404 = () => (

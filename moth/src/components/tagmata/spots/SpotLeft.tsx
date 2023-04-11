@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { TBaseTagmataProps } from "../types";
-import { SPOT_LEFT_NAME } from "@components/moth/constants";
+import { SPOT_LEFT_NAME } from "@moth-components/moth/constants";
 
 export const SpotLeft: FC<TBaseTagmataProps> = ({
   span = 1,

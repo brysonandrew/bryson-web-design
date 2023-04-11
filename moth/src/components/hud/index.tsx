@@ -1,5 +1,5 @@
-import { useMothContext } from "@state/Context";
-import type { TSpawn } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
 import { HealthBar } from "./health-bar";
 

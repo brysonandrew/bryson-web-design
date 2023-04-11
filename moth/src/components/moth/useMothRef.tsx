@@ -1,9 +1,9 @@
-import { BLADES_NAME } from "@components/tagmata/wings/shuriken/constants";
-import { useViewport } from "@hooks/useViewport";
-import { useMothContext } from "@state/Context";
+import { BLADES_NAME } from "@moth-components/tagmata/wings/shuriken/constants";
+import { useViewport } from "@moth-hooks/useViewport";
+import { useMothContext } from "@moth-state/Context";
 import { Group, Mesh } from "three";
 import { PADDING_Y, SPOT_NAMES } from "./constants";
-import { MOTH_NAME } from "@constants/index";
+import { MOTH_NAME } from "@moth-constants/index";
 
 export const useMothRef = () => {
   const { dispatch, moth } = useMothContext();

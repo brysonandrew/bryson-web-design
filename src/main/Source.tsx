@@ -1,6 +1,6 @@
 import { Contact } from "@pages/contact";
 import { Index } from "@pages/index";
-// import { Moth } from "@pages/moth";
+import { Moth } from "@pages/moth";
 import { NotFound404 } from "@pages/not-found-404";
 import { Showcase } from "@pages/showcase";
 import { useRoutes } from "react-router-dom";
@@ -19,10 +19,10 @@ export const Source = () => {
       path: "/showcase",
       element: <Showcase />,
     },
-    // {
-    //   path: "/moth",
-    //   element: <Moth />,
-    // },
+    {
+      path: "/moth",
+      element: <Moth />,
+    },
     {
       path: "*",
       element: <NotFound404 />,

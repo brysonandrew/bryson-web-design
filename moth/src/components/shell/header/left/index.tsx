@@ -1,9 +1,9 @@
-import { Beam } from "@components/icons/Beam";
-import { Nuke } from "@components/icons/Nuke";
-import { MD, SM, XS } from "@constants/styles";
-import type { TShopNumberEntry } from "@components/moth/types";
-import { useMothContext } from "@state/Context";
-import type { TShopKey } from "@state/constants";
+import { Beam } from "@moth-components/icons/Beam";
+import { Nuke } from "@moth-components/icons/Nuke";
+import { MD, SM, XS } from "@moth-constants/styles";
+import type { TShopNumberEntry } from "@moth-components/moth/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TShopKey } from "@moth-state/constants";
 import type { TBaseIconMotionProps } from "@t/icons";
 import { pascalToTitle } from "@utils/format";
 import { AnimatePresence } from "framer-motion";

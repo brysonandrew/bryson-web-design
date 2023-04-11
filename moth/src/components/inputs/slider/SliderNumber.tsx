@@ -4,9 +4,9 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { Slider as _Slider } from "@components/inputs";
-import { Number } from "@components/inputs/number";
-import { MD_H, MOTION_CENTER_STYLE } from "@constants/styles";
+import { Slider as _Slider } from "@moth-components/inputs";
+import { Number } from "@moth-components/inputs/number";
+import { MD_H, MOTION_CENTER_STYLE } from "@moth-constants/styles";
 
 const Root = styled(motion.li)``;
 const Label = styled(motion.div)``;

@@ -3,7 +3,7 @@ import type {
 import {
   useSynthMulti,
 } from "react-synthwave";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 
 export const useOnSound = () => {
   const { context, isSound } = useMothContext();

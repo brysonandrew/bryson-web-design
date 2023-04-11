@@ -1,7 +1,7 @@
-import { VolumeOff } from "@components/icons/VolumeOff";
-import { VolumeOn } from "@components/icons/VolumeOn";
+import { VolumeOff } from "@moth-components/icons/VolumeOff";
+import { VolumeOn } from "@moth-components/icons/VolumeOn";
 import styled from "@emotion/styled";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { motion } from "framer-motion";
 
 const Root = styled(motion.div)``;

@@ -6,8 +6,8 @@ import {
   _SPEECH_STORAGE_KEY,
   resolveFirstVoice,
 } from "./settings/config";
-import { useKey } from "@hooks/useKey";
-import { NOOP } from "@constants/index";
+import { useKey } from "@moth-hooks/useKey";
+import { NOOP } from "@moth-constants/index";
 import { DEFAULT_VOICE_KEY } from "./constants"; 
 
 type TConfig = {

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import type { TShopKey } from "@state/types";
+import type { TShopKey } from "@moth-state/types";
 import { pascalToTitle } from "@utils/format";
 import { motion } from "framer-motion";
 import type { FC } from "react";

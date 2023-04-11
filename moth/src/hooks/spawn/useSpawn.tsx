@@ -1,6 +1,6 @@
-import { HEIGHT } from "@constants/index";
+import { HEIGHT } from "@moth-constants/index";
 import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { useRef } from "react";
 import { SPAWN_POINTS } from "../../components/level/0/constants";
 import { useTriggerSpawn } from "./useTriggerSpawn";

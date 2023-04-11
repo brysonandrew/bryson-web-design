@@ -9,8 +9,8 @@ import {
   PlaneGeometry,
   CircleGeometry,
 } from "three";
-import { Hercules as _Hercules } from "@components/enemies/hercules";
-import { BASE_ENEMY_CONFIG } from "@components/enemies/constants";
+import { Hercules as _Hercules } from "@moth-components/enemies/hercules";
+import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
 
 extend({

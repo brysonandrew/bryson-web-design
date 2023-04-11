@@ -1,5 +1,5 @@
-import { useMothContext } from "@state/Context";
-import type { TSource } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TSource } from "@moth-state/types";
 import type { Point } from "framer-motion";
 import type { Mesh } from "three";
 import { useShotCollision } from "./useShotCollision";

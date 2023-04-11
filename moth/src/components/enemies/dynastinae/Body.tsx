@@ -1,7 +1,7 @@
-import { Eyes } from "@components/tagmata/eyes";
-import { Elite } from "@components/tagmata/thoraces/elite";
-import { Warlord as Wings } from "@components/tagmata/wings/warlord";
-import { GREY, RED } from "@constants/colors";
+import { Eyes } from "@moth-components/tagmata/eyes";
+import { Elite } from "@moth-components/tagmata/thoraces/elite";
+import { Warlord as Wings } from "@moth-components/tagmata/wings/warlord";
+import { GREY, RED } from "@moth-constants/colors";
 import type { FC } from "react";
 
 export const Body: FC = () => (

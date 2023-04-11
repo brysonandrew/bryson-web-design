@@ -1,4 +1,4 @@
-import type { TKillHandlerConfig } from "@hooks/useKill";
+import type { TKillHandlerConfig } from "@moth-hooks/useKill";
 import { useFrame } from "@react-three/fiber";
 import type { FC} from "react";
 import { useState } from "react";

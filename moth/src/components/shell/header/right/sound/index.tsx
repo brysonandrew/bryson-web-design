@@ -1,4 +1,4 @@
-import { VolumeOn as Icon } from "@components/icons/VolumeOn";
+import { VolumeOn as Icon } from "@moth-components/icons/VolumeOn";
 import type { FC } from "react";
 import { Options } from "./Options";
 import { Control } from "../control";

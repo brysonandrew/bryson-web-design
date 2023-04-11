@@ -1,11 +1,11 @@
-import { Spots } from "@components/tagmata/spots";
-import { Basic as Wings } from "@components/tagmata/wings/basic";
-import { Shuriken } from "@components/tagmata/wings/shuriken";
+import { Spots } from "@moth-components/tagmata/spots";
+import { Basic as Wings } from "@moth-components/tagmata/wings/basic";
+import { Shuriken } from "@moth-components/tagmata/wings/shuriken";
 import {
   GREY,
   TEAL_BRIGHT,
   WHITE,
-} from "@constants/colors";
+} from "@moth-constants/colors";
 import type { FC } from "react";
 import { Thorax } from "./Thorax";
 import { Specials } from "./specials";

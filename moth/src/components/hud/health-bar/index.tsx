@@ -1,4 +1,4 @@
-import { useViewportHeight } from "@hooks/useViewportHeight";
+import { useViewportHeight } from "@moth-hooks/useViewportHeight";
 import { Text } from "@react-three/drei";
 import type { FC } from "react";
 import { Background } from "./Background";
@@ -9,8 +9,8 @@ import {
   PADDING,
   WIDTH,
 } from "../constants";
-import type { TSpawn } from "@state/types";
-import { useMothContext } from "@state/Context";
+import type { TSpawn } from "@moth-state/types";
+import { useMothContext } from "@moth-state/Context";
 import { pascalToTitle } from "@utils/format";
 
 type TProps = {

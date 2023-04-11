@@ -1,8 +1,8 @@
-import { CENTER } from "@constants/styles";
+import { CENTER } from "@moth-constants/styles";
 import styled from "@emotion/styled";
-import { useLoop } from "@hooks/sounds/koolasuchas/useLoop";
-import { useKey } from "@hooks/useKey";
-import { useMothContext } from "@state/Context";
+import { useLoop } from "@moth-hooks/sounds/koolasuchas/useLoop";
+import { useKey } from "@moth-hooks/useKey";
+import { useMothContext } from "@moth-state/Context";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, type FC } from "react";
@@ -78,4 +78,4 @@ export const Start: FC = () => {
       <Controls />
     </Root>
   );
-};
+}; 

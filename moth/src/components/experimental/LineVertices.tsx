@@ -1,5 +1,4 @@
-import { useShape } from "@hooks/shape/useShape";
-import { motion } from "framer-motion-3d";
+import { useShape } from "@moth-hooks/shape/useShape";
 import type { FC } from "react";
 import { useRef } from "react";
 import type { Mesh } from "three";
@@ -15,7 +14,7 @@ export const LineVertices: FC = () => {
   if (!shape) return null;
 
   return (
-    <motion.group animate={{ x: -256, y: -256 }}>
+    <group position={[-256, -256, 0]}>
       <mesh ref={meshRef}>
         <shapeGeometry
           attach="geometry"
@@ -27,6 +26,6 @@ export const LineVertices: FC = () => {
           color={0x212121}
         />
       </mesh>
-    </motion.group>
+    </group>
   );
 };

@@ -1,4 +1,4 @@
-import { MOTH_NAME } from "@constants/index";
+import { MOTH_NAME } from "@moth-constants/index";
 
 export const MOTH_SOURCE = {
   name: MOTH_NAME,

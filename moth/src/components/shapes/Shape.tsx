@@ -1,5 +1,4 @@
-import type { TBaseTagmataProps } from "@components/tagmata/types";
-import { motion } from "framer-motion-3d";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 import type { FC } from "react";
 import { DoubleSide, type Shape as _Shape } from "three";
 
@@ -15,14 +14,14 @@ export const Shape: FC<TProps> = ({
   transparent,
   span = 0,
 }) => (
-  <motion.mesh
+  <mesh
     name={name}
     scale={scale}
-    initial={false}
-    animate={{
-      x: (-size / 2) * scale + span,
-      y: (-size / 2) * scale,
-    }}
+    position={[
+      (-size / 2) * scale + span,
+      (-size / 2) * scale,
+      0,
+    ]}
   >
     <shapeGeometry attach="geometry" args={[shape]} />
     <meshBasicMaterial
@@ -31,5 +30,5 @@ export const Shape: FC<TProps> = ({
       transparent={transparent}
       side={DoubleSide}
     />
-  </motion.mesh>
+  </mesh>
 );

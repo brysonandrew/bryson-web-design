@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { motion } from "framer-motion";
 import { Volume } from "./Volume";
 import { useState } from "react";
 import clsx from "clsx";
 import { useDetectGPU } from "@react-three/drei";
 import { Mute } from "./Mute";
-import { BUTTON_PADDING } from "@constants/styles";
+import { BUTTON_PADDING } from "@moth-constants/styles";
 
 const Root = styled(motion.div)``;
 const Items = styled.ul``;

@@ -1,6 +1,6 @@
-import { HEIGHT } from "@constants/index";
-import { useViewport } from "@hooks/useViewport";
-import { useMothContext } from "@state/Context";
+import { HEIGHT } from "@moth-constants/index";
+import { useViewport } from "@moth-hooks/useViewport";
+import { useMothContext } from "@moth-state/Context";
 import { generateUUID } from "three/src/math/MathUtils";
 import { resolveSpawnEnemies } from "../../components/enemies/resolveSpawnEnemies";
 import type { TSpawnPoint } from "../../components/level/0/constants";

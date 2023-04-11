@@ -4,7 +4,7 @@ import {
   ExtrudeGeometry,
   ShapeGeometry,
 } from "three";
-import { Bug as _Bug } from "@components/enemies/bug";
+import { Bug as _Bug } from "@moth-components/enemies/bug";
 import { useEffect, useRef, useState } from "react";
 import { SVGPathData } from "svg-pathdata";
 

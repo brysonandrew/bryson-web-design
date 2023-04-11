@@ -1,8 +1,8 @@
-import type { TKillConfig } from "@hooks/useKill";
-import { useSourceCollision } from "@hooks/useSourceCollision";
+import type { TKillConfig } from "@moth-hooks/useKill";
+import { useSourceCollision } from "@moth-hooks/useSourceCollision";
 import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@state/Context";
-import type { TSource } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TSource } from "@moth-state/types";
 
 type TConfig = {
   source: TSource;

@@ -14,9 +14,9 @@ import {
   LineBasicMaterial,
   ExtrudeGeometry,
 } from "three";
-import { BASE_ENEMY_CONFIG } from "@components/enemies/constants";
+import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
-import { Bug as _Bug } from "@components/enemies/bug";
+import { Bug as _Bug } from "@moth-components/enemies/bug";
 
 extend({
   Group,

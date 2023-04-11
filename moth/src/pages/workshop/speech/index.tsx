@@ -1,5 +1,5 @@
-import { Speech as _Speech } from "@components/speech";
-import { CENTER } from "@constants/styles";
+import { Speech as _Speech } from "@moth-components/speech";
+import { CENTER } from "@moth-constants/styles";
 import styled from "@emotion/styled";
 import clsx from "clsx";
 import { motion } from "framer-motion";

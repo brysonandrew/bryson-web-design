@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { metalRadialCss } from "@constants/styles/metal";
+import { metalRadialCss } from "@moth-constants/styles/metal";
 
 const THUMB_SIZE = 20;
 

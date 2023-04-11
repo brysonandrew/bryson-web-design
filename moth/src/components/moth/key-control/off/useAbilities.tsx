@@ -1,5 +1,5 @@
-import { useMothContext } from "@state/Context";
-import { SPEED } from "@state/constants";
+import { useMothContext } from "@moth-state/Context";
+import { SPEED } from "@moth-state/constants";
 import type { MutableRefObject } from "react";
 import { Mesh } from "three";
 import type { TCurrent } from "../../types";

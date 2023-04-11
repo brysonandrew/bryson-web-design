@@ -5,7 +5,7 @@ import type {
   TNodeRecord,
   TProcessorsConfig,
 } from "./config";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 
 type TSource = {
   node: AudioBufferSourceNode | null;

@@ -1,4 +1,4 @@
-import { PADDING } from "@components/moth/constants";
+import { PADDING } from "@moth-components/moth/constants";
 import type { Viewport } from "@react-three/fiber";
 
 export const resolveRandomXY = (viewport: Viewport) => ({

@@ -6,10 +6,10 @@ import {
   LANG_KEY_NAME,
   VOICE_KEY_NAME,
 } from "./config";
-import { Slider } from "@components/inputs";
-import { Textarea } from "@components/inputs/Textarea";
-import { Select } from "@components/inputs/Select";
-import { LG_H } from "@constants/styles";
+import { Slider } from "@moth-components/inputs";
+import { Textarea } from "@moth-components/inputs/Textarea";
+import { Select } from "@moth-components/inputs/Select";
+import { LG_H } from "@moth-constants/styles";
 
 type TProps = {
   state: TSpeechState;

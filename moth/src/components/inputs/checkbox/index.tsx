@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 import type { TChildren } from "@t/index";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
-import { Tick } from "@components/icons/Tick";
-import { CENTER, LG } from "@constants/styles";
+import { Tick } from "@moth-components/icons/Tick";
+import { CENTER, LG } from "@moth-constants/styles";
 
 const Root = styled.label``;
 const Input = styled.input``;

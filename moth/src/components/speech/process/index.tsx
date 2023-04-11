@@ -4,10 +4,10 @@ import { Params } from "./params";
 import type { TProcessorsConfig } from "./config";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { Stop } from "@components/icons/Stop";
-import { Play } from "@components/icons/Play";
-import { Checkbox } from "@components/inputs/checkbox";
-import { LG_H, LG } from "@constants/styles";
+import { Stop } from "@moth-components/icons/Stop";
+import { Play } from "@moth-components/icons/Play";
+import { Checkbox } from "@moth-components/inputs/checkbox";
+import { LG_H, LG } from "@moth-constants/styles";
 
 export const Process: FC<TProcessorsConfig> = (
   props
