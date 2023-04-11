@@ -13,6 +13,7 @@ import { usePlay as useWastePlay } from "@moth-hooks/sounds/ost/waste/usePlay";
 import { usePlay as useBladePlay } from "@moth-hooks/sounds/ost/blade/usePlay";
 import { usePlay as useDemonsPlay } from "@moth-hooks/sounds/ost/demons/usePlay";
 import { usePlay as useJiriProzniakPlay } from "@moth-hooks/sounds/ost/jiri-prozniak/usePlay";
+import { usePlay as useSoldicPlay } from "@moth-hooks/sounds/ost/soldic/usePlay";
 
 export const useTracks = () => {
   const handleKoolasuchasTap = useKoolasuchasPlay();
@@ -31,6 +32,7 @@ export const useTracks = () => {
   const handleBladePlay = useBladePlay();
   const handleDemonsPlay = useDemonsPlay();
   const handleJiriProzniakPlay = useJiriProzniakPlay();
+  const handleSoldicPlay = useSoldicPlay()
 
   return {
     koolasuchas: handleKoolasuchasTap,
@@ -48,5 +50,6 @@ export const useTracks = () => {
     blade: handleBladePlay,
     demons: handleDemonsPlay,
     "jiri-prozniak": handleJiriProzniakPlay,
+    soldic: handleSoldicPlay
   };
 };

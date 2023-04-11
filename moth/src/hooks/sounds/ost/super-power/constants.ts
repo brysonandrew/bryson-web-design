@@ -35,7 +35,7 @@ export const REPEAT_COUNT = 48
 //         Who the fuck is you, lookin' like you always normal
 //         Stay the fuck out my way fore' this day gonna miss you
 //         I just say that shit for myself
-//         For me you just the threat, to my life and my health
+//         It's all i care about, it's all my kahrma
 
 // ALT Bridge just call me nobody jjjjj just call me nobody
 // Fighting for those dreams, hurting for those dreams, killing for those dreams, until those dreams are mine

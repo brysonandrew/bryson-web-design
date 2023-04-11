@@ -15,7 +15,7 @@ export const useArpeggio = () => {
     type = "sawtooth",
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
-      frequency: 200,
+      frequency: 400,
       type: "lowpass",
     });
     const gain = new GainNode(context, {

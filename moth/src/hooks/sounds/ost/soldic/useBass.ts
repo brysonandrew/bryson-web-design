@@ -3,7 +3,7 @@ import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "./types";
 
-export const useArpeggio = () => {
+export const useBass = () => {
   const { context, master } = useMothContext();
   const multiSynth = useSynthMulti(context);
 
@@ -35,7 +35,6 @@ export const useArpeggio = () => {
 
     filter.connect(gain);
     gain.connect(master);
-
     multiSynth.play(options);
   };
 

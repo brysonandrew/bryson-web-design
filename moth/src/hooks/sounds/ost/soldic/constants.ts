@@ -19,34 +19,37 @@
 // wiedziałeś to przez cały czas, nadchodzi latające kolano
 // ostatni gwóźdź do trumny, jesteś twardym facetem
 
+const VERSE_II = [
+  0, //B
+  0, //B
+  0, //B
+  7, //C,
+  7,
+  8,
+  7,
+  5,
+]
+
 export const VERSE = [
-  3, //E
-  1, //C
-  1, //C
-  3, //E
-  1, //C
-  1, //C
-  3, //E
-  1, //C
-  1, //C
-  3, //E
-  1, //C
-  1, //C
-  2, //C#
-  1, //C
-  1, //C
-  2, //C#
-  1, //C
-  1, //C
-  2, //C#
-  1, //C
-  1, //C
-  2, //C#
-  1, //C
-  1, //C
-  // ...[...Array(4)].map((_) => 11), //B
-  // ...[...Array(4)].map((_) => 10), //A#
-  // ...[...Array(8)].map((_) => 15), // E
+  0, //B
+  0, //B
+  0, //B
+  7, //C,
+  7,
+  8,
+  7,
+  5,
+];
+export const CHORUS = [
+  // 8,8,8,8,9,9,9,9
+  // 0, //B
+  // 0, //B
+  // 0, //B
+  // 7, //C,
+  // 7,
+  // 8,
+  // 7,
+  // 5,
 ];
 // intro = 4;
 // intro chorus = 4
@@ -61,7 +64,10 @@ export const VERSE = [
 
 export const REPEAT_COUNT = 48;
 
-export const BASS_STEPS = [...VERSE];
+export const BASS_STEPS = [
+  ...VERSE,
+  // ...CHORUS
+];
 
 export const CYMBAL_STEPS = [
   ...[...Array(64)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
