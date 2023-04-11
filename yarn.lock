@@ -1495,7 +1495,6 @@ __metadata:
     detect-gpu: ^5.0.16
     eslint: ^8.21.0
     framer-motion: ^10.3.2
-    framer-motion-3d: ^10.3.2
     prettier: ^2.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -2166,22 +2165,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion-3d@npm:^10.3.2":
-  version: 10.11.2
-  resolution: "framer-motion-3d@npm:10.11.2"
-  dependencies:
-    framer-motion: ^10.11.2
-    react-merge-refs: ^2.0.1
-  peerDependencies:
-    "@react-three/fiber": ^8.2.2
-    react: ">=18.0"
-    react-dom: ">=18.0"
-    three: ">=0.133"
-  checksum: 174449ff6a31c74f7b1d1795c73ff8a76517a8e4a3fe0b3dae0bc19210399bfb112a8a86b381ed65bfb5eee32eeb602cc2770c773e5ea2196090e910f5b2037d
-  languageName: node
-  linkType: hard
-
-"framer-motion@npm:^10.11.2, framer-motion@npm:^10.3.2":
+"framer-motion@npm:^10.3.2":
   version: 10.11.2
   resolution: "framer-motion@npm:10.11.2"
   dependencies:
@@ -3348,13 +3332,6 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
-  languageName: node
-  linkType: hard
-
-"react-merge-refs@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "react-merge-refs@npm:2.0.1"
-  checksum: c0b6fdb384a92e9b2bb7d56128244a2db97b9343c0dcae70f172352c3732312266c078495902707e45f523625afcba78996a22edea3a8e7b2b17fe97347059fe
   languageName: node
   linkType: hard
 
