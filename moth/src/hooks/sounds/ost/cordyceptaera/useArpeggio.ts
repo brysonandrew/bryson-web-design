@@ -29,7 +29,7 @@ export const useArpeggio = () => {
       stagger: 0,
       decay: 0.1,
       start: startTime,
-      end: startTime + (duration ?? 0) + 0.4,
+      end: startTime + (duration ?? 0) + 0.9,
       output: filter,
     };
 
