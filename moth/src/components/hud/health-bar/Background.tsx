@@ -1,4 +1,4 @@
-import { BLACK } from "@constants/colors";
+import { BLACK } from "@moth-constants/colors";
 import type { FC } from "react";
 import { DoubleSide } from "three";
 import { HEIGHT, WIDTH } from "../constants";

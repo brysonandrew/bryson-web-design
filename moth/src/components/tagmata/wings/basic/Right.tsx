@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { WING_RIGHT_NAME } from "./config";
-import type { TBaseTagmataProps } from "@components/tagmata/types";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 import { DoubleSide } from "three";
 
 export const Right: FC<TBaseTagmataProps> = ({

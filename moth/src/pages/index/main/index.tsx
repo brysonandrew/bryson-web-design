@@ -12,8 +12,8 @@ import {
 } from "three";
 import { Moth } from "../../../components/moth";
 import { Level } from "../../../components/level";
-import { useMothContext } from "@state/Context";
-import { MOTH_NAME } from "@constants/index";
+import { useMothContext } from "@moth-state/Context";
+import { MOTH_NAME } from "@moth-constants/index";
 import { GameOver } from "./GameOver";
 import { Hud } from "../../../components/hud";
 

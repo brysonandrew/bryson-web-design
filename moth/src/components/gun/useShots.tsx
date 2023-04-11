@@ -1,7 +1,7 @@
-import { MOTH_NAME } from "@constants/index";
+import { MOTH_NAME } from "@moth-constants/index";
 import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@state/Context";
-import type { TFiringStart, TSource } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TFiringStart, TSource } from "@moth-state/types";
 import type { MutableRefObject } from "react";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";

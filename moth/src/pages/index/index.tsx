@@ -1,7 +1,7 @@
-import { Shell } from "@components/shell";
+import { Shell } from "@moth-components/shell";
 import { Suspense, useEffect } from "react";
 import { Main } from "./main";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { Start } from "./start";
 
 export const Index = () => {

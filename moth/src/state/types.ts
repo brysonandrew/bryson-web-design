@@ -12,8 +12,8 @@ import type {
   TSpecialsRunningRecord,
   TSpecialsSwitchRecord,
 } from "./constants";
-import type { TShopBooleanEntry } from "@components/moth/types";
-import type { TSpawnPoint } from "@components/level/0/constants";
+import type { TShopBooleanEntry } from "@moth-components/moth/types";
+import type { TSpawnPoint } from "@moth-components/level/0/constants";
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";

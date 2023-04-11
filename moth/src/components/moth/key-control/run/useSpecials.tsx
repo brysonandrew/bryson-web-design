@@ -1,4 +1,4 @@
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import type { MutableRefObject } from "react";
 import type { TCurrent } from "../../types";
 

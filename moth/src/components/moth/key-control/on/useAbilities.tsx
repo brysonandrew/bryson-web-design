@@ -1,9 +1,9 @@
-import { useMothContext } from "@state/Context";
-import { MAX_SPEED } from "@state/constants";
+import { useMothContext } from "@moth-state/Context";
+import { MAX_SPEED } from "@moth-state/constants";
 import type { MutableRefObject } from "react";
 import { Mesh, MeshBasicMaterial } from "three";
 import type { TCurrent } from "../../types";
-import type { TAbilitiesSounds } from "@hooks/sounds/abilities";
+import type { TAbilitiesSounds } from "@moth-hooks/sounds/abilities";
 
 type TConfig = {
   keyRef: MutableRefObject<TCurrent>;

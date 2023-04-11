@@ -1,4 +1,4 @@
-import { useShape } from "@hooks/shape/useShape";
+import { useShape } from "@moth-hooks/shape/useShape";
 import { motion } from "framer-motion-3d";
 import type { FC } from "react";
 import { useRef } from "react";

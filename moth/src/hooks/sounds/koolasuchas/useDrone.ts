@@ -1,6 +1,6 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 
 export const useDrone = () => {
   const { context, master } = useMothContext();

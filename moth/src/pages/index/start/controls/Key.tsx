@@ -1,7 +1,7 @@
-import { Down } from "@components/icons/Down";
-import { Left } from "@components/icons/Left";
-import { Right } from "@components/icons/Right";
-import { Up } from "@components/icons/Up";
+import { Down } from "@moth-components/icons/Down";
+import { Left } from "@moth-components/icons/Left";
+import { Right } from "@moth-components/icons/Right";
+import { Up } from "@moth-components/icons/Up";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { type FC } from "react";

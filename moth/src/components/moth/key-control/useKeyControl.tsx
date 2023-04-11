@@ -1,4 +1,4 @@
-import { useKey } from "@hooks/useKey";
+import { useKey } from "@moth-hooks/useKey";
 import { useAnimationFrame } from "framer-motion";
 
 import { useAbilities as useAbilitiesOff } from "./off/useAbilities";
@@ -15,14 +15,14 @@ import { useSpecials as useSpecialsRun } from "./run/useSpecials";
 
 import type { MutableRefObject } from "react";
 import { useRef } from "react";
-import { useLoop } from "@hooks/sounds/koolasuchas/useLoop";
-import { useSpeech } from "@components/speech/useSpeech";
-import type { TDirectionsSounds } from "@hooks/sounds/directions";
-import { useDirections as useSoundDirections } from "@hooks/sounds/directions";
-import type { TAbilitiesSounds } from "@hooks/sounds/abilities";
-import { useAbilities as useSoundAbilities } from "@hooks/sounds/abilities";
-import type { TUiSounds } from "@hooks/sounds/ui";
-import { useUi as useSoundUi } from "@hooks/sounds/ui";
+import { useLoop } from "@moth-hooks/sounds/koolasuchas/useLoop";
+import { useSpeech } from "@moth-components/speech/useSpeech";
+import type { TDirectionsSounds } from "@moth-hooks/sounds/directions";
+import { useDirections as useSoundDirections } from "@moth-hooks/sounds/directions";
+import type { TAbilitiesSounds } from "@moth-hooks/sounds/abilities";
+import { useAbilities as useSoundAbilities } from "@moth-hooks/sounds/abilities";
+import type { TUiSounds } from "@moth-hooks/sounds/ui";
+import { useUi as useSoundUi } from "@moth-hooks/sounds/ui";
 
 import type { TCurrent } from "../types";
 

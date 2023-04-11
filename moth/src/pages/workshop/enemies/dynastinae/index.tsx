@@ -9,8 +9,8 @@ import {
   PlaneGeometry,
   CircleGeometry,
 } from "three";
-import { Dynastinae as _Dynastinae } from "@components/enemies/dynastinae";
-import { BASE_ENEMY_CONFIG } from "@components/enemies/constants";
+import { Dynastinae as _Dynastinae } from "@moth-components/enemies/dynastinae";
+import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
 
 extend({

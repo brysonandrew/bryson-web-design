@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { BarsLoader } from "@components/icons/BarsLoader";
-import { Warning } from "@components/icons/Warning";
-import { Error } from "@components/icons/Error";
+import { BarsLoader } from "@moth-components/icons/BarsLoader";
+import { Warning } from "@moth-components/icons/Warning";
+import { Error } from "@moth-components/icons/Error";
 import clsx from "clsx";
-import { Mic } from "@components/icons/Mic";
+import { Mic } from "@moth-components/icons/Mic";
 import type { TVoiceStateKey } from "./config";
 import COLORS from "@windi/config-colors.json";
-import { CENTER_CHILD, MD } from "@constants/styles";
+import { CENTER_CHILD, MD } from "@moth-constants/styles";
 
 export const resolveStateColor = (
   state: TVoiceStateKey,

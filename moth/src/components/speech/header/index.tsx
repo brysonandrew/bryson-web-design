@@ -4,10 +4,10 @@ import { Button } from "./Button";
 import type { TRecorderState } from "../recorder/config";
 import type { TSpeechState } from "../settings/config";
 import { RecorderIcon } from "../recorder/RecorderIcon";
-import { Pause } from "@components/icons/Pause";
-import { Play } from "@components/icons/Play";
-import { Stop } from "@components/icons/Stop";
-import { Quotes } from "@components/icons/Quotes";
+import { Pause } from "@moth-components/icons/Pause";
+import { Play } from "@moth-components/icons/Play";
+import { Stop } from "@moth-components/icons/Stop";
+import { Quotes } from "@moth-components/icons/Quotes";
 
 const Root = styled.header``;
 

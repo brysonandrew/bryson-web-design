@@ -1,5 +1,5 @@
-import type { TKillConfig } from "@hooks/useKill";
-import { useKill } from "@hooks/useKill";
+import type { TKillConfig } from "@moth-hooks/useKill";
+import { useKill } from "@moth-hooks/useKill";
 import type { FC, MutableRefObject } from "react";
 import { Shot } from "./Shot";
 import type { TShotsConfig } from "./useShots";

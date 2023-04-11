@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { motion } from "framer-motion";
 import { Inventory } from "./Inventory";
 import { useState } from "react";
 import clsx from "clsx";
-import { BUTTON_PADDING } from "@constants/styles";
-import type { TShopKey } from "@state/types";
-import { useSpeech } from "@components/speech/useSpeech";
+import { BUTTON_PADDING } from "@moth-constants/styles";
+import type { TShopKey } from "@moth-state/types";
+import { useSpeech } from "@moth-components/speech/useSpeech";
 import { pascalToTitle } from "@utils/format";
-import { SHOP_KEYS } from "@state/constants";
+import { SHOP_KEYS } from "@moth-state/constants";
 
 const Root = styled(motion.div)``;
 const Items = styled.ul``;

@@ -1,5 +1,5 @@
-import { PADDING } from "@components/moth/constants";
-import type { TSpawn, TSource } from "@state/types";
+import { PADDING } from "@moth-components/moth/constants";
+import type { TSpawn, TSource } from "@moth-state/types";
 import type { Group } from "three";
 
 type TConfig = TSpawn & {

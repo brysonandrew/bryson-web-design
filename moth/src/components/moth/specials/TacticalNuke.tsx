@@ -1,5 +1,5 @@
-import { TEAL } from "@constants/colors";
-import { useViewport } from "@hooks/useViewport";
+import { TEAL } from "@moth-constants/colors";
+import { useViewport } from "@moth-hooks/useViewport";
 import { useRef, type FC } from "react";
 import type { Mesh } from "three";
 import { DoubleSide } from "three";

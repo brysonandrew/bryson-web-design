@@ -1,7 +1,7 @@
-import { Gun } from "@components/gun";
-import type { TShotsConfig } from "@components/gun/useShots";
-import { useMothContext } from "@state/Context";
-import type { TSource } from "@state/types";
+import { Gun } from "@moth-components/gun";
+import type { TShotsConfig } from "@moth-components/gun/useShots";
+import { useMothContext } from "@moth-state/Context";
+import type { TSource } from "@moth-state/types";
 import type { FC } from "react";
 import { useRef } from "react";
 

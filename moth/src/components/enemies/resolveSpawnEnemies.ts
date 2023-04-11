@@ -1,4 +1,4 @@
-import type { TSpawn } from "@state/types";
+import type { TSpawn } from "@moth-state/types";
 
 export type TSpawnEnemiesConfig = {
   count: number;

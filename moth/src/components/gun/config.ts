@@ -1,4 +1,4 @@
-import type { TLevel } from "@components/level/config";
+import type { TLevel } from "@moth-components/level/config";
 
 export type TShot = { name: string; x: number; y: number };
 export type TPassedLevelProps = Pick<TLevel, "y">;

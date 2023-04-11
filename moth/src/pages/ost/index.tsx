@@ -1,7 +1,7 @@
-import { Play } from "@components/icons/Play";
-import { Playing } from "@components/icons/Playing";
+import { Play } from "@moth-components/icons/Play";
+import { Playing } from "@moth-components/icons/Playing";
 import styled from "@emotion/styled";
-import { useLoop as useKoolasuchasLoop } from "@hooks/sounds/koolasuchas/useLoop";
+import { useLoop as useKoolasuchasLoop } from "@moth-hooks/sounds/koolasuchas/useLoop";
 import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 

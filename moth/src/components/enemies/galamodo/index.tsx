@@ -1,4 +1,4 @@
-import type { TSpawn } from "@state/types";
+import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
 import { Body } from "./Body";
 import { Kill } from "./Kill";

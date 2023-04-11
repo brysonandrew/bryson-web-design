@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { useShape } from "@hooks/shape/useShape";
-import { CIRCLE_CAGE_PATH } from "@components/tagmata/cephalon/paths";
-import { Shape } from "@components/shapes/Shape";
-import type { TBaseTagmataProps } from "@components/tagmata/types";
+import { useShape } from "@moth-hooks/shape/useShape";
+import { CIRCLE_CAGE_PATH } from "@moth-components/tagmata/cephalon/paths";
+import { Shape } from "@moth-components/shapes/Shape";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 import { MOTH_BODY_NAME } from "./constants";
 
 type TProps = TBaseTagmataProps;

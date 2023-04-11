@@ -14,9 +14,9 @@ import {
   LineBasicMaterial,
   ExtrudeGeometry,
 } from "three";
-import { BASE_ENEMY_CONFIG } from "@components/enemies/constants";
+import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
-import { RiverHorse as _RiverHorse } from "@components/enemies/river-horse";
+import { RiverHorse as _RiverHorse } from "@moth-components/enemies/river-horse";
 
 extend({
   Group,

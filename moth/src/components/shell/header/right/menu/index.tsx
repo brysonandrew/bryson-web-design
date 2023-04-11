@@ -1,4 +1,4 @@
-import { BigGear as Icon } from "@components/icons/BigGear";
+import { BigGear as Icon } from "@moth-components/icons/BigGear";
 import { Control } from "../control";
 import { Options } from "./Options";
 

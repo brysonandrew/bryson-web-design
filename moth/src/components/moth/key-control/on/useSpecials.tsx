@@ -1,11 +1,11 @@
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { useRef, type MutableRefObject } from "react";
 import type {
   TCurrent,
   TShopNumberEntry,
 } from "../../types";
 import type { TSounds } from "../useKeyControl";
-import { useSpeech } from "@components/speech/useSpeech";
+import { useSpeech } from "@moth-components/speech/useSpeech";
 import { pascalToTitle } from "@utils/format";
 
 type TConfig = {

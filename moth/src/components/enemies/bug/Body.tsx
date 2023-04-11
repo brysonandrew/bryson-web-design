@@ -1,12 +1,12 @@
-import { Eyes } from "@components/tagmata/eyes";
-import { Basic as Thorax } from "@components/tagmata/thoraces/Basic";
-import { Basic as Wings } from "@components/tagmata/wings/basic";
+import { Eyes } from "@moth-components/tagmata/eyes";
+import { Basic as Thorax } from "@moth-components/tagmata/thoraces/Basic";
+import { Basic as Wings } from "@moth-components/tagmata/wings/basic";
 import {
   GREY,
   LIGHTER_BLACK,
   LIGHT_BLACK,
   RED,
-} from "@constants/colors";
+} from "@moth-constants/colors";
 import type { FC } from "react";
 import { DoubleSide } from "three";
 

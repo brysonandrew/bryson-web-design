@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 import { AnimatePresence, motion } from "framer-motion";
-import { Close as CloseIcon } from "@components/icons/Close";
-import { useMothContext } from "@state/Context";
-import { useOutsideClick } from "@hooks/useOutsideClick";
+import { Close as CloseIcon } from "@moth-components/icons/Close";
+import { useMothContext } from "@moth-state/Context";
+import { useOutsideClick } from "@moth-hooks/useOutsideClick";
 import type { FC } from "react";
 import { useRef } from "react";
 import type { TBaseIconMotionProps } from "@t/icons";
-import { useFocusSound } from "@hooks/sounds/ui/useFocusSound";
-import type { TMenu } from "@state/types";
-import { CENTER } from "@constants/styles";
+import { useFocusSound } from "@moth-hooks/sounds/ui/useFocusSound";
+import type { TMenu } from "@moth-state/types";
+import { CENTER } from "@moth-constants/styles";
 import type { TChildren } from "@t/index";
 
 const Root = styled.div``;

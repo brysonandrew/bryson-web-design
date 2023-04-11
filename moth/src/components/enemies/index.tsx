@@ -1,7 +1,7 @@
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import type { FC } from "react";
 import { Dynastinae } from "./dynastinae";
-import type { TSpawn } from "@state/types";
+import type { TSpawn } from "@moth-state/types";
 import { Hercules } from "./hercules";
 import { Bug } from "./bug";
 import { Galamodo } from "./galamodo";

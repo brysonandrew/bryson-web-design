@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { DARK_TEAL } from "@constants/colors";
+import { DARK_TEAL } from "@moth-constants/colors";
 import { DoubleSide } from "three";
 import {
   COUNTER_WIDTH,

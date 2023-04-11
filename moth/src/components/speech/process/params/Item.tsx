@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import clsx from "clsx";
-import { Slider } from "@components/inputs";
-import type { TSliderProps } from "@components/inputs/slider";
+import { Slider } from "@moth-components/inputs";
+import type { TSliderProps } from "@moth-components/inputs/slider";
 type TProps = TSliderProps;
 export const Item: FC<TProps> = (props) => (
   <li

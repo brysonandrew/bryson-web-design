@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
-import type { XL_H, LG_H, MD_H } from "@constants/styles";
+import type { XL_H, LG_H, MD_H } from "@moth-constants/styles";
 import {
   XXL_H,
   INSET_BOX_INPUT_CLASS,
-} from "@constants/styles";
+} from "@moth-constants/styles";
 import {
   TEXT_SIZE_FROM_H,
   clearNativeCss,
-} from "@constants/styles/inputs";
-import { CaretDown } from "@components/icons/CaretDown";
+} from "@moth-constants/styles/inputs";
+import { CaretDown } from "@moth-components/icons/CaretDown";
 
 const parseOptions = <T extends string>(
   option: T | [T, string],

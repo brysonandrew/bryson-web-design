@@ -1,7 +1,7 @@
-import { Eyes } from "@components/tagmata/eyes";
-import { Warlock as Thorax } from "@components/tagmata/thoraces/warlock";
-import { Octoman as Wings } from "@components/tagmata/wings/octoman";
-import { DARK_PURPLE, GREY, RED } from "@constants/colors";
+import { Eyes } from "@moth-components/tagmata/eyes";
+import { Warlock as Thorax } from "@moth-components/tagmata/thoraces/warlock";
+import { Octoman as Wings } from "@moth-components/tagmata/wings/octoman";
+import { DARK_PURPLE, GREY, RED } from "@moth-constants/colors";
 import type { FC } from "react";
 
 export const Body: FC = () => (

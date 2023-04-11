@@ -1,8 +1,8 @@
-import type { TCollisionHandlerConfig } from "@hooks/useShotCollision";
-import { useShotCollision } from "@hooks/useShotCollision";
+import type { TCollisionHandlerConfig } from "@moth-hooks/useShotCollision";
+import { useShotCollision } from "@moth-hooks/useShotCollision";
 import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@state/Context";
-import type { TSpecialsKey } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TSpecialsKey } from "@moth-state/types";
 import type { MutableRefObject } from "react";
 import type { Mesh } from "three";
 

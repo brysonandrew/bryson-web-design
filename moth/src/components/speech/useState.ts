@@ -18,7 +18,7 @@ import {
   DEFAULT_RATE,
   DEFAULT_VOICE_KEY,
 } from "./constants";
-import { useInterval } from "@hooks/useInterval";
+import { useInterval } from "@moth-hooks/useInterval";
 
 type TConfig = {
   text: string;

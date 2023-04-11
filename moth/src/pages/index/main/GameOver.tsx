@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { useKey } from "@hooks/useKey";
-import { useMothContext } from "@state/Context";
+import { useKey } from "@moth-hooks/useKey";
+import { useMothContext } from "@moth-state/Context";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import COLORS from "@windi/config-colors.json";

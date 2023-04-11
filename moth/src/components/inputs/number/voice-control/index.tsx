@@ -9,8 +9,8 @@ import {
   resolveStateIcon,
 } from "./resolveStateConfig";
 import COLORS from "@windi/config-colors.json";
-import { CENTER, LG } from "@constants/styles";
-import { NUMBERS, resolveNumber } from "@constants/numbers";
+import { CENTER, LG } from "@moth-constants/styles";
+import { NUMBERS, resolveNumber } from "@moth-constants/numbers";
 
 declare const window: any;
 

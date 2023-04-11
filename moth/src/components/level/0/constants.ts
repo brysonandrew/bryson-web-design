@@ -1,4 +1,4 @@
-import type { TEnemyType } from "@state/types";
+import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 
 export const KOOLASUCHAS_NAME = "KOOLASUCHAS_NAME";

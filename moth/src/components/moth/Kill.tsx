@@ -1,8 +1,8 @@
-import { Gun } from "@components/gun";
-import { useMothContext } from "@state/Context";
+import { Gun } from "@moth-components/gun";
+import { useMothContext } from "@moth-state/Context";
 import type { FC } from "react";
 import { useCollision } from "./useCollision";
-import type { TSource } from "@state/types";
+import type { TSource } from "@moth-state/types";
 
 type TProps = {
   moth: TSource;

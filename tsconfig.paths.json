@@ -3,17 +3,23 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@moth-components/*": ["moth/src/components/*"],
       "@constants/*": ["src/constants/*"],
+      "@moth-constants/*": ["moth/src/constants/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@moth-hooks/*": ["moth/src/hooks/*"],
       "@icons/*": ["src/icons/*"],
+      "@moth-icons/*": ["moth/src/components/icons/*"],
       "@logic/*": ["src/logic/*"],
+      "@moth-logic/*": ["moth/src/logic/*"],
       "@main/*": ["src/main/*"],
       "@pages/*": ["src/pages/*"],
       "@state/*": ["src/state/*"],
+      "@moth-state/*": ["moth/src/state/*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
+      "@moth/*": ["moth/src/*"],
       "@utils/*": ["src/utils/*"],
-      // "@moth/*": ["moth/*"],
       "@windi/*": ["windi.*"]
     }
   }

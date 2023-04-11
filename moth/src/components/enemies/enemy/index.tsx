@@ -1,6 +1,6 @@
 import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@state/Context";
-import type { TSource } from "@state/types";
+import { useMothContext } from "@moth-state/Context";
+import type { TSource } from "@moth-state/types";
 import type { TChildrenElement } from "@t/index";
 import type { FC } from "react";
 import type { Group } from "three";

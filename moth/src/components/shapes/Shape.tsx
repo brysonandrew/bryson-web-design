@@ -1,4 +1,4 @@
-import type { TBaseTagmataProps } from "@components/tagmata/types";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 import { motion } from "framer-motion-3d";
 import type { FC } from "react";
 import { DoubleSide, type Shape as _Shape } from "three";

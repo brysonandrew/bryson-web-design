@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { SPOT_RIGHT_NAME } from "@components/moth/constants";
+import { SPOT_RIGHT_NAME } from "@moth-components/moth/constants";
 import type { TBaseTagmataProps } from "../types";
 
 export const SpotRight: FC<TBaseTagmataProps> = ({

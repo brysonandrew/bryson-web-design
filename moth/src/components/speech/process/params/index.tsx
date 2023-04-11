@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useParams } from "../useParams";
 import { Item } from "./Item";
 import type { TParam, TNode } from "../config";
-import { Slider } from "@components/inputs";
+import { Slider } from "@moth-components/inputs";
 
 type TEntry = [string, TParam];
 export type TParamsProps = Omit<TNode, "name">;

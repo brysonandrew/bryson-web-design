@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { ARTEFACTS } from "./constants";
-import { TEAL } from "@constants/colors";
+import { TEAL } from "@moth-constants/colors";
 import { DoubleSide } from "three";
 
 type TProps = {

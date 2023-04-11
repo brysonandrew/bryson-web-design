@@ -1,6 +1,6 @@
-import { Piggy as Thorax } from "@components/tagmata/thoraces/piggy";
-import { Rhino as Head } from "@components/tagmata/cephalon/rhino";
-import { WHITE } from "@constants/colors";
+import { Piggy as Thorax } from "@moth-components/tagmata/thoraces/piggy";
+import { Rhino as Head } from "@moth-components/tagmata/cephalon/rhino";
+import { WHITE } from "@moth-constants/colors";
 import type { FC } from "react";
 
 export const Body: FC = () => (

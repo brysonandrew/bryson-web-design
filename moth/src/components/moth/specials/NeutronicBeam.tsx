@@ -1,5 +1,5 @@
-import { TEAL_BRIGHT } from "@constants/colors";
-import { useViewportHeight } from "@hooks/useViewportHeight";
+import { TEAL_BRIGHT } from "@moth-constants/colors";
+import { useViewportHeight } from "@moth-hooks/useViewportHeight";
 import { useRef, type FC } from "react";
 import type { Mesh } from "three";
 import { DoubleSide } from "three";

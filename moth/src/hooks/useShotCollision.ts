@@ -1,4 +1,4 @@
-import type { TSource } from "@state/types";
+import type { TSource } from "@moth-state/types";
 import type {
   TKillConfig,
   TKillHandlerConfig,

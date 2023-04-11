@@ -1,6 +1,6 @@
-import { Shape } from "@components/shapes/Shape";
-import type { TBaseTagmataProps } from "@components/tagmata/types";
-import { useShape } from "@hooks/shape/useShape";
+import { Shape } from "@moth-components/shapes/Shape";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
+import { useShape } from "@moth-hooks/shape/useShape";
 import type { FC } from "react";
  
 const HOLLOW_HEAD =

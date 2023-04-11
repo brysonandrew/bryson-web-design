@@ -1,4 +1,4 @@
-import type { TBaseTagmataProps } from "@components/tagmata/types";
+import type { TBaseTagmataProps } from "@moth-components/tagmata/types";
 import type { FC } from "react";
 import { Blade } from "./Blade";
 import { Blade1 } from "./Blade1";

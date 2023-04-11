@@ -2,13 +2,13 @@ import type {
   TInventory,
   TShopKey,
   TSpecialsSwitchRecord,
-} from "@state/constants";
+} from "@moth-state/constants";
 import type {
   TBlades,
   TControlsRecord,
   TLevel,
   TMoth,
-} from "@state/types";
+} from "@moth-state/types";
 import type { Mesh } from "three";
 
 export type TCurrent = {

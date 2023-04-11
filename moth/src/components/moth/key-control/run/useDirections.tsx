@@ -1,9 +1,9 @@
-import { useMothContext } from "@state/Context";
+import { useMothContext } from "@moth-state/Context";
 import { PADDING } from "../../constants";
 import type { MutableRefObject } from "react";
-import { HEIGHT } from "@constants/index";
+import { HEIGHT } from "@moth-constants/index";
 import type { TCurrent } from "../../types";
-import { useViewportWidth } from "@hooks/useViewportWidth";
+import { useViewportWidth } from "@moth-hooks/useViewportWidth";
 
 type TConfig = {
   keyRef: MutableRefObject<TCurrent>;
