@@ -3,7 +3,7 @@ import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "./types";
 
-export const useArpeggio = () => {
+export const useBass = () => {
   const { context, master } = useMothContext();
   const multiSynth = useSynthMulti(context);
 
@@ -15,8 +15,8 @@ export const useArpeggio = () => {
     type = "sawtooth",
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
-      frequency: 1200,
-      type: "highpass",
+      frequency: 200,
+      type: "lowpass",
     });
     const gain = new GainNode(context, {
       gain: volume ?? 0.01,
@@ -24,18 +24,17 @@ export const useArpeggio = () => {
     const options: TMultiOptions = {
       type,
       midi: 0 + (pitch ?? 0),
-      count: 10,
+      count: 4,
       spread: 1,
       stagger: 0,
       decay: 0.1,
       start: startTime,
-      end: startTime + (duration ?? 0) + 0.9,
+      end: startTime + (duration ?? 0) + 0.4,
       output: filter,
     };
 
     filter.connect(gain);
     gain.connect(master);
-
     multiSynth.play(options);
   };
 

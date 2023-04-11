@@ -24,6 +24,8 @@ const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
 const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
 
 export const usePlay = () => {
+  const [time, setTime] = useState<number | null>(null);
+
   const indexRef = useRef<number>(0);
 
   const arpeggio = useArpeggio();
@@ -37,45 +39,35 @@ export const usePlay = () => {
   const loop = () => {
     STEPS.forEach((v, stepsIndex) => {
       arpeggio.play({
-        startTime:
-          context.currentTime +
-          stepsIndex * SPEED,
+        startTime: context.currentTime + stepsIndex * SPEED,
         pitch: v + 36,
         duration: SPEED,
       });
-      CYMBAL_STEPS.forEach((v, index) => {
-        if (!v) return;
-        cymbal({
-          startTime:
-            context.currentTime +
-            index * CYMBAL_SPEED +
-            stepsIndex * CYMBAL_SPEED * CYMBAL_COUNT,
-        });
-      });
-      SNARE_STEPS.forEach((v, index) => {
-        if (!v) return;
-        snare({
-          startTime:
-            context.currentTime +
-            index * SNARE_SPEED +
-            stepsIndex * SNARE_SPEED * SNARE_COUNT,
-        });
-      });
-      KICK_STEPS.forEach((v, index) => {
-        if (!v) return;
-        kick({
-          startTime:
-            context.currentTime +
-            index * KICK_SPEED +
-            stepsIndex * KICK_SPEED * KICK_COUNT,
-        });
-      });
-    
-
-      indexRef.current++;
     });
-  };
 
+    CYMBAL_STEPS.forEach((v, index) => {
+      if (!v) return;
+      cymbal({
+        startTime:
+          context.currentTime + index * CYMBAL_SPEED,
+      });
+    });
+    SNARE_STEPS.forEach((v, index) => {
+      if (!v) return;
+      snare({
+        startTime:
+          context.currentTime + index * SNARE_SPEED,
+      });
+    });
+    KICK_STEPS.forEach((v, index) => {
+      if (!v) return;
+      kick({
+        startTime: context.currentTime + index * KICK_SPEED,
+      });
+    });
+
+    indexRef.current++;
+  };
 
   const play = () => {
     loop();

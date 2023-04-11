@@ -1,19 +1,17 @@
-
-export const VERSE = [
-  8,// D
-  12 //F#
-];
-
-export const STEPS_ARPEGGIO = [
-  8,// D
-  12 //F#
-];
-
+export const VERSE = [...[...Array(24).fill(0)]];
 
 export const STEPS = [...VERSE];
 
 export const CYMBAL_STEPS = [
-  ...[...Array(64)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
+  10,
+  10,
+  10,
+  12,
+  5,
+  5,
+  5,
+  7,
+  8,
 ];
 
 export const SNARE_STEPS = [

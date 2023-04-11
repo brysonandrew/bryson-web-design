@@ -1,24 +1,37 @@
+// My demons keep me busy
+// a life long in the shade
+// they caress me, and make me happy
+// turn my words into blades
+
+// Nothings every coming back to you
+// my medusa, im your statue for you
 
 export const VERSE = [
-  9, //A
-  9,
-  9,
-  9,
+  7, //E
+  10, // G
+  10,
+  10,
+  12, // A
+  12,
+  12,
+  12,
+  12, // A
+  12,
+  12,
+  12,
   7, //E
   7,
-  4,
+  7,
+  12,
+  12,
+  4, //C
+  4, //C
+  7,
+  7,
   5,
-  4,
-  5,
-  4,
-  5,
-  4,
-  5,
-  4,
-  5,
-  4,
   5,
 ];
+console.log(VERSE.length);
 
 export const STEPS = [...VERSE];
 

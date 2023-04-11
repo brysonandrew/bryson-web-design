@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import { Item } from "./Item";
 import { TRACKS } from "./constants";
-import { useTracks } from "./useTracks";
 import type { TTrackKey } from "./types";
-import { useStyles } from "@moth-hooks/useStyles";
 import { useMothContext } from "@moth-state/Context";
-import { AlbumCover } from "@moth-hooks/sounds/album-cover";
+import { useStyles } from "./useStyles";
+import { useSwitchTracks } from "./switch";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -15,7 +14,6 @@ const List = styled(motion.ul)``;
 export const Ost = () => {
   const { context } = useMothContext();
   useStyles();
-
   const [nowPlaying, setPlay] = useState<TTrackKey | null>(
     null,
   );
@@ -28,54 +26,11 @@ export const Ost = () => {
     }
   };
 
-  const tracks = useTracks();
+  const switchTracks = useSwitchTracks();
 
   const handleTap = (name: TTrackKey) => {
-    if (typeof nowPlaying === "string") {
-      tracks[nowPlaying].stop.bind(context);
-      setPlay(null);
-    } else {
-      handlePlay(name);
-      switch (name) {
-        case "super-power": {
-          tracks["super-power"].play();
-          break;
-        }
-        case "wind-race": {
-          tracks["wind-race"].play();
-          break;
-        }
-        case "rhynchocephalia": {
-          tracks.rhynchocephalia.play();
-          break;
-        }
-        case "velociraptor": {
-          tracks.velociraptor.play();
-          break;
-        }
-        case "eukaryotchii": {
-          tracks.eukaryotchii.play();
-          break;
-        }
-        case "brachyurazoa": {
-          tracks.brachyurazoa.play();
-          break;
-        }
-        case "cordyceptaera": {
-          tracks.cordyceptaera.play();
-          break;
-        }
-        case "nautilus": {
-          tracks.nautilus.play();
-          break;
-        }
-        default: {
-          tracks.koolasuchas.play();
-        }
-      }
-    }
+    switchTracks(name);
   };
-
   return (
     <Root className="flex flex-col items-center w-screen">
       <div className="p-4" />
@@ -92,10 +47,6 @@ export const Ost = () => {
         ))}
       </List>
       <div className="p-4" />
-      <div className="w-full bg-teal-bright-08 h-px" />
-      <div className="p-4" />
-
-      <AlbumCover />
     </Root>
   );
 };

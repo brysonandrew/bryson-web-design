@@ -1,5 +1,5 @@
 import { useMothContext } from "@moth-state/Context";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   CYMBAL_STEPS,
   SNARE_STEPS,
@@ -36,42 +36,45 @@ export const usePlay = () => {
   const loop = () => {
     STEPS.forEach((v, stepsIndex) => {
       bass.play({
-        startTime: context.currentTime + stepsIndex * SPEED,
+        startTime:
+          context.currentTime +
+          stepsIndex * SPEED,
         pitch: v + 36,
         duration: SPEED,
       });
-    });
-    CYMBAL_STEPS.forEach((v, index) => {
-      if (!v) return;
-      cymbal({
-        startTime:
-          context.currentTime + index * CYMBAL_SPEED,
-        //  +
-        // stepsIndex * CYMBAL_SPEED * CYMBAL_COUNT,
+      CYMBAL_STEPS.forEach((v, index) => {
+        if (!v) return;
+        cymbal({
+          startTime:
+            context.currentTime +
+            index * CYMBAL_SPEED +
+            stepsIndex * CYMBAL_SPEED * CYMBAL_COUNT,
+        });
       });
-    });
-    SNARE_STEPS.forEach((v, index) => {
-      if (!v) return;
-      snare({
-        startTime:
-          context.currentTime + index * SNARE_SPEED,
-        // +
-        // stepsIndex * SNARE_SPEED * SNARE_COUNT,
+      SNARE_STEPS.forEach((v, index) => {
+        if (!v) return;
+        snare({
+          startTime:
+            context.currentTime +
+            index * SNARE_SPEED +
+            stepsIndex * SNARE_SPEED * SNARE_COUNT,
+        });
       });
-    });
-    KICK_STEPS.forEach((v, index) => {
-      if (!v) return;
-      kick({
-        startTime:
-          context.currentTime +
-          index * KICK_SPEED
-          //  +
-          // stepsIndex * KICK_SPEED * KICK_COUNT,
+      KICK_STEPS.forEach((v, index) => {
+        if (!v) return;
+        kick({
+          startTime:
+            context.currentTime +
+            index * KICK_SPEED +
+            stepsIndex * KICK_SPEED * KICK_COUNT,
+        });
       });
-    });
+    
 
-    indexRef.current++;
+      indexRef.current++;
+    });
   };
+
 
   const play = () => {
     loop();

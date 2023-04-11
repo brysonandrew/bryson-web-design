@@ -24,10 +24,10 @@ export const useBass = () => {
       midi: 24 + (pitch ?? 0),
       count: 20,
       spread: 4,
-      stagger: 0,
-      decay: 0,
+      stagger: 0.1,
+      decay: 0.01,
       start: startTime,
-      end: startTime + (duration ?? 0),
+      end: startTime + (duration ?? 0.2),
       output: filter,
     };
 

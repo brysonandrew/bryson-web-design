@@ -28,19 +28,15 @@ export const usePlay = () => {
       startTime: context.currentTime,
       pitch: 12,
       duration: SPEED * stepsCount,
-      volume: 0.02,
+      volume: 0.01,
       type: "triangle",
     });
     bass.play({
       startTime: context.currentTime,
       pitch: 24,
       duration: SPEED * stepsCount,
-      volume: 0.02,
+      volume: 0.01,
       type: "sine",
-    });
-    // }
-    tom({
-      startTime: context.currentTime,
     });
 
     bassSteps.forEach((v, index) => {
@@ -49,8 +45,12 @@ export const usePlay = () => {
         startTime: context.currentTime + index * SPEED,
         pitch: v,
         duration: SPEED,
-        volume: 0.1,
+        volume: 0.06,
       });
+    });
+
+    tom({
+      startTime: context.currentTime,
     });
 
     const apreggioSpeed = SPEED / 4;

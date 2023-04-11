@@ -24,6 +24,8 @@ const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
 const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
 
 export const usePlay = () => {
+  const [time, setTime] = useState<number | null>(null);
+
   const indexRef = useRef<number>(0);
 
   const arpeggio = useArpeggio();
@@ -37,9 +39,7 @@ export const usePlay = () => {
   const loop = () => {
     STEPS.forEach((v, stepsIndex) => {
       arpeggio.play({
-        startTime:
-          context.currentTime +
-          stepsIndex * SPEED,
+        startTime: context.currentTime + stepsIndex * SPEED,
         pitch: v + 36,
         duration: SPEED,
       });
@@ -70,15 +70,19 @@ export const usePlay = () => {
             stepsIndex * KICK_SPEED * KICK_COUNT,
         });
       });
-    
 
       indexRef.current++;
     });
   };
 
+  useInterval(
+    loop,
+    time === null ? null : time * STEPS.length,
+  );
 
   const play = () => {
     loop();
+    setTime(SPEED * TIME * 1000);
   };
 
   const stop = () => {
