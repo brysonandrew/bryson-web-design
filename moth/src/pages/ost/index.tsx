@@ -7,7 +7,6 @@ import { useTracks } from "./useTracks";
 import type { TTrackKey } from "./types";
 import { useStyles } from "@moth-hooks/useStyles";
 import { useMothContext } from "@moth-state/Context";
-import { AlbumCover } from "@moth-hooks/sounds/album-cover";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -37,6 +36,10 @@ export const Ost = () => {
     } else {
       handlePlay(name);
       switch (name) {
+        case "jiri-prozniak": {
+          tracks["jiri-prozniak"].play();
+          break;
+        }
         case "super-power": {
           tracks["super-power"].play();
           break;
@@ -92,10 +95,6 @@ export const Ost = () => {
         ))}
       </List>
       <div className="p-4" />
-      <div className="w-full bg-teal-bright-08 h-px" />
-      <div className="p-4" />
-
-      <AlbumCover />
     </Root>
   );
 };

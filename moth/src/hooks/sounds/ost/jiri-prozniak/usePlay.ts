@@ -81,7 +81,6 @@ export const usePlay = () => {
   };
 
   const play = () => {
-    vocals({ startTime: context.currentTime + 0.24, volume: 0.8 });
     loop();
     setTime(SPEED * TIME * 1000);
   };

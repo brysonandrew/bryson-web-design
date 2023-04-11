@@ -1,4 +1,3 @@
-import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
 import { useRef, useState } from "react";
 import {
@@ -8,7 +7,7 @@ import {
   STEPS,
 } from "./constants";
 import { useCymbal } from "./useCymbal";
-import { useArpeggio } from "./useArpeggio";
+import { useBass } from "./useBass";
 import { useSnare } from "./useSnare";
 import { useKick } from "./useKick";
 
@@ -26,7 +25,7 @@ const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
 export const usePlay = () => {
   const indexRef = useRef<number>(0);
 
-  const arpeggio = useArpeggio();
+  const bass = useBass();
 
   const cymbal = useCymbal();
   const snare = useSnare();
@@ -36,7 +35,7 @@ export const usePlay = () => {
 
   const loop = () => {
     STEPS.forEach((v, stepsIndex) => {
-      arpeggio.play({
+      bass.play({
         startTime:
           context.currentTime +
           stepsIndex * SPEED,
@@ -82,7 +81,7 @@ export const usePlay = () => {
   };
 
   const stop = () => {
-    arpeggio.stop();
+    bass.stop();
   };
 
   return { play, stop };

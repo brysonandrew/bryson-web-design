@@ -11,6 +11,7 @@ import { usePlay as useErickHaydenPlay } from "@moth-hooks/sounds/ost/erick-hayd
 import { usePlay as useWastePlay } from "@moth-hooks/sounds/ost/waste/usePlay";
 import { usePlay as useBladePlay } from "@moth-hooks/sounds/ost/blade/usePlay";
 import { usePlay as useDemonsPlay } from "@moth-hooks/sounds/ost/demons/usePlay";
+import { usePlay as useJiriProzniakPlay } from "@moth-hooks/sounds/ost/jiri-prozniak/usePlay";
 
 export const useTracks = () => {
   const handleKoolasuchasTap = useKoolasuchasPlay();
@@ -27,6 +28,7 @@ export const useTracks = () => {
   const handleWastePlay = useWastePlay();
   const handleBladePlay = useBladePlay();
   const handleDemonsPlay = useDemonsPlay();
+  const handleJiriProzniakPlay = useJiriProzniakPlay();
 
   return {
     koolasuchas: handleKoolasuchasTap,
@@ -42,5 +44,6 @@ export const useTracks = () => {
     waste: handleWastePlay,
     blade: handleBladePlay,
     demons: handleDemonsPlay,
+    "jiri-prozniak": handleJiriProzniakPlay,
   };
 };
