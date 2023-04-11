@@ -1,6 +1,5 @@
 import { CENTER } from "@moth-constants/styles";
 import styled from "@emotion/styled";
-import { useLoop } from "@moth-hooks/sounds/koolasuchas/useLoop";
 import { useKey } from "@moth-hooks/useKey";
 import { useMothContext } from "@moth-state/Context";
 import clsx from "clsx";
@@ -8,12 +7,13 @@ import { motion } from "framer-motion";
 import { useEffect, type FC } from "react";
 import COLORS from "@windi/config-colors.json";
 import { Controls } from "./controls";
+import { usePlay } from "@moth-hooks/sounds/ost/brachyurazoa/usePlay";
 
 const Root = styled(motion.div)``;
 
 export const Start: FC = () => {
   const { dispatch } = useMothContext();
-  const { play } = useLoop();
+  const { play } = usePlay();
   const handleStart = () => {
     dispatch({
       type: "start",

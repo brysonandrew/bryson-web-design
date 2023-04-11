@@ -5,6 +5,7 @@ import { Ost } from "@pages/ost/index";
 import { NotFound404 } from "@pages/not-found-404";
 import { Showcase } from "@pages/showcase";
 import { useRoutes } from "react-router-dom";
+import { AlbumCover } from "@moth-hooks/sounds/album-cover";
 
 export const Source = () => {
   const element = useRoutes([
@@ -27,6 +28,10 @@ export const Source = () => {
     {
       path: "/ost",
       element: <Ost />,
+    },
+    {
+      path: "/album-cover",
+      element: <AlbumCover />,
     },
     {
       path: "*",

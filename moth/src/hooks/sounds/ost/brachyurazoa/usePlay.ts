@@ -4,7 +4,6 @@ import {  useRef, useState } from "react";
 import { STEPS_2, STEPS_ARPEGGIO } from "./constants";
 import { useArpeggio } from "./useArpeggio";
 import { useBass } from "./useBass";
-import { useBuild } from "./useBuild";
 import { useKick } from "./useKick";
 
 const SPEED = 1;

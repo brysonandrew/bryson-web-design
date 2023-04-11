@@ -37,6 +37,10 @@ export const Ost = () => {
     } else {
       handlePlay(name);
       switch (name) {
+        case "super-power": {
+          tracks["super-power"].play();
+          break;
+        }
         case "wind-race": {
           tracks["wind-race"].play();
           break;

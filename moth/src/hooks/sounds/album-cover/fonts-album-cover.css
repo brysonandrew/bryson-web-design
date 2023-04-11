@@ -14,3 +14,8 @@
   font-family: "GALSB";
   src: url("/fonts/GALSB.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Valorax";
+  src: url("/fonts/Valorax.otf") format("opentype");
+}
