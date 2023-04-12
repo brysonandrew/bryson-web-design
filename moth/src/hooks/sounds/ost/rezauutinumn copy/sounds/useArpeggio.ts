@@ -1,9 +1,9 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import type { THandlerConfig } from "./types";
+import type { THandlerConfig } from "../types";
 
-export const useBass = () => {
+export const useArpeggio = () => {
   const { context, master } = useMothContext();
   const multiSynth = useSynthMulti(context);
 
@@ -11,31 +11,27 @@ export const useBass = () => {
     startTime,
     pitch,
     duration,
-    type = "sine",
-    volume
+    volume,
+    type = "sawtooth",
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
-      frequency: 1200,
+      frequency: 400,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain: volume ?? 0.02 });
+    const gain = new GainNode(context, {
+      gain: volume ?? 0.01,
+    });
     const options: TMultiOptions = {
       type,
-      midi: 24 + (pitch ?? 0),
-      count: 20,
-      spread: 4,
+      midi: 0 + (pitch ?? 0),
+      count: 4,
+      spread: 1,
       stagger: 0,
-      decay: 0,
+      decay: 0.1,
       start: startTime,
-      end: startTime + (duration ?? 0),
+      end: startTime + (duration ?? 0) + 0.4,
       output: filter,
     };
-
-    filter.frequency.linearRampToValueAtTime(
-      10,
-      startTime + (duration ?? 0),
-    );
-    //gain.gain.linearRampToValueAtTime(0, startTime + duration);
 
     filter.connect(gain);
     gain.connect(master);
