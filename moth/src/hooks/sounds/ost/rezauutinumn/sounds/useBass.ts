@@ -11,23 +11,25 @@ export const useBass = () => {
     startTime,
     pitch,
     duration,
-    type = "sine",
-    volume
+    type = "sawtooth",
+    volume = 0.1,
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain: volume ?? 0.02 });
+
+    const gain = new GainNode(context, { gain: volume });
+    const end = startTime + (duration ?? 0);
     const options: TMultiOptions = {
       type,
       midi: 24 + (pitch ?? 0),
       count: 20,
       spread: 4,
-      stagger: 0,
-      decay: 0,
+      stagger: 0.2,
+      decay: 0.2,
       start: startTime,
-      end: startTime + (duration ?? 0),
+      end,
       output: filter,
     };
 
@@ -35,7 +37,7 @@ export const useBass = () => {
       10,
       startTime + (duration ?? 0),
     );
-    //gain.gain.linearRampToValueAtTime(0, startTime + duration);
+    gain.gain.linearRampToValueAtTime(volume, end);
 
     filter.connect(gain);
     gain.connect(master);

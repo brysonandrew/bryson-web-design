@@ -29,9 +29,9 @@ export const usePhase2 = () => {
       arpeggio.play({
         startTime:
           context.currentTime + index * STEPS_SPEED,
-        pitch: v + 33,
-        duration: SPEED * 0.01,
-        volume: 0.04,
+        pitch: v + 38,
+        duration: SPEED * 0.6,
+        volume: 0.02,
       });
     });
 
@@ -40,7 +40,7 @@ export const usePhase2 = () => {
       cymbal({
         startTime:
           context.currentTime + index * CYMBAL_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
     SNARE_STEPS.forEach((v, index) => {
@@ -48,14 +48,14 @@ export const usePhase2 = () => {
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
     KICK_STEPS.forEach((v, index) => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
   };

@@ -13,7 +13,6 @@ import { useArpeggio } from "../../sounds/useArpeggio";
 import { useCymbal } from "../../sounds/useCymbal";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
-import { SPEED, TIME } from "../constants";
 
 export const usePhase0 = () => {
   const arpeggio = useArpeggio();
@@ -29,18 +28,17 @@ export const usePhase0 = () => {
       arpeggio.play({
         startTime:
           context.currentTime + stepsIndex * STEPS_SPEED,
-        pitch: v + 11,
-        duration: SPEED * 0.2,
-        volume: 0.04,
+        pitch: v + 38,
+        duration: STEPS_SPEED * 0.28,
+        volume: 0.02,
       });
     });
-
     CYMBAL_STEPS.forEach((v, index) => {
       if (!v) return;
       cymbal({
         startTime:
           context.currentTime + index * CYMBAL_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
     SNARE_STEPS.forEach((v, index) => {
@@ -48,14 +46,14 @@ export const usePhase0 = () => {
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
     KICK_STEPS.forEach((v, index) => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
   };

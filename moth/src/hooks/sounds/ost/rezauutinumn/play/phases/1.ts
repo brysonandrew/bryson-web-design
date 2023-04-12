@@ -1,8 +1,8 @@
 import { useMothContext } from "@moth-state/Context";
 import {
-  CYMBAL_STEPS,
+  CYMBAL_STEPS_1,
   KICK_SPEED,
-  KICK_STEPS,
+  KICK_STEPS_1,
   SNARE_SPEED,
   SNARE_STEPS,
   STEPS_1,
@@ -12,7 +12,7 @@ import { useArpeggio } from "../../sounds/useArpeggio";
 import { useCymbal } from "../../sounds/useCymbal";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
-import { SPEED, TIME } from "../constants";
+import { SPEED } from "../constants";
 
 export const usePhase1 = () => {
   const arpeggio = useArpeggio();
@@ -27,18 +27,25 @@ export const usePhase1 = () => {
     STEPS_1.forEach((v, stepsIndex) => {
       arpeggio.play({
         startTime: context.currentTime + stepsIndex * SPEED,
-        pitch: v + 22,
-        duration: SPEED * 0.1,
-        volume: 0.04,
+        pitch: v + 39,
+        duration: STEPS_SPEED * 0.4,
+        volume: 0.01,
+      });
+      arpeggio.play({
+        startTime: context.currentTime + stepsIndex * SPEED,
+        pitch: v + 39 + 24,
+        duration: STEPS_SPEED * 0.4,
+        volume: 0.01,
+        type: "triangle",
       });
     });
 
-    CYMBAL_STEPS.forEach((v, index) => {
+    CYMBAL_STEPS_1.forEach((v, index) => {
       if (!v) return;
       cymbal({
         startTime:
           context.currentTime + index * STEPS_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
     SNARE_STEPS.forEach((v, index) => {
@@ -46,14 +53,14 @@ export const usePhase1 = () => {
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
-        volume: 0.08,
-      });
+          volume: 0.1,
+        });
     });
-    KICK_STEPS.forEach((v, index) => {
+    KICK_STEPS_1.forEach((v, index) => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 0.08,
+        volume: 0.1,
       });
     });
   };

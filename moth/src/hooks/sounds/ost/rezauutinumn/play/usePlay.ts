@@ -8,6 +8,7 @@ import { usePhase1 } from "./phases/1";
 import { PHASES, SPEED, TIME } from "./constants";
 import { usePhase2 } from "./phases/2";
 import { usePhase3 } from "./phases/3";
+import { useIntro } from "./phases/intro";
 
 export const usePlay = () => {
   const [time, setTime] = useState<number | null>(null);
@@ -19,17 +20,18 @@ export const usePlay = () => {
 
   const { context } = useMothContext();
 
+  const intro = useIntro();
   const phase0 = usePhase0();
   const phase1 = usePhase1();
   const phase2 = usePhase2();
   const phase3 = usePhase3();
 
-  const phases = [phase0, phase1, phase2, phase3];
+  const phases = [intro, phase0, phase1, phase2, phase3];
 
   const loop = () => {
-    const { name, repeat } = PHASES[indexRef.current];
+    const { repeat } = PHASES[indexRef.current];
 
-    phases[name]();
+    phases[indexRef.current]();
 
     if (repeat !== repeatRef.current) {
       repeatRef.current++;
