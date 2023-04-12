@@ -30,14 +30,14 @@ export const usePhase3 = () => {
           context.currentTime + index * STEPS_SPEED,
         pitch: v + 39,
         duration: STEPS_SPEED * 0.72,
-        volume: 0.04,
+        volume: 0.02,
       });
       arpeggio.play({
         startTime:
           context.currentTime + index * STEPS_SPEED,
         pitch: v + 39 + 24,
         duration: STEPS_SPEED * 0.72,
-        volume: 0.04,
+        volume: 0.02,
         type: "sine",
       });
     });

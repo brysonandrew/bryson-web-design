@@ -9,9 +9,9 @@ export const useArpeggio = () => {
 
   const handler = ({
     startTime,
-    pitch = 0,
-    duration = 0,
-    volume = 0.01,
+    pitch,
+    duration,
+    volume,
     type = "sawtooth",
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
@@ -19,17 +19,17 @@ export const useArpeggio = () => {
       type: "lowpass",
     });
     const gain = new GainNode(context, {
-      gain: volume,
+      gain: volume ?? 0.04,
     });
     const options: TMultiOptions = {
       type,
-      midi: 0 + pitch,
-      count: 10,
+      midi: 0 + (pitch ?? 0),
+      count: 12,
       spread: 1,
       stagger: 0,
       decay: 0,
       start: startTime,
-      end: startTime + duration,
+      end: startTime + (duration ?? 0),
       output: filter,
     };
 

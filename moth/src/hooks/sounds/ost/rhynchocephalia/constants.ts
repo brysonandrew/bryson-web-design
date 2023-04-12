@@ -10,16 +10,7 @@ export const INTRO = [...Array(8)].fill(22);
 //   1,
 // ];
 
-export const OUTRO = [
-  9,
-  9,
-  9,
-  9,
-  9,
-  9,
-  9,
-  9,
-];
+export const OUTRO = [9, 9, 9, 9, 9, 9, 9, 9];
 
 export const BRIDGE = [
   4, //F
@@ -112,7 +103,13 @@ export const KICK_STEPS = [
   ...[...Array(64)].map((v, i) => (i % 32 === 0 ? 1 : 0)),
 ];
 
-export const STEPS_COUNT = STEPS.length;
-export const INTERVAL_DURATION = STEPS.length * 1000; // * VERSES.length; // * BARS.length;
-export const BEAT_DURATION = 1000; // 1000 = 1sec
-export const STEP_DURATION = 1000 * STEPS.length;
+export const SPEED = 0.28;
+export const TIME = 8;
+
+export const CYMBAL_COUNT = CYMBAL_STEPS.length;
+export const SNARE_COUNT = SNARE_STEPS.length;
+export const KICK_COUNT = KICK_STEPS.length;
+
+export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
+export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
+export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;

@@ -8,12 +8,12 @@ import {
   SNARE_STEPS,
   STEPS_2,
   STEPS_SPEED,
+  SPEED,
 } from "../constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useCymbal } from "../../sounds/useCymbal";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
-import { SPEED, TIME } from "../constants";
 
 export const usePhase2 = () => {
   const arpeggio = useArpeggio();

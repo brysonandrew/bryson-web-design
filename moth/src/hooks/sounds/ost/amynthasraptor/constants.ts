@@ -50,7 +50,16 @@ export const KICK_STEPS = [
   ...[...Array(64)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
 ];
 
-export const STEPS_COUNT = STEPS.length;
-export const INTERVAL_DURATION = STEPS.length * 1000; // * VERSES.length; // * BARS.length;
-export const BEAT_DURATION = 1000; // 1000 = 1sec
-export const STEP_DURATION = 1000 * STEPS.length;
+export const SPEED = 1;
+export const TIME = 8;
+
+export const CYMBAL_COUNT = CYMBAL_STEPS.length;
+export const SNARE_COUNT = SNARE_STEPS.length;
+export const KICK_COUNT = KICK_STEPS.length;
+export const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
+
+export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
+export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
+export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
+export const ARPEGGIO_SPEED =
+  (SPEED / ARPEGGIO_COUNT) * TIME;

@@ -1,17 +1,17 @@
 import { useMothContext } from "@moth-state/Context";
-import { useBass } from "../../sounds/useBass";
-import { STEPS_SPEED } from "../constants";
+import { useDrone } from "../../sounds/useDrone";
+import { STEPS_SPEED, TIME } from "../constants";
 
 export const useIntro = () => {
-  const bass = useBass();
+  const drone = useDrone();
 
   const { context } = useMothContext();
 
   const loop = () => {
-    bass.play({
+    drone.play({
       startTime: context.currentTime,
-      pitch: 24,
-      duration: STEPS_SPEED * 10,
+      pitch: 12,
+      duration: STEPS_SPEED * TIME * 4,
       volume: 0.1,
     });
   };

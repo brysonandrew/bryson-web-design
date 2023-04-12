@@ -15,7 +15,7 @@ import { useSpecials as useSpecialsRun } from "./run/useSpecials";
 
 import type { MutableRefObject } from "react";
 import { useRef } from "react";
-import { usePlay } from "@moth-hooks/sounds/ost/koolasuchas/usePlay";
+import { usePlay } from "@moth-hooks/sounds/ost/koolasuchas/play/usePlay";
 import { useSpeech } from "@moth-components/speech/useSpeech";
 import type { TDirectionsSounds } from "@moth-hooks/sounds/directions";
 import { useDirections as useSoundDirections } from "@moth-hooks/sounds/directions";

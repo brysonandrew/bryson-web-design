@@ -14,6 +14,7 @@ export const usePlay = () => {
   const [time, setTime] = useState<number | null>(null);
 
   const indexRef = useRef<number>(0);
+  const sustainRef = useRef<number>(0);
   const repeatRef = useRef<number>(0);
 
   const arpeggio = useArpeggio();
@@ -29,17 +30,35 @@ export const usePlay = () => {
   const phases = [intro, phase0, phase1, phase2, phase3];
 
   const loop = () => {
-    const { repeat } = PHASES[indexRef.current];
+    const { repeat, sustain } = PHASES[indexRef.current];
 
-    phases[indexRef.current]();
-
-    if (repeat !== repeatRef.current) {
-      repeatRef.current++;
-    } else {
-      indexRef.current =
-        (indexRef.current + 1) % phases.length;
-      repeatRef.current = 0;
+    if (
+      typeof sustain === "undefined" ||
+      sustainRef.current === 0
+    ) {
+      phases[indexRef.current]();
     }
+
+    if (
+      typeof sustain !== "undefined" &&
+      sustain !== sustainRef.current
+    ) {
+      sustainRef.current++;
+      return;
+    }
+
+    if (
+      typeof repeat !== "undefined" &&
+      repeat !== repeatRef.current
+    ) {
+      repeatRef.current++;
+      return;
+    }
+
+    indexRef.current =
+      (indexRef.current + 1) % phases.length;
+    repeatRef.current = 0;
+    sustainRef.current = 0;
   };
 
   useInterval(loop, time);

@@ -7,12 +7,12 @@ import {
   SNARE_STEPS,
   STEPS_1,
   STEPS_SPEED,
+  SPEED,
 } from "../constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useCymbal } from "../../sounds/useCymbal";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
-import { SPEED } from "../constants";
 
 export const usePhase1 = () => {
   const arpeggio = useArpeggio();
@@ -53,8 +53,8 @@ export const usePhase1 = () => {
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
-          volume: 0.1,
-        });
+        volume: 0.1,
+      });
     });
     KICK_STEPS_1.forEach((v, index) => {
       if (!v) return;

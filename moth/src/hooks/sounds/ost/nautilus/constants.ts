@@ -40,3 +40,20 @@ export const KICK_STEPS = [
   // ...[...Array(4)].map((v, i) => 1),
   // ...[...Array(30)].map((v, i) => (i % 4 === 0 ? 1 : 0)),
 ];
+
+export const SPEED = 2;
+export const TIME = 1;
+
+export const CYMBAL_COUNT = CYMBAL_STEPS.length;
+export const SNARE_COUNT = SNARE_STEPS.length;
+export const KICK_COUNT = KICK_STEPS.length;
+export const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
+export const MACHINE_GUN_COUNT = MACHINE_GUN_STEPS.length;
+
+export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
+export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
+export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
+export const MACHINE_GUN_SPEED =
+  (2 / MACHINE_GUN_COUNT) * TIME;
+export const ARPEGGIO_SPEED =
+  (SPEED / ARPEGGIO_COUNT) * TIME;
