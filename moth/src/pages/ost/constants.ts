@@ -6,4 +6,5 @@ export const TRACKS = [
   "koolasuchas",
   "brachyurazoa",
   "cordyceptaera",
+  "rezauutinumn",
 ] as const;

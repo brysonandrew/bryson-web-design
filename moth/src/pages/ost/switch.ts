@@ -26,6 +26,9 @@ export const useSwitchTracks = () => {
       case "koolasuchas": {
         return tracks.koolasuchas.play();
       }
+      case "rezauutinumn": {
+        return tracks.rezauutinumn.play();
+      }
       default: {
         return tracks.nautilus.play();
       }

@@ -5,6 +5,7 @@ import { usePlay as useCordyceptaeraPlay } from "@moth-hooks/sounds/ost/cordycep
 import { usePlay as useNautilusPlay } from "@moth-hooks/sounds/ost/nautilus/usePlay";
 import { usePlay as useAmynthasraptorPlay } from "@moth-hooks/sounds/ost/amynthasraptor/usePlay";
 import { usePlay as useRhynchocephaliaPlay } from "@moth-hooks/sounds/ost/rhynchocephalia/usePlay";
+import { usePlay as useRezauutinumnPlay } from "@moth-hooks/sounds/ost/rezauutinumn/usePlay";
 
 export const useTracks = () => {
   const handleKoolasuchasTap = useKoolasuchasPlay();
@@ -15,6 +16,7 @@ export const useTracks = () => {
   const handleAmynthasraptorPlay = useAmynthasraptorPlay();
   const handleRhynchocephaliaPlay =
     useRhynchocephaliaPlay();
+  const handleRezauutinumnPlay = useRezauutinumnPlay();
 
   return {
     koolasuchas: handleKoolasuchasTap,
@@ -24,5 +26,6 @@ export const useTracks = () => {
     nautilus: handleNautilusPlay,
     amynthasraptor: handleAmynthasraptorPlay,
     rhynchocephalia: handleRhynchocephaliaPlay,
+    rezauutinumn: handleRezauutinumnPlay,
   };
 };
