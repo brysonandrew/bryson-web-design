@@ -1,16 +1,9 @@
 export const TRACKS = [
-  "soldic",
-  "jiri-prozniak",
-  "erick-hayden",
-  "waste",
+  "nautilus",
   "eukaryotchii",
-  "blade",
-  "velociraptor",
-  "demons",
+  "amynthasraptor",
   "rhynchocephalia",
-  "wind-race",
   "koolasuchas",
   "brachyurazoa",
   "cordyceptaera",
-  "nautilus",
 ] as const;

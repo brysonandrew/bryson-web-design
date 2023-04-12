@@ -30,7 +30,7 @@ export const Item: FC<TProps> = ({
         {isPlaying ? <Playing /> : <Play />}
       </Icon>
       <div className="p-2" />
-      <h5>{name}</h5>
+      <p>{name}</p>
       <div className="p-2" />
     </Button>
   </Root>

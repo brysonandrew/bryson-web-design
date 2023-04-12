@@ -1,4 +1,4 @@
-import { TTrackKey } from "./types";
+import type { TTrackKey } from "./types";
 import { useTracks } from "./useTracks";
 
 export const useSwitchTracks = () => {

@@ -5,7 +5,7 @@ import { reducer } from ".";
 import { Context } from "./Context";
 import { STATE } from "./constants";
 import { useDetectGPU } from "@react-three/drei";
-import { TChildrenElement } from "@t/index";
+import type { TChildrenElement } from "@t/index";
 
 type TProviderProps = {
   children: TChildrenElement;

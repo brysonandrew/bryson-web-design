@@ -34,7 +34,7 @@ export const useLoop = ({ drones, pulses }: TConfig) => {
   };
 
   const bassLoop = () => {
-    BEATS.forEach((beat, index) => {
+    BEATS.forEach((beat, index) => { 
       if (beat === 1) {
         const startTime =
           context.currentTime +

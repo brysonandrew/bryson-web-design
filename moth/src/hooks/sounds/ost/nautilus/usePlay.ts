@@ -1,51 +1,117 @@
 import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
 import { useRef, useState } from "react";
-import { ARPEGGIO_STEPS, VERSES } from "./constants";
+import {
+  ARPEGGIO_STEPS,
+  CYMBAL_STEPS,
+  KICK_STEPS,
+  MACHINE_GUN_STEPS,
+  SNARE_STEPS,
+} from "./constants";
 import { useArpeggio } from "./useArpeggio";
+import { useSnare } from "./useSnare";
+import { useKick } from "./useKick";
+import { useCymbal } from "./useCymbal";
 
 const SPEED = 2;
-const TIME = 8;
+const TIME = 1;
 
-const VERSES_COUNT = VERSES.length;
+const CYMBAL_COUNT = CYMBAL_STEPS.length;
+const SNARE_COUNT = SNARE_STEPS.length;
+const KICK_COUNT = KICK_STEPS.length;
 const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
-const ARPEGGIO_SPEED = (SPEED / ARPEGGIO_COUNT) * TIME;
+const MACHINE_GUN_COUNT = MACHINE_GUN_STEPS.length;
 
-const baseSpeed = TIME * 1000;
+const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
+const CYMBAL_OFFSET = 0;
+const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
+const SNARE_OFFSET = 0;
+const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
+const MACHINE_GUN_SPEED = (2 / MACHINE_GUN_COUNT) * TIME;
+const ARPEGGIO_SPEED = (SPEED / ARPEGGIO_COUNT) * TIME;
 
 export const usePlay = () => {
   const [time, setTime] = useState<number | null>(null);
   const indexRef = useRef<number>(0);
 
   const arpeggio = useArpeggio();
+  const snare = useSnare();
+  const kick = useKick();
+  const cymbal = useCymbal();
 
   const { context } = useMothContext();
 
-  const loop = () => {
-    VERSES.forEach((v, verseIndex) => {
-      ARPEGGIO_STEPS.forEach((v, index) => {
-        arpeggio.play({
-          startTime:
-            context.currentTime +
-            index * ARPEGGIO_SPEED +
-            verseIndex * ARPEGGIO_SPEED * ARPEGGIO_COUNT,
-          pitch: v + 24,
-          duration: ARPEGGIO_SPEED,
-        });
+  const oneTwoLoop = () => {
+    ARPEGGIO_STEPS.forEach((v, index) => {
+      const isSecond = indexRef.current % 2 === 0;
+      const pitch = isSecond ? v + 24 : v + 36;
+      arpeggio.play({
+        startTime:
+          context.currentTime + index * ARPEGGIO_SPEED,
+        pitch,
+        duration: ARPEGGIO_SPEED * 2,
+        volume: 0.02,
+        type: isSecond ? "square" : "triangle",
       });
-
-      indexRef.current++;
+    });
+    CYMBAL_STEPS.forEach((v, index) => {
+      if (!v) return;
+      cymbal({
+        startTime:
+          context.currentTime + index * CYMBAL_SPEED,
+        volume: 0.12,
+      });
+    });
+    SNARE_STEPS.forEach((v, index) => {
+      if (!v) return;
+      snare({
+        startTime:
+          context.currentTime + index * SNARE_SPEED,
+        volume: 0.1,
+      });
+    });
+    KICK_STEPS.forEach((v, index) => {
+      if (!v) return;
+      kick({
+        startTime: context.currentTime + index * KICK_SPEED,
+        volume: 0.15,
+      });
     });
   };
 
-  useInterval(
-    loop,
-    time === null ? null : time * VERSES_COUNT,
-  );
+  const machineGun = () => {
+    MACHINE_GUN_STEPS.forEach((v, index) => {
+      snare({
+        startTime:
+          context.currentTime + index * MACHINE_GUN_SPEED,
+        volume: 0.2,
+      });
+      kick({
+        startTime:
+          context.currentTime + index * MACHINE_GUN_SPEED,
+        volume: 0.2,
+      });
+    });
+  };
 
-  const play = () => {
+  const loop = () => {
+    if (indexRef.current % 8 === 0) {
+      machineGun();
+    } else {
+      oneTwoLoop();
+    }
+    indexRef.current++;
+  };
+
+  useInterval(loop, time === null ? null : time * SPEED);
+
+  const preload = async () => {};
+
+  const play = async () => {
+    await context.resume();
+    await preload();
     loop();
-    setTime(baseSpeed * SPEED);
+    setTime(TIME * 1000);
   };
 
   const stop = () => {

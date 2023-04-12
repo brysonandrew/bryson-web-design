@@ -4,7 +4,6 @@ import { Fragment, useState } from "react";
 import { Item } from "./Item";
 import { TRACKS } from "./constants";
 import type { TTrackKey } from "./types";
-import { useMothContext } from "@moth-state/Context";
 import { useSwitchTracks } from "./switch";
 import { useStyles } from "@styles/useStyles";
 
@@ -12,11 +11,8 @@ const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
 export const Ost = () => {
-  const { context } = useMothContext();
   useStyles();
-  const [nowPlaying, setPlay] = useState<TTrackKey | null>(
-    null,
-  );
+  const [nowPlaying] = useState<TTrackKey | null>(null);
 
   const switchTracks = useSwitchTracks();
 
