@@ -19,15 +19,8 @@
 // wiedziałeś to przez cały czas, nadchodzi latające kolano
 // ostatni gwóźdź do trumny, jesteś twardym facetem
 
-const VERSE_II = [
-  0, //B
-  0, //B
-  0, //B
-  7, //C,
-  7,
-  8,
-  7,
-  5,
+const CHORUS = [
+  5,6,7,7,7,7,7,7
 ]
 
 export const VERSE = [
@@ -40,16 +33,8 @@ export const VERSE = [
   7,
   5,
 ];
-export const CHORUS = [
-  // 8,8,8,8,9,9,9,9
-  // 0, //B
-  // 0, //B
-  // 0, //B
-  // 7, //C,
-  // 7,
-  // 8,
-  // 7,
-  // 5,
+export const VERSE_II = [
+1,2,1,2,1,2,1,2
 ];
 // intro = 4;
 // intro chorus = 4

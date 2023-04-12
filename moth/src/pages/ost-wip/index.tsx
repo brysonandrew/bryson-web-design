@@ -11,7 +11,7 @@ import { useSwitchTracks } from "./switch";
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
-export const Ost = () => {
+export const OstWip = () => {
   const { context } = useMothContext();
   useStyles();
   const [nowPlaying, setPlay] = useState<TTrackKey | null>(

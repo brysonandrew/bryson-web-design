@@ -5,9 +5,10 @@ import { reducer } from ".";
 import { Context } from "./Context";
 import { STATE } from "./constants";
 import { useDetectGPU } from "@react-three/drei";
+import { TChildrenElement } from "@t/index";
 
 type TProviderProps = {
-  children: JSX.Element | JSX.Element[];
+  children: TChildrenElement;
 };
 export const Provider: FC<TProviderProps> = ({
   children,
