@@ -44,14 +44,14 @@ export const VERSE = [
 ];
 
 export const CHORUS = [
-  9, //B
+  10, 
+  11,
+  12,
   9,
-  9,
-  9,
-  1, //F
-  1,
-  1,
-  1,
+  3, 
+  3,
+  3,
+  3,
 ];
 
 export const STEPS = [

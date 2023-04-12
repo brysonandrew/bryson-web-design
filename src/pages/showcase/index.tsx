@@ -20,12 +20,12 @@ export const Showcase = () => {
         selectedPath={selectedPath}
       />
       <Space />
-      {/* <List
+      <List
         header="Games"
         items={GAME_ITEMS}
         selectedPath={selectedPath}
       />
-      <Space /> */}
+      <Space />
       <List
         header="Libraries"
         items={LIBRARIES_ITEMS}

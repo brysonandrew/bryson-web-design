@@ -15,6 +15,7 @@ import { useSnare } from "./useSnare";
 import { useKick } from "./useKick";
 import { useInterval } from "@moth-hooks/useInterval";
 import { useVocals } from "./useVocals";
+import { CHORUS } from "../miracles/constants";
 
 const SPEED = 0.4;
 const TIME = VERSE.length * 1.2;
@@ -47,8 +48,32 @@ export const usePlay = () => {
 
   const loop = () => {
     indexRef.current++;
-    if (indexRef.current > REPEAT_COUNT) {
-      setTime(null);
+    if (
+      (indexRef.current > 0 && indexRef.current < 4) ||
+      (indexRef.current > 8 && indexRef.current < 10)
+    ) {
+      CHORUS.forEach((v, stepsIndex) => {
+        bass.play({
+          startTime:
+            context.currentTime +
+            stepsIndex * BASS_STEP_SPEED,
+          pitch: v + 36,
+          duration: (BASS_STEP_COUNT / TIME) * 0.1,
+        });
+      });
+      return;
+    }
+
+    if (indexRef.current === 1) {
+      BASS_STEPS.forEach((v, stepsIndex) => {
+        bass.play({
+          startTime:
+            context.currentTime +
+            stepsIndex * BASS_STEP_SPEED,
+          pitch: v + 36,
+          duration: (BASS_STEP_COUNT / TIME) * 0.1,
+        });
+      });
     }
 
     BASS_STEPS.forEach((v, stepsIndex) => {
@@ -59,14 +84,6 @@ export const usePlay = () => {
         pitch: v + 36,
         duration: (BASS_STEP_COUNT / TIME) * 0.1,
       });
-      // heavyBass.play({
-      //   startTime:
-      //     context.currentTime +
-      //     stepsIndex * BASS_STEP_SPEED,
-      //   pitch: v + 12,
-      //   duration: (BASS_STEP_COUNT / TIME) * 0.1,
-      //   type: "sawtooth",
-      // });
     });
     CYMBAL_STEPS.forEach((v, index) => {
       if (!v) return;
