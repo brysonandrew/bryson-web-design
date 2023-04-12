@@ -29,6 +29,7 @@ export const usePlay = () => {
           context.currentTime + index * ARPEGGIO_SPEED,
         pitch: v + 38 + 36,
         duration: ARPEGGIO_SPEED * 2,
+        volume: 0.4,
       });
     });
   };
@@ -38,11 +39,13 @@ export const usePlay = () => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * SPEED,
+        volume: 1.2,
       });
       bass.play({
         startTime: context.currentTime + index * SPEED,
         pitch: v,
         duration: SPEED,
+        volume: 0.2,
       });
     });
   };

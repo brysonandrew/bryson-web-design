@@ -15,7 +15,7 @@ export const useCymbal = () => {
       frequency: 800,
       type: "highpass",
     });
-    const gain = new GainNode(context, { gain: volume ?? 0.04 });
+    const gain = new GainNode(context, { gain: volume ?? 0.08 });
 
     const sampleBuffer: AudioBuffer = await handleSample(
       `/sounds/cymbals/saev_${version}.wav`,

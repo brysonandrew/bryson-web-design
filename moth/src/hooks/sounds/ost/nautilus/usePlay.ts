@@ -103,7 +103,7 @@ export const usePlay = () => {
     indexRef.current++;
   };
 
-  useInterval(loop, time === null ? null : time * SPEED);
+  useInterval(loop, time);
 
   const preload = async () => {};
 
@@ -111,7 +111,7 @@ export const usePlay = () => {
     await context.resume();
     await preload();
     loop();
-    setTime(TIME * 1000);
+    setTime(TIME * SPEED * 1000);
   };
 
   const stop = () => {

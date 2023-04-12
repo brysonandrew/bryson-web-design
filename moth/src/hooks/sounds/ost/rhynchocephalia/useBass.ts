@@ -15,7 +15,7 @@ export const useBass = () => {
     type = "sawtooth",
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
-      frequency: 200,
+      frequency: 1200,
       type: "lowpass",
     });
     const gain = new GainNode(context, {
@@ -24,10 +24,10 @@ export const useBass = () => {
     const options: TMultiOptions = {
       type,
       midi: 0 + (pitch ?? 0),
-      count: 4,
+      count: 10,
       spread: 1,
       stagger: 0,
-      decay: 0.1,
+      decay: 0,
       start: startTime,
       end: startTime + (duration ?? 0) + 0.4,
       output: filter,

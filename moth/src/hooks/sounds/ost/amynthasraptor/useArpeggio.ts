@@ -19,7 +19,7 @@ export const useArpeggio = () => {
       type: "lowpass",
     });
     const gain = new GainNode(context, {
-      gain: volume ?? 0.01,
+      gain: volume ?? 0.04,
     });
     const options: TMultiOptions = {
       type,

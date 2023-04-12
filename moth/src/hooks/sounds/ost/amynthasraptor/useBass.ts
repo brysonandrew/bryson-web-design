@@ -18,7 +18,7 @@ export const useBass = () => {
       frequency: 1200,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain: volume ?? 0.02 });
+    const gain = new GainNode(context, { gain: volume ?? 0.04 });
     const options: TMultiOptions = {
       type,
       midi: 24 + (pitch ?? 0),

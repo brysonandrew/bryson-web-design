@@ -26,8 +26,16 @@ export const ARPEGGIO_STEPS = [...STEPS_XXXX, ...STEPS];
 export const CYMBAL_STEPS = [
   ...[...Array(4)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
   ...[...Array(4)].map((v, i) => 1),
-  ...[...Array(56)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
+  ...[...Array(19)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
+  ...[...Array(2)].map((v, i) => (i % 2 === 0 ? 1 : 0)),
+  ...[...Array(2)].map((v, i) => 0),
+  ...[...Array(4)].map((v, i) => (i % 2 === 0 ? 1 : 0)),
+  ...[...Array(23)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
+  ...[...Array(6)].map((v, i) => (i % 2 === 0 ? 1 : 0)),
 ];
+
+const COUNT = 4 + 4 + 19 + 2 + 2 + 4 + 23 + 6;
+console.log(COUNT);
 
 export const SNARE_STEPS = [
   ...[...Array(12)].map((v, i) => 0),

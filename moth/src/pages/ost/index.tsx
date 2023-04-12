@@ -22,6 +22,8 @@ export const Ost = () => {
   return (
     <Root className="flex flex-col items-center w-screen">
       <div className="p-4" />
+      <div className="p-4" />
+      <div className="p-4" />
       <List className="shadow-teal-dark">
         {TRACKS.map((name, index) => (
           <Fragment key={name}>

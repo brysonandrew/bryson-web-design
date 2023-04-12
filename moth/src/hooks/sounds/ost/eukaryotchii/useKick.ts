@@ -11,7 +11,7 @@ export const useKick = () => {
       frequency: 400,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain:volume ?? 0.2 });
+    const gain = new GainNode(context, { gain:volume ?? 0.1 });
 
     const sampleBuffer: AudioBuffer = await handleSample(
       "/sounds/kicks/saev.wav",
