@@ -5,7 +5,7 @@ import {
   BEATS_COUNT,
   BEAT_DURATION,
 } from "./constants";
-import { THandlerConfig } from "./ost/amynthasraptor/types";
+import type { THandlerConfig } from "./ost/amynthasraptor/types";
 
 type TDrone = {
   play(): void;

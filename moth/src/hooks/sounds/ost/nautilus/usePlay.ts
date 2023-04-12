@@ -105,7 +105,9 @@ export const usePlay = () => {
 
   useInterval(loop, time);
 
-  const preload = async () => {};
+  const preload = async () => {
+    console.log("PRELOAD")
+  };
 
   const play = async () => {
     await context.resume();

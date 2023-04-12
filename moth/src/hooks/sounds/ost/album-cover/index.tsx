@@ -1,13 +1,9 @@
 import { TRACKS } from "@pages/ost/constants";
 
-export const AlbumCover = () => {
-  return (
+export const AlbumCover = () => (
     <div>
       <ul>
-        {TRACKS.map((name) => {
-          return <li key={name}>{name}</li>;
-        })}
+        {TRACKS.map((name) => <li key={name}>{name}</li>)}
       </ul>
     </div>
   );
-};
