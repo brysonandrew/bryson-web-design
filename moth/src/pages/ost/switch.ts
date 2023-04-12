@@ -11,9 +11,6 @@ export const useSwitchTracks = () => {
       case "erick-hayden": {
         return tracks["erick-hayden"].play();
       }
-      case "super-power": {
-        return tracks["super-power"].play();
-      }
       case "wind-race": {
         return tracks["wind-race"].play();
       }

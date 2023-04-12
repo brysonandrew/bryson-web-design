@@ -6,9 +6,6 @@ import { MothProvider } from "@moth-state/Provider";
 import { Boundary } from "@moth-components/boundary";
 import { MOTION_CONFIG } from "@moth-constants/animation";
 import { BrowserRouter as _Router } from "react-router-dom";
-// import "virtual:windi.css";
-// import "@styles/fonts.css";
-// import "@styles/globals.css";
 
 const root = document.getElementById("root");
 if (root)
