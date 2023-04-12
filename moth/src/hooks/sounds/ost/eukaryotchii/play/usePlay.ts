@@ -1,16 +1,14 @@
-import { useLoop } from "../../../_useLoop";
-import { useBass } from "../sounds/useBass";
-import { useDrone } from "../sounds/useDrone";
-import { useKick } from "../sounds/useKick";
+import { useLoop } from "../../../useLoop";
+import { TIME, SPEED } from "./constants";
+import { usePhases } from "./usePhases";
 
 export const usePlay = () => {
-  const drone = useDrone();
-  const bass = useBass();
-  const kick = useKick();
+  const phases = usePhases();
+
   const loop = useLoop({
-    kicks: [null, kick, null, null],
-    drones: [drone, drone, drone, drone],
-    pulses: [bass, bass, bass, bass],
+    interval: TIME * SPEED,
+    phases,
   });
+
   return loop;
 };

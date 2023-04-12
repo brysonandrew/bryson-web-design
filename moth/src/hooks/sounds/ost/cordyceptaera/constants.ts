@@ -1,3 +1,6 @@
+export const SPEED = 1;
+export const TIME = 8;
+
 export const VERSES = [...[...Array(4)].fill(1)];
 
 export const STEPS_XXXX = [1, 2, 4, 20, 50, 80, 90, 20];

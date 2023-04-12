@@ -1,11 +1,14 @@
-import { useLoop } from "../../../_useLoop";
-import { useBass } from "../sounds/useBass";
+import { useLoop } from "@moth-hooks/sounds/useLoop";
+import { TIME, SPEED } from "../constants";
+import { usePhases } from "./usePhases";
 
 export const usePlay = () => {
-  const bass = useBass();
+  const phases = usePhases();
+
   const loop = useLoop({
-    pulses: [bass],
-    drones: []
+    interval: TIME * SPEED * 0.125,
+    phases,
   });
+
   return loop;
 };

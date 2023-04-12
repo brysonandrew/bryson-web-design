@@ -6,17 +6,16 @@ import {
   KICK_STEPS,
   SNARE_SPEED,
   SNARE_STEPS,
-  SNARE_STEPS_3,
-  STEPS_3,
-  STEPS_SPEED,
-} from "../constants";
-import { useArpeggio } from "../../sounds/useArpeggio";
+  SPEED,
+  STEPS,
+} from "../../constants";
+import { useBass } from "../../sounds/useBass";
 import { useCymbal } from "../../sounds/useCymbal";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
 
-export const usePhase3 = () => {
-  const arpeggio = useArpeggio();
+export const usePhase0 = () => {
+  const bass = useBass();
 
   const cymbal = useCymbal();
   const snare = useSnare();
@@ -25,24 +24,14 @@ export const usePhase3 = () => {
   const { context } = useMothContext();
 
   const loop = () => {
-    STEPS_3.forEach((v, index) => {
-      arpeggio.play({
-        startTime:
-          context.currentTime + index * STEPS_SPEED,
-        pitch: v + 39,
-        duration: STEPS_SPEED * 0.72,
-        volume: 0.02,
-      });
-      arpeggio.play({
-        startTime:
-          context.currentTime + index * STEPS_SPEED,
-        pitch: v + 39 + 24,
-        duration: STEPS_SPEED * 0.72,
-        volume: 0.02,
-        type: "sine",
+    STEPS.forEach((v, index) => {
+      bass.play({
+        startTime: context.currentTime + index * SPEED,
+        pitch: v + 36,
+        duration: SPEED,
+        volume: 0.028,
       });
     });
-
     CYMBAL_STEPS.forEach((v, index) => {
       if (!v) return;
       cymbal({
@@ -51,19 +40,20 @@ export const usePhase3 = () => {
         volume: 0.2,
       });
     });
-    SNARE_STEPS_3.forEach((v, index) => {
+    SNARE_STEPS.forEach((v, index) => {
       if (!v) return;
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
         volume: 0.2,
+        version: 2,
       });
     });
     KICK_STEPS.forEach((v, index) => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 0.2,
+        volume: 0.4,
       });
     });
   };
