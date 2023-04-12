@@ -5,6 +5,7 @@ import {
   BEATS_COUNT,
   BEAT_DURATION,
 } from "./constants";
+import type { THandlerConfig } from "./ost/amynthasraptor/types";
 
 type TDrone = {
   play(): void;
@@ -19,8 +20,13 @@ type TPulse = {
 type TConfig = {
   drones: TDrone[];
   pulses: TPulse[];
+  kicks?: (((config: THandlerConfig) => void) | null)[];
 };
-export const useLoop = ({ drones, pulses }: TConfig) => {
+export const useLoop = ({
+  drones,
+  pulses,
+  kicks,
+}: TConfig) => {
   const { context, isSound } = useMothContext();
 
   const intervalRef = useRef<ReturnType<
@@ -41,6 +47,11 @@ export const useLoop = ({ drones, pulses }: TConfig) => {
           (index * 1000) / BEAT_DURATION / BEATS_COUNT;
         pulses.forEach((pulse) => {
           pulse.play(startTime);
+        });
+        (kicks ?? []).forEach((kick) => {
+          if (kick) {
+            kick({ startTime });
+          }
         });
       }
     });

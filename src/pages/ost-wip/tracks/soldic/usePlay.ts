@@ -5,7 +5,6 @@ import {
   SNARE_STEPS,
   KICK_STEPS,
   BASS_STEPS,
-  REPEAT_COUNT,
   VERSE,
 } from "./constants";
 import { useCymbal } from "./useCymbal";

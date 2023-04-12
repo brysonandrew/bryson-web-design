@@ -8,7 +8,7 @@ export const useKick = () => {
 
   const play = async ({ startTime, volume }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
-      frequency: 800,
+      frequency: 1200,
       type: "lowpass",
     });
     const gain = new GainNode(context, { gain:volume ?? 0.05 });

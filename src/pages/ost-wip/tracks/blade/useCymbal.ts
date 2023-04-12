@@ -1,6 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "./types";
-import { useBufferFromSrcHandler } from "../useBufferFromSrcHandler";
+import { useBufferFromSrcHandler } from "../../../../../moth/src/hooks/sounds/ost/useBufferFromSrcHandler";
 
 export const useCymbal = () => {
   const { context, master } = useMothContext();
