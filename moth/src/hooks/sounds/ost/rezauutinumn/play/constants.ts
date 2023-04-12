@@ -1,3 +1,5 @@
+import type { TPhase } from "../../types";
+
 export const STEPS_0 = [10, 10, 10, 12, 5, 5, 7, 8];
 export const STEPS_1 = [12, 12, 12, 12, 5, 5, 7, 8];
 export const STEPS_2 = [5, 5, 7, 8, 12, 12, 12, 12];
@@ -16,7 +18,6 @@ export const KICK_STEPS = [
 export const CYMBAL_STEPS = [
   ...[...Array(24)].map((v, i) => (i % 12 === 0 ? 1 : 0)),
 ];
-
 
 export const KICK_STEPS_1 = [
   ...[...Array(24)].map((v, i) => (i % 12 === 0 ? 1 : 0)),
@@ -39,26 +40,3 @@ export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
 export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
 
 export const STEPS_SPEED = (SPEED / STEPS_COUNT) * TIME;
-
-export const PHASES = [
-  {
-    name: "intro",
-    sustain: 3,
-  },
-  {
-    name: 0,
-    repeat: 3,
-  },
-  {
-    name: 1,
-    repeat: 3,
-  },
-  {
-    name: 2,
-    repeat: 3,
-  },
-  {
-    name: 3,
-    repeat: 3,
-  },
-];

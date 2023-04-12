@@ -40,11 +40,11 @@ export const usePlay = () => {
           context.currentTime + index * CYMBAL_SPEED,
         volume: 0.2,
       });
-    });
+    }); 
     SNARE_STEPS.forEach((v, index) => {
       if (!v) return;
       snare({
-        startTime:
+        startTime: 
           context.currentTime + index * SNARE_SPEED,
         volume: 0.28,
       });

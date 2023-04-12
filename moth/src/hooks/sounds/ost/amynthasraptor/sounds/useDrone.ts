@@ -11,6 +11,7 @@ export const useDrone = () => {
     startTime,
     pitch,
     volume,
+    duration = 0,
   }: THandlerConfig) => {
     const delay = new DelayNode(context, {
       delayTime: 0.99,
@@ -36,6 +37,7 @@ export const useDrone = () => {
       spread: 0.4,
       stagger: 0.1,
       start: startTime,
+      end: startTime + duration,
       output: delay,
     };
 

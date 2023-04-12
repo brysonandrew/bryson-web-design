@@ -1,3 +1,6 @@
+export const SPEED = 1;
+export const TIME = 8;
+
 export const STEPS_XXXX = [1, 2, 4, 20, 50, 80, 90, 20];
 export const STEPS = [0, 2, 0, 2, 0, 2, 0, 2];
 
@@ -5,7 +8,6 @@ export const STEPS_2_X = [2, 2, 0, 2, 2, 2, 2, 2];
 
 export const STEPS_II = [1, 1, 1, 1, 1, 1, 1, 1];
 export const STEPS_1 = [...Array(8)].fill(1);
-export const STEPS_2 = [...Array(4)].fill(2);
 export const STEPS_8 = [...Array(8)].fill(8);
 export const STEPS_11 = [...Array(8)].fill(11);
 export const STEPS_43 = [...Array(4)].fill(43);
@@ -20,8 +22,7 @@ export const STEPS_XXX = [0, 8, 9, 2];
 export const STEPS_III = [1, 0, 1, 0, 0, 0, 0, 0];
 export const STEPS_IV = [0, 0, 0, 0, 0, 0, 0, 0];
 
-export const STEPS_ARPEGGIO = [1, 5, 1, 5, 8, 5, 3, 5];
-
+export const ARPEGGIO_STEPS = [1, 5, 1, 5, 8, 5, 3, 5];
 
 export const BARS: number[][] = [
   STEPS_X,
@@ -54,7 +55,12 @@ export const VERSES: number[][][] = [
   BARS_VI,
 ];
 
-export const STEPS_COUNT = STEPS.length;
-export const INTERVAL_DURATION = STEPS.length * 1000; // * VERSES.length; // * BARS.length;
-export const BEAT_DURATION = 1000; // 1000 = 1sec
-export const STEP_DURATION = 1000 * STEPS.length;
+export const STEPS_2 = [...Array(TIME)].fill(2);
+export const KICK_COUNT = STEPS_2.length;
+export const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
+
+export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
+export const ARPEGGIO_SPEED =
+  (SPEED / ARPEGGIO_COUNT) * TIME;
+
+//(SPEED / ARPEGGIO_COUNT) * TIME;

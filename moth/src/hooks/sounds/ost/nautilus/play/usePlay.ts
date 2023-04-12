@@ -20,7 +20,6 @@ import { useCymbal } from "../sounds/useCymbal";
 import { useKick } from "../sounds/useKick";
 import { useSnare } from "../sounds/useSnare";
 
-
 export const usePlay = () => {
   const [time, setTime] = useState<number | null>(null);
   const indexRef = useRef<number>(0);
