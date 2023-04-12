@@ -1,4 +1,7 @@
-export const STEPS = [10, 10, 10, 12, 5, 5, 7, 8];
+export const STEPS_0 = [10, 10, 10, 12, 5, 5, 7, 8];
+export const STEPS_1 = [12, 12, 12, 12, 5, 5, 7, 8];
+export const STEPS_2 = [5, 5, 7, 8, 12, 12, 12, 12];
+export const STEPS_3 = [10, 3, 10, 3, 5, 10, 3, 5];
 
 export const SNARE_STEPS = [
   ...[...Array(24)].map((v, i) =>
@@ -20,7 +23,7 @@ export const TIME = 8;
 export const CYMBAL_COUNT = CYMBAL_STEPS.length;
 export const SNARE_COUNT = SNARE_STEPS.length;
 export const KICK_COUNT = KICK_STEPS.length;
-export const STEPS_COUNT = STEPS.length;
+export const STEPS_COUNT = STEPS_0.length;
 
 export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
 export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
@@ -31,11 +34,11 @@ export const STEPS_SPEED = (SPEED / STEPS_COUNT) * TIME;
 export const PHASES = [
   {
     name: 0,
-    repeat: 1,
+    repeat: 0,
   },
   {
     name: 1,
-    repeat: 1,
+    repeat: 0,
   },
   {
     name: 2,
@@ -43,6 +46,6 @@ export const PHASES = [
   },
   {
     name: 3,
-    repeat: 1,
+    repeat: 4,
   },
 ];

@@ -9,7 +9,6 @@ import { PHASES, SPEED, TIME } from "./constants";
 import { usePhase2 } from "./phases/2";
 import { usePhase3 } from "./phases/3";
 
-
 export const usePlay = () => {
   const [time, setTime] = useState<number | null>(null);
 
@@ -28,14 +27,16 @@ export const usePlay = () => {
   const phases = [phase0, phase1, phase2, phase3];
 
   const loop = () => {
-    const next = PHASES[indexRef.current].name;
-    phases[(next)]();
-    if (repeatRef.current > 1) {
-      repeatRef.current--;
+    const { name, repeat } = PHASES[indexRef.current];
+
+    phases[name]();
+
+    if (repeat !== repeatRef.current) {
+      repeatRef.current++;
     } else {
       indexRef.current =
         (indexRef.current + 1) % phases.length;
-      repeatRef.current = PHASES[indexRef.current].repeat;
+      repeatRef.current = 0;
     }
   };
 

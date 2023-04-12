@@ -6,7 +6,7 @@ import {
   KICK_STEPS,
   SNARE_SPEED,
   SNARE_STEPS,
-  STEPS,
+  STEPS_3,
   STEPS_SPEED,
 } from "../constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
@@ -25,11 +25,11 @@ export const usePhase3 = () => {
   const { context } = useMothContext();
 
   const loop = () => {
-    STEPS.forEach((v, index) => {
+    STEPS_3.forEach((v, index) => {
       arpeggio.play({
         startTime:
           context.currentTime + index * STEPS_SPEED,
-        pitch: v + 33,
+        pitch: v + 44,
         duration: SPEED * 0.1,
         volume: 0.04,
       });
