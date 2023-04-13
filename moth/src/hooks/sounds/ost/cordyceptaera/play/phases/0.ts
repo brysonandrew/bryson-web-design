@@ -1,7 +1,5 @@
-import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
-import { useRef, useState } from "react";
-import { STEPS, STEPS_ARPEGGIO } from "../../constants";
+import { STEPS, ARPEGGIO_STEPS } from "../../constants";
 import { useBass } from "../../sounds/useBass";
 import { useTom } from "../../sounds/useTom";
 import { useArpeggio } from "../../sounds/useArpeggio";
@@ -10,17 +8,11 @@ const SPEED = 1;
 
 const bassSteps = STEPS;
 const stepsCount = bassSteps.length;
-const baseSpeed = stepsCount * 1000;
 
 export const usePhase0 = () => {
-  const [time, setTime] = useState<number | null>(null);
-  const indexRef = useRef<number>(0);
-
   const bass = useBass();
   const arpeggio = useArpeggio();
-
   const tom = useTom();
-
   const { context } = useMothContext();
 
   const loop = () => {
@@ -55,7 +47,7 @@ export const usePhase0 = () => {
 
     const apreggioSpeed = SPEED / 4;
 
-    STEPS_ARPEGGIO.forEach((v, index) => {
+    ARPEGGIO_STEPS.forEach((v, index) => {
       if (!v) return;
       arpeggio.play({
         startTime:
@@ -66,21 +58,7 @@ export const usePhase0 = () => {
         volume: 0.28,
       });
     });
-
-    indexRef.current++;
   };
 
-  useInterval(loop, time);
-
-  const play = () => {
-    loop();
-    setTime(baseSpeed * SPEED);
-  };
-
-  const stop = () => {
-    bass.stop();
-    arpeggio.stop();
-  };
-
-  return { play, stop };
+  return loop;
 };

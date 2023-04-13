@@ -48,12 +48,6 @@ export const CHORUS = [
 export const STEPS = [
   // ...INTRO,
   // ...INTRO,
-  ...VERSE,
-  ...VERSE,
-  ...VERSE,
-  ...VERSE,
-  ...VERSE,
-  ...VERSE,
   ...VERSE, // we give what we take
   // // we hide
   ...VERSE, // the soul shakes

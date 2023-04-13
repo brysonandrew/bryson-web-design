@@ -5,7 +5,7 @@ export const usePhases = () => {
 
   return [
     {
-      sound: phase0.play,
+      sound: phase0,
       repeat: 3,
     },
   ];

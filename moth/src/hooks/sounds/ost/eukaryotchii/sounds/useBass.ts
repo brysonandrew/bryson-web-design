@@ -1,12 +1,16 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
+import { THandlerConfig } from "../types";
 
 export const useBass = () => {
   const { context, master } = useMothContext();
   const { play, stop } = useSynthMulti(context);
 
-  const handler = (startTime: number) => {
+  const handler = ({
+    startTime,
+    duration = 0.4,
+  }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
@@ -20,7 +24,7 @@ export const useBass = () => {
       stagger: 0,
       decay: 0,
       start: startTime,
-      end: startTime + 0.4,
+      end: startTime + duration,
       output: filter,
     };
 

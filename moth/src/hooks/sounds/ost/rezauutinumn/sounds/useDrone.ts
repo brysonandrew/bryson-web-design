@@ -9,8 +9,8 @@ export const useDrone = () => {
 
   const handler = ({
     startTime,
-    pitch,
-    duration,
+    pitch = 0,
+    duration = 0,
     type = "sawtooth",
     volume = 0.1,
   }: THandlerConfig) => {
@@ -20,10 +20,10 @@ export const useDrone = () => {
     });
 
     const gain = new GainNode(context, { gain: volume });
-    const end = startTime + (duration ?? 0);
+    const end = startTime + duration;
     const options: TMultiOptions = {
       type,
-      midi: 24 + (pitch ?? 0),
+      midi: 24 + pitch,
       count: 24,
       spread: 2,
       stagger: 0.04,
@@ -33,7 +33,7 @@ export const useDrone = () => {
       output: filter,
     };
 
-  //  filter.frequency.linearRampToValueAtTime(200, end);
+    filter.frequency.linearRampToValueAtTime(200, end);
     gain.gain.linearRampToValueAtTime(volume, end);
 
     filter.connect(gain);
