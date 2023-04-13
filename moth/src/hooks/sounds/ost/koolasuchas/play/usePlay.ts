@@ -6,7 +6,7 @@ export const usePlay = () => {
   const phases = usePhases();
 
   const loop = useLoop({
-    interval: TIME * SPEED * 0.125,
+    interval: TIME * SPEED,
     phases,
   });
 
