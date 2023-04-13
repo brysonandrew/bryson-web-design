@@ -9,7 +9,7 @@ import {
   ARPEGGIO_STEPS,
   TIME,
 } from "../constants";
-import { useClang } from "../../sounds/useClang";
+import { useClang } from "@moth-hooks/sounds/ost/sounds/robo/useClang";
 
 export const usePhase1 = () => {
   const mech = useMech();

@@ -56,7 +56,7 @@ export const usePhase3 = () => {
       snare({
         startTime:
           context.currentTime + index * SNARE_SPEED,
-        volume: 0.2,
+        volume: 0.1,
       });
     });
     KICK_STEPS.forEach((v, index) => {

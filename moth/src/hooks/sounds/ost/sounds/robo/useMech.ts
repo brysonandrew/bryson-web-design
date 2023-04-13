@@ -19,8 +19,8 @@ export const useMech = () => {
       duration = 1,
       pitch = 0,
       volume = 0.01,
-      torque = 5000,
-      revs = 1200,
+      torque = 1200,
+      revs = 2400,
     } = config;
     const lfo = new OscillatorNode(context, {
       frequency: revs,
@@ -31,8 +31,9 @@ export const useMech = () => {
       type: "lowpass",
     });
     const filter = new BiquadFilterNode(context, {
-      frequency: 1000,
-      type: "allpass",
+      frequency: 1200,
+      type: "lowpass",
+      detune: 0
     });
     lfo.connect(lfoGain);
     lfoGain.connect(filter.detune);
@@ -42,9 +43,9 @@ export const useMech = () => {
     const options: TMultiOptions = {
       type,
       midi: 28 + pitch,
-      count: 20,
-      spread: 0.4,
-      stagger: 0.1,
+      count: 1,
+      spread: 0,
+      stagger: 0,
       start: startTime,
       end,
       output: filter,

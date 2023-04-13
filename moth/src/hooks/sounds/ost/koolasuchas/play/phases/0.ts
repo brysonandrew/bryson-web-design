@@ -4,12 +4,10 @@ import {
   BASS_COUNT,
   BASS_SPEED,
   BASS_STEPS,
-  SPEED,
 } from "../../constants";
 
 export const usePhase0 = () => {
   const { context } = useMothContext();
-
   const bass = useBass();
 
   const play = () => {
@@ -17,6 +15,7 @@ export const usePhase0 = () => {
       bass.play({
         startTime: context.currentTime + index,
         duration: BASS_SPEED * BASS_COUNT,
+        volume: 0.1,
       });
     });
   };

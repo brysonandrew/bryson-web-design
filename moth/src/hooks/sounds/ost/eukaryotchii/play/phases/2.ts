@@ -21,7 +21,7 @@ import { useSnare } from "../../sounds/useSnare";
 import { useBass } from "../../sounds/useBass";
 import { useClang } from "@moth-hooks/sounds/ost/sounds/robo/useClang";
 
-export const usePhase0 = () => {
+export const usePhase2 = () => {
   const mech = useMech();
   const bass = useBass();
   const clang = useClang();
@@ -32,7 +32,7 @@ export const usePhase0 = () => {
 
   const loop = () => {
     ARPEGGIO_STEPS.forEach((v, index) => {
-      const pitch = v;
+      const pitch = index + 12;
       const config: TMechHandlerConfig = {
         startTime:
           context.currentTime + index * ARPEGGIO_SPEED,

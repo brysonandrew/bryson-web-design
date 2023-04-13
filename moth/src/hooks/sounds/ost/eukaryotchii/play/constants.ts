@@ -1,6 +1,4 @@
-import { SCALE_RECORD } from "@moth-hooks/sounds/constants/scales";
-
-export const SPEED = 1;
+export const SPEED = 0.5;
 export const TIME = 8;
 
 export const STEPS_0 = [5, 5, 1, 12, 12, 12, 12, 12];
@@ -8,20 +6,26 @@ export const STEPS_1 = [1, 5, 1, 5, 8, 5, 3, 5];
 export const STEPS_2 = [1, 5, 1, 5, 8, 5, 3, 5];
 export const STEPS_3 = [1, 5, 1, 5, 3, 1, -2, -4];
 
+const PATTERN = [
+  ...STEPS_1,
+  ...STEPS_1,
+  ...STEPS_1,
+  ...STEPS_1,
+];
+
 export const ARPEGGIO_STEPS = [
-  // ...SCALE_RECORD.aeolian,
-  // ...SCALE_RECORD.dorian,
-  // ...SCALE_RECORD.blues,
-  ...SCALE_RECORD.all,
-
+  ...PATTERN,
+  //...[...Array(2)].map((v, i) => (i % 2 === 0 ? 6 : 2)),
+  //...SCALE_RECORD_8.aeolian,
+  //...SCALE_RECORD_8.dorian,
+  // ...SCALE_RECORD_8.dorian,
+  // ...SCALE_RECORD_8.dorian,
+  //...PATTERN,
+  //...SCALE_RECORD_8.blues,
+  // ...SCALE_RECORD_8.all,
   // ...STEPS_0,
   // ...STEPS_0,
   // ...STEPS_0,
-  // ...STEPS_0,
-
-  // ...STEPS_1,
-  // ...STEPS_2,
-  // ...STEPS_3,
 ];
 
 export const CLANG_STEPS = [
