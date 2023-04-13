@@ -33,7 +33,7 @@ export const useBass = () => {
     const end = startTime + duration;
     const options: TMultiOptions = {
       type: "sawtooth",
-      midi: 16 + pitch,
+      midi: 12 + pitch,
       count: 1,
       spread: 1,
       stagger: 0,

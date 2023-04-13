@@ -3,7 +3,7 @@ import { useMothContext } from "@moth-state/Context";
 import { BASS_STEPS } from "../constants";
 import { useBass } from "../../../../sounds/basses/useBass";
 
-export const usePhase0 = () => {
+export const usePhase2 = () => {
   const { context } = useMothContext();
   const bass = useBass();
 
@@ -14,7 +14,7 @@ export const usePhase0 = () => {
       bass.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.1,
+        volume: 0.2,
         pitch,
       });
     });

@@ -35,7 +35,10 @@ export const useClang = () => {
     const lfoGain = new GainNode(context, { gain: torque });
     lfoGain.gain.setValueAtTime(torque, startTime);
     lfo.connect(lfoGain);
-
+    const lowpass = new BiquadFilterNode(context, {
+      frequency: 800,
+      type: "lowpass",
+    });
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
@@ -60,9 +63,9 @@ export const useClang = () => {
     const options: TMultiOptions = {
       type,
       midi: 28 + pitch,
-      count: 12,
-      spread: 0.2,
-      stagger: 0.01,
+      count: 40,
+      spread: 0.1,
+      stagger: 0.04,
       start: startTime + 0.01,
       end: end - 0.01,
       output: filter,
@@ -76,7 +79,8 @@ export const useClang = () => {
       end, // if delayTime.end > delayTime.start can use buffer (delayTime.end) to stop it zipping back up
     );
     filter.connect(delay);
-    delay.connect(gain);
+    delay.connect(lowpass);
+    lowpass.connect(gain);
     gain.connect(master);
 
     play(options);

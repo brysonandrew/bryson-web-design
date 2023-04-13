@@ -1,4 +1,4 @@
-export const SPEED = 0.5 / 4;
+export const SPEED = 0.5 / 3;
 export const TIME = 8;
 
 export const INTERVAL = SPEED * TIME;
@@ -65,3 +65,5 @@ export const SNARE_COUNT = SNARE_STEPS.length;
 
 export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
 export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
+
+export const BASS_STEPS = [...Array(TIME)].map((v) => 1);

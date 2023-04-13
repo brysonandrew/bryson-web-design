@@ -1,6 +1,6 @@
 import { interpolateScale } from "@moth-hooks/sounds/constants/scales";
-import { useClang } from "@moth-hooks/sounds/ost/sounds/robo/useClang";
-import type { TMechHandlerConfig } from "@moth-hooks/sounds/ost/sounds/robo/useMech";
+import { useClang } from "@moth-hooks/sounds/ost/sounds/robos/useClang";
+import type { TMechHandlerConfig } from "@moth-hooks/sounds/ost/sounds/robos/useMech";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 
@@ -18,7 +18,7 @@ export const usePhaseAscent = () => {
       const config: TMechHandlerConfig = {
         startTime: context.currentTime + index * d + start,
         pitch,
-        duration: duration * 2,
+        duration: d * 0.5,
         volume: 0.05,
         torque: 1200,
         revs: 2400 / pitch,

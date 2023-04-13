@@ -1,4 +1,4 @@
-import { useClang } from "@moth-hooks/sounds/ost/sounds/robo/useClang";
+import { useClang } from "@moth-hooks/sounds/ost/sounds/robos/useClang";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { ARPEGGIO_STEPS, TIME } from "../constants";
@@ -15,7 +15,7 @@ export const usePhase1 = () => {
         startTime: context.currentTime + index * d + start,
         pitch: v + 24,
         torque: v + inc * 1000,
-        duration: duration * 1.4,
+        duration: d * 1,
         volume: 0.04,
       };
       clang.play(config);

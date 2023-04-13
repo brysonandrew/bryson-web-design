@@ -1,0 +1,81 @@
+import type { TMultiOptions } from "react-synthwave";
+import { useSynthMulti } from "react-synthwave";
+import { useMothContext } from "@moth-state/Context";
+import type { THandlerConfig } from "../../types";
+
+type TFromTo = {
+  from: number;
+  to: number;
+};
+export type TTundraHandlerConfig = THandlerConfig & {
+  pain?: TFromTo;
+  writhe?: TFromTo;
+};
+
+export const useTundra = () => {
+  const { context, master } = useMothContext();
+  const { play, stop } = useSynthMulti(context);
+
+  const handler = (config: TTundraHandlerConfig) => {
+    const {
+      type = "triangle",
+      startTime,
+      duration = 1,
+      pitch = 0,
+      volume = 0.01,
+      writhe = { from: 4, to: 10 },
+      pain = { from: 0, to: 4000 },
+    } = config;
+
+    const lfo = new OscillatorNode(context, {
+      frequency: writhe.from,
+    });
+    lfo.frequency.setValueAtTime(writhe.from, startTime);
+    const lfoGain = new GainNode(context, {
+      gain: pain.from,
+    });
+    lfoGain.gain.setValueAtTime(pain.from, startTime);
+    lfo.connect(lfoGain);
+
+    const filterFrequency = pain.to;
+    const filter = new BiquadFilterNode(context, {
+      frequency: filterFrequency,
+      type: "bandpass",
+    });
+    filter.frequency.setValueAtTime(
+      filterFrequency,
+      startTime,
+    );
+    lfoGain.connect(filter.frequency);
+
+    const gain = new GainNode(context, { gain: volume });
+
+    const end = startTime + duration * 2;
+
+    const options: TMultiOptions = {
+      type,
+      midi: 64 + pitch,
+      count: 10,
+      spread: 2,
+      stagger: 0.1,
+      attack: duration * 0.5,
+      decay: duration * 0.5,
+      start: startTime,
+      end: end,
+      output: filter,
+    };
+
+    gain.gain.setValueAtTime(volume, startTime);
+    gain.gain.exponentialRampToValueAtTime(volume * 0.5, end);
+
+    lfo.start(startTime + 0.01);
+    lfo.stop(end - 0.01);
+
+    filter.connect(gain);
+    gain.connect(master);
+
+    play(options);
+  };
+
+  return { play: handler, stop };
+};
