@@ -51,3 +51,13 @@ export const SCALE_RECORD_8 = entries.reduce(
   },
   {},
 ) as TScale8Record;
+
+export type TInterpolateScaleConfig = {
+  index: number;
+  key: TScaleKey;
+};
+export const interpolateScale = ({
+  index,
+  key,
+}: TInterpolateScaleConfig) =>
+  SCALE_RECORD[key][index % SCALE_RECORD[key].length];

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { useEffect, type FC } from "react";
 import COLORS from "@windi/config-colors.json";
 import { Controls } from "./controls";
-import { usePlay } from "@moth-hooks/sounds/ost/brachyurazoa/play/_usePlay";
+import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/play/usePlay";
 
 const Root = styled(motion.div)``;
 

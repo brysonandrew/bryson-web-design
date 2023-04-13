@@ -1,7 +1,7 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
-import { THandlerConfig } from "../../rezauutinumn/types";
 import { useMothContext } from "@moth-state/Context";
+import type { THandlerConfig } from "../../types";
 
 export type TMechHandlerConfig = THandlerConfig & {
   torque?: number;

@@ -1,14 +1,17 @@
 import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
 import { useRef, useState } from "react";
-import type { TPhase } from "./ost/types";
-import { useArpeggio } from "./ost/rezauutinumn/sounds/useArpeggio";
+import type {
+  TPhase,
+  TPlayers,
+  TPlayer,
+} from "./ost/types";
+import { useArpeggio } from "./ost/tracks/brachyurazoa/sounds/useArpeggio";
 
 type TConfig = {
   phases: TPhase[];
   interval: number;
 };
-
 export const useLoop = ({ phases, interval }: TConfig) => {
   const [time, setTime] = useState<number | null>(null);
 
@@ -21,14 +24,30 @@ export const useLoop = ({ phases, interval }: TConfig) => {
   const { context } = useMothContext();
 
   const loop = () => {
-    const { repeat, sustain, sound } =
+    const { repeat, sustain, sounds } =
       phases[indexRef.current];
 
     if (
       typeof sustain === "undefined" ||
       sustainRef.current === 0
     ) {
-      sound();
+      if (typeof sounds !== "undefined") {
+        sounds.forEach((players: TPlayers) => {
+          players.forEach(
+            (player: TPlayer, index, { length }) => {
+              if (typeof player === "function") {
+                const t =
+                  interval + interval * (sustain ?? 0);
+                const duration = t / length;
+                player({
+                  start: index * duration,
+                  duration,
+                });
+              }
+            },
+          );
+        });
+      }
     }
 
     if (
@@ -62,7 +81,6 @@ export const useLoop = ({ phases, interval }: TConfig) => {
   const play = async () => {
     await context.resume();
     await preload();
-    loop();
     setTime(interval * 1000);
   };
 

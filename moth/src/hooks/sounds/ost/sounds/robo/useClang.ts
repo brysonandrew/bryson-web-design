@@ -1,7 +1,7 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../../rezauutinumn/types";
+import type { THandlerConfig } from "../../types";
 
 export type TClangHandlerConfig = THandlerConfig & {
   torque?: number;
@@ -61,15 +61,15 @@ export const useClang = () => {
       type,
       midi: 28 + pitch,
       count: 12,
-      spread: 0.1,
+      spread: 0.2,
       stagger: 0.01,
-      start: startTime,
-      end,
+      start: startTime + 0.01,
+      end: end - 0.01,
       output: filter,
     };
 
-    lfo.start(startTime);
-    lfo.stop(end);
+    lfo.start(startTime + 0.01);
+    lfo.stop(end - 0.01);
 
     delay.delayTime.exponentialRampToValueAtTime(
       delayTime.end,
