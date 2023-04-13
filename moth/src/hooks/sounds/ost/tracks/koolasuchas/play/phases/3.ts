@@ -3,18 +3,20 @@ import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { INTERVAL } from "../constants";
 
-export const usePhase2 = () => {
+export const usePhase3 = () => {
   const { context } = useMothContext();
+  //const t = useTundra();
   const tundra = useTundra();
 
   const play = ({ duration, start }: TPlayerConfig) => {
-    const pitch = 25;
-    tundra.play({ // change to make tremelo
+    const pitch = -64;
+    tundra.play({
       startTime: context.currentTime + start,
       duration,
-      volume: 0.2,
+      volume: 1,
       pitch,
-      glitch: 0.1,
+      glitch: 0.5,
+      type: "sawtooth",
     });
     // tundra.play({
     //   startTime: context.currentTime + start,
@@ -22,7 +24,6 @@ export const usePhase2 = () => {
     //   volume: 0.1,
     //   pitch,
     //   type: "sawtooth",
-    //   glitch: 0.001,
     // });
     // tundra.play({
     //   startTime: context.currentTime + start,
@@ -30,7 +31,6 @@ export const usePhase2 = () => {
     //   volume: 0.1,
     //   pitch,
     //   type: "sine",
-    //   glitch: 0.001,
     // });
   };
 

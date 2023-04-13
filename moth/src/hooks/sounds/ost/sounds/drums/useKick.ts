@@ -1,6 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
-import type { THandlerConfig } from "../types";
-import { useBufferFromSrcHandler } from "../../../../../useBufferFromSrcHandler";
+import type { THandlerConfig } from "../../tracks/eukaryotchii/types";
+import { useBufferFromSrcHandler } from "../../../../useBufferFromSrcHandler";
 
 export const useKick = () => {
   const { context, master } = useMothContext();

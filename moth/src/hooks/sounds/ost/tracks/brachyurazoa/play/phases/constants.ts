@@ -57,6 +57,8 @@ export const VERSES: number[][][] = [
 ];
 
 export const STEPS_2 = [...Array(TIME)].fill(2);
+export const STEPS_3 = [10, 3, 10, 3, 5, 10, 3, 5];
+
 export const KICK_COUNT = STEPS_2.length;
 export const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
 
@@ -64,4 +66,4 @@ export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
 export const ARPEGGIO_SPEED =
   (SPEED / ARPEGGIO_COUNT) * TIME;
 
-//(SPEED / ARPEGGIO_COUNT) * TIME;
+export const STEPS_SPEED = (SPEED / ARPEGGIO_COUNT) * TIME;

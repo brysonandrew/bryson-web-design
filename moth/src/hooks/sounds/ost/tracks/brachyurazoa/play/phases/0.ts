@@ -6,7 +6,7 @@ import {
   ARPEGGIO_STEPS,
   KICK_SPEED,
   TIME,
-} from "../../constants";
+} from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useBass } from "../../sounds/useBass";
 import { useKick } from "../../sounds/useKick";

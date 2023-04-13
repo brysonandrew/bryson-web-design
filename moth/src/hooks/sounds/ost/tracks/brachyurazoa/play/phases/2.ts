@@ -11,7 +11,7 @@ import { useSnare } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/sounds/us
 import { STEPS_SPEED } from "@moth-hooks/sounds/ost/rezauutinumn/play/constants";
 import { useMothContext } from "@moth-state/Context";
 import { SPEED } from "@moth-state/constants";
-import { STEPS_2 } from "../../constants";
+import { STEPS_2 } from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useKick } from "../../sounds/useKick";
 

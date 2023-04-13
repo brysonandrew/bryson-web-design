@@ -1,6 +1,6 @@
 
 import { useMothContext } from "@moth-state/Context";
-import { TIME, SPEED } from "../../constants";
+import { TIME, SPEED } from "./constants";
 import { useDrone } from "../../sounds/useDrone";
 
 export const useIntro = () => {

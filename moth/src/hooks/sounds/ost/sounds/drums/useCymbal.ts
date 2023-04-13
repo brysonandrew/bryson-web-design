@@ -1,26 +1,24 @@
 import { useMothContext } from "@moth-state/Context";
-import { useBufferFromSrcHandler } from "../../../../../useBufferFromSrcHandler";
-import type { THandlerConfig } from "../types";
+import { useBufferFromSrcHandler } from "../../../../useBufferFromSrcHandler";
+import type { THandlerConfig } from "../../tracks/eukaryotchii/types";
 
-export const useSnare = () => {
+export const useCymbal = () => {
   const { context, master } = useMothContext();
   const handleSample = useBufferFromSrcHandler(context);
 
   const play = async ({
     startTime,
-    version = 7,
-    volume,
-  }: THandlerConfig & { version?: 2 | 7 | 9 | 11 }) => {
+    version = 4,
+    volume
+  }: THandlerConfig & { version?: 1|4|10 }) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 800,
-      type: "allpass",
+      type: "highpass",
     });
-    const gain = new GainNode(context, {
-      gain: volume ?? 0.028,
-    });
+    const gain = new GainNode(context, { gain: volume ?? 0.04 });
 
     const sampleBuffer: AudioBuffer = await handleSample(
-      `/sounds/snares/saev_${version}.wav`,
+      `/sounds/cymbals/saev_${version}.wav`,
     );
 
     const source = context.createBufferSource();

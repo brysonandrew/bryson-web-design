@@ -2,7 +2,7 @@ import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../types";
-import { SPEED, TIME } from "../constants";
+import { SPEED, TIME } from "../play/phases/constants";
 
 export const useDrone = () => {
   const { context, master } = useMothContext();

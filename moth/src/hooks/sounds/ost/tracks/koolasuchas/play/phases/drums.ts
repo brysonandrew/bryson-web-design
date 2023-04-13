@@ -21,7 +21,7 @@ export const useDrums = () => {
       const d = duration / length;
       kick({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: 0.4,
       });
     });
     CYMBAL_STEPS.forEach((v, index, { length }) => {
@@ -29,7 +29,7 @@ export const useDrums = () => {
       const d = duration / length;
       cymbal({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: 0.28,
       });
     });
     SNARE_STEPS.forEach((v, index, { length }) => {
@@ -37,7 +37,7 @@ export const useDrums = () => {
       const d = duration / length;
       snare({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: 0.28,
         version: 2,
       });
     });

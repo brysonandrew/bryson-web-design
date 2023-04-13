@@ -6,7 +6,7 @@ export const useDrone = () => {
   const { context, master } = useMothContext();
   const { play, stop } = useSynthMulti(context);
 
-  const handler = () => {
+  const handler = ({ pitch = 0 }) => {
     const delay = new DelayNode(context, {
       delayTime: 0.99,
     });
@@ -24,7 +24,7 @@ export const useDrone = () => {
     const gain = new GainNode(context, { gain: 0.01 });
     const options: TMultiOptions = {
       type: "sawtooth",
-      midi: 28,
+      midi: 64 + pitch,
       count: 20,
       spread: 0.4,
       stagger: 0.1,

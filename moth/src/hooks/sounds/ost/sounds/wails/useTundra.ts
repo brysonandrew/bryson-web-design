@@ -10,6 +10,7 @@ type TFromTo = {
 export type TTundraHandlerConfig = THandlerConfig & {
   pain?: TFromTo;
   writhe?: TFromTo;
+  glitch?: number;
 };
 
 export const useTundra = () => {
@@ -25,6 +26,7 @@ export const useTundra = () => {
       volume = 0.01,
       writhe = { from: 4, to: 10 },
       pain = { from: 0, to: 4000 },
+      glitch = 0,
     } = config;
 
     const lfo = new OscillatorNode(context, {
@@ -66,12 +68,35 @@ export const useTundra = () => {
     };
 
     gain.gain.setValueAtTime(volume, startTime);
-    gain.gain.exponentialRampToValueAtTime(volume * 0.5, end);
+    gain.gain.exponentialRampToValueAtTime(
+      volume * 0.5,
+      end,
+    );
 
     lfo.start(startTime + 0.01);
     lfo.stop(end - 0.01);
 
-    filter.connect(gain);
+    if (glitch > 0) {
+      console.log("GLITCH");
+      const delay = new DelayNode(context, {
+        delayTime: glitch,
+      });
+      delay.delayTime.setValueAtTime(glitch, startTime);
+      delay.delayTime.exponentialRampToValueAtTime(
+        0.4,
+        end,
+      );
+      const g = new GainNode(context, { gain: 0.99 });
+
+      delay.connect(filter);
+      filter.connect(g);
+      g.connect(delay);
+
+      g.connect(gain);
+    } else {
+      filter.connect(gain);
+    }
+
     gain.connect(master);
 
     play(options);
