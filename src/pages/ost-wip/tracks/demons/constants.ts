@@ -31,7 +31,6 @@ export const VERSE = [
   5,
   5,
 ];
-console.log(VERSE.length);
 
 export const STEPS = [...VERSE];
 

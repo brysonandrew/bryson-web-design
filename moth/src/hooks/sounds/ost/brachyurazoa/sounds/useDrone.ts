@@ -1,7 +1,8 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../../types";
+import type { THandlerConfig } from "../types";
+import { SPEED, TIME } from "../constants";
 
 export const useDrone = () => {
   const { context, master } = useMothContext();
@@ -9,31 +10,34 @@ export const useDrone = () => {
 
   const handler = ({
     startTime,
+    pitch = 0,
+    volume = 0.01,
     duration = 0,
   }: THandlerConfig) => {
     const delay = new DelayNode(context, {
-      delayTime: 0.99,
+      delayTime: 0.001,
     });
     const lfo = new OscillatorNode(context, {
-      frequency: 0.5,
+      frequency: TIME,
     });
-    const lfoGain = new GainNode(context, { gain: 500 });
+    const lfoGain = new GainNode(context, { gain: 1200 });
     const filter = new BiquadFilterNode(context, {
       frequency: 400,
-      type: "lowpass",
+      type: "allpass",
     });
     lfo.connect(lfoGain);
-    lfoGain.connect(filter.frequency);
+    lfoGain.connect(delay.delayTime);
 
+    const gain = new GainNode(context, {
+      gain: volume * 0.1,
+    });
     const end = startTime + duration;
-
-    const gain = new GainNode(context, { gain: 0.01 });
     const options: TMultiOptions = {
       type: "sawtooth",
-      midi: 28,
+      midi: pitch + 28,
       count: 20,
-      spread: 0.4,
-      stagger: 0.1,
+      spread: 2,
+      stagger: 0.4,
       start: startTime,
       end,
       output: delay,
@@ -43,8 +47,11 @@ export const useDrone = () => {
     lfo.stop(end);
 
     delay.delayTime.setValueAtTime(1, startTime);
-    delay.delayTime.exponentialRampToValueAtTime(0.001, end);
-
+    delay.delayTime.exponentialRampToValueAtTime(1, end);
+    gain.gain.exponentialRampToValueAtTime(
+      volume * 0.1,
+      end,
+    );
     delay.connect(filter);
     filter.connect(gain);
     gain.connect(master);

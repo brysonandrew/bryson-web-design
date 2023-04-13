@@ -1,30 +1,38 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
+import { THandlerConfig } from "../../rezauutinumn/types";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../types";
 
-export const useClang = () => {
+export type TMechHandlerConfig = THandlerConfig & {
+  torque?: number;
+  revs?: number;
+};
+
+export const useMech = () => {
   const { context, master } = useMothContext();
   const { play, stop } = useSynthMulti(context);
 
-  const handler = (config: THandlerConfig) => {
+  const handler = (config: TMechHandlerConfig) => {
     const {
       type = "sawtooth",
       startTime,
       duration = 1,
       pitch = 0,
-      volume = 0.01
+      volume = 0.01,
+      torque = 5000,
+      revs = 1200,
     } = config;
-    const delay = new DelayNode(context, {
-      delayTime: 1,
-    });
     const lfo = new OscillatorNode(context, {
-      frequency: 1200,
+      frequency: revs,
     });
-    const lfoGain = new GainNode(context, { gain: 5000 });
-    const filter = new BiquadFilterNode(context, {
-      frequency: 400,
+    const lfoGain = new GainNode(context, { gain: torque });
+    const lowpass = new BiquadFilterNode(context, {
+      frequency: 1200,
       type: "lowpass",
+    });
+    const filter = new BiquadFilterNode(context, {
+      frequency: 1000,
+      type: "allpass",
     });
     lfo.connect(lfoGain);
     lfoGain.connect(filter.detune);
@@ -45,14 +53,8 @@ export const useClang = () => {
     lfo.start(startTime);
     lfo.stop(end);
 
-    delay.delayTime.setValueAtTime(1, startTime);
-    delay.delayTime.exponentialRampToValueAtTime(
-      0.001,
-      end,
-    );
-
-    delay.connect(filter);
-    filter.connect(gain);
+    filter.connect(lowpass);
+    lowpass.connect(gain);
     gain.connect(master);
 
     play(options);

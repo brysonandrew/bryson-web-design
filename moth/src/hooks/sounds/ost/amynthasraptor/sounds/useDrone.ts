@@ -42,6 +42,11 @@ export const useDrone = () => {
       output: delay,
     };
 
+    lfo.start(startTime);
+    lfo.stop(end);
+
+    delay.delayTime.setValueAtTime(1, startTime);
+
     delay.delayTime.exponentialRampToValueAtTime(
       0.001,
       end,

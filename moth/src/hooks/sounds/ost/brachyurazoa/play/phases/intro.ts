@@ -1,9 +1,7 @@
-import {
-  SPEED,
-  TIME,
-} from "@moth-hooks/sounds/ost/amynthasraptor/constants";
-import { useDrone } from "@moth-hooks/sounds/ost/amynthasraptor/sounds/useDrone";
+
 import { useMothContext } from "@moth-state/Context";
+import { TIME, SPEED } from "../../constants";
+import { useDrone } from "../../sounds/useDrone";
 
 export const useIntro = () => {
   const drone = useDrone();

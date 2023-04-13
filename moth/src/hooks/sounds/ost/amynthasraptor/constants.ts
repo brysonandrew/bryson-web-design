@@ -35,7 +35,6 @@ export const CYMBAL_STEPS = [
 ];
 
 const COUNT = 4 + 4 + 19 + 2 + 2 + 4 + 23 + 6;
-console.log(COUNT);
 
 export const SNARE_STEPS = [
   ...[...Array(12)].map((v, i) => 0),
@@ -45,7 +44,6 @@ export const SNARE_STEPS = [
   ...[...Array(16)].map((v, i) => 0),
 ];
 const TOTAL = 12 + 1 + 23 + 12 + 16;
-console.log(TOTAL);
 export const KICK_STEPS = [
   ...[...Array(64)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
 ];

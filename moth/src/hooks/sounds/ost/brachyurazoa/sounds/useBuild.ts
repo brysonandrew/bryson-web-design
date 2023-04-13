@@ -10,8 +10,8 @@ export const useBuild = () => {
   const handler = ({
     startTime,
     pitch,
-    duration,
-    volume
+    duration = 0,
+    volume,
   }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 400,
@@ -20,11 +20,12 @@ export const useBuild = () => {
     const lfo = new OscillatorNode(context, {
       frequency: duration,
     });
-    lfo.start(startTime);
+
     const lfoGain = new GainNode(context, { gain: volume });
     lfo.connect(lfoGain);
 
     const gain = new GainNode(context, { gain: 0 });
+    const end = startTime + duration;
     const options: TMultiOptions = {
       type: "sawtooth",
       midi: 0 + (pitch ?? 0),
@@ -33,10 +34,12 @@ export const useBuild = () => {
       stagger: 0.5,
       decay: 1,
       start: startTime,
+      end,
       output: filter,
     };
     lfoGain.connect(gain.gain);
-
+    lfo.start(startTime);
+    lfo.stop(end);
     filter.connect(gain);
     gain.connect(master);
 
