@@ -3,17 +3,16 @@ import {
   CYMBAL_STEPS,
   KICK_STEPS,
   SNARE_STEPS,
-  SPEED,
-  STEPS,
+  STEPS_0,
 } from "../constants";
-import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
+import { useSynth2 } from "../../../sounds/synths/useSynth2";
 import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
 import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
 import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const usePhase0 = () => {
-  const bass = useBass1();
+  const arpeggio = useSynth2();
 
   const cymbal = useCymbal();
   const snare = useSnare();
@@ -22,14 +21,14 @@ export const usePhase0 = () => {
   const { context } = useMothContext();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
-    STEPS.forEach((v, index, { length }) => {
+    STEPS_0.forEach((v, stepsIndex, { length }) => {
       const d = duration / length;
-
-      bass.play({
-        startTime: context.currentTime + index * d + start,
-        pitch: v + 36,
-        duration: SPEED,
-        volume: 0.028,
+      arpeggio.play({
+        startTime:
+          context.currentTime + stepsIndex * d + start,
+        pitch: v + 38,
+        duration: d * 0.28,
+        volume: 0.02,
       });
     });
     CYMBAL_STEPS.forEach((v, index, { length }) => {
@@ -37,7 +36,7 @@ export const usePhase0 = () => {
       const d = duration / length;
       cymbal({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: 0.1,
       });
     });
     SNARE_STEPS.forEach((v, index, { length }) => {
@@ -45,9 +44,7 @@ export const usePhase0 = () => {
       const d = duration / length;
       snare({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
-        version: 2,
-        type: "highpass",
+        volume: 0.1,
       });
     });
     KICK_STEPS.forEach((v, index, { length }) => {
@@ -55,7 +52,7 @@ export const usePhase0 = () => {
       const d = duration / length;
       kick({
         startTime: context.currentTime + index * d + start,
-        volume: 0.4,
+        volume: 0.1,
       });
     });
   };

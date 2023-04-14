@@ -1,35 +1,29 @@
 import { useMothContext } from "@moth-state/Context";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import { useCymbal } from "../../../sounds/drums/useCymbal";
+import { useKick } from "../../../sounds/drums/useKick";
+import { useSnare } from "../../../sounds/drums/useSnare";
 import {
   CYMBAL_STEPS,
   KICK_STEPS,
   SNARE_STEPS,
-  SPEED,
-  STEPS,
 } from "../constants";
-import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
-import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
-import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
-export const usePhase0 = () => {
-  const bass = useBass1();
+const VOLUME = 0.4;
 
+export const useDrums = () => {
   const cymbal = useCymbal();
   const snare = useSnare();
   const kick = useKick();
-
   const { context } = useMothContext();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
-    STEPS.forEach((v, index, { length }) => {
+    KICK_STEPS.forEach((v, index, { length }) => {
+      if (!v) return;
       const d = duration / length;
-
-      bass.play({
+      kick({
         startTime: context.currentTime + index * d + start,
-        pitch: v + 36,
-        duration: SPEED,
-        volume: 0.028,
+        volume: VOLUME,
       });
     });
     CYMBAL_STEPS.forEach((v, index, { length }) => {
@@ -37,7 +31,7 @@ export const usePhase0 = () => {
       const d = duration / length;
       cymbal({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: VOLUME,
       });
     });
     SNARE_STEPS.forEach((v, index, { length }) => {
@@ -45,17 +39,8 @@ export const usePhase0 = () => {
       const d = duration / length;
       snare({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: VOLUME,
         version: 2,
-        type: "highpass",
-      });
-    });
-    KICK_STEPS.forEach((v, index, { length }) => {
-      if (!v) return;
-      const d = duration / length;
-      kick({
-        startTime: context.currentTime + index * d + start,
-        volume: 0.4,
       });
     });
   };
