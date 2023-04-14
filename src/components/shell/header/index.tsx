@@ -41,7 +41,6 @@ export const Header = () => {
   const height = useTransform(scrollY, [0, 100], [100, 60]);
   const scaleY = useTransform(scrollY, [0, 100], [0, 2]);
   const { pathname } = useLocation();
-  const isShowCase = useSelectedItem();
 
   const initAnimation = {
     initial: { opacity: 0, y: "-100%" },
@@ -80,18 +79,21 @@ export const Header = () => {
         <Main {...{ scale, x }} />
         <Sub />
       </div>
-      <List className={clsx("flex flex-col md:flex-row items-center mt-0.5")}>
+      <List
+        className={clsx(
+          "flex flex-col md:flex-row items-center mt-0.5",
+        )}
+      >
         {["showcase", "contact"].map((item, index) => {
           const to = `/${item}`;
-          if (
-            pathname === to 
-            // (pathname === "/showcase" && !isShowCase)
-          )
-            return null;
+          if (pathname === to) return null;
           return (
             <Fragment key={item}>
               {index !== 0 && (
-                <li key={`${index}`} className="p-0.25 md:p-2" />
+                <li
+                  key={`${index}`}
+                  className="p-0.25 md:p-2"
+                />
               )}
               <Item to={to}>{item}</Item>
             </Fragment>
