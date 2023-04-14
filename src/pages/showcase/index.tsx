@@ -6,6 +6,8 @@ import { Shell } from "@components/Shell";
 import { APP_ITEMS } from "@constants/apps";
 import { Space } from "@components/spaces/Space";
 import { GAME_ITEMS } from "@constants/games";
+import { MUSIC_ITEMS } from "@constants/music";
+
 import { LIBRARIES_ITEMS } from "@constants/libraries";
 
 export const Showcase = () => {
@@ -29,6 +31,12 @@ export const Showcase = () => {
       <List
         header="Libraries"
         items={LIBRARIES_ITEMS}
+        selectedPath={selectedPath}
+      />
+      <Space />
+      <List
+        header="Music"
+        items={MUSIC_ITEMS}
         selectedPath={selectedPath}
       />
       <Space16 />

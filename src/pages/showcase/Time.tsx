@@ -14,7 +14,7 @@ export const Time: FC<TProps> = ({ time }) => {
           : new Intl.DateTimeFormat("en-UK", {
               month: "short",
               year: "numeric",
-            }).format(time)}
+            }).format(time)}Ę
       </motion.span>
     </TextSm>
   );

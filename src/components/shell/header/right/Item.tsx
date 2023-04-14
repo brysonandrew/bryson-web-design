@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Border as Select } from "../../../select/Border";
 import { useOffSound } from "@hooks/sounds/useOffSound";
 
-
 const Root = styled(motion.li)``;
 
 type TProp = {
@@ -21,11 +20,12 @@ export const Item: FC<TProp> = ({ to, children }) => {
       <Link
         to={to}
         onClick={handleClick}
-        className="flex items-center justify-center pl-2 pr-1 pt-1 pb-1.5"
+        className="flex items-center justify-center pl-2 pr-1 pt-1 pb-1.5 bg-transparent"
       >
         {isSelected && <Select />}
+
         <h6
-          className="text-teal-bright uppercase text-xxxs"
+          className="relative text-teal-bright uppercase text-xxxs"
           style={{ letterSpacing: 4 }}
         >
           {children}

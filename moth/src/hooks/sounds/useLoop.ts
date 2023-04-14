@@ -6,7 +6,7 @@ import type {
   TPlayers,
   TPlayer,
 } from "./ost/types";
-import { useArpeggio } from "./ost/tracks/brachyurazoa/sounds/useArpeggio";
+import { useFade } from "./ost/sounds/wails/useFade";
 
 type TConfig = {
   phases: TPhase[];
@@ -19,7 +19,7 @@ export const useLoop = ({ phases, interval }: TConfig) => {
   const sustainRef = useRef<number>(0);
   const repeatRef = useRef<number>(0);
 
-  const arpeggio = useArpeggio();
+  const arpeggio = useFade();
 
   const { context } = useMothContext();
 
