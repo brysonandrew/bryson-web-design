@@ -13,7 +13,7 @@ export const useIntro = () => {
       startTime: context.currentTime,
       pitch: 24,
       duration: TIME * SPEED,
-      volume: 0.1,
+      volume: 0.4,
       type: "square",
     });
   };

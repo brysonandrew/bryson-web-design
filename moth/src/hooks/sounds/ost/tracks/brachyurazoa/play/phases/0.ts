@@ -6,6 +6,7 @@ import {
   ARPEGGIO_STEPS,
   KICK_SPEED,
   TIME,
+  APRPEGGIOS_0,
 } from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useBass } from "../../sounds/useBass";
@@ -20,25 +21,17 @@ export const usePhase0 = () => {
   const { context } = useMothContext();
 
   const arpeggioLoop = () => {
-    ARPEGGIO_STEPS.forEach((v, index) => {
-      arpeggio.play({
-        startTime:
-          context.currentTime +
-          index * ARPEGGIO_SPEED * 0.125,
-        pitch: v + 38 + 36,
-        duration: ARPEGGIO_SPEED * 2,
-        volume: 0.1,
-      });
-    });
-    ARPEGGIO_STEPS.forEach((v, index) => {
-      arpeggio.play({
-        startTime:
-          context.currentTime +
-          index * ARPEGGIO_SPEED * 0.125 +
-          TIME * 0.5,
-        pitch: v + 38 + 36,
-        duration: ARPEGGIO_SPEED * 2,
-        volume: 1,
+    APRPEGGIOS_0.forEach((steps, index) => {
+      steps.forEach((v, stepIndex) => {
+        arpeggio.play({
+          startTime:
+            context.currentTime +
+            stepIndex * ARPEGGIO_SPEED * 0.125 +
+            index * TIME * 0.5,
+          pitch: v + 38 + 36,
+          duration: ARPEGGIO_SPEED * 2,
+          volume: 0.2,
+        });
       });
     });
   };
@@ -48,13 +41,13 @@ export const usePhase0 = () => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 1.2,
+        volume: 1.4,
       });
       bass.play({
         startTime: context.currentTime + index * KICK_SPEED,
         pitch: v,
         duration: KICK_SPEED,
-        volume: 0.2,
+        volume: 0.4,
       });
     });
   };

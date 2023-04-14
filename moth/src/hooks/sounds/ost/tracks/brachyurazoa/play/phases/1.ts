@@ -1,70 +1,59 @@
-import {
-  SNARE_STEPS,
-  SNARE_SPEED,
-  KICK_SPEED,
-} from "@moth-hooks/sounds/ost/tracks/amynthasraptor/constants";
-import { useCymbal } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/sounds/useCymbal";
-import { useSnare } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/sounds/useSnare";
-import {
-  STEPS_SPEED,
-  CYMBAL_STEPS_1,
-  KICK_STEPS_1,
-} from "@moth-hooks/sounds/ost/rezauutinumn/play/constants";
 import { useMothContext } from "@moth-state/Context";
-import { SPEED } from "@moth-state/constants";
-import { STEPS_1 } from "./constants";
+import {
+  ARPEGGIO_SPEED,
+  SPEED,
+  STEPS_2,
+  ARPEGGIO_STEPS,
+  KICK_SPEED,
+  TIME,
+  APRPEGGIOS_1,
+} from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
+import { useBass } from "../../sounds/useBass";
 import { useKick } from "../../sounds/useKick";
 
 export const usePhase1 = () => {
   const arpeggio = useArpeggio();
+  const bass = useBass();
 
-  const cymbal = useCymbal();
-  const snare = useSnare();
   const kick = useKick();
 
   const { context } = useMothContext();
 
-  const loop = () => {
-    STEPS_1.forEach((v, stepsIndex) => {
-      arpeggio.play({
-        startTime: context.currentTime + stepsIndex * SPEED,
-        pitch: v + 39,
-        duration: STEPS_SPEED * 0.4,
-        volume: 0.01,
-      });
-      arpeggio.play({
-        startTime: context.currentTime + stepsIndex * SPEED,
-        pitch: v + 39 + 24,
-        duration: STEPS_SPEED * 0.4,
-        volume: 0.01,
-        type: "triangle",
+  const arpeggioLoop = () => {
+    APRPEGGIOS_1.forEach((steps, index) => {
+      steps.forEach((v, stepIndex) => {
+        arpeggio.play({
+          startTime:
+            context.currentTime +
+            stepIndex * ARPEGGIO_SPEED * 0.125 +
+            index * TIME * 0.5,
+          pitch: v + 38 + 36,
+          duration: ARPEGGIO_SPEED * 2,
+          volume: 0.2,
+        });
       });
     });
-
-    CYMBAL_STEPS_1.forEach((v, index) => {
-      if (!v) return;
-      cymbal({
-        startTime:
-          context.currentTime + index * STEPS_SPEED,
-        volume: 0.1,
-      });
-    });
-    SNARE_STEPS.forEach((v, index) => {
-      if (!v) return;
-      snare({
-        startTime:
-          context.currentTime + index * SNARE_SPEED,
-        volume: 0.1,
-      });
-    });
-    KICK_STEPS_1.forEach((v, index) => {
+  };
+  const bassLoop = () => {
+    STEPS_2.forEach((v, index) => {
       if (!v) return;
       kick({
         startTime: context.currentTime + index * KICK_SPEED,
-        volume: 0.1,
+        volume: 1.4,
+      });
+      bass.play({
+        startTime: context.currentTime + index * KICK_SPEED,
+        pitch: v,
+        duration: KICK_SPEED,
+        volume: 0.4,
       });
     });
+  };
+
+  const loop = () => {
+    arpeggioLoop();
+    bassLoop();
   };
 
   return loop;

@@ -1,12 +1,15 @@
 import { usePhase0 } from "./phases/0";
-import { usePhase1 } from "./phases/1";
+import { usePhase10 } from "./phases/1.0";
+import { usePhase11 } from "./phases/1.1";
 import { usePhase2 } from "./phases/2";
 import { usePhase3 } from "./phases/3";
 import { useDrums } from "./phases/drums";
 
 export const usePhases = () => {
   const phase0 = usePhase0();
-  const phase1 = usePhase1();
+  const phase10 = usePhase10();
+  const phase11 = usePhase11();
+
   const phase2 = usePhase2();
   const phase3 = usePhase3();
   const drums = useDrums();
@@ -16,15 +19,17 @@ export const usePhases = () => {
       sounds: [[phase0]],
     },
     {
-      sounds: [[phase0, phase0], [phase1]],
+      sounds: [
+        [phase0, phase0],
+        [phase10, phase11],
+      ],
       sustain: 1,
     },
     {
-      sounds: [[phase2, phase3]],
-      sustain: 0,
+      sounds: [[phase2]],
     },
     {
-      sounds: [[drums]],
+      sounds: [[phase0], [drums]],
       repeat: 11,
     },
   ];

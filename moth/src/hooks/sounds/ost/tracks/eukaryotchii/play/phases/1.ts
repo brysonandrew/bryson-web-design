@@ -16,7 +16,7 @@ export const usePhase1 = () => {
         pitch: v + 24,
         torque: v + inc * 1000,
         duration: d * 1,
-        volume: 0.04,
+        volume: 0.2,
       };
       clang.play(config);
     });

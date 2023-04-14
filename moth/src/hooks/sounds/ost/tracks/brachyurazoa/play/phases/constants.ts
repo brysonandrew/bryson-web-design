@@ -24,6 +24,17 @@ export const STEPS_III = [1, 0, 1, 0, 0, 0, 0, 0];
 export const STEPS_IV = [0, 0, 0, 0, 0, 0, 0, 0];
 
 export const ARPEGGIO_STEPS = [1, 5, 1, 5, 8, 5, 3, 5];
+export const ARPEGGIO_STEPS_1 = [1, 5, 1, 5, 1, 5, 1, 5];
+export const APRPEGGIOS_0 = [
+  ARPEGGIO_STEPS,
+  ARPEGGIO_STEPS,
+];
+export const APRPEGGIOS_1 = [
+  ARPEGGIO_STEPS,
+  ARPEGGIO_STEPS_1,
+  ARPEGGIO_STEPS,
+  ARPEGGIO_STEPS_1,
+];
 
 export const BARS: number[][] = [
   STEPS_X,

@@ -9,34 +9,40 @@ export const useArpeggio = () => {
 
   const handler = ({
     startTime,
-    pitch,
-    duration,
-    volume,
+    pitch = 0,
+    duration = 0,
+    volume = 0.04,
     type = "sawtooth",
   }: THandlerConfig) => {
+    const filterFrequencyStart = 1200;
     const filter = new BiquadFilterNode(context, {
-      frequency: 1200,
+      frequency: filterFrequencyStart,
       type: "lowpass",
     });
+    filter.frequency.setValueAtTime(
+      filterFrequencyStart,
+      startTime,
+    );
+
+    const gainStart = volume;
     const gain = new GainNode(context, {
-      gain: volume ?? 0.04,
+      gain: gainStart,
     });
+    gain.gain.setValueAtTime(gainStart, startTime);
+    const end = startTime + duration;
     const options: TMultiOptions = {
       type,
-      midi: 10 + (pitch ?? 0),
+      midi: 10 + pitch,
       count: 4,
       spread: 20,
       stagger: 0,
       decay: 0,
       start: startTime,
-      end: startTime + (duration ?? 0),
+      end,
       output: filter,
     };
 
-    filter.frequency.linearRampToValueAtTime(
-      10,
-      startTime + (duration ?? 0),
-    );
+    filter.frequency.linearRampToValueAtTime(10, end);
 
     filter.connect(gain);
     gain.connect(master);
@@ -46,6 +52,6 @@ export const useArpeggio = () => {
 
   return {
     play: handler,
-    stop: stop.bind(multiSynth.stop),
+    stop: stop,
   };
 };

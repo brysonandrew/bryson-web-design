@@ -61,9 +61,9 @@ export const useTundra = () => {
       spread: 2,
       stagger: 0.1,
       attack: duration * 0.5,
-      decay: duration * 0.5,
+      decay: 0, // duration * 0.5,
       start: startTime,
-      end: end,
+      end,
       output: filter,
     };
 
@@ -77,22 +77,26 @@ export const useTundra = () => {
     lfo.stop(end - 0.01);
 
     if (glitch > 0) {
-      console.log("GLITCH");
       const delay = new DelayNode(context, {
         delayTime: glitch,
       });
       delay.delayTime.setValueAtTime(glitch, startTime);
       delay.delayTime.exponentialRampToValueAtTime(
-        0.4,
+        10,
         end,
       );
-      const g = new GainNode(context, { gain: 0.99 });
+      const feedback = new GainNode(context, {
+        gain: 0.99,
+      });
+      feedback.gain.setValueAtTime(0.99, startTime);
+      feedback.gain.exponentialRampToValueAtTime(0.001, end);
+      feedback.gain.setValueAtTime(0, end);
 
       delay.connect(filter);
-      filter.connect(g);
-      g.connect(delay);
+      filter.connect(feedback);
+      feedback.connect(delay);
 
-      g.connect(gain);
+      feedback.connect(gain);
     } else {
       filter.connect(gain);
     }

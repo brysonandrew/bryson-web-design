@@ -1,4 +1,4 @@
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { BASS_STEPS } from "../constants";
 import { useBass } from "../../../../sounds/basses/useBass";
@@ -14,7 +14,7 @@ export const usePhase2 = () => {
       bass.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.2,
+        volume: 0.4,
         pitch,
       });
     });

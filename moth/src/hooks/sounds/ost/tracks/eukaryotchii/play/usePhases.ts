@@ -4,6 +4,7 @@ import { usePhaseAscent } from "./phases/ascent";
 import { usePhaseDescent } from "./phases/descent";
 import { useDrums } from "./phases/drums";
 import { usePhase2 } from "./phases/2";
+import { usePhase4 } from "./phases/4";
 
 export const usePhases = () => {
   const phase0 = usePhase0();
@@ -11,13 +12,10 @@ export const usePhases = () => {
   const phase2 = usePhase2();
   const phaseAscent = usePhaseAscent();
   const phaseDescent = usePhaseDescent();
+  const phase4 = usePhase4();
   const drums = useDrums();
 
   return [
-    // {
-    //   sounds: [[phase2]],
-    //   repeat:1
-    // },
     {
       sounds: [[phase1], []],
     },

@@ -1,11 +1,9 @@
 import { useTundra } from "@moth-hooks/sounds/ost/sounds/wails/useTundra";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { INTERVAL } from "../constants";
 
 export const usePhase3 = () => {
   const { context } = useMothContext();
-  //const t = useTundra();
   const tundra = useTundra();
 
   const play = ({ duration, start }: TPlayerConfig) => {

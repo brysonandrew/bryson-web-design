@@ -14,12 +14,12 @@ export const usePhaseAscent = () => {
     [...Array(COUNT)].forEach((_, index, { length }) => {
       const d = duration / length;
       const pitch =
-        interpolateScale({ index, key: "aeolian" }) + 12;
+        interpolateScale({ index, key: "dorian" }) + 12;
       const config: TMechHandlerConfig = {
         startTime: context.currentTime + index * d + start,
         pitch,
         duration: d * 0.5,
-        volume: 0.05,
+        volume: 0.2,
         torque: 1200,
         revs: 2400 / pitch,
       };

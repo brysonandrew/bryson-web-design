@@ -1,7 +1,7 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "@moth-hooks/sounds/ost/types";
+import type { THandlerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const useDrone1 = () => {
   const { context, master } = useMothContext();

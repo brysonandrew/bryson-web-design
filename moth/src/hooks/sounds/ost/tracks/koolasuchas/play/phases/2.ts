@@ -1,7 +1,6 @@
 import { useTundra } from "@moth-hooks/sounds/ost/sounds/wails/useTundra";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { INTERVAL } from "../constants";
 
 export const usePhase2 = () => {
   const { context } = useMothContext();
@@ -12,7 +11,7 @@ export const usePhase2 = () => {
     tundra.play({ // change to make tremelo
       startTime: context.currentTime + start,
       duration,
-      volume: 0.2,
+      volume: 0.4,
       pitch,
       glitch: 0.1,
     });

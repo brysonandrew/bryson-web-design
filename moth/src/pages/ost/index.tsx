@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Fragment, useState } from "react";
 import { Item } from "./Item";
 import { TRACKS } from "./constants";
@@ -25,16 +25,18 @@ export const Ost = () => {
       <div className="p-4" />
       <div className="p-4" />
       <List className="shadow-teal-dark">
-        {TRACKS.map((name, index) => (
-          <Fragment key={name}>
-            {index !== 0 && <li className="py-1" />}
-            <Item
-              name={name}
-              isPlaying={name === nowPlaying}
-              onTap={() => handleTap(name)}
-            />
-          </Fragment>
-        ))}
+        <AnimatePresence>
+          {TRACKS.map((name, index) => (
+            <Fragment key={name}>
+              {index !== 0 && <li className="py-1" />}
+              <Item
+                name={name}
+                isPlaying={name === nowPlaying}
+                onTap={() => handleTap(name)}
+              />
+            </Fragment>
+          ))}
+        </AnimatePresence>
       </List>
       <div className="p-4" />
     </Root>
