@@ -31,10 +31,10 @@ export const HealthBar: FC<TProps> = ({ boss, index }) => {
     <group
       position={[
         0,
-        viewportHeight * 0.5 -
-          HEIGHT +
+        HEIGHT +
           index * HEIGHT +
-          PADDING,
+          PADDING -
+          viewportHeight * 0.5,
         0,
       ]}
     >

@@ -1,6 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../../types";
-import { midiToHz } from "@utils/sound";
+import type { THandlerConfig } from "../../types";
+import { midiToHz } from "@moth-utils/sound";
 
 type TAtaxiaHandlerConfig = THandlerConfig & {
   delayRamp?: number | null;
@@ -14,7 +14,6 @@ export const useAtaxia = () => {
     startTime,
     pitch = 0,
     duration = 0,
-    type = "sine",
     volume = 1,
     delayRamp = null,
     frequencyRamp = null,

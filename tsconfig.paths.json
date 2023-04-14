@@ -16,6 +16,7 @@
       "@pages/*": ["src/pages/*"],
       "@state/*": ["src/state/*"],
       "@moth-state/*": ["moth/src/state/*"],
+      "@moth-utils/*": ["moth/src/utils/*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
       "@moth/*": ["moth/src/*"],

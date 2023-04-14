@@ -1,7 +1,7 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../../types";
+import type { THandlerConfig } from "../../types";
 export type TFromTo = {
   from: number;
   to: number;
@@ -30,7 +30,6 @@ export const useDistruptor = () => {
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
-      // Q: 0.1,
     });
 
     const delay = new DelayNode(context, {

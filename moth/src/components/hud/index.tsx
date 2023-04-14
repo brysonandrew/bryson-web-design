@@ -9,7 +9,7 @@ export const Hud: FC = () => {
   const bosses = spawns.filter((v: TSpawn) => v.isBoss);
 
   return (
-    <>
+    <group>
       {bosses.map((boss: TSpawn, index) => (
         <HealthBar
           key={`boss-${boss.name}`}
@@ -17,6 +17,6 @@ export const Hud: FC = () => {
           index={index}
         />
       ))}
-    </>
+    </group>
   );
 };

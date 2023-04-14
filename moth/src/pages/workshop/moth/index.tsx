@@ -10,7 +10,7 @@ import {
   CircleGeometry,
 } from "three";
 import { Moth as _Moth } from "@moth-components/moth";
-import { MapControls, OrbitControls } from "@react-three/drei";
+import { MapControls } from "@react-three/drei";
 
 extend({
   Group,
