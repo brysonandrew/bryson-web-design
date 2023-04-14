@@ -38,7 +38,7 @@ export const useGlitch = () => {
     const end = startTime + duration;
     const options: TMultiOptions = {
       type,
-      midi: pitch + 28,
+      midi: pitch + 24,
       count: 20,
       spread: 2,
       stagger: 0.4,
