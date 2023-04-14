@@ -16,7 +16,7 @@ export const usePhase0 = () => {
         startTime: context.currentTime + index * d + start,
         pitch,
         duration: d * 1.1,
-        volume: 0.06,
+        volume: 0.04,
         torque: 1200,
         revs: 2400 / pitch,
       };

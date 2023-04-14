@@ -62,3 +62,26 @@ export const TUNDRA_STEPS_0 = [
 export const TUNDRA_STEPS_1 = [
   8, 7, 5, 7, 8, 12, 17, 24, 0, 1, 3, 1, 7, 12, 17, 25,
 ];
+
+export const TUNDRA_STEPS_2 = [
+  8, 7, 5, 5, 8, 7, 5, 5, 8, 7, 5, 5, 0, 1, 3, 1,
+];
+
+export const TUNDRA_STEPS_3 = [
+  8, 7, 8, 7, 8, 7, 20, 7, 8, 7, 5, 5, 0, 1, 3, 1,
+];
+
+export const TUNDRA_STEPS_4 = [
+  8, 7, 5, 5, 8, 15, 5, 5, 8, 7, 5, 5, 12, 15, 17, 25,
+];
+
+export const TUNDRA_STEPS_5 = [
+  0, 1, 0, 1,
+  3, 1, 3, 5,
+  3, 5, 7, 5,
+  7, 8, 7, 8,
+  12, 8, 12, 13,
+  12, 13, 15, 13, 
+  15, 17, 15, 17, 
+  23, 17, 23, 24, 
+];
