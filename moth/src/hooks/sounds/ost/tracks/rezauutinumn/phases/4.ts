@@ -1,9 +1,8 @@
+import { useGlitch } from "@moth-hooks/sounds/ost/sounds/robos/useGlitch";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { TIME, SPEED } from "./constants";
-import { useGlitch } from "../../../sounds/robos/useGlitch";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
-export const useIntro = () => {
+export const usePhase4 = () => {
   const glitch = useGlitch();
   const { context } = useMothContext();
 

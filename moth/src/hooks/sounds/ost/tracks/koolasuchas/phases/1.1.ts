@@ -14,13 +14,13 @@ export const usePhase11 = () => {
       tundra.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.18,
+        volume: 0.06,
         pitch,
       });
       tundra.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.1,
+        volume: 0.06 ,
         pitch,
         type: "sawtooth",
       });

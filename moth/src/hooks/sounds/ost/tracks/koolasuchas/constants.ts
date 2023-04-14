@@ -8,7 +8,6 @@ export const BASS_STEPS = [...Array(TIME)].map((v, index) =>
 
 export const CYMBAL_STEPS = [
   ...[...Array(58)].map((v, i) => 0),
-
   ...[...Array(6)].fill(1),
   // ...[...Array(58)].map((v, i) =>
   //   (i + 2) % 4 === 0 ? 1 : 0,

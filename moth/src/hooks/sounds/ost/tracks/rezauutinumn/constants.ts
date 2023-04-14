@@ -31,6 +31,12 @@ export const CYMBAL_STEPS_1 = [
   ...[...Array(24)].map((v, i) => (i % 12 === 0 ? 1 : 0)),
 ];
 
+export const MACHINE_GUN_STEPS = [
+  ...[...Array(16)].map((v, i) => 1),
+  // ...[...Array(16)].map((v, i) => (i % 8 === 0 ? 1 : 0)),
+  // ...[...Array(4)].map((v, i) => 1),
+];
+
 export const SPEED = 0.1;
 export const TIME = 8;
 export const INTERVAL = TIME * SPEED;

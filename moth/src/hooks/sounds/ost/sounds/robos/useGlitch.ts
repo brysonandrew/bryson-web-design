@@ -56,6 +56,10 @@ export const useGlitch = () => {
       volume * 0.1,
       end,
     );
+    gain.gain.setValueAtTime(
+      0,
+      end,
+    );
     delay.connect(filter);
     filter.connect(gain);
     gain.connect(master);

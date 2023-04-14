@@ -1,4 +1,3 @@
-import { useGlitch } from "@moth-hooks/sounds/ost/sounds/robos/useGlitch";
 import { usePowerUp } from "@moth-hooks/sounds/ost/sounds/robos/usePowerUp";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
