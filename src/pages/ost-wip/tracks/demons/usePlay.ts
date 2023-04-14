@@ -1,4 +1,3 @@
-import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
 import { useRef, useState } from "react";
 import {

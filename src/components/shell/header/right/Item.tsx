@@ -21,7 +21,7 @@ export const Item: FC<TProp> = ({ to, children }) => {
       <Link
         to={to}
         onClick={handleClick}
-        className="flex items-center justify-center px-2 pt-1 pb-1.5"
+        className="flex items-center justify-center pl-2 pr-1 pt-1 pb-1.5"
       >
         {isSelected && <Select />}
         <h6

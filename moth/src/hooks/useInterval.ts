@@ -39,6 +39,7 @@ export function useInterval(
 
   useEffect(() => {
     if (typeof delay === "number") {
+      callbackRef.current();
       intervalRef.current = window.setInterval(
         () => callbackRef.current(),
         delay,

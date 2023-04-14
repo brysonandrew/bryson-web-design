@@ -1,87 +1,92 @@
+import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
-import { useEffect, useRef } from "react";
-import {
-  BEATS,
-  BEATS_COUNT,
-  BEAT_DURATION,
-} from "./constants";
-import type { THandlerConfig } from "./ost/amynthasraptor/types";
-
-type TDrone = {
-  play(): void;
-  stop(): void;
-};
-
-type TPulse = {
-  play(startTime: number): void;
-  stop(): void;
-};
+import { useRef, useState } from "react";
+import type {
+  TPhase,
+  TPlayers,
+  TPlayer,
+} from "./ost/types";
+import { useArpeggio } from "./ost/tracks/brachyurazoa/sounds/useArpeggio";
 
 type TConfig = {
-  drones: TDrone[];
-  pulses: TPulse[];
-  kicks?: (((config: THandlerConfig) => void) | null)[];
+  phases: TPhase[];
+  interval: number;
 };
-export const useLoop = ({
-  drones,
-  pulses,
-  kicks,
-}: TConfig) => {
-  const { context, isSound } = useMothContext();
+export const useLoop = ({ phases, interval }: TConfig) => {
+  const [time, setTime] = useState<number | null>(null);
 
-  const intervalRef = useRef<ReturnType<
-    typeof setInterval
-  > | null>(null);
+  const indexRef = useRef<number>(0);
+  const sustainRef = useRef<number>(0);
+  const repeatRef = useRef<number>(0);
 
-  const endInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-  };
+  const arpeggio = useArpeggio();
 
-  const bassLoop = () => {
-    BEATS.forEach((beat, index) => {
-      if (beat === 1) {
-        const startTime =
-          context.currentTime +
-          (index * 1000) / BEAT_DURATION / BEATS_COUNT;
-        pulses.forEach((pulse) => {
-          pulse.play(startTime);
-        });
-        (kicks ?? []).forEach((kick) => {
-          if (kick) {
-            kick({ startTime });
-          }
+  const { context } = useMothContext();
+
+  const loop = () => {
+    const { repeat, sustain, sounds } =
+      phases[indexRef.current];
+
+    if (
+      typeof sustain === "undefined" ||
+      sustainRef.current === 0
+    ) {
+      if (typeof sounds !== "undefined") {
+        sounds.forEach((players: TPlayers) => {
+          players.forEach(
+            (player: TPlayer, index, { length }) => {
+              if (typeof player === "function") {
+                const t =
+                  interval + interval * (sustain ?? 0);
+                const duration = t / length;
+                player({
+                  start: index * duration,
+                  duration,
+                });
+              }
+            },
+          );
         });
       }
-    });
+    }
+
+    if (
+      typeof sustain !== "undefined" &&
+      sustain !== sustainRef.current
+    ) {
+      sustainRef.current++;
+      return;
+    }
+
+    if (
+      typeof repeat !== "undefined" &&
+      repeat !== repeatRef.current
+    ) {
+      repeatRef.current++;
+      return;
+    }
+
+    indexRef.current =
+      (indexRef.current + 1) % phases.length;
+    repeatRef.current = 0;
+    sustainRef.current = 0;
   };
 
-  const handler = async () => {
-    endInterval();
-    if (!isSound) return;
+  useInterval(loop, time);
+
+  const preload = async () => {
+    console.log("PRELOAD");
+  };
+
+  const play = async () => {
     await context.resume();
-    drones.forEach((drone) => {
-      drone.play();
-    });
-    bassLoop();
-    intervalRef.current = setInterval(
-      bassLoop,
-      BEAT_DURATION,
-    );
+    await preload();
+    setTime(interval * 1000);
   };
-
-  useEffect(() => endInterval, []);
 
   const stop = () => {
-    endInterval();
-    pulses.forEach((pulse) => {
-      pulse.stop();
-    });
-    drones.forEach((drone) => {
-      drone.stop();
-    });
+    arpeggio.stop();
   };
 
-  return { play: handler, stop };
+  return { play, stop };
 };
