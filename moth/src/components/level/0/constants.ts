@@ -1,3 +1,4 @@
+import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
 import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 
@@ -11,7 +12,6 @@ export type TSpawnPoint = {
   width?: number;
   height?: number;
   health?: number;
-  isBoss?: boolean;
 };
 export const SPAWN_POINTS: TSpawnPoint[] = [
   {
@@ -19,16 +19,6 @@ export const SPAWN_POINTS: TSpawnPoint[] = [
     threshold: 0.01,
     count: 2,
     type: "Dynastinae",
-  },
-  {
-    name: generateUUID(),
-    threshold: 0.2,
-    count: 1,
-    type: "RiverHorse",
-    width: 90,
-    height: 60,
-    health: 1000,
-    isBoss: true,
   },
   {
     name: generateUUID(),
@@ -56,13 +46,12 @@ export const SPAWN_POINTS: TSpawnPoint[] = [
   },
   {
     name: generateUUID(),
-    threshold: 0.95,
+    threshold: 0,
     count: 1,
-    type: "RiverHorse",
+    type: RIVER_HORSE_KEY,
     width: 90,
     height: 60,
     health: 1000,
-    isBoss: true,
   },
 ];
 

@@ -14,6 +14,7 @@ import type {
 } from "./constants";
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
 import type { TSpawnPoint } from "@moth-components/level/0/constants";
+import type { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";
@@ -42,7 +43,7 @@ export type TMothState = {
   specials: TSpecialsRunningRecord;
 };
 
-export type TSource = {
+export type TSource = Partial<TSpawnPoint> & {
   name: string;
   width: number;
   height: number;
@@ -58,12 +59,9 @@ export type TEnemyType =
   | "Dynastinae"
   | "Bug"
   | "Galamodo"
-  | "RiverHorse";
+  | typeof RIVER_HORSE_KEY;
 
-export type TSpawn = Pick<
-  TSpawnPoint,
-  "isBoss" | "health"
-> & {
+export type TSpawn = Pick<TSpawnPoint, "health"> & {
   type?: TEnemyType;
   name: string;
   width: number;
@@ -139,6 +137,7 @@ export type TState = TMothInit & {
   controls: TControlsRecord;
   shop: TShopRecord;
   inventory: TInventory;
+  note: string | null;
 };
 
 export type TContext = TState & {
@@ -157,6 +156,10 @@ export type TMoth = TSource | null;
 export type TShopKey = keyof TShopRecord;
 
 export type TAction =
+  | {
+      type: "clear-note";
+      value: null;
+    }
   | {
       type: "murder";
       value: string;

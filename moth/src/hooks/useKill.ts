@@ -3,6 +3,7 @@ import type { TSource } from "@moth-state/types";
 import type { Point } from "framer-motion";
 import type { Mesh } from "three";
 import { useShotCollision } from "./useShotCollision";
+import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
 
 export type TKillHandlerConfig = Point & {
   mesh: Mesh;
@@ -35,9 +36,11 @@ export const useKill = (config: TConfig) => {
       speed,
       levelY,
     });
+
     if (Math.abs(config.y - source.y) > range) {
       onRemove(config.name);
     }
+
     if (enemyCollided) {
       const isStillAlive =
         isNaN(damage[enemyCollided.name]) ||
@@ -49,7 +52,7 @@ export const useKill = (config: TConfig) => {
           type: "damage",
           value: {
             name: enemyCollided.name,
-            amount: 1
+            amount: 1,
           },
         });
       } else {

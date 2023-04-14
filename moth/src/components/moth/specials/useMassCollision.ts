@@ -65,6 +65,7 @@ export const useMassCollision = ({
           },
         });
       } else {
+        
         dispatch({
           type: "kill",
           value: killSource,

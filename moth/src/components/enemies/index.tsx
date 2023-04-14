@@ -6,6 +6,7 @@ import { Hercules } from "./hercules";
 import { Bug } from "./bug";
 import { Galamodo } from "./galamodo";
 import { RiverHorse } from "./river-horse";
+import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
 
 export const Enemies: FC = () => {
   const { killRecord, spawns } = useMothContext();
@@ -14,7 +15,7 @@ export const Enemies: FC = () => {
       {spawns.map((spawn: TSpawn, index: number) => {
         if (killRecord[spawn.name]) return;
         switch (spawn.type) {
-          case "RiverHorse": {
+          case RIVER_HORSE_KEY: {
             return (
               <RiverHorse
                 key={`${spawn.name}-${index}`}

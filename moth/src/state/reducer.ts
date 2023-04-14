@@ -1,3 +1,7 @@
+import {
+  BOSSES,
+  TBossKey,
+} from "@moth-components/hud/constants";
 import { SHOP_INIT, SHOP_KEYS, STATE } from "./constants";
 import type { TState, TReducerAction } from "./types";
 
@@ -6,8 +10,13 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "clear-note": {
+      return {
+        ...state,
+        note: null,
+      };
+    }
     case "start": {
-      console.log("S")
       return {
         ...state,
         start: true,
@@ -106,6 +115,7 @@ export const reducer = (
       const enemies = state.enemies.filter(
         (v) => v.name !== value.name,
       );
+
       return {
         ...state,
         enemies,
@@ -117,6 +127,9 @@ export const reducer = (
           },
         },
         xp: state.xp + (value.xp ?? 0),
+        note: BOSSES.includes(value?.type as TBossKey)
+          ? value.type
+          : null,
       };
     }
     case "murder": {
