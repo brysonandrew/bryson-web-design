@@ -50,7 +50,7 @@ export const usePhases = () => {
       sounds: [[phase0], [drums]],
     },
     {
-      sounds: [[phase42], [drums]],
+      sounds: [[phase42], [drums], [phase40]],
     },
     {
       sounds: [[phase0], [drums]],
@@ -66,7 +66,7 @@ export const usePhases = () => {
       sounds: [[phase2], [drums]],
     },
     {
-      sounds: [[phase41], [drums]],
+      sounds: [[phase41], [drums], [phase40]],
     },
     {
       sounds: [[phase2], [drums]],

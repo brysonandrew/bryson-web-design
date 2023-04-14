@@ -1,11 +1,32 @@
-export const STEPS_XXXX = [10, 13, 10, 15, 10, 13, 22, 15];
+export const STEPS_0 = [10, 13, 10, 15, 10, 13, 22, 15];
+export const STEPS_1 = [10, 10, 10, 10, 10, 13, 22, 15];
+export const STEPS_2 = [
+  ...[...Array(9)].fill(10),
+  ...[...Array(2)].fill(null),
+  22,
+];
+export const STEPS_3 = [
+  ...[...Array(9)].fill(15),
+  ...[...Array(2)].fill(null),
+  25,
+];
+export const STEPS_4 = [
+  ...[...Array(9)].fill(18),
+  ...[...Array(2)].fill(null),
+  27,
+];
+export const STEPS_5 = [
+  ...[...Array(9)].fill(23),
+  ...[...Array(2)].fill(null),
+  34,
+];
+
+export const STEPS_6 = [10, 10, 10, 10, 10, 10, 10, 27];
 
 export const VERSES = [...[...Array(4)].fill(1)];
 
-export const ARPEGGIO_STEPS = [
-  ...STEPS_XXXX,
-  // ...STEPS,
-];
+export const ARPEGGIO_STEPS_0 = [...STEPS_0];
+export const ARPEGGIO_STEPS_1 = [...STEPS_1];
 
 export const CYMBAL_STEPS = [
   // ...[...Array(58)].map((v, i) => (i % 4 === 0 ? 1 : 0)),
@@ -41,22 +62,6 @@ export const KICK_STEPS = [
   // ...[...Array(30)].map((v, i) => (i % 4 === 0 ? 1 : 0)),
 ];
 
-
-
 export const SPEED = 2;
 export const TIME = 1;
 export const INTERVAL = TIME * SPEED;
-
-export const CYMBAL_COUNT = CYMBAL_STEPS.length;
-export const SNARE_COUNT = SNARE_STEPS.length;
-export const KICK_COUNT = KICK_STEPS.length;
-export const ARPEGGIO_COUNT = ARPEGGIO_STEPS.length;
-export const MACHINE_GUN_COUNT = MACHINE_GUN_STEPS.length;
-
-export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
-export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;
-export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
-export const MACHINE_GUN_SPEED =
-  (2 / MACHINE_GUN_COUNT) * TIME;
-export const ARPEGGIO_SPEED =
-  (SPEED / ARPEGGIO_COUNT) * TIME;

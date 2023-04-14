@@ -1,24 +1,32 @@
-import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
+import { interpolateScale } from "@moth-hooks/sounds/constants/scales";
+import { useDistruptor } from "@moth-hooks/sounds/ost/sounds/termini/useDistruptor";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { CLANG_STEPS, SPEED } from "../constants";
-import { useClang } from "@moth-hooks/sounds/ost/sounds/robos/useClang";
-import { useMech } from "@moth-hooks/sounds/ost/sounds/robos/useMech";
+
+const STEPS = [
+  -12, 24, 12, 0, 1, 2, 3, 4,
+  //...[...Array(24)].fill(24),
+];
 
 export const usePhase2 = () => {
-  const bass = useMech();
+  const disruptor = useDistruptor();
 
   const { context } = useMothContext();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
-    CLANG_STEPS.forEach((v, index, { length }) => {
-      if (v === null) return;
+    STEPS.forEach((v, index, { length }) => {
       const d = duration / length;
-      bass.play({
+      disruptor.play({
         startTime: context.currentTime + index * d + start,
-        pitch: v + 36,
+        pitch:
+          interpolateScale({ index, key: "aeolian" }) +
+          v +
+          1, // + 24
+        // -
+        // 24
         duration: d,
         volume: 0.1,
+        type: "square",
       });
     });
   };

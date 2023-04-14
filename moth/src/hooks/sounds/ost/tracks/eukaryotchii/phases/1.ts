@@ -13,10 +13,10 @@ export const usePhase1 = () => {
       const inc = ~~(index / TIME) * 12;
       const config = {
         startTime: context.currentTime + index * d + start,
-        pitch: v + 24,
+        pitch: v + 2,
         torque: v + inc * 1000,
         duration: d * 1,
-        volume: 0.2,
+        volume: 0.06,
       };
       clang.play(config);
     });

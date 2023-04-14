@@ -1,14 +1,15 @@
 import { useMothContext } from "@moth-state/Context";
-import { ARPEGGIO_STEPS_0 } from "../constants";
+import { STEPS_6 } from "../constants";
 import { useSynth } from "../../../sounds/synths/useSynth";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
-export const usePhase0 = () => {
+export const usePhase6 = () => {
   const arpeggio = useSynth();
   const { context } = useMothContext();
 
   const loop = ({ start, duration }: TPlayerConfig) => {
-    ARPEGGIO_STEPS_0.forEach((v, index, { length }) => {
+    STEPS_6.forEach((v, index, { length }) => {
+      if (v === null) return;
       const d = duration / length;
 
       const isSecond = index % 2 === 0;

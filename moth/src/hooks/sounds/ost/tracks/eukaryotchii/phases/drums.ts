@@ -9,7 +9,7 @@ import {
   SNARE_STEPS,
 } from "../constants";
 
-const VOLUME = 0.4;
+const VOLUME = 0.24;
 
 export const useDrums = () => {
   const cymbal = useCymbal();

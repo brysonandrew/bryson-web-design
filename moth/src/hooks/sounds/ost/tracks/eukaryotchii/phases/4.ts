@@ -11,7 +11,7 @@ export const usePhase4 = () => {
     tundra.play({
       startTime: context.currentTime + start,
       duration,
-      volume: 1,
+      volume: 0.28,
       pitch,
       glitch: 0.5,
       type: "sawtooth",

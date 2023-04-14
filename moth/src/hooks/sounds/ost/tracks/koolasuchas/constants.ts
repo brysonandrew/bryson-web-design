@@ -23,6 +23,18 @@ export const CYMBAL_STEPS = [
 ];
 const COUNT = 2 + 12 + 6 + 12;
 
+export const HIHAT_STEPS_0 = [
+  ...[...Array(12)].map((v, i) => 0),
+  ...[...Array(1)].map((v, i) => 1),
+  ...[...Array(3)].map((v, i) => 0),
+];
+
+export const HIHAT_STEPS_1 = [
+  ...[...Array(6)].map((v, i) => 0),
+  ...[...Array(3)].map((v, i) => 1),
+  ...[...Array(7)].map((v, i) => 0),
+];
+
 export const SNARE_STEPS = [
   0, 0, 0, 1, 0, 0, 0, 0,
   // ...[...Array(6)].map((v, i) => (i % 2 === 0 ? 0 : 1)),
