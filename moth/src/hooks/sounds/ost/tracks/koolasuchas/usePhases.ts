@@ -11,7 +11,6 @@ export const usePhases = () => {
   const phase0 = usePhase0();
   const phase10 = usePhase10();
   const phase11 = usePhase11();
-
   const phase2 = usePhase2();
   const phase3 = usePhase3();
   const drums = useDrums();

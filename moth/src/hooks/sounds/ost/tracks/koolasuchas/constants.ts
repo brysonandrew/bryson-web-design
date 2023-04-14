@@ -2,6 +2,9 @@ export const SPEED = 1;
 export const TIME = 8;
 export const INTERVAL = SPEED * TIME;
 
+export const SYNTH_VOLUME = 0.032;
+export const HIHAT_VOLUME = 0.06;
+
 export const BASS_STEPS = [...Array(TIME)].map((v, index) =>
   index % 2 === 0 ? 0 : 1,
 );
@@ -59,11 +62,3 @@ export const TUNDRA_STEPS_0 = [
 export const TUNDRA_STEPS_1 = [
   8, 7, 5, 7, 8, 12, 17, 24, 0, 1, 3, 1, 7, 12, 17, 25,
 ];
-export const KICK_COUNT = KICK_STEPS.length;
-export const KICK_SPEED = (SPEED / KICK_COUNT) * TIME;
-
-export const CYMBAL_COUNT = CYMBAL_STEPS.length;
-export const CYMBAL_SPEED = (SPEED / CYMBAL_COUNT) * TIME;
-
-export const SNARE_COUNT = SNARE_STEPS.length;
-export const SNARE_SPEED = (SPEED / SNARE_COUNT) * TIME;

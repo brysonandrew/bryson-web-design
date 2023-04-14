@@ -1,21 +1,19 @@
-import { useTundra } from "@moth-hooks/sounds/ost/sounds/wails/useTundra";
+import { useAtaxia } from "@moth-hooks/sounds/ost/sounds/termini/useAtaxia";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 
-export const usePhase2 = () => {
+export const usePhase9 = () => {
   const { context } = useMothContext();
-  const tundra = useTundra();
+  const tundra = useAtaxia();
 
   const play = ({ duration, start }: TPlayerConfig) => {
-    const pitch = 25;
+    const pitch = 72;
     tundra.play({
       startTime: context.currentTime + start,
-      duration,
-      volume: 0.1,
       pitch,
-      glitch: 0.1,
+      duration: duration * 24,
+      volume: 0.0005,
     });
   };
-
   return play;
 };

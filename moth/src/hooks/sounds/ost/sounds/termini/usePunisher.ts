@@ -14,10 +14,15 @@ export const usePunisher = () => {
     type = "sawtooth",
     volume = 0.1,
   }: THandlerConfig) => {
+    const filterFrequencyStart = 100;
     const filter = new BiquadFilterNode(context, {
-      frequency: 100,
+      frequency: filterFrequencyStart,
       type: "lowpass",
     });
+    filter.frequency.setValueAtTime(
+      filterFrequencyStart,
+      startTime,
+    );
 
     const gain = new GainNode(context, { gain: volume });
     gain.gain.setValueAtTime(volume, startTime);

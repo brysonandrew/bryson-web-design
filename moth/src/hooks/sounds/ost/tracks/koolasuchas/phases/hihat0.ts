@@ -1,7 +1,7 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { useCymbal } from "../../../sounds/drums/useCymbal";
-import { HIHAT_STEPS_0 } from "../constants";
+import { HIHAT_STEPS_0, HIHAT_VOLUME } from "../constants";
 
 export const useHihat0 = () => {
   const cymbal = useCymbal();
@@ -18,7 +18,7 @@ export const useHihat0 = () => {
       const d = duration / length;
       cymbal({
         startTime: context.currentTime + index * d + start,
-        volume: 0.1,
+        volume: HIHAT_VOLUME,
         duration: d,
       });
     });

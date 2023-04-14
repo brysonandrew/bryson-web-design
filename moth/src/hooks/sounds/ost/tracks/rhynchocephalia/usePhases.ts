@@ -10,10 +10,10 @@ export const usePhases = () => {
   const phase3 = usePhase3();
 
   return [
-    {
-      sounds: [[phase3]],
-      sustain: 4,
-    },
+    // {
+    //   sounds: [[phase3]],
+    //   sustain: 4,
+    // },
     // {
     //   sounds: [[phase2]],
     //   sustain: 4,
@@ -22,9 +22,9 @@ export const usePhases = () => {
     //   sounds: [[phase3]],
     //   sustain: 4,
     // },
-    // {
-    //   sounds: [[phase0, phase0, phase0, phase0], [phase1]],
-    //   sustain: 3,
-    // },
+    {
+      sounds: [[phase0, phase0, phase0, phase0], [phase3]],
+      sustain: 3,
+    },
   ];
 };

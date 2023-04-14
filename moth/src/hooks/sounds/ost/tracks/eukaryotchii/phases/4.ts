@@ -16,20 +16,6 @@ export const usePhase4 = () => {
       glitch: 0.5,
       type: "sawtooth",
     });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sawtooth",
-    // });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sine",
-    // });
   };
 
   return play;
