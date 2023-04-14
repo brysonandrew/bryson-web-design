@@ -11,9 +11,9 @@ import {
   SPEED,
 } from "../constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
-import { useCymbal } from "../../sounds/useCymbal";
-import { useKick } from "../../sounds/useKick";
-import { useSnare } from "../../sounds/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
 
 export const usePhase2 = () => {
   const arpeggio = useArpeggio();

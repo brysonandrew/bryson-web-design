@@ -1,23 +1,18 @@
-import { useInterval } from "@moth-hooks/useInterval";
 import { useMothContext } from "@moth-state/Context";
-import { useRef, useState } from "react";
-import { useCymbal } from "../../sounds/useCymbal";
-import { useArpeggio } from "../../sounds/useArpeggio";
-import { useSnare } from "../../sounds/useSnare";
-import { useKick } from "../../sounds/useKick";
-import { useDrone } from "../../sounds/useDrone";
 import {
-  CYMBAL_STEPS,
-  CYMBAL_SPEED,
-  SNARE_STEPS,
-  SNARE_SPEED,
-  KICK_STEPS,
-  KICK_SPEED,
-  ARPEGGIO_STEPS,
   ARPEGGIO_SPEED,
-  TIME,
-  SPEED,
+  ARPEGGIO_STEPS,
+  CYMBAL_SPEED,
+  CYMBAL_STEPS,
+  KICK_SPEED,
+  KICK_STEPS,
+  SNARE_SPEED,
+  SNARE_STEPS,
 } from "../../constants";
+import { useArpeggio } from "../../sounds/useArpeggio";
+import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
 
 export const usePhase0 = () => {
   const { context } = useMothContext();

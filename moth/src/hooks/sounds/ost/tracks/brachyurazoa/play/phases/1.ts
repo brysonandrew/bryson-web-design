@@ -10,7 +10,7 @@ import {
 } from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useBass } from "../../sounds/useBass";
-import { useKick } from "../../sounds/useKick";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
 
 export const usePhase1 = () => {
   const arpeggio = useArpeggio();

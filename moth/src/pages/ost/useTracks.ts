@@ -1,10 +1,10 @@
-import { usePlay as useKoolasuchasPlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/play/usePlay";
+import { usePlay as useKoolasuchasPlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
 import { usePlay as useEukaryotchiiPlay } from "@moth-hooks/sounds/ost/tracks/eukaryotchii/play/usePlay";
 import { usePlay as useBrachyurazoaPlay } from "@moth-hooks/sounds/ost/tracks/brachyurazoa/play/usePlay";
 import { usePlay as useCordyceptaeraPlay } from "@moth-hooks/sounds/ost/tracks/cordyceptaera/play/usePlay";
 import { usePlay as useNautilusPlay } from "@moth-hooks/sounds/ost/tracks/nautilus/play/usePlay";
 import { usePlay as useAmynthasraptorPlay } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/play/usePlay";
-import { usePlay as useRhynchocephaliaPlay } from "@moth-hooks/sounds/ost/tracks/rhynchocephalia/play/usePlay";
+import { usePlay as useRhynchocephaliaPlay } from "@moth-hooks/sounds/ost/tracks/rhynchocephalia/usePlay";
 import { usePlay as useRezauutinumnPlay } from "@moth-hooks/sounds/ost/tracks/rezauutinumn/play/usePlay";
 
 export const useTracks = () => {

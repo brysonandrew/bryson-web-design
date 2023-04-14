@@ -4,10 +4,10 @@ import {
   KICK_STEPS,
   SNARE_STEPS,
 } from "../../constants";
-import { useCymbal } from "../../sounds/useCymbal";
-import { useKick } from "../../sounds/useKick";
-import { useSnare } from "../../sounds/useSnare";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
+import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
 
 export const useDrums = () => {
   const snare = useSnare();
@@ -18,7 +18,7 @@ export const useDrums = () => {
 
   const loop = ({ start, duration }: TPlayerConfig) => {
     console.log(start, duration);
-    CYMBAL_STEPS.forEach((v, index, {length}) => {
+    CYMBAL_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
       cymbal({
@@ -26,7 +26,7 @@ export const useDrums = () => {
         volume: 0.12,
       });
     });
-    SNARE_STEPS.forEach((v, index, {length}) => {
+    SNARE_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
       snare({
@@ -34,7 +34,7 @@ export const useDrums = () => {
         volume: 0.1,
       });
     });
-    KICK_STEPS.forEach((v, index, {length}) => {
+    KICK_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
       kick({

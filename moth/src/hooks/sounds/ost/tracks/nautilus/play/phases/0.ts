@@ -3,9 +3,9 @@ import {
   MACHINE_GUN_SPEED,
   MACHINE_GUN_STEPS,
 } from "../../constants";
-import { useKick } from "../../sounds/useKick";
-import { useSnare } from "../../sounds/useSnare";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
 
 export const usePhase0 = () => {
   const snare = useSnare();

@@ -1,6 +1,6 @@
 import { useLoop } from "@moth-hooks/sounds/useLoop";
 import { usePhases } from "./usePhases";
-import { INTERVAL } from "../constants";
+import { INTERVAL } from "./constants";
 
 export const usePlay = () => {
   const phases = usePhases();

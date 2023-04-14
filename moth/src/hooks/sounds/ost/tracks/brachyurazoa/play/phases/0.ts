@@ -1,16 +1,14 @@
 import { useMothContext } from "@moth-state/Context";
 import {
   ARPEGGIO_SPEED,
-  SPEED,
   STEPS_2,
-  ARPEGGIO_STEPS,
   KICK_SPEED,
   TIME,
   APRPEGGIOS_0,
 } from "./constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
 import { useBass } from "../../sounds/useBass";
-import { useKick } from "../../sounds/useKick";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
 
 export const usePhase0 = () => {
   const arpeggio = useArpeggio();

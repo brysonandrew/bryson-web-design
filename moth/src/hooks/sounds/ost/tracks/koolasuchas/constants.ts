@@ -1,5 +1,5 @@
 export const SPEED = 1;
-export const TIME = 8 * 0.5;
+export const TIME = 8;
 export const INTERVAL = SPEED * TIME;
 
 export const BASS_STEPS = [...Array(TIME)].map((v, index) =>

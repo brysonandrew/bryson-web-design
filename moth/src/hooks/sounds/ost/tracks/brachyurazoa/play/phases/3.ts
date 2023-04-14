@@ -6,12 +6,12 @@ import {
   KICK_STEPS,
   KICK_SPEED,
 } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/constants";
-import { useCymbal } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/sounds/useCymbal";
-import { useSnare } from "@moth-hooks/sounds/ost/tracks/amynthasraptor/sounds/useSnare";
 import { useMothContext } from "@moth-state/Context";
 import { useArpeggio } from "../../sounds/useArpeggio";
-import { useKick } from "../../sounds/useKick";
 import { STEPS_3, STEPS_SPEED } from "./constants";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
+import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
 
 export const usePhase3 = () => {
   const arpeggio = useArpeggio();

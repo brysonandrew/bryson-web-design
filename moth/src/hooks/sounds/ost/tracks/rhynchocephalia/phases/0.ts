@@ -1,27 +1,21 @@
 import { useMothContext } from "@moth-state/Context";
-import { useRef, useState } from "react";
-import { useCymbal } from "../sounds/useCymbal";
-import { useBass } from "../sounds/useBass";
-import { useSnare } from "../sounds/useSnare";
-import { useKick } from "../sounds/useKick";
-import { useInterval } from "@moth-hooks/useInterval";
 import {
-  STEPS,
-  SPEED,
-  CYMBAL_STEPS,
   CYMBAL_SPEED,
-  SNARE_STEPS,
-  SNARE_SPEED,
-  KICK_STEPS,
+  CYMBAL_STEPS,
   KICK_SPEED,
-  TIME,
+  KICK_STEPS,
+  SNARE_SPEED,
+  SNARE_STEPS,
+  SPEED,
+  STEPS,
 } from "../constants";
+import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
+import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
+import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
 
-export const usePlay = () => {
-  const indexRef = useRef<number>(0);
-  const [time, setTime] = useState<number | null>(null);
-
-  const bass = useBass();
+export const usePhase0 = () => {
+  const bass = useBass1();
 
   const cymbal = useCymbal();
   const snare = useSnare();
@@ -53,6 +47,7 @@ export const usePlay = () => {
           context.currentTime + index * SNARE_SPEED,
         volume: 0.2,
         version: 2,
+        type: "highpass",
       });
     });
     KICK_STEPS.forEach((v, index) => {
@@ -62,26 +57,7 @@ export const usePlay = () => {
         volume: 0.4,
       });
     });
-
-    indexRef.current++;
   };
 
-  useInterval(loop, time);
-
-  const preload = async () => {
-    console.log("PRELOAD");
-  };
-
-  const play = async () => {
-    await context.resume();
-    await preload();
-    loop();
-    setTime(TIME * SPEED * 1000);
-  };
-
-  const stop = () => {
-    bass.stop();
-  };
-
-  return { play, stop };
+  return loop;
 };

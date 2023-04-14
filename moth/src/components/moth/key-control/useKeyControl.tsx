@@ -24,7 +24,7 @@ import type { TUiSounds } from "@moth-hooks/sounds/ui";
 import { useUi as useSoundUi } from "@moth-hooks/sounds/ui";
 
 import type { TCurrent } from "../types";
-import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/play/usePlay";
+import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
 
 export type TSounds = TDirectionsSounds &
   TAbilitiesSounds &

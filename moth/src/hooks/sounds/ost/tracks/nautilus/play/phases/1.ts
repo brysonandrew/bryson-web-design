@@ -5,7 +5,7 @@ import {
   ARPEGGIO_STEPS,
 } from "../../constants";
 import { useArpeggio } from "../../sounds/useArpeggio";
-import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const usePhase1 = () => {
   const arpeggio = useArpeggio();
