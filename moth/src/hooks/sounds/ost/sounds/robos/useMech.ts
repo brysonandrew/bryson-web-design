@@ -33,7 +33,7 @@ export const useMech = () => {
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
-      detune: 0
+      detune: 0,
     });
     lfo.connect(lfoGain);
     lfoGain.connect(filter.detune);
@@ -47,7 +47,8 @@ export const useMech = () => {
       spread: 0,
       stagger: 0,
       start: startTime,
-      end,
+      end: end + 0.1,
+      delay: 0.1,
       output: filter,
     };
 

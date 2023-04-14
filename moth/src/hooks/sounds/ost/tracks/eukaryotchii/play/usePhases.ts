@@ -17,7 +17,7 @@ export const usePhases = () => {
 
   return [
     {
-      sounds: [[phase1], []],
+      sounds: [[phase1]],
     },
     {
       sounds: [
@@ -34,6 +34,15 @@ export const usePhases = () => {
         [phase2],
       ],
       sustain: 3,
+    },
+    {
+      sounds: [[phase1]],
+    },
+    {
+      sounds: [[phase1]],
+    },
+    {
+      sounds: [[phase1]],
     },
   ];
 };

@@ -5,6 +5,7 @@ import {
 } from "../../constants";
 import { useKick } from "../../sounds/useKick";
 import { useSnare } from "../../sounds/useSnare";
+import { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const usePhase0 = () => {
   const snare = useSnare();
@@ -12,7 +13,7 @@ export const usePhase0 = () => {
 
   const { context } = useMothContext();
 
-  const loop = () => {
+  const loop = ({ start, duration }: TPlayerConfig) => {
     MACHINE_GUN_STEPS.forEach((v, index) => {
       snare({
         startTime:

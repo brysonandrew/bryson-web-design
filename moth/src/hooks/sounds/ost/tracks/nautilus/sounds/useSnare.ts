@@ -9,14 +9,14 @@ export const useSnare = () => {
   const play = async ({
     startTime,
     version = 7,
-    volume,
+    volume = 0.028,
   }: THandlerConfig & { version?: 2 | 7 | 9 | 11 }) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 800,
       type: "allpass",
     });
     const gain = new GainNode(context, {
-      gain: volume ?? 0.028,
+      gain: volume,
     });
 
     const sampleBuffer: AudioBuffer = await handleSample(

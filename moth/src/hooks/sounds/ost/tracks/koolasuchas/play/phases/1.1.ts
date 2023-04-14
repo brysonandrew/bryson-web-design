@@ -1,10 +1,7 @@
 import { useTundra } from "@moth-hooks/sounds/ost/sounds/wails/useTundra";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import {
-  TUNDRA_STEPS_0,
-  TUNDRA_STEPS_1,
-} from "../constants";
+import { TUNDRA_STEPS_1 } from "../constants";
 
 export const usePhase11 = () => {
   const { context } = useMothContext();
@@ -17,13 +14,13 @@ export const usePhase11 = () => {
       tundra.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.4,
+        volume: 0.18,
         pitch,
       });
       tundra.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.2,
+        volume: 0.1,
         pitch,
         type: "sawtooth",
       });

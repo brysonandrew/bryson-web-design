@@ -3,20 +3,28 @@ import {
   interpolateScale,
 } from "@moth-hooks/sounds/constants/scales";
 import { useClang } from "@moth-hooks/sounds/ost/sounds/robos/useClang";
-import type { TMechHandlerConfig } from "@moth-hooks/sounds/ost/sounds/robos/useMech";
+import {
+  useMech,
+  type TMechHandlerConfig,
+} from "@moth-hooks/sounds/ost/sounds/robos/useMech";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 
-const COUNT = 4;
+const COUNT = 8;
 
 export const usePhaseDescent = () => {
-  const clang = useClang();
+  const clang = useMech();
   const { context } = useMothContext();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
     [...Array(COUNT)].forEach((_, index, { length }) => {
       const pitch =
-        interpolateScale({ index, key: "all" }) + 12;
+        interpolateScale({
+          index: length - index,
+          key: "lydian",
+        }) +
+        24 +
+        1;
       const d = duration / length;
       const config: TMechHandlerConfig = {
         startTime: context.currentTime + index * d + start,
@@ -27,6 +35,7 @@ export const usePhaseDescent = () => {
         revs: 2400 / pitch,
       };
       clang.play(config);
+      // clang.play({ ...config, pitch: 12 });
     });
   };
 

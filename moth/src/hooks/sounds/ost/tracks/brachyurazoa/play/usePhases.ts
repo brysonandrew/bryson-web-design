@@ -8,9 +8,9 @@ export const usePhases = () => {
   const phase1 = usePhase1();
 
   return [
-    // {
-    //   sounds: [[intro]],
-    // },
+    {
+      sounds: [[intro]],
+    },
     {
       sounds: [[phase0]],
       repeat: 0,

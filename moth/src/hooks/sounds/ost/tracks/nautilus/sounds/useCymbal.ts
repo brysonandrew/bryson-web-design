@@ -1,6 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
-import { useBufferFromSrcHandler } from "../../../../../useBufferFromSrcHandler";
 import type { THandlerConfig } from "../types";
+import { useBufferFromSrcHandler } from "@moth-hooks/useBufferFromSrcHandler";
 
 export const useCymbal = () => {
   const { context, master } = useMothContext();
@@ -9,13 +9,15 @@ export const useCymbal = () => {
   const play = async ({
     startTime,
     version = 4,
-    volume
-  }: THandlerConfig & { version?: 1|4|10 }) => {
+    volume = 0.04,
+  }: THandlerConfig & { version?: 1 | 4 | 10 }) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 800,
       type: "highpass",
     });
-    const gain = new GainNode(context, { gain: volume ?? 0.04 });
+    const gain = new GainNode(context, {
+      gain: volume,
+    });
 
     const sampleBuffer: AudioBuffer = await handleSample(
       `/sounds/cymbals/saev_${version}.wav`,

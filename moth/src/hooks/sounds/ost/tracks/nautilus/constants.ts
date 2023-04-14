@@ -41,6 +41,8 @@ export const KICK_STEPS = [
   // ...[...Array(30)].map((v, i) => (i % 4 === 0 ? 1 : 0)),
 ];
 
+
+
 export const SPEED = 2;
 export const TIME = 1;
 export const INTERVAL = TIME * SPEED;

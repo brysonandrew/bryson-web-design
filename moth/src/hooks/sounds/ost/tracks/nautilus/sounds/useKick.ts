@@ -6,12 +6,15 @@ export const useKick = () => {
   const { context, master } = useMothContext();
   const handleSample = useBufferFromSrcHandler(context);
 
-  const play = async ({ startTime, volume }: THandlerConfig) => {
+  const play = async ({
+    startTime,
+    volume = 0.05,
+  }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 1200,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain:volume ?? 0.05 });
+    const gain = new GainNode(context, { gain: volume });
 
     const sampleBuffer: AudioBuffer = await handleSample(
       "/sounds/kicks/saev.wav",

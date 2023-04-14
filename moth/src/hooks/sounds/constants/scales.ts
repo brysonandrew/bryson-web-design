@@ -16,6 +16,7 @@ export const SCALE_RECORD = {
   phrygian: [0, 1, 3, 5, 7, 8, 10],
   wholetone: [0, 2, 4, 6, 8, 10],
 } as const;
+
 export type TScaleRecord = typeof SCALE_RECORD;
 export type TScaleKey = keyof TScaleRecord;
 export const SCALES = [
