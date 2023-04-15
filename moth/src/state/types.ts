@@ -52,6 +52,7 @@ export type TSource = Partial<TSpawnPoint> & {
   instance: Group;
   xp?: number;
   health?: number;
+  gunX?: number;
 };
 
 export type TEnemyType =

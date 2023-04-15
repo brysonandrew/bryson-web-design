@@ -1,17 +1,28 @@
 import { useViewportHeight } from "@moth-hooks/useViewportHeight";
+import { useMothContext } from "@moth-state/Context";
+import type { TSpawn } from "@moth-state/types";
 import { Text } from "@react-three/drei";
 import type { FC } from "react";
-import { Background } from "./Background";
-import { Counter } from "./Counter";
 import {
   COUNTER_WIDTH,
   HEIGHT,
   PADDING,
+  RIVER_HORSE_KEY,
   WIDTH,
 } from "../constants";
-import type { TSpawn } from "@moth-state/types";
-import { useMothContext } from "@moth-state/Context";
-import { pascalToTitle } from "@utils/format";
+import { Background } from "./Background";
+import { Counter } from "./Counter";
+
+const resolveBossTitle = (key?: string) => {
+  switch (key) {
+    case RIVER_HORSE_KEY: {
+      return "River Horse";
+    }
+    default: {
+      return "unknown";
+    }
+  }
+};
 
 type TProps = {
   boss: TSpawn;
@@ -47,7 +58,7 @@ export const HealthBar: FC<TProps> = ({ boss, index }) => {
         rotation={[0, Math.PI, 0]}
         position={[WIDTH / 2 - 1.5, -PADDING * 0.5, 0]}
       >
-        {boss.type ? pascalToTitle(boss.type) : "unknown"}
+        {resolveBossTitle(boss.type)}
       </Text>
       <Background />
       <Counter healthLeft={healthLeft} />

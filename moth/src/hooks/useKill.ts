@@ -3,7 +3,6 @@ import type { TSource } from "@moth-state/types";
 import type { Point } from "framer-motion";
 import type { Mesh } from "three";
 import { useShotCollision } from "./useShotCollision";
-import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
 
 export type TKillHandlerConfig = Point & {
   mesh: Mesh;

@@ -1,7 +1,10 @@
 import { MOTH_NAME } from "@moth-constants/index";
 import { useFrame } from "@react-three/fiber";
 import { useMothContext } from "@moth-state/Context";
-import type { TFiringStart, TSource } from "@moth-state/types";
+import type {
+  TFiringStart,
+  TSource,
+} from "@moth-state/types";
 import type { MutableRefObject } from "react";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
@@ -39,8 +42,9 @@ export const useShots = (config: TConfig) => {
         ...prev,
         {
           name: generateUUID(),
-          x: source.instance.position.x,
-          y: source.y,
+          x:
+            source.instance.position.x + (source.gunX ?? 0),
+          y: source.instance.position.y,
         },
       ]);
 

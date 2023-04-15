@@ -28,7 +28,7 @@ export const Gun: FC<TProps> = ({
   if (shots.length === 0) return null;
 
   return (
-    <group>
+    <>
       {shots.map((shot) => (
         <Shot
           key={shot.name}
@@ -37,6 +37,6 @@ export const Gun: FC<TProps> = ({
           speed={firingSpeed}
         />
       ))}
-    </group>
+    </>
   );
 };
