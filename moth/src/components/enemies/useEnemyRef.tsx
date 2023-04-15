@@ -11,6 +11,7 @@ export const useEnemyRef = (spawn: TConfig) => {
     if (instance && !source) {
       instance.position.x = spawn.x;
       instance.position.y = spawn.y;
+      //instance.rotation.z = Math.PI * 0.25; to rotate bullets go to useShot
 
       dispatch({
         type: "add-enemy",

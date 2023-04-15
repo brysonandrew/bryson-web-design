@@ -7,7 +7,6 @@ import { useEnemyRef } from "../useEnemyRef";
 type TProps = TSpawn;
 export const Dynastinae: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
-  console.log(source);
   return (
     <group>
       <group ref={resolveRef}>

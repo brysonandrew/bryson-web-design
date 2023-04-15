@@ -43,8 +43,11 @@ export const useShots = (config: TConfig) => {
         {
           name: generateUUID(),
           x:
-            source.instance.position.x + (source.gunX ?? 0),
-          y: source.instance.position.y,
+            source.instance.position.x +
+            (source.offsetX ?? 0),
+          y:
+            source.instance.position.y +
+            (source.offsetY ?? 0),
         },
       ]);
 

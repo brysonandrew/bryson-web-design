@@ -46,7 +46,7 @@ export const SPAWN_POINTS: TSpawnPoint[] = [
   },
   {
     name: generateUUID(),
-    threshold: 0,
+    threshold: 0.9,
     count: 1,
     type: RIVER_HORSE_KEY,
     width: 90,
