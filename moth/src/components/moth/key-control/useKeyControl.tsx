@@ -63,9 +63,9 @@ export const useKeyControl = ({ keyRef }: TConfig) => {
     handlers: {
       onKeyDown: (event: KeyboardEvent) => {
         if (event.repeat) return;
-        if (!loopRef.current) {
+        if (!loopRef.current && keyRef.current.isSound) {
           loopRef.current = true;
-          //play();
+          play();
           speech.play();
         }
         handleDirectionsOn(event.key, sounds);

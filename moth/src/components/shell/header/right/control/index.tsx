@@ -48,7 +48,17 @@ export const Control: FC<TProps> = ({
   });
   return (
     <Root className="flex flex-col" ref={ref}>
-      <Position>
+      <Position
+        className="absolute"
+        style={{ top: 48, right: 12 }}
+      >
+        <div onPointerDown={(e) => e.stopPropagation()}>
+          <AnimatePresence>
+            {isOpen && <Menu />}
+          </AnimatePresence>
+        </div>
+      </Position>
+      <Position className="relative">
         <Button className={CENTER} onTap={handleTap}>
           {children}
           {isOpen ? (
@@ -58,13 +68,6 @@ export const Control: FC<TProps> = ({
           )}
         </Button>
       </Position>
-      <div className="absolute top-8 right-2">
-        <div onPointerDown={(e) => e.stopPropagation()}>
-          <AnimatePresence>
-            {isOpen && <Menu />}
-          </AnimatePresence>
-        </div>
-      </div>
     </Root>
   );
 };

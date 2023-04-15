@@ -14,14 +14,14 @@ export const Controls: FC = () => {
 
   return (
     <Root
-      className={clsx("absolute top-0 left-0 py-2 px-4")}
+      className={clsx("py-2 px-4")}
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       whileHover={{ opacity: 1 }}
     >
       <h3 className="text-xl">Controls</h3>
       <div className="p-1" />
-      <ul>
+      <List>
         {entries.map(([controlType, value], index) => (
           <Fragment key={controlType}>
             {index !== 0 && <li className="p-2" />}
@@ -47,7 +47,7 @@ export const Controls: FC = () => {
             </li>
           </Fragment>
         ))}
-      </ul>
+      </List>
     </Root>
   );
 };

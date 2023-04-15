@@ -1,10 +1,13 @@
-import type { TMothState, TState } from "./types";
+import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
+import type { TLocalState, TMothState, TState } from "./types";
 const context = new AudioContext();
 const master = new GainNode(context, { gain: 0.5 });
 const musicGain = new GainNode(context, { gain: 0.5 });
 const soundEffectsGain = new GainNode(context, {
   gain: 0.01,
 });
+
+export const MOTH_LOCAL_STORAGE_KEY = "MOTH_LOCAL_STORAGE_KEY"
 
 export const SHOP_INIT = {
   NeutronicBeam: 200,
@@ -43,31 +46,15 @@ export type TSpecialsRunningRecord = Partial<
   Record<TShopKey, number>
 >;
 
-master.connect(context.destination);
-export const STATE: TState = {
-  start: false,
+export const LOCAL_STATE: TLocalState = {
   isSound: true,
-  context,
-  master,
-  musicGain,
-  soundEffectsGain,
-  xp: 110,
-  activeSpecial: 0,
-  isInit: true,
-  menu: null,
-  level: null,
-  enemies: [],
-  spawns: [],
-  enemyRecord: {},
-  moth: null,
-  spots: [],
-  blades: null,
-  meshes: [],
-  killRecord: {},
-  shop: SHOP_INIT,
+  levels: [
+    {
+      name: RIVER_HORSE_KEY,
+      isLocked: true
+    }
+  ],
   inventory: SPECIALS_999,
-  specials: {},
-  damage: {},
   controls: {
     direction: {
       Forward: "ArrowUp",
@@ -87,8 +74,37 @@ export const STATE: TState = {
       CycleDown: "c",
     },
   },
+}
+
+
+master.connect(context.destination);
+export const STATE: TState = {
+  ...LOCAL_STATE,
+  start: false,
+  context,
+  master,
+  musicGain,
+  soundEffectsGain,
+  xp: 110,
+  activeSpecial: 0,
+  isInit: true,
+  menu: null,
+  level: null,
+  enemies: [],
+  spawns: [],
+  enemyRecord: {},
+  moth: null,
+  spots: [],
+  blades: null,
+  meshes: [],
+  killRecord: {},
+  shop: SHOP_INIT,
+  specials: {},
+  damage: {},
+
   note: null,
 };
+
 
 export const SPEED = 0.5;
 export const MAX_SPEED = SPEED * 2;

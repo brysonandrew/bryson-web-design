@@ -21,6 +21,7 @@ export type TCurrent = {
   activeSpecial: number;
   inventory: TInventory;
   specials: TSpecialsSwitchRecord;
+  isSound: boolean;
 };
 
 export type TShopNumberEntry = [TShopKey, number];

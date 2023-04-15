@@ -80,6 +80,12 @@ export const reducer = (
         xp: state.xp + SHOP_INIT[value] * 0.5 ?? 0,
       };
     }
+    case "toggle-sound": {
+      return {
+        ...state,
+        isSound: !state.isSound,
+      };
+    }
     case "menu": {
       return {
         ...state,

@@ -11,7 +11,7 @@ export const Mute = () => {
   const { isSound, dispatch } = useMothContext();
 
   const handleTap = () => {
-    dispatch({ type: "menu", value: null });
+    dispatch({ type: "toggle-sound", value: null });
   };
 
   return (
@@ -22,7 +22,7 @@ export const Mute = () => {
       >
         <div>{isSound ? "On" : "Off"}</div>
         <div className="p-1" />
-        {/* {isSound ? <VolumeOn /> : <VolumeOff />} */}
+        {isSound ? <VolumeOn /> : <VolumeOff />}
       </Button>
     </Root>
   );

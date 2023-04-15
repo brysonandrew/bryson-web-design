@@ -19,6 +19,7 @@ export const Moth: FC = () => {
     inventory,
     activeSpecial,
     specials,
+    isSound
   } = useMothContext();
   const current: TCurrent = {
     moth,
@@ -30,6 +31,7 @@ export const Moth: FC = () => {
     inventory,
     activeSpecial,
     specials,
+    isSound
   };
   const keyRef = useRef<TCurrent>(current);
   keyRef.current = current;

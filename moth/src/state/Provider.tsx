@@ -2,9 +2,20 @@ import type { FC } from "react";
 import { useReducer, useRef } from "react";
 import { reducer } from "./reducer";
 import { Context } from "./Context";
-import { MOTH_STATE, STATE } from "./constants";
-import type { TMothState, TReducer } from "./types";
+import {
+  LOCAL_STATE,
+  MOTH_LOCAL_STORAGE_KEY,
+  MOTH_STATE,
+  STATE,
+} from "./constants";
+import type {
+  TLocalState,
+  TMothState,
+  TReducer,
+  TState,
+} from "./types";
 import type { TChildrenElement } from "@t/index";
+import { useLocalStorage } from "@moth-hooks/useLocalStorage";
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -12,10 +23,38 @@ type TProviderProps = {
 export const MothProvider: FC<TProviderProps> = ({
   children,
 }) => {
+  const [savedState, setSavedState] =
+    useLocalStorage<TLocalState>(
+      MOTH_LOCAL_STORAGE_KEY,
+      LOCAL_STATE,
+    );
   const mothRef = useRef<TMothState>({ ...MOTH_STATE });
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
+  const [state, dispatch] = useReducer<TReducer, TState>(
+    (...args) => {
+      const nextState = reducer(...args);
+
+      const {
+        controls,
+        levels,
+        isSound,
+        inventory,
+      } = nextState;
+
+      setSavedState({
+        controls,
+        levels,
+        isSound,
+        inventory,
+      });
+
+      return nextState;
+    },
+    STATE,
+    (state) => ({
+      ...state,
+      ...savedState,
+    }),
+  );
   const reset = () => {
     if (state.moth) {
       state.moth.instance.position.x = 0;
@@ -28,10 +67,10 @@ export const MothProvider: FC<TProviderProps> = ({
   return (
     <Context.Provider
       value={{
-        ...state,
         mothRef,
         reset,
         dispatch,
+        ...state,
       }}
     >
       {children}

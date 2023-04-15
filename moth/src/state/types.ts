@@ -14,7 +14,10 @@ import type {
 } from "./constants";
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
 import type { TSpawnPoint } from "@moth-components/level/0/constants";
-import type { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
+import type {
+  RIVER_HORSE_KEY,
+  TBossKey,
+} from "@moth-components/hud/constants";
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";
@@ -136,11 +139,17 @@ export type TState = TMothInit & {
   spawns: TSpawn[];
   enemyRecord: Record<string, TSource>;
   killRecord: TKillRecord;
+  levels: TLevelItem[];
   controls: TControlsRecord;
   shop: TShopRecord;
   inventory: TInventory;
   note: string | null;
 };
+
+export type TLocalState = Pick<
+  TState,
+  "controls" | "isSound" | "levels" | "inventory"
+>;
 
 export type TContext = TState & {
   reset(): void;
@@ -157,7 +166,16 @@ export type TLevel = null | Group;
 export type TMoth = TSource | null;
 export type TShopKey = keyof TShopRecord;
 
+export type TLevelItem = {
+  name: TBossKey;
+  isLocked: boolean;
+};
+
 export type TAction =
+  | {
+      type: "toggle-sound";
+      value: null;
+    }
   | {
       type: "clear-note";
       value: null;
