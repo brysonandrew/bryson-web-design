@@ -1,7 +1,5 @@
-import {
-  BOSSES,
-  TBossKey,
-} from "@moth-components/hud/constants";
+import type { TBossKey } from "@moth-components/hud/constants";
+import { BOSSES } from "@moth-components/hud/constants";
 import { SHOP_INIT, SHOP_KEYS, STATE } from "./constants";
 import type { TState, TReducerAction } from "./types";
 
@@ -127,9 +125,11 @@ export const reducer = (
           },
         },
         xp: state.xp + (value.xp ?? 0),
-        note: BOSSES.includes(value?.type as TBossKey)
-          ? value.type
-          : null,
+        note:
+          BOSSES.includes(value?.type as TBossKey) &&
+          typeof value.type === "string"
+            ? value.type
+            : null,
       };
     }
     case "murder": {

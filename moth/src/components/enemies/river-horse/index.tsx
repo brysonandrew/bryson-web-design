@@ -19,7 +19,7 @@ export const RiverHorse: FC<TProps> = (props) => {
               key={`kill-${index}`}
               source={{
                 ...source,
-                gunX: source.x + index * 4,
+                offsetX: source.x + index * 4,
               }}
             />
           ))}
