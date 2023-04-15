@@ -9,7 +9,7 @@ import { Hercules } from "@moth/pages/workshop/enemies/hercules";
 import { Dynastinae } from "@moth/pages/workshop/enemies/dynastinae";
 import { Galamodo } from "@moth/pages/workshop/enemies/galamodo";
 import { Mite } from "@moth/pages/workshop/enemies/mite";
-import { MiteI } from "@moth/pages/workshop/enemies/mite-i";
+import { MiteI } from "@moth/pages/workshop/enemies/mite-I";
 
 import { OstWip } from "@pages/ost-wip/index";
 import { NotFound404 } from "@pages/not-found-404";
