@@ -14,7 +14,7 @@ export const usePhase0 = () => {
       bass.play({
         startTime: context.currentTime + index * d + start,
         duration: d,
-        volume: 0.4,
+        volume: 0.2,
         pitch,
       });
     });

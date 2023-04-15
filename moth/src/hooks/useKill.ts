@@ -35,9 +35,11 @@ export const useKill = (config: TConfig) => {
       speed,
       levelY,
     });
+
     if (Math.abs(config.y - source.y) > range) {
       onRemove(config.name);
     }
+
     if (enemyCollided) {
       const isStillAlive =
         isNaN(damage[enemyCollided.name]) ||
@@ -49,7 +51,7 @@ export const useKill = (config: TConfig) => {
           type: "damage",
           value: {
             name: enemyCollided.name,
-            amount: 1
+            amount: 1,
           },
         });
       } else {

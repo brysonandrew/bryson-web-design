@@ -1,29 +1,24 @@
 import { useMothContext } from "@moth-state/Context";
-import {
-  MACHINE_GUN_SPEED,
-  MACHINE_GUN_STEPS,
-} from "../constants";
+import { ARPEGGIO_STEPS_0 } from "../constants";
+import { useSynth } from "../../../sounds/synths/useSynth";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
 
 export const usePhase0 = () => {
-  const snare = useSnare();
-  const kick = useKick();
-
+  const arpeggio = useSynth();
   const { context } = useMothContext();
 
   const loop = ({ start, duration }: TPlayerConfig) => {
-    MACHINE_GUN_STEPS.forEach((v, index) => {
-      snare({
-        startTime:
-          context.currentTime + index * MACHINE_GUN_SPEED,
-        volume: 0.2,
-      });
-      kick({
-        startTime:
-          context.currentTime + index * MACHINE_GUN_SPEED,
-        volume: 0.2,
+    ARPEGGIO_STEPS_0.forEach((v, index, { length }) => {
+      const d = duration / length;
+
+      const isSecond = index % 2 === 0;
+      const pitch = isSecond ? v + 24 : v + 36;
+      arpeggio.play({
+        startTime: context.currentTime + index * d + start,
+        pitch,
+        duration: d * 2,
+        volume: 0.02,
+        type: isSecond ? "square" : "triangle",
       });
     });
   };

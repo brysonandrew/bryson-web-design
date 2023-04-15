@@ -20,6 +20,11 @@ export const CHORUS = [
   1,
 ];
 
+export const CLANG_STEPS = [
+  ...[...Array(4)].map((v,i) => null),
+  ...[...Array(4)].map((v,i) => 9 + 12)
+];
+
 export const STEPS = [
   // ...INTRO,
   // ...INTRO,

@@ -38,7 +38,7 @@ export const useGlitch = () => {
     const end = startTime + duration;
     const options: TMultiOptions = {
       type,
-      midi: pitch + 28,
+      midi: pitch + 24,
       count: 20,
       spread: 2,
       stagger: 0.4,
@@ -54,6 +54,10 @@ export const useGlitch = () => {
     delay.delayTime.exponentialRampToValueAtTime(1, end);
     gain.gain.exponentialRampToValueAtTime(
       volume * 0.1,
+      end,
+    );
+    gain.gain.setValueAtTime(
+      0,
       end,
     );
     delay.connect(filter);

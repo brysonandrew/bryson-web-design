@@ -61,7 +61,7 @@ export const useTundra = () => {
       spread: 2,
       stagger: 0.1,
       attack: duration * 0.5,
-      decay: 0, // duration * 0.5,
+      decay: 0,
       start: startTime,
       end,
       output: filter,
@@ -81,15 +81,15 @@ export const useTundra = () => {
         delayTime: glitch,
       });
       delay.delayTime.setValueAtTime(glitch, startTime);
-      delay.delayTime.exponentialRampToValueAtTime(
-        10,
-        end,
-      );
+      delay.delayTime.exponentialRampToValueAtTime(1, end);
       const feedback = new GainNode(context, {
         gain: 0.99,
       });
       feedback.gain.setValueAtTime(0.99, startTime);
-      feedback.gain.exponentialRampToValueAtTime(0.001, end);
+      feedback.gain.exponentialRampToValueAtTime(
+        0.001,
+        end,
+      );
       feedback.gain.setValueAtTime(0, end);
 
       delay.connect(filter);

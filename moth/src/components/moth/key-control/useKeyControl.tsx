@@ -22,7 +22,6 @@ import type { TAbilitiesSounds } from "@moth-hooks/sounds/abilities";
 import { useAbilities as useSoundAbilities } from "@moth-hooks/sounds/abilities";
 import type { TUiSounds } from "@moth-hooks/sounds/ui";
 import { useUi as useSoundUi } from "@moth-hooks/sounds/ui";
-
 import type { TCurrent } from "../types";
 import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
 
@@ -66,7 +65,7 @@ export const useKeyControl = ({ keyRef }: TConfig) => {
         if (event.repeat) return;
         if (!loopRef.current) {
           loopRef.current = true;
-          play();
+          //play();
           speech.play();
         }
         handleDirectionsOn(event.key, sounds);

@@ -87,6 +87,7 @@ export const STATE: TState = {
       CycleDown: "c",
     },
   },
+  note: null,
 };
 
 export const SPEED = 0.5;

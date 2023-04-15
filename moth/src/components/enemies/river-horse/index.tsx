@@ -12,7 +12,19 @@ export const RiverHorse: FC<TProps> = (props) => {
       <group ref={resolveRef}>
         <Body />
       </group>
-      {source && <Kill source={source} />}
+      {source && (
+        <>
+          {[...Array(12)].map((_, index) => (
+            <Kill
+              key={`kill-${index}`}
+              source={{
+                ...source,
+                gunX: source.x + index * 4,
+              }}
+            />
+          ))}
+        </>
+      )}
     </group>
   );
 };

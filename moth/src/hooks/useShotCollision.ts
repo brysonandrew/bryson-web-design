@@ -26,10 +26,12 @@ export const useShotCollision = () => {
           typeof width === "number" &&
           typeof height === "number"
         ) {
+          console.log("WID")
           const tx = target.instance.position.x;
           const ty =
             target.instance.position.y +
             levelY * Math.sign(speed);
+          
           if (
             x < tx + target.width &&
             x + width > tx &&

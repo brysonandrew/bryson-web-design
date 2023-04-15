@@ -11,25 +11,11 @@ export const usePhase3 = () => {
     tundra.play({
       startTime: context.currentTime + start,
       duration,
-      volume: 1,
+      volume: 0.5,
       pitch,
       glitch: 0.5,
       type: "sawtooth",
     });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sawtooth",
-    // });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sine",
-    // });
   };
 
   return play;

@@ -1,7 +1,6 @@
 import { Index } from "@pages/index";
 import { NotFound404 } from "@pages/not-found-404";
 import { Ost } from "@pages/ost";
-import { OstWip } from "@pages/ost-wip";
 import { Workshop } from "@pages/workshop";
 import { Enemies } from "@pages/workshop/enemies";
 import { Bug } from "@pages/workshop/enemies/bug";
@@ -23,10 +22,6 @@ export const Source = () => {
     {
       path: "/ost",
       element: <Ost />,
-    },
-    {
-      path: "/ost-wip",
-      element: <OstWip />,
     },
     {
       path: "/workshop",

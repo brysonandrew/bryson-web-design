@@ -37,7 +37,7 @@ export const VERSE_STEPS_1 = [
   9 + 12,
   9 + 12,
   9 + 12,
-  8 + 12,
+  8 + 15,
 ];
 
 export const VERSES = [...[...Array(4)].fill(1)];

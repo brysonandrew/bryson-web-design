@@ -8,29 +8,13 @@ export const usePhase2 = () => {
 
   const play = ({ duration, start }: TPlayerConfig) => {
     const pitch = 25;
-    tundra.play({ // change to make tremelo
+    tundra.play({
       startTime: context.currentTime + start,
       duration,
-      volume: 0.4,
+      volume: 0.1,
       pitch,
       glitch: 0.1,
     });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sawtooth",
-    //   glitch: 0.001,
-    // });
-    // tundra.play({
-    //   startTime: context.currentTime + start,
-    //   duration: INTERVAL,
-    //   volume: 0.1,
-    //   pitch,
-    //   type: "sine",
-    //   glitch: 0.001,
-    // });
   };
 
   return play;

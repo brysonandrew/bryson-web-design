@@ -26,7 +26,7 @@ export const usePhaseAscent = () => {
         startTime: context.currentTime + index * d + start,
         pitch,
         duration: d * 0.5,
-        volume: 0.2,
+        volume: 0.12,
         torque: 1200,
         revs: 2400 / pitch,
       };
