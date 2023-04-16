@@ -7,22 +7,11 @@ import {
   COUNTER_WIDTH,
   HEIGHT,
   PADDING,
-  RIVER_HORSE_KEY,
   WIDTH,
 } from "../constants";
 import { Background } from "./Background";
 import { Counter } from "./Counter";
-
-const resolveBossTitle = (key?: string) => {
-  switch (key) {
-    case RIVER_HORSE_KEY: {
-      return "River Horse";
-    }
-    default: {
-      return "unknown";
-    }
-  }
-};
+import { resolveBossTitle } from "@moth-utils/resolveBossTitle";
 
 type TProps = {
   boss: TSpawn;
@@ -55,8 +44,8 @@ export const HealthBar: FC<TProps> = ({ boss, index }) => {
         anchorX="left"
         anchorY="middle"
         letterSpacing={0.4}
-        rotation={[0, Math.PI, 0]}
-        position={[WIDTH / 2 - 1.5, -PADDING * 0.5, 0]}
+        rotation={[0, 0, 0]}
+        position={[-WIDTH / 2 + 1.5, -PADDING * 0.5, 0]}
       >
         {resolveBossTitle(boss.type)}
       </Text>

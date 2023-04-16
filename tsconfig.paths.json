@@ -3,25 +3,26 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@moth-components/*": ["moth/src/components/*"],
       "@constants/*": ["src/constants/*"],
-      "@moth-constants/*": ["moth/src/constants/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@moth-hooks/*": ["moth/src/hooks/*"],
       "@icons/*": ["src/icons/*"],
-      "@moth-icons/*": ["moth/src/components/icons/*"],
       "@logic/*": ["src/logic/*"],
-      "@moth-logic/*": ["moth/src/logic/*"],
       "@main/*": ["src/main/*"],
       "@pages/*": ["src/pages/*"],
       "@state/*": ["src/state/*"],
-      "@moth-state/*": ["moth/src/state/*"],
-      "@moth-utils/*": ["moth/src/utils/*"],
+      "@utils/*": ["src/utils/*"],
+      "@windi/*": ["windi.*"],
       "@styles/*": ["src/styles/*"],
       "@t/*": ["src/types/*"],
       "@moth/*": ["moth/src/*"],
-      "@utils/*": ["src/utils/*"],
-      "@windi/*": ["windi.*"]
+      "@moth-state/*": ["moth/src/state/*"],
+      "@moth-utils/*": ["moth/src/utils/*"],
+      "@moth-components/*": ["moth/src/components/*"],
+      "@moth-constants/*": ["moth/src/constants/*"],
+      "@moth-pages/*": ["moth/src/pages/*"],
+      "@moth-hooks/*": ["moth/src/hooks/*"],
+      "@moth-icons/*": ["moth/src/components/icons/*"],
+      "@moth-logic/*": ["moth/src/logic/*"]
     }
   }
 }

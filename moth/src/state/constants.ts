@@ -1,5 +1,10 @@
-import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
-import type { TLocalState, TMothState, TState } from "./types";
+import { TRACKS } from "@pages/sample-songs/constants";
+import type {
+  TLocalState,
+  TMothState,
+  TState,
+} from "./types";
+import { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
 const context = new AudioContext();
 const master = new GainNode(context, { gain: 0.5 });
 const musicGain = new GainNode(context, { gain: 0.5 });
@@ -7,7 +12,8 @@ const soundEffectsGain = new GainNode(context, {
   gain: 0.01,
 });
 
-export const MOTH_LOCAL_STORAGE_KEY = "MOTH_LOCAL_STORAGE_KEY"
+export const MOTH_LOCAL_STORAGE_KEY =
+  "MOTH_LOCAL_STORAGE_KEY";
 
 export const SHOP_INIT = {
   NeutronicBeam: 200,
@@ -47,12 +53,16 @@ export type TSpecialsRunningRecord = Partial<
 >;
 
 export const LOCAL_STATE: TLocalState = {
-  isSound: true,
+  isSound: false,
   levels: [
     {
       name: RIVER_HORSE_KEY,
-      isLocked: true
-    }
+      isLocked: true,
+    },
+    // ...TRACKS.map((name) => ({
+    //   name,
+    //   isLocked: true,
+    // })),
   ],
   inventory: SPECIALS_999,
   controls: {
@@ -74,10 +84,10 @@ export const LOCAL_STATE: TLocalState = {
       CycleDown: "c",
     },
   },
-}
-
+};
 
 master.connect(context.destination);
+
 export const STATE: TState = {
   ...LOCAL_STATE,
   start: false,
@@ -101,10 +111,8 @@ export const STATE: TState = {
   shop: SHOP_INIT,
   specials: {},
   damage: {},
-
   note: null,
 };
-
 
 export const SPEED = 0.5;
 export const MAX_SPEED = SPEED * 2;

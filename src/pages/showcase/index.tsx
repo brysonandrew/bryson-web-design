@@ -9,8 +9,10 @@ import { GAME_ITEMS } from "@constants/games";
 import { MUSIC_ITEMS } from "@constants/music";
 
 import { LIBRARIES_ITEMS } from "@constants/libraries";
+import { useStyles } from "@styles/useStyles";
 
 export const Showcase = () => {
+  useStyles();
   const selectedPath = useSelectedItem();
   const isSelectedItem = selectedPath !== null;
 

@@ -6,7 +6,6 @@ import { useStyles } from "@styles/useStyles";
 
 export const Index = () => {
   const { start } = useMothContext();
-
   useStyles();
 
   return (

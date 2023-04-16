@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
+import { resolveBossTitle } from "@moth-utils/resolveBossTitle";
 
 const Root = styled(motion.li)``;
 const Button = styled(motion.button)``;

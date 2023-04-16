@@ -1,39 +1,20 @@
 import styled from "@emotion/styled";
-import { Canvas, extend } from "@react-three/fiber";
-import {
-  Group,
-  AmbientLight,
-  Mesh,
-  SphereGeometry,
-  MeshBasicMaterial,
-  PlaneGeometry,
-  CircleGeometry,
-} from "three";
+import { Level0 } from "@moth-components/level/0";
 import { Moth as _Moth } from "@moth-components/moth";
+import { Shell } from "@moth-pages/index/main/Shell";
+import { MothProvider } from "@moth-state/Provider";
 import { MapControls } from "@react-three/drei";
-
-extend({
-  Group,
-  AmbientLight,
-  Mesh,
-  SphereGeometry,
-  MeshBasicMaterial,
-  PlaneGeometry,
-  CircleGeometry,
-});
 
 const Root = styled.div``;
 
 export const Moth = () => (
-  <Root className="w-screen h-screen">
-    <Canvas
-      camera={{
-        position: [0, 0, -20],
-      }}
-    >
-      <ambientLight intensity={0.3} />
-      <MapControls />
-      <_Moth />
-    </Canvas>
-  </Root>
-);
+    <MothProvider>
+      <Root className="w-screen h-screen">
+        <Shell>
+          <MapControls />
+          <_Moth />
+          <Level0 />
+        </Shell>
+      </Root>
+    </MothProvider>
+  );

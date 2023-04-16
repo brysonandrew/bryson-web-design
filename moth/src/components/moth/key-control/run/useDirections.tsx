@@ -33,14 +33,14 @@ export const useDirections = ({ keyRef }: TConfig) => {
       instance.position.x < halfWidth - PADDING
     ) {
       instance.position.x =
-        instance.position.x + speed * 0.8;
+        instance.position.x - speed * 0.8;
     }
     if (
       direction === "left" &&
       instance.position.x > -halfWidth + PADDING
     ) {
       instance.position.x =
-        instance.position.x - speed * 0.8;
+        instance.position.x + speed * 0.8;
     }
   };
   return handler;

@@ -6,7 +6,7 @@ import { Hercules } from "./hercules";
 import { Bug } from "./bug";
 import { Galamodo } from "./galamodo";
 import { RiverHorse } from "./river-horse";
-import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
+import { RIVER_HORSE_KEY } from "./river-horse/constants";
 
 export const Enemies: FC = () => {
   const { killRecord, spawns } = useMothContext();
@@ -20,7 +20,7 @@ export const Enemies: FC = () => {
               <RiverHorse
                 key={`${spawn.name}-${index}`}
                 {...spawn}
-              />
+              /> 
             );
           }
           case "Galamodo": {

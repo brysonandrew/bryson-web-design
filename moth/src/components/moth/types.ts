@@ -5,23 +5,24 @@ import type {
 } from "@moth-state/constants";
 import type {
   TBlades,
-  TControlsRecord,
+  TDispatch,
   TLevel,
-  TMoth,
+  TState,
 } from "@moth-state/types";
 import type { Mesh } from "three";
 
-export type TCurrent = {
-  moth: TMoth;
+export type TCurrent = Pick<
+  TState,
+  "note" | "isSound" | "controls" | "moth"
+> & {
   spots: Mesh[];
   meshes: Mesh[];
   level: TLevel;
   blades: TBlades;
-  controls: TControlsRecord;
   activeSpecial: number;
   inventory: TInventory;
   specials: TSpecialsSwitchRecord;
-  isSound: boolean;
+  dispatch: TDispatch;
 };
 
 export type TShopNumberEntry = [TShopKey, number];

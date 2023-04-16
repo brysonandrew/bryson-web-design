@@ -10,7 +10,7 @@ import { useStyles } from "@styles/useStyles";
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
-export const Ost = () => {
+export const SampleSongs = () => {
   useStyles();
   const [nowPlaying] = useState<TTrackKey | null>(null);
 
@@ -22,7 +22,7 @@ export const Ost = () => {
   return (
     <Root className="flex flex-col items-center w-screen">
       <div className="p-4" />
-      <div className="p-4" />
+      <div className="p-4" /> 
       <div className="p-4" />
       <List className="shadow-teal-dark">
         <AnimatePresence>

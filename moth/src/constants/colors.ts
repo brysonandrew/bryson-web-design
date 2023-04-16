@@ -17,3 +17,5 @@ export const DARK_TEAL = 0x166a60;
 export const DARKER_TEAL = 0x0b3035;
 
 export const RED = 0xff2244;
+export const GREEN = 0x22ff44;
+export const BLUE = 0x2222ff;

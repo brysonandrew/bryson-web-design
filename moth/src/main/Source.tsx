@@ -1,6 +1,6 @@
 import { Index } from "@pages/index";
 import { NotFound404 } from "@pages/not-found-404";
-import { Ost } from "@pages/ost";
+import { Ost } from "@moth-pages/sample-songs";
 import { Workshop } from "@pages/workshop";
 import { Enemies } from "@pages/workshop/enemies";
 import { Bug } from "@pages/workshop/enemies/bug";

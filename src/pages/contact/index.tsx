@@ -18,11 +18,13 @@ import { Space2 } from "@components/spaces/Space2";
 import { Shell } from "@components/Shell";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border } from "@components/select/Border";
+import { useStyles } from "@styles/useStyles";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
 
 export const Contact = () => {
+  useStyles();
   const { handlers, isSelected } =
     useSelectHandlers("CONTACT_FORM");
   const [focus, setFocus] = useState<string | null>(null);

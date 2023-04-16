@@ -1,6 +1,6 @@
 import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
-import { Body } from "./Body";
+import { Body } from "./body";
 import { Kill } from "./Kill";
 import { useEnemyRef } from "../useEnemyRef";
 
@@ -10,16 +10,20 @@ export const RiverHorse: FC<TProps> = (props) => {
   return (
     <group>
       <group ref={resolveRef}>
-        <Body />
+        <Body /> 
       </group>
       {source && (
         <>
-          {[...Array(12)].map((_, index) => (
+          {[...Array(2)].map((_, index) => (
             <Kill
               key={`kill-${index}`}
               source={{
                 ...source,
-                offsetX: source.x + index * 4,
+                offsetX:
+                  source.x +
+                  index * 2
+                  // BODY_SIZE_X -
+                  // BODY_SIZE_X_05,
               }}
             />
           ))}

@@ -1,4 +1,4 @@
-import { TRACKS } from "@pages/ost/constants";
+import { TRACKS } from "@moth-pages/sample-songs/constants";
 
 export const AlbumCover = () => (
     <div>

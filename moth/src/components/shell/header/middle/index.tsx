@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
+import { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
 import { Lighthouse } from "@moth-components/icons/Lighthouse";
 import { LG } from "@moth-constants/styles";
 import { useMothContext } from "@moth-state/Context";

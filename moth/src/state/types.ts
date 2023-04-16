@@ -15,9 +15,9 @@ import type {
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
 import type { TSpawnPoint } from "@moth-components/level/0/constants";
 import type {
-  RIVER_HORSE_KEY,
   TBossKey,
 } from "@moth-components/hud/constants";
+import type { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";
@@ -167,7 +167,7 @@ export type TMoth = TSource | null;
 export type TShopKey = keyof TShopRecord;
 
 export type TLevelItem = {
-  name: TBossKey;
+  name: TBossKey | string;
   isLocked: boolean;
 };
 
