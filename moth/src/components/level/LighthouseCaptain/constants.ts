@@ -9,7 +9,7 @@ import { generateUUID } from "three/src/math/MathUtils";
 export const KOOLASUCHAS_NAME = "KOOLASUCHAS_NAME";
 
 export type TSpawnPoint = {
-  id: string;
+  progressId: string;
   threshold: number;
   count: number;
   type: TEnemyType;
@@ -19,49 +19,49 @@ export type TSpawnPoint = {
 };
 export const SPAWN_ENEMIES: TSpawnPoint[] = [
   {
-    id: generateUUID(),
-    threshold: 0.1,
+    progressId: generateUUID(),
+    threshold: 0.01,
     type: "Mite",
     count: 4,
   },
   {
-    id: generateUUID(),
-    threshold: 0.2,
+    progressId: generateUUID(),
+    threshold: 0.02,
     type: "Dynastinae",
     count: 4,
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.3,
     type: "MiteI",
     count: 4,
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.4,
     type: "Hercules",
     count: 4,
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.6,
     type: "Galamodo",
     count: 4,
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.8,
     type: "Bug",
     count: 8,
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.9,
     count: 2,
     type: "Dynastinae",
   },
   {
-    id: generateUUID(),
+    progressId: generateUUID(),
     threshold: 0.95,
     count: 1,
     type: LIGHTHOUSE_CAPTAIN_KEY,

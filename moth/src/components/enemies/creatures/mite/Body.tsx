@@ -18,7 +18,7 @@ export const Body: FC = () => (
         side={DoubleSide}
       />
     </mesh>
-    <group position={[0, 6, 1]}>
+    <group position={[0, 6, -1.5]}>
       <Eyes span={2} color={RED} />
     </group>
   </group>

@@ -17,14 +17,14 @@ export const useSpawn = () => {
     SPAWN_ENEMIES.forEach((spawnPoint) => {
       if (
         !level?.position ||
-        progressRef.current[spawnPoint.id]
+        progressRef.current[spawnPoint.progressId]
       )
         return;
       if (
         -level.position.y >
         height * spawnPoint.threshold
       ) {
-        progressRef.current[spawnPoint.id] = true;
+        progressRef.current[spawnPoint.progressId] = true;
         handleTriggerSpawn(spawnPoint);
       }
     });

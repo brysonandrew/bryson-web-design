@@ -23,6 +23,7 @@ export const ENEMY_RECORD = {
 import { generateUUID } from "three/src/math/MathUtils";
 
 export const BASE_ENEMY_CONFIG = {
+  progressId: generateUUID(),
   id: generateUUID(),
   width: 10,
   height: 10,

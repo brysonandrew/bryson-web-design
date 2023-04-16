@@ -26,7 +26,7 @@ export const Gun: FC<TProps> = ({
     range,
   }); 
   if (shots.length === 0) return null;
-
+ 
   return (
     <>
       {shots.map((shot) => (

@@ -116,6 +116,7 @@ export const reducer = (
       };
     }
     case "kill": {
+      console.log(state.enemies);
       const enemies = state.enemies.filter(
         (v) => v.id !== value.id,
       );

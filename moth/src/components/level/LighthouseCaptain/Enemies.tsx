@@ -5,6 +5,8 @@ import { Bug } from "@moth-components/enemies/creatures/bug";
 import { Dynastinae } from "@moth-components/enemies/creatures/dynastinae";
 import { Galamodo } from "@moth-components/enemies/creatures/galamodo";
 import { Hercules } from "@moth-components/enemies/creatures/hercules";
+import { Mite } from "@moth-components/enemies/creatures/mite";
+import { MiteI } from "@moth-components/enemies/creatures/mite-i";
 import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
 import { LighthouseCaptain } from "@moth-components/enemies/bosses/lighthouse-captain";
 
@@ -42,6 +44,22 @@ export const Enemies: FC = () => {
           case "Hercules": {
             return (
               <Hercules
+                key={`${spawn.id}-${index}`}
+                {...spawn}
+              />
+            );
+          }
+          case "Mite": {
+            return (
+              <Mite
+                key={`${spawn.id}-${index}`}
+                {...spawn}
+              /> 
+            );
+          }
+          case "MiteI": {
+            return (
+              <MiteI
                 key={`${spawn.id}-${index}`}
                 {...spawn}
               />

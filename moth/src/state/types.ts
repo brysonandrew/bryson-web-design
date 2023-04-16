@@ -54,7 +54,8 @@ export type TMothState = {
 };
 
 export type TSource = Partial<TSpawnPoint> &
-  Pick<TSpawnPoint, "id"> & {
+  Pick<TSpawnPoint, "progressId"> & {
+    id: string;
     width: number;
     height: number;
     x: number;
@@ -75,7 +76,11 @@ export type TEnemyType =
   | "Galamodo"
   | typeof LIGHTHOUSE_CAPTAIN_KEY;
 
-export type TSpawn = Pick<TSpawnPoint, "health" | "id"> & {
+export type TSpawn = Pick<
+  TSpawnPoint,
+  "health" | "progressId"
+> & {
+  id: string;
   type?: TEnemyType;
   width: number;
   height: number;
