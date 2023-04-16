@@ -42,7 +42,6 @@ export const useKeyControl = () => {
     specials,
     isSound,
     note,
-    dispatch
   } = useMothContext();
   const current: TCurrent = {
     moth,
@@ -56,8 +55,8 @@ export const useKeyControl = () => {
     specials,
     isSound,
     note,
-    dispatch
   };
+  const { dispatch } = useMothContext();
   const keyRef = useRef<TCurrent>(current);
   keyRef.current = current;
 
@@ -97,7 +96,7 @@ export const useKeyControl = () => {
           speech.play();
         }
         if (keyRef.current.note) {
-          keyRef.current.dispatch({
+          dispatch({
             type: "clear-note",
             value: null,
           });

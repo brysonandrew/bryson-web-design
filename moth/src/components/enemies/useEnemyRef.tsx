@@ -5,7 +5,7 @@ import type { Group } from "three";
 type TConfig = TSpawn;
 export const useEnemyRef = (spawn: TConfig) => {
   const { dispatch, enemyRecord } = useMothContext();
-  const source = enemyRecord[spawn.name];
+  const source = enemyRecord[spawn.id];
 
   const resolveRef = (instance: Group) => {
     if (instance && !source) {

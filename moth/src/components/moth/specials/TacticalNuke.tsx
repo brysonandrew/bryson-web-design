@@ -13,7 +13,6 @@ export const TacticalNuke: FC = () => {
 
   useMassCollision({
     name: "TacticalNuke",
-    
     width,
     height,
     ref,

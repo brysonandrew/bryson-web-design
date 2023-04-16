@@ -10,7 +10,7 @@ import {
 } from "./constants";
 
 type TProps = TSpawn;
-export const LighthouseCaptain: FC<TProps> = (props) => {
+export const LeatherFlapper: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
   return (
     <group>

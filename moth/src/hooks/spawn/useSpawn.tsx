@@ -2,8 +2,8 @@ import { HEIGHT } from "@moth-constants/index";
 import { useFrame } from "@react-three/fiber";
 import { useMothContext } from "@moth-state/Context";
 import { useRef } from "react";
-import { SPAWN_POINTS } from "../../components/level/0/constants";
 import { useTriggerSpawn } from "./useTriggerSpawn";
+import { SPAWN_ENEMIES } from "@moth-components/level/LighthouseCaptain/constants";
 
 type TProgressRecord = Record<string, true>;
 
@@ -14,17 +14,17 @@ export const useSpawn = () => {
   const handleTriggerSpawn = useTriggerSpawn();
 
   useFrame(() => {
-    SPAWN_POINTS.forEach((spawnPoint) => {
+    SPAWN_ENEMIES.forEach((spawnPoint) => {
       if (
         !level?.position ||
-        progressRef.current[spawnPoint.name]
+        progressRef.current[spawnPoint.id]
       )
         return;
       if (
         -level.position.y >
         height * spawnPoint.threshold
       ) {
-        progressRef.current[spawnPoint.name] = true;
+        progressRef.current[spawnPoint.id] = true;
         handleTriggerSpawn(spawnPoint);
       }
     });

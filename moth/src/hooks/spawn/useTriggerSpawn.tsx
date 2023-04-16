@@ -1,9 +1,8 @@
 import { HEIGHT } from "@moth-constants/index";
 import { useViewport } from "@moth-hooks/useViewport";
 import { useMothContext } from "@moth-state/Context";
-import { generateUUID } from "three/src/math/MathUtils";
 import { resolveSpawnEnemies } from "../../components/enemies/resolveSpawnEnemies";
-import type { TSpawnPoint } from "../../components/level/0/constants";
+import type { TSpawnPoint } from "@moth-components/level/LighthouseCaptain/constants";
 
 export const useTriggerSpawn = () => {
   const { dispatch, spawns } = useMothContext();
@@ -11,7 +10,7 @@ export const useTriggerSpawn = () => {
   const height = HEIGHT;
 
   const handler = ({
-    name,
+    id,
     threshold,
     count,
     type,
@@ -21,12 +20,12 @@ export const useTriggerSpawn = () => {
     const value = resolveSpawnEnemies({
       count,
       spawn: (_, i) => ({
+        id,
         type,
         instance: null,
-        name: generateUUID(),
-        x:
-          viewport.width * (i / count) -
-          viewport.width * 0.125,
+        x:0,
+          // viewport.width * (i / count) -
+          // viewport.width * 0.125,
         y,
         width: 10,
         height: 10,

@@ -7,11 +7,12 @@ import {
   BODY_SIZE_X_05,
   BODY_SIZE_Y_0125,
   BODY_SIZE_Y_05,
+  WING_SPAN_SCALE,
 } from "../constants";
 
 export const Wings: FC = () => (
-  <group scale={2}>
-    <mesh rotation={[0, 0, 0]}>
+  <group scale={WING_SPAN_SCALE}>
+    <mesh>
       <planeGeometry
         args={[BODY_SIZE_X, BODY_SIZE_Y_0125]}
       />
@@ -32,7 +33,6 @@ export const Wings: FC = () => (
               BODY_SIZE_Y_05,
             1,
           ]}
-          rotation={[0, 0, 0]}
         >
           <planeGeometry
             args={[BODY_SIZE_X_0125, BODY_SIZE_X_05]}

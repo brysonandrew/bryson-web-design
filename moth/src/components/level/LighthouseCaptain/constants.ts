@@ -1,56 +1,72 @@
-import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
+import {
+  LIGHTHOUSE_CAPTAIN_HEIGHT,
+  LIGHTHOUSE_CAPTAIN_KEY,
+  LIGHTHOUSE_CAPTAIN_WIDTH,
+} from "@moth-components/enemies/bosses/lighthouse-captain/constants";
 import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 
 export const KOOLASUCHAS_NAME = "KOOLASUCHAS_NAME";
 
 export type TSpawnPoint = {
+  id: string;
   threshold: number;
   count: number;
-  name: string;
   type: TEnemyType;
   width?: number;
   height?: number;
   health?: number;
 };
-export const SPAWN_POINTS: TSpawnPoint[] = [
+export const SPAWN_ENEMIES: TSpawnPoint[] = [
   {
-    name: generateUUID(),
-    threshold: 0.04,
-    count: 2,
-    type: "Dynastinae",
+    id: generateUUID(),
+    threshold: 0.1,
+    type: "Mite",
+    count: 4,
   },
   {
-    name: generateUUID(),
+    id: generateUUID(),
     threshold: 0.2,
     type: "Dynastinae",
     count: 4,
   },
   {
-    name: generateUUID(),
+    id: generateUUID(),
+    threshold: 0.3,
+    type: "MiteI",
+    count: 4,
+  },
+  {
+    id: generateUUID(),
     threshold: 0.4,
     type: "Hercules",
     count: 4,
   },
   {
-    name: generateUUID(),
+    id: generateUUID(),
     threshold: 0.6,
     type: "Galamodo",
     count: 4,
   },
   {
-    name: generateUUID(),
+    id: generateUUID(),
     threshold: 0.8,
     type: "Bug",
     count: 8,
   },
   {
-    name: generateUUID(),
-    threshold: 0,
+    id: generateUUID(),
+    threshold: 0.9,
+    count: 2,
+    type: "Dynastinae",
+  },
+  {
+    id: generateUUID(),
+    threshold: 0.95,
     count: 1,
-    type: RIVER_HORSE_KEY,
-    width: 90,
-    height: 60, 
+    type: LIGHTHOUSE_CAPTAIN_KEY,
+    width: LIGHTHOUSE_CAPTAIN_WIDTH,
+    height: LIGHTHOUSE_CAPTAIN_HEIGHT,
     health: 1000,
   },
 ];

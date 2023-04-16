@@ -68,7 +68,7 @@ export const Start: FC = () => {
         </h1>
         <div className="p-1" />
         <motion.button
-          className="relative text-xl text-teal px-4 py-2"
+          className="relative text-xl text-teal px-4 py-2 z-10"
           onTap={handleStart}
           style={{
             filter: `drop-shadow(0px 0px 12px ${COLORS["teal"]})`,
@@ -89,8 +89,6 @@ export const Start: FC = () => {
         )}
       >
         <Controls />
-        <div className="p-2" />
-        <Levels />
       </div>
     </Root>
   );

@@ -109,15 +109,15 @@ export const reducer = (
         ...state,
         damage: {
           ...state.damage,
-          [value.name]:
-            (state.damage[value.name] ?? 0) +
+          [value.id]:
+            (state.damage[value.id] ?? 0) +
             (value.amount ?? 1),
         },
       };
     }
     case "kill": {
       const enemies = state.enemies.filter(
-        (v) => v.name !== value.name,
+        (v) => v.id !== value.id,
       );
 
       return {
@@ -125,7 +125,7 @@ export const reducer = (
         enemies,
         killRecord: {
           ...state.killRecord,
-          [value.name]: {
+          [value.id]: {
             source: value,
             throes: 100,
           },
@@ -171,7 +171,7 @@ export const reducer = (
         enemies: [...state.enemies, value],
         enemyRecord: {
           ...state.enemyRecord,
-          [value.name]: {
+          [value.id]: {
             ...value,
           },
         },
@@ -181,7 +181,7 @@ export const reducer = (
       return {
         ...state,
         enemies: state.enemies.map((v) => {
-          if (v.name === value.name) {
+          if (v.id === value.id) {
             return {
               ...v,
               ...value,

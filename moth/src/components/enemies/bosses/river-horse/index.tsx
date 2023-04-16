@@ -3,6 +3,12 @@ import type { FC } from "react";
 import { Body } from "./body";
 import { Kill } from "./Kill";
 import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
+import {
+  BODY_SIZE_X,
+  BODY_SIZE_X_0125,
+  BODY_SIZE_X_05,
+  WING_SPAN_SCALE,
+} from "./constants";
 
 type TProps = TSpawn;
 export const RiverHorse: FC<TProps> = (props) => {
@@ -10,7 +16,7 @@ export const RiverHorse: FC<TProps> = (props) => {
   return (
     <group>
       <group ref={resolveRef}>
-        <Body /> 
+        <Body />
       </group>
       {source && (
         <>
@@ -20,10 +26,9 @@ export const RiverHorse: FC<TProps> = (props) => {
               source={{
                 ...source,
                 offsetX:
-                  source.x +
-                  index * 2
-                  // BODY_SIZE_X -
-                  // BODY_SIZE_X_05,
+                  source.instance.position.x +
+                  index * BODY_SIZE_X * WING_SPAN_SCALE -
+                  BODY_SIZE_X_05 * WING_SPAN_SCALE,
               }}
             />
           ))}

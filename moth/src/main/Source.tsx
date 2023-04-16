@@ -1,27 +1,22 @@
 import { Index } from "@pages/index";
 import { NotFound404 } from "@pages/not-found-404";
-import { Ost } from "@moth-pages/sample-songs";
 import { Workshop } from "@pages/workshop";
 import { Enemies } from "@pages/workshop/enemies";
-import { Bug } from "@pages/workshop/enemies/bug";
-import { Dynastinae } from "@pages/workshop/enemies/dynastinae";
-import { Galamodo } from "@pages/workshop/enemies/galamodo";
-import { Hercules } from "@pages/workshop/enemies/hercules";
-import { RiverHorse } from "@pages/workshop/enemies/river-horse";
+import { Bug } from "@moth-pages/workshop/enemies/creatures/bug";
+import { Dynastinae } from "@moth-pages/workshop/enemies/creatures/dynastinae";
+import { RiverHorse } from "@moth-pages/workshop/enemies/bosses/river-horse";
 import { Moth } from "@pages/workshop/moth";
 import { Abilities } from "@pages/workshop/sounds/abilities";
 import { Speech } from "@pages/workshop/speech";
 import { useRoutes } from "react-router-dom";
+import { Hercules } from "@moth-pages/workshop/enemies/creatures/hercules";
+import { Galamodo } from "@moth-pages/workshop/enemies/creatures/galamodo";
 
 export const Source = () => {
   const element = useRoutes([
     {
       path: "/",
       element: <Index />,
-    },
-    {
-      path: "/ost",
-      element: <Ost />,
     },
     {
       path: "/workshop",

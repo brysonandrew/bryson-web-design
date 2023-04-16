@@ -20,7 +20,6 @@ export type TCurrent = Pick<
   activeSpecial: number;
   inventory: TInventory;
   specials: TSpecialsSwitchRecord;
-  dispatch: TDispatch;
 };
 
 export type TShopNumberEntry = [TShopKey, number];

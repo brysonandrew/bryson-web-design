@@ -6,8 +6,8 @@ import type {
   TState,
 } from "./types";
 import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
-import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
 import { KOOLASUCHAS_KEY } from "@moth-components/enemies/bosses/koolasuchas/constants";
+import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
 const context = new AudioContext();
 const master = new GainNode(context, { gain: 0.5 });
 const musicGain = new GainNode(context, { gain: 0.5 });
@@ -42,14 +42,7 @@ const SPECIALS_999: TInventory = SHOP_KEYS.reduce(
   {},
 );
 
-export const LEVEL_KEYS = [
-  RIVER_HORSE_KEY,
-  KOOLASUCHAS_KEY,
-  "UNKNOWN1",
-  "UNKNOWN2",
-  LIGHTHOUSE_CAPTAIN_KEY,
-] as const;
-
+export const LEVEL_KEYS = [LIGHTHOUSE_CAPTAIN_KEY] as const;
 
 export const LOCAL_STATE: TLocalState = {
   isSound: false,
@@ -79,6 +72,7 @@ master.connect(context.destination);
 
 export const STATE: TState = {
   ...LOCAL_STATE,
+  currentLevel: LEVEL_KEYS[0],
   levels: LEVEL_KEYS,
   start: false,
   context,

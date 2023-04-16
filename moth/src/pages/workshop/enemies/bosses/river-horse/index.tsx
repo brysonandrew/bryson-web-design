@@ -26,7 +26,7 @@ export const RiverHorse = () => (
   
   <Shell>
     <OrbitControls />
-    <group rotation={[0, Math.PI, 0]}>
+    <group>
       <_RiverHorse {...props} instance={null} />
     </group>
   </Shell>

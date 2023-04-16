@@ -4,7 +4,7 @@ import { Limbs } from "./Limbs";
 import { Wings } from "./Wings";
 
 export const Body: FC = () => (
-  <group scale={0.2}>
+  <group>
     <Wings />
     <group position={[0, 0, 1]}>
       <Limbs />

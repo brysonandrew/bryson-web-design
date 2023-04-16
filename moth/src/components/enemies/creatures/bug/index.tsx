@@ -17,3 +17,4 @@ export const Bug: FC<TProps> = (props) => {
     </group>
   );
 };
+ 

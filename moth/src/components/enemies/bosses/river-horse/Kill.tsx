@@ -10,9 +10,9 @@ type TProps = {
 };
 export const Kill: FC<TProps> = ({ source }) => {
   const shotsRef = useRef<TShotsConfig>({
-    firingRate: 0.001,
+    firingRate: 0.000001,
     firingStart: 0,
-    firingSpeed: -4,
+    firingSpeed: -2,
     range: 100,
   });
   const { moth } = useMothContext();

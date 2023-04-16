@@ -8,10 +8,10 @@ import type {
 } from "react";
 import type { Group, Mesh } from "three";
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
-import type { TSpawnPoint } from "@moth-components/level/0/constants";
 import type { TBossKey } from "@moth-components/hud/constants";
-import type { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
 import type { LEVEL_KEYS } from "./constants";
+import type { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
+import type { TSpawnPoint } from "@moth-components/level/LighthouseCaptain/constants";
 
 export type TInventoryRecord = Record<TShopKey, number>;
 export type TInventory = Partial<TInventoryRecord>;
@@ -53,29 +53,30 @@ export type TMothState = {
   specials: TSpecialsRunningRecord;
 };
 
-export type TSource = Partial<TSpawnPoint> & {
-  name: string;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-  instance: Group;
-  xp?: number;
-  health?: number;
-  offsetX?: number;
-  offsetY?: number;
-};
+export type TSource = Partial<TSpawnPoint> &
+  Pick<TSpawnPoint, "id"> & {
+    width: number;
+    height: number;
+    x: number;
+    y: number;
+    instance: Group;
+    xp?: number;
+    health?: number;
+    offsetX?: number;
+    offsetY?: number;
+  };
 
 export type TEnemyType =
+  | "Mite"
+  | "MiteI"
   | "Hercules"
   | "Dynastinae"
   | "Bug"
   | "Galamodo"
-  | typeof RIVER_HORSE_KEY;
+  | typeof LIGHTHOUSE_CAPTAIN_KEY;
 
-export type TSpawn = Pick<TSpawnPoint, "health"> & {
+export type TSpawn = Pick<TSpawnPoint, "health" | "id"> & {
   type?: TEnemyType;
-  name: string;
   width: number;
   height: number;
   x: number;
@@ -130,6 +131,7 @@ export type TKill = {
 export type TKillRecord = Record<string, TKill | null>;
 
 export type TState = TMothInit & {
+  currentLevel: null | TLevelKey;
   damage: Record<string, any>;
   start: null | boolean;
   isSound: boolean;
@@ -174,7 +176,7 @@ export type TMoth = TSource | null;
 export type TShopKey = keyof TShopRecord;
 
 export type TLevelItem = {
-  name: TBossKey | string;
+  id: TBossKey | string;
   isLocked: boolean;
 };
 
@@ -193,7 +195,7 @@ export type TAction =
     }
   | {
       type: "damage";
-      value: Pick<TSource, "name"> & {
+      value: Pick<TSource, "id"> & {
         amount: number;
       };
     }

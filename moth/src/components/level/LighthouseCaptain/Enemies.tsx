@@ -1,32 +1,32 @@
 import { useMothContext } from "@moth-state/Context";
 import type { FC } from "react";
-import { Dynastinae } from "./creatures/dynastinae";
 import type { TSpawn } from "@moth-state/types";
-import { Bug } from "./creatures/bug";
-import { Galamodo } from "./creatures/galamodo";
-import { RiverHorse } from "./bosses/river-horse";
-import { RIVER_HORSE_KEY } from "./bosses/river-horse/constants";
-import { Hercules } from "./creatures/hercules";
+import { Bug } from "@moth-components/enemies/creatures/bug";
+import { Dynastinae } from "@moth-components/enemies/creatures/dynastinae";
+import { Galamodo } from "@moth-components/enemies/creatures/galamodo";
+import { Hercules } from "@moth-components/enemies/creatures/hercules";
+import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
+import { LighthouseCaptain } from "@moth-components/enemies/bosses/lighthouse-captain";
 
 export const Enemies: FC = () => {
   const { killRecord, spawns } = useMothContext();
   return (
     <group>
       {spawns.map((spawn: TSpawn, index: number) => {
-        if (killRecord[spawn.name]) return;
+        if (killRecord[spawn.id]) return;
         switch (spawn.type) {
-          case RIVER_HORSE_KEY: {
+          case LIGHTHOUSE_CAPTAIN_KEY: {
             return (
-              <RiverHorse
-                key={`${spawn.name}-${index}`}
+              <LighthouseCaptain
+                key={`${spawn.id}-${index}`}
                 {...spawn}
-              /> 
+              />
             );
           }
           case "Galamodo": {
             return (
               <Galamodo
-                key={`${spawn.name}-${index}`}
+                key={`${spawn.id}-${index}`}
                 {...spawn}
               />
             );
@@ -34,7 +34,7 @@ export const Enemies: FC = () => {
           case "Bug": {
             return (
               <Bug
-                key={`${spawn.name}-${index}`}
+                key={`${spawn.id}-${index}`}
                 {...spawn}
               />
             );
@@ -42,7 +42,7 @@ export const Enemies: FC = () => {
           case "Hercules": {
             return (
               <Hercules
-                key={`${spawn.name}-${index}`}
+                key={`${spawn.id}-${index}`}
                 {...spawn}
               />
             );
@@ -50,7 +50,7 @@ export const Enemies: FC = () => {
           default: {
             return (
               <Dynastinae
-                key={`${spawn.name}-${index}`}
+                key={`${spawn.id}-${index}`}
                 {...spawn}
               />
             );

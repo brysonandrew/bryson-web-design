@@ -20,7 +20,7 @@ type TProps = {
 export const HealthBar: FC<TProps> = ({ boss, index }) => {
   const viewportHeight = useViewportHeight();
   const { damage: damageRecord } = useMothContext();
-  const damage = damageRecord[boss.name];
+  const damage = damageRecord[boss.id];
   const deathPercent = damage / (boss.health ?? 1);
   let healthLeft =
     COUNTER_WIDTH - deathPercent * COUNTER_WIDTH;
