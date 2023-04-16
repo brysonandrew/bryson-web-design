@@ -2,7 +2,7 @@ import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
 import { Body } from "./body";
 import { Kill } from "./Kill";
-import { useEnemyRef } from "../useEnemyRef";
+import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 
 type TProps = TSpawn;
 export const RiverHorse: FC<TProps> = (props) => {

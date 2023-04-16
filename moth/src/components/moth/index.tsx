@@ -12,7 +12,7 @@ export const Moth: FC = () => {
   const resolveRef = useMothRef();
 
   return (
-    <group rotation={[0, Math.PI, 0]}>
+    <group>
       <group name={MOTH_NAME} ref={resolveRef}>
         <Body />
       </group>

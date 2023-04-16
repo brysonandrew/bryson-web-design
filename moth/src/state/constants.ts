@@ -1,10 +1,13 @@
-import { TRACKS } from "@pages/sample-songs/constants";
 import type {
+  TInventory,
   TLocalState,
   TMothState,
+  TShopKey,
   TState,
 } from "./types";
-import { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
+import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
+import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
+import { KOOLASUCHAS_KEY } from "@moth-components/enemies/bosses/koolasuchas/constants";
 const context = new AudioContext();
 const master = new GainNode(context, { gain: 0.5 });
 const musicGain = new GainNode(context, { gain: 0.5 });
@@ -24,14 +27,9 @@ export const SHOP_INIT = {
   // BuffaloBillSuit: 500,
 } as const;
 
-export type TShopKey = keyof typeof SHOP_INIT;
-
 export const SHOP_KEYS = Object.keys(
   SHOP_INIT,
 ) as TShopKey[];
-
-export type TInventoryRecord = Record<TShopKey, number>;
-export type TInventory = Partial<TInventoryRecord>;
 
 const SPECIALS_999: TInventory = SHOP_KEYS.reduce(
   (a: TInventory, v: TShopKey) => {
@@ -44,26 +42,17 @@ const SPECIALS_999: TInventory = SHOP_KEYS.reduce(
   {},
 );
 
-export type TSpecialsSwitchRecord = Partial<
-  Record<TShopKey, boolean>
->;
+export const LEVEL_KEYS = [
+  RIVER_HORSE_KEY,
+  KOOLASUCHAS_KEY,
+  "UNKNOWN1",
+  "UNKNOWN2",
+  LIGHTHOUSE_CAPTAIN_KEY,
+] as const;
 
-export type TSpecialsRunningRecord = Partial<
-  Record<TShopKey, number>
->;
 
 export const LOCAL_STATE: TLocalState = {
   isSound: false,
-  levels: [
-    {
-      name: RIVER_HORSE_KEY,
-      isLocked: true,
-    },
-    // ...TRACKS.map((name) => ({
-    //   name,
-    //   isLocked: true,
-    // })),
-  ],
   inventory: SPECIALS_999,
   controls: {
     direction: {
@@ -90,6 +79,7 @@ master.connect(context.destination);
 
 export const STATE: TState = {
   ...LOCAL_STATE,
+  levels: LEVEL_KEYS,
   start: false,
   context,
   master,

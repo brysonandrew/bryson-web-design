@@ -16,7 +16,7 @@ import {
 } from "three";
 import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
-import { Bug as _Bug } from "@moth-components/enemies/bug";
+import { Bug as _Bug } from "@moth-components/enemies/creatures/bug";
 
 extend({
   Group,

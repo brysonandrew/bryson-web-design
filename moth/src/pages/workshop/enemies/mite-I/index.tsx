@@ -16,7 +16,7 @@ import {
 } from "three";
 import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
-import { MiteI as _MiteI } from "@moth-components/enemies/mite-i";
+import { MiteI as _MiteI } from "@moth-components/enemies/creatures/mite-i";
 
 extend({
   Group,

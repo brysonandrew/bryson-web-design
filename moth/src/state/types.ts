@@ -7,17 +7,24 @@ import type {
   MutableRefObject,
 } from "react";
 import type { Group, Mesh } from "three";
-import type {
-  TInventory,
-  TSpecialsRunningRecord,
-  TSpecialsSwitchRecord,
-} from "./constants";
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
 import type { TSpawnPoint } from "@moth-components/level/0/constants";
-import type {
-  TBossKey,
-} from "@moth-components/hud/constants";
-import type { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
+import type { TBossKey } from "@moth-components/hud/constants";
+import type { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
+import type { LEVEL_KEYS } from "./constants";
+
+export type TInventoryRecord = Record<TShopKey, number>;
+export type TInventory = Partial<TInventoryRecord>;
+export type TSpecialsSwitchRecord = Partial<
+  Record<TShopKey, boolean>
+>;
+
+export type TSpecialsRunningRecord = Partial<
+  Record<TShopKey, number>
+>;
+
+export type TLevelsTuple = typeof LEVEL_KEYS;
+export type TLevelKey = TLevelsTuple[number];
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";
@@ -139,7 +146,7 @@ export type TState = TMothInit & {
   spawns: TSpawn[];
   enemyRecord: Record<string, TSource>;
   killRecord: TKillRecord;
-  levels: TLevelItem[];
+  levels: TLevelsTuple;
   controls: TControlsRecord;
   shop: TShopRecord;
   inventory: TInventory;
@@ -148,7 +155,7 @@ export type TState = TMothInit & {
 
 export type TLocalState = Pick<
   TState,
-  "controls" | "isSound" | "levels" | "inventory"
+  "controls" | "isSound" | "inventory"
 >;
 
 export type TContext = TState & {

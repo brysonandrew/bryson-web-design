@@ -1,12 +1,10 @@
 import type {
-  TInventory,
-  TShopKey,
-  TSpecialsSwitchRecord,
-} from "@moth-state/constants";
-import type {
   TBlades,
   TDispatch,
+  TInventory,
   TLevel,
+  TShopKey,
+  TSpecialsSwitchRecord,
   TState,
 } from "@moth-state/types";
 import type { Mesh } from "three";

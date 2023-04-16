@@ -1,4 +1,4 @@
-import { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
+import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
 import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 

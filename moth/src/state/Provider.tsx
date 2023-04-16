@@ -35,14 +35,12 @@ export const MothProvider: FC<TProviderProps> = ({
 
       const {
         controls,
-        levels,
         isSound,
         inventory,
       } = nextState;
 
       setSavedState({
         controls,
-        levels,
         isSound,
         inventory,
       });

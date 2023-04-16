@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
-import { Lock } from "@moth-components/icons/Lock";
-import { Tick } from "@moth-components/icons/Tick";
+import { Circle } from "@moth-components/icons/Circle";
 import { useMothContext } from "@moth-state/Context";
-import type { TLevelItem } from "@moth-state/types";
+import type { TLevelKey } from "@moth-state/types";
 import { resolveBossTitle } from "@moth-utils/resolveBossTitle";
 import clsx from "clsx";
 import { motion } from "framer-motion";
@@ -24,17 +23,18 @@ export const Levels: FC = () => {
       <h3 className="text-xl">Levels</h3>
       <div className="p-1" />
       <List className="flex flex-col items-start">
-        {levels.map((level: TLevelItem, index) => (
-          <Fragment key={level.name}>
+        {levels.map((level: TLevelKey, index) => (
+          <Fragment key={level}>
             {index !== 0 && <li className="p-1" />}
             <li className="flex items-center rounded-full shadow-teal-02">
-              {level.isLocked ? (
+              <Circle />
+              {/* {level.isLocked ? (
                 <Lock />
               ) : (
                 <Tick isChecked />
-              )}
+              )} */}
               <div className="p-1" />
-              <div>{resolveBossTitle(level.name)}</div>
+              <div>{resolveBossTitle(level)}</div>
             </li>
           </Fragment>
         ))}

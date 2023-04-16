@@ -1,12 +1,12 @@
 import { useMothContext } from "@moth-state/Context";
 import type { FC } from "react";
-import { Dynastinae } from "./dynastinae";
+import { Dynastinae } from "./creatures/dynastinae";
 import type { TSpawn } from "@moth-state/types";
-import { Hercules } from "./hercules";
-import { Bug } from "./bug";
-import { Galamodo } from "./galamodo";
-import { RiverHorse } from "./river-horse";
-import { RIVER_HORSE_KEY } from "./river-horse/constants";
+import { Bug } from "./creatures/bug";
+import { Galamodo } from "./creatures/galamodo";
+import { RiverHorse } from "./bosses/river-horse";
+import { RIVER_HORSE_KEY } from "./bosses/river-horse/constants";
+import { Hercules } from "./creatures/hercules";
 
 export const Enemies: FC = () => {
   const { killRecord, spawns } = useMothContext();

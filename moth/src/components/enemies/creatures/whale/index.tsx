@@ -1,6 +1,6 @@
 import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
-import { useEnemyRef } from "../useEnemyRef";
+import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 import { Body } from "./Body";
 import { Kill } from "./Kill";
 

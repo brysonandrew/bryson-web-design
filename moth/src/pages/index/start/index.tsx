@@ -85,7 +85,7 @@ export const Start: FC = () => {
       </div>
       <div
         className={clsx(
-          "flex justify-between absolute top-0 left-0 w-full py-2 px-4",
+          "flex absolute top-0 left-0 w-full py-2 px-4",
         )}
       >
         <Controls />

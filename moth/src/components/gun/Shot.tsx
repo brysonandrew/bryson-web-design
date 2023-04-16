@@ -16,7 +16,7 @@ export const Shot: FC<TProps> = (props) => {
 
   useFrame(() => {
     if (shot !== null) {
-      const x = -shot.position.x;
+      const x = shot.position.x;
       const y = shot.position.y;
       onKill({ x, y, mesh: shot, name });
       shot.position.y = shot.position.y + speed;

@@ -9,7 +9,7 @@ import {
   PlaneGeometry,
   CircleGeometry,
 } from "three";
-import { Galamodo as _Galamodo } from "@moth-components/enemies/galamodo";
+import { Galamodo as _Galamodo } from "@moth-components/enemies/creatures/galamodo";
 import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
 

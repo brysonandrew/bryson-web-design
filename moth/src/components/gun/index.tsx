@@ -15,7 +15,7 @@ export const Gun: FC<TProps> = ({
 }) => {
   const { source } = killConfig;
   const { shots, onRemove } = useShots({
-    source,
+    source, 
     shotsRef,
   });
   const { firingSpeed, range } = shotsRef.current;
@@ -24,7 +24,7 @@ export const Gun: FC<TProps> = ({
     onRemove,
     speed: firingSpeed,
     range,
-  });
+  }); 
   if (shots.length === 0) return null;
 
   return (

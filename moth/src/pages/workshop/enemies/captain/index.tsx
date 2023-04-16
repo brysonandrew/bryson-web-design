@@ -16,7 +16,7 @@ import {
 } from "three";
 import { BASE_ENEMY_CONFIG } from "@moth-components/enemies/constants";
 import { OrbitControls } from "@react-three/drei";
-import { Captain as _Captain } from "@moth-components/enemies/captian";
+import { Captain as _Captain } from "@moth-components/enemies/creatures/captian";
 
 extend({
   Group,

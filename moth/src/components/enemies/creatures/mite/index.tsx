@@ -1,12 +1,13 @@
 import type { TSpawn } from "@moth-state/types";
 import type { FC } from "react";
+import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 import { Body } from "./Body";
 import { Kill } from "./Kill";
-import { useEnemyRef } from "../useEnemyRef";
 
 type TProps = TSpawn;
-export const Dynastinae: FC<TProps> = (props) => {
+export const Mite: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
+
   return (
     <group>
       <group ref={resolveRef}>

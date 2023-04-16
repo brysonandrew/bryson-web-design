@@ -1,4 +1,4 @@
-import { RIVER_HORSE_KEY } from "@moth-components/enemies/river-horse/constants";
+import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
 
 export const HEIGHT = 5;
 export const WIDTH = 100;
