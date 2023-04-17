@@ -10,7 +10,6 @@ type TProgressRecord = Record<string, true>;
 export const useSpawn = () => {
   const { level } = useMothContext();
   const progressRef = useRef<TProgressRecord>({});
-  const height = HEIGHT;
   const handleTriggerSpawn = useTriggerSpawn();
 
   useFrame(() => {
@@ -20,9 +19,10 @@ export const useSpawn = () => {
         progressRef.current[spawnPoint.progressId]
       )
         return;
+
       if (
         -level.position.y >
-        height * spawnPoint.threshold
+        HEIGHT * spawnPoint.threshold
       ) {
         progressRef.current[spawnPoint.progressId] = true;
         handleTriggerSpawn(spawnPoint);

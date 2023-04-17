@@ -5,7 +5,6 @@ import { Kill } from "./Kill";
 import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 import {
   BODY_SIZE_X,
-  BODY_SIZE_X_0125,
   BODY_SIZE_X_05,
   WING_SPAN_SCALE,
 } from "./constants";

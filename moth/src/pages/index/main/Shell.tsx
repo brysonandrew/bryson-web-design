@@ -12,6 +12,7 @@ import {
 import type { TChildren } from "@t/index";
 import { Fullscreen } from "./Fullscreen";
 import { CanvasShell } from "./CanvasShell";
+import { OrbitControls } from "@react-three/drei";
 
 extend({
   Group,
@@ -31,6 +32,7 @@ export const Shell: FC<TProps> = ({ children }) => (
         position: [0, 0, 80],
       }}
     >
+      <OrbitControls/>
       <CanvasShell>{children}</CanvasShell>
     </Canvas>
   </Fullscreen>

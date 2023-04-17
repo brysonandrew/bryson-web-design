@@ -10,7 +10,10 @@ export const resolveX = ({
   count,
   index,
 }: TResolveXConfig) => {
-  const d = viewport.width * (index / (count - 1)) * OFFSET;
+  const d =
+    viewport.width *
+    (index / Math.max(1, count - 1)) *
+    OFFSET;
   const offset = viewport.width * 0.5 * OFFSET;
   return d - offset;
 };

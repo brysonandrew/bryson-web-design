@@ -15,10 +15,10 @@ export const Body: FC = () => (
       <circleGeometry args={[1.5, 32]} />
       <meshBasicMaterial
         color={LIGHT_BLACK}
-        side={DoubleSide}
+        side={DoubleSide} 
       />
     </mesh>
-    <group position={[0, 2.4, 1]}>
+    <group position={[0, 2.4, -1.5]}>
       <Eyes span={2} color={RED} />
     </group>
   </group>

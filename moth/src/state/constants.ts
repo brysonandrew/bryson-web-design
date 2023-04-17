@@ -5,8 +5,6 @@ import type {
   TShopKey,
   TState,
 } from "./types";
-import { RIVER_HORSE_KEY } from "@moth-components/enemies/bosses/river-horse/constants";
-import { KOOLASUCHAS_KEY } from "@moth-components/enemies/bosses/koolasuchas/constants";
 import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
 const context = new AudioContext();
 const master = new GainNode(context, { gain: 0.5 });
@@ -95,7 +93,7 @@ export const STATE: TState = {
   shop: SHOP_INIT,
   specials: {},
   damage: {},
-  note: LIGHTHOUSE_CAPTAIN_KEY,
+  note: null,
 };
 
 export const SPEED = 0.5;

@@ -10,8 +10,15 @@ export const resolveY = ({
   count,
   index,
 }: TResolveXConfig) => {
-  // const d = viewport.height * (index / (count - 1)) * OFFSET;
-  // const offset = viewport.height * 0.5 * OFFSET;
-  // return d - offset;
-  return index % 2 === 0 ? 0 : viewport.height * 0.1;
+  const d =
+    viewport.height *
+    (index / Math.max(1, count - 1)) *
+    OFFSET *
+    Math.random();
+  const offset =
+    viewport.height * 0.5 * OFFSET +
+    index * d * 0.5 * Math.random();
+  const result = d - offset;
+
+  return result;
 };

@@ -20,7 +20,7 @@ export type TSpawnPoint = {
 export const SPAWN_ENEMIES: TSpawnPoint[] = [
   {
     progressId: generateUUID(),
-    threshold: 0.12,
+    threshold: 0.1,
     type: "Mite",
     count: 4,
   },
@@ -62,7 +62,7 @@ export const SPAWN_ENEMIES: TSpawnPoint[] = [
   },
   {
     progressId: generateUUID(),
-    threshold: 0.9,
+    threshold: 0.94,
     count: 1,
     type: LIGHTHOUSE_CAPTAIN_KEY,
     width: LIGHTHOUSE_CAPTAIN_WIDTH,

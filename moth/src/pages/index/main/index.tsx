@@ -20,7 +20,7 @@ export const Main: FC = () => {
         ) : (
           <Shell>
             <Level />
-            <Moth />
+            <Moth /> 
             <Hud />
           </Shell>
         )}

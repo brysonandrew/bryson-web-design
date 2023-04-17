@@ -18,6 +18,7 @@ export const Enemies: FC = () => {
         if (killRecord[spawn.id]) return;
         switch (spawn.type) {
           case LIGHTHOUSE_CAPTAIN_KEY: {
+            console.log("LIGHT HOUSE CAPITAN");
             return (
               <LighthouseCaptain
                 key={`${spawn.id}-${index}`}
@@ -54,7 +55,7 @@ export const Enemies: FC = () => {
               <Mite
                 key={`${spawn.id}-${index}`}
                 {...spawn}
-              /> 
+              />
             );
           }
           case "MiteI": {
@@ -65,6 +66,7 @@ export const Enemies: FC = () => {
               />
             );
           }
+
           default: {
             return (
               <Dynastinae
