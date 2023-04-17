@@ -12,7 +12,7 @@ type TProps = {
 };
 export const Counter: FC<TProps> = ({ healthLeft }) => (
     <mesh
-      position={[-healthLeft / 2 + COUNTER_WIDTH / 2, 0, 0]}
+      position={[healthLeft / 2 - COUNTER_WIDTH / 2, 0, 0]}
     >
       <planeGeometry
         args={[healthLeft, HEIGHT - PADDING * 4]}

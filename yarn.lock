@@ -1062,6 +1062,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/stats.js@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@types/stats.js@npm:0.17.0"
+  checksum: ac8dc5e622fa3b7cc37b9e21663193a2f171a4f5896285e4dfc04f2874acbb75edc958f077bffbd85b0ae358daa5bf4ecbc71210386a4300bff05d09435e35f9
+  languageName: node
+  linkType: hard
+
 "@types/three@npm:^0.149.0":
   version: 0.149.0
   resolution: "@types/three@npm:0.149.0"
@@ -1486,6 +1493,7 @@ __metadata:
     "@types/node": ^18.11.18
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
+    "@types/stats.js": ^0.17.0
     "@types/three": ^0.149.0
     "@typescript-eslint/eslint-plugin": ^5.14.0
     "@typescript-eslint/parser": ^5.0.0
@@ -1498,9 +1506,10 @@ __metadata:
     prettier: ^2.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-router: ^6.3.0
-    react-router-dom: ^6.3.0
+    react-router: ^6.10.0
+    react-router-dom: ^6.10.0
     react-synthwave: ^1.2.6
+    stats.js: ^0.17.0
     svg-pathdata: ^6.0.3
     three: ^0.150.1
     typescript: ^4.9.4
@@ -3354,7 +3363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^6.3.0":
+"react-router-dom@npm:^6.10.0":
   version: 6.10.0
   resolution: "react-router-dom@npm:6.10.0"
   dependencies:
@@ -3367,7 +3376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:6.10.0, react-router@npm:^6.3.0":
+"react-router@npm:6.10.0, react-router@npm:^6.10.0":
   version: 6.10.0
   resolution: "react-router@npm:6.10.0"
   dependencies:

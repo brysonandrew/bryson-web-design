@@ -1,9 +1,11 @@
 import { HEIGHT } from "@moth-constants/index";
 import { useViewport } from "@moth-hooks/useViewport";
 import { useMothContext } from "@moth-state/Context";
-import { generateUUID } from "three/src/math/MathUtils";
 import { resolveSpawnEnemies } from "../../components/enemies/resolveSpawnEnemies";
-import type { TSpawnPoint } from "../../components/level/0/constants";
+import type { TSpawnPoint } from "@moth-components/level/LighthouseCaptain/constants";
+import { generateUUID } from "three/src/math/MathUtils";
+import { resolveX } from "./resolveX";
+import { resolveY } from "./resolveY";
 
 export const useTriggerSpawn = () => {
   const { dispatch, spawns } = useMothContext();
@@ -11,28 +13,33 @@ export const useTriggerSpawn = () => {
   const height = HEIGHT;
 
   const handler = ({
-    name,
+    progressId,
     threshold,
     count,
     type,
     ...props
   }: TSpawnPoint) => {
-    const y = height * threshold + viewport.height * 0.5;
+    const initialY =
+      height * threshold + viewport.height * 0.5;
+
     const value = resolveSpawnEnemies({
       count,
-      spawn: (_, i) => ({
-        type,
-        instance: null,
-        name: generateUUID(),
-        x:
-          viewport.width * (i / count) -
-          viewport.width * 0.125,
-        y,
-        width: 10,
-        height: 10,
-        xp: 100,
-        ...props,
-      }),
+      spawn: (_, index) => {
+        const y =
+          resolveY({ index, viewport, count }) + initialY;
+        return {
+          progressId,
+          id: generateUUID(),
+          type,
+          instance: null,
+          x: resolveX({ index, viewport, count }),
+          y,
+          width: 10,
+          height: 10,
+          xp: 100,
+          ...props,
+        };
+      },
     });
     dispatch({
       type: "spawn-enemies",

@@ -1,23 +1,9 @@
 import styled from "@emotion/styled";
-import { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
-import { Lighthouse } from "@moth-components/icons/Lighthouse";
-import { LG } from "@moth-constants/styles";
 import { useMothContext } from "@moth-state/Context";
-import clsx from "clsx";
 import { motion } from "framer-motion";
+import { Note } from "./note";
 
 const Root = styled(motion.div)``;
-
-const resolveNote = (note: string | null) => {
-  switch (note) {
-    case RIVER_HORSE_KEY: {
-      return "You killed my river horse!";
-    }
-    default: {
-      return "...";
-    }
-  }
-};
 
 export const Middle = () => {
   const { note, dispatch } = useMothContext();
@@ -28,7 +14,7 @@ export const Middle = () => {
   };
   return (
     <Root
-      className="w-screen h-screen flex flex items-center justify-center"
+      className="w-screen h-screen flex items-center justify-center"
       onTap={handleTap}
     >
       <div
@@ -39,10 +25,8 @@ export const Middle = () => {
         }}
       />
       <div className="relative flex flex-col items-center p-4 bg-red">
-        <div className="flex text-teal-bright">
-          <Lighthouse classValue={clsx(LG)} />
-          <div className="p-2" />
-          <p>{resolveNote(note)}</p>
+        <div className="flex text-teal-bright px-12">
+          <Note note={note} />
         </div>
       </div>
     </Root>

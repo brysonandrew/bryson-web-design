@@ -10,6 +10,6 @@ export const MUSIC_ITEMS: TItem[] = [
       "Oscillators",
       "Biquad Filters",
     ],
-    altTo: "/moth/ost",
+    altTo: "/songs",
   },
 ];

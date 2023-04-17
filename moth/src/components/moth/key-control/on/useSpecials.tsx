@@ -47,7 +47,6 @@ export const useSpecials = ({ keyRef }: TConfig) => {
         dispatch({ type: "special-end", value: key });
         mothRef.current.specials[key] = 0;
       }, 1000);
-
       dispatch({ type: "special-use", value: next });
       return;
     }

@@ -43,7 +43,7 @@ export const useMassCollision = ({
         mesh: ref.current,
         source: moth,
         targets: enemies,
-        x: -moth.instance.position.x - width / 2,
+        x: moth.instance.position.x - width / 2,
         y: moth.instance.position.y, // - height / 2,
         levelY: level.position.y,
         width,
@@ -53,19 +53,18 @@ export const useMassCollision = ({
       const killSource = handleKill(config);
       if (typeof killSource === "undefined") return;
       const isStillAlive =
-        isNaN(damage[killSource.name]) ||
+        isNaN(damage[killSource.id]) ||
         (killSource.health ?? 0) >
-          (damage[killSource.name] ?? 0);
+          (damage[killSource.id] ?? 0);
       if (isStillAlive) {
         dispatch({
           type: "damage",
           value: {
-            name: killSource.name,
+            id: killSource.id,
             amount: 5,
           },
         });
       } else {
-        
         dispatch({
           type: "kill",
           value: killSource,

@@ -7,7 +7,7 @@ import { Middle } from "./middle";
 const Root = styled(motion.header)``;
 
 export const Header = () => (
-  <Root className="flex items-center justify-between fixed top-0 left-0 w-full">
+  <Root className="fixed top-0 left-0 w-full">
     <Left />
     <Middle />
     <Right />

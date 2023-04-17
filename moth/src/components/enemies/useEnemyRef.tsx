@@ -5,13 +5,16 @@ import type { Group } from "three";
 type TConfig = TSpawn;
 export const useEnemyRef = (spawn: TConfig) => {
   const { dispatch, enemyRecord } = useMothContext();
-  const source = enemyRecord[spawn.name];
+  const source = enemyRecord[spawn.id];
 
   const resolveRef = (instance: Group) => {
     if (instance && !source) {
-      instance.position.x = spawn.x;
-      instance.position.y = spawn.y;
-      //instance.rotation.z = Math.PI * 0.25; to rotate bullets go to useShot
+      if (typeof spawn.x === "number" && !isNaN(spawn.x)) {
+        instance.position.x = spawn.x;
+      }
+      if (typeof spawn.y === "number" && !isNaN(spawn.y)) {
+        instance.position.y = spawn.y;
+      }
 
       dispatch({
         type: "add-enemy",

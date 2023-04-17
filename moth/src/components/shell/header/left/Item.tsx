@@ -3,7 +3,7 @@ import { Nuke } from "@moth-components/icons/Nuke";
 import type { TShopNumberEntry } from "@moth-components/moth/types";
 import { XS } from "@moth-constants/styles";
 import { useMothContext } from "@moth-state/Context";
-import type { TShopKey } from "@moth-state/constants";
+import type { TShopKey } from "@moth-state/types";
 import type { TBaseIconMotionProps } from "@t/icons";
 import { pascalToTitle } from "@utils/format";
 import type { FC } from "react";

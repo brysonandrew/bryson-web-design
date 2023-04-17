@@ -7,14 +7,24 @@ import type {
   MutableRefObject,
 } from "react";
 import type { Group, Mesh } from "three";
-import type {
-  TInventory,
-  TSpecialsRunningRecord,
-  TSpecialsSwitchRecord,
-} from "./constants";
 import type { TShopBooleanEntry } from "@moth-components/moth/types";
-import type { TSpawnPoint } from "@moth-components/level/0/constants";
-import type { RIVER_HORSE_KEY } from "@moth-components/hud/constants";
+import type { TBossKey } from "@moth-components/hud/constants";
+import type { LEVEL_KEYS } from "./constants";
+import type { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
+import type { TSpawnPoint } from "@moth-components/level/LighthouseCaptain/constants";
+
+export type TInventoryRecord = Record<TShopKey, number>;
+export type TInventory = Partial<TInventoryRecord>;
+export type TSpecialsSwitchRecord = Partial<
+  Record<TShopKey, boolean>
+>;
+
+export type TSpecialsRunningRecord = Partial<
+  Record<TShopKey, number>
+>;
+
+export type TLevelsTuple = typeof LEVEL_KEYS;
+export type TLevelKey = TLevelsTuple[number];
 
 export type TDirection = null | "right" | "left";
 export type TThrust = null | "up" | "down";
@@ -43,29 +53,35 @@ export type TMothState = {
   specials: TSpecialsRunningRecord;
 };
 
-export type TSource = Partial<TSpawnPoint> & {
-  name: string;
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-  instance: Group;
-  xp?: number;
-  health?: number;
-  offsetX?: number;
-  offsetY?: number;
-};
+export type TSource = Partial<TSpawnPoint> &
+  Pick<TSpawnPoint, "progressId"> & {
+    id: string;
+    width: number;
+    height: number;
+    x: number;
+    y: number;
+    instance: Group;
+    xp?: number;
+    health?: number;
+    offsetX?: number;
+    offsetY?: number;
+  };
 
 export type TEnemyType =
+  | "Mite"
+  | "MiteI"
   | "Hercules"
   | "Dynastinae"
   | "Bug"
   | "Galamodo"
-  | typeof RIVER_HORSE_KEY;
+  | typeof LIGHTHOUSE_CAPTAIN_KEY;
 
-export type TSpawn = Pick<TSpawnPoint, "health"> & {
+export type TSpawn = Pick<
+  TSpawnPoint,
+  "health" | "progressId"
+> & {
+  id: string;
   type?: TEnemyType;
-  name: string;
   width: number;
   height: number;
   x: number;
@@ -120,6 +136,7 @@ export type TKill = {
 export type TKillRecord = Record<string, TKill | null>;
 
 export type TState = TMothInit & {
+  currentLevel: null | TLevelKey;
   damage: Record<string, any>;
   start: null | boolean;
   isSound: boolean;
@@ -136,11 +153,17 @@ export type TState = TMothInit & {
   spawns: TSpawn[];
   enemyRecord: Record<string, TSource>;
   killRecord: TKillRecord;
+  levels: TLevelsTuple;
   controls: TControlsRecord;
   shop: TShopRecord;
   inventory: TInventory;
   note: string | null;
 };
+
+export type TLocalState = Pick<
+  TState,
+  "controls" | "isSound" | "inventory"
+>;
 
 export type TContext = TState & {
   reset(): void;
@@ -157,7 +180,16 @@ export type TLevel = null | Group;
 export type TMoth = TSource | null;
 export type TShopKey = keyof TShopRecord;
 
+export type TLevelItem = {
+  id: TBossKey | string;
+  isLocked: boolean;
+};
+
 export type TAction =
+  | {
+      type: "toggle-sound";
+      value: null;
+    }
   | {
       type: "clear-note";
       value: null;
@@ -168,7 +200,7 @@ export type TAction =
     }
   | {
       type: "damage";
-      value: Pick<TSource, "name"> & {
+      value: Pick<TSource, "id"> & {
         amount: number;
       };
     }

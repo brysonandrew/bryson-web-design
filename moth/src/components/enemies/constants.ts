@@ -1,19 +1,19 @@
 import { MOTH_NAME } from "@moth-constants/index";
 
 export const MOTH_SOURCE = {
-  name: MOTH_NAME,
+  id: MOTH_NAME,
   width: 4,
   height: 4,
 };
 export const HERCULES_NAME = "hercules";
 export const HERCULES = {
   xp: 1000,
-  name: "hercules",
+  id: "hercules",
 };
 export const KOOLASUCHAS_NAME = "koolasuchas";
 export const KOOLASUCHAS = {
   xp: 10000,
-  name: KOOLASUCHAS_NAME,
+  id: KOOLASUCHAS_NAME,
 };
 export const ENEMY_RECORD = {
   hercules: HERCULES,
@@ -23,7 +23,8 @@ export const ENEMY_RECORD = {
 import { generateUUID } from "three/src/math/MathUtils";
 
 export const BASE_ENEMY_CONFIG = {
-  name: generateUUID(),
+  progressId: generateUUID(),
+  id: generateUUID(),
   width: 10,
   height: 10,
   x: 0,

@@ -13,7 +13,6 @@ import { useAbilities as useAbilitiesRun } from "./run/useAbilities";
 import { useDirections as useDirectionsRun } from "./run/useDirections";
 import { useSpecials as useSpecialsRun } from "./run/useSpecials";
 
-import type { MutableRefObject } from "react";
 import { useRef } from "react";
 import { useSpeech } from "@moth-components/speech/useSpeech";
 import type { TDirectionsSounds } from "@moth-hooks/sounds/directions";
@@ -24,15 +23,43 @@ import type { TUiSounds } from "@moth-hooks/sounds/ui";
 import { useUi as useSoundUi } from "@moth-hooks/sounds/ui";
 import type { TCurrent } from "../types";
 import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
+import { useMothContext } from "@moth-state/Context";
 
 export type TSounds = TDirectionsSounds &
   TAbilitiesSounds &
   TUiSounds;
 
-type TConfig = {
-  keyRef: MutableRefObject<TCurrent>;
-};
-export const useKeyControl = ({ keyRef }: TConfig) => {
+export const useKeyControl = () => {
+  const {
+    moth,
+    spots,
+    meshes,
+    level,
+    blades,
+    controls,
+    inventory,
+    activeSpecial,
+    specials,
+    isSound,
+    note,
+  } = useMothContext();
+  const current: TCurrent = {
+    moth,
+    spots,
+    meshes,
+    level,
+    blades,
+    controls,
+    inventory,
+    activeSpecial,
+    specials,
+    isSound,
+    note,
+  };
+  const { dispatch } = useMothContext();
+  const keyRef = useRef<TCurrent>(current);
+  keyRef.current = current;
+
   const loopRef = useRef(false);
   const { play } = usePlay();
   const handleDirectionsOn = useDirectionsOn({ keyRef });
@@ -63,10 +90,16 @@ export const useKeyControl = ({ keyRef }: TConfig) => {
     handlers: {
       onKeyDown: (event: KeyboardEvent) => {
         if (event.repeat) return;
-        if (!loopRef.current) {
+        if (!loopRef.current && keyRef.current.isSound) {
           loopRef.current = true;
-          //play();
+          play();
           speech.play();
+        }
+        if (keyRef.current.note) {
+          dispatch({
+            type: "clear-note",
+            value: null,
+          });
         }
         handleDirectionsOn(event.key, sounds);
         const key = event.key.toLowerCase();

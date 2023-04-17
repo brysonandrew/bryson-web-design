@@ -38,9 +38,8 @@ export const Options = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      WIP
-      {/* <Mute />
-      <div className="py-1" />
+      <Mute />
+      {/* <div className="py-1" />
       <div className="h-px bg-blue w-full" />
       <div className="py-1" />
       <Volume title="d" />

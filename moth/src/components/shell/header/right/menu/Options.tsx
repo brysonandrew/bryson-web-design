@@ -11,9 +11,7 @@ const Button = styled(motion.button)``;
 export const Options = () => {
   const { controls, reset } = useMothContext();
 
-  const options: [string, () => void][] = [
-    ["reset", reset],
-  ];
+  const options: [string, () => void][] = [["quit", reset]];
 
   return (
     <Root

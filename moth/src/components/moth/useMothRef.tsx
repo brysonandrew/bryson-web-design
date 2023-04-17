@@ -45,7 +45,8 @@ export const useMothRef = () => {
         type: "add-moth",
         value: {
           moth: {
-            name: MOTH_NAME,
+            progressId: MOTH_NAME,
+            id: MOTH_NAME,
             instance,
             x: instance.position.x,
             y: instance.position.y,

@@ -18,7 +18,7 @@ export const Hud: FC = () => {
     <group>
       {bosses.map((boss: TSpawn, index) => (
         <HealthBar
-          key={`boss-${boss.name}`}
+          key={`boss-${boss.id}`}
           boss={boss}
           index={index}
         />

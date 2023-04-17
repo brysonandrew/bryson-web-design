@@ -17,10 +17,10 @@ module.exports = defineConfig({
   ],
   theme: {
     colors: COLORS,
+    spacing: SPACING,
     extend: {
       boxShadow: SHADOW,
       fontSize: FONT_SIZE,
-      spacing: SPACING,
       backgroundColor: {
         current: "currentColor",
       },

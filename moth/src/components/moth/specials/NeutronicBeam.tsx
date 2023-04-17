@@ -17,7 +17,7 @@ export const NeutronicBeam: FC = () => {
     height,
     ref, 
   });
-
+ 
   return (
     <mesh ref={ref}>
       <planeGeometry args={[width, height]} />

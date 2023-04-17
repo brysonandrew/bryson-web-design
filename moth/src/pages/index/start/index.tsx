@@ -8,11 +8,12 @@ import { useEffect, type FC } from "react";
 import COLORS from "@windi/config-colors.json";
 import { Controls } from "./controls";
 import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
+import { Levels } from "./levels";
 
 const Root = styled(motion.div)``;
 
 export const Start: FC = () => {
-  const { dispatch } = useMothContext();
+  const { dispatch, isSound } = useMothContext();
   const { play } = usePlay();
   const handleStart = () => {
     dispatch({
@@ -21,8 +22,14 @@ export const Start: FC = () => {
     });
   };
 
+  const handlePlay = () => {
+    if (isSound) {
+      play();
+    }
+  };
+
   useEffect(() => {
-    play();
+    handlePlay();
   }, []);
 
   useKey({
@@ -39,7 +46,7 @@ export const Start: FC = () => {
   return (
     <Root
       className={clsx(CENTER, "w-screen h-screen")}
-      onTap={play}
+      onTap={handlePlay}
     >
       <motion.video
         className={clsx("absolute w-full h-full")}
@@ -49,6 +56,7 @@ export const Start: FC = () => {
         loop
         style={{ objectFit: "cover" }}
       />
+
       <div className="relative flex flex-col items-center">
         <h1
           className="text-10xl lg:text-20xl"
@@ -60,7 +68,7 @@ export const Start: FC = () => {
         </h1>
         <div className="p-1" />
         <motion.button
-          className="relative text-xl text-teal px-4 py-2"
+          className="relative text-xl text-teal px-4 py-2 z-10"
           onTap={handleStart}
           style={{
             filter: `drop-shadow(0px 0px 12px ${COLORS["teal"]})`,
@@ -75,7 +83,13 @@ export const Start: FC = () => {
           [ Enter ]
         </motion.button>
       </div>
-      <Controls />
+      <div
+        className={clsx(
+          "flex absolute top-0 left-0 w-full py-2 px-4",
+        )}
+      >
+        <Controls />
+      </div>
     </Root>
   );
-}; 
+};

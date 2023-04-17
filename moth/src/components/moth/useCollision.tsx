@@ -12,7 +12,8 @@ export const useCollision = ({
   source,
   targets,
 }: TConfig) => {
-  const { dispatch, level, mothRef } = useMothContext();
+  const { dispatch, level, damage, mothRef } =
+    useMothContext();
   const killConfig: TKillConfig = {
     source,
     targets,
@@ -25,20 +26,35 @@ export const useCollision = ({
       levelY: level?.position.y ?? 0,
     });
     if (collidedWithSource) {
-      if (!mothRef.current.melee) {
+      const isStillAlive =
+        isNaN(damage[collidedWithSource.id]) ||
+        (collidedWithSource.health ?? 0) >
+          (damage[collidedWithSource.id] ?? 0);
+      if (isStillAlive) {
+        if (!mothRef.current.melee) {
+          dispatch({
+            type: "kill",
+            value: killConfig.source,
+          });
+        }
         dispatch({
-          type: "kill",
-          value: killConfig.source,
-        });
-        dispatch({
-          type: "kill",
-          value: collidedWithSource,
+          type: "damage",
+          value: {
+            id: collidedWithSource.id,
+            amount: 5,
+          },
         });
       } else {
+        if (!mothRef.current.melee) {
+          dispatch({
+            type: "kill",
+            value: killConfig.source,
+          });
+        }
         dispatch({
           type: "kill",
           value: collidedWithSource,
-        }); 
+        });
       }
     }
   });

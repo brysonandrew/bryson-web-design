@@ -42,15 +42,15 @@ export const useKill = (config: TConfig) => {
 
     if (enemyCollided) {
       const isStillAlive =
-        isNaN(damage[enemyCollided.name]) ||
+        isNaN(damage[enemyCollided.id]) ||
         (enemyCollided.health ?? 0) >
-          (damage[enemyCollided.name] ?? 0);
+          (damage[enemyCollided.id] ?? 0);
 
       if (isStillAlive) {
         dispatch({
           type: "damage",
           value: {
-            name: enemyCollided.name,
+            id: enemyCollided.id,
             amount: 1,
           },
         });
