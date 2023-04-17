@@ -99,7 +99,7 @@ export const STATE: TState = {
 };
 
 export const SPEED = 0.5;
-export const MAX_SPEED = SPEED * 2;
+export const MAX_SPEED = SPEED * 2.8;
 export const SPEED_FRAME_COUNT = 10;
 
 export const MOTH_STATE: TMothState = {

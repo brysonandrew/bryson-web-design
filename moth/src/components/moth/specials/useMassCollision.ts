@@ -43,7 +43,7 @@ export const useMassCollision = ({
         mesh: ref.current,
         source: moth,
         targets: enemies,
-        x: -moth.instance.position.x - width / 2,
+        x: moth.instance.position.x - width / 2,
         y: moth.instance.position.y, // - height / 2,
         levelY: level.position.y,
         width,

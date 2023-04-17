@@ -20,7 +20,6 @@ export const Main: FC = () => {
           <GameOver />
         ) : (
           <Shell>
-            <OrbitControls />
             <Level />
             <Moth />
             <Hud />

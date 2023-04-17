@@ -12,7 +12,7 @@ export const useSourceCollision = () => {
     const collidedWithSource = targets.find((target) => {
       if (!target.instance || !source.instance) return;
 
-      const sx = -source.instance.position.x;
+      const sx = source.instance.position.x;
       const sy = source.instance.position.y;
 
       const tx = target.instance.position.x;

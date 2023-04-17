@@ -2,8 +2,8 @@ import { useFrame } from "@react-three/fiber";
 import type { TSource } from "@moth-state/types";
 
 type TConfig = TSource;
-export const useLeftToRight = (props: TConfig) => {
-  const { instance: sourceInstance } = props;
+export const useLeftToRight = (props?: TConfig) => {
+  const sourceInstance = props?.instance
 
   useFrame(({ clock }) => {
     if (!sourceInstance) return;

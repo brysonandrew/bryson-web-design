@@ -62,7 +62,7 @@ export const SPAWN_ENEMIES: TSpawnPoint[] = [
   },
   {
     progressId: generateUUID(),
-    threshold: 0.95,
+    threshold: 0.9,
     count: 1,
     type: LIGHTHOUSE_CAPTAIN_KEY,
     width: LIGHTHOUSE_CAPTAIN_WIDTH,
