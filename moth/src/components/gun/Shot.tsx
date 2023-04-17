@@ -1,10 +1,12 @@
 import type { TKillHandlerConfig } from "@moth-hooks/useKill";
-import { useFrame } from "@react-three/fiber";
 import type { FC } from "react";
 import { useState } from "react";
 import type { Mesh } from "three";
 import { DoubleSide } from "three";
 import type { TShot } from "./config";
+import { useShot } from "@moth-hooks/frames/useShot";
+
+export type TShotRef = Mesh | null;
 
 type TProps = TShot & {
   onKill(config: TKillHandlerConfig): void;
@@ -12,15 +14,13 @@ type TProps = TShot & {
 };
 export const Shot: FC<TProps> = (props) => {
   const { x, y, onKill, speed, name } = props;
-  const [shot, setShot] = useState<Mesh | null>(null);
+  const [shot, setShot] = useState<TShotRef>(null);
 
-  useFrame(() => {
-    if (shot !== null) {
-      const x = shot.position.x;
-      const y = shot.position.y;
-      onKill({ x, y, mesh: shot, name });
-      shot.position.y = shot.position.y + speed;
-    }
+  useShot({
+    name,
+    speed,
+    onKill,
+    shot,
   });
 
   const resolveRef = (instance: Mesh) => {

@@ -1,58 +1,28 @@
-import { MOTH_NAME } from "@moth-constants/index";
-import { useFrame } from "@react-three/fiber";
-import { useMothContext } from "@moth-state/Context";
+import { useState } from "react";
+import type { MutableRefObject } from "react";
 import type {
   TFiringStart,
   TSource,
 } from "@moth-state/types";
-import type { MutableRefObject } from "react";
-import { useState } from "react";
-import { generateUUID } from "three/src/math/MathUtils";
+import { useFire } from "@moth-hooks/frames/useFire";
 import type { TShot } from "./config";
 
-export type TShotsConfig = {
+export type TShotFiringConfig = {
   firingRate: number;
   firingStart: TFiringStart;
   firingSpeed: number;
   range: number;
 };
-type TConfig = {
+export type TShotsConfig = {
   source: TSource;
-  shotsRef: MutableRefObject<TShotsConfig>;
+  shotsRef: MutableRefObject<TShotFiringConfig>;
 };
-export const useShots = (config: TConfig) => {
-  const { source, shotsRef } = config;
-  const { mothRef } = useMothContext();
-
+export const useShots = (config: TShotsConfig) => {
   const [shots, setShots] = useState<TShot[]>([]);
 
-  useFrame(({ clock }) => {
-    if (
-      shotsRef.current.firingStart === null ||
-      (mothRef.current.cloak &&
-        source.instance.name !== MOTH_NAME)
-    )
-      return;
-
-    const d =
-      ~~clock.elapsedTime - shotsRef.current.firingStart;
-
-    if (d > shotsRef.current.firingRate) {
-      setShots((prev) => [
-        ...prev,
-        {
-          name: generateUUID(),
-          x:
-            source.instance.position.x +
-            (source.offsetX ?? 0),
-          y:
-            source.instance.position.y +
-            (source.offsetY ?? 0),
-        },
-      ]);
-
-      shotsRef.current.firingStart = ~~clock.elapsedTime;
-    }
+  useFire({
+    setShots,
+    ...config,
   });
 
   const handleRemove = (name: string) => {

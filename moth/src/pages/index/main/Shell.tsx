@@ -11,7 +11,7 @@ import {
 } from "three";
 import type { TChildren } from "@t/index";
 import { Fullscreen } from "./Fullscreen";
-import { LightsAndControl } from "./LightsAndControl";
+import { CanvasShell } from "./CanvasShell";
 
 extend({
   Group,
@@ -31,7 +31,7 @@ export const Shell: FC<TProps> = ({ children }) => (
         position: [0, 0, 80],
       }}
     >
-      <LightsAndControl>{children}</LightsAndControl>
+      <CanvasShell>{children}</CanvasShell>
     </Canvas>
   </Fullscreen>
 );

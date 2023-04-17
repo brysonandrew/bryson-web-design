@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { MOTH_NAME } from "@moth-constants/index";
 import { useMothContext } from "@moth-state/Context";
-import { OrbitControls } from "@react-three/drei";
 import type { FC } from "react";
 import { Hud } from "../../../components/hud";
 import { Level } from "../../../components/level";

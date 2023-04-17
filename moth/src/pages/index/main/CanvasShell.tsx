@@ -1,9 +1,9 @@
-import type { FC } from "react";
-import type { TChildren } from "@t/index";
 import { useKeyControl } from "@moth-components/moth/key-control/useKeyControl";
+import type { TChildren } from "@t/index";
+import { type FC } from "react";
 
 type TProps = { children: TChildren };
-export const LightsAndControl: FC<TProps> = ({ children }) => {
+export const CanvasShell: FC<TProps> = ({ children }) => {
   useKeyControl();
   return (
     <>

@@ -2,12 +2,12 @@ import type { TKillConfig } from "@moth-hooks/useKill";
 import { useKill } from "@moth-hooks/useKill";
 import type { FC, MutableRefObject } from "react";
 import { Shot } from "./Shot";
-import type { TShotsConfig } from "./useShots";
+import type { TShotFiringConfig } from "./useShots";
 import { useShots } from "./useShots";
 
 type TProps = {
   killConfig: TKillConfig;
-  shotsRef: MutableRefObject<TShotsConfig>;
+  shotsRef: MutableRefObject<TShotFiringConfig>;
 };
 export const Gun: FC<TProps> = ({
   shotsRef,

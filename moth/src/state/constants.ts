@@ -95,7 +95,7 @@ export const STATE: TState = {
   shop: SHOP_INIT,
   specials: {},
   damage: {},
-  note: null,
+  note: LIGHTHOUSE_CAPTAIN_KEY,
 };
 
 export const SPEED = 0.5;

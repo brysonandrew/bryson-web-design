@@ -16,7 +16,7 @@ export const Index = () => {
         </Shell>
       ) : (
         <Start />
-      )}
+      )} 
     </>
   );
 };
