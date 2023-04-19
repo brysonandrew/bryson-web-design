@@ -16,7 +16,7 @@ export const useHihat0 = () => {
     ].forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      cymbal({
+      cymbal.play({
         startTime: context.currentTime + index * d + start,
         volume: HIHAT_VOLUME,
         duration: d,

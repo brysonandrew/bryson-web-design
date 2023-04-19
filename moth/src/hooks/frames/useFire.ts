@@ -1,10 +1,11 @@
-import { TShot } from "@moth-components/gun/config";
-import { TShotsConfig } from "@moth-components/gun/useShots";
+import type { TShot } from "@moth-components/gun/config";
+import type { TShotsConfig } from "@moth-components/gun/useShots";
 import { MOTH_NAME } from "@moth-constants/index";
 import { useMothContext } from "@moth-state/Context";
 import { useFrame } from "@react-three/fiber";
 import { generateUUID } from "three/src/math/MathUtils";
-import { Dispatch, SetStateAction, useState } from "react";
+import type { Dispatch, SetStateAction} from "react";
+import { useState } from "react";
 
 type TConfig = TShotsConfig & {
   setShots: Dispatch<SetStateAction<TShot[]>>;

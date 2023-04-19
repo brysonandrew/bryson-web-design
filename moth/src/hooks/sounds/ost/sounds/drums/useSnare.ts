@@ -1,10 +1,12 @@
 import { useMothContext } from "@moth-state/Context";
 import { useBufferFromSrcHandler } from "../../../../useBufferFromSrcHandler";
 import type { THandlerConfig } from "./types";
+import { useGain } from "../useGain";
 
 export const useSnare = () => {
   const { context, master } = useMothContext();
   const handleSample = useBufferFromSrcHandler(context);
+  const gain = useGain();
 
   const play = async ({
     startTime,
@@ -18,14 +20,10 @@ export const useSnare = () => {
       frequency: 800,
       type,
     });
-    const gain = new GainNode(context, {
-      gain: volume ?? 0.028,
-    });
-
+    gain.gain.value = volume ?? 0.028;
     const sampleBuffer: AudioBuffer = await handleSample(
       `/sounds/snares/saev_${version}.wav`,
     );
-
     const source = context.createBufferSource();
     source.buffer = sampleBuffer;
     source.connect(filter);
@@ -34,5 +32,5 @@ export const useSnare = () => {
     source.start(startTime);
   };
 
-  return play;
+  return { gain, play };
 };

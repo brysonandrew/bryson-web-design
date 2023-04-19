@@ -2,7 +2,7 @@ import { useViewportWidth } from "@moth-hooks/useViewportWidth";
 import { Artefacts } from "./Artefacts";
 import { Enemies } from "./Enemies";
 import { HEIGHT } from "./constants";
-import { resolveShade } from "@utils/colors";
+import { resolveShade } from "@moth-utils/colors";
 
 export const LighthouseCaptain = () => {
   const width = useViewportWidth();

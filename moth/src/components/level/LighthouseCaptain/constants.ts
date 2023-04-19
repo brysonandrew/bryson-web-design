@@ -6,7 +6,7 @@ import {
 import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 
-export const HEIGHT = 1000;
+export const HEIGHT = 2000;
 
 export type TSpawnPoint = {
   progressId: string;

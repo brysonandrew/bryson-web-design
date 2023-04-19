@@ -13,7 +13,7 @@ export const useKick = () => {
     KICK_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      kick({
+      kick.play({
         startTime: context.currentTime + index * d + start,
         volume: VOLUME,
       });

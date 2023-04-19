@@ -6,7 +6,6 @@ import type {
   TPlayers,
   TPlayer,
 } from "./ost/types";
-import { useFade } from "./ost/sounds/wails/useFade";
 
 type TConfig = {
   phases: TPhase[];
@@ -14,19 +13,15 @@ type TConfig = {
 };
 export const useLoop = ({ phases, interval }: TConfig) => {
   const [time, setTime] = useState<number | null>(null);
-
   const indexRef = useRef<number>(0);
   const sustainRef = useRef<number>(0);
   const repeatRef = useRef<number>(0);
-
-  const arpeggio = useFade();
-
-  const { context } = useMothContext();
+  const mothContext = useMothContext();
 
   const loop = () => {
+    if (time === null) return;
     const { repeat, sustain, sounds } =
       phases[indexRef.current];
-
     if (
       typeof sustain === "undefined" ||
       sustainRef.current === 0
@@ -79,13 +74,16 @@ export const useLoop = ({ phases, interval }: TConfig) => {
   };
 
   const play = async () => {
-    await context.resume();
+    await mothContext.context.resume();
     await preload();
     setTime(interval * 1000);
   };
 
   const stop = () => {
-    arpeggio.stop();
+    indexRef.current = 0;
+    repeatRef.current = 0;
+    sustainRef.current = 0;
+    setTime(null);
   };
 
   return { play, stop };

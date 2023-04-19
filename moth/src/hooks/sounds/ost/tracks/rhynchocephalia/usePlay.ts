@@ -5,7 +5,7 @@ import { INTERVAL } from "./constants";
 export const usePlay = () => {
   const phases = usePhases();
 
-  const loop = useLoop({
+  const loop = useLoop({  
     interval: INTERVAL,
     phases,
   });

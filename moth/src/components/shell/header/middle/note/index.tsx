@@ -1,5 +1,5 @@
 import { LIGHTHOUSE_CAPTAIN_KEY } from "@moth-components/enemies/bosses/lighthouse-captain/constants";
-import { FC } from "react";
+import type { FC } from "react";
 import { LighthouseCaptian } from "./LighthouseCaptian";
 
 type TProps = {

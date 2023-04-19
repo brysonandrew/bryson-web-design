@@ -15,8 +15,7 @@ interface IFilterProps {
   intensity: number;
 }
 
-export const Filter = (props: IFilterProps) => {
-  return (
+export const Filter = (props: IFilterProps) => (
     <filter id={ID}>
       <feFlood
         floodColor={props.backgroundColor}
@@ -249,4 +248,3 @@ export const Filter = (props: IFilterProps) => {
       </feMerge>
     </filter>
   );
-};

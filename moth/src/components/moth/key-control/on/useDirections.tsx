@@ -10,24 +10,36 @@ export const useDirections = ({ keyRef }: TConfig) => {
   const { mothRef, controls } = useMothContext();
 
   const handler = (key: string, sounds: TSounds) => {
-    if (key === controls.direction.Forward) {
+    if (
+      key === controls.direction.Forward &&
+      !mothRef.current.thrust.includes("up")
+    ) {
       sounds.Hyperdrive.play();
-      mothRef.current.thrust = "up";
+      mothRef.current.thrust.push("up");
       return;
     }
-    if (key === controls.direction.Reverse) {
+    if (
+      key === controls.direction.Reverse &&
+      !mothRef.current.thrust.includes("down")
+    ) {
       sounds.Hyperdrive.play();
-      mothRef.current.thrust = "down";
+      mothRef.current.thrust.push("down");
       return;
     }
-    if (key === controls.direction.Right) {
+    if (
+      key === controls.direction.Right &&
+      !mothRef.current.direction.includes("right")
+    ) {
       sounds.Hyperdrive.play();
-      mothRef.current.direction = "right";
+      mothRef.current.direction.push("right");
       return;
     }
-    if (key === controls.direction.Left) {
+    if (
+      key === controls.direction.Left &&
+      !mothRef.current.direction.includes("left")
+    ) {
       sounds.Hyperdrive.play();
-      mothRef.current.direction = "left";
+      mothRef.current.direction.push("left");
       return;
     }
   };

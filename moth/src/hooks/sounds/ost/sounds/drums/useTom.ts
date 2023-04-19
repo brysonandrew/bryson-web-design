@@ -1,17 +1,19 @@
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../../tracks/cordyceptaera/types";
 import { useBufferFromSrcHandler } from "../../../../useBufferFromSrcHandler";
+import { useGain } from "../useGain";
 
 export const useTom = () => {
   const { context, master } = useMothContext();
   const handleSample = useBufferFromSrcHandler(context);
+  const gain = useGain();
 
   const play = async ({ startTime }: THandlerConfig) => {
     const filter = new BiquadFilterNode(context, {
       frequency: 800,
       type: "lowpass",
     });
-    const gain = new GainNode(context, { gain: 0.4 });
+    gain.gain.value = 0.4;
 
     const sampleBuffer: AudioBuffer = await handleSample(
       "/sounds/toms/ludwig-mahogany-low-tom.wav",
