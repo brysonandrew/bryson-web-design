@@ -6,7 +6,7 @@ import {
 import type { TEnemyType } from "@moth-state/types";
 import { generateUUID } from "three/src/math/MathUtils";
 
-export const KOOLASUCHAS_NAME = "KOOLASUCHAS_NAME";
+export const HEIGHT = 1000;
 
 export type TSpawnPoint = {
   progressId: string;
@@ -20,14 +20,14 @@ export type TSpawnPoint = {
 export const SPAWN_ENEMIES: TSpawnPoint[] = [
   {
     progressId: generateUUID(),
-    threshold: 0.1,
-    type: "Mite",
-    count: 4,
+    threshold: 0.01,
+    count: 2,
+    type: "MiteI",
   },
   {
     progressId: generateUUID(),
     threshold: 0.28,
-    type: "Dynastinae",
+    type: "Mite",
     count: 4,
   },
   {
@@ -54,11 +54,12 @@ export const SPAWN_ENEMIES: TSpawnPoint[] = [
     type: "Bug",
     count: 8,
   },
+
   {
     progressId: generateUUID(),
     threshold: 0.82,
-    count: 2,
-    type: "Dynastinae",
+    type: "Mite",
+    count: 4,
   },
   {
     progressId: generateUUID(),

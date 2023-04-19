@@ -3,15 +3,11 @@ import { useMothContext } from "@moth-state/Context";
 import type { TSpawn } from "@moth-state/types";
 import { Text } from "@react-three/drei";
 import type { FC } from "react";
-import {
-  COUNTER_WIDTH,
-  HEIGHT,
-  PADDING,
-  WIDTH,
-} from "../constants";
+import { COUNTER_WIDTH, HUD_STYLES } from "../constants";
 import { Background } from "./Background";
 import { Counter } from "./Counter";
 import { resolveBossTitle } from "@moth-utils/resolveBossTitle";
+const { width, height, padding } = HUD_STYLES;
 
 type TProps = {
   boss: TSpawn;
@@ -31,9 +27,9 @@ export const HealthBar: FC<TProps> = ({ boss, index }) => {
     <group
       position={[
         0,
-        HEIGHT +
-          index * HEIGHT +
-          PADDING -
+        height +
+          index * height +
+          padding -
           viewportHeight * 0.5,
         0,
       ]}
@@ -45,7 +41,7 @@ export const HealthBar: FC<TProps> = ({ boss, index }) => {
         anchorY="middle"
         letterSpacing={0.4}
         rotation={[0, 0, 0]}
-        position={[-WIDTH / 2 + 1.5, -PADDING * 0.5, 0]}
+        position={[-width / 2 + 1.5, -padding * 0.5, 0]}
       >
         {resolveBossTitle(boss.type)}
       </Text>

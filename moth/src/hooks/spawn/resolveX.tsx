@@ -1,5 +1,5 @@
 import { Viewport } from "@react-three/fiber";
-const OFFSET = 0.6;
+const TIGHTNESS_OFFSET = 0.7;
 type TResolveXConfig = {
   viewport: Viewport;
   count: number;
@@ -10,10 +10,16 @@ export const resolveX = ({
   count,
   index,
 }: TResolveXConfig) => {
-  const d =
-    viewport.width *
-    (index / Math.max(1, count - 1)) *
-    OFFSET;
-  const offset = viewport.width * 0.5 * OFFSET;
-  return d - offset;
+  const originX = viewport.width * 0.5;
+  const span = viewport.width * TIGHTNESS_OFFSET;
+  const margin = viewport.width * (1 - TIGHTNESS_OFFSET);
+  const margin05 = margin * 0.5;
+  const division = span / count;
+
+  const result =
+    margin05 +
+    division * (index + 1) -
+    division * 0.5 -
+    originX;
+  return result;
 };

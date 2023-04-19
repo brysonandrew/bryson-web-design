@@ -3,16 +3,17 @@ import type { FC } from "react";
 import { Body } from "./body";
 import { Kill } from "./Kill";
 import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
-import { BODY_SIZE_X, WING_SPAN_SCALE, BODY_SIZE_X_05 } from "./constants";
+import { SIZE_X, SIZE_X_05 } from "./constants";
+import { useMovement } from "@moth-hooks/movement/useMovement";
 
 type TProps = TSpawn;
 export const LighthouseCaptain: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
+  useMovement(source);
+
   return (
     <group>
-      <group 
-      ref={resolveRef}
-      >
+      <group ref={resolveRef}>
         <Body />
       </group>
       {source && (
@@ -23,9 +24,9 @@ export const LighthouseCaptain: FC<TProps> = (props) => {
               source={{
                 ...source,
                 offsetX:
-                  source.instance.position.x +
-                  index * BODY_SIZE_X * WING_SPAN_SCALE -
-                  BODY_SIZE_X_05 * WING_SPAN_SCALE,
+                  source.instance.position.x -
+                  SIZE_X_05 +
+                  index * SIZE_X,
               }}
             />
           ))}

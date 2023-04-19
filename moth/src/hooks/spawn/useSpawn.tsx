@@ -1,9 +1,8 @@
-import { HEIGHT } from "@moth-constants/index";
 import { useFrame } from "@react-three/fiber";
 import { useMothContext } from "@moth-state/Context";
 import { useRef } from "react";
 import { useTriggerSpawn } from "./useTriggerSpawn";
-import { SPAWN_ENEMIES } from "@moth-components/level/LighthouseCaptain/constants";
+import { HEIGHT, SPAWN_ENEMIES } from "@moth-components/level/LighthouseCaptain/constants";
 
 type TProgressRecord = Record<string, true>;
 

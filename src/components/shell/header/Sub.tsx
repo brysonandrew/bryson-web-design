@@ -6,8 +6,6 @@ import {
 import styled from "@emotion/styled";
 import { Sub as _Sub } from "@components/text/Sub";
 
-const text = "" as const;
-
 const Root = styled(motion.div)``;
 
 export const Sub = () => {
@@ -27,7 +25,7 @@ export const Sub = () => {
         style={{ scale, x }}
         classValue="relative md:flex"
       >
-        sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs
+        <>sᴇʀᴠɪᴄɪɴɢ ʏᴏᴜʀ ғʀᴏɴᴛᴇɴᴅ's ɴᴇᴇᴅs</>
       </_Sub>
     </Root>
   );

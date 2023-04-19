@@ -1,7 +1,8 @@
-import { HEIGHT } from "@moth-constants/index";
 import { useViewportWidth } from "@moth-hooks/useViewportWidth";
 import { Artefacts } from "./Artefacts";
 import { Enemies } from "./Enemies";
+import { HEIGHT } from "./constants";
+import { resolveShade } from "@utils/colors";
 
 export const LighthouseCaptain = () => {
   const width = useViewportWidth();
@@ -11,7 +12,7 @@ export const LighthouseCaptain = () => {
       <group>
         <mesh>
           <planeGeometry args={[width, height]} />
-          <meshBasicMaterial color="rgb(11, 11, 11)" />
+          <meshBasicMaterial color={resolveShade(0.05)} />
         </mesh>
         <Artefacts {...{ width, height }} />
       </group>

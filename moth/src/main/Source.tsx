@@ -19,7 +19,7 @@ export const Source = () => {
       element: <Index />,
     },
     {
-      path: "/workshop",
+      path: "/workshop", 
       element: <Workshop />,
     },
     {

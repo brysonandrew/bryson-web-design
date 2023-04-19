@@ -6,7 +6,7 @@ import type { FC } from "react";
 
 export const Body: FC = () => (
   <group>
-    <group position={[0, -4.2, 0.01]}>
+    <group position={[0, -4.2, 0]}>
       <Eyes span={2} scale={0.4} color={RED} />
     </group>
     <group position={[0, 0.1, 0]}>

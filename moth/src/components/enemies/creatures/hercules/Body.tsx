@@ -8,7 +8,7 @@ export const Body: FC = () => (
   <>
     <Thorax scale={0.04} color={DARK_PURPLE} />
     <Wings scale={0.04} span={-3} color={GREY} />
-    <group position={[0, -4.2, -1]}>
+    <group position={[0, -4.2, 0]}>
       <Eyes color={RED} span={2} />
     </group>
   </>
