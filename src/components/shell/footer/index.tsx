@@ -28,15 +28,15 @@ export const Footer = () => {
 
   return (
     <Root
-      className="flex items-center justify-between fixed bottom-0 left-0 w-full px-4 pt-4 pb-5 z-40"
+      className="fixed bottom-0 left-0 w-full h-0 z-40"
       {...(isInit ? initAnimation : {})}
     >
-      <div className="relative">
-        <>
-          <Sub classValue="px-3">ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ</Sub>
-          <div className="py-0.5" />
-          <Sub classValue="px-3">ᴡᴇʙ sɪɴᴄᴇ 2014</Sub>
-        </>
+      <div className="absolute bottom-4 left-2">
+        <Sub classValue="px-3 whitespace">
+          ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ
+        </Sub>
+        <div className="py-0.5" />
+        <Sub classValue="px-3">ᴡᴇʙ sɪɴᴄᴇ 2014</Sub>
       </div>
       {!isMobile && <Sound />}
     </Root>
