@@ -14,7 +14,7 @@ const Root = styled(motion.div)``;
 
 export const Start: FC = () => {
   const { dispatch } = useMothContext();
-  const { play, stop } = useStartSong();
+  //const { play, stop } = useStartSong();
 
   const handleStart = () => {
     stop();
@@ -38,7 +38,7 @@ export const Start: FC = () => {
   return (
     <Root
       className={clsx(CENTER, "w-screen h-screen")}
-      onTap={play}
+      //onTap={play}
     >
       <motion.video
         className={clsx("absolute w-full h-full")}

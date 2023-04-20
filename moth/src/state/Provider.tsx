@@ -33,11 +33,7 @@ export const MothProvider: FC<TProviderProps> = ({
     (...args) => {
       const nextState = reducer(...args);
 
-      const {
-        controls,
-        isSound,
-        inventory,
-      } = nextState;
+      const { controls, isSound, inventory } = nextState;
 
       setSavedState({
         controls,
@@ -59,6 +55,7 @@ export const MothProvider: FC<TProviderProps> = ({
       state.moth.instance.position.y = 0;
     }
     mothRef.current = { ...MOTH_STATE };
+    console.log(mothRef.current);
     dispatch({ type: "reset", value: null });
   };
 

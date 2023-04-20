@@ -7,7 +7,6 @@ export const useStartSong = () => {
   const { isSound } = useMothContext();
 
   const handler = () => {
-    console.log("HANDLE PLAY")
     if (isSound) {
       play();
     }
