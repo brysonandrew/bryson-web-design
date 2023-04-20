@@ -17,3 +17,4 @@ TODOs.md
 .yarn/
 .yarnrc.yml
 tsconfig.tsbuildinfo
+.assets/**/*
