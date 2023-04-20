@@ -9,6 +9,10 @@ import {
   SNARE_STEPS,
 } from "../constants";
 
+const VOLUME = 0.28;
+const CYMBAL_VOLUME = VOLUME * 0.7;
+const SNARE_VOLUME = VOLUME * 0.5;
+
 export const useDrums = () => {
   const cymbal = useCymbal();
   const snare = useSnare();
@@ -21,7 +25,7 @@ export const useDrums = () => {
       const d = duration / length;
       kick.play({
         startTime: context.currentTime + index * d + start,
-        volume: 0.28,
+        volume: VOLUME,
       });
     });
     CYMBAL_STEPS.forEach((v, index, { length }) => {
@@ -29,7 +33,7 @@ export const useDrums = () => {
       const d = duration / length;
       cymbal.play({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: CYMBAL_VOLUME,
       });
     });
     SNARE_STEPS.forEach((v, index, { length }) => {
@@ -37,7 +41,7 @@ export const useDrums = () => {
       const d = duration / length;
       snare.play({
         startTime: context.currentTime + index * d + start,
-        volume: 0.2,
+        volume: SNARE_VOLUME,
         version: 2,
       });
     });

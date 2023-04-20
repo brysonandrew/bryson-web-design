@@ -36,7 +36,6 @@ export const useBass2 = () => {
       10,
       startTime + (duration ?? 0),
     );
-    //gain.gain.linearRampToValueAtTime(0, startTime + duration);
 
     filter.connect(gain);
     gain.connect(master);

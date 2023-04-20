@@ -14,7 +14,7 @@ export const usePhase0 = () => {
       arpeggio.play({
         startTime: context.currentTime + index * d + start,
         pitch: v + 36,
-        duration: d,
+        duration: d * 0.9,
       });
     });
   };
