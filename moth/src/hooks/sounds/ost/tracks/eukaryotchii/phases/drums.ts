@@ -10,6 +10,7 @@ import {
 } from "../constants";
 
 const VOLUME = 0.24;
+const SNARE_VOLUME = VOLUME * 0.5;
 
 export const useDrums = () => {
   const cymbal = useCymbal();
@@ -39,7 +40,7 @@ export const useDrums = () => {
       const d = duration / length;
       snare.play({
         startTime: context.currentTime + index * d + start,
-        volume: VOLUME,
+        volume: SNARE_VOLUME,
         version: 2,
       });
     });

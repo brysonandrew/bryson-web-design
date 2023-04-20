@@ -3,6 +3,7 @@ import { usePowerUp } from "../../../sounds/robos/usePowerUp";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 const STEPS = [12, 24, 0, 48];
+const VOLUME = 0.05;
 
 export const useIntro = () => {
   const drone = usePowerUp();
@@ -15,7 +16,7 @@ export const useIntro = () => {
         startTime: context.currentTime + index * d + start,
         pitch: v,
         duration: d,
-        volume: 0.1,
+        volume: VOLUME,
         type: "square"
       });
     });

@@ -6,6 +6,8 @@ import {
   ARPEGGIO_VOLUME,
 } from "../constants";
 
+const VOLUME = ARPEGGIO_VOLUME * 0.1;
+
 export const useAscending1 = () => {
   const arpeggio = useSynth3();
   const { context } = useMothContext();
@@ -21,7 +23,7 @@ export const useAscending1 = () => {
           pitch: v + 1 + 12 * 4,
           duration: d,
           type: "triangle",
-          volume: ARPEGGIO_VOLUME,
+          volume: VOLUME,
         });
       },
     );

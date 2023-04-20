@@ -15,7 +15,7 @@ export const Sound = () => {
   };
 
   return (
-    <Root className="relative z-50">
+    <Root className="absolute bottom-2 right-2 z-50">
       <Button
         className="p-4 rounded-full text-teal-bright bg-black cursor-pointer"
         onTap={handleTap}

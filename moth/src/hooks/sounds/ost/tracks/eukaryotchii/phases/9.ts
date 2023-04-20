@@ -4,11 +4,11 @@ import { useMothContext } from "@moth-state/Context";
 
 export const usePhase9 = () => {
   const { context } = useMothContext();
-  const tundra = useAtaxia();
+  const ataxia = useAtaxia();
 
   const play = ({ duration, start }: TPlayerConfig) => {
     const pitch = 72;
-    tundra.play({
+    ataxia.play({
       startTime: context.currentTime + start,
       pitch,
       duration: duration * 24,
