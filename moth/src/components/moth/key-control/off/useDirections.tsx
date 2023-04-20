@@ -11,38 +11,44 @@ export const useDirections = ({ keyRef }: TConfig) => {
 
   const handler = (key: string, sounds: TSounds) => {
     const { controls } = keyRef.current;
-    const { thrust, direction } = mothRef.current;
     if (
       key === controls.direction.Forward &&
-      thrust === "up"
+      mothRef.current.thrust.includes("up")
     ) {
       sounds.Hyperdrive.stop();
-      mothRef.current.thrust = null;
+      mothRef.current.thrust =
+        mothRef.current.thrust.filter((v) => v !== "up");
       return;
     }
     if (
       key === controls.direction.Reverse &&
-      thrust === "down"
+      mothRef.current.thrust.includes("down")
     ) {
       sounds.Hyperdrive.stop();
-      mothRef.current.thrust = null;
+      mothRef.current.thrust =
+        mothRef.current.thrust.filter((v) => v !== "down");
       return;
     }
-
     if (
       key === controls.direction.Right &&
-      direction === "right"
+      mothRef.current.direction.includes("right")
     ) {
       sounds.Hyperdrive.stop();
-      mothRef.current.direction = null;
+      mothRef.current.direction =
+        mothRef.current.direction.filter(
+          (v) => v !== "right",
+        );
       return;
     }
     if (
       key === controls.direction.Left &&
-      direction === "left"
+      mothRef.current.direction.includes("left")
     ) {
       sounds.Hyperdrive.stop();
-      mothRef.current.direction = null;
+      mothRef.current.direction =
+        mothRef.current.direction.filter(
+          (v) => v !== "left",
+        );
       return;
     }
   };

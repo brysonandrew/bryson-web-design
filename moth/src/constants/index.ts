@@ -10,5 +10,4 @@ export {
   FOOTER_TRANSITION_EXIT,
 } from "./animation";
 export const MOTH_NAME = "MOTH_NAME";
-export const HEIGHT = 4000;
 export const NOOP = () => null;

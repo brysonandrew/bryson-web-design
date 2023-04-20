@@ -3,12 +3,12 @@ import type { FC } from "react";
 import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 import { Body } from "./Body";
 import { Kill } from "./Kill";
-import { useLeftToRight } from "@moth-hooks/move/useLeftToRight";
+import { useMovement } from "@moth-hooks/movement/useMovement";
 
 type TProps = TSpawn;
 export const Mite: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
-  useLeftToRight(source)
+  useMovement(source);
   return (
     <group>
       <group ref={resolveRef}>

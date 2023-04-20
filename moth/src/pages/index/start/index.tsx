@@ -1,36 +1,28 @@
-import { CENTER } from "@moth-constants/styles";
 import styled from "@emotion/styled";
+import { CENTER } from "@moth-constants/styles";
 import { useKey } from "@moth-hooks/useKey";
 import { useMothContext } from "@moth-state/Context";
+import COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { useEffect, type FC } from "react";
-import COLORS from "@windi/config-colors.json";
+import { type FC } from "react";
 import { Controls } from "./controls";
-import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
-import { Levels } from "./levels";
+import { Footer } from "./footer";
+import { useStartSong } from "./useStartSong";
 
 const Root = styled(motion.div)``;
 
 export const Start: FC = () => {
-  const { dispatch, isSound } = useMothContext();
-  const { play } = usePlay();
+  const { dispatch } = useMothContext();
+  //const { play, stop } = useStartSong();
+
   const handleStart = () => {
+    stop();
     dispatch({
       type: "start",
       value: null,
     });
   };
-
-  const handlePlay = () => {
-    if (isSound) {
-      play();
-    }
-  };
-
-  useEffect(() => {
-    handlePlay();
-  }, []);
 
   useKey({
     handlers: {
@@ -46,7 +38,7 @@ export const Start: FC = () => {
   return (
     <Root
       className={clsx(CENTER, "w-screen h-screen")}
-      onTap={handlePlay}
+      //onTap={play}
     >
       <motion.video
         className={clsx("absolute w-full h-full")}
@@ -90,6 +82,7 @@ export const Start: FC = () => {
       >
         <Controls />
       </div>
+      <Footer />
     </Root>
   );
 };

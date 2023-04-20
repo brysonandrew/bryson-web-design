@@ -9,12 +9,7 @@ export const EyeLeft: FC<TBaseTagmataProps> = ({
   color,
   ...props
 }) => (
-  <mesh
-    name={EYE_LEFT_NAME}
-    position-x={-span}
-    position-z={0.1}
-    {...props}
-  >
+  <mesh name={EYE_LEFT_NAME} position-x={-span} {...props}>
     <circleGeometry args={[size, 8]} />
     <meshBasicMaterial color={color} side={DoubleSide} />
   </mesh>

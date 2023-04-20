@@ -1,8 +1,7 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Item } from "./Item";
 
-export const LighthouseCaptian: FC = () => {
-  return (
+export const LighthouseCaptian: FC = () => (
     <div>
       <ul>
         <Item
@@ -28,4 +27,3 @@ export const LighthouseCaptian: FC = () => {
       </ul>
     </div>
   );
-};

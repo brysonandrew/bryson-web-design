@@ -14,12 +14,12 @@ export const usePhase7 = () => {
     MACHINE_GUN_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      snare({
+      snare.play({
         startTime: context.currentTime + index * d + start,
         volume: 0.2,
         duration: d,
       });
-      kick({
+      kick.play({
         startTime: context.currentTime + index * d + start,
         volume: 0.2,
         duration: d,

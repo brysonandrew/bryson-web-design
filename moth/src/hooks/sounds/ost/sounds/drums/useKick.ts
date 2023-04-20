@@ -1,11 +1,12 @@
 import { useMothContext } from "@moth-state/Context";
 import { useBufferFromSrcHandler } from "../../../../useBufferFromSrcHandler";
 import type { THandlerConfig } from "./types";
+import { useGain } from "../useGain";
 
 export const useKick = () => {
   const { context, master } = useMothContext();
   const handleSample = useBufferFromSrcHandler(context);
-
+  const gain = useGain()
   const play = async ({
     startTime,
     volume,
@@ -14,9 +15,8 @@ export const useKick = () => {
       frequency: 400,
       type: "lowpass",
     });
-    const gain = new GainNode(context, {
-      gain: volume ?? 0.1,
-    });
+
+    gain.gain.value = volume ?? 0.1;
 
     const sampleBuffer: AudioBuffer = await handleSample(
       "/sounds/kicks/saev.wav",
@@ -30,5 +30,5 @@ export const useKick = () => {
     source.start(startTime);
   };
 
-  return play;
+  return { gain, play };
 };

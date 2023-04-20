@@ -43,7 +43,7 @@ const SPECIALS_999: TInventory = SHOP_KEYS.reduce(
 export const LEVEL_KEYS = [LIGHTHOUSE_CAPTAIN_KEY] as const;
 
 export const LOCAL_STATE: TLocalState = {
-  isSound: false,
+  isSound: true,
   inventory: SPECIALS_999,
   controls: {
     direction: {
@@ -106,8 +106,8 @@ export const MOTH_STATE: TMothState = {
   firingSpeed: 4,
   speed: SPEED,
   range: 120,
-  direction: null,
-  thrust: null,
+  direction: [],
+  thrust: [],
   hyperdrive: false,
   melee: false,
   cloak: false,

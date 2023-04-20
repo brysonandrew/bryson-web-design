@@ -22,7 +22,7 @@ import { useAbilities as useSoundAbilities } from "@moth-hooks/sounds/abilities"
 import type { TUiSounds } from "@moth-hooks/sounds/ui";
 import { useUi as useSoundUi } from "@moth-hooks/sounds/ui";
 import type { TCurrent } from "../types";
-import { usePlay } from "@moth-hooks/sounds/ost/tracks/koolasuchas/usePlay";
+import { usePlay } from "@moth-hooks/sounds/ost/tracks/eukaryotchii/usePlay";
 import { useMothContext } from "@moth-state/Context";
 
 export type TSounds = TDirectionsSounds &

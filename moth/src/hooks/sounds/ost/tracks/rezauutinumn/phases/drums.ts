@@ -20,7 +20,7 @@ export const useDrums = () => {
     CYMBAL_STEPS_1.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      cymbal({
+      cymbal.play({
         startTime: context.currentTime + index * d + start,
         volume: 0.1,
       });
@@ -28,7 +28,7 @@ export const useDrums = () => {
     SNARE_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      snare({
+      snare.play({
         startTime: context.currentTime + index * d + start,
         volume: 0.1,
       });
@@ -36,7 +36,7 @@ export const useDrums = () => {
     KICK_STEPS_1.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      kick({
+      kick.play({
         startTime: context.currentTime + index * d + start,
         volume: 0.1,
       });

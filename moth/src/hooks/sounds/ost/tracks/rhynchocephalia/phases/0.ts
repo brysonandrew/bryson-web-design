@@ -10,23 +10,29 @@ import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
 import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
 import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
 import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
+import type {
+  TPlayer,
+  TPlayerConfig,
+} from "@moth-hooks/sounds/ost/types";
 
 export const usePhase0 = () => {
+  const { context } = useMothContext();
   const bass = useBass1();
 
   const cymbal = useCymbal();
   const snare = useSnare();
   const kick = useKick();
 
-  const { context } = useMothContext();
-
-  const loop = ({ duration, start }: TPlayerConfig) => {
+  const play: TPlayer = ({
+    duration,
+    start,
+  }: TPlayerConfig) => {
     STEPS.forEach((v, index, { length }) => {
       const d = duration / length;
-
+      const startTime =
+        context.currentTime + index * d + start;
       bass.play({
-        startTime: context.currentTime + index * d + start,
+        startTime,
         pitch: v + 36,
         duration: SPEED,
         volume: 0.028,
@@ -35,16 +41,20 @@ export const usePhase0 = () => {
     CYMBAL_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      cymbal({
-        startTime: context.currentTime + index * d + start,
+      const startTime =
+        context.currentTime + index * d + start;
+      cymbal.play({
+        startTime,
         volume: 0.2,
       });
     });
     SNARE_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      snare({
-        startTime: context.currentTime + index * d + start,
+      const startTime =
+        context.currentTime + index * d + start;
+      snare.play({
+        startTime,
         volume: 0.2,
         version: 2,
         type: "highpass",
@@ -53,12 +63,14 @@ export const usePhase0 = () => {
     KICK_STEPS.forEach((v, index, { length }) => {
       if (!v) return;
       const d = duration / length;
-      kick({
-        startTime: context.currentTime + index * d + start,
+      const startTime =
+        context.currentTime + index * d + start;
+      kick.play({
+        startTime,
         volume: 0.4,
       });
     });
   };
 
-  return loop;
+  return play;
 };

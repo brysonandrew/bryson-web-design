@@ -1,8 +1,4 @@
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import {
   FOOTER_TRANSITION,
@@ -14,9 +10,6 @@ import { Sound } from "./Sound";
 import { useDetectGPU } from "@react-three/drei";
 
 const Root = styled(motion.footer)``;
-const Background = styled(motion.div)``;
-const BackgroundFade = styled(motion.div)``;
-const Border = styled(motion.div)``;
 
 export const Footer = () => {
   const { isMobile } = useDetectGPU();
@@ -39,9 +32,11 @@ export const Footer = () => {
       {...(isInit ? initAnimation : {})}
     >
       <div className="relative">
-        <Sub classValue="px-3">ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ</Sub>
-        <div className="py-0.5"/>
-        <Sub classValue="px-3">ᴡᴇʙ sɪɴᴄᴇ 2014</Sub>
+        <>
+          <Sub classValue="px-3">ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ</Sub>
+          <div className="py-0.5" />
+          <Sub classValue="px-3">ᴡᴇʙ sɪɴᴄᴇ 2014</Sub>
+        </>
       </div>
       {!isMobile && <Sound />}
     </Root>

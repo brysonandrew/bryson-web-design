@@ -2,7 +2,9 @@ export type TPlayerConfig = {
   start: number;
   duration: number;
 };
-export type TPlayer = (config: TPlayerConfig) => void;
+export type TPlayer = (
+  config: TPlayerConfig,
+) => void;
 export type TPlayers = TPlayer[];
 export type TPhaseOptions = {
   sustain?: number;

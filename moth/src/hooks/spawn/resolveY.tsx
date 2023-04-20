@@ -1,4 +1,4 @@
-import { Viewport } from "@react-three/fiber";
+import type { Viewport } from "@react-three/fiber";
 const OFFSET = 0.6;
 type TResolveXConfig = {
   viewport: Viewport;

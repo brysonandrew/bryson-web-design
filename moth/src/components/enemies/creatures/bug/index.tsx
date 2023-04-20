@@ -3,10 +3,12 @@ import type { FC } from "react";
 import { useEnemyRef } from "@moth-components/enemies/useEnemyRef";
 import { Body } from "./Body";
 import { Kill } from "./Kill";
+import { useMovement } from "@moth-hooks/movement/useMovement";
 
 type TProps = TSpawn;
 export const Bug: FC<TProps> = (props) => {
   const { resolveRef, source } = useEnemyRef(props);
+  useMovement(source)
 
   return (
     <group>

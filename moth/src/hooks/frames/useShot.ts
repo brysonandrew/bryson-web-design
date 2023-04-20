@@ -1,5 +1,5 @@
-import { TShotRef } from "@moth-components/gun/Shot";
-import { TKillHandlerConfig } from "@moth-hooks/useKill";
+import type { TShotRef } from "@moth-components/gun/Shot";
+import type { TKillHandlerConfig } from "@moth-hooks/useKill";
 import { useFrame } from "@react-three/fiber";
 
 type TConfig = {

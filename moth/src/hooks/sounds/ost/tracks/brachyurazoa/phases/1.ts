@@ -36,7 +36,7 @@ export const usePhase1 = () => {
   const bassLoop = () => {
     STEPS_2.forEach((v, index) => {
       if (!v) return;
-      kick({
+      kick.play({
         startTime: context.currentTime + index * KICK_SPEED,
         volume: 1.4,
       });

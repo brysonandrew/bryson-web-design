@@ -8,6 +8,15 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "replace-master": {
+      state.master.disconnect();
+      const master = state.context.createGain();
+      master.connect(state.context.destination);
+      return {
+        ...state,
+        master,
+      };
+    }
     case "clear-note": {
       return {
         ...state,
@@ -116,7 +125,6 @@ export const reducer = (
       };
     }
     case "kill": {
-      console.log(state.enemies);
       const enemies = state.enemies.filter(
         (v) => v.id !== value.id,
       );

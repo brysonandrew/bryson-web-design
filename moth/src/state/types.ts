@@ -26,8 +26,8 @@ export type TSpecialsRunningRecord = Partial<
 export type TLevelsTuple = typeof LEVEL_KEYS;
 export type TLevelKey = TLevelsTuple[number];
 
-export type TDirection = null | "right" | "left";
-export type TThrust = null | "up" | "down";
+export type TDirection = "right" | "left";
+export type TThrust = "up" | "down";
 export type TMenu = null | "shop" | "sound" | "menu";
 export type TFiringStart = number | null;
 export type TBlades = Group | null;
@@ -39,8 +39,8 @@ export type TManaRecord = {
 };
 
 export type TMothState = {
-  direction: TDirection;
-  thrust: TThrust;
+  direction: TDirection[];
+  thrust: TThrust[];
   speed: number;
   range: number;
   hyperdrive: boolean;
@@ -186,6 +186,10 @@ export type TLevelItem = {
 };
 
 export type TAction =
+  | {
+      type: "replace-master";
+      value: null;
+    }
   | {
       type: "toggle-sound";
       value: null;

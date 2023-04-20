@@ -2,10 +2,12 @@ import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../../types";
+import { useGain } from "../useGain";
 
 export const useBass1 = () => {
   const { context, master } = useMothContext();
   const multiSynth = useSynthMulti(context);
+  const gain = useGain();
 
   const handler = ({
     startTime,
@@ -18,9 +20,7 @@ export const useBass1 = () => {
       frequency: 1200,
       type: "lowpass",
     });
-    const gain = new GainNode(context, {
-      gain: volume ?? 0.01,
-    });
+    gain.gain.value = volume ?? 0.01;
     const options: TMultiOptions = {
       type,
       midi: 0 + (pitch ?? 0),
@@ -41,6 +41,7 @@ export const useBass1 = () => {
 
   return {
     play: handler,
-    stop: stop.bind(multiSynth.stop),
+    stop,
+    gain,
   };
 };

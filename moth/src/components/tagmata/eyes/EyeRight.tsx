@@ -12,7 +12,6 @@ export const EyeRight: FC<TBaseTagmataProps> = ({
   <mesh
     name={EYE_RIGHT_NAME}
     position-x={span}
-    position-z={0.1}
     {...props}
   >
     <circleGeometry args={[size, 8]} />
