@@ -5,7 +5,7 @@ export const useDownload = () => {
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
-    a.download = `test_${Math.random().toFixed(4)}.mp3`;
+    a.download = `test_${Math.random().toFixed(4)}.wav`;
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {

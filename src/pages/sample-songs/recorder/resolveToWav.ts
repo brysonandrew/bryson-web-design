@@ -1,4 +1,4 @@
-import lamejs from "lamejs";
+// import lamejs from "lamejs";
 import { resolveToMp3 } from "./resolveToMp3";
 
 export const resolveToWav = (aBuffer: AudioBuffer) => {
@@ -49,15 +49,15 @@ export const resolveToWav = (aBuffer: AudioBuffer) => {
     btwOffset++; // next source sample
   }
 
-  let wavHdr = lamejs.WavHeader.readHeader(
-    new DataView(btwArrBuff),
-  );
+  // let wavHdr = lamejs.WavHeader.readHeader(
+  //   new DataView(btwArrBuff),
+  // );
 
   //Stereo
   let data = new Int16Array(
     btwArrBuff,
-    wavHdr.dataOffset,
-    wavHdr.dataLen / 2,
+    // wavHdr.dataOffset,
+    // wavHdr.dataLen / 2,
   );
   let leftData = [];
   let rightData = [];
@@ -70,11 +70,11 @@ export const resolveToWav = (aBuffer: AudioBuffer) => {
   const AudioFormat = "MP3";
 
   if (AudioFormat === "MP3") {
-    return resolveToMp3(
-      wavHdr.channels,
-      wavHdr.sampleRate,
-      data,
-    );
+    // return resolveToMp3(
+    //   wavHdr.channels,
+    //   wavHdr.sampleRate,
+    //   data,
+    // );
     // //STEREO
     // if (wavHdr.channels === 2)
     //   return wavToMp3Stereo(

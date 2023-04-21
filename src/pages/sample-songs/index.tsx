@@ -7,23 +7,25 @@ import type { TTrackKey } from "./types";
 import { useSwitchTracks } from "./switch";
 import { useStyles } from "@styles/useStyles";
 import { useMothContext } from "@moth/state/Context";
-import { useRecorder } from "./useRecorder";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
 export const SampleSongs = () => {
-  const { context } = useMothContext();
-  const handler = useRecorder();
   useStyles();
-  const [nowPlaying] = useState<TTrackKey | null>(null);
+  const { context } = useMothContext();
+  const [nowPlaying, setPlaying] =
+    useState<TTrackKey | null>(null);
 
   const switchTracks = useSwitchTracks();
 
   const handleTap = async (name: TTrackKey) => {
-    await context.resume();
-    switchTracks(name);
-    handler();
+    if (name === nowPlaying) {
+    } else {
+      await context.resume();
+      switchTracks(name);
+      setPlaying(name);
+    }
   };
 
   return (

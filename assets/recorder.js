@@ -42,36 +42,36 @@ class Recorder extends AudioWorkletProcessor {
 
   constructor() {
     super();
-    this._bufferSize = 2048;
-    this._buffer = new Float32Array(this._bufferSize);
-    this._initBuffer();
+    this.bufferSize = 2048;
+    this.buffer = new Float32Array(this.bufferSize);
+    this.initBuffer();
   }
 
-  _initBuffer() {
-    this._bytesWritten = 0;
+  initBuffer() {
+    this.bytesWritten = 0;
   }
 
-  _isBufferEmpty() {
-    return this._bytesWritten === 0;
+  isBufferEmpty() {
+    return this.bytesWritten === 0;
   }
 
-  _isBufferFull() {
-    return this._bytesWritten === this._bufferSize;
+  isBufferFull() {
+    return this.bytesWritten === this.bufferSize;
   }
 
-  _appendToBuffer(value) {
-    if (this._isBufferFull()) {
-      this._flush();
+  appendToBuffer(value) {
+    if (this.isBufferFull()) {
+      this.flush();
     }
 
-    this._buffer[this._bytesWritten] = value;
-    this._bytesWritten += 1;
+    this.buffer[this.bytesWritten] = value;
+    this.bytesWritten += 1;
   }
 
-  _flush() {
-    let buffer = this._buffer;
-    if (this._bytesWritten < this._bufferSize) {
-      buffer = buffer.slice(0, this._bytesWritten);
+  flush() {
+    let buffer = this.buffer;
+    if (this.bytesWritten < this.bufferSize) {
+      buffer = buffer.slice(0, this.bytesWritten);
     }
 
     this.port.postMessage({
@@ -79,10 +79,10 @@ class Recorder extends AudioWorkletProcessor {
       audioBuffer: buffer
     });
 
-    this._initBuffer();
+    this.initBuffer();
   }
 
-  _recordingStopped() {
+  recordingStopped() {
     this.port.postMessage({
       eventType: 'stop'
     });
@@ -97,13 +97,13 @@ class Recorder extends AudioWorkletProcessor {
       dataIndex++
     ) {
       const shouldRecord = isRecordingValues[dataIndex] === 1;
-      if (!shouldRecord && !this._isBufferEmpty()) {
-        this._flush();
-        this._recordingStopped();
+      if (!shouldRecord && !this.isBufferEmpty()) {
+        this.flush();
+        this.recordingStopped();
       }
 
       if (shouldRecord) {
-        this._appendToBuffer(inputs[0][0][dataIndex]);
+        this.appendToBuffer(inputs[0][0][dataIndex]);
       }
     }
 
