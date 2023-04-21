@@ -187,10 +187,6 @@ export type TLevelItem = {
 
 export type TAction =
   | {
-      type: "replace-master";
-      value: null;
-    }
-  | {
       type: "toggle-sound";
       value: null;
     }

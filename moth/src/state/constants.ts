@@ -66,7 +66,7 @@ export const LOCAL_STATE: TLocalState = {
   },
 };
 
-master.connect(context.destination);
+// master.connect(context.destination);
 
 export const STATE: TState = {
   ...LOCAL_STATE,

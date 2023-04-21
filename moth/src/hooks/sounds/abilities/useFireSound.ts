@@ -32,7 +32,6 @@ export const useFireSound = () => {
       0.001,
       context.currentTime + 0.4,
     );
-    gain.connect(context.destination);
     gain.gain.linearRampToValueAtTime(
       0,
       context.currentTime + 1,

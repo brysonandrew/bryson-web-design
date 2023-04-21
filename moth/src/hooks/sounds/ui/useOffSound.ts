@@ -6,7 +6,7 @@ import {
 import { useMothContext } from "@moth-state/Context";
 
 export const useOffSound = () => {
-  const { context, isSound } = useMothContext();
+  const { context, isSound, master } = useMothContext();
   const { play } = useSynthMulti(context);
 
   const handler = async () => {
@@ -29,7 +29,7 @@ export const useOffSound = () => {
       output: filter,
     };
     filter.connect(gain);
-    gain.connect(context.destination);
+    gain.connect(master);
     gain.gain.linearRampToValueAtTime(
       0,
       context.currentTime + 0.6,

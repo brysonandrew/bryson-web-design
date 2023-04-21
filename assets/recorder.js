@@ -1,49 +1,34 @@
 /*
 A worklet for recording in sync with AudioContext.currentTime.
 
-More info about the API:
-https://developers.google.com/web/updates/2017/12/audio-worklet
-
-How to use:
-
-1. Serve this file from your server (e.g. put it in the "public" folder) as is.
-
-2. Register the worklet:
-
-    const audioContext = new AudioContext();
-    audioContext.audioWorklet.addModule('path/to/recorderWorkletProcessor.js')
-      .then(() => {
-        // your code here
-      })
-
-3. Whenever you need to record anything, create a WorkletNode, route the 
+How to use. Whenever you need to record anything, create a WorkletNode, route the 
 audio into it, and schedule the values for 'isRecording' parameter:
 
-      const recorderNode = new window.AudioWorkletNode(
-        audioContext,
-        'recorder-worklet'
-      );
+    const recorderNode = new window.AudioWorkletNode(
+      audioContext,
+      'recorder-worklet'
+    );
 
-      yourSourceNode.connect(recorderNode);
-      recorderNode.connect(audioContext.destination);
+    yourSourceNode.connect(recorderNode);
+    recorderNode.connect(audioContext.destination);
 
-      recorderNode.port.onmessage = (e) => {
-        if (e.data.eventType === 'data') {
-          const audioData = e.data.audioBuffer;
-          // process pcm data
-        }
+    recorderNode.port.onmessage = (e) => {
+      if (e.data.eventType === 'data') {
+        const audioData = e.data.audioBuffer;
+        // process pcm data
+      }
 
-        if (e.data.eventType === 'stop') {
-          // recording has stopped
-        }
-      };
+      if (e.data.eventType === 'stop') {
+        // recording has stopped
+      }
+    };
 
-      recorderNode.parameters.get('isRecording').setValueAtTime(1, time);
-      recorderNode.parameters.get('isRecording').setValueAtTime(
-        0,
-        time + duration
-      );
-      yourSourceNode.start(time);
+    recorderNode.parameters.get('isRecording').setValueAtTime(1, time);
+    recorderNode.parameters.get('isRecording').setValueAtTime(
+      0,
+      time + duration
+    );
+    yourSourceNode.start(time);
       
 */
 

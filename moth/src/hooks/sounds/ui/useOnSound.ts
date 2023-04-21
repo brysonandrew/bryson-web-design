@@ -6,7 +6,7 @@ import {
 import { useMothContext } from "@moth-state/Context";
 
 export const useOnSound = () => {
-  const { context, isSound } = useMothContext();
+  const { context, isSound, master } = useMothContext();
   const { play } = useSynthMulti(context);
 
   const handler = async () => {
@@ -34,7 +34,7 @@ export const useOnSound = () => {
     };
 
     filter.connect(gain);
-    gain.connect(context.destination);
+    gain.connect(master);
 
     await play(opts);
   };
