@@ -1503,6 +1503,7 @@ __metadata:
     detect-gpu: ^5.0.16
     eslint: ^8.21.0
     framer-motion: ^10.3.2
+    lamejs: ^1.2.1
     prettier: ^2.8.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -2693,6 +2694,15 @@ __metadata:
   version: 0.4.5
   resolution: "ktx-parse@npm:0.4.5"
   checksum: f82d8b5dfd0ede05d5e4a2d90ad5114c83d8f708431e3fce2c3e6e0a0e1fe1b1649cb6f3de35b429ef636ce9a92a3897295198e94b46bba24bc3268c6ae9cc42
+  languageName: node
+  linkType: hard
+
+"lamejs@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "lamejs@npm:1.2.1"
+  dependencies:
+    use-strict: 1.0.1
+  checksum: bb49d2fcb48d087f7c3efb7d0ac5a2972def8c9ab2795e42cf20565b9198cdbae0faedd1fc6c7019ee3868f17e7af31976793dbc96c95fc08ccb692b8df5895d
   languageName: node
   linkType: hard
 
@@ -4053,6 +4063,13 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"use-strict@npm:1.0.1":
+  version: 1.0.1
+  resolution: "use-strict@npm:1.0.1"
+  checksum: e2798c587b8dc95483ac376e1b9b13fbab179bbd498ed7bd55cba2ef72792569621ba25d9aa5df21f884a161d28624d39165070a690fc5f088bf903e097fc267
   languageName: node
   linkType: hard
 

@@ -31,6 +31,7 @@ interface ICustomWindow extends Window {
 }
 
 declare const window: ICustomWindow & any;
+
 declare module "*.mid" {
   const content: any;
   export default content;
@@ -140,3 +141,5 @@ declare function registerProcessor(
     parameterDescriptors?: AudioParamDescriptor[];
   },
 ): void;
+
+declare module "lamejs"
