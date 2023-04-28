@@ -1,7 +1,7 @@
 import { useMothContext } from "@moth-state/Context";
-import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
+import { useCymbal } from "@moth-hooks/sounds/ost/drums/useCymbal";
+import { useKick } from "@moth-hooks/sounds/ost/drums/useKick";
+import { useSnare } from "@moth-hooks/sounds/ost/drums/useSnare";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import {
   CYMBAL_STEPS_1,

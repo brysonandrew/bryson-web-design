@@ -6,9 +6,9 @@ import {
   TIME,
   APRPEGGIOS_0,
 } from "./constants";
-import { useBass2 } from "../../../sounds/basses/useBass2";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import { useFade } from "@moth-hooks/sounds/ost/sounds/wails/useFade";
+import { useBass2 } from "../../../basses/useBass2";
+import { useKick } from "@moth-hooks/sounds/ost/drums/useKick";
+import { useFade } from "@moth-hooks/sounds/ost/wails/useFade";
 
 export const usePhase0 = () => {
   const arpeggio = useFade();

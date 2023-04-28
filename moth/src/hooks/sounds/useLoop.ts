@@ -70,13 +70,17 @@ export const useLoop = ({ phases, interval }: TConfig) => {
   useInterval(loop, time);
 
   const preload = async () => {
-    console.log("PRELOAD");
+    // console.log("PRELOAD");
   };
 
   const play = async () => {
     await mothContext.context.resume();
     await preload();
     setTime(interval * 1000);
+
+    // setTimeout(() => {
+    //   setTime(interval * 1000);
+    // }, 12000);
   };
 
   const stop = () => {

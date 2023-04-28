@@ -1,6 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
 import { STEPS_3 } from "../constants";
-import { useSynth } from "../../../sounds/synths/useSynth";
+import { useSynth } from "../../../synths/useSynth";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const usePhase3 = () => {

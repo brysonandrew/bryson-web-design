@@ -1,6 +1,6 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useKick as _useKick } from "../../../sounds/drums/useKick";
+import { useKick as _useKick } from "../../../drums/useKick";
 import { KICK_STEPS } from "../constants";
 
 const VOLUME = 0.24;

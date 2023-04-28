@@ -3,7 +3,7 @@ import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 
 export const useBass = () => {
-  const { context } = useMothContext();
+  const { context, master } = useMothContext();
   const { play, stop } = useSynthMulti(context);
 
   const handler = (startTime: number) => {
@@ -29,7 +29,7 @@ export const useBass = () => {
     );
     gain.gain.linearRampToValueAtTime(0, startTime + 0.6);
     filter.connect(gain);
-    gain.connect(context.destination);
+    gain.connect(master);
     play(opts);
   };
   const handleStop = () => {

@@ -6,10 +6,10 @@ import {
   SPEED,
   STEPS,
 } from "../constants";
-import { useBass1 } from "@moth-hooks/sounds/ost/sounds/basses/useBass1";
-import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
-import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
+import { useBass1 } from "@moth-hooks/sounds/ost/basses/useBass1";
+import { useCymbal } from "@moth-hooks/sounds/ost/drums/useCymbal";
+import { useSnare } from "@moth-hooks/sounds/ost/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/drums/useKick";
 import type {
   TPlayer,
   TPlayerConfig,

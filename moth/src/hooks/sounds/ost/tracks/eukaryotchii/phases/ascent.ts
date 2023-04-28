@@ -2,7 +2,7 @@ import { interpolateScale } from "@moth-hooks/sounds/constants/scales";
 import {
   useMech,
   type TMechHandlerConfig,
-} from "@moth-hooks/sounds/ost/sounds/robos/useMech";
+} from "@moth-hooks/sounds/ost/robos/useMech";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 

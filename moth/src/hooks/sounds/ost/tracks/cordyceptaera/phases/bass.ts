@@ -1,7 +1,7 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useBass5 } from "../../../sounds/basses/useBass5";
-import { useTom } from "../../../sounds/drums/useTom";
+import { useBass5 } from "../../../basses/useBass5";
+import { useTom } from "../../../drums/useTom";
 import { BASS_STEPS } from "../constants";
 
 export const useBass = () => {

@@ -2,7 +2,7 @@ import { MOTION_CONFIG } from "@constants/animation";
 import { MotionConfig } from "framer-motion";
 import { Suspense } from "react";
 import { MothProvider } from "@moth/state/Provider";
-import { SampleSongs as _SampleSongs } from "@pages/sample-songs";
+import { Sample as _SampleSongs } from "@pages/songs/sample";
 
 export const SampleSongs = () => (
   <Suspense fallback={null}>

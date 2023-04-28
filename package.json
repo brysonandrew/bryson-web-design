@@ -27,6 +27,7 @@
     "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.57.3",
     "@react-three/fiber": "^8.12.0",
+    "audiobuffer-to-wav": "^1.0.0",
     "clsx": "^1.2.1",
     "detect-gpu": "^5.0.16",
     "framer-motion": "^10.3.2",

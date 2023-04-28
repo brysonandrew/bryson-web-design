@@ -1,4 +1,4 @@
-import { useAtaxia } from "@moth-hooks/sounds/ost/sounds/termini/useAtaxia";
+import { useAtaxia } from "@moth-hooks/sounds/ost/termini/useAtaxia";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 

@@ -1,5 +1,5 @@
 import { useMothContext } from "@moth-state/Context";
-import { useGlitch } from "../../../sounds/robos/useGlitch";
+import { useGlitch } from "../../../robos/useGlitch";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 export const useIntro = () => {

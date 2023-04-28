@@ -1,5 +1,5 @@
 import { useMothContext } from "@moth-state/Context";
-import { usePowerUp } from "../../../sounds/robos/usePowerUp";
+import { usePowerUp } from "../../../robos/usePowerUp";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 
 const STEPS = [12, 24, 0, 48];

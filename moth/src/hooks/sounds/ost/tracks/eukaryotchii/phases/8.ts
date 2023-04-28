@@ -1,4 +1,4 @@
-import { usePunisher } from "@moth-hooks/sounds/ost/sounds/termini/usePunisher";
+import { usePunisher } from "@moth-hooks/sounds/ost/termini/usePunisher";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { PUNISHER_STEPS } from "../constants";

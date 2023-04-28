@@ -5,9 +5,9 @@ import {
   SNARE_STEPS,
 } from "../constants";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
-import { useSnare } from "@moth-hooks/sounds/ost/sounds/drums/useSnare";
-import { useKick } from "@moth-hooks/sounds/ost/sounds/drums/useKick";
-import { useCymbal } from "@moth-hooks/sounds/ost/sounds/drums/useCymbal";
+import { useSnare } from "@moth-hooks/sounds/ost/drums/useSnare";
+import { useKick } from "@moth-hooks/sounds/ost/drums/useKick";
+import { useCymbal } from "@moth-hooks/sounds/ost/drums/useCymbal";
 
 export const useDrums = () => {
   const snare = useSnare();
