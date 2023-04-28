@@ -1,6 +1,6 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useSynth3 } from "../../../sounds/synths/useSynth3";
+import { useSynth3 } from "../../../synths/useSynth3";
 import {
   ARPEGGIO_ASCENDING_STEPS_0,
   ARPEGGIO_VOLUME,

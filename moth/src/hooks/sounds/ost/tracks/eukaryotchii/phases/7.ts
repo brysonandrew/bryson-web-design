@@ -1,5 +1,5 @@
-import { useClang } from "@moth-hooks/sounds/ost/sounds/robos/useClang";
-import type { TMechHandlerConfig } from "@moth-hooks/sounds/ost/sounds/robos/useMech";
+import { useClang } from "@moth-hooks/sounds/ost/robos/useClang";
+import type { TMechHandlerConfig } from "@moth-hooks/sounds/ost/robos/useMech";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { STEPS_1, STEPS_2 } from "../constants";

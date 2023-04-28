@@ -6,7 +6,8 @@ import { useRoutes } from "react-router-dom";
 import { MOTH_ROUTES } from "./moth";
 import { OstWip } from "@pages/ost-wip";
 import { AlbumCover } from "@pages/ost-wip/album-cover";
-import { SampleSongs } from "@pages/sample-songs";
+import { Sample as SampleSongs } from "@pages/songs/sample";
+import { Hype as HypeSongs } from "@pages/songs/hype";
 
 export const Source = () => {
   const element = useRoutes([
@@ -25,6 +26,10 @@ export const Source = () => {
     {
       path: "/songs",
       element: <SampleSongs />,
+    },
+    {
+      path: "/hype",
+      element: <HypeSongs />,
     },
     {
       path: "/ost-wip",

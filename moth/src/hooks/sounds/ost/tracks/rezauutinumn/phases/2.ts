@@ -1,6 +1,6 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useSynth2 } from "../../../sounds/synths/useSynth2";
+import { useSynth2 } from "../../../synths/useSynth2";
 import { SPEED, STEPS_2 } from "../constants";
 
 export const usePhase2 = () => {

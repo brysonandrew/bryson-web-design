@@ -1,4 +1,4 @@
-import { useDistruptor } from "@moth-hooks/sounds/ost/sounds/termini/useDistruptor";
+import { useDistruptor } from "@moth-hooks/sounds/ost/termini/useDistruptor";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import {

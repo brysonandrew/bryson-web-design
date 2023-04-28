@@ -1,4 +1,4 @@
-import { useTundra } from "@moth-hooks/sounds/ost/sounds/wails/useTundra";
+import { useTundra } from "@moth-hooks/sounds/ost/wails/useTundra";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { SYNTH_VOLUME, TUNDRA_STEPS_4 } from "../constants";

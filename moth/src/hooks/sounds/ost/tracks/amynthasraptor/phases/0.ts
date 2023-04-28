@@ -1,6 +1,6 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useBass3 } from "../../../sounds/basses/useBass3";
+import { useBass3 } from "../../../basses/useBass3";
 import { ARPEGGIO_STEPS } from "./constants";
 
 export const usePhase0 = () => {
