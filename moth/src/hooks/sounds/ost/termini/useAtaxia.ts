@@ -1,7 +1,6 @@
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../types";
 import { midiToHz } from "@moth-utils/sound";
-import { useGain } from "../useGain";
 
 type TAtaxiaHandlerConfig = THandlerConfig & {
   delayRamp?: number | null;

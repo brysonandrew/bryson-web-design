@@ -42,7 +42,7 @@ export const useMech = () => {
     const end = startTime + duration;
     const options: TMultiOptions = {
       type,
-      midi: 28 + pitch,
+      midi: 24 + pitch,
       count: 1,
       spread: 0,
       stagger: 0,

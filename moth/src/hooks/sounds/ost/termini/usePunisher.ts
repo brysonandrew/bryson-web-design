@@ -2,7 +2,7 @@ import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../tracks/rezauutinumn/types";
-
+const OFFSET = 0.01;
 export const usePunisher = () => {
   const { context, master } = useMothContext();
   const multiSynth = useSynthMulti(context);
@@ -34,8 +34,8 @@ export const usePunisher = () => {
       count: 24,
       spread: 2.2,
       stagger: 0.00099,
-      start: startTime,
-      end,
+      start: startTime + OFFSET,
+      end: end - OFFSET,
       output: filter,
     };
 
