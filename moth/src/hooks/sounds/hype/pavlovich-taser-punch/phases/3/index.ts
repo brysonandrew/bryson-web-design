@@ -1,21 +1,22 @@
+import { useTaser } from "@moth-hooks/sounds/ost/robos/useTaser";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useTaser } from "@moth-hooks/sounds/ost/robos/useTaser";
-import { ARPEGGIO_STEPS } from "./constants";
+import { STEPS } from "./constants";
 
-export const usePhase0 = () => {
+export const usePhase3 = () => {
+  const taser = useTaser();
   const { context } = useMothContext();
 
-  const arpeggio = useTaser();
-
   const loop = ({ duration, start }: TPlayerConfig) => {
-    ARPEGGIO_STEPS.forEach((v, index, { length }) => {
+    STEPS.forEach((v, index, { length }) => {
       const d = duration / length;
-      arpeggio.play({
+      const config = {
         startTime: context.currentTime + index * d + start,
-        pitch: v + 36,
-        duration: d * 0.9,
-      });
+        pitch: v + 2,
+        duration: d,
+        volume: 0.08,
+      };
+      taser.play(config);
     });
   };
 

@@ -2,6 +2,9 @@ import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../types";
+
+const OFFSET = 0.01;
+
 export type TFromTo = {
   from: number;
   to: number;
@@ -18,7 +21,7 @@ export const useDistruptor = () => {
     startTime,
     pitch = 0,
     duration = 0,
-    type = "sawtooth",
+    type = "sine",
     volume = 0.1,
     fromTo = {
       // from: 1,
@@ -47,8 +50,8 @@ export const useDistruptor = () => {
       count: 24,
       spread: 2.2,
       stagger: 0.00099,
-      start: startTime,
-      end,
+      start: startTime + OFFSET,
+      end: end - OFFSET,
       output: filter,
     };
     delay.delayTime.exponentialRampToValueAtTime(
@@ -59,13 +62,13 @@ export const useDistruptor = () => {
       gain: 0.99,
     });
     feedback.gain.setValueAtTime(0.99, startTime);
-    const feedbackEnd =
-      end + Math.max(fromTo.to, fromTo.from);
+    // const feedbackEnd =
+    //   end + Math.max(fromTo.to, fromTo.from);
     feedback.gain.exponentialRampToValueAtTime(
       0.001,
-      feedbackEnd,
+      end,
     );
-    feedback.gain.setValueAtTime(0, feedbackEnd);
+    feedback.gain.setValueAtTime(0, end);
 
     delay.connect(filter);
     filter.connect(feedback);

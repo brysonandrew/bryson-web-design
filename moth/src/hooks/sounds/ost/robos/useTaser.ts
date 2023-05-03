@@ -3,24 +3,24 @@ import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../types";
 
-export type TClangHandlerConfig = THandlerConfig & {
-  torque?: number;
-  revs?: number;
+export type TTaserHandlerConfig = THandlerConfig & {
+  volts?: number;
+  current?: number;
 };
 
-export const useClang = () => {
+export const useTaser = () => {
   const { context, master } = useMothContext();
   const { play, stop } = useSynthMulti(context);
 
-  const handler = (config: TClangHandlerConfig) => {
+  const handler = (config: TTaserHandlerConfig) => {
     const {
       type = "sawtooth",
       startTime,
       duration = 1,
       pitch = 0,
       volume = 0.01,
-      torque = 1200,
-      revs = 2400,
+      volts = 1200,
+      current = 2400,
     } = config;
 
     const delayTime = {
@@ -29,19 +29,19 @@ export const useClang = () => {
     };
 
     const lfo = new OscillatorNode(context, {
-      frequency: revs,
+      frequency: current,
     });
-    lfo.frequency.setValueAtTime(revs, startTime);
-    const lfoGain = new GainNode(context, { gain: torque });
-    lfoGain.gain.setValueAtTime(torque, startTime);
+    lfo.frequency.setValueAtTime(current, startTime);
+    const lfoGain = new GainNode(context, { gain: volts });
+    lfoGain.gain.setValueAtTime(volts, startTime);
     lfo.connect(lfoGain);
     const lowpass = new BiquadFilterNode(context, {
       frequency: 800,
-      type: "lowpass",
+      type: "allpass",
     });
     const filter = new BiquadFilterNode(context, {
-      frequency: 1200,
-      type: "lowpass",
+      frequency: 1400,
+      type: "highpass",
     });
     filter.frequency.setValueAtTime(1200, startTime);
     filter.detune.setValueAtTime(0, startTime);

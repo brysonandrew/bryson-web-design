@@ -1,7 +1,8 @@
 import { useMothContext } from "@moth-state/Context";
 import type { THandlerConfig } from "../types";
 import { midiToHz } from "@moth-utils/sound";
-import { useGain } from "../useGain";
+
+const OFFSET = 0.01;
 
 type TAtaxiaHandlerConfig = THandlerConfig & {
   delayRamp?: number | null;
@@ -19,10 +20,11 @@ export const useAtaxia = () => {
     delayRamp = null,
     frequencyRamp = null,
   }: TAtaxiaHandlerConfig) => {
-    const end = startTime + duration;
+    const start = startTime + OFFSET;
+    const end = startTime + duration - OFFSET;
 
     const delay = context.createDelay();
-    delay.delayTime.setValueAtTime(0.01, startTime);
+    delay.delayTime.setValueAtTime(0.01, start);
     if (delayRamp !== null) {
       delay.delayTime.exponentialRampToValueAtTime(
         delayRamp,
@@ -31,16 +33,17 @@ export const useAtaxia = () => {
     }
 
     const gain = context.createGain();
+    gain.gain.setValueAtTime(0, end);
     gain.gain.exponentialRampToValueAtTime(0.001, end);
     gain.gain.setValueAtTime(0, end);
 
     const gain2 = context.createGain();
-    gain2.gain.setValueAtTime(volume, startTime);
+    gain2.gain.setValueAtTime(volume, start);
     gain2.gain.exponentialRampToValueAtTime(0.001, end);
     gain2.gain.setValueAtTime(0, end);
 
     const o = context.createOscillator();
-    o.frequency.setValueAtTime(midiToHz(pitch), startTime);
+    o.frequency.setValueAtTime(midiToHz(pitch), start);
     if (frequencyRamp !== null) {
       o.frequency.exponentialRampToValueAtTime(
         frequencyRamp,
@@ -49,12 +52,12 @@ export const useAtaxia = () => {
     }
 
     const feedback = context.createGain();
-    feedback.gain.setValueAtTime(1.1, startTime);
+    feedback.gain.setValueAtTime(1.1, start);
     feedback.gain.exponentialRampToValueAtTime(0.001, end);
     feedback.gain.setValueAtTime(0, end);
 
     o.connect(gain);
-    o.start(startTime);
+    o.start(start);
     o.stop(end);
 
     gain.connect(delay);

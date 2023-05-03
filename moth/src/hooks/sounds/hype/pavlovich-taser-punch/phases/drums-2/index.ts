@@ -6,13 +6,13 @@ import {
   CYMBAL_STEPS,
   KICK_STEPS,
   SNARE_STEPS,
-} from "./drums-2/constants";
+} from "./constants";
 import { useCymbal } from "@moth-hooks/sounds/ost/drums/useCymbal";
 
-const VOLUME = 1;
+const VOLUME = 4;
 const VOLUME_SNARE = VOLUME * 0.01;
 
-export const useDrums = () => {
+export const useDrums2 = () => {
   const { context } = useMothContext();
   const snare = useSnare();
   const kick = useKick();
