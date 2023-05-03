@@ -1,5 +1,4 @@
 import { useAtaxia } from "@moth-hooks/sounds/ost/termini/useAtaxia";
-import { useGain } from "@moth-hooks/sounds/ost/useGain";
 import type {
   TPlayer,
   TPlayerConfig,

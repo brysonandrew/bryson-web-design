@@ -7,6 +7,7 @@ import type { TTrackHypeKey } from "./types";
 import { useSwitchTracks } from "./switch";
 import { useStyles } from "@styles/useStyles";
 import { useMothContext } from "@moth/state/Context";
+import { useKey } from "@hooks/useKey";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -27,6 +28,23 @@ export const Hype = () => {
       setPlaying(name);
     }
   };
+
+  useKey({
+    handlers: {
+      onKeyDown: ({ key, repeat }) => {
+        if (key === " ") {
+          window.location.reload();
+          return;
+        }
+        const name = TRACKS[Number(key) - 1];
+        if (!repeat && typeof name !== "undefined") {
+          handleTap(name);
+          return;
+        }
+      },
+    },
+    isActive: true,
+  });
 
   return (
     <Root className="flex flex-col items-center w-screen">

@@ -1,12 +1,12 @@
-import { useBass3 } from "@moth-hooks/sounds/ost/basses/useBass3";
+import { useBass1 } from "@moth-hooks/sounds/ost/basses/useBass1";
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { ARPEGGIO_STEPS } from "./drums-build/constants";
+import { ARPEGGIO_STEPS } from "./constants";
 
 export const usePhase1 = () => {
   const { context } = useMothContext();
 
-  const arpeggio = useBass3();
+  const arpeggio = useBass1();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
     ARPEGGIO_STEPS.forEach((v, index, { length }) => {

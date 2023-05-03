@@ -1,7 +1,7 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { ARPEGGIO_STEPS } from "./drums-build/constants";
 import { useTaser } from "@moth-hooks/sounds/ost/robos/useTaser";
+import { ARPEGGIO_STEPS } from "./constants";
 
 export const usePhase0 = () => {
   const { context } = useMothContext();

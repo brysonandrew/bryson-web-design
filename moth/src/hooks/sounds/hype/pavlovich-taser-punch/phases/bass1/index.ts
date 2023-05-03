@@ -2,10 +2,12 @@ import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
 import { THandlerConfig } from "../../types";
 import { STEPS } from "../3/constants";
-import { useDistruptor } from "@moth-hooks/sounds/ost/termini/useDistruptor";
+import { usePunisher } from "@moth-hooks/sounds/ost/termini/usePunisher";
 
-export const useBass0 = () => {
-  const sound = useDistruptor();
+const VOLUME = 0.1
+
+export const useBass1 = () => {
+  const sound = usePunisher();
   const { context } = useMothContext();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
@@ -16,8 +18,7 @@ export const useBass0 = () => {
         startTime: context.currentTime + index * d + start,
         pitch,
         duration: d * 1.1,
-        volume: 1,
-        type: "sine",
+        volume: VOLUME,
       };
       sound.play(config);
     });

@@ -1,9 +1,6 @@
 import { useRef } from "react";
 import type { FC } from "react";
-import {
-  motion,
-  useTransform,
-} from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { Section } from "./Section";
 import type { TBaseProps } from "../types";
 import styled from "@emotion/styled";
@@ -14,6 +11,7 @@ import {
 } from "./constants";
 import { Image } from "./image";
 import type { TMedia } from "@pages/showcase/config";
+import { Filter } from "./Filter";
 
 export const Root = styled(motion.div)``;
 
@@ -34,6 +32,7 @@ export const Sections: FC<TProps> = (props) => {
       style={{ width, left }}
       {...PRESENCE_OPACITY}
     >
+      <Filter motionX={motionX} />
       <motion.ul
         className="absolute flex"
         style={{ left, top: HEADER_SIZE }}
@@ -49,7 +48,7 @@ export const Sections: FC<TProps> = (props) => {
               height: `calc(100vh - ${CONTENT_OFFSET_SIZE}px)`,
             }}
           >
-            <Image item={item} motionX={motionX} />
+            <Image item={item} />
           </Section>
         ))}
       </motion.ul>

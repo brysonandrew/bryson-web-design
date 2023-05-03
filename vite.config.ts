@@ -5,7 +5,6 @@ import windiCss from "vite-plugin-windicss";
 import viteRestart from "vite-plugin-restart";
 
 export default defineConfig({
-
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -18,6 +17,7 @@ export default defineConfig({
       babel: {
         plugins: ["@emotion/babel-plugin"],
       },
+      fastRefresh: false,
     }),
     paths(),
     viteRestart({

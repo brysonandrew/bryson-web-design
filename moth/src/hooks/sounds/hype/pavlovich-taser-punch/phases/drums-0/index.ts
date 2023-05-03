@@ -10,9 +10,9 @@ import {
 import { useCymbal } from "@moth-hooks/sounds/ost/drums/useCymbal";
 
 const VOLUME = 2;
-const VOLUME_SNARE = VOLUME * 0.01;
+const VOLUME_SNARE = VOLUME * 0.1;
 
-export const useDrumsBuild = () => {
+export const useDrums0 = () => {
   const { context } = useMothContext();
   const snare = useSnare();
   const kick = useKick();

@@ -10,7 +10,7 @@ export const usePhase10 = () => {
     const pitch = 72 + 24;
     ataxia.play({
       startTime: context.currentTime + start,
-      pitch,
+      pitch: pitch - 24,
       duration: duration * 24,
       volume: 0.00002,
     });
