@@ -1,21 +1,20 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { useBass3 } from "@moth-hooks/sounds/ost/basses/useBass3";
-import { BASS_STEPS } from "./constants";
+import { INTRO_STEPS } from "./phases/constants";
+import { useGuitar } from "@moth-hooks/sounds/ost/guitars/useGuitar";
 
-export const usePhase1 = () => {
+export const useIntro = () => {
   const { context } = useMothContext();
 
-  const arpeggio = useBass3();
+  const sound = useGuitar();
 
   const loop = ({ duration, start }: TPlayerConfig) => {
-    BASS_STEPS.forEach((v, index, { length }) => {
-      if (v === null) return;
+    INTRO_STEPS.forEach((v, index, { length }) => {
       const d = duration / length;
-      arpeggio.play({
+      sound.play({
         startTime: context.currentTime + index * d + start,
         pitch: v,
-        duration: d,
+        duration: d * 0.9,
       });
     });
   };

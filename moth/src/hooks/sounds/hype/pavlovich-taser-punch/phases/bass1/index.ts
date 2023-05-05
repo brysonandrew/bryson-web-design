@@ -1,6 +1,6 @@
 import type { TPlayerConfig } from "@moth-hooks/sounds/ost/types";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../../types";
+import type { THandlerConfig } from "../../types";
 import { STEPS } from "../3/constants";
 import { usePunisher } from "@moth-hooks/sounds/ost/termini/usePunisher";
 
