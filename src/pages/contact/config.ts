@@ -7,12 +7,12 @@ export const INPUT_CLASS =
   "text-white text-md px-4 pb-1 w-full tracking-widest";
 
 export const textShadow = {
-  on: `0 0 10px ${COLORS["teal-bright-04"]}, 0 0 20px ${COLORS["teal-bright-02"]},
-  0 0 30px ${COLORS["teal-04"]}, 0 0 40px ${COLORS["teal-02"]}, 0 0 50px ${COLORS["teal-02"]},
-  0 0 60px ${COLORS["teal-02"]}, 0 0 70px ${COLORS["teal-04"]}`,
-  off: `0 0 0px ${COLORS["teal-bright-04"]}, 0 0 0px ${COLORS["teal-bright-02"]},
-  0 0 0px ${COLORS["teal-04"]}, 0 0 0px ${COLORS["teal-02"]}, 0 0 50px ${COLORS["teal-02"]},
-  0 0 0px ${COLORS["teal-02"]}, 0 0 0px ${COLORS["teal-04"]}`,
+  on: `0 0 10px ${COLORS["red-bright-04"]}, 0 0 20px ${COLORS["red-bright-02"]},
+  0 0 30px ${COLORS["red-04"]}, 0 0 40px ${COLORS["red-02"]}, 0 0 50px ${COLORS["red-02"]},
+  0 0 60px ${COLORS["red-02"]}, 0 0 70px ${COLORS["red-04"]}`,
+  off: `0 0 0px ${COLORS["red-bright-04"]}, 0 0 0px ${COLORS["red-bright-02"]},
+  0 0 0px ${COLORS["red-04"]}, 0 0 0px ${COLORS["red-02"]}, 0 0 50px ${COLORS["red-02"]},
+  0 0 0px ${COLORS["red-02"]}, 0 0 0px ${COLORS["red-04"]}`,
 };
 
 export type TSendingState =

@@ -5,9 +5,8 @@ import {
   FOOTER_TRANSITION_EXIT,
 } from "@constants/animation";
 import { useContext } from "@state/Context";
-import { Sub } from "@components/text/Sub";
-import { Sound } from "./Sound";
 import { useDetectGPU } from "@react-three/drei";
+import { Sound } from "./Sound";
 
 const Root = styled(motion.footer)``;
 
@@ -28,16 +27,9 @@ export const Footer = () => {
 
   return (
     <Root
-      className="fixed bottom-0 left-0 w-full h-0 z-40"
+      className="fixed bottom-2 right-1 w-full h-0 z-40"
       {...(isInit ? initAnimation : {})}
     >
-      <div className="absolute bottom-4 left-2">
-        <Sub classValue="px-3 whitespace">
-          ᴅᴇᴠᴇʟᴏᴘɪɴɢ ᴏɴ ᴛʜᴇ
-        </Sub>
-        <div className="py-0.5" />
-        <Sub classValue="px-3">ᴡᴇʙ sɪɴᴄᴇ 2014</Sub>
-      </div>
       {!isMobile && <Sound />}
     </Root>
   );

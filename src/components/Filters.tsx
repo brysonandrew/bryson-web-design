@@ -3,12 +3,13 @@ import { Pattern } from "@components/background/pattern";
 import { POOL_ID } from "@components/cursor";
 import { Displacement } from "@components/effects/displacement";
 import { Pool } from "@components/effects/pool";
+import { FilterShell } from "./FilterShell";
 
 export const Filters = () => (
-  <svg width="0%" height="0%" viewBox="0 0 100 100">
+  <FilterShell>
     <Pool id={POOL_ID} intensity={10} />
     <Displacement />
     <Pattern />
     <Morph />
-  </svg>
+  </FilterShell>
 );

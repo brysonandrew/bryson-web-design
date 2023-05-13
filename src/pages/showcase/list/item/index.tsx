@@ -6,7 +6,6 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Container } from "@pages/showcase/full/Container";
 import {
   IMG_KEY,
-  ITEM_HEIGHT,
   SELECTED_KEY,
 } from "@pages/showcase/config";
 import { Link as InternalLink } from "react-router-dom";
@@ -27,10 +26,7 @@ export const Item: FC<TProps> = (props) => {
   const handleOnSound = useOnSound();
 
   return (
-    <Root
-      className="flex relative shadow-teal-01-sm"
-      {...handlers}
-    >
+    <Root className="flex relative" {...handlers}>
       <InternalLink
         to={
           altTo
@@ -38,17 +34,16 @@ export const Item: FC<TProps> = (props) => {
             : `/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`
         }
         onClick={handleOnSound}
-        className="relative rounded-md w-full"
-        style={{ height: ITEM_HEIGHT }}
+        className="relative rounded-md w-full h-14 lg:h-10"
       >
         <Container
           id={key}
-          classValue="flex items-center justify-between absolute inset-0 px-4 text-lg w-full"
+          classValue="flex items-center justify-between absolute inset-0 text-lg w-full"
         >
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
-                className="inline-flex"
+                className="relative flex flex-col w-full lg:flex-row pl-4 pr-2 py-1"
                 key="SELECTED_ITEM_TEXT_KEY"
                 initial={{ opacity: 0 }}
                 animate={{

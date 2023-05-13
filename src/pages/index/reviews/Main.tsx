@@ -31,7 +31,7 @@ export const Main: FC<TProps> = ({
         />
       )}
       <motion.div
-        className="absolute top-2 bottom-2 shadow-teal left-0 w-1 h-full bg-teal-bright"
+        className="absolute top-2 bottom-2 shadow-red left-0 w-1 h-full bg-red"
         animate={{ opacity: isActive ? 1 : 0.2 }}
       />
       <Review index={index} type="short" />

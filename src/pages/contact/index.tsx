@@ -110,7 +110,7 @@ export const Contact = () => {
     <Shell>
       <Root className="flex flex-col px-4">
         <h2
-          className="inline my-0 mx-auto text-lg tracking-widest text-teal-bright"
+          className="inline my-0 mx-auto text-lg tracking-widest text-white"
           style={{ lineHeight: 2 }}
         >
           Send me a message
@@ -128,7 +128,7 @@ export const Contact = () => {
           >
             {isSelected && <Border />}
             <Text
-              title="name"
+              title="name" 
               autoFocus
               className={clsx(INPUT_CLASS, "pt-1.25")}
               disabled={isDisabled}
@@ -155,7 +155,7 @@ export const Contact = () => {
             <Space2 />
             <Textarea
               title="message"
-              className={clsx(INPUT_CLASS, "pt-1.5")}
+              className={clsx(INPUT_CLASS, "pt-2")}
               name="message"
               disabled={isDisabled}
               style={{ marginTop: -4 }}

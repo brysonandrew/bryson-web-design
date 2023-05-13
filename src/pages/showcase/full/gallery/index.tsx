@@ -45,7 +45,7 @@ export const Gallery: FC<TProps> = ({
   };
 
   return (
-    <Root className="relative h-screen w-full overflow-hidden bg-black-05 backdrop-blur-lg">
+    <Root className="relative h-screen w-full mt-6 overflow-hidden bg-black-05 backdrop-blur-lg">
       <AnimatePresence>
         {!windowSize.isResizing && <Sections {...props} />}
       </AnimatePresence>

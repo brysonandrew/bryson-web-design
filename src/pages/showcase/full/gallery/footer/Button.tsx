@@ -56,7 +56,7 @@ export const Button: FC<TProps> = ({
         {isActive && (
           <motion.div
             layoutId="SELECTED_GALLERY_BUTTON"
-            className="absolute inset-0 bg-teal-bright-02"
+            className="absolute inset-0 bg-red-bright-02"
           />
         )}
         <motion.span
