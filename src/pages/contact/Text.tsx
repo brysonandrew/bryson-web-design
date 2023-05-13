@@ -40,8 +40,9 @@ export const Text: FC<TProps> = ({
           <Name>{title}</Name>
         </div>
         <Input
-          {...props}
           className={INPUT_CLASS}
+          {...props}
+
           type="text"
           autoComplete="off"
           onFocus={handleFocusSound}

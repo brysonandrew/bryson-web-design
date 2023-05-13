@@ -1,7 +1,7 @@
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 import { useMothContext } from "@moth-state/Context";
-import { THandlerConfig } from "../types";
+import type { THandlerConfig } from "../types";
 const OFFSET = 0.01;
 
 export const usePunisher = () => {

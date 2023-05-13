@@ -21,7 +21,7 @@ export const Container: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "inset-0 shadow-teal-04-sm bg-black-09 backdrop-blur-xl z-10",
+      "inset-0 shadow-red-04-sm bg-black-09 backdrop-blur-xl z-10",
       classValue,
     )}
     layoutId={id}

@@ -13,7 +13,7 @@ export const Close: FC = () => {
       style={{ height: HEADER_SIZE }}
     >
       <Link
-        className="relative p-2.5 rounded-full bg-teal-dark-02"
+        className="relative p-2.5 rounded-full bg-red-dark-02"
         to="/showcase"
         onClick={handleOnSound}
       >

@@ -1,8 +1,6 @@
 export const SELECTED_KEY = "selected";
 export const IMG_KEY = "img";
 
-export const ITEM_HEIGHT = 48;
-
 export const ITEM_DESCRIPTION_LOOKUP: Record<
   string,
   string

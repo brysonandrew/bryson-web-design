@@ -13,7 +13,7 @@
             </div>
           </Label>
             <div className="flex items-center justify-end">
-              <h4 className="whitespace-nowrap text-teal">
+              <h4 className="whitespace-nowrap text-red">
                 to
               </h4>
               <div className="p-1" />

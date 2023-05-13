@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Text } from "@components/text/Text";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
+import { WHITE_FILTER } from "../constants";
 
 const Root = styled(motion.div)``;
 
@@ -20,11 +21,12 @@ export const Ending: FC<TProps> = () => {
     >
       <Link
         to="/contact"
-        className="relative px-1 py-2 bg-teal-01 m-1 backdrop-blur-xl"
+        className="relative px-1 py-2 bg-white-005 m-1 backdrop-blur-xl"
       >
         {isSelected && <Select />}
         <Text>
-          👉 Get in touch if you would like to collaborate
+          <span style={WHITE_FILTER}>👉 </span>
+          Get in touch if you would like to collaborate
         </Text>
       </Link>
     </Root>

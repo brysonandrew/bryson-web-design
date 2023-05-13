@@ -49,7 +49,7 @@ export const Square: FC<TProps> = ({
         ...style,
       }}
       className={clsx(
-        "fixed shadow-teal-md z-40 pointer-events-none cursor-crosshair",
+        "fixed shadow-red-md z-40 pointer-events-none cursor-crosshair",
         classValue,
       )}
       animate={{

@@ -19,8 +19,10 @@ export const List: FC<TProps> = ({
   items,
   selectedPath,
 }) => (
-  <Root className="text-teal">
-    <h4 className="uppercase pl-4 text-gray-lighter">{header}</h4>
+  <Root>
+    <h4 className="uppercase pl-4 text-gray-lighter">
+      {header}
+    </h4>
     <div className="py-1" />
     <_List>
       {items.map((item: TItem, index: number) => (

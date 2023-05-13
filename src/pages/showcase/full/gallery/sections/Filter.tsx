@@ -1,6 +1,7 @@
 import { useDetectGPU } from "@react-three/drei";
+import type {
+  MotionValue} from "framer-motion";
 import {
-  MotionValue,
   useVelocity,
   useTransform,
   useMotionTemplate,

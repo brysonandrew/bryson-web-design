@@ -9,7 +9,6 @@ import { useLocation } from "react-router";
 import { Sub } from "./Sub";
 import { Item } from "./right/Item";
 import { Fragment } from "react";
-import { useSelectedItem } from "@pages/showcase/useSelectedItem";
 import {
   HEADER_TRANSITION,
   HEADER_TRANSITION_EXIT,
@@ -26,13 +25,11 @@ const List = styled(motion.ul)``;
 export const Header = () => {
   const { isInit } = useContext();
   const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, 100], [0, -28]);
   const backgroundOpacity = useTransform(
     scrollY,
     [0, 40],
     [1, 0.4],
   );
-  const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
   const borderOpacity = useTransform(
     scrollY,
     [0, 100],
@@ -65,7 +62,7 @@ export const Header = () => {
           originY: 0,
           originX: 0,
         }}
-        className="absolute w-full top-full left-0 w-full h-full from-current bg-gradient-to-b border-teal-04 backdrop-blur-lg pointer-events-none"
+        className="absolute w-full top-full left-0 w-full h-full from-current bg-gradient-to-b border-white-04 backdrop-blur-lg pointer-events-none"
       />
       <Background
         style={{ opacity: backgroundOpacity }}
@@ -73,15 +70,15 @@ export const Header = () => {
       />
       <Border
         style={{ opacity: borderOpacity }}
-        className="absolute bottom-0 left-0 h-px w-full bg-teal-bright-08"
+        className="absolute -bottom-1 left-0 w-full h-px bg-red-04"
       />
-      <div className="flex items-center">
-        <Main {...{ scale, x }} />
+      <div className="flex flex-col">
+        <Main />
         <Sub />
       </div>
       <List
         className={clsx(
-          "flex flex-col md:flex-row items-center mt-0.5",
+          "flex flex-col md:flex-row items-center mt-2",
         )}
       >
         {["showcase", "contact"].map((item, index) => {

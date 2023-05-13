@@ -16,14 +16,14 @@ export const Name: FC<TProps> = ({ children }) => (
       variants={{
         animate: {
           textShadow: textShadow.off,
-          color: COLORS["teal"],
+          color: COLORS["white"],
         },
         focus: {
           textShadow: textShadow.on,
-          color: COLORS["teal-08"],
+          color: COLORS["red-08"],
         },
         value: {
-          color: COLORS["teal-04"],
+          color: COLORS["red-04"],
           textShadow: textShadow.off,
         },
       }}

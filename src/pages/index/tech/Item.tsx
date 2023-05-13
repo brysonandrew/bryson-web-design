@@ -19,7 +19,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
     >
       {isSelected && <Select />}
       <Anchor
-        className="relative flex items-center p-2 lg:p-3 xl:p-4 bg-teal-01"
+        className="relative flex items-center p-2 lg:p-3 xl:p-4 bg-white-005"
         href={href}
         target="_blank"
       >

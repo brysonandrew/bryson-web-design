@@ -11,6 +11,9 @@ export const useSwitchTracks = () => {
       case "big-red-machine": {
         return tracks.bigRedMachine.play();
       }
+      case "ministry": {
+        return tracks.ministry.play();
+      }
       default: {
         return tracks.pavlovichTaserPunch.play();
       }

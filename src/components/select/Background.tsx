@@ -15,7 +15,7 @@ export const Background: FC<TProps> = ({ classValue }) => (
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
       "absolute inset-0 pointer-events-none rounded-sm cursor-default",
-      classValue ?? "bg-teal-01",
+      classValue ?? "bg-red-01",
     )}
   />
 );

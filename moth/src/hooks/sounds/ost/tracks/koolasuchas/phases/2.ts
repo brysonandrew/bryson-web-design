@@ -7,7 +7,7 @@ export const usePhase2 = () => {
   const tundra = useTundra();
 
   const play = ({ duration, start }: TPlayerConfig) => {
-    const pitch = 25;
+    const pitch = 65;
     tundra.play({
       startTime: context.currentTime + start,
       duration,

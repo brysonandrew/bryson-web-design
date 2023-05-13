@@ -21,7 +21,7 @@ export const Link: FC = () => {
   return (
     <Root onTap={handleResetScroll} {...handlers}>
       <_Link
-        className="flex relative px-3 pt-2 pb-3"
+        className="flex relative"
         to="/"
         onClick={handleClick}
       >

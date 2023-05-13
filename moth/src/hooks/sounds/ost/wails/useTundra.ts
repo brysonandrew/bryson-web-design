@@ -56,7 +56,7 @@ export const useTundra = () => {
 
     const options: TMultiOptions = {
       type,
-      midi: 64 + pitch,
+      midi: 24 + pitch,
       count: 10,
       spread: 2,
       stagger: 0.1,

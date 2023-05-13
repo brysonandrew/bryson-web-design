@@ -5,9 +5,11 @@ import { Showcase } from "@pages/showcase";
 import { useRoutes } from "react-router-dom";
 import { MOTH_ROUTES } from "./moth";
 import { OstWip } from "@pages/ost-wip";
-import { AlbumCover } from "@pages/ost-wip/album-cover";
+import { AlbumCover } from "@pages/album-cover";
 import { Sample as SampleSongs } from "@pages/songs/sample";
 import { Hype as HypeSongs } from "@pages/songs/hype";
+import { Card } from "@pages/card";
+import { Cv } from "@pages/cv";
 
 export const Source = () => {
   const element = useRoutes([
@@ -38,6 +40,14 @@ export const Source = () => {
     {
       path: "/album-cover",
       element: <AlbumCover />,
+    },
+    {
+      path: "/card",
+      element: <Card />,
+    },
+    {
+      path: "/cv",
+      element: <Cv />,
     },
     ...MOTH_ROUTES,
     {

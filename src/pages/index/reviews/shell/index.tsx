@@ -1,7 +1,8 @@
 import { Blinders } from "@components/blinders/Blinders";
-import { Text } from "@components/text/Text";
 import { Intro } from "@components/text/Intro";
 import styled from "@emotion/styled";
+import { useOffSound } from "@hooks/sounds/useOffSound";
+import { useOnSound } from "@hooks/sounds/useOnSound";
 import { useOutsideClick } from "@hooks/useOutsideClick";
 import clsx from "clsx";
 import { motion } from "framer-motion";
@@ -11,13 +12,6 @@ import type { TChildrenProps } from "../Motion";
 import { Review } from "../Review";
 import { REVIEWS } from "../constants";
 import { Item } from "./Item";
-import {
-  TMultiOptions,
-  useSynthMulti,
-} from "react-synthwave";
-import { useContext } from "@state/Context";
-import { useOnSound } from "@hooks/sounds/useOnSound";
-import { useOffSound } from "@hooks/sounds/useOffSound";
 
 const Root = styled(motion.div)``;
 

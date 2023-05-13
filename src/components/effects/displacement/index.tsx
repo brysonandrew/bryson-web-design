@@ -16,10 +16,10 @@ export const Displacement: FC<TProps> = ({
   <>
     <filter
       id={filterId}
-      x="-50%"
-      y="-50%"
-      height="200%"
-      width="200%"
+      x="-600%"
+      y="-600%"
+      height="1300%"
+      width="1300%"
     >
       <Filter
         {...props}

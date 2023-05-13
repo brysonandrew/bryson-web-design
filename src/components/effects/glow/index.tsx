@@ -5,14 +5,19 @@ import type { TFilterChildrenProps } from "../types";
 import { HEIGHT, WIDTH } from "../constants";
 
 export const ID = "EdgesId";
-type TProps = TFilterChildrenProps<typeof ID>;
+type TProps = TFilterChildrenProps<typeof ID> & {
+  id?: string;
+  color?: keyof typeof COLORS;
+};
 export const Filter: FC<TProps> = ({
+  id,
   children,
   external,
+  color,
 }) => (
   <>
     <filter
-      id={ID}
+      id={id ?? ID}
       x={0}
       y={0}
       height={HEIGHT}
@@ -31,7 +36,7 @@ export const Filter: FC<TProps> = ({
         result="blur"
       />
       <motion.feFlood
-        floodColor={COLORS["teal-bright"]}
+        floodColor={color ?? COLORS["teal-bright"]}
         result="color"
       />
       <feComposite

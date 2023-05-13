@@ -5,6 +5,11 @@ import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { Border as Select } from "../../../select/Border";
 import { useOffSound } from "@hooks/sounds/useOffSound";
+import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import FONT_SIZE from "@windi/config-font-size.json";
+import { resolveUrlId } from "@utils/resolveUrlId";
+import { ID } from "@components/effects/displacement";
+import { TEXT_CLASS_NAMES } from "@components/text/main/glitch-porsalin/config";
 
 const Root = styled(motion.li)``;
 
@@ -23,13 +28,14 @@ export const Item: FC<TProp> = ({ to, children }) => {
         className="flex items-center justify-center pl-2 pr-1 pt-1 pb-1.5 bg-transparent"
       >
         {isSelected && <Select />}
-
-        <h6
-          className="relative text-teal-bright uppercase text-xxxs"
-          style={{ letterSpacing: 4 }}
+        <GlitchPorsalin
+          style={{ fontSize: FONT_SIZE["xxxs"] }}
+          offset={2.8}
+          tag="h6"
+          classValue="uppercase"
         >
           {children}
-        </h6>
+        </GlitchPorsalin>
       </Link>
     </Root>
   );
