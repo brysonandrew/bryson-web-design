@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import COLORS from "@windi/config-colors.json";
+import type COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";

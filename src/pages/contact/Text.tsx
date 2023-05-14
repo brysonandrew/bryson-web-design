@@ -7,6 +7,7 @@ import { Gradient } from "./Gradient";
 import { TextName } from "./TextName";
 import { LABEL_CLASS } from "./config";
 import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.input)`
@@ -21,14 +22,18 @@ export const Text: FC<TProps> = ({
   title,
   isFocused,
   ...props
-}) => {
-  return (
-    <Root className={clsx(LABEL_CLASS, LINE_COLOR_STYLE)}>
-      <div className="flex items-center">
-        <TextName title={title} isFocused={isFocused} />
-        <Input {...props} type="text" autoComplete="off" />
-      </div>
-      <Gradient />
-    </Root>
-  );
-};
+}) => (
+  <Root className={clsx(LABEL_CLASS)}>
+    <Fill />
+    <div
+      className={clsx(
+        "relative flex items-center bg-black-dark pb-1",
+      )}
+    >
+      <TextName title={title} isFocused={isFocused} />
+      <Input {...props} type="text" autoComplete="off" />
+    </div>
+
+    <Gradient />
+  </Root>
+);

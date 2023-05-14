@@ -16,7 +16,7 @@ import { Text } from "./Text";
 import type { TItem } from "@t/showcase";
 import { LINE_COLOR_STYLE } from "@components/Line";
 import clsx from "clsx";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {

@@ -2,10 +2,13 @@ import { Text } from "@components/text/Text";
 import styled from "@emotion/styled";
 import type { TChildren } from "@t/index";
 import clsx from "clsx";
-import type { HTMLMotionProps} from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { ROLLING_TEXT_CLASS } from "../../constants";
+import {
+  BAR_CLASS,
+  ROLLING_TEXT_CLASS,
+} from "../../constants";
 import { Main } from "../Main";
 import type { TChildrenProps } from "../Motion";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
@@ -40,7 +43,13 @@ export const Item: FC<TProps> = ({
       )}
       {...handlers}
     >
-      <Button className="inline relative" {...props}>
+      <Button className="relative" {...props}>
+        <motion.div
+          className={BAR_CLASS}
+          animate={{
+            filter: `brightness(${isActive ? 100 : 40}%)`,
+          }}
+        />
         {isSelected && <Bar />}
         <List
           className="inline-flex relative"

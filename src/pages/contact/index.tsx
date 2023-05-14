@@ -9,11 +9,6 @@ import type { HTMLMotionProps } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { Text } from "./Text";
-import { Textarea } from "./Textarea";
-import type { TSendingState } from "./config";
-import { INPUT_CLASS, INIT_STATE } from "./config";
-import { Submit } from "./Submit";
 import { Space2 } from "@components/spaces/Space2";
 import { Shell } from "@components/Shell";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
@@ -22,7 +17,11 @@ import { useStyles } from "@styles/useStyles";
 import { useFocusSound } from "@hooks/sounds/useFocusSound";
 import { Shell as MainShell } from "@main/Shell";
 import { TextSm } from "@components/text/TextSm";
-import { Space } from "@components/spaces/Space";
+import { Text } from "./Text";
+import { Textarea } from "./Textarea";
+import type { TSendingState } from "./config";
+import { INPUT_CLASS, INIT_STATE } from "./config";
+import { Submit } from "./Submit";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -122,15 +121,16 @@ export const Contact = () => {
           >
             Tell me please, what's on your mind?
           </TextSm>
-          <Space />
           <Form
-            className="flex flex-col w-full my-0 mx-auto"
+            className={clsx(
+              "flex flex-col w-full my-0 mx-auto",
+            )}
             ref={ref}
             onSubmit={isDisabled ? () => null : sendEmail}
           >
             <Space2 />
             <motion.div
-              className="relative flex flex-col w-full p-2 bg-black-dark"
+              className="relative flex flex-col w-full"
               {...handlers}
             >
               {isSelected && <Border />}
@@ -162,10 +162,10 @@ export const Contact = () => {
               <Space2 />
               <Textarea
                 title="message"
-                className={clsx(INPUT_CLASS, "pt-2")}
+                className={clsx(INPUT_CLASS)}
                 name="message"
                 disabled={isDisabled}
-                style={{ marginTop: -4 }}
+                style={{ marginTop: -6 }}
                 value={state.message}
                 rows={4}
                 cols={50}

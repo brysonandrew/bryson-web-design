@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import clsx from "clsx";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion, useInView } from "framer-motion";
 import { useRef, type FC } from "react";
@@ -8,8 +9,7 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
 import { Pulse } from "@components/select/Pulse";
 import { WHITE_FILTER } from "../constants";
-import clsx from "clsx";
-import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.div)``;
 
@@ -27,17 +27,15 @@ export const Ending: FC<TProps> = () => {
     >
       <Link
         to="/contact"
-        className={clsx(
-          "relative px-2 py-4",
-          LINE_COLOR_STYLE,
-        )}
+        className={clsx("relative px-2 py-4")}
       >
+        <Fill inset={2} />
         {isSelected ? (
           <Select />
         ) : isInView ? (
           <Pulse />
         ) : null}
-        <Text>
+        <Text classValue="relative">
           <span style={WHITE_FILTER}>👉 </span>
           Get in touch if you would like to collaborate
         </Text>

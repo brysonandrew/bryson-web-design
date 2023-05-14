@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { Border as Select } from "../../../select/Border";
+import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.li)``;
 
@@ -22,11 +23,11 @@ export const Item: FC<TProp> = ({ to, children }) => {
       <Link
         to={to}
         onClick={handleClick}
-        className="flex items-center justify-center py-2.5 pl-3 pr-2.5 bg-transparent"
+        className="relative flex items-center justify-center py-2.5 pl-3 pr-2.5 bg-transparent text-xxxs lg:text-xs xl:text-sm"
       >
+        <Fill inset={1} />
         {isSelected && <Select />}
         <GlitchPorsalin
-          style={{ fontSize: FONT_SIZE["xxxs"] }}
           offset={2.8}
           tag="h6"
           classValue="uppercase"

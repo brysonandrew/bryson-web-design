@@ -49,7 +49,7 @@ export const Shell: FC<TProps> = ({
       <Intro>For businesses</Intro>
       <div className="py-2" />
       <Blinders opacity={opacityBlinders} />
-      <div className={clsx("relative w-full h-full left-6")}>
+      <div className={clsx("relative w-full h-full left-8")}>
         {isLong ? (
           <Review
             layoutId={`${long}`}

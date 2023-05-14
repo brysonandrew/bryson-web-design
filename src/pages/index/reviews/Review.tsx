@@ -8,8 +8,6 @@ import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "@constants/animation";
 
 const Long = styled(motion.div)``;
-
-const Block = styled(motion.div)``;
 const Span = styled(motion.span)``;
 
 type TProps = HTMLMotionProps<"div"> & {
@@ -60,11 +58,11 @@ export const Review: FC<TProps> = ({
     );
   }
   return (
-    <TextSm>
-      <Block className="text-slate">{content}</Block>
-      <Block className="text-teal`">
+    <TextSm> 
+      <Span className="text-slate">{content}, </Span>
+      <Span className="text-teal`">
         {author}, {project}
-      </Block>
+      </Span>
     </TextSm>
   );
 };

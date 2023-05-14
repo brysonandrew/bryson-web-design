@@ -14,7 +14,7 @@ const Root = styled(motion.div)``;
 export const Main: FC = () => {
   const { pathname } = useLocation();
   const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, 100], [0, -28]);
+  const x = useTransform(scrollY, [0, 100], [0, -34]);
   const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
 
   return (
@@ -22,6 +22,7 @@ export const Main: FC = () => {
       className="flex flex-col relative grow z-10 top-0.5"
       style={{ scale, x, originY: "50%" }}
     >
+      
       {pathname === "/" ? <Title /> : <Link />}
     </Root>
   );

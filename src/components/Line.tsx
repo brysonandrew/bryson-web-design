@@ -5,12 +5,20 @@ import type { FC } from "react";
 export const LINE_COLOR_STYLE = "bg-white-01";
 
 const Root = styled.hr``;
-
-export const Line: FC = () => (
+type TProps = {
+  position?: "fixed" | "absolute" | "relative";
+  height?: number | string;
+};
+export const Line: FC<TProps> = ({
+  position = "absolute",
+  height = 12,
+}) => (
   <Root
     className={clsx(
-      "relative top-12 flex  w-full h-12",
-      LINE_COLOR_STYLE,
+      `flex ${position} left-0 top-0 w-full h-${height}`,
     )}
+    style={{
+      backgroundColor: "rgba(28, 28, 28, 0.4)",
+    }}
   />
 );

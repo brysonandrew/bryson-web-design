@@ -13,26 +13,29 @@ import { Ending } from "./ending";
 import { Mugshot } from "./mugshot";
 import { Reviews } from "./reviews";
 import { Tech } from "./tech";
+import { Space6 } from "@components/spaces/Space6";
+import { Space16 } from "@components/spaces/Space16";
 
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
       <Shell>
-        <Space4 />
+        <Space2/>
         <Intro />
         <Mugshot />
-        <Space4 />
+        <Space4 /> 
         <Tech />
-        <Space4 />
-        <Line />
         <Space8 />
+        <Line position="relative" />
+        <Space6 />
         <Clients />
-        <Line />
-        <Space8 />
+        <Space6 /> 
+        <Line position="relative" />
+        <Space6 />
         <Reviews />
-        <Space2 />
-        <Line />
-        <Space24 />
+        <Space6 /> 
+        <Line position="relative" />
+        <Space16 />
         <Ending />
         <Space48 />
       </Shell>

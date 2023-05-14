@@ -14,8 +14,7 @@ export const Filter: FC<TProps> = ({
   children,
   external,
   color,
-}) => {
-  return (
+}) => (
     <>
       <filter
         id={id}
@@ -45,5 +44,4 @@ export const Filter: FC<TProps> = ({
       </filter>
       {external && external(id)}
     </>
-  )
-};
+  );

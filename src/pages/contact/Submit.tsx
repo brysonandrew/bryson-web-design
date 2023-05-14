@@ -7,11 +7,11 @@ import type { FC } from "react";
 import type { TSendingState } from "./config";
 import {
   LABEL_BASE_CLASS,
-  LABEL_CLASS,
   resolveButtonValue,
 } from "./config";
 import { useMoveSound } from "@hooks/sounds/useMoveSound";
 import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
 
 const SUBMIT_ID = "SUBMIT_ID";
 
@@ -36,15 +36,18 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
       onTap={handleMoveSound}
       {...handlers}
     >
+      <Fill />
       {isSelected && <Select />}
       <Decoration
         className={clsx(
           LABEL_BASE_CLASS,
-          "px-2 py-1.5 pointer-events-none",
+          "px-2 py-1 pointer-events-none",
         )}
       >
         <Input
-          className={clsx("absolute inset-0 cursor-pointer")}
+          className={clsx(
+            "absolute inset-0 cursor-pointer",
+          )}
           type="submit"
           style={{
             opacity: sendingState === "idle" ? 0.5 : 1,
@@ -55,7 +58,6 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
         <h4
           className={clsx(
             "relative text-center text-white py-2 cursor-pointer",
-            LINE_COLOR_STYLE,
           )}
         >
           {resolveButtonValue(sendingState)}
