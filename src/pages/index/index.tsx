@@ -18,13 +18,13 @@ import { Space32 } from "@components/spaces/Space32";
 
 export const Index = () => (
   <Suspense fallback={null}>
-    <MainShell>
+    <MainShell> 
       <Shell>
         <Intro />
         <Mugshot />
         <Space2 />
         <Tech />
-        <Space6 />
+        <Space6 /> 
         <Line />
         <Space6 />
         <Clients />

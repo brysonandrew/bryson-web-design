@@ -23,10 +23,9 @@ const Blinder = styled(motion.div)``;
 
 const ID_CYCLES: (keyof typeof COLORS)[] = [
   "blue",
-  "green",
+  "black",
   "red",
-  "white",
-
+  "green",
 ];
 
 const Root = styled(motion.div)``;
@@ -72,55 +71,58 @@ export const Mugshot = () => {
             />
           ))}
         </FilterShell>
-        <Image
+        {/* <Image
           width="100%"
           height="100%"
           xlinkHref="/mugshot2.png"
           className="opacity-80"
-        />
-        {ID_CYCLES.map(
-          (_, index: number, { length }) => {
-            const progress =
-              (index / length) * Math.PI * 2 +
-              Math.PI * 1.6;
-            const x = Math.sin(progress) * OFFSET;
-            const y = Math.cos(progress) * OFFSET;
-            return (
-              <Image
-                key={`${x}_${y}`}
-                filter={resolveUrlId(
-                  `${COLOR_ID}_${
-                    ID_CYCLES[index % ID_CYCLES.length]
-                  }`,
-                )}
-                width="100%"
-                height="100%"
-                xlinkHref="/mugshot2.png"
-                style={{
-                  opacity: 1 / length,
-                  mixBlendMode: 
-                 // "saturation"
-                  //"luminosity",
-                    //"lighten",
-                    //"hard-light",
-                  //"overlay",
-                  "screen",
-                  // "hue"
-                  //"color",
-                  //"exclusion",
-                  //"difference",
-                  //"multiply",
-                }}
-                transform={`translate(${x.toFixed(
-                  6,
-                )} ${y.toFixed(6)})`}
-              />
-            );
-          },
-        )}
+        /> */}
+        {ID_CYCLES.map((_, index: number, { length }) => {
+          const progress =
+            (index / length) * Math.PI * 2 + Math.PI * 1.6;
+          const x = Math.sin(progress) * OFFSET;
+          const y = Math.cos(progress) * OFFSET;
+          return (
+            <Image
+              key={`${x}_${y}`}
+              filter={resolveUrlId(
+                `${COLOR_ID}_${
+                  ID_CYCLES[index % ID_CYCLES.length]
+                }`,
+              )}
+              width="100%"
+              height="100%"
+              xlinkHref="/mugshot2.png"
+              style={{
+                opacity: 2 / length,
+                mixBlendMode: 
+                //"saturation",
+                //"luminosity",
+                //"lighten",
+                //"hard-light",
+                //"overlay",
+                // "screen",
+                //"hue"
+                //"color",
+                //"exclusion",
+                "difference",
+                //"multiply",
+              }}
+              transform={`translate(${x.toFixed(
+                6,
+              )} ${y.toFixed(6)})`}
+            />
+          );
+        })}
+        
       </Svg>
       <Blinder
-        style={{ bottom: "5%", left: 38, height: "20%", width: WIDTH+38 }}
+        style={{
+          bottom: "8%",
+          left: 34,
+          height: "20%",
+          width: WIDTH + 46,
+        }}
         className={clsx(
           "absolute bg-gradient-to-t from-black-dark z-10 pointer-events-none",
         )}

@@ -16,7 +16,7 @@ export type TDisplacementProps = TTurbulance & {
   id?: string;
   begin?: number;
 };
-export const INTENSITY = 180;
+export const INTENSITY = 120;
 
 export const TRANSITION_DEFAULTS: TTransition = {
   repeat: Infinity,
