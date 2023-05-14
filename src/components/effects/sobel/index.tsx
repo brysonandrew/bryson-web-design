@@ -5,7 +5,7 @@ import { Filter } from "./Filter";
 
 export const ID = "SobelId";
 
-export const Sobel: FC<TFilterChildrenProps<typeof ID>> = ({
+export const Sobel: FC<TFilterChildrenProps> = ({
   children,
   external,
 }) => (

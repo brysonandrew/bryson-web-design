@@ -1,5 +1,5 @@
-import { TChildren } from "@t/index";
-import { FC, SVGProps } from "react";
+import type { TChildren } from "@t/index";
+import type { FC, SVGProps } from "react";
 
 type TProps = {
   children: TChildren;

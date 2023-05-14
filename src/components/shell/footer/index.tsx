@@ -7,6 +7,7 @@ import {
 import { useContext } from "@state/Context";
 import { useDetectGPU } from "@react-three/drei";
 import { Sound } from "./Sound";
+import { BackgroundFade } from "./BackgroundFade";
 
 const Root = styled(motion.footer)``;
 
@@ -27,9 +28,10 @@ export const Footer = () => {
 
   return (
     <Root
-      className="fixed bottom-2 right-1 w-full h-0 z-40"
+      className="fixed bottom-0 left-0 w-full h-0 z-50"
       {...(isInit ? initAnimation : {})}
     >
+      <BackgroundFade />
       {!isMobile && <Sound />}
     </Root>
   );

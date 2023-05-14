@@ -1,4 +1,3 @@
-import type { MotionValue } from "framer-motion";
 import {
   motion,
   useScroll,

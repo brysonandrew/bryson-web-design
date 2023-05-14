@@ -19,7 +19,7 @@ export const Sound = () => {
   return (
     <Root
       whileHover="hover"
-      className="absolute bottom-2 right-2 z-50"
+      className="absolute bottom-4 right-4 z-50"
     >
       <Background
         variants={{ hover: { scale: 0.9 } }}

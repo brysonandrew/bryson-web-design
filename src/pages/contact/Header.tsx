@@ -8,6 +8,6 @@ const Root = styled(motion.header)`
 
 export const Header = () => (
   <Root className="flex items-center fixed w-full px-12 top-0 left-0 pt-4 pb-5 z-40">
-    <Main {...{ scale: 0.7, x: -28 }} />
+    <Main />
   </Root>
 );

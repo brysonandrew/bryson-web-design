@@ -4,10 +4,10 @@ import { Laptop } from "@components/icons/Laptop";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { ID } from "@components/effects/displacement";
 import { STROKE_CLASS_NAMES } from "./glitch-porsalin/config";
+import { LOGO_SUFFIX, TITLE_SUFFIX } from "@components/Filters";
 
 type TProps = { style?: CSSProperties };
-export const Title: FC<TProps> = (props) => {
-  return (
+export const Title: FC<TProps> = (props) => (
     <div className="flex relative px-3 pt-2 pb-3 grow">
       <GlitchPorsalin
         offset={0.8}
@@ -15,11 +15,11 @@ export const Title: FC<TProps> = (props) => {
         classValues={STROKE_CLASS_NAMES}
       >
         <Laptop
-          width={28}
+          width={28} 
           height={28}
           fill="none"
-          strokeWidth={20}
-          filter={resolveUrlId(ID)}
+          strokeWidth={8}
+          filter={resolveUrlId(`${ID}_${LOGO_SUFFIX}`)}
         />
       </GlitchPorsalin>
       <div className="p-1.5" />
@@ -31,7 +31,7 @@ export const Title: FC<TProps> = (props) => {
               left: 2,
               top: 2,
               width: "100%",
-              filter: resolveUrlId(ID),
+              filter: resolveUrlId(`${ID}_${TITLE_SUFFIX}`),
             }}
           >
             Andrew Bryson
@@ -40,4 +40,3 @@ export const Title: FC<TProps> = (props) => {
       </div>
     </div>
   );
-};

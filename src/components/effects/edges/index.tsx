@@ -2,10 +2,10 @@ import type { FC } from "react";
 import { HEIGHT, WIDTH } from "../constants";
 import type { TFilterChildrenProps } from "../types";
 import { Filter } from "./Filter";
-import COLORS from "@windi/config-colors.json";
+import type COLORS from "@windi/config-colors.json";
 
 export const ID = "EdgesId";
-type TProps = TFilterChildrenProps<typeof ID> & {
+type TProps = TFilterChildrenProps & {
   id?: string;
   color?: keyof typeof COLORS;
 };
@@ -14,8 +14,7 @@ export const Edges: FC<TProps> = ({
   color,
   external,
   children,
-}) => {
-  return (
+}) => (
     <>
       <filter
         id={id}
@@ -32,4 +31,3 @@ export const Edges: FC<TProps> = ({
       {external && external(ID)}
     </>
   );
-};

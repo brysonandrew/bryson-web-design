@@ -25,27 +25,24 @@ export const Text: FC<TProps> = ({
   ...props
 }) => {
   const isValue = Boolean(props.value);
-  const handleFocusSound = useFocusSound();
 
   return (
-    <Root
-      className={clsx("pb-2", LABEL_CLASS)}
-      initial={false}
-      animate={
-        isFocused ? "focus" : isValue ? "value" : "animate"
-      }
-    >
+    <Root className={clsx("pb-2", LABEL_CLASS)}>
       <div className="flex items-center">
-        <div className={INPUT_LABEL_CLASS}>
+        <motion.div
+          className={INPUT_LABEL_CLASS}
+          initial={false}
+          animate={
+            isFocused ? "focus" : isValue ? "value" : "idle"
+          }
+        >
           <Name>{title}</Name>
-        </div>
+        </motion.div>
         <Input
           className={INPUT_CLASS}
           {...props}
-
           type="text"
           autoComplete="off"
-          onFocus={handleFocusSound}
         />
       </div>
       <Gradient />

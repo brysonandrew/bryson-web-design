@@ -5,7 +5,7 @@ import { HEIGHT, WIDTH } from "../constants";
 export const ID = "ShadowTextId";
 
 export const ShadowText: FC<
-  TFilterChildrenProps<typeof ID>
+  TFilterChildrenProps
 > = ({ children }) => (
   <filter id={ID} x={0} y={0} height={HEIGHT} width={WIDTH}>
     <feGaussianBlur

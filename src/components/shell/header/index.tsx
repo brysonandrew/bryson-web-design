@@ -15,6 +15,9 @@ import {
 } from "@constants/animation";
 import { useContext } from "@state/Context";
 import clsx from "clsx";
+import { Line } from "@components/Line";
+
+const FINAL_HEADER_HEIGHT = 60;
 
 const Root = styled(motion.header)``;
 const Background = styled(motion.div)``;
@@ -28,14 +31,18 @@ export const Header = () => {
   const backgroundOpacity = useTransform(
     scrollY,
     [0, 40],
-    [1, 0.4],
+    [0.1, 0],
   );
   const borderOpacity = useTransform(
     scrollY,
     [0, 100],
-    [1, 0.2],
+    [1, 0],
   );
-  const height = useTransform(scrollY, [0, 100], [100, 60]);
+  const height = useTransform(
+    scrollY,
+    [0, 100],
+    [100, FINAL_HEADER_HEIGHT],
+  );
   const scaleY = useTransform(scrollY, [0, 100], [0, 2]);
   const { pathname } = useLocation();
 
@@ -52,25 +59,28 @@ export const Header = () => {
 
   return (
     <Root
-      className="flex items-center justify-between fixed top-0 left-0 w-full h-20 px-4 pt-4 pb-5 z-40"
+      className="flex items-center justify-between fixed top-0 left-0 w-full h-20 px-4 pt-4 pb-5 z-50"
       style={{ height }}
       {...(isInit ? initAnimation : {})}
     >
-      <BackgroundFade
-        style={{
-          scaleY,
-          originY: 0,
-          originX: 0,
-        }}
-        className="absolute w-full top-full left-0 w-full h-full from-current bg-gradient-to-b border-white-04 backdrop-blur-lg pointer-events-none"
-      />
       <Background
         style={{ opacity: backgroundOpacity }}
         className="absolute bg-black-dark inset-0"
       />
       <Border
         style={{ opacity: borderOpacity }}
-        className="absolute -bottom-1 left-0 w-full h-px bg-red-04"
+        className="absolute -bottom-1 left-0 w-full"
+      >
+        <Line />
+      </Border>
+      <BackgroundFade
+        style={{
+          scaleY,
+          originY: 0,
+          originX: 0,
+          height: FINAL_HEADER_HEIGHT * 2,
+        }}
+        className="absolute top-0 left-0 w-full bg-gradient-to-b from-black-dark pointer-events-none"
       />
       <div className="flex flex-col">
         <Main />

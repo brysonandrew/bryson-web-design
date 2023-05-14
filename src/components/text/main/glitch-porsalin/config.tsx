@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { CSSProperties, HTMLProps, SVGProps } from "react";
+import type { CSSProperties, HTMLProps, SVGProps } from "react";
 
 export const MIX_BLEND = "mix-blend-lighten";
 const DEFAULT_MARGIN_OFFSET = 0.5;

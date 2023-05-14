@@ -1,11 +1,6 @@
 import styled from "@emotion/styled";
 import type { FC } from "react";
 
-const Root = styled.div``;
-const Content = styled.hr``;
+const Root = styled.hr``;
 
-export const Line: FC = () => (
-  <Root className="border w-full opacity-10">
-    <Content />
-  </Root>
-);
+export const Line: FC = () => <Root className="flex bg-red w-full h-px opacity-40" />;

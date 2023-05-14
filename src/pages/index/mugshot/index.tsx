@@ -7,39 +7,25 @@ import {
   MUGSHOT_TRANSITION,
   MUGSHOT_TRANSITION_EXIT,
 } from "@constants/animation";
-import { Filter as ColorFilter } from "@components/effects/color";
+import {
+  Filter as ColorFilter,
+  ID as COLOR_ID,
+} from "@components/effects/color";
 import { FilterShell } from "@components/FilterShell";
+import { MUGSHOT_SUFFIX } from "@components/Filters";
+import COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
-
 export const WIDTH = 280;
 export const HEIGHT = 280;
 const OFFSET = 4;
 
 const Blinder = styled(motion.div)``;
 
-export const COLOR_IDS = {
-  red: "COLOR_IDS.red",
-  teal: "COLOR_IDS.teal",
-  blue: "COLOR_IDS.blue",
-  green: "COLOR_IDS.green",
-};
-
-const ID_CYCLES: (keyof typeof COLOR_IDS)[] = [
-  "teal",
+const ID_CYCLES: (keyof typeof COLORS)[] = [
   "red",
   "blue",
+  "green",
 ];
-
-const resolveSquare = (offset: number) => [
-  [offset, offset],
-  [-offset, offset],
-  [offset, -offset],
-  [-offset, -offset],
-];
-
-const resolveLine = (offset: number, index: number) =>
-  (offset * length * index) / length -
-  (offset * length) / 2;
 
 const Root = styled(motion.div)``;
 const Svg = styled.svg``;
@@ -68,60 +54,70 @@ export const Mugshot = () => {
         height="100%"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         filter={`${
-          isSafari ? "" : `${resolveUrlId(DISPLACEMENT_ID)}`
+          isSafari
+            ? ""
+            : `${resolveUrlId(
+                `${DISPLACEMENT_ID}_${MUGSHOT_SUFFIX}`,
+              )}`
         }`}
       >
         <FilterShell>
           {ID_CYCLES.map((key) => (
-            <ColorFilter id={COLOR_IDS[key]} color={key} />
+            <ColorFilter
+              key={key}
+              id={`${COLOR_ID}_${key}`}
+              color={key}
+            />
           ))}
         </FilterShell>
-        {[...Array(12)].map(
+        <Image
+          width="100%"
+          height="100%"
+          xlinkHref="/mugshot2.png"
+        />
+        {[...Array(3)].map(
           (_, index: number, { length }) => {
-            const progress = index / length;
-            const x =
-              Math.sin(progress * Math.PI * 2) * OFFSET;
-            const y =
-              Math.cos(progress * Math.PI * 2) * OFFSET;
+            const progress =
+              (index / length) * Math.PI * 2 +
+              Math.PI * 1.6;
+            const x = Math.sin(progress) * OFFSET;
+            const y = Math.cos(progress) * OFFSET;
             return (
               <Image
-                key={x + y + ""}
+                key={`${x}_${y}`}
                 filter={resolveUrlId(
-                  COLOR_IDS[
+                  `${COLOR_ID}_${
                     ID_CYCLES[index % ID_CYCLES.length]
-                  ],
+                  }`,
                 )}
-                x="0"
-                y="0"
                 width="100%"
                 height="100%"
                 xlinkHref="/mugshot2.png"
                 style={{
-                  // opacity: (index / length),
+                  opacity: 1.25 / length,
                   mixBlendMode:
-                    // "hue"
-                    //"color",
-                    //"exclusion",
-                    "difference",
+                    //"lighten",
+                    //"hard-light",
+                  //"overlay",
+                  //"screen",
+                  // "hue"
+                  "color",
+                  //"exclusion",
+                  //"difference",
                   //"multiply",
                 }}
-                transform={`translate(${x} ${y})`}
+                transform={`translate(${x.toFixed(
+                  6,
+                )} ${y.toFixed(6)})`}
               />
             );
           },
         )}
-        <Image
-          x={0}
-          y={0}
-          width="100%"
-          height="100%"
-          xlinkHref="/mugshot2.png"
-          className="opacity-70"
-        />
       </Svg>
       <Blinder
+        style={{ bottom: 30, left: 38, height: 40, width: WIDTH+38 }}
         className={clsx(
-          "absolute bottom-0 left-0 bg-gradient-to-t w-full h-full from-black-dark z-10 pointer-events-none",
+          "absolute bg-gradient-to-t from-black-dark z-10 pointer-events-none",
         )}
       />
     </Root>

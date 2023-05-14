@@ -11,7 +11,7 @@ type TProps = {
   cursorY?: MotionValue<number>;
 };
 export const Lighting: FC<
-  TFilterChildrenProps<typeof ID> & TProps
+  TFilterChildrenProps & TProps
 > = ({ children, external, cursorX, cursorY }) => (
   <>
     <filter

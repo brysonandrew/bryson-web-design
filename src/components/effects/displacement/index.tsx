@@ -4,30 +4,26 @@ import { Filter } from "./Filter";
 import type { TDisplacementProps } from "./config";
 
 export const ID = "DisplacementId";
-type TChildrenProps = TFilterChildrenProps<typeof ID>;
+type TChildrenProps = TFilterChildrenProps;
 type TProps = TChildrenProps & TDisplacementProps;
 
 export const Displacement: FC<TProps> = ({
   external,
   children,
-  filterId = ID,
+  id = ID,
   ...props
 }) => (
   <>
     <filter
-      id={filterId}
+      id={id}
       x="-600%"
       y="-600%"
       height="1300%"
       width="1300%"
     >
-      <Filter
-        {...props}
-        id={filterId}
-        source="SourceGraphic"
-      />
-      {children && children(ID)}
+      <Filter {...props} id={id} source="SourceGraphic" />
+      {children && children(id)}
     </filter>
-    {external && external(ID)}
+    {external && external(id)}
   </>
 );

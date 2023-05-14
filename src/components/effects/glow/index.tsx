@@ -5,7 +5,7 @@ import type { TFilterChildrenProps } from "../types";
 import { HEIGHT, WIDTH } from "../constants";
 
 export const ID = "EdgesId";
-type TProps = TFilterChildrenProps<typeof ID> & {
+type TProps = TFilterChildrenProps & {
   id?: string;
   color?: keyof typeof COLORS;
 };

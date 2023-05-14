@@ -19,6 +19,7 @@ import { Shell } from "@components/Shell";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border } from "@components/select/Border";
 import { useStyles } from "@styles/useStyles";
+import { useFocusSound } from "@hooks/sounds/useFocusSound";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -63,6 +64,7 @@ export const Contact = () => {
     });
   };
   const isDisabled = sendingState !== "idle";
+  const handleFocusSound = useFocusSound();
 
   const handleFocus = (
     event: FocusEvent<
@@ -73,6 +75,7 @@ export const Contact = () => {
     const target = event.currentTarget;
     if (!target) return;
     setFocus(target.name);
+    handleFocusSound();
   };
 
   const handleBlur = (
@@ -128,7 +131,7 @@ export const Contact = () => {
           >
             {isSelected && <Border />}
             <Text
-              title="name" 
+              title="name"
               autoFocus
               className={clsx(INPUT_CLASS, "pt-1.25")}
               disabled={isDisabled}
@@ -170,7 +173,7 @@ export const Contact = () => {
           <Space2 />
           <Submit sendingState={sendingState} />
         </Form>
-        <div className="py-12"/>
+        <div className="py-12" />
       </Root>
     </Shell>
   );
