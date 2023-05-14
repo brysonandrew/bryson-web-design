@@ -18,7 +18,7 @@ export const TextXs: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "md:flex text-teal text-xxxs uppercase whitespace-nowrap",
+      "md:flex text-teal text-xxxs whitespace-nowrap",
       classValue ?? "text-teal-bright",
     )}
     style={{

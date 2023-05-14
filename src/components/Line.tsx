@@ -1,11 +1,16 @@
 import styled from "@emotion/styled";
+import clsx from "clsx";
 import type { FC } from "react";
 
-const Root = styled.div``;
-const Content = styled.hr``;
+export const LINE_COLOR_STYLE = "bg-white-01";
+
+const Root = styled.hr``;
 
 export const Line: FC = () => (
-  <Root className="border w-full opacity-10">
-    <Content />
-  </Root>
+  <Root
+    className={clsx(
+      "relative top-12 flex  w-full h-12",
+      LINE_COLOR_STYLE,
+    )}
+  />
 );

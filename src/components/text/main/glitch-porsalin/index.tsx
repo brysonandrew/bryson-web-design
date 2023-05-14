@@ -1,17 +1,19 @@
-import clsx, { ClassValue } from "clsx";
-import type { FC } from "react";
-import {
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
+import type { FC ,
+  CSSProperties} from "react";
+import type {
   TConfig,
+  TItem} from "./config";
+import {
   TEXT_CLASS_NAMES,
-  TItem,
   resolveItems,
 } from "./config";
 import {
-  CSSProperties,
   Fragment,
   createElement,
 } from "react";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 
 type TProps = {
   style?: CSSProperties;
@@ -29,8 +31,7 @@ export const GlitchPorsalin: FC<TProps> = ({
   children,
   classValue,
   classValues = TEXT_CLASS_NAMES,
-}) => {
-  return (
+}) => (
     <>
       {resolveItems({ offset }).map(
         (
@@ -42,7 +43,7 @@ export const GlitchPorsalin: FC<TProps> = ({
               tag,
               {
                 className: clsx(
-                  "text-xl leading-none",
+                  "text-inherit leading-none",
                   classValues[index],
                   classValue,
                   itemClassName,
@@ -61,4 +62,3 @@ export const GlitchPorsalin: FC<TProps> = ({
       )}
     </>
   );
-};

@@ -17,7 +17,7 @@ export default defineConfig({
       babel: {
         plugins: ["@emotion/babel-plugin"],
       },
-      fastRefresh: false,
+      fastRefresh: true,
     }),
     paths(),
     viteRestart({

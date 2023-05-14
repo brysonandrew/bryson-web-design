@@ -1,14 +1,15 @@
 import { TextSm } from "@components/text/TextSm";
-import type { FC} from "react";
+import type { FC } from "react";
 import { Fragment } from "react";
 import { REVIEWS } from "./constants";
 import styled from "@emotion/styled";
-import type { HTMLMotionProps} from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import { MOTION_CONFIG } from "@constants/animation";
 
 const Long = styled(motion.div)``;
 
+const Block = styled(motion.div)``;
 const Span = styled(motion.span)``;
 
 type TProps = HTMLMotionProps<"div"> & {
@@ -23,7 +24,7 @@ export const Review: FC<TProps> = ({
   const review = REVIEWS[index];
   const { author, project } = review;
   const content = review[type];
-  
+
   if (Array.isArray(content)) {
     return (
       <Long
@@ -59,12 +60,11 @@ export const Review: FC<TProps> = ({
     );
   }
   return (
-    <TextSm >
-      <Span className="text-slate">{content}</Span>
-      <Span> - </Span>
-      <Span className="text-teal`">
+    <TextSm>
+      <Block className="text-slate">{content}</Block>
+      <Block className="text-teal`">
         {author}, {project}
-      </Span>
+      </Block>
     </TextSm>
   );
 };

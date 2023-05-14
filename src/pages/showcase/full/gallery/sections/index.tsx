@@ -28,14 +28,14 @@ export const Sections: FC<TProps> = (props) => {
     <Root
       key="Sections"
       ref={ref}
-      className="bg-black-95 backdrop-blur-xl min-h-screen mx-auto"
+      className="min-h-screen mx-auto"
       style={{ width, left }}
       {...PRESENCE_OPACITY}
     >
       <Filter motionX={motionX} />
       <motion.ul
         className="absolute flex"
-        style={{ left, top: HEADER_SIZE }}
+        style={{ left, top: HEADER_SIZE + 40 }}
       >
         {items.map((item: TMedia, index: number) => (
           <Section

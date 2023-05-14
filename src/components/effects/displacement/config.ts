@@ -1,7 +1,4 @@
-import type {
-  Transition,
-  SVGMotionProps,
-} from "framer-motion";
+import type { Transition } from "framer-motion";
 import type { SVGProps } from "react";
 
 type TTransition = Pick<
@@ -16,9 +13,10 @@ type TTurbulance = Omit<
 };
 export type TDisplacementProps = TTurbulance & {
   intensity?: number;
-  filterId?: string;
+  id?: string;
+  begin?: number;
 };
-export const INTENSITY = 180;
+export const INTENSITY = 120;
 
 export const TRANSITION_DEFAULTS: TTransition = {
   repeat: Infinity,

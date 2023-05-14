@@ -1,3 +1,4 @@
+import { LINE_COLOR_STYLE } from "@components/Line";
 import styled from "@emotion/styled";
 import type { TChildren } from "@t/index";
 import type { ClassValue } from "clsx";
@@ -21,7 +22,8 @@ export const Container: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "inset-0 shadow-red-04-sm bg-black-09 backdrop-blur-xl z-10",
+      "inset-0 rounded-sm z-10",
+      LINE_COLOR_STYLE,
       classValue,
     )}
     layoutId={id}

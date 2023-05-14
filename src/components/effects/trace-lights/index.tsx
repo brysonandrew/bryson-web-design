@@ -12,7 +12,7 @@ type TProps = {
   cursorY: MotionValue<number>;
 };
 export const TraceLights: FC<
-  TFilterChildrenProps<typeof ID> & TProps
+  TFilterChildrenProps & TProps
 > = ({ children, external, cursorX, cursorY }) => (
   <>
     <motion.filter

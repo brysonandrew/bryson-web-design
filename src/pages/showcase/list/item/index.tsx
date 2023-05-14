@@ -14,13 +14,17 @@ import { useOnSound } from "@hooks/sounds/useOnSound";
 import { MOTION_CONFIG } from "@constants/animation";
 import { Text } from "./Text";
 import type { TItem } from "@t/showcase";
+import { LINE_COLOR_STYLE } from "@components/Line";
+import clsx from "clsx";
+import { TChildren } from "@t/index";
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
   selectedPath: string | null;
+  children: TChildren;
 };
 export const Item: FC<TProps> = (props) => {
-  const { title, selectedPath, altTo } = props;
+  const { title, selectedPath, altTo, children } = props;
   const { isSelected, handlers } = useSelectHandlers(title);
   const key = titleToKebab(title);
   const handleOnSound = useOnSound();
@@ -43,7 +47,7 @@ export const Item: FC<TProps> = (props) => {
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
-                className="relative flex flex-col w-full lg:flex-row pl-4 pr-2 py-1"
+                className="relative flex flex-col w-full lg:flex-row pl-6 pr-2 py-1"
                 key="SELECTED_ITEM_TEXT_KEY"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -61,7 +65,15 @@ export const Item: FC<TProps> = (props) => {
             )}
           </AnimatePresence>
         </Container>
-        {isSelected && <Select />}
+        {isSelected && (
+          <Select
+            classValue={clsx(
+              LINE_COLOR_STYLE,
+              "rounded-sm",
+            )}
+          />
+        )}
+        {children}
       </InternalLink>
     </Root>
   );

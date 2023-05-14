@@ -19,7 +19,7 @@ import type { TFragmentShape } from "../fragment/Shape";
 import type { TFilterChildrenProps } from "../types";
 
 export const ID = "GlitchId";
-type TProps = TFilterChildrenProps<typeof ID>;
+type TProps = TFilterChildrenProps;
 export const Glitch: FC<TProps> = () => {
   const glitch = resolveRandomGlitch();
   const [currGlitch, setGlitch] = useState(glitch);
@@ -50,10 +50,10 @@ export const Glitch: FC<TProps> = () => {
         s={currGlitch.delay}
       />
       <Displacement
-        filterId={ID}
+        id={ID}
         baseFrequency={`0 ${baseFrequency}`}
         // animate={{ numOctaves: currGlitch.keyframes }}
-        scale={400}
+        scale={200}
         // transition={{
         //   repeat: Infinity,
         //   repeatDelay: currGlitch.delay,

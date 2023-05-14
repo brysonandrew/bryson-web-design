@@ -21,8 +21,8 @@ export const Morph = () => (
       result="morphology"
     />
     <feFlood
-      floodColor={COLORS["black"]}
-      floodOpacity="0.5"
+      floodColor={COLORS["black-light"]}
+      floodOpacity="0.8"
       result="flood"
     />
     <feComposite

@@ -11,23 +11,25 @@ type TProps = {
   children: TChildren;
 };
 export const Name: FC<TProps> = ({ children }) => (
-    <Root
-      className="whitespace-nowrap"
-      variants={{
-        animate: {
-          textShadow: textShadow.off,
-          color: COLORS["white"],
-        },
-        focus: {
-          textShadow: textShadow.on,
-          color: COLORS["red-08"],
-        },
-        value: {
-          color: COLORS["red-04"],
-          textShadow: textShadow.off,
-        },
-      }}
-    >
-      {children}
-    </Root>
-  );
+  <Root
+    className="whitespace-nowrap"
+    variants={{
+      idle: {
+        textShadow: textShadow.off,
+        color: COLORS["white"],
+      },
+      focus: {
+        textShadow: textShadow.on,
+        color: COLORS["teal-bright"],
+        opacity: 0.4,
+      },
+      value: {
+        textShadow: textShadow.off,
+        color: COLORS["teal-bright"],
+        opacity: 0.6,
+      },
+    }}
+  >
+    {children}
+  </Root>
+);

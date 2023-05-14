@@ -13,7 +13,7 @@ export const Intro: FC<TProps> = ({
   ...props
 }) => (
   <Text
-    classValue={clsx("text-teal-bright", classValue)}
+    classValue={clsx(classValue)}
     {...props}
   >
     {children}

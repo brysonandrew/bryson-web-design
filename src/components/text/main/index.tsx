@@ -1,4 +1,3 @@
-import type { MotionValue } from "framer-motion";
 import {
   motion,
   useScroll,
@@ -20,8 +19,8 @@ export const Main: FC = () => {
 
   return (
     <Root
-      className="flex relative grow z-10 top-0.5"
-      style={{ scale, x, originY: "100%" }}
+      className="flex flex-col relative grow z-10 top-0.5"
+      style={{ scale, x, originY: "50%" }}
     >
       {pathname === "/" ? <Title /> : <Link />}
     </Root>
