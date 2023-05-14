@@ -45,9 +45,9 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
           whileHover={{ opacity: 1 }}
           disabled={isDisabled}
         />
-        <div className="relative text-center text-white">
+        <h4 className="relative text-center text-white">
           {resolveButtonValue(sendingState)}
-        </div>
+        </h4>
       </Decoration>
     </Root>
   );

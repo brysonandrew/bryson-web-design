@@ -133,7 +133,7 @@ export const Contact = () => {
             <Text
               title="name"
               autoFocus
-              className={clsx(INPUT_CLASS, "pt-1.25")}
+              className={clsx(INPUT_CLASS, "pt-1")}
               disabled={isDisabled}
               name="from_name"
               placeholder=""
@@ -145,7 +145,7 @@ export const Contact = () => {
             <Space2 />
             <Text
               title="email"
-              className={clsx(INPUT_CLASS, "pt-1.25")}
+              className={clsx(INPUT_CLASS, "pt-1")}
               disabled={isDisabled}
               type="email"
               name="from_email"

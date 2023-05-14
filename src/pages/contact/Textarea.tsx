@@ -4,9 +4,8 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Gradient } from "./Gradient";
-import { Name } from "./Name";
-import { INPUT_LABEL_CLASS, LABEL_CLASS } from "./config";
-import { useFocusSound } from "@hooks/sounds/useFocusSound";
+import { TextName } from "./TextName";
+import { LABEL_CLASS } from "./config";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)``;
@@ -20,24 +19,17 @@ export const Textarea: FC<TProps> = ({
   isFocused,
   ...props
 }) => {
-  const isValue = Boolean(props.value);
-
   return (
     <Root className={clsx(LABEL_CLASS)}>
       <div className="flex items-start">
-        <motion.div
-          className={INPUT_LABEL_CLASS}
-          initial={false}
-          animate={
-            isFocused ? "focus" : isValue ? "value" : "idle"
-          }
-        >
-          <Name>{title}</Name>
-        </motion.div>
-        <Input
-          {...props}
-          autoComplete="off"
-        />
+        <div className={clsx([isFocused && "mt-1"])}>
+          <TextName
+            title={title}
+            isFocused={isFocused}
+            offset={0.2}
+          />
+        </div>
+        <Input {...props} autoComplete="off" />
       </div>
       <Gradient />
     </Root>

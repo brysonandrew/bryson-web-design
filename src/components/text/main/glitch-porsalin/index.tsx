@@ -43,7 +43,7 @@ export const GlitchPorsalin: FC<TProps> = ({
               tag,
               {
                 className: clsx(
-                  "text-xl leading-none",
+                  "text-inherit leading-none",
                   classValues[index],
                   classValue,
                   itemClassName,

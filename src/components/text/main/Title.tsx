@@ -4,10 +4,16 @@ import { Laptop } from "@components/icons/Laptop";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { ID } from "@components/effects/displacement";
 import { STROKE_CLASS_NAMES } from "./glitch-porsalin/config";
-import { LOGO_SUFFIX, TITLE_SUFFIX } from "@components/Filters";
+import {
+  LOGO_SUFFIX,
+  TITLE_SUFFIX,
+} from "@components/Filters";
+import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
+import { Sub } from "../Sub";
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = (props) => (
+  <>
     <div className="flex relative px-3 pt-2 pb-3 grow">
       <GlitchPorsalin
         offset={0.8}
@@ -15,7 +21,7 @@ export const Title: FC<TProps> = (props) => (
         classValues={STROKE_CLASS_NAMES}
       >
         <Laptop
-          width={28} 
+          width={28}
           height={28}
           fill="none"
           strokeWidth={8}
@@ -39,4 +45,8 @@ export const Title: FC<TProps> = (props) => (
         </GlitchPorsalin>
       </div>
     </div>
-  );
+    <Sub classValue="relative md:flex">
+      {EXPERIENCE_SLOGAN}
+    </Sub>
+  </>
+);

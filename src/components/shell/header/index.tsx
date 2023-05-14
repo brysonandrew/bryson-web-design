@@ -82,10 +82,7 @@ export const Header = () => {
         }}
         className="absolute top-0 left-0 w-full bg-gradient-to-b from-black-dark pointer-events-none"
       />
-      <div className="flex flex-col">
-        <Main />
-        <Sub />
-      </div>
+      <Main />
       <List
         className={clsx(
           "flex flex-col md:flex-row items-center mt-2",

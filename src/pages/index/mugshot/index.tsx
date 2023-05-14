@@ -17,14 +17,16 @@ import COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 export const WIDTH = 280;
 export const HEIGHT = 280;
-const OFFSET = 4;
+const OFFSET = 6;
 
 const Blinder = styled(motion.div)``;
 
 const ID_CYCLES: (keyof typeof COLORS)[] = [
-  "red",
   "blue",
   "green",
+  "red",
+  "white",
+
 ];
 
 const Root = styled(motion.div)``;
@@ -74,8 +76,9 @@ export const Mugshot = () => {
           width="100%"
           height="100%"
           xlinkHref="/mugshot2.png"
+          className="opacity-80"
         />
-        {[...Array(3)].map(
+        {ID_CYCLES.map(
           (_, index: number, { length }) => {
             const progress =
               (index / length) * Math.PI * 2 +
@@ -94,14 +97,16 @@ export const Mugshot = () => {
                 height="100%"
                 xlinkHref="/mugshot2.png"
                 style={{
-                  opacity: 1.25 / length,
-                  mixBlendMode:
+                  opacity: 1 / length,
+                  mixBlendMode: 
+                 // "saturation"
+                  //"luminosity",
                     //"lighten",
                     //"hard-light",
                   //"overlay",
-                  //"screen",
+                  "screen",
                   // "hue"
-                  "color",
+                  //"color",
                   //"exclusion",
                   //"difference",
                   //"multiply",
@@ -115,7 +120,7 @@ export const Mugshot = () => {
         )}
       </Svg>
       <Blinder
-        style={{ bottom: 30, left: 38, height: 40, width: WIDTH+38 }}
+        style={{ bottom: "5%", left: 38, height: "20%", width: WIDTH+38 }}
         className={clsx(
           "absolute bg-gradient-to-t from-black-dark z-10 pointer-events-none",
         )}

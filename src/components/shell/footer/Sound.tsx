@@ -23,10 +23,10 @@ export const Sound = () => {
     >
       <Background
         variants={{ hover: { scale: 0.9 } }}
-        className="p-5 rounded-full absolute -inset-0.5 bg-red-02"
+        className="p-4 rounded-full absolute -inset-0.5 bg-red-02"
       />
       <Button
-        className="relative p-4 rounded-full bg-black cursor-pointer"
+        className="relative p-3 rounded-full bg-black cursor-pointer"
         onTap={handleTap}
       >
         <GlitchPorsalin

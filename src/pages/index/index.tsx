@@ -14,6 +14,7 @@ import { Shell as MainShell } from "@main/Shell";
 import { Suspense } from "react";
 import { Line } from "@components/Line";
 import { Space6 } from "@components/spaces/Space6";
+import { Space32 } from "@components/spaces/Space32";
 
 export const Index = () => (
   <Suspense fallback={null}>
@@ -24,18 +25,18 @@ export const Index = () => (
         <Space2 />
         <Tech />
         <Space6 />
-        <Line/>
+        <Line />
         <Space6 />
         <Clients />
         <Space6 />
-        <Line/>
+        <Line />
         <Space6 />
         <Reviews />
         <Space6 />
-        <Line/>
+        <Line />
         <Space6 />
         <Ending />
-        <Space16 />
+        <Space32 />
       </Shell>
     </MainShell>
   </Suspense>

@@ -1,16 +1,11 @@
-import type { FC } from "react";
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import {
-  LABEL_CLASS,
-  INPUT_CLASS,
-  INPUT_LABEL_CLASS,
-} from "./config";
+import type { HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
+import type { FC } from "react";
 import { Gradient } from "./Gradient";
-import { Name } from "./Name";
-import { useFocusSound } from "@hooks/sounds/useFocusSound";
+import { TextName } from "./TextName";
+import { LABEL_CLASS } from "./config";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.input)``;
@@ -24,26 +19,11 @@ export const Text: FC<TProps> = ({
   isFocused,
   ...props
 }) => {
-  const isValue = Boolean(props.value);
-
   return (
-    <Root className={clsx("pb-2", LABEL_CLASS)}>
+    <Root className={clsx(LABEL_CLASS)}>
       <div className="flex items-center">
-        <motion.div
-          className={INPUT_LABEL_CLASS}
-          initial={false}
-          animate={
-            isFocused ? "focus" : isValue ? "value" : "idle"
-          }
-        >
-          <Name>{title}</Name>
-        </motion.div>
-        <Input
-          className={INPUT_CLASS}
-          {...props}
-          type="text"
-          autoComplete="off"
-        />
+        <TextName title={title} isFocused={isFocused} />
+        <Input {...props} type="text" autoComplete="off" />
       </div>
       <Gradient />
     </Root>
