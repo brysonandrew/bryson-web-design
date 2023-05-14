@@ -81,8 +81,12 @@ module.exports = {
   "white-01-sm": `0 0 1px 1px ${COLORS["white-01"]}`,
   "white-02-sm": `0 0 1px 1px ${COLORS["white-02"]}`,
   "white-04-sm": `0 0 1px 1px ${COLORS["white-04"]}`,
+  "white-08-sm": `0 0 1px 1px ${COLORS["white-08"]}`,
 
   gray: `0 0 1px 1px ${COLORS.gray}, 0 0 1px 2px ${COLORS.white}`,
+  "gray-01": `0 0 1px 1px ${COLORS["gray-01"]}, 0 0 1px 2px ${COLORS["white-01"]}`,
+  "gray-02": `0 0 1px 1px ${COLORS["gray-02"]}, 0 0 1px 2px ${COLORS["white-02"]}`,
+  "gray-04": `0 0 1px 1px ${COLORS["gray-04"]}, 0 0 1px 2px ${COLORS["white-04"]}`,
   "gray-sm": `0 0 1px 1px ${COLORS.gray}`,
 
   "light-sm": `0 0 4px 1px rgba(255,255,255,0.2)`,

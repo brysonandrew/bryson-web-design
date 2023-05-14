@@ -15,11 +15,11 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => (
-  <Root className="relative text-black-dark-04 overflow-visible z-10">
+  <Root className="relative text-black-dark-04 overflow-hidden z-10">
     <Header />
     <Content
       key="Content"
-      className="relative bg-current mx-auto px-0 w-full overflow-visible sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
+      className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
       style={{
         paddingTop: HEADER_OFFSET_Y,
         minHeight: "100vh",

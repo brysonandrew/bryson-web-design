@@ -7,7 +7,7 @@ import { APP_ITEMS } from "@constants/apps";
 import { Space } from "@components/spaces/Space";
 import { GAME_ITEMS } from "@constants/games";
 import { MUSIC_ITEMS } from "@constants/music";
-
+import { Shell as MainShell } from "@main/Shell";
 import { LIBRARIES_ITEMS } from "@constants/libraries";
 import { useStyles } from "@styles/useStyles";
 
@@ -17,36 +17,42 @@ export const Showcase = () => {
   const isSelectedItem = selectedPath !== null;
 
   return (
-    <Shell>
-      <List
-        header="Apps"
-        items={APP_ITEMS}
-        selectedPath={selectedPath}
-      />
-      <Space />
-      <List
-        header="Games"
-        items={GAME_ITEMS}
-        selectedPath={selectedPath}
-      />
-      <Space />
-      <List
-        header="Libraries"
-        items={LIBRARIES_ITEMS}
-        selectedPath={selectedPath}
-      />
-      <Space />
-      <List
-        header="Music"
-        items={MUSIC_ITEMS}
-        selectedPath={selectedPath}
-      />
-      <Space16 />
-      <>
-        {isSelectedItem && (
-          <Full selectedPath={selectedPath} />
-        )}
-      </>
-    </Shell>
+    <MainShell>
+      <Shell>
+        <List
+          header="Apps"
+          color="red"
+          items={APP_ITEMS}
+          selectedPath={selectedPath}
+        />
+        <Space />
+        <List
+          header="Games"
+          color="green"
+          items={GAME_ITEMS}
+          selectedPath={selectedPath}
+        />
+        <Space />
+        <List
+          header="Libraries"
+          color="blue"
+          items={LIBRARIES_ITEMS}
+          selectedPath={selectedPath}
+        />
+        <Space />
+        <List
+          header="Music"
+          color="purple"
+          items={MUSIC_ITEMS}
+          selectedPath={selectedPath}
+        />
+        <Space16 />
+        <>
+          {isSelectedItem && (
+            <Full selectedPath={selectedPath} />
+          )}
+        </>
+      </Shell>
+    </MainShell>
   );
 };

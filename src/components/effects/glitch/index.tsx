@@ -53,7 +53,7 @@ export const Glitch: FC<TProps> = () => {
         id={ID}
         baseFrequency={`0 ${baseFrequency}`}
         // animate={{ numOctaves: currGlitch.keyframes }}
-        scale={400}
+        scale={200}
         // transition={{
         //   repeat: Infinity,
         //   repeatDelay: currGlitch.delay,

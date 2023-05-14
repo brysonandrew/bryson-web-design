@@ -6,7 +6,6 @@ import {
 import styled from "@emotion/styled";
 import { Main } from "@components/text/main";
 import { useLocation } from "react-router";
-import { Sub } from "./Sub";
 import { Item } from "./right/Item";
 import { Fragment } from "react";
 import {
@@ -60,7 +59,6 @@ export const Header = () => {
   return (
     <Root
       className="flex items-center justify-between fixed top-0 left-0 w-full h-20 px-4 pt-4 pb-5 z-50"
-      style={{ height }}
       {...(isInit ? initAnimation : {})}
     >
       <Background
@@ -85,7 +83,7 @@ export const Header = () => {
       <Main />
       <List
         className={clsx(
-          "flex flex-col md:flex-row items-center mt-2",
+          "flex flex-col items-center pt-2 md:flex-row",
         )}
       >
         {["showcase", "contact"].map((item, index) => {

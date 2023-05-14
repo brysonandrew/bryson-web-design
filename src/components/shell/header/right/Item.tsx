@@ -18,11 +18,11 @@ export const Item: FC<TProp> = ({ to, children }) => {
   const { handlers, isSelected } = useSelectHandlers(to);
   const handleClick = useOffSound();
   return (
-    <Root className="relative" {...handlers}>
+    <Root className="relative mb-0.5" {...handlers}>
       <Link
         to={to}
         onClick={handleClick}
-        className="flex items-center justify-center p-2 pr-1.5 bg-transparent"
+        className="flex items-center justify-center py-2.5 pl-3 pr-2.5 bg-transparent"
       >
         {isSelected && <Select />}
         <GlitchPorsalin

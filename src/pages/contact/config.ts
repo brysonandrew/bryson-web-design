@@ -1,9 +1,14 @@
 import COLORS from "@windi/config-colors.json";
+import clsx from "clsx";
 
-export const LABEL_CLASS =
-  "relative w-full pl-4 pt-1 shadow-neu-black";
+export const LABEL_BASE_CLASS =
+  "relative w-full shadow-gray-01 rounded-sm";
+export const LABEL_CLASS = clsx(
+  "relative w-full pl-4 py-2 shadow-gray-01 rounded-sm",
+  LABEL_BASE_CLASS,
+);
 export const INPUT_CLASS =
-  "text-white text-md px-4 pb-1 w-full tracking-widest";
+  "text-white text-md px-4 py-2 w-full tracking-widest";
 
 export const textShadow = {
   on: `0 0 10px ${COLORS["red-bright-04"]}, 0 0 20px ${COLORS["red-bright-02"]},

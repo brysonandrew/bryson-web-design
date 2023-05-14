@@ -1,8 +1,10 @@
+import { LINE_COLOR_STYLE } from "@components/Line";
 import { VolumeOff } from "@components/icons/VolumeOff";
 import { VolumeOn } from "@components/icons/VolumeOn";
 import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
 import styled from "@emotion/styled";
 import { useContext } from "@state/Context";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
 const Root = styled(motion.div)``;
@@ -23,7 +25,7 @@ export const Sound = () => {
     >
       <Background
         variants={{ hover: { scale: 0.9 } }}
-        className="p-4 rounded-full absolute -inset-0.5 bg-red-02"
+        className={clsx("p-4 rounded-full absolute -inset-1", LINE_COLOR_STYLE)}
       />
       <Button
         className="relative p-3 rounded-full bg-black cursor-pointer"

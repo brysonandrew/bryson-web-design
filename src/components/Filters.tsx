@@ -27,6 +27,7 @@ export const Filters = () => (
           key={`index-${index}`}
           id={`${DISPLACEMENT_ID}_${suffix}`}
           begin={index * 4 * Math.random()}
+          intensity={80}
         />
       ))}
     </>

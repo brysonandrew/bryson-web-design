@@ -8,7 +8,6 @@ import { useLocation } from "react-router-dom";
 import { Link } from "./Link";
 import styled from "@emotion/styled";
 import { Title } from "./Title";
-import { Sub } from "@components/shell/header/Sub";
 
 const Root = styled(motion.div)``;
 
@@ -21,7 +20,7 @@ export const Main: FC = () => {
   return (
     <Root
       className="flex flex-col relative grow z-10 top-0.5"
-      style={{ scale, x, originY: "100%" }}
+      style={{ scale, x, originY: "50%" }}
     >
       {pathname === "/" ? <Title /> : <Link />}
     </Root>

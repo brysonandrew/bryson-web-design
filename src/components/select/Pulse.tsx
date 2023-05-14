@@ -22,8 +22,8 @@ export const Pulse: FC<TProps> = ({ classValue }) => (
     style={{ originX: "50%", originY: "50%" }}
     animate={{
       opacity: [1, 0],
-      scaleY: [1, 1.4],
-      scaleX: [1, 1.1],
+      scaleY: [1, 2.4],
+      scaleX: [1, 1.15],
     }}
     transition={{
       ...MOTION_CONFIG,

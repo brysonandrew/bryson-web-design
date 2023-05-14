@@ -6,9 +6,12 @@ import type { FC } from "react";
 import { Gradient } from "./Gradient";
 import { TextName } from "./TextName";
 import { LABEL_CLASS } from "./config";
+import { LINE_COLOR_STYLE } from "@components/Line";
 
 const Root = styled(motion.label)``;
-const Input = styled(motion.textarea)``;
+const Input = styled(motion.textarea)`
+  background-color: transparent;
+`;
 
 type TProps = HTMLMotionProps<"textarea"> & {
   title: string;
@@ -20,7 +23,7 @@ export const Textarea: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root className={clsx(LABEL_CLASS)}>
+    <Root className={clsx(LABEL_CLASS, LINE_COLOR_STYLE)}>
       <div className="flex items-start">
         <div className={clsx([isFocused && "mt-1"])}>
           <TextName

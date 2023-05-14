@@ -8,6 +8,8 @@ import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { Border as Select } from "@components/select/Border";
 import { Pulse } from "@components/select/Pulse";
 import { WHITE_FILTER } from "../constants";
+import clsx from "clsx";
+import { LINE_COLOR_STYLE } from "@components/Line";
 
 const Root = styled(motion.div)``;
 
@@ -20,12 +22,15 @@ export const Ending: FC<TProps> = () => {
   return (
     <Root
       ref={ref}
-      className="relative flex flex-col items-start"
+      className="relative flex flex-col items-center"
       {...handlers}
     >
       <Link
         to="/contact"
-        className="relative px-1 py-2 bg-white-005 m-1 backdrop-blur-xl"
+        className={clsx(
+          "relative px-2 py-4",
+          LINE_COLOR_STYLE,
+        )}
       >
         {isSelected ? (
           <Select />

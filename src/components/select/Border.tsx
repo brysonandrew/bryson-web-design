@@ -14,7 +14,7 @@ export const Border: FC<TProps> = ({ classValue }) => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
-      "absolute inset-0 pointer-events-none rounded-sm cursor-default",
+      "absolute -inset-1 pointer-events-none rounded-sm cursor-default",
       classValue ?? "shadow-red-04-sm",
     )}
   />

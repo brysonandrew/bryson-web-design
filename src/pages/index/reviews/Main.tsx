@@ -20,7 +20,7 @@ export const Main: FC<TProps> = ({
 }) => (
     <Root
       className={clsx(
-        "absolute left-full top-0 uppercase px-1 py-2 m-1 w-mid lg:w-mid-lg xl:w-mid-xl",
+        "absolute left-full top-0 px-1 py-2 m-1 w-mid lg:w-mid-lg xl:w-mid-xl",
       )}
       {...props}
     >
@@ -32,7 +32,7 @@ export const Main: FC<TProps> = ({
       )}
       <motion.div
         className="absolute top-2 bottom-2 shadow-red left-0 w-1 h-full bg-red"
-        animate={{ opacity: isActive ? 1 : 0.2 }}
+        animate={{ opacity: isActive ? 1 : 0.4 }}
       />
       <Review index={index} type="short" />
     </Root>
