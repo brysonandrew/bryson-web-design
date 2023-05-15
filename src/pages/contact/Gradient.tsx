@@ -7,7 +7,7 @@ const Root = styled(motion.div)``;
 
 export const Gradient: FC = () => (
     <Root
-      className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-red-08 h-1/2 opacity-10"
+      className="absolute left-0 bottom-0 w-full bg-gradient-to-t from-green-08 h-1/2 opacity-10"
       variants={{
         animate: { scaleX: 0 },
         focus: { scaleX: 1 },

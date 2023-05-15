@@ -1,5 +1,4 @@
 import { Blinders } from "@components/blinders/Blinders";
-import { Intro } from "@components/text/Intro";
 import styled from "@emotion/styled";
 import { useOffSound } from "@hooks/sounds/useOffSound";
 import { useOnSound } from "@hooks/sounds/useOnSound";
@@ -12,6 +11,9 @@ import type { TChildrenProps } from "../Motion";
 import { Review } from "../Review";
 import { REVIEWS } from "../constants";
 import { Item } from "./Item";
+import { TextXl } from "@components/text/TextXl";
+import { ThinLineGap } from "@components/ThinLineGap";
+import { STORY } from "@constants/copy";
 
 const Root = styled(motion.div)``;
 
@@ -44,12 +46,16 @@ export const Shell: FC<TProps> = ({
   return (
     <Root
       ref={ref}
-      className="relative flex flex-col items-start z-10"
+      className="relative flex flex-col items-center z-10"
     >
-      <Intro>For businesses</Intro>
-      <div className="py-2" />
+      <TextXl>{STORY.clients}</TextXl>
+      <ThinLineGap />
       <Blinders opacity={opacityBlinders} />
-      <div className={clsx("relative w-full h-full left-8")}>
+      <div
+        className={clsx(
+          "relative w-full overflow-hidden left-8",
+        )}
+      >
         {isLong ? (
           <Review
             layoutId={`${long}`}

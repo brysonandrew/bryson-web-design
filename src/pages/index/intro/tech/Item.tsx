@@ -1,12 +1,12 @@
 import { Border as Select } from "@components/select/Border";
 import clsx from "clsx";
-import { TextLg } from "@components/text/TextLg";
+import { Text } from "@components/text/Text";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { XXXXL } from "@styles/style";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import type { TItem } from "../../../constants/tech";
+import type { TItem } from "../../../../constants/tech";
 import { LINE_COLOR_STYLE } from "@components/Line";
 import { Fill } from "@components/metal/Fill";
 
@@ -34,7 +34,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
         <div className="relative flex items-center z-10">
           <Icon classValue={XXXXL} />
           <div className="p-2" />
-          <TextLg>{title}</TextLg>
+          <Text>{title}</Text>
         </div>
       </Anchor>
     </Root>

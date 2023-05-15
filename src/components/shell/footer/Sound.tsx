@@ -1,6 +1,7 @@
 import { LINE_COLOR_STYLE } from "@components/Line";
 import { VolumeOff } from "@components/icons/VolumeOff";
 import { VolumeOn } from "@components/icons/VolumeOn";
+import { Fill } from "@components/metal/Fill";
 import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
 import styled from "@emotion/styled";
 import { useContext } from "@state/Context";
@@ -23,10 +24,7 @@ export const Sound = () => {
       whileHover="hover"
       className="absolute bottom-4 right-4 z-50"
     >
-      <Background
-        variants={{ hover: { scale: 0.9 } }}
-        className={clsx("p-4 rounded-full absolute -inset-1", LINE_COLOR_STYLE)}
-      />
+      <Fill classValue="rounded-full" inset={-1} />
       <Button
         className="relative p-3 rounded-full bg-black cursor-pointer"
         onTap={handleTap}

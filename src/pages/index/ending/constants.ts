@@ -1,0 +1,1 @@
+export const ANCHOR_CLASS = "flex relative px-4 py-2 w-full cursor-pointer"

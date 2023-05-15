@@ -10,7 +10,7 @@ type TProps = {
   height?: number | string;
 };
 export const Line: FC<TProps> = ({
-  position = "absolute",
+  position = "relative",
   height = 12,
 }) => (
   <Root

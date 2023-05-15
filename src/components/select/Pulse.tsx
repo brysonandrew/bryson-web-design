@@ -16,7 +16,7 @@ export const Pulse: FC<TProps> = ({ classValue }) => (
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
       "absolute inset-0 pointer-events-none rounded-sm cursor-default",
-      classValue ?? "shadow-red-04",
+      classValue ?? "shadow-green-04",
     )}
     initial={false}
     style={{ originX: "50%", originY: "50%" }}

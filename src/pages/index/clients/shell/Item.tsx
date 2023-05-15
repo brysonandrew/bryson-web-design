@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import {
   BAR_CLASS,
+  BAR_GREEN_ACTIVE_CLASS,
+  BAR_GREEN_CLASS,
   ROLLING_TEXT_CLASS,
 } from "../../constants";
 import { Main } from "../Main";
@@ -45,9 +47,13 @@ export const Item: FC<TProps> = ({
     >
       <Button className="relative" {...props}>
         <motion.div
-          className={BAR_CLASS}
+          className={
+            isActive || isSelected
+              ? BAR_GREEN_ACTIVE_CLASS
+              : BAR_GREEN_CLASS
+          }
           animate={{
-            filter: `brightness(${isActive ? 100 : 40}%)`,
+            filter: `brightness(${isSelected ? 100 : 40}%)`,
           }}
         />
         {isSelected && <Bar />}

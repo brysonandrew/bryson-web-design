@@ -47,6 +47,11 @@
   "blue-light-04": "rgba(31,182,255,0.4)",
   "blue-light-01": "rgba(31,182,255,0.1)",
 
+  "baby-blue": "rgb(153, 204, 255)",
+  "baby-blue-01": "rgba(153, 204, 255, 0.1)",
+  "baby-blue-04": "rgba(153, 204, 255, 0.4)",
+  "baby-blue-08": "rgba(153, 204, 255, 0.8)",
+
   "purple-dark": "rgb(13, 9, 24)",
   "purple-dark-08": "rgba(13,9,24, 0.8)",
   "purple-dark-02": "rgba(13,9,24, 0.2)",

@@ -22,6 +22,7 @@ import { Textarea } from "./Textarea";
 import type { TSendingState } from "./config";
 import { INPUT_CLASS, INIT_STATE } from "./config";
 import { Submit } from "./Submit";
+import { TextXl } from "@components/text/TextXl";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -115,12 +116,8 @@ export const Contact = () => {
     <MainShell>
       <Shell>
         <Root className="flex flex-col px-4">
-          <TextSm
-            className="ml-2 text-lg tracking-widest text-white-04"
-            style={{ lineHeight: 2 }}
-          >
-            Tell me please, what's on your mind?
-          </TextSm>
+          <TextXl>I would love to hear from you.</TextXl>
+          <div className="py-1" />
           <Form
             className={clsx(
               "flex flex-col w-full my-0 mx-auto",

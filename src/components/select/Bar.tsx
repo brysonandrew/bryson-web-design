@@ -11,7 +11,7 @@ const Root = styled(motion.div)``;
 type TProps = {
   classValue?: ClassValue;
 };
-export const Bar: FC<TProps> = ({ classValue }) => (
+export const Bar: FC<TProps> = () => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
     initial={false}

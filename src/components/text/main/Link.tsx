@@ -7,7 +7,6 @@ import type { FC } from "react";
 import { Link as _Link } from "react-router-dom";
 import { Title } from "./Title";
 import { useOffSound } from "@hooks/sounds/useOffSound";
-import { Fill } from "@components/metal/Fill";
 
 const TITLE_ID = "TITLE_ID";
 
@@ -26,7 +25,6 @@ export const Link: FC = () => {
         to="/"
         onClick={handleClick}
       >
-        <Fill inset={1} />
         {isSelected && <Select />}
         <Title />
       </_Link>

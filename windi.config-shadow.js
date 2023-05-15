@@ -65,10 +65,12 @@ module.exports = {
   "red-08-sm": `0 0 1px 1px ${COLORS["red-08"]}`,
 
   green: `0 0 1px 1px ${COLORS.green}, 0 0 1px 2px ${COLORS.green}`,
+  "green-04": `0 0 1px 1px ${COLORS["green-04"]}, 0 0 1px 2px ${COLORS["green-02"]}`,
   "green-sm": `0 0 1px 1px ${COLORS.green}`,
   "green-02-sm": `0 0 1px 1px ${COLORS["green-02"]}`,
   "green-04-sm": `0 0 1px 1px ${COLORS["green-04"]}`,
   "green-06-sm": `0 0 1px 1px ${COLORS["green-06"]}`,
+
   yellow: `0 0 1px 1px ${COLORS.white}, 0 0 1px 2px ${COLORS.yellow}`,
   "yellow-sm": `0 0 1px 1px ${COLORS.yellow}`,
   "current-sm": `0 0 1px 1px currentColor`,

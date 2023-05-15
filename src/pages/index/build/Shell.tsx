@@ -1,18 +1,19 @@
+import { Fragment } from "react";
+import type { FC } from "react";
+import { motion } from "framer-motion";
+import { ThinLineGap } from "@components/ThinLineGap";
 import { Blinders } from "@components/blinders/Blinders";
 import { Text } from "@components/text/Text";
-import { Intro } from "@components/text/Intro";
+import { TextXl } from "@components/text/TextXl";
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { Fragment } from "react";
 import {
-  BAR_CLASS,
+  BAR_BLACK_CLASS,
   ROLLING_TEXT_CLASS,
 } from "../constants";
 import { Main } from "./Main";
 import type { TChildrenProps } from "./Motion";
 import { GROUPS } from "./constants";
-import clsx from "clsx";
+import { STORY } from "@constants/copy";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -22,9 +23,9 @@ export const Shell: FC<TProps> = ({
   xs,
   opacityBlinders,
 }) => (
-  <Root className="flex flex-col items-start">
-    <Intro>To build</Intro>
-    <div className="py-2" />
+  <Root className="flex flex-col items-center">
+    <TextXl>{STORY.build}</TextXl>
+    <ThinLineGap />
     <div className="relative overflow-hidden w-full left-8">
       <Blinders opacity={opacityBlinders} />
       <ul>
@@ -33,11 +34,9 @@ export const Shell: FC<TProps> = ({
             key={`group-${index}`}
             className="flex relative items-center overflow-hidden w-full"
           >
-            <motion.div
-              className={clsx(BAR_CLASS, "opacity-40")}
-            />
+            <motion.div className={BAR_BLACK_CLASS} />
             <List
-              className="flex relative left-4 top-6"
+              className="flex relative left-4 top-4"
               style={{
                 x: (xs ?? ["-100%", "-100%", "-100%"])[
                   index
