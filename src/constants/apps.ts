@@ -14,7 +14,7 @@ export const APP_ITEMS: TItem[] = [
     tags: ["React", "Typescript", "Metamask SDK"],
     href: "https://canvas.co/",
     time: new Date(2022, 8, 1),
-  },
+  }, 
   {
     title: "Juke",
     description: "NFT Admin and Marketplace",
