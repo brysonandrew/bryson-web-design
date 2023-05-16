@@ -1,14 +1,10 @@
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import styled from "@emotion/styled";
+import { useHome } from "@hooks/useHome";
+import { motion } from "framer-motion";
 import type { FC } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "./Link";
-import styled from "@emotion/styled";
 import { Title } from "./Title";
-import { useHome } from "@hooks/useHome";
 
 const Root = styled(motion.div)``;
 
