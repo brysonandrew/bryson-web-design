@@ -11,12 +11,10 @@ import { Space6 } from "@components/spaces/Space6";
 import { Space12 } from "@components/spaces/Space12";
 import { Clients } from "./clients";
 import { Space24 } from "@components/spaces/Space24";
-import { Background } from "@components/background";
 
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
-
       <Shell>
         <Space2 />
         <Build />

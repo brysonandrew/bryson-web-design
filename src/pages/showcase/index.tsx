@@ -4,7 +4,6 @@ import { Space16 } from "@components/spaces/Space16";
 import { List } from "./list";
 import { Shell } from "@components/Shell";
 import { APP_ITEMS } from "@constants/apps";
-import { Space } from "@components/spaces/Space";
 import { GAME_ITEMS } from "@constants/games";
 import { MUSIC_ITEMS } from "@constants/music";
 import { Shell as MainShell } from "@main/Shell";

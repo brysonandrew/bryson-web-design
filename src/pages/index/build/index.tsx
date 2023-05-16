@@ -12,7 +12,7 @@ export const Build: FC<TProps> = () => {
   if (isMobile) return <Shell/>
   switch (tier) {
     case 3: {
-      return (
+      return ( 
         <Motion>
           {(props: TChildrenProps) => <Shell {...props} />}
         </Motion>
