@@ -1,5 +1,4 @@
 import { Desk } from "@components/icons/Desk";
-import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
 import { Sub } from "@components/text/Sub";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
@@ -11,8 +10,7 @@ const ICON_SIZE = {
 
 const Root = styled(motion.header)``;
 
-export const Header = () => {
-  return (
+export const Header = () => (
     <Root className="flex items-center justify-center">
       <div className="-mt-4">
         <Desk {...ICON_SIZE} />
@@ -35,4 +33,3 @@ export const Header = () => {
       </div>
     </Root>
   );
-};

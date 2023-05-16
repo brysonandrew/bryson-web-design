@@ -1,13 +1,15 @@
-import { TextSm } from "@components/text/TextSm";
+import { TextXs } from "@components/text/TextXs";
 import { motion } from "framer-motion";
 import type { FC } from "react";
+
+const CLASS = "mt-0.5 md:mt-0.5 lg:mt-0.5"
 
 type TProps = { time?: Date };
 export const Time: FC<TProps> = ({ time }) => {
   if (!time)
-    return <TextSm classValue="px-0">Present</TextSm>;
+    return <TextXs classValue={CLASS}>Present</TextXs>;
   return (
-    <TextSm classValue="px-0">
+    <TextXs classValue={CLASS}>
       <motion.span className="truncate" layout>
         {typeof time === "undefined"
           ? "Present"
@@ -16,6 +18,6 @@ export const Time: FC<TProps> = ({ time }) => {
               year: "numeric",
             }).format(time)}
       </motion.span>
-    </TextSm>
+    </TextXs>
   );
 };

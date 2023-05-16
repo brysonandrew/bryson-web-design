@@ -1,8 +1,7 @@
 import { APP_ITEMS } from "@constants/apps";
 import { Fragment } from "react";
 
-export const Experience = () => {
-  return (
+export const Experience = () => (
     <ul>
       {APP_ITEMS.map((item, index) => (
         <Fragment>
@@ -25,4 +24,3 @@ export const Experience = () => {
       ))}
     </ul>
   );
-};

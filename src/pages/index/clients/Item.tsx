@@ -6,15 +6,14 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import {
-  BAR_CLASS,
   BAR_GREEN_ACTIVE_CLASS,
   BAR_GREEN_CLASS,
   ROLLING_TEXT_CLASS,
-} from "../../constants";
-import { Main } from "../Main";
-import type { TChildrenProps } from "../Motion";
+} from "../constants";
+import { Main } from "./Main";
+import type { TChildrenProps } from "./Motion";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Bar } from "@components/select/Bar";
+import { Bar } from "./Bar";
 
 const Root = styled(motion.li)``;
 const List = styled(motion.ul)``;

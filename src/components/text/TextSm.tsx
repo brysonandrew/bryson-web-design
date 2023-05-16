@@ -21,9 +21,7 @@ export const TextSm: FC<TProps> = ({
       "text-left text-sm text-teal-bright whitespace-normal sm:text-lg xl:text-2xl truncate",
       classValue ?? "px-4",
     )}
-    style={{
-      ...style,
-    }}
+    style={style}
     {...props}
   >
     {children}
