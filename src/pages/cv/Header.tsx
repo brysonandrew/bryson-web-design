@@ -1,5 +1,4 @@
 import { Desk } from "@components/icons/Desk";
-import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
 import { Sub } from "@components/text/Sub";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";

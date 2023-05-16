@@ -20,7 +20,7 @@ export const Section: FC<TProps> = ({
   return (
     <motion.li
       ref={ref}
-      className="absolute bg-black shadow-teal-dark-08"
+      className="absolute"
       {...props}
     >
       {children}

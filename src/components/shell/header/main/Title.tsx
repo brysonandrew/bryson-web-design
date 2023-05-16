@@ -26,7 +26,7 @@ export const Title: FC<TProps> = (props) => (
           />
         </GlitchPorsalin>
       </div>
-      <motion.div className="flex relative px-3 pt-2 pb-3 grow">
+      <motion.div className="flex relative px-3 pt-0 pb-1 grow">
         <motion.div className="hidden flex-col sm:flex">
           <GlitchPorsalin {...props} offset={0.2}>
             <span

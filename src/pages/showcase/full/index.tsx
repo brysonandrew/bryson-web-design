@@ -13,8 +13,8 @@ export const Full: FC<TProps> = ({ selectedPath }) => {
   return (
     <Container
       id={selectedPath}
-      classValue="fixed top-0 left-0 screen-width screen-height z-10 text-teal-bright"
-      style={{ zIndex: 99 }}
+      classValue="fixed top-0 left-0 screen-width screen-height z-10 text-teal-bright bg-black-08"
+      style={{ zIndex: 99, backdropFilter: "blur(10px)" }}
     >
       <Title>{selectedPath}</Title>
       <Close />
