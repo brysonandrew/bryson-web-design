@@ -5,19 +5,19 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TSendingState } from "./config";
-import {
-  LABEL_BASE_CLASS,
-  LABEL_CLASS,
-  resolveButtonValue,
-} from "./config";
+import { resolveButtonValue } from "./config";
 import { useMoveSound } from "@hooks/sounds/useMoveSound";
-import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 
 const SUBMIT_ID = "SUBMIT_ID";
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
-const Input = styled(motion.input)``;
+const Input = styled(motion.input)`
+  background-color: transparent;
+`;
+const Text = styled(motion.div)``;
 
 type TProps = {
   sendingState: TSendingState;
@@ -27,39 +27,50 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
     useSelectHandlers(SUBMIT_ID);
   const isDisabled = sendingState !== "idle";
   const handleMoveSound = useMoveSound();
+  const title = resolveButtonValue(sendingState);
 
   return (
     <Root
-      className={clsx(
-        "relative p-2 flex w-full cursor-pointer",
-      )}
-      onTap={handleMoveSound}
+      className={clsx("relative p-0.5 flex w-full", [
+        isDisabled
+          ? "cursor-not-allowed"
+          : "cursor-pointer",
+      ])}
+      onTap={isDisabled ? () => null : handleMoveSound}
       {...handlers}
     >
-      {isSelected && <Select />}
+      <Fill />
       <Decoration
         className={clsx(
-          LABEL_BASE_CLASS,
-          "px-2 py-1.5 pointer-events-none",
+          "relative w-full pointer-events-none",
         )}
       >
         <Input
-          className={clsx("absolute inset-0 cursor-pointer")}
+          className={clsx(
+            "absolute inset-0 pointer-events-none",
+          )}
           type="submit"
-          style={{
-            opacity: sendingState === "idle" ? 0.5 : 1,
-          }}
-          whileHover={{ opacity: 1 }}
           disabled={isDisabled}
         />
-        <h4
+        <Text
           className={clsx(
-            "relative text-center text-white py-2 cursor-pointer",
-            LINE_COLOR_STYLE,
+            "flex justify-center relative text-white py-2 pointer-events-none",
           )}
         >
-          {resolveButtonValue(sendingState)}
-        </h4>
+          {isSelected ? (
+            <>
+              <GlitchPorsalin
+                tag="h4"
+                classValue="py-1"
+                offset={0.4}
+              >
+                {title}
+              </GlitchPorsalin>
+            </>
+          ) : (
+            <h4>{title}</h4>
+          )}
+        </Text>
       </Decoration>
     </Root>
   );

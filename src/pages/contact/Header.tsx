@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
-import { Main } from "@components/text/main";
+import { Main } from "@components/shell/header/main";
 
 const Root = styled(motion.header)`
   width: calc(100% - 4rem);

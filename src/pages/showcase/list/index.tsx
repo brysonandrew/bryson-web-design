@@ -5,7 +5,7 @@ import type { FC } from "react";
 import { Fragment } from "react";
 import { Space } from "@components/spaces/Space";
 import type { TItem } from "@t/showcase";
-import COLORS from "@windi/config-colors.json";
+import type COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 import { Mark } from "./Mark";
 

@@ -2,9 +2,9 @@ import COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 
 export const LABEL_BASE_CLASS =
-  "relative w-full shadow-gray-01 rounded-sm";
+  "relative w-full shadow-black-dark-01 bg-black-dark rounded-sm";
 export const LABEL_CLASS = clsx(
-  "relative w-full pl-4 py-2 shadow-gray-01 rounded-sm",
+  "relative w-full p-2 shadow-black-01 rounded-sm",
   LABEL_BASE_CLASS,
 );
 export const INPUT_CLASS =
@@ -23,7 +23,7 @@ export type TSendingState =
   | "idle"
   | "sending"
   | "sent"
-  | "error";
+  | "error"; 
 
 export const resolveButtonValue = (
   sendingState: TSendingState,

@@ -10,6 +10,7 @@ import { MUSIC_ITEMS } from "@constants/music";
 import { Shell as MainShell } from "@main/Shell";
 import { LIBRARIES_ITEMS } from "@constants/libraries";
 import { useStyles } from "@styles/useStyles";
+import { Space4 } from "@components/spaces/Space4";
 
 export const Showcase = () => {
   useStyles();
@@ -25,21 +26,21 @@ export const Showcase = () => {
           items={APP_ITEMS}
           selectedPath={selectedPath}
         />
-        <Space />
+        <Space4 />
         <List
           header="Games"
           color="green"
           items={GAME_ITEMS}
           selectedPath={selectedPath}
         />
-        <Space />
+        <Space4 />
         <List
           header="Libraries"
           color="blue"
           items={LIBRARIES_ITEMS}
           selectedPath={selectedPath}
         />
-        <Space />
+        <Space4 />
         <List
           header="Music"
           color="purple"

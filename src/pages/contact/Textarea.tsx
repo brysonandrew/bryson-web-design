@@ -7,6 +7,7 @@ import { Gradient } from "./Gradient";
 import { TextName } from "./TextName";
 import { LABEL_CLASS } from "./config";
 import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)`
@@ -21,20 +22,25 @@ export const Textarea: FC<TProps> = ({
   title,
   isFocused,
   ...props
-}) => {
-  return (
-    <Root className={clsx(LABEL_CLASS, LINE_COLOR_STYLE)}>
-      <div className="flex items-start">
-        <div className={clsx([isFocused && "mt-1"])}>
-          <TextName
-            title={title}
-            isFocused={isFocused}
-            offset={0.2}
-          />
-        </div>
-        <Input {...props} autoComplete="off" />
+}) => (
+  <Root className={clsx(LABEL_CLASS)}>
+    <Fill />
+    <div
+      className={clsx(
+        "pt-1.5",
+        "relative flex items-start",
+        "bg-black-dark",
+      )}
+    >
+      <div className={clsx([isFocused && "pt-1"])}>
+        <TextName
+          title={title}
+          isFocused={isFocused}
+          offset={0.2}
+        />
       </div>
-      <Gradient />
-    </Root>
-  );
-};
+      <Input {...props} autoComplete="off" />
+    </div>
+    <Gradient />
+  </Root>
+);

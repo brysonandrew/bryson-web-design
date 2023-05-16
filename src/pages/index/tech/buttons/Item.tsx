@@ -1,15 +1,17 @@
 import { Border as Select } from "@components/select/Border";
-import { TextLg } from "@components/text/TextLg";
+import clsx from "clsx";
+import { Text } from "@components/text/Text";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import { XXXXL } from "@styles/style";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import type { TItem } from "../../../constants/tech";
-import clsx from "clsx";
+import type { TItem } from "../../../../constants/tech";
 import { LINE_COLOR_STYLE } from "@components/Line";
+import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.div)``;
+
 const Anchor = styled.a``;
 
 export const Item: FC<TItem> = ({ Icon, title, href }) => {
@@ -21,13 +23,19 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
     >
       {isSelected && <Select />}
       <Anchor
-        className={clsx("relative flex items-center p-2 lg:p-3 xl:p-4", LINE_COLOR_STYLE)}
+        className={clsx(
+          "relative p-2 lg:p-3 xl:p-4",
+          LINE_COLOR_STYLE,
+        )}
         href={href}
         target="_blank"
       >
-        <Icon classValue={XXXXL} />
-        <div className="p-2" />
-        <TextLg>{title}</TextLg>
+        <Fill classValue="rounded-sm" inset={1} />
+        <div className="relative flex items-center z-10">
+          <Icon classValue={XXXXL} />
+          <div className="p-2" />
+          <Text>{title}</Text>
+        </div>
       </Anchor>
     </Root>
   );

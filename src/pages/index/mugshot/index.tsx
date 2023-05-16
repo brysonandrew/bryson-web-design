@@ -13,22 +13,19 @@ import {
 } from "@components/effects/color";
 import { FilterShell } from "@components/FilterShell";
 import { MUGSHOT_SUFFIX } from "@components/Filters";
-import COLORS from "@windi/config-colors.json";
+import type COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 export const WIDTH = 280;
 export const HEIGHT = 280;
-const OFFSET = 6.5;
+const OFFSET = 44;
 
 const Blinder = styled(motion.div)``;
 
 const ID_CYCLES: (keyof typeof COLORS)[] = [
-
   "blue",
   "black",
-
   "red",
   "green",
-
 ];
 
 const Root = styled(motion.div)``;
@@ -43,14 +40,14 @@ export const Mugshot = () => {
   );
   return (
     <Root
-      className="absolute w-74 left-1/2 top-52 sm:right-4 xs:right-0 md:w-86 lg:left-6/12 lg:w-96 xl:left-4/6 xl:top-39 xl:w-84"
+      className={`absolute w-74 left-1/2 top-43 sm:right-4 xs:right-0 md:w-86 lg:left-6/12 lg:w-90 xl:left-4/6 xl:top-28 xl:w-94`}
       initial={{ opacity: 0, filter: "blur(20px)" }}
       animate={{ opacity: 0.86, filter: "blur(0px)" }}
       exit={{
         opacity: 0,
         filter: "blur(2px)",
         transition: MUGSHOT_TRANSITION_EXIT,
-      }} 
+      }}
       transition={MUGSHOT_TRANSITION}
     >
       <Svg
@@ -60,7 +57,7 @@ export const Mugshot = () => {
         filter={`${
           isSafari
             ? ""
-            : `${resolveUrlId(
+            : `contrast(180%) opacity(70%) ${resolveUrlId(
                 `${DISPLACEMENT_ID}_${MUGSHOT_SUFFIX}`,
               )}`
         }`}
@@ -91,8 +88,8 @@ export const Mugshot = () => {
               height="100%"
               xlinkHref="/mugshot2.png"
               style={{
-                opacity: 2 / length,
-                mixBlendMode: "difference",
+                // opacity: 2 / length,
+                mixBlendMode: "color-dodge",
               }}
               transform={`translate(${x.toFixed(
                 6,
@@ -100,12 +97,20 @@ export const Mugshot = () => {
             />
           );
         })}
+        <Image
+          width="100%"
+          height="100%"
+          xlinkHref="/mugshot2.png"
+          style={{
+            mixBlendMode: "multiply",
+          }}
+        />
       </Svg>
       <Blinder
         style={{
-          bottom: "8%",
+          bottom: "7%",
           left: "8%",
-          height: "20%",
+          height: "22%",
           width: "94%",
         }}
         className={clsx(

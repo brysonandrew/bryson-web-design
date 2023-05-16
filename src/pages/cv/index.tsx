@@ -2,7 +2,7 @@ import { Displacement, ID, } from "@components/effects/displacement";
 import { Laptop } from "@components/icons/Laptop";
 import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
 import { Sub } from "@components/text/Sub";
-import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import styled from "@emotion/styled";
 import { useStyles } from "@styles/useStyles";
 import { resolveUrlId } from "@utils/resolveUrlId";

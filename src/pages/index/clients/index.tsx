@@ -4,12 +4,13 @@ import type { FC } from "react";
 
 import type { TChildrenProps } from "./Motion";
 import { Motion } from "./Motion";
-import { Shell } from "./Shell";
+import { Shell } from "./shell";
 
 type TProps = HTMLMotionProps<"div">;
 export const Clients: FC<TProps> = () => {
   const { tier, isMobile } = useDetectGPU();
-  if (isMobile) return <Shell/>
+  if (isMobile) return <Shell />;
+
   switch (tier) {
     case 3: {
       return (

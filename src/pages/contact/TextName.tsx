@@ -1,4 +1,4 @@
-import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import styled from "@emotion/styled";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
@@ -15,20 +15,21 @@ type TProps = HTMLMotionProps<"input"> & {
 export const TextName: FC<TProps> = ({
   title,
   isFocused,
-  offset = 0.4,
+  offset = 0.2,
   ...props
 }) => {
   const isValue = Boolean(props.value);
 
   return (
     <Root
+      className="pl-4"
       initial={false}
       animate={
         isFocused ? "focus" : isValue ? "value" : "idle"
       }
     >
       {isFocused ? (
-        <GlitchPorsalin offset={0.4}>
+        <GlitchPorsalin offset={0.16}>
           {title}
         </GlitchPorsalin>
       ) : (
