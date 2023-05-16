@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { HEADER_OFFSET_Y } from "@pages/index/constants";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   useRef,
   type FC,
@@ -11,7 +11,10 @@ import type { TChildren } from "../types";
 import { BlindersOut } from "./blinders/BlindersOut";
 import { Footer } from "./shell/footer";
 import { Header } from "./shell/header";
-import { PRESENCE_OPACITY_SHIFT } from "@constants/animation";
+import {
+  MOTION_CONFIG,
+  PRESENCE_OPACITY_SHIFT,
+} from "@constants/animation";
 import { useContext } from "@state/Context";
 
 const Root = styled(motion.div)``;
@@ -30,7 +33,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
       setContent(true);
-    }, 100);
+    }, 500);
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
@@ -41,20 +44,24 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <Root className="relative text-black-dark-04 overflow-hidden z-10">
       <Header />
-      {isContent && (
-        <Content
-          key="Content"
-          className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
-          style={{
-            paddingTop: HEADER_OFFSET_Y,
-            minHeight: "100vh",
-          }}
-          {...PRESENCE_OPACITY_SHIFT}
-        >
-          {children}
-          <BlindersOut />
-        </Content>
-      )}
+      <AnimatePresence>
+        {isContent && (
+          <Content
+            key="Content"
+            className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
+            style={{
+              paddingTop: HEADER_OFFSET_Y,
+              minHeight: "100vh",
+            }}
+            {...PRESENCE_OPACITY_SHIFT}
+            {...{ ...MOTION_CONFIG, duration: 1 }}
+          >
+            {children}
+            <BlindersOut />
+          </Content>
+        )}
+      </AnimatePresence>
+
       <Footer />
     </Root>
   );
