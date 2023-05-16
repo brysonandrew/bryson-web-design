@@ -12,9 +12,8 @@ export const Text: FC<TProps> = ({
 }) => (
   <>
     <div className="flex flex-col lg:flex-row lg:items-center">
-      <TextSm classValue="px-0">{title}</TextSm>
-      <div className="hidden px-2 lg:block lg:py-1" />
-      <motion.p className="text-white-light" layout>
+      <TextSm>{title}</TextSm>
+      <motion.p className="text-white-light ml-3.5 lg:ml-0 lg:mt-1 xl:mt-1.75" layout>
         {description}
       </motion.p>
     </div>

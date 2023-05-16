@@ -5,7 +5,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import { type FC } from "react";
 import { Contact } from "./Contact";
-import { Showroom } from "./Showcase";
+import { Showcase } from "./Showcase";
 import { Home } from "./Home";
 
 const Root = styled(motion.div)``;
@@ -20,7 +20,7 @@ export const Ending: FC<TProps> = () => (
         >
           <Fill />
         </div>
-        <Showroom />
+        <Showcase />
         <Space2 />
         <Contact />
         <Space2 />

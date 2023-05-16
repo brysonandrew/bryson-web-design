@@ -24,7 +24,6 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  const { dispatch } = useContext();
   const [isContent, setContent] = useState(false);
   const timeoutRef = useRef<null | ReturnType<
     typeof setTimeout
@@ -61,7 +60,6 @@ export const Shell: FC<TProps> = ({ children }) => {
           </Content>
         )}
       </AnimatePresence>
-
       <Footer />
     </Root>
   );

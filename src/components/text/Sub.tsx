@@ -21,9 +21,7 @@ export const Sub: FC<TProps> = ({
       "relative top-0 left-0 text-md08 text-teal-bright leading-none",
       classValue,
     )}
-    style={{
-      ...style,
-    }}
+    style={style}
     {...props}
   >
     {children}
