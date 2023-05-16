@@ -1,4 +1,3 @@
-import { FilterShell } from "@components/FilterShell";
 import COLORS from "@windi/config-colors.json";
 
 export const MORPH_ID = "MORPH_ID";
@@ -21,7 +20,7 @@ export const Morph = () => (
       result="morphology"
     />
     <feFlood
-      floodColor={COLORS["black-light"]}
+      floodColor={COLORS["white-01"]}
       floodOpacity="0.8"
       result="flood"
     />

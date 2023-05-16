@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { PATTERN_ID } from "./pattern";
 import { MORPH_ID } from "./morph";
-import clsx, { ClassValue } from "clsx";
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
 
 const Root = styled(motion.svg)``;
 const Rect = styled(motion.rect)``;
@@ -14,7 +15,7 @@ type TProps = {
 };
 export const Background: FC<TProps> = ({ classValue }) => (
   <Root
-    className={clsx("absolute inset-0 z-0", classValue)}
+    className={clsx("fixed inset-0 z-0", classValue)}
     width="100%"
     height="100%"
   >

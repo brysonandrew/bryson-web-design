@@ -9,6 +9,7 @@ import type {
   MotionValue,
 } from "framer-motion";
 import { DELAY, DELAY_2, FULL, GAP_1 } from "../constants";
+import { useContext } from "@state/Context";
 
 export type TChildrenProps = {
   xs: MotionValue<string>[];
@@ -18,10 +19,19 @@ type TProps = Omit<HTMLMotionProps<"div">, "children"> & {
   children: (props: TChildrenProps) => JSX.Element;
 };
 export const Motion: FC<TProps> = ({ children }) => {
+  const { isInit } = useContext();
   const motion = useMotionValue(0);
+  const endTime = GAP_1 + DELAY_2;
 
   useEffect(() => {
-    animate(motion, GAP_1 + DELAY_2, { duration: 1.8, ease:"easeIn" })
+    if (isInit) {
+      animate(motion, endTime, {
+        duration: 1.8,
+        ease: "easeIn",
+      });
+    } else {
+      motion.set(endTime);
+    }
   }, []);
 
   const x = useTransform(motion, [0, GAP_1], FULL);

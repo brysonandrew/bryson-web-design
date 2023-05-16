@@ -5,11 +5,9 @@ import { Nav } from "./Nav";
 
 const Root = styled(motion.div)``;
 
-export const Top = () => {
-  return (
+export const Top = () => (
     <Root className="relative flex items-center justify-between w-full">
       <Main />
       <Nav />
     </Root>
   );
-};

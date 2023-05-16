@@ -10,8 +10,7 @@ import { STROKE_CLASS_NAMES } from "../../../text/glitch-porsalin/config";
 const Root = styled(motion.div)``;
 
 type TProps = { style?: CSSProperties };
-export const Title: FC<TProps> = (props) => {
-  return (
+export const Title: FC<TProps> = (props) => (
     <Root className="flex items-center">
       <div className="-mt-3">
         <GlitchPorsalin
@@ -53,4 +52,3 @@ export const Title: FC<TProps> = (props) => {
       </motion.div>
     </Root>
   );
-};

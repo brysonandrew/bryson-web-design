@@ -3,7 +3,6 @@ import type { FC } from "react";
 import { motion } from "framer-motion";
 import { ThinLineGap } from "@components/ThinLineGap";
 import { Blinders } from "@components/blinders/Blinders";
-import { Text } from "@components/text/Text";
 import { TextXl } from "@components/text/TextXl";
 import styled from "@emotion/styled";
 import {

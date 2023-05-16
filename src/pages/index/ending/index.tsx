@@ -11,8 +11,7 @@ import { Home } from "./Home";
 const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
-export const Ending: FC<TProps> = () => {
-  return (
+export const Ending: FC<TProps> = () => (
     <Root className="relative flex flex-col items-center">
       <div className="inline-flex flex-col items-start">
         <div
@@ -29,4 +28,3 @@ export const Ending: FC<TProps> = () => {
       </div>
     </Root>
   );
-};

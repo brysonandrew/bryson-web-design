@@ -12,8 +12,9 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <>
       <Filters />
+      <Background />
+
       {children}
     </>
   );
 };
- 
