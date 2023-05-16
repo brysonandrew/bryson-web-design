@@ -1,4 +1,4 @@
-import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import styled from "@emotion/styled";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";

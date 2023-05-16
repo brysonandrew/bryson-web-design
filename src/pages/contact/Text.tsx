@@ -33,7 +33,7 @@ export const Text: FC<TProps> = ({
       <TextName title={title} isFocused={isFocused} />
       <Input {...props} type="text" autoComplete="off" />
     </div>
-
     <Gradient />
   </Root>
 );
+ 

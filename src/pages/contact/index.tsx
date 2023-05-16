@@ -11,26 +11,22 @@ import styled from "@emotion/styled";
 import clsx from "clsx";
 import { Space2 } from "@components/spaces/Space2";
 import { Shell } from "@components/Shell";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Border } from "@components/select/Border";
 import { useStyles } from "@styles/useStyles";
 import { useFocusSound } from "@hooks/sounds/useFocusSound";
 import { Shell as MainShell } from "@main/Shell";
-import { TextSm } from "@components/text/TextSm";
+import { TextXl } from "@components/text/TextXl";
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
 import type { TSendingState } from "./config";
 import { INPUT_CLASS, INIT_STATE } from "./config";
 import { Submit } from "./Submit";
-import { TextXl } from "@components/text/TextXl";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
 
 export const Contact = () => {
   useStyles();
-  const { handlers, isSelected } =
-    useSelectHandlers("CONTACT_FORM");
+
   const [focus, setFocus] = useState<string | null>(null);
   const [state, setState] = useState(INIT_STATE);
   const [sendingState, setSendingState] =
@@ -43,6 +39,7 @@ export const Contact = () => {
     event.preventDefault();
 
     if (ref.current === null) return;
+
     try {
       const result = await emailjs.sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
@@ -56,6 +53,7 @@ export const Contact = () => {
       setSendingState("error");
     }
   };
+
   const handleChange = ({
     currentTarget: { name, value },
   }: ChangeEvent<
@@ -126,11 +124,7 @@ export const Contact = () => {
             onSubmit={isDisabled ? () => null : sendEmail}
           >
             <Space2 />
-            <motion.div
-              className="relative flex flex-col w-full"
-              {...handlers}
-            >
-              {isSelected && <Border />}
+            <motion.div className="relative flex flex-col w-full">
               <Text
                 title="name"
                 autoFocus

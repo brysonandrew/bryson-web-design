@@ -27,7 +27,7 @@ module.exports = {
 
   "teal-md": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}, 0 0 1px 3px ${COLORS.teal}`,
   "teal": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}`,
-  "teal-02": `0 0 1px 1px ${COLORS["teal-02"]}, 0 0 1px 2px ${COLORS["teal-02"]}`,
+  "teal-02": `0 0 1px 1px ${COLORS["teal-02"]}, 0 0 1px 2px ${COLORS["teal-01"]}`,
   "teal-04": `0 0 1px 1px ${COLORS["teal-04"]}, 0 0 1px 2px ${COLORS["teal-04"]}`,
   "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
   "teal-01-sm": `0 0 1px 1px ${COLORS["teal-01"]}`,
@@ -65,6 +65,7 @@ module.exports = {
   "red-08-sm": `0 0 1px 1px ${COLORS["red-08"]}`,
 
   green: `0 0 1px 1px ${COLORS.green}, 0 0 1px 2px ${COLORS.green}`,
+  "green-02": `0 0 1px 1px ${COLORS["green-02"]}, 0 0 1px 2px ${COLORS["green-01"]}`,
   "green-04": `0 0 1px 1px ${COLORS["green-04"]}, 0 0 1px 2px ${COLORS["green-02"]}`,
   "green-sm": `0 0 1px 1px ${COLORS.green}`,
   "green-02-sm": `0 0 1px 1px ${COLORS["green-02"]}`,

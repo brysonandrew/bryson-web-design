@@ -11,7 +11,7 @@ import { Item } from "./Item";
 const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
-export const Tech: FC<TProps> = () => (
+export const Buttons: FC<TProps> = () => (
   <Root className="flex flex-col items-start text-teal-bright mt-2 ml-2 xl:flex-row lg:items-center">
     <Item {...TECH.REACT} />
     <div className="p-2" />

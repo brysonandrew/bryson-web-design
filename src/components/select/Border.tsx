@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import { SELECT_LAYOUT_ID } from "../cursor/config";
+import { resolveUrlId } from "@utils/resolveUrlId";
+import { POOL_ID } from "@components/cursor";
 
 const Root = styled(motion.div)``;
 
@@ -13,9 +15,10 @@ type TProps = {
 export const Border: FC<TProps> = ({ classValue }) => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
+    style={{filter: resolveUrlId(POOL_ID)}}
     className={clsx(
       "absolute -inset-1 pointer-events-none rounded-sm cursor-default",
-      classValue ?? "shadow-green-04",
+      classValue ?? "shadow-teal-bright",
     )}
   />
 );

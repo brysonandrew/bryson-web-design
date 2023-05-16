@@ -14,15 +14,11 @@ const Root = styled(motion.div)``;
 
 export const Main: FC = () => {
   const { pathname } = useLocation();
-  const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, 100], [0, -40]);
-  const scale = useTransform(scrollY, [0, 100], [1, 0.7]);
   const handleTap = useHome();
 
   return (
     <Root
-      className="flex flex-col relative grow z-10"
-      // style={{ scale, x, originY: 0 }}
+      className="relative flex flex-col relative grow"
       onTap={handleTap}
     >
       <>{pathname === "/" ? <Title /> : <Link />}</>

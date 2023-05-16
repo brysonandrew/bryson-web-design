@@ -9,6 +9,6 @@ const Root = styled(motion.div)``;
 
 export const Text: FC = () => (
   <Root className="flex flex-col items-center">
-    <TextXl>{STORY.intro}</TextXl>
+    <TextXl>{STORY.tech}</TextXl>
   </Root>
 );

@@ -1,11 +1,11 @@
-import { Tech } from "./tech";
+import { Buttons } from "./buttons";
 import { Text } from "./Text";
 import { ThinLineGap } from "@components/ThinLineGap";
 
-export const Intro = () => (
+export const Tech = () => (
   <div className="flex flex-col items-center">
     <Text />
     <ThinLineGap />
-    <Tech />
+    <Buttons />
   </div>
 );

@@ -19,7 +19,6 @@ export const Center: FC<TProps> = ({
   const insetCss = `${inset < 0 ? "-" : ""}inset-${
     inset < 0 ? inset * -1 : inset
   }`;
-  console.log(insetCss);
   return (
     <Root
       className={clsx(`absolute`, classValue, insetCss)}

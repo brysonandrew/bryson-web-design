@@ -17,4 +17,4 @@ const PROJECTS_2 = [
   ...PROJECTS_1.slice(0, 3),
 ];
 export const GROUPS = [PROJECTS, PROJECTS_1, PROJECTS_2];
-export const GENERIC_ITEMS = ["Websites", "and", "Web Apps"];
+export const GENERIC_ITEMS = ["Websites", "and", "Applications"];

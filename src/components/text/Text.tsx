@@ -21,7 +21,7 @@ export const Text: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-teal-bright text-left text-lg tracking-wide px-3 sm:text-2xl md:text-3xl lg:text-3.5xl xl:text-4xl",
+      "text-teal-bright text-left text-lg tracking-wide px-1 sm:text-2xl md:text-3xl lg:text-3.5xl xl:text-4xl",
       classValue,
     )}
     style={{

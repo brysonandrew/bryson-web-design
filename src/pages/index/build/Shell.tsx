@@ -14,6 +14,7 @@ import { Main } from "./Main";
 import type { TChildrenProps } from "./Motion";
 import { GROUPS } from "./constants";
 import { STORY } from "@constants/copy";
+import { Letter } from "@components/text/Letter";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
@@ -44,10 +45,10 @@ export const Shell: FC<TProps> = ({
               }}
             >
               {projects.map((p, index) => (
-                <Fragment key={p}>
-                  {index !== 0 && <li className="p-1" />}
+                <Fragment key={`${p}-${index}`}>
+                  {index !== 0 && <li className="p-0.5" />}
                   <li className={ROLLING_TEXT_CLASS}>
-                    <Text>{p}</Text>
+                    <Letter>{p}</Letter>
                   </li>
                 </Fragment>
               ))}

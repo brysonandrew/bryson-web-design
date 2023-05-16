@@ -2,10 +2,9 @@ import { LINE_COLOR_STYLE } from "@components/Line";
 import { VolumeOff } from "@components/icons/VolumeOff";
 import { VolumeOn } from "@components/icons/VolumeOn";
 import { Fill } from "@components/metal/Fill";
-import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import styled from "@emotion/styled";
 import { useContext } from "@state/Context";
-import clsx from "clsx";
 import { motion } from "framer-motion";
 
 const Root = styled(motion.div)``;

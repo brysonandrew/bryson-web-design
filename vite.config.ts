@@ -19,10 +19,7 @@ export default defineConfig({
       },
       fastRefresh: true,
     }),
-    paths(),
-    viteRestart({
-      restart: "windi.config-*",
-    }),
+    paths()
   ],
   server: {
     port: 3000,

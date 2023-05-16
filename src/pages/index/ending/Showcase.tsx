@@ -24,7 +24,7 @@ export const Showroom: FC<TProps> = () => {
       {...handlers}
     >
       <Link
-        to="/showroom"
+        to="/showcase"
         className={clsx(ANCHOR_CLASS)}
         {...handlers}
       >

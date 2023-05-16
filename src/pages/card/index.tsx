@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useStyles } from "@styles/useStyles";
 import { Sub } from "@components/text/Sub";
 import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
-import { GlitchPorsalin } from "@components/text/main/glitch-porsalin";
+import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import { Background } from "@components/background";
 
 const Root = styled(motion.div)``;

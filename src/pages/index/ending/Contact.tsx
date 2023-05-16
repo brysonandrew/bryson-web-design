@@ -20,9 +20,7 @@ export const Contact: FC<TProps> = () => {
     useSelectHandlers("Contact");
 
   return (
-    <Root
-      {...handlers}
-    >
+    <Root {...handlers}>
       <Link
         to="/contact"
         className={clsx(ANCHOR_CLASS)}

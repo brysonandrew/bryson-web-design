@@ -23,7 +23,7 @@ export type TSendingState =
   | "idle"
   | "sending"
   | "sent"
-  | "error";
+  | "error"; 
 
 export const resolveButtonValue = (
   sendingState: TSendingState,

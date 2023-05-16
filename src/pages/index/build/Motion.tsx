@@ -1,10 +1,13 @@
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import {
-  useScroll,
+  animate,
+  useMotionValue,
   useTransform,
 } from "framer-motion";
-import type { HTMLMotionProps ,
-  MotionValue} from "framer-motion";
+import type {
+  HTMLMotionProps,
+  MotionValue,
+} from "framer-motion";
 import { DELAY, DELAY_2, FULL, GAP_1 } from "../constants";
 
 export type TChildrenProps = {
@@ -15,15 +18,20 @@ type TProps = Omit<HTMLMotionProps<"div">, "children"> & {
   children: (props: TChildrenProps) => JSX.Element;
 };
 export const Motion: FC<TProps> = ({ children }) => {
-  const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, GAP_1], FULL);
+  const motion = useMotionValue(0);
+
+  useEffect(() => {
+    animate(motion, GAP_1 + DELAY_2, { duration: 1.8, ease:"easeIn" })
+  }, []);
+
+  const x = useTransform(motion, [0, GAP_1], FULL);
   const x1 = useTransform(
-    scrollY,
+    motion,
     [DELAY, GAP_1 + DELAY],
     FULL,
   );
   const x2 = useTransform(
-    scrollY,
+    motion,
     [DELAY_2, GAP_1 + DELAY_2],
     FULL,
   );
@@ -31,7 +39,7 @@ export const Motion: FC<TProps> = ({ children }) => {
   const xs = [x, x1, x2];
 
   const opacityBlinders = useTransform(
-    scrollY,
+    motion,
     [DELAY_2, GAP_1 + DELAY_2],
     [1, 0],
   );
