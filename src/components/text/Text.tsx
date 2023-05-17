@@ -5,10 +5,7 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const Root = styled(motion.h5)`
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-`;
+const Root = styled(motion.h5)``;
 
 type TProps = HTMLMotionProps<"h5"> & {
   classValue?: ClassValue;
@@ -24,9 +21,7 @@ export const Text: FC<TProps> = ({
       "text-teal-bright text-left text-lg tracking-wide px-1 sm:text-2xl md:text-3xl lg:text-3.5xl xl:text-4xl",
       classValue,
     )}
-    style={{
-      ...style,
-    }}
+    style={style}
     {...props}
   >
     {children}
