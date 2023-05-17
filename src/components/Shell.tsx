@@ -46,7 +46,7 @@ export const Shell: FC<TProps> = ({ children }) => {
         {isContent && (
           <Content
             key="Content"
-            className="relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-core lg:w-core-lg xl:w-core-xl xxl:w-core-xxl"
+            className="relative bg-current"
             style={{
               paddingTop: HEADER_OFFSET_Y,
               minHeight: "100vh",

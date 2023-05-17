@@ -1,25 +1,25 @@
-import { ThinLineGap } from "@components/ThinLineGap";
-import { Blinders } from "@components/blinders/Blinders";
-import { TextXl } from "@components/text/TextXl";
 import { STORY } from "@constants/copy";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import type { TChildrenProps } from "./Motion";
-import { Text } from "./Text";
+import { Title } from "../Title";
+import { Blinder } from "./Blinder";
 import { Images } from "./images";
+import { Line } from "./Line";
 
 const Root = styled(motion.div)``;
 
-type TProps = Partial<TChildrenProps>;
-export const Build: FC<TProps> = ({ opacityBlinders }) => (
+export const Build: FC = () => (
   <Root className="flex flex-col items-center">
-    <TextXl>{STORY.build}</TextXl>
-    <ThinLineGap />
-    <div className="relative overflow-hidden w-full">
-      <Blinders opacity={opacityBlinders} />
+    <Title>{STORY.build}</Title>
+    <motion.div
+      className="relative w-full overflow-hidden"
+      style={{ height: 200 }}
+      whileHover="hover"
+    >
       <Images />
-      <Text />
-    </div>
+      <Blinder />
+      <Line />
+    </motion.div>
   </Root>
 );

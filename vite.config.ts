@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import paths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 import windiCss from "vite-plugin-windicss";
-import viteRestart from "vite-plugin-restart";
 
 export default defineConfig({
   build: {

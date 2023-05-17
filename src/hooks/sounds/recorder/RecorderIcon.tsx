@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
 import styled from "@emotion/styled";
 import clsx from "clsx";
-import { SM } from "@styles/style";
+import { SM } from "@styles/styles";
 import type { TVariant } from "./config";
 import { RECORDER_ICON_ANIMATION } from "./config";
 

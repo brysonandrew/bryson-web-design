@@ -20,6 +20,7 @@ import { Textarea } from "./Textarea";
 import type { TSendingState } from "./config";
 import { INPUT_CLASS, INIT_STATE } from "./config";
 import { Submit } from "./Submit";
+import { WIDTH_CLASS } from "@styles/styles";
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -113,7 +114,12 @@ export const Contact = () => {
   return (
     <MainShell>
       <Shell>
-        <Root className="flex flex-col px-4">
+        <Root
+          className={clsx(
+            "flex flex-col px-4",
+            WIDTH_CLASS,
+          )}
+        >
           <TextXl>I would love to hear from you.</TextXl>
           <div className="py-1" />
           <Form

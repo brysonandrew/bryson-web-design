@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { Text } from "@components/text/Text";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { XXXXL } from "@styles/style";
+import { XXXXL } from "@styles/styles";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "../../../../constants/tech";

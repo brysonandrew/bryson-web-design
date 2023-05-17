@@ -14,15 +14,20 @@ const Blinder = styled(motion.div)``;
 type TProps = HTMLMotionProps<"div"> & {
   opacity?: MotionValue<number> | number;
 };
-export const Blinders: FC<TProps> = ({ opacity }) => (
+export const Blinders: FC<TProps> = ({
+  opacity,
+  ...props
+}) => (
   <>
     <Blinder
       className={clsx(CLASS, "left-0 bg-gradient-to-r")}
       style={{ opacity }}
+      {...props}
     />
     <Blinder
       className={clsx(CLASS, "right-0 bg-gradient-to-l")}
       style={{ opacity }}
+      {...props}
     />
   </>
 );
