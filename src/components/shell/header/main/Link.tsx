@@ -1,4 +1,4 @@
-import { Border as Select } from "@components/select/Border";
+import { BackgroundOverflow as Select } from "@components/select/BackgroundOverflow";
 import styled from "@emotion/styled";
 import { useResetScroll } from "@hooks/useResetScroll";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
@@ -7,7 +7,6 @@ import type { FC } from "react";
 import { Link as _Link } from "react-router-dom";
 import { Title } from "./Title";
 import { useOffSound } from "@hooks/sounds/useOffSound";
-import { Fill } from "@components/metal/Fill";
 
 const TITLE_ID = "TITLE_ID";
 
@@ -21,13 +20,12 @@ export const Link: FC = () => {
 
   return (
     <Root onTap={handleResetScroll} {...handlers}>
-      {isSelected && <Select />}
-      <Fill />
       <_Link
-        className="flex flex-col relative"
+        className="flex flex-col relative cursor-pointer"
         to="/"
         onClick={handleClick}
       >
+        {isSelected && <Select />}
         <Title />
       </_Link>
     </Root>

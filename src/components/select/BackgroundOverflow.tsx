@@ -10,11 +10,13 @@ const Root = styled(motion.div)``;
 type TProps = {
   classValue?: ClassValue;
 };
-export const Background: FC<TProps> = ({ classValue }) => (
+export const BackgroundOverflow: FC<TProps> = ({
+  classValue,
+}) => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
-      "absolute inset-0 pointer-events-none rounded-sm cursor-default",
+      "absolute -inset-2 pointer-events-none rounded-sm cursor-default",
       classValue ?? "bg-baby-blue-01",
     )}
   />

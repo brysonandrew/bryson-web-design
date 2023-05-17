@@ -23,7 +23,7 @@ export const Home: FC<TProps> = () => {
   const handleTap = useHome();
 
   return (
-    <Root style={{ x: "-100%" }} {...handlers}>
+    <Root style={{ x: "calc(-100% + 10px)" }} {...handlers}>
       <Button
         onTap={handleTap}
         className={clsx(ANCHOR_CLASS, "")}

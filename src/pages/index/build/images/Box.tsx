@@ -13,9 +13,7 @@ export const Box: FC<TProps> = ({
 }) => {
   const [isLoaded, setLoaded] = useState(false);
   const handleLoad = () => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 0);
+    setLoaded(true);
   };
 
   return (
@@ -37,14 +35,14 @@ export const Box: FC<TProps> = ({
       }}
     >
       <motion.img
+        initial={false}
         animate={{ y: isLoaded ? "0%" : "100%" }}
         transition={{
-          ...MOTION_CONFIG,
-          duration: 1,
-          ease: "easeIn",
+          ...MOTION_CONFIG.transition,
+          duration: 0.4,
+          ease: "easeOut",
         }}
         onLoad={handleLoad}
-        onLoadedData={handleLoad}
         {...props}
       />
     </motion.li>

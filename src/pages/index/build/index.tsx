@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { Title } from "../Title";
 import { Images } from "./images";
-import { Blinder } from "./Blinder";
-import { Line } from "./Line";
 
 const Root = styled(motion.div)``;
 
@@ -18,8 +16,6 @@ export const Build: FC = () => (
       whileHover="hover"
     >
       <Images />
-      {/* <Blinder /> */}
-      {/* <Line /> */}
-    </motion.div>
+    </motion.div> 
   </Root>
 );

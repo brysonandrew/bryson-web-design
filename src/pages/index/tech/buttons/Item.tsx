@@ -17,20 +17,17 @@ const Anchor = styled.a``;
 export const Item: FC<TItem> = ({ Icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
   return (
-    <Root
-      className="inline-flex relative rounded-xs rounded-md"
-      {...handlers}
-    >
+    <Root className="inline-flex relative" {...handlers}>
       {isSelected && <Select />}
       <Anchor
         className={clsx(
-          "relative p-2 lg:p-3 xl:p-4",
+          "relative px-4 py-2 lg:py-3 lg:px-5 xl:py-4 xl:px-6",
           LINE_COLOR_STYLE,
         )}
         href={href}
         target="_blank"
       >
-        <Fill classValue="rounded-sm" inset={1} />
+        <Fill inset={1} />
         <div className="relative flex items-center z-10">
           <Icon classValue={XXXXL} />
           <div className="p-2" />

@@ -11,12 +11,7 @@ const ROW = "flex";
 type TProps = Partial<TChildrenProps>;
 export const Images: FC<TProps> = () => {
   const images = useImages();
-  console.log("🚀 ~ file: index.tsx:14 ~ images:", images);
-  console.log(
-    "🚀 ~ file: index.tsx:14 ~ x:",
-    images.map((v) => v.default),
-  );
-
+  console.log(images.length);
   return (
     <motion.ul
       className={clsx(
@@ -27,7 +22,7 @@ export const Images: FC<TProps> = () => {
     >
       {images.map((image, index, { length }) => (
         <Box
-          key={`${image.default}-${index}`}
+          key={image.default}
           src={image.default}
           index={index}
           count={length}

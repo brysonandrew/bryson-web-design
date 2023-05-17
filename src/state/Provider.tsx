@@ -20,6 +20,10 @@ export const Provider: FC<TProviderProps> = ({
     isSound: !isMobile,
   });
 
+  useEffect(() => {
+    dispatch({ type: "init", value: null });
+  }, []);
+
   return (
     <Context.Provider
       value={{
