@@ -1,14 +1,14 @@
-const screenFiles = import.meta.glob(
-  "/assets/screens/**/*.png",
-);
+const screenFiles = import.meta.glob("/screens/**/*.png");
 const values = Object.values(screenFiles);
 
 export const resolveRandom = async () => {
-  const indicies = [];
+  const indicies: number[] = [];
   const requiredCount = Math.min(values.length, 9);
   while (indicies.length < requiredCount) {
     const next = ~~(values.length * Math.random());
-    indicies.push(next);
+    if (!indicies.includes(next)) {
+      indicies.push(next);
+    }
   }
   const items = [];
 

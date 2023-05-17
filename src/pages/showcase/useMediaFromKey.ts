@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { TMedia } from "./config";
 import { resolveMedia } from "./config";
 const screenFiles = import.meta.glob(
-  "../../../assets/screens/**/*.png",
+  "/screens/**/*.png",
 );
 
 export const useMediaFromKey = (key: string) => {

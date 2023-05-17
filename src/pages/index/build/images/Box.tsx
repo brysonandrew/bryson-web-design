@@ -13,7 +13,9 @@ export const Box: FC<TProps> = ({
 }) => {
   const [isLoaded, setLoaded] = useState(false);
   const handleLoad = () => {
-    setLoaded(true);
+    setTimeout(() => {
+      setLoaded(true);
+    }, 0);
   };
 
   return (
@@ -25,12 +27,12 @@ export const Box: FC<TProps> = ({
         maxHeight: 100,
         x: `-${50 * index}%`,
         y:
-          -Math.sin(((index + 0.5) / count) * Math.PI) * 50,
+          -Math.sin(((index + 0.5) / count) * Math.PI) * 20,
         originX: "50%",
         originY: "100%",
       }}
       whileHover={{
-        y: -50,
+        y: -20,
         scale: 1.4,
       }}
     >
@@ -42,6 +44,7 @@ export const Box: FC<TProps> = ({
           ease: "easeIn",
         }}
         onLoad={handleLoad}
+        onLoadedData={handleLoad}
         {...props}
       />
     </motion.li>
