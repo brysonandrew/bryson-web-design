@@ -11,9 +11,9 @@ import type { TChildrenProps } from "./Motion";
 import { Review } from "./Review";
 import { REVIEWS } from "./constants";
 import { Item } from "./Item";
-import { TextXl } from "@components/text/TextXl";
-import { ThinLineGap } from "@components/ThinLineGap";
 import { STORY } from "@constants/copy";
+import { Title } from "../Title";
+import { WIDTH_CLASS } from "@styles/styles";
 
 const Root = styled(motion.div)``;
 
@@ -48,12 +48,12 @@ export const Shell: FC<TProps> = ({
       ref={ref}
       className="relative flex flex-col items-center z-10"
     >
-      <TextXl>{STORY.clients}</TextXl>
-      <ThinLineGap />
+      <Title>{STORY.clients}</Title>
       <Blinders opacity={opacityBlinders} />
       <div
         className={clsx(
           "relative w-full overflow-hidden left-8",
+          WIDTH_CLASS,
         )}
       >
         {isLong ? (

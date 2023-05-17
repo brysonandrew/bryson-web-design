@@ -11,7 +11,7 @@ type TProps = {
 };
 export const Line: FC<TProps> = ({
   position = "relative",
-  height = 12,
+  height = 6,
 }) => (
   <Root
     className={clsx(

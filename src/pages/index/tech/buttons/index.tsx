@@ -1,7 +1,7 @@
 import { Plus } from "@components/icons/Plus";
 import { TECH } from "@constants/tech";
 import styled from "@emotion/styled";
-import { XL } from "@styles/style";
+import { XL } from "@styles/styles";
 import clsx from "clsx";
 import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";

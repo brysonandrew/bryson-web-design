@@ -1,11 +1,10 @@
+import { STORY } from "@constants/copy";
+import { Title } from "../Title";
 import { Buttons } from "./buttons";
-import { Text } from "./Text";
-import { ThinLineGap } from "@components/ThinLineGap";
 
 export const Tech = () => (
   <div className="flex flex-col items-center">
-    <Text />
-    <ThinLineGap />
+    <Title>{STORY.tech}</Title>
     <Buttons />
   </div>
 );

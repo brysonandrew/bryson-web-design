@@ -57,6 +57,7 @@ export const Review: FC<TProps> = ({
       </Long>
     );
   }
+  
   return (
     <TextSm>
       <Block className="text-slate">{content}, </Block>

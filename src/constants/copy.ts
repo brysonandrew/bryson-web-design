@@ -1,5 +1,5 @@
 export const STORY = {
-  build: "Building",
+  build: "Building websites and apps",
   tech: "With the power of",
-  clients: "For my dear clients",
+  clients: "Driven by feedback",
 };

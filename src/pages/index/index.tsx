@@ -14,8 +14,8 @@ import { Space24 } from "@components/spaces/Space24";
 
 export const Index = () => (
   <Suspense fallback={null}>
-    <MainShell>
-      <Shell>
+    <MainShell> 
+      <Shell> 
         <Build />
         <Space8 />
         <Line /> 
