@@ -15,7 +15,6 @@ import {
   MOTION_CONFIG,
   PRESENCE_OPACITY_SHIFT,
 } from "@constants/animation";
-import { useContext } from "@state/Context";
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;

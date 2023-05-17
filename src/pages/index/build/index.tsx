@@ -1,25 +1,25 @@
-import { useDetectGPU } from "@react-three/drei";
-import type { HTMLMotionProps } from "framer-motion";
+import { ThinLineGap } from "@components/ThinLineGap";
+import { Blinders } from "@components/blinders/Blinders";
+import { TextXl } from "@components/text/TextXl";
+import { STORY } from "@constants/copy";
+import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import type { FC } from "react";
-
 import type { TChildrenProps } from "./Motion";
-import { Motion } from "./Motion";
-import { Shell } from "./Shell";
+import { Text } from "./Text";
+import { Images } from "./images";
 
-type TProps = HTMLMotionProps<"div">;
-export const Build: FC<TProps> = () => {
-  const { tier, isMobile } = useDetectGPU();
-  if (isMobile) return <Shell/>
-  switch (tier) {
-    case 3: {
-      return ( 
-        <Motion>
-          {(props: TChildrenProps) => <Shell {...props} />}
-        </Motion>
-      );
-    }
-    default: {
-      return <Shell />;
-    }
-  }
-};
+const Root = styled(motion.div)``;
+
+type TProps = Partial<TChildrenProps>;
+export const Build: FC<TProps> = ({ opacityBlinders }) => (
+  <Root className="flex flex-col items-center">
+    <TextXl>{STORY.build}</TextXl>
+    <ThinLineGap />
+    <div className="relative overflow-hidden w-full">
+      <Blinders opacity={opacityBlinders} />
+      <Images />
+      <Text />
+    </div>
+  </Root>
+);

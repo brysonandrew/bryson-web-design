@@ -16,10 +16,9 @@ export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
       <Shell>
-        <Space2 />
         <Build />
         <Space8 />
-        <Line />
+        <Line /> 
         <Space6 />
         <Tech />
         <Space6 />
