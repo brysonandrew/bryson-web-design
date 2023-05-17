@@ -1,12 +1,12 @@
 import type { TItem } from "@t/showcase";
 
-
 export const APP_ITEMS: TItem[] = [
   {
     title: "Insight Factory",
     description: "Process Management System",
     href: "https://www.insightfactory.ai/",
     tags: ["React", "Typescript", "Framer Motion", "d3.js", "d3-dag"],
+    time: new Date(2023, 4, 1),
   },
   {
     title: "Canvas",
