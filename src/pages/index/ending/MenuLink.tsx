@@ -16,7 +16,7 @@ import { TChildren } from "@t/index";
 const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div"> & {
-  to:string
+  to: string;
   children: TChildren;
 };
 export const MenuLink: FC<TProps> = ({
@@ -24,15 +24,14 @@ export const MenuLink: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { handlers, isSelected } =
-    useSelectHandlers(to);
+  const { handlers, isSelected } = useSelectHandlers(to);
 
   return (
     <Root {...handlers} {...props}>
       <Link to={to} className={clsx(ANCHOR_CLASS)}>
+        {isSelected ? <Select /> : null}
         <Fill inset={2} />
         <Text classValue="relative">{children}</Text>
-        {isSelected ? <Select /> : null}
       </Link>
     </Root>
   );

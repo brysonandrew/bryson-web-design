@@ -18,20 +18,20 @@ const Button = styled(motion.button)``;
 type TProps = HTMLMotionProps<"div">;
 export const Home: FC<TProps> = () => {
   const { handlers, isSelected } =
-  useSelectHandlers("Home");
-  
+    useSelectHandlers("Home");
+
   const handleTap = useHome();
 
   return (
-    <Root style={{x:"-100%"}} {...handlers}>
+    <Root style={{ x: "-100%" }} {...handlers}>
       <Button
         onTap={handleTap}
         className={clsx(ANCHOR_CLASS, "")}
       >
+        {isSelected ? <Select /> : null}
         <Fill inset={2} />
         <Text classValue="relative">Home</Text>
-        {isSelected ? <Select /> : null}
-      </Button> 
+      </Button>
     </Root>
   );
 };
