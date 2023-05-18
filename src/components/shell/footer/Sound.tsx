@@ -1,4 +1,3 @@
-import { LINE_COLOR_STYLE } from "@components/Line";
 import { VolumeOff } from "@components/icons/VolumeOff";
 import { VolumeOn } from "@components/icons/VolumeOn";
 import { Fill } from "@components/metal/Fill";

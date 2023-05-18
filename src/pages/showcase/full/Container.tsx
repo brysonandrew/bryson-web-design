@@ -1,9 +1,8 @@
-import { LINE_COLOR_STYLE } from "@components/Line";
 import styled from "@emotion/styled";
 import type { TChildren } from "@t/index";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
-import type { HTMLMotionProps} from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
@@ -23,10 +22,10 @@ export const Container: FC<TProps> = ({
   <Root
     className={clsx(
       "inset-0 rounded-sm z-10",
-      LINE_COLOR_STYLE,
       classValue,
     )}
     layoutId={id}
+    style={{ backgroundColor: "rgba(28,28,28, 0.7)" }}
     {...props}
   >
     {children}

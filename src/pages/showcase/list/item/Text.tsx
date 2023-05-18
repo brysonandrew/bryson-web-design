@@ -11,7 +11,10 @@ export const Text: FC<TProps> = ({
   description,
 }) => (
   <>
-    <div className="flex flex-col lg:flex-row lg:items-end -mt-0.5">
+    <motion.div
+      className="flex flex-col lg:flex-row lg:items-end -mt-0.5"
+      layout
+    >
       <TextSm>{title}</TextSm>
       <motion.p
         className="text-white-light text-sm ml-3.5 md:text-md lg:text-lg lg:ml-0 xl:text-xl"
@@ -19,9 +22,12 @@ export const Text: FC<TProps> = ({
       >
         {description}
       </motion.p>
-    </div>
-    <div className="absolute top-0 right-0 py-4 px-4 lg:py-1">
+    </motion.div>
+    <motion.div
+      className="absolute top-0 right-0 py-4 px-4 lg:py-1"
+      layout
+    >
       <Time time={time} />
-    </div>
+    </motion.div>
   </>
 );

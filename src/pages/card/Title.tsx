@@ -18,10 +18,9 @@ export const Title = () => {
         </div>
         <div className="p-2" />
         <div className="flex flex-col items-center">
-          <h1 style={{ fontSize: 50, lineHeight: 1 }}>
+          <h1 style={{ fontSize: 42, lineHeight: 1 }}>
             Andrew Bryson
           </h1>
-          <div className="p-0.5" />
           <Sub
             style={{
               fontSize: 42,
