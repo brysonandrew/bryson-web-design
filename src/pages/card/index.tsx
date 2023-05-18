@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useStyles } from "@styles/useStyles";
 import { Sub } from "@components/text/Sub";
 import { EXPERIENCE_SLOGAN } from "@components/shell/constants";
-import { GlitchPorsalin } from "@components/text/glitch-porsalin";
 import { Background } from "@components/background";
 import { Desk } from "@components/icons/Desk";
 
@@ -19,7 +18,7 @@ const _Card = styled(motion.div)``;
 export const Card = () => {
   useStyles();
   return (
-    <Root className="flex items-center justify-center w-screen h-screen">
+    <Root className="flex items-center justify-center w-screen h-screen text-white">
       <_Card
         className="flex flex-col justify-around bg-black"
         style={{ ...SIZE }}
@@ -45,10 +44,16 @@ export const Card = () => {
             </Sub>
           </div>
         </div>
-        <div className="flex flex-col items-center h-10 -mt-8">
-          <div className="flex items-center justify-around w-full text-2xl">
-            <h6>brysona.dev</h6>
-            <h6>020 4069 8339</h6>
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-around w-full text-xl">
+            <div>
+              <p>brysona.dev</p>
+              <p>020 4069 8339</p>
+            </div>
+            <div className="flex flex-col items-end">
+              <p>andrewbryson12</p>
+              <p>@gmail.com</p>
+            </div>
           </div>
         </div>
       </_Card>

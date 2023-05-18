@@ -10,7 +10,7 @@ const Root = styled(motion.div)``;
 type TProps = { children: TChildren };
 export const Shell: FC<TProps> = ({ children }) => {
   return (
-    <Root className="w-screen h-screen bg-black-dark text-white">
+    <Root className="flex flex-col bg-black-dark text-white">
       <FilterShell>
         <Displacement />
       </FilterShell>
