@@ -1,15 +1,17 @@
 import { TextXs } from "@components/text/TextXs";
+import clsx, { ClassValue } from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const CLASS = "mt-0.5 md:mt-0.5 lg:mt-0.5"
+const CLASS = "mt-0.5 md:mt-0.5 lg:mt-0.5";
 
-type TProps = { time?: Date };
-export const Time: FC<TProps> = ({ time }) => {
+type TProps = { time?: Date; classValue?: ClassValue };
+export const Time: FC<TProps> = ({ time, classValue }) => {
+  const className = clsx(CLASS, classValue);
   if (!time)
-    return <TextXs classValue={CLASS}>Present</TextXs>;
+    return <TextXs classValue={className}>Present</TextXs>;
   return (
-    <TextXs classValue={CLASS}>
+    <TextXs classValue={className}>
       <motion.span className="truncate" layout>
         {typeof time === "undefined"
           ? "Present"
