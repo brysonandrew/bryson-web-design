@@ -11,11 +11,11 @@ const ICON_SIZE = {
 const Root = styled(motion.div)``;
 
 export const Title = () => (
-  <Root className="flex items-center justify-center">
-    <div className="-mt-4">
+  <Root className="flex items-center justify-center text-white-dark">
+    <div className="-mt-2.25">
       <Desk {...ICON_SIZE} />
     </div>
-    <div className="p-2" />
+    <div className="p-1.5" />
     <div className="flex flex-col items-center whitespace-nowrap">
       <h1 style={{ fontSize: 26, lineHeight: 1 }}>
         Andrew Bryson
@@ -25,7 +25,6 @@ export const Title = () => (
         className="whitespace-nowrap"
         style={{
           fontSize: 12,
-          color: "white",
           textTransform: "uppercase",
         }}
       >

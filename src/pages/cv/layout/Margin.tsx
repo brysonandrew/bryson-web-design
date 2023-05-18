@@ -7,5 +7,5 @@ const Root = styled(motion.div)``;
 
 type TProps = { children: TChildren };
 export const Margin: FC<TProps> = ({ children }) => {
-  return <Root className="w-3/4">{children}</Root>;
+  return <Root className="relative w-3/4">{children}</Root>;
 };

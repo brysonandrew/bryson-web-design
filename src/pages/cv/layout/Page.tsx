@@ -12,7 +12,7 @@ export const Page: FC<TProps> = ({ children }) => {
   useStyles();
   return (
     <Root
-      className="flex flex-col items-center pt-20 bg-black"
+      className="flex flex-col items-center pt-18 bg-black overflow-hidden"
       style={{ ...SIZE }}
     >
       {children}

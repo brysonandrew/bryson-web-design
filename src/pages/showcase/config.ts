@@ -12,7 +12,6 @@ export const ITEM_DESCRIPTION_LOOKUP: Record<
 
 export const EXCLUDED_KEYS = ["preview", "logo"]
 
-
 export type TMedia = {
   img: string;
   file: string;

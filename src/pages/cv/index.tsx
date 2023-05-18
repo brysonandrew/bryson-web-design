@@ -6,6 +6,9 @@ import { Header } from "./header";
 import { Margin } from "./layout/Margin";
 import { Page } from "./layout/Page";
 import { Shell } from "./layout/Shell";
+import { Space3 } from "@components/spaces/Space3";
+import { Space } from "@components/spaces/Space";
+import { Space4 } from "@components/spaces/Space4";
 
 export const Cv = () => {
   useStyles();
@@ -15,15 +18,16 @@ export const Cv = () => {
         <Margin>
           <Header />
         </Margin>
-        <Space2 />
+        <Space4 />
         <Margin>
-          <Space2 />
           <Description />
-          <Space2 />
-          <hr className="bg-white-02 w-full h-px" />
-          <Space2 />
-          <Experience />
         </Margin>
+        <Space3 />
+        <Margin>
+          <hr className="bg-white-02 w-full h-px" />
+        </Margin>
+        <Space />
+        <Experience />
       </Page>
     </Shell>
   );
