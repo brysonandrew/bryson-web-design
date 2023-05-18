@@ -11,44 +11,44 @@ const Root = styled(motion.div)``;
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = (props) => (
-    <Root className="flex items-center">
-      <div className="-mt-3">
-        <GlitchPorsalin
-          offset={0.6}
-          tag="div"
-          classValues={STROKE_CLASS_NAMES}
-        >
-          <Desk 
-            width={60}
-            height={60}
-            fill="none"
-            strokeWidth={8}
-          />
-        </GlitchPorsalin>
-      </div>
-      <motion.div className="flex relative pl-3 pr-1 pt-0 pb-1 grow">
-        <motion.div className="hidden flex-col sm:flex">
-          <GlitchPorsalin {...props} offset={0.2}>
-            <span
-              style={{
-                position: "relative",
-                left: 2,
-                top: 2,
-                width: "100%",
-                fontSize: 32,
-              }}
-            >
-              Bryson A
-            </span>
-          </GlitchPorsalin>
-          <div className="p-0.5" />
-          <Sub
-            classValue="relative md:flex"
-            style={{ fontSize: 18, left: 1 }}
+  <Root className="flex items-center">
+    <div className="-mt-2">
+      <GlitchPorsalin
+        offset={0.6}
+        tag="div"
+        classValues={STROKE_CLASS_NAMES}
+      >
+        <Desk
+          width={50}
+          height={50}
+          fill="none"
+          strokeWidth={8}
+        />
+      </GlitchPorsalin>
+    </div>
+    <motion.div className="flex relative pl-3 pr-1 pt-0 pb-1 grow">
+      <motion.div className="hidden flex-col sm:flex">
+        <GlitchPorsalin {...props} tag="div" offset={1}>
+          <h1
+            style={{
+              position: "relative",
+              left: 2,
+              top: 2,
+              width: "100%",
+              fontSize: 27,
+              lineHeight: 1,
+            }}
           >
-            {EXPERIENCE_SLOGAN}
-          </Sub>
-        </motion.div>
+            Bryson A
+          </h1>
+        </GlitchPorsalin>
+        <Sub
+          classValue="relative md:flex text-teal-bright"
+          style={{ fontSize: 18, left: 1 }}
+        >
+          {EXPERIENCE_SLOGAN}
+        </Sub>
       </motion.div>
-    </Root>
-  );
+    </motion.div>
+  </Root>
+);

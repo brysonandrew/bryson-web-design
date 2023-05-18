@@ -26,7 +26,7 @@ type TProps = {
 } & TConfig;
 export const GlitchPorsalin: FC<TProps> = ({
   style = {},
-  tag = "h1",
+  tag = "div",
   offset,
   children,
   classValue,
