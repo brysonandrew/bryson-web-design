@@ -7,7 +7,6 @@ import { XXXXL } from "@styles/styles";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 import type { TItem } from "../../../../constants/tech";
-import { LINE_COLOR_STYLE } from "@components/Line";
 import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.div)``;
@@ -22,7 +21,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
       <Anchor
         className={clsx(
           "relative px-4 py-2 lg:py-3 lg:px-5 xl:py-4 xl:px-6",
-          LINE_COLOR_STYLE,
+          "bg-white-01",
         )}
         href={href}
         target="_blank"

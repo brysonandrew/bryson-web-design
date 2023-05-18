@@ -7,10 +7,17 @@
 
 @font-face {
   font-family: "Valorax";
-  src: url("/fonts/Valorax.otf") format("truetype");
+  src: url("/fonts/Valorax.otf") format("opentype");
 }
 
 @font-face {
   font-family: "GALSB";
   src: url("/fonts/GALSB.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "LEDLIGHT";
+  src: url("/fonts/LEDLIGHT.otf") format("opentype");
+}
+
+

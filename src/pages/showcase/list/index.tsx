@@ -13,8 +13,8 @@ const Root = styled(motion.div)``;
 const _List = styled(motion.ul)``;
 
 const Title = styled(motion.h4)`
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: white;
+  /* -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white; */
 `;
 
 type TProps = {
@@ -31,7 +31,7 @@ export const List: FC<TProps> = ({
 }) => (
   <Root>
     <Title
-      className={clsx("uppercase pl-7 opacity-80 text-2xl")}
+      className={clsx("uppercase pl-7 text-4xl")}
       style={{ color }}
     >
       {header}

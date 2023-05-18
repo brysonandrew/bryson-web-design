@@ -6,7 +6,6 @@ import type { FC } from "react";
 import { Gradient } from "./Gradient";
 import { TextName } from "./TextName";
 import { LABEL_CLASS } from "./config";
-import { LINE_COLOR_STYLE } from "@components/Line";
 import { Fill } from "@components/metal/Fill";
 
 const Root = styled(motion.label)``;

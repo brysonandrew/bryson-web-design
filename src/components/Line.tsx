@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import clsx from "clsx";
 import type { FC } from "react";
 
-export const LINE_COLOR_STYLE = "bg-white-01";
-
 const Root = styled.hr``;
 type TProps = {
   position?: "fixed" | "absolute" | "relative";

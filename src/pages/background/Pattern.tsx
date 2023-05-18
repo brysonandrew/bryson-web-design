@@ -2,12 +2,11 @@ import styled from "@emotion/styled";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { PATTERN_ID } from "./pattern";
-import { MORPH_ID } from "./morph";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
+import { MORPH_ID } from "@components/background/morph";
+import { PATTERN_ID } from "@components/background/pattern";
 import { Processor } from "@components/icons/Processor";
-import { POOL_ID } from "@components/cursor";
 
 const Root = styled(motion.svg)``;
 const Rect = styled(motion.rect)``;
@@ -15,9 +14,9 @@ const Rect = styled(motion.rect)``;
 type TProps = {
   classValue?: ClassValue;
 };
-export const Background: FC<TProps> = ({ classValue }) => (
+export const Pattern: FC<TProps> = ({ classValue }) => (
   <Root
-    className={clsx("fixed inset-0 z-0", classValue)}
+    className={clsx("fixed inset-0", classValue)}
     width="100%"
     height="100%"
   >
@@ -29,12 +28,7 @@ export const Background: FC<TProps> = ({ classValue }) => (
       fill={resolveUrlId(PATTERN_ID)}
       filter={resolveUrlId(MORPH_ID)}
     />
-    <Processor
-      width="100%"
-      height="100%"
-      fill="gray"
-      // fill="unset"
-      opacity="0.2"
-    />
+          <Processor width="100%" height="100%" stroke="green" fill="unset" />
+
   </Root>
 );

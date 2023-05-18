@@ -14,7 +14,6 @@ import { useOnSound } from "@hooks/sounds/useOnSound";
 import { MOTION_CONFIG } from "@constants/animation";
 import { Text } from "./Text";
 import type { TItem } from "@t/showcase";
-import { LINE_COLOR_STYLE } from "@components/Line";
 import clsx from "clsx";
 import type { TChildren } from "@t/index";
 
@@ -67,10 +66,7 @@ export const Item: FC<TProps> = (props) => {
         </Container>
         {isSelected && (
           <Select
-            classValue={clsx(
-              LINE_COLOR_STYLE,
-              "rounded-sm",
-            )}
+            classValue={clsx("bg-white-01", "rounded-sm")}
           />
         )}
         {children}
