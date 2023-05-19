@@ -2,7 +2,7 @@ import type { TModule } from "@t/index";
 import { useState, useEffect } from "react";
 import type { TMediaRecord } from "./config";
 import { resolveMedia, EXCLUDED_KEYS } from "./config";
-const screenFiles = import.meta.glob("/src/screens/**/*.png");
+const screenFiles = import.meta.glob("/screens/**/*.png");
 
 export const useMediaRecordFromFiles = () => {
   const [mediaRecord, setMediaRecord] =
@@ -18,7 +18,7 @@ export const useMediaRecordFromFiles = () => {
 
       const media = resolveMedia(
         (value as TModule).default,
-      );
+      ); 
 
       if (!EXCLUDED_KEYS.includes(media.img)) {
         mediaRecord[media.name] = [

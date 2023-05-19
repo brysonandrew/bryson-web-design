@@ -28,12 +28,12 @@ export type TMedia = TMediaDetails & {
 export type TMediaRecord = Record<string, TMedia[]>;
 
 export const resolveMedia = (
-  path: string,
-): TMediaDetails => {
-  const parts = path.split("/");
+  src: string,
+): TMedia => {
+  const parts = src.split("/");
   const [name, file] = parts.slice(-2);
   const [img] = file.split(".");
 
   const key = `${name}-${img}`.toLowerCase();
-  return { file, name, key, img };
+  return { file, name, key, img, src };
 };
