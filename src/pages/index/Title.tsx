@@ -1,9 +1,9 @@
 import { ThinLineGap } from "@components/ThinLineGap";
 import { TextXl } from "@components/text/TextXl";
 import { WIDTH_CLASS } from "@styles/styles";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 import clsx from "clsx";
-import { FC } from "react";
+import type { FC } from "react";
 
 type TProps = { children: TChildren };
 export const Title: FC<TProps> = ({ children }) => (

@@ -1,5 +1,6 @@
 import { TextXs } from "@components/text/TextXs";
-import clsx, { ClassValue } from "clsx";
+import type { ClassValue } from "clsx";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 

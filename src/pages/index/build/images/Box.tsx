@@ -1,5 +1,6 @@
 import { MOTION_CONFIG } from "@constants/animation";
-import { HTMLMotionProps, motion } from "framer-motion";
+import type { HTMLMotionProps} from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, type FC } from "react";
 
 type TProps = HTMLMotionProps<"img"> & {

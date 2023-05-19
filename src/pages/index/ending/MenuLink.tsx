@@ -11,7 +11,7 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { ANCHOR_CLASS } from "./constants";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 
 const Root = styled(motion.div)``;
 

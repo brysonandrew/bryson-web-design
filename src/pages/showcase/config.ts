@@ -10,18 +10,26 @@ export const ITEM_DESCRIPTION_LOOKUP: Record<
   HoldToSkip: "HoldToSkip",
 };
 
-export const EXCLUDED_KEYS = ["preview", "logo"]
+export const EXCLUDED_KEYS = ["preview", "logo"];
 
-export type TMedia = {
+export type TResolver = () => Promise<any>;
+
+export type TMediaDetails = {
   img: string;
   file: string;
   name: string;
   key: string;
 };
 
+export type TMedia = TMediaDetails & {
+  src: string;
+};
+
 export type TMediaRecord = Record<string, TMedia[]>;
 
-export const resolveMedia = (path: string): TMedia => {
+export const resolveMedia = (
+  path: string,
+): TMediaDetails => {
   const parts = path.split("/");
   const [name, file] = parts.slice(-2);
   const [img] = file.split(".");

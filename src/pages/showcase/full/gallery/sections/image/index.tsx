@@ -11,12 +11,12 @@ type TProps = {
   item: TMedia;
 };
 export const Image: FC<TProps> = ({ item }) => {
-  const { key, name, file } = item;
+  const { key, name, file, src } = item;
 
   return (
     <Root
       className="absolute left-1/2 top-1/2 max-w-full max-h-full shadow-teal-dark-02"
-      src={`/screens/${name}/${file}`}
+      src={src}
       alt={key}
       onPointerDown={(e) => e.preventDefault()}
       style={{

@@ -1,4 +1,4 @@
-const screenFiles = import.meta.glob("/screens/**/*.png");
+const screenFiles = import.meta.glob("/src/screens/**/*.png");
 const values = Object.values(screenFiles);
 
 export const resolveRandom = async () => {

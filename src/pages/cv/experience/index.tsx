@@ -1,6 +1,6 @@
 import { CV_ITEMS } from "@constants/apps";
 import { Item } from "./Item";
-import { TItem } from "@t/showcase";
+import type { TItem } from "@t/showcase";
 
 export const Experience = () => (
   <ul>

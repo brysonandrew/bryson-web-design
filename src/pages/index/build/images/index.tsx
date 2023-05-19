@@ -11,7 +11,6 @@ const ROW = "flex";
 type TProps = Partial<TChildrenProps>;
 export const Images: FC<TProps> = () => {
   const images = useImages();
-  console.log(images.length);
   return (
     <motion.ul
       className={clsx(

@@ -1,5 +1,6 @@
 import type { TItem } from "@t/showcase";
-import { FC, Fragment } from "react";
+import type { FC} from "react";
+import { Fragment } from "react";
 import { Margin } from "../layout/Margin";
 
 type TProps = TItem & {

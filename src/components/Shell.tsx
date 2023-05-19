@@ -14,8 +14,7 @@ const Content = styled(motion.div)``;
 type TProps = {
   children: TChildren;
 };
-export const Shell: FC<TProps> = ({ children }) => {
-  return (
+export const Shell: FC<TProps> = ({ children }) => (
     <Root className="relative text-black-dark-04 overflow-hidden z-10">
       <Header />
       <AnimatePresence>
@@ -34,4 +33,3 @@ export const Shell: FC<TProps> = ({ children }) => {
       <Footer />
     </Root>
   );
-};

@@ -8,8 +8,7 @@ const ICON_SIZE = {
   height: 120,
 };
 
-export const Title = () => {
-  return (
+export const Title = () => (
     <>
       <Background />
       <div className="flex items-center justify-center">
@@ -33,4 +32,3 @@ export const Title = () => {
       </div>
     </>
   );
-};

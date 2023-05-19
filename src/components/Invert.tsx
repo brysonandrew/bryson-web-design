@@ -1,5 +1,6 @@
 import { useStyles } from "@styles/useStyles";
-import { ChangeEvent, FC, useState } from "react";
+import type { ChangeEvent, FC} from "react";
+import { useState } from "react";
 
 type TProps = {
   children(invert: string): void;
