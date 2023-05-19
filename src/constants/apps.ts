@@ -91,6 +91,4 @@ export const APP_ITEMS: TItem[] = [
   },
 ];
 
-export const CV_ITEMS = APP_ITEMS.filter(({ title }) => {
-  return title !== "Stock Portfolio" && title !== "Epirus";
-});
+export const CV_ITEMS = APP_ITEMS.filter(({ title }) => title !== "Stock Portfolio" && title !== "Epirus");

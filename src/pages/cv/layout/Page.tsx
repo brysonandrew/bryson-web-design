@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { useStyles } from "@styles/useStyles";
-import { TChildren } from "@t/index";
+import type { TChildren } from "@t/index";
 import { motion } from "framer-motion";
-import { CSSProperties, FC } from "react";
+import type { CSSProperties, FC } from "react";
 import { SIZE } from "../constants";
 
 const Root = styled(motion.div)``;

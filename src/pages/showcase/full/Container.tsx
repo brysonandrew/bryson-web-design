@@ -20,10 +20,7 @@ export const Container: FC<TProps> = ({
   ...props
 }) => (
   <Root
-    className={clsx(
-      "inset-0 rounded-sm z-10",
-      classValue,
-    )}
+    className={clsx("inset-0 rounded-sm z-10", classValue)}
     layoutId={id}
     style={{ backgroundColor: "rgba(28,28,28, 0.7)" }}
     {...props}

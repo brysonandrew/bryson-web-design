@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { TMedia } from "./config";
 import { resolveMedia } from "./config";
 const screenFiles = import.meta.glob(
-  "/screens/**/*.png",
+  "/src/screens/**/*.png",
 );
 
 export const useMediaFromKey = (key: string) => {
@@ -11,19 +11,19 @@ export const useMediaFromKey = (key: string) => {
   >(null);
 
   const handleLoad = async () => {
-    const mediaItems = Object.keys(screenFiles).reduce(
-      (a: TMedia[], v: string) => {
-        if (
-          v.includes(`/${key}/`) &&
-          !v.includes(`${key}/preview`)
-        ) {
-          const next = resolveMedia(v);
-          a.push(next);
-        }
-        return a;
-      },
-      [],
-    );
+    const mediaItems: TMedia[] = [];
+    for await (const entry of Object.entries(screenFiles)) {
+      const [k, value] = entry;
+      if (
+        k.includes(`/${key}/`) &&
+        !k.includes(`${key}/preview`)
+      ) {
+        const m: any = await value();
+        const next = resolveMedia(k);
+        mediaItems.push({ ...next, src: m.default });
+      }
+    }
+
     if (mediaItems.length === 0) return;
 
     setMediaItems(mediaItems);

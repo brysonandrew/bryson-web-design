@@ -1,5 +1,4 @@
-export const Contact = () => {
-  return (
+export const Contact = () => (
     <div className="flex flex-col items-center">
       <div className="flex items-center justify-around w-full text-xl">
         <div>
@@ -13,4 +12,3 @@ export const Contact = () => {
       </div>
     </div>
   );
-};
