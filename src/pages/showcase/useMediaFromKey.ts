@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import type { TMedia } from "./config";
 import { resolveMedia } from "./config";
-const screenFiles = import.meta.glob(
-  "/src/screens/**/*.png",
-);
+import { TModule } from "@t/index";
+const screenFiles = import.meta.glob("/screens/**/*.png");
 
 export const useMediaFromKey = (key: string) => {
   const [mediaItems, setMediaItems] = useState<
@@ -13,14 +12,17 @@ export const useMediaFromKey = (key: string) => {
   const handleLoad = async () => {
     const mediaItems: TMedia[] = [];
     for await (const entry of Object.entries(screenFiles)) {
-      const [k, value] = entry;
+      const [k, resolver] = entry;
       if (
         k.includes(`/${key}/`) &&
         !k.includes(`${key}/preview`)
       ) {
-        const m: any = await value();
+        const m = await resolver();
         const next = resolveMedia(k);
-        mediaItems.push({ ...next, src: m.default });
+        mediaItems.push({
+          ...next,
+          src: (m as TModule).default,
+        });
       }
     }
 
