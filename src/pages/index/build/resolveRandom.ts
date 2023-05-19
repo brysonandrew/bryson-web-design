@@ -1,5 +1,6 @@
-const screenFiles = import.meta.glob("/screens/**/*.png");
-console.log(screenFiles)
+const screenFiles = import.meta.glob(
+  "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.png",
+);
 const values = Object.values(screenFiles);
 
 export const resolveRandom = async () => {
