@@ -11,7 +11,7 @@ export const Header = () => {
   const { isInit } = useContext();
   return (
     <Root
-      className="fixed top-0 left-0 flex items-center justify-between w-full px-6 py-4 z-50"
+      className="fixed top-0 left-0 flex items-center justify-between w-full px-3 py-2 sm:px-6 sm:py-4 z-50"
       {...(isInit ? INIT_ANIMATION : {})}
     >
       <Top />

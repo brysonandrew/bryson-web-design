@@ -12,7 +12,7 @@ const Root = styled(motion.div)``;
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = (props) => (
   <Root className="flex items-center">
-    <div className="-mt-2">
+    <div className="hidden sm:flex -mt-2">
       <GlitchPorsalin
         offset={0.6}
         tag="div"
@@ -26,8 +26,8 @@ export const Title: FC<TProps> = (props) => (
         />
       </GlitchPorsalin>
     </div>
-    <motion.div className="flex relative pl-3 pr-1 pt-0 pb-1 grow">
-      <motion.div className="hidden flex-col sm:flex">
+    <motion.div className="flex relative pl-0 sm:pl-3 pr-1 pt-0 pb-1 grow">
+      <motion.div className="flex flex-col">
         <GlitchPorsalin {...props} tag="div" offset={1}>
           <h1
             style={{
