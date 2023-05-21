@@ -23,7 +23,7 @@ export const Title = () => (
       <Sub
         className="whitespace-nowrap"
         style={{
-          fontSize: 16,
+          fontSize: 15,
           textTransform: "uppercase",
         }}
       >

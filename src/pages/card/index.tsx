@@ -15,12 +15,12 @@ export const Card = () => {
     <Invert>
       {(filter) => (
         <Root
-          className="flex items-center justify-center w-screen h-screen text-white"
+          className="relative flex items-center justify-center w-screen h-screen text-white"
           style={{ filter }}
         >
           <_Card
             className="flex flex-col justify-around bg-black"
-            style={{ ...SIZE }}
+            style={SIZE}
           >
             <Title />
             <Contact />

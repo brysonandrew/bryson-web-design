@@ -27,7 +27,7 @@ export const List: FC<TProps> = ({
 }) => (
   <Root>
     <Title
-      className={clsx("uppercase pl-7 text-4xl")}
+      className={clsx("uppercase text-4xl text-center")}
       style={{ color }}
     >
       {header}

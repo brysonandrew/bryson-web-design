@@ -42,11 +42,16 @@ export const Title: FC<TProps> = (props) => (
             Bryson A
           </h1>
         </GlitchPorsalin>
+        <div className="pt-1"/>
         <Sub
-          classValue="relative md:flex text-teal-bright"
-          style={{ fontSize: 18, left: 1 }}
+          classValue="relative md:flex text-teal-bright uppercase"
+          style={{
+            fontSize: 14,
+            left: 2,
+            fontStyle: "bold",
+          }}
         >
-          {EXPERIENCE_SLOGAN}
+          Web development
         </Sub>
       </motion.div>
     </motion.div>

@@ -120,7 +120,7 @@ export const Contact = () => {
             WIDTH_CLASS,
           )}
         >
-          <TextXl>I would love to hear from you.</TextXl>
+          <TextXl>I would love to hear from you</TextXl>
           <div className="py-1" />
           <Form
             className={clsx(

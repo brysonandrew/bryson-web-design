@@ -7,7 +7,7 @@ import type { FC } from "react";
 
 const Root = styled(motion.h2)``;
 
-type TProps = HTMLMotionProps<"p"> & {
+type TProps = HTMLMotionProps<"h2"> & {
   classValue?: ClassValue;
 };
 export const Sub: FC<TProps> = ({
@@ -18,7 +18,7 @@ export const Sub: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "relative top-0 left-0 text-md08 text-teal-bright leading-none",
+      "relative top-0 left-0 text-teal-bright leading-none",
       classValue,
     )}
     style={style}

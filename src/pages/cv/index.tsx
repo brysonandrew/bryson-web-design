@@ -18,7 +18,7 @@ export const Cv = () => {
         <Shell>
           <Page style={{ filter }}>
             <Margin>
-              <Header />
+              <Header /> 
             </Margin>
             <Space4 />
             <Margin>
