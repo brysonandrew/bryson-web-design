@@ -22,7 +22,7 @@ export const Showcase = () => {
     <MainShell>
       <Shell>
         <div className={WIDTH_CLASS}>
-          <TextXl>My most recent work</TextXl>
+          <TextXl classValue="text-center">My most recent work</TextXl>
           <Space4 />
           <List
             header="Apps"
