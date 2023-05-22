@@ -16,12 +16,12 @@ export const Text: FC<TProps> = ({
       layout
     >
       <TextSm>{title}</TextSm>
-      <motion.p
-        className="text-white-light text-sm ml-3.5 md:text-md lg:text-lg lg:ml-0 xl:text-xl"
+      <TextSm
+        classValue="text-white-light ml-3.5 lg:ml-0"
         layout
       >
         {description}
-      </motion.p>
+      </TextSm>
     </motion.div>
     <motion.div
       className="absolute top-0 right-0 py-4 px-4 lg:py-1"

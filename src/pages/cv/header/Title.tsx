@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 const ICON_SIZE = {
-  width: 60,
-  height: 60,
+  width: 67,
+  height: 67,
 };
 
 const Root = styled(motion.div)``;
@@ -17,17 +17,17 @@ export const Title = () => (
     </div>
     <div className="p-1.5" />
     <div className="flex flex-col items-center whitespace-nowrap">
-      <h1 style={{ fontSize: 29, lineHeight: 1 }}>
+      <h2 style={{ fontSize: 36, lineHeight: 1 }}>
         Andrew Bryson
-      </h1>
+      </h2>
       <Sub
         className="whitespace-nowrap"
         style={{
-          fontSize: 15,
+          fontSize: 17,
           textTransform: "uppercase",
         }}
       >
-        Front-end web development
+        Front-end web developer
       </Sub>
     </div>
   </Root>
