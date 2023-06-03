@@ -2,8 +2,11 @@ import { MOTION_CONFIG } from '@constants/animation';
 import { useTimeoutRef } from '@hooks/useTimeoutRef';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useContext } from '@state/Context';
 
 export const FadeIn = () => {
+  const { isInit } = useContext();
+
   const [isFading, setFading] = useState(false);
   const { timeoutRef } = useTimeoutRef();
   useEffect(() => {
@@ -14,9 +17,9 @@ export const FadeIn = () => {
 
   return (
     <AnimatePresence>
-      {!isFading && (
+      {isInit && !isFading && (
         <motion.div
-          className='fixed inset-0 bg-black z-50'
+          className='fixed inset-0 bg-black z-50 pointer-events-none'
           initial={false}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
