@@ -85,8 +85,8 @@ export const APP_ITEMS: TItem[] = [
     ],
     description: "Blockchain Explorer",
     paragraphs: [
-      "Build a web app, out of Material Design wireframes and MongoDB backend.",
-      "Implement features such as interactive tool-tips, custom auto-correct, meta-data upload, paginated routing",
+      "A web app built with Material Design wireframes and a MongoDB backend.",
+      "Features such as interactive tool-tips, custom auto-correct, meta-data upload, paginated routing",
     ],
   },
 ];
