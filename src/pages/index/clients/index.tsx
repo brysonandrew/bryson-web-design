@@ -18,7 +18,7 @@ export const Clients: FC<TProps> = () => {
           {(props: TChildrenProps) => <Shell {...props} />}
         </Motion>
       );
-    }
+    } 
     default: {
       return <Shell />;
     }

@@ -1,4 +1,3 @@
-import { Border as Select } from "@components/select/Border";
 import styled from "@emotion/styled";
 import { useSelectHandlers } from "@hooks/useSelectHandlers";
 import clsx from "clsx";

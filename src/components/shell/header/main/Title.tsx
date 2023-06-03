@@ -26,7 +26,7 @@ export const Title: FC<TProps> = (props) => (
         />
       </GlitchPorsalin>
     </div>
-    <motion.div className="flex relative pl-0 sm:pl-3 pr-1 pt-0 pb-1 grow">
+    <motion.div className="flex relative pl-0 sm:pl-3 pr-1 pt-0.5 pb-1 grow">
       <motion.div className="flex flex-col">
         <GlitchPorsalin {...props} tag="div" offset={1}>
           <h1

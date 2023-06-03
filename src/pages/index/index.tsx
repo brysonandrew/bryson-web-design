@@ -6,7 +6,6 @@ import { Tech } from "./tech";
 import { Build } from "./build";
 import { Clients } from "./clients";
 import { Ending } from "./ending";
-import { Space2 } from "@components/spaces/Space2";
 import { Space8 } from "@components/spaces/Space8";
 import { Space6 } from "@components/spaces/Space6";
 import { Space12 } from "@components/spaces/Space12";
@@ -17,14 +16,14 @@ export const Index = () => (
     <MainShell> 
       <Shell> 
         <Build />
-        <Space8 />
+        <Space8 /> 
         <Line /> 
         <Space6 />
         <Tech />
         <Space6 />
         <Line />
         <Space6 />
-        <Clients />
+        <Clients /> 
         <Space6 />
         <Line />
         <Space12 />
