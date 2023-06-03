@@ -3,9 +3,9 @@ import clsx from "clsx";
 export const HEADER_SIZE_Y = 80;
 export const HEADER_OFFSET_Y = 100 + HEADER_SIZE_Y;
 
-export const GAP_1 = 700;
+export const GAP_1 = 500;
 
-export const GAP_2 = GAP_1 + 400;
+export const GAP_2 = GAP_1 + 300;
 
 export const FULL = ["0%", "-100%"];
 export const DELAY = 24;

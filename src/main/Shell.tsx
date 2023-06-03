@@ -15,7 +15,7 @@ export const Shell: FC<TProps> = ({ children }) => {
       <Filters />
       <Background />
       {children}
-<FadeIn />
+      <FadeIn />
     </>
   );
 };
