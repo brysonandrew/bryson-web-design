@@ -23,7 +23,8 @@ export const Box: FC<TProps> = ({
       style={{
         flex: 1,
         zIndex: index,
-        maxHeight: 100,
+        height: 100,
+        backgroundColor: 'blue',
         x: `-${50 * index}%`,
         y:
           -Math.sin(((index + 0.5) / count) * Math.PI) * 20,
@@ -35,8 +36,8 @@ export const Box: FC<TProps> = ({
         scale: 1.4,
       }}
     >
-      <AnimatePresence>
-        {!isLoaded && (
+      <AnimatePresence mode="wait">
+        {isLoaded ? null : (
           <motion.div
             key={`loader-${index}`}
             initial={{ opacity: 0 }}
@@ -48,7 +49,7 @@ export const Box: FC<TProps> = ({
               duration: 2,
               delay: (index / count) * 1.5,
             }}
-            className='absolute left-0 bottom-0 w-full bg-baby-blue'
+            className='absolute inset-0 w-full bg-baby-blue'
           />
         )}
       </AnimatePresence>
@@ -61,7 +62,6 @@ export const Box: FC<TProps> = ({
           ease: 'easeOut',
         }}
         onLoad={handleLoad}
-        onLoadedData={handleLoad}
         {...props}
       />
     </motion.li>

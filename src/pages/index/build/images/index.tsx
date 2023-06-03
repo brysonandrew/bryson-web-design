@@ -11,7 +11,7 @@ type TProps = Partial<TChildrenProps>;
 export const Images: FC<TProps> = () => {
   const images = useImages();
   return (
-    <motion.ul
+    <motion.ul 
       className={clsx(
         ROW,
         "absolute left-0 bottom-0 w-full",
