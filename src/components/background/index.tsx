@@ -7,7 +7,6 @@ import { MORPH_ID } from "./morph";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import { Processor } from "@components/icons/Processor";
-import { POOL_ID } from "@components/cursor";
 
 const Root = styled(motion.svg)``;
 const Rect = styled(motion.rect)``;
@@ -34,7 +33,7 @@ export const Background: FC<TProps> = ({ classValue }) => (
       height="100%"
       fill="gray"
       // fill="unset"
-      opacity="0.2"
+      opacity="0.1"
     />
   </Root>
 );

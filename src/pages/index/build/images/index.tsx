@@ -5,7 +5,6 @@ import { useImages } from "./useImages";
 import { Box } from "./Box";
 import clsx from "clsx";
 
-const GRID = "grid grid-cols-3 gap-1";
 const ROW = "flex";
 
 type TProps = Partial<TChildrenProps>;
