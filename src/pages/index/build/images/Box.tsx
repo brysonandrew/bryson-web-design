@@ -38,6 +38,7 @@ export const Box: FC<TProps> = ({
       <AnimatePresence>
         {!isLoaded && (
           <motion.div
+            key={`loader-${index}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: [0.1, 0.4, 0.1] }}
             exit={{ opacity: 0 }}
@@ -47,7 +48,7 @@ export const Box: FC<TProps> = ({
               duration: 2,
               delay: (index / count) * 1.5,
             }}
-            className='absolute inset-0 bg-baby-blue'
+            className='absolute left-0 bottom-0 w-full bg-baby-blue'
           />
         )}
       </AnimatePresence>
@@ -60,6 +61,7 @@ export const Box: FC<TProps> = ({
           ease: 'easeOut',
         }}
         onLoad={handleLoad}
+        onLoadedData={handleLoad}
         {...props}
       />
     </motion.li>
