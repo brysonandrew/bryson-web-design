@@ -14,6 +14,7 @@ import { Item } from "./Item";
 import { STORY } from "@constants/copy";
 import { Title } from "../Title";
 import { WIDTH_CLASS } from "@styles/styles";
+import { TitleOffset } from "@components/spaces/TitleOffset";
 
 const Root = styled(motion.div)``;
 
@@ -49,6 +50,7 @@ export const Shell: FC<TProps> = ({
       className="relative flex flex-col items-center z-10"
     >
       <Title>{STORY.clients}</Title>
+      <TitleOffset />
       <Blinders opacity={opacityBlinders} />
       <div
         className={clsx(

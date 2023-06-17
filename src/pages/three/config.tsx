@@ -3,6 +3,7 @@ import { Build } from './build';
 import { FC } from 'react';
 import { Tech } from './tech';
 import { Clients } from './clients';
+import { Ending } from './ending';
 
 export type TPage = {
   key: string;
@@ -22,8 +23,8 @@ const createPage = (key: string, Component?: FC): TPage => {
 export const PAGES: TPage[] = [
   createPage('build', Build),
   createPage('tech', Tech),
-  createPage('clients', Clients),
-  createPage('ending'),
+  createPage('clients'),
+  createPage('ending', Ending),
 ];
 
 export const PAGES_COUNT = PAGES.length;

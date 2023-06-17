@@ -1,26 +1,21 @@
-import { Text } from "@components/text/Text";
-import styled from "@emotion/styled";
-import type { TChildren } from "@t/index";
-import clsx from "clsx";
-import type { HTMLMotionProps } from "framer-motion";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import {
-  BAR_GREEN_ACTIVE_CLASS,
-  BAR_GREEN_CLASS,
-  ROLLING_TEXT_CLASS,
-} from "../constants";
-import { Main } from "./Main";
-import type { TChildrenProps } from "./Motion";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { Bar } from "./Bar";
+import { Text } from '@components/text/Text';
+import styled from '@emotion/styled';
+import type { TChildren } from '@t/index';
+import clsx from 'clsx';
+import type { HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { Main } from './Main';
+import type { TChildrenProps } from './Motion';
+import { Bar } from './Bar';
+import { BAR_GREEN_CLASS, ROLLING_TEXT_CLASS } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
 const List = styled(motion.ul)``;
 const Button = styled(motion.button)``;
 
-type TProps = Pick<Partial<TChildrenProps>, "xs"> &
-  HTMLMotionProps<"button"> & {
+type TProps = Pick<Partial<TChildrenProps>, 'xs'> &
+  HTMLMotionProps<'button'> & {
     isActive: boolean;
     isLong: boolean;
     index: number;
@@ -34,32 +29,37 @@ export const Item: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { handlers, isSelected } = useSelectHandlers(
-    `REVIEWS_SHELL_ITEM_${index}`,
-  );
   return (
     <Root
       className={clsx(
-        "relative flex w-full overflow-hidden",
+        'relative flex w-full overflow-hidden',
       )}
-      {...handlers}
+      initial={false}
+      whileHover='hover'
+      animate={isActive ? 'active' : 'animate'}
     >
-      <Button className="relative" {...props}>
+      <Button className='relative' {...props}>
         <motion.div
-          className={
-            isActive || isSelected
-              ? BAR_GREEN_ACTIVE_CLASS
-              : BAR_GREEN_CLASS
-          }
-          animate={{
-            filter: `brightness(${isSelected ? 100 : 40}%)`,
+          className={clsx(
+            'hover:cursor-pointer',
+            BAR_GREEN_CLASS,
+          )}
+          variants={{
+            hover: {
+              filter: 'brightness(100%)',
+              opacity: 1,
+            },
+            animate: {
+              filter: 'brightness(40%)',
+              opacity: 0.8,
+            },
           }}
         />
-        {isSelected && <Bar />}
+        {isActive && <Bar />}
         <List
-          className="inline-flex relative"
+          className='inline-flex relative'
           style={{
-            x: (["-100%", "-100%", "-100%"])[index],
+            x: ['-100%', '-100%', '-100%'][index],
           }}
         >
           <li className={ROLLING_TEXT_CLASS}>

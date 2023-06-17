@@ -27,7 +27,7 @@ export const Tech: FC<TProps> = () => {
         scale={[44, 18]}
         url={reactSvg}
       />
-      <Svg src={plusSvg} />
+      <Svg src={plusSvg} position={[-15, 7, 0]} />
       <Image
         onClick={handleTypescriptClick}
         position={[SPAN_05, 2, BUTTON_Z]}

@@ -23,10 +23,8 @@ export const Shell: FC<TProps> = () => {
   const handleOffSound = useOffSound();
 
   const closeLong = async () => {
-    if (isLong) {
-      handleOffSound();
-      setLong(null);
-    }
+    handleOffSound();
+    setLong(null);
   };
 
   const handleOpen = async (next: number) => {
@@ -44,7 +42,7 @@ export const Shell: FC<TProps> = () => {
     >
       <div
         className={clsx(
-          'relative w-full overflow-hidden left-8',
+          'relative w-full left-8',
           WIDTH_CLASS,
         )}
       >

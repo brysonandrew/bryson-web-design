@@ -12,7 +12,7 @@ const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<"div">;
 export const Buttons: FC<TProps> = () => (
-  <Root className="flex flex-col items-start text-teal-bright mt-2 ml-2 xl:flex-row lg:items-center">
+  <Root className="flex flex-col items-start text-teal-bright ml-2 xl:flex-row lg:items-center">
     <Item {...TECH.REACT} />
     <div className="p-2" />
     <div className="flex items-center justify-center w-full xl:pt-1">

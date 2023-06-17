@@ -13,6 +13,7 @@ type TProps = {
 };
 export const Bar: FC<TProps> = () => (
   <Root
+  
     layoutId={BAR_LAYOUT_ID}
     initial={false}
     animate={{
