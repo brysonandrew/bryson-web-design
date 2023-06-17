@@ -59,7 +59,7 @@ export const Item: FC<TProps> = ({
         <List
           className="inline-flex relative"
           style={{
-            x: (xs ?? ["-100%", "-100%", "-100%"])[index],
+            x: (["-100%", "-100%", "-100%"])[index],
           }}
         >
           <li className={ROLLING_TEXT_CLASS}>

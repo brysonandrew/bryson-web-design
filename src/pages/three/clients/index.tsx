@@ -1,26 +1,20 @@
-import { useDetectGPU } from "@react-three/drei";
-import type { HTMLMotionProps } from "framer-motion";
-import type { FC } from "react";
+import { Html, Scroll } from '@react-three/drei';
+import { Content } from './Content';
+import { DoubleSide } from 'three';
+import { Shell } from './Shell';
 
-import type { TChildrenProps } from "./Motion";
-import { Motion } from "./Motion";
-import { Shell } from "./Shell";
-
-type TProps = HTMLMotionProps<"div">;
-export const Clients: FC<TProps> = () => {
-  const { tier, isMobile } = useDetectGPU();
-  if (isMobile) return <Shell />;
-
-  switch (tier) {
-    case 3: {
-      return (
-        <Motion>
-          {(props: TChildrenProps) => <Shell {...props} />}
-        </Motion>
-      );
-    } 
-    default: {
-      return <Shell />;
-    }
-  }
+export const Clients = () => {
+  return (
+    <Html>
+      <div
+        className='absolute'
+        style={{
+          top: '300vh',
+          transform: 'translateX(-50%)',
+        }}
+      >
+        <Shell />
+      </div>
+    </Html>
+  );
 };

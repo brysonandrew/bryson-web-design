@@ -1,17 +1,19 @@
-import { useSelectedItem } from "./useSelectedItem";
-import { Full } from "./full";
-import { Space16 } from "@components/spaces/Space16";
-import { List } from "./list";
-import { Shell } from "@components/Shell";
-import { APP_ITEMS } from "@constants/apps";
-import { GAME_ITEMS } from "@constants/games";
-import { MUSIC_ITEMS } from "@constants/music";
-import { Shell as MainShell } from "@main/Shell";
-import { LIBRARIES_ITEMS } from "@constants/libraries";
-import { useStyles } from "@styles/useStyles";
-import { Space4 } from "@components/spaces/Space4";
-import { TextXl } from "@components/text/TextXl";
-import { WIDTH_CLASS } from "@styles/styles";
+import { useSelectedItem } from './useSelectedItem';
+import { Full } from './full';
+import { Space16 } from '@components/spaces/Space16';
+import { List } from './list';
+import { Shell } from '@components/Shell';
+import { APP_ITEMS } from '@constants/apps';
+import { GAME_ITEMS } from '@constants/games';
+import { MUSIC_ITEMS } from '@constants/music';
+import { Shell as MainShell } from '@main/Shell';
+import { LIBRARIES_ITEMS } from '@constants/libraries';
+import { useStyles } from '@styles/useStyles';
+import { Space4 } from '@components/spaces/Space4';
+import { TextXl } from '@components/text/TextXl';
+import { WIDTH_CLASS } from '@styles/styles';
+import { HEADER_OFFSET_Y } from '@pages/index/constants';
+import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 export const Showcase = () => {
   useStyles();
@@ -21,33 +23,36 @@ export const Showcase = () => {
   return (
     <MainShell>
       <Shell>
+        <HeaderOffset />
         <div className={WIDTH_CLASS}>
-          <TextXl classValue="text-center">My most recent work</TextXl>
+          <TextXl classValue='text-center'>
+            My most recent work
+          </TextXl>
           <Space4 />
           <List
-            header="Apps"
-            color="red"
+            header='Apps'
+            color='red'
             items={APP_ITEMS}
             selectedPath={selectedPath}
           />
           <Space4 />
           <List
-            header="Games"
-            color="green"
+            header='Games'
+            color='green'
             items={GAME_ITEMS}
             selectedPath={selectedPath}
           />
           <Space4 />
           <List
-            header="Libraries"
-            color="blue"
+            header='Libraries'
+            color='blue'
             items={LIBRARIES_ITEMS}
             selectedPath={selectedPath}
           />
           <Space4 />
           <List
-            header="Music"
-            color="purple"
+            header='Music'
+            color='purple'
             items={MUSIC_ITEMS}
             selectedPath={selectedPath}
           />

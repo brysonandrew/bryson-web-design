@@ -19,9 +19,8 @@ export const Shell: FC<TProps> = ({ children }) => (
       <Header />
       <AnimatePresence>
         <Content
-          className="relative bg-current"
+          className="relative bg-current w-screen"
           style={{
-            paddingTop: HEADER_OFFSET_Y,
             minHeight: "100vh",
           }}
           {...PRESENCE_OPACITY_SHIFT}
