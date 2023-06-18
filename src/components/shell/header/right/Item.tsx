@@ -18,7 +18,7 @@ export const Item: FC<TProp> = ({ to, children }) => {
   const { handlers, isSelected } = useSelectHandlers(to);
   const handleClick = useOffSound();
   return (
-    <Root className="relative mb-0.5" {...handlers}>
+    <Root className="relative mb-0.5 shadow-baby-blue-02-sm" {...handlers}>
       {isSelected && <Select />}
       <Link
         to={to}

@@ -1,7 +1,15 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion } from 'framer-motion';
-import { useState, type FC } from 'react';
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import { useState, type FC, useMemo } from 'react';
+
+const RANGE_Y = 200;
+const RANGE_Z = 200;
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
@@ -17,22 +25,41 @@ export const Box: FC<TProps> = ({
     setLoaded(true);
   };
 
+  const y = useMemo(() => Math.random() * RANGE_Y - RANGE_Y * 0.5, []);
+  const z = useMemo(() => Math.random() * RANGE_Z - RANGE_Z * 0.5, []);
+  const zm = useMotionValue(z);
+  const brightness = useTransform(
+    zm,
+    [-100, 100],
+    [40, 140],
+  );
+  const blur = useTransform(zm, [-100, 0], [2, 0]);
+  const filter = useMotionTemplate`brightness(${brightness}%) blur(${blur}px)`;
+
   return (
     <motion.li
-      className='relative inset-0'
+      className='relative inset-0 overflow-hidden'
       style={{
         flex: 1,
         zIndex: index,
-        minHeight: 100,
+        // height: 100,
+        // width: 200,
+        minHeight: 140,
         x: `-${50 * index}%`,
-        y:
-          -Math.sin(((index + 0.5) / count) * Math.PI) * 20,
+        y,
+        // -Math.sin(((index + 0.5) / count) * Math.PI) * 20,
+        z,
+        filter,
+        //-Math.sin(((index + 0.5) / count) * Math.PI) *
+        //200,
+        // rotateY: 9 * Math.random(),
         originX: '50%',
         originY: '100%',
       }}
       whileHover={{
-        y: -20,
         scale: 1.4,
+        filter: 'brightness(100%) blur(0px)',
+        z: 100
       }}
     >
       {!isLoaded && (

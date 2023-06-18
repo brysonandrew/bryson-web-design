@@ -11,8 +11,6 @@ export const useSelectHandlers = (name: string) => {
       dispatch({ type: 'select-id', value: name }),
     onHoverEnd: handleSelectEnd,
   };
-  console.log(name);
-  console.log(selectId);
 
   useEffect(() => handleSelectEnd, []);
 

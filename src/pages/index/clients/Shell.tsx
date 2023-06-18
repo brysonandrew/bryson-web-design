@@ -1,20 +1,20 @@
-import { Blinders } from "@components/blinders/Blinders";
-import styled from "@emotion/styled";
-import { useOffSound } from "@hooks/sounds/useOffSound";
-import { useOnSound } from "@hooks/sounds/useOnSound";
-import { useOutsideClick } from "@hooks/useOutsideClick";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { useRef, useState } from "react";
-import type { TChildrenProps } from "./Motion";
-import { Review } from "./Review";
-import { REVIEWS } from "./constants";
-import { Item } from "./Item";
-import { STORY } from "@constants/copy";
-import { Title } from "../Title";
-import { WIDTH_CLASS } from "@styles/styles";
-import { TitleOffset } from "@components/spaces/TitleOffset";
+import { Blinders } from '@components/blinders/Blinders';
+import styled from '@emotion/styled';
+import { useOffSound } from '@hooks/sounds/useOffSound';
+import { useOnSound } from '@hooks/sounds/useOnSound';
+import { useOutsideClick } from '@hooks/useOutsideClick';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { useRef, useState } from 'react';
+import type { TChildrenProps } from './Motion';
+import { Review } from './Review';
+import { REVIEWS } from './constants';
+import { Item } from './Item';
+import { STORY } from '@constants/copy';
+import { Title } from '../Title';
+import { WIDTH_CLASS } from '@styles/styles';
+import { TitleOffset } from '@components/spaces/TitleOffset';
 
 const Root = styled(motion.div)``;
 
@@ -24,7 +24,7 @@ export const Shell: FC<TProps> = ({
   opacityBlinders,
 }) => {
   const [long, setLong] = useState<number | null>(null);
-  const isLong = typeof long === "number";
+  const isLong = typeof long === 'number';
 
   const handleOnSound = useOnSound();
   const handleOffSound = useOffSound();
@@ -45,16 +45,14 @@ export const Shell: FC<TProps> = ({
   useOutsideClick({ ref, handler: closeLong });
 
   return (
-    <Root
-      ref={ref}
-      className="relative flex flex-col items-center z-10"
-    >
+    <Root className='relative flex flex-col items-center z-10'>
       <Title>{STORY.clients}</Title>
       <TitleOffset />
       <Blinders opacity={opacityBlinders} />
       <div
+        ref={ref}
         className={clsx(
-          "relative w-full overflow-hidden left-8",
+          'relative w-full overflow-hidden left-8',
           WIDTH_CLASS,
         )}
       >
@@ -62,7 +60,7 @@ export const Shell: FC<TProps> = ({
           <Review
             layoutId={`${long}`}
             index={long}
-            type="long"
+            type='long'
           />
         ) : null}
         <motion.ul>

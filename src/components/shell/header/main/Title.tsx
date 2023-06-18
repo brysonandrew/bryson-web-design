@@ -51,7 +51,7 @@ export const Title: FC<TProps> = (props) => (
             fontStyle: 'bold',
           }}
         >
-          <h1>Web developer</h1>
+          Web developer
         </Sub>
       </motion.div>
     </motion.div>
