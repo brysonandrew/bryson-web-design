@@ -5,13 +5,8 @@ import {
 } from "framer-motion";
 import type { HTMLMotionProps ,
   MotionValue} from "framer-motion";
-import {
-  DELAY,
-  DELAY_2,
-  FULL,
-  GAP_1,
-  GAP_2,
-} from "../constants";
+import { GAP_1, GAP_2, DELAY, DELAY_2, FULL } from "@pages/index/constants";
+
 
 export type TChildrenProps = {
   xs: any[];

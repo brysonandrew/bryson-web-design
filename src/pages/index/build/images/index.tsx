@@ -24,7 +24,7 @@ export const Images: FC<TProps> = () => {
   return (
     <motion.div
       className='relative w-full'
-      style={{ height: 200 + TITLE_OFFSET }}
+      style={{ height: 160 + TITLE_OFFSET }}
       whileHover='hover'
     >
       <motion.ul
