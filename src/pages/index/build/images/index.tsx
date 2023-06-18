@@ -1,48 +1,25 @@
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
-import { type FC } from 'react';
-import type { TChildrenProps } from '../Motion';
-import { useImages } from './useImages';
-import { Box } from './Box';
-import clsx from 'clsx';
-import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
+import { useDetectGPU } from '@react-three/drei';
+import type { HTMLMotionProps } from 'framer-motion';
+import type { FC } from 'react';
 
-const ROW = 'flex';
+import { Motion } from './Motion';
+import { Content } from './Content';
 
-type TProps = Partial<TChildrenProps>;
+type TProps = HTMLMotionProps<'div'>;
 export const Images: FC<TProps> = () => {
-  const { scrollY } = useScroll();
-  const rotateX = useTransform(
-    scrollY,
-    [0, 400],
-    [0, 45],
-  );
-  const images = useImages();
-  return (
-    <motion.div
-      className='relative w-full'
-      style={{ height: 160 + TITLE_OFFSET }}
-      whileHover='hover'
-    >
-      <motion.ul
-        className={clsx(
-          ROW,
-          'absolute left-0 bottom-0 w-full preserve-3d perspective-8',
-        )}
-        style={{ width: '200%', rotateX }}
-      >
-        {images.map((image, index, { length }) => (
-          <Box
-            key={image.default}
-            src={image.default}
-            index={index}
-            count={length}
-          />
-        ))}
-      </motion.ul>
-    </motion.div>
-  );
+  const { tier, isMobile } = useDetectGPU();
+  if (isMobile) return <Content />;
+
+  switch (tier) {
+    case 3: {
+      return (
+        <Motion>
+          {(rotateX) => <Content rotateX={rotateX} />}
+        </Motion>
+      );
+    }
+    default: {
+      return <Content />;
+    }
+  }
 };
