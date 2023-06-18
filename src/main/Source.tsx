@@ -11,12 +11,17 @@ import { Hype as HypeSongs } from "@pages/songs/hype";
 import { Card } from "@pages/card";
 import { Cv } from "@pages/cv";
 import { Background } from "@pages/background";
+import { Three } from "@pages/three";
 
 export const Source = () => {
   const element = useRoutes([
     {
       path: "/",
       element: <Index />,
+    },
+    {
+      path: "/three",
+      element: <Three />,
     },
     {
       path: "/contact",

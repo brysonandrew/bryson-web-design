@@ -11,7 +11,7 @@ type TProps = { children: TChildren };
 export const Title: FC<TProps> = ({ children }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
-    margin: '-200px',
+    margin: '-100px',
     once: true,
   });
 
@@ -29,7 +29,7 @@ export const Title: FC<TProps> = ({ children }) => {
           animate={{ y: isInView ? '0%' : '100%' }}
           transition={{
             ...MOTION_CONFIG.transition,
-            delay: 1,
+            delay: 0.2,
           }}
         >
           <TextXl>{children}</TextXl>

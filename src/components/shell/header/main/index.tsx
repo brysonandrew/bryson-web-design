@@ -21,7 +21,7 @@ export const Main: FC = () => {
       onTap={handleTap}
     >
       <Background
-        className='absolute'
+        className='absolute shadow-baby-blue-02-sm'
         style={{
           rotateZ: '76deg',
           left: -100,

@@ -1,26 +1,28 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 import type {
   ChangeEvent,
   FormEvent,
   FocusEvent,
-} from "react";
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import styled from "@emotion/styled";
-import clsx from "clsx";
-import { Space2 } from "@components/spaces/Space2";
-import { Shell } from "@components/Shell";
-import { useStyles } from "@styles/useStyles";
-import { useFocusSound } from "@hooks/sounds/useFocusSound";
-import { Shell as MainShell } from "@main/Shell";
-import { TextXl } from "@components/text/TextXl";
-import { Text } from "./Text";
-import { Textarea } from "./Textarea";
-import type { TSendingState } from "./config";
-import { INPUT_CLASS, INIT_STATE } from "./config";
-import { Submit } from "./Submit";
-import { WIDTH_CLASS } from "@styles/styles";
+} from 'react';
+import { motion } from 'framer-motion';
+import type { HTMLMotionProps } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import styled from '@emotion/styled';
+import clsx from 'clsx';
+import { Space2 } from '@components/spaces/Space2';
+import { Shell } from '@components/Shell';
+import { useStyles } from '@styles/useStyles';
+import { useFocusSound } from '@hooks/sounds/useFocusSound';
+import { Shell as MainShell } from '@main/Shell';
+import { TextXl } from '@components/text/TextXl';
+import { Text } from './Text';
+import { Textarea } from './Textarea';
+import type { TSendingState } from './config';
+import { INPUT_CLASS, INIT_STATE } from './config';
+import { Submit } from './Submit';
+import { WIDTH_CLASS } from '@styles/styles';
+import { HEADER_OFFSET_Y } from '@pages/index/constants';
+import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -31,12 +33,12 @@ export const Contact = () => {
   const [focus, setFocus] = useState<string | null>(null);
   const [state, setState] = useState(INIT_STATE);
   const [sendingState, setSendingState] =
-    useState<TSendingState>("idle");
+    useState<TSendingState>('idle');
 
   const ref = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = async (event: FormEvent) => {
-    setSendingState("sending");
+    setSendingState('sending');
     event.preventDefault();
 
     if (ref.current === null) return;
@@ -48,10 +50,10 @@ export const Contact = () => {
         ref.current,
         import.meta.env.VITE_EMAIL_PUBLIC_KEY,
       );
-      setSendingState("sent");
+      setSendingState('sent');
     } catch (error) {
       console.error(error);
-      setSendingState("error");
+      setSendingState('error');
     }
   };
 
@@ -65,7 +67,7 @@ export const Contact = () => {
       [name]: value,
     });
   };
-  const isDisabled = sendingState !== "idle";
+  const isDisabled = sendingState !== 'idle';
   const handleFocusSound = useFocusSound();
 
   const handleFocus = (
@@ -94,8 +96,8 @@ export const Contact = () => {
   };
 
   const focusHandlers: Pick<
-    HTMLMotionProps<"input">,
-    "onChange" | "onBlur" | "onFocus"
+    HTMLMotionProps<'input'>,
+    'onChange' | 'onBlur' | 'onFocus'
   > = {
     onBlur: handleBlur,
     onFocus: handleFocus,
@@ -103,8 +105,8 @@ export const Contact = () => {
   };
 
   const textareaFocusHandlers: Pick<
-    HTMLMotionProps<"textarea">,
-    "onChange" | "onBlur" | "onFocus"
+    HTMLMotionProps<'textarea'>,
+    'onChange' | 'onBlur' | 'onFocus'
   > = {
     onBlur: handleBlur,
     onFocus: handleFocus,
@@ -114,59 +116,60 @@ export const Contact = () => {
   return (
     <MainShell>
       <Shell>
+        <HeaderOffset />
         <Root
           className={clsx(
-            "flex flex-col px-4",
+            'flex flex-col px-4',
             WIDTH_CLASS,
           )}
         >
           <TextXl>I would love to hear from you</TextXl>
-          <div className="py-1" />
+          <div className='py-1' />
           <Form
             className={clsx(
-              "flex flex-col w-full my-0 mx-auto",
+              'flex flex-col w-full my-0 mx-auto',
             )}
             ref={ref}
             onSubmit={isDisabled ? () => null : sendEmail}
           >
             <Space2 />
-            <motion.div className="relative flex flex-col w-full">
+            <motion.div className='relative flex flex-col w-full'>
               <Text
-                title="name"
+                title='name'
                 autoFocus
                 className={clsx(INPUT_CLASS)}
                 disabled={isDisabled}
-                name="from_name"
-                placeholder=""
+                name='from_name'
+                placeholder=''
                 value={state.from_name}
-                isFocused={"from_name" === focus}
+                isFocused={'from_name' === focus}
                 required
                 {...focusHandlers}
               />
               <Space2 />
               <Text
-                title="email"
+                title='email'
                 className={clsx(INPUT_CLASS)}
                 disabled={isDisabled}
-                type="email"
-                name="from_email"
-                placeholder=""
+                type='email'
+                name='from_email'
+                placeholder=''
                 value={state.from_email}
-                isFocused={"from_email" === focus}
+                isFocused={'from_email' === focus}
                 required
                 {...focusHandlers}
               />
               <Space2 />
               <Textarea
-                title="message"
+                title='message'
                 className={clsx(INPUT_CLASS)}
-                name="message"
+                name='message'
                 disabled={isDisabled}
                 style={{ marginTop: -6 }}
                 value={state.message}
                 rows={4}
                 cols={50}
-                isFocused={"message" === focus}
+                isFocused={'message' === focus}
                 required
                 {...textareaFocusHandlers}
               />
@@ -174,7 +177,7 @@ export const Contact = () => {
             <Space2 />
             <Submit sendingState={sendingState} />
           </Form>
-          <div className="py-12" />
+          <div className='py-12' />
         </Root>
       </Shell>
     </MainShell>
