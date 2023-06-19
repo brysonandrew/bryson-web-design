@@ -1,10 +1,10 @@
-import type { MotionValue } from "framer-motion";
+import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
   Reducer,
   ReducerState,
   ReducerAction,
-} from "react";
+} from 'react';
 
 export type TContext = TState & {
   dispatch: TDispatch;
@@ -17,49 +17,59 @@ export type TMotionValuePair = [
 
 export type TAction =
   | {
-      type: "start-page-transition";
+      type: 'start-page-transition';
       value: null;
     }
   | {
-      type: "end-page-transition";
+      type: 'end-page-transition';
       value: null;
     }
   | {
-      type: "init";
+      type: 'init';
       value: null;
     }
   | {
-      type: "toggle-sound";
-      value: null;
-    }
-  | {
-      type: "select-id";
-      value: null | string;
-    }
-  | {
-      type: "cursor-ready";
+      type: 'scroll';
       value: boolean;
     }
   | {
-      type: "add-motion-value";
-      value: { pair: TMotionValuePair; index: number };
+      type: 'scroll-start';
+      value: boolean;
     }
   | {
-      type: "threshold-reached";
+      type: 'toggle-sound';
       value: null;
     }
   | {
-      type: "threshold-lost";
+      type: 'select-id';
+      value: null | string;
+    }
+  | {
+      type: 'cursor-ready';
+      value: boolean;
+    }
+  | {
+      type: 'add-motion-value';
+      value: { pair: TMotionValuePair; index: number };
+    }
+  | {
+      type: 'threshold-reached';
+      value: null;
+    }
+  | {
+      type: 'threshold-lost';
       value: null;
     };
 
 export type TState = {
+  isScroll: boolean;
+  isScrollStart: boolean;
   isInit: boolean;
   isCursorReady: boolean;
   isSound: boolean;
   context: AudioContext;
   selectId: null | string;
-  mode: "instant" | "stagger";
+  mode: 'instant' | 'stagger';
   isThreshold: boolean;
   motionValuePairs: TMotionValuePair[];
 };

@@ -11,7 +11,7 @@ import { useState, type FC, useMemo } from 'react';
 const RANGE_Y = 20;
 const RANGE_MIN_Y = 10;
 
-const RANGE_Z = 400;
+const RANGE_Z = 100;
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
@@ -26,7 +26,6 @@ export const Box: FC<TProps> = ({
   const handleLoad = () => {
     setLoaded(true);
   };
-
   const y = useMemo(
     () =>
       index % 2 === 0
@@ -35,16 +34,23 @@ export const Box: FC<TProps> = ({
     [index],
   );
   const z = useMemo(
-    () => Math.random() * RANGE_Z - RANGE_Z * 0.5,
+    () =>
+      -RANGE_MIN_Y * index -
+      RANGE_Z * Math.random() -
+      RANGE_Z,
     [],
   );
   const zm = useMotionValue(z);
   const brightness = useTransform(
     zm,
-    [-RANGE_Z, RANGE_Z],
-    [40, 140],
+    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [40, 110],
   );
-  const blur = useTransform(zm, [-RANGE_Z, 0], [4, 0]);
+  const blur = useTransform(
+    zm,
+    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [4, 0],
+  );
   const filter = useMotionTemplate`brightness(${brightness}%) blur(${blur}px)`;
 
   return (
@@ -52,7 +58,7 @@ export const Box: FC<TProps> = ({
       className='relative inset-0 overflow-hidden'
       style={{
         flex: 1,
-        zIndex: index,
+        zIndex: 0,
         minHeight: 140,
         x: `-${50 * index}%`,
         y,
@@ -64,7 +70,8 @@ export const Box: FC<TProps> = ({
       whileHover={{
         scale: 1.4,
         filter: 'brightness(100%) blur(0px)',
-        z: 100,
+        z: RANGE_Z,
+        zIndex: 1
       }}
     >
       {!isLoaded && (

@@ -1,60 +1,72 @@
-import type { TState, TReducerAction } from "./types";
+import type { TState, TReducerAction } from './types';
 
 export const reducer = (
   state: TState,
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
-    case "init": {
+    case 'init': {
       return {
         ...state,
         isInit: false,
       };
     }
-    case "select-id": {
+    case 'scroll': {
+      return {
+        ...state,
+        isScroll: value,
+      };
+    }
+    case 'scroll-start': {
+      return {
+        ...state,
+        isScrollStart: value,
+      };
+    }
+    case 'select-id': {
       return {
         ...state,
         selectId: value,
       };
     }
-    case "toggle-sound": {
+    case 'toggle-sound': {
       return {
         ...state,
         isSound: !state.isSound,
       };
     }
-    case "cursor-ready": {
+    case 'cursor-ready': {
       return {
         ...state,
         isCursorReady: value,
       };
     }
-    case "add-motion-value": {
+    case 'add-motion-value': {
       state.motionValuePairs[value.index] = value.pair;
       return {
         ...state,
         motionValuePairs: [...state.motionValuePairs],
       };
     }
-    case "threshold-reached": {
+    case 'threshold-reached': {
       return {
         ...state,
         isThreshold: true,
       };
     }
-    case "threshold-lost": {
+    case 'threshold-lost': {
       return {
         ...state,
         isThreshold: false,
       };
     }
-    case "start-page-transition": {
+    case 'start-page-transition': {
       return {
         ...state,
         isPageTransitioning: true,
       };
     }
-    case "end-page-transition": {
+    case 'end-page-transition': {
       return {
         ...state,
         isPageTransitioning: false,
