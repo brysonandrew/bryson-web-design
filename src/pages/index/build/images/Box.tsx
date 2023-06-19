@@ -43,12 +43,12 @@ export const Box: FC<TProps> = ({
   const zm = useMotionValue(z);
   const brightness = useTransform(
     zm,
-    [-RANGE_Z, 0],
-    [40, 140],
+    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [40, 110],
   );
   const blur = useTransform(
     zm,
-    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z],
+    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
     [4, 0],
   );
   const filter = useMotionTemplate`brightness(${brightness}%) blur(${blur}px)`;
@@ -58,7 +58,7 @@ export const Box: FC<TProps> = ({
       className='relative inset-0 overflow-hidden'
       style={{
         flex: 1,
-        zIndex: index,
+        zIndex: 0,
         minHeight: 140,
         x: `-${50 * index}%`,
         y,
@@ -68,9 +68,10 @@ export const Box: FC<TProps> = ({
         originY: '100%',
       }}
       whileHover={{
-        //scale: 1.4,
+        scale: 1.4,
         filter: 'brightness(100%) blur(0px)',
-        z: 0,
+        z: RANGE_Z,
+        zIndex: 1
       }}
     >
       {!isLoaded && (

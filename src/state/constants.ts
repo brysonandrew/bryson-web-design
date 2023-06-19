@@ -1,14 +1,16 @@
-import type { TState } from "./types";
+import type { TState } from './types';
 
 export const STATE: TState = {
   isInit: true,
+  isScroll: false,
+  isScrollStart: false,
   isCursorReady: false,
   isSound: true,
   context: new AudioContext(),
   selectId: null,
   mode:
     //"instant",
-    "stagger",
+    'stagger',
   isThreshold: false,
   motionValuePairs: [],
 };

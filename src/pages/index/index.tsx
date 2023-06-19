@@ -15,8 +15,7 @@ import { HeaderOffset } from '@components/spaces/HeaderOffset';
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
-      <Shell>
-        <HeaderOffset />
+      <Shell key="X">
         <Build />
         <Space8 />
         <Line />

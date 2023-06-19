@@ -12,8 +12,6 @@ import { useStyles } from '@styles/useStyles';
 import { Space4 } from '@components/spaces/Space4';
 import { TextXl } from '@components/text/TextXl';
 import { WIDTH_CLASS } from '@styles/styles';
-import { HEADER_OFFSET_Y } from '@pages/index/constants';
-import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 export const Showcase = () => {
   useStyles();
@@ -21,9 +19,8 @@ export const Showcase = () => {
   const isSelectedItem = selectedPath !== null;
 
   return (
-    <MainShell>
-      <Shell>
-        <HeaderOffset />
+    <MainShell> 
+      <Shell key="X">
         <div className={WIDTH_CLASS}>
           <TextXl classValue='text-center'>
             My most recent work

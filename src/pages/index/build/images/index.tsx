@@ -13,9 +13,7 @@ export const Images: FC<TProps> = () => {
   switch (tier) {
     case 3: {
       return (
-        <Motion>
-          {(rotateX) => <Content rotateX={rotateX} />}
-        </Motion>
+        <Motion>{(props) => <Content {...props} />}</Motion>
       );
     }
     default: {
