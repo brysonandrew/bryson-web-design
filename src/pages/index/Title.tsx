@@ -32,7 +32,7 @@ export const Title: FC<TProps> = ({ children }) => {
             delay: 0.2,
           }}
         >
-          <TextXl>{children}</TextXl>
+          <TextXl classValue="text-center">{children}</TextXl>
         </motion.div>
       </div>
       <motion.div

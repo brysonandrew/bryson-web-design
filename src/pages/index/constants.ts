@@ -12,7 +12,7 @@ export const DELAY_2 = DELAY * 4;
 export const DELTA = GAP_1 + DELAY_2;
 
 export const ROLLING_TEXT_CLASS =
-  'relative uppercase bg-white bg-opacity-10 py-6 lg:py-2.5 xl:py-3.5 m-1 whitespace-nowrap opacity-40';
+  'py-6 lg:py-2.5 xl:py-3.5 m-1 whitespace-nowrap opacity-40';
 
 export const BAR_CLASS =
   'absolute left-0 top-2 bottom-2 w-2 h-full rounded-sm';

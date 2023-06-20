@@ -16,7 +16,6 @@ import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import { Bar } from './Bar';
 
 const Root = styled(motion.li)``;
-const List = styled(motion.ul)``;
 const Button = styled(motion.button)``;
 
 type TProps = Pick<Partial<TChildrenProps>, 'xs'> &
@@ -39,39 +38,38 @@ export const Item: FC<TProps> = ({
   );
   return (
     <Root
-      className={clsx(
-        'relative flex w-full overflow-hidden',
-      )}
+      className={clsx('relative flex w-full p-4')}
       {...handlers}
     >
-      <Button className='relative' {...props}>
+      <Button
+        className='relative left-1/2'
+        {...props}
+      >
         <motion.div
           className={clsx(
-            'overflow-hidden',
+            "absolute -left-1/2",
             isActive || isSelected
               ? BAR_GREEN_ACTIVE_CLASS
               : BAR_GREEN_CLASS,
           )}
+          style={{top: -2}}
           animate={{
             filter: `brightness(${isSelected ? 100 : 40}%)`,
           }}
         />
         {isSelected && <Bar />}
-        <List
-          className='inline-flex relative'
-          style={{
-            x: (xs ?? ['-100%', '-100%', '-100%'])[index],
-          }}
+        <div
+          className={clsx(
+            'flex items-center justify-center h-16 w-full',
+            ROLLING_TEXT_CLASS,
+          )}
         >
-          <li className={ROLLING_TEXT_CLASS}>
-            <Text>{children}</Text>
-          </li>
           <Main
             isActive={isActive}
             isLong={isLong}
             index={index}
           />
-        </List>
+        </div>
       </Button>
     </Root>
   );
