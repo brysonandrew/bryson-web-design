@@ -25,7 +25,7 @@ export const Main: FC<TProps> = ({
   >
     {!isLong && (
       <motion.div
-        className='absolute inset-0 bg-transparent'
+        className='absolute inset-0 bg-baby-blue-01'
         layoutId={`${index}`}
       />
     )}

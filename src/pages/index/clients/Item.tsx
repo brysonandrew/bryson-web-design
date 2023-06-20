@@ -41,23 +41,17 @@ export const Item: FC<TProps> = ({
       className={clsx('relative flex w-full p-4')}
       {...handlers}
     >
-      <Button
-        className='relative left-1/2'
-        {...props}
-      >
+      <Button className='relative left-1/2' {...props}>
         <motion.div
           className={clsx(
-            "absolute -left-1/2",
-            isActive || isSelected
-              ? BAR_GREEN_ACTIVE_CLASS
-              : BAR_GREEN_CLASS,
+            'absolute -left-1/2',
+            BAR_GREEN_CLASS,
           )}
-          style={{top: -2}}
+          style={{ top: -2 }}
           animate={{
             filter: `brightness(${isSelected ? 100 : 40}%)`,
           }}
         />
-        {isSelected && <Bar />}
         <div
           className={clsx(
             'flex items-center justify-center h-16 w-full',
