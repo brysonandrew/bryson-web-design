@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import clsx from "clsx";
-import type { HTMLMotionProps } from "framer-motion";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { Review } from "./Review";
+import styled from '@emotion/styled';
+import clsx from 'clsx';
+import type { HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { Review } from './Review';
 
-const Root = styled(motion.li)``;
+const Root = styled(motion.div)``;
 
-type TProps = HTMLMotionProps<"li"> & {
+type TProps = HTMLMotionProps<'div'> & {
   isActive: boolean;
   index: number;
   isLong: boolean;
@@ -19,17 +19,16 @@ export const Main: FC<TProps> = ({
   ...props
 }) => (
   <Root
-    className={clsx(
-      "absolute left-full top-0 px-1 py-2 m-1 w-xs xs:w-sm sm:w-md m:w-lg lg:w-xl xl:w-xxl",
-    )}
+    className={clsx('p-4 py-2 m-1 w-full lg:w-core')}
     {...props}
+    style={{ x: '-50%' }}
   >
     {!isLong && (
       <motion.div
-        className="absolute inset-0 bg-transparent"
+        className='absolute inset-0 bg-baby-blue-01'
         layoutId={`${index}`}
       />
     )}
-    <Review index={index} type="short" />
+    <Review index={index} type='short' />
   </Root>
 );

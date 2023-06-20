@@ -52,8 +52,7 @@ export const Shell: FC<TProps> = ({
       <div
         ref={ref}
         className={clsx(
-          'relative w-full overflow-hidden left-8',
-          WIDTH_CLASS,
+          'relative w-full overflow-hidden -translate-x-1/2',
         )}
       >
         {isLong ? (
@@ -63,7 +62,7 @@ export const Shell: FC<TProps> = ({
             type='long'
           />
         ) : null}
-        <motion.ul>
+        <motion.ul className='w-full'>
           {REVIEWS.map((review, index: number) => (
             <Item
               key={`group-${index}`}
