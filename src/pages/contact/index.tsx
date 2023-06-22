@@ -115,7 +115,7 @@ export const Contact = () => {
 
   return (
     <MainShell>
-      <Shell key="X">
+      <Shell>
         <Root
           className={clsx(
             'flex flex-col px-4',

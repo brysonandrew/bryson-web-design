@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 
 export const CORE_WIDTHS = "md:w-core-sm lg:w-core-md xl:w-core-lg xxl:w-core-xl";
 export const WIDTH_CLASS =
-  "mx-auto px-0 overflow-hidden w-full text-center md:w-1/2 sm:overflow-visible";
+  "mx-auto px-0 overflow-hidden w-full text-center sm:overflow-visible md:w-2/3 lg:w-core";
 
 export const PANEL_CLASS =
   "relative py-2 px-4 shadow-white-sm rounded-xs w-full";

@@ -47,7 +47,7 @@ export const Review: FC<TProps> = ({
             <Fragment key={`${index}`}>
               {index !== 0 && <li className="py-1" />}
               <li>
-                <TextSm classValue="text-slate">
+                <TextSm classValue="text-white">
                   {part}
                 </TextSm>
               </li>
@@ -60,7 +60,7 @@ export const Review: FC<TProps> = ({
   
   return (
     <TextSm>
-      <Block className="text-slate">{content}, </Block>
+      <Block className="text-white">{content}, </Block>
       <Block className="text-teal`">
         {author}, {project}
       </Block>
