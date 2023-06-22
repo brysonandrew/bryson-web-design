@@ -24,7 +24,7 @@ export const Nav = () => {
             {index !== 0 && (
               <li
                 key={`${index}`}
-                className="p-0.25 md:p-2"
+                className="p-0.5 md:p-2"
               />
             )}
             <Item to={to}>{item}</Item>

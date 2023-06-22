@@ -21,13 +21,13 @@ export const Shell: FC<TProps> = ({ children }) => {
   const isShown = !isInit && !isScroll;
 
   return (
-    <Root className='relative text-black-dark-04 overflow-hidden z-10'>
+    <Root className='relative text-black-dark-04 px-4 overflow-hidden z-10'>
       <AnimatePresence>
         {isShown && <Header />}
       </AnimatePresence>
       <AnimatePresence>
         <Content
-          className='relative bg-current w-screen'
+          className='relative bg-current'
           style={{
             minHeight: '100vh',
           }}
