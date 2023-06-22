@@ -150,7 +150,7 @@
   "white-darkest": "#bbb",
   "white-darker": "#ccc",
   "white-dark": "#ddd",
-  "white": "#f4f4f4",
+  "white": "#fff",
   "white-005": "rgba(255,255,255,0.05)",
   "white-01": "rgba(255,255,255,0.1)",
   "white-02": "rgba(255,255,255,0.2)",

@@ -1,4 +1,3 @@
-import { Text } from '@components/text/Text';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import clsx from 'clsx';
@@ -6,14 +5,12 @@ import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import {
-  BAR_GREEN_ACTIVE_CLASS,
   BAR_GREEN_CLASS,
   ROLLING_TEXT_CLASS,
 } from '../constants';
 import { Main } from './Main';
 import type { TChildrenProps } from './Motion';
 import { useSelectHandlers } from '@hooks/useSelectHandlers';
-import { Bar } from './Bar';
 
 const Root = styled(motion.li)``;
 const Button = styled(motion.button)``;
@@ -48,9 +45,6 @@ export const Item: FC<TProps> = ({
             BAR_GREEN_CLASS,
           )}
           style={{ top: -2 }}
-          animate={{
-            filter: `brightness(${isSelected ? 100 : 40}%)`,
-          }}
         />
         <div
           className={clsx(
