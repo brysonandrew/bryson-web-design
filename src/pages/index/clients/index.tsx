@@ -7,11 +7,11 @@ import { useOutsideClick } from '@hooks/useOutsideClick';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useRef, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { Title } from '../Title';
 import { Item } from './Item';
-import { Review } from './Review';
-import { REVIEWS } from './constants';
+import { Review } from './review/Review';
+import { REVIEWS } from './config';
 
 const Root = styled(motion.div)``;
 
@@ -22,7 +22,7 @@ export const Clients: FC = () => {
   const handleOnSound = useOnSound();
   const handleOffSound = useOffSound();
 
-  const closeLong = async () => {
+  const handleCloseLong = async () => {
     if (isLong) {
       handleOffSound();
       setLong(null);
@@ -35,7 +35,7 @@ export const Clients: FC = () => {
   };
 
   const ref = useRef<HTMLDivElement | null>(null);
-  useOutsideClick({ ref, handler: closeLong });
+  useOutsideClick({ ref, handler: handleCloseLong });
 
   return (
     <Root className='relative flex flex-col items-center z-10'>
@@ -47,25 +47,27 @@ export const Clients: FC = () => {
           'relative w-full overflow-hidden -translate-x-1/2',
         )}
       >
-        {isLong ? (
+        {isLong && (
           <Review
             layoutId={`${long}`}
             index={long}
             type='long'
-            onClose={closeLong}
+            onClose={handleCloseLong}
           />
-        ) : null}
+        )}
         <motion.ul className='w-full'>
           {REVIEWS.map((review, index: number) => (
-            <Item
-              key={`group-${index}`}
-              isActive={index === long}
-              isLong={isLong}
-              index={index}
-              onTap={() => handleOpen(index)}
-            >
-              {review.long}
-            </Item>
+            <Fragment key={review.project}>
+              {index !== 0 && <div className='p-4' />}
+              <Item
+                isActive={index === long}
+                isLong={isLong}
+                index={index}
+                onTap={() => handleOpen(index)}
+              >
+                {review.long}
+              </Item>
+            </Fragment>
           ))}
         </motion.ul>
       </div>

@@ -3,13 +3,16 @@ import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
 import { type FC } from 'react';
-import { Image } from './Image';
-import { TChildrenProps } from './Motion';
-import { useImages } from './hooks/useImages';
-const ROW = 'flex';
+import { Image } from './image';
+import { useImages } from './image/hooks/useImages';
+import { TChildrenProps } from './motion';
+import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
+
+export const HEIGHT = 164 + TITLE_OFFSET;
 
 type TProps = Partial<TChildrenProps>;
-export const Content: FC<TProps> = ({
+export const Swarm: FC<TProps> = ({
+  y,
   rotateX,
   filter,
 }) => {
@@ -17,20 +20,18 @@ export const Content: FC<TProps> = ({
   const images = useImages();
   return (
     <motion.div
-      className='relative w-full'
       style={{
-        height: 160 + TITLE_OFFSET,
+        height: HEIGHT,
         pointerEvents: isScroll ? 'none' : 'unset',
-        filter
+        filter,
       }}
-      whileHover='hover'
+      {...PRESENCE_OPACITY_SHIFT}
     >
       <motion.ul
         className={clsx(
-          ROW,
-          'absolute left-0 bottom-0 w-full preserve-3d',
+          'flex absolute left-0 bottom-0 w-full preserve-3d',
         )}
-        style={{ width: '200%', rotateX }}
+        style={{ width: '200%', rotateX, y }}
       >
         {images.map((image, index, { length }) => (
           <Image

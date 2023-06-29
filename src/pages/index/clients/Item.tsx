@@ -27,7 +27,7 @@ export const Item: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root className={clsx('relative flex w-full p-4')}>
+    <Root className={clsx('relative flex w-full')}>
       <Button
         className='relative left-1/2'
         style={{ x: '-50%' }}

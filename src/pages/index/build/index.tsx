@@ -7,9 +7,11 @@ import { Images } from './images';
 
 const Root = styled(motion.div)``;
 
-export const Build: FC = () => (
-  <Root className='flex flex-col items-center'>
-    <Title>{STORY.build}</Title>
-    <Images />
-  </Root>
-);
+export const Build: FC = () => {
+  return (
+    <Root className='flex flex-col items-center'>
+      <Title>{STORY.build}</Title>
+      <Images />
+    </Root>
+  );
+};
