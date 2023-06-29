@@ -9,23 +9,19 @@ import {
   ROLLING_TEXT_CLASS,
 } from '../constants';
 import { Main } from './Main';
-import type { TChildrenProps } from './Motion';
-import { useSelectHandlers } from '@hooks/useSelectHandlers';
 
 const Root = styled(motion.li)``;
 const Button = styled(motion.button)``;
 
-type TProps = Pick<Partial<TChildrenProps>, 'xs'> &
-  HTMLMotionProps<'button'> & {
-    isActive: boolean;
-    isLong: boolean;
-    index: number;
-    children: TChildren;
-  };
+type TProps = HTMLMotionProps<'button'> & {
+  isActive: boolean;
+  isLong: boolean;
+  index: number;
+  children: TChildren;
+};
 export const Item: FC<TProps> = ({
   isLong,
   isActive,
-  xs,
   index,
   children,
   ...props

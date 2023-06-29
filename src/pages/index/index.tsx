@@ -10,13 +10,12 @@ import { Space8 } from '@components/spaces/Space8';
 import { Space6 } from '@components/spaces/Space6';
 import { Space12 } from '@components/spaces/Space12';
 import { Space24 } from '@components/spaces/Space24';
-import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
       <Shell>
-        <Build />
+        <Build /> 
         <Space8 />
         <Line />
         <Space6 />

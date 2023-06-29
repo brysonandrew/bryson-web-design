@@ -9,7 +9,6 @@ import { NOOP } from "@constants/functions";
 import { useEventListener } from "@hooks/useEventListener";
 import { useContext } from "@state/Context";
 import type { TChildren } from "@t/index";
-import { useCursorAppear } from "@hooks/useCursorAppear";
 import { CURSOR_SIZE, CURSOR_SIZE_HALF } from "./config";
 import { usePointerEnterLeave } from "./usePointerEnterLeave";
 

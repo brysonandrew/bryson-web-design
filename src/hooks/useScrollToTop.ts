@@ -6,6 +6,9 @@ import {
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+export const SCROLL_START = 60;
+export const SCROLL = 120;
+
 export const useScrollToTop = () => {
   const { pathname } = useLocation();
   const { isScroll, isScrollStart, dispatch } = useContext();
@@ -13,16 +16,16 @@ export const useScrollToTop = () => {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (value) => {
-    if (!isScrollStart && value > 40) {
+    if (!isScrollStart && value > SCROLL_START) {
       dispatch({ type: 'scroll-start', value: true });
     }
-    if (!isScroll && value > 60) {
+    if (!isScroll && value > SCROLL) {
       dispatch({ type: 'scroll', value: true });
     }
-    if (isScrollStart && value < 40) {
+    if (isScrollStart && value < SCROLL_START) {
       dispatch({ type: 'scroll-start', value: false });
     }
-    if (isScroll && value < 60) {
+    if (isScroll && value < SCROLL) {
       dispatch({ type: 'scroll', value: false });
     }
   });
