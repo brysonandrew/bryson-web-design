@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { Space2 } from '@components/spaces/Space2';
-import { Shell } from '@components/Shell';
+import { Shell } from '@components/shell';
 import { useStyles } from '@styles/useStyles';
 import { useFocusSound } from '@hooks/sounds/useFocusSound';
 import { Shell as MainShell } from '@main/Shell';

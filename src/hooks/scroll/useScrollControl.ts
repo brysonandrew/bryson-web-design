@@ -3,16 +3,12 @@ import {
   useScroll,
   useMotionValueEvent,
 } from 'framer-motion';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 export const SCROLL_START = 60;
 export const SCROLL = 120;
 
-export const useScrollToTop = () => {
-  const { pathname } = useLocation();
+export const useScrollControl = () => {
   const { isScroll, isScrollStart, dispatch } = useContext();
-
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (value) => {
@@ -30,8 +26,4 @@ export const useScrollToTop = () => {
     }
   });
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch({ type: 'scroll', value: false });
-  }, [pathname]);
 };

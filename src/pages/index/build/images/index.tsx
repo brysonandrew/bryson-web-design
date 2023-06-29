@@ -1,7 +1,6 @@
 import { useDetectGPU } from '@react-three/drei';
 import type { HTMLMotionProps } from 'framer-motion';
 import type { FC } from 'react';
-
 import { Motion } from './Motion';
 import { Content } from './Content';
 

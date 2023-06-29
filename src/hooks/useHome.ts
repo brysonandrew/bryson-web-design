@@ -27,7 +27,6 @@ export const useHome = (delay?: number) => {
   };
 
   useEffect(() => {
-    reset();
     return endTimeout;
   }, [pathname]);
 

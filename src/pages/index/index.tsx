@@ -1,5 +1,5 @@
 import { Line } from '@components/Line';
-import { Shell } from '@components/Shell';
+import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Suspense } from 'react';
 import { Tech } from './tech';

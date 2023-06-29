@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router";
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router';
 
-export const useResetScroll = () => {
+export const useScrollReset = () => {
   const location = useLocation();
   const timeoutRef = useRef<ReturnType<
     typeof setTimeout

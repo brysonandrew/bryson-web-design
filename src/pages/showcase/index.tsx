@@ -2,7 +2,7 @@ import { useSelectedItem } from './useSelectedItem';
 import { Full } from './full';
 import { Space16 } from '@components/spaces/Space16';
 import { List } from './list';
-import { Shell } from '@components/Shell';
+import { Shell } from '@components/shell';
 import { APP_ITEMS } from '@constants/apps';
 import { GAME_ITEMS } from '@constants/games';
 import { MUSIC_ITEMS } from '@constants/music';

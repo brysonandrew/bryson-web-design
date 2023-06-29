@@ -1,39 +1,43 @@
-import type { FC } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 import styled from '@emotion/styled';
+import { AnimatePresence, motion } from 'framer-motion';
+import { type FC } from 'react';
 import type { TChildren } from '../../types';
-import { HEADER_OFFSET_Y } from '@pages/index/constants';
+import { BlindersOut } from '../blinders/BlindersOut';
 import { Footer } from './footer';
 import { Header } from './header';
-import { BlindersOut } from '@components/blinders/BlindersOut';
-import { useDetectGPU } from '@react-three/drei';
+import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 
 const Root = styled(motion.div)``;
+const Content = styled(motion.div)``;
 
 type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, isScroll } = useContext();
-  const isShown = !isScroll;
-  const { isMobile } = useDetectGPU();
+  const isShown = !isInit && !isScroll;
+
   return (
-    <div className='text-black-dark-01'>
+    <Root className='relative text-black-dark-04 px-4 overflow-hidden z-10'>
       <AnimatePresence>
         {isShown && <Header />}
       </AnimatePresence>
-      <Root
-        className='relative bg-current mx-auto px-0 w-full overflow-hidden sm:overflow-visible md:w-mid lg:w-1/2 xl:w-2/3'
-        style={{
-          paddingTop: HEADER_OFFSET_Y,
-          minHeight: '100vh',
-        }}
-      >
-        {children}
-        <BlindersOut />
-      </Root>
-      {!isMobile && <Footer />}
-    </div>
+      <AnimatePresence>
+        <Content
+          className='relative bg-current'
+          style={{
+            minHeight: '100vh',
+          }}
+          {...PRESENCE_OPACITY_SHIFT}
+        >
+          <HeaderOffset />
+          {children}
+          <BlindersOut />
+        </Content>
+      </AnimatePresence>
+      <Footer />
+    </Root>
   );
 };
