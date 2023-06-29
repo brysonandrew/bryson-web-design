@@ -3,9 +3,9 @@ import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
 import { type FC } from 'react';
-import { Box } from './Box';
+import { Image } from './Image';
 import { TChildrenProps } from './Motion';
-import { useImages } from './useImages';
+import { useImages } from './hooks/useImages';
 const ROW = 'flex';
 
 type TProps = Partial<TChildrenProps>;
@@ -21,19 +21,19 @@ export const Content: FC<TProps> = ({
       style={{
         height: 160 + TITLE_OFFSET,
         pointerEvents: isScroll ? 'none' : 'unset',
-        filter,
+        filter
       }}
       whileHover='hover'
     >
       <motion.ul
         className={clsx(
           ROW,
-          'absolute left-0 bottom-0 w-full preserve-3d perspective-12',
+          'absolute left-0 bottom-0 w-full preserve-3d',
         )}
         style={{ width: '200%', rotateX }}
       >
         {images.map((image, index, { length }) => (
-          <Box
+          <Image
             key={image.default}
             src={image.default}
             index={index}
