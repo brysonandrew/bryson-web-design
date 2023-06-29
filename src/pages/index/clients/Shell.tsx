@@ -13,7 +13,6 @@ import { REVIEWS } from './constants';
 import { Item } from './Item';
 import { STORY } from '@constants/copy';
 import { Title } from '../Title';
-import { WIDTH_CLASS } from '@styles/styles';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 
 const Root = styled(motion.div)``;
@@ -60,6 +59,7 @@ export const Shell: FC<TProps> = ({
             layoutId={`${long}`}
             index={long}
             type='long'
+            onClose={closeLong}
           />
         ) : null}
         <motion.ul className='w-full'>

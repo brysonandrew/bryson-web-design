@@ -30,25 +30,19 @@ export const Item: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { handlers, isSelected } = useSelectHandlers(
-    `REVIEWS_SHELL_ITEM_${index}`,
-  );
   return (
-    <Root
-      className={clsx('relative flex w-full p-4')}
-      {...handlers}
-    >
-      <Button className='relative left-1/2' {...props}>
+    <Root className={clsx('relative flex w-full p-4')}>
+      <Button
+        className='relative left-1/2'
+        style={{ x: '-50%' }}
+        {...props}
+      >
         <motion.div
-          className={clsx(
-            'absolute -left-1/2',
-            BAR_GREEN_CLASS,
-          )}
-          style={{ top: -2 }}
+          className={clsx('absolute', BAR_GREEN_CLASS)}
         />
         <div
           className={clsx(
-            'flex items-center justify-center h-16 w-full',
+            'flex items-center justify-center h-24 sm:h-20 w-full',
             ROLLING_TEXT_CLASS,
           )}
         >

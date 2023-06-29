@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Main } from './Main';
 import type { TChildrenProps } from './Motion';
-import { Bar } from './Bar';
 import { BAR_GREEN_CLASS, ROLLING_TEXT_CLASS } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
@@ -55,7 +54,6 @@ export const Item: FC<TProps> = ({
             },
           }}
         />
-        {isActive && <Bar />}
         <List
           className='inline-flex relative'
           style={{

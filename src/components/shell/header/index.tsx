@@ -20,8 +20,8 @@ export const Header = () => {
       className='fixed top-0 left-0 flex items-center justify-between w-full px-3 py-2 sm:px-6 sm:py-4 z-50'
       {...(isInit || isScrollStart ? INIT_ANIMATION : {})}
     >
-      <Top />
       <Decoration />
+      <Top />
     </Root>
   );
 };
