@@ -7,7 +7,6 @@ import { Short } from './Short';
 type TProps = HTMLMotionProps<'div'> & {
   index: number;
   type: TReviewType;
-  onClose?(): void;
 };
 export const Review: FC<TProps> = ({
   index,

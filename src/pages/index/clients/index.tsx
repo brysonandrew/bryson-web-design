@@ -10,10 +10,12 @@ import type { FC } from 'react';
 import { Fragment, useRef, useState } from 'react';
 import { Title } from '../Title';
 import { Item } from './Item';
-import { Review } from './review/Review';
+import { Review } from './review';
 import { REVIEWS } from './config';
+import { Cross } from '@components/icons/Cross';
 
 const Root = styled(motion.div)``;
+const Button = styled(motion.button)``;
 
 export const Clients: FC = () => {
   const [long, setLong] = useState<number | null>(null);
@@ -43,30 +45,34 @@ export const Clients: FC = () => {
       <TitleOffset />
       <div
         ref={ref}
-        className={clsx(
-          'relative w-full overflow-hidden -translate-x-1/2',
-        )}
+        className={clsx('relative w-full -translate-x-1/2')}
       >
         {isLong && (
-          <Review
-            layoutId={`${long}`}
-            index={long}
-            type='long'
-            onClose={handleCloseLong}
-          />
+          <>
+            <Button
+              className='absolute bottom-full right-2 text-white p-4 mb-6'
+              initial={false}
+              whileHover={{ opacity: 0.7 }}
+              onTap={handleCloseLong}
+            >
+              <Cross classValue='w-4 h-4' />
+            </Button>
+            <Review
+              layoutId={`${long}`}
+              index={long}
+              type='long'
+            />
+          </>
         )}
         <motion.ul className='w-full'>
           {REVIEWS.map((review, index: number) => (
             <Fragment key={review.project}>
               {index !== 0 && <div className='p-4' />}
               <Item
-                isActive={index === long}
                 isLong={isLong}
                 index={index}
                 onTap={() => handleOpen(index)}
-              >
-                {review.long}
-              </Item>
+              />
             </Fragment>
           ))}
         </motion.ul>

@@ -5,35 +5,28 @@ import styled from '@emotion/styled';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { MOTION_CONFIG } from '@constants/animation';
-import { Cross } from '@components/icons/Cross';
-import {
-  TBaseReview,
-  TLongReviewValue,
-} from '../config';
+import { TBaseReview, TLongReviewValue } from '../config';
 
 const Root = styled(motion.div)``;
-const Button = styled(motion.button)``;
 
 type TProps = HTMLMotionProps<'div'> &
   TBaseReview & {
-    onClose?(): void;
     children: TLongReviewValue;
   };
 export const Long: FC<TProps> = ({
   author,
   project,
-  onClose,
   children,
   ...props
 }) => {
   return (
     <Root
-      className='absolute inset-0 left-2 bg-black-dark p-4 overflow-y-auto overflow-x-hidden z-10'
+      className='absolute left-2 -top-4 right-2 -bottom-4 bg-black-dark px-8 py-4 overflow-y-auto overflow-x-hidden shadow-green-04-sm z-10'
       {...props}
     >
       <motion.ul
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           ...MOTION_CONFIG,
           delay: MOTION_CONFIG.transition.duration,
@@ -43,18 +36,6 @@ export const Long: FC<TProps> = ({
           <TextSm classValue='text-teal-bright'>
             {author} from {project} writes
           </TextSm>
-          {onClose ? (
-            <Button
-              className='text-white p-4'
-              initial={false}
-              whileHover={{ opacity: 0.7 }}
-              onTap={onClose}
-            >
-              <Cross />
-            </Button>
-          ) : (
-            <div />
-          )}
         </li>
         <li className='py-1' />
         {children.map((part, index) => (
