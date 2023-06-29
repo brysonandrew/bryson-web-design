@@ -15,7 +15,7 @@ export const Main: FC = () => {
   const { pathname } = useLocation();
   const handleTap = useHome();
 
-  return (
+  return ( 
     <Root
       className='relative flex flex-col relative grow'
       onTap={handleTap}

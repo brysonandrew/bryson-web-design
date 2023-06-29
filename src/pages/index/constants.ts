@@ -14,22 +14,8 @@ export const DELTA = GAP_1 + DELAY_2;
 export const ROLLING_TEXT_CLASS =
   'py-6 lg:py-2.5 xl:py-3.5 m-1 whitespace-nowrap';
 
-export const BAR_CLASS =
-  'absolute left-0 top-2 bottom-2 w-2 h-full rounded-sm';
-
 export const BAR_GREEN_CLASS = clsx(
-  BAR_CLASS,
-  'bg-green shadow-green',
-);
-
-export const BAR_GREEN_ACTIVE_CLASS = clsx(
-  BAR_CLASS,
-  'bg-green shadow-green opacity-100',
-);
-
-export const BAR_BLACK_CLASS = clsx(
-  BAR_CLASS,
-  'bg-black shadow-black',
+  'absolute left-0 w-2 h-full rounded-sm bg-green shadow-green',
 );
 
 export const WHITE_FILTER = {

@@ -1,12 +1,11 @@
-import { MotionValue, motion } from 'framer-motion';
-import { type FC } from 'react';
-import { useImages } from './useImages';
-import { Box } from './Box';
-import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
+import clsx from 'clsx';
+import { type FC } from 'react';
+import { Box } from './Box';
 import { TChildrenProps } from './Motion';
-
+import { useImages } from './useImages';
 const ROW = 'flex';
 
 type TProps = Partial<TChildrenProps>;

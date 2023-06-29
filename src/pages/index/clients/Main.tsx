@@ -21,7 +21,6 @@ export const Main: FC<TProps> = ({
   <Root
     className={clsx('p-4 py-2 m-1 w-full lg:w-core')}
     {...props}
-    style={{ x: '-50%' }}
   >
     {!isLong && (
       <motion.div

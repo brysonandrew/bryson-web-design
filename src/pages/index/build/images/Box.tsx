@@ -1,17 +1,9 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import type { HTMLMotionProps } from 'framer-motion';
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useTransform,
-} from 'framer-motion';
-import { useState, type FC, useMemo } from 'react';
-
-const RANGE_Y = 20;
-const RANGE_MIN_Y = 10;
-
-const RANGE_Z = 100;
+import { motion, transform } from 'framer-motion';
+import { useState, type FC } from 'react';
+import { RANGE_MIN_Y, useY } from './useY';
+import { RANGE_Z, useZ } from './useZ';
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
@@ -26,32 +18,17 @@ export const Box: FC<TProps> = ({
   const handleLoad = () => {
     setLoaded(true);
   };
-  const y = useMemo(
-    () =>
-      index % 2 === 0
-        ? -Math.random() * RANGE_Y - RANGE_MIN_Y
-        : Math.random() * RANGE_Y + RANGE_MIN_Y,
-    [index],
-  );
-  const z = useMemo(
-    () =>
-      -RANGE_MIN_Y * index -
-      RANGE_Z * Math.random() -
-      RANGE_Z,
-    [],
-  );
-  const zm = useMotionValue(z);
-  const brightness = useTransform(
-    zm,
+  const y = useY(index);
+  const z = useZ(index);
+  const brightness = transform(
     [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
-    [40, 110],
-  );
-  const blur = useTransform(
-    zm,
-    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
-    [4, 0],
-  );
-  const filter = useMotionTemplate`brightness(${brightness}%) blur(${blur}px)`;
+    [10, 110],
+  )(z);
+  const blur = transform(
+    [-RANGE_Z * 1.5 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [2, 0],
+  )(z);
+  const filter = `brightness(${brightness}%) blur(${blur}px)`;
 
   return (
     <motion.li
@@ -71,7 +48,7 @@ export const Box: FC<TProps> = ({
         scale: 1.4,
         filter: 'brightness(100%) blur(0px)',
         z: RANGE_Z,
-        zIndex: 1
+        zIndex: 1,
       }}
     >
       {!isLoaded && (

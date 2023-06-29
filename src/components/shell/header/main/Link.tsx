@@ -1,28 +1,28 @@
-import { BackgroundOverflow as Select } from "@components/select/BackgroundOverflow";
-import styled from "@emotion/styled";
-import { useResetScroll } from "@hooks/useResetScroll";
-import { useSelectHandlers } from "@hooks/useSelectHandlers";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { Link as _Link } from "react-router-dom";
-import { Title } from "./Title";
-import { useOffSound } from "@hooks/sounds/useOffSound";
+import { BackgroundOverflow as Select } from '@components/select/BackgroundOverflow';
+import styled from '@emotion/styled';
+import { useScrollReset } from '@hooks/scroll/useScrollReset';
+import { useSelectHandlers } from '@hooks/useSelectHandlers';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { Link as _Link } from 'react-router-dom';
+import { Title } from './Title';
+import { useOffSound } from '@hooks/sounds/useOffSound';
 
-const TITLE_ID = "TITLE_ID";
+const TITLE_ID = 'TITLE_ID';
 
 const Root = styled(motion.div)``;
 
 export const Link: FC = () => {
   const { handlers, isSelected } =
     useSelectHandlers(TITLE_ID);
-  const handleResetScroll = useResetScroll();
+  const handleResetScroll = useScrollReset();
   const handleClick = useOffSound();
 
   return (
     <Root onTap={handleResetScroll} {...handlers}>
       <_Link
-        className="flex flex-col relative cursor-pointer"
-        to="/"
+        className='flex flex-col relative cursor-pointer'
+        to='/'
         onClick={handleClick}
       >
         {isSelected && <Select />}

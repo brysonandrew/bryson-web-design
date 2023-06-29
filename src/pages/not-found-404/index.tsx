@@ -1,4 +1,4 @@
-import { Shell } from "@components/Shell";
+import { Shell } from "@components/shell";
 import { Shell as MainShell } from "@main/Shell";
 import { ID } from "@components/effects/displacement";
 import { Space } from "@components/spaces/Space";

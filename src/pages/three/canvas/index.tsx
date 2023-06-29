@@ -1,11 +1,7 @@
 import { Canvas as _Canvas } from '@react-three/fiber';
 import { PAGES, PAGES_COUNT } from '../config';
 import { Page } from './Page';
-import {
-  OrbitControls,
-  Scroll,
-  ScrollControls,
-} from '@react-three/drei';
+import { Scroll, ScrollControls } from '@react-three/drei';
 import { Clients } from '../clients';
 
 export const Canvas = () => {
@@ -17,7 +13,6 @@ export const Canvas = () => {
         position: [0, 0, 100],
       }}
     >
-      {/* <OrbitControls /> */}
       <ambientLight />
       <ScrollControls pages={PAGES_COUNT}>
         <Scroll>
