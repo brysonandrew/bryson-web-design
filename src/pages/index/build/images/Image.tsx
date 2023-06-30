@@ -31,7 +31,7 @@ export const Image: FC<TProps> = ({
         filter: resolveFilter({
           blur: 0,
           brightness: 100,
-          grayscale: 100,
+          grayscale: 0,
         }),
         z: 0,
         zIndex: 1,
