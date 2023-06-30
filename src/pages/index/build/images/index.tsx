@@ -39,7 +39,9 @@ export const Images: FC<TProps> = ({
   };
   return (
     <motion.div
+      className='relative'
       style={{
+        top: 40,
         height: HEIGHT,
         pointerEvents: isScroll ? 'none' : 'unset',
         filter,

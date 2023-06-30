@@ -2,13 +2,13 @@ import COLORS from "@windi/config-colors.json";
 import clsx from "clsx";
 
 export const LABEL_BASE_CLASS =
-  "relative w-full shadow-black-dark-01 bg-black-dark rounded-sm";
+  "relative w-full bg-black-dark rounded-sm";
 export const LABEL_CLASS = clsx(
-  "relative w-full p-2 shadow-black-01 rounded-sm",
+  "relative w-full p-2 shadow-teal-bright-02-sm rounded-sm",
   LABEL_BASE_CLASS,
 );
 export const TEXTAREA_INPUT_CLASS =
-  "text-white text-md py-2 w-full tracking-widest grow";
+  "text-white text-xl py-2 w-full tracking-widest grow";
 export const INPUT_CLASS = clsx(TEXTAREA_INPUT_CLASS, "px-4");
 
 export const textShadow = {

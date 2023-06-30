@@ -58,7 +58,7 @@ export const HOVER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlo
 export const HOVER_BLUE_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "baby-blue" });
 export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "teal" });
 export const HOVER_BLUE_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 0, color: "baby-blue" });
-
+export const HOVER_TEAL_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 20, color: "teal" });
 export const DURATION_DELAY_TRANSITION = {
   transition: {
     ...MOTION_CONFIG,
@@ -70,4 +70,20 @@ export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   ...DURATION_DELAY_TRANSITION
+};
+
+
+
+
+export const TEAL_GLOW = {
+  variants: {
+    hover: {
+      opacity: 1,
+      filter: resolveDropShadow(20, 'teal'),
+    },
+    animate: {
+      opacity: 0.8,
+      filter: resolveDropShadow(10, 'teal'),
+    },
+  },
 };

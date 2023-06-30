@@ -13,7 +13,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link as InternalLink } from 'react-router-dom';
 import { Text } from './Text';
-import { Mark } from './Mark';
+import { Mark, resolveLayoutId } from '../../Mark';
+import { resolveCompositeKey } from '@utils/keys';
+import { Fill } from '@components/metal/Fill';
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
@@ -26,8 +28,10 @@ export const Item: FC<TProps> = (props) => {
 
   return (
     <Root
-      className='flex relative'
-      {...HOVER_BLUE_OUTER_GLOW_PROPS_SM}
+      className='flex relative shadow-white-02-sm'
+      initial={false}
+      animate='animate'
+      whileHover='hover'
     >
       <InternalLink
         to={
@@ -40,8 +44,10 @@ export const Item: FC<TProps> = (props) => {
       >
         <Container
           layoutId={key}
-          classValue='absolute flex items-center justify-between text-lg w-full'
+          classValue='absolute flex items-center justify-between text-lg w-full pl-4'
         >
+          <Fill />
+          <Mark layoutId={resolveLayoutId(key)} />
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
@@ -62,10 +68,7 @@ export const Item: FC<TProps> = (props) => {
               </motion.div>
             )}
           </AnimatePresence>
-        <Mark colorKey='baby-blue' />
-
         </Container>
-
       </InternalLink>
     </Root>
   );

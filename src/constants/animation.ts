@@ -1,3 +1,5 @@
+import { resolveDropShadow } from "@pages/index/constants";
+
 export const PRESENCE_OPACITY_SHIFT = {
   initial: { opacity: 0, x: -20 },
   animate: { opacity: 1, x: 0 },
@@ -48,3 +50,4 @@ export const FOOTER_TRANSITION_EXIT = {
   ...MOTION_CONFIG,
   delay: 0,
 };
+

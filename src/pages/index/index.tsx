@@ -1,14 +1,14 @@
-import { Line } from '@components/Line';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Suspense } from 'react';
 import { Tech } from './tech';
 import { Build } from './build';
-import { Ending } from './ending';
 import { Space8 } from '@components/spaces/Space8';
 import { Space6 } from '@components/spaces/Space6';
-import { Space12 } from '@components/spaces/Space12';
 import { Space24 } from '@components/spaces/Space24';
+import { Main as Showcase } from '@pages/showcase/Main';
+import { Main as Contact } from '@pages/contact/Main';
+import { Space16 } from '@components/spaces/Space16';
 
 export const Index = () => (
   <Suspense fallback={null}>
@@ -16,14 +16,13 @@ export const Index = () => (
       <Shell>
         <Build />
         <Space8 />
-        <Line />
         <Space6 />
         <Tech />
+        <Space16 /> 
+        <Showcase />
         <Space6 />
-        <Line />
-        <Space24 />
-        <Ending />
-        <Space24 />
+        <Contact />
+        <Space8 />
       </Shell>
     </MainShell>
   </Suspense>

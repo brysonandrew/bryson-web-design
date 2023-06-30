@@ -7,7 +7,7 @@ import { resolveButtonValue } from './config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { Fill } from '@components/metal/Fill';
 import COLORS from '@windi/config-colors.json';
-import { HOVER_BLUE_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
+import { HOVER_TEAL_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -29,9 +29,9 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
   const title = resolveButtonValue(sendingState);
 
   return (
-    <Root
+    <Root 
       className={clsx(
-        'relative p-0.5 flex w-full shadow-white-02-sm',
+        'relative p-0.5 flex w-full shadow-white-01-sm',
         [
           isDisabled
             ? 'cursor-not-allowed'
@@ -39,7 +39,6 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...HOVER_BLUE_OUTER_GLOW_PROPS_SM}
     >
       <Fill />
       <Decoration
@@ -63,14 +62,14 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
               color: COLORS['black'],
               letterSpacing: '1px',
               transition:
-                HOVER_BLUE_OUTER_GLOW_PROPS_SM.variants.animate
+                HOVER_TEAL_OUTER_GLOW_PROPS_SM.variants.animate
                   .transition,
             },
             hover: {
               color: COLORS['teal'],
               letterSpacing: '4px',
               transition:
-                HOVER_BLUE_OUTER_GLOW_PROPS_SM.variants.hover
+                HOVER_TEAL_OUTER_GLOW_PROPS_SM.variants.hover
                   .transition,
             },
           }}

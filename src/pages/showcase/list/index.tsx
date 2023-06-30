@@ -1,16 +1,12 @@
+import { Space2 } from '@components/spaces/Space2';
+import { TitleOffset } from '@components/spaces/TitleOffset';
+import { Title } from '@components/text/Title';
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import type { TItem } from '@t/showcase';
 import { motion } from 'framer-motion';
-import { Item } from './item';
 import type { FC } from 'react';
 import { Fragment } from 'react';
-import { Space } from '@components/spaces/Space';
-import type { TItem } from '@t/showcase';
-import type COLORS from '@windi/config-colors.json';
-import { Mark } from './item/Mark';
-import { Title } from '@components/text/Title';
-import { Space2 } from '@components/spaces/Space2';
-import { HOVER_GLOW_PROPS } from '@pages/index/constants';
+import { Item } from './item';
 
 const Root = styled(motion.div)``;
 const _List = styled(motion.ul)``;
@@ -27,6 +23,7 @@ export const List: FC<TProps> = ({
 }) => (
   <Root>
     <Title>{header}</Title>
+    <TitleOffset />
     <_List>
       {items.map((item: TItem, index: number) => (
         <Fragment key={item.title}>

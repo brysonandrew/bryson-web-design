@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Gradient } from './Gradient';
 import { TextName } from './TextName';
 import {
   LABEL_CLASS,
   TEXTAREA_INPUT_CLASS,
 } from './config';
 import { Fill } from '@components/metal/Fill';
+import { Input as Select } from '@components/select/Input';
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)`
@@ -25,23 +25,22 @@ export const Textarea: FC<TProps> = ({
   isFocused,
   ...props
 }) => (
-  <Root className={clsx(LABEL_CLASS)}>
+  <Root
+    className={clsx(LABEL_CLASS)}
+    animate='animate'
+    whileHover='hover'
+  >
     <Fill />
+    {isFocused && <Select key={title} />}
     <div
       className={clsx(
-        'pt-1.5',
-        'relative flex items-start',
-        'bg-black-dark',
+        'relative flex items-start bg-black-dark',
       )}
     >
-      <div className={clsx([isFocused && 'pt-1.5'])}>
-        <TextName
-          title={title}
-          isFocused={isFocused}
-          offset={0.2}
-        />
+      <div className='pt-0.25'>
+        <TextName title={title} isFocused={isFocused} />
       </div>
-      <div className={clsx('flex w-full pt-0')}>
+      <div className={clsx('flex w-full')}>
         <Input
           className={clsx(TEXTAREA_INPUT_CLASS)}
           autoComplete='off'
@@ -49,6 +48,5 @@ export const Textarea: FC<TProps> = ({
         />
       </div>
     </div>
-    <Gradient />
   </Root>
 );

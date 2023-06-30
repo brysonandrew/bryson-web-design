@@ -9,6 +9,8 @@ import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 import { Decoration } from './header/Decoration';
+import { WIDTH_CLASS } from '@constants/styles';
+import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;

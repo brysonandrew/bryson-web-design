@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useStyles } from "@css/useStyles";
 import { motion } from "framer-motion";
 import { Contact } from "./Contact";
 import { Title } from "./Title";
@@ -10,7 +9,6 @@ const Root = styled(motion.div)``;
 const _Card = styled(motion.div)``;
 
 export const Card = () => {
-  useStyles();
   return (
     <Invert>
       {(filter) => (

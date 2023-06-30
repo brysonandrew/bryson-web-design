@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import { FadeIn } from '@components/FadeIn';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
-import { useStyles } from '@css/useStyles';
 import { Variables } from '@css/Variables';
 import { Background } from '@components/background';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -16,7 +15,6 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  useStyles();
   useScrollControl();
   useScrollToTop();
   const isFading = useFading();
