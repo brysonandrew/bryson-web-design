@@ -1,24 +1,20 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { useState, type FC } from 'react';
-import { useDepthStyle } from './hooks/useDepthStyle';
+import { type FC } from 'react';
 import { resolveFilter } from './hooks/resolveFilter';
-
+import { useDepthStyle } from './hooks/useDepthStyle';
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
   count: number;
+  isLoaded: boolean;
 };
 export const Image: FC<TProps> = ({
   index,
   count,
+  isLoaded,
   ...props
 }) => {
-  const [isLoaded, setLoaded] = useState(false);
-  const handleLoad = () => {
-    setLoaded(true);
-  };
-
   const depthStyle = useDepthStyle({ index, count });
 
   return (
@@ -52,7 +48,7 @@ export const Image: FC<TProps> = ({
         />
       )}
       <motion.div className='absolute top-0 left-0 w-full'>
-        <motion.img onLoad={handleLoad} {...props} />
+        <motion.img {...props} />
       </motion.div>
     </motion.li>
   );

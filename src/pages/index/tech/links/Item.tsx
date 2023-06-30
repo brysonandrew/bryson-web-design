@@ -15,8 +15,13 @@ const Anchor = styled.a``;
 
 export const Item: FC<TItem> = ({ Icon, title, href }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
+
   return (
-    <Root className='inline-flex relative ' {...handlers}>
+    <Root
+      className='inline-flex relative'
+      style={{ z: 1000 }}
+      {...handlers}
+    >
       {isSelected && <Select />}
       <Anchor
         className={clsx(
@@ -26,9 +31,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
         href={href}
         target='_blank'
       >
-        <Fill
-          inset={1}
-        />
+        <Fill inset={1} />
         <div className='relative flex items-center z-10'>
           <Icon classValue={XXXXL} />
           <div className='p-2' />

@@ -8,7 +8,6 @@ export const useScrollToTop = () => {
   const { dispatch } = useContext();
 
   useEffect(() => {
-    console.log("SCROLL TOP");
     window.scrollTo(0, 0);
     dispatch({ type: 'scroll', value: false });
   }, [pathname]);

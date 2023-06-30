@@ -56,7 +56,6 @@ export function useLocalStorage<T>(
   //   const configStr =
   //     window.localStorage.getItem(BACKUP_KEY);
   //   const config = JSON.parse(configStr ?? "{}");
-  //   console.log(config);
   //   const items = [...config.items, { key, date, value }];
   //   const next = {
   //     ...config,
@@ -73,7 +72,6 @@ export function useLocalStorage<T>(
   //   const configStr =
   //     window.localStorage.getItem(BACKUP_KEY);
   //   const config = JSON.parse(configStr ?? "{}");
-  //   console.log(config);
   //   if (!config) return;
   //   const { items, activeIndex } = config;
 
