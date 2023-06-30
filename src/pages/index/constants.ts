@@ -18,31 +18,46 @@ export const WHITE_FILTER = {
 };
 
 export const resolveWhite = (opacity: number) => `rgba(255,255,255, ${opacity})`;
-export const resolveDropShadow = (spread: number) => `drop-shadow(0px 0px ${spread}px ${resolveWhite(0.8)})`;
-export const resolveTextShadow = (spread: number) => `0px 0px ${spread}px ${resolveWhite(0.5)}, 0px 0px ${spread}px ${resolveWhite(0.8)}`;
+export const resolveBabyBlue = (opacity: number) => `rgba(153, 204, 255, ${opacity})`;
+export const resolveTeal = (opacity: number) => `rgba(45, 212, 191, ${opacity})`;
+
+export const COLOR_RECORD = {
+  "baby-blue": resolveBabyBlue,
+  "white": resolveWhite,
+  "teal": resolveTeal
+};
+export type TColor = keyof typeof COLOR_RECORD;
+export const resolveDropShadow = (spread: number, color: TColor = "white") => `drop-shadow(0px 0px ${spread}px ${COLOR_RECORD[color](0.8)})`;
+export const resolveTextShadow = (spread: number, color: TColor = "white") => `0px 0px ${spread}px ${resolveWhite(0.5)}, 0px 0px ${spread}px ${COLOR_RECORD[color](0.8)}`;
 
 type TConfig = {
   outerGlow: number;
   textGlow: number;
+  color?: TColor;
 };
-export const resolveHoverGlowProps = ({ outerGlow, textGlow }: TConfig) => ({
+export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) => ({
   initial: false,
-  animate: {
-    filter: resolveDropShadow(0),
-    textShadow: resolveTextShadow(0),
-    transition: { ease: "easeIn", duration: 0.28, delay: 0.08 },
-    // color: COLORS["teal-bright"]
-  },
-  whileHover: {
-    filter: resolveDropShadow(outerGlow),
-    textShadow: resolveTextShadow(textGlow),
-    // color: COLORS["baby-blue"],
-    transition: { ease: "linear", duration: 0.2, delay: 0 },
-  },
+  animate: "animate",
+  whileHover: "hover",
+  variants: {
+    animate: {
+      filter: resolveDropShadow(0),
+      textShadow: resolveTextShadow(0),
+      transition: { ease: "easeIn", duration: 0.28, delay: 0.08 },
+    },
+    hover: {
+      filter: resolveDropShadow(outerGlow, color),
+      textShadow: resolveTextShadow(textGlow, color),
+      transition: { ease: "linear", duration: 0.2, delay: 0 },
+    },
+  }
 });
 
 export const HOVER_GLOW_PROPS = resolveHoverGlowProps({ outerGlow: 8, textGlow: 10 });
 export const HOVER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 1 });
+export const HOVER_BLUE_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "baby-blue" });
+export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "teal" });
+export const HOVER_BLUE_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 0, color: "baby-blue" });
 
 export const DURATION_DELAY_TRANSITION = {
   transition: {

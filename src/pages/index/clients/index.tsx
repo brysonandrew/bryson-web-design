@@ -3,7 +3,7 @@ import { MAX_SCROLL } from '@components/fake-3d/hooks/config';
 import { List } from './list';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 import { STORY } from '@constants/copy';
-import { Title } from '../Title';
+import { Title } from '../../../components/text/Title';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 

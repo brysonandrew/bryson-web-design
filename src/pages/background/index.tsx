@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 import { motion } from "framer-motion";
 import { Pattern } from "./Pattern";
 import { Filters } from "@components/Filters";

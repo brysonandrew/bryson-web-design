@@ -1,4 +1,4 @@
-import { Title } from "@components/text/Title";
+import { Title } from "@components/text/_Title";
 import styled from "@emotion/styled";
 import { Defs } from "./defs";
 import { FILTER_ID } from "./constants";

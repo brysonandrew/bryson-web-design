@@ -1,4 +1,4 @@
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 import type { ChangeEvent, FC} from "react";
 import { useState } from "react";
 

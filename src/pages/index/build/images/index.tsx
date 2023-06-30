@@ -3,8 +3,8 @@ import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
 import { useState, type FC, useEffect } from 'react';
-import { Image } from './image';
-import { useImages } from './image/hooks/useImages';
+import { Image } from './Image';
+import { useImages } from './hooks/useImages';
 import { TChildrenProps } from '../../../../components/fake-3d/Motion';
 import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 

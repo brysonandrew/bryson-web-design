@@ -10,7 +10,7 @@ import type { TChildrenProps } from './Motion';
 import { Review } from './Review';
 import { REVIEWS } from './constants';
 import { Item } from './Item';
-import { WIDTH_CLASS } from '@styles/styles';
+import { WIDTH_CLASS } from '@constants/styles';
 
 const Root = styled(motion.div)``;
 

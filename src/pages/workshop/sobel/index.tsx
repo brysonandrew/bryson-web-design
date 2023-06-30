@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Sobel as SobelFilter } from "@components/effects/sobel";
-import { Title } from "@components/text/Title";
+import { Title } from "@components/text/_Title";
 const Root = styled.div``;
 
 export const Sobel = () => (

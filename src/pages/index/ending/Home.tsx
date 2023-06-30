@@ -21,7 +21,7 @@ export const Home: FC<TProps> = () => {
   const handleTap = useHome();
 
   return (
-    <Root style={{ x: 'calc(-100% + 10px)' }} {...handlers}>
+    <Root style={{ x: '-100%' }} {...handlers}>
       <Button onTap={handleTap} {...INTERACTIVE_PROPS}>
         {isSelected ? <Select /> : null}
         <Fill inset={2} />

@@ -3,7 +3,7 @@ import clsx, { ClassValue } from 'clsx';
 export const Cross = ({
   classValue,
 }: {
-  classValue: ClassValue;
+  classValue?: ClassValue;
 }) => (
   <svg
     className={clsx(classValue)}

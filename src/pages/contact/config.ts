@@ -7,8 +7,9 @@ export const LABEL_CLASS = clsx(
   "relative w-full p-2 shadow-black-01 rounded-sm",
   LABEL_BASE_CLASS,
 );
-export const INPUT_CLASS =
-  "text-white text-md px-4 py-2 w-full tracking-widest";
+export const TEXTAREA_INPUT_CLASS =
+  "text-white text-md py-2 w-full tracking-widest grow";
+export const INPUT_CLASS = clsx(TEXTAREA_INPUT_CLASS, "px-4");
 
 export const textShadow = {
   on: `0 0 10px ${COLORS["red-bright-04"]}, 0 0 20px ${COLORS["red-bright-02"]},
@@ -23,7 +24,7 @@ export type TSendingState =
   | "idle"
   | "sending"
   | "sent"
-  | "error"; 
+  | "error";
 
 export const resolveButtonValue = (
   sendingState: TSendingState,

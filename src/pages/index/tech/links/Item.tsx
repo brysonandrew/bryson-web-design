@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { Text } from '@components/text/Text';
 import styled from '@emotion/styled';
 import { useSelectHandlers } from '@hooks/useSelectHandlers';
-import { XXXXL } from '@styles/styles';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '../../../../constants/tech';
@@ -34,7 +33,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
       >
         <Fill inset={1} />
         <div className='relative flex items-center z-10'>
-          <Icon classValue={XXXXL} />
+          <Icon classValue='h-10 w-10' />
           <div className='p-2' />
           <Text>{title}</Text>
         </div>

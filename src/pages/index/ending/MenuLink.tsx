@@ -28,7 +28,7 @@ export const MenuLink: FC<TProps> = ({
   const { handlers, isSelected } = useSelectHandlers(to);
 
   return (
-    <Root {...handlers} {...props}>
+    <Root {...handlers} {...props} style={{x: "12px"}}>
       <Link to={to} {...INTERACTIVE_PROPS}>
         {isSelected ? <Select /> : null}
         <Fill inset={2} />

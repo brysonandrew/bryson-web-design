@@ -1,29 +1,34 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   metalRadialDarkCss,
   metalRadialDarkestCss,
-} from "@styles/metal";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { Fragment } from "react";
-import { resolveTo } from "../resolveTo";
+} from '@css/metal';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { useDrag } from '../hooks/useDrag';
+import { resolveTo } from '../resolveTo';
 import {
   FOOTER_SIZE,
   PADDING,
-} from "../sections/constants";
-import type { TBaseProps } from "../types";
-import { useDrag } from "../useDrag";
-import { Button } from "./Button";
+} from '../sections/constants';
+import type { TBaseProps } from '../types';
+import { Button } from './Button';
+import { DragIcon } from './DragIcon';
 
 export const Root = styled(motion.footer)``;
+
 const Center = styled(motion.div)``;
-export const Dragger = styled(motion.ul)``;
-export const MetalBackground = styled(motion.li)`
+
+export const Dragger = styled(motion.div)``;
+
+export const MetalBackground = styled(motion.div)`
   ${metalRadialDarkestCss}
 `;
-export const Metal = styled(motion.li)`
+
+export const Metal = styled(motion.div)`
   ${metalRadialDarkCss}
 `;
+
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
   const { width, items, motionX, itemWidth, base } = props;
@@ -31,18 +36,18 @@ export const Footer: FC<TProps> = (props) => {
 
   return (
     <Root
-      className="flex justify-center fixed bottom-0 w-full bg-black-9 backdrop-blur-sm"
+      className='flex justify-center fixed bottom-0 w-full bg-black-9 backdrop-blur-sm'
       style={{ height: FOOTER_SIZE }}
     >
-      <MetalBackground className="absolute inset-0 bg-teal-01" />
+      <MetalBackground className='absolute inset-0 bg-teal-01' />
       <Center
-        className="relative h-full"
+        className='relative h-full'
         style={{ width: itemWidth, left: -PADDING }}
       >
         <Dragger
-          className="relative flex items-center h-full rounded-lg"
-          whileHover={{ cursor: "grab" }}
-          whileTap={{ cursor: "grabbing" }}
+          className='relative flex items-center h-full'
+          whileHover={{ cursor: 'grab' }}
+          whileTap={{ cursor: 'grabbing' }}
           initial={false}
           style={{
             x: motionX,
@@ -57,7 +62,9 @@ export const Footer: FC<TProps> = (props) => {
           }}
           {...dragHandlers}
         >
-          <Metal className="absolute inset-0 bg-teal-01" />
+          <Metal className='absolute inset-0' />
+          <DragIcon />
+          <div style={{ width: PADDING }} />
           {items
             .sort((a, b) => {
               const an = +a.img;
@@ -72,16 +79,17 @@ export const Footer: FC<TProps> = (props) => {
               return 0;
             })
             .map(({ key, name, img }) => (
-              <Fragment key={key}>
-                <Button
-                  name={img}
-                  to={resolveTo({ img, name, base })}
-                  itemWidth={itemWidth}
-                />
-              </Fragment>
+              <Button
+                key={key}
+                name={img}
+                to={resolveTo({ img, name, base })}
+                itemWidth={itemWidth}
+              />
             ))}
+          <div style={{ width: PADDING }} />
+          <DragIcon />
         </Dragger>
-        <div className="py-2" />
+        <div className='py-2' />
       </Center>
     </Root>
   );

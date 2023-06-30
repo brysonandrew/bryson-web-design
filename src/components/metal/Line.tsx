@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { metalRadialDarkCss } from "@styles/metal";
+import { metalRadialDarkCss } from "@css/metal";
 import clsx from "clsx";
 import type { FC } from "react";
 

@@ -5,9 +5,9 @@ import type { HTMLMotionProps } from "framer-motion";
 import { motion } from "framer-motion";
 import type { FC } from "react";
 
-const Root = styled(motion.h2)``;
+const Root = styled(motion.h4)``;
 
-type TProps = HTMLMotionProps<"h2"> & {
+type TProps = HTMLMotionProps<"h4"> & {
   classValue?: ClassValue;
 };
 export const Sub: FC<TProps> = ({

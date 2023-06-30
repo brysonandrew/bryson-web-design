@@ -12,7 +12,7 @@ type TProps = {
 };
 export const Name: FC<TProps> = ({ children }) => (
   <Root
-    className="whitespace-nowrap"
+    className="text-xl whitespace-nowrap"
     variants={{
       idle: {
         textShadow: textShadow.off,

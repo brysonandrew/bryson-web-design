@@ -53,11 +53,12 @@ export const List: FC<TProps> = ({
     >
       {isLong && (
         <Button
-          className='absolute bottom-full right-2 text-white p-4 mb-6'
+          className='absolute bottom-full right-2 text-white p-2 mb-6'
           initial={false}
           whileHover={{ opacity: 0.7 }}
           onTap={handleCloseLong}
         >
+          <Fill/>
           <Cross classValue='w-4 h-4 stroke-baby-blue' />
         </Button>
       )}

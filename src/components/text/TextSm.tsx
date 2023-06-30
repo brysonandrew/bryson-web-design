@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 
 export const TEXT_SM_CLASS =
-  'text-left text-teal-bright whitespace-normal text-lg md:text-2xl truncate';
+  'text-left text-teal-bright whitespace-normal text-2xl truncate';
 
 const Root = styled(motion.h6)``;
 
@@ -20,10 +20,7 @@ export const TextSm: FC<TProps> = ({
   ...props
 }) => (
   <Root
-    className={clsx(
-      TEXT_SM_CLASS,
-      classValue ?? 'px-1 md:px-4',
-    )}
+    className={clsx(TEXT_SM_CLASS, classValue)}
     style={style}
     {...props}
   >

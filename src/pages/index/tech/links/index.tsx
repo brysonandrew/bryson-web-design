@@ -1,7 +1,6 @@
 import { Plus } from '@components/icons/Plus';
 import { TECH } from '@constants/tech';
 import styled from '@emotion/styled';
-import { XL } from '@styles/styles';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
@@ -26,7 +25,7 @@ export const Links: FC<TProps> = ({
       <Item {...TECH.REACT} />
       <div className='p-2' />
       <div className='flex items-center justify-center w-full xl:pt-1'>
-        <Plus classValue={clsx(XL)} />
+        <Plus classValue={clsx('h-7 w-7')} />
       </div>
       <div className='p-2' />
       <Item {...TECH.TYPESCRIPT} />

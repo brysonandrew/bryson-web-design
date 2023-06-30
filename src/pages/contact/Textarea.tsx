@@ -1,19 +1,22 @@
-import styled from "@emotion/styled";
-import clsx from "clsx";
-import type { HTMLMotionProps } from "framer-motion";
-import { motion } from "framer-motion";
-import type { FC } from "react";
-import { Gradient } from "./Gradient";
-import { TextName } from "./TextName";
-import { LABEL_CLASS } from "./config";
-import { Fill } from "@components/metal/Fill";
+import styled from '@emotion/styled';
+import clsx from 'clsx';
+import type { HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+import { Gradient } from './Gradient';
+import { TextName } from './TextName';
+import {
+  LABEL_CLASS,
+  TEXTAREA_INPUT_CLASS,
+} from './config';
+import { Fill } from '@components/metal/Fill';
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.textarea)`
   background-color: transparent;
 `;
 
-type TProps = HTMLMotionProps<"textarea"> & {
+type TProps = HTMLMotionProps<'textarea'> & {
   title: string;
   isFocused: boolean;
 };
@@ -26,19 +29,25 @@ export const Textarea: FC<TProps> = ({
     <Fill />
     <div
       className={clsx(
-        "pt-1.5",
-        "relative flex items-start",
-        "bg-black-dark",
+        'pt-1.5',
+        'relative flex items-start',
+        'bg-black-dark',
       )}
     >
-      <div className={clsx([isFocused && "pt-1"])}>
+      <div className={clsx([isFocused && 'pt-1.5'])}>
         <TextName
           title={title}
           isFocused={isFocused}
           offset={0.2}
         />
       </div>
-      <Input {...props} autoComplete="off" />
+      <div className={clsx('flex w-full pt-0')}>
+        <Input
+          className={clsx(TEXTAREA_INPUT_CLASS)}
+          autoComplete='off'
+          {...props}
+        />
+      </div>
     </div>
     <Gradient />
   </Root>

@@ -20,8 +20,8 @@ export const Border: FC<TProps> = ({
     layoutId={SELECT_LAYOUT_ID}
     style={{ filter: resolveUrlId(POOL_ID) }}
     className={clsx(
-      'absolute -inset-1 mt-1.5 ml-1 pointer-events-none rounded-sm cursor-default',
-      classValue ?? 'bg-baby-blue',
+      'absolute mt-1.5 ml-1 pointer-events-none rounded-sm cursor-default',
+      classValue ?? 'bg-baby-blue -inset-1',
     )}
     {...props}
   />

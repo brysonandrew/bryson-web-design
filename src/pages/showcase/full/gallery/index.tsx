@@ -1,15 +1,15 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 import {
   AnimatePresence,
   useMotionValue,
-} from "framer-motion";
-import styled from "@emotion/styled";
-import { useWindowSize } from "@hooks/useWindowSize";
-import { useMediaFromKey } from "@pages/showcase/useMediaFromKey";
-import { Footer } from "./footer";
-import { Sections } from "./sections";
-import { useKeys } from "./useKeys";
-import type { TBase, TBaseProps } from "./types";
+} from 'framer-motion';
+import styled from '@emotion/styled';
+import { useWindowSize } from '@hooks/useWindowSize';
+import { useMediaFromKey } from '@pages/showcase/useMediaFromKey';
+import { Footer } from './footer';
+import { Sections } from './sections';
+import { useKeys } from './hooks/useKeys';
+import type { TBase, TBaseProps } from './types';
 
 const Root = styled.div``;
 
@@ -19,7 +19,7 @@ type TProps = {
 };
 export const Gallery: FC<TProps> = ({
   selectedPath,
-  base = "showcase",
+  base = 'showcase',
 }) => {
   const mediaItems = useMediaFromKey(selectedPath);
   const motionX = useMotionValue(0);
@@ -45,7 +45,7 @@ export const Gallery: FC<TProps> = ({
   };
 
   return (
-    <Root className="relative h-screen w-full pt-6 overflow-hidden">
+    <Root className='relative h-screen w-full pt-6 overflow-hidden'>
       <AnimatePresence>
         {!windowSize.isResizing && <Sections {...props} />}
       </AnimatePresence>
