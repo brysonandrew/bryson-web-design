@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { metalRhondaCss } from "@styles/metal";
+import { metalRhondaCss } from "@css/metal";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import type { FC } from "react";

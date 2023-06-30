@@ -14,7 +14,9 @@ export const useHome = (delay?: number) => {
     }
   };
 
-  const reset = () => window.scrollTo(0, 0);
+  const reset = () => {
+    window.scrollTo(0, 0);
+  };
 
   const handler = () => {
     if (typeof delay === "number") {

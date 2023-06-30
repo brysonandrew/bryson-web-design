@@ -3,7 +3,7 @@ import {
   Glitch as GlitchFilter,
   ID,
 } from "@components/effects/glitch";
-import { Title } from "@components/text/Title";
+import { Title } from "@components/text/_Title";
 import { resolveUrlId } from "@utils/resolveUrlId";
 
 const Root = styled.div``;

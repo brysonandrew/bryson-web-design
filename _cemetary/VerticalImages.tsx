@@ -1,6 +1,6 @@
 import { useEffect, type FC } from "react";
 import type { TChildrenProps } from "../src/pages/index/build/Motion";
-import { useImages } from "../src/pages/index/build/images/image/hooks/useImages";
+import { useImages } from "../src/pages/index/build/images/hooks/useImages";
 import styled from "@emotion/styled";
 import {
   animate,

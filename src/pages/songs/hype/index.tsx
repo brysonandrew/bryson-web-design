@@ -5,7 +5,7 @@ import { Item } from "../ui/Item";
 import { TRACKS } from "./constants";
 import type { TTrackHypeKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 import { useMothContext } from "@moth/state/Context";
 import { useKey } from "@hooks/useKey";
 

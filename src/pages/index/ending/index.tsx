@@ -19,7 +19,7 @@ export const Ending: FC<TProps> = () => (
     >
       <div
         className="absolute"
-        style={{ width: 10, height: 600 }}
+        style={{ width: 10, height: 720 }}
       >
         <Fill />
       </div>

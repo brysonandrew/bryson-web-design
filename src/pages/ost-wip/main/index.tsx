@@ -5,7 +5,7 @@ import { Item } from "./Item";
 import { TRACKS } from "./constants";
 import type { TTrackKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;

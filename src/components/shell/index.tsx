@@ -21,8 +21,8 @@ export const Shell: FC<TProps> = ({ children }) => {
   const isShown = !isInit && !isScroll;
 
   return (
-    <Root className='relative text-black-dark-04 px-4 overflow-hidden z-10'>
-      <AnimatePresence mode='sync'>
+    <Root className='relative text-black-dark-04 overflow-hidden z-10'>
+      <AnimatePresence mode='wait'>
         {isShown ? (
           <Header key='HEADER' />
         ) : (
@@ -35,7 +35,6 @@ export const Shell: FC<TProps> = ({ children }) => {
           style={{
             minHeight: '100vh',
           }}
-          {...PRESENCE_OPACITY_SHIFT}
         >
           <HeaderOffset />
           {children}

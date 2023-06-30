@@ -1,5 +1,5 @@
 import { STORY } from '@constants/copy';
-import { Title } from '../Title';
+import { Title } from '../../../components/text/Title';
 import { Links } from './links';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 import { Fake3D } from '@components/fake-3d';
@@ -22,7 +22,7 @@ export const Tech = () => (
           startScroll,
           startScroll + MAX_SCROLL,
         ],
-        output: [-60, 60],
+        output: [-20, 60],
       }}
       visibility={{
         input: ({ startScroll, windowHeight }) => [

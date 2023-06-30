@@ -12,13 +12,12 @@ export const Full: FC<TProps> = ({ selectedPath }) => {
   useFreezeScrollBar();
   return (
     <Container
-      id={selectedPath}
-      classValue="fixed top-0 left-0 screen-width screen-height z-10 text-teal-bright bg-black-08"
-      style={{ zIndex: 99, backdropFilter: "blur(10px)" }}
+      layoutId={selectedPath}
+      classValue="fixed inset-0 screen-width screen-height text-teal-bright"
     >
       <Title>{selectedPath}</Title>
       <Close />
       <Gallery selectedPath={selectedPath} />
     </Container>
   );
-};
+}; 

@@ -1,17 +1,22 @@
-import type { FC } from "react";
-import { motion } from "framer-motion";
-import styled from "@emotion/styled";
-import { Link, useSearchParams } from "react-router-dom";
-import clsx from "clsx";
-import { IMG_KEY } from "@pages/showcase/config";
-import { useMoveSound } from "@hooks/sounds/useMoveSound";
+import type { FC } from 'react';
+import { FillDarkest } from '@components/metal/FillDarkest';
+import styled from '@emotion/styled';
+import { useMoveSound } from '@hooks/sounds/useMoveSound';
+import {
+  resolveDropShadow,
+  resolveTextShadow,
+} from '@pages/index/constants';
+import { IMG_KEY } from '@pages/showcase/config';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import {
+  Link as _Link,
+  useSearchParams,
+} from 'react-router-dom';
 
-const TEXT_GLOW =
-  "1px 1px 16px white, 0 0 8em white, 0 0 1em white";
-const NO_TEXT_GLOW =
-  "1px 1px 0px white, 0 0 0em white, 0 0 0em white";
+export const Root = styled(motion.div)``;
+export const Link = styled(motion(_Link))``;
 
-export const Root = styled(motion.li)``;
 export const Background = styled(motion.div)``;
 
 export type TProps = {
@@ -27,56 +32,54 @@ export const Button: FC<TProps> = ({
   const [searchParams] = useSearchParams();
   const imgParam = searchParams.get(IMG_KEY);
   const isActive = imgParam === to.split(`${IMG_KEY}=`)[1];
-  const animation = isActive ? "active" : "idle";
+  const animation = isActive ? 'active' : 'idle';
   const handleMoveSound = useMoveSound();
   const handleClick = () => {
     handleMoveSound();
   };
   return (
     <Root
-      initial="idle"
+      initial='idle'
       animate={animation}
       style={{
         width: itemWidth,
       }}
-      whileHover={isActive ? "active" : "hover"}
-      className="relative shadow-teal-bright-sm m-0.25"
+      whileHover={isActive ? 'active' : 'hover'}
+      className='relative m-0.25'
       variants={{
-        active: { cursor: "default", zIndex: 99 },
+        active: { cursor: 'default', zIndex: 99 },
       }}
     >
       <Link
         to={to}
         onClick={handleClick}
         className={clsx(
-          "relative flex items-center pl-2 pt-1 pb-1 h-full bg-black m-0.5 z-10",
+          'relative flex items-center pl-2 pt-1 pb-1 h-full m-0.5 z-10 shadow-baby-blue-01-sm',
         )}
-        style={{ cursor: isActive ? "default" : "pointer" }}
+        style={{ cursor: isActive ? 'default' : 'pointer' }}
+        variants={{
+          idle: {
+            opacity: 0.5,
+            textShadow: resolveTextShadow(0),
+            filter: resolveDropShadow(0),
+          },
+          active: {
+            opacity: 1,
+            textShadow: resolveTextShadow(2),
+            filter: resolveDropShadow(1),
+          },
+          hover: {
+            opacity: 0.7,
+            textShadow: resolveTextShadow(8),
+            filter: resolveDropShadow(8),
+          },
+        }}
       >
         {isActive && (
-          <motion.div
-            layoutId="SELECTED_GALLERY_BUTTON"
-            className="absolute inset-0 bg-red-bright-02"
-          />
+          <FillDarkest layoutId='GALLERY_BUTTON_FILL' />
         )}
-        <motion.span
-          className="uppercase text-teal-bright text-xs"
-          variants={{
-            idle: {
-              opacity: 0.5,
-              textShadow: NO_TEXT_GLOW,
-            },
-            active: {
-              opacity: 1,
-              textShadow: TEXT_GLOW,
-            },
-            hover: {
-              opacity: 0.7,
-              textShadow: NO_TEXT_GLOW,
-            },
-          }}
-        >
-          {name.replace(/x/, "")}
+        <motion.span className='relative uppercase text-teal-bright text-xs'>
+          {name.replace(/x/, '')}
         </motion.span>
       </Link>
     </Root>

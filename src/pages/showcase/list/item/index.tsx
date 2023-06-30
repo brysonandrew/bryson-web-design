@@ -1,36 +1,34 @@
-import type { FC } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Background as Select } from '@components/select/Background';
+import { MOTION_CONFIG } from '@constants/animation';
 import styled from '@emotion/styled';
-import { useSelectHandlers } from '@hooks/useSelectHandlers';
-import { Container } from '@pages/showcase/full/Container';
+import { useOnSound } from '@hooks/sounds/useOnSound';
+import { HOVER_BLUE_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
 import {
   IMG_KEY,
   SELECTED_KEY,
 } from '@pages/showcase/config';
-import { Link as InternalLink } from 'react-router-dom';
-import { titleToKebab } from '@utils/format';
-import { useOnSound } from '@hooks/sounds/useOnSound';
-import { MOTION_CONFIG } from '@constants/animation';
-import { Text } from './Text';
+import { Container } from '@pages/showcase/full/Container';
 import type { TItem } from '@t/showcase';
-import clsx from 'clsx';
-import type { TChildren } from '@t/index';
-import { Fill } from '@components/metal/Fill';
+import { titleToKebab } from '@utils/format';
+import { AnimatePresence, motion } from 'framer-motion';
+import type { FC } from 'react';
+import { Link as InternalLink } from 'react-router-dom';
+import { Text } from './Text';
+import { Mark } from './Mark';
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
   selectedPath: string | null;
-  children: TChildren;
 };
 export const Item: FC<TProps> = (props) => {
-  const { title, selectedPath, altTo, children } = props;
-  const { isSelected, handlers } = useSelectHandlers(title);
+  const { title, selectedPath, altTo } = props;
   const key = titleToKebab(title);
   const handleOnSound = useOnSound();
 
   return (
-    <Root className='flex relative' {...handlers}>
+    <Root
+      className='flex relative'
+      {...HOVER_BLUE_OUTER_GLOW_PROPS_SM}
+    >
       <InternalLink
         to={
           altTo
@@ -38,17 +36,17 @@ export const Item: FC<TProps> = (props) => {
             : `/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`
         }
         onClick={handleOnSound}
-        className='relative rounded-md w-full h-14 lg:h-10'
+        className='relative w-full bg-black-dark h-24 lg:h-16'
       >
         <Container
-          id={key}
-          classValue='flex items-center justify-between absolute inset-0 text-lg w-full'
+          layoutId={key}
+          classValue='absolute flex items-center justify-between text-lg w-full'
         >
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
-                className='relative flex flex-col w-full lg:flex-row pl-3 pr-2 py-1'
                 key='SELECTED_ITEM_TEXT_KEY'
+                className='relative flex flex-col justify-between w-full md:flex-row md:items-center px-3 py-1'
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
@@ -64,17 +62,10 @@ export const Item: FC<TProps> = (props) => {
               </motion.div>
             )}
           </AnimatePresence>
+        <Mark colorKey='baby-blue' />
+
         </Container>
-        <Fill />
-        {isSelected && (
-          <div
-            className={clsx(
-              'absolute inset-0 bg-white-01',
-              'rounded-sm',
-            )}
-          />
-        )}
-        {children}
+
       </InternalLink>
     </Root>
   );

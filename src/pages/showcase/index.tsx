@@ -8,10 +8,10 @@ import { GAME_ITEMS } from '@constants/games';
 import { MUSIC_ITEMS } from '@constants/music';
 import { Shell as MainShell } from '@main/Shell';
 import { LIBRARIES_ITEMS } from '@constants/libraries';
-import { useStyles } from '@styles/useStyles';
 import { Space4 } from '@components/spaces/Space4';
 import { TextXl } from '@components/text/TextXl';
-import { WIDTH_CLASS } from '@styles/styles';
+import { WIDTH_CLASS } from '@constants/styles';
+import { useStyles } from '@css/useStyles';
 
 export const Showcase = () => {
   useStyles();
@@ -19,38 +19,12 @@ export const Showcase = () => {
   const isSelectedItem = selectedPath !== null;
 
   return (
-    <MainShell> 
-      <Shell key="X">
+    <MainShell>
+      <Shell>
         <div className={WIDTH_CLASS}>
-          <TextXl classValue='text-center'>
-            My most recent work
-          </TextXl>
-          <Space4 />
           <List
-            header='Apps'
-            color='red'
+            header='Latest projects'
             items={APP_ITEMS}
-            selectedPath={selectedPath}
-          />
-          <Space4 />
-          <List
-            header='Games'
-            color='green'
-            items={GAME_ITEMS}
-            selectedPath={selectedPath}
-          />
-          <Space4 />
-          <List
-            header='Libraries'
-            color='blue'
-            items={LIBRARIES_ITEMS}
-            selectedPath={selectedPath}
-          />
-          <Space4 />
-          <List
-            header='Music'
-            color='purple'
-            items={MUSIC_ITEMS}
             selectedPath={selectedPath}
           />
           <Space16 />

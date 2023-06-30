@@ -5,7 +5,7 @@ import { Item } from "../ui/Item";
 import { TRACKS } from "./constants";
 import type { TTrackSampleKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 import { useMothContext } from "@moth/state/Context";
 
 const Root = styled(motion.div)``;

@@ -1,1 +1,8 @@
-export const ANCHOR_CLASS = "flex relative px-4 py-2 w-full cursor-pointer"
+import { HOVER_GLOW_PROPS } from "../constants";
+
+const INTERACTIVE_CLASS = "flex relative px-4 py-2 w-full shadow-baby-blue-04-sm cursor-pointer";
+
+export const INTERACTIVE_PROPS = {
+  className: INTERACTIVE_CLASS,
+  ...HOVER_GLOW_PROPS
+};

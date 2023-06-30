@@ -4,7 +4,6 @@ import { Shell as MainShell } from '@main/Shell';
 import { Suspense } from 'react';
 import { Tech } from './tech';
 import { Build } from './build';
-import { Clients } from './clients';
 import { Ending } from './ending';
 import { Space8 } from '@components/spaces/Space8';
 import { Space6 } from '@components/spaces/Space6';
@@ -22,11 +21,7 @@ export const Index = () => (
         <Tech />
         <Space6 />
         <Line />
-        <Space6 />
-        <Clients />
-        <Space6 />
-        <Line />
-        <Space12 />
+        <Space24 />
         <Ending />
         <Space24 />
       </Shell>

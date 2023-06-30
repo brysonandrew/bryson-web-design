@@ -11,7 +11,6 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { Space2 } from '@components/spaces/Space2';
 import { Shell } from '@components/shell';
-import { useStyles } from '@styles/useStyles';
 import { useFocusSound } from '@hooks/sounds/useFocusSound';
 import { Shell as MainShell } from '@main/Shell';
 import { TextXl } from '@components/text/TextXl';
@@ -20,9 +19,9 @@ import { Textarea } from './Textarea';
 import type { TSendingState } from './config';
 import { INPUT_CLASS, INIT_STATE } from './config';
 import { Submit } from './Submit';
-import { WIDTH_CLASS } from '@styles/styles';
-import { HEADER_OFFSET_Y } from '@pages/index/constants';
-import { HeaderOffset } from '@components/spaces/HeaderOffset';
+import { WIDTH_CLASS } from '@constants/styles';
+import { useStyles } from '@css/useStyles';
+import { Title } from '@components/text/Title';
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -122,8 +121,7 @@ export const Contact = () => {
             WIDTH_CLASS,
           )}
         >
-          <TextXl>I would love to hear from you</TextXl>
-          <div className='py-1' />
+          <Title>Get in touch</Title>
           <Form
             className={clsx(
               'flex flex-col w-full my-0 mx-auto',
@@ -131,7 +129,6 @@ export const Contact = () => {
             ref={ref}
             onSubmit={isDisabled ? () => null : sendEmail}
           >
-            <Space2 />
             <motion.div className='relative flex flex-col w-full'>
               <Text
                 title='name'
@@ -161,7 +158,6 @@ export const Contact = () => {
               <Space2 />
               <Textarea
                 title='message'
-                className={clsx(INPUT_CLASS)}
                 name='message'
                 disabled={isDisabled}
                 style={{ marginTop: -6 }}

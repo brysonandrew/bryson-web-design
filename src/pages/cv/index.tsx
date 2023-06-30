@@ -1,4 +1,4 @@
-import { useStyles } from "@styles/useStyles";
+import { useStyles } from "@css/useStyles";
 import { Description } from "./Description";
 import { Experience } from "./experience";
 import { Header } from "./header";

@@ -12,7 +12,7 @@
       "@state/*": ["src/state/*"],
       "@utils/*": ["src/utils/*"],
       "@windi/*": ["windi.*"],
-      "@styles/*": ["src/styles/*"],
+      "@css/*": ["src/css/*"],
       "@t/*": ["src/types/*"],
       "@moth/*": ["moth/src/*"],
       "@moth-state/*": ["moth/src/state/*"],

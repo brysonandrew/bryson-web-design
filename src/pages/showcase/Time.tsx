@@ -1,10 +1,10 @@
-import { TextXs } from "@components/text/TextXs";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import type { FC } from "react";
+import { TextXs } from '@components/text/TextXs';
+import type { ClassValue } from 'clsx';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
 
-const CLASS = "mt-0.5 md:mt-0.5 lg:mt-0.5";
+const CLASS = 'mt-0.5 md:mt-0.5 lg:mt-0.5';
 
 type TProps = { time?: Date; classValue?: ClassValue };
 export const Time: FC<TProps> = ({ time, classValue }) => {
@@ -13,12 +13,12 @@ export const Time: FC<TProps> = ({ time, classValue }) => {
     return <TextXs classValue={className}>Present</TextXs>;
   return (
     <TextXs classValue={className}>
-      <motion.span className="truncate" layout>
-        {typeof time === "undefined"
-          ? "Present"
-          : new Intl.DateTimeFormat("en-UK", {
-              month: "short",
-              year: "numeric",
+      <motion.span className='truncate' layout>
+        {typeof time === 'undefined'
+          ? 'Present'
+          : new Intl.DateTimeFormat('en-UK', {
+              month: 'short',
+              year: 'numeric',
             }).format(time)}
       </motion.span>
     </TextXs>
