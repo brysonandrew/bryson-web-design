@@ -12,7 +12,7 @@ export const Bar: FC<TProps> = ({ classValue }) => {
   return (
     <Root
       className={clsx(
-        'absolute w-4 h-full rounded-sm bg-green shadow-green',
+        'absolute w-4 h-full rounded-sm bg-baby-blue shadow-baby-blue-sm',
         classValue,
       )}
       style={{

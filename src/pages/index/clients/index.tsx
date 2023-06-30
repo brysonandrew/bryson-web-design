@@ -1,6 +1,6 @@
 import { Fake3D } from '@components/fake-3d';
 import { MAX_SCROLL } from '@components/fake-3d/hooks/config';
-import { List } from './List';
+import { List } from './list';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 import { STORY } from '@constants/copy';
 import { Title } from '../Title';

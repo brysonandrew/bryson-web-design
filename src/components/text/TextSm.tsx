@@ -1,13 +1,16 @@
-import styled from "@emotion/styled";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import type { HTMLMotionProps } from "framer-motion";
-import { motion } from "framer-motion";
-import type { FC } from "react";
+import styled from '@emotion/styled';
+import type { ClassValue } from 'clsx';
+import clsx from 'clsx';
+import type { HTMLMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { FC } from 'react';
+
+export const TEXT_SM_CLASS =
+  'text-left text-teal-bright whitespace-normal text-lg md:text-2xl truncate';
 
 const Root = styled(motion.h6)``;
 
-type TProps = HTMLMotionProps<"h6"> & {
+type TProps = HTMLMotionProps<'h6'> & {
   classValue?: ClassValue;
 };
 export const TextSm: FC<TProps> = ({
@@ -18,8 +21,8 @@ export const TextSm: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-left text-teal-bright whitespace-normal text-lg md:text-2xl truncate",
-      classValue ?? "px-1 md:px-4",
+      TEXT_SM_CLASS,
+      classValue ?? 'px-1 md:px-4',
     )}
     style={style}
     {...props}

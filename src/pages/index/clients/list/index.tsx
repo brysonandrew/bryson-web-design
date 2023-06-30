@@ -11,6 +11,7 @@ import { Review } from './review';
 import { REVIEWS } from './config';
 import { Cross } from '@components/icons/Cross';
 import { TChildrenProps } from '@components/fake-3d/Motion';
+import { Fill } from '@components/metal/Fill';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
@@ -51,31 +52,41 @@ export const List: FC<TProps> = ({
       style={{ rotateX, y, filter }}
     >
       {isLong && (
-        <>
-          <Button
-            className='absolute bottom-full right-2 text-white p-4 mb-6'
-            initial={false}
-            whileHover={{ opacity: 0.7 }}
-            onTap={handleCloseLong}
-          >
-            <Cross classValue='w-4 h-4' />
-          </Button>
-          <Review
-            layoutId={`${long}`}
-            index={long}
-            type='long'
-          />
-        </>
+        <Button
+          className='absolute bottom-full right-2 text-white p-4 mb-6'
+          initial={false}
+          whileHover={{ opacity: 0.7 }}
+          onTap={handleCloseLong}
+        >
+          <Cross classValue='w-4 h-4 stroke-baby-blue' />
+        </Button>
       )}
-      <motion.ul className='w-full'>
+      <motion.ul className='relative w-full'>
         {REVIEWS.map((review, index: number) => (
           <Fragment key={review.project}>
-            {index !== 0 && <div className='p-4' />}
-            <Item
-              isLong={isLong}
-              index={index}
-              onTap={() => handleOpen(index)}
-            />
+            <>
+              {index === long ? (
+                <motion.li
+                  className='absolute left-0 top-0 right-0 bottom-0 shadow-baby-blue-04-sm z-20'
+                  layoutId={`${long}`}
+                >
+                  <Fill />
+                  <Review index={long} type='long' />
+                </motion.li>
+              ) : (
+                <>
+                  {index !== 0 && (
+                    <motion.li layout className='p-4' />
+                  )}
+                  <Item
+                    layoutId={`${index}`}
+                    isLong={isLong}
+                    index={index}
+                    onTap={() => handleOpen(index)}
+                  />
+                </>
+              )}
+            </>
           </Fragment>
         ))}
       </motion.ul>
