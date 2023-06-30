@@ -21,8 +21,6 @@ import type { TSendingState } from './config';
 import { INPUT_CLASS, INIT_STATE } from './config';
 import { Submit } from './Submit';
 import { WIDTH_CLASS } from '@styles/styles';
-import { HEADER_OFFSET_Y } from '@pages/index/constants';
-import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 const Root = styled(motion.div)``;
 const Form = styled(motion.form)``;
@@ -122,7 +120,7 @@ export const Contact = () => {
             WIDTH_CLASS,
           )}
         >
-          <TextXl>I would love to hear from you</TextXl>
+          <TextXl>Get in touch</TextXl>
           <div className='py-1' />
           <Form
             className={clsx(
