@@ -67,7 +67,9 @@ export const List: FC<TProps> = ({
             <>
               {index === long ? (
                 <motion.li
-                  className='absolute left-0 top-0 right-0 bottom-0 shadow-baby-blue-04-sm z-20'
+                  className={clsx(
+                    'absolute left-0 top-0 right-0 bottom-0 shadow-baby-blue-04-sm z-20',
+                  )}
                   layoutId={`${long}`}
                 >
                   <Fill />
@@ -75,7 +77,7 @@ export const List: FC<TProps> = ({
                 </motion.li>
               ) : (
                 <>
-                  {index !== 0 && (
+                  {!isLong && index !== 0 && (
                     <motion.li layout className='p-4' />
                   )}
                   <Item

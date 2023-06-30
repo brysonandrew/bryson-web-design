@@ -1,14 +1,17 @@
 import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 
 const Root = styled(motion.div)``;
 
-type TProps = {
+type TProps = HTMLMotionProps<'div'> & {
   classValue?: ClassValue;
 };
-export const Bar: FC<TProps> = ({ classValue }) => {
+export const Bar: FC<TProps> = ({
+  classValue,
+  ...props
+}) => {
   return (
     <Root
       className={clsx(
@@ -20,7 +23,7 @@ export const Bar: FC<TProps> = ({ classValue }) => {
         top: '-0.25rem',
         bottom: '-0.25rem',
       }}
+      {...props}
     />
   );
 };
-//
