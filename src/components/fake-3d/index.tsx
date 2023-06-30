@@ -9,7 +9,7 @@ import { TOptionsConfig } from './hooks/config';
 
 type TProps = TOptionsConfig & {
   classValue?: ClassValue;
-  children(props?: TChildrenProps): TChildren;
+  children(props?: TChildrenProps): JSX.Element;
 };
 export const Fake3D: FC<TProps> = ({
   classValue,
