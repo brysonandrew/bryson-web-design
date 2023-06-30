@@ -1,4 +1,18 @@
-export const REVIEWS = [
+export type TLongReviewValue = string[];
+export type TShortReviewValue = string;
+
+type TReviewTypeRecord = {
+  long: TLongReviewValue;
+  short: TShortReviewValue;
+};
+export type TReviewType = keyof TReviewTypeRecord;
+
+export type TBaseReview = {
+  author: string;
+  project: string;
+};
+export type TRawReview = TBaseReview & TReviewTypeRecord;
+export const REVIEWS: TRawReview[] = [
   {
     long: [
       "Andrew is a highly-skilled React Developer eager to bring his skillset to any problem. He takes instruction well, organises his time efficiently and is a pleasant and easy-going team player.",

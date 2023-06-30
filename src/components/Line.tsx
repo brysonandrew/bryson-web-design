@@ -11,12 +11,13 @@ export const Line: FC<TProps> = ({
   position = "relative",
   height = 6,
 }) => (
-  <Root
-    className={clsx(
-      `flex ${position} left-0 top-0 w-full h-${height}`,
-    )}
-    style={{
-      backgroundColor: "rgba(28, 28, 28, 0.4)",
-    }}
-  />
+  <div/>
+  // <Root
+  //   className={clsx(
+  //     `flex ${position} left-0 top-0 w-full h-${height}`,
+  //   )}
+  //   style={{
+  //     backgroundColor: "rgba(28, 28, 28, 0.4)",
+  //   }}
+  // />
 );

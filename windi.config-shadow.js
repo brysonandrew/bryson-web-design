@@ -45,12 +45,14 @@ module.exports = {
   blue: `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}`,
   "blue-sm": `0 0 1px 1px ${COLORS["blue"]}`,
   "blue-01-sm": `0 0 1px 1px ${COLORS["blue-01"]}`,
+  "blue-03-sm": `0 0 1px 1px ${COLORS["blue-03"]}`,
   "blue-04-sm": `0 0 1px 1px ${COLORS["blue-04"]}`,
   "blue-light-sm": `0 0 1px 1px ${COLORS["blue-light"]}`,
   "blue-light-04-sm": `0 0 1px 1px ${COLORS["blue-light-04"]}`,
 
   "baby-blue-01-sm": `0 0 1px 1px ${COLORS["baby-blue-01"]}`,
   "baby-blue-02-sm": `0 0 1px 1px ${COLORS["baby-blue-02"]}`,
+  "baby-blue-03-sm": `0 0 1px 1px ${COLORS["baby-blue-03"]}`,
   "baby-blue-04-sm": `0 0 1px 1px ${COLORS["baby-blue-04"]}`,
 
   orange: `0 0 1px 1px ${COLORS.orange}, 0 0 1px 2px ${COLORS.orange}`,

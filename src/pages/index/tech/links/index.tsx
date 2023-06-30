@@ -3,21 +3,26 @@ import { TECH } from '@constants/tech';
 import styled from '@emotion/styled';
 import { XL } from '@styles/styles';
 import clsx from 'clsx';
-import type { HTMLMotionProps } from 'framer-motion';
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
+import { TChildrenProps } from '@components/fake-3d/Motion';
 
 const Root = styled(motion.div)``;
 
-type TProps = HTMLMotionProps<'div'>;
-export const Buttons: FC<TProps> = () => {
+type TProps = Partial<TChildrenProps>;
+export const Links: FC<TProps> = ({
+  y,
+  rotateX,
+  filter,
+}) => {
   return (
-    <Root className='flex flex-col items-start text-teal-bright ml-2 xl:flex-row lg:items-center'>
+    <Root
+      className={clsx(
+        'inline-flex flex-col items-center justify-center text-teal-bright ml-2 lg:flex-row preserve-3d',
+      )}
+      style={{ rotateX, y, filter }}
+    >
       <Item {...TECH.REACT} />
       <div className='p-2' />
       <div className='flex items-center justify-center w-full xl:pt-1'>

@@ -1,6 +1,6 @@
 import { Text as _Text } from "@components/text/Text";
 import { useEffect, useState } from "react";
-import { resolveRandom } from "../resolveRandom";
+import { resolveRandom } from "../../../resolveRandom";
 
 export const useImages = () => {
   const [images, setImages] = useState<any[]>([]);

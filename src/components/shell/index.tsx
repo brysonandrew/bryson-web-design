@@ -8,6 +8,7 @@ import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
+import { Decoration } from './header/Decoration';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -21,8 +22,12 @@ export const Shell: FC<TProps> = ({ children }) => {
 
   return (
     <Root className='relative text-black-dark-04 px-4 overflow-hidden z-10'>
-      <AnimatePresence>
-        {isShown && <Header />}
+      <AnimatePresence mode='sync'>
+        {isShown ? (
+          <Header key='HEADER' />
+        ) : (
+          <Decoration key='DECORATION' />
+        )}
       </AnimatePresence>
       <AnimatePresence>
         <Content

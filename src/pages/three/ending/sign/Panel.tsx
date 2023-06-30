@@ -32,11 +32,9 @@ export const Panel: FC<TProps> = ({
       // rotation={[0, radians * (180 / Math.PI), 0]}
       onPointerDown={onPointerDown}
       onPointerOver={() => {
-        console.log('OVER');
         setHover(true);
       }}
       onPointerOut={() => {
-        console.log('OVER');
         setHover(false);
       }}
     >

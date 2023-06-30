@@ -1,74 +1,48 @@
-import styled from '@emotion/styled';
+import { Fake3D } from '@components/fake-3d';
+import { MAX_SCROLL } from '@components/fake-3d/hooks/config';
+import { List } from './List';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 import { STORY } from '@constants/copy';
-import { useOffSound } from '@hooks/sounds/useOffSound';
-import { useOnSound } from '@hooks/sounds/useOnSound';
-import { useOutsideClick } from '@hooks/useOutsideClick';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import type { FC } from 'react';
-import { useRef, useState } from 'react';
 import { Title } from '../Title';
-import { Item } from './Item';
-import { Review } from './Review';
-import { REVIEWS } from './constants';
+import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 const Root = styled(motion.div)``;
 
-export const Clients: FC = () => {
-  const [long, setLong] = useState<number | null>(null);
-  const isLong = typeof long === 'number';
-
-  const handleOnSound = useOnSound();
-  const handleOffSound = useOffSound();
-
-  const closeLong = async () => {
-    if (isLong) {
-      handleOffSound();
-      setLong(null);
-    }
-  };
-
-  const handleOpen = async (next: number) => {
-    setLong(next);
-    handleOnSound();
-  };
-
-  const ref = useRef<HTMLDivElement | null>(null);
-  useOutsideClick({ ref, handler: closeLong });
-
+export const Clients = () => {
   return (
     <Root className='relative flex flex-col items-center z-10'>
       <Title>{STORY.clients}</Title>
       <TitleOffset />
-      <div
-        ref={ref}
-        className={clsx(
-          'relative w-full overflow-hidden -translate-x-1/2',
-        )}
+      <Fake3D
+        dispersion={{
+          input: ({ startScroll, windowHeight }) => [
+            startScroll + windowHeight * 0.9,
+            startScroll + windowHeight * 0.9 + MAX_SCROLL,
+          ],
+          output: [0, 20],
+        }}
+        resistance={{
+          input: ({ startScroll, windowHeight }) => [
+            startScroll + windowHeight * 0.25,
+            startScroll + windowHeight * 0.25 + MAX_SCROLL,
+          ],
+          output: [-60, 80],
+        }}
+        visibility={{
+          input: ({ startScroll, windowHeight }) => [
+            startScroll + windowHeight * 0.9,
+            startScroll +
+              MAX_SCROLL * 0.8 +
+              windowHeight * 0.9,
+          ],
+          blur: [0, 8],
+          grayscale: [0, 100],
+          opacity: [0, 0.5],
+        }}
       >
-        {isLong ? (
-          <Review
-            layoutId={`${long}`}
-            index={long}
-            type='long'
-            onClose={closeLong}
-          />
-        ) : null}
-        <motion.ul className='w-full'>
-          {REVIEWS.map((review, index: number) => (
-            <Item
-              key={`group-${index}`}
-              isActive={index === long}
-              isLong={isLong}
-              index={index}
-              onTap={() => handleOpen(index)}
-            >
-              {review.long}
-            </Item>
-          ))}
-        </motion.ul>
-      </div>
+        {(props) => <List {...props} />}
+      </Fake3D>
     </Root>
   );
 };

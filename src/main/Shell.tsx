@@ -13,7 +13,7 @@ type TProps = {
 export const Shell: FC<TProps> = ({ children }) => {
   useStyles();
   useScrollControl();
-  //useScrollToTop();
+  useScrollToTop();
 
   return (
     <>

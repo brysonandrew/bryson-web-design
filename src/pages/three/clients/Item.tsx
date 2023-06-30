@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Main } from './Main';
 import type { TChildrenProps } from './Motion';
-import { BAR_GREEN_CLASS, ROLLING_TEXT_CLASS } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
 const List = styled(motion.ul)``;
@@ -39,10 +38,7 @@ export const Item: FC<TProps> = ({
     >
       <Button className='relative' {...props}>
         <motion.div
-          className={clsx(
-            'hover:cursor-pointer',
-            BAR_GREEN_CLASS,
-          )}
+          className={clsx('hover:cursor-pointer')}
           variants={{
             hover: {
               filter: 'brightness(100%)',
@@ -60,7 +56,7 @@ export const Item: FC<TProps> = ({
             x: ['-100%', '-100%', '-100%'][index],
           }}
         >
-          <li className={ROLLING_TEXT_CLASS}>
+          <li>
             <Text>{children}</Text>
           </li>
           <Main

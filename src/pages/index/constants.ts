@@ -11,12 +11,6 @@ export const DELAY = 24;
 export const DELAY_2 = DELAY * 4;
 export const DELTA = GAP_1 + DELAY_2;
 
-export const ROLLING_TEXT_CLASS =
-  'py-6 lg:py-2.5 xl:py-3.5 m-1 whitespace-nowrap';
-
-export const BAR_GREEN_CLASS = clsx(
-  'absolute left-0 w-2 h-full rounded-sm bg-green shadow-green',
-);
 
 export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',

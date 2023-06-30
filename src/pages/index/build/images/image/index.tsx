@@ -1,53 +1,34 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion, transform } from 'framer-motion';
-import { useState, type FC } from 'react';
-import { RANGE_MIN_Y, useY } from './useY';
-import { RANGE_Z, useZ } from './useZ';
-
+import { motion } from 'framer-motion';
+import { type FC } from 'react';
+import { resolveFilter } from './hooks/resolveFilter';
+import { useDepthStyle } from './hooks/useDepthStyle';
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
   count: number;
+  isLoaded: boolean;
 };
-export const Box: FC<TProps> = ({
+export const Image: FC<TProps> = ({
   index,
   count,
+  isLoaded,
   ...props
 }) => {
-  const [isLoaded, setLoaded] = useState(false);
-  const handleLoad = () => {
-    setLoaded(true);
-  };
-  const y = useY(index);
-  const z = useZ(index);
-  const brightness = transform(
-    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
-    [10, 110],
-  )(z);
-  const blur = transform(
-    [-RANGE_Z * 1.5 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
-    [2, 0],
-  )(z);
-  const filter = `brightness(${brightness}%) blur(${blur}px)`;
+  const depthStyle = useDepthStyle({ index, count });
 
   return (
     <motion.li
       className='relative inset-0 overflow-hidden'
       style={{
         flex: 1,
-        zIndex: 0,
         minHeight: 140,
-        x: `-${50 * index}%`,
-        y,
-        z,
-        filter,
-        originX: '50%',
-        originY: '100%',
+        ...depthStyle,
       }}
       whileHover={{
         scale: 1.4,
-        filter: 'brightness(100%) blur(0px)',
-        z: RANGE_Z,
+        filter: resolveFilter({ blur: 0, brightness: 100 }),
+        z: 0,
         zIndex: 1,
       }}
     >
@@ -67,7 +48,7 @@ export const Box: FC<TProps> = ({
         />
       )}
       <motion.div className='absolute top-0 left-0 w-full'>
-        <motion.img onLoad={handleLoad} {...props} />
+        <motion.img {...props} />
       </motion.div>
     </motion.li>
   );
