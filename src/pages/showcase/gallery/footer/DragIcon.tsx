@@ -11,6 +11,5 @@ export const DragIcon: FC<TProps> = ({ classValue }) => (
       'relative -top-0.375 text-teal-bright',
       classValue,
     )}
-    style={{ zIndex: 9999 }}
   />
 );

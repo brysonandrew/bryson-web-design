@@ -4,7 +4,8 @@ import { resolveCompositeKey } from '@utils/keys';
 import clsx from 'clsx';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-export const resolveLayoutId = (key: string) =>
+
+export const resolveMarkLayoutId = (key: string) =>
   resolveCompositeKey('MARK', key);
 
 const Root = styled(motion.div)``;

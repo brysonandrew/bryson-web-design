@@ -2,19 +2,22 @@ import { useRef } from 'react';
 import type { FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import { Section } from './Section';
-import type { TBaseProps } from '../types';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { FOOTER_SIZE } from './constants';
 import { Image } from './image';
 import type { TMedia } from '@pages/showcase/config';
 import { Filter } from './Filter';
+import { TBaseProps } from '../types';
 
 export const Root = styled(motion.div)``;
 
-type TProps = TBaseProps;
+type TProps = TBaseProps & {
+  width: number;
+};
 export const Sections: FC<TProps> = (props) => {
   const { items, count, motionX, width } = props;
+
   const left = useTransform(
     motionX,
     (v) => `${(-v * count * 100) / width + 50}vw`,

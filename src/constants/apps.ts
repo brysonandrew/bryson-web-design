@@ -1,6 +1,7 @@
 import type { TItem } from "@t/showcase";
+import { titleToKebab } from "@utils/format";
 
-export const APP_ITEMS: TItem[] = [
+export const INIT_APP_ITEMS = [
   {
     title: "Insight Factory",
     description: "Process Management System",
@@ -90,5 +91,12 @@ export const APP_ITEMS: TItem[] = [
     ],
   },
 ];
+
+export const APP_ITEMS: TItem[] = INIT_APP_ITEMS.map((item) => ({ ...item, slug: titleToKebab(item.title) }));
+export const APP_ITEMS_RECORD = APP_ITEMS.reduce((a: Record<string, TItem>, item: TItem) => {
+  a[item.slug] = item;
+  return a;
+}, {});
+export type TAppItemKey = keyof typeof APP_ITEMS_RECORD;
 
 export const CV_ITEMS = APP_ITEMS.filter(({ title }) => title !== "Stock Portfolio" && title !== "Epirus");

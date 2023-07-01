@@ -4,25 +4,24 @@ import { Suspense } from 'react';
 import { Tech } from './tech';
 import { Build } from './build';
 import { Space8 } from '@components/spaces/Space8';
-import { Space6 } from '@components/spaces/Space6';
-import { Space16 } from '@components/spaces/Space16';
 import { Contact } from './contact';
 import { Showcase } from './showcase';
+import { Space24 } from '@components/spaces/Space24';
+import { Space12 } from '@components/spaces/Space12';
 
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
       <Shell>
         <Build />
-        <Space8 />
-        <Space6 />
+        <Space24 />
         <Tech />
-        <Space16 /> 
+        <Space24 />
         <Showcase />
-        <Space6 />
+        <Space12 />
         <Contact />
         <Space8 />
-      </Shell> 
+      </Shell>
     </MainShell>
   </Suspense>
 );

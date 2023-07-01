@@ -8,7 +8,6 @@ export const Contact = () => {
   return (
     <Section
       title={STORY.contact}
-      classValue='items-center z-10'
     >
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}

@@ -1,11 +1,12 @@
 import { InView } from '@components/InView';
 import { TextXl } from '@components/text/TextXl';
 import { ThinLineGap } from '@components/thin-line/ThinLineGap';
+import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import { WIDTH_CLASS } from '@constants/styles';
 import type { TChildren } from '@t/index';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { type FC } from 'react';
 
 type TProps = { children: TChildren };
@@ -20,29 +21,29 @@ export const Title: FC<TProps> = ({ children }) => {
       once
     >
       {(isInView) => (
-        <>
-          <div className='overflow-hidden'>
-            <motion.div
-              initial={false}
-              animate={{ y: isInView ? '0%' : '100%' }}
-              transition={{
-                ...MOTION_CONFIG.transition,
-                delay: 0.2,
-              }}
-            >
-              <TextXl classValue='text-center'>
-                {children}
-              </TextXl>
-            </motion.div>
-          </div>
-          <motion.div
-            className='overflow-hidden w-full flex justify-center items-center'
-            initial={false}
-            animate={{ scaleX: isInView ? 1 : 0 }}
-          >
-            <ThinLineGap />
-          </motion.div>
-        </>
+        <AnimatePresence>
+          {isInView && (
+            <>
+              <div className='overflow-hidden'>
+                <motion.div
+                  key='TITLE_TEXT'
+                  initial={{ y: '100%' }}
+                  animate={{ y: '0%' }}
+                  exit={{ y: '100%' }}
+                  transition={{
+                    ...MOTION_CONFIG.transition,
+                    delay: 0.2,
+                  }}
+                >
+                  <TextXl classValue='text-center'>
+                    {children}
+                  </TextXl>
+                </motion.div>
+              </div>
+              <ThinLineGrow />
+            </>
+          )}
+        </AnimatePresence>
       )}
     </InView>
   );

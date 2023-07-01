@@ -8,6 +8,7 @@ import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 import { Decoration } from './header/Decoration';
+import { useSelectedItem } from '@pages/showcase/useSelectedItem';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -17,7 +18,9 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, isScroll } = useContext();
-  const isShown = !isInit && !isScroll;
+  const selectedItem = useSelectedItem();
+  const isSelectedItem = Boolean(selectedItem);
+  const isShown = !isInit && !isScroll && !isSelectedItem;
 
   return (
     <Root className='relative text-black-dark-04 overflow-hidden z-10'>
@@ -26,7 +29,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Header key='HEADER' />
         ) : (
           <Decoration key='DECORATION' />
-        )} 
+        )}
       </AnimatePresence>
       <AnimatePresence>
         <Content

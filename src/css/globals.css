@@ -13,6 +13,8 @@ body {
   font-size: 18px;
   background-color: #000;
   color: rgb(207 250 254);
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 h1,

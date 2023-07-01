@@ -2,6 +2,7 @@ import type { TItem } from "@t/showcase";
 
 export const MUSIC_ITEMS: TItem[] = [
   {
+    slug: "moth-ost",
     title: "Moth OST",
     description: "Soundtrack for the Moth game",
     tags: [

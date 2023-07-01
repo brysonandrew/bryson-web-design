@@ -1,7 +1,8 @@
-import type { TItem } from "@t/showcase";
+import { TItem } from "@t/showcase";
 
 export const GAME_ITEMS: TItem[] = [
   {
+    slug: "moth",
     title: "Moth",
     description: "Top-down shooter",
     tags: [

@@ -1,5 +1,4 @@
 import { MOTION_CONFIG } from "@constants/animation";
-import COLORS from "@windi/config-colors.json";
 
 export const HEADER_OFFSET_Y = 240;
 
@@ -20,11 +19,13 @@ export const WHITE_FILTER = {
 export const resolveWhite = (opacity: number) => `rgba(255,255,255, ${opacity})`;
 export const resolveBabyBlue = (opacity: number) => `rgba(153, 204, 255, ${opacity})`;
 export const resolveTeal = (opacity: number) => `rgba(45, 212, 191, ${opacity})`;
+export const resolveTealBright = (opacity: number) => `rgba(202, 248, 255, ${opacity})`;
 
 export const COLOR_RECORD = {
   "baby-blue": resolveBabyBlue,
   "white": resolveWhite,
-  "teal": resolveTeal
+  "teal": resolveTeal,
+  "teal-bright": resolveTealBright,
 };
 export type TColor = keyof typeof COLOR_RECORD;
 export const resolveDropShadow = (spread: number, color: TColor = "white") => `drop-shadow(0px 0px ${spread}px ${COLOR_RECORD[color](0.8)})`;
@@ -55,8 +56,10 @@ export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) =
 
 export const HOVER_GLOW_PROPS = resolveHoverGlowProps({ outerGlow: 8, textGlow: 10 });
 export const HOVER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 1 });
+export const HOVER_GLOW_PROPS_XS = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2 });
 export const HOVER_BLUE_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "baby-blue" });
-export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "teal" });
+export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal" });
+export const HOVER_TEAL_BRIGHT_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal-bright" });
 export const HOVER_BLUE_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 0, color: "baby-blue" });
 export const HOVER_TEAL_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 20, color: "teal" });
 export const DURATION_DELAY_TRANSITION = {

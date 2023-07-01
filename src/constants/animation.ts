@@ -1,6 +1,20 @@
-export const BASIC_VARIANTS = {
+export const BASIC_VARIANT_KEYS = {
+  initial: "initial",
   animate: 'animate',
   whileHover: 'hover',
+};
+
+export const MOTION_CONFIG = {
+  transition: {
+    ease: "linear",
+    duration: 0.2,
+  },
+};
+
+export const DURATION_DELAY = {
+  ...MOTION_CONFIG,
+  delay:
+    MOTION_CONFIG.transition.duration,
 };
 
 export const PRESENCE_OPACITY_SHIFT = {
@@ -15,12 +29,31 @@ export const PRESENCE_OPACITY = {
   exit: { opacity: 0 },
 };
 
-export const MOTION_CONFIG = {
-  transition: {
-    ease: "easeIn",
-    duration: 0.2,
-  },
+export const PRESENCE_SCALE = {
+  initial: { scale: 0 },
+  animate: { scale: 1 },
+  exit: { scale: 0 },
 };
+
+export const PRESENCE_Y = {
+  initial: { y: "100%" },
+  animate: { y: "0%" },
+  exit: { y: "100%" },
+};
+
+
+export const PRESENCE_OPACITY_DELAY = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ...MOTION_CONFIG,
+      ...DURATION_DELAY,
+    },
+  },
+  exit: { opacity: 0 },
+};
+
 
 export const HEADER_TRANSITION = {
   ...MOTION_CONFIG,

@@ -24,6 +24,7 @@ export const Section: FC<TProps> = ({
         'flex flex-col items-center',
         classValue,
       )}
+      layout='position'
     >
       <Title>{title}</Title>
       <TitleOffset />

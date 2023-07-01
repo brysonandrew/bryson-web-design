@@ -1,4 +1,1 @@
-export const Space2 = () => (
-  <div className="py-3" />
-
-)
+export const Space2 = () => <div className='py-3' />;
