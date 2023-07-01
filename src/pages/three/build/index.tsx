@@ -1,9 +1,9 @@
 import { type FC } from 'react';
 import { Box } from './Box';
-import { useImages } from './useImages';
+import { useContext } from '@state/Context';
 
 export const Build: FC = () => {
-  const images = useImages();
+  const { images } = useContext();
   return (
     <group>
       {images.map((image, index, { length }) => (

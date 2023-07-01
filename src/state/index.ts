@@ -5,6 +5,12 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'images': {
+      return {
+        ...state,
+        images: value
+      };
+    }
     case 'init': {
       return {
         ...state,

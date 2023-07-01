@@ -1,6 +1,6 @@
 import { Filters } from '../components/Filters';
 import type { TChildren } from '@t/index';
-import type { FC } from 'react';
+import { useEffect, type FC } from 'react';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
 import { Variables } from '@css/Variables';
@@ -15,15 +15,22 @@ import {
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
+import { useImages } from '@pages/index/build/images/hooks/useImages';
 
 type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
+  const { isInit, dispatch } = useContext();
+  const images = useImages();
   useScrollControl();
   useScrollToTop();
 
-  const { isInit, dispatch } = useContext();
+  useEffect(() => {
+    if (images.length > 0) {
+      dispatch({ type: 'images', value: images });
+    }
+  }, [images]);
 
   const handleAnimationComplete = () =>
     dispatch({ type: 'init', value: null });

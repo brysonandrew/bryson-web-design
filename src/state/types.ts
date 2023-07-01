@@ -19,6 +19,10 @@ export type TMotionValuePair = [
 
 export type TAction =
   | {
+    type: "images",
+    value: TModule[];
+  }
+  | {
     type: 'start-page-transition';
     value: null;
   }
@@ -64,6 +68,7 @@ export type TAction =
   };
 
 export type TState = {
+  images: TModule[];
   isScroll: boolean;
   isScrollStart: boolean;
   isInit: boolean;
