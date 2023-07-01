@@ -5,13 +5,11 @@ import { Item } from "./Item";
 import { TRACKS } from "./constants";
 import type { TTrackKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@css/useStyles";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
 export const Main = () => {
-  useStyles();
   const [nowPlaying, setPlay] = useState<TTrackKey | null>(
     null,
   );

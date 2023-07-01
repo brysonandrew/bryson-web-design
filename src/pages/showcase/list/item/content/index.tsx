@@ -1,11 +1,11 @@
 import { TextSm } from '@components/text/TextSm';
 import type { FC } from 'react';
-import { Time } from '../../Time';
+import { Time } from './Time';
 import type { TItem } from '@t/showcase';
 import { motion } from 'framer-motion';
 
-type TProps = TItem;
-export const Text: FC<TProps> = ({
+type TProps = Pick<TItem, 'title' | 'time' | 'description'>;
+export const Content: FC<TProps> = ({
   title,
   time,
   description,

@@ -1,7 +1,7 @@
 import { MOTION_CONFIG } from '@constants/animation';
+import { Fill } from '@components/metal/Fill';
 import styled from '@emotion/styled';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { HOVER_BLUE_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
 import {
   IMG_KEY,
   SELECTED_KEY,
@@ -11,9 +11,12 @@ import type { TItem } from '@t/showcase';
 import { titleToKebab } from '@utils/format';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Link as InternalLink } from 'react-router-dom';
-import { Text } from './Text';
-import { Mark } from './Mark';
+import {
+  Link as InternalLink,
+  useLocation,
+} from 'react-router-dom';
+import { Mark, resolveLayoutId } from '../../Mark';
+import { Content } from './content';
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
@@ -21,27 +24,32 @@ type TProps = TItem & {
 };
 export const Item: FC<TProps> = (props) => {
   const { title, selectedPath, altTo } = props;
+  const { pathname } = useLocation();
   const key = titleToKebab(title);
   const handleOnSound = useOnSound();
 
   return (
     <Root
-      className='flex relative'
-      {...HOVER_BLUE_OUTER_GLOW_PROPS_SM}
+      className='flex relative shadow-white-02-sm'
+      initial={false}
+      animate='animate'
+      whileHover='hover'
     >
       <InternalLink
         to={
           altTo
             ? altTo
-            : `/showcase?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`
+            : `${pathname}?${SELECTED_KEY}=${key}&${IMG_KEY}=${1}`
         }
         onClick={handleOnSound}
         className='relative w-full bg-black-dark h-24 lg:h-16'
       >
         <Container
           layoutId={key}
-          classValue='absolute flex items-center justify-between text-lg w-full'
+          classValue='absolute flex items-center justify-between text-lg w-full pl-4'
         >
+          <Fill />
+          <Mark layoutId={resolveLayoutId(key)} />
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
@@ -58,14 +66,11 @@ export const Item: FC<TProps> = (props) => {
                 }}
                 exit={{ opacity: 0 }}
               >
-                <Text {...props} />
+                <Content {...props} />
               </motion.div>
             )}
           </AnimatePresence>
-        <Mark colorKey='baby-blue' />
-
         </Container>
-
       </InternalLink>
     </Root>
   );

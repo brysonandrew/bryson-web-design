@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
+import { RANGE_MIN_Y } from './useY';
 
-export const RANGE_MIN_Y = 10;
 export const RANGE_Z = 800;
 
 export const useZ = (index: number) => {

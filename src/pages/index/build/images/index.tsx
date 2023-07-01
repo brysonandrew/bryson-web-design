@@ -5,17 +5,15 @@ import clsx from 'clsx';
 import { useState, type FC, useEffect } from 'react';
 import { Image } from './Image';
 import { useImages } from './hooks/useImages';
-import { TChildrenProps } from '../../../../components/fake-3d/Motion';
 import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
+import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 
 const HEIGHT = 164 + TITLE_OFFSET;
 
-type TProps = Partial<TChildrenProps>;
+type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({
-  y,
-  rotateX,
-  filter,
-  onUpdateRect,
+  style: { filter, rotateX, y },
+  rectConfig: { onUpdateRect },
 }) => {
   const [loadedState, setLoaded] = useState<
     Record<string, boolean>
@@ -39,7 +37,9 @@ export const Images: FC<TProps> = ({
   };
   return (
     <motion.div
+      className='relative'
       style={{
+        top: 40,
         height: HEIGHT,
         pointerEvents: isScroll ? 'none' : 'unset',
         filter,

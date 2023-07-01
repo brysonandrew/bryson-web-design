@@ -1,20 +1,19 @@
 import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { HEADER_SIZE } from './gallery/sections/constants';
+import { Link, useLocation } from 'react-router-dom';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { HOVER_BLUE_GLOW_PROPS_SM } from '@pages/index/constants';
+import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
 
 export const Close: FC = () => {
+  const { pathname } = useLocation();
   const handleOnSound = useOffSound();
 
   return (
     <motion.div
-      className='absolute top-10 right-9 lg:right-18 flex items-center justify-between z-10'
-      style={{ height: HEADER_SIZE }}
-      {...HOVER_BLUE_GLOW_PROPS_SM}
+      className='absolute top-7 right-9 lg:right-18 flex items-center justify-between z-10'
+      {...HOVER_TEAL_GLOW_PROPS_SM}
     >
       <motion.div
         className={clsx(
@@ -24,7 +23,7 @@ export const Close: FC = () => {
       />
       <Link
         className='relative p-5 rounded-full cursor-pointer'
-        to='/showcase'
+        to={pathname}
         onClick={handleOnSound}
       >
         <Cross />

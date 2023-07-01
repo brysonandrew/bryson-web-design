@@ -1,4 +1,3 @@
-import { useStyles } from "@css/useStyles";
 import type { ChangeEvent, FC} from "react";
 import { useState } from "react";
 
@@ -7,8 +6,6 @@ type TProps = {
 };
 export const Invert: FC<TProps> = ({ children }) => {
   const [invert, setInvert] = useState(0);
-
-  useStyles();
   const handleChange = ({
     currentTarget: { value },
   }: ChangeEvent<HTMLInputElement>) => {

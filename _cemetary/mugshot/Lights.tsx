@@ -8,7 +8,7 @@ import {
   OVERHANG,
   WIDTH_AND_OVERHANG,
 } from "@components/effects/glitch/config";
-import COLORS from "../../../../windi.config-colors.json";
+import COLORS from "../../windi.config-colors.json";
 
 const INDENT = OVERHANG * 2.8;
 

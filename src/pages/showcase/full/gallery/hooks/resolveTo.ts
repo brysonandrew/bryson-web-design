@@ -2,7 +2,7 @@ import {
   SELECTED_KEY,
   IMG_KEY,
 } from "@pages/showcase/config";
-import type { TBase } from "./types";
+import type { TBase } from "../types";
 
 type TConfig = {
   name: string;

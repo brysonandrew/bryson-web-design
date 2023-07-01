@@ -24,6 +24,7 @@ export const Image: FC<TProps> = ({
       style={{
         flex: 1,
         minHeight: 140,
+        cursor: 'zoom-in',
         ...depthStyle,
       }}
       whileHover={{

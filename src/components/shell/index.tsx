@@ -1,4 +1,3 @@
-import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -27,7 +26,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Header key='HEADER' />
         ) : (
           <Decoration key='DECORATION' />
-        )}
+        )} 
       </AnimatePresence>
       <AnimatePresence>
         <Content

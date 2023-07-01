@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useStyles } from "@css/useStyles";
 import type { TChildren } from "@t/index";
 import { motion } from "framer-motion";
 import type { CSSProperties, FC } from "react";
@@ -9,7 +8,6 @@ const Root = styled(motion.div)``;
 
 type TProps = { children: TChildren, style?: CSSProperties };
 export const Page: FC<TProps> = ({ children, style = {} }) => {
-  useStyles();
   return (
     <Root
       className="flex flex-col items-center pt-18 bg-black overflow-hidden"

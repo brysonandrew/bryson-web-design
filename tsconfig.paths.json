@@ -16,6 +16,7 @@
       "@t/*": ["src/types/*"],
       "@moth/*": ["moth/src/*"],
       "@moth-state/*": ["moth/src/state/*"],
+      "@moth-css/*": ["moth/src/css/*"],
       "@moth-utils/*": ["moth/src/utils/*"],
       "@moth-components/*": ["moth/src/components/*"],
       "@moth-constants/*": ["moth/src/constants/*"],

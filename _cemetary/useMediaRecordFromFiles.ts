@@ -1,7 +1,7 @@
 import type { TModule } from "@t/index";
 import { useState, useEffect } from "react";
-import type { TMediaRecord } from "./config";
-import { resolveMedia, EXCLUDED_KEYS } from "./config";
+import type { TMediaRecord } from "../src/pages/showcase/config";
+import { resolveMedia, EXCLUDED_KEYS } from "../src/pages/showcase/config";
 const screenFiles = import.meta.glob("/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png");
 
 export const useMediaRecordFromFiles = () => {

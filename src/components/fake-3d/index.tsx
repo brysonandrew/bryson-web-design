@@ -1,24 +1,26 @@
 import { InView } from '@components/InView';
 import { useDetectGPU } from '@react-three/drei';
-import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Motion, TChildrenProps } from './Motion';
-import { TOptionsConfig } from './hooks/config';
+import { Aggregator } from './aggregator';
+import {
+  EMPTY_PROPS,
+  TFake3DMotionChildrenProps,
+  TOptionsConfig,
+} from './config';
 
 type TProps = TOptionsConfig & {
   classValue?: ClassValue;
-  children(props?: TChildrenProps): JSX.Element;
+  children(props: TFake3DMotionChildrenProps): JSX.Element;
 };
 export const Fake3D: FC<TProps> = ({
   classValue,
   children,
   ...optionsConfig
 }) => {
-  const optionsConfigKey = JSON.stringify(optionsConfig);
   const { tier, isMobile } = useDetectGPU();
-  if (isMobile) return children();
+  if (isMobile) return children(EMPTY_PROPS);
 
   switch (tier) {
     case 3: {
@@ -26,13 +28,18 @@ export const Fake3D: FC<TProps> = ({
         <InView className={clsx('relative', classValue)}>
           {({ isInView, ref, ...rectProps }) => (
             <>
-              <AnimatePresence>
+              <AnimatePresence mode="wait">
                 {isInView ? (
-                  <Motion {...rectProps} {...optionsConfig}>
+                  <Aggregator
+                    key='AGGREGATOR'
+                    {...rectProps}
+                    {...optionsConfig}
+                  >
                     {children}
-                  </Motion>
+                  </Aggregator>
                 ) : (
                   <motion.div
+                    key='PLACEHOLDER'
                     style={{
                       height: rectProps.rect?.height,
                     }}
@@ -45,7 +52,7 @@ export const Fake3D: FC<TProps> = ({
       );
     }
     default: {
-      return children();
+      return children(EMPTY_PROPS);
     }
   }
 };

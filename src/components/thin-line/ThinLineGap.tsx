@@ -1,7 +1,6 @@
 import clsx from 'clsx';
-import { Space4 } from './spaces/Space4';
-
-export const THIN_LINE_CLASS = 'flex w-full h-px bg-white-02';
+import { THIN_LINE_CLASS } from '.';
+import { Space4 } from '@components/spaces/Space4';
 
 export const ThinLineGap = () => (
   <>

@@ -11,7 +11,7 @@
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
       "@moth-state/*": ["src/state/*"],
-      "@css/*": ["src/css/*"],
+      "@moth-css/*": ["src/css/*"],
       "@t/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@moth-utils/*": ["src/utils/*"],

@@ -5,7 +5,7 @@ import {
 } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useWindowSize } from '@hooks/useWindowSize';
-import { useMediaFromKey } from '@pages/showcase/useMediaFromKey';
+import { useMediaFromKey } from '@pages/showcase/full/gallery/hooks/useMediaFromKey';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { useKeys } from './hooks/useKeys';

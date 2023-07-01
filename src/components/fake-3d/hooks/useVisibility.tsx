@@ -1,4 +1,5 @@
 import {
+  MotionValue,
   useMotionTemplate,
   useTransform,
 } from 'framer-motion';
@@ -6,31 +7,49 @@ import {
   MAX_SCROLL,
   TBaseConfig,
   TVisibilityRange,
-} from './config';
+} from '../config';
 import { SCROLL_START } from '@hooks/scroll/useScrollControl';
 
 export const useVisibility = ({
   scrollY,
-  input = ({ startScroll }) => [
-    startScroll + SCROLL_START,
-    startScroll + MAX_SCROLL,
-  ],
-  blur: blurRange = [0, 4],
+  input,
+  blur: blurRange,
+  grayscale: grayscaleRange,
+  opacity: opacityRange,
   ...inputConfig
 }: TBaseConfig & TVisibilityRange) => {
   const inputRange = input(inputConfig);
-  const blur = useTransform(scrollY, inputRange, blurRange);
+  const blur = useTransform(
+    scrollY,
+    inputRange,
+    blurRange ?? inputRange,
+  );
   const grayscale = useTransform(
     scrollY,
     inputRange,
-    [0, 100],
+    grayscaleRange ?? inputRange,
   );
   const opacity = useTransform(
     scrollY,
     inputRange,
-    [1, 0.4],
+    opacityRange ?? inputRange,
   );
-  const visibility = useMotionTemplate`blur(${blur}px) grayscale(${grayscale}%) opacity(${opacity})`;
+  const template = [
+    blurRange && {
+      blur,
+      resolver: (v: MotionValue) => `blur(${v}px)`,
+    },
+    grayscaleRange && {
+      grayscale,
+      resolver: (v: MotionValue) => `grayscale(${v}%)`,
+    },
+    opacityRange && {
+      opacity,
+      resolver: (v: MotionValue) => `opacity(${v})`,
+    },
+  ];
+  const path = template.join(' ');
+  const visibility = useMotionTemplate`${path}`;
 
   return visibility;
 };

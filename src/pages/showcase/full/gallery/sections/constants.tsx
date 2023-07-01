@@ -8,10 +8,7 @@ export const GAP_05 = GAP / 2;
 export const MOTION_BLUR_ID = 'MOTION_BLUR_ID';
 export const MOTION_BLUR_INTENSITY = 40;
 
-export const HEADER_SIZE = 0;
 export const FOOTER_SIZE = 80;
-export const CONTENT_OFFSET_SIZE =
-  HEADER_SIZE + FOOTER_SIZE;
 
 type TItemProps = {
   name: string;

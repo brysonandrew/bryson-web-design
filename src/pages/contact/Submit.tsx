@@ -7,7 +7,8 @@ import { resolveButtonValue } from './config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { Fill } from '@components/metal/Fill';
 import COLORS from '@windi/config-colors.json';
-import { HOVER_BLUE_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
+import { HOVER_TEAL_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
+import { BASIC_VARIANTS } from '@constants/animation';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -18,7 +19,6 @@ const Text = styled(motion.h4)`
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(153, 204, 255, 0.9);
 `;
-
 
 type TProps = {
   sendingState: TSendingState;
@@ -31,7 +31,7 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
   return (
     <Root
       className={clsx(
-        'relative p-0.5 flex w-full shadow-white-02-sm',
+        'relative p-0.5 flex w-full shadow-white-01-sm',
         [
           isDisabled
             ? 'cursor-not-allowed'
@@ -39,9 +39,9 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...HOVER_BLUE_OUTER_GLOW_PROPS_SM}
+      {...BASIC_VARIANTS}
     >
-      <Fill />
+      <Fill classValue='pointer-events-none' />
       <Decoration
         className={clsx(
           'relative w-full pointer-events-none',
@@ -63,15 +63,15 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
               color: COLORS['black'],
               letterSpacing: '1px',
               transition:
-                HOVER_BLUE_OUTER_GLOW_PROPS_SM.variants.animate
-                  .transition,
+                HOVER_TEAL_OUTER_GLOW_PROPS_SM.variants
+                  .animate.transition,
             },
             hover: {
               color: COLORS['teal'],
               letterSpacing: '4px',
               transition:
-                HOVER_BLUE_OUTER_GLOW_PROPS_SM.variants.hover
-                  .transition,
+                HOVER_TEAL_OUTER_GLOW_PROPS_SM.variants
+                  .hover.transition,
             },
           }}
         >

@@ -5,14 +5,12 @@ import { Item } from "../ui/Item";
 import { TRACKS } from "./constants";
 import type { TTrackSampleKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@css/useStyles";
 import { useMothContext } from "@moth/state/Context";
 
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
 export const Sample = () => {
-  useStyles();
   const { context } = useMothContext();
   const [nowPlaying, setPlaying] =
     useState<TTrackSampleKey | null>(null);

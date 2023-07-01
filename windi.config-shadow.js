@@ -26,7 +26,7 @@ module.exports = {
   "purple-005-sm": `0 0 1px 1px ${COLORS["purple-005"]}`,
 
   "teal-md": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}, 0 0 1px 3px ${COLORS.teal}`,
-  "teal": `0 0 1px 1px ${COLORS.teal}, 0 0 1px 2px ${COLORS.teal}`,
+  "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
   "teal-02": `0 0 1px 1px ${COLORS["teal-02"]}, 0 0 1px 2px ${COLORS["teal-01"]}`,
   "teal-04": `0 0 1px 1px ${COLORS["teal-04"]}, 0 0 1px 2px ${COLORS["teal-04"]}`,
   "teal-sm": `0 0 1px 1px ${COLORS.teal}`,
@@ -40,6 +40,8 @@ module.exports = {
   "teal-bright-sm": `0 0 1px 1px ${COLORS["teal-bright"]}`,
   "teal-bright-fade-sm": `0 0 1px 1px ${COLORS["teal-bright-fade"]}`,
   "teal-bright-01-sm": `0 0 1px 1px ${COLORS["teal-bright-01"]}`,
+  "teal-bright-02-sm": `0 0 1px 1px ${COLORS["teal-bright-02"]}`,
+  "teal-bright-04-sm": `0 0 1px 1px ${COLORS["teal-bright-04"]}`,
 
   "blue-md": `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}, 0 0 1px 3px ${COLORS.blue}`,
   blue: `0 0 1px 1px ${COLORS.blue}, 0 0 1px 2px ${COLORS.blue}`,
@@ -50,6 +52,7 @@ module.exports = {
   "blue-light-sm": `0 0 1px 1px ${COLORS["blue-light"]}`,
   "blue-light-04-sm": `0 0 1px 1px ${COLORS["blue-light-04"]}`,
 
+  "baby-blue-sm": `0 0 1px 1px ${COLORS["baby-blue"]}`,
   "baby-blue-01-sm": `0 0 1px 1px ${COLORS["baby-blue-01"]}`,
   "baby-blue-02-sm": `0 0 1px 1px ${COLORS["baby-blue-02"]}`,
   "baby-blue-03-sm": `0 0 1px 1px ${COLORS["baby-blue-03"]}`,

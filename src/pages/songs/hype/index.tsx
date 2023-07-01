@@ -5,7 +5,6 @@ import { Item } from "../ui/Item";
 import { TRACKS } from "./constants";
 import type { TTrackHypeKey } from "./types";
 import { useSwitchTracks } from "./switch";
-import { useStyles } from "@css/useStyles";
 import { useMothContext } from "@moth/state/Context";
 import { useKey } from "@hooks/useKey";
 
@@ -13,7 +12,6 @@ const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
 export const Hype = () => {
-  useStyles();
   const { context } = useMothContext();
   const [nowPlaying, setPlaying] =
     useState<TTrackHypeKey | null>(null);
