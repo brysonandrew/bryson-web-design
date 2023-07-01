@@ -39,17 +39,17 @@ export const Footer: FC<TProps> = (props) => {
       className='flex justify-center fixed bottom-0 w-full bg-black-9 backdrop-blur-sm'
       style={{ height: FOOTER_SIZE }}
     >
-      <MetalBackground className='absolute inset-0 bg-teal-01' />
+      <MetalBackground className='absolute inset-0' />
       <Center
         className='relative h-full'
         style={{ width: itemWidth, left: -PADDING }}
       >
         <Dragger
-          className='relative flex items-center h-full'
+          className='relative flex items-center h-full shadow-teal-02-sm'
           whileHover={{ cursor: 'grab' }}
           whileTap={{ cursor: 'grabbing' }}
           initial={false}
-          style={{
+          style={{ 
             x: motionX,
             width: width + PADDING * 2,
             padding: PADDING,

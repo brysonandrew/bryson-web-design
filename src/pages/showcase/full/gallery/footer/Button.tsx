@@ -54,7 +54,7 @@ export const Button: FC<TProps> = ({
         to={to}
         onClick={handleClick}
         className={clsx(
-          'relative flex items-center pl-2 pt-1 pb-1 h-full m-0.5 z-10 shadow-baby-blue-01-sm',
+          'relative flex items-center pl-2 pt-1 pb-1 h-full m-0.5 shadow-teal-02-sm z-10',
         )}
         style={{ cursor: isActive ? 'default' : 'pointer' }}
         variants={{
@@ -69,14 +69,17 @@ export const Button: FC<TProps> = ({
             filter: resolveDropShadow(1),
           },
           hover: {
-            opacity: 0.7,
-            textShadow: resolveTextShadow(8),
-            filter: resolveDropShadow(8),
+            opacity: 1,
+            textShadow: resolveTextShadow(4, 'teal'),
+            filter: resolveDropShadow(8, 'teal'),
           },
         }}
       >
         {isActive && (
-          <FillDarkest layoutId='GALLERY_BUTTON_FILL' />
+          <FillDarkest
+            initial={false}
+            layoutId='GALLERY_BUTTON_FILL'
+          />
         )}
         <motion.span className='relative uppercase text-teal-bright text-xs'>
           {name.replace(/x/, '')}

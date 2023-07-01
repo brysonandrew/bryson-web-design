@@ -1,5 +1,6 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import { motion } from 'framer-motion';
+import { ThinLineGrow } from './thin-line/ThinLineGrow';
 
 export const FadeIn = () => {
   return (
@@ -10,8 +11,11 @@ export const FadeIn = () => {
       exit={{ opacity: 0 }}
       transition={{
         ...MOTION_CONFIG.transition,
-        duration: 4,
+        duration: 2,
+        delay: 2,
       }}
-    />
+    >
+      <ThinLineGrow key='FADE_IN_THIN_LINE_GROW' />
+    </motion.div>
   );
 };

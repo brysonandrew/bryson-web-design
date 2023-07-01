@@ -12,7 +12,7 @@ export const Content: FC<TProps> = ({
 }) => (
   <>
     <motion.div
-      className='flex flex-col -mt-0.5 pl-4 lg:flex-row lg:items-end'
+      className='flex flex-col -mt-0.5 pl-6 lg:flex-row lg:items-end'
       layout
     >
       <TextSm classValue='text-teal-bright'>{title}</TextSm>

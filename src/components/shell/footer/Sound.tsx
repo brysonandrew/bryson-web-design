@@ -1,10 +1,11 @@
-import { VolumeOff } from "@components/icons/VolumeOff";
-import { VolumeOn } from "@components/icons/VolumeOn";
-import { Fill } from "@components/metal/Fill";
-import { GlitchPorsalin } from "@components/text/glitch-porsalin";
-import styled from "@emotion/styled";
-import { useContext } from "@state/Context";
-import { motion } from "framer-motion";
+import { VolumeOff } from '@components/icons/VolumeOff';
+import { VolumeOn } from '@components/icons/VolumeOn';
+import { Fill } from '@components/metal/Fill';
+import { GlitchPorsalin } from '@components/text/glitch-porsalin';
+import styled from '@emotion/styled';
+import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import { useContext } from '@state/Context';
+import { motion } from 'framer-motion';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
@@ -14,23 +15,23 @@ export const Sound = () => {
   const { isSound, dispatch } = useContext();
 
   const handleTap = () => {
-    dispatch({ type: "toggle-sound", value: null });
+    dispatch({ type: 'toggle-sound', value: null });
   };
 
   return (
     <Root
-      whileHover="hover"
-      className="absolute bottom-4 right-4 z-50"
+      className='absolute bottom-4 right-4 rounded-full shadow-teal-02-sm z-50'
+      {...HOVER_TEAL_GLOW_PROPS_SM}
     >
-      <Fill classValue="rounded-full" inset={-1} />
+      <Fill classValue='rounded-full' inset={-1} />
       <Button
-        className="relative p-3 rounded-full bg-black cursor-pointer"
+        className='relative p-3 cursor-pointer'
         onTap={handleTap}
       >
         <GlitchPorsalin
           offset={2.8}
-          tag="div"
-          classValue="uppercase"
+          tag='div'
+          classValue='uppercase'
         >
           <Background variants={{ hover: { scale: 1.15 } }}>
             {isSound ? <VolumeOn /> : <VolumeOff />}

@@ -1,4 +1,8 @@
-import { MOTION_CONFIG } from '@constants/animation';
+import {
+  DURATION_DELAY,
+  MOTION_CONFIG,
+  PRESENCE_OPACITY_DELAY,
+} from '@constants/animation';
 import { Fill } from '@components/metal/Fill';
 import styled from '@emotion/styled';
 import { useOnSound } from '@hooks/sounds/useOnSound';
@@ -17,6 +21,8 @@ import {
 } from 'react-router-dom';
 import { Mark, resolveLayoutId } from '../../Mark';
 import { Content } from './content';
+import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import { resolveCompositeKey } from '@utils/keys';
 
 const Root = styled(motion.li)``;
 type TProps = TItem & {
@@ -30,10 +36,8 @@ export const Item: FC<TProps> = (props) => {
 
   return (
     <Root
-      className='flex relative shadow-white-02-sm'
-      initial={false}
-      animate='animate'
-      whileHover='hover'
+      className='flex relative shadow-teal-02-sm'
+      {...HOVER_TEAL_GLOW_PROPS_SM}
     >
       <InternalLink
         to={
@@ -46,25 +50,19 @@ export const Item: FC<TProps> = (props) => {
       >
         <Container
           layoutId={key}
-          classValue='absolute flex items-center justify-between text-lg w-full pl-4'
+          classValue='absolute flex items-center justify-between text-lg w-full'
         >
           <Fill />
           <Mark layoutId={resolveLayoutId(key)} />
           <AnimatePresence>
             {selectedPath !== key && (
               <motion.div
-                key='SELECTED_ITEM_TEXT_KEY'
+                key={resolveCompositeKey(
+                  'SELECTED_ITEM_TEXT_KEY',
+                  key,
+                )}
                 className='relative flex flex-col justify-between w-full md:flex-row md:items-center px-3 py-1'
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    ...MOTION_CONFIG,
-                    delay:
-                      MOTION_CONFIG.transition.duration,
-                  },
-                }}
-                exit={{ opacity: 0 }}
+                {...PRESENCE_OPACITY_DELAY}
               >
                 <Content {...props} />
               </motion.div>
