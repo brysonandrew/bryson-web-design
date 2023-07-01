@@ -44,6 +44,3 @@ export const resolveMedia = (
 };
 
 export type TSlugProps = Pick<TItem, 'slug'>;
-
-export const CONTENT_HEIGHT_CLASS = "h-24 lg:h-16";
-export const CONTENT_WIDTH_CLASS = "h-24 lg:h-16";

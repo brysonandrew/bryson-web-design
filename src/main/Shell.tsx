@@ -16,6 +16,7 @@ import {
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
 import { useImages } from '@pages/index/build/images/hooks/useImages';
+import { useShowcaseRedirect } from './useShowcaseRedirect';
 
 type TProps = {
   children: TChildren;
@@ -25,6 +26,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   const images = useImages();
   useScrollControl();
   useScrollToTop();
+  useShowcaseRedirect();
 
   useEffect(() => {
     if (images.length > 0) {

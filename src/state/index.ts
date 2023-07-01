@@ -5,6 +5,15 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'update-image-record': {
+      return {
+        ...state,
+        clientImageRecord: {
+          ...state.clientImageRecord,
+          ...value
+        }
+      };
+    }
     case 'images': {
       return {
         ...state,

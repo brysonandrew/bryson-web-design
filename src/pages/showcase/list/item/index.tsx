@@ -7,14 +7,14 @@ import {
 } from '@pages/showcase/config';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import {
-  Link as InternalLink,
-  useLocation,
-} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
+import { Time } from './content/Time';
+import { useMediaFromKey } from '@pages/showcase/gallery/hooks/useMediaFromKey';
 
 const Root = styled(motion.li)``;
+const InternalLink = styled(motion(Link))``;
 
 type TProps = TSlugProps;
 export const Item: FC<TProps> = ({ slug, ...props }) => {
@@ -22,18 +22,23 @@ export const Item: FC<TProps> = ({ slug, ...props }) => {
   const handleOnSound = useOnSound();
 
   const item = APP_ITEMS_RECORD[slug];
-
+  const handleLoadMedia = useMediaFromKey();
+  const handleMouseEnter = () => {
+    handleLoadMedia(slug);
+  };
   return (
-    <Root>
+    <Root onMouseEnter={handleMouseEnter}>
       <InternalLink
         to={
           item.altTo
             ? item.altTo
             : `${pathname}?${SELECTED_KEY}=${slug}&${IMG_KEY}=${1}`
         }
-        onClick={handleOnSound}
+        onTap={handleOnSound}
       >
-        <Content {...item} />
+        <Content {...item}>
+          <Time time={item.time} />
+        </Content>
       </InternalLink>
     </Root>
   );

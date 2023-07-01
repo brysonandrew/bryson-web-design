@@ -11,7 +11,6 @@ import styled from '@emotion/styled';
 import { Fill } from '@components/metal/Fill';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import clsx from 'clsx';
-import { CONTENT_HEIGHT_CLASS } from '../config';
 
 const Link = styled(motion(_Link))`
   aspect-ratio: 1 / 1;
@@ -25,8 +24,7 @@ export const Close: FC = () => {
     <motion.div {...PRESENCE_OPACITY}>
       <Link
         className={clsx(
-          'relative flex items-center justify-center shrink-0 cursor-pointer shadow-teal-02-sm z-10',
-          CONTENT_HEIGHT_CLASS,
+          'relative flex items-center justify-center shrink-0 p-4 h-full cursor-pointer shadow-teal-02-sm z-10',
         )}
         to={pathname}
         onClick={handleOnSound}

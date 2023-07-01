@@ -5,17 +5,10 @@ import { APP_ITEMS } from '@constants/apps';
 import { useSelectedItem } from './useSelectedItem';
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import {
-  AnimatePresence,
-  MotionValue,
-  motion,
-  useMotionValue,
-  useMotionValueEvent,
-} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import clsx from 'clsx';
 import { WIDTH_CLASS } from '@constants/styles';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
 
 const Root = styled(motion.div)``;
 
