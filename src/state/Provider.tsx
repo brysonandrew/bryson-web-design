@@ -6,7 +6,6 @@ import { Context } from './Context';
 import { STATE } from './constants';
 import { useDetectGPU } from '@react-three/drei';
 import type { TChildrenElement } from '@t/index';
-import { useImages } from '@pages/index/build/images/hooks/useImages';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -14,7 +13,6 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const images = useImages();
   const { isMobile } = useDetectGPU();
 
   const [state, dispatch] = useReducer<TReducer>(reducer, {
@@ -30,7 +28,6 @@ export const Provider: FC<TProviderProps> = ({
     <Context.Provider
       value={{
         dispatch,
-        images,
         ...state,
       }}
     >

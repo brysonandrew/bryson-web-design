@@ -13,4 +13,6 @@ export const STATE: TState = {
     'stagger',
   isThreshold: false,
   motionValuePairs: [],
+  images: [],
+
 };
