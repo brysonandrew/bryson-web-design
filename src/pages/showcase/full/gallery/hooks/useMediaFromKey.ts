@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import type { TMedia } from "./config";
-import { resolveMedia } from "./config";
+import type { TMedia } from "../../../config";
+import { resolveMedia } from "../../../config";
 import type { TModule } from "@t/index";
 const screenFiles = import.meta.glob("/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png");
 

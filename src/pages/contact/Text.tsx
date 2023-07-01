@@ -8,6 +8,7 @@ import { TextName } from './TextName';
 import { LABEL_CLASS } from './config';
 import { Fill } from '@components/metal/Fill';
 import { Input as Select } from '@components/select/Input';
+import { BASIC_VARIANTS } from '@constants/animation';
 
 const Root = styled(motion.label)``;
 const Input = styled(motion.input)`
@@ -23,11 +24,7 @@ export const Text: FC<TProps> = ({
   isFocused,
   ...props
 }) => (
-  <Root
-    className={clsx(LABEL_CLASS)}
-    animate='animate'
-    whileHover='hover'
-  >
+  <Root className={clsx(LABEL_CLASS)} {...BASIC_VARIANTS}>
     <Fill />
     {isFocused && <Select key={title} />}
     <div

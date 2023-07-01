@@ -1,4 +1,7 @@
-import { resolveDropShadow } from "@pages/index/constants";
+export const BASIC_VARIANTS = {
+  animate: 'animate',
+  whileHover: 'hover',
+};
 
 export const PRESENCE_OPACITY_SHIFT = {
   initial: { opacity: 0, x: -20 },

@@ -19,7 +19,7 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
   return (
     <Root
       className='inline-flex relative'
-      style={{ z: 1000 }}
+      style={{ z: title === 'React' ? 40 : -60 }}
       {...HOVER_GLOW_PROPS}
       {...handlers}
     >

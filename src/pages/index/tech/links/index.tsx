@@ -5,15 +5,13 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TChildrenProps } from '@components/fake-3d/Motion';
+import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 
 const Root = styled(motion.div)``;
 
-type TProps = Partial<TChildrenProps>;
+type TProps = TFake3DMotionChildrenProps;
 export const Links: FC<TProps> = ({
-  y,
-  rotateX,
-  filter,
+  style: { y, rotateX, filter },
 }) => {
   return (
     <Root
@@ -24,9 +22,9 @@ export const Links: FC<TProps> = ({
     >
       <Item {...TECH.REACT} />
       <div className='p-2' />
-      <div className='flex items-center justify-center w-full xl:pt-1'>
+      <motion.div className='flex items-center justify-center w-full xl:pt-1' style={{z: 10}}>
         <Plus classValue={clsx('h-7 w-7')} />
-      </div>
+      </motion.div>
       <div className='p-2' />
       <Item {...TECH.TYPESCRIPT} />
     </Root>

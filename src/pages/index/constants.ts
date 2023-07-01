@@ -72,17 +72,12 @@ export const DELAY_VISIBILITY = {
   ...DURATION_DELAY_TRANSITION
 };
 
-
-
-
 export const TEAL_GLOW = {
   variants: {
     hover: {
-      opacity: 1,
       filter: resolveDropShadow(20, 'teal'),
     },
     animate: {
-      opacity: 0.8,
       filter: resolveDropShadow(10, 'teal'),
     },
   },

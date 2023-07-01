@@ -10,6 +10,7 @@ import {
   useEffect,
 } from 'react';
 type TInViewParameters = Parameters<typeof useInView>;
+type TInViewOptions = TInViewParameters[1];
 
 type TType = keyof ReactHTML;
 export type TUpdateRectProps = {
@@ -21,7 +22,7 @@ type TChildrenProps<T> = TUpdateRectProps & {
   ref: MutableRefObject<T | null>;
 };
 type TProps<T> = Omit<HTMLProps<T>, 'children'> &
-  TInViewParameters[1] & {
+  TInViewOptions & {
     type?: TType;
     children(props: TChildrenProps<T>): TChildren;
   };

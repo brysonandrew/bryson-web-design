@@ -1,4 +1,4 @@
-import { HOVER_GLOW_PROPS } from "../constants";
+import { HOVER_GLOW_PROPS } from "../../src/pages/index/constants";
 
 const INTERACTIVE_CLASS = "flex relative px-4 py-2 w-full shadow-baby-blue-04-sm cursor-pointer";
 

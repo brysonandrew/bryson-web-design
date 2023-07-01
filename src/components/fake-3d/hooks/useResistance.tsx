@@ -1,17 +1,13 @@
 import { useTransform } from 'framer-motion';
 import {
-  MAX_SCROLL,
   TBaseConfig,
   TTransformRange,
-} from './config';
+} from '../config';
 
 export const useResistance = ({
   scrollY,
-  input = ({ startScroll }) => [
-    startScroll,
-    startScroll + MAX_SCROLL,
-  ],
-  output = [0, -440],
+  input,
+  output,
   ...inputConfig
 }: TBaseConfig & TTransformRange) => {
   const dispersion = useTransform(

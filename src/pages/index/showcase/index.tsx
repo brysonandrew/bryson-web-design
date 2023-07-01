@@ -1,17 +1,17 @@
 import { Fake3D } from '@components/fake-3d';
-import { List } from './list';
+import { Main } from '@pages/showcase/Main';
 import { STORY } from '@constants/copy';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 
-export const Clients = () => {
+export const Showcase = () => {
   return (
     <Section
-      title={STORY.clients}
+      title={STORY.showcase}
       classValue='items-center z-10'
     >
       <Fake3D {...FAKE_3D_PROPS}>
-        {(props) => <List {...props} />}
+        {(props) => <Main {...props} />}
       </Fake3D>
     </Section>
   );

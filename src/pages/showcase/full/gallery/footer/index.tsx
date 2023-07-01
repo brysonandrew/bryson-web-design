@@ -6,7 +6,7 @@ import {
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useDrag } from '../hooks/useDrag';
-import { resolveTo } from '../resolveTo';
+import { resolveTo } from '../hooks/resolveTo';
 import {
   FOOTER_SIZE,
   PADDING,

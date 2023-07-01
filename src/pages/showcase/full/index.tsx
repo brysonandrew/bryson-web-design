@@ -6,13 +6,14 @@ import { Gallery } from './gallery';
 import { Mark, resolveLayoutId } from '../Mark';
 import { TextSm } from '@components/text/TextSm';
 import { kebabToTitle } from '@utils/format';
+import { createPortal } from 'react-dom';
 
 type TProps = {
   selectedPath: string;
 };
 export const Full: FC<TProps> = ({ selectedPath }) => {
   useFreezeScrollBar();
-  return (
+  return createPortal(
     <Container
       layoutId={selectedPath}
       classValue='fixed inset-0 screen-width screen-height text-teal-bright'
@@ -23,6 +24,7 @@ export const Full: FC<TProps> = ({ selectedPath }) => {
       </div>
       <Close />
       <Gallery selectedPath={selectedPath} />
-    </Container>
+    </Container>,
+    document.body,
   );
 };

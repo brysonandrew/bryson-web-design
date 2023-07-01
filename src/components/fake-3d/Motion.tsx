@@ -5,16 +5,11 @@ import { useDispersion } from './hooks/useDispersion';
 import { useResistance } from './hooks/useResistance';
 import { useVisibility } from './hooks/useVisibility';
 import { useWindowSize } from '@hooks/useWindowSize';
-import { TOptionsConfig } from './hooks/config';
+import { TFake3DMotionChildrenProps, TOptionsConfig } from './config';
 
-export type TChildrenProps = TUpdateRectProps & {
-  y: MotionValue;
-  rotateX: MotionValue;
-  filter: MotionValue<string>;
-};
 type TProps = TUpdateRectProps &
   TOptionsConfig & {
-    children(props: TChildrenProps): void;
+    children(props: TFake3DMotionChildrenProps): void;
   };
 export const Motion: FC<TProps> = ({
   children,
@@ -47,7 +42,7 @@ export const Motion: FC<TProps> = ({
     ...config,
     ...dispersionRange,
   });
-  const resistance = useResistance({
+  const resistance = useResistance({ 
     ...config,
     ...resistanceRange,
   });
@@ -59,10 +54,12 @@ export const Motion: FC<TProps> = ({
   return (
     <>
       {children({
-        y: resistance,
-        rotateX: dispersion,
-        filter: visibility,
-        ...rectProps,
+        style: {
+          y: resistance,
+          rotateX: dispersion,
+          filter: visibility,
+        },
+        rectConfig: rectProps,
       })}
     </>
   );

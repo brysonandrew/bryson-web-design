@@ -1,4 +1,3 @@
-import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -9,8 +8,6 @@ import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 import { Decoration } from './header/Decoration';
-import { WIDTH_CLASS } from '@constants/styles';
-import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -29,7 +26,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Header key='HEADER' />
         ) : (
           <Decoration key='DECORATION' />
-        )}
+        )} 
       </AnimatePresence>
       <AnimatePresence>
         <Content

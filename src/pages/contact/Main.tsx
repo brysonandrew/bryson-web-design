@@ -3,30 +3,31 @@ import type {
   ChangeEvent,
   FormEvent,
   FocusEvent,
+  FC,
 } from 'react';
 import { motion } from 'framer-motion';
 import type { HTMLMotionProps } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import clsx from 'clsx';
 import { Space2 } from '@components/spaces/Space2';
-
 import { useFocusSound } from '@hooks/sounds/useFocusSound';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
 import type { TSendingState } from './config';
 import { INPUT_CLASS, INIT_STATE } from './config';
 import { Submit } from './Submit';
-import { Title } from '@components/text/Title';
 import { Space16 } from '@components/spaces/Space16';
-import { TitleOffset } from '@components/spaces/TitleOffset';
-import { Width } from '@components/Width';
 import styled from '@emotion/styled';
-import { Space6 } from '@components/spaces/Space6';
 import { Space4 } from '@components/spaces/Space4';
+import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { WIDTH_CLASS } from '@constants/styles';
+
+const Root = styled(motion.div)``;
 
 const Form = styled(motion.form)``;
 
-export const Main = () => {
+type TProps = Partial<TFake3DMotionChildrenProps>;
+export const Main: FC<TProps> = ({ style }) => {
   const [focus, setFocus] = useState<string | null>(null);
   const [state, setState] = useState(INIT_STATE);
   const [sendingState, setSendingState] =
@@ -63,7 +64,6 @@ export const Main = () => {
     const target = event.currentTarget;
     if (!target) return;
     setFocus(target.name);
-    handleFocusSound();
   };
 
   const handleBlur = (
@@ -111,9 +111,7 @@ export const Main = () => {
   };
 
   return (
-    <Width>
-      <Title>Get in touch</Title>
-      <TitleOffset />
+    <Root className={clsx(WIDTH_CLASS)} style={style}>
       <Form
         className={clsx(
           'flex flex-col w-full my-0 mx-auto',
@@ -165,6 +163,6 @@ export const Main = () => {
         <Submit sendingState={sendingState} />
       </Form>
       <Space16 />
-    </Width>
+    </Root>
   );
 };

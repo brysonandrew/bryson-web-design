@@ -1,12 +1,13 @@
 import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
 
 export const Close: FC = () => {
+  const { pathname } = useLocation();
   const handleOnSound = useOffSound();
 
   return (
@@ -22,7 +23,7 @@ export const Close: FC = () => {
       />
       <Link
         className='relative p-5 rounded-full cursor-pointer'
-        to='/showcase'
+        to={pathname}
         onClick={handleOnSound}
       >
         <Cross />

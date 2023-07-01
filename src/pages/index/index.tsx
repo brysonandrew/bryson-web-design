@@ -5,10 +5,9 @@ import { Tech } from './tech';
 import { Build } from './build';
 import { Space8 } from '@components/spaces/Space8';
 import { Space6 } from '@components/spaces/Space6';
-import { Space24 } from '@components/spaces/Space24';
-import { Main as Showcase } from '@pages/showcase/Main';
-import { Main as Contact } from '@pages/contact/Main';
 import { Space16 } from '@components/spaces/Space16';
+import { Contact } from './contact';
+import { Showcase } from './showcase';
 
 export const Index = () => (
   <Suspense fallback={null}>
@@ -23,7 +22,7 @@ export const Index = () => (
         <Space6 />
         <Contact />
         <Space8 />
-      </Shell>
+      </Shell> 
     </MainShell>
   </Suspense>
 );
