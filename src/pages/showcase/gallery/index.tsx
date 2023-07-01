@@ -16,6 +16,7 @@ import { createPortal } from 'react-dom';
 import { Background } from './Background';
 import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
 import { useDelay } from '@main/useDelay';
+import { useContext } from '@state/Context';
 
 const Root = styled(motion.div)``;
 
@@ -23,10 +24,13 @@ type TProps = {
   selectedPath: TAppItemKey;
 };
 export const Gallery: FC<TProps> = ({ selectedPath }) => {
+  const { clientImageRecord } = useContext();
+  const items = Object.values(
+    clientImageRecord[selectedPath] ?? {},
+  );
   useFreezeScrollBar();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
-  const items = useMediaFromKey(selectedPath);
   const motionX = useMotionValue(0);
   const count = items?.length ?? 0;
   const width = useWidth();
@@ -60,12 +64,8 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               <Close />
             </Content>
           </div>
-          {isReady ? (
-            <>
-              <Background />
-              <Sections {...galleryProps} />
-            </>
-          ) : null}
+          <Background key='GALLERY_BACKGROUND' />
+          {isReady ? <Sections {...galleryProps} /> : null}
           <Footer key='GALLERY_FOOTER' {...galleryProps} />
         </Root>,
         document.body,

@@ -1,3 +1,4 @@
+import { TMedia } from '@pages/showcase/config';
 import { TModule } from '@t/index';
 import type { MotionValue } from 'framer-motion';
 import type {
@@ -17,7 +18,14 @@ export type TMotionValuePair = [
   y: MotionValue,
 ];
 
+export type TImageRecord = Record<string, TMedia>;
+export type TClientImageRecord = Record<string, TImageRecord>;
+
 export type TAction =
+  | {
+    type: "update-image-record",
+    value: Partial<TClientImageRecord>;
+  }
   | {
     type: "images",
     value: TModule[];
@@ -69,6 +77,7 @@ export type TAction =
 
 export type TState = {
   images: TModule[];
+  clientImageRecord: TClientImageRecord;
   isScroll: boolean;
   isScrollStart: boolean;
   isInit: boolean;

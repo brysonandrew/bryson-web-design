@@ -14,5 +14,5 @@ export const STATE: TState = {
   isThreshold: false,
   motionValuePairs: [],
   images: [],
-
+  clientImageRecord: {}
 };

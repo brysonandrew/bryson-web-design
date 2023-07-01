@@ -1,38 +1,39 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import type { TModule } from "@t/index";
-import { TMedia, resolveMedia } from "@pages/showcase/config";
+import { resolveMedia } from "@pages/showcase/config";
+import { useContext } from "@state/Context";
+import { TImageRecord } from "@state/types";
 const screenFiles = import.meta.glob("/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png");
 
-export const useMediaFromKey = (key: string) => {
-  const [mediaItems, setMediaItems] = useState<
-    TMedia[]
-  >([]);
+export const useMediaFromKey = () => {
+  const { clientImageRecord, dispatch } = useContext();
 
-  const handleLoad = async () => {
-    const mediaItems: TMedia[] = [];
+  const handleLoad = async (selectedKey: string) => {
+    const selectedRecord = clientImageRecord[selectedKey];
+    const isEmpty = !Boolean(selectedRecord);
+    const imageRecord: TImageRecord = isEmpty ? {} : { ...selectedRecord };
     for await (const entry of Object.entries(screenFiles)) {
       const [k, resolver] = entry;
+      if (imageRecord[k]) continue;
       if (
-        k.includes(`/${key}/`) &&
-        !k.includes(`${key}/preview`)
+        k.includes(`/${selectedKey}/`) &&
+        !k.includes(`${selectedKey}/preview`)
       ) {
         const m = await resolver();
-        const next = resolveMedia(k);
-        mediaItems.push({
+        let next = resolveMedia(k);
+        next = {
           ...next,
           src: (m as TModule).default,
-        });
+        };
+        imageRecord[k] = next;
+        if (isEmpty && Object.keys(imageRecord).length < 3) { // load first two
+          dispatch({ type: "update-image-record", value: { [selectedKey]: imageRecord } });
+        }
       }
     }
 
-    if (mediaItems.length === 0) return;
-
-    setMediaItems(mediaItems);
+    dispatch({ type: "update-image-record", value: { [selectedKey]: imageRecord } });
   };
 
-  useEffect(() => {
-    void handleLoad();
-  }, []);
-
-  return mediaItems;
+  return handleLoad;
 };
