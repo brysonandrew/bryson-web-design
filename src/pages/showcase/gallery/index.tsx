@@ -1,11 +1,6 @@
 import { useState, type FC } from 'react';
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-} from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import { Close } from './Close';
-import { useMediaFromKey } from './hooks/useMediaFromKey';
 import { useWidth } from './hooks/useWidth';
 import styled from '@emotion/styled';
 import { TAppItemKey } from '@constants/apps';

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type { TModule } from "@t/index";
 import { resolveMedia } from "@pages/showcase/config";
 import { useContext } from "@state/Context";
