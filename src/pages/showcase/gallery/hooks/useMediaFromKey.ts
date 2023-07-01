@@ -7,6 +7,17 @@ const screenFiles = import.meta.glob("/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png")
 export const useMediaFromKey = () => {
   const { clientImageRecord, dispatch } = useContext();
 
+  const updateRecord = ({ key, imageRecord }: { key: string, imageRecord: TImageRecord; }) => {
+    dispatch({
+      type: "image-record", value: {
+        [key]: {
+          ...clientImageRecord[key],
+          ...imageRecord
+        }
+      }
+    });
+  };
+
   const handleLoad = async (selectedKey: string) => {
     const selectedRecord = clientImageRecord[selectedKey];
     const isEmpty = !Boolean(selectedRecord);
@@ -26,12 +37,12 @@ export const useMediaFromKey = () => {
         };
         imageRecord[k] = next;
         if (isEmpty && Object.keys(imageRecord).length < 3) { // load first two
-          dispatch({ type: "update-image-record", value: { [selectedKey]: imageRecord } });
+          updateRecord({ key: selectedKey, imageRecord });
         }
       }
     }
 
-    dispatch({ type: "update-image-record", value: { [selectedKey]: imageRecord } });
+    updateRecord({ key: selectedKey, imageRecord });
   };
 
   return handleLoad;

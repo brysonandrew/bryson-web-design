@@ -20,11 +20,12 @@ export type TMotionValuePair = [
 
 export type TImageRecord = Record<string, TMedia>;
 export type TClientImageRecord = Record<string, TImageRecord>;
+export type TPartialClientImageRecord = { [key: string]: TImageRecord; };
 
 export type TAction =
   | {
-    type: "update-image-record",
-    value: Partial<TClientImageRecord>;
+    type: "image-record",
+    value: TPartialClientImageRecord;
   }
   | {
     type: "images",
