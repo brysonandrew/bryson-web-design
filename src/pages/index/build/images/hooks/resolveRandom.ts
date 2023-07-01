@@ -1,7 +1,7 @@
 import { TModule } from "@t/index";
 
 const screenFiles = import.meta.glob(
-  "/assets/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.png",
+  "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.png",
 );
 const values = Object.values(screenFiles);
 
