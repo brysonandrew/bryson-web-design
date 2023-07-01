@@ -1,6 +1,11 @@
+import { TItem } from "@t/showcase";
+import { resolveCompositeKey } from "@utils/keys";
+
 export const SELECTED_KEY = "selected";
 export const IMG_KEY = "img";
 
+export const resolveFillMetalLayoutId = (key: string) => resolveCompositeKey("FILL_DARKEST_LAYOUT_KEY", key);
+export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
 export const ITEM_DESCRIPTION_LOOKUP: Record<
   string,
   string
@@ -37,3 +42,8 @@ export const resolveMedia = (
   const key = `${name}-${img}`.toLowerCase();
   return { file, name, key, img, src };
 };
+
+export type TSlugProps = Pick<TItem, 'slug'>;
+
+export const CONTENT_HEIGHT_CLASS = "h-24 lg:h-16";
+export const CONTENT_WIDTH_CLASS = "h-24 lg:h-16";

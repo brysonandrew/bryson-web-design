@@ -1,4 +1,4 @@
-import { Gallery as _Gallery } from "@pages/showcase/full/gallery";
+import { Gallery as _Gallery } from "@pages/showcase/gallery/gallery";
 const NAME = "stock-portfolio";
 
 export const Gallery = () => (

@@ -11,8 +11,8 @@ export const FadeIn = () => {
       exit={{ opacity: 0 }}
       transition={{
         ...MOTION_CONFIG.transition,
-        duration: 2,
-        delay: 2,
+        duration: 1,
+        delay: 1,
       }}
     >
       <ThinLineGrow key='FADE_IN_THIN_LINE_GROW' />

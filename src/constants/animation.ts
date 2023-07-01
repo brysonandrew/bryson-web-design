@@ -6,7 +6,7 @@ export const BASIC_VARIANT_KEYS = {
 
 export const MOTION_CONFIG = {
   transition: {
-    ease: "easeIn",
+    ease: "linear",
     duration: 0.2,
   },
 };
@@ -28,6 +28,19 @@ export const PRESENCE_OPACITY = {
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };
+
+export const PRESENCE_SCALE = {
+  initial: { scale: 0 },
+  animate: { scale: 1 },
+  exit: { scale: 0 },
+};
+
+export const PRESENCE_Y = {
+  initial: { y: "100%" },
+  animate: { y: "0%" },
+  exit: { y: "100%" },
+};
+
 
 export const PRESENCE_OPACITY_DELAY = {
   initial: { opacity: 0 },

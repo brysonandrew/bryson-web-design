@@ -1,31 +1,38 @@
-import { TextSm } from '@components/text/TextSm';
 import type { FC } from 'react';
 import { Time } from './Time';
-import type { TItem } from '@t/showcase';
-import { motion } from 'framer-motion';
+import { Header } from './Header';
+import {
+  CONTENT_HEIGHT_CLASS,
+  TSlugProps,
+  resolveTitleLayoutId,
+} from '@pages/showcase/config';
+import { FillDark } from '@components/metal/FillDark';
+import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import styled from '@emotion/styled';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import clsx from 'clsx';
 
-type TProps = Pick<TItem, 'title' | 'time' | 'description'>;
+const Root = styled(motion.div)``;
+
+type TProps = TSlugProps & {
+  time?: Date;
+} & HTMLMotionProps<'div'>;
 export const Content: FC<TProps> = ({
-  title,
+  slug,
   time,
-  description,
+  ...props
 }) => (
-  <>
-    <motion.div
-      className='flex flex-col -mt-0.5 pl-6 lg:flex-row lg:items-end'
-      layout
-    >
-      <TextSm classValue='text-teal-bright'>{title}</TextSm>
-      <div className='hidden lg:flex px-2' />
-      <TextSm
-        classValue='text-baby-blue text-md italic'
-        layout
-      >
-        {description}
-      </TextSm>
-    </motion.div>
-    <motion.div className='px-4' layout>
-      <Time time={time} />
-    </motion.div>
-  </>
+  <Root
+    className={clsx(
+      'relative flex items-center justify-between w-full pr-4 shadow-teal-02-sm z-20',
+      CONTENT_HEIGHT_CLASS,
+    )}
+    layoutId={resolveTitleLayoutId(slug)}
+    {...HOVER_TEAL_GLOW_PROPS_SM}
+    {...props}
+  >
+    <FillDark key='FillDark' />
+    <Header slug={slug} />
+    <Time time={time} />
+  </Root>
 );

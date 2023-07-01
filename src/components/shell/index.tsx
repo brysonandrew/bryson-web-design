@@ -8,6 +8,9 @@ import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 import { Decoration } from './header/Decoration';
+import { useSearchParams } from 'react-router-dom';
+import { SELECTED_KEY } from '@pages/showcase/config';
+import { useSelectedItem } from '@pages/showcase/useSelectedItem';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -17,7 +20,9 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, isScroll } = useContext();
-  const isShown = !isInit && !isScroll;
+  const selectedItem = useSelectedItem();
+  const isShown =
+    !isInit && !isScroll && !Boolean(selectedItem);
 
   return (
     <Root className='relative text-black-dark-04 overflow-hidden z-10'>
@@ -26,7 +31,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Header key='HEADER' />
         ) : (
           <Decoration key='DECORATION' />
-        )} 
+        )}
       </AnimatePresence>
       <AnimatePresence>
         <Content

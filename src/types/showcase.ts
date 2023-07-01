@@ -1,4 +1,5 @@
 export type TItem = {
+  slug: string;
   title: string;
   description: string;
   paragraphs?: string[];

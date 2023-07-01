@@ -9,23 +9,31 @@ import { motion } from 'framer-motion';
 import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
 import styled from '@emotion/styled';
 import { Fill } from '@components/metal/Fill';
+import { PRESENCE_OPACITY } from '@constants/animation';
+import clsx from 'clsx';
+import { CONTENT_HEIGHT_CLASS } from '../config';
 
-const Link = styled(motion(_Link))``;
+const Link = styled(motion(_Link))`
+  aspect-ratio: 1 / 1;
+`;
 
 export const Close: FC = () => {
   const { pathname } = useLocation();
   const handleOnSound = useOffSound();
 
   return (
-    <motion.div className='absolute top-7 right-9 lg:right-18 flex items-center justify-between z-10'>
+    <motion.div {...PRESENCE_OPACITY}>
       <Link
-        className='relative p-4 cursor-pointer shadow-teal-02-sm'
+        className={clsx(
+          'relative flex items-center justify-center shrink-0 cursor-pointer shadow-teal-02-sm z-10',
+          CONTENT_HEIGHT_CLASS,
+        )}
         to={pathname}
         onClick={handleOnSound}
         {...HOVER_TEAL_GLOW_PROPS_SM}
       >
         <Fill />
-        <Cross classValue='relative' />
+        <Cross classValue='relative w-6 h-6' />
       </Link>
     </motion.div>
   );

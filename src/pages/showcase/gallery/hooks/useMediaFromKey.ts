@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import type { TMedia } from "../../../config";
-import { resolveMedia } from "../../../config";
 import type { TModule } from "@t/index";
+import { TMedia, resolveMedia } from "@pages/showcase/config";
 const screenFiles = import.meta.glob("/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png");
 
 export const useMediaFromKey = (key: string) => {
   const [mediaItems, setMediaItems] = useState<
-    TMedia[] | null
-  >(null);
+    TMedia[]
+  >([]);
 
   const handleLoad = async () => {
     const mediaItems: TMedia[] = [];
