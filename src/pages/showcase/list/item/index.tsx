@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
+import { Time } from './content/Time';
 
 const Root = styled(motion.li)``;
 
@@ -33,7 +34,9 @@ export const Item: FC<TProps> = ({ slug, ...props }) => {
         }
         onClick={handleOnSound}
       >
-        <Content {...item} />
+        <Content {...item}>
+          <Time time={item.time} />
+        </Content>
       </InternalLink>
     </Root>
   );

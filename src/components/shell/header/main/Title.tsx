@@ -7,7 +7,7 @@ const Root = styled(motion.div)``;
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => (
-  <Root className='relative flex'>
+  <Root className='relative flex flex-col sm:flex-row'>
     <h1 className='text-teal-bright text-md uppercase'>
       Bryson A.
     </h1>

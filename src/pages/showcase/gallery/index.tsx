@@ -15,6 +15,7 @@ import { Sections } from './sections';
 import { createPortal } from 'react-dom';
 import { Background } from './Background';
 import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
+import { useDelay } from '@main/useDelay';
 
 const Root = styled(motion.div)``;
 
@@ -29,7 +30,10 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const motionX = useMotionValue(0);
   const count = items?.length ?? 0;
   const width = useWidth();
-  const isReady = width > 0 && count > 0 && isAnimationDone;
+
+  const isDelay = useDelay(400);
+  const isReady =
+    width > 0 && count > 0 && (isAnimationDone || isDelay);
 
   const galleryProps = {
     items,
@@ -52,8 +56,9 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
                 handleLayoutAnimationComplete
               }
               slug={selectedPath}
-            />
-            <Close />
+            >
+              <Close />
+            </Content>
           </div>
           {isReady ? (
             <>
