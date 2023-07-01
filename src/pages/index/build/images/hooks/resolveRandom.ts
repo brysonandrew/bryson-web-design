@@ -1,3 +1,5 @@
+import { TModule } from "@t/index";
+
 const screenFiles = import.meta.glob(
   "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.png",
 );
@@ -12,10 +14,10 @@ export const resolveRandom = async () => {
       indicies.push(next);
     }
   }
-  const items = [];
+  const items: TModule[] = [];
 
   for await (const index of indicies) {
-    const next = await values[index]();
+    const next = await values[index]() as TModule;
     items.push(next);
   }
 

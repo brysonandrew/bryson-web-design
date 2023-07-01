@@ -1,13 +1,13 @@
 import { useTimeoutRef } from "@hooks/useTimeoutRef";
 import { useState, useEffect } from "react";
 
-export const useFading = () => {
-  const [isFading, setFading] = useState(false);
+export const useDelay = (ms = 200) => {
+  const [isReady, setReady] = useState(false);
   const { timeoutRef } = useTimeoutRef();
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
-      setFading(true);
-    }, 50);
+      setReady(true);
+    }, ms);
   }, []);
-  return isFading;
+  return isReady;
 };

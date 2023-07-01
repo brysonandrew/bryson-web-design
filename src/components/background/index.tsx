@@ -13,8 +13,12 @@ const Rect = styled(motion.rect)``;
 
 type TProps = {
   classValue?: ClassValue;
+  children: JSX.Element;
 };
-export const Background: FC<TProps> = ({ classValue }) => (
+export const Background: FC<TProps> = ({
+  classValue,
+  children,
+}) => (
   <Root
     className={clsx('fixed inset-0 z-0', classValue)}
     width='100%'
@@ -28,11 +32,6 @@ export const Background: FC<TProps> = ({ classValue }) => (
       fill={resolveUrlId(PATTERN_ID)}
       filter={resolveUrlId(MORPH_ID)}
     />
-    <Processor
-      style={{ opacity: 0.1 }}
-      width='100%'
-      height='100%'
-      fill='gray'
-    />
+    {children}
   </Root>
 );

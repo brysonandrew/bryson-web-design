@@ -1,6 +1,6 @@
 import { MOTION_CONFIG } from '@constants/animation';
 import { motion } from 'framer-motion';
-import { ThinLineGrow } from './thin-line/ThinLineGrow';
+import { ThinLineGrow } from '../thin-line/ThinLineGrow';
 
 export const FadeIn = () => {
   return (
