@@ -18,6 +18,14 @@ export const INIT_MOTION_CONFIG = {
   },
 };
 
+export const ZERO_MOTION_CONFIG = {
+  transition: {
+    ease: "linear",
+    duration: 0,
+    delay: 0
+  },
+};
+
 export const DURATION_DELAY = {
   ...MOTION_CONFIG,
   delay:

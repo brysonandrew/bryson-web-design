@@ -13,6 +13,5 @@ export const useImages = () => {
     init();
   }, []);
 
-  console.log(images);
   return images;
 };

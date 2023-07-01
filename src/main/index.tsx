@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Source } from './Source';
 import { Provider } from '@state/Provider';
 import { Boundary } from '@components/boundary';
-import { INIT_MOTION_CONFIG } from '@constants/animation';
+import { MOTION_CONFIG } from '@constants/animation';
 import 'virtual:windi.css';
 import '@css/fonts.css';
 import '@css/globals.css';
@@ -15,7 +15,7 @@ if (root) {
   ReactDOM.createRoot(root).render(
     <StrictMode>
       <Provider>
-        <MotionConfig {...INIT_MOTION_CONFIG}>
+        <MotionConfig {...MOTION_CONFIG}>
           <Boundary>
             <Router>
               <Source />
