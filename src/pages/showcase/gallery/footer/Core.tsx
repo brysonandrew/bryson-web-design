@@ -9,7 +9,8 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useKeys } from '../hooks/useKeys';
-import { TBaseProps } from '..';
+import { TBaseProps } from '../types';
+import { TMedia } from '@pages/showcase/config';
 
 const Root = styled(motion.div)``;
 export const Dragger = styled(motion.div)``;
@@ -62,7 +63,7 @@ export const Core: FC<TProps> = (props) => {
             }
             return 0;
           })
-          .map(({ key, name, img }) => (
+          .map(({ key, name, img }: TMedia) => (
             <Button
               key={key}
               name={img}

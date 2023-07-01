@@ -14,6 +14,7 @@ import { Footer } from './footer';
 import { Sections } from './sections';
 import { createPortal } from 'react-dom';
 import { Background } from './Background';
+import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
 
 const Root = styled(motion.div)``;
 
@@ -21,7 +22,7 @@ type TProps = {
   selectedPath: TAppItemKey;
 };
 export const Gallery: FC<TProps> = ({ selectedPath }) => {
-  //useFreezeScrollBar();
+  useFreezeScrollBar();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const items = useMediaFromKey(selectedPath);
@@ -29,7 +30,6 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const count = items?.length ?? 0;
   const width = useWidth();
   const isReady = width > 0 && count > 0 && isAnimationDone;
-  console.log(isReady, width, isAnimationDone, count);
 
   const galleryProps = {
     items,

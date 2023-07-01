@@ -32,7 +32,6 @@ export const Form = () => {
       ref={ref}
       onSubmit={isDisabled ? () => null : onSend}
     >
-
       <motion.div className='relative flex flex-col w-full'>
         <Text
           title='name'

@@ -4,11 +4,6 @@ import react from "@vitejs/plugin-react";
 import windiCss from "vite-plugin-windicss";
 
 export default defineConfig({
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
-  },
   plugins: [
     windiCss(),
     react({
