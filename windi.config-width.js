@@ -8,7 +8,8 @@ module.exports = {
     xl: "1440px",
   },
   minWidth: {
-    "core": "512px",
+    "md-core": "512px",
+    "core": "480px",
     "step": "2rem",
     "6/12": "50%",
     "8/12": "75%",

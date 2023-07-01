@@ -42,6 +42,7 @@ export const useMediaFromKey = () => {
       }
     }
 
+    console.log(`updating: ${selectedKey} ${JSON.stringify(imageRecord)}`);
     updateRecord({ key: selectedKey, imageRecord });
   };
 

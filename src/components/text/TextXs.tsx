@@ -18,7 +18,7 @@ export const TextXs: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "text-left text-teal-bright whitespace-normal text-xl truncate",
+      "text-left text-teal-bright whitespace-normal text-lg md:text-xl truncate",
       classValue ?? "px-4",
     )}
     style={style}

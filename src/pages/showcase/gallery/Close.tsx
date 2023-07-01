@@ -24,14 +24,14 @@ export const Close: FC = () => {
     <motion.div {...PRESENCE_OPACITY}>
       <Link
         className={clsx(
-          'relative flex items-center justify-center shrink-0 p-4 h-full cursor-pointer shadow-teal-02-sm z-10',
+          'relative flex items-center justify-center shrink-0 p-2.5 h-full cursor-pointer shadow-teal-02-sm z-10',
         )}
         to={pathname}
         onClick={handleOnSound}
         {...HOVER_TEAL_GLOW_PROPS_SM}
       >
         <Fill />
-        <Cross classValue='relative w-6 h-6' />
+        <Cross classValue='relative w-5 h-5' />
       </Link>
     </motion.div>
   );

@@ -22,10 +22,9 @@ export const Content: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'relative flex items-center justify-between w-full pr-4 py-4 shadow-teal-02-sm z-20',
+      'relative flex items-center justify-between w-full pr-4 py-2 z-20',
     )}
     layoutId={resolveTitleLayoutId(slug)}
-    {...HOVER_TEAL_GLOW_PROPS_SM}
     {...props}
   >
     <FillDark key='FillDark' />
@@ -33,6 +32,7 @@ export const Content: FC<TProps> = ({
       <Mark />
       <div className='p-2' />
       <Header slug={slug} />
+      <div className='p-4' />
     </div>
     <>{children}</>
   </Root>

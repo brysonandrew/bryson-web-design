@@ -12,6 +12,7 @@ import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@pages/showcase/gallery/hooks/useMediaFromKey';
+import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
@@ -34,7 +35,9 @@ export const Item: FC<TProps> = ({ slug, ...props }) => {
             ? item.altTo
             : `${pathname}?${SELECTED_KEY}=${slug}&${IMG_KEY}=${1}`
         }
+        className='shadow-teal-02-sm'
         onTap={handleOnSound}
+        {...HOVER_TEAL_GLOW_PROPS_SM}
       >
         <Content {...item}>
           <Time time={item.time} />

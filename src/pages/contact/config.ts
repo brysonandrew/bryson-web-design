@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 export const LABEL_CLASS = clsx(
-  "relative flex items-start w-full bg-black-dark-04",
+  "relative flex flex-col items-start w-full bg-black-dark-04 md:flex-row",
   "p-2 shadow-teal-02-sm",
 );
 export const TEXTAREA_INPUT_CLASS =
