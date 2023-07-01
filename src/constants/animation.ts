@@ -11,6 +11,13 @@ export const MOTION_CONFIG = {
   },
 };
 
+export const INIT_MOTION_CONFIG = {
+  transition: {
+    ease: "linear",
+    duration: 1,
+  },
+};
+
 export const DURATION_DELAY = {
   ...MOTION_CONFIG,
   delay:
@@ -26,6 +33,12 @@ export const PRESENCE_OPACITY_SHIFT = {
 export const PRESENCE_OPACITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
+  exit: { opacity: 0 },
+};
+
+export const PRESENCE_OPACITY_01 = {
+  initial: { opacity: 0 },
+  animate: { opacity: 0.1 },
   exit: { opacity: 0 },
 };
 

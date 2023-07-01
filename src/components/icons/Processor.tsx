@@ -22,7 +22,6 @@ export const Processor: FC<TProps> = ({
     width='24'
     height='24'
     fill='currentColor'
-    layoutId='Processor'
     {...props}
   >
     {title && <title>{title}</title>}

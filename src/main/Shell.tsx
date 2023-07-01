@@ -1,15 +1,17 @@
 import { Filters } from '../components/Filters';
 import type { TChildren } from '@t/index';
 import type { FC } from 'react';
-import { FadeIn } from '@components/FadeIn';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
 import { Variables } from '@css/Variables';
 import { Background } from '@components/background';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useContext } from '@state/Context';
-import { PRESENCE_OPACITY } from '@constants/animation';
-import { useFading } from './useFading';
+import { MotionConfig, motion } from 'framer-motion';
+import {
+  MOTION_CONFIG,
+  PRESENCE_OPACITY,
+  PRESENCE_OPACITY_01,
+} from '@constants/animation';
+import { Processor } from '@components/icons/Processor';
 
 type TProps = {
   children: TChildren;
@@ -17,26 +19,41 @@ type TProps = {
 export const Shell: FC<TProps> = ({ children }) => {
   useScrollControl();
   useScrollToTop();
-  const isFading = useFading();
-  const { isInit } = useContext();
+
+  const resolveTransition = (delay: number) => ({
+    transition: {
+      ease: 'linear',
+      delay,
+      duration: 1,
+    },
+  });
 
   return (
     <>
       <Variables />
       <Filters />
-      <AnimatePresence>
-        {children}
-        {isInit && !isFading ? (
-          <FadeIn key='FADE_IN' />
-        ) : (
-          <motion.div
-            key='BACKGROUND'
-            {...PRESENCE_OPACITY}
-          >
-            <Background />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        {...PRESENCE_OPACITY}
+        {...resolveTransition(0.1)}
+      >
+        <Background>
+          <Processor
+            width='100%'
+            height='100%'
+            fill='gray'
+            {...PRESENCE_OPACITY_01}
+            {...resolveTransition(1.1)}
+          />
+        </Background>
+      </motion.div>
+      <motion.div
+        {...PRESENCE_OPACITY}
+        {...resolveTransition(2.1)}
+      >
+        <MotionConfig {...MOTION_CONFIG}>
+          {children}
+        </MotionConfig>
+      </motion.div>
     </>
   );
 };

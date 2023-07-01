@@ -1,3 +1,4 @@
+import { TModule } from '@t/index';
 import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
@@ -7,6 +8,7 @@ import type {
 } from 'react';
 
 export type TContext = TState & {
+  images: TModule[];
   dispatch: TDispatch;
 };
 
@@ -17,49 +19,49 @@ export type TMotionValuePair = [
 
 export type TAction =
   | {
-      type: 'start-page-transition';
-      value: null;
-    }
+    type: 'start-page-transition';
+    value: null;
+  }
   | {
-      type: 'end-page-transition';
-      value: null;
-    }
+    type: 'end-page-transition';
+    value: null;
+  }
   | {
-      type: 'init';
-      value: null;
-    }
+    type: 'init';
+    value: null;
+  }
   | {
-      type: 'scroll';
-      value: boolean;
-    }
+    type: 'scroll';
+    value: boolean;
+  }
   | {
-      type: 'scroll-start';
-      value: boolean;
-    }
+    type: 'scroll-start';
+    value: boolean;
+  }
   | {
-      type: 'toggle-sound';
-      value: null;
-    }
+    type: 'toggle-sound';
+    value: null;
+  }
   | {
-      type: 'select-id';
-      value: null | string;
-    }
+    type: 'select-id';
+    value: null | string;
+  }
   | {
-      type: 'cursor-ready';
-      value: boolean;
-    }
+    type: 'cursor-ready';
+    value: boolean;
+  }
   | {
-      type: 'add-motion-value';
-      value: { pair: TMotionValuePair; index: number };
-    }
+    type: 'add-motion-value';
+    value: { pair: TMotionValuePair; index: number; };
+  }
   | {
-      type: 'threshold-reached';
-      value: null;
-    }
+    type: 'threshold-reached';
+    value: null;
+  }
   | {
-      type: 'threshold-lost';
-      value: null;
-    };
+    type: 'threshold-lost';
+    value: null;
+  };
 
 export type TState = {
   isScroll: boolean;

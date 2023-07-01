@@ -7,6 +7,7 @@ import type { TAction, TContext } from './types';
 
 export const Context = createContext<TContext>({
   ...STATE,
+  images: [],
   dispatch: (_: TAction) => null,
 });
 
