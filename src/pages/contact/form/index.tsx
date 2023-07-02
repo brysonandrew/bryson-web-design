@@ -4,7 +4,7 @@ import { Textarea } from './Textarea';
 import { Space4 } from '@components/spaces/Space4';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Submit } from './Submit';
 import { useRef } from 'react';
 import { useForm } from './useForm';
@@ -14,16 +14,8 @@ const Root = styled(motion.form)``;
 export const Form = () => {
   const ref = useRef<HTMLFormElement | null>(null);
 
-  const {
-    isDisabled,
-    onSend,
-    state,
-    sendingState,
-    focusKey,
-    focusHandlers,
-    textareaFocusHandlers,
-  } = useForm({
-    form: ref.current,
+  const { isDisabled, onSend, focusHandlers } = useForm({
+    element: ref.current,
   });
 
   return (
@@ -35,12 +27,9 @@ export const Form = () => {
       <motion.div className='relative flex flex-col w-full'>
         <Text
           title='name'
-          autoFocus
-          disabled={isDisabled}
           name='name'
+          disabled={isDisabled}
           placeholder=''
-          value={state.name}
-          isFocused={'name' === focusKey}
           required
           {...focusHandlers}
         />
@@ -51,8 +40,6 @@ export const Form = () => {
           type='email'
           name='email'
           placeholder=''
-          value={state.email}
-          isFocused={'email' === focusKey}
           required
           {...focusHandlers}
         />
@@ -60,16 +47,14 @@ export const Form = () => {
         <Textarea
           title='message'
           name='message'
-          value={state.message}
           rows={4}
           cols={50}
-          isFocused={'message' === focusKey}
           required
-          {...textareaFocusHandlers}
+          {...focusHandlers}
         />
       </motion.div>
       <Space4 />
-      <Submit sendingState={sendingState} />
+      <Submit />
     </Root>
   );
 };

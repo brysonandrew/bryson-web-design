@@ -1,3 +1,4 @@
+import { INIT_CONTACT_STATE } from '@pages/contact/config';
 import type { TState } from './types';
 
 export const STATE: TState = {
@@ -14,5 +15,6 @@ export const STATE: TState = {
   isThreshold: false,
   motionValuePairs: [],
   images: [],
-  clientImageRecord: {}
+  clientImageRecord: {},
+  contact: INIT_CONTACT_STATE
 };

@@ -1,3 +1,4 @@
+import { TContactState, TFormKey, TStatus } from '@pages/contact/config';
 import { TMedia } from '@pages/showcase/config';
 import { TModule } from '@t/index';
 import type { MotionValue } from 'framer-motion';
@@ -23,6 +24,18 @@ export type TClientImageRecord = Record<string, TImageRecord>;
 export type TPartialClientImageRecord = { [key: string]: TImageRecord; };
 
 export type TAction =
+  | {
+    type: "contact-status",
+    value: TStatus;
+  }
+  | {
+    type: "contact-state",
+    value: Partial<TContactState>;
+  }
+  | {
+    type: "contact-focus",
+    value: TFormKey | null
+  }
   | {
     type: "image-record",
     value: TPartialClientImageRecord;
@@ -89,6 +102,7 @@ export type TState = {
   mode: 'instant' | 'stagger';
   isThreshold: boolean;
   motionValuePairs: TMotionValuePair[];
+  contact: TContactState;
 };
 
 export type TActionType = null;

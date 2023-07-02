@@ -5,6 +5,35 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'contact-focus': {
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          focusKey: value
+        },
+      };
+    }
+    case 'contact-status': {
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          status: value
+        },
+      };
+    }
+    case 'contact-state': {
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          form: {
+            ...state.contact.form
+          }
+        },
+      };
+    }
     case 'image-record': {
       return {
         ...state,
