@@ -29,7 +29,8 @@ export const reducer = (
         contact: {
           ...state.contact,
           form: {
-            ...state.contact.form
+            ...state.contact.form,
+            ...value
           }
         },
       };

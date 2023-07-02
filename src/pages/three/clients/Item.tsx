@@ -1,4 +1,3 @@
-import { Text } from '@components/text/Text';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import clsx from 'clsx';
@@ -7,6 +6,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Main } from './Main';
 import type { TChildrenProps } from './Motion';
+import { TextXl2 } from '@components/text/TextXl2';
 
 const Root = styled(motion.li)``;
 const List = styled(motion.ul)``;
@@ -57,7 +57,7 @@ export const Item: FC<TProps> = ({
           }}
         >
           <li>
-            <Text>{children}</Text>
+            <TextXl2>{children}</TextXl2>
           </li>
           <Main
             isActive={isActive}

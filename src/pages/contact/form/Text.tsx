@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Fill } from '@components/metal/Fill';
 import { Input as Select } from '@components/select/Input';
@@ -36,7 +36,7 @@ export const Text: FC<TProps> = ({
       {...HOVER_TEAL_GLOW_PROPS_SM}
     >
       <Fill />
-      <div className='pt-1'>
+      <div className='pt-1 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />
       </div>
       <Input
@@ -48,7 +48,7 @@ export const Text: FC<TProps> = ({
         autoFocus={isFocused}
         {...props}
       />
-      {isFocused && <Select />}
+      {isFocused && <Select key={name} />}
     </Root>
   );
 };

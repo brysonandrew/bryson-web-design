@@ -21,7 +21,7 @@ export const Name: FC<TProps> = ({
 
   return (
     <Root
-      className='relative flex shrink-0 w-37 pl-6 pt-1'
+      className='relative flex shrink-0 w-full pt-1 pb-4 pl-0 justify-center md:w-37 md:pb-2 md:pl-6 md:justify-start'
       {...PRESENCE_OPACITY_DELAY}
     >
       <AnimatePresence>

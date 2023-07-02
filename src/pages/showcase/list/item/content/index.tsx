@@ -1,12 +1,10 @@
 import type { FC } from 'react';
-import { Time } from './Time';
 import { Header } from './Header';
 import {
   TSlugProps,
   resolveTitleLayoutId,
 } from '@pages/showcase/config';
 import { FillDark } from '@components/metal/FillDark';
-import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import clsx from 'clsx';
@@ -22,7 +20,7 @@ export const Content: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'relative flex items-center justify-between w-full pr-4 py-2 z-20',
+      'relative flex items-center justify-between w-full pr-4 py-4 z-20',
     )}
     layoutId={resolveTitleLayoutId(slug)}
     {...props}

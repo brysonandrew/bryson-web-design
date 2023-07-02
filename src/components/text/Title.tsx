@@ -1,6 +1,5 @@
 import { InView } from '@components/InView';
 import { TextXl } from '@components/text/TextXl';
-import { ThinLineGap } from '@components/thin-line/ThinLineGap';
 import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import { WIDTH_CLASS } from '@constants/styles';

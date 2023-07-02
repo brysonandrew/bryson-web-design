@@ -1,17 +1,26 @@
-import { TEAL_GLOW } from '@pages/index/constants';
+import { PRESENCE_OPACITY } from '@constants/animation';
+import {
+  TEAL_GLOW,
+  resolveDropShadow,
+} from '@pages/index/constants';
 import { motion } from 'framer-motion';
 
 export const Input = () => (
   <motion.div
-    initial={false}
     layoutId='CONTACT_FORM_INPUT_SELECT'
-    className='absolute bg-teal z-50'
+    className='absolute -left-px -top-px -bottom-px bg-teal z-50'
     style={{
-      left: -1,
-      top: -1,
-      bottom: -1,
       width: 'calc(0.5rem + 4px)',
     }}
-    {...TEAL_GLOW}
+    variants={{
+      hover: {
+        opacity: 1,
+        filter: resolveDropShadow(20, 'teal'),
+      },
+      animate: {
+        opacity: 1,
+        filter: resolveDropShadow(10, 'teal'),
+      },
+    }}
   />
 );

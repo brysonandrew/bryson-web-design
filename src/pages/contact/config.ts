@@ -52,7 +52,7 @@ export type TContactState = {
 export const INIT_CONTACT_STATE: TContactState = {
   form: INIT_STATE,
   status: "idle",
-  focusKey: null
+  focusKey: "name"
 };
 
 export type TBaseInputProps = {

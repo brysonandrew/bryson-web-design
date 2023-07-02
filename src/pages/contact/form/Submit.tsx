@@ -55,7 +55,7 @@ export const Submit: FC = () => {
         />
         <Text
           className={clsx(
-            'flex justify-center relative uppercase py-2 text-teal text-2xl italic pointer-events-none',
+            'flex justify-center relative capitalise py-2 text-teal text-2xl italic pointer-events-none',
           )}
           variants={{
             animate: {

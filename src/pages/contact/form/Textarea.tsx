@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Fill } from '@components/metal/Fill';
 import { Input as Select } from '@components/select/Input';
@@ -37,10 +37,10 @@ export const Textarea: FC<TProps> = ({
       {...HOVER_TEAL_GLOW_PROPS_SM}
     >
       <Fill />
-      <div className='pt-0.75'>
+      <div className='pt-0.75 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />
       </div>
-      <div className={clsx('flex w-full')}>
+      <div className={clsx('flex')}>
         <Input
           className={clsx(TEXTAREA_INPUT_CLASS)}
           autoComplete='off'
@@ -50,7 +50,7 @@ export const Textarea: FC<TProps> = ({
           {...props}
         />
       </div>
-      {isFocused && <Select />}
+      {isFocused && <Select key={name} />}
     </Root>
   );
 };

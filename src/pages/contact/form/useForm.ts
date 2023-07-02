@@ -1,15 +1,21 @@
 
+
 import type { HTMLMotionProps } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { FormEvent, useState, ChangeEvent, FocusEvent } from 'react';
+import { FormEvent, ChangeEvent, FocusEvent, useRef } from 'react';
 import { TFormKey, TStatus } from '../config';
 import { useContext } from '@state/Context';
+import { useTimeoutRef } from '@hooks/useTimeoutRef';
 
 type TConfig = {
   element: HTMLFormElement | null;
 };
 export const useForm = ({ element }: TConfig) => {
   const { contact, dispatch } = useContext();
+  const current = { contact };
+  const currentRef = useRef(current);
+  currentRef.current = current;
+  const { timeoutRef } = useTimeoutRef();
 
   const handleStatus = (value: TStatus) => dispatch({ type: "contact-status", value });
 
@@ -46,8 +52,21 @@ export const useForm = ({ element }: TConfig) => {
     updateFocus(target.name as TFormKey);
   };
 
-  const handleBlur = () => {
-    updateFocus(null);
+  const handleBlur = (
+    event: FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement,
+      Element
+    >,
+  ) => {
+    const target = event.currentTarget;
+    if (!target) return;
+    timeoutRef.current = setTimeout(() => {
+      const currentFocusKey = currentRef.current.contact.focusKey;
+      if (target.name === currentFocusKey) {
+        updateFocus(null);
+      }
+    }, 100);
+
   };
 
   const handleChange = ({
@@ -60,7 +79,7 @@ export const useForm = ({ element }: TConfig) => {
 
   const isDisabled = contact.status !== 'idle';
 
-  const focusHandlers: Pick<
+  const inputHandlers: Pick<
     HTMLMotionProps<'input'> & HTMLMotionProps<'textarea'>,
     'onChange' | 'onBlur' | 'onFocus'
   > = {
@@ -71,7 +90,7 @@ export const useForm = ({ element }: TConfig) => {
 
   return {
     isDisabled,
-    focusHandlers,
+    inputHandlers,
     onSend
   };
 };

@@ -15,7 +15,7 @@ import {
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
-import { useImages } from '@pages/index/build/images/hooks/useImages';
+import { useSmallImages } from '@pages/index/build/images/hooks/useSmallImages';
 import { useShowcaseRedirect } from './useShowcaseRedirect';
 
 type TProps = {
@@ -23,16 +23,10 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, dispatch } = useContext();
-  const images = useImages();
+  useSmallImages();
   useScrollControl();
   useScrollToTop();
   useShowcaseRedirect();
-
-  useEffect(() => {
-    if (images.length > 0) {
-      dispatch({ type: 'images', value: images });
-    }
-  }, [images]);
 
   const handleAnimationComplete = () =>
     dispatch({ type: 'init', value: null });
@@ -54,7 +48,7 @@ export const Shell: FC<TProps> = ({ children }) => {
       <Filters />
       <motion.div
         {...PRESENCE_OPACITY}
-        {...resolveTransition(0.1)}
+        {...resolveTransition(0)}
       >
         <Background>
           <Processor
@@ -62,13 +56,13 @@ export const Shell: FC<TProps> = ({ children }) => {
             height='100%'
             fill='gray'
             {...PRESENCE_OPACITY_01}
-            {...resolveTransition(1.1)}
+            {...resolveTransition(0.4)}
           />
         </Background>
       </motion.div>
       <motion.div
         {...PRESENCE_OPACITY}
-        {...resolveTransition(2.1)}
+        {...resolveTransition(2)}
         onAnimationComplete={handleAnimationComplete}
       >
         <MotionConfig {...MOTION_CONFIG}>

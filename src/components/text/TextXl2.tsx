@@ -10,7 +10,7 @@ const Root = styled(motion.h5)``;
 type TProps = HTMLMotionProps<'h5'> & {
   classValue?: ClassValue;
 };
-export const Text: FC<TProps> = ({
+export const TextXl2: FC<TProps> = ({
   classValue,
   style,
   children,
@@ -18,7 +18,7 @@ export const Text: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'text-teal-bright text-left text-2xl tracking-wide px-1 md:text-3xl lg:text-3.5xl xl:text-4xl',
+      'text-teal-bright text-left text-3xl tracking-wide px-1 md:text-3.5xl xl:text-4xl',
       classValue,
     )}
     style={style}

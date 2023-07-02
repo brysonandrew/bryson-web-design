@@ -21,11 +21,10 @@ export const TextXl: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'uppercase text-teal text-left px-2 tracking-widest text-2xl sm:text-2xl md:text-4xl xl:text-4xl xl:px-4',
+      'uppercase text-teal text-left px-2 tracking-widest text-3xl md:text-4xl xl:px-4',
       classValue,
     )}
     style={{
-      lineHeight: 1,
       ...style,
     }}
     {...props}

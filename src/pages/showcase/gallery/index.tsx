@@ -23,7 +23,6 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const items = Object.values(
     clientImageRecord[selectedPath] ?? {},
   );
-  useFreezeScrollBar();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
@@ -59,9 +58,9 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               <Close />
             </Content>
           </div>
-          <Background key='GALLERY_BACKGROUND' />
+          <Background />
           {isReady ? <Sections {...galleryProps} /> : null}
-          <Footer key='GALLERY_FOOTER' {...galleryProps} />
+          <Footer {...galleryProps} />
         </Root>,
         document.body,
       )}

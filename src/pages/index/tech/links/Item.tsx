@@ -1,13 +1,13 @@
 import { Border as Select } from '@components/select/Border';
 import clsx from 'clsx';
-import { Text } from '@components/text/Text';
 import styled from '@emotion/styled';
 import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import type { TItem } from '../../../../constants/tech';
+import type { TItem } from '@constants/tech';
 import { Fill } from '@components/metal/Fill';
 import { HOVER_GLOW_PROPS } from '@pages/index/constants';
+import { TextXl2 } from '@components/text/TextXl2';
 
 const Root = styled(motion.div)``;
 
@@ -35,9 +35,10 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
         <div className='relative flex items-center z-10'>
           <Icon classValue='h-10 w-10' />
           <div className='p-2' />
-          <Text>{title}</Text>
+          <TextXl2>{title}</TextXl2>
         </div>
       </Anchor>
     </Root>
   );
 };
+ 
