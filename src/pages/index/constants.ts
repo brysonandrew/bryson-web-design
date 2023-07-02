@@ -37,9 +37,10 @@ type TConfig = {
   color?: TColor;
 };
 export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) => ({
-  initial: false,
+  initial: "initial",
   animate: "animate",
   whileHover: "hover",
+  exit: "exit",
   variants: {
     animate: {
       filter: resolveDropShadow(0),
@@ -61,7 +62,7 @@ export const HOVER_BLUE_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, te
 export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal" });
 export const HOVER_TEAL_BRIGHT_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal-bright" });
 export const HOVER_BLUE_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 0, color: "baby-blue" });
-export const HOVER_TEAL_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 20, color: "teal" });
+export const HOVER_TEAL_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 0, color: "teal" });
 export const DURATION_DELAY_TRANSITION = {
   transition: {
     ...MOTION_CONFIG,

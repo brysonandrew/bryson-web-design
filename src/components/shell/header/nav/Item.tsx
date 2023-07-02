@@ -15,14 +15,14 @@ type TProp = {
   children: string;
 };
 export const Item: FC<TProp> = ({ to, children }) => {
-  const { handlers, isSelected } = useSelectHandlers(to);
+  const { isSelected } = useSelectHandlers(to);
   const handleClick = useOffSound();
   return (
-    <Root className='relative mb-0.5'>
+    <Root className='relative'>
       <Link
         to={to}
         onClick={handleClick}
-        className='relative flex items-center justify-center py-0.5 pl-1.5 pr-2'
+        className='relative flex items-center justify-center'
         whileHover='hover'
       >
         {isSelected && <Fill inset={1} />}

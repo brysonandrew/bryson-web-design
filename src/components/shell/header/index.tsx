@@ -11,10 +11,10 @@ export const Header = () => {
   const { isInit, isScrollStart } = useContext();
   return (
     <Root
-      className='fixed top-0 left-0 flex items-center justify-between w-full px-3 py-2 sm:px-6 sm:py-4 z-50'
+      className='fixed top-0 left-0 flex items-center justify-between w-full px-4 py-3.5 md:px-6 md:py-4 z-50'
       {...(isInit || isScrollStart ? INIT_ANIMATION : {})}
     >
-      <motion.div className='relative flex items-center justify-between w-full'>
+      <motion.div className='relative flex items-start justify-between w-full md:items-center'>
         <Main />
         <Nav />
       </motion.div>

@@ -14,7 +14,7 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
     >
       <TextSm classValue='text-teal-bright'>{title}</TextSm>
       <div className='hidden lg:flex px-2' />
-      <TextSm classValue='text-baby-blue text-md italic'>
+      <TextSm classValue='text-baby-blue italic'>
         {description}
       </TextSm>
     </motion.header>

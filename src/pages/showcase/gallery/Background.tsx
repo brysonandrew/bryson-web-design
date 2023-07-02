@@ -15,7 +15,6 @@ export const Background: FC = () => {
         backgroundColor: 'rgba(12,12,12, 0.7)',
       }}
       {...PRESENCE_OPACITY}
-      transition={{ duration: 1 }}
     />
   );
 };

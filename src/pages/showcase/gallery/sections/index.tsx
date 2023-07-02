@@ -35,7 +35,7 @@ export const Sections: FC<TProps> = (props) => {
       <Filter motionX={motionX} />
       <motion.ul
         className='absolute flex'
-        style={{ left, top: 70 }}
+        style={{ left, top: 40 }}
       >
         {items.map((item: TMedia, index: number) => (
           <Section

@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import type { TSendingState } from '../config';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { Fill } from '@components/metal/Fill';
@@ -10,6 +9,7 @@ import {
   HOVER_TEAL_GLOW_PROPS_SM,
   HOVER_TEAL_OUTER_GLOW_PROPS_SM,
 } from '@pages/index/constants';
+import { useContext } from '@state/Context';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -21,13 +21,11 @@ const Text = styled(motion.h4)`
   -webkit-text-stroke-color: rgba(153, 204, 255, 0.9);
 `;
 
-type TProps = {
-  sendingState: TSendingState;
-};
-export const Submit: FC<TProps> = ({ sendingState }) => {
-  const isDisabled = sendingState !== 'idle';
+export const Submit: FC = () => {
+  const { contact } = useContext();
+  const isDisabled = contact.status !== 'idle';
   const handleMoveSound = useMoveSound();
-  const title = resolveButtonValue(sendingState);
+  const title = resolveButtonValue(contact.status);
 
   return (
     <Root
@@ -57,7 +55,7 @@ export const Submit: FC<TProps> = ({ sendingState }) => {
         />
         <Text
           className={clsx(
-            'flex justify-center relative uppercase py-2 text-teal text-2xl italic pointer-events-none',
+            'flex justify-center relative capitalise py-2 text-teal text-2xl italic pointer-events-none',
           )}
           variants={{
             animate: {

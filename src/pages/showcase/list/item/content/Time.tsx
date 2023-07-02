@@ -6,7 +6,7 @@ import type { FC } from 'react';
 type TProps = { time?: Date; classValue?: ClassValue };
 export const Time: FC<TProps> = ({ time, classValue }) => {
   const className = clsx(
-    'relative mt-0.5',
+    'relative text-right',
     classValue,
   );
   if (!time)
