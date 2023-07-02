@@ -4,16 +4,7 @@ import { resolveCompositeKey } from "@utils/keys";
 export const SELECTED_KEY = "selected";
 export const IMG_KEY = "img";
 
-export const resolveFillMetalLayoutId = (key: string) => resolveCompositeKey("FILL_DARKEST_LAYOUT_KEY", key);
 export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
-export const ITEM_DESCRIPTION_LOOKUP: Record<
-  string,
-  string
-> = {
-  AnimatedSpinningLoader: "Animated spinning loader",
-  AnimatedViewButton: "Animated View Button",
-  HoldToSkip: "HoldToSkip",
-};
 
 export const EXCLUDED_KEYS = ["preview", "logo"];
 
@@ -29,6 +20,19 @@ export type TMediaDetails = {
 export type TMedia = TMediaDetails & {
   src: string;
 };
+
+export const EMPTY_MEDIA = {
+  img: "",
+  file: "",
+  name: "",
+  key: "",
+  src: ""
+};
+
+export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
+  ...EMPTY_MEDIA,
+  ...partial
+});
 
 export type TMediaRecord = Record<string, TMedia[]>;
 

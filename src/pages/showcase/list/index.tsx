@@ -17,7 +17,7 @@ export const List: FC<TProps> = ({
   items,
   selectedPath,
 }) => (
-  <Root>
+  <Root className='mt-1'>
     {items.map((item: TItem, index: number) => {
       const itemKey = item.slug;
       const isSelected = selectedPath === item.slug;

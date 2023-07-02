@@ -8,11 +8,9 @@ import {
 import type { TChildren } from "@t/index";
 
 type TProps = HTMLMotionProps<"li"> & {
-  root: RefObject<HTMLDivElement>;
   children: TChildren;
 };
 export const Section: FC<TProps> = ({
-  root,
   children,
   ...props
 }) => {

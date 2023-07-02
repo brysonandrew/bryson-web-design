@@ -1,16 +1,26 @@
-import { useEffect, useReducer } from 'react';
+import { useReducer } from 'react';
 import type { FC } from 'react';
-import type { TReducer } from './types';
+import type {
+  TReducer,
+  TScreensCountRecord,
+} from './types';
 import { reducer } from '.';
 import { Context } from './Context';
 import { STATE } from './constants';
 import { useDetectGPU } from '@react-three/drei';
 import type { TChildrenElement } from '@t/index';
-import {
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
-import { SELECTED_KEY } from '@pages/showcase/config';
+import { resolveMedia } from '@pages/showcase/config';
+const screensRecord = import.meta.glob(
+  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
+);
+
+const screensCountRecord = Object.keys(
+  screensRecord,
+).reduce((a: TScreensCountRecord, key) => {
+  const media = resolveMedia(key);
+  a[media.name] = ~~a[media.name] + 1;
+  return a;
+}, {});
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -28,6 +38,8 @@ export const Provider: FC<TProviderProps> = ({
     <Context.Provider
       value={{
         dispatch,
+        screensRecord,
+        screensCountRecord,
         ...state,
       }}
     >

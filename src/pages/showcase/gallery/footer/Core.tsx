@@ -1,25 +1,22 @@
-import { Button } from './Button';
 import { DragIcon } from './DragIcon';
 import { FillDark } from '@components/metal/FillDark';
 import { useDrag } from '../hooks/useDrag';
-import { resolveTo } from '../hooks/resolveTo';
-import { useLocation } from 'react-router';
 import { PADDING } from '../sections/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useKeys } from '../hooks/useKeys';
 import { TBaseProps } from '../types';
-import { TMedia } from '@pages/showcase/config';
+import { Items } from './Items';
 
 const Root = styled(motion.div)``;
 export const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { items, count, motionX, width } = props;
-  useKeys({ count });
-  const { pathname } = useLocation();
+  const { items, count, readyCount, motionX, width } =
+    props;
+  useKeys({ readyCount });
   const itemWidth = width / count;
   const dragHandlers = useDrag({ width, items, motionX });
 
@@ -50,27 +47,11 @@ export const Core: FC<TProps> = (props) => {
         <FillDark layout />
         <DragIcon />
         <div style={{ width: PADDING }} />
-        {items
-          .sort((a, b) => {
-            const an = +a.img;
-            const bn = +b.img;
+        <Items
+          items={items}
+          itemWidth={itemWidth}
 
-            if (an < bn) {
-              return -1;
-            }
-            if (bn < an) {
-              return 1;
-            }
-            return 0;
-          })
-          .map(({ key, name, img }: TMedia) => (
-            <Button
-              key={key}
-              name={img}
-              to={resolveTo({ img, name, pathname })}
-              itemWidth={itemWidth}
-            />
-          ))}
+        />
         <div style={{ width: PADDING }} />
         <DragIcon />
       </Dragger>

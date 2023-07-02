@@ -9,7 +9,12 @@ import type {
   ReducerAction,
 } from 'react';
 
+export type TScreensCountRecord = Record<string, number>;
+export type TScreensRecord = Record<string, () => Promise<unknown>>;
+
 export type TContext = TState & {
+  screensCountRecord: TScreensCountRecord;
+  screensRecord: TScreensRecord;
   images: TModule[];
   dispatch: TDispatch;
 };
@@ -34,7 +39,7 @@ export type TAction =
   }
   | {
     type: "contact-focus",
-    value: TFormKey | null
+    value: TFormKey | null;
   }
   | {
     type: "image-record",

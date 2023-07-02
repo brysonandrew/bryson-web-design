@@ -18,7 +18,7 @@ const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
 
 type TProps = TSlugProps;
-export const Item: FC<TProps> = ({ slug, ...props }) => {
+export const Item: FC<TProps> = ({ slug }) => {
   const { pathname } = useLocation();
   const handleOnSound = useOnSound();
 
@@ -42,7 +42,7 @@ export const Item: FC<TProps> = ({ slug, ...props }) => {
         <Content {...item}>
           <Time time={item.time} />
         </Content>
-      </InternalLink>
+      </InternalLink> 
     </Root>
   ); 
 };

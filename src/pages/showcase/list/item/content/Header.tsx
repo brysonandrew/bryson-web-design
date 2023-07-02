@@ -9,11 +9,11 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
   const { title, description } = APP_ITEMS_RECORD[slug];
   return (
     <motion.header
-      className='relative flex items-start flex-col lg:flex-row lg:items-center h-full pl-4'
+      className='relative flex items-start flex-col sm:flex-row sm:items-center h-full pl-4'
       {...props}
     >
       <TextSm classValue='text-teal-bright'>{title}</TextSm>
-      <div className='hidden lg:flex px-2' />
+      <div className='hidden sm:flex px-2' />
       <TextSm classValue='text-baby-blue italic'>
         {description}
       </TextSm>
