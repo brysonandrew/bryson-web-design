@@ -5,6 +5,7 @@ export type TBaseProps = {
   isReady: boolean;
   items: TMedia[];
   count: number;
+  readyCount: number;
   motionX: MotionValue;
   width: number;
 };

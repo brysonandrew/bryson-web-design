@@ -7,14 +7,14 @@ import { useLocation, useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
 
 type TConfig = {
-  count: number;
+  readyCount: number;
 };
-export const useKeys = ({ count }: TConfig) => {
+export const useKeys = ({ readyCount }: TConfig) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const currImg = searchParams.get(IMG_KEY);
-  const current = { currImg, count };
+  const current = { currImg, readyCount };
   const ref = useRef(current);
   ref.current = current;
   const handleMoveSound = useMoveSound();
@@ -23,20 +23,20 @@ export const useKeys = ({ count }: TConfig) => {
   useKey({
     handlers: {
       onKeyDown: (event) => {
-        const { currImg, count } = ref.current;
+        const { currImg, readyCount } = ref.current;
 
         if (currImg === null) return;
         if (event.key === "ArrowLeft") {
           handleMoveSound();
           let next = +currImg - 1;
-          next = next === 0 ? count : next;
+          next = next === 0 ? readyCount : next;
           searchParams.set(IMG_KEY, `${next}`);
           navigate(`${pathname}?${searchParams}`);
           return;
         }
         if (event.key === "ArrowRight") {
           handleMoveSound();
-          const n = +currImg % count;
+          const n = +currImg % readyCount;
           searchParams.set(IMG_KEY, `${n + 1}`);
           navigate(`${pathname}?${searchParams}`);
           return;

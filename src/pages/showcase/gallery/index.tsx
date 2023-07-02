@@ -9,9 +9,9 @@ import { Footer } from './footer';
 import { Sections } from './sections';
 import { createPortal } from 'react-dom';
 import { Background } from './Background';
-import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
 import { useDelay } from '@main/useDelay';
 import { useContext } from '@state/Context';
+import { TMedia, resolveEmptyMedia } from '../config';
 
 const Root = styled(motion.div)``;
 
@@ -19,23 +19,35 @@ type TProps = {
   selectedPath: TAppItemKey;
 };
 export const Gallery: FC<TProps> = ({ selectedPath }) => {
-  const { clientImageRecord } = useContext();
+  const { clientImageRecord, screensCountRecord } =
+    useContext();
   const items = Object.values(
     clientImageRecord[selectedPath] ?? {},
   );
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  const count = items?.length ?? 0;
+  const readyCount = items?.length ?? 0;
+  const count = screensCountRecord[selectedPath];
+  const loadingCount = count - readyCount;
   const width = useWidth();
 
   const isDelay = useDelay(400);
-  const isReady =
-    width > 0 && count > 0 && (isAnimationDone || isDelay);
+  const isReady = width > 0 && (isAnimationDone || isDelay);
+
+  const loadingItems: TMedia[] = [
+    ...Array(loadingCount),
+  ].map((_, index) =>
+    resolveEmptyMedia({
+      key: `media-${index}`,
+      img: `${items.length + index + 1}`,
+    }),
+  );
 
   const galleryProps = {
-    items,
+    items: [...items, ...loadingItems],
     motionX,
+    readyCount,
     count,
     width,
     isReady,

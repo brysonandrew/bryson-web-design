@@ -14,7 +14,7 @@ export const Index = () => (
     <MainShell>
       <Shell>
         <Build />
-        <Space24 />
+        <Space24 /> 
         <Tech />
         <Space24 />
         <Showcase />

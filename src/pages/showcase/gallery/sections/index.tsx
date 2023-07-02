@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import type { FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import { Section } from './Section';
@@ -16,18 +15,16 @@ type TProps = TBaseProps & {
   width: number;
 };
 export const Sections: FC<TProps> = (props) => {
-  const { items, count, motionX, width } = props;
+  const { items, count, motionX, width } =
+    props;
 
   const left = useTransform(
     motionX,
     (v) => `${(-v * count * 100) / width + 50}vw`,
   );
-  const ref = useRef<HTMLDivElement>(null);
 
   return (
     <Root
-      key='Sections'
-      ref={ref}
       className='min-h-screen mx-auto'
       style={{ width, left }}
       {...PRESENCE_OPACITY}
@@ -40,7 +37,6 @@ export const Sections: FC<TProps> = (props) => {
         {items.map((item: TMedia, index: number) => (
           <Section
             key={item.key}
-            root={ref}
             style={{
               left: `${-index * 100}vw`,
               x: '-50%',
@@ -48,7 +44,11 @@ export const Sections: FC<TProps> = (props) => {
               height: `calc(100vh - ${FOOTER_SIZE}px)`,
             }}
           >
-            <Image item={item} />
+            {item.name ? (
+              <Image item={item} />
+            ) : (
+              <div></div>
+            )}
           </Section>
         ))}
       </motion.ul>

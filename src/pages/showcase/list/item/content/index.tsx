@@ -31,7 +31,7 @@ export const Content: FC<TProps> = ({
       <div className='p-2' />
       <Header slug={slug} />
       <div className='p-4' />
-    </div>
+    </div> 
     <>{children}</>
   </Root>
 );
