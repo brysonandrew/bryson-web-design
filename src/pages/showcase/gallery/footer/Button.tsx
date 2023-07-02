@@ -62,16 +62,19 @@ export const Button: FC<TProps> = ({
             opacity: 0.5,
             textShadow: resolveTextShadow(0),
             filter: resolveDropShadow(0),
+            zIndex: 0,
           },
           active: {
             opacity: 1,
             textShadow: resolveTextShadow(2),
             filter: resolveDropShadow(1),
+            zIndex: 9999,
           },
           hover: {
             opacity: 1,
             textShadow: resolveTextShadow(4, 'teal'),
             filter: resolveDropShadow(8, 'teal'),
+            zIndex: 1,
           },
         }}
       >
