@@ -9,6 +9,7 @@ import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
 import { Decoration } from './header/Decoration';
 import { useSelectedItem } from '@pages/showcase/useSelectedItem';
+import { useDetectGPU } from '@react-three/drei';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -31,18 +32,16 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Decoration key='DECORATION' />
         )}
       </AnimatePresence>
-      <AnimatePresence>
-        <Content
-          className='relative bg-current'
-          style={{
-            minHeight: '100vh',
-          }}
-        >
-          <HeaderOffset />
-          {children}
-          <BlindersOut />
-        </Content>
-      </AnimatePresence>
+      <Content
+        className='relative bg-current'
+        style={{
+          minHeight: '100vh',
+        }}
+      >
+        <HeaderOffset />
+        {children}
+        <BlindersOut />
+      </Content>
       <Footer />
     </Root>
   );

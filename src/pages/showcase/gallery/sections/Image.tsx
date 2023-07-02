@@ -3,7 +3,7 @@ import type { TMedia } from "@pages/showcase/config";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { MOTION_BLUR_ID } from "../constants";
+import { MOTION_BLUR_ID } from "./constants";
 
 export const Root = styled(motion.img)``;
 
@@ -11,11 +11,11 @@ type TProps = {
   item: TMedia;
 };
 export const Image: FC<TProps> = ({ item }) => {
-  const { key, name, file, src } = item;
+  const { key, src } = item;
 
   return (
     <Root
-      className="absolute left-1/2 top-1/2 max-w-full max-h-full shadow-teal-dark-02"
+      className="absolute left-1/2 top-1/2 max-w-full max-h-full"
       src={src}
       alt={key}
       onPointerDown={(e) => e.preventDefault()}

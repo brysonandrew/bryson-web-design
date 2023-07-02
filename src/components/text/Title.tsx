@@ -20,7 +20,7 @@ export const Title: FC<TProps> = ({ children }) => {
       once
     >
       {(isInView) => (
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {isInView && (
             <>
               <div className='overflow-hidden'>
@@ -31,7 +31,7 @@ export const Title: FC<TProps> = ({ children }) => {
                   exit={{ y: '100%' }}
                   transition={{
                     ...MOTION_CONFIG.transition,
-                    delay: 0.2,
+                    delay: 0.8,
                   }}
                 >
                   <TextXl classValue='text-center'>

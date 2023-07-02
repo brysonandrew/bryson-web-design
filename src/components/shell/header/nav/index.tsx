@@ -22,13 +22,9 @@ export const Nav = () => {
         .filter((item) => pathname !== toPathname(item))
         .map((item, index) => {
           const to = toPathname(item);
-          const isSelected = pathname === to;
-          if (isSelected) return null;
           return (
             <Fragment key={item}>
-              {index !== 0 && (
-                <li className='p-2 md:p-2' />
-              )}
+              {index !== 0 && <li className='p-2 md:p-2' />}
               <Item to={to}>{item}</Item>
             </Fragment>
           );

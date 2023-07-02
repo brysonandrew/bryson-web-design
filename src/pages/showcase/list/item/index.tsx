@@ -28,21 +28,23 @@ export const Item: FC<TProps> = ({ slug }) => {
     handleLoadMedia(slug);
   };
   return (
-    <Root onMouseEnter={handleMouseEnter}>
+    <Root
+      className='shadow-teal-02-sm'
+      onMouseEnter={handleMouseEnter}
+      {...HOVER_TEAL_OUTER_GLOW_PROPS_SM}
+    >
       <InternalLink
         to={
           item.altTo
             ? item.altTo
             : `${pathname}?${SELECTED_KEY}=${slug}&${IMG_KEY}=${1}`
         }
-        className='shadow-teal-02-sm'
         onTap={handleOnSound}
-        {...HOVER_TEAL_OUTER_GLOW_PROPS_SM}
       >
         <Content {...item}>
           <Time time={item.time} />
         </Content>
-      </InternalLink> 
+      </InternalLink>
     </Root>
-  ); 
+  );
 };

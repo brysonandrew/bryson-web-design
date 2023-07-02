@@ -21,7 +21,7 @@ export const Form = () => {
   
   return (
     <Root
-      className={clsx('flex flex-col mt-1 mx-4 mx-auto')}
+      className={clsx('flex flex-col mt-1 mx-auto')}
       ref={ref}
       onSubmit={isDisabled ? () => null : onSend}
     >

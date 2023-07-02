@@ -18,15 +18,3 @@ type TItemProps = {
 export type TItem = TItemProps & {
   Component: FC<any>;
 };
-export const ITEMS: TItem[] = [
-  {
-    name: 'NotFound404',
-    to: '/gallery',
-    Component: () => <div>NotFound404</div>,
-  },
-  {
-    name: 'Decipher',
-    to: '/gallery',
-    Component: () => <div>decipher</div>,
-  },
-];

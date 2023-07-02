@@ -12,7 +12,7 @@ export const Background: FC = () => {
       className={clsx('absolute inset-0')}
       style={{
         backdropFilter: 'blur(12px)',
-        backgroundColor: 'rgba(12,12,12, 0.7)',
+        backgroundColor: 'rgba(12,12,12, 0.8)',
       }}
       {...PRESENCE_OPACITY}
     />

@@ -1,10 +1,9 @@
 import type { FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
-import { Section } from './Section';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { FOOTER_SIZE } from './constants';
-import { Image } from './image';
+import { Image } from './Image';
 import type { TMedia } from '@pages/showcase/config';
 import { Filter } from './Filter';
 import { TBaseProps } from '../types';
@@ -15,8 +14,7 @@ type TProps = TBaseProps & {
   width: number;
 };
 export const Sections: FC<TProps> = (props) => {
-  const { items, count, motionX, width } =
-    props;
+  const { items, count, motionX, width } = props;
 
   const left = useTransform(
     motionX,
@@ -35,8 +33,9 @@ export const Sections: FC<TProps> = (props) => {
         style={{ left, top: 40 }}
       >
         {items.map((item: TMedia, index: number) => (
-          <Section
+          <motion.li
             key={item.key}
+            className='absolute'
             style={{
               left: `${-index * 100}vw`,
               x: '-50%',
@@ -49,7 +48,7 @@ export const Sections: FC<TProps> = (props) => {
             ) : (
               <div></div>
             )}
-          </Section>
+          </motion.li>
         ))}
       </motion.ul>
     </Root>
