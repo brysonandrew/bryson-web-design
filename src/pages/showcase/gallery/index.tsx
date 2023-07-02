@@ -60,6 +60,7 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
     <>
       {createPortal(
         <Root className='fixed inset-0 z-10'>
+          <Background />
           <div className='absolute left-0 top-0 flex items-center w-full z-10'>
             <Content
               onLayoutAnimationComplete={
@@ -67,10 +68,9 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               }
               slug={selectedPath}
             >
-              <Close />
+              <Close {...galleryProps} />
             </Content>
           </div>
-          <Background />
           {isReady ? <Sections {...galleryProps} /> : null}
           <Footer {...galleryProps} />
         </Root>,

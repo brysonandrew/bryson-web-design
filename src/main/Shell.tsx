@@ -62,7 +62,7 @@ export const Shell: FC<TProps> = ({ children }) => {
       </motion.div>
       <motion.div
         {...PRESENCE_OPACITY}
-        {...resolveTransition(2)}
+        {...resolveTransition(1)}
         onAnimationComplete={handleAnimationComplete}
       >
         <MotionConfig {...MOTION_CONFIG}>

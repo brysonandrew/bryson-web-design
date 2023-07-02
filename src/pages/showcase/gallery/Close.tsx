@@ -11,14 +11,19 @@ import styled from '@emotion/styled';
 import { Fill } from '@components/metal/Fill';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import clsx from 'clsx';
+import { TBaseProps } from './types';
 
 const Link = styled(motion(_Link))`
   aspect-ratio: 1 / 1;
 `;
 
-export const Close: FC = () => {
+type TProps = TBaseProps;
+export const Close: FC<TProps> = () => {
   const { pathname } = useLocation();
   const handleOnSound = useOffSound();
+  const handleClose = () => {
+    handleOnSound();
+  };
 
   return (
     <motion.div {...PRESENCE_OPACITY}>
@@ -27,7 +32,7 @@ export const Close: FC = () => {
           'relative flex items-center justify-center shrink-0 p-2.5 h-full cursor-pointer shadow-teal-02-sm z-10',
         )}
         to={pathname}
-        onClick={handleOnSound}
+        onTap={handleClose}
         {...HOVER_TEAL_GLOW_PROPS_SM}
       >
         <Fill />
