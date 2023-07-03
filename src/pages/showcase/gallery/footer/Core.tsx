@@ -27,7 +27,7 @@ export const Core: FC<TProps> = (props) => {
       layout
     >
       <Dragger
-        className='relative flex items-center h-full shadow-teal-02-sm'
+        className='relative flex items-center h-full'
         layout
         whileHover={{ cursor: 'grab' }}
         whileTap={{ cursor: 'grabbing' }}
@@ -47,11 +47,7 @@ export const Core: FC<TProps> = (props) => {
         <FillDark layout />
         <DragIcon />
         <div style={{ width: PADDING }} />
-        <Items
-          items={items}
-          itemWidth={itemWidth}
-
-        />
+        <Items items={items} itemWidth={itemWidth} />
         <div style={{ width: PADDING }} />
         <DragIcon />
       </Dragger>

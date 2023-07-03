@@ -29,7 +29,6 @@ export const Item: FC<TProps> = ({ slug }) => {
   };
   return (
     <Root
-      className='shadow-teal-02-sm'
       onMouseEnter={handleMouseEnter}
       {...HOVER_TEAL_OUTER_GLOW_PROPS_SM}
     >

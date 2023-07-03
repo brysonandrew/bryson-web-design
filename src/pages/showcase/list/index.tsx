@@ -1,7 +1,7 @@
 import { Space2 } from '@components/spaces/Space2';
 import styled from '@emotion/styled';
 import type { TItem } from '@t/showcase';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Item } from './item';
@@ -25,9 +25,7 @@ export const List: FC<TProps> = ({
       return (
         <Fragment key={itemKey}>
           {index !== 0 && <Space2 />}
-          <AnimatePresence>
-            <Item slug={itemKey} />
-          </AnimatePresence>
+          <Item slug={itemKey} />
         </Fragment>
       );
     })}

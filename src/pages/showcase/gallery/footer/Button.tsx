@@ -6,37 +6,56 @@ import {
   resolveDropShadow,
   resolveTextShadow,
 } from '@pages/index/constants';
-import { IMG_KEY } from '@pages/showcase/config';
+import { IMG_KEY, TMedia } from '@pages/showcase/config';
 import clsx from 'clsx';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-
-export const ROOT_CLASS = 'flex items-center px-2 py-1';
-export const TEXT_CLASS = 'relative uppercase text-xs';
+import { MARGIN, PADDING, TEXT_WIDTH } from './config';
+import { useTo } from '../hooks/nav/useTo';
 
 export const Root = styled(motion(_Link))``;
 export const Background = styled(motion.div)``;
 
-export type TProps = HTMLMotionProps<'div'> & {
-  to: string;
+export type TProps = TMedia & {
+  width: number;
 };
-export const Button: FC<TProps> = ({ children, to }) => {
+export const Button: FC<TProps> = ({
+  img,
+  name,
+  width,
+}) => {
+  const to = useTo(img);
+  const isLoading = !name;
   const [searchParams] = useSearchParams();
   const imgParam = searchParams.get(IMG_KEY);
   const isActive = imgParam === to.split(`${IMG_KEY}=`)[1];
-  const animation = isActive ? 'active' : 'idle';
+  const animation = isLoading
+    ? 'loading'
+    : isActive
+    ? 'active'
+    : 'idle';
   const handleMoveSound = useMoveSound();
   const handleClick = () => {
     handleMoveSound();
   };
+
   return (
     <Root
       to={to}
       onClick={handleClick}
-      className={clsx(ROOT_CLASS, 'shadow-teal-02-sm')}
+      className={clsx('relative', [
+        isLoading
+          ? 'shadow-white-02-sm'
+          : 'shadow-teal-02-sm',
+      ])}
+      style={{
+        width,
+        // margin: MARGIN,
+        // padding: `${PADDING * 0.5}px ${PADDING}px`,
+      }}
       initial='idle'
       animate={animation}
       whileHover={isActive ? 'active' : 'hover'}
@@ -47,6 +66,13 @@ export const Button: FC<TProps> = ({ children, to }) => {
           filter: resolveDropShadow(1),
           zIndex: 0,
           cursor: 'default',
+        },
+        loading: {
+          opacity: 0.8,
+          textShadow: resolveTextShadow(0),
+          filter: resolveDropShadow(1, 'white'),
+          zIndex: 0,
+          cursor: 'wait',
         },
         active: {
           opacity: 1,
@@ -70,11 +96,19 @@ export const Button: FC<TProps> = ({ children, to }) => {
           layoutId='GALLERY_BUTTON_FILL'
         />
       )}
-      <motion.span
-        className={clsx(TEXT_CLASS, 'text-teal-bright')}
+      <motion.div
+        className={clsx(
+          'relative uppercase text-xs text-center overflow-hidden',
+          [
+            isLoading
+              ? 'text-gray'
+              : 'text-teal-bright',
+          ]
+        )}
+        style={{ width: TEXT_WIDTH }}
       >
-        {children}
-      </motion.span>
+        {img}
+      </motion.div>
     </Root>
   );
 };

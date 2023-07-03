@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 
 export const TEXT_SM_CLASS =
-  'text-left text-teal-bright whitespace-normal text-xl md:text-2xl truncate';
+  'text-left text-teal-bright text-xl md:text-2xl';
 
 const Root = styled(motion.h6)``;
 

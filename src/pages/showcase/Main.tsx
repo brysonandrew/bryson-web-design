@@ -31,11 +31,9 @@ export const Main: FC<TProps> = ({ style }) => {
       <List items={APP_ITEMS} selectedPath={selectedPath} />
       <Space16 />
       <AnimatePresence>
-        {isSelectedItem ? (
-          <Gallery
-            selectedPath={selectedPath}
-          />
-        ) : null}
+        {isSelectedItem && (
+          <Gallery selectedPath={selectedPath} />
+        )}
       </AnimatePresence>
     </Root>
   );
