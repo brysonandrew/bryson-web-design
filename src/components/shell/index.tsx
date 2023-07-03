@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import type { TChildren } from '../../types';
 import { BlindersOut } from '../blinders/BlindersOut';
@@ -7,7 +7,6 @@ import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useContext } from '@state/Context';
-import { Decoration } from './header/Decoration';
 import { useSelectedItem } from '@pages/showcase/useSelectedItem';
 import { useShowcaseRedirect } from '../../hooks/router/useShowcaseRedirect';
 import { useSmallImages } from '@pages/index/build/images/hooks/useSmallImages';
@@ -26,20 +25,9 @@ export const Shell: FC<TProps> = ({ children }) => {
   useScrollControl();
   useScrollToTop();
 
-  const { isInit, isScroll } = useContext();
-  const selectedItem = useSelectedItem();
-  const isSelectedItem = Boolean(selectedItem);
-  const isShown = !isInit && !isScroll && !isSelectedItem;
-
   return (
     <Root className='relative text-black-dark-04 overflow-hidden z-10'>
-      <AnimatePresence mode='wait'>
-        {isShown ? (
-          <Header key='HEADER' />
-        ) : (
-          <Decoration key='DECORATION' />
-        )}
-      </AnimatePresence>
+      <Header />
       <Content
         className='relative bg-current'
         style={{

@@ -9,7 +9,7 @@ const toPathname = (v: string) => `/${v}`;
 
 const Root = styled(motion.ul)``;
 
-export const Nav = () => {
+export const Pages = () => {
   const { pathname } = useLocation();
 
   return (

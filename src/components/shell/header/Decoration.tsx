@@ -1,6 +1,7 @@
 import { FadeDown } from '@components/vertical-fade/FadeDown';
+import { FC } from 'react';
 
-export const Decoration = () => (
+export const Decoration: FC = () => (
   <FadeDown
     {...{
       initial: { opacity: 0 },

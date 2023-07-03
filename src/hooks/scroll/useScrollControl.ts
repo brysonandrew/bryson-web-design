@@ -25,5 +25,4 @@ export const useScrollControl = () => {
       dispatch({ type: 'scroll', value: false });
     }
   });
-
 };

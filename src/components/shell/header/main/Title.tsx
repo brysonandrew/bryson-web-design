@@ -12,9 +12,9 @@ export const Title: FC<TProps> = () => (
       Bryson A.
     </h1>
     <div className='p-0 md:p-0.75' />
-    <h2 className='text-baby-blue text-md italic uppercase mt-0.125'>
+    <h2 className='text-baby-blue text-md italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.0625'>
       Web developer
     </h2>
-    <ThinLine classValue='hidden md:flex absolute -bottom-1 left-0' />
+    <ThinLine classValue='flex absolute -bottom-1 left-0' />
   </Root>
 );
