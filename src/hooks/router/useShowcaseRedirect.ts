@@ -11,6 +11,7 @@ export const useShowcaseRedirect = () => {
   const [searchParams] = useSearchParams();
   const selectedKey = searchParams.get(SELECTED_KEY);
   const navigate = useNavigate();
+  
   useEffect(() => {
     if (selectedKey && isInit) {
       handleLoadMedia(selectedKey);

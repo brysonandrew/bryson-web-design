@@ -15,7 +15,7 @@ export const Main: FC<TProps> = ({ style }) => {
     <Root
       className={clsx(WIDTH_CLASS)}
       style={style}
-    >
+    >  
       <Form />
       <Space16 />
     </Root>

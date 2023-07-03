@@ -1,9 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  AnimatePresence,
-  MotionConfig,
-} from 'framer-motion';
+import { MotionConfig } from 'framer-motion';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Source } from './Source';
 import { Provider } from '@state/Provider';

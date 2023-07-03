@@ -3,10 +3,10 @@ import { MAX_SCROLL, TOptionsConfig } from "@components/fake-3d/config";
 export const FAKE_3D_PROPS: TOptionsConfig = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
-      startScroll + windowHeight * 0.75,
-      startScroll + windowHeight * 0.75 + MAX_SCROLL,
+      startScroll,
+      startScroll + windowHeight * 0.5 + MAX_SCROLL,
     ],
-    output: [0, 20],
+    output: [-10, 10],
   },
   resistance: {
     input: ({ startScroll }) => [

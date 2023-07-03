@@ -1,18 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { useTimeoutRef } from "./useTimeoutRef";
 
 export const useHome = (delay?: number) => {
   const { pathname } = useLocation();
 
-  const timeoutRef = useRef<null | ReturnType<
-    typeof setTimeout
-  >>(null);
-
-  const endTimeout = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
+  const { timeoutRef, endTimeout } = useTimeoutRef();
 
   const reset = () => {
     window.scrollTo(0, 0);
@@ -20,7 +13,7 @@ export const useHome = (delay?: number) => {
 
   const handler = () => {
     if (typeof delay === "number") {
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         reset();
       }, delay);
     } else {

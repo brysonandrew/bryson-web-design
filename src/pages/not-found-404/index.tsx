@@ -21,5 +21,5 @@ export const NotFound404 = () => (
         </h6>
       </div>
     </Shell>
-  </MainShell>
+  </MainShell> 
 );

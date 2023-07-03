@@ -14,10 +14,8 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 
-export const ROOT_CLASS =
-  'flex items-center pl-2 pt-1 pb-1';
-export const TEXT_CLASS =
-  'relative uppercase text-xs';
+export const ROOT_CLASS = 'flex items-center px-2 py-1';
+export const TEXT_CLASS = 'relative uppercase text-xs';
 
 export const Root = styled(motion(_Link))``;
 export const Background = styled(motion.div)``;
@@ -72,7 +70,9 @@ export const Button: FC<TProps> = ({ children, to }) => {
           layoutId='GALLERY_BUTTON_FILL'
         />
       )}
-      <motion.span className={clsx(TEXT_CLASS, 'text-teal-bright')}>
+      <motion.span
+        className={clsx(TEXT_CLASS, 'text-teal-bright')}
+      >
         {children}
       </motion.span>
     </Root>

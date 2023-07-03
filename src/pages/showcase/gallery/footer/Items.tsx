@@ -34,7 +34,7 @@ export const Items: FC<TProps> = ({ items, itemWidth }) => {
           return (
             <div
               key={key}
-              className='relative h-full m-0.75 z-10'
+              className='relative m-0.75 z-10'
               style={{
                 width: itemWidth,
               }}
