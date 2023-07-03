@@ -45,7 +45,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <MotionConfig {...INIT_MOTION_CONFIG}>
       <Variables />
-      <Filters />
+      <Filters /> 
       <motion.div
         {...PRESENCE_OPACITY}
         {...resolveTransition(0)}

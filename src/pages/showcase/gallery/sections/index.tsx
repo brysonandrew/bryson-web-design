@@ -46,7 +46,7 @@ export const Sections: FC<TProps> = (props) => {
             {item.name ? (
               <Image item={item} />
             ) : (
-              <div></div>
+              <div>loading</div>
             )}
           </motion.li>
         ))}

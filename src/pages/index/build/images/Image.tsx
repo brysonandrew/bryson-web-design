@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveFilter } from './hooks/resolveFilter';
 import { useDepthStyle } from './hooks/useDepthStyle';
+import { Placeholder } from '@components/images/Placeholder';
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
@@ -39,19 +40,7 @@ export const Image: FC<TProps> = ({
       }}
     >
       {!isLoaded && (
-        <motion.div
-          key={`loader-${index}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.1, 0.4, 0.1] }}
-          exit={{ opacity: 0 }}
-          transition={{
-            ...MOTION_CONFIG.transition,
-            repeat: Infinity,
-            duration: 2,
-            delay: (index / count) * 1.5,
-          }}
-          className='absolute inset-0 w-full bg-baby-blue'
-        />
+        <Placeholder index={index} count={count} />
       )}
       <motion.div className='absolute top-0 left-0 w-full'>
         <motion.img {...props} />

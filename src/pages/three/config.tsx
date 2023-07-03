@@ -2,7 +2,6 @@ import { STORY } from '@constants/copy';
 import { Build } from './build';
 import { FC } from 'react';
 import { Tech } from './tech';
-import { Clients } from './clients';
 import { Ending } from './ending';
 
 export type TPage = {

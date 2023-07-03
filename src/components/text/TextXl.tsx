@@ -24,9 +24,6 @@ export const TextXl: FC<TProps> = ({
       'uppercase text-teal text-left px-2 tracking-widest text-3xl md:text-4xl xl:px-4',
       classValue,
     )}
-    style={{
-      ...style,
-    }}
     {...props}
   >
     {children}

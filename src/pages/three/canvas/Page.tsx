@@ -3,7 +3,6 @@ import { Title } from './Title';
 import { useViewport } from '@moth/hooks/useViewport';
 import COLORS from '@windi/config-colors.json';
 import { TPage } from '../config';
-import { Scroll } from '@react-three/drei';
 import { Color } from 'three';
 
 type TProps = TPage & { index: number };
@@ -15,7 +14,6 @@ export const Page: FC<TProps> = ({
   const vp = useViewport();
   return (
     <group position={[0, -vp.height * index, 0]}>
-      {/* <pointLight position={[20, -10, 10]} /> */}
       <mesh position={[0, 0, -20]}>
         <planeGeometry args={[vp.width, vp.height]} />
         <meshBasicMaterial

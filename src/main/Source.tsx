@@ -10,8 +10,8 @@ import { Sample as SampleSongs } from "@pages/songs/sample";
 import { Hype as HypeSongs } from "@pages/songs/hype";
 import { Card } from "@pages/card";
 import { Cv } from "@pages/cv";
-import { Background } from "@pages/background";
 import { Three } from "@pages/three";
+import { Background } from "@components/background";
 
 export const Source = () => {
   const element = useRoutes([
@@ -54,10 +54,6 @@ export const Source = () => {
     {
       path: "/cv",
       element: <Cv />,
-    },
-    {
-      path: "/background",
-      element: <Background />,
     },
     ...MOTH_ROUTES,
     {
