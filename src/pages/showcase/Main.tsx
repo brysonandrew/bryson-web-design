@@ -30,12 +30,16 @@ export const Main: FC<TProps> = ({ style }) => {
     >
       <AnimatePresence>
         <List
+          key='SHOWCASE_MAIN_LIST'
           items={APP_ITEMS}
           selectedPath={selectedPath}
         />
-        <Space16 />
+        <Space16 key='SHOWCASE_MAIN_SPACE_16' />
         {isSelectedItem && (
-          <Gallery selectedPath={selectedPath} />
+          <Gallery
+            key='SHOWCASE_MAIN_GALLERY'
+            selectedPath={selectedPath}
+          />
         )}
       </AnimatePresence>
     </Root>

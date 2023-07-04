@@ -49,6 +49,7 @@ export const Image: FC<TProps> = ({ item }) => {
               exit: { opacity: 0 },
               transition: {
                 repeat: Infinity,
+                duration: 2,
               },
             }}
           />
