@@ -6,7 +6,7 @@ import { FC } from 'react';
 type TProps = {
   index: number;
   count: number;
-  children: TChildren;
+  children?: TChildren;
 };
 export const Placeholder: FC<TProps> = ({
   index,

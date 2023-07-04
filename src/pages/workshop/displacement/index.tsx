@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import {
   Displacement as DisplacementFilter,
-  ID,
+  DISPLACEMENT_ID,
 } from "@components/effects/displacement";
 import { Filter as SobelFilter } from "@components/effects/sobel/Filter";
 import { Filters as SweepFilters } from "@components/effects/sweep/Filters";
@@ -30,7 +30,7 @@ export const Displacement = () => (
         height="100%"
         xlinkHref="/synthwave.jpg"
         //xlinkHref="/mugshot2.png"
-        filter={resolveUrlId(ID)}
+        filter={resolveUrlId(DISPLACEMENT_ID)}
       />
     </svg>
     <svg width="0" height="0">
