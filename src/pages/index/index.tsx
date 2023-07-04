@@ -12,7 +12,7 @@ import { Space12 } from '@components/spaces/Space12';
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
-      <Shell>
+      <Shell> 
         <Build />
         <Space24 /> 
         <Tech />
