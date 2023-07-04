@@ -41,14 +41,12 @@ input,
 textarea,
 select {
   font-family: inherit;
-  background-color: rgba(0, 0, 0, 1);
 }
 
 label:disabled,
 input:disabled,
 textarea:disabled,
 select:disabled {
-  background-color: rgba(0, 0, 0, 1);
   cursor: not-allowed;
 }
 

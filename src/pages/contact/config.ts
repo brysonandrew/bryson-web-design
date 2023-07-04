@@ -21,7 +21,7 @@ export const resolveButtonValue = (
     case "sending":
       return "Sending...";
     case "sent":
-      return "Thanks for the message 🎉";
+      return `Thank you, I will write back soon.`;
     case "error":
       return "Something went wrong ⚠️";
     default:

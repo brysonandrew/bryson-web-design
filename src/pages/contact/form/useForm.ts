@@ -22,6 +22,8 @@ export const useForm = ({ element }: TConfig) => {
   const onSend = async (event: FormEvent) => {
     if (element === null) return;
     handleStatus('sending');
+    event.preventDefault();
+
     try {
       const result = await emailjs.sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
@@ -35,7 +37,6 @@ export const useForm = ({ element }: TConfig) => {
       handleStatus('error');
     }
 
-    event.preventDefault();
   };
 
   const updateFocus = (value: TFormKey | null) => dispatch({ type: "contact-focus", value });

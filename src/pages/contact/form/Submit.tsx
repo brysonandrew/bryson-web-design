@@ -14,7 +14,7 @@ import { useContext } from '@state/Context';
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
 const Input = styled(motion.input)`
-  background-color: transparent;
+  background-color: transparent !important;
 `;
 const Text = styled(motion.h4)`
   -webkit-text-stroke-width: 0.5px;
@@ -24,8 +24,9 @@ const Text = styled(motion.h4)`
 export const Submit: FC = () => {
   const { contact } = useContext();
   const isDisabled = contact.status !== 'idle';
-  const handleMoveSound = useMoveSound();
   const title = resolveButtonValue(contact.status);
+
+  const handleMoveSound = useMoveSound();
 
   return (
     <Root
@@ -55,7 +56,7 @@ export const Submit: FC = () => {
         />
         <Text
           className={clsx(
-            'flex justify-center relative capitalise py-2 text-teal text-2xl italic pointer-events-none',
+            'flex justify-center relative capitalise text-teal text-2xl italic py-2 pointer-events-none',
           )}
           variants={{
             animate: {
