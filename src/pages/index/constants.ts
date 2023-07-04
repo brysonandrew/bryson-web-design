@@ -16,25 +16,30 @@ export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',
 };
 
-export const resolveWhite = (opacity: number) => `rgba(255,255,255, ${opacity})`;
-export const resolveBabyBlue = (opacity: number) => `rgba(153, 204, 255, ${opacity})`;
-export const resolveTeal = (opacity: number) => `rgba(45, 212, 191, ${opacity})`;
-export const resolveTealBright = (opacity: number) => `rgba(202, 248, 255, ${opacity})`;
-
-export const COLOR_RECORD = {
-  "baby-blue": resolveBabyBlue,
-  "white": resolveWhite,
-  "teal": resolveTeal,
-  "teal-bright": resolveTealBright,
+export const COLOR_RGB_RECORD = {
+  "white": "255,255,255",
+  "gray": "68,68,68",
+  "baby-blue": "153,204,255",
+  "teal": "45,212,191",
+  "teal-bright": "202,248,255",
 };
-export type TColor = keyof typeof COLOR_RECORD;
-export const resolveDropShadow = (spread: number, color: TColor = "white") => `drop-shadow(0px 0px ${spread}px ${COLOR_RECORD[color](0.8)})`;
-export const resolveTextShadow = (spread: number, color: TColor = "white") => `0px 0px ${spread}px ${resolveWhite(0.5)}, 0px 0px ${spread}px ${COLOR_RECORD[color](0.8)}`;
+export type TColorRgbKey = keyof typeof COLOR_RGB_RECORD;
+
+export const resolveColor = (color: TColorRgbKey, opacity: number) => `rgba(${COLOR_RGB_RECORD[color]}, ${opacity})`;
+
+export const resolveWhite = (opacity: number) => resolveColor("white", opacity);
+export const resolveGray = (opacity: number) => resolveColor("gray", opacity);
+export const resolveBabyBlue = (opacity: number) => resolveColor("baby-blue", opacity);
+export const resolveTeal = (opacity: number) => resolveColor("teal", opacity);
+export const resolveTealBright = (opacity: number) => resolveColor("teal-bright", opacity);
+
+export const resolveDropShadow = (spread: number, color: TColorRgbKey = "white") => `drop-shadow(0px 0px ${spread}px ${resolveColor(color, 0.8)})`;
+export const resolveShadow = (spread: number, color: TColorRgbKey = "white") => `0px 0px ${spread}px ${resolveWhite(0.5)}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
 type TConfig = {
   outerGlow: number;
   textGlow: number;
-  color?: TColor;
+  color?: TColorRgbKey;
 };
 export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) => ({
   initial: "initial",
@@ -44,12 +49,12 @@ export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) =
   variants: {
     animate: {
       filter: resolveDropShadow(0),
-      textShadow: resolveTextShadow(0),
+      textShadow: resolveShadow(0),
       transition: { ease: "easeIn", duration: 0.28, delay: 0.08 },
     },
     hover: {
       filter: resolveDropShadow(outerGlow, color),
-      textShadow: resolveTextShadow(textGlow, color),
+      textShadow: resolveShadow(textGlow, color),
       transition: { ease: "linear", duration: 0.2, delay: 0 },
     },
   }

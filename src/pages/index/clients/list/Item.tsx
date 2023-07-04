@@ -11,7 +11,7 @@ import {
   DURATION_DELAY_TRANSITION,
   HOVER_GLOW_PROPS_SM,
   resolveDropShadow,
-  resolveTextShadow,
+  resolveShadow,
 } from '@pages/index/constants';
 import { PRESENCE_OPACITY } from '@constants/animation';
 
@@ -40,10 +40,10 @@ export const Item: FC<TProps> = ({
   const contentProps = {
     variants: {
       hover: {
-        textShadow: resolveTextShadow(6),
+        textShadow: resolveShadow(6),
       },
       animate: {
-        textShadow: resolveTextShadow(0),
+        textShadow: resolveShadow(0),
       },
     },
   };
