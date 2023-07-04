@@ -6,8 +6,6 @@ import { BlindersOut } from '../blinders/BlindersOut';
 import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
-import { useContext } from '@state/Context';
-import { useSelectedItem } from '@pages/showcase/useSelectedItem';
 import { useShowcaseRedirect } from '../../hooks/router/useShowcaseRedirect';
 import { useSmallImages } from '@pages/index/build/images/hooks/useSmallImages';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';

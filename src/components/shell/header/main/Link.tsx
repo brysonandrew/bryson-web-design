@@ -16,7 +16,7 @@ export const Link: FC = () => {
   return (
     <Root onTap={handleResetScroll}>
       <_Link
-        className='relative -left-1 flex flex-col px-1 cursor-pointer'
+        className='relative -left-1 flex flex-col cursor-pointer'
         to='/'
         onTap={handleClick}
         whileHover='hover'
