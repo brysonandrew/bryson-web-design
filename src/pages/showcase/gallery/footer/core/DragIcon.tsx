@@ -6,10 +6,12 @@ type TProps = {
   classValue?: ClassValue;
 };
 export const DragIcon: FC<TProps> = ({ classValue }) => (
-  <Drag
+  <div
     className={clsx(
-      'relative -top-0.375 text-teal-bright',
+      'flex items-center absolute h-full text-teal-bright',
       classValue,
     )}
-  />
+  >
+    <Drag />
+  </div>
 );

@@ -1,13 +1,14 @@
 import { DragIcon } from './DragIcon';
 import { FillDark } from '@components/metal/FillDark';
 import { useDrag } from '../../hooks/useDrag';
-import { PADDING } from '../../sections/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
 import { Items } from './Items';
+import { PADDING_X } from './config';
+import { Fill } from '@components/metal/Fill';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;
@@ -23,16 +24,18 @@ export const Core: FC<TProps> = (props) => {
   return (
     <Root
       className='relative h-full'
-      style={{ width: itemWidth, left: -PADDING }}
+      style={{ width: itemWidth }}
     >
+      <Fill />
       <Dragger
         className='relative flex items-center h-full'
         whileHover={{ cursor: 'grab' }}
         whileTap={{ cursor: 'grabbing' }}
         style={{
           x: motionX,
-          width: width + PADDING * 2,
-          padding: PADDING,
+          left: -PADDING_X,
+          width: width + PADDING_X * 2,
+          padding: `0 ${PADDING_X}px`,
         }}
         dragConstraints={{
           left: -width + itemWidth,
@@ -42,13 +45,12 @@ export const Core: FC<TProps> = (props) => {
         }}
         {...dragHandlers}
       >
-        <FillDark layout />
-        <DragIcon />
-        <div style={{ width: PADDING }} />
+        <FillDark classValue='opacity-50' />
+        <DragIcon classValue='left-5' />
         <Items items={items} itemWidth={itemWidth} />
-        <div style={{ width: PADDING }} />
-        <DragIcon />
+        <DragIcon classValue='right-5' />
       </Dragger>
     </Root>
   );
 };
+1;

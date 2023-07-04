@@ -15,12 +15,12 @@ export const Footer: FC<TProps> = ({ ...props }) => {
     <Root
       className='absolute left-0 bottom-0 flex justify-center w-full'
       style={{ height: FOOTER_SIZE }}
-      {...PRESENCE_Y}
       transition={{
         ease: 'easeIn',
         duration: 0.2,
         delay: 0.2,
       }}
+      {...PRESENCE_Y}
     >
       <FillDarkest />
       {props.isReady && <Core {...props} />}

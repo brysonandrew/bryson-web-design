@@ -59,6 +59,13 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
     <>
       {createPortal(
         <Root className='fixed inset-0 z-10'>
+          <Header
+            key='GALLERY_HEADER'
+            onLayoutAnimationComplete={
+              handleLayoutAnimationComplete
+            }
+            slug={selectedPath}
+          />
           {isResizing ? null : (
             <>
               <Background />
@@ -71,13 +78,6 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               <Footer {...galleryProps} />
             </>
           )}
-          <Header
-            key='GALLERY_HEADER'
-            onLayoutAnimationComplete={
-              handleLayoutAnimationComplete
-            }
-            slug={selectedPath}
-          />
         </Root>,
         document.body,
       )}

@@ -13,11 +13,14 @@ import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-import { MARGIN, PADDING, TEXT_WIDTH } from '../config';
 import { useTo } from '../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
+import COLORS from '@windi/config-colors.json';
+import SHADOWS from '@windi/config-shadow.js';
 
-export const Root = styled(motion(_Link))``;
+export const Root = styled(motion.div)``;
+export const Link = styled(motion(_Link))``;
+
 export const Background = styled(motion.div)``;
 
 export type TProps = TMedia & {
@@ -50,69 +53,70 @@ export const Button: FC<TProps> = ({
 
   return (
     <Root
-      to={to}
-      onTap={handleTap}
       className={clsx(
-        'relative h-10 bg-teal m-0 p-0 md:bg-transparent md:px-2 md:py-1 md:m-1 md:h-auto',
-        [
-          isLoading
-            ? 'shadow-white-02-sm'
-            : 'shadow-teal-02-sm',
-        ],
+        'relative h-10 bg-transparent h-auto px-2 py-1',
       )}
       style={{
         width,
       }}
-      initial='idle'
-      animate={animation}
-      whileHover={isActive ? 'active' : 'hover'}
-      variants={{
-        idle: {
-          opacity: 0.8,
-          textShadow: resolveTextShadow(0),
-          filter: resolveDropShadow(1),
-          zIndex: 0,
-          cursor: 'default',
-        },
-        loading: {
-          opacity: 0.8,
-          textShadow: resolveTextShadow(0),
-          filter: resolveDropShadow(1, 'white'),
-          zIndex: 0,
-          cursor: 'wait',
-        },
-        active: {
-          opacity: 1,
-          textShadow: resolveTextShadow(2),
-          filter: resolveDropShadow(1),
-          zIndex: 9999,
-          cursor: 'pointer',
-        },
-        hover: {
-          opacity: 1,
-          textShadow: resolveTextShadow(4, 'teal'),
-          filter: resolveDropShadow(8, 'teal'),
-          zIndex: 1,
-          cursor: 'pointer',
-        },
-      }}
     >
-      {isActive && (
-        <FillDarkest
-          initial={false}
-          classValue='hidden md:flex'
-          layoutId='GALLERY_BUTTON_FILL'
-        />
-      )}
-      <motion.div
+      <Link
+        to={to}
+        onTap={handleTap}
         className={clsx(
-          'hidden relative uppercase text-xs text-center overflow-hidden md:flex',
-          [isLoading ? 'text-gray' : 'text-teal-bright'],
+          'relative flex items-center justify-center uppercase text-xs text-center bg-transparent px-2 py-2',
         )}
-        style={{ width: TEXT_WIDTH }}
+        initial='idle'
+        animate={animation}
+        whileHover={isActive ? 'active' : 'hover'}
+        variants={{
+          idle: {
+            opacity: 0.4,
+            textShadow: resolveTextShadow(0),
+            filter: resolveDropShadow(1),
+            zIndex: 0,
+            cursor: 'default',
+            color: COLORS['teal'],
+            boxShadow: SHADOWS['teal-sm'],
+          },
+          loading: {
+            opacity: 0.8,
+            textShadow: resolveTextShadow(0),
+            filter: resolveDropShadow(1, 'white'),
+            zIndex: 0,
+            cursor: 'wait',
+            color: COLORS['gray'],
+            boxShadow: SHADOWS['gray-sm'],
+          },
+          active: {
+            opacity: 1,
+            textShadow: resolveTextShadow(2),
+            filter: resolveDropShadow(1),
+            zIndex: 9999,
+            cursor: 'pointer',
+            color: COLORS['teal-bright'],
+            boxShadow: SHADOWS['teal-bright-sm'],
+          },
+          hover: {
+            opacity: 1,
+            textShadow: resolveTextShadow(4, 'teal'),
+            filter: resolveDropShadow(8, 'teal'),
+            zIndex: 1,
+            cursor: 'pointer',
+            color: COLORS['teal-bright'],
+            boxShadow: SHADOWS['teal-bright-sm'],
+          },
+        }}
       >
-        {img}
-      </motion.div>
+        {isActive && (
+          <FillDarkest
+            initial={false}
+            classValue='hidden md:flex'
+            layoutId='GALLERY_BUTTON_FILL'
+          />
+        )}
+        <div className='flex relative px-1 py-0.5 bg-black md:flex'>{img}</div>
+      </Link>
     </Root>
   );
 };
