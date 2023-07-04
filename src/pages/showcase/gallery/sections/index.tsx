@@ -41,11 +41,7 @@ export const Sections: FC<TProps> = (props) => {
               height: `calc(100vh - ${FOOTER_SIZE}px)`,
             }}
           >
-            {item.name ? (
-              <Image item={item} />
-            ) : (
-              <div>loading</div>
-            )}
+            <Image item={item} />
           </motion.li>
         ))}
       </motion.ul>

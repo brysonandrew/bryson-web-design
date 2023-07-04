@@ -24,17 +24,15 @@ export const Name: FC<TProps> = ({
       className='relative flex shrink-0 w-full pt-1 pb-4 pl-0 justify-center md:w-37 md:pb-2 md:pl-6 md:justify-start'
       {...PRESENCE_OPACITY_DELAY}
     >
-      <AnimatePresence>
-        <motion.div
-          key={resolveCompositeKey('Name', title)}
-          className='inline-flex'
-          animate={
-            isFocused ? 'focus' : isValue ? 'value' : 'idle'
-          }
-        >
-          <Text>{title}</Text>
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={resolveCompositeKey('Name', title)}
+        className='inline-flex'
+        animate={
+          isFocused ? 'focus' : isValue ? 'value' : 'idle'
+        }
+      >
+        <Text>{title}</Text>
+      </motion.div>
     </Root>
   );
 };
