@@ -6,7 +6,6 @@ import { PATTERN_ID } from './pattern';
 import { MORPH_ID } from './morph';
 import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
-import { Processor } from '@components/icons/Processor';
 
 const Root = styled(motion.svg)``;
 const Rect = styled(motion.rect)``;
@@ -31,6 +30,13 @@ export const Background: FC<TProps> = ({
       height='100%'
       fill={resolveUrlId(PATTERN_ID)}
       filter={resolveUrlId(MORPH_ID)}
+    />
+    <Rect
+      x='0'
+      y='0'
+      width='100%'
+      height='100%'
+      fill='rgba(0,0,0,0.4)'
     />
     {children}
   </Root>
