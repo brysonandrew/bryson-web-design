@@ -53,7 +53,7 @@ export const Button: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'flex items-center justify-center relative h-10',
+        'flex items-center justify-center relative h-16',
       )}
       style={{ width }}
     >
@@ -61,7 +61,7 @@ export const Button: FC<TProps> = ({
         to={to}
         onTap={handleTap}
         className={clsx(
-          'flex items-center justify-center relative w-full h-8',
+          'flex items-center justify-center relative w-full h-full',
         )}
         initial='idle'
         animate={animation}
@@ -69,51 +69,51 @@ export const Button: FC<TProps> = ({
       >
         {isActive && (
           <motion.div
-            className='absolute w-4 h-0.5 rounded-full bg-teal'
+            className='absolute w-4 h-0.5 rounded-full bg-teal-bright'
             style={{
-              boxShadow: resolveShadow(2, 'teal-bright'),
-              filter: resolveDropShadow(3, 'teal'),
+              boxShadow: resolveShadow(4, 'teal-bright'),
+              filter: resolveDropShadow(6, 'teal'),
             }}
             layoutId='GALLERY_BUTTON_FILL'
           />
         )}
         <motion.div
-          className='flex relative uppercase text-xs text-center px-2 py-1'
+          className='flex relative uppercase text-xs text-center px-2.5 py-1.25'
           variants={{
             idle: {
               opacity: 0.2,
-              textShadow: resolveShadow(0),
-              filter: resolveDropShadow(2, 'white'),
               zIndex: 0,
               cursor: 'default',
               color: COLORS['white'],
+              textShadow: resolveShadow(0),
+              filter: resolveDropShadow(2, 'white'),
               boxShadow: resolveShadow(1, 'white'),
             },
             loading: {
-              opacity: 0.8,
-              textShadow: resolveShadow(0),
-              filter: resolveDropShadow(1, 'white'),
               zIndex: 0,
               cursor: 'wait',
+              opacity: 0.8,
               color: COLORS['gray'],
+              textShadow: resolveShadow(0),
+              filter: resolveDropShadow(1, 'white'),
               boxShadow: resolveShadow(1, 'gray'),
             },
             active: {
               opacity: 1,
               zIndex: 9999,
               cursor: 'pointer',
-              textShadow: resolveShadow(4, 'teal-bright'),
-              filter: resolveDropShadow(8, 'teal-bright'),
               color: COLORS['teal-bright'],
-              boxShadow: resolveShadow(1, 'teal-bright'),
+              textShadow: resolveShadow(2, 'teal'),
+              filter: resolveDropShadow(4, 'teal-bright'),
+              boxShadow: resolveShadow(1, 'teal'),
             },
             hover: {
               opacity: 1,
               zIndex: 1,
               cursor: 'pointer',
-              textShadow: resolveShadow(2, 'teal'),
-              filter: resolveDropShadow(4, 'teal'),
-              color: COLORS['teal'],
+              color: COLORS['white'],
+              textShadow: resolveShadow(2, 'white'),
+              filter: resolveDropShadow(4, 'white'),
               boxShadow: resolveShadow(1, 'teal'),
             },
           }}

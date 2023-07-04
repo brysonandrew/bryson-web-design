@@ -7,7 +7,7 @@ const Root = styled(motion.div)``;
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => (
-  <Root className='relative flex flex-col md:flex-row'>
+  <Root className='relative flex flex-col pb-2 md:flex-row'>
     <h1 className='text-teal-bright text-md uppercase'>
       Bryson A.
     </h1>
@@ -15,6 +15,6 @@ export const Title: FC<TProps> = () => (
     <h2 className='text-baby-blue text-md italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.0625'>
       Web developer
     </h2>
-    <ThinLine classValue='flex absolute -bottom-1 left-0' />
+    <ThinLine classValue='flex absolute bottom-1 left-0' />
   </Root>
 );

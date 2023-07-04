@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Fill } from '@components/metal/Fill';
 import { Input as Select } from '@components/select/Input';

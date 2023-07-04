@@ -9,6 +9,7 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import clsx from 'clsx';
 import { Mark } from './Mark';
+import { DELAY_VISIBILITY } from '@pages/index/constants';
 
 const Root = styled(motion.div)``;
 
@@ -24,18 +25,23 @@ export const Content: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'relative flex items-center justify-between w-full pl-6 pr-4 py-4 z-20',
-      [!isHeader && 'shadow-teal-02-sm']
+      'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20',
+      [!isHeader && 'shadow-teal-02-sm'],
     )}
     layoutId={resolveTitleLayoutId(slug)}
     {...props}
   >
     <FillDark key='FillDark' />
-    <div className='flex items-center'>
-      <Mark />
-      <Header slug={slug} />
-    </div>
-    <div className='p-2' />
-    <>{children}</>
+    <Mark />
+    <motion.div
+      className='flex items-center justify-between'
+      {...DELAY_VISIBILITY}
+    >
+      <div className='flex items-center'>
+        <Header slug={slug} />
+      </div>
+      <div className='p-2' />
+      <>{children}</>
+    </motion.div>
   </Root>
 );

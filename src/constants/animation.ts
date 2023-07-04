@@ -50,6 +50,12 @@ export const PRESENCE_OPACITY_01 = {
   exit: { opacity: 0 },
 };
 
+export const PRESENCE_OPACITY_06 = {
+  initial: { opacity: 0 },
+  animate: { opacity: 0.1 },
+  exit: { opacity: 0 },
+};
+
 export const PRESENCE_SCALE = {
   initial: { scale: 0 },
   animate: { scale: 1 },
@@ -61,7 +67,6 @@ export const PRESENCE_Y = {
   animate: { y: "0%" },
   exit: { y: "100%" },
 };
-
 
 export const PRESENCE_OPACITY_DELAY = {
   initial: { opacity: 0 },

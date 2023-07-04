@@ -39,7 +39,7 @@ export const Core: FC<TProps> = (props) => {
           x: motionX,
           left: -PADDING_X,
           width: width + PADDING_X * 2,
-          padding: `1rem ${PADDING_X}px`,
+          padding: `0 ${PADDING_X}px`,
         }}
         dragConstraints={{
           left: -width + itemWidth,

@@ -28,9 +28,12 @@ export const Main: FC<TProps> = ({ style }) => {
         top: style?.y,
       }}
     >
-      <List items={APP_ITEMS} selectedPath={selectedPath} />
-      <Space16 />
       <AnimatePresence>
+        <List
+          items={APP_ITEMS}
+          selectedPath={selectedPath}
+        />
+        <Space16 />
         {isSelectedItem && (
           <Gallery selectedPath={selectedPath} />
         )}
