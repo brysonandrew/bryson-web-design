@@ -43,7 +43,14 @@ export const Image: FC<TProps> = ({ item }) => {
           <motion.figure
             key='IMAGE_PLACEHOLDER'
             className='relative bg-teal-bright w-full h-full'
-            {...PRESENCE_OPACITY_06}
+            {...{
+              initial: { opacity: 0 },
+              animate: { opacity: [0, 0.4, 0] },
+              exit: { opacity: 0 },
+              transition: {
+                repeat: Infinity,
+              },
+            }}
           />
         )}
       </AnimatePresence>

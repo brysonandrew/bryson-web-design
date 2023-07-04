@@ -9,7 +9,6 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import clsx from 'clsx';
 import { Mark } from './Mark';
-import { PRESENCE_OPACITY } from '@constants/animation';
 import { DELAY_VISIBILITY } from '@pages/index/constants';
 
 const Root = styled(motion.div)``;
