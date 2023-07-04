@@ -41,7 +41,6 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const count = screensCountRecord[selectedPath];
   const loadingCount = count - readyCount;
   const width = useWidth();
-
   const isDelay = useDelay(400);
   const isReady = width > 0 && (isAnimationDone || isDelay);
 
@@ -85,6 +84,7 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
           {isReady && <Sections {...galleryProps} />}
           <AnimatePresence>
             <Left
+              key='GALLERY_LEFT'
               classValue={clsx(
                 BASE_NAV_BUTTON_CLASS,
                 'left-4',
@@ -92,6 +92,7 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               max={galleryProps.count}
             />
             <Right
+              key='GALLERY_RIGHT'
               classValue={clsx(
                 BASE_NAV_BUTTON_CLASS,
                 'right-4',
