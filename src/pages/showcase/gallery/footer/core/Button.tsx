@@ -53,7 +53,7 @@ export const Button: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'flex items-center justify-center relative h-10',
+        'flex items-center justify-center relative h-16',
       )}
       style={{ width }}
     >
@@ -61,7 +61,7 @@ export const Button: FC<TProps> = ({
         to={to}
         onTap={handleTap}
         className={clsx(
-          'flex items-center justify-center relative w-full h-8',
+          'flex items-center justify-center relative w-full h-full',
         )}
         initial='idle'
         animate={animation}
@@ -69,10 +69,10 @@ export const Button: FC<TProps> = ({
       >
         {isActive && (
           <motion.div
-            className='absolute w-4 h-0.5 rounded-full bg-teal'
+            className='absolute w-4 h-0.5 rounded-full bg-teal-bright'
             style={{
-              boxShadow: resolveShadow(2, 'teal-bright'),
-              filter: resolveDropShadow(3, 'teal'),
+              boxShadow: resolveShadow(4, 'teal-bright'),
+              filter: resolveDropShadow(6, 'teal'),
             }}
             layoutId='GALLERY_BUTTON_FILL'
           />
