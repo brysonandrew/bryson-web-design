@@ -36,7 +36,7 @@ export const Aggregator: FC<TProps> = ({
     <>
       {dispersionRange && (
         <Dispersion range={dispersionRange} {...config}>
-          {(v) => {
+          {(v) => { 
             styleRef.current.rotateX = v;
             return null;
           }}
@@ -45,7 +45,7 @@ export const Aggregator: FC<TProps> = ({
       {resistanceRange && (
         <Resistance range={resistanceRange} {...config}>
           {(v) => {
-            styleRef.current.y = v;
+            styleRef.current.y = v; 
             return null;
           }}
         </Resistance>
