@@ -17,7 +17,7 @@ module.exports = {
 
   purple: PURPLE,
   "purple-sm": `0 0 1px 1px ${COLORS.purple}`,
-  "purple-08-sm": `0 0 1px 1px ${COLORS["purple-08"]}`,
+"purple-08-sm": `0 0 1px 1px ${COLORS["purple-08"]}`,
   "purple-06-sm": `0 0 1px 1px ${COLORS["purple-06"]}`,
   "purple-04-sm": `0 0 1px 1px ${COLORS["purple-04"]}`,
   "purple-02-sm": `0 0 1px 1px ${COLORS["purple-02"]}`,

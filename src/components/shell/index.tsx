@@ -24,7 +24,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   useScrollToTop();
 
   return (
-    <Root className='relative text-black-dark-04 z-10'>
+    <Root className='relative text-black-dark-04 overflow-hidden z-10'>
       <Header />
       <Content
         className='relative'
