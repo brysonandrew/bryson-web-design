@@ -1,22 +1,20 @@
-/** @type {import('windicss').Config} */
-
-module.exports = {
-  screens: {
-    sm: "480px",
-    md: "768px",
-    lg: "1100px",
-    xl: "1440px",
+{
+  "screens": {
+    "sm": "480px",
+    "md": "768px",
+    "lg": "1100px",
+    "xl": "1440px"
   },
-  minWidth: {
+  "minWidth": {
     "step": "2rem",
     "6/12": "50%",
-    "8/12": "75%",
+    "8/12": "75%"
   },
-  maxWidth: {
+  "maxWidth": {
     "6/12": "50%",
-    "8/12": "75%",
+    "8/12": "75%"
   },
-  width: {
+  "width": {
     "xs": "300px",
     "sm": "380px",
     "md": "480px",
@@ -28,6 +26,6 @@ module.exports = {
     "core-md": "768px",
     "core-lg": "900px",
     "core-xl": "1100px",
-    "left-menu": "280px",
-  },
-};
+    "left-menu": "280px"
+  }
+}

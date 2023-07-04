@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { FOOTER_SIZE } from '../sections/constants';
 import { PRESENCE_Y } from '@constants/animation';
 import { FillDarkest } from '@components/metal/FillDarkest';
-import { Core } from './Core';
+import { Core } from './core';
 import { TBaseProps } from '../types';
 
 const Root = styled(motion.footer)``;

@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { animate, motion } from "framer-motion";
-import type { MotionValue } from "framer-motion";
-import styled from "@emotion/styled";
-import { useX } from "./useX";
-import { useContext } from "@state/Context";
-import type { TMedia } from "@pages/showcase/config";
+import { useEffect } from 'react';
+import { animate, motion } from 'framer-motion';
+import type { MotionValue } from 'framer-motion';
+import styled from '@emotion/styled';
+import { useX } from './useX';
+import { useContext } from '@state/Context';
+import type { TMedia } from '@pages/showcase/config';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
@@ -22,32 +22,25 @@ export const useDrag = ({
   const { dispatch } = useContext();
   const nextX = useX({ width, items });
 
-  const startTransition = () =>
+  const handleDragStart = () =>
     dispatch({
-      type: "start-page-transition",
+      type: 'start-drag-gallery', 
       value: null,
     });
-  const endTransition = () =>
-    dispatch({ type: "end-page-transition", value: null });
-
-  const handleDragStart = startTransition;
-  const handleDragEnd = endTransition;
+  const handleDragEnd = () =>
+    dispatch({ type: 'end-drag-gallery', value: null });
 
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
-      ease: "easeIn",
+      ease: 'easeIn',
       duration: 0.4,
-      onPlay: startTransition,
-      onComplete: endTransition,
     });
     return subscribe.stop;
   }, [nextX]);
 
   return {
     onDragStart: handleDragStart,
-    onDragEnd: handleDragEnd,
-    drag: "x" as const,
-
-    // onDrag: (e: PointerEvent) => e.preventDefault(),
+    onDragTransitionEnd: handleDragEnd,
+    drag: 'x' as const,
   };
 };

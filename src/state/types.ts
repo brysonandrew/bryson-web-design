@@ -30,6 +30,10 @@ export type TPartialClientImageRecord = { [key: string]: TImageRecord; };
 
 export type TAction =
   | {
+    type: "gallery-drag",
+    value: boolean;
+  }
+  | {
     type: "contact-status",
     value: TStatus;
   }
@@ -50,11 +54,11 @@ export type TAction =
     value: TModule[];
   }
   | {
-    type: 'start-page-transition';
+    type: 'start-drag-gallery';
     value: null;
   }
   | {
-    type: 'end-page-transition';
+    type: 'end-drag-gallery';
     value: null;
   }
   | {
@@ -102,6 +106,7 @@ export type TState = {
   isInit: boolean;
   isCursorReady: boolean;
   isSound: boolean;
+  isDraggingGallery: boolean;
   context: AudioContext;
   selectId: null | string;
   mode: 'instant' | 'stagger';

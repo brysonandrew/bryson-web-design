@@ -1,16 +1,16 @@
 import { DragIcon } from './DragIcon';
 import { FillDark } from '@components/metal/FillDark';
-import { useDrag } from '../hooks/useDrag';
-import { PADDING } from '../sections/constants';
+import { useDrag } from '../../hooks/useDrag';
+import { PADDING } from '../../sections/constants';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useKeys } from '../hooks/useKeys';
-import { TBaseProps } from '../types';
+import { useKeys } from '../../hooks/useKeys';
+import { TBaseProps } from '../../types';
 import { Items } from './Items';
 
 const Root = styled(motion.div)``;
-export const Dragger = styled(motion.div)``;
+const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
@@ -24,11 +24,9 @@ export const Core: FC<TProps> = (props) => {
     <Root
       className='relative h-full'
       style={{ width: itemWidth, left: -PADDING }}
-      layout
     >
       <Dragger
         className='relative flex items-center h-full'
-        layout
         whileHover={{ cursor: 'grab' }}
         whileTap={{ cursor: 'grabbing' }}
         style={{

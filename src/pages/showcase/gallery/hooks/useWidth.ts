@@ -1,4 +1,5 @@
 import { useWindowSize } from "@hooks/useWindowSize";
+import WIDTH from "@windi/config-width.json"
 
 const MAX_WIDTH = 700;
 

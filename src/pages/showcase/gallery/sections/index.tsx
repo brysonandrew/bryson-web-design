@@ -18,7 +18,7 @@ export const Sections: FC<TProps> = (props) => {
 
   const left = useTransform(
     motionX,
-    (v) => `calc(${(-v * count * 100) / width + 50}vw + 1rem)`,
+    (v) => `${(-v * count * 100) / width + 50}vw`,
   );
 
   return (

@@ -5,6 +5,12 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case "gallery-drag": {
+      return {
+        ...state,
+        isDraggingGallery: value
+      };
+    }
     case 'contact-focus': {
       return {
         ...state,
@@ -105,16 +111,16 @@ export const reducer = (
         isThreshold: false,
       };
     }
-    case 'start-page-transition': {
+    case 'start-drag-gallery': {
       return {
         ...state,
-        isPageTransitioning: true,
+        isDraggingGallery: true,
       };
     }
-    case 'end-page-transition': {
+    case 'end-drag-gallery': {
       return {
         ...state,
-        isPageTransitioning: false,
+        isDraggingGallery: false,
       };
     }
     default: {
