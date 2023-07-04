@@ -10,6 +10,7 @@ import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
 } from './constants';
+import { useContext } from '@state/Context';
 
 const id = MOTION_BLUR_ID;
 const intensity = MOTION_BLUR_INTENSITY;
@@ -56,15 +57,9 @@ export const Filter = ({ motionX }: TProps) => {
               radius='10'
               result={`${id}-morph`}
             />
-            <feOffset
-              in='SourceGraphic'
-              dx={-intensity * 0.5}
-              dy={-intensity * 0.5}
-              result={`${id}-offset`}
-            />
             <feDisplacementMap
               in2={`${id}-morph`}
-              in={`${id}-offset`}
+              in="SourceGraphic"
               scale={intensity}
               xChannelSelector='R'
               yChannelSelector='G'

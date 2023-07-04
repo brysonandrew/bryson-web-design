@@ -1,10 +1,21 @@
-import { useEffect } from "react";
-import { animate, motion } from "framer-motion";
-import type { MotionValue } from "framer-motion";
-import styled from "@emotion/styled";
-import { useX } from "./useX";
-import { useContext } from "@state/Context";
-import type { TMedia } from "@pages/showcase/config";
+import { useEffect } from 'react';
+import { animate, motion } from 'framer-motion';
+import type { MotionValue } from 'framer-motion';
+import styled from '@emotion/styled';
+import { useX } from './useX';
+import { useContext } from '@state/Context';
+import {
+  SELECTED_KEY,
+  type TMedia,
+} from '@pages/showcase/config';
+import { resolveActiveIndex } from './resolveActiveIndex';
+import {
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
+import { useTo } from './nav/useTo';
+import { resolveTo } from './nav/resolveTo';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
@@ -19,35 +30,46 @@ export const useDrag = ({
   items,
   motionX,
 }: TConfig) => {
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get(SELECTED_KEY);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { dispatch } = useContext();
   const nextX = useX({ width, items });
 
-  const startTransition = () =>
+  const handleComplete = () =>
     dispatch({
-      type: "start-page-transition",
+      type: 'end-motion-blur',
       value: null,
     });
-  const endTransition = () =>
-    dispatch({ type: "end-page-transition", value: null });
-
-  const handleDragStart = startTransition;
-  const handleDragEnd = endTransition;
+  const handleDragTransitionEnd = () => {
+    const x = motionX.get();
+    const activeIndex = resolveActiveIndex({
+      count: items.length,
+      x,
+      width,
+    });
+    if (name) {
+      const to = resolveTo({
+        pathname,
+        name,
+        next: activeIndex,
+      });
+      navigate(to);
+    }
+  };
 
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
-      ease: "easeIn",
+      ease: 'easeIn',
       duration: 0.4,
-      onPlay: startTransition,
-      onComplete: endTransition,
+      onComplete: handleComplete,
     });
     return subscribe.stop;
   }, [nextX]);
 
   return {
-    onDragStart: handleDragStart,
-    onDragEnd: handleDragEnd,
-    drag: "x" as const,
-
-    // onDrag: (e: PointerEvent) => e.preventDefault(),
+    onDragTransitionEnd: handleDragTransitionEnd,
+    drag: 'x' as const,
   };
 };

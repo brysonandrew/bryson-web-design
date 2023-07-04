@@ -75,17 +75,6 @@ export const PRESENCE_OPACITY_DELAY = {
   exit: { opacity: 0 },
 };
 
-
-export const HEADER_TRANSITION = {
-  ...MOTION_CONFIG,
-  delay: MOTION_CONFIG.transition.duration,
-};
-
-export const HEADER_TRANSITION_EXIT = {
-  ...MOTION_CONFIG,
-  delay: 0,
-};
-
 export const MUGSHOT_TRANSITION = {
   ...MOTION_CONFIG,
   duration: 0.6,

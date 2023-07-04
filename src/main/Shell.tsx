@@ -1,8 +1,6 @@
 import { Filters } from '../components/Filters';
 import type { TChildren } from '@t/index';
-import { useEffect, type FC } from 'react';
-import { useScrollControl } from '@hooks/scroll/useScrollControl';
-import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
+import { type FC } from 'react';
 import { Variables } from '@css/Variables';
 import { Background } from '@components/background';
 import { MotionConfig, motion } from 'framer-motion';
@@ -15,19 +13,12 @@ import {
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
-import { useSmallImages } from '@pages/index/build/images/hooks/useSmallImages';
-import { useShowcaseRedirect } from './useShowcaseRedirect';
 
 type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, dispatch } = useContext();
-  useSmallImages();
-  useScrollControl();
-  useScrollToTop();
-  useShowcaseRedirect();
-
   const handleAnimationComplete = () =>
     dispatch({ type: 'init', value: null });
 
@@ -56,13 +47,13 @@ export const Shell: FC<TProps> = ({ children }) => {
             height='100%'
             fill='gray'
             {...PRESENCE_OPACITY_01}
-            {...resolveTransition(0.4)}
+            {...resolveTransition(0.28)}
           />
         </Background>
       </motion.div>
       <motion.div
         {...PRESENCE_OPACITY}
-        {...resolveTransition(1)}
+        {...resolveTransition(0.8)}
         onAnimationComplete={handleAnimationComplete}
       >
         <MotionConfig {...MOTION_CONFIG}>

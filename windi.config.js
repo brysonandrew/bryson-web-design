@@ -6,7 +6,7 @@ const SPACING = require("./windi.config-spacing.js");
 const COLORS = require("./windi.config-colors.json");
 const FONT_SIZE = require("./windi.config-font-size.json");
 const GRID = require("./windi.config-grid.js");
-const WIDTH = require("./windi.config-width.js");
+const WIDTH = require("./windi.config-width.json");
 const HEIGHT = require("./windi.config-height.js");
 const SHADOW = require("./windi.config-shadow.js");
 

@@ -10,9 +10,7 @@ import { TBaseProps } from '../types';
 
 export const Root = styled(motion.div)``;
 
-type TProps = TBaseProps & {
-  width: number;
-};
+type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
   const { items, count, motionX, width } = props;
 
@@ -46,7 +44,7 @@ export const Sections: FC<TProps> = (props) => {
             {item.name ? (
               <Image item={item} />
             ) : (
-              <div></div>
+              <div>loading</div>
             )}
           </motion.li>
         ))}

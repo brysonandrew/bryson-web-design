@@ -4,7 +4,7 @@ import {
   useMotionValueEvent,
 } from 'framer-motion';
 
-export const SCROLL_START = 60;
+export const SCROLL_START = 80;
 export const SCROLL = 120;
 
 export const useScrollControl = () => {
@@ -25,5 +25,4 @@ export const useScrollControl = () => {
       dispatch({ type: 'scroll', value: false });
     }
   });
-
 };

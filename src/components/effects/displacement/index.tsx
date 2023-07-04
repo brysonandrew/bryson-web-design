@@ -3,14 +3,14 @@ import type { TFilterChildrenProps } from "../types";
 import { Filter } from "./Filter";
 import type { TDisplacementProps } from "./config";
 
-export const ID = "DisplacementId";
+export const DISPLACEMENT_ID = "DisplacementId";
 type TChildrenProps = TFilterChildrenProps;
 type TProps = TChildrenProps & TDisplacementProps;
 
 export const Displacement: FC<TProps> = ({
   external,
   children,
-  id = ID,
+  id = DISPLACEMENT_ID,
   ...props
 }) => (
   <>

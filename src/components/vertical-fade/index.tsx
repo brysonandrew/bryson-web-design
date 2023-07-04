@@ -14,7 +14,7 @@ export const VerticalFade: FC<TBaseProps> = ({
 }) => (
   <Root
     className={clsx(
-      'fixed left-0 right-0 w-full h-20 from-black-dark pointer-events-none z-50',
+      'absolute left-0 right-0 w-full h-24 from-black-dark pointer-events-none z-10',
       classValue,
     )}
     {...props}

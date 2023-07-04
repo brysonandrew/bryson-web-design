@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import clsx from 'clsx';
 import { WIDTH_CLASS } from '@constants/styles';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { useFreezeScrollBar } from '@hooks/useFreezeScroll';
+import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 
 const Root = styled(motion.div)``;
 
@@ -31,11 +31,9 @@ export const Main: FC<TProps> = ({ style }) => {
       <List items={APP_ITEMS} selectedPath={selectedPath} />
       <Space16 />
       <AnimatePresence>
-        {isSelectedItem ? (
-          <Gallery
-            selectedPath={selectedPath}
-          />
-        ) : null}
+        {isSelectedItem && (
+          <Gallery selectedPath={selectedPath} />
+        )}
       </AnimatePresence>
     </Root>
   );

@@ -3,6 +3,7 @@ import { resolveCompositeKey } from "@utils/keys";
 
 export const SELECTED_KEY = "selected";
 export const IMG_KEY = "img";
+export const OF_KEY = "of";
 
 export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
 

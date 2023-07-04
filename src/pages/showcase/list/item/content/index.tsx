@@ -12,26 +12,30 @@ import { Mark } from './Mark';
 
 const Root = styled(motion.div)``;
 
-type TProps = TSlugProps & HTMLMotionProps<'div'>;
+type TProps = TSlugProps &
+  HTMLMotionProps<'div'> & {
+    isHeader?: boolean;
+  };
 export const Content: FC<TProps> = ({
   slug,
+  isHeader,
   children,
   ...props
 }) => (
   <Root
     className={clsx(
-      'relative flex items-center justify-between w-full pr-4 py-4 z-20',
+      'relative flex items-center justify-between w-full pl-6 pr-4 py-4 z-20',
+      [!isHeader && 'shadow-teal-02-sm']
     )}
     layoutId={resolveTitleLayoutId(slug)}
     {...props}
   >
     <FillDark key='FillDark' />
-    <div className='flex  items-center'>
+    <div className='flex items-center'>
       <Mark />
-      <div className='p-2' />
       <Header slug={slug} />
-      <div className='p-4' />
-    </div> 
+    </div>
+    <div className='p-2' />
     <>{children}</>
   </Root>
 );

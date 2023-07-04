@@ -92,8 +92,14 @@ export const metalConicalCss = css`
   }
 `;
 
+export const metalRadialLightCss = css`
+  background-image: ${METAL_RADIAL_GRADIENT};
+  ${metalConicalCss}
+  filter: brightness(18%);
+`;
+
+
 export const metalRadialCss = css`
-  position: relative;
   background-image: ${METAL_RADIAL_GRADIENT};
   ${metalConicalCss}
   filter: brightness(100%);

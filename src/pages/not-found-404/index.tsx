@@ -1,28 +1,25 @@
-import { Shell } from "@components/shell";
-import { Shell as MainShell } from "@main/Shell";
-import { ID } from "@components/effects/displacement";
-import { Space } from "@components/spaces/Space";
-import { TextLg } from "@components/text/TextLg";
-import { TextXl } from "@components/text/TextXl";
-import { resolveUrlId } from "@utils/resolveUrlId";
-import clsx from "clsx";
+import { Shell } from '@components/shell';
+import { Shell as MainShell } from '@main/Shell';
+import { Space } from '@components/spaces/Space';
+import { resolveUrlId } from '@utils/resolveUrlId';
+import clsx from 'clsx';
+import { DISPLACEMENT_ID } from '@components/effects/displacement';
 
 export const NotFound404 = () => (
   <MainShell>
     <Shell>
       <div
-        className={clsx("flex flex-col items-center")}
-        style={{ filter: resolveUrlId(ID) }}
+        className={clsx('flex flex-col items-center')}
+        style={{ filter: resolveUrlId(DISPLACEMENT_ID) }}
       >
-        <Space />
-        <TextXl classValue="text-10xl lg:text-20xl">
+        <h5 className='text-teal-bright text-left tracking-wide px-1 text-7xl lg:text-10xl'>
           404
-        </TextXl>
+        </h5>
         <Space />
-        <TextLg classValue="text-4xl lg:text-6xl">
+        <h6 className='italic uppercase text-teal-bright text-left tracking-wide px-1 text-xl lg:text-3xl'>
           Nothing Here
-        </TextLg>
+        </h6>
       </div>
     </Shell>
-  </MainShell>
+  </MainShell> 
 );

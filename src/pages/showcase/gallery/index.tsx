@@ -1,10 +1,8 @@
 import { useState, type FC } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
-import { Close } from './Close';
 import { useWidth } from './hooks/useWidth';
 import styled from '@emotion/styled';
 import { TAppItemKey } from '@constants/apps';
-import { Content } from '../list/item/content';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { createPortal } from 'react-dom';
@@ -12,6 +10,8 @@ import { Background } from './Background';
 import { useDelay } from '@main/useDelay';
 import { useContext } from '@state/Context';
 import { TMedia, resolveEmptyMedia } from '../config';
+import { Header } from './Header';
+import { Arrows } from './Arrows';
 
 const Root = styled(motion.div)``;
 
@@ -30,8 +30,7 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const readyCount = items?.length ?? 0;
   const count = screensCountRecord[selectedPath];
   const loadingCount = count - readyCount;
-  const width = useWidth();
-
+  const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady = width > 0 && (isAnimationDone || isDelay);
 
@@ -60,19 +59,25 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
     <>
       {createPortal(
         <Root className='fixed inset-0 z-10'>
-          <Background />
-          <div className='absolute left-0 top-0 flex items-center w-full z-10'>
-            <Content
-              onLayoutAnimationComplete={
-                handleLayoutAnimationComplete
-              }
-              slug={selectedPath}
-            >
-              <Close {...galleryProps} />
-            </Content>
-          </div>
-          {isReady ? <Sections {...galleryProps} /> : null}
-          <Footer {...galleryProps} />
+          <Header
+            key='GALLERY_HEADER'
+            onLayoutAnimationComplete={
+              handleLayoutAnimationComplete
+            }
+            slug={selectedPath}
+          />
+          {isResizing ? null : (
+            <>
+              <Background />
+              {isReady && (
+                <>
+                  <Sections {...galleryProps} />
+                  <Arrows max={galleryProps.count} />
+                </>
+              )}
+              <Footer {...galleryProps} />
+            </>
+          )}
         </Root>,
         document.body,
       )}

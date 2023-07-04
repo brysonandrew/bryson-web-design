@@ -25,7 +25,7 @@ export const Fake3D: FC<TProps> = ({
   switch (tier) {
     case 3: {
       return (
-        <InView className={clsx('relative', classValue)}>
+        <InView className={clsx('relative w-full', classValue)}>
           {({ isInView, ref, ...rectProps }) => (
             <>
               <AnimatePresence mode="wait">
