@@ -8,9 +8,9 @@ import { useTo } from '../hooks/nav/useTo';
 type TProps = TClassValueProps;
 export const Close: FC<TProps> = (props) => {
   const to = useTo();
-  const handleOnSound = useOffSound();
+  const handleOffSound = useOffSound();
   const handleClose = () => {
-    handleOnSound();
+    handleOffSound();
   };
 
   return (

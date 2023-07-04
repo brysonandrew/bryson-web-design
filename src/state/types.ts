@@ -54,11 +54,11 @@ export type TAction =
     value: TModule[];
   }
   | {
-    type: 'start-drag-gallery';
+    type: 'start-motion-blur';
     value: null;
   }
   | {
-    type: 'end-drag-gallery';
+    type: 'end-motion-blur';
     value: null;
   }
   | {
@@ -106,7 +106,7 @@ export type TState = {
   isInit: boolean;
   isCursorReady: boolean;
   isSound: boolean;
-  isDraggingGallery: boolean;
+  isTransitioningGallery: boolean;
   context: AudioContext;
   selectId: null | string;
   mode: 'instant' | 'stagger';

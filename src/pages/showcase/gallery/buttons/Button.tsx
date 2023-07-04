@@ -12,12 +12,12 @@ const Link = styled(motion(_Link))`
   aspect-ratio: 1 / 1;
 `;
 
-type TProps = TClassValueProps & {
+export type TButtonProps = TClassValueProps & {
   to: string;
   onTap?(): void;
   Icon: FC<TBaseIconProps>;
 };
-export const Button: FC<TProps> = ({
+export const Button: FC<TButtonProps> = ({
   Icon,
   classValue,
   ...props

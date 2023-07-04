@@ -8,7 +8,7 @@ export const reducer = (
     case "gallery-drag": {
       return {
         ...state,
-        isDraggingGallery: value
+        isTransitioningGallery: value
       };
     }
     case 'contact-focus': {
@@ -111,16 +111,16 @@ export const reducer = (
         isThreshold: false,
       };
     }
-    case 'start-drag-gallery': {
+    case 'start-motion-blur': {
       return {
         ...state,
-        isDraggingGallery: true,
+        isTransitioningGallery: true,
       };
     }
-    case 'end-drag-gallery': {
+    case 'end-motion-blur': {
       return {
         ...state,
-        isDraggingGallery: false,
+        isTransitioningGallery: false,
       };
     }
     default: {

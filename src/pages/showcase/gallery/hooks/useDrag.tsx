@@ -4,7 +4,18 @@ import type { MotionValue } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useX } from './useX';
 import { useContext } from '@state/Context';
-import type { TMedia } from '@pages/showcase/config';
+import {
+  SELECTED_KEY,
+  type TMedia,
+} from '@pages/showcase/config';
+import { resolveActiveIndex } from './resolveActiveIndex';
+import {
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
+import { useTo } from './nav/useTo';
+import { resolveTo } from './nav/resolveTo';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
@@ -19,28 +30,46 @@ export const useDrag = ({
   items,
   motionX,
 }: TConfig) => {
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get(SELECTED_KEY);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { dispatch } = useContext();
   const nextX = useX({ width, items });
 
-  const handleDragStart = () =>
+  const handleComplete = () =>
     dispatch({
-      type: 'start-drag-gallery', 
+      type: 'end-motion-blur',
       value: null,
     });
-  const handleDragEnd = () =>
-    dispatch({ type: 'end-drag-gallery', value: null });
+  const handleDragTransitionEnd = () => {
+    const x = motionX.get();
+    const activeIndex = resolveActiveIndex({
+      count: items.length,
+      x,
+      width,
+    });
+    if (name) {
+      const to = resolveTo({
+        pathname,
+        name,
+        next: activeIndex,
+      });
+      navigate(to);
+    }
+  };
 
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
       ease: 'easeIn',
       duration: 0.4,
+      onComplete: handleComplete,
     });
     return subscribe.stop;
   }, [nextX]);
 
   return {
-    onDragStart: handleDragStart,
-    onDragTransitionEnd: handleDragEnd,
+    onDragTransitionEnd: handleDragTransitionEnd,
     drag: 'x' as const,
   };
 };

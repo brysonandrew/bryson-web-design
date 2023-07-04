@@ -9,7 +9,7 @@ const Root = styled(motion.div)``;
 export const Background: FC = () => {
   return (
     <Root
-      className={clsx('absolute inset-0 w-full')}
+      className={clsx('absolute inset-0')}
       style={{
         backdropFilter: 'blur(12px)',
         backgroundColor: 'rgba(12,12,12, 0.8)',

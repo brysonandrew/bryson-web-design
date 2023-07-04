@@ -1,10 +1,10 @@
-import { useSearchParams } from "react-router-dom";
-import type {
-  TMedia} from "@pages/showcase/config";
+import { useSearchParams } from 'react-router-dom';
+import type { TMedia } from '@pages/showcase/config';
 import {
   IMG_KEY,
-  SELECTED_KEY
-} from "@pages/showcase/config";
+  SELECTED_KEY,
+} from '@pages/showcase/config';
+import { resolveX } from './resolveX';
 
 type TConfig = {
   items: TMedia[];
@@ -22,6 +22,10 @@ export const useX = ({ items, width }: TConfig) => {
     0,
   );
 
-  const x = (-activeIndex * width) / items.length;
+  const x = resolveX({
+    activeIndex,
+    width,
+    count: items.length,
+  });
   return x;
 };

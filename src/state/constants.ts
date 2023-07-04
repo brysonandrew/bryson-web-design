@@ -7,7 +7,7 @@ export const STATE: TState = {
   isScrollStart: false,
   isCursorReady: false,
   isSound: true,
-  isDraggingGallery: false,
+  isTransitioningGallery: false,
   context: new AudioContext(),
   selectId: null,
   mode:

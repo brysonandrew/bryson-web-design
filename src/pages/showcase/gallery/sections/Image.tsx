@@ -12,7 +12,7 @@ type TProps = {
   item: TMedia;
 };
 export const Image: FC<TProps> = ({ item }) => {
-  const { isDraggingGallery } = useContext();
+  const { isTransitioningGallery } = useContext();
   const [isLoaded, setLoaded] = useState(false);
   const { key, src } = item;
 
@@ -25,9 +25,9 @@ export const Image: FC<TProps> = ({ item }) => {
       style={{
         x: '-50%',
         y: '-50%',
-        ...(isDraggingGallery
-          ? {}
-          : { filter: resolveUrlId(MOTION_BLUR_ID) }),
+        ...(isTransitioningGallery
+          ? { filter: resolveUrlId(MOTION_BLUR_ID) }
+          : {}),
       }}
     />
   );

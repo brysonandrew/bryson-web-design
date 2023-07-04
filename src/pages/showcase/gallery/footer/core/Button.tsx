@@ -15,6 +15,7 @@ import {
 } from 'react-router-dom';
 import { MARGIN, PADDING, TEXT_WIDTH } from '../config';
 import { useTo } from '../../hooks/nav/useTo';
+import { useContext } from '@state/Context';
 
 export const Root = styled(motion(_Link))``;
 export const Background = styled(motion.div)``;
@@ -27,6 +28,7 @@ export const Button: FC<TProps> = ({
   name,
   width,
 }) => {
+  const { dispatch } = useContext();
   const to = useTo(img);
   const isLoading = !name;
   const [searchParams] = useSearchParams();
@@ -38,21 +40,28 @@ export const Button: FC<TProps> = ({
     ? 'active'
     : 'idle';
   const handleMoveSound = useMoveSound();
-  const handleClick = () => {
+  const handleTap = () => {
+    dispatch({
+      type: 'start-motion-blur',
+      value: null,
+    });
     handleMoveSound();
   };
 
   return (
     <Root
       to={to}
-      onClick={handleClick}
-      className={clsx('relative h-10 bg-teal m-0 p-0 md:bg-transparent md:px-2 md:py-1 md:m-1 md:h-auto', [
-        isLoading
-          ? 'shadow-white-02-sm'
-          : 'shadow-teal-02-sm',
-      ])}
+      onTap={handleTap}
+      className={clsx(
+        'relative h-10 bg-teal m-0 p-0 md:bg-transparent md:px-2 md:py-1 md:m-1 md:h-auto',
+        [
+          isLoading
+            ? 'shadow-white-02-sm'
+            : 'shadow-teal-02-sm',
+        ],
+      )}
       style={{
-        width
+        width,
       }}
       initial='idle'
       animate={animation}
@@ -91,18 +100,14 @@ export const Button: FC<TProps> = ({
       {isActive && (
         <FillDarkest
           initial={false}
-          classValue="hidden md:flex"
+          classValue='hidden md:flex'
           layoutId='GALLERY_BUTTON_FILL'
-        /> 
+        />
       )}
       <motion.div
         className={clsx(
           'hidden relative uppercase text-xs text-center overflow-hidden md:flex',
-          [
-            isLoading
-              ? 'text-gray'
-              : 'text-teal-bright',
-          ]
+          [isLoading ? 'text-gray' : 'text-teal-bright'],
         )}
         style={{ width: TEXT_WIDTH }}
       >

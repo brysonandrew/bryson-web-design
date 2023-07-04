@@ -30,7 +30,7 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const readyCount = items?.length ?? 0;
   const count = screensCountRecord[selectedPath];
   const loadingCount = count - readyCount;
-  const width = useWidth(); 
+  const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady = width > 0 && (isAnimationDone || isDelay);
 
@@ -58,19 +58,28 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   return (
     <>
       {createPortal(
-        <Root className='fixed inset-0 w-full z-10'>
-          {isReady && <Background />}
+        <Root className='fixed inset-0 z-10'>
+          {isResizing ? null : (
+            <>
+              <Background />
+              {isReady && (
+                <>
+                  <Sections {...galleryProps} />
+                  <Arrows max={galleryProps.count} />
+                </>
+              )}
+              <Footer {...galleryProps} />
+            </>
+          )}
           <Header
+            key='GALLERY_HEADER'
             onLayoutAnimationComplete={
               handleLayoutAnimationComplete
             }
             slug={selectedPath}
           />
-          {isReady && <Sections {...galleryProps} />}
-          <Arrows max={galleryProps.count} />
-          <Footer {...galleryProps} />
         </Root>,
-        document.body, 
+        document.body,
       )}
     </>
   );
