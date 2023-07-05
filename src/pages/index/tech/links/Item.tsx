@@ -22,7 +22,7 @@ export const Item: FC<TItem> = ({
   const { handlers, isSelected } = useSelectHandlers(title);
   const rootPropsWithTealGlow = resolveTealGlow({
     classValue: clsx(
-      'inline-flex relative shadow-teal-04-sm',
+      'inline-flex relative',
     ),
   });
   return (

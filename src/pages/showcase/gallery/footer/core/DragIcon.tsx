@@ -4,6 +4,7 @@ import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import COLORS from '@windi/config-colors.json';
+import { PADDING_X } from './config';
 
 type TProps = {
   classValue?: ClassValue;
@@ -11,20 +12,34 @@ type TProps = {
 export const DragIcon: FC<TProps> = ({ classValue }) => (
   <motion.div
     className={clsx(
-      'flex items-center absolute h-full',
+      'absolute flex items-center justify-center h-full z-50',
       classValue,
     )}
+    initial={false}
+    animate='animate'
+    whileHover='hover'
+    whileTap='tap'
+    style={{
+      width: PADDING_X,
+    }}
     variants={{
+      animate: {
+        cursor: 'grab',
+        color: COLORS['gray'],
+        filter: resolveDropShadow(0),
+      },
       hover: {
-        filter: resolveDropShadow(10, 'teal'),
-        color: COLORS['teal'],
+        cursor: 'grab',
+        filter: resolveDropShadow(2, 'white'),
+        color: COLORS['white'],
       },
       tap: {
-        filter: resolveDropShadow(100, 'teal-bright'),
+        filter: resolveDropShadow(4, 'teal-bright'),
         color: COLORS['teal-bright'],
+        cursor: 'grabbing',
       },
     }}
   >
-    <Drag />
+    <Drag classValue='cursor-grab' />
   </motion.div>
 );

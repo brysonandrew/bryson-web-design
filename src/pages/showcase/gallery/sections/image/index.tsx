@@ -2,50 +2,37 @@ import styled from '@emotion/styled';
 import type { TMedia } from '@pages/showcase/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  useState,
-  type FC,
-  useRef,
-  useEffect,
-} from 'react';
-import { MOTION_BLUR_ID } from './constants';
+import { useState, type FC, useRef } from 'react';
+import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
-import { Placeholder } from './Placeholder';
+import { Placeholder } from '../Placeholder';
+import { useLoadImage } from './useLoadImage';
+import { Zoom } from './Zoom';
+import { TBaseProps } from '../../types';
+import { Control } from './Control';
 
 export const Root = styled(motion.div)``;
 
-type TProps = {
+type TProps = Pick<TBaseProps, 'width'> & {
   item: TMedia;
 };
-export const Image: FC<TProps> = ({ item }) => {
+export const Image: FC<TProps> = ({ item, width }) => {
   const ref = useRef<HTMLImageElement | null>(null);
-  const { isTransitioningGallery } = useContext();
-  const [isLoaded, setLoaded] = useState(false);
+  const image = ref.current;
   const { key, src } = item;
-
-  useEffect(() => {
-    const handleLoad = () => {
-      if (ref.current) {
-        ref.current.onload = () => {
-          setLoaded(true);
-        };
-        ref.current.src = src;
-      }
-
-      setLoaded(false);
-    };
-
-    handleLoad();
-  }, []);
+  const isLoaded = useLoadImage({
+    image,
+    src,
+  });
+  const { isTransitioningGallery } = useContext();
 
   return (
-    <>
+    <Control item={item} width={width} image={image}>
       <motion.img
         ref={ref}
         className='absolute left-1/2 top-1/2 max-w-full max-h-full'
         src={src}
         alt={key}
-        onPointerDown={(e) => e.preventDefault()}
         style={{
           opacity: isLoaded ? 1 : 0.5,
           x: '-50%',
@@ -60,6 +47,6 @@ export const Image: FC<TProps> = ({ item }) => {
           <Placeholder key='IMAGE_PLACEHOLDER' />
         )}
       </AnimatePresence>
-    </>
+    </Control>
   );
 };

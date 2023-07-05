@@ -16,6 +16,7 @@ import { useTo } from '../../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
 import COLORS from '@windi/config-colors.json';
 import { FillDark } from '@components/metal/FillDark';
+import { Fill } from '@components/metal/Fill';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -75,10 +76,13 @@ export const Button: FC<TProps> = ({
               filter: resolveDropShadow(6, 'teal'),
             }}
             layoutId='GALLERY_BUTTON_FILL'
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            exit={{ opacity: 1 }}
           />
         )}
         <motion.div
-          className='flex relative uppercase text-xs text-center px-2.5 py-1.25'
+          className='flex items-center justify-center absolute inset-0 uppercase text-xs text-center'
           variants={{
             idle: {
               opacity: 0.2,
@@ -86,8 +90,6 @@ export const Button: FC<TProps> = ({
               cursor: 'default',
               color: COLORS['white'],
               textShadow: resolveShadow(0),
-              filter: resolveDropShadow(2, 'white'),
-              boxShadow: resolveShadow(1, 'white'),
             },
             loading: {
               zIndex: 0,
@@ -95,8 +97,6 @@ export const Button: FC<TProps> = ({
               opacity: 0.8,
               color: COLORS['gray'],
               textShadow: resolveShadow(0),
-              filter: resolveDropShadow(1, 'white'),
-              boxShadow: resolveShadow(1, 'gray'),
             },
             active: {
               opacity: 1,
@@ -104,8 +104,6 @@ export const Button: FC<TProps> = ({
               cursor: 'pointer',
               color: COLORS['teal-bright'],
               textShadow: resolveShadow(2, 'teal'),
-              filter: resolveDropShadow(4, 'teal-bright'),
-              boxShadow: resolveShadow(1, 'teal'),
             },
             hover: {
               opacity: 1,
@@ -113,12 +111,9 @@ export const Button: FC<TProps> = ({
               cursor: 'pointer',
               color: COLORS['white'],
               textShadow: resolveShadow(2, 'white'),
-              filter: resolveDropShadow(4, 'white'),
-              boxShadow: resolveShadow(1, 'teal'),
             },
           }}
         >
-          <FillDark />
           <span className='flex relative'>{img}</span>
         </motion.div>
       </Link>
