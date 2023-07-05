@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
-import { Items } from './Items';
+import { Items } from './items';
 import { PADDING_X } from './config';
 import { FillLight } from '@components/metal/FillLight';
 
@@ -33,13 +33,19 @@ export const Core: FC<TProps> = (props) => {
       <FillLight />
       <Dragger
         className='relative flex items-center h-full'
-        whileHover={{ cursor: 'grab' }}
-        whileTap={{ cursor: 'grabbing' }}
+        initial={false}
+        animate='animate'
+        whileHover='hover'
+        whileTap='tap'
         style={{
           x: motionX,
           left: -PADDING_X,
           width: width + PADDING_X * 2,
           padding: `0 ${PADDING_X}px`,
+        }}
+        variants={{
+          hover: { cursor: 'grab' },
+          tap: { cursor: 'grabbing' },
         }}
         dragConstraints={{
           left: -width + itemWidth,

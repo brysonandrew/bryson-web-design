@@ -6,22 +6,30 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Fill } from '@components/metal/Fill';
-import { HOVER_GLOW_PROPS } from '@pages/index/constants';
+import { resolveTealGlow } from '@pages/index/constants';
 import { TextXl2 } from '@components/text/TextXl2';
 
 const Root = styled(motion.div)``;
 
 const Anchor = styled.a``;
 
-export const Item: FC<TItem> = ({ Icon, title, href }) => {
+export const Item: FC<TItem> = ({
+  Icon,
+  title,
+  href,
+  ...props
+}) => {
   const { handlers, isSelected } = useSelectHandlers(title);
-
+  const rootPropsWithTealGlow = resolveTealGlow({
+    classValue: clsx(
+      'inline-flex relative shadow-teal-04-sm',
+    ),
+  });
   return (
     <Root
-      className='inline-flex relative shadow-teal-04-sm'
-      style={{ z: title === 'React' ? 120 : -120 }}
-      {...HOVER_GLOW_PROPS}
+      {...rootPropsWithTealGlow}
       {...handlers}
+      {...props}
     >
       {isSelected && <Select layoutId={title} />}
       <Anchor
@@ -41,4 +49,3 @@ export const Item: FC<TItem> = ({ Icon, title, href }) => {
     </Root>
   );
 };
- 

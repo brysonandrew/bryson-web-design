@@ -7,9 +7,7 @@ import { Review } from './review';
 import { Fill } from '@components/metal/Fill';
 import { Bar } from './Bar';
 import {
-  DELAY_VISIBILITY,
   DURATION_DELAY_TRANSITION,
-  HOVER_GLOW_PROPS_SM,
   resolveDropShadow,
   resolveShadow,
 } from '@pages/index/constants';

@@ -22,16 +22,16 @@ export const Links: FC<TProps> = ({
         )}
         style={{ rotateX, y, filter }}
       >
-        <Item {...TECH.REACT} />
+        <Item style={{z: 0}} {...TECH.REACT} />
         <div className='p-2' />
         <motion.div
           className='flex items-center justify-center w-full xl:pt-1'
-          style={{ z: 10 }}
+          style={{ z: 60 }}
         >
           <Plus classValue={clsx('h-7 w-7')} />
         </motion.div>
         <div className='p-2' />
-        <Item {...TECH.TYPESCRIPT} />
+        <Item style={{z: 120}}  {...TECH.TYPESCRIPT} />
       </Inner>
     </Root>
   );

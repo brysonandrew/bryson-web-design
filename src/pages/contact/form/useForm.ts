@@ -48,6 +48,7 @@ export const useForm = ({ element }: TConfig) => {
       Element
     >,
   ) => {
+    //setTimeout(() => window.scrollTo(0,100), 50)
     const target = event.currentTarget;
     if (!target) return;
     updateFocus(target.name as TFormKey);

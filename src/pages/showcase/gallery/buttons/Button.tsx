@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import { resolveTealGlow } from '@pages/index/constants';
 import styled from '@emotion/styled';
 import { Fill } from '@components/metal/Fill';
 import clsx from 'clsx';
@@ -22,15 +22,14 @@ export const Button: FC<TButtonProps> = ({
   classValue,
   ...props
 }) => {
+  const rootPropsWithTealGlow = resolveTealGlow({
+    classValue: clsx(
+      'relative flex items-center justify-center p-2.5 cursor-pointer z-10',
+    ),
+  });
   return (
     <div className={clsx(classValue)}>
-      <Link
-        className={clsx(
-          'relative flex items-center justify-center p-2.5 cursor-pointer shadow-teal-02-sm z-10',
-        )}
-        {...HOVER_TEAL_GLOW_PROPS_SM}
-        {...props}
-      >
+      <Link {...rootPropsWithTealGlow} {...props}>
         <Fill />
         <Icon classValue='relative' />
       </Link>

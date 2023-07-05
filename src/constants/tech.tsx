@@ -1,9 +1,10 @@
-import { React } from "@components/icons/React";
-import { Typescript } from "@components/icons/Typescript";
-import type { TBaseIconProps } from "@t/icons";
-import type { FC } from "react";
+import { React } from '@components/icons/React';
+import { Typescript } from '@components/icons/Typescript';
+import type { TBaseIconProps } from '@t/icons';
+import { HTMLMotionProps } from 'framer-motion';
+import type { FC } from 'react';
 
-export type TItem = {
+export type TItem = HTMLMotionProps<'div'> & {
   title: string;
   href: string;
   Icon: FC<TBaseIconProps>;
@@ -11,13 +12,13 @@ export type TItem = {
 
 export const TECH = {
   REACT: {
-    title: "React",
-    href: "https://reactjs.org/",
+    title: 'React',
+    href: 'https://reactjs.org/',
     Icon: React,
   },
   TYPESCRIPT: {
-    title: "Typescript",
-    href: "https://www.typescriptlang.org/",
+    title: 'Typescript',
+    href: 'https://www.typescriptlang.org/',
     Icon: Typescript,
   },
 };

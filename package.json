@@ -33,6 +33,7 @@
     "framer-motion": "^10.3.2",
     "framer-motion-3d": "^10.12.16",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0",

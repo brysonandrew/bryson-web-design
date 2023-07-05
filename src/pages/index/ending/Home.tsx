@@ -1,31 +1,25 @@
 import { type FC } from 'react';
 import { Fill } from '@components/metal/Fill';
-import { Border as Select } from '@components/select/Border';
-import { Text } from '@components/text/Text';
 import styled from '@emotion/styled';
 import { useHome } from '@hooks/useHome';
-import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import {
   motion,
   type HTMLMotionProps,
 } from 'framer-motion';
 import { INTERACTIVE_PROPS } from './constants';
+import { TextXl } from '@components/text/TextXl';
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
 
 type TProps = HTMLMotionProps<'div'>;
 export const Home: FC<TProps> = () => {
-  const { handlers, isSelected } =
-    useSelectHandlers('Home');
-
   const handleTap = useHome();
 
   return (
-    <Root style={{ x: '-100%' }} {...handlers}>
+    <Root style={{ x: '-100%' }}>
       <Button onTap={handleTap} {...INTERACTIVE_PROPS}>
-        {isSelected ? <Select /> : null}
         <Fill inset={2} />
-        <Text classValue='relative'>Home</Text>
+        <TextXl>Home</TextXl>
       </Button>
     </Root>
   );

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Fill } from '@components/metal/Fill';
 import { Input as Select } from '@components/select/Input';
-import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import { resolveTealGlow } from '@pages/index/constants';
 import {
   LABEL_CLASS,
   TBaseInputProps,
@@ -29,13 +29,14 @@ export const Textarea: FC<TProps> = ({
   } = useContext();
   const isFocused = focusKey === name;
   const value = form[name];
+  const rootPropsWithTealGlow = resolveTealGlow({
+    classValue: clsx(LABEL_CLASS),
+  });
+
   return (
     <Root
-      className={clsx(LABEL_CLASS, [
-        isFocused ? 'z-50' : 'z-0',
-      ])}
-      {...HOVER_TEAL_GLOW_PROPS_SM}
-    >
+      {...rootPropsWithTealGlow}
+    > 
       <Fill />
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />

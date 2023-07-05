@@ -21,7 +21,7 @@ export const Source = () => {
       element: <Contact />,
     },
     {
-      path: '/showcase',
+      path: '/projects',
       element: <Showcase />,
     },
     {
