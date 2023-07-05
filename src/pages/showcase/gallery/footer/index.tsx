@@ -13,7 +13,7 @@ type TProps = TBaseProps;
 export const Footer: FC<TProps> = ({ ...props }) => {
   return (
     <Root
-      className='absolute left-0 bottom-0 flex justify-center w-full z-10'
+      className='relative flex justify-center w-full z-10'
       style={{ height: FOOTER_SIZE }}
       transition={{
         ease: 'easeIn',

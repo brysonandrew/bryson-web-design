@@ -32,7 +32,8 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   const loadingCount = count - readyCount;
   const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
-  const isReady = width > 0 && (isAnimationDone || isDelay);
+  const isReady =
+    width.screen > 0 && (isAnimationDone || isDelay);
 
   const loadingItems: TMedia[] = [
     ...Array(loadingCount),
@@ -58,27 +59,29 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
   return (
     <>
       {createPortal(
-        <Root className='fixed inset-0 z-10'>
-          <Header
-            key='GALLERY_HEADER'
-            onLayoutAnimationComplete={
-              handleLayoutAnimationComplete
-            }
-            slug={selectedPath}
-          />
-          {isResizing ? null : (
-            <>
-              <Background />
-              {isReady && (
-                <>
-                  <Sections {...galleryProps} />
-                  <Arrows max={galleryProps.count} />
-                </>
-              )}
-              <Footer {...galleryProps} />
-            </>
-          )}
-        </Root>,
+        <>
+          <Root className='fixed inset-0 flex flex-col z-10'>
+            <Header
+              key='GALLERY_HEADER'
+              onLayoutAnimationComplete={
+                handleLayoutAnimationComplete
+              }
+              slug={selectedPath}
+            />
+            <Background />
+            {isResizing ? null : (
+              <>
+                {isReady && (
+                  <>
+                    <Sections {...galleryProps} />
+                    <Arrows max={galleryProps.count} />
+                  </>
+                )}
+                <Footer {...galleryProps} />
+              </>
+            )}
+          </Root>
+        </>,
         document.body,
       )}
     </>

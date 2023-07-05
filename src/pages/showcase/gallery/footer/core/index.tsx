@@ -8,8 +8,6 @@ import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
 import { Items } from './items';
 import { PADDING_X } from './config';
-import { FillLight } from '@components/metal/FillLight';
-import { FillDarkest } from '@components/metal/FillDarkest';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;
@@ -19,9 +17,9 @@ export const Core: FC<TProps> = (props) => {
   const { items, count, readyCount, motionX, width } =
     props;
   useKeys({ readyCount });
-  const itemWidth = width / count;
+  const itemWidth = width.footer / count;
   const dragHandlers = useDrag({
-    width: width,
+    width: width.footer,
     items,
     motionX,
   });
@@ -37,7 +35,7 @@ export const Core: FC<TProps> = (props) => {
         style={{
           x: motionX,
           left: -PADDING_X,
-          width: width + PADDING_X * 2,
+          width: width.footer + PADDING_X * 2,
           padding: `0 ${PADDING_X}px`,
         }}
         dragConstraints={{

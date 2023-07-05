@@ -13,10 +13,9 @@ body {
   font-size: 18px;
   background-color: #000;
   color: rgb(207 250 254);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   -webkit-font-smoothing: antialiased;
-  -webkit-overflow-scrolling: touch !important;
-  overflow: auto !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,

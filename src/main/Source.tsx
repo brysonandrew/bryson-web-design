@@ -30,7 +30,7 @@ export const Source = () => {
     },
   ];
 
-  const ROUTES = false// import.meta.env.DEV
+  const ROUTES =import.meta.env.DEV
     ? [
         ...COMMON_ROUTES,
         {

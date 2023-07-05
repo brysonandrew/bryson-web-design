@@ -5,6 +5,7 @@ export const useFreezeScrollBar = (isDisabled = false) => {
     const setOverflow = (next: "hidden" | "unset") => {
       document.documentElement.style.overflow = next;
       document.body.style.overflowX = next;
+      console.log(next);
     };
 
     if (isDisabled) {

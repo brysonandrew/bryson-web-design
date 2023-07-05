@@ -2,8 +2,7 @@ import type { FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { FOOTER_SIZE } from './constants';
-import { Image } from './Image';
+import { Image } from './image';
 import type { TMedia } from '@pages/showcase/config';
 import { Filter } from './Filter';
 import { TBaseProps } from '../types';
@@ -16,32 +15,24 @@ export const Sections: FC<TProps> = (props) => {
 
   const left = useTransform(
     motionX,
-    (v) => `${(-v * count * 100) / width + 50}vw`,
+    (v) => (v * count * (width.screen / width.footer)),
   );
 
   return (
-    <Root
-      className='min-h-screen mx-auto'
-      style={{ width, left }}
-      {...PRESENCE_OPACITY}
-    >
+    <Root className='h-full grow'>
       <Filter motionX={motionX} />
       <motion.ul
-        className='absolute flex'
-        style={{ left, top: 40 }}
+        className='flex relative h-full'
+        style={{ left, width: width.screen * count }}
+        {...PRESENCE_OPACITY}
       >
-        {items.map((item: TMedia, index: number) => (
+        {items.map((item: TMedia) => (
           <motion.li
             key={item.key}
-            className='absolute'
-            style={{
-              left: `${-index * 100}vw`,
-              x: '-50%',
-              width,
-              height: `calc(100vh - ${FOOTER_SIZE}px)`,
-            }}
+            className='relative flex justify-center'
+            style={{ width: width.screen }}
           >
-            <Image item={item} />
+            <Image item={item} {...props} />
           </motion.li>
         ))}
       </motion.ul>

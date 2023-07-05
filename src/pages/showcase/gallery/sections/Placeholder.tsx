@@ -11,7 +11,7 @@ export const Placeholder: FC = () => {
       className='relative w-full h-full overflow-hidden'
       {...{
         initial: { opacity: 0 },
-        animate: { opacity: 1 },
+        animate: { opacity: 0.1 },
         exit: { opacity: 0 },
       }}
     >
