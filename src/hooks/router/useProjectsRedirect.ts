@@ -5,17 +5,17 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
 
-export const useShowcaseRedirect = () => {
+export const useProjectsRedirect = () => {
   const { isInit } = useContext();
   const handleLoadMedia = useMediaFromKey();
   const [searchParams] = useSearchParams();
   const selectedKey = searchParams.get(SELECTED_KEY);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (selectedKey && isInit) {
       handleLoadMedia(selectedKey);
-      navigate(`/showcase?${searchParams}`, {
+      navigate(`/projects?${searchParams}`, {
         replace: true,
       });
     }
