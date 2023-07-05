@@ -8,56 +8,56 @@ import {
 } from 'framer-motion';
 import { useState, type FC } from 'react';
 import { useEventListener } from '@hooks/useEventListener';
-import { FOOTER_SIZE } from '../constants';
 
 const SCALE = 2;
 export const CURSOR_SIZE = 120;
 export const CURSOR_SIZE_HALF = CURSOR_SIZE * 0.5;
-const CURSOR_OFFSET_Y = -CURSOR_SIZE_HALF;
-const CURSOR_OFFSET_X = 0;
-
-const MULTIPLIER = SCALE * 2;
 
 export const Root = styled(motion.div)``;
 
 type TProps = {
   media: TMedia;
+  element: HTMLDivElement;
   image: HTMLImageElement;
 };
-export const Zoom: FC<TProps> = ({ media, image }) => {
+export const Zoom: FC<TProps> = ({
+  media,
+  element,
+  image,
+}) => {
   const [isCursorReady, setCursorReady] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const rect = image.getBoundingClientRect();
+  const rect = element.getBoundingClientRect();
+  const imageRect = image.getBoundingClientRect();
+  const diffX = imageRect.left - rect.left;
+  const diffY = imageRect.top - rect.top;
 
-  const baseOffset = (v: number) => -(v * MULTIPLIER);
   const offsetX = useTransform(
     cursorX,
-    (v: number) =>
-      baseOffset(v) + rect.x + CURSOR_OFFSET_X * MULTIPLIER,
+    (v: number) => (-CURSOR_SIZE_HALF-v * SCALE) ,
   );
   const offsetY = useTransform(
     cursorY,
-    (v: number) =>
-      baseOffset(v) + rect.y + CURSOR_OFFSET_Y * MULTIPLIER,
+    (v: number) => (-CURSOR_SIZE_HALF-v * SCALE),
   );
-
   const { scrollX, scrollY } = useScroll();
 
   const handleMove = (event: PointerEvent) => {
-    const nextX = event.pageX - scrollX.get() - rect.x;
-    const nextY = event.pageY - scrollY.get() - rect.y;
+    const nextX = event.pageX - scrollX.get() - imageRect.x;
+    const nextY = event.pageY - scrollY.get() - imageRect.y;
+
     if (
       nextX > 0 &&
       nextY > 0 &&
-      nextX < rect.width &&
-      nextY < rect.height
+      nextX < imageRect.width &&
+      nextY < imageRect.height
     ) {
-      setCursorReady(true);
-      const cx = nextX + CURSOR_OFFSET_X;
-      const cy = nextY + CURSOR_OFFSET_Y + FOOTER_SIZE;
+      const cx = nextX - CURSOR_SIZE_HALF;
+      const cy = nextY - CURSOR_SIZE_HALF;
       cursorX.set(cx);
       cursorY.set(cy);
+      setCursorReady(true);
     } else {
       setCursorReady(false);
     }
@@ -71,8 +71,10 @@ export const Zoom: FC<TProps> = ({ media, image }) => {
   if (isCursorReady) {
     return (
       <Root
-        className='absolute left-0 top-0 shadow-teal-bright-04-sm pointer-events-none overflow-hidden'
+        className='absolute shadow-teal-bright-04-sm pointer-events-none overflow-hidden'
         style={{
+          top: diffY,
+          left: diffX,
           x: cursorX,
           y: cursorY,
           width: CURSOR_SIZE,
@@ -85,9 +87,8 @@ export const Zoom: FC<TProps> = ({ media, image }) => {
           style={{
             x: offsetX,
             y: offsetY,
-            width: rect.width * SCALE,
-            height: rect.height * SCALE,
-            scale: SCALE,
+            width: imageRect.width * SCALE,
+            height: imageRect.height * SCALE,
           }}
           alt={media.key}
         />
