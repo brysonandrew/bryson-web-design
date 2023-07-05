@@ -36,7 +36,7 @@ export const Images: FC<TProps> = ({
   };
   return (
     <motion.div
-      className='relative'
+      className='relative w-full'
       style={{
         top: 40,
         height: HEIGHT,
@@ -46,10 +46,8 @@ export const Images: FC<TProps> = ({
       {...PRESENCE_OPACITY_SHIFT}
     >
       <motion.ul
-        className={clsx(
-          'flex relative left-0 bottom-0 w-full preserve-3d',
-        )}
-        style={{ width: '200%', rotateX, y }}
+        className={clsx('flex relative w-full preserve-3d')}
+        style={{ rotateX, y }}
       >
         {images.map((image, index, { length }) => {
           const src = image.default;

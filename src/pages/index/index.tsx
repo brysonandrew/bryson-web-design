@@ -8,18 +8,35 @@ import { Contact } from './contact';
 import { Showcase } from './showcase';
 import { Space24 } from '@components/spaces/Space24';
 import { Space12 } from '@components/spaces/Space12';
+import { Space16 } from '@components/spaces/Space16';
+
+import {
+  isSafari,
+  isMobileSafari,
+} from 'react-device-detect';
+import { Ending } from './ending';
 
 export const Index = () => (
   <Suspense fallback={null}>
     <MainShell>
-      <Shell> 
+      <Shell>
         <Build />
-        <Space24 /> 
+        <Space24 />
         <Tech />
         <Space24 />
         <Showcase />
-        <Space12 />
-        <Contact />
+        {isSafari && !isMobileSafari ? (
+          <>
+            <Space16 />
+            <Ending />
+            <Space16 />
+          </>
+        ) : (
+          <>
+            <Space12 />
+            <Contact />
+          </>
+        )}
         <Space8 />
       </Shell>
     </MainShell>

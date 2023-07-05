@@ -12,10 +12,7 @@ const Root = styled(motion.div)``;
 type TProps = Partial<TFake3DMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
   return (
-    <Root
-      className={clsx(WIDTH_CLASS)}
-      style={style}
-    >  
+    <Root className={clsx(WIDTH_CLASS)} style={style}>
       <Form />
       <Space16 />
     </Root>

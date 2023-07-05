@@ -1,31 +1,25 @@
 import { transform } from "framer-motion";
-import { useY, RANGE_MIN_Y } from "./useY";
+import { useY } from "./useY";
 import { useZ, RANGE_Z } from "./useZ";
 import { resolveFilter } from "./resolveFilter";
 
-type TConfig = {
-  index: number;
-  count: number;
-};
-export const useDepthStyle = ({ index, count }: TConfig) => {
-  const y = useY(index);
-  const z = useZ(index);
+export const useDepthStyle = () => {
+  const y = useY();
+  const z = useZ();
   const brightness = transform(
-    [-RANGE_Z * 2 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [0, RANGE_Z],
     [10, 110],
   )(z);
   const blur = transform(
-    [-RANGE_Z * 1.5 - RANGE_MIN_Y * count, -RANGE_Z * 1.5],
+    [0, RANGE_Z],
     [2, 0],
   )(z);
   const filter = resolveFilter({ blur, brightness, grayscale: 100 });
 
   return {
-    x: `-${50 * index}%`,
     y,
     z,
+    zIndex: z,
     filter,
-    originX: '50%',
-    originY: '100%',
   };
 };

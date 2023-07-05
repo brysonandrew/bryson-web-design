@@ -6,7 +6,7 @@ export const FAKE_3D_PROPS: TOptionsConfig = {
       startScroll,
       startScroll + MAX_SCROLL,
     ],
-    output: [0, 28],
+    output: [0, -28],
   },
   resistance: {
     input: ({ startScroll }) => [

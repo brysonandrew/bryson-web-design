@@ -4,13 +4,11 @@ import {
   type HTMLMotionProps,
 } from 'framer-motion';
 import { Fill } from '@components/metal/Fill';
-import { Border as Select } from '@components/select/Border';
-import { Text } from '@components/text/Text';
-import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import { Link as _Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import { INTERACTIVE_PROPS } from './constants';
+import { TextXl } from '@components/text/TextXl';
 
 const Root = styled(motion.div)``;
 
@@ -25,14 +23,11 @@ export const MenuLink: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { handlers, isSelected } = useSelectHandlers(to);
-
   return (
-    <Root {...handlers} {...props} style={{x: "12px"}}>
+    <Root {...props} style={{ x: '12px' }}>
       <Link to={to} {...INTERACTIVE_PROPS}>
-        {isSelected ? <Select /> : null}
         <Fill inset={2} />
-        <Text classValue='relative'>{children}</Text>
+        <TextXl>{children}</TextXl>
       </Link>
     </Root>
   );

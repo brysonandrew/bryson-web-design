@@ -1,6 +1,6 @@
 import { useWindowSize } from "@hooks/useWindowSize";
 
-const MAX_WIDTH = 600;
+const MAX_WIDTH = 800;
 
 export const useWidth = () => {
   const windowSize = useWindowSize();

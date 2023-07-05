@@ -12,7 +12,7 @@ import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@pages/showcase/gallery/hooks/useMediaFromKey';
-import { HOVER_TEAL_OUTER_GLOW_PROPS_SM } from '@pages/index/constants';
+import { resolveTealGlow } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
@@ -30,7 +30,7 @@ export const Item: FC<TProps> = ({ slug }) => {
   return (
     <Root
       onMouseEnter={handleMouseEnter}
-      {...HOVER_TEAL_OUTER_GLOW_PROPS_SM}
+      {...resolveTealGlow({ partial: { outerGlow: 0 } })}
     >
       <InternalLink
         to={

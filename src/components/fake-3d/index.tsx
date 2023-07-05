@@ -20,39 +20,31 @@ export const Fake3D: FC<TProps> = ({
   ...optionsConfig
 }) => {
   const { tier, isMobile } = useDetectGPU();
-  if (isMobile) return children(EMPTY_PROPS);
-
-  switch (tier) {
-    case 3: {
-      return (
-        <InView className={clsx('relative w-full', classValue)}>
-          {({ isInView, ref, ...rectProps }) => (
-            <>
-              <AnimatePresence mode="wait">
-                {isInView ? (
-                  <Aggregator
-                    key='AGGREGATOR'
-                    {...rectProps}
-                    {...optionsConfig}
-                  >
-                    {children}
-                  </Aggregator>
-                ) : (
-                  <motion.div
-                    key='PLACEHOLDER'
-                    style={{
-                      height: rectProps.rect?.height,
-                    }}
-                  />
-                )}
-              </AnimatePresence>
-            </>
-          )}
-        </InView>
-      );
-    }
-    default: {
-      return children(EMPTY_PROPS);
-    }
-  }
+  if (isMobile || tier < 1) return children(EMPTY_PROPS);
+  return (
+    <InView className={clsx('relative w-full', classValue)}>
+      {({ isInView, ref, ...rectProps }) => (
+        <>
+          <AnimatePresence mode='wait'>
+            {isInView ? (
+              <Aggregator
+                key='AGGREGATOR'
+                {...rectProps}
+                {...optionsConfig}
+              >
+                {children}
+              </Aggregator>
+            ) : (
+              <motion.div
+                key='PLACEHOLDER'
+                style={{
+                  height: rectProps.rect?.height,
+                }}
+              />
+            )}
+          </AnimatePresence>
+        </>
+      )}
+    </InView>
+  );
 };

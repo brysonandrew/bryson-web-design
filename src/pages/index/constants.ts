@@ -1,16 +1,8 @@
 import { MOTION_CONFIG } from "@constants/animation";
+import clsx from "clsx";
+import { isSafari } from "react-device-detect";
 
 export const HEADER_OFFSET_Y = 240;
-
-export const GAP_1 = 0; // 500;
-
-export const GAP_2 = 0; // GAP_1 + 300;
-
-export const FULL = ['0%', '-100%'];
-export const DELAY = 24;
-export const DELAY_2 = DELAY * 4;
-export const DELTA = GAP_1 + DELAY_2;
-
 
 export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',
@@ -48,26 +40,32 @@ export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) =
   exit: "exit",
   variants: {
     animate: {
-      filter: resolveDropShadow(0),
-      textShadow: resolveShadow(0),
+      ...(isSafari ? {} : {
+        filter: resolveDropShadow(0),
+        textShadow: resolveShadow(0),
+      }),
       transition: { ease: "easeIn", duration: 0.28, delay: 0.08 },
     },
     hover: {
-      filter: resolveDropShadow(outerGlow, color),
-      textShadow: resolveShadow(textGlow, color),
+      ...(isSafari ? {} : {
+        filter: resolveDropShadow(outerGlow, color),
+        textShadow: resolveShadow(textGlow, color),
+      }),
       transition: { ease: "linear", duration: 0.2, delay: 0 },
     },
   }
 });
 
-export const HOVER_GLOW_PROPS = resolveHoverGlowProps({ outerGlow: 8, textGlow: 10 });
-export const HOVER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 1 });
-export const HOVER_GLOW_PROPS_XS = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2 });
-export const HOVER_BLUE_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 6, color: "baby-blue" });
-export const HOVER_TEAL_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal" });
-export const HOVER_TEAL_BRIGHT_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal-bright" });
-export const HOVER_BLUE_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 4, textGlow: 0, color: "baby-blue" });
-export const HOVER_TEAL_OUTER_GLOW_PROPS_SM = resolveHoverGlowProps({ outerGlow: 2, textGlow: 0, color: "teal" });
+type TTealGlowConfig = {
+  classValue?: string, partial?: Partial<TConfig>;
+};
+export const resolveTealGlow = (config: TTealGlowConfig = {}) => {
+  const { classValue, partial } = config;
+  return {
+    className: clsx([!isSafari && "shadow-teal-02-sm"], classValue),
+    ...resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal", ...partial })
+  };
+};
 export const DURATION_DELAY_TRANSITION = {
   transition: {
     ...MOTION_CONFIG,

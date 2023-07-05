@@ -12,7 +12,7 @@ import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-import { useTo } from '../../hooks/nav/useTo';
+import { useTo } from '../../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
 import COLORS from '@windi/config-colors.json';
 import { FillDark } from '@components/metal/FillDark';

@@ -4,6 +4,8 @@ import { type FC } from 'react';
 import { resolveFilter } from './hooks/resolveFilter';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { Placeholder } from '@components/images/Placeholder';
+import { RANGE_Z } from './hooks/useZ';
+import { useX } from './hooks/useX';
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
@@ -16,15 +18,15 @@ export const Image: FC<TProps> = ({
   isLoaded,
   ...props
 }) => {
-  const depthStyle = useDepthStyle({ index, count });
+  const depthStyle = useDepthStyle();
+  const xStyle = useX({ index, count });
 
   return (
     <motion.li
-      className='relative inset-0 overflow-hidden'
+      className='absolute'
       style={{
-        flex: 1,
-        minHeight: 140,
         cursor: 'zoom-in',
+        ...xStyle,
         ...depthStyle,
       }}
       whileHover={{
@@ -34,16 +36,14 @@ export const Image: FC<TProps> = ({
           brightness: 100,
           grayscale: 0,
         }),
-        z: 0,
-        zIndex: 1,
+        z: RANGE_Z,
+        zIndex: RANGE_Z,
       }}
     >
       {!isLoaded && (
         <Placeholder index={index} count={count} />
       )}
-      <motion.div className='absolute top-0 left-0 w-full'>
-        <motion.img {...props} />
-      </motion.div>
+      <motion.img {...props} />
     </motion.li>
   );
 };

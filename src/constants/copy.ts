@@ -4,3 +4,5 @@ export const STORY: Record<string, string> = {
   showcase: "Latest projects",
   contact: "Get in touch"
 };
+
+export const PAGE_LINKS = ['projects', 'contact'];

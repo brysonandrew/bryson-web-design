@@ -3,8 +3,9 @@ import { VolumeOn } from '@components/icons/VolumeOn';
 import { Fill } from '@components/metal/Fill';
 import { GlitchPorsalin } from '@components/text/glitch-porsalin';
 import styled from '@emotion/styled';
-import { HOVER_TEAL_GLOW_PROPS_SM } from '@pages/index/constants';
+import { resolveTealGlow } from '@pages/index/constants';
 import { useContext } from '@state/Context';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
 const Root = styled(motion.div)``;
@@ -18,11 +19,14 @@ export const Sound = () => {
     dispatch({ type: 'toggle-sound', value: null });
   };
 
+  const rootPropsWithTealGlow = resolveTealGlow({
+    classValue: clsx(
+      'absolute bottom-4 right-4 rounded-full z-50',
+    ),
+  });
+
   return (
-    <Root
-      className='absolute bottom-4 right-4 rounded-full shadow-teal-02-sm z-50'
-      {...HOVER_TEAL_GLOW_PROPS_SM}
-    >
+    <Root {...rootPropsWithTealGlow}>
       <Fill classValue='rounded-full' inset={-1} />
       <Button
         className='relative p-3 cursor-pointer'
