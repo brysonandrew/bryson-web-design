@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { TMedia } from '@pages/showcase/config';
 import { motion } from 'framer-motion';
 import { useState, type FC, useRef } from 'react';
-import { Zoom } from './Zoom';
+import { Zoom } from './zoom/Zoom';
 import { TBaseProps } from '../../types';
 import { TChildren } from '@t/index';
 

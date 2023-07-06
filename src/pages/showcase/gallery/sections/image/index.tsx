@@ -7,7 +7,7 @@ import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
 import { Placeholder } from '../Placeholder';
 import { useLoadImage } from './useLoadImage';
-import { Zoom } from './Zoom';
+import { Zoom } from './zoom/Zoom';
 import { TBaseProps } from '../../types';
 import { Control } from './Control';
 
@@ -18,8 +18,8 @@ type TProps = Pick<TBaseProps, 'width'> & {
 };
 export const Image: FC<TProps> = ({ item, width }) => {
   const ref = useRef<HTMLImageElement | null>(null);
-  const image = ref.current;
   const { key, src } = item;
+  const image = ref.current;
   const isLoaded = useLoadImage({
     image,
     src,

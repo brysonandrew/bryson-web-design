@@ -56,13 +56,14 @@ export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) =
   }
 });
 
+export const TEAL_GLOW_BOX_SHADOW = "shadow-teal-02-sm";
 type TTealGlowConfig = {
   classValue?: string, partial?: Partial<TConfig>;
 };
 export const resolveTealGlow = (config: TTealGlowConfig = {}) => {
   const { classValue, partial } = config;
   return {
-    className: clsx([!isSafari && "shadow-teal-02-sm"], classValue),
+    className: clsx([!isSafari && TEAL_GLOW_BOX_SHADOW], classValue),
     ...resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal", ...partial })
   };
 };

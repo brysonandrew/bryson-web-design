@@ -8,5 +8,5 @@ export const useHover = () => {
   const onHoverStart = () => setHover(true);
   const onHoverEnd = () => setHover(false);
 
-  return { isHover, onHoverStart, onHoverEnd };
+  return { isHover, onHoverStart, onHoverEnd, onPointerLeave: onHoverEnd, onMouseLeave: onHoverEnd };
 };

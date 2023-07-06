@@ -22,7 +22,7 @@ export function useLocalStorage<T>(
 ): [T, TSetter<T>, TRewindHandler];
 export function useLocalStorage<T>(
   key: string,
-  defaultValue?: T,
+  defaultValue: T,
   options?: Options<T>
 ) {
   const opts = useMemo(
@@ -38,7 +38,7 @@ export function useLocalStorage<T>(
 
   const { serializer, parser, logger, syncData } = opts;
 
-  const [storedValue, setValue] = useState(() => {
+  const [storedValue, setValue] = useState<T>(() => {
     if (typeof window === "undefined") return defaultValue;
 
     try {
@@ -50,41 +50,6 @@ export function useLocalStorage<T>(
       return defaultValue;
     }
   });
-
-  // const handleBackup = (value: Record<string, any>) => {
-  //   const date = new Date(Date.now()).toISOString();
-  //   const configStr =
-  //     window.localStorage.getItem(BACKUP_KEY);
-  //   const config = JSON.parse(configStr ?? "{}");
-  //   const items = [...config.items, { key, date, value }];
-  //   const next = {
-  //     ...config,
-  //     items,
-  //     activeIndex: items.length - 1,
-  //   };
-  //   window.localStorage.setItem(
-  //     BACKUP_KEY,
-  //     JSON.stringify(next)
-  //   );
-  // };
-
-  // const handleRewind = () => {
-  //   const configStr =
-  //     window.localStorage.getItem(BACKUP_KEY);
-  //   const config = JSON.parse(configStr ?? "{}");
-  //   if (!config) return;
-  //   const { items, activeIndex } = config;
-
-  //   if (!items || items.length === 0) return;
-  //   const prevIndex = activeIndex - 1;
-  //   const next = items[prevIndex];
-  //   if (!next) return;
-  //   setValue(next);
-  //   window.localStorage.setItem(
-  //     BACKUP_KEY,
-  //     JSON.stringify({ ...config, activeIndex: prevIndex })
-  //   );
-  // };
 
   useEffect(() => {
     if (typeof window === "undefined") return;

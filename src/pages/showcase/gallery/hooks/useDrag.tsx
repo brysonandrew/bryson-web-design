@@ -14,7 +14,6 @@ import {
   useNavigate,
   useSearchParams,
 } from 'react-router-dom';
-import { useTo } from './nav/useTo';
 import { resolveTo } from './nav/resolveTo';
 
 export const Root = styled(motion.footer)``;

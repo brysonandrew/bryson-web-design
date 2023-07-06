@@ -82,7 +82,7 @@ export const Button: FC<TProps> = ({
           />
         )}
         <motion.div
-          className='flex items-center justify-center absolute inset-0 uppercase text-xs text-center'
+          className='flex items-center justify-center absolute inset-0 uppercase text-sm text-center'
           variants={{
             idle: {
               opacity: 0.2,

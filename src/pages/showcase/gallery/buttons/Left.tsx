@@ -12,3 +12,4 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
   if (!to) return null;
   return <Nav to={to} Icon={ArrowLeft} {...props} />;
 };
+ 
