@@ -102,3 +102,15 @@ export const FOOTER_TRANSITION_EXIT = {
   delay: 0,
 };
 
+export const DURATION_DELAY_TRANSITION = {
+  transition: {
+    ...MOTION_CONFIG,
+    delay: MOTION_CONFIG.transition.duration,
+  },
+};
+
+export const DELAY_VISIBILITY = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  ...DURATION_DELAY_TRANSITION
+};

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Metal } from '@components/metal';
-import { resolveTealGlow } from '@pages/index/constants';
+import { resolveTealGlow } from '@constants/colors';
 import { TextXl2 } from '@components/text/TextXl2';
 
 const Root = styled(motion.div)``;

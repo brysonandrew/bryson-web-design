@@ -6,7 +6,7 @@ import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
-import { TMediaRecord } from '@pages/showcase/config';
+import { TMediaRecord } from '@pages/projects/config';
 import { Placeholder } from '@components/placeholder';
 
 type TProps = HTMLMotionProps<'img'> & {

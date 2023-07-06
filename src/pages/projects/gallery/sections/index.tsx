@@ -1,0 +1,41 @@
+import type { FC } from 'react';
+import { motion, useTransform } from 'framer-motion';
+import styled from '@emotion/styled';
+import { PRESENCE_OPACITY } from '@constants/animation';
+import { Image } from './image';
+import type { TMediaRecord } from '@pages/projects/config';
+import { Filter } from './Filter';
+import { TBaseProps } from '../types';
+
+export const Root = styled(motion.div)``;
+
+type TProps = TBaseProps;
+export const Sections: FC<TProps> = (props) => {
+  const { items, count, motionX, width } = props;
+
+  const left = useTransform(
+    motionX,
+    (v) => v * count * (width.screen / width.footer),
+  );
+
+  return (
+    <Root className='h-full grow'>
+      <Filter motionX={motionX} />
+      <motion.ul
+        className='flex relative h-full'
+        style={{ left, width: width.screen * count }}
+        {...PRESENCE_OPACITY}
+      >
+        {items.map((mediaRecord: TMediaRecord) => (
+          <motion.li
+            key={mediaRecord.png.key}
+            className='relative flex justify-center'
+            style={{ width: width.screen }}
+          >
+            <Image mediaRecord={mediaRecord} {...props} />
+          </motion.li>
+        ))}
+      </motion.ul>
+    </Root>
+  );
+};

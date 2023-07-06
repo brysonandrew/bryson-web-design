@@ -1,9 +1,8 @@
 import { VolumeOff } from '@components/icons/VolumeOff';
 import { VolumeOn } from '@components/icons/VolumeOn';
 import { Metal } from '@components/metal';
-import { GlitchPorsalin } from '@components/text/glitch-porsalin';
 import styled from '@emotion/styled';
-import { resolveTealGlow } from '@pages/index/constants';
+import { resolveTealGlow } from '@constants/colors';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -27,20 +26,14 @@ export const Sound = () => {
 
   return (
     <Root {...rootPropsWithTealGlow}>
-      <Metal classValue='rounded-full'/>
+      <Metal classValue='rounded-full' />
       <Button
-        className='relative p-3 cursor-pointer'
+        className='relative p-3 cursor-pointer text-baby-blue'
         onTap={handleTap}
       >
-        <GlitchPorsalin
-          offset={2.8}
-          tag='div'
-          classValue='uppercase'
-        >
-          <Background variants={{ hover: { scale: 1.15 } }}>
-            {isSound ? <VolumeOn /> : <VolumeOff />}
-          </Background>
-        </GlitchPorsalin>
+        <Background variants={{ hover: { scale: 1.15 } }}>
+          {isSound ? <VolumeOn /> : <VolumeOff />}
+        </Background>
       </Button>
     </Root>
   );

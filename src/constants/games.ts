@@ -1,4 +1,4 @@
-import { TItem } from "@t/showcase";
+import { TItem } from "@t/projects";
 
 export const GAME_ITEMS: TItem[] = [
   {

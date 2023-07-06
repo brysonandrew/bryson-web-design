@@ -99,18 +99,6 @@ export const reducer = (
         motionValuePairs: [...state.motionValuePairs],
       };
     }
-    case 'threshold-reached': {
-      return {
-        ...state,
-        isThreshold: true,
-      };
-    }
-    case 'threshold-lost': {
-      return {
-        ...state,
-        isThreshold: false,
-      };
-    }
     case 'start-motion-blur': {
       return {
         ...state,

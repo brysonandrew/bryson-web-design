@@ -10,10 +10,6 @@ export const STATE: TState = {
   isTransitioningGallery: false,
   context: new AudioContext(),
   selectId: null,
-  mode:
-    //"instant",
-    'stagger',
-  isThreshold: false,
   motionValuePairs: [],
   images: [],
   clientImageRecord: {},

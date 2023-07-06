@@ -22,5 +22,3 @@ export const TECH = {
     Icon: Typescript,
   },
 };
-
-// export const ITEMS: TItem[] = [TECH.REACT, TECH.TYPESCRIPT];

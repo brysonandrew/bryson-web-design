@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { resolveTealGlow } from '@pages/index/constants';
+import { resolveTealGlow } from '@constants/colors';
 import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
 

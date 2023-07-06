@@ -1,4 +1,4 @@
-import { Filters } from '../components/Filters';
+import { Filters } from '../components/filters';
 import type { TChildren } from '@t/index';
 import { type FC } from 'react';
 import { Variables } from '@css/Variables';

@@ -1,4 +1,4 @@
-import { resolveTealGlow } from "../constants";
+import { resolveTealGlow } from "../../../constants/colors";
 
 const INTERACTIVE_CLASS = "flex relative px-4 py-2 w-full cursor-pointer";
 

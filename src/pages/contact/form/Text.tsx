@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { memo, type FC } from 'react';
 import { Metal } from '@components/metal';
 import { Input as Select } from '@components/select/Input';
-import { resolveTealGlow } from '@pages/index/constants';
+import { resolveTealGlow } from '@constants/colors';
 import {
   LABEL_CLASS,
   INPUT_CLASS,

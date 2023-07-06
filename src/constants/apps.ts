@@ -1,4 +1,4 @@
-import type { TItem } from "@t/showcase";
+import type { TItem } from "@t/projects";
 import { titleToKebab } from "@utils/format";
 
 export const INIT_APP_ITEMS = [

@@ -1,6 +1,6 @@
 
 import { TContactState, TFormKey, TStatus } from '@pages/contact/config';
-import { TMediaRecord } from '@pages/showcase/config';
+import { TMediaRecord } from '@pages/projects/config';
 import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
@@ -88,14 +88,6 @@ export type TAction =
   | {
     type: 'add-motion-value';
     value: { pair: TMotionValuePair; index: number; };
-  }
-  | {
-    type: 'threshold-reached';
-    value: null;
-  }
-  | {
-    type: 'threshold-lost';
-    value: null;
   };
 
 export type TState = {
@@ -109,8 +101,6 @@ export type TState = {
   isTransitioningGallery: boolean;
   context: AudioContext;
   selectId: null | string;
-  mode: 'instant' | 'stagger';
-  isThreshold: boolean;
   motionValuePairs: TMotionValuePair[];
   contact: TContactState;
 };
