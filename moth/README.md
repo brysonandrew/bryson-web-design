@@ -1,2 +1,0 @@
-# moth
-top-down shooter
