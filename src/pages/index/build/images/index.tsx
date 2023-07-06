@@ -6,7 +6,7 @@ import { useState, type FC, useEffect } from 'react';
 import { Image } from './Image';
 import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { TMediaRecord } from '@pages/showcase/config';
+import { TMediaRecord } from '@pages/projects/config';
 
 const HEIGHT = 164 + TITLE_OFFSET;
 

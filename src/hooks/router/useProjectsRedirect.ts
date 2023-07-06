@@ -1,5 +1,5 @@
-import { SOURCE_KEY } from "@pages/showcase/config";
-import { useMediaFromKey } from "@pages/showcase/gallery/hooks/useMediaFromKey";
+import { SOURCE_KEY } from "@pages/projects/config";
+import { useMediaFromKey } from "@pages/projects/gallery/hooks/useMediaFromKey";
 import { useContext } from "@state/Context";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";

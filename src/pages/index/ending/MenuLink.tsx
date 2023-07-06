@@ -3,7 +3,7 @@ import {
   motion,
   type HTMLMotionProps,
 } from 'framer-motion';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { Link as _Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
@@ -26,7 +26,7 @@ export const MenuLink: FC<TProps> = ({
   return (
     <Root {...props} style={{ x: '12px' }}>
       <Link to={to} {...INTERACTIVE_PROPS}>
-        <Fill inset={2} />
+        <Metal  />
         <TextXl>{children}</TextXl>
       </Link>
     </Root>

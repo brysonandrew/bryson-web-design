@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { Input as Select } from '@components/select/Input';
-import { resolveTealGlow } from '@pages/index/constants';
+import { resolveTealGlow } from '@constants/colors';
 import {
   LABEL_CLASS,
   TBaseInputProps,
@@ -37,7 +37,7 @@ export const Textarea: FC<TProps> = ({
     <Root
       {...rootPropsWithTealGlow}
     > 
-      <Fill />
+      <Metal />
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />
       </div>

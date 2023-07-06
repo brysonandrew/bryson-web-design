@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FC } from 'react';
 import { Decoration } from './Decoration';
 import { useContext } from '@state/Context';
-import { useCurrSource } from '@pages/showcase/useCurrSource';
 import { Nav } from './Nav';
+import { useCurrSource } from '@pages/projects/hooks/useCurrSource';
 
 const Root = styled(motion.header)``;
 

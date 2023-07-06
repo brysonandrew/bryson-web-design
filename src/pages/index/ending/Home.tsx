@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import styled from '@emotion/styled';
 import { useHome } from '@hooks/useHome';
 import {
@@ -18,7 +18,7 @@ export const Home: FC<TProps> = () => {
   return (
     <Root style={{ x: '-100%' }}>
       <Button onTap={handleTap} {...INTERACTIVE_PROPS}>
-        <Fill inset={2} />
+        <Metal />
         <TextXl>Home</TextXl>
       </Button>
     </Root>

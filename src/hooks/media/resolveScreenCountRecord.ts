@@ -1,4 +1,4 @@
-import { DEFAULT_EXT, resolveMedia } from "@pages/showcase/config";
+import { DEFAULT_EXT, resolveMedia } from "@pages/projects/config";
 import { TScreensCountRecord, TScreensRecord } from "@state/types";
 
 export const resolveScreensCountRecord = (screensRecord: TScreensRecord) => Object.keys(

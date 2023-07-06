@@ -1,4 +1,4 @@
-import { resolveMedia } from "@pages/showcase/config";
+import { resolveMedia } from "@pages/projects/config";
 import { TImageRecord } from "@state/types";
 import { TModule } from "@t/index";
 

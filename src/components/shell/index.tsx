@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import type { TChildren } from '../../types';
-import { BlindersOut } from '../blinders/BlindersOut';
 import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
@@ -26,15 +25,9 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <Root className='relative text-black-dark-04 overflow-hidden z-10'>
       <Header />
-      <Content
-        className='relative'
-        style={{
-          minHeight: '100vh',
-        }}
-      >
+      <Content className='relative'>
         <HeaderOffset />
         {children}
-        <BlindersOut />
       </Content>
       <Footer />
     </Root>

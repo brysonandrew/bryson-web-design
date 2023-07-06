@@ -1,4 +1,4 @@
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { Space2 } from '@components/spaces/Space2';
 import styled from '@emotion/styled';
 import type { HTMLMotionProps } from 'framer-motion';
@@ -21,7 +21,7 @@ export const Ending: FC<TProps> = () => (
         className='absolute'
         style={{ left: -2, width: 16, height: 720 }}
       >
-        <Fill />
+        <Metal />
       </div>
       <Contact />
       <Space2 />

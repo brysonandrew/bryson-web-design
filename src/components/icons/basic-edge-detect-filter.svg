@@ -1,7 +1,0 @@
-<svg>
-    <filter id="EdgeDetect">
-        <feConvolveMatrix order="3 3"
-                          preserveAlpha="true"
-                          kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" />
-    </filter>
-</svg>

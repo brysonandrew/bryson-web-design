@@ -2,7 +2,7 @@ import { PRESENCE_OPACITY } from '@constants/animation';
 import {
   TEAL_GLOW,
   resolveDropShadow,
-} from '@pages/index/constants';
+} from '@constants/colors';
 import { motion } from 'framer-motion';
 
 export const Input = () => (

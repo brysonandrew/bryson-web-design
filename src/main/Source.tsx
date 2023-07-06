@@ -1,6 +1,6 @@
 import { Contact } from '@pages/contact';
 import { Index } from '@pages/index';
-import { Showcase } from '@pages/showcase';
+import { Projects } from '@pages/projects';
 import { Navigate, useRoutes } from 'react-router-dom';
 import { Card } from '@pages/card';
 import { Cv } from '@pages/cv';
@@ -17,7 +17,7 @@ export const Source = () => {
     },
     {
       path: '/projects',
-      element: <Showcase />,
+      element: <Projects />,
     },
     {
       path: '*',

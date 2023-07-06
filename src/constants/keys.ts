@@ -1,4 +1,0 @@
-export const GLITCH_FILTER_I_I = "__GLITCH_FILTER_I_I";
-export const GLITCH_FILTER_I_II = "__GLITCH_FILTER_I_II";
-export const GLITCH_FILTER_I_III = "__GLITCH_FILTER_I_III";
-export const GLITCH_FILTER_II = "__GLITCH_FILTER_II";
