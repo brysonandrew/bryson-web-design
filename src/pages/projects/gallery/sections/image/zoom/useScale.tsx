@@ -14,16 +14,13 @@ export const Root = styled(motion.div)``;
 
 type TConfig = TSharedConfig;
 export const useScale = ({
+  imageWidth,
+  imageHeight,
   cursorX,
   cursorY,
   element,
-  image,
 }: TConfig) => {
   const [scale, setScale] = useState<number>(SCALE.INIT);
-  const imageRect = image.getBoundingClientRect();
-
-  const imageWidth = imageRect.width;
-  const imageHeight = imageRect.height;
 
   const copyImageWidth = imageWidth * scale;
   const copyImageHeight = imageHeight * scale;
@@ -42,23 +39,26 @@ export const useScale = ({
   const resolveClampedScale = (value: number) =>
     clamp(SCALE.MIN, SCALE.MAX, Math.abs(value));
 
-  const handleWheel = ({ deltaY }: WheelEvent) => {
+  const handleTuneScale = (delta: number) => {
     const handleScale = (prev: number, delta: number) => {
       let next = prev + delta * DELTA_FACTOR;
       next = resolveClampedScale(next);
       return next;
     };
 
-    if (deltaY > WHEEL_DELTA_THRESHOLD) {
-      setScale((prev) => handleScale(prev, deltaY));
+    if (delta > WHEEL_DELTA_THRESHOLD) {
+      setScale((prev) => handleScale(prev, delta));
     }
-    if (deltaY < WHEEL_DELTA_THRESHOLD) {
-      setScale((prev) => handleScale(prev, deltaY));
+    if (delta < WHEEL_DELTA_THRESHOLD) {
+      setScale((prev) => handleScale(prev, delta));
     }
   };
 
-  useEventListener<typeof SCALE.TUNE_EVENT, typeof element>(
-    SCALE.TUNE_EVENT,
+  const handleWheel = ({ deltaY }: WheelEvent) =>
+    handleTuneScale(deltaY);
+
+  useEventListener<'wheel', typeof element>(
+    'wheel',
     handleWheel,
     { current: element },
     {
@@ -66,7 +66,7 @@ export const useScale = ({
     },
   );
 
-  const handleClick = () => {
+  const handleJumpScale = () => {
     setScale((prev) => {
       const next = prev * 2;
       if (
@@ -80,14 +80,10 @@ export const useScale = ({
     });
   };
 
-  useEventListener<typeof SCALE.JUMP_EVENT, typeof image>(
-    SCALE.JUMP_EVENT,
-    handleClick,
-    { current: image },
-  );
-
   return {
     scale,
+    onJumpScale: handleJumpScale,
+    onTuneScale: handleTuneScale,
     style: {
       x: copyImageX,
       y: copyImageY,
