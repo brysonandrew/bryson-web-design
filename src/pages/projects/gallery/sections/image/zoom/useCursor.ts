@@ -1,10 +1,13 @@
 
 
 
+
+
 import { useScroll } from 'framer-motion';
 import { useState } from 'react';
 import { useEventListener } from '@hooks/useEventListener';
 import { CURSOR_SIZE_HALF, CURSOR_SIZE, TSharedConfig } from './config';
+import { useOutsideClick } from '@hooks/useOutsideClick';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({
@@ -13,6 +16,7 @@ export const useCursor = ({
   element,
   image,
 }: TConfig) => {
+  const imageRef = { current: image };
   const [isCursorReady, setCursorReady] = useState(false);
   const rect = element.getBoundingClientRect();
   const imageRect =
@@ -29,7 +33,7 @@ export const useCursor = ({
 
   const { scrollX, scrollY } = useScroll();
 
-  const handleMove = (event: PointerEvent) => {
+  const handleMove = (event: PointerEvent | MouseEvent) => {
     const cx = event.pageX - scrollX.get() - imageX;
     const cy = event.pageY - scrollY.get() - imageY;
 
@@ -47,10 +51,21 @@ export const useCursor = ({
     }
   };
 
+  const handleClose = () => setCursorReady(false);
+
   useEventListener<'pointermove'>(
     'pointermove',
     handleMove,
   );
+
+  useEventListener<'click', HTMLImageElement>(
+    'click',
+    handleMove,
+    imageRef,
+  );
+
+  useOutsideClick({ ref: imageRef, handler: handleClose });
+
 
   return {
     isCursorReady,

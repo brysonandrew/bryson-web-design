@@ -1,21 +1,23 @@
 import type { RefObject } from "react";
 import { useEventListener } from "./useEventListener";
 
-type Handler = (event: MouseEvent) => void;
+type Handler = (event: MouseEvent | TouchEvent) => void;
+
+type TEventKey = keyof Pick<GlobalEventHandlersEventMap, "touchstart" | "mousedown">;
 
 export type TOutsideClickConfig<T> = {
   ref: RefObject<T>;
   handler: Handler;
-  mouseEvent?: "mousedown" | "mouseup";
+  events?: readonly TEventKey[];
 };
 export const useOutsideClick = <
   T extends HTMLElement = HTMLElement,
 >({
   ref,
   handler,
-  mouseEvent = "mousedown",
+  events = ["mousedown", "touchstart"] as const,
 }: TOutsideClickConfig<T>): void => {
-  useEventListener(mouseEvent, (event) => {
+  const handleEvent = (event: MouseEvent | TouchEvent) => {
     const el = ref?.current;
 
     // Do nothing if clicking ref's element or descendent elements
@@ -24,5 +26,11 @@ export const useOutsideClick = <
     }
 
     handler(event);
+  };
+  events.forEach((event) => {
+    useEventListener(event, handleEvent);
+    useEventListener(event, handleEvent);
   });
+
+
 };

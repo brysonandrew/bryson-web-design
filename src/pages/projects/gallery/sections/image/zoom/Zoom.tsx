@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { TMedia, TMediaRecord } from '@pages/projects/config';
+import type { TMediaRecord } from '@pages/projects/config';
 import {
   AnimatePresence,
   motion,
