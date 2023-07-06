@@ -1,9 +1,8 @@
 import { TItem } from "@t/showcase";
 import { resolveCompositeKey } from "@utils/keys";
 
-export const SELECTED_KEY = "selected";
-export const IMG_KEY = "img";
-export const OF_KEY = "of";
+export const SOURCE_KEY = "source";
+export const NAME_KEY = "name";
 
 export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
 
@@ -12,22 +11,31 @@ export const EXCLUDED_KEYS = ["preview", "logo"];
 export type TResolver = () => Promise<any>;
 
 export type TMediaDetails = {
-  img: string;
+  key: string;
+  source: string;
   file: string;
   name: string;
-  key: string;
+  ext: string;
 };
 
 export type TMedia = TMediaDetails & {
   src: string;
 };
 
-export const EMPTY_MEDIA = {
-  img: "",
-  file: "",
-  name: "",
+export const DEFAULT_EXT = "png";
+
+export type TMediaRecord = {
+  webp?: TMedia;
+  [DEFAULT_EXT]: TMedia;
+};
+
+export const EMPTY_MEDIA: TMedia = {
   key: "",
-  src: ""
+  source: "",
+  name: "",
+  file: "",
+  src: "",
+  ext: ""
 };
 
 export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
@@ -35,17 +43,17 @@ export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
   ...partial
 });
 
-export type TMediaRecord = Record<string, TMedia[]>;
+export const resolveLoadingItemKey = (index: number) => resolveCompositeKey('loading', index);
 
 export const resolveMedia = (
   src: string,
 ): TMedia => {
   const parts = src.split("/");
-  const [name, file] = parts.slice(-2);
-  const [img] = file.split(".");
+  const [source, file] = parts.slice(-2);
+  const [name, ext] = file.split(".");
 
-  const key = `${name}-${img}`.toLowerCase();
-  return { file, name, key, img, src };
+  const key = `${source}-${name}`.toLowerCase();
+  return { file, source, key, name, src, ext };
 };
 
 export type TSlugProps = Pick<TItem, 'slug'>;

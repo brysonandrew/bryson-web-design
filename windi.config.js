@@ -19,6 +19,11 @@ module.exports = defineConfig({
     colors: COLORS,
     spacing: SPACING,
     extend: {
+      scale: {
+        "placeholder": "var(--placeholder)",
+        "placeholder_sm": "var(--placeholder-sm)",
+        "placeholder_md": "var(--placeholder-md)"
+      },
       boxShadow: SHADOW,
       fontSize: FONT_SIZE,
       backgroundColor: {

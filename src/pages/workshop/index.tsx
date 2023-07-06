@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const pages = import.meta.glob<TModule>("./**/*");
 
 const Root = styled.div``;
+
 export const Workshop = () => (
   <Root className="w-screen h-screen px-4 py-4">
     workshop

@@ -28,6 +28,10 @@ strong {
   font-family: inherit;
 }
 
+code {
+  font-family: 'Nova Mono', Courier, Menlo, and Consolas, monospace;
+}
+
 a {
   color: inherit;
   text-decoration: none;

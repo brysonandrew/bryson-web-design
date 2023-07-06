@@ -4,24 +4,18 @@ import type { MotionValue } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useX } from './useX';
 import { useContext } from '@state/Context';
-import {
-  SELECTED_KEY,
-  type TMedia,
-} from '@pages/showcase/config';
+import { TMediaRecord } from '@pages/showcase/config';
 import { resolveActiveIndex } from './resolveActiveIndex';
-import {
-  useLocation,
-  useNavigate,
-  useSearchParams,
-} from 'react-router-dom';
-import { useTo } from './nav/useTo';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from './nav/resolveTo';
+import { useCurrName } from '@pages/showcase/useCurrName';
+import { useCurrParams } from '@pages/showcase/useCurrParams';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
 
 type TConfig = {
-  items: TMedia[];
+  items: TMediaRecord[];
   width: number;
   motionX: MotionValue;
 };
@@ -30,12 +24,12 @@ export const useDrag = ({
   items,
   motionX,
 }: TConfig) => {
-  const [searchParams] = useSearchParams();
-  const name = searchParams.get(SELECTED_KEY);
+  const { name: currName, source: currSource } =
+    useCurrParams();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { dispatch } = useContext();
-  const nextX = useX({ width, items });
+  const nextX = useX({ width, items, currName });
 
   const handleComplete = () =>
     dispatch({
@@ -49,10 +43,10 @@ export const useDrag = ({
       x,
       width,
     });
-    if (name) {
+    if (currSource) {
       const to = resolveTo({
         pathname,
-        name,
+        source: currSource,
         next: activeIndex,
       });
       navigate(to);

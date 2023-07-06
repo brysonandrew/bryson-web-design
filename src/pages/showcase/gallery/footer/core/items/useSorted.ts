@@ -1,11 +1,11 @@
-import { TMedia } from "@pages/showcase/config";
 import { useMemo } from "react";
+import { TMediaRecord } from "@pages/showcase/config";
 
-export const useSorted = (items: TMedia[]) => {
+export const useSorted = (items: TMediaRecord[]) => {
   const results = useMemo(() => {
     return items.sort((a, b) => {
-      const an = +a.img;
-      const bn = +b.img;
+      const an = +a.png.name;
+      const bn = +b.png.name;
 
       if (an < bn) {
         return -1;

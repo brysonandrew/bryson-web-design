@@ -13,13 +13,13 @@ export const Arrows: FC<TProps> = (props) => {
   return (
     <>
       <Left
-        classValue={clsx(BASE_NAV_BUTTON_CLASS, 'left-4')}
+        classValue={clsx(BASE_NAV_BUTTON_CLASS, 'left-4 md:left-6')}
         {...props}
       />
       <Right
-        classValue={clsx(BASE_NAV_BUTTON_CLASS, 'right-4')}
+        classValue={clsx(BASE_NAV_BUTTON_CLASS, 'right-4 md:right-6')}
         {...props}
-      />
+      /> 
     </>
   );
 };

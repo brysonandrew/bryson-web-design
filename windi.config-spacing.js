@@ -1,4 +1,5 @@
 module.exports = {
+  button: "40px",
   icon: "24px",
   px: "1px",
   0: "0",

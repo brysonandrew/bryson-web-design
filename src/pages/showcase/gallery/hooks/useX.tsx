@@ -1,23 +1,19 @@
-import { useSearchParams } from 'react-router-dom';
-import type { TMedia } from '@pages/showcase/config';
-import {
-  IMG_KEY,
-  SELECTED_KEY,
-} from '@pages/showcase/config';
+import type { TMediaRecord } from '@pages/showcase/config';
 import { resolveX } from './resolveX';
 
 type TConfig = {
-  items: TMedia[];
+  currName: string | null;
+  items: TMediaRecord[];
   width: number;
 };
-export const useX = ({ items, width }: TConfig) => {
-  const [searchParams] = useSearchParams();
-  const selected = searchParams.get(SELECTED_KEY);
-  const img = searchParams.get(IMG_KEY);
-
+export const useX = ({
+  currName,
+  items,
+  width,
+}: TConfig) => {
   const activeIndex = Math.max(
     items.findIndex(
-      ({ key }) => `${selected}-${img}` === key,
+      ({ png: { name } }) => name === currName,
     ),
     0,
   );

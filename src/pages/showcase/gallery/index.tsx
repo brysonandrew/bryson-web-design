@@ -9,38 +9,43 @@ import { createPortal } from 'react-dom';
 import { Background } from './Background';
 import { useDelay } from '@main/useDelay';
 import { useContext } from '@state/Context';
-import { TMedia, resolveEmptyMedia } from '../config';
+import {
+  TMediaRecord,
+  resolveEmptyMedia,
+  resolveLoadingItemKey,
+} from '../config';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 
 const Root = styled(motion.div)``;
 
 type TProps = {
-  selectedPath: TAppItemKey;
+  currSource: TAppItemKey;
 };
-export const Gallery: FC<TProps> = ({ selectedPath }) => {
+export const Gallery: FC<TProps> = ({ currSource }) => {
   const { clientImageRecord, screensCountRecord } =
     useContext();
   const items = Object.values(
-    clientImageRecord[selectedPath] ?? {},
+    clientImageRecord[currSource] ?? {},
   );
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  const readyCount = items?.length ?? 0;
-  const count = screensCountRecord[selectedPath];
+  const readyCount = items.length ?? 0;
+  const count = screensCountRecord[currSource];
   const loadingCount = count - readyCount;
+
   const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  const loadingItems: TMedia[] = [
-    ...Array(loadingCount),
-  ].map((_, index) =>
-    resolveEmptyMedia({
-      key: `media-${index}`,
-      img: `${items.length + index + 1}`,
+  const loadingItems: TMediaRecord[] = [...Array(loadingCount)].map(
+    (_, index) => ({
+      png: resolveEmptyMedia({
+        key: resolveLoadingItemKey(index),
+        name: `${items.length + index + 1}`,
+      }),
     }),
   );
 
@@ -66,18 +71,20 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               onLayoutAnimationComplete={
                 handleLayoutAnimationComplete
               }
-              slug={selectedPath}
+              slug={currSource}
             />
-            <Background />
             {isResizing ? null : (
               <>
                 {isReady && (
                   <>
+                    <Background />
                     <Sections {...galleryProps} />
-                    <Arrows max={galleryProps.count} />
                   </>
                 )}
                 <Footer {...galleryProps} />
+                {isReady && (
+                  <Arrows max={galleryProps.count} />
+                )}
               </>
             )}
           </Root>

@@ -1,20 +1,20 @@
 import styled from '@emotion/styled';
-import type { TMedia } from '@pages/showcase/config';
+import type { TMedia, TMediaRecord } from '@pages/showcase/config';
 import { motion } from 'framer-motion';
 import { useState, type FC, useRef } from 'react';
-import { Zoom } from './Zoom';
+import { Zoom } from './zoom/Zoom';
 import { TBaseProps } from '../../types';
 import { TChildren } from '@t/index';
 
 export const Root = styled(motion.div)``;
 
 type TProps = Pick<TBaseProps, 'width'> & {
-  item: TMedia;
+  mediaRecord: TMediaRecord;
   image: HTMLImageElement | null;
   children: TChildren;
 };
 export const Control: FC<TProps> = ({
-  item,
+  mediaRecord,
   image,
   width,
   children,
@@ -37,10 +37,10 @@ export const Control: FC<TProps> = ({
       {children}
       {isHover && image && element && (
         <Zoom
-          key={item.key}
+          key={mediaRecord.png.key}
           element={element}
           image={image}
-          media={item}
+          mediaRecord={mediaRecord}
         />
       )}
     </motion.div>

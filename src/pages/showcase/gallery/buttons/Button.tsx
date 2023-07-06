@@ -8,9 +8,7 @@ import clsx from 'clsx';
 import { TBaseIconProps } from '@t/icons';
 import { TClassValueProps } from '@t/index';
 
-const Link = styled(motion(_Link))`
-  aspect-ratio: 1 / 1;
-`;
+const Link = styled(motion(_Link))``;
 
 export type TButtonProps = TClassValueProps & {
   to: string;
@@ -24,14 +22,14 @@ export const Button: FC<TButtonProps> = ({
 }) => {
   const rootPropsWithTealGlow = resolveTealGlow({
     classValue: clsx(
-      'relative flex items-center justify-center p-2.5 cursor-pointer z-10',
+      'relative flex items-center justify-center p-0.5 cursor-pointer z-10',
     ),
   });
   return (
     <div className={clsx(classValue)}>
       <Link {...rootPropsWithTealGlow} {...props}>
         <Fill />
-        <Icon classValue='relative' />
+        <Icon classValue='relative w-9 h-9' />
       </Link>
     </div>
   );

@@ -52,7 +52,7 @@ export const Item: FC<TProps> = ({
     >
       <Button
         key='ITEM_BUTTON'
-        className='relative flex items-center justify-center w-full md:w-core-md py-4'
+        className='relative flex items-center justify-center w-full md:w-core_md py-4'
         whileHover='hover'
         initial='initial'
         animate='animate'

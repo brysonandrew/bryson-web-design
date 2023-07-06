@@ -2,7 +2,7 @@ import { Gallery } from './gallery';
 import { List } from './list';
 import { Space16 } from '@components/spaces/Space16';
 import { APP_ITEMS } from '@constants/apps';
-import { useSelectedItem } from './useSelectedItem';
+import { useCurrSource } from './useCurrSource';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -15,8 +15,8 @@ const Root = styled(motion.div)``;
 
 type TProps = Partial<TFake3DMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
-  const selectedPath = useSelectedItem();
-  const isSelectedItem = selectedPath !== null;
+  const currSource = useCurrSource();
+  const isSelectedItem = currSource !== null;
   useFreezeScrollBar(!isSelectedItem);
 
   return (
@@ -32,13 +32,13 @@ export const Main: FC<TProps> = ({ style }) => {
         <List
           key='SHOWCASE_MAIN_LIST'
           items={APP_ITEMS}
-          selectedPath={selectedPath}
+          currSource={currSource}
         />
         <Space16 key='SHOWCASE_MAIN_SPACE_16' />
         {isSelectedItem && (
           <Gallery
             key='SHOWCASE_MAIN_GALLERY'
-            selectedPath={selectedPath}
+            currSource={currSource}
           />
         )}
       </AnimatePresence>

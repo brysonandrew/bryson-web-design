@@ -8,6 +8,8 @@ import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
 import { Items } from './items';
 import { PADDING_X } from './config';
+import { TEAL_GLOW_BOX_SHADOW } from '@pages/index/constants';
+import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;
@@ -24,22 +26,27 @@ export const Core: FC<TProps> = (props) => {
     motionX,
   });
 
+  const left = -width.footer + itemWidth;
+
   return (
     <Root
-      className='relative h-full'
+      className='relative'
       style={{ width: itemWidth }}
     >
       <FillDark />
       <Dragger
-        className='relative flex items-center h-full'
+        className={clsx(
+          'relative flex items-center',
+          TEAL_GLOW_BOX_SHADOW,
+        )}
         style={{
           x: motionX,
           left: -PADDING_X,
           width: width.footer + PADDING_X * 2,
-          padding: `0 ${PADDING_X}px`,
+          padding: `0.25rem ${PADDING_X}px`,
         }}
         dragConstraints={{
-          left: -width + itemWidth,
+          left,
           right: 0,
           top: 0,
           bottom: 0,
@@ -54,4 +61,3 @@ export const Core: FC<TProps> = (props) => {
     </Root>
   );
 };
-1;

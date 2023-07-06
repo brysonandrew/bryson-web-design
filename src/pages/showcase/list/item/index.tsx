@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import {
-  IMG_KEY,
-  SELECTED_KEY,
+  NAME_KEY,
+  SOURCE_KEY,
   TSlugProps,
 } from '@pages/showcase/config';
 import { motion } from 'framer-motion';
@@ -36,7 +36,7 @@ export const Item: FC<TProps> = ({ slug }) => {
         to={
           item.altTo
             ? item.altTo
-            : `${pathname}?${SELECTED_KEY}=${slug}&${IMG_KEY}=${1}`
+            : `${pathname}?${SOURCE_KEY}=${slug}&${NAME_KEY}=${1}`
         }
         onTap={handleOnSound}
       >

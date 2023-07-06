@@ -3,14 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FC } from 'react';
 import { Decoration } from './Decoration';
 import { useContext } from '@state/Context';
-import { useSelectedItem } from '@pages/showcase/useSelectedItem';
+import { useCurrSource } from '@pages/showcase/useCurrSource';
 import { Nav } from './Nav';
 
 const Root = styled(motion.header)``;
 
 export const Header: FC = () => {
   const { isScroll } = useContext();
-  const selectedItem = useSelectedItem();
+  const selectedItem = useCurrSource();
   const isSelectedItem = Boolean(selectedItem);
 
   const isShown = !isScroll && !isSelectedItem;

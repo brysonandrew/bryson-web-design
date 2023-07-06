@@ -9,13 +9,10 @@ export const Cross = ({
     className={clsx(classValue)}
     width='24'
     height='24'
-    viewBox='0 0 28 28'
+    viewBox='0 0 24 24'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
   >
-    <path
-      d='M28 2.913 16.913 14 28 25.087 25.087 28 14 16.913 2.913 28 0 25.087 11.087 14 0 2.913 2.913 0 14 11.087 25.087 0z'
-      fillRule='nonzero'
-    />
+    <path d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z' />
   </svg>
 );

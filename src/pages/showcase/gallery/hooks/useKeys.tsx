@@ -1,7 +1,7 @@
 import { useMoveSound } from "@hooks/sounds/useMoveSound";
 import { useOffSound } from "@hooks/sounds/useOffSound";
 import { useKey } from "@hooks/useKey";
-import { IMG_KEY } from "@pages/showcase/config";
+import { NAME_KEY } from "@pages/showcase/config";
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
@@ -13,8 +13,8 @@ export const useKeys = ({ readyCount }: TConfig) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const currImg = searchParams.get(IMG_KEY);
-  const current = { currImg, readyCount };
+  const currName = searchParams.get(NAME_KEY);
+  const current = { currName, readyCount };
   const ref = useRef(current);
   ref.current = current;
   const handleMoveSound = useMoveSound();
@@ -23,21 +23,21 @@ export const useKeys = ({ readyCount }: TConfig) => {
   useKey({
     handlers: {
       onKeyDown: (event) => {
-        const { currImg, readyCount } = ref.current;
+        const { currName, readyCount } = ref.current;
 
-        if (currImg === null) return;
+        if (currName === null) return;
         if (event.key === "ArrowLeft") {
           handleMoveSound();
-          let next = +currImg - 1;
+          let next = +currName - 1;
           next = next === 0 ? readyCount : next;
-          searchParams.set(IMG_KEY, `${next}`);
+          searchParams.set(NAME_KEY, `${next}`);
           navigate(`${pathname}?${searchParams}`);
           return;
         }
         if (event.key === "ArrowRight") {
           handleMoveSound();
-          const n = +currImg % readyCount;
-          searchParams.set(IMG_KEY, `${n + 1}`);
+          const n = +currName % readyCount;
+          searchParams.set(NAME_KEY, `${n + 1}`);
           navigate(`${pathname}?${searchParams}`);
           return;
         }

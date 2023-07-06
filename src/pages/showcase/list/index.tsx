@@ -10,17 +10,17 @@ import { TAppItemKey } from '@constants/apps';
 const Root = styled(motion.ul)``;
 
 type TProps = {
-  selectedPath: TAppItemKey | null;
+  currSource: TAppItemKey | null;
   items: TItem[];
 };
 export const List: FC<TProps> = ({
   items,
-  selectedPath,
+  currSource,
 }) => (
   <Root className='mt-1'>
-    {items.map((item: TItem, index: number) => {
-      const itemKey = item.slug;
-      const isSelected = selectedPath === item.slug;
+    {items.map(({slug}: TItem, index: number) => {
+      const itemKey = slug;
+      const isSelected = currSource === slug;
       if (isSelected) return null;
       return (
         <Fragment key={itemKey}>

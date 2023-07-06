@@ -5,7 +5,12 @@ import {
   resolveDropShadow,
   resolveShadow,
 } from '@pages/index/constants';
-import { IMG_KEY, TMedia } from '@pages/showcase/config';
+import {
+  DEFAULT_EXT,
+  NAME_KEY,
+  TMediaRecord,
+  resolveLoadingItemKey,
+} from '@pages/showcase/config';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import {
@@ -15,28 +20,29 @@ import {
 import { useTo } from '../../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
 import COLORS from '@windi/config-colors.json';
-import { FillDark } from '@components/metal/FillDark';
-import { Fill } from '@components/metal/Fill';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
 
 export const Background = styled(motion.div)``;
 
-export type TProps = TMedia & {
+export type TProps = {
+  index: number;
   width: number;
+  mediaRecord: TMediaRecord;
 };
 export const Button: FC<TProps> = ({
-  img,
-  name,
+  index,
+  mediaRecord,
   width,
 }) => {
+  const { key, name } = mediaRecord[DEFAULT_EXT];
   const { dispatch } = useContext();
-  const to = useTo(img);
-  const isLoading = !name;
+  const to = useTo(name);
+  const isLoading = key === resolveLoadingItemKey(index);
   const [searchParams] = useSearchParams();
-  const imgParam = searchParams.get(IMG_KEY);
-  const isActive = imgParam === to.split(`${IMG_KEY}=`)[1];
+  const imgParam = searchParams.get(NAME_KEY);
+  const isActive = imgParam === to.split(`${NAME_KEY}=`)[1];
   const animation = isLoading
     ? 'loading'
     : isActive
@@ -82,7 +88,7 @@ export const Button: FC<TProps> = ({
           />
         )}
         <motion.div
-          className='flex items-center justify-center absolute inset-0 uppercase text-xs text-center'
+          className='flex items-center justify-center absolute inset-0 uppercase text-sm text-center'
           variants={{
             idle: {
               opacity: 0.2,
@@ -114,7 +120,7 @@ export const Button: FC<TProps> = ({
             },
           }}
         >
-          <span className='flex relative'>{img}</span>
+          <span className='flex relative'>{name}</span>
         </motion.div>
       </Link>
     </Root>
