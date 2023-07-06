@@ -13,6 +13,7 @@ import {
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
+import { ClipPaths } from '@components/ClipPaths';
 
 type TProps = {
   children: TChildren;
@@ -37,6 +38,7 @@ export const Shell: FC<TProps> = ({ children }) => {
     <MotionConfig {...INIT_MOTION_CONFIG}>
       <Variables />
       <Filters />
+      <ClipPaths />
       <motion.div
         {...PRESENCE_OPACITY}
         {...resolveTransition(0)}
