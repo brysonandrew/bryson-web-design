@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { resolveRandom } from './resolveRandom';
+import { resolveRandomMediaRecord } from './resolveRandomMediaRecord';
 import { useContext } from '@state/Context';
 
 export const useSmallImages = () => {
@@ -7,8 +7,9 @@ export const useSmallImages = () => {
 
   useEffect(() => {
     const init = async () => {
-      const randoms = await resolveRandom();
-      dispatch({ type: 'images', value: randoms });
+      const value = await resolveRandomMediaRecord();
+
+      dispatch({ type: 'images', value });
     };
     init();
   }, []);

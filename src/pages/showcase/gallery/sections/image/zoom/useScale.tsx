@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { clamp, motion, useTransform } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useEventListener } from '@hooks/useEventListener';
 import {
   CURSOR_SIZE_HALF,
@@ -8,9 +8,7 @@ import {
   WHEEL_DELTA_THRESHOLD,
   TSharedConfig,
   SCALE,
-  LOCAL_HOST_SCALE_KEY,
 } from './config';
-import { useLocalStorage } from '@moth/hooks/useLocalStorage';
 
 export const Root = styled(motion.div)``;
 
@@ -21,11 +19,7 @@ export const useScale = ({
   element,
   image,
 }: TConfig) => {
-  const [savedScale, saveScale] = useLocalStorage<number>(
-    LOCAL_HOST_SCALE_KEY,
-    SCALE.INIT,
-  );
-  const [scale, setScale] = useState<number>(savedScale);
+  const [scale, setScale] = useState<number>(SCALE.INIT);
   const imageRect = image.getBoundingClientRect();
 
   const imageWidth = imageRect.width;
@@ -91,12 +85,6 @@ export const useScale = ({
     handleClick,
     { current: image },
   );
-
-  useEffect(() => {
-    return () => {
-      saveScale(scale);
-    };
-  }, [scale]);
 
   return {
     scale,

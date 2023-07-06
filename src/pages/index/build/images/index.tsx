@@ -6,6 +6,7 @@ import { useState, type FC, useEffect } from 'react';
 import { Image } from './Image';
 import { PRESENCE_OPACITY_SHIFT } from '@constants/animation';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TMediaRecord } from '@pages/showcase/config';
 
 const HEIGHT = 164 + TITLE_OFFSET;
 
@@ -49,19 +50,26 @@ export const Images: FC<TProps> = ({
         className={clsx('flex relative w-full preserve-3d')}
         style={{ rotateX, y }}
       >
-        {images.map((image, index, { length }) => {
-          const src = image.default;
-          return (
-            <Image
-              key={src}
-              src={src}
-              index={index}
-              count={length}
-              isLoaded={Boolean(loadedState[src])}
-              onLoad={() => handleLoad(src)}
-            />
-          );
-        })}
+        {images.map(
+          (
+            mediaRecord: TMediaRecord,
+            index,
+            { length },
+          ) => {
+            const src = mediaRecord.png.src;
+            return (
+              <Image
+                key={src}
+                src={src}
+                mediaRecord={mediaRecord}
+                index={index}
+                count={length}
+                isLoaded={Boolean(loadedState[src])}
+                onLoad={() => handleLoad(src)}
+              />
+            );
+          },
+        )}
       </motion.ul>
     </motion.div>
   );

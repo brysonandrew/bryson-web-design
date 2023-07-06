@@ -1,6 +1,6 @@
+
 import { TContactState, TFormKey, TStatus } from '@pages/contact/config';
-import { TMedia } from '@pages/showcase/config';
-import { TModule } from '@t/index';
+import { TMediaRecord } from '@pages/showcase/config';
 import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
@@ -15,7 +15,7 @@ export type TScreensRecord = Record<string, () => Promise<unknown>>;
 export type TContext = TState & {
   screensCountRecord: TScreensCountRecord;
   screensRecord: TScreensRecord;
-  images: TModule[];
+  images: TMediaRecord[];
   dispatch: TDispatch;
 };
 
@@ -24,7 +24,7 @@ export type TMotionValuePair = [
   y: MotionValue,
 ];
 
-export type TImageRecord = Record<string, TMedia>;
+export type TImageRecord = Record<string, TMediaRecord>;
 export type TClientImageRecord = Record<string, TImageRecord>;
 export type TPartialClientImageRecord = { [key: string]: TImageRecord; };
 
@@ -51,7 +51,7 @@ export type TAction =
   }
   | {
     type: "images",
-    value: TModule[];
+    value: TMediaRecord[];
   }
   | {
     type: 'start-motion-blur';
@@ -99,7 +99,7 @@ export type TAction =
   };
 
 export type TState = {
-  images: TModule[];
+  images: TMediaRecord[];
   clientImageRecord: TClientImageRecord;
   isScroll: boolean;
   isScrollStart: boolean;

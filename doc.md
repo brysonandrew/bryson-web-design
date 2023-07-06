@@ -14,3 +14,7 @@ file.wav … output file
 Second attempt
 
 `ffmpeg -loglevel panic -f f32le -y -i test.pcm output.wav`
+
+Webp convert
+
+for file in screens/**/*.png ; do cwebp "$file" -o "${file%.png}.webp"; done

@@ -3,15 +3,15 @@ import { resolveMedia } from "@pages/showcase/config";
 import { useContext } from "@state/Context";
 import { TImageRecord } from "@state/types";
 
-type TUpdateRecord = { key: string, nextRecord: TImageRecord; };
+type TUpdateRecord = { currSource: string, nextRecord: TImageRecord; };
 export const useMediaFromKey = () => {
   const { clientImageRecord, screensRecord, dispatch } = useContext();
 
-  const updateRecord = ({ key, nextRecord }: TUpdateRecord) => {
-    const prev = clientImageRecord[key];
+  const updateRecord = ({ currSource, nextRecord }: TUpdateRecord) => {
+    const prev = clientImageRecord[currSource];
     dispatch({
       type: "image-record", value: {
-        [key]: {
+        [currSource]: {
           ...prev,
           ...nextRecord
         }
@@ -19,37 +19,39 @@ export const useMediaFromKey = () => {
     });
   };
 
-  const handleLoad = async (selectedKey: string) => {
+  const handleLoad = async (currSource: string) => {
     try {
       const entries = Object.entries(screensRecord);
-      const selectedRecord = clientImageRecord[selectedKey];
+      const selectedRecord = clientImageRecord[currSource];
       const isEmpty = !Boolean(selectedRecord) || Object.keys(selectedRecord).length === 0;
       const imageRecord: TImageRecord = isEmpty ? {} : { ...selectedRecord };
       const nextRecord: TImageRecord = {};
 
       for await (const entry of entries) {
-        const [k, resolver] = entry;
-        if (imageRecord[k]) continue;
+        const [longKey, resolver] = entry;
+        if (imageRecord[longKey]) continue;
         if (
-          k.includes(`/${selectedKey}/`) &&
-          !k.includes(`${selectedKey}/preview`)
+          longKey.includes(`/${currSource}/`)
         ) {
           const m = await resolver();
-          let next = resolveMedia(k);
+          let next = resolveMedia(longKey);
           next = {
             ...next,
             src: (m as TModule).default,
           };
-          nextRecord[k] = next;
+          nextRecord[next.name] = {
+            ...(nextRecord[next.name] ?? {}),
+            [next.ext]: next
+          };
 
           if (isEmpty && Object.keys(nextRecord).length < 3) { // load first two
-            updateRecord({ key: selectedKey, nextRecord });
+            updateRecord({ currSource, nextRecord });
           }
         }
       }
 
       if (Object.keys(nextRecord).length > 0) {
-        updateRecord({ key: selectedKey, nextRecord });
+        updateRecord({ currSource, nextRecord });
       }
     } catch (error) {
       console.log(error);

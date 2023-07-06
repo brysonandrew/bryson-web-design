@@ -1,4 +1,4 @@
-import { SELECTED_KEY } from "@pages/showcase/config";
+import { SOURCE_KEY } from "@pages/showcase/config";
 import { useMediaFromKey } from "@pages/showcase/gallery/hooks/useMediaFromKey";
 import { useContext } from "@state/Context";
 import { useEffect } from "react";
@@ -9,7 +9,7 @@ export const useProjectsRedirect = () => {
   const { isInit } = useContext();
   const handleLoadMedia = useMediaFromKey();
   const [searchParams] = useSearchParams();
-  const selectedKey = searchParams.get(SELECTED_KEY);
+  const selectedKey = searchParams.get(SOURCE_KEY);
   const navigate = useNavigate();
 
   useEffect(() => {

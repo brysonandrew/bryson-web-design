@@ -6,13 +6,17 @@ import { useDepthStyle } from './hooks/useDepthStyle';
 import { Placeholder } from '@components/images/Placeholder';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
+import { Picture } from '@components/picture';
+import { TMediaRecord } from '@pages/showcase/config';
 
 type TProps = HTMLMotionProps<'img'> & {
+  mediaRecord: TMediaRecord;
   index: number;
   count: number;
   isLoaded: boolean;
 };
 export const Image: FC<TProps> = ({
+  mediaRecord,
   index,
   count,
   isLoaded,
@@ -43,7 +47,7 @@ export const Image: FC<TProps> = ({
       {!isLoaded && (
         <Placeholder index={index} count={count} />
       )}
-      <motion.img {...props} />
+      <Picture mediaRecord={mediaRecord} {...props} />
     </motion.li>
   );
 };

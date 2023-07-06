@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { TMedia } from '@pages/showcase/config';
+import type { TMedia, TMediaRecord } from '@pages/showcase/config';
 import {
   AnimatePresence,
   motion,
@@ -13,6 +13,7 @@ import { TImageProps } from './config';
 import clsx from 'clsx';
 import { TEAL_GLOW_BOX_SHADOW } from '@pages/index/constants';
 import { Cross } from '@components/icons/Cross';
+import { Picture } from '@components/picture';
 
 export const Root = styled(motion.div)``;
 export const Border = styled(motion.div)``;
@@ -22,11 +23,11 @@ export const Tag = styled.code`
 `;
 
 type TProps = TImageProps & {
-  media: TMedia;
+  mediaRecord: TMediaRecord;
   element: HTMLDivElement;
 };
 export const Zoom: FC<TProps> = ({
-  media,
+  mediaRecord,
   element,
   image,
 }) => {
@@ -74,10 +75,9 @@ export const Zoom: FC<TProps> = ({
             {...rootProps}
             {...PRESENCE_OPACITY}
           >
-            <motion.img
-              src={media.src}
+            <Picture
+              mediaRecord={mediaRecord}
               className='absolute'
-              alt={media.key}
               {...copyProps}
             />
           </Root>
