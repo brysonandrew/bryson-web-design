@@ -40,8 +40,7 @@ export const Gallery: FC<TProps> = ({ currSource }) => {
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  console.log(loadingCount);
-  const loadingItems: TMediaRecord[] = [...Array(0)].map(
+  const loadingItems: TMediaRecord[] = [...Array(loadingCount)].map(
     (_, index) => ({
       png: resolveEmptyMedia({
         key: resolveLoadingItemKey(index),

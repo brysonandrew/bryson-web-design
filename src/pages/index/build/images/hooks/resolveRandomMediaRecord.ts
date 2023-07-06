@@ -8,13 +8,12 @@ const screensRecordSmall = import.meta.glob(
 const screensRecordSmallWebp = import.meta.glob(
   "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.webp",
 );
-const MAX_COUNT = 9;
 const entries = Object.entries(screensRecordSmall);
 const count = entries.length;
 
-export const resolveRandomMediaRecord = async () => {
+export const resolveRandomMediaRecord = async (countRequired: number) => {
   const indicies: number[] = [];
-  const requiredCount = Math.min(count, MAX_COUNT);
+  const requiredCount = Math.min(count, countRequired);
   while (indicies.length < requiredCount) {
     const next = ~~(count * Math.random());
     if (!indicies.includes(next)) {

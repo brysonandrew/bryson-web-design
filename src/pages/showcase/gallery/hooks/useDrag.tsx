@@ -9,6 +9,7 @@ import { resolveActiveIndex } from './resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from './nav/resolveTo';
 import { useCurrName } from '@pages/showcase/useCurrName';
+import { useCurrParams } from '@pages/showcase/useCurrParams';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
@@ -23,7 +24,8 @@ export const useDrag = ({
   items,
   motionX,
 }: TConfig) => {
-  const currName = useCurrName();
+  const { name: currName, source: currSource } =
+    useCurrParams();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { dispatch } = useContext();
@@ -41,10 +43,10 @@ export const useDrag = ({
       x,
       width,
     });
-    if (currName) {
+    if (currSource) {
       const to = resolveTo({
         pathname,
-        name: currName,
+        source: currSource,
         next: activeIndex,
       });
       navigate(to);

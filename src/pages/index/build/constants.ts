@@ -13,7 +13,7 @@ export const FAKE_3D_PROPS: TOptionsConfig = {
       startScroll,
       startScroll + MAX_SCROLL,
     ],
-    output: [-160, -440],
+    output: [-100, -440],
   },
   visibility: {
     input: ({ startScroll }) => [

@@ -29,12 +29,13 @@ export const Images: FC<TProps> = ({
     }
   }, [loadedCount]);
 
-  const handleLoad = (src: string) => {
+  const handleLoad = (key: string) => {
     setLoaded((prev) => {
-      const next = { ...prev, [src]: true };
+      const next = { ...prev, [key]: true };
       return next;
     });
   };
+  
   return (
     <motion.div
       className='relative w-full'
@@ -56,16 +57,15 @@ export const Images: FC<TProps> = ({
             index,
             { length },
           ) => {
-            const src = mediaRecord.png.src;
+            const key = mediaRecord.png.key;
             return (
               <Image
-                key={src}
-                src={src}
+                key={key}
                 mediaRecord={mediaRecord}
                 index={index}
                 count={length}
-                isLoaded={Boolean(loadedState[src])}
-                onLoad={() => handleLoad(src)}
+                isLoaded={Boolean(loadedState[key])}
+                onLoad={() => handleLoad(key)}
               />
             );
           },

@@ -16,7 +16,6 @@ const Root = styled(motion.div)``;
 type TProps = Partial<TFake3DMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
   const currSource = useCurrSource();
-  console.log(currSource);
   const isSelectedItem = currSource !== null;
   useFreezeScrollBar(!isSelectedItem);
 
