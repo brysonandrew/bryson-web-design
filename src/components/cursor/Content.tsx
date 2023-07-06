@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import type { ClassValue } from "clsx";
 import { clsx } from "clsx";
-import type { TCursorProps } from "../../pages/filters/trail/trail";
 import { CONTENT_CLASS } from "./config";
+import { TCursorProps } from ".";
 
 const Root = styled(motion.div)``;
 
