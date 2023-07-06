@@ -1,5 +1,5 @@
 import { DragIcon } from './DragIcon';
-import { FillDark } from '@components/metal/FillDark';
+import { MetalDark } from '@components/metal/MetalDark';
 import { useDrag } from '../../hooks/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
@@ -29,11 +29,8 @@ export const Core: FC<TProps> = (props) => {
   const left = -width.footer + itemWidth;
 
   return (
-    <Root
-      className='relative'
-      style={{ width: itemWidth }}
-    >
-      <FillDark />
+    <Root className='relative' style={{ width: itemWidth }}>
+      <MetalDark />
       <Dragger
         className={clsx(
           'relative flex items-center',
@@ -53,7 +50,7 @@ export const Core: FC<TProps> = (props) => {
         }}
         {...dragHandlers}
       >
-        <FillDark classValue='opacity-50' />
+        <MetalDark classValue='opacity-50' />
         <DragIcon classValue='left-0' />
         <Items items={items} itemWidth={itemWidth} />
         <DragIcon classValue='right-0' />

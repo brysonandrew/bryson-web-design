@@ -4,7 +4,7 @@ import type { HTMLMotionProps } from 'framer-motion';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Review } from './review';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { Bar } from './Bar';
 import {
   DURATION_DELAY_TRANSITION,
@@ -70,7 +70,7 @@ export const Item: FC<TProps> = ({
         <AnimatePresence>
           {!isLong && (
             <motion.div key="ITEM_SHORT" {...PRESENCE_OPACITY}>
-              <Fill />
+              <Metal />
               <motion.div
                 className='relative pointer-events-none z-10'
                 {...contentProps}

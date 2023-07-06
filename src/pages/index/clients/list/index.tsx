@@ -10,7 +10,7 @@ import { Item } from './Item';
 import { Review } from './review';
 import { REVIEWS } from './config';
 import { Cross } from '@components/icons/Cross';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 
 const Root = styled(motion.div)``;
@@ -56,7 +56,7 @@ export const List: FC<TProps> = ({
           whileHover={{ opacity: 0.7 }}
           onTap={handleCloseLong}
         >
-          <Fill />
+          <Metal />
           <Cross classValue='w-4 h-4 stroke-baby-blue' />
         </Button>
       )}
@@ -71,7 +71,7 @@ export const List: FC<TProps> = ({
                   )}
                   layoutId={`${long}`}
                 >
-                  <Fill />
+                  <Metal />
                   <Review index={long} type='long' />
                 </motion.li>
               ) : (

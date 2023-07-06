@@ -3,7 +3,6 @@ export type TItem = {
   href: string;
   icon: JSX.Element;
 };
-
 export const ITEMS: TItem[] = [
   {
     title: "Github",

@@ -1,6 +1,6 @@
 import { VolumeOff } from '@components/icons/VolumeOff';
 import { VolumeOn } from '@components/icons/VolumeOn';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { GlitchPorsalin } from '@components/text/glitch-porsalin';
 import styled from '@emotion/styled';
 import { resolveTealGlow } from '@pages/index/constants';
@@ -27,7 +27,7 @@ export const Sound = () => {
 
   return (
     <Root {...rootPropsWithTealGlow}>
-      <Fill classValue='rounded-full' inset={-1} />
+      <Metal classValue='rounded-full'/>
       <Button
         className='relative p-3 cursor-pointer'
         onTap={handleTap}

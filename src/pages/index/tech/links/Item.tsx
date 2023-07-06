@@ -5,7 +5,7 @@ import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import { resolveTealGlow } from '@pages/index/constants';
 import { TextXl2 } from '@components/text/TextXl2';
 
@@ -39,7 +39,7 @@ export const Item: FC<TItem> = ({
         href={href}
         target='_blank'
       >
-        <Fill inset={1} />
+        <Metal />
         <div className='relative flex items-center z-10'>
           <Icon classValue='h-10 w-10' />
           <div className='p-2' />

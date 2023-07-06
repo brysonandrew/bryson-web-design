@@ -1,8 +1,0 @@
-export const FRAGMENT_ID = "FRAGMENT_ID";
-export const FRAGMENT_RESULT = "FRAGMENT_RESULT";
-export const FRAGMENTS_RESULT = "FRAGMENTS_RESULT";
-export const FRAGMENT_PREFIX = "FRAGMENT_PREFIX";
-
-
-export const FRAGMENT_COUNT = 40;
-export const FRAGMENT_ARR = [...Array(FRAGMENT_COUNT)];

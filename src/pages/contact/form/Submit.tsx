@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { Fill } from '@components/metal/Fill';
 import { resolveTealGlow } from '@pages/index/constants';
 import { useContext } from '@state/Context';
+import { Metal } from '@components/metal';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -36,7 +36,7 @@ export const Submit: FC = () => {
       onTap={isDisabled ? () => null : handleMoveSound}
       {...rootPropsWithTealGlow}
     >
-      <Fill classValue='pointer-events-none' />
+      <Metal classValue='pointer-events-none' />
       <Decoration
         className={clsx(
           'relative w-full pointer-events-none',

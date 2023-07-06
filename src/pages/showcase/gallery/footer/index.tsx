@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { PRESENCE_Y } from '@constants/animation';
-import { FillDarkest } from '@components/metal/FillDarkest';
+import { MetalDarkest } from '@components/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
 
@@ -20,7 +20,7 @@ export const Footer: FC<TProps> = ({ ...props }) => {
       }}
       {...PRESENCE_Y}
     >
-      <FillDarkest />
+      <MetalDarkest />
       {props.isReady && <Core {...props} />}
     </Root>
   );

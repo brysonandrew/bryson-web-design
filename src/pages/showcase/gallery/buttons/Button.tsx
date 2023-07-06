@@ -3,7 +3,7 @@ import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { resolveTealGlow } from '@pages/index/constants';
 import styled from '@emotion/styled';
-import { Fill } from '@components/metal/Fill';
+import { Metal } from '@components/metal';
 import clsx from 'clsx';
 import { TBaseIconProps } from '@t/icons';
 import { TClassValueProps } from '@t/index';
@@ -28,7 +28,7 @@ export const Button: FC<TButtonProps> = ({
   return (
     <div className={clsx(classValue)}>
       <Link {...rootPropsWithTealGlow} {...props}>
-        <Fill />
+        <Metal />
         <Icon classValue='relative w-9 h-9' />
       </Link>
     </div>

@@ -4,7 +4,7 @@ import {
   TSlugProps,
   resolveTitleLayoutId,
 } from '@pages/showcase/config';
-import { FillDark } from '@components/metal/FillDark';
+import { MetalDark } from '@components/metal/MetalDark';
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import clsx from 'clsx';
@@ -39,7 +39,7 @@ export const Content: FC<TProps> = ({
         }))}
     {...props}
   >
-    <FillDark key='FillDark' />
+    <MetalDark key='FillDark' />
     <Mark />
     <motion.div
       className='flex items-center justify-between'
