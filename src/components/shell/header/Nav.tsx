@@ -2,15 +2,14 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Main } from './main';
 import { Pages } from './pages';
-import { useDetectGPU } from '@react-three/drei';
 import { FC } from 'react';
 import { useContext } from '@state/Context';
+import { isMobile } from 'react-device-detect';
 
 const Root = styled(motion.nav)``;
 
 export const Nav: FC = () => {
   const { isInit, isScrollStart } = useContext();
-  const { isMobile } = useDetectGPU();
 
   const animation = {
     initial:

@@ -1,5 +1,5 @@
 import { InView } from '@components/InView';
-import { useDetectGPU } from '@react-three/drei';
+import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
@@ -19,8 +19,7 @@ export const Fake3D: FC<TProps> = ({
   children,
   ...optionsConfig
 }) => {
-  const { tier, isMobile } = useDetectGPU();
-  if (isMobile || tier < 1) return children(EMPTY_PROPS);
+  if (isMobile) return children(EMPTY_PROPS);
   return (
     <InView className={clsx('relative w-full', classValue)}>
       {({ isInView, ref, ...rectProps }) => (

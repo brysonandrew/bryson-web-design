@@ -12,7 +12,6 @@ import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@pages/showcase/gallery/hooks/useMediaFromKey';
-import { resolveTealGlow } from '@pages/index/constants';
 
 const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
@@ -30,7 +29,6 @@ export const Item: FC<TProps> = ({ slug }) => {
   return (
     <Root
       onMouseEnter={handleMouseEnter}
-      {...resolveTealGlow({ partial: { outerGlow: 0 } })}
     >
       <InternalLink
         to={

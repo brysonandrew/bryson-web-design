@@ -1,4 +1,4 @@
-import { useDetectGPU } from '@react-three/drei';
+import { isMobile } from 'react-device-detect';
 import type { MotionValue } from 'framer-motion';
 import {
   useVelocity,
@@ -18,7 +18,6 @@ type TProps = {
   motionX: MotionValue<number>;
 };
 export const Filter = ({ motionX }: TProps) => {
-  const { isMobile, tier } = useDetectGPU();
   const velocity = useVelocity(motionX);
   const acceleration = useVelocity(velocity);
   const v = useTransform(
@@ -33,7 +32,7 @@ export const Filter = ({ motionX }: TProps) => {
   const blur = useMotionTemplate`${v} 0`;
   return (
     <>
-      {tier > 1 && !isMobile && (
+      {!isMobile && (
         <svg width='0' height='0'>
           <filter
             id={id}
@@ -58,7 +57,7 @@ export const Filter = ({ motionX }: TProps) => {
             />
             <feDisplacementMap
               in2={`${id}-morph`}
-              in="SourceGraphic"
+              in='SourceGraphic'
               scale={intensity}
               xChannelSelector='R'
               yChannelSelector='G'
