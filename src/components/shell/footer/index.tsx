@@ -5,14 +5,13 @@ import {
   FOOTER_TRANSITION_EXIT,
 } from '@constants/animation';
 import { useContext } from '@state/Context';
-import { useDetectGPU } from '@react-three/drei';
 import { Sound } from './Sound';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
+import { isMobile } from 'react-device-detect';
 
 const Root = styled(motion.footer)``;
 
 export const Footer = () => {
-  const { isMobile } = useDetectGPU();
   const { isInit } = useContext();
 
   const initAnimation = {

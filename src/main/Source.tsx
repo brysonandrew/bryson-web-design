@@ -2,7 +2,6 @@ import { Contact } from '@pages/contact';
 import { Index } from '@pages/index';
 import { Showcase } from '@pages/showcase';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { MOTH_ROUTES } from './moth';
 import { OstWip } from '@pages/ost-wip';
 import { AlbumCover } from '@pages/album-cover';
 import { Sample as SampleSongs } from '@pages/songs/sample';
@@ -34,22 +33,6 @@ export const Source = () => {
     ? [
         ...COMMON_ROUTES,
         {
-          path: '/songs',
-          element: <SampleSongs />,
-        },
-        {
-          path: '/hype',
-          element: <HypeSongs />,
-        },
-        {
-          path: '/ost-wip',
-          element: <OstWip />,
-        },
-        {
-          path: '/album-cover',
-          element: <AlbumCover />,
-        },
-        {
           path: '/card',
           element: <Card />,
         },
@@ -57,7 +40,6 @@ export const Source = () => {
           path: '/cv',
           element: <Cv />,
         },
-        ...MOTH_ROUTES,
       ]
     : [...COMMON_ROUTES];
   const element = useRoutes(ROUTES);
