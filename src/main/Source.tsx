@@ -2,10 +2,6 @@ import { Contact } from '@pages/contact';
 import { Index } from '@pages/index';
 import { Showcase } from '@pages/showcase';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { OstWip } from '@pages/ost-wip';
-import { AlbumCover } from '@pages/album-cover';
-import { Sample as SampleSongs } from '@pages/songs/sample';
-import { Hype as HypeSongs } from '@pages/songs/hype';
 import { Card } from '@pages/card';
 import { Cv } from '@pages/cv';
 
