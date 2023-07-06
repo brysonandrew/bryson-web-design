@@ -40,7 +40,7 @@ export const Images: FC<TProps> = ({
     <motion.div
       className='relative w-full'
       style={{
-        top: 40,
+        top: 0,
         height: HEIGHT,
         pointerEvents: isScroll ? 'none' : 'unset',
         filter,
