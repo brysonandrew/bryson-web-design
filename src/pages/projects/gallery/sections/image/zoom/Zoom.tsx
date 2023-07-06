@@ -54,6 +54,8 @@ export const Zoom: FC<TProps> = ({
 
   const rect = element.getBoundingClientRect();
 
+  
+
   const handleMove = ({ cx, cy }: TMoveConfig) => {
     if (
       cx > 0 &&
@@ -85,13 +87,9 @@ export const Zoom: FC<TProps> = ({
     onMove: handleMove,
     onClose: () => setCursorReady(false),
   };
-  const { ...rootProps } = useCursor({
-    ...sharedConfig,
-  });
+  const { ...rootProps } = useCursor(sharedConfig);
   const { scale, onJumpScale, onTuneScale, ...copyProps } =
-    useScale({
-      ...sharedConfig,
-    });
+    useScale(sharedConfig);
 
   useTapEvents({
     onJumpScale,
