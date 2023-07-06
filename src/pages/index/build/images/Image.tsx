@@ -1,13 +1,13 @@
 import type { HTMLMotionProps } from 'framer-motion';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveFilter } from './hooks/resolveFilter';
 import { useDepthStyle } from './hooks/useDepthStyle';
-import { Placeholder } from '@components/images/Placeholder';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
 import { TMediaRecord } from '@pages/showcase/config';
+import { Placeholder } from '@components/placeholder';
 
 type TProps = HTMLMotionProps<'img'> & {
   mediaRecord: TMediaRecord;
@@ -44,10 +44,20 @@ export const Image: FC<TProps> = ({
         zIndex: RANGE_Z,
       }}
     >
-      {!isLoaded && (
-        <Placeholder index={index} count={count} />
-      )}
-      <Picture mediaRecord={mediaRecord} {...props} />
+      <AnimatePresence>
+        {!isLoaded && (
+          <Placeholder
+            key='IMAGE_PLACEHOLDER'
+            classValue='origin-top scale-placeholder'
+          />
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial={false}
+        animate={{ opacity: isLoaded ? 1 : 0 }}
+      >
+        <Picture mediaRecord={mediaRecord} {...props} />
+      </motion.div>
     </motion.li>
   );
 };

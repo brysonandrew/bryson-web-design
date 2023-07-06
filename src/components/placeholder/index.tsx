@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { IMAGE_PLACEHOLDER_ID } from './constants';
+import { IMAGE_PLACEHOLDER_ID } from '../../pages/showcase/gallery/sections/constants';
 import { resolveUrlId } from '@utils/resolveUrlId';
-import COLORS from '@windi/config-colors.json';
+import { resolveGradientStops } from './resolveGradientStops';
+import clsx from 'clsx';
+import { TClassValueProps } from '@t/index';
 
 export const Root = styled(motion.div)``;
 
-export const Placeholder: FC = () => {
+type TProps = TClassValueProps;
+export const Placeholder: FC<TProps> = ({ classValue }) => {
   return (
     <Root
       className='relative flex items-center justify-center w-full h-full'
@@ -18,7 +21,7 @@ export const Placeholder: FC = () => {
       }}
     >
       <div
-        className='transform origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+        className={clsx('transform', classValue)}
         style={{
           width: 24,
           height: 24,
@@ -29,7 +32,10 @@ export const Placeholder: FC = () => {
           className='relative bg-teal-bright-01 h-full'
           style={{
             width: '300%',
-            backgroundImage: `linear-gradient(to right, transparent 0%, ${COLORS['teal-bright-02']} 33%, transparent 66.67%, ${COLORS['teal-bright-02']} 100%)`,
+            backgroundImage: `linear-gradient(to right, ${resolveGradientStops(
+              4,
+              ['teal-bright-04', 'transparent'],
+            )})`,
           }}
           {...{
             animate: {

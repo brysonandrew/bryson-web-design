@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { type FC, useRef } from 'react';
 import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
-import { Placeholder } from '../Placeholder';
+import { Placeholder } from '../../../../../components/placeholder';
 import { useLoadImage } from './useLoadImage';
 import { TBaseProps } from '../../types';
 import { Control } from './Control';
@@ -49,7 +49,10 @@ export const Image: FC<TProps> = ({
       />
       <AnimatePresence>
         {!isLoaded && (
-          <Placeholder key='IMAGE_PLACEHOLDER' />
+          <Placeholder
+            key='IMAGE_PLACEHOLDER'
+            classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+          />
         )}
       </AnimatePresence>
     </Control>
