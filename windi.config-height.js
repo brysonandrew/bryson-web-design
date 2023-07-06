@@ -6,5 +6,5 @@ module.exports = {
   },
   maxHeight: {
     "half-screen": "50vh",
-  },
+  }
 };

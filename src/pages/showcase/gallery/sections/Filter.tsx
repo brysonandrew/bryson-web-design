@@ -10,7 +10,6 @@ import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
 } from './constants';
-import { useContext } from '@state/Context';
 
 const id = MOTION_BLUR_ID;
 const intensity = MOTION_BLUR_INTENSITY;

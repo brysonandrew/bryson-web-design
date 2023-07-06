@@ -34,7 +34,7 @@ export const Image: FC<TProps> = ({ item, width }) => {
         src={src}
         alt={key}
         style={{
-          opacity: isLoaded ? 1 : 0.5,
+          opacity: isLoaded ? 1 : 0,
           x: '-50%',
           y: '-50%',
           ...(isTransitioningGallery

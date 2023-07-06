@@ -21,11 +21,11 @@
     "lg": "684px",
     "xl": "806px",
     "xxl": "900px",
-    "core-xs": "375px",
-    "core-sm": "480px",
-    "core-md": "768px",
-    "core-lg": "900px",
-    "core-xl": "1100px",
+    "core_xs": "375px",
+    "core_sm": "480px",
+    "core_md": "768px",
+    "core_lg": "900px",
+    "core_xl": "1100px",
     "left-menu": "280px"
   }
 }

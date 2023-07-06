@@ -68,10 +68,14 @@ export const Gallery: FC<TProps> = ({ selectedPath }) => {
               }
               slug={selectedPath}
             />
-            <Background />
             {isResizing ? null : (
               <>
-                {isReady && <Sections {...galleryProps} />}
+                {isReady && (
+                  <>
+                    <Background />
+                    <Sections {...galleryProps} />
+                  </>
+                )}
                 <Footer {...galleryProps} />
                 {isReady && (
                   <Arrows max={galleryProps.count} />
