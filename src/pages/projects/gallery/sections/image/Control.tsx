@@ -6,6 +6,7 @@ import { Zoom } from './zoom/Zoom';
 import { TBaseProps } from '../../types';
 import { TChildren } from '@t/index';
 import { useWindowSize } from '@hooks/useWindowSize';
+import { useContext } from '@state/Context';
 
 export const Root = styled(motion.div)``;
 
@@ -22,6 +23,7 @@ export const Control: FC<TProps> = ({
   width,
   children,
 }) => {
+  const { scrollX, scrollY } = useContext();
   const [isHover, setHover] = useState(false);
   const windowSize = useWindowSize();
   const isResizing = windowSize?.isResizing;
@@ -69,6 +71,7 @@ export const Control: FC<TProps> = ({
           element={element}
           image={image}
           mediaRecord={mediaRecord}
+          {...{ scrollX, scrollY }}
         />
       )}
     </motion.div>
