@@ -1,5 +1,3 @@
-import clsx from "clsx";
-import { isSafari } from "react-device-detect";
 
 export const HEADER_OFFSET_Y = 240;
 
@@ -29,25 +27,27 @@ export const resolveShadow = (spread: number, color: TColorRgbKey = "white") => 
 
 export const TEAL_GLOW_ANIMATE_TRANSITION = { ease: "easeIn", duration: 0.28, delay: 0.08 };
 export const TEAL_GLOW_HOVER_TRANSITION = { ease: "linear", duration: 0.2, delay: 0 };
+export const GLOW_BOX_SHADOW = "shadow-teal-02-sm";
 
-export const PARENT_HOVER_GLOW_PROPS = {
-  initial: "initial",
+export const PARENT_GLOW_PROPS = {
+  initial: false,
   animate: "animate",
   whileHover: "hover",
   exit: "exit",
 };
 
-export type TTealGlowConfigOptions = {
-  outerGlow: number;
-  textGlow: number;
+export type TGlowConfigOptions = {
+  text?: number;
+  drop?: number;
   color?: TColorRgbKey;
 };
-export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TTealGlowConfigOptions) => ({
+export type TPartialGlowConfigOptions = Partial<TGlowConfigOptions>;
+export const resolveGlowProps = ({ text = 0, drop = 0, color = "teal" }: TGlowConfigOptions) => ({
   variants: {
     animate: {
       opacity: 0,
-      filter: resolveDropShadow(outerGlow, color),
-      textShadow: resolveShadow(textGlow, color),
+      textShadow: resolveShadow(text, color),
+      filter: resolveDropShadow(drop, color),
       transition: TEAL_GLOW_ANIMATE_TRANSITION
     },
     hover: {
@@ -56,19 +56,6 @@ export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TTealGlowC
     },
   }
 });
-
-export const TEAL_GLOW_BOX_SHADOW = "shadow-teal-02-sm";
-export type TPartialTealGlowConfigOptions = Partial<TTealGlowConfigOptions>;
-export type TTealGlowConfig = {
-  classValue?: string, partial?: TPartialTealGlowConfigOptions;
-};
-export const resolveTealGlow = (config: TTealGlowConfig = {}) => {
-  const { classValue, partial } = config;
-  return {
-    className: clsx([!isSafari && TEAL_GLOW_BOX_SHADOW], classValue),
-    ...resolveHoverGlowProps({ outerGlow: 2, textGlow: 2, color: "teal", ...partial })
-  };
-};
 
 export const TEAL_GLOW = {
   variants: {

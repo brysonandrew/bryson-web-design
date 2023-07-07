@@ -12,7 +12,8 @@ import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@pages/projects/gallery/hooks/useMediaFromKey';
-import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { Box } from '@components/glow/Box';
 
 const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
@@ -28,10 +29,7 @@ export const Item: FC<TProps> = ({ slug }) => {
     handleLoadMedia(slug);
   };
   return (
-    <Root
-      onMouseEnter={handleMouseEnter}
-      {...PARENT_HOVER_GLOW_PROPS}
-    >
+    <Root onMouseEnter={handleMouseEnter}>
       <InternalLink
         to={
           item.altTo
@@ -39,6 +37,7 @@ export const Item: FC<TProps> = ({ slug }) => {
             : `${pathname}?${SOURCE_KEY}=${slug}&${NAME_KEY}=${1}`
         }
         onTap={handleOnSound}
+        {...PARENT_GLOW_PROPS}
       >
         <Content {...item}>
           <Time time={item.time} />

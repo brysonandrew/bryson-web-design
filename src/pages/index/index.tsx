@@ -32,7 +32,7 @@ export const Index = () => {
             <>
               <Space16 />
               <Ending />
-              <Space16 /> 
+              <Space16 />
             </>
           ) : (
             <>

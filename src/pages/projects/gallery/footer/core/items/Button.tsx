@@ -73,6 +73,7 @@ export const Button: FC<TProps> = ({
         initial='idle'
         animate={animation}
         whileHover={isActive ? 'active' : 'hover'}
+        whileTap='tap'
       >
         {isActive && (
           <motion.div
@@ -107,7 +108,7 @@ export const Button: FC<TProps> = ({
             active: {
               opacity: 1,
               zIndex: 9999,
-              cursor: 'pointer',
+              cursor: 'default',
               color: COLORS['teal-bright'],
               textShadow: resolveShadow(2, 'teal'),
             },
@@ -117,6 +118,13 @@ export const Button: FC<TProps> = ({
               cursor: 'pointer',
               color: COLORS['white'],
               textShadow: resolveShadow(2, 'white'),
+            },
+            tap: {
+              opacity: 1,
+              zIndex: 1,
+              cursor: 'pointer',
+              color: COLORS['teal-bright'],
+              textShadow: resolveShadow(4, 'teal-bright'),
             },
           }}
         >
