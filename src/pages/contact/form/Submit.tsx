@@ -8,7 +8,8 @@ import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
 import { Glow } from '@components/glow';
 import {
-  PARENT_HOVER_GLOW_PROPS,
+  GLOW_BOX_SHADOW,
+  PARENT_GLOW_PROPS,
   TEAL_GLOW_ANIMATE_TRANSITION,
   TEAL_GLOW_HOVER_TRANSITION,
 } from '@constants/colors';
@@ -32,16 +33,21 @@ export const Submit: FC = () => {
 
   return (
     <Root
-      className={clsx('relative p-0.5 flex w-full', [
-        isDisabled
-          ? 'cursor-not-allowed'
-          : 'cursor-pointer',
-      ])}
+      className={clsx(
+        'relative p-0.5 flex w-full',
+        GLOW_BOX_SHADOW,
+        [
+          isDisabled
+            ? 'cursor-not-allowed'
+            : 'cursor-pointer',
+        ],
+      )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...PARENT_HOVER_GLOW_PROPS}
+      {...PARENT_GLOW_PROPS}
     >
-      <Glow />
-      <Metal classValue='pointer-events-none' />
+      <Glow drop={2}>
+        <Metal classValue='pointer-events-none' />
+      </Glow>
       <Decoration
         className={clsx(
           'relative w-full pointer-events-none',

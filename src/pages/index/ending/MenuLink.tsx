@@ -3,14 +3,15 @@ import {
   motion,
   type HTMLMotionProps,
 } from 'framer-motion';
-import { Metal } from '@components/metal';
 import { Link as _Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
-import { INTERACTIVE_PROPS } from './constants';
-import { TextXl } from '@components/text/TextXl';
-import { Glow } from '@components/glow';
-import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
+import {
+  GLOW_BOX_SHADOW,
+  PARENT_GLOW_PROPS,
+} from '@constants/colors';
+import clsx from 'clsx';
+import { Inner } from './Inner';
 
 const Root = styled(motion.div)``;
 
@@ -27,14 +28,12 @@ export const MenuLink: FC<TProps> = ({
 }) => {
   return (
     <Root
-      {...props}
       style={{ x: '12px' }}
-      {...PARENT_HOVER_GLOW_PROPS}
+      {...PARENT_GLOW_PROPS}
+      {...props}
     >
-      <Link to={to} {...INTERACTIVE_PROPS}>
-        <Glow />
-        <Metal />
-        <TextXl>{children}</TextXl>
+      <Link className={clsx("flex", GLOW_BOX_SHADOW)} to={to}>
+        <Inner>{children}</Inner>
       </Link>
     </Root>
   );

@@ -1,39 +1,37 @@
 import {
-  TEAL_GLOW_BOX_SHADOW,
-  TPartialTealGlowConfigOptions,
-  resolveTealGlow,
+  TPartialGlowConfigOptions,
+  resolveGlowProps,
 } from '@constants/colors';
 import styled from '@emotion/styled';
-import { TClassValueProps } from '@t/index';
+import { TChildren, TClassValueProps } from '@t/index';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
-const SHARED_CLASS = 'absolute inset-0';
+const Effect = styled(motion.div)``;
 
-const Root = styled(motion.div)``;
-const Core = styled(motion.div)``;
-
-type TProps = TPartialTealGlowConfigOptions &
-  TClassValueProps;
+type TProps = TPartialGlowConfigOptions &
+  TClassValueProps & {
+    children?: TChildren;
+  };
 export const Glow: FC<TProps> = ({
   classValue,
-  ...partial
+  children,
+  ...options
 }) => {
   return (
-    <Root
-      className={clsx(
-        TEAL_GLOW_BOX_SHADOW,
-        SHARED_CLASS,
-        classValue,
+    <>
+      {children && (
+        <>
+          {children}
+          <Effect
+            className={clsx('absolute inset-0', classValue)}
+            {...resolveGlowProps(options)}
+          >
+            {children}
+          </Effect>
+        </>
       )}
-    >
-      <Core
-        {...resolveTealGlow({
-          classValue: clsx(SHARED_CLASS, classValue),
-          partial,
-        })}
-      />
-    </Root>
+    </>
   );
 };

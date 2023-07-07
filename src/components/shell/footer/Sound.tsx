@@ -2,7 +2,10 @@ import { Glow } from '@components/glow';
 import { VolumeOff } from '@components/icons/VolumeOff';
 import { VolumeOn } from '@components/icons/VolumeOn';
 import { Metal } from '@components/metal';
-import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
+import {
+  GLOW_BOX_SHADOW,
+  PARENT_GLOW_PROPS,
+} from '@constants/colors';
 import styled from '@emotion/styled';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
@@ -24,13 +27,15 @@ export const Sound = () => {
   return (
     <Root
       className={clsx(
-        'absolute bottom-4 right-4 z-50',
+        'absolute bottom-4 right-4 p-0.25 z-50',
         SHARED_CLASS,
+        GLOW_BOX_SHADOW,
       )}
-      {...PARENT_HOVER_GLOW_PROPS}
+      {...PARENT_GLOW_PROPS}
     >
-      <Glow classValue={SHARED_CLASS} />
-      <Metal classValue={SHARED_CLASS} />
+      <Glow classValue={SHARED_CLASS} drop={0.5}>
+        <Metal classValue={SHARED_CLASS} />
+      </Glow>
       <Button
         aria-label='sound'
         className='relative p-3 cursor-pointer text-baby-blue'

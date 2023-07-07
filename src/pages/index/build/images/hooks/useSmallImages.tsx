@@ -10,20 +10,26 @@ export const useSmallImages = () => {
   const isResizing = windowSize?.isResizing;
   const countRequired = Math.min(
     MAX_COUNT,
-    ~~((windowSize?.width ?? 0) / 100),
+    ~~((windowSize?.width ?? 0) / 100) + 3,
   );
-  const { dispatch } = useContext();
+  const {
+    images: { length: count },
+    dispatch,
+  } = useContext();
 
   useEffect(() => {
-    if (!isResizing && countRequired > 0) {
+    if (
+      !isResizing &&
+      countRequired > 0 &&
+      count !== countRequired
+    ) {
       const init = async () => {
         const value = await resolveRandomMediaRecord(
           countRequired,
         );
-
         dispatch({ type: 'images', value });
       };
       init();
     }
-  }, [isResizing, countRequired]);
+  }, [isResizing, countRequired, count]);
 };

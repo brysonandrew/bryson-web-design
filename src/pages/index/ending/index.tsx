@@ -7,6 +7,7 @@ import { type FC } from 'react';
 import { Contact } from './Contact';
 import { Projects } from './Projects';
 import { Home } from './Home';
+import { Space } from '@components/spaces/Space';
 
 const Root = styled(motion.div)``;
 
@@ -18,11 +19,12 @@ export const Ending: FC<TProps> = () => (
       style={{ x: '50%' }}
     >
       <div
-        className='absolute'
-        style={{ left: -2, width: 16, height: 720 }}
+        className='absolute z-50'
+        style={{ left: -2, width: 16, height: 740 }}
       >
         <Metal />
       </div>
+      <Space />
       <Contact />
       <Space2 />
       <Projects />

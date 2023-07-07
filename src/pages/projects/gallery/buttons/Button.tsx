@@ -7,7 +7,11 @@ import clsx from 'clsx';
 import { TBaseIconProps } from '@t/icons';
 import { TClassValueProps } from '@t/index';
 import { Glow } from '@components/glow';
-import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
+import {
+  GLOW_BOX_SHADOW,
+  PARENT_GLOW_PROPS,
+} from '@constants/colors';
+import { Box } from '@components/glow/Box';
 
 const Link = styled(motion(_Link))``;
 
@@ -25,14 +29,20 @@ export const Button: FC<TButtonProps> = ({
     <div className={clsx(classValue)}>
       <Link
         className={clsx(
-          'relative flex items-center justify-center p-0.5 cursor-pointer z-10',
+          'relative flex items-center justify-center cursor-pointer z-10',
+          GLOW_BOX_SHADOW,
         )}
-        {...PARENT_HOVER_GLOW_PROPS}
+        {...PARENT_GLOW_PROPS}
         {...props}
       >
-        <Glow />
-        <Metal />
-        <Icon classValue='relative w-9 h-9' />
+        <Glow drop={2}>
+          <Metal />
+        </Glow>
+        <Glow drop={4} color='white'>
+          <Box classValue='p-0.5'>
+            <Icon classValue='relative w-9 h-9' />
+          </Box>
+        </Glow>
       </Link>
     </div>
   );

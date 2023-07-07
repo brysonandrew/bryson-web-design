@@ -10,6 +10,8 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import { Mark } from './Mark';
 import { DELAY_VISIBILITY } from '@constants/animation';
 import { Glow } from '@components/glow';
+import { GLOW_BOX_SHADOW } from '@constants/colors';
+import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 
@@ -22,24 +24,35 @@ export const Content: FC<TProps> = ({
   isHeader,
   children,
   ...props
-}) => (
-  <Root
-    layoutId={resolveTitleLayoutId(slug)}
-    className='relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20'
-    {...props}
-  >
-    <MetalDark key='FillDark' />
-    {!isHeader && <Glow />}
-    <Mark />
-    <motion.div
-      className='flex items-center justify-between'
-      {...DELAY_VISIBILITY}
+}) => {
+  const metal = <MetalDark key='FillDark' />;
+  return (
+    <Root
+      layoutId={resolveTitleLayoutId(slug)}
+      className={clsx(
+        'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20',
+        [!isHeader && GLOW_BOX_SHADOW],
+      )}
+      {...props}
     >
-      <div className='flex items-center'>
-        <Header slug={slug} />
-      </div>
-      <div className='p-2' />
-      <>{children}</>
-    </motion.div>
-  </Root>
-);
+      {isHeader ? (
+        metal
+      ) : (
+        <Glow text={1} drop={2} color='teal'>
+          {metal}
+        </Glow>
+      )}
+      <Mark />
+      <motion.div
+        className='flex items-center justify-between'
+        {...DELAY_VISIBILITY}
+      >
+        <div className='flex items-center'>
+          <Header slug={slug} />
+        </div>
+        <div className='p-2' />
+        <>{children}</>
+      </motion.div>
+    </Root>
+  );
+};
