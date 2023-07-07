@@ -7,15 +7,9 @@ import {
 import { MetalDark } from '@components/metal/MetalDark';
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
-import clsx from 'clsx';
 import { Mark } from './Mark';
-import {
-  resolveTealGlow,
-} from '@constants/colors';
 import { DELAY_VISIBILITY } from '@constants/animation';
-
-const CLASSNAME =
-  'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20';
+import { Glow } from '@components/glow';
 
 const Root = styled(motion.div)``;
 
@@ -31,15 +25,11 @@ export const Content: FC<TProps> = ({
 }) => (
   <Root
     layoutId={resolveTitleLayoutId(slug)}
-    {...(isHeader
-      ? { className: CLASSNAME }
-      : resolveTealGlow({
-          partial: { outerGlow: 0 },
-          classValue: clsx(CLASSNAME),
-        }))}
+    className='relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20'
     {...props}
   >
     <MetalDark key='FillDark' />
+    {!isHeader && <Glow />}
     <Mark />
     <motion.div
       className='flex items-center justify-between'

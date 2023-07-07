@@ -27,37 +27,40 @@ export const resolveTealBright = (opacity: number) => resolveColor("teal-bright"
 export const resolveDropShadow = (spread: number, color: TColorRgbKey = "white") => `drop-shadow(0px 0px ${spread}px ${resolveColor(color, 0.8)})`;
 export const resolveShadow = (spread: number, color: TColorRgbKey = "white") => `0px 0px ${spread}px ${resolveWhite(0.5)}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
-type TConfig = {
-  outerGlow: number;
-  textGlow: number;
-  color?: TColorRgbKey;
-};
-export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TConfig) => ({
+export const TEAL_GLOW_ANIMATE_TRANSITION = { ease: "easeIn", duration: 0.28, delay: 0.08 };
+export const TEAL_GLOW_HOVER_TRANSITION = { ease: "linear", duration: 0.2, delay: 0 };
+
+export const PARENT_HOVER_GLOW_PROPS = {
   initial: "initial",
   animate: "animate",
   whileHover: "hover",
   exit: "exit",
+};
+
+export type TTealGlowConfigOptions = {
+  outerGlow: number;
+  textGlow: number;
+  color?: TColorRgbKey;
+};
+export const resolveHoverGlowProps = ({ outerGlow, textGlow, color }: TTealGlowConfigOptions) => ({
   variants: {
     animate: {
-      ...(isSafari ? {} : {
-        filter: resolveDropShadow(0),
-        textShadow: resolveShadow(0),
-      }),
-      transition: { ease: "easeIn", duration: 0.28, delay: 0.08 },
+      opacity: 0,
+      filter: resolveDropShadow(outerGlow, color),
+      textShadow: resolveShadow(textGlow, color),
+      transition: TEAL_GLOW_ANIMATE_TRANSITION
     },
     hover: {
-      ...(isSafari ? {} : {
-        filter: resolveDropShadow(outerGlow, color),
-        textShadow: resolveShadow(textGlow, color),
-      }),
-      transition: { ease: "linear", duration: 0.2, delay: 0 },
+      opacity: 1,
+      transition: TEAL_GLOW_HOVER_TRANSITION
     },
   }
 });
 
 export const TEAL_GLOW_BOX_SHADOW = "shadow-teal-02-sm";
-type TTealGlowConfig = {
-  classValue?: string, partial?: Partial<TConfig>;
+export type TPartialTealGlowConfigOptions = Partial<TTealGlowConfigOptions>;
+export type TTealGlowConfig = {
+  classValue?: string, partial?: TPartialTealGlowConfigOptions;
 };
 export const resolveTealGlow = (config: TTealGlowConfig = {}) => {
   const { classValue, partial } = config;

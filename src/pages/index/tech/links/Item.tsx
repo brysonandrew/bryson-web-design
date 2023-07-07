@@ -6,8 +6,9 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Metal } from '@components/metal';
-import { resolveTealGlow } from '@constants/colors';
 import { TextXl2 } from '@components/text/TextXl2';
+import { Glow } from '@components/glow';
+import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
 
 const Root = styled(motion.div)``;
 
@@ -20,18 +21,15 @@ export const Item: FC<TItem> = ({
   ...props
 }) => {
   const { handlers, isSelected } = useSelectHandlers(title);
-  const rootPropsWithTealGlow = resolveTealGlow({
-    classValue: clsx(
-      'inline-flex relative',
-    ),
-  });
   return (
     <Root
-      {...rootPropsWithTealGlow}
+      className={clsx('inline-flex relative')}
+      {...PARENT_HOVER_GLOW_PROPS}
       {...handlers}
       {...props}
     >
       {isSelected && <Select layoutId={title} />}
+      <Glow />
       <Anchor
         className={clsx(
           'relative px-4 py-2 lg:py-3 lg:px-5 xl:py-4 xl:px-6',
