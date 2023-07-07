@@ -9,7 +9,7 @@ type TConfig = {
 export const useScrollBounds = ({ rectConfig }: TConfig) => {
   const { scrollY } = useContext();
   const windowSize = useWindowSize();
-  const top = rectConfig.rect?.top ?? 0;
+  const top = rectConfig.rect.top ?? 0;
   const windowHeight = windowSize?.height ?? 0;
 
   const startScroll = useMemo(() => {

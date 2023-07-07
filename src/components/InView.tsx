@@ -11,10 +11,13 @@ import {
 } from 'react';
 type TInViewParameters = Parameters<typeof useInView>;
 type TInViewOptions = TInViewParameters[1];
+export type TRect =
+  | DOMRect
+  | Pick<DOMRect, 'height' | 'top'>;
 
 type TType = keyof ReactHTML;
 export type TUpdateRectProps = {
-  rect: DOMRect | null;
+  rect: TRect;
   onUpdateRect(): void;
 };
 type TChildrenProps<T> = TUpdateRectProps & {
@@ -36,7 +39,10 @@ export const InView = <T extends HTMLElement>({
   ...props
 }: TProps<T>) => {
   const ref = useRef<T | null>(null);
-  const [rect, setRect] = useState<DOMRect | null>(null);
+  const [rect, setRect] = useState<TRect>({
+    height: 1000,
+    top: 1000,
+  });
 
   const onUpdateRect = () => {
     if (ref.current) {

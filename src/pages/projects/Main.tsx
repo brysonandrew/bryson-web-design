@@ -33,7 +33,6 @@ export const Main: FC<TProps> = ({ style }) => {
         items={APP_ITEMS}
         currSource={currSource}
       />
-      <Space16 />
       {isSelectedItem && (
         <Gallery currSource={currSource} />
       )}

@@ -1,20 +1,23 @@
 
+import { useTimeoutRef } from '@hooks/useTimeoutRef';
 import { useContext } from '@state/Context';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export const useScrollToTop = () => {
+const INIT_Y = 0;
+
+export const useScrollToTop = (handleUpdate: (value: number) => void) => {
   const { pathname } = useLocation();
-  const { isInit, scrollX, scrollY, dispatch } = useContext();
-
-
+  const { scrollX, scrollY } = useContext();
+  const { timeoutRef } = useTimeoutRef();
   useEffect(() => {
     const setY = () => {
-      scrollX.set(0);
-      scrollY.set(0);
-      window.scrollTo(0, 0);
-      dispatch({ type: 'scroll-start', value: false });
+      scrollX.set(INIT_Y);
+      scrollY.set(INIT_Y);
+      window.scrollTo(0, INIT_Y);
+      document.documentElement.scrollTop = INIT_Y;
+      handleUpdate(INIT_Y);
     };
-    setY();
-  }, [isInit, pathname]);
+    timeoutRef.current = setTimeout(setY);
+  }, [pathname]);
 };

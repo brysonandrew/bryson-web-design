@@ -15,7 +15,6 @@ import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
 import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
-import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 
 type TProps = {
@@ -25,7 +24,6 @@ export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, dispatch } = useContext();
   useHtmlTitle();
   useScrollControl();
-  useScrollToTop();
   const handleAnimationComplete = () =>
     dispatch({ type: 'init', value: null });
 

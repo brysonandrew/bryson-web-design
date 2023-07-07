@@ -48,9 +48,9 @@ export const useForm = ({ element }: TConfig) => {
       Element
     >,
   ) => {
-    const y = scrollY.get();
-    window.scrollTo(scrollX.get(), y);
-    document.body.scrollTop = y;
+    // const y = scrollY.get();
+    // window.scrollTo(scrollX.get(), y);
+    // document.body.scrollTop = y;
     const target = event.currentTarget;
     if (!target) return;
     updateFocus(target.name as TFormKey);
