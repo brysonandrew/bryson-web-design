@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import type { TMediaRecord } from '@pages/projects/config';
 import { motion } from 'framer-motion';
-import { useState, type FC, useRef, useMemo } from 'react';
+import { type FC, useRef, useMemo } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '../../types';
 import { TChildren } from '@t/index';
 import { useWindowSize } from '@hooks/useWindowSize';
 import { useContext } from '@state/Context';
+import { isDesktop } from 'react-device-detect';
+import { useHover } from '@hooks/useHover';
 
 export const Root = styled(motion.div)``;
 
@@ -23,8 +25,8 @@ export const Control: FC<TProps> = ({
   width,
   children,
 }) => {
+  const { isHover, ...hoverHandlers } = useHover();
   const { scrollX, scrollY } = useContext();
-  const [isHover, setHover] = useState(false);
   const windowSize = useWindowSize();
   const isResizing = windowSize?.isResizing;
   const ref = useRef<HTMLDivElement | null>(null);
@@ -52,20 +54,20 @@ export const Control: FC<TProps> = ({
     return { width: imageWidth, height: imageHeight };
   }, [element, image, isResizing, isHover]);
 
-  const handleMouseEnter = () => setHover(true);
-  const handleMouseLeave = () => setHover(false);
-
   return (
     <motion.div
       ref={ref}
       className='relative'
       style={{ width: width.footer }}
-      onPointerDown={(e) => e.preventDefault()}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      {...(isDesktop
+        ? {
+            ...hoverHandlers,
+            onPointerDown: (e) => e.preventDefault(),
+          }
+        : {})}
     >
       {children(dimensions)}
-      {isHover && image && element && (
+      {isHover && image && element && isDesktop && (
         <Zoom
           key={mediaRecord.png.key}
           element={element}
