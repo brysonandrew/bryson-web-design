@@ -36,13 +36,13 @@ type TProps = TImageProps & {
   scrollX: MotionValue;
   scrollY: MotionValue;
   mediaRecord: TMediaRecord;
-  element: HTMLDivElement;
+  container: HTMLDivElement;
 };
 export const Zoom: FC<TProps> = ({
   scrollX,
   scrollY,
   mediaRecord,
-  element,
+  container,
   image,
 }) => {
   const [isCursorReady, setCursorReady] = useState(false);
@@ -57,7 +57,7 @@ export const Zoom: FC<TProps> = ({
   const imageX = imageRect.x;
   const imageY = imageRect.y;
 
-  const rect = element.getBoundingClientRect();
+  const rect = container.getBoundingClientRect();
 
   const handleMove = ({ cx, cy }: TMoveConfig) => {
     if (
@@ -84,7 +84,7 @@ export const Zoom: FC<TProps> = ({
     imageY,
     imageWidth,
     imageHeight,
-    element,
+    container,
     rect,
     cursorX,
     cursorY,

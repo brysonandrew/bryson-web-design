@@ -23,7 +23,7 @@ export type TSharedConfig = TImageProps & {
   imageY: number;
   imageWidth: number;
   imageHeight: number;
-  element: HTMLDivElement;
+  container: HTMLDivElement;
   rect: DOMRect;
   cursorX: MotionValue;
   cursorY: MotionValue;
