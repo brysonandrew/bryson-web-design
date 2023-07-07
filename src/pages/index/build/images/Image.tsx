@@ -8,8 +8,10 @@ import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
 import { TMediaRecord } from '@pages/projects/config';
 import { Placeholder } from '@components/placeholder';
+import { useImageDimensions } from '@hooks/media/useImageDimensions';
+import { resolveDimensions } from '@hooks/media/resolveDimensions';
 
-const IMAGE_WIDTH = 240;
+const IMAGE_SIZE = 320;
 
 type TProps = HTMLMotionProps<'img'> & {
   mediaRecord: TMediaRecord;
@@ -24,17 +26,21 @@ export const Image: FC<TProps> = ({
   isLoaded,
   ...props
 }) => {
+  const imageRef = useRef<HTMLImageElement | null>(null);
+
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
-  const imageRef = useRef<HTMLImageElement | null>(null);
   const image = imageRef.current;
+  const dimensions = useImageDimensions({
+    container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
+    image: resolveDimensions(image),
+  });
 
   return (
     <motion.li
       className='absolute overflow-hidden'
       style={{
         cursor: 'zoom-in',
-        maxHeight: IMAGE_WIDTH,
         ...xStyle,
         ...depthStyle,
       }}
@@ -60,13 +66,9 @@ export const Image: FC<TProps> = ({
         animate={{ opacity: isLoaded ? 1 : 0 }}
       >
         <Picture
-          width={`${IMAGE_WIDTH}px`}
-          height={`${~~(image
-            ? image.naturalHeight /
-              (image.naturalWidth / IMAGE_WIDTH)
-            : 0)}px`}
           imageRef={imageRef}
           mediaRecord={mediaRecord}
+          {...dimensions}
           {...props}
         />
       </motion.div>

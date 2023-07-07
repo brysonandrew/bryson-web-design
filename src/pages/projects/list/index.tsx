@@ -13,18 +13,15 @@ type TProps = {
   currSource: TAppItemKey | null;
   items: TItem[];
 };
-export const List: FC<TProps> = ({
-  items,
-  currSource,
-}) => (
+export const List: FC<TProps> = ({ items, currSource }) => (
   <Root className='mt-1'>
-    {items.map(({slug}: TItem, index: number) => {
+    {items.map(({ slug }: TItem, index: number) => {
       const itemKey = slug;
       const isSelected = currSource === slug;
       if (isSelected) return null;
       return (
         <Fragment key={itemKey}>
-          {index !== 0 && <Space2 />}
+          {index !== 0 && <Space2 element='li' />}
           <Item slug={itemKey} />
         </Fragment>
       );

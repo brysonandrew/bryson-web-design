@@ -7,7 +7,7 @@ import type { FC } from 'react';
 
 const Root = styled(motion.h5)``;
 
-type TProps = HTMLMotionProps<'h5'> & {
+type TProps = HTMLMotionProps<'h6'> & {
   classValue?: ClassValue;
 };
 export const TextXl2: FC<TProps> = ({
