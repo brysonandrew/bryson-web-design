@@ -43,7 +43,7 @@ export const Textarea: FC<TProps> = ({
           value={value}
           autoFocus={isFocused}
           disabled={disabled}
-          {...props}
+          {...props} 
         />
       </div>
     </Box>

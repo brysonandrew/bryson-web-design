@@ -15,13 +15,13 @@ export const FAKE_3D_PROPS: TOptionsConfig = {
     ],
     output: [-60, -280],
   },
-  visibility: {
-    input: ({ startScroll }) => [
-      startScroll,
-      startScroll + MAX_SCROLL,
-    ],
-    blur: [0, 4],
-    grayscale: [0, 100],
-    opacity: [1, 0.4],
-  },
+  // visibility: {
+  //   input: ({ startScroll }) => [
+  //     startScroll,
+  //     startScroll + MAX_SCROLL,
+  //   ],
+  //   blur: [0, 4],
+  //   grayscale: [0, 100],
+  //   opacity: [1, 0.4],
+  // },
 };

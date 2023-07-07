@@ -8,7 +8,9 @@ import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './Box';
 
-const Input = styled(motion.input)``;
+const Input = styled(motion.input)`
+  color: rgb(153, 204, 255) !important;
+`;
 
 type TProps = HTMLMotionProps<'input'> & TBaseInputProps;
 export const Text: FC<TProps> = ({

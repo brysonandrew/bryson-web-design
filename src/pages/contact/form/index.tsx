@@ -18,7 +18,7 @@ export const Form = () => {
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  useAutoFocus();
+  useAutoFocus(isDisabled);
 
   return (
     <Root
