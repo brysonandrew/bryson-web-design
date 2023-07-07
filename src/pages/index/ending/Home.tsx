@@ -17,7 +17,11 @@ export const Home: FC<TProps> = () => {
 
   return (
     <Root style={{ x: '-100%' }}>
-      <Button onTap={handleTap} {...INTERACTIVE_PROPS}>
+      <Button
+        aria-label='home'
+        onTap={handleTap}
+        {...INTERACTIVE_PROPS}
+      >
         <Metal />
         <TextXl>Home</TextXl>
       </Button>

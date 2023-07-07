@@ -28,6 +28,7 @@ export const Sound = () => {
     <Root {...rootPropsWithTealGlow}>
       <Metal classValue='rounded-full' />
       <Button
+        aria-label='sound'
         className='relative p-3 cursor-pointer text-baby-blue'
         onTap={handleTap}
       >
