@@ -1,6 +1,5 @@
 import {
   DEFAULT_EXT,
-  TMedia,
   TMediaRecord,
 } from '@pages/projects/config';
 import { FC } from 'react';

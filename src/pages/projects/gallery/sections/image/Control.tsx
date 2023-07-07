@@ -1,17 +1,20 @@
 import styled from '@emotion/styled';
-import type { TMedia, TMediaRecord } from '@pages/projects/config';
+import type { TMediaRecord } from '@pages/projects/config';
 import { motion } from 'framer-motion';
-import { useState, type FC, useRef } from 'react';
+import { useState, type FC, useRef, useMemo } from 'react';
 import { Zoom } from './zoom/Zoom';
 import { TBaseProps } from '../../types';
 import { TChildren } from '@t/index';
+import { useWindowSize } from '@hooks/useWindowSize';
 
 export const Root = styled(motion.div)``;
 
 type TProps = Pick<TBaseProps, 'width'> & {
   mediaRecord: TMediaRecord;
   image: HTMLImageElement | null;
-  children: TChildren;
+  children(
+    dimensions: Pick<HTMLImageElement, 'width' | 'height'>,
+  ): TChildren;
 };
 export const Control: FC<TProps> = ({
   mediaRecord,
@@ -20,8 +23,33 @@ export const Control: FC<TProps> = ({
   children,
 }) => {
   const [isHover, setHover] = useState(false);
+  const windowSize = useWindowSize();
+  const isResizing = windowSize?.isResizing;
   const ref = useRef<HTMLDivElement | null>(null);
   const element = ref.current;
+
+  const dimensions = useMemo(() => {
+    let imageHeight = 0;
+    let imageWidth = 0;
+
+    if (element && image && !isResizing) {
+      const rect = element.getBoundingClientRect();
+
+      const rectAspect = rect.width / rect.height;
+      const imageAspect =
+        image.naturalWidth / image.naturalHeight;
+
+      if (imageAspect > rectAspect) {
+        imageWidth = rect.width;
+        imageHeight = rect.width / imageAspect;
+      } else {
+        imageWidth = rect.width * imageAspect;
+        imageHeight = rect.height;
+      }
+    }
+    return { width: imageWidth, height: imageHeight };
+  }, [element, image, isResizing, isHover]);
+
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
 
@@ -34,7 +62,7 @@ export const Control: FC<TProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {children}
+      {children(dimensions)}
       {isHover && image && element && (
         <Zoom
           key={mediaRecord.png.key}

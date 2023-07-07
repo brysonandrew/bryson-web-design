@@ -51,6 +51,7 @@ export const List: FC<TProps> = ({
     >
       {isLong && (
         <Button
+          aria-label='close'
           className='absolute bottom-full right-2 text-white p-2 mb-6'
           initial={false}
           whileHover={{ opacity: 0.7 }}

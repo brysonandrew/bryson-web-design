@@ -10,7 +10,10 @@ import {
   resolveDropShadow,
   resolveShadow,
 } from '@constants/colors';
-import { DURATION_DELAY_TRANSITION, PRESENCE_OPACITY } from '@constants/animation';
+import {
+  DURATION_DELAY_TRANSITION,
+  PRESENCE_OPACITY,
+} from '@constants/animation';
 
 const Root = styled(motion.li)``;
 const Button = styled(motion.button)``;
@@ -51,6 +54,7 @@ export const Item: FC<TProps> = ({
     >
       <Button
         key='ITEM_BUTTON'
+        aria-label='item'
         className='relative flex items-center justify-center w-full md:w-core_md py-4'
         whileHover='hover'
         initial='initial'
@@ -68,7 +72,10 @@ export const Item: FC<TProps> = ({
         <Bar classValue='-left-1' {...barProps} />
         <AnimatePresence>
           {!isLong && (
-            <motion.div key="ITEM_SHORT" {...PRESENCE_OPACITY}>
+            <motion.div
+              key='ITEM_SHORT'
+              {...PRESENCE_OPACITY}
+            >
               <Metal />
               <motion.div
                 className='relative pointer-events-none z-10'

@@ -1,15 +1,12 @@
+
 import { useContext } from '@state/Context';
-import {
-  useScroll,
-  useMotionValueEvent,
-} from 'framer-motion';
+import { useMotionValueEvent } from 'framer-motion';
 
 export const SCROLL_START = 80;
 export const SCROLL = 120;
 
 export const useScrollControl = () => {
-  const { isScroll, isScrollStart, dispatch } = useContext();
-  const { scrollY } = useScroll();
+  const { isScroll, isScrollStart, scrollY, dispatch } = useContext();
 
   useMotionValueEvent(scrollY, 'change', (value) => {
     if (!isScrollStart && value > SCROLL_START) {

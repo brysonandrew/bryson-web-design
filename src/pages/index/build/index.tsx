@@ -11,7 +11,7 @@ export const Build: FC = () => {
       <Fake3D classValue='w-full' {...FAKE_3D_PROPS}>
         {(props) => <Images {...props} />}
       </Fake3D>
-    </Section>
+    </Section> 
   ); 
 };
    

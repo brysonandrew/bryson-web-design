@@ -1,4 +1,3 @@
-import { useScroll } from 'framer-motion';
 import { TUpdateRectProps } from '@components/InView';
 import { type FC, useRef } from 'react';
 import {
@@ -16,21 +15,14 @@ type TProps = TUpdateRectProps &
     children(props: TFake3DMotionChildrenProps): void;
   };
 export const Aggregator: FC<TProps> = ({
-  children,
   dispersion: dispersionRange,
   resistance: resistanceRange,
   visibility: visibilityRange,
+  children,
   ...rectConfig
 }) => {
-  const { scrollY } = useScroll();
   const styleRef = useRef<Partial<TStyleProps>>({});
-
-  const scrollBounds = useScrollBounds({ rectConfig });
-
-  const config = {
-    scrollY,
-    ...scrollBounds,
-  };
+  const config = useScrollBounds({ rectConfig });
 
   return (
     <>

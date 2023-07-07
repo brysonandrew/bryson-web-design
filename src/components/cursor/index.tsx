@@ -2,7 +2,6 @@ import type { FC } from "react";
 import {
   AnimatePresence,
   useMotionValue,
-  useScroll,
 } from "framer-motion";
 import { Square as Select } from "@components/select/Square";
 import { NOOP } from "@constants/functions";
@@ -25,10 +24,9 @@ export const Cursor: FC<TCursorProps> = ({
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  const { isCursorReady, selectId, dispatch } =
+  const { scrollX, scrollY, isCursorReady, selectId, dispatch } =
     useContext();
 
-  const { scrollX, scrollY } = useScroll();
 
   const toggleCursor = (isReady: boolean) => {
     dispatch({ type: "cursor-ready", value: isReady });

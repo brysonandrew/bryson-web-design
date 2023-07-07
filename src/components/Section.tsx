@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Title } from '@components/text/Title';
+import { Title } from '@components/text/title';
 import { TitleOffset } from '@components/spaces/TitleOffset';
 import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';

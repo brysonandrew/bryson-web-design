@@ -11,7 +11,7 @@ type TConfig = {
   element: HTMLFormElement | null;
 };
 export const useForm = ({ element }: TConfig) => {
-  const { contact, dispatch } = useContext();
+  const { contact, dispatch, scrollX, scrollY } = useContext();
   const current = { contact };
   const currentRef = useRef(current);
   currentRef.current = current;
@@ -25,7 +25,7 @@ export const useForm = ({ element }: TConfig) => {
     event.preventDefault();
 
     try {
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         element,
@@ -48,7 +48,9 @@ export const useForm = ({ element }: TConfig) => {
       Element
     >,
   ) => {
-    //setTimeout(() => window.scrollTo(0,100), 50)
+    const y = scrollY.get();
+    window.scrollTo(scrollX.get(), y);
+    document.body.scrollTop = y;
     const target = event.currentTarget;
     if (!target) return;
     updateFocus(target.name as TFormKey);

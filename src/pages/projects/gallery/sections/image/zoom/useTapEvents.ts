@@ -20,6 +20,7 @@ export const useTapEvents = ({
   onJumpScale,
   onTuneScale
 }: TConfig) => {
+  const imageRef = { current: image };
   const pinchRef = useRef({ isPinch: false, prevDelta: 0 });
 
   const handleTap = (event: MouseEvent | TouchEvent) => {
@@ -41,6 +42,7 @@ export const useTapEvents = ({
   const handleTouchStart = (event: TouchEvent) => {
     if (event.touches.length === 2) {
       pinchRef.current.isPinch = true;
+      event.preventDefault();
     }
   };
 
@@ -54,13 +56,14 @@ export const useTapEvents = ({
       const delta = distance - pinchRef.current.prevDelta;
       onTuneScale(delta);
       pinchRef.current.prevDelta = distance;
+      event.preventDefault();
     } else {
       onMove({ cx: x0, cy: y0 });
     }
   };
 
   const handleTouchEnd = (event: TouchEvent) => {
-    if (pinchRef.current) {
+    if (pinchRef.current.isPinch) {
       pinchRef.current.isPinch = false;
     }
     handleTap(event);
@@ -69,25 +72,25 @@ export const useTapEvents = ({
   useEventListener<'click', typeof image>(
     'click',
     handleTap,
-    { current: image },
+    imageRef,
   );
 
   useEventListener<'touchstart', typeof image>(
     'touchstart',
     handleTouchStart,
-    { current: image },
+    imageRef,
   );
 
   useEventListener<'touchmove', typeof image>(
     'touchmove',
     handleTouchMove,
-    { current: image },
+    imageRef,
   );
 
   useEventListener<'touchend', typeof image>(
     'touchend',
     handleTouchEnd,
-    { current: image },
+    imageRef,
   );
 
 };

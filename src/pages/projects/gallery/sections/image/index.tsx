@@ -36,27 +36,32 @@ export const Image: FC<TProps> = ({
       width={width}
       image={isLoaded ? image : null}
     >
-      <Picture
-        imageRef={ref}
-        mediaRecord={mediaRecord}
-        className='absolute left-1/2 top-1/2 max-w-full max-h-full'
-        style={{
-          opacity: isLoaded ? 1 : 0,
-          x: '-50%',
-          y: '-50%',
-          ...(isTransitioningGallery
-            ? { filter: resolveUrlId(MOTION_BLUR_ID) }
-            : {}),
-        }}
-      />
-      <AnimatePresence>
-        {!isLoaded && (
-          <Placeholder
-            key='IMAGE_PLACEHOLDER'
-            classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+      {(dimensions) => (
+        <>
+          <Picture
+            imageRef={ref}
+            mediaRecord={mediaRecord}
+            className='absolute left-1/2 top-1/2'
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              x: '-50%',
+              y: '-50%',
+              ...(isTransitioningGallery
+                ? { filter: resolveUrlId(MOTION_BLUR_ID) }
+                : {}),
+            }}
+            {...dimensions}
           />
-        )}
-      </AnimatePresence>
+          <AnimatePresence>
+            {!isLoaded && (
+              <Placeholder
+                key='IMAGE_PLACEHOLDER'
+                classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+              />
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </Control>
   );
 };

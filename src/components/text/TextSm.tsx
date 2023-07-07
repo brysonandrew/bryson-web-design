@@ -8,9 +8,9 @@ import type { FC } from 'react';
 export const TEXT_SM_CLASS =
   'text-left text-teal-bright text-xl md:text-2xl';
 
-const Root = styled(motion.h6)``;
+const Root = styled(motion.h5)``;
 
-type TProps = HTMLMotionProps<'h6'> & {
+type TProps = HTMLMotionProps<'h5'> & {
   classValue?: ClassValue;
 };
 export const TextSm: FC<TProps> = ({

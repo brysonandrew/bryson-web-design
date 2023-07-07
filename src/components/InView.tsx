@@ -52,6 +52,7 @@ export const InView = <T extends HTMLElement>({
     amount,
     once,
   });
+
   return createElement(
     type,
     { ref, ...props },

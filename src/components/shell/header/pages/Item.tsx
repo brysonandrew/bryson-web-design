@@ -22,9 +22,9 @@ export const Item: FC<TProp> = ({ to, children }) => {
         className='relative flex items-center justify-center pb-2'
         whileHover='hover'
       >
-        <h6 className='relative text-md uppercase text-baby-blue italic'>
+        <h2 className='relative text-md uppercase text-baby-blue italic'>
           {children}
-        </h6>
+        </h2>
         <ThinLine classValue='absolute bottom-1 left-0' />
       </Link>
     </Root>
