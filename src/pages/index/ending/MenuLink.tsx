@@ -9,6 +9,8 @@ import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import { INTERACTIVE_PROPS } from './constants';
 import { TextXl } from '@components/text/TextXl';
+import { Glow } from '@components/glow';
+import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
 
 const Root = styled(motion.div)``;
 
@@ -24,9 +26,14 @@ export const MenuLink: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root {...props} style={{ x: '12px' }}>
+    <Root
+      {...props}
+      style={{ x: '12px' }}
+      {...PARENT_HOVER_GLOW_PROPS}
+    >
       <Link to={to} {...INTERACTIVE_PROPS}>
-        <Metal  />
+        <Glow />
+        <Metal />
         <TextXl>{children}</TextXl>
       </Link>
     </Root>

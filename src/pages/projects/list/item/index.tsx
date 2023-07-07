@@ -12,6 +12,7 @@ import { Content } from './content';
 import { APP_ITEMS_RECORD } from '@constants/apps';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@pages/projects/gallery/hooks/useMediaFromKey';
+import { PARENT_HOVER_GLOW_PROPS } from '@constants/colors';
 
 const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
@@ -29,6 +30,7 @@ export const Item: FC<TProps> = ({ slug }) => {
   return (
     <Root
       onMouseEnter={handleMouseEnter}
+      {...PARENT_HOVER_GLOW_PROPS}
     >
       <InternalLink
         to={

@@ -4,9 +4,14 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { resolveTealGlow } from '@constants/colors';
 import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
+import { Glow } from '@components/glow';
+import {
+  PARENT_HOVER_GLOW_PROPS,
+  TEAL_GLOW_ANIMATE_TRANSITION,
+  TEAL_GLOW_HOVER_TRANSITION,
+} from '@constants/colors';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -25,17 +30,17 @@ export const Submit: FC = () => {
 
   const handleMoveSound = useMoveSound();
 
-  const rootPropsWithTealGlow = resolveTealGlow({
-    classValue: clsx('relative p-0.5 flex w-full', [
-      isDisabled ? 'cursor-not-allowed' : 'cursor-pointer',
-    ]),
-  });
-
   return (
     <Root
+      className={clsx('relative p-0.5 flex w-full', [
+        isDisabled
+          ? 'cursor-not-allowed'
+          : 'cursor-pointer',
+      ])}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...rootPropsWithTealGlow}
+      {...PARENT_HOVER_GLOW_PROPS}
     >
+      <Glow />
       <Metal classValue='pointer-events-none' />
       <Decoration
         className={clsx(
@@ -56,11 +61,11 @@ export const Submit: FC = () => {
           variants={{
             animate: {
               letterSpacing: '4px',
-              transition: rootPropsWithTealGlow.variants.animate.transition,
+              transition: TEAL_GLOW_ANIMATE_TRANSITION,
             },
             hover: {
               letterSpacing: '8px',
-              transition: rootPropsWithTealGlow.variants.hover.transition,
+              transition: TEAL_GLOW_HOVER_TRANSITION,
             },
           }}
         >
