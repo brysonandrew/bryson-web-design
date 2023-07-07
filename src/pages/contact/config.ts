@@ -56,5 +56,4 @@ export const INIT_CONTACT_STATE: TContactState = {
 
 export type TBaseInputProps = {
   name: TFormKey;
-  title: string;
 };

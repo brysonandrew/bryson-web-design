@@ -7,8 +7,8 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Submit } from './Submit';
 import { useRef } from 'react';
-import { useForm } from './useForm';
-import { useAutoFocus } from './useAutoFocus';
+import { useForm } from './hooks/useForm';
+import { useAutoFocus } from './hooks/useAutoFocus';
 import { resolveFilter } from '@pages/index/build/images/hooks/resolveFilter';
 
 const Root = styled(motion.form)``;
@@ -37,7 +37,6 @@ export const Form = () => {
         }}
       >
         <Text
-          title='name'
           name='name'
           disabled={isDisabled}
           placeholder=''
@@ -46,7 +45,6 @@ export const Form = () => {
         />
         <Space2 />
         <Text
-          title='email'
           disabled={isDisabled}
           type='email'
           name='email'
@@ -56,7 +54,6 @@ export const Form = () => {
         />
         <Space2 />
         <Textarea
-          title='message'
           name='message'
           disabled={isDisabled}
           rows={4}

@@ -7,5 +7,5 @@ export const useAutoFocus = (isDisabled: boolean) => {
     if (focusKey === null && !isDisabled) {
       dispatch({ type: "contact-focus", value: "name" });
     }
-  }, [isDisabled, focusKey]);
+  }, []); // no deps
 };

@@ -2,27 +2,29 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { type FC } from 'react';
+import { useRef, type FC, useEffect } from 'react';
 import { INPUT_CLASS, TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './Box';
+import { useFocus } from './hooks/useFocus';
 
-const Input = styled(motion.input)`
-  color: rgb(153, 204, 255) !important;
-`;
+const Input = styled(motion.input)``;
 
 type TProps = HTMLMotionProps<'input'> & TBaseInputProps;
 export const Text: FC<TProps> = ({
-  title,
   name,
   disabled,
   ...props
 }) => {
+  const ref = useRef<HTMLInputElement | null>(null);
+  const input = ref.current;
   const {
     contact: { focusKey, form },
   } = useContext();
   const isFocused = focusKey === name;
+  useFocus(input, isFocused);
+
   const value = form[name];
 
   return (
@@ -32,15 +34,15 @@ export const Text: FC<TProps> = ({
       isFocused={isFocused}
     >
       <div className='pt-1 w-full md:w-auto'>
-        <Name title={title} isFocused={isFocused} />
+        <Name title={name} isFocused={isFocused} />
       </div>
       <Input
+        ref={ref}
         className={clsx(INPUT_CLASS)}
         type='text'
         autoComplete='off'
         name={name}
         value={value}
-        autoFocus={isFocused}
         disabled={disabled}
         {...props}
       />
