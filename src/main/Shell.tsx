@@ -16,13 +16,15 @@ import { useContext } from '@state/Context';
 import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useScrollToTop } from '@hooks/scroll/useScrollToTop';
+import { useHtmlTitle } from '@hooks/useHtmlTitle';
 
 type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
   const { isInit, dispatch } = useContext();
-  useScrollControl(); 
+  useHtmlTitle();
+  useScrollControl();
   useScrollToTop();
   const handleAnimationComplete = () =>
     dispatch({ type: 'init', value: null });

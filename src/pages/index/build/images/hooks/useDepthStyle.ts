@@ -5,7 +5,7 @@ import { resolveFilter } from "./resolveFilter";
 
 export const useDepthStyle = () => {
   const y = useY();
-  const z = useZ();
+  const z = useZ(y);
   const brightness = transform(
     [0, RANGE_Z],
     [10, 110],

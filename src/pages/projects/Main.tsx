@@ -2,7 +2,7 @@ import { Gallery } from './gallery';
 import { List } from './list';
 import { Space16 } from '@components/spaces/Space16';
 import { APP_ITEMS } from '@constants/apps';
-import { useCurrSource } from './hooks/useCurrSource';
+import { useCurrSource } from '../../hooks/params/useCurrSource';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -28,20 +28,15 @@ export const Main: FC<TProps> = ({ style }) => {
         top: style?.y,
       }}
     >
-      <AnimatePresence>
-        <List
-          key='SHOWCASE_MAIN_LIST'
-          items={APP_ITEMS}
-          currSource={currSource}
-        />
-        <Space16 key='SHOWCASE_MAIN_SPACE_16' />
-        {isSelectedItem && (
-          <Gallery
-            key='SHOWCASE_MAIN_GALLERY'
-            currSource={currSource}
-          />
-        )}
-      </AnimatePresence>
+      <List
+        key='SHOWCASE_MAIN_LIST'
+        items={APP_ITEMS}
+        currSource={currSource}
+      />
+      <Space16 />
+      {isSelectedItem && (
+        <Gallery currSource={currSource} />
+      )}
     </Root>
   );
 };

@@ -5,11 +5,6 @@ import { PRESENCE_Y } from '@constants/animation';
 import { MetalDarkest } from '@components/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
-import { Glow } from '@components/glow';
-import {
-  GLOW_BOX_SHADOW,
-  PARENT_GLOW_PROPS,
-} from '@constants/colors';
 
 const Root = styled(motion.footer)``;
 
