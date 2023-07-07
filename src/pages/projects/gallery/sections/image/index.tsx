@@ -10,6 +10,7 @@ import { useLoadImage } from './useLoadImage';
 import { TBaseProps } from '../../types';
 import { Control } from './Control';
 import { Picture } from '@components/picture';
+import { isSafari, isBrowser } from 'react-device-detect';
 
 export const Root = styled(motion.div)``;
 
@@ -38,6 +39,12 @@ export const Image: FC<TProps> = ({
     >
       {(dimensions) => (
         <>
+          {!isLoaded && (
+            <Placeholder
+              key='IMAGE_PLACEHOLDER'
+              classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+            />
+          )}
           <Picture
             imageRef={ref}
             mediaRecord={mediaRecord}
@@ -46,20 +53,13 @@ export const Image: FC<TProps> = ({
               opacity: isLoaded ? 1 : 0,
               x: '-50%',
               y: '-50%',
-              ...(isTransitioningGallery
+              ...(isTransitioningGallery &&
+              !(isSafari && isBrowser)
                 ? { filter: resolveUrlId(MOTION_BLUR_ID) }
                 : {}),
             }}
             {...dimensions}
           />
-          <AnimatePresence>
-            {!isLoaded && (
-              <Placeholder
-                key='IMAGE_PLACEHOLDER'
-                classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
-              />
-            )}
-          </AnimatePresence>
         </>
       )}
     </Control>

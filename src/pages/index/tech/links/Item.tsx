@@ -30,7 +30,7 @@ export const Item: FC<TItem> = ({
       {...props}
     >
       {isSelected && <Select layoutId={title} />}
-      <Glow text={1} drop={4} color='white'>
+      <Glow text={1} drop={8} color='white'>
         <MetalDark />
       </Glow>
       <Box>

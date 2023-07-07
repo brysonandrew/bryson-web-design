@@ -2,11 +2,9 @@ import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { Section } from '@components/Section';
-import { STORY, TITLE_BASE } from '@constants/copy';
-import { useHtmlTitle } from '@hooks/useHtmlTitle';
+import { STORY } from '@constants/copy';
 
 export const Contact = () => {
-  useHtmlTitle(`${TITLE_BASE} - Contact`);
   return (
     <MainShell>
       <Shell>
@@ -17,4 +15,3 @@ export const Contact = () => {
     </MainShell>
   );
 };
-

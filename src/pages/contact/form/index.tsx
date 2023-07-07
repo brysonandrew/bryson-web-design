@@ -9,6 +9,7 @@ import { Submit } from './Submit';
 import { useRef } from 'react';
 import { useForm } from './useForm';
 import { useAutoFocus } from './useAutoFocus';
+import { resolveFilter } from '@pages/index/build/images/hooks/resolveFilter';
 
 const Root = styled(motion.form)``;
 
@@ -18,14 +19,23 @@ export const Form = () => {
     element: ref.current,
   });
   useAutoFocus();
-  
+
   return (
     <Root
       className={clsx('flex flex-col mt-1 w-full')}
       ref={ref}
       onSubmit={isDisabled ? () => null : onSend}
     >
-      <motion.div className='relative flex flex-col w-full'>
+      <motion.div
+        className='relative flex flex-col w-full'
+        animate={{
+          filter: resolveFilter({
+            blur: 0,
+            brightness: isDisabled ? 60 : 110,
+            grayscale: isDisabled ? 60 : 0,
+          }),
+        }}
+      >
         <Text
           title='name'
           name='name'
@@ -48,6 +58,7 @@ export const Form = () => {
         <Textarea
           title='message'
           name='message'
+          disabled={isDisabled}
           rows={4}
           cols={50}
           required
@@ -55,7 +66,7 @@ export const Form = () => {
         />
       </motion.div>
       <Space4 />
-      <Submit />
+      <Submit isDisabled={isDisabled} />
     </Root>
   );
 };

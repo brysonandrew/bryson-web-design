@@ -14,6 +14,7 @@ type TProps = HTMLMotionProps<'input'> & TBaseInputProps;
 export const Text: FC<TProps> = ({
   title,
   name,
+  disabled,
   ...props
 }) => {
   const {
@@ -23,7 +24,11 @@ export const Text: FC<TProps> = ({
   const value = form[name];
 
   return (
-    <Box name={name} isFocused={isFocused}>
+    <Box
+      name={name}
+      isDisabled={disabled}
+      isFocused={isFocused}
+    >
       <div className='pt-1 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />
       </div>
@@ -34,6 +39,7 @@ export const Text: FC<TProps> = ({
         name={name}
         value={value}
         autoFocus={isFocused}
+        disabled={disabled}
         {...props}
       />
     </Box>

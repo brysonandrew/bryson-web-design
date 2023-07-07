@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY } from '@constants/animation';
+import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { Image } from './image';
 import type { TMediaRecord } from '@pages/projects/config';
 import { Filter } from './Filter';
@@ -24,7 +24,7 @@ export const Sections: FC<TProps> = (props) => {
       <motion.ul
         className='flex relative h-full'
         style={{ left, width: width.screen * count }}
-        {...PRESENCE_OPACITY}
+        {...PRESENCE_OPACITY_Y_SHIFT}
       >
         {items.map((mediaRecord: TMediaRecord) => (
           <motion.li

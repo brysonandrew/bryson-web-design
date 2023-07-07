@@ -40,14 +40,14 @@ export const Gallery: FC<TProps> = ({ currSource }) => {
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  const loadingItems: TMediaRecord[] = [...Array(loadingCount)].map(
-    (_, index) => ({
-      png: resolveEmptyMedia({
-        key: resolveLoadingItemKey(index),
-        name: `${items.length + index + 1}`,
-      }),
+  const loadingItems: TMediaRecord[] = [
+    ...Array(loadingCount),
+  ].map((_, index) => ({
+    png: resolveEmptyMedia({
+      key: resolveLoadingItemKey(index),
+      name: `${items.length + index + 1}`,
     }),
-  );
+  }));
 
   const galleryProps = {
     items: [...items, ...loadingItems],
@@ -64,31 +64,28 @@ export const Gallery: FC<TProps> = ({ currSource }) => {
   return (
     <>
       {createPortal(
-        <>
-          <Root className='fixed inset-0 flex flex-col z-10'>
-            <Header
-              key='GALLERY_HEADER'
-              onLayoutAnimationComplete={
-                handleLayoutAnimationComplete
-              }
-              slug={currSource}
-            />
-            {isResizing ? null : (
-              <>
-                {isReady && (
-                  <>
-                    <Background />
-                    <Sections {...galleryProps} />
-                  </>
-                )}
-                <Footer {...galleryProps} />
-                {isReady && (
-                  <Arrows max={galleryProps.count} />
-                )}
-              </>
-            )}
-          </Root>
-        </>,
+        <Root className='fixed inset-0 flex flex-col z-10'>
+          <Header
+            onLayoutAnimationComplete={
+              handleLayoutAnimationComplete
+            }
+            slug={currSource}
+          />
+          {isResizing ? null : (
+            <>
+              {isReady && (
+                <>
+                  <Background />
+                  <Sections {...galleryProps} />
+                </>
+              )}
+              <Footer {...galleryProps} />
+              {isReady && (
+                <Arrows max={galleryProps.count} />
+              )}
+            </>
+          )}
+        </Root>,
         document.body,
       )}
     </>

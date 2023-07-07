@@ -65,12 +65,14 @@ export const reducer = (
     case 'scroll': {
       return {
         ...state,
+        ...(value ? { isScrollStart: true } : {}),
         isScroll: value,
       };
     }
     case 'scroll-start': {
       return {
         ...state,
+        ...(value ? {} : { isScroll: false }),
         isScrollStart: value,
       };
     }

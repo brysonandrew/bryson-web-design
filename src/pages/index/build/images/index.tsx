@@ -16,6 +16,7 @@ export const Images: FC<TProps> = ({
   rectConfig: { onUpdateRect },
 }) => {
   const { images } = useContext();
+
   const [loadedState, setLoaded] = useState<
     Record<string, boolean>
   >({});
@@ -35,13 +36,13 @@ export const Images: FC<TProps> = ({
       return next;
     });
   };
-  
+
   return (
     <motion.div
       className='relative w-full'
       style={{
+        minHeight: HEIGHT,
         top: 0,
-        height: HEIGHT,
         pointerEvents: isScroll ? 'none' : 'unset',
         filter,
       }}

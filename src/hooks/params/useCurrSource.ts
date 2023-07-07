@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { SOURCE_KEY } from "../config";
+import { SOURCE_KEY } from "../../pages/projects/config";
 
 export const useCurrSource = () => {
   const [searchParams] = useSearchParams();

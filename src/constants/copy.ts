@@ -6,4 +6,4 @@ export const STORY: Record<string, string> = {
   contact: "Get in touch"
 };
 
-export const PAGE_LINKS = ['projects', 'contact'];
+export const PAGE_LINKS = ['projects', 'contact'] as const;

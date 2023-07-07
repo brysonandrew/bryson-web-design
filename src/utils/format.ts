@@ -1,8 +1,8 @@
-export const capitalize = (word: string) =>
+export const capitalize = (word: string | null) =>
   word
     ? `${word[0].toUpperCase()}${word
-        .toLowerCase()
-        .slice(1)}`
+      .toLowerCase()
+      .slice(1)}`
     : "";
 
 export const kebabToTitle = (slug: string): string =>

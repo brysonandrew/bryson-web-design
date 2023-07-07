@@ -1,5 +1,5 @@
 import type { HTMLMotionProps } from 'framer-motion';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef, type FC } from 'react';
 import { resolveFilter } from './hooks/resolveFilter';
 import { useDepthStyle } from './hooks/useDepthStyle';
@@ -31,9 +31,10 @@ export const Image: FC<TProps> = ({
 
   return (
     <motion.li
-      className='absolute'
+      className='absolute overflow-hidden'
       style={{
         cursor: 'zoom-in',
+        maxHeight: IMAGE_WIDTH,
         ...xStyle,
         ...depthStyle,
       }}
@@ -48,26 +49,22 @@ export const Image: FC<TProps> = ({
         zIndex: RANGE_Z,
       }}
     >
-      <AnimatePresence>
-        {!isLoaded && (
-          <Placeholder
-            key='IMAGE_PLACEHOLDER'
-            classValue='origin-top scale-placeholder'
-          />
-        )}
-      </AnimatePresence>
+      {!isLoaded && (
+        <Placeholder
+          key='IMAGE_PLACEHOLDER'
+          classValue='origin-top scale-placeholder'
+        />
+      )}
       <motion.div
         initial={false}
         animate={{ opacity: isLoaded ? 1 : 0 }}
       >
         <Picture
           width={`${IMAGE_WIDTH}px`}
-          height={`${
-            ~~(image
-              ? image.naturalHeight /
-                (image.naturalWidth / IMAGE_WIDTH)
-              : 0)
-          }px`}
+          height={`${~~(image
+            ? image.naturalHeight /
+              (image.naturalWidth / IMAGE_WIDTH)
+            : 0)}px`}
           imageRef={imageRef}
           mediaRecord={mediaRecord}
           {...props}

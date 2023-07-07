@@ -38,6 +38,19 @@ export const PRESENCE_OPACITY_SHIFT = {
   exit: { opacity: 0, x: 20 },
 };
 
+export const PRESENCE_OPACITY_Y_SHIFT = {
+  initial: { opacity: 0, y: "50%" },
+  animate: { opacity: 1, y: "0%" },
+  exit: { opacity: 0, y: "50%" },
+};
+
+export const PRESENCE_Y_SHIFT = {
+  initial: { y: "100%" },
+  animate: { y: "0%" },
+  exit: { y: "100%" },
+};
+
+
 export const PRESENCE_OPACITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },

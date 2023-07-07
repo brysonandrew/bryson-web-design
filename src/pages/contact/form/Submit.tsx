@@ -8,6 +8,7 @@ import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
 import { Glow } from '@components/glow';
 import {
+  DISABLED_BOX_SHADOW,
   GLOW_BOX_SHADOW,
   PARENT_GLOW_PROPS,
   TEAL_GLOW_ANIMATE_TRANSITION,
@@ -24,9 +25,9 @@ const Text = styled(motion.h4)`
   -webkit-text-stroke-color: rgba(153, 204, 255, 0.9);
 `;
 
-export const Submit: FC = () => {
+type TProps = { isDisabled: boolean };
+export const Submit: FC<TProps> = ({ isDisabled }) => {
   const { contact } = useContext();
-  const isDisabled = contact.status !== 'idle';
   const title = resolveButtonValue(contact.status);
 
   const handleMoveSound = useMoveSound();
@@ -38,12 +39,12 @@ export const Submit: FC = () => {
         GLOW_BOX_SHADOW,
         [
           isDisabled
-            ? 'cursor-not-allowed'
-            : 'cursor-pointer',
+            ? clsx('cursor-not-allowed')
+            : clsx('cursor-pointer'),
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...PARENT_GLOW_PROPS}
+      {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
     >
       <Glow drop={2}>
         <Metal classValue='pointer-events-none' />

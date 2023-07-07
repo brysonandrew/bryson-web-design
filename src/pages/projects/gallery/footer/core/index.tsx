@@ -10,7 +10,6 @@ import { Items } from './items';
 import { PADDING_X } from './config';
 import { GLOW_BOX_SHADOW } from '@constants/colors';
 import clsx from 'clsx';
-import { Glow } from '@components/glow';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;

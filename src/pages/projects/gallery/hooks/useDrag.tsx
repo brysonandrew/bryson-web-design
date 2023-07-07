@@ -8,7 +8,7 @@ import { TMediaRecord } from '@pages/projects/config';
 import { resolveActiveIndex } from './resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from './nav/resolveTo';
-import { useCurrParams } from '@pages/projects/hooks/useCurrParams';
+import { useCurrParams } from '@hooks/params/useCurrParams';
 
 export const Root = styled(motion.footer)``;
 export const List = styled(motion.ul)``;
@@ -28,7 +28,7 @@ export const useDrag = ({
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { dispatch } = useContext();
-  const nextX = useX({ width, items, currName });
+  const nextX = useX({ width, items, currName, motionX });
 
   const handleComplete = () =>
     dispatch({
