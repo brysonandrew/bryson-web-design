@@ -12,12 +12,12 @@ export const Content: FC<TProps> = ({ children }) => {
       <div className='overflow-hidden'>
         <motion.div
           key='TITLE_TEXT'
-          initial={{ y: '100%' }}
-          animate={{ y: '0%' }}
-          exit={{ y: '100%' }}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0 , opacity: 1 }}
+          exit={{ y: 20, opacity: 0  }}
           transition={{
             ...MOTION_CONFIG.transition,
-            delay: 0.8,
+            delay: 0.1,
           }}
         >
           <TextXl classValue='text-center'>

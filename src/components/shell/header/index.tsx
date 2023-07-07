@@ -17,13 +17,11 @@ export const Header: FC = () => {
 
   return (
     <Root className='fixed top-0 left-0 w-full h-0 z-10'>
-      <AnimatePresence>
-        {isShown ? (
-          <Nav key='NAV' />
-        ) : (
-          <Decoration key='DECORATION' />
-        )}
-      </AnimatePresence>
+      {isShown ? (
+        <Nav key='NAV' />
+      ) : (
+        <Decoration key='DECORATION' />
+      )}
     </Root>
   );
 };
