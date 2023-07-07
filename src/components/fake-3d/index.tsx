@@ -1,7 +1,7 @@
 import { InView } from '@components/InView';
 import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
@@ -22,30 +22,21 @@ export const Fake3D: FC<TProps> = ({
   if (isMobile) return children(EMPTY_PROPS);
   return (
     <InView className={clsx('relative w-full', classValue)}>
-      {({ isInView, ref, ...rectProps }) => {
-        return (
-          <>
-            <AnimatePresence mode='wait'>
-              {isInView ? (
-                <Aggregator
-                  key='AGGREGATOR'
-                  {...rectProps}
-                  {...optionsConfig}
-                >
-                  {children}
-                </Aggregator>
-              ) : (
-                <motion.div
-                  key='PLACEHOLDER'
-                  style={{
-                    height: rectProps.rect?.height,
-                  }}
-                />
-              )}
-            </AnimatePresence>
-          </>
-        );
-      }}
+      {({ isInView, ref, ...rectProps }) => (
+        <>
+          {isInView ? (
+            <Aggregator {...rectProps} {...optionsConfig}>
+              {children}
+            </Aggregator>
+          ) : (
+            <motion.div
+              style={{
+                height: rectProps.rect?.height,
+              }}
+            />
+          )}
+        </>
+      )}
     </InView>
   );
 };

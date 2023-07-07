@@ -18,6 +18,7 @@ export const Placeholder: FC<TProps> = ({ classValue }) => {
         initial: { opacity: 0 },
         animate: { opacity: 0.28 },
         exit: { opacity: 0 },
+        transition: { ease: 'linear', duration: 1.4 },
       }}
     >
       <div

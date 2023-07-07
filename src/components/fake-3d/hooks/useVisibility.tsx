@@ -3,12 +3,7 @@ import {
   useMotionTemplate,
   useTransform,
 } from 'framer-motion';
-import {
-  MAX_SCROLL,
-  TBaseConfig,
-  TVisibilityRange,
-} from '../config';
-import { SCROLL_START } from '@hooks/scroll/useScrollControl';
+import { TBaseConfig, TVisibilityRange } from '../config';
 
 export const useVisibility = ({
   scrollY,

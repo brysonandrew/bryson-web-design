@@ -17,6 +17,7 @@ type TProps = HTMLMotionProps<'textarea'> & TBaseInputProps;
 export const Textarea: FC<TProps> = ({
   title,
   name,
+  disabled,
   ...props
 }) => {
   const {
@@ -26,7 +27,11 @@ export const Textarea: FC<TProps> = ({
   const value = form[name];
 
   return (
-    <Box name={name} isFocused={isFocused}>
+    <Box
+      name={name}
+      isFocused={isFocused}
+      isDisabled={disabled}
+    >
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={title} isFocused={isFocused} />
       </div>
@@ -37,6 +42,7 @@ export const Textarea: FC<TProps> = ({
           name={name}
           value={value}
           autoFocus={isFocused}
+          disabled={disabled}
           {...props}
         />
       </div>

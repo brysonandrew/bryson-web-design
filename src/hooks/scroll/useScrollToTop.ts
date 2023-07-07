@@ -5,10 +5,16 @@ import { useLocation } from 'react-router-dom';
 
 export const useScrollToTop = () => {
   const { pathname } = useLocation();
-  const { dispatch } = useContext();
+  const { isInit, scrollX, scrollY, dispatch } = useContext();
+
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch({ type: 'scroll', value: false });
-  }, [pathname]);
+    const setY = () => {
+      scrollX.set(0);
+      scrollY.set(0);
+      window.scrollTo(0, 0);
+      dispatch({ type: 'scroll-start', value: false });
+    };
+    setY();
+  }, [isInit, pathname]);
 };

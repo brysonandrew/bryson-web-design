@@ -14,10 +14,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#111" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="child-src 'none';"
-    />
+    <meta http-equiv="Content-Security-Policy" content="child-src 'none';" />
     <link
       href="https://www.googletagmanager.com/gtag/js?id=G-7B2D9E62EW"
       rel="preconnect"
@@ -31,7 +28,7 @@
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7B2D9E62EW"></script>
-    <script>
+    <script async>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -43,6 +40,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main/index.tsx"></script>
+    <script defer type="module" src="/src/main/index.tsx"></script>
   </body>
 </html>

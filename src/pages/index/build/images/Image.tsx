@@ -31,9 +31,10 @@ export const Image: FC<TProps> = ({
 
   return (
     <motion.li
-      className='absolute'
+      className='absolute overflow-hidden'
       style={{
         cursor: 'zoom-in',
+        maxHeight: IMAGE_WIDTH,
         ...xStyle,
         ...depthStyle,
       }}
@@ -62,12 +63,10 @@ export const Image: FC<TProps> = ({
       >
         <Picture
           width={`${IMAGE_WIDTH}px`}
-          height={`${
-            ~~(image
-              ? image.naturalHeight /
-                (image.naturalWidth / IMAGE_WIDTH)
-              : 0)
-          }px`}
+          height={`${~~(image
+            ? image.naturalHeight /
+              (image.naturalWidth / IMAGE_WIDTH)
+            : 0)}px`}
           imageRef={imageRef}
           mediaRecord={mediaRecord}
           {...props}

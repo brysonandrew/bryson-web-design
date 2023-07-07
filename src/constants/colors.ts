@@ -28,6 +28,7 @@ export const resolveShadow = (spread: number, color: TColorRgbKey = "white") => 
 export const TEAL_GLOW_ANIMATE_TRANSITION = { ease: "easeIn", duration: 0.28, delay: 0.08 };
 export const TEAL_GLOW_HOVER_TRANSITION = { ease: "linear", duration: 0.2, delay: 0 };
 export const GLOW_BOX_SHADOW = "shadow-teal-02-sm";
+export const DISABLED_BOX_SHADOW = 'shadow-gray-sm';
 
 export const PARENT_GLOW_PROPS = {
   initial: false,
@@ -56,14 +57,3 @@ export const resolveGlowProps = ({ text = 0, drop = 0, color = "teal" }: TGlowCo
     },
   }
 });
-
-export const TEAL_GLOW = {
-  variants: {
-    hover: {
-      filter: resolveDropShadow(20, 'teal'),
-    },
-    animate: {
-      filter: resolveDropShadow(10, 'teal'),
-    },
-  },
-};

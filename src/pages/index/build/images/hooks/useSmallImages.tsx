@@ -8,28 +8,28 @@ const MAX_COUNT = 10;
 export const useSmallImages = () => {
   const windowSize = useWindowSize();
   const isResizing = windowSize?.isResizing;
-  const countRequired = Math.min(
-    MAX_COUNT,
-    ~~((windowSize?.width ?? 0) / 100) + 3,
-  );
+  const windowWidth = windowSize?.width ?? 0;
+
   const {
     images: { length: count },
     dispatch,
   } = useContext();
 
   useEffect(() => {
-    if (
-      !isResizing &&
-      countRequired > 0 &&
-      count !== countRequired
-    ) {
-      const init = async () => {
-        const value = await resolveRandomMediaRecord(
-          countRequired,
-        );
-        dispatch({ type: 'images', value });
-      };
-      init();
+    if (!isResizing && windowWidth > 0) {
+      const countRequired = Math.min(
+        MAX_COUNT,
+        ~~(windowWidth / 100) + 3,
+      );
+      if (count !== countRequired) {
+        const init = async () => {
+          const value = await resolveRandomMediaRecord(
+            countRequired,
+          );
+          dispatch({ type: 'images', value });
+        };
+        init();
+      }
     }
-  }, [isResizing, countRequired, count]);
+  }, [isResizing, windowWidth, count]);
 };
