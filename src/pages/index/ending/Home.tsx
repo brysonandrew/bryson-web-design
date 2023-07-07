@@ -8,6 +8,7 @@ import {
 } from 'framer-motion';
 import { INTERACTIVE_PROPS } from './constants';
 import { TextXl } from '@components/text/TextXl';
+
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
 
