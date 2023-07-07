@@ -10,9 +10,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from './nav/resolveTo';
 import { useCurrParams } from '@hooks/params/useCurrParams';
 
-export const Root = styled(motion.footer)``;
-export const List = styled(motion.ul)``;
-
 type TConfig = {
   items: TMediaRecord[];
   width: number;
