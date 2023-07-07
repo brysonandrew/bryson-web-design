@@ -52,6 +52,8 @@ export type TVisibilityRange = TInputResolver & {
 };
 
 export type TOptionsConfig = {
+  n?: string;
+
   dispersion?: TTransformRange;
   resistance?: TTransformRange;
   visibility?: TVisibilityRange;

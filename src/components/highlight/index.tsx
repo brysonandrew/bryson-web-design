@@ -16,9 +16,13 @@ export const Highlight: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'absolute -left-px -top-px -bottom-px h-full bg-teal pointer-events-none',
+        'absolute -left-px -top-px -bottom-px bg-teal pointer-events-none',
         classValue,
       )}
+      style={{
+        width: 'calc(0.5rem + 4px)',
+        height: 'calc(100% + 2px)',
+      }}
       {...BASE_PROPS}
       {...props}
     />

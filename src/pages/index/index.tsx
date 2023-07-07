@@ -17,19 +17,19 @@ export const Index = () => {
       <MainShell>
         <Shell>
           <Build />
-          <Space24 />
+          <Space16 />
           <Tech />
           <Space24 />
           <Projects />
           {false ? (
             <>
-              <Space16 />
+              <Space12 />
               <Ending />
               <Space16 />
             </>
           ) : (
             <>
-              <Space12 />
+              <Space24 />
               <Contact />
             </>
           )}

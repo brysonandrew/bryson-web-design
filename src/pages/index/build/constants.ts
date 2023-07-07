@@ -1,4 +1,7 @@
 import { MAX_SCROLL, TOptionsConfig } from "@components/fake-3d/config";
+import { RANGE_Y } from "./images/hooks/useY";
+
+const START_Y = -60
 
 export const FAKE_3D_PROPS: TOptionsConfig = {
   dispersion: {
@@ -13,15 +16,15 @@ export const FAKE_3D_PROPS: TOptionsConfig = {
       startScroll,
       startScroll + MAX_SCROLL,
     ],
-    output: [-60, -280],
+    output: [START_Y, START_Y - RANGE_Y],
   },
-  visibility: {
-    input: ({ startScroll }) => [
-      startScroll,
-      startScroll + MAX_SCROLL,
-    ],
-    blur: [0, 4],
-    grayscale: [0, 100],
-    opacity: [1, 0.4],
-  },
+  // visibility: {
+  //   input: ({ startScroll }) => [
+  //     startScroll,
+  //     startScroll + MAX_SCROLL,
+  //   ],
+  //   blur: [0, 4],
+  //   grayscale: [0, 100],
+  //   opacity: [1, 0.4],
+  // },
 };

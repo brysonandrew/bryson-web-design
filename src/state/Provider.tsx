@@ -22,7 +22,7 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const { scrollX, scrollY } = useScroll();
+  const { scrollX, scrollY } = useScroll({layoutEffect:false});
 
   const [state, dispatch] = useReducer<TReducer>(reducer, {
     ...STATE,

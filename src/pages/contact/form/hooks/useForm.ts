@@ -3,7 +3,7 @@
 import type { HTMLMotionProps } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FormEvent, ChangeEvent, FocusEvent, useRef } from 'react';
-import { TFormKey, TStatus } from '../config';
+import { TFormKey, TStatus } from '../../config';
 import { useContext } from '@state/Context';
 import { useTimeoutRef } from '@hooks/useTimeoutRef';
 
@@ -11,7 +11,7 @@ type TConfig = {
   element: HTMLFormElement | null;
 };
 export const useForm = ({ element }: TConfig) => {
-  const { contact, dispatch, scrollX, scrollY } = useContext();
+  const { scrollX, scrollY, contact, dispatch } = useContext();
   const current = { contact };
   const currentRef = useRef(current);
   currentRef.current = current;
@@ -48,9 +48,9 @@ export const useForm = ({ element }: TConfig) => {
       Element
     >,
   ) => {
-    const y = scrollY.get();
-    window.scrollTo(scrollX.get(), y);
-    document.body.scrollTop = y;
+    // const y = scrollY.get();
+    // window.scrollTo(scrollX.get(), y);
+    // document.body.scrollTop = y;
     const target = event.currentTarget;
     if (!target) return;
     updateFocus(target.name as TFormKey);

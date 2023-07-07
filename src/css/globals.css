@@ -80,16 +80,8 @@ hr {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-input::-webkit-autofill,
-::-webkit-autofill:hover,
-::-webkit-autofill:focus,
-::-webkit-autofill:active {
-  background-color: #111 !important;
-  -webkit-box-shadow: 0 0 0 30px #111 inset !important;
-  -webkit-text-fill-color: #fff !important;
-}
-input::-internal-autofill-selected {
-  background-color: #111 !important;
-  -webkit-box-shadow: 0 0 0 30px #111 inset !important;
-  -webkit-text-fill-color: #fff !important;
+input:-webkit-autofill {
+  filter: none;
+  box-shadow: 0 0 0 100px #111 inset;
+  -webkit-text-fill-color: rgb(153, 204, 255) !important;
 }

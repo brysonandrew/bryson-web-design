@@ -1,7 +1,7 @@
 import { InView } from '@components/InView';
 import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
@@ -9,6 +9,7 @@ import {
   TFake3DMotionChildrenProps,
   TOptionsConfig,
 } from './config';
+import { PRESENCE_OPACITY } from '@constants/animation';
 
 type TProps = TOptionsConfig & {
   classValue?: ClassValue;
@@ -17,26 +18,33 @@ type TProps = TOptionsConfig & {
 export const Fake3D: FC<TProps> = ({
   classValue,
   children,
+  n,
   ...optionsConfig
 }) => {
   if (isMobile) return children(EMPTY_PROPS);
   return (
-    <InView className={clsx('relative w-full', classValue)}>
-      {({ isInView, ref, ...rectProps }) => (
-        <>
-          {isInView ? (
-            <Aggregator {...rectProps} {...optionsConfig}>
-              {children}
-            </Aggregator>
-          ) : (
-            <motion.div
-              style={{
-                height: rectProps.rect?.height,
-              }}
-            />
-          )}
-        </>
-      )}
+    <InView
+      className={clsx('relative w-full', classValue)}
+      amount='some'
+    >
+      {({ isInView, ref, ...rectProps }) => {
+        return (
+          <>
+            {isInView ? (
+              <Aggregator {...rectProps} {...optionsConfig}>
+                {children}
+              </Aggregator>
+            ) : (
+              <motion.div
+                style={{
+                  height: rectProps.rect.height,
+                }}
+                {...PRESENCE_OPACITY}
+              />
+            )}
+          </>
+        );
+      }}
     </InView>
   );
 };
