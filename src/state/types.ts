@@ -13,6 +13,8 @@ export type TScreensCountRecord = Record<string, number>;
 export type TScreensRecord = Record<string, () => Promise<unknown>>;
 
 export type TContext = TState & {
+  scrollX: MotionValue;
+  scrollY: MotionValue;
   screensCountRecord: TScreensCountRecord;
   screensRecord: TScreensRecord;
   images: TMediaRecord[];

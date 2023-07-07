@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import type { TMediaRecord } from '@pages/projects/config';
 import {
   AnimatePresence,
+  MotionValue,
   motion,
   useMotionValue,
-  useScroll,
 } from 'framer-motion';
 import { useState, type FC } from 'react';
 import { PRESENCE_OPACITY } from '@constants/animation';
@@ -12,10 +12,8 @@ import { useCursor } from './useCursor';
 import { useScale } from './useScale';
 import {
   TImageProps,
-  TInteractiveEvent,
   TMoveConfig,
   TSharedConfig,
-  resolveCoord,
 } from './config';
 import clsx from 'clsx';
 import { TEAL_GLOW_BOX_SHADOW } from '@constants/colors';
@@ -31,15 +29,18 @@ export const Tag = styled.code`
 `;
 
 type TProps = TImageProps & {
+  scrollX: MotionValue;
+  scrollY: MotionValue;
   mediaRecord: TMediaRecord;
   element: HTMLDivElement;
 };
 export const Zoom: FC<TProps> = ({
+  scrollX,
+  scrollY,
   mediaRecord,
   element,
   image,
 }) => {
-  const { scrollX, scrollY } = useScroll();
   const [isCursorReady, setCursorReady] = useState(false);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
@@ -53,8 +54,6 @@ export const Zoom: FC<TProps> = ({
   const imageY = imageRect.y;
 
   const rect = element.getBoundingClientRect();
-
-  
 
   const handleMove = ({ cx, cy }: TMoveConfig) => {
     if (

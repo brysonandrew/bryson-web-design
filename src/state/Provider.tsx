@@ -7,6 +7,7 @@ import { STATE } from './constants';
 import type { TChildrenElement } from '@t/index';
 import { resolveScreensCountRecord } from '@hooks/media/resolveScreenCountRecord';
 import { isMobile } from 'react-device-detect';
+import { useScroll } from 'framer-motion';
 
 const screensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).(png|webp)',
@@ -21,6 +22,8 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
+  const { scrollX, scrollY } = useScroll();
+
   const [state, dispatch] = useReducer<TReducer>(reducer, {
     ...STATE,
     isSound: !isMobile,
@@ -29,9 +32,11 @@ export const Provider: FC<TProviderProps> = ({
   return (
     <Context.Provider
       value={{
-        dispatch,
         screensRecord,
         screensCountRecord,
+        scrollX,
+        scrollY,
+        dispatch,
         ...state,
       }}
     >

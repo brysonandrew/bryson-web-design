@@ -7,7 +7,7 @@ import { type FC } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Content } from './Content';
 
-const rootProps = {
+const ROOT_PROPS = {
   className: clsx(
     'flex flex-col items-center',
     WIDTH_CLASS,
@@ -18,10 +18,10 @@ type TProps = { children: TChildren };
 export const Title: FC<TProps> = ({ children }) => {
   return ((content) => {
     if (isMobile) {
-      return <div {...rootProps}>{content}</div>;
+      return <div {...ROOT_PROPS}>{content}</div>;
     }
     return (
-      <InView {...rootProps} margin='-220px' once>
+      <InView {...ROOT_PROPS} margin='-220px' once>
         {(isInView) => (
           <AnimatePresence initial={false}>
             {isInView && content}
