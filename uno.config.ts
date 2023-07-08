@@ -34,6 +34,7 @@ const config = defineConfig({
       "black-04": "var(--black-04)",
       "black-1": "var(--black-1)",
       "black-2": "var(--black-2)",
+      "black-3": "var(--black-3)",
 
       "gray": "var(--gray)",
       "gray-1": "var(--gray-1)",

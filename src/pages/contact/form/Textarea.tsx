@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRef, type FC } from 'react';
