@@ -1,7 +1,7 @@
+import clsx from 'clsx';
 import styled from '@emotion/styled';
 import type { TMediaRecord } from '@pages/projects/config';
 import {
-  AnimatePresence,
   MotionValue,
   clamp,
   motion,
@@ -12,20 +12,16 @@ import { PRESENCE_OPACITY } from '@constants/animation';
 import { useCursor } from './useCursor';
 import { useScale } from './useScale';
 import {
-  CURSOR_SIZE_HALF,
+  CURSOR_SIZE_QUARTER,
   TImageProps,
   TMoveConfig,
   TSharedConfig,
 } from './config';
-import clsx from 'clsx';
-import { GLOW_BOX_SHADOW } from '@constants/colors';
 import { Cross } from '@components/icons/Cross';
 import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
-import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import { useImageDimensions } from '@hooks/media/useImageDimensions';
 
-const MOVE_BUFFER = CURSOR_SIZE_HALF;
+const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 
 export const Root = styled(motion.div)``;
 export const Border = styled(motion.div)``;
@@ -106,16 +102,14 @@ export const Zoom: FC<TProps> = ({
   });
 
   return (
-    <AnimatePresence>
+    <>
       {isCursorReady && (
         <>
           <Border
-            key='ZOOM_BORDER'
             className={clsx(
-              'absolute pointer-events-none glow-interactive',
+              'absolute glow-interactive pointer-events-none',
             )}
             {...rootProps}
-            {...PRESENCE_OPACITY}
           >
             <div
               className={clsx(
@@ -137,12 +131,12 @@ export const Zoom: FC<TProps> = ({
           >
             <Picture
               mediaRecord={mediaRecord}
-              className='absolute w-full h-full'
+              className='absolute'
               {...copyProps}
             />
           </Root>
         </>
       )}
-    </AnimatePresence>
+    </>
   );
 };

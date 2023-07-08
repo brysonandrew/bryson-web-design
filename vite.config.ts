@@ -5,11 +5,6 @@ import unoCss from 'unocss/vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      "external": ["@unocss/reset/tailwind.css"]
-    }
-  },
   plugins: [
     nodePolyfills({
       globals: {
