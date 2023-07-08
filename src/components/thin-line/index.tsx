@@ -1,7 +1,8 @@
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import COLORS from '@windi/config-colors.json';
+import * as unoConfig from '@uno/config';
+const COLORS = unoConfig.default.theme.colors;
 
 export const THIN_LINE_CLASS = 'bg-teal-04 h-px w-full';
 

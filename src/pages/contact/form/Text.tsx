@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { useRef, type FC, useEffect } from 'react';
-import { INPUT_CLASS, TBaseInputProps } from '../config';
+import { useRef, type FC } from 'react';
+import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './Box';
@@ -38,7 +38,7 @@ export const Text: FC<TProps> = ({
       </div>
       <Input
         ref={ref}
-        className={clsx(INPUT_CLASS)}
+        className='input-text'
         type='text'
         autoComplete='off'
         name={name}

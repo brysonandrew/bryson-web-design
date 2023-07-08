@@ -11,7 +11,7 @@ type TProps = Partial<TChildrenProps>;
 export const Blinder: FC<TProps> = () => (
   <Root
     className={clsx(
-      'absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-black-dark z-10 pointer-events-none opacity-60',
+      'absolute left-0 bottom-0 w-full h-full bg-gradient-to-t from-black z-10 pointer-events-none opacity-60',
     )}
     variants={{ hover: { opacity: 0 } }}
     transition={{

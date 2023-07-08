@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
-import paths from "vite-tsconfig-paths";
+import tsConfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
-import windiCss from "vite-plugin-windicss";
+import unoCss from 'unocss/vite';
 
 export default defineConfig({
   build: {
@@ -10,15 +10,11 @@ export default defineConfig({
     },
   },
   plugins: [
-    windiCss(),
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-      fastRefresh: true,
+    tsConfigPaths(),
+    unoCss({
+      configFile: './uno.config.ts',
     }),
-    paths()
+    react(),
   ],
   server: {
     port: 3000,

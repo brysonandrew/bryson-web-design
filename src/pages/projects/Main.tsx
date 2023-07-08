@@ -1,13 +1,10 @@
 import { Gallery } from './gallery';
 import { List } from './list';
-import { Space16 } from '@components/spaces/Space16';
 import { APP_ITEMS } from '@constants/apps';
 import { useCurrSource } from '../../hooks/params/useCurrSource';
 import { FC } from 'react';
 import styled from '@emotion/styled';
-import { AnimatePresence, motion } from 'framer-motion';
-import clsx from 'clsx';
-import { WIDTH_CLASS } from '@constants/styles';
+import { motion } from 'framer-motion';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 
@@ -21,9 +18,8 @@ export const Main: FC<TProps> = ({ style }) => {
 
   return (
     <Root
-      className={clsx('relative', WIDTH_CLASS)}
+      className='relative w-box'
       style={{
-        filter: style?.filter,
         rotateX: style?.rotateX,
         top: style?.y,
       }}

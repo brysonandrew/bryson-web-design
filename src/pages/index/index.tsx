@@ -33,7 +33,7 @@ export const Index = () => {
               <Contact />
             </>
           )}
-          <Space8 />
+          <Space24 />
         </Shell>
       </MainShell>
     </Suspense>

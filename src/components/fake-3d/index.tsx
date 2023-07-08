@@ -24,7 +24,7 @@ export const Fake3D: FC<TProps> = ({
   if (isMobile) return children(EMPTY_PROPS);
   return (
     <InView
-      className={clsx('relative w-full', classValue)}
+      className={clsx('flex flex-col items-center relative w-full', classValue)}
       amount='some'
     >
       {({ isInView, ref, ...rectProps }) => {

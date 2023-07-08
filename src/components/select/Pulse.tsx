@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 import { SELECT_LAYOUT_ID } from "../cursor/config";
 import { MOTION_CONFIG } from "@constants/animation";
+import { GLOW_BOX_SHADOW } from "@constants/colors";
 
 const Root = styled(motion.div)``;
 
@@ -16,7 +17,7 @@ export const Pulse: FC<TProps> = ({ classValue }) => (
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
       "absolute inset-0 pointer-events-none rounded-sm cursor-default",
-      classValue ?? "shadow-green-04",
+      classValue ?? GLOW_BOX_SHADOW,
     )}
     initial={false}
     style={{ originX: "50%", originY: "50%" }}

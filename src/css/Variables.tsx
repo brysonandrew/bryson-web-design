@@ -11,19 +11,25 @@ export const Variables = () => {
     <Global
       styles={css`
         :root {
+          --teal: rgb(45 212 191);
+          --teal-04: rgba(45, 212, 191, 0.4);
+          --teal-02: rgba(45, 212, 191, 0.2);
+          --teal-01: rgba(45, 212, 191, 0.1);
+
           --white: #fff;
-          --placeholder-md: ${PLACEHOLDER_MD};
-          --placeholder-sm: ${PLACEHOLDER_SM};
-          --placeholder: ${PLACEHOLDER};
+          --gray: rgb(68, 68, 68);
+          --gray-1: rgb(119, 119, 119);
+
+          --placeholder-md: scale(${PLACEHOLDER_MD});
+          --placeholder-sm: scale(${PLACEHOLDER_SM});
+          --placeholder: scale(${PLACEHOLDER});
           --size-placeholder-md: ${resolveWidth(
             PLACEHOLDER_MD,
           )};
           --size-placeholder-sm: ${resolveWidth(
             PLACEHOLDER_SM,
           )};
-          --size-placeholder: ${resolveWidth(
-            PLACEHOLDER,
-          )};
+          --size-placeholder: ${resolveWidth(PLACEHOLDER)};
         }
       `}
     />

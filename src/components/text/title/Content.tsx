@@ -9,12 +9,12 @@ type TProps = { children: TChildren };
 export const Content: FC<TProps> = ({ children }) => {
   return (
     <>
-      <div className='overflow-hidden'>
+      <div>
         <motion.div
           key='TITLE_TEXT'
           initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0 , opacity: 1 }}
-          exit={{ y: 20, opacity: 0  }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 20, opacity: 0 }}
           transition={{
             ...MOTION_CONFIG.transition,
             delay: 0.1,
@@ -25,7 +25,9 @@ export const Content: FC<TProps> = ({ children }) => {
           </TextXl>
         </motion.div>
       </div>
-      <ThinLineGrow />
+      <div className='overflow-hidden w-3/4'>
+        <ThinLineGrow />
+      </div>
     </>
   );
 };

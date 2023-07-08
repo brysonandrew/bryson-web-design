@@ -13,10 +13,10 @@ export const Item: FC<TProps> = ({
   <Fragment>
     <li className="relative flex items-center justify-center py-6">
       {index % 2 === 0 ? null : (
-        <div className="absolute inset-0 bg-black-light" />
+        <div className="absolute inset-0 bg-black-2" />
       )}
       <Margin>
-        <div className="flex items-center justify-between text-gray-lightest">
+        <div className="flex items-center justify-between text-gray-1">
           <div className="relative">
             <p className="absolute right-full top-0 mr-4 text-right">
               {new Intl.DateTimeFormat("en-UK", {
@@ -47,7 +47,7 @@ export const Item: FC<TProps> = ({
           {item.tags && (
             <>
               <div className="py-1" />
-              <i className="text-gray-lightest">
+              <i className="text-gray-1">
                 {item.tags.join(", ")}
               </i>
             </>
