@@ -49,7 +49,7 @@ export const Control: FC<TProps> = ({
         : {})}
     >
       {children(dimensions)}
-      {image && container && isDesktop && (
+      {isHover && image && container && isDesktop && (
         <Zoom
           key={mediaRecord.png.key}
           container={container}

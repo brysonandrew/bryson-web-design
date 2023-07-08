@@ -107,7 +107,7 @@ export const Zoom: FC<TProps> = ({
 
   return (
     <AnimatePresence>
-      {(
+      {isCursorReady && (
         <>
           <Border
             key='ZOOM_BORDER'
