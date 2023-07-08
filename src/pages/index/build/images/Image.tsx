@@ -1,7 +1,7 @@
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRef, type FC } from 'react';
-import { resolveFilter } from './hooks/resolveFilter';
+import { resolveFilter } from '../../../../components/filters/resolveFilter';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
@@ -10,6 +10,7 @@ import { TMediaRecord } from '@pages/projects/config';
 import { Placeholder } from '@components/placeholder';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
+import { PRESENCE_OPACITY } from '@constants/animation';
 
 export const IMAGE_SIZE = 320;
 
@@ -54,13 +55,18 @@ export const Image: FC<TProps> = ({
         z: RANGE_Z,
         zIndex: RANGE_Z,
       }}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: index / 10, duration: 0.4 },
+      }}
     >
       {!isLoaded && (
         <Placeholder
           key='IMAGE_PLACEHOLDER'
           classValue='origin-top placeholder'
         />
-      )} 
+      )}
       <motion.div
         initial={false}
         animate={{ opacity: isLoaded ? 1 : 0 }}

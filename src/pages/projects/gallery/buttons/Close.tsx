@@ -1,7 +1,7 @@
 import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
 import { useOffSound } from '@hooks/sounds/useOffSound';
-import { Button } from './Button';
+import { Button } from '../../../../components/buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../hooks/nav/useTo';
 

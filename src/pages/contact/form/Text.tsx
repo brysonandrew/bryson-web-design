@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
-import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRef, type FC } from 'react';
 import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
-import { Box } from './Box';
+import { Box } from './box';
 import { useFocus } from './hooks/useFocus';
 
 const Input = styled(motion.input)``;
@@ -23,15 +22,17 @@ export const Text: FC<TProps> = ({
     contact: { focusKey, form },
   } = useContext();
   const isFocused = focusKey === name;
-  useFocus(input, isFocused);
 
   const value = form[name];
+  const isEmpty = Boolean(value);
 
   return (
     <Box
       name={name}
       isDisabled={disabled}
       isFocused={isFocused}
+      isEmpty={isEmpty}
+      input={input}
     >
       <div className='pt-1 w-full md:w-auto'>
         <Name title={name} isFocused={isFocused} />

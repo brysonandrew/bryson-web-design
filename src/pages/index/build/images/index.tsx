@@ -17,7 +17,6 @@ export const Images: FC<TProps> = ({
   rectConfig: { onUpdateRect },
 }) => {
   const { images } = useContext();
-
   const [loadedState, setLoaded] = useState<
     Record<string, boolean>
   >({});
@@ -47,7 +46,6 @@ export const Images: FC<TProps> = ({
       }}
     >
       <motion.ul
-        key='IMAGES'
         className={clsx('absolute w-full preserve-3d')}
         style={{ rotateX, y }}
       >

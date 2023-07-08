@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Button, TButtonProps } from './Button';
+import { Button, TButtonProps } from '../../../../components/buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';

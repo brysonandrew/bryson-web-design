@@ -40,7 +40,7 @@ export type TAction =
     value: TStatus;
   }
   | {
-    type: "contact-state",
+    type: "contact-form",
     value: Partial<TContactState>;
   }
   | {

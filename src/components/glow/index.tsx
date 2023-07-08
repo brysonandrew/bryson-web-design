@@ -10,11 +10,11 @@ import { FC } from 'react';
 
 const Effect = styled(motion.div)``;
 
-type TProps = TPartialGlowConfigOptions &
+export type TGlowProps = TPartialGlowConfigOptions &
   TClassValueProps & {
     children?: TChildren;
   };
-export const Glow: FC<TProps> = ({
+export const Glow: FC<TGlowProps> = ({
   classValue,
   children,
   ...options

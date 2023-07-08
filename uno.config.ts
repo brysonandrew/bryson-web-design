@@ -22,9 +22,9 @@ const config = defineConfig({
       "teal-02": "var(--teal-02)",
       "teal-04": "var(--teal-04)",
 
-      "teal-bright": "rgb(207, 250, 254)",
-      "teal-bright-04": "rgba(207, 250, 254, 0.4)",
-      "teal-bright-01": "rgba(207, 250, 254, 0.1)",
+      "teal-bright": "var(--teal-bright)",
+      "teal-bright-04": "var(--teal-bright-04)",
+      "teal-bright-01": "var(--teal-bright-01)",
 
       "baby-blue": "rgb(153, 204, 255)",
       "baby-blue-01": "rgba(153, 204, 255, 0.1)",
@@ -35,8 +35,8 @@ const config = defineConfig({
       "black-2": "#161616",
 
       "gray": "var(--gray)",
-      "gray-1": "var(--gray-light)",
-      "gray-2": "#ddd",
+      "gray-1": "var(--gray-1)",
+      "gray-2": "var(--gray-2)",
 
       "white": "var(--white)",
       "white-01": "rgba(255,255,255,0.1)",

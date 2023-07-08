@@ -29,7 +29,7 @@ export const reducer = (
         },
       };
     }
-    case 'contact-state': {
+    case 'contact-form': {
       return {
         ...state,
         contact: {

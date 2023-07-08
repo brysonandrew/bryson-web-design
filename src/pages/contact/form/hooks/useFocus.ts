@@ -1,9 +1,16 @@
+import { TInputElement } from "@pages/contact/config";
 import { useEffect } from "react";
 
-export const useFocus = (input: HTMLInputElement | HTMLTextAreaElement | null, isFocused: boolean) => {
-  useEffect(() => {
-    if (input && isFocused) {
+export const useFocus = (input: TInputElement | null, isFocused: boolean) => {
+  const handler = () => {
+    if (input) {
       input.focus();
+    }
+  };
+  useEffect(() => {
+    console.log(input, isFocused);
+    if (isFocused) {
+      handler();
     }
     return () => {
       if (input && isFocused) {
@@ -11,4 +18,6 @@ export const useFocus = (input: HTMLInputElement | HTMLTextAreaElement | null, i
       }
     };
   }, [input, isFocused]);
+
+  return handler;
 };

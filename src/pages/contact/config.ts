@@ -1,3 +1,6 @@
+import { HTMLMotionProps } from 'framer-motion';
+import { ChangeEvent, FocusEvent } from 'react';
+
 export type TStatus =
   | "idle"
   | "sending"
@@ -48,3 +51,19 @@ export const INIT_CONTACT_STATE: TContactState = {
 export type TBaseInputProps = {
   name: TFormKey;
 };
+
+export type TFocusEvent = FocusEvent<
+  HTMLInputElement | HTMLTextAreaElement,
+  Element
+>;
+
+export type TChangeEvent = ChangeEvent<
+  HTMLInputElement | HTMLTextAreaElement
+>;
+
+export type TInputHandlers = Pick<
+  HTMLMotionProps<'input'> & HTMLMotionProps<'textarea'>,
+  'onChange' | 'onBlur' | 'onFocus'
+>;
+
+export type TInputElement = HTMLInputElement | HTMLTextAreaElement;
