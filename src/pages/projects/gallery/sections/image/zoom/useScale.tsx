@@ -18,7 +18,7 @@ export const useScale = ({
   imageHeight,
   cursorX,
   cursorY,
-  element,
+  container,
 }: TConfig) => {
   const [scale, setScale] = useState<number>(SCALE.INIT);
 
@@ -57,10 +57,10 @@ export const useScale = ({
   const handleWheel = ({ deltaY }: WheelEvent) =>
     handleTuneScale(deltaY);
 
-  useEventListener<'wheel', typeof element>(
+  useEventListener<'wheel', typeof container>(
     'wheel',
     handleWheel,
-    { current: element },
+    { current: container },
     {
       passive: true,
     },

@@ -1,5 +1,12 @@
+
 import { useEventListener } from '@hooks/useEventListener';
-import { CURSOR_SIZE_HALF, CURSOR_SIZE, TSharedConfig, resolveCoord, TInteractiveEvent, resolveCursorCoords } from './config';
+import {
+  CURSOR_SIZE_HALF,
+  CURSOR_SIZE,
+  TSharedConfig,
+  TInteractiveEvent,
+  resolveCursorCoords,
+} from './config';
 import { useOutsideClick } from '@hooks/useOutsideClick';
 
 
