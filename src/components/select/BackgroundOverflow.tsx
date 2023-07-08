@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
-import { SELECT_LAYOUT_ID } from "../cursor/config";
+import { SELECT_LAYOUT_ID } from "../../../_cemetary/cursor/config";
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import type { FC } from "react";

@@ -6,7 +6,7 @@ import type { TChildren } from '@t/index';
 import { Content } from './Content';
 
 const ROOT_PROPS = {
-  className: clsx('flex flex-col items-center w-core'),
+  className: clsx('column w-core'),
 };
 type TProps = { children: TChildren };
 export const Title: FC<TProps> = ({ children }) => {

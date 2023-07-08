@@ -1,8 +1,17 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useIsomorphicLayoutEffect } from "framer-motion";
 import { useEventListener } from "./useEventListener";
+import { useTimeoutRef } from "./useTimeoutRef";
 
 const RESIZE_COOLDOWN = 400;
+
+const INIT = {
+  isResizing: true,
+  width: 0,
+  widthOffset:
+    0,
+  height: 0
+};
 
 export type TResizing = boolean | null;
 
@@ -13,26 +22,15 @@ export type TWindowSize = {
   width: number;
   widthOffset: number;
   height: number;
-  handleSize: TUpdateWindowHandler;
-} | null;
+};
 
 export const useWindowSize = (): TWindowSize => {
   const [windowSize, setWindowSize] =
-    useState<TWindowSize>(null);
-  const timerRef = useRef<ReturnType<
-    typeof setTimeout
-  > | null>(null);
-
-
-  const handleEndTimeout = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-  };
+    useState<TWindowSize>(INIT);
+  const { timeoutRef, endTimeout } = useTimeoutRef();
 
   const handleSize = () => {
     const next = {
-      handleSize,
       isResizing: true,
       width: document.documentElement.clientWidth,
       widthOffset:
@@ -43,8 +41,8 @@ export const useWindowSize = (): TWindowSize => {
 
     setWindowSize(next);
 
-    handleEndTimeout();
-    timerRef.current = setTimeout(() => {
+    endTimeout();
+    timeoutRef.current = setTimeout(() => {
       setWindowSize({ ...next, isResizing: false });
     }, RESIZE_COOLDOWN);
   };
@@ -53,7 +51,6 @@ export const useWindowSize = (): TWindowSize => {
 
   useIsomorphicLayoutEffect(() => {
     handleSize();
-    return handleEndTimeout;
   }, []);
 
   return windowSize;

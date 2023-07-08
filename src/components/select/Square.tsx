@@ -10,7 +10,7 @@ import { clsx } from "clsx";
 import {
   CURSOR_SIZE,
   SELECT_LAYOUT_ID,
-} from "../cursor/config";
+} from "../../../_cemetary/cursor/config";
 import { resolveUrlId } from "@utils/resolveUrlId";
 import { POOL_ID } from "@components/cursor";
 import { useDomCondition } from "@hooks/useDomCondition";

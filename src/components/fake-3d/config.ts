@@ -51,7 +51,7 @@ export type TVisibilityRange = TInputResolver & {
   grayscale?: TRange;
 };
 
-export type TOptionsConfig = {
+export type TFake3DOptions = {
   dispersion?: TTransformRange;
   resistance?: TTransformRange;
   visibility?: TVisibilityRange;

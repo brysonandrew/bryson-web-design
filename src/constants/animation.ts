@@ -13,14 +13,6 @@ export const MOTION_CONFIG = {
   },
 };
 
-export const INIT_MOTION_CONFIG = {
-  transition: {
-    ease: "linear",
-    duration: 1,
-  },
-};
-
-
 export const SLOW_MOTION_CONFIG = {
   transition: {
     ease: 'linear',

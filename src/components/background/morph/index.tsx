@@ -1,6 +1,3 @@
-import * as unoConfig from '@uno/config';
-const COLORS = unoConfig.default.theme.colors;
-
 export const MORPH_ID = 'MORPH_ID';
 
 export const Morph = () => (

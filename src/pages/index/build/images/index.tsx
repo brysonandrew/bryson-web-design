@@ -36,6 +36,8 @@ export const Images: FC<TProps> = ({
     });
   };
 
+  console.log(images);
+
   return (
     <motion.div
       className='relative w-full'

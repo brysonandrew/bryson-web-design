@@ -6,9 +6,8 @@ import { useWindowSize } from '@hooks/useWindowSize';
 const MAX_COUNT = 10;
 
 export const useSmallImages = () => {
-  const windowSize = useWindowSize();
-  const isResizing = windowSize?.isResizing;
-  const windowWidth = windowSize?.width ?? 0;
+  const { isResizing, width: windowWidth } =
+    useWindowSize();
 
   const {
     images: { length: count },
@@ -21,7 +20,10 @@ export const useSmallImages = () => {
         MAX_COUNT,
         ~~(windowWidth / 100) + 3,
       );
+      console.log(countRequired);
+
       if (count !== countRequired) {
+        console.log('DISPATCH');
         const init = async () => {
           const value = await resolveRandomMediaRecord(
             countRequired,

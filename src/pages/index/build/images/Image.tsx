@@ -58,7 +58,11 @@ export const Image: FC<TProps> = ({
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: index / 10, duration: 0.4 },
+        transition: {
+          ease: 'linear',
+          delay: index / 10,
+          duration: 0.4,
+        },
       }}
     >
       {!isLoaded && (
