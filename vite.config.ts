@@ -2,9 +2,14 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 import unoCss from 'unocss/vite';
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      "external": ["@unocss/reset/tailwind.css"]
+    }
+  },
   plugins: [
     nodePolyfills({
       globals: {
