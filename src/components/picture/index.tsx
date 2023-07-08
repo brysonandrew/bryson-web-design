@@ -21,6 +21,10 @@ export const Picture: FC<TProps> = ({
     src,
     alt: mediaRecord.png.name,
   };
+  const imageProps = {
+    ...mainImg,
+    ...props,
+  };
 
   return (
     <Root>
@@ -32,13 +36,9 @@ export const Picture: FC<TProps> = ({
       )}
       <Source type='image/png' srcSet={src} />
       {imageRef ? (
-        <ImageWithRef
-          ref={imageRef}
-          {...mainImg}
-          {...props}
-        />
+        <ImageWithRef ref={imageRef} {...imageProps} />
       ) : (
-        <motion.img {...mainImg} {...props} />
+        <motion.img {...imageProps} />
       )}
     </Root>
   );

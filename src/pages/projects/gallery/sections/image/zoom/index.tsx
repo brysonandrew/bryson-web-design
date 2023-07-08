@@ -22,6 +22,8 @@ import { GLOW_BOX_SHADOW } from '@constants/colors';
 import { Cross } from '@components/icons/Cross';
 import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
+import { resolveDimensions } from '@hooks/media/resolveDimensions';
+import { useImageDimensions } from '@hooks/media/useImageDimensions';
 
 const MOVE_BUFFER = CURSOR_SIZE_HALF;
 
@@ -93,7 +95,7 @@ export const Zoom: FC<TProps> = ({
     onMove: handleMove,
     onClose: () => setCursorReady(false),
   };
-  const { ...rootProps } = useCursor(sharedConfig);
+  const rootProps = useCursor(sharedConfig);
   const { scale, onJumpScale, onTuneScale, ...copyProps } =
     useScale(sharedConfig);
 
@@ -110,8 +112,7 @@ export const Zoom: FC<TProps> = ({
           <Border
             key='ZOOM_BORDER'
             className={clsx(
-              'absolute pointer-events-none',
-              GLOW_BOX_SHADOW,
+              'absolute pointer-events-none glow-interactive',
             )}
             {...rootProps}
             {...PRESENCE_OPACITY}
@@ -131,14 +132,12 @@ export const Zoom: FC<TProps> = ({
             </div>
           </Border>
           <Root
-            key='ZOOM_CURSOR'
             className='absolute pointer-events-none overflow-hidden'
             {...rootProps}
-            {...PRESENCE_OPACITY}
           >
             <Picture
               mediaRecord={mediaRecord}
-              className='absolute'
+              className='absolute w-full h-full'
               {...copyProps}
             />
           </Root>
