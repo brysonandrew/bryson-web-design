@@ -1,19 +1,18 @@
 import clsx from 'clsx';
 import styled from '@emotion/styled';
-import { useSelectHandlers } from '@hooks/useSelectHandlers';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
-import { TextXl2 } from '@components/text/TextXl2';
 import { Glow } from '@components/glow';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 import { Border as Select } from '@components/select/Border';
 import { MetalDark } from '@components/metal/MetalDark';
 import { Box } from '@components/glow/Box';
+import { useHover } from '@hooks/useHover';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
-const TitleRoot = styled.h4``;
+const Title = styled.h4``;
 
 export const Item: FC<TItem> = ({
   Icon,
@@ -21,7 +20,7 @@ export const Item: FC<TItem> = ({
   href,
   ...props
 }) => {
-  const { handlers, isSelected } = useSelectHandlers(title);
+  const { isHover, ...handlers } = useHover();
 
   return (
     <Root
@@ -30,7 +29,7 @@ export const Item: FC<TItem> = ({
       {...handlers}
       {...props}
     >
-      {isSelected && <Select layoutId={title} />}
+      {isHover && <Select layoutId={title} />}
       <Glow text={1} drop={8} color='white'>
         <MetalDark />
       </Glow>
@@ -46,7 +45,7 @@ export const Item: FC<TItem> = ({
             <div className='relative flex items-center z-10'>
               <Icon classValue='h-10 w-10' />
               <div className='p-2' />
-              <TextXl2 Root={TitleRoot}>{title}</TextXl2>
+              <Title className='+++text'>{title}</Title>
             </div>
           </Anchor>
         </Glow>

@@ -21,8 +21,6 @@ const Input = styled(motion.input)`
   background-color: transparent !important;
 `;
 const Text = styled(motion.h4)`
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: rgba(153, 204, 255, 0.9);
 `;
 
 type TProps = { isDisabled: boolean };
@@ -61,7 +59,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         />
         <Text
           className={clsx(
-            'flex justify-center relative capitalise text-teal text-2xl italic py-2 pointer-events-none',
+            'flex justify-center relative capitalise text-teal text-baby-blue-stroke-09 text-2xl italic py-2 pointer-events-none',
           )}
           variants={{
             animate: {

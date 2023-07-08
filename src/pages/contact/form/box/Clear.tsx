@@ -32,10 +32,10 @@ export const Clear: FC<TProps> = ({
   };
 
   return (
-    <Root className='absolute top-3.75 right-3.75 z-10'>
+    <Root className='absolute top-4 md:top-3.75 right-3.75 z-10'>
       <motion.button
         type='button'
-        className='relative text-gray'
+        className='relative text-gray-1 backdrop-blur-sm bg-white-01 rounded-md'
         whileHover={{ filter: HIGHLIGHT }}
         onTap={handleClear}
         {...PRESENCE_OPACITY_DELAY}

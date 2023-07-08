@@ -27,3 +27,4 @@ export const TextSm: FC<TProps> = ({
     {children}
   </Root>
 );
+ 

@@ -8,7 +8,6 @@ export const useFocus = (input: TInputElement | null, isFocused: boolean) => {
     }
   };
   useEffect(() => {
-    console.log(input, isFocused);
     if (isFocused) {
       handler();
     }

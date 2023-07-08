@@ -26,24 +26,26 @@ const config = defineConfig({
       "teal-bright-04": "var(--teal-bright-04)",
       "teal-bright-01": "var(--teal-bright-01)",
 
-      "baby-blue": "rgb(153, 204, 255)",
-      "baby-blue-01": "rgba(153, 204, 255, 0.1)",
+      "baby-blue": "var(--baby-blue)",
+      "baby-blue-01": "var(--baby-blue-01)",
+      "baby-blue-09": "var(--baby-blue-09)",
 
-      "black": "rgb(0, 0, 0)",
-      "black-04": "rgba(0, 0, 0, 0.4)",
-      "black-1": "#111",
-      "black-2": "#161616",
+      "black": "var(--black)",
+      "black-04": "var(--black-04)",
+      "black-1": "var(--black-1)",
+      "black-2": "var(--black-2)",
+      "black-3": "var(--black-3)",
 
       "gray": "var(--gray)",
       "gray-1": "var(--gray-1)",
       "gray-2": "var(--gray-2)",
 
       "white": "var(--white)",
-      "white-01": "rgba(255,255,255,0.1)",
-      "white-02": "rgba(255,255,255,0.2)",
+      "white-01": "var(white-01)",
+      "white-02": "var(white-02)",
 
-      "current": "currentColor",
-      "transparent": "rgba(0,0,0,0)"
+      "current": "var(--current)",
+      "transparent": "var(--transparent)"
     },
     spacing: SPACING,
     fontSize: {
@@ -68,14 +70,25 @@ const config = defineConfig({
     ['placeholder', { transform: 'scale(8)' }],
     ['+placeholder', { transform: 'scale(16)' }],
     ['++placeholder', { transform: 'scale(28)' }],
+    ['text-baby-blue-stroke', { '-webkit-text-stroke': '1px var(--baby-blue)' }],
+    ['text-baby-blue-stroke-09', { '-webkit-text-stroke': '1px var(--baby-blue)' }],
+    ['text-gray-stroke', { '-webkit-text-stroke': '1px var(--gray)' }],
   ],
   shortcuts: {
     "w-core": "w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core",
     "row": "flex items-center",
     "row-space": "row justify-between",
+    "column": "flex flex-col items-center",
+    "column-space": "column justify-between",
+    "center": "flex items-center justify-center",
     'input-label': 'relative flex flex-col items-start w-full p-2 bg-black-04 md:flex-row',
     'input-textarea': 'relative text-baby-blue text-2xl px-4 py-2 w-full tracking-widest bg-black-04',
-    "input-text": 'input-textarea px-4'
+    "input-text": 'input-textarea px-4',
+    "+++text": 'text-teal-bright text-left text-3xl tracking-wide px-1 md:text-3.5xl xl:text-4xl',
+    "++text": 'relative uppercase text-teal-bright px-2 tracking-widest text-baby-blue-stroke text-3xl md:text-4xl xl:px-4',
+    "+text": "text-left text-teal-bright text-xl md:text-2xl",
+    "cover-fixed": 'fixed inset-0',
+    "cover": 'absolute inset-0',
   },
   presets: [
     presetUno(),

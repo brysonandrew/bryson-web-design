@@ -6,7 +6,7 @@ import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './box';
-import { useFocus } from './hooks/useFocus';
+import { useInput } from './useInput';
 
 const Input = styled(motion.input)``;
 
@@ -16,16 +16,8 @@ export const Text: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const ref = useRef<HTMLInputElement | null>(null);
-  const input = ref.current;
-  const {
-    contact: { focusKey, form },
-  } = useContext();
-  const isFocused = focusKey === name;
-
-  const value = form[name];
-  const isEmpty = Boolean(value);
-
+  const { ref, input, isEmpty, isFocused, value } =
+    useInput<HTMLInputElement>({ name });
   return (
     <Box
       name={name}
