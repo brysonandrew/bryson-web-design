@@ -1,7 +1,6 @@
 
-import { defineConfig, presetWebFonts, presetUno, presetAttributify } from 'unocss';
+import { defineConfig, presetWebFonts, presetUno } from 'unocss';
 import { SPACING } from './uno.config-spacing';
-
 
 const config = defineConfig({
   theme: {
@@ -79,7 +78,6 @@ const config = defineConfig({
     "input-text": 'input-textarea px-4'
   },
   presets: [
-    presetAttributify(),
     presetUno(),
     presetWebFonts({
       fonts: {
