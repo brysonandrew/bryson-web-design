@@ -58,9 +58,9 @@ export const Image: FC<TProps> = ({
       {!isLoaded && (
         <Placeholder
           key='IMAGE_PLACEHOLDER'
-          classValue='origin-top scale-placeholder'
+          classValue='origin-top placeholder'
         />
-      )}
+      )} 
       <motion.div
         initial={false}
         animate={{ opacity: isLoaded ? 1 : 0 }}

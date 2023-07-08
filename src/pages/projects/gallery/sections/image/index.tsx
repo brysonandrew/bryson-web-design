@@ -45,7 +45,7 @@ export const Image: FC<TProps> = ({
               classValue='origin-center placeholder sm:+placeholder md:++placeholder'
             />
           )}
-          {/* <Picture
+          <Picture
             imageRef={ref}
             mediaRecord={mediaRecord}
             className='absolute left-1/2 top-1/2'
@@ -59,7 +59,7 @@ export const Image: FC<TProps> = ({
                 : {}),
             }}
             {...dimensions}
-          /> */}
+          />
         </>
       )}
     </Control>
