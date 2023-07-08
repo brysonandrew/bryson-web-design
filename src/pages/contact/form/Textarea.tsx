@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { useRef, type FC } from 'react';
+import { type FC } from 'react';
 import { TBaseInputProps } from '../config';
 import { Name } from './name';
-import { useContext } from '@state/Context';
 import { Box } from './box';
+import { useInput } from './useInput';
 
 const Input = styled(motion.textarea)``;
 
@@ -15,15 +15,8 @@ export const Textarea: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const ref = useRef<HTMLInputElement | null>(null);
-  const input = ref.current;
-  const {
-    contact: { focusKey, form },
-  } = useContext();
-  const isFocused = focusKey === name;
-
-  const value = form[name];
-  const isEmpty = Boolean(value);
+  const { ref, input, isEmpty, isFocused, value } =
+    useInput<HTMLTextAreaElement>({ name });
 
   return (
     <Box
@@ -38,6 +31,7 @@ export const Textarea: FC<TProps> = ({
       </div>
       <div className={'flex grow'}>
         <Input
+          ref={ref}
           className='input-textarea'
           autoComplete='off'
           name={name}
