@@ -13,7 +13,7 @@ const Root = styled(motion.h4)`
 type TProps = HTMLMotionProps<"h4"> & {
   classValue?: ClassValue;
 };
-export const TextLg: FC<TProps> = ({
+export const Textgt-lg: FC<TProps> = ({
   classValue,
   style,
   children,

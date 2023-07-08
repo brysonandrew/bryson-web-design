@@ -1,3 +1,9 @@
+import type { AttributifyAttributes } from '@unocss/preset-attributify';
+
+declare module 'react' {
+  type HTMLAttributes<T> = AttributifyAttributes;
+}
+
 type MemoryInfo = {
   jsHeapSizeLimit: number; // 4294705152;
   totalJSHeapSize: number; //  37725333;
@@ -124,7 +130,7 @@ interface AudioWorkletProcessor {
 
 declare const AudioWorkletProcessor: {
   prototype: AudioWorkletProcessor;
-  new (
+  new(
     options?: AudioWorkletNodeOptions,
   ): AudioWorkletProcessor;
 };
@@ -142,4 +148,4 @@ declare function registerProcessor(
   },
 ): void;
 
-declare module "lamejs"
+declare module "lamejs";

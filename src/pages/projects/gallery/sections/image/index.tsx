@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { TMediaRecord } from '@pages/projects/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { type FC, useRef } from 'react';
 import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
@@ -39,13 +39,13 @@ export const Image: FC<TProps> = ({
     >
       {(dimensions) => (
         <>
-          {!isLoaded && (
+          {true && (
             <Placeholder
               key='IMAGE_PLACEHOLDER'
-              classValue='origin-center scale-placeholder sm:scale-placeholder_sm md:scale-placeholder_md'
+              classValue='origin-center scale-placeholder sm:scale-placeholder-sm md:scale-placeholder-md'
             />
           )}
-          <Picture
+          {/* <Picture
             imageRef={ref}
             mediaRecord={mediaRecord}
             className='absolute left-1/2 top-1/2'
@@ -59,7 +59,7 @@ export const Image: FC<TProps> = ({
                 : {}),
             }}
             {...dimensions}
-          />
+          /> */}
         </>
       )}
     </Control>

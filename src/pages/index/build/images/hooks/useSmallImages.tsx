@@ -3,7 +3,7 @@ import { resolveRandomMediaRecord } from './resolveRandomMediaRecord';
 import { useContext } from '@state/Context';
 import { useWindowSize } from '@hooks/useWindowSize';
 
-const MAX_COUNT = 10;
+const MAX_COUNT = 6;
 
 export const useSmallImages = () => {
   const windowSize = useWindowSize();

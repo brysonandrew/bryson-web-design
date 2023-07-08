@@ -11,7 +11,7 @@ import { Placeholder } from '@components/placeholder';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
 
-const IMAGE_SIZE = 320;
+export const IMAGE_SIZE = 320;
 
 type TProps = HTMLMotionProps<'img'> & {
   mediaRecord: TMediaRecord;
@@ -38,7 +38,7 @@ export const Image: FC<TProps> = ({
 
   return (
     <motion.li
-      className='absolute overflow-hidden'
+      className='absolute'
       style={{
         cursor: 'zoom-in',
         ...xStyle,

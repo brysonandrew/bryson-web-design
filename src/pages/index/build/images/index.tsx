@@ -7,7 +7,6 @@ import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { TMediaRecord } from '@pages/projects/config';
 import { RANGE_Y } from './hooks/useY';
-import { PRESENCE_OPACITY } from '@constants/animation';
 
 const BUFFER = 100;
 const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
@@ -49,7 +48,7 @@ export const Images: FC<TProps> = ({
     >
       <motion.ul
         key='IMAGES'
-        className={clsx('flex relative w-full preserve-3d')}
+        className={clsx('absolute w-full preserve-3d')}
         style={{ rotateX, y }}
       >
         {images.map(

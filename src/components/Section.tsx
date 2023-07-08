@@ -17,7 +17,7 @@ export const Section: FC<TProps> = ({
   title,
   classValue,
   children,
-}) => {
+}) => { 
   return (
     <Root
       className={clsx(

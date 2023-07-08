@@ -16,7 +16,7 @@ export const Item: FC<TProps> = ({
         <div className="absolute inset-0 bg-black-light" />
       )}
       <Margin>
-        <div className="flex items-center justify-between text-gray-lightest">
+        <div className="flex items-center justify-between text-gray-light">
           <div className="relative">
             <p className="absolute right-full top-0 mr-4 text-right">
               {new Intl.DateTimeFormat("en-UK", {
@@ -47,7 +47,7 @@ export const Item: FC<TProps> = ({
           {item.tags && (
             <>
               <div className="py-1" />
-              <i className="text-gray-lightest">
+              <i className="text-gray-light">
                 {item.tags.join(", ")}
               </i>
             </>

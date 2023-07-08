@@ -1,6 +1,8 @@
 import type { FC } from "react";
 import type { TChildren } from "@t/index";
-import COLORS from "@windi/config-colors.json";
+import * as unoConfig from '@uno/config';
+const COLORS = unoConfig.default.theme.colors;
+console.log(unoConfig)
 export const PATTERN_ID = "PATTERN_ID";
 
 type TProps = {

@@ -19,7 +19,8 @@ import {
 } from 'react-router-dom';
 import { useTo } from '../../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
-import COLORS from '@windi/config-colors.json';
+import * as unoConfig from '@uno/config';
+const COLORS = unoConfig.default.theme.colors;
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

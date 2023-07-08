@@ -6,14 +6,10 @@ import { Section } from '@components/Section';
 
 export const Projects = () => {
   return (
-    <Section
-      title={STORY.projects}
-      classValue='items-center z-10'
-    >
+    <Section title={STORY.projects}>
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>
     </Section>
   );
 };
-   

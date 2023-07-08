@@ -3,10 +3,10 @@ import { TImageRecord } from "@state/types";
 import { TModule } from "@t/index";
 
 const screensRecordSmall = import.meta.glob(
-  "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.png",
+  "/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.png",
 );
 const screensRecordSmallWebp = import.meta.glob(
-  "/screens/**/+([0-9]|!(*[a-z]*)[0-9]) Small.webp",
+  "/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.webp",
 );
 const entries = Object.entries(screensRecordSmall);
 const count = entries.length;

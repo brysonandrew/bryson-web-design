@@ -3,7 +3,8 @@ import { resolveDropShadow } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import COLORS from '@windi/config-colors.json';
+import * as unoConfig from '@uno/config';
+const COLORS = unoConfig.default.theme.colors;
 import { PADDING_X } from './config';
 import { useHover } from '@hooks/useHover';
 

@@ -25,3 +25,4 @@ export const Title: FC<TProps> = ({ children }) => {
     );
   })(<Content>{children}</Content>);
 };
+ 
