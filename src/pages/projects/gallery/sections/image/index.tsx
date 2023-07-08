@@ -23,12 +23,10 @@ export const Image: FC<TProps> = ({
 }) => {
   const ref = useRef<HTMLImageElement | null>(null);
   const image = ref.current;
-
   const isLoaded = useLoadImage({
     image,
     src: mediaRecord.png.src,
   });
-
   const { isTransitioningGallery } = useContext();
 
   return (
@@ -39,7 +37,7 @@ export const Image: FC<TProps> = ({
     >
       {(dimensions) => (
         <>
-          {true && (
+          {!isLoaded && (
             <Placeholder
               key='IMAGE_PLACEHOLDER'
               classValue='origin-center placeholder sm:+placeholder md:++placeholder'

@@ -49,15 +49,17 @@ export const Control: FC<TProps> = ({
         : {})}
     >
       {children(dimensions)}
-      {isHover && image && container && isDesktop && (
-        <Zoom
-          key={mediaRecord.png.key}
-          container={container}
-          image={image}
-          mediaRecord={mediaRecord}
-          {...{ scrollX, scrollY }}
-        />
-      )}
+      <>
+        {isHover && image && container && isDesktop && (
+          <Zoom
+            key={mediaRecord.png.key}
+            container={container}
+            image={image}
+            mediaRecord={mediaRecord}
+            {...{ scrollX, scrollY }}
+          />
+        )}
+      </>
     </motion.div>
   );
 };

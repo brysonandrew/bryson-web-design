@@ -11,6 +11,7 @@ export const DELTA_FACTOR = 0.001;
 
 export const CURSOR_SIZE = 275;
 export const CURSOR_SIZE_HALF = CURSOR_SIZE * 0.5;
+export const CURSOR_SIZE_QUARTER = CURSOR_SIZE_HALF * 0.5;
 
 export type TImageProps = {
   image: HTMLImageElement;
