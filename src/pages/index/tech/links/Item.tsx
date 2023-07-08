@@ -13,6 +13,7 @@ import { Box } from '@components/glow/Box';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
+const TitleRoot = styled.h4``;
 
 export const Item: FC<TItem> = ({
   Icon,
@@ -45,7 +46,7 @@ export const Item: FC<TItem> = ({
             <div className='relative flex items-center z-10'>
               <Icon classValue='h-10 w-10' />
               <div className='p-2' />
-              <TextXl2>{title}</TextXl2>
+              <TextXl2 Root={TitleRoot}>{title}</TextXl2>
             </div>
           </Anchor>
         </Glow>

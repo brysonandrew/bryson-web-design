@@ -25,7 +25,6 @@ export const useScale = ({
 
   const copyImageWidth = imageWidth * scale;
   const copyImageHeight = imageHeight * scale;
-  console.log(`ciw: ` + copyImageWidth);
   const resolveCopyTransform = (v: number) =>
     -(v * scale - CURSOR_SIZE_HALF);
   const copyImageX = useTransform(
