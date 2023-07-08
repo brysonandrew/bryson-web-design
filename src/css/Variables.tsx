@@ -18,7 +18,7 @@ export const Variables = () => {
 
           --white: #fff;
           --gray: rgb(68, 68, 68);
-          --gray-light: rgb(119, 119, 119);
+          --gray-1: rgb(119, 119, 119);
 
           --placeholder-md: scale(${PLACEHOLDER_MD});
           --placeholder-sm: scale(${PLACEHOLDER_SM});

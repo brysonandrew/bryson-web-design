@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import clsx from 'clsx';
 import { Header } from './Header';
 import {
   TSlugProps,
@@ -10,8 +11,6 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import { Mark } from './Mark';
 import { DELAY_VISIBILITY } from '@constants/animation';
 import { Glow } from '@components/glow';
-import { GLOW_BOX_SHADOW } from '@constants/colors';
-import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 
@@ -31,7 +30,7 @@ export const Content: FC<TProps> = ({
       layoutId={resolveTitleLayoutId(slug)}
       className={clsx(
         'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20',
-        [!isHeader && GLOW_BOX_SHADOW],
+        [!isHeader && 'glow-interactive'],
       )}
       {...props}
     >
@@ -44,12 +43,10 @@ export const Content: FC<TProps> = ({
       )}
       <Mark />
       <motion.div
-        className='flex items-center justify-between'
+        className='row-space'
         {...DELAY_VISIBILITY}
       >
-        <div className='flex items-center'>
-          <Header slug={slug} />
-        </div>
+        <Header slug={slug} />
         <div className='p-2' />
         <>{children}</>
       </motion.div>

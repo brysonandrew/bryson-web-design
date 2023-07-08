@@ -19,7 +19,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   useSmallImages();
 
   return (
-    <Root className='relative text-black-dark-04 z-10 overflow-x-hidden'>
+    <Root className='relative text-black-04 z-10 overflow-x-hidden'>
       <Header />
       <Content className='relative'>
         <HeaderOffset />

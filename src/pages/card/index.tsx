@@ -17,7 +17,7 @@ export const Card = () => {
           style={{ filter }}
         >
           <_Card
-            className="flex flex-col justify-around bg-black"
+            className="flex flex-col justify-around bg-black-1"
             style={SIZE}
           >
             <Title />

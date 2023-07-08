@@ -5,6 +5,7 @@
   "main": "src/main/index.tsx",
   "scripts": {
     "dev": "vite",
+    "unbuild": "unbuild",
     "build": "tsc && vite build",
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",

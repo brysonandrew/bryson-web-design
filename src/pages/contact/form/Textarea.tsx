@@ -3,10 +3,7 @@ import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { useRef, type FC } from 'react';
-import {
-  TBaseInputProps,
-  TEXTAREA_INPUT_CLASS,
-} from '../config';
+import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './Box';
@@ -41,7 +38,7 @@ export const Textarea: FC<TProps> = ({
       </div>
       <div className={clsx('flex')}>
         <Input
-          className={clsx(TEXTAREA_INPUT_CLASS)}
+          className='input-textarea'
           autoComplete='off'
           name={name}
           value={value}

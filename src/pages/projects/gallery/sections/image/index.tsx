@@ -42,7 +42,7 @@ export const Image: FC<TProps> = ({
           {true && (
             <Placeholder
               key='IMAGE_PLACEHOLDER'
-              classValue='origin-center scale-placeholder sm:scale-placeholder-sm md:scale-placeholder-md'
+              classValue='origin-center placeholder sm:+placeholder md:++placeholder'
             />
           )}
           {/* <Picture

@@ -22,7 +22,7 @@ export const Textgt-lg: FC<TProps> = ({
   <Root
     className={clsx(
       "text-left px-2 tracking-widest text-1xl sm:text-2xl xl:text-3xl xl:px-4",
-      classValue ?? "text-black",
+      classValue ?? "text-black-1",
     )}
     style={{
       lineHeight: 1,

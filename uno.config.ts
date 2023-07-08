@@ -1,6 +1,5 @@
-import { defineConfig, presetWind, presetWebFonts, presetUno, presetAttributify } from 'unocss';
-import inspector from "@unocss/inspector";
 
+import { defineConfig, presetWebFonts, presetUno, presetAttributify } from 'unocss';
 import { SPACING } from './uno.config-spacing';
 
 
@@ -13,11 +12,10 @@ const config = defineConfig({
       xl: '1440px',
     },
     width: {
-      'core-xs': '375px',
-      'core-sm': '480px',
-      'core-md': '768px',
-      'core-lg': '900px',
-      'core-xl': '1100px',
+      '+core': '480px',
+      '++core': '768px',
+      '+++core': '900px',
+      '++++core': '1100px',
     },
     colors: {
       "teal": "var(--teal)",
@@ -32,15 +30,15 @@ const config = defineConfig({
       "baby-blue": "rgb(153, 204, 255)",
       "baby-blue-01": "rgba(153, 204, 255, 0.1)",
 
-      "black-dark": "#000",
-      "black-dark-04": "rgba(0,0,0,0.4)",
-      "black": "#111",
-      "black-light": "#161616",
+      "black": "rgb(0, 0, 0)",
+      "black-04": "rgba(0, 0, 0, 0.4)",
+      "black-1": "#111",
+      "black-2": "#161616",
 
       "gray": "var(--gray)",
-      "gray-light": "var(--gray-light)",
+      "gray-1": "var(--gray-light)",
+      "gray-2": "#ddd",
 
-      "white-dark": "#ddd",
       "white": "var(--white)",
       "white-01": "rgba(255,255,255,0.1)",
       "white-02": "rgba(255,255,255,0.2)",
@@ -68,10 +66,18 @@ const config = defineConfig({
   rules: [
     ["glow-interactive", { "box-shadow": "0 0 1px 1px var(--teal-02), 0 0 1px 2px var(--teal-01)" }],
     ["glow-disabled", { "box-shadow": "0 0 1px 1px var(--gray)" }],
-    ['placeholder', { transform: 'var(--placeholder)' }],
-    ['placeholder-sm', { transform: 'var(--placeholder-sm)' }],
-    ['placeholder-md', { transform: 'var(--placeholder-md)' }],
+    ['placeholder', { transform: 'scale(8)' }],
+    ['+placeholder', { transform: 'scale(16)' }],
+    ['++placeholder', { transform: 'scale(28)' }],
   ],
+  shortcuts: {
+    "w-box": "w-full sm:w-+core md:w-++core lg:w-+++core",
+    "row": "flex items-center",
+    "row-space": "row justify-between",
+    'input-label': 'relative flex flex-col items-start w-full p-2 bg-black-04 md:flex-row',
+    'input-textarea': 'relative text-baby-blue text-2xl px-4 py-2 w-full tracking-widest bg-black-04',
+    "input-text": 'input-textarea px-4'
+  },
   presets: [
     presetAttributify(),
     presetUno(),
