@@ -7,7 +7,6 @@ import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
 import { Box } from './box';
-import { useFocus } from './hooks/useFocus';
 
 const Input = styled(motion.textarea)``;
 
