@@ -10,12 +10,14 @@ import {
   PRESENCE_OPACITY,
   PRESENCE_OPACITY_01,
   ZERO_MOTION_CONFIG,
+  resolveSlowMotionConfig,
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
 import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
+import { Network } from '@components/network';
 
 type TProps = {
   children: TChildren;
@@ -29,13 +31,7 @@ export const Shell: FC<TProps> = ({ children }) => {
 
   const resolveTransition = (delay: number) =>
     isInit
-      ? {
-          transition: {
-            ease: 'linear',
-            delay,
-            duration: 1,
-          },
-        }
+      ? resolveSlowMotionConfig({ delay })
       : ZERO_MOTION_CONFIG;
 
   return (
@@ -51,7 +47,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Processor
             width='100%'
             height='100%'
-            fill='gray'
+            fill='var(--gray)'
             {...PRESENCE_OPACITY_01}
             {...resolveTransition(0.28)}
           />
@@ -63,7 +59,7 @@ export const Shell: FC<TProps> = ({ children }) => {
         onAnimationComplete={handleAnimationComplete}
       >
         <MotionConfig {...MOTION_CONFIG}>
-          {children}
+          <Network>{children}</Network>
         </MotionConfig>
       </motion.div>
     </MotionConfig>

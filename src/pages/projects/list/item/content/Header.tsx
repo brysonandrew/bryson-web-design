@@ -12,11 +12,11 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
       className='relative flex items-start flex-col h-full md:flex-row md:items-center'
       {...props}
     >
-      <TextSm classValue='text-teal-bright'>{title}</TextSm>
+      <h5 className='+text text-teal-bright'>{title}</h5>
       <div className='hidden md:flex px-2' />
-      <TextSm classValue='text-baby-blue italic'>
+      <h5 className='+text text-baby-blue italic'>
         {description}
-      </TextSm>
+      </h5>
     </motion.header>
   );
-}; 
+};

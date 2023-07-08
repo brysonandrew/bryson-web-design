@@ -45,7 +45,7 @@ export const Item: FC<TItem> = ({
             <div className='relative flex items-center z-10'>
               <Icon classValue='h-10 w-10' />
               <div className='p-2' />
-              <Title className='text-xl2'>{title}</Title>
+              <Title className='+++text'>{title}</Title>
             </div>
           </Anchor>
         </Glow>

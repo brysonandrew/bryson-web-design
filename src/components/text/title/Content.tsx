@@ -20,9 +20,7 @@ export const Content: FC<TProps> = ({ children }) => {
             delay: 0.1,
           }}
         >
-          <TextXl classValue='text-center'>
-            {children}
-          </TextXl>
+          <h3 className='++text'>{children}</h3>
         </motion.div>
       </div>
       <div className='overflow-hidden w-3/4'>

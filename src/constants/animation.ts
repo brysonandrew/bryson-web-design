@@ -1,3 +1,5 @@
+import { Transition } from "framer-motion";
+
 export const BASIC_VARIANT_KEYS = {
   initial: "initial",
   animate: 'animate',
@@ -18,6 +20,21 @@ export const INIT_MOTION_CONFIG = {
   },
 };
 
+
+export const SLOW_MOTION_CONFIG = {
+  transition: {
+    ease: 'linear',
+    duration: 1,
+  },
+};
+
+export const resolveSlowMotionConfig = (config: Partial<Transition>) => ({
+  transition: {
+    ...SLOW_MOTION_CONFIG,
+    ...config
+  },
+});
+
 export const ZERO_MOTION_CONFIG = {
   transition: {
     ease: "linear",
@@ -25,6 +42,7 @@ export const ZERO_MOTION_CONFIG = {
     delay: 0
   },
 };
+
 
 export const DURATION_DELAY = {
   ...MOTION_CONFIG,

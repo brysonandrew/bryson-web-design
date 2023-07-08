@@ -24,10 +24,7 @@ const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 
 export const Root = styled(motion.div)``;
 export const Border = styled(motion.div)``;
-export const Tag = styled.code`
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: gray;
-`;
+export const Tag = styled.code``;
 
 type TProps = TImageProps & {
   scrollX: MotionValue;
@@ -121,7 +118,7 @@ export const Zoom: FC<TProps> = ({
                 strokeWidth={2}
               />
               <div className='p-0.5' />
-              <Tag className='relative text-xs whitespace-nowrap'>{`${~~scale}`}</Tag>
+              <Tag className='relative text-xs text-gray-stroke whitespace-nowrap'>{`${~~scale}`}</Tag>
             </div>
           </Border>
           <Root
