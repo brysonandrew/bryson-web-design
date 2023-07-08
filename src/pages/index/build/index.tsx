@@ -8,7 +8,10 @@ import { FAKE_3D_PROPS } from './constants';
 export const Build: FC = () => {
   return (
     <Section title={STORY.build}>
-      <Fake3D {...FAKE_3D_PROPS}>
+      <Fake3D
+        inViewOptions={{ once: true }}
+        {...FAKE_3D_PROPS}
+      >
         {(props) => <Images {...props} />}
       </Fake3D>
     </Section>

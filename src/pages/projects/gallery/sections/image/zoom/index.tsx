@@ -8,7 +8,6 @@ import {
   useMotionValue,
 } from 'framer-motion';
 import { useState, type FC } from 'react';
-import { PRESENCE_OPACITY } from '@constants/animation';
 import { useCursor } from './useCursor';
 import { useScale } from './useScale';
 import {

@@ -12,8 +12,7 @@ type TProps = {
 export const Line: FC<TProps> = ({ size = 20 }) => (
   <Root
     className={clsx(
-      `flex absolute -top-${size} w-full h-${size}`,
-      'bg-white-01',
+      `flex absolute -top-${size} w-full h-${size} bg-white-01`,
     )}
   />
 );

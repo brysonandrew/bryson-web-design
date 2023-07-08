@@ -8,12 +8,12 @@ import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
 import { Glow } from '@components/glow';
 import {
-  DISABLED_BOX_SHADOW,
   GLOW_BOX_SHADOW,
   PARENT_GLOW_PROPS,
   TEAL_GLOW_ANIMATE_TRANSITION,
   TEAL_GLOW_HOVER_TRANSITION,
 } from '@constants/colors';
+import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -46,9 +46,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       onTap={isDisabled ? () => null : handleMoveSound}
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
     >
-      <Glow drop={2}>
-        <Metal classValue='pointer-events-none' />
-      </Glow>
+      <MetalGlow />
       <Decoration
         className={clsx(
           'relative w-full pointer-events-none',

@@ -1,4 +1,4 @@
-import { InView } from '@components/InView';
+import { InView, TInViewOptions } from '@components/InView';
 import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -13,19 +13,24 @@ import { PRESENCE_OPACITY } from '@constants/animation';
 
 type TProps = TOptionsConfig & {
   classValue?: ClassValue;
+  inViewOptions?: TInViewOptions;
   children(props: TFake3DMotionChildrenProps): JSX.Element;
 };
 export const Fake3D: FC<TProps> = ({
   classValue,
   children,
-  n,
+  inViewOptions = {},
   ...optionsConfig
 }) => {
   if (isMobile) return children(EMPTY_PROPS);
   return (
     <InView
-      className={clsx('flex flex-col items-center relative w-full', classValue)}
+      className={clsx(
+        'flex flex-col items-center relative w-full',
+        classValue,
+      )}
       amount='some'
+      {...inViewOptions}
     >
       {({ isInView, ref, ...rectProps }) => {
         return (

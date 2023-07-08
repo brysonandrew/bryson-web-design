@@ -1,7 +1,7 @@
 import { transform } from "framer-motion";
 import { useY } from "./useY";
 import { useZ, RANGE_Z } from "./useZ";
-import { resolveFilter } from "./resolveFilter";
+import { resolveFilter } from "../../../../../components/filters/resolveFilter";
 
 export const useDepthStyle = () => {
   const y = useY();

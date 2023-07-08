@@ -6,7 +6,7 @@ import { useRef, type FC } from 'react';
 import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { useContext } from '@state/Context';
-import { Box } from './Box';
+import { Box } from './box';
 import { useFocus } from './hooks/useFocus';
 
 const Input = styled(motion.textarea)``;
@@ -23,15 +23,17 @@ export const Textarea: FC<TProps> = ({
     contact: { focusKey, form },
   } = useContext();
   const isFocused = focusKey === name;
-  useFocus(input, isFocused);
 
   const value = form[name];
+  const isEmpty = Boolean(value);
 
   return (
     <Box
       name={name}
       isFocused={isFocused}
       isDisabled={disabled}
+      isEmpty={isEmpty}
+      input={input}
     >
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={name} isFocused={isFocused} />
@@ -42,7 +44,6 @@ export const Textarea: FC<TProps> = ({
           autoComplete='off'
           name={name}
           value={value}
-          autoFocus={isFocused}
           disabled={disabled}
           {...props}
         />

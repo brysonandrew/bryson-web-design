@@ -29,7 +29,7 @@ if (root) {
 
 if (navigator.serviceWorker) {
   navigator.serviceWorker
-    .register('./sw.js')
+    .register('./sw.js', { scope: '/' })
     .then((registration) => {
       console.log(
         'ServiceWorker registration successful with scope:',

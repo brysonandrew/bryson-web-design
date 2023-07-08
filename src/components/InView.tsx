@@ -10,7 +10,7 @@ import {
   useEffect,
 } from 'react';
 type TInViewParameters = Parameters<typeof useInView>;
-type TInViewOptions = TInViewParameters[1];
+export type TInViewOptions = TInViewParameters[1];
 export type TRect =
   | DOMRect
   | Pick<DOMRect, 'height' | 'top'>;
