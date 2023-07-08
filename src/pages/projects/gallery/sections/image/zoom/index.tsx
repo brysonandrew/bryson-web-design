@@ -107,7 +107,7 @@ export const Zoom: FC<TProps> = ({
 
   return (
     <AnimatePresence>
-      {isCursorReady && (
+      {(
         <>
           <Border
             key='ZOOM_BORDER'
@@ -137,7 +137,7 @@ export const Zoom: FC<TProps> = ({
           >
             <Picture
               mediaRecord={mediaRecord}
-              className='absolute w-full h-full'
+              className='absolute'
               {...copyProps}
             />
           </Root>
