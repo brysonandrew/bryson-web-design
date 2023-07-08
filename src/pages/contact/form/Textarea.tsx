@@ -36,7 +36,7 @@ export const Textarea: FC<TProps> = ({
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={name} isFocused={isFocused} />
       </div>
-      <div className={clsx('flex')}>
+      <div className={'flex grow'}>
         <Input
           className='input-textarea'
           autoComplete='off'

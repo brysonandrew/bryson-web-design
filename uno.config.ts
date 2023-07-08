@@ -7,14 +7,14 @@ const config = defineConfig({
     breakpoints: {
       sm: '480px',
       md: '768px',
-      lg: '1100px',
-      xl: '1440px',
+      lg: '900px',
+      xl: '1100px',
     },
     width: {
       '+core': '480px',
-      '++core': '768px',
-      '+++core': '900px',
-      '++++core': '1100px',
+      '++core': '700px',
+      '+++core': '840px',
+      '++++core': '1000px',
     },
     colors: {
       "teal": "var(--teal)",
@@ -70,7 +70,7 @@ const config = defineConfig({
     ['++placeholder', { transform: 'scale(28)' }],
   ],
   shortcuts: {
-    "w-core": "w-full sm:w-+core md:w-++core lg:w-+++core",
+    "w-core": "w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core",
     "row": "flex items-center",
     "row-space": "row justify-between",
     'input-label': 'relative flex flex-col items-start w-full p-2 bg-black-04 md:flex-row',
