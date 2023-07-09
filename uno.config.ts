@@ -84,7 +84,7 @@ const config = defineConfig({
     'input-label': 'relative flex flex-col items-start w-full p-2 bg-black-04 md:flex-row',
     'input-textarea': 'relative text-baby-blue text-2xl px-4 py-2 w-full tracking-widest bg-black-04',
     "input-text": 'input-textarea px-4',
-    "+++text": 'text-teal-bright text-left text-3xl tracking-wide px-1 md:text-3.5xl xl:text-4xl',
+    "+++text": 'text-teal-bright text-left text-3xl tracking-wide px-1 lg:text-4xl',
     "++text": 'relative uppercase text-teal-bright px-2 tracking-widest text-baby-blue-stroke text-3xl md:text-4xl xl:px-4',
     "+text": "text-left text-teal-bright text-xl md:text-2xl",
     "cover-fixed": 'fixed inset-0',

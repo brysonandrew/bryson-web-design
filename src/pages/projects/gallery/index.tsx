@@ -9,13 +9,8 @@ import { createPortal } from 'react-dom';
 import { Background } from './Background';
 import { useDelay } from '@hooks/useDelay';
 import { useContext } from '@state/Context';
-import {
-  resolveEmptyMedia,
-  resolveLoadingItemKey,
-} from '../config';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
-import { TMediaRecord } from '@t/media';
 
 const Root = styled(motion.div)``;
 
@@ -23,40 +18,41 @@ type TProps = {
   currProject: TProjectKey;
 };
 export const Gallery: FC<TProps> = ({ currProject }) => {
-  const { projectImageRecord, screensCountRecord } =
-    useContext();
-  const items = Object.values(
-    projectImageRecord[currProject] ?? {},
-  );
+  const ctx = useContext();
+  const { screensCountRecord } = ctx;
+  console.log(ctx);
+  // const items = Object.values(
+  //   projectImageRecord[currProject] ?? {},
+  // );
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  const readyCount = items.length ?? 0;
+  // const readyCount = items.length ?? 0;
   const count = screensCountRecord[currProject];
-  const loadingCount = count - readyCount;
+  // const loadingCount = count - readyCount;
 
   const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  const loadingItems: TMediaRecord[] = [
-    ...Array(loadingCount),
-  ].map((_, index) => {
-    const item = resolveEmptyMedia({
-      key: resolveLoadingItemKey(index),
-      name: `${items.length + index + 1}`,
-    });
-    return {
-      png: item,
-      webp: item,
-    };
-  });
+  // const loadingItems: TMediaRecord[] = [
+  //   ...Array(0),
+  // ].map((_, index) => {
+  //   const item = resolveEmptyMedia({
+  //     key: resolveLoadingItemKey(index),
+  //     name: `${items.length + index + 1}`,
+  //   });
+  //   return {
+  //     png: item,
+  //     webp: item,
+  //   };
+  // });
 
   const galleryProps = {
-    items: [...items, ...loadingItems],
+    // items: [...items, ...loadingItems],
     motionX,
-    readyCount,
+    // readyCount,
     count,
     width,
     isReady,

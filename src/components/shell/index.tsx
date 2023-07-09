@@ -23,7 +23,7 @@ export const Shell: FC<TProps> = ({ children }) => {
         <HeaderOffset />
         {children}
       </Content>
-      <Footer />
+      <Footer /> 
     </Root>
   );
 };

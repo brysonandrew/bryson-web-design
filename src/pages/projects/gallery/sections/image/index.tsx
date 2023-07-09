@@ -21,10 +21,11 @@ export const Image: FC<TProps> = ({
   mediaRecord,
   width,
 }) => {
+  console.log(mediaRecord)
   const ref = useRef<HTMLImageElement | null>(null);
   const image = ref.current;
   const isLoaded = useLoadImage({
-    image,
+    image, 
     src: mediaRecord.png.src,
   });
   const { isTransitioningGallery } = useContext();

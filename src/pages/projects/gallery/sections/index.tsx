@@ -11,11 +11,11 @@ export const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
-  const { items, count, motionX, width } = props;
+  const { count, motionX, width } = props;
 
   const left = useTransform(
     motionX,
-    (v) => v * count * (width.screen / width.footer),
+    (v) => v * count * (width.screen / width.footer) + width.screen * 0.5,
   );
 
   return (
@@ -26,7 +26,7 @@ export const Sections: FC<TProps> = (props) => {
         style={{ left, width: width.screen * count }}
         {...PRESENCE_OPACITY_Y_SHIFT}
       >
-        {items.map((mediaRecord: TMediaRecord) => (
+        {[].map((mediaRecord: TMediaRecord) => (
           <motion.li
             key={mediaRecord.png.key}
             className='relative flex justify-center'
