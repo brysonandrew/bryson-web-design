@@ -5,7 +5,6 @@ import type { TChildren } from '../../types';
 import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
-import { useSmallImages } from '@pages/index/build/images/hooks/useSmallImages';
 import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
 
 const Root = styled(motion.div)``;
@@ -16,7 +15,6 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => {
   useProjectsRedirect();
-  useSmallImages();
 
   return (
     <Root className='relative text-black-04 z-10 overflow-x-hidden'>

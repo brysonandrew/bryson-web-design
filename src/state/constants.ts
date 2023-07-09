@@ -12,6 +12,6 @@ export const STATE: TState = {
   selectId: null,
   motionValuePairs: [],
   images: [],
-  clientImageRecord: {},
+  projectImageRecord: {},
   contact: INIT_CONTACT_STATE
 };

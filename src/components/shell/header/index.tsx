@@ -10,8 +10,8 @@ const Root = styled(motion.header)``;
 
 export const Header: FC = () => {
   const { isScroll } = useContext();
-  const currSource = useCurrSource();
-  const isSource = Boolean(currSource);
+  const currProject = useCurrSource();
+  const isSource = Boolean(currProject);
 
   const isShown = !isScroll && !isSource;
 

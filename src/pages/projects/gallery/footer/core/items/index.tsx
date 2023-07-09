@@ -1,10 +1,8 @@
-import {
-  DEFAULT_EXT,
-  TMediaRecord,
-} from '@pages/projects/config';
 import { FC } from 'react';
 import { Button } from './Button';
 import { useSorted } from './useSorted';
+import { DEFAULT_EXT } from '@constants/media';
+import { TMediaRecord } from '@t/media';
 
 type TProps = {
   itemWidth: number;

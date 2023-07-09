@@ -1,5 +1,5 @@
+import { TMediaRecord } from "@t/media";
 import { useMemo } from "react";
-import { TMediaRecord } from "@pages/projects/config";
 
 export const useSorted = (items: TMediaRecord[]) => {
   const results = useMemo(() => {

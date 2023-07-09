@@ -3,9 +3,9 @@ import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { Image } from './image';
-import type { TMediaRecord } from '@pages/projects/config';
 import { Filter } from './Filter';
 import { TBaseProps } from '../types';
+import { TMediaRecord } from '@t/media';
 
 export const Root = styled(motion.div)``;
 

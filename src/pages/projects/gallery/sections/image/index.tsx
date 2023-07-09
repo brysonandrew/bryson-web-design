@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import type { TMediaRecord } from '@pages/projects/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
 import { motion } from 'framer-motion';
 import { type FC, useRef } from 'react';
@@ -11,6 +10,7 @@ import { TBaseProps } from '../../types';
 import { Control } from './Control';
 import { Picture } from '@components/picture';
 import { isSafari, isBrowser } from 'react-device-detect';
+import { TMediaRecord } from '@t/media';
 
 export const Root = styled(motion.div)``;
 

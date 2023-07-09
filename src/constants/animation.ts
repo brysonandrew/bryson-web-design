@@ -1,4 +1,5 @@
-import { Transition } from "framer-motion";
+import { TTransition } from "@t/animation";
+import { Keyframes, Transition } from "framer-motion";
 
 export const BASIC_VARIANT_KEYS = {
   initial: "initial",
@@ -13,14 +14,28 @@ export const MOTION_CONFIG = {
   },
 };
 
+export const MID_MOTION_CONFIG = {
+  transition: {
+    ease: "linear",
+    duration: 0.2,
+  },
+};
+
+
 export const SLOW_MOTION_CONFIG = {
   transition: {
     ease: 'linear',
     duration: 1,
   },
+
 };
 
-export const resolveSlowMotionConfig = (config: Partial<Transition>) => ({
+export const resolveDynamicMotionConfig = (partial: Partial<TTransition>) => ({
+  ...MOTION_CONFIG,
+  ...partial
+});
+
+export const resolveDynamicSlowMotionConfig = (config: Partial<TTransition>) => ({
   transition: {
     ...SLOW_MOTION_CONFIG,
     ...config

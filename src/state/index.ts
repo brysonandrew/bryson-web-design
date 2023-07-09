@@ -44,10 +44,16 @@ export const reducer = (
     case 'image-record': {
       return {
         ...state,
-        clientImageRecord: {
-          ...state.clientImageRecord,
+        projectImageRecord: {
+          ...state.projectImageRecord,
           ...(value ?? {})
         }
+      };
+    }
+    case 'image-add': {
+      return {
+        ...state,
+        images: [...state.images, value]
       };
     }
     case 'images': {

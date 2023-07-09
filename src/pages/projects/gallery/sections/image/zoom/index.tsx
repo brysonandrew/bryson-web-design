@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import styled from '@emotion/styled';
-import type { TMediaRecord } from '@pages/projects/config';
 import {
   MotionValue,
   clamp,
@@ -19,6 +18,7 @@ import {
 import { Cross } from '@components/icons/Cross';
 import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
+import { TMediaRecord } from '@t/media';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 

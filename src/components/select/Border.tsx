@@ -5,7 +5,7 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { SELECT_LAYOUT_ID } from '../../../_cemetary/cursor/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
-import { POOL_ID } from '@components/cursor';
+import { POOL_ID } from '@components/effects/pool';
 
 const Root = styled(motion.div)``;
 

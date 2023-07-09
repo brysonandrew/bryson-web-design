@@ -5,16 +5,32 @@ import { reducer } from '.';
 import { Context } from './Context';
 import { STATE } from './constants';
 import type { TChildrenElement } from '@t/index';
-import { resolveScreensCountRecord } from '@hooks/media/resolveScreenCountRecord';
+import { resolveProjectScreensCountRecord } from '@hooks/media/resolveProjectScreensCountRecord';
 import { isMobile } from 'react-device-detect';
 import { useScroll } from 'framer-motion';
+import { PNG_EXT, WEBP_EXT } from '@constants/media';
+import { TScreensRecord } from '@t/screens';
+import { resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
 
-const screensRecord = import.meta.glob(
-  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).(png|webp)',
+const screensRecordPng: TScreensRecord = import.meta.glob(
+  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
+);
+const screensRecordWebp: TScreensRecord = import.meta.glob(
+  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).webp',
 );
 
-const screensCountRecord =
-  resolveScreensCountRecord(screensRecord);
+const screensCountRecord = resolveProjectScreensCountRecord(
+  screensRecordPng,
+);
+
+const screensRecordSmallPng: TScreensRecord =
+  import.meta.glob(
+    '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.png',
+  );
+const screensRecordSmallWebp: TScreensRecord =
+  import.meta.glob(
+    '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.webp',
+  );
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -22,8 +38,9 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const { scrollX, scrollY } = useScroll({layoutEffect:false});
-
+  const { scrollX, scrollY } = useScroll({
+    layoutEffect: false,
+  });
   const [state, dispatch] = useReducer<TReducer>(reducer, {
     ...STATE,
     isSound: !isMobile,
@@ -32,8 +49,16 @@ export const Provider: FC<TProviderProps> = ({
   return (
     <Context.Provider
       value={{
-        screensRecord,
         screensCountRecord,
+        screensLookup: {
+          [PNG_EXT]: screensRecordPng,
+          [WEBP_EXT]: screensRecordWebp,
+        },
+        screensLookupSmall: {
+          [PNG_EXT]: screensRecordSmallPng,
+          [WEBP_EXT]: screensRecordSmallWebp,
+        },
+        randomIndicies: resolveRandomIndicies(),
         scrollX,
         scrollY,
         dispatch,

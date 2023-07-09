@@ -1,12 +1,12 @@
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
-import clsx from 'clsx';
-import { useState, type FC, useEffect } from 'react';
+import { type FC } from 'react';
 import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { TMediaRecord } from '@pages/projects/config';
 import { RANGE_Y } from './hooks/useY';
+import { PNG_EXT, WEBP_EXT } from '@constants/media';
 
 const BUFFER = 100;
 const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
@@ -14,29 +14,11 @@ const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
 type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({
   style: { rotateX, y },
-  rectConfig: { onUpdateRect },
 }) => {
-  const { images } = useContext();
-  const [loadedState, setLoaded] = useState<
-    Record<string, boolean>
-  >({});
+  const { randomIndicies, screensLookupSmall } =
+    useContext();
+  const entries = Object.entries(screensLookupSmall.png);
   const { isScroll } = useContext();
-  const loadedCount = Object.keys(loadedState).length;
-
-  useEffect(() => {
-    if (loadedCount === images.length && onUpdateRect) {
-      onUpdateRect();
-    }
-  }, [loadedCount]);
-
-  const handleLoad = (key: string) => {
-    setLoaded((prev) => {
-      const next = { ...prev, [key]: true };
-      return next;
-    });
-  };
-
-  console.log(images);
 
   return (
     <motion.div
@@ -48,28 +30,36 @@ export const Images: FC<TProps> = ({
       }}
     >
       <motion.ul
-        className={clsx('absolute w-full preserve-3d')}
+        className={'absolute w-full preserve-3d'}
         style={{ rotateX, y }}
       >
-        {images.map(
-          (
-            mediaRecord: TMediaRecord,
-            index,
-            { length },
-          ) => {
-            const key = mediaRecord.png.key;
-            return (
-              <Image
-                key={key}
-                mediaRecord={mediaRecord}
-                index={index}
-                count={length}
-                isLoaded={Boolean(loadedState[key])}
-                onLoad={() => handleLoad(key)}
-              />
-            );
-          },
-        )}
+        {randomIndicies.map((_, index, { length }) => {
+          const [filePath, resolver] = entries[index];
+          const webpFilePath = filePath.replace(
+            PNG_EXT,
+            WEBP_EXT,
+          );
+          return (
+            <Image
+              key={filePath}
+              index={index}
+              count={length}
+              moduleRecord={{
+                [PNG_EXT]: {
+                  filePath,
+                  resolver,
+                },
+                [WEBP_EXT]: {
+                  filePath: webpFilePath,
+                  resolver:
+                    screensLookupSmall[WEBP_EXT][
+                      webpFilePath
+                    ],
+                },
+              }}
+            />
+          );
+        })}
       </motion.ul>
     </motion.div>
   );

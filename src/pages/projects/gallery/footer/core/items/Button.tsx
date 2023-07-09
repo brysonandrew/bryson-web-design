@@ -6,9 +6,7 @@ import {
   resolveShadow,
 } from '@constants/colors';
 import {
-  DEFAULT_EXT,
   NAME_KEY,
-  TMediaRecord,
   resolveLoadingItemKey,
 } from '@pages/projects/config';
 import clsx from 'clsx';
@@ -20,6 +18,8 @@ import {
 import { useTo } from '../../../hooks/nav/useTo';
 import { useContext } from '@state/Context';
 import * as unoConfig from '@uno/config';
+import { DEFAULT_EXT } from '@constants/media';
+import { TMediaRecord } from '@t/media';
 const COLORS = unoConfig.default.theme.colors;
 
 export const Root = styled(motion.div)``;

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC, ForwardedRef } from 'react';
 import { ImageWithRef } from './ImageWithRef';
-import { TMediaRecord } from '@pages/projects/config';
+import { TMediaRecord } from '@t/media';
 
 const Root = styled.picture``;
 const Source = styled.source``;

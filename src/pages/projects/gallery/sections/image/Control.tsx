@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import type { TMediaRecord } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import { type FC, useRef } from 'react';
 import { Zoom } from './zoom';
@@ -10,6 +9,7 @@ import { isDesktop } from 'react-device-detect';
 import { useHover } from '@hooks/useHover';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
+import { TMediaRecord } from '@t/media';
 
 export const Root = styled(motion.div)``;
 

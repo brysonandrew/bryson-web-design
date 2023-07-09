@@ -9,9 +9,9 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Content } from './content';
-import { APP_ITEMS_RECORD } from '@constants/apps';
+import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
-import { useMediaFromKey } from '@pages/projects/gallery/hooks/useMediaFromKey';
+import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 
 const Root = styled(motion.li)``;
@@ -22,7 +22,7 @@ export const Item: FC<TProps> = ({ slug }) => {
   const { pathname } = useLocation();
   const handleOnSound = useOnSound();
 
-  const item = APP_ITEMS_RECORD[slug];
+  const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
   const handleMouseEnter = () => {
     handleLoadMedia(slug);

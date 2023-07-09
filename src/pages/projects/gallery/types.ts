@@ -1,6 +1,6 @@
 import { MotionValue } from "framer-motion";
-import { TMediaRecord } from "../config";
 import { useWidth } from "./hooks/useWidth";
+import { TMediaRecord } from "@t/media";
 
 export type TWidth = ReturnType<typeof useWidth>["width"];
 export type TBaseProps = {

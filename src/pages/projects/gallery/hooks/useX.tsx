@@ -1,4 +1,4 @@
-import type { TMediaRecord } from '@pages/projects/config';
+import { TMediaRecord } from '@t/media';
 import { resolveX } from './resolveX';
 import { MotionValue } from 'framer-motion';
 

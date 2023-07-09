@@ -5,12 +5,12 @@ import { Variables } from '@css/Variables';
 import { Background } from '@components/background';
 import { MotionConfig, motion } from 'framer-motion';
 import {
-  INIT_MOTION_CONFIG,
+  SLOW_MOTION_CONFIG,
   MOTION_CONFIG,
   PRESENCE_OPACITY,
   PRESENCE_OPACITY_01,
   ZERO_MOTION_CONFIG,
-  resolveSlowMotionConfig,
+  resolveDynamicSlowMotionConfig,
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
@@ -31,11 +31,11 @@ export const Shell: FC<TProps> = ({ children }) => {
 
   const resolveTransition = (delay: number) =>
     isInit
-      ? resolveSlowMotionConfig({ delay })
+      ? resolveDynamicSlowMotionConfig({ delay })
       : ZERO_MOTION_CONFIG;
 
   return (
-    <MotionConfig {...INIT_MOTION_CONFIG}>
+    <MotionConfig {...SLOW_MOTION_CONFIG}>
       <Variables />
       <Filters />
       <ClipPaths />
