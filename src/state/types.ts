@@ -1,7 +1,17 @@
-
-import { TContactState, TFormKey, TStatus } from '@pages/contact/config';
+import { TProjectKey } from '@constants/projects';
+import {
+  TContactState,
+  TFormKey,
+  TStatus,
+} from '@pages/contact/config';
 import { TMotionValuePair } from '@t/animation';
-import { TPartialProjectImageRecord, TProjectImageRecord, TScreensLookup } from '@t/screens';
+import { TFilePathKey, TMediaRecord } from '@t/media';
+import {
+  TPartialProjectImageRecord,
+  TProjectImageRecord,
+  TProjectImageResolverRecord,
+  TScreensLookup,
+} from '@t/screens';
 import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
@@ -12,6 +22,7 @@ import type {
 
 export type TState = {
   projectImageRecord: TProjectImageRecord;
+  buildImages: TMediaRecord[];
   isScroll: boolean;
   isScrollStart: boolean;
   isInit: boolean;
@@ -25,6 +36,7 @@ export type TContext = TState & {
   randomIndicies: number[];
   screensLookup: TScreensLookup;
   screensLookupSmall: TScreensLookup;
+  projectImageResolverRecord: TProjectImageResolverRecord;
 
   scrollX: MotionValue;
   scrollY: MotionValue;
@@ -32,63 +44,73 @@ export type TContext = TState & {
   dispatch: TDispatch;
 };
 
+export type TUpdateProjectImageRecord = {
+  project: TProjectKey;
+  filePath: TFilePathKey;
+  mediaRecord: TMediaRecord;
+};
+
 export type TAction =
   | {
-    type: "gallery-drag",
-    value: boolean;
-  }
+      type: 'build-images';
+      value: TMediaRecord[];
+    }
   | {
-    type: "contact-status",
-    value: TStatus;
-  }
+      type: 'gallery-drag';
+      value: boolean;
+    }
   | {
-    type: "contact-form",
-    value: Partial<TContactState>;
-  }
+      type: 'contact-status';
+      value: TStatus;
+    }
   | {
-    type: "contact-focus",
-    value: TFormKey | null;
-  }
+      type: 'contact-form';
+      value: Partial<TContactState>;
+    }
   | {
-    type: "project-image-record",
-    value: TPartialProjectImageRecord;
-  }
+      type: 'contact-focus';
+      value: TFormKey | null;
+    }
   | {
-    type: 'start-motion-blur';
-    value: null;
-  }
+      type: 'project-image-record';
+      value: TUpdateProjectImageRecord;
+    }
   | {
-    type: 'end-motion-blur';
-    value: null;
-  }
+      type: 'start-motion-blur';
+      value: null;
+    }
   | {
-    type: 'init';
-    value: null;
-  }
+      type: 'end-motion-blur';
+      value: null;
+    }
   | {
-    type: 'scroll';
-    value: boolean;
-  }
+      type: 'init';
+      value: null;
+    }
   | {
-    type: 'scroll-start';
-    value: boolean;
-  }
+      type: 'scroll';
+      value: boolean;
+    }
   | {
-    type: 'toggle-sound';
-    value: null;
-  }
+      type: 'scroll-start';
+      value: boolean;
+    }
   | {
-    type: 'select-id';
-    value: null | string;
-  }
+      type: 'toggle-sound';
+      value: null;
+    }
   | {
-    type: 'cursor-ready';
-    value: boolean;
-  }
+      type: 'select-id';
+      value: null | string;
+    }
   | {
-    type: 'add-motion-value';
-    value: { pair: TMotionValuePair; index: number; };
-  };
+      type: 'cursor-ready';
+      value: boolean;
+    }
+  | {
+      type: 'add-motion-value';
+      value: { pair: TMotionValuePair; index: number };
+    };
 
 export type TActionType = null;
 export type TActionValue = any;

@@ -9,5 +9,6 @@ export const STATE: TState = {
   isTransitioningGallery: false,
   context: new AudioContext(),
   projectImageRecord: {},
-  contact: INIT_CONTACT_STATE
+  contact: INIT_CONTACT_STATE,
+  buildImages: [],
 };

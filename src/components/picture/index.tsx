@@ -28,17 +28,15 @@ export const Picture: FC<TProps> = ({
 
   return (
     <Root>
-      {mediaRecord.webp && (
-        <Source
-          type='image/webp'
-          srcSet={mediaRecord.webp.src}
-        />
-      )}
+      <Source
+        type='image/webp'
+        srcSet={mediaRecord.webp.src}
+      />
       <Source type='image/png' srcSet={src} />
       {imageRef ? (
         <ImageWithRef ref={imageRef} {...imageProps} />
       ) : (
-        <motion.img {...imageProps} width="1600px" />
+        <motion.img {...imageProps} width='1600px' />
       )}
     </Root>
   );

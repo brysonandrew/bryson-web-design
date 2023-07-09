@@ -5,10 +5,10 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
-    case "gallery-drag": {
+    case 'gallery-drag': {
       return {
         ...state,
-        isTransitioningGallery: value
+        isTransitioningGallery: value,
       };
     }
     case 'contact-focus': {
@@ -16,7 +16,7 @@ export const reducer = (
         ...state,
         contact: {
           ...state.contact,
-          focusKey: value
+          focusKey: value,
         },
       };
     }
@@ -25,7 +25,7 @@ export const reducer = (
         ...state,
         contact: {
           ...state.contact,
-          status: value
+          status: value,
         },
       };
     }
@@ -36,18 +36,28 @@ export const reducer = (
           ...state.contact,
           form: {
             ...state.contact.form,
-            ...value
-          }
+            ...value,
+          },
         },
       };
     }
+    case 'build-images': {
+      return {
+        ...state,
+        buildImages: value,
+      };
+    }
     case 'project-image-record': {
+      const { project, filePath, mediaRecord } = value;
       return {
         ...state,
         projectImageRecord: {
           ...state.projectImageRecord,
-          ...(value ?? {})
-        }
+          [project]: {
+            ...(state.projectImageRecord?.[project] ?? {}),
+            [filePath]: mediaRecord,
+          },
+        },
       };
     }
     case 'init': {

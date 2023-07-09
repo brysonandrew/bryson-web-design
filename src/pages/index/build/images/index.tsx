@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
 import { useContext } from '@state/Context';
@@ -6,8 +5,10 @@ import { type FC } from 'react';
 import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { RANGE_Y } from './hooks/useY';
-import { PNG_EXT, WEBP_EXT } from '@constants/media';
-import { resolveWebpFilePath } from '@hooks/media/resolveFilePathByExt';
+import { resolveModuleRecord } from '@hooks/media/resolveModuleRecord';
+import { TScreensRecordEntry } from '@t/screens';
+import { TMediaRecord, TModuleRecord } from '@t/media';
+import { Build as Fetch } from '@components/fetch-media/Build';
 
 const BUFFER = 100;
 const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
@@ -16,8 +17,11 @@ type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({
   style: { rotateX, y },
 }) => {
-  const { randomIndicies, screensLookupSmall } =
-    useContext();
+  const {
+    randomIndicies,
+    screensLookupSmall,
+    buildImages,
+  } = useContext();
   const entries = Object.entries(screensLookupSmall.png);
   const { isScroll } = useContext();
 
@@ -34,31 +38,38 @@ export const Images: FC<TProps> = ({
         className={'absolute w-full preserve-3d'}
         style={{ rotateX, y }}
       >
-        {randomIndicies.map((_, index, { length }) => {
-          const [filePath, resolver] = entries[index];
-          const webpFilePath =
-            resolveWebpFilePath(filePath);
-          return (
-            <Image
-              key={filePath}
-              index={index}
-              count={length}
-              moduleRecord={{
-                [PNG_EXT]: {
-                  filePath,
-                  resolver,
-                },
-                [WEBP_EXT]: {
-                  filePath: webpFilePath,
-                  resolver:
-                    screensLookupSmall[WEBP_EXT][
-                      webpFilePath
-                    ],
-                },
-              }}
-            />
-          );
-        })}
+        {randomIndicies.map(
+          (randomIndex, index, { length }) => {
+            const mediaRecord = buildImages[randomIndex];
+
+            if (mediaRecord) {
+              return (
+                <Image
+                  key={mediaRecord.png.key}
+                  index={index}
+                  count={length}
+                  mediaRecord={mediaRecord as TMediaRecord}
+                />
+              );
+            } else {
+              const entry = entries[randomIndex];
+              const [filePath, value] = entry;
+              const moduleRecord = resolveModuleRecord(
+                entry,
+                screensLookupSmall,
+              );
+              return (
+                <Fetch
+                  key={filePath}
+                  index={randomIndex}
+                  moduleRecord={
+                    moduleRecord as TModuleRecord
+                  }
+                />
+              );
+            }
+          },
+        )}
       </motion.ul>
     </motion.div>
   );

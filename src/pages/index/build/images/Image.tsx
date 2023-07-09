@@ -1,6 +1,6 @@
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { useRef, type FC } from 'react';
+import { type FC } from 'react';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
@@ -13,30 +13,27 @@ import {
   resolveDynamicMotionConfig,
 } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
-import { TModuleRecord } from '@t/media';
-import { useMediaRecord } from '@hooks/media/useMediaRecord';
+import { TMediaRecord } from '@t/media';
+import { useLoadImage } from '@hooks/media/useLoadImage';
 
 export const IMAGE_SIZE = 320;
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
   count: number;
-  moduleRecord: TModuleRecord;
+  mediaRecord: TMediaRecord;
 };
 export const Image: FC<TProps> = ({
   index,
   count,
-  moduleRecord,
+  mediaRecord,
   ...props
 }) => {
-  const imageRef = useRef<HTMLImageElement | null>(null);
-
-  const mediaRecord = useMediaRecord(moduleRecord);
-  const isLoaded = Boolean(mediaRecord);
+  const { isLoaded, image, imageRef } =
+    useLoadImage(mediaRecord);
 
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
-  const image = imageRef.current; 
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: resolveDimensions(image),
@@ -75,14 +72,12 @@ export const Image: FC<TProps> = ({
         initial={false}
         animate={{ opacity: isLoaded ? 1 : 0 }}
       >
-        {mediaRecord && (
-          <Picture
-            imageRef={imageRef}
-            mediaRecord={mediaRecord}
-            {...dimensions}
-            {...props}
-          />
-        )}
+        <Picture
+          imageRef={imageRef}
+          mediaRecord={mediaRecord}
+          {...dimensions}
+          {...props}
+        />
       </motion.div>
     </motion.li>
   );
