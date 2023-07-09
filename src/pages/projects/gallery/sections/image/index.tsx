@@ -4,13 +4,12 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
-import { Placeholder } from '../../../../../components/placeholder';
+import { Placeholder } from '@components/placeholder';
 import { TBaseProps } from '../../types';
 import { Control } from './Control';
 import { Picture } from '@components/picture';
 import { isSafari, isBrowser } from 'react-device-detect';
-import { TImageRecordValue } from '@t/screens';
-import { useLoadImage } from '../../../../../hooks/media/useLoadImage';
+import { useLoadImage } from '@hooks/media/useLoadImage';
 import { TMediaRecord } from '@t/media';
 
 export const Root = styled(motion.div)``;
@@ -18,14 +17,18 @@ export const Root = styled(motion.div)``;
 type TProps = Pick<TBaseProps, 'width'> & {
   mediaRecord: TMediaRecord;
 };
-export const Image: FC<TProps> = ({ mediaRecord, width }) => {
-  const { isLoaded, image, imageRef } =
-    useLoadImage(mediaRecord);
+export const Image: FC<TProps> = ({
+  mediaRecord,
+  width,
+}) => {
+  const { isLoaded, image, imageRef } = useLoadImage(
+    mediaRecord.png.src,
+  );
   const { isTransitioningGallery } = useContext();
 
   return (
     <Control
-    mediaRecord={mediaRecord}
+      mediaRecord={mediaRecord}
       width={width}
       image={isLoaded ? image : null}
     >

@@ -1,9 +1,9 @@
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
-import { SELECT_LAYOUT_ID } from "../../../_cemetary/cursor/config";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import type { FC } from "react";
+import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+import type { ClassValue } from 'clsx';
+import clsx from 'clsx';
+import type { FC } from 'react';
+import { SELECT_LAYOUT_ID } from './config';
 
 const Root = styled(motion.div)``;
 
@@ -14,8 +14,8 @@ export const Background: FC<TProps> = ({ classValue }) => (
   <Root
     layoutId={SELECT_LAYOUT_ID}
     className={clsx(
-      "absolute inset-0 pointer-events-none rounded-sm cursor-default",
-      classValue ?? "bg-baby-blue-01",
+      'absolute inset-0 pointer-events-none rounded-sm cursor-default',
+      classValue ?? 'bg-baby-blue-01',
     )}
   />
 );

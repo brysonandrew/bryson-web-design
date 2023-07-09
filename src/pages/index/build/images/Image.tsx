@@ -29,8 +29,9 @@ export const Image: FC<TProps> = ({
   mediaRecord,
   ...props
 }) => {
-  const { isLoaded, image, imageRef } =
-    useLoadImage(mediaRecord);
+  const { isLoaded, image, imageRef } = useLoadImage(
+    mediaRecord.png.src,
+  );
 
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
