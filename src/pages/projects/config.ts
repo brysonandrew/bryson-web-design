@@ -1,10 +1,10 @@
 import { DEFAULT_EXT } from "@constants/media";
-import { TExtKey, TMedia, TMediaDetails, TMediaRecord, TModuleConfig, TModuleRecord } from "@t/media";
+import { TExtKey, TFilePathKey, TMedia, TMediaDetails, TModuleConfig, TModuleRecord } from "@t/media";
 import { TItem } from "@t/projects";
 import { TModule } from "@t/screens";
 import { resolveCompositeKey } from "@utils/keys";
 
-export const SOURCE_KEY = "source";
+export const PROJECT_KEY = "project";
 export const NAME_KEY = "name";
 
 export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
@@ -15,7 +15,7 @@ export type TSlugProps = Pick<TItem, 'slug'>;
 
 export const EMPTY_MEDIA: TMedia = {
   key: "",
-  source: "",
+  project: "",
   name: "",
   file: "",
   src: "",
@@ -30,16 +30,16 @@ export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
 export const resolveLoadingItemKey = (index: number) => resolveCompositeKey('loading', index);
 
 export const resolveMediaDetails = (
-  filePath: string,
+  filePath: TFilePathKey,
 ): TMediaDetails => {
   const parts = filePath.split("/");
-  const [source, file] = parts.slice(-2);
+  const [project, file] = parts.slice(-2);
   const [name, tail] = file.split(".");
   const ext = tail as TExtKey;
 
-  const key = `${source}-${name}`.toLowerCase();
+  const key = `${project}-${name}`.toLowerCase();
 
-  return { file, source, key, name, ext };
+  return { file, project, key, name, ext };
 };
 
 export const resolveMedia = async ({ filePath, resolver }: TModuleConfig) => {

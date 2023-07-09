@@ -16,9 +16,8 @@ const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { items, count, readyCount, motionX, width } =
-    props;
-  useKeys({ readyCount });
+  const { count, motionX, width, items } = props;
+  useKeys({ readyCount: count });
   const itemWidth = width.footer / count;
   const dragHandlers = useDrag({
     width: width.footer,

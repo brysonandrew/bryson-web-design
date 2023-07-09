@@ -1,9 +1,10 @@
-import { TMediaRecord } from "@t/media";
+import { TMedia } from "@t/media";
+import { TImageRecordEntries } from "@t/screens";
 import { useMemo } from "react";
 
-export const useSorted = (items: TMediaRecord[]) => {
+export const useSorted = (items: TImageRecordEntries) => {
   const results = useMemo(() => {
-    return items.sort((a, b) => {
+    return items.sort(([_, a], [__, b]) => {
       const an = +a.png.name;
       const bn = +b.png.name;
 

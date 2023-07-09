@@ -41,25 +41,13 @@ export const reducer = (
         },
       };
     }
-    case 'image-record': {
+    case 'project-image-record': {
       return {
         ...state,
         projectImageRecord: {
           ...state.projectImageRecord,
           ...(value ?? {})
         }
-      };
-    }
-    case 'image-add': {
-      return {
-        ...state,
-        images: [...state.images, value]
-      };
-    }
-    case 'images': {
-      return {
-        ...state,
-        images: value
       };
     }
     case 'init': {
@@ -82,29 +70,10 @@ export const reducer = (
         isScrollStart: value,
       };
     }
-    case 'select-id': {
-      return {
-        ...state,
-        selectId: value,
-      };
-    }
     case 'toggle-sound': {
       return {
         ...state,
         isSound: !state.isSound,
-      };
-    }
-    case 'cursor-ready': {
-      return {
-        ...state,
-        isCursorReady: value,
-      };
-    }
-    case 'add-motion-value': {
-      state.motionValuePairs[value.index] = value.pair;
-      return {
-        ...state,
-        motionValuePairs: [...state.motionValuePairs],
       };
     }
     case 'start-motion-blur': {

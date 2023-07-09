@@ -3,14 +3,18 @@ import { motion, useMotionValue } from 'framer-motion';
 import { useWidth } from './hooks/useWidth';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { Footer } from './footer';
-import { Sections } from './sections';
 import { createPortal } from 'react-dom';
-import { Background } from './Background';
 import { useDelay } from '@hooks/useDelay';
 import { useContext } from '@state/Context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
+import { Background } from './Background';
+import { Footer } from './footer';
+import { Sections } from './sections';
+import {
+  TImageRecord,
+  TImageRecordEntries,
+} from '@t/screens';
 
 const Root = styled(motion.div)``;
 
@@ -18,41 +22,26 @@ type TProps = {
   currProject: TProjectKey;
 };
 export const Gallery: FC<TProps> = ({ currProject }) => {
-  const ctx = useContext();
-  const { screensCountRecord } = ctx;
-  console.log(ctx);
-  // const items = Object.values(
-  //   projectImageRecord[currProject] ?? {},
-  // );
+  const { projectImageRecord } = useContext();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  // const readyCount = items.length ?? 0;
-  const count = screensCountRecord[currProject];
-  // const loadingCount = count - readyCount;
+  const imageRecord: TImageRecord =
+    projectImageRecord[currProject];
+  const items = Object.entries(
+    imageRecord,
+  ) as TImageRecordEntries;
+  console.log(items);
+  const count = items.length;
 
   const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  // const loadingItems: TMediaRecord[] = [
-  //   ...Array(0),
-  // ].map((_, index) => {
-  //   const item = resolveEmptyMedia({
-  //     key: resolveLoadingItemKey(index),
-  //     name: `${items.length + index + 1}`,
-  //   });
-  //   return {
-  //     png: item,
-  //     webp: item,
-  //   };
-  // });
-
   const galleryProps = {
-    // items: [...items, ...loadingItems],
     motionX,
-    // readyCount,
+    items,
     count,
     width,
     isReady,

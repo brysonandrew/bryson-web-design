@@ -2,6 +2,7 @@ import { DEFAULT_EXT, PNG_EXT, WEBP_EXT } from "@constants/media";
 import { resolveMediaRecord } from "@pages/projects/config";
 import { TModuleEntries } from "@t/media";
 import { TScreensLookup } from "@t/screens";
+import { resolveWebpFilePath } from "./resolveFilePathByExt";
 
 export type TResolveIndexedMediaConfig = {
   index: number;
@@ -10,10 +11,7 @@ export type TResolveIndexedMediaConfig = {
 export const resolveMediaRecordByIndex = async ({ index, screensLookup }: TResolveIndexedMediaConfig) => {
   const entries: TModuleEntries = Object.entries(screensLookup[DEFAULT_EXT]);
   const [filePath, resolver] = entries[index];
-  const webpFilePath = filePath.replace(
-    PNG_EXT,
-    WEBP_EXT,
-  );
+  const webpFilePath = resolveWebpFilePath(filePath);
   console.log(resolver);
   const webpResolver = screensLookup[WEBP_EXT][webpFilePath];
   console.log(webpResolver);

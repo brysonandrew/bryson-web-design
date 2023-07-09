@@ -7,6 +7,7 @@ import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { RANGE_Y } from './hooks/useY';
 import { PNG_EXT, WEBP_EXT } from '@constants/media';
+import { resolveWebpFilePath } from '@hooks/media/resolveFilePathByExt';
 
 const BUFFER = 100;
 const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
@@ -35,10 +36,8 @@ export const Images: FC<TProps> = ({
       >
         {randomIndicies.map((_, index, { length }) => {
           const [filePath, resolver] = entries[index];
-          const webpFilePath = filePath.replace(
-            PNG_EXT,
-            WEBP_EXT,
-          );
+          const webpFilePath =
+            resolveWebpFilePath(filePath);
           return (
             <Image
               key={filePath}

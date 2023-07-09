@@ -93,7 +93,8 @@ export const INIT_PROJECT_ITEMS = [
 ];
 
 export const PROJECT_ITEMS: TItem[] = INIT_PROJECT_ITEMS.map((item) => ({ ...item, slug: titleToKebab(item.title) }));
-export const PROJECT_ITEMS_RECORD = PROJECT_ITEMS.reduce((a: Record<string, TItem>, item: TItem) => {
+type TProjectItemRecord = Record<string, TItem>;
+export const PROJECT_ITEMS_RECORD = PROJECT_ITEMS.reduce((a: TProjectItemRecord, item: TItem) => {
   a[item.slug] = item;
   return a;
 }, {});

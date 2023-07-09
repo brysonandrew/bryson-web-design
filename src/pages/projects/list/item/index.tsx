@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import {
   NAME_KEY,
-  SOURCE_KEY,
+  PROJECT_KEY,
   TSlugProps,
 } from '@pages/projects/config';
 import { motion } from 'framer-motion';
@@ -33,7 +33,7 @@ export const Item: FC<TProps> = ({ slug }) => {
         to={
           item.altTo
             ? item.altTo
-            : `${pathname}?${SOURCE_KEY}=${slug}&${NAME_KEY}=${1}`
+            : `${pathname}?${PROJECT_KEY}=${slug}&${NAME_KEY}=${1}`
         }
         onTap={handleOnSound}
         {...PARENT_GLOW_PROPS}

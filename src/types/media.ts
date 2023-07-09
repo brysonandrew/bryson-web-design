@@ -1,5 +1,6 @@
 import { EXTS, WEBP_EXT, DEFAULT_EXT } from "@constants/media";
 import { TResolver } from "./screens";
+import { TProjectKey } from "@constants/projects";
 
 export type TFilePathKey = string;
 export type TFilePathBaseKey = string;
@@ -8,7 +9,7 @@ export type TExtKey = typeof EXTS[number];
 
 export type TMediaDetails = {
   key: string;
-  source: string;
+  project: TProjectKey;
   file: string;
   name: string;
   ext: TExtKey;
@@ -18,7 +19,7 @@ export type TMedia = TMediaDetails & {
   src: string;
 };
 
-export type TModuleConfig = { filePath: string, resolver: TResolver; };
+export type TModuleConfig = { filePath: string, resolver: TResolver; } & TMediaDetails;
 export type TModuleEntry = [filePath: string, resolver: TResolver];
 export type TModuleEntries = TModuleEntry[];
 

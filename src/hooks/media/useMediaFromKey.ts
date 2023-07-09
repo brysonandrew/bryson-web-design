@@ -1,5 +1,4 @@
 import { TProjectKey } from "@constants/projects";
-import { resolveMediaRecord } from "@pages/projects/config";
 import { useContext } from "@state/Context";
 import { TImageRecord } from "@t/screens";
 
@@ -10,7 +9,7 @@ export const useMediaFromKey = () => {
   const updateRecord = ({ currProject, nextRecord }: TUpdateRecord) => {
     const prev = projectImageRecord[currProject];
     dispatch({
-      type: "image-record", value: {
+      type: "project-image-record", value: {
         [currProject]: {
           ...prev,
           ...nextRecord
@@ -42,9 +41,9 @@ export const useMediaFromKey = () => {
         }
       }
 
-      if (Object.keys(nextRecord).length > 0) {
-        updateRecord({ currProject, nextRecord });
-      }
+      // if (Object.keys(nextRecord).length > 0) {
+      //   updateRecord({ currProject, nextRecord });
+      // }
     } catch (error) {
       console.log(error);
     }

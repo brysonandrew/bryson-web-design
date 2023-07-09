@@ -1,25 +1,22 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import type { MotionValue } from 'framer-motion';
 import { useX } from './useX';
 import { useContext } from '@state/Context';
 import { resolveActiveIndex } from './resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from './nav/resolveTo';
 import { useCurrParams } from '@hooks/params/useCurrParams';
-import { TMediaRecord } from '@t/media';
+import { TBaseProps } from '../types';
 
-type TConfig = {
-  items: TMediaRecord[];
+type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
   width: number;
-  motionX: MotionValue;
 };
 export const useDrag = ({
   width,
   items,
   motionX,
 }: TConfig) => {
-  const { name: currName, source: currProject } =
+  const { name: currName, project: currProject } =
     useCurrParams();
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -41,7 +38,7 @@ export const useDrag = ({
     if (currProject) {
       const to = resolveTo({
         pathname,
-        source: currProject,
+        project: currProject,
         next: activeIndex,
       });
       navigate(to);

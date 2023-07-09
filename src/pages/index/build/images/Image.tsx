@@ -36,7 +36,7 @@ export const Image: FC<TProps> = ({
 
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
-  const image = imageRef.current;
+  const image = imageRef.current; 
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: resolveDimensions(image),

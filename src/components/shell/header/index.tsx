@@ -4,13 +4,13 @@ import { FC } from 'react';
 import { Decoration } from './Decoration';
 import { useContext } from '@state/Context';
 import { Nav } from './Nav';
-import { useCurrSource } from '@hooks/params/useCurrSource';
+import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.header)``;
 
 export const Header: FC = () => {
   const { isScroll } = useContext();
-  const currProject = useCurrSource();
+  const currProject = useCurrProject();
   const isSource = Boolean(currProject);
 
   const isShown = !isScroll && !isSource;

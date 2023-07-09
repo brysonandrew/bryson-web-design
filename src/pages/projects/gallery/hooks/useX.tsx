@@ -1,11 +1,8 @@
-import { TMediaRecord } from '@t/media';
 import { resolveX } from './resolveX';
-import { MotionValue } from 'framer-motion';
+import { TBaseProps } from '../types';
 
-type TConfig = {
-  motionX: MotionValue;
+type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
   currName: string | null;
-  items: TMediaRecord[];
   width: number;
 };
 export const useX = ({
@@ -15,7 +12,7 @@ export const useX = ({
   width,
 }: TConfig) => {
   const activeIndex = items.findIndex(
-    ({ png: { name } }) => name === currName,
+    ([_, item]) => item.png.name === currName,
   );
   const x =
     activeIndex < 0
