@@ -19,7 +19,7 @@ import { useTo } from '../../../hooks/nav/useTo';
 import * as unoConfig from '@uno/config';
 import { DEFAULT_EXT } from '@constants/media';
 import { TImageRecordValue } from '@t/screens';
-import { useMediaRecord } from '@hooks/media/useMediaRecord';
+import { useMediaRecord } from '@hooks/media/useMediaRecordBuild';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';
 const COLORS = unoConfig.default.theme.colors;

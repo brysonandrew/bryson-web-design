@@ -11,10 +11,7 @@ import { Arrows } from './Arrows';
 import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
-import {
-  TImageRecord,
-  TImageRecordEntries,
-} from '@t/screens';
+import { TBaseProps } from './types';
 
 const Root = styled(motion.div)``;
 
@@ -22,16 +19,15 @@ type TProps = {
   currProject: TProjectKey;
 };
 export const Gallery: FC<TProps> = ({ currProject }) => {
-  const { projectImageRecord } = useContext();
+  const { projectImageResolverRecord, projectImageRecord } =
+    useContext();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  const imageRecord: TImageRecord =
-    projectImageRecord[currProject];
+  const imageRecord = projectImageRecord[currProject];
   const items = Object.entries(
-    imageRecord,
-  ) as TImageRecordEntries;
-  console.log(items);
+    projectImageResolverRecord[currProject],
+  );
   const count = items.length;
 
   const { width, isResizing } = useWidth();
@@ -39,9 +35,10 @@ export const Gallery: FC<TProps> = ({ currProject }) => {
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  const galleryProps = {
+  const galleryProps: TBaseProps = {
     motionX,
     items,
+    imageRecord,
     count,
     width,
     isReady,

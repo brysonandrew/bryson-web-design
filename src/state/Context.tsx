@@ -10,9 +10,10 @@ import { EMPTY_SCREENS_LOOKUP } from '@constants/media';
 export const Context = createContext<TContext>({
   ...STATE,
   randomIndicies: [],
-  screensCountRecord: {},
   screensLookup: EMPTY_SCREENS_LOOKUP,
   screensLookupSmall: EMPTY_SCREENS_LOOKUP,
+  projectImageResolverRecord: {},
+  
   scrollX: motionValue(0),
   scrollY: motionValue(0),
   dispatch: (_: TAction) => null,

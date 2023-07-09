@@ -1,16 +1,19 @@
 import { useReducer } from 'react';
 import type { FC } from 'react';
-import type { TReducer, TState } from './types';
+import type { TReducer } from './types';
 import { reducer } from '.';
 import { Context } from './Context';
 import { STATE } from './constants';
 import type { TChildrenElement } from '@t/index';
-import { resolveInitProjectImageRecord } from '@hooks/media/resolveInitProjectImageRecord';
 import { isMobile } from 'react-device-detect';
 import { useScroll } from 'framer-motion';
 import { PNG_EXT, WEBP_EXT } from '@constants/media';
-import { TScreensRecord } from '@t/screens';
 import { resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
+import { resolveProjectImageResolverRecord } from '@hooks/media/resolveProjectScreensRecord';
+import {
+  TScreensRecord,
+  TProjectImageResolverRecord,
+} from '@t/screens';
 
 const screensRecordPng: TScreensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
@@ -24,8 +27,8 @@ const screensLookup = {
   [WEBP_EXT]: screensRecordWebp,
 };
 
-const projectImageRecord =
-  resolveInitProjectImageRecord(screensLookup);
+const projectImageResolverRecord: TProjectImageResolverRecord =
+  resolveProjectImageResolverRecord(screensLookup);
 
 const screensRecordSmallPng: TScreensRecord =
   import.meta.glob(
@@ -42,21 +45,16 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const { scrollX, scrollY } = useScroll({
-    layoutEffect: false,
+  const { scrollX, scrollY } = useScroll();
+  const [state, dispatch] = useReducer<TReducer>(reducer, {
+    ...STATE,
+    isSound: !isMobile,
   });
-  const [state, dispatch] = useReducer<TReducer, TState>(
-    reducer,
-    {
-      ...STATE,
-      isSound: !isMobile,
-    },
-    (state) => ({ ...state, projectImageRecord }),
-  );
 
   return (
     <Context.Provider
       value={{
+        projectImageResolverRecord,
         screensLookup,
         screensLookupSmall: {
           [PNG_EXT]: screensRecordSmallPng,

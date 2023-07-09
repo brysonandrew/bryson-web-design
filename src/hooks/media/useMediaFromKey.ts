@@ -1,49 +1,53 @@
-import { TProjectKey } from "@constants/projects";
-import { useContext } from "@state/Context";
-import { TImageRecord } from "@t/screens";
+import { TProjectKey } from '@constants/projects';
+import { resolveMediaRecord } from '@pages/projects/config';
+import { useContext } from '@state/Context';
+import { TUpdateProjectImageRecord } from '@state/types';
+import { TImageRecord } from '@t/screens';
 
-type TUpdateRecord = { currProject: TProjectKey, nextRecord: TImageRecord; };
+type TUpdateRecord = {
+  currProject: TProjectKey;
+  nextRecord: TImageRecord;
+};
 export const useMediaFromKey = () => {
-  const { projectImageRecord, screensLookup, dispatch } = useContext();
+  const {
+    projectImageResolverRecord,
+    projectImageRecord,
+    dispatch,
+  } = useContext();
 
-  const updateRecord = ({ currProject, nextRecord }: TUpdateRecord) => {
-    const prev = projectImageRecord[currProject];
+  const updateRecord = (
+    value: TUpdateProjectImageRecord,
+  ) => {
     dispatch({
-      type: "project-image-record", value: {
-        [currProject]: {
-          ...prev,
-          ...nextRecord
-        }
-      }
+      type: 'project-image-record',
+      value,
     });
   };
 
   const handleLoad = async (currProject: TProjectKey) => {
     try {
-      const entries = Object.entries(screensLookup.png);
-      const selectedRecord = projectImageRecord[currProject];
-      const isEmpty = !Boolean(selectedRecord) || Object.keys(selectedRecord).length === 0;
-      const imageRecord: TImageRecord = isEmpty ? {} : { ...selectedRecord };
+      const imageRecord = projectImageRecord[currProject];
+      const resolverRecord =
+        projectImageResolverRecord[currProject];
       const nextRecord: TImageRecord = {};
+      const entries = Object.entries(resolverRecord);
 
       for await (const entry of entries) {
-        const [filePath, resolver] = entry;
-        if (imageRecord[filePath]) continue;
-        if (
-          filePath.includes(`/${currProject}/`)
-        ) {
-          // const mediaRecord = await resolveMediaRecord({ png: { filePath, resolver }, webp: { filePath, resolver: screensLookup.webp[filePath] } });
-          // nextRecord[mediaRecord.png.name] = mediaRecord;
+        const [filePath, value] = entry;
+        if (imageRecord?.[filePath]) continue;
 
-          // if (isEmpty && Object.keys(nextRecord).length < 3) {
-          //   updateRecord({ currProject, nextRecord });
-          // }
-        }
+        const mediaRecord = await resolveMediaRecord({
+          png: value.png,
+          webp: value.webp,
+        });
+        nextRecord[filePath] = mediaRecord;
+
+        updateRecord({
+          project: currProject,
+          filePath,
+          mediaRecord,
+        });
       }
-
-      // if (Object.keys(nextRecord).length > 0) {
-      //   updateRecord({ currProject, nextRecord });
-      // }
     } catch (error) {
       console.log(error);
     }
