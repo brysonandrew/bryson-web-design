@@ -1,0 +1,1 @@
+export const SELECT_LAYOUT_ID = 'SELECT_LAYOUT_ID';
