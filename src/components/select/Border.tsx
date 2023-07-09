@@ -3,7 +3,7 @@ import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { SELECT_LAYOUT_ID } from '../../../_cemetary/cursor/config';
+import { SELECT_LAYOUT_ID } from '../../../_brysona-cemetary/cursor/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
 import { POOL_ID } from '@components/effects/pool';
 

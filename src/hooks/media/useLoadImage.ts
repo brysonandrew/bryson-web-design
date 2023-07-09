@@ -1,11 +1,9 @@
-import { TMediaRecord } from '@t/media';
 import { useState, useEffect, useRef } from 'react';
 
-export const useLoadImage = (mediaRecord: TMediaRecord) => {
+export const useLoadImage = (src?: string) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const image = imageRef.current;
 
-  const src = mediaRecord.png.src;
   const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
