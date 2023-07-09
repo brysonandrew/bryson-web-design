@@ -1,54 +1,56 @@
-import type { FC } from "react";
+import type { FC } from 'react';
+
+export const POOL_ID = 'POOL_ID';
 
 const BASE_ANIMATION = {
-  dur: "6s",
-  repeatCount: "indefinite",
+  dur: '6s',
+  repeatCount: 'indefinite',
 };
 
 type TProps = {
   intensity?: number;
-  id: string;
+  id?: string;
 };
 export const Pool: FC<TProps> = ({
-  id,
+  id = POOL_ID,
   intensity = 120,
 }) => (
   <filter
     id={id}
-    x="-20%"
-    y="-20%"
-    width="120%"
-    height="120%"
-    colorInterpolationFilters="sRGB"
+    x='-20%'
+    y='-20%'
+    width='120%'
+    height='120%'
+    colorInterpolationFilters='sRGB'
   >
     <feTurbulence
-      in="SourceGraphic"
-      baseFrequency="10"
-      type="turbulence"
-      numOctaves="4"
-      result="MERGE_IMG"
+      in='SourceGraphic'
+      baseFrequency='10'
+      type='turbulence'
+      numOctaves='4'
+      result='MERGE_IMG'
     >
       <animate
-        attributeName="baseFrequency"
-        values="0.08;0.12;0.08"
+        attributeName='baseFrequency'
+        values='0.08;0.12;0.08'
         {...BASE_ANIMATION}
       />
     </feTurbulence>
     <feOffset
-      in="SourceGraphic"
+      in='SourceGraphic'
       dx={-intensity * 0.5}
       dy={-intensity * 0.5}
-      result="OFFSET"
+      result='OFFSET'
     >
       <animate
-        attributeName="dx"
+        attributeName='dx'
         values={`${-intensity * 0.25};${-intensity * 0.5};${
           -intensity * 0.25
         }`}
         {...BASE_ANIMATION}
       />
       <animate
-        attributeName="dy"
+        attributeName='dy'
         values={`${-intensity * 0.25};${-intensity * 0.5};${
           -intensity * 0.25
         }`}
@@ -56,25 +58,25 @@ export const Pool: FC<TProps> = ({
       />
     </feOffset>
     <feDisplacementMap
-      in="OFFSET"
-      in2="MERGE_IMG"
+      in='OFFSET'
+      in2='MERGE_IMG'
       scale={`${intensity * 0.5}`}
-      xChannelSelector="B"
-      yChannelSelector="G"
-      result="DISPLACEMENT"
+      xChannelSelector='B'
+      yChannelSelector='G'
+      result='DISPLACEMENT'
     >
       <animate
-        attributeName="scale"
+        attributeName='scale'
         values={`${intensity * 0.5};${intensity};${
           intensity * 0.5
         }`}
         {...BASE_ANIMATION}
       />
     </feDisplacementMap>
-    <feGaussianBlur in="DISPLACEMENT" stdDeviation="0 1.3">
+    <feGaussianBlur in='DISPLACEMENT' stdDeviation='0 1.3'>
       <animate
-        attributeName="baseFrequency"
-        values="0 0.7;0 1.3;0 0.7"
+        attributeName='baseFrequency'
+        values='0 0.7;0 1.3;0 0.7'
         {...BASE_ANIMATION}
       />
     </feGaussianBlur>

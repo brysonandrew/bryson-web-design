@@ -1,6 +1,6 @@
-import { MAX_SCROLL, TOptionsConfig } from "@components/fake-3d/config";
+import { MAX_SCROLL, TFake3DOptions } from "@components/fake-3d/config";
 
-export const FAKE_3D_PROPS: TOptionsConfig = {
+export const FAKE_3D_PROPS: TFake3DOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
       startScroll + windowHeight * 0.75,
@@ -15,15 +15,4 @@ export const FAKE_3D_PROPS: TOptionsConfig = {
     ],
     output: [-20, 60],
   },
-  // visibility: {
-  //   input: ({ startScroll, windowHeight }) => [
-  //     startScroll + windowHeight * 2,
-  //     startScroll +
-  //     MAX_SCROLL * 0.8 +
-  //     windowHeight * 2,
-  //   ],
-  //   blur: [0, 8],
-  //   grayscale: [0, 100],
-  //   opacity: [0, 0.5],
-  // },
 };

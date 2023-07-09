@@ -1,41 +1,25 @@
+import { DEFAULT_EXT } from "@constants/media";
+import { TExtKey, TFilePathKey, TMedia, TMediaDetails, TModuleConfig, TModuleRecord } from "@t/media";
 import { TItem } from "@t/projects";
+import { TModule } from "@t/screens";
 import { resolveCompositeKey } from "@utils/keys";
 
-export const SOURCE_KEY = "source";
+export const PROJECT_KEY = "project";
 export const NAME_KEY = "name";
 
 export const resolveTitleLayoutId = (key: string) => resolveCompositeKey('TITLE', key);
 
 export const EXCLUDED_KEYS = ["preview", "logo"];
 
-export type TResolver = () => Promise<any>;
-
-export type TMediaDetails = {
-  key: string;
-  source: string;
-  file: string;
-  name: string;
-  ext: string;
-};
-
-export type TMedia = TMediaDetails & {
-  src: string;
-};
-
-export const DEFAULT_EXT = "png";
-
-export type TMediaRecord = {
-  webp?: TMedia;
-  [DEFAULT_EXT]: TMedia;
-};
+export type TSlugProps = Pick<TItem, 'slug'>;
 
 export const EMPTY_MEDIA: TMedia = {
   key: "",
-  source: "",
+  project: "",
   name: "",
   file: "",
   src: "",
-  ext: ""
+  ext: DEFAULT_EXT
 };
 
 export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
@@ -45,15 +29,30 @@ export const resolveEmptyMedia = (partial: Partial<TMedia>) => ({
 
 export const resolveLoadingItemKey = (index: number) => resolveCompositeKey('loading', index);
 
-export const resolveMedia = (
-  src: string,
-): TMedia => {
-  const parts = src.split("/");
-  const [source, file] = parts.slice(-2);
-  const [name, ext] = file.split(".");
+export const resolveMediaDetails = (
+  filePath: TFilePathKey,
+): TMediaDetails => {
+  const parts = filePath.split("/");
+  const [project, file] = parts.slice(-2);
+  const [name, tail] = file.split(".");
+  const ext = tail as TExtKey;
 
-  const key = `${source}-${name}`.toLowerCase();
-  return { file, source, key, name, src, ext };
+  const key = `${project}-${name}`.toLowerCase();
+
+  return { file, project, key, name, ext };
 };
 
-export type TSlugProps = Pick<TItem, 'slug'>;
+export const resolveMedia = async ({ filePath, resolver }: TModuleConfig) => {
+  const module = await resolver() as TModule;
+  return {
+    ...resolveMediaDetails(filePath),
+    src: module.default
+  };
+};
+
+export const resolveMediaRecord = async (
+  { png, webp }: TModuleRecord,
+) => ({
+  png: await resolveMedia(png),
+  webp: await resolveMedia(webp),
+});

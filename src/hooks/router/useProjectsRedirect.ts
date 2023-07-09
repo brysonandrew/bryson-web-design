@@ -1,5 +1,5 @@
-import { SOURCE_KEY } from "@pages/projects/config";
-import { useMediaFromKey } from "@pages/projects/gallery/hooks/useMediaFromKey";
+import { PROJECT_KEY } from "@pages/projects/config";
+import { useMediaFromKey } from "@hooks/media/useMediaFromKey";
 import { useContext } from "@state/Context";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -9,7 +9,7 @@ export const useProjectsRedirect = () => {
   const { isInit } = useContext();
   const handleLoadMedia = useMediaFromKey();
   const [searchParams] = useSearchParams();
-  const selectedKey = searchParams.get(SOURCE_KEY);
+  const selectedKey = searchParams.get(PROJECT_KEY);
   const navigate = useNavigate();
 
   useEffect(() => {

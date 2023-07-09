@@ -1,24 +1,24 @@
-import {
-  DEFAULT_EXT,
-  TMediaRecord,
-} from '@pages/projects/config';
 import { FC } from 'react';
 import { Button } from './Button';
 import { useSorted } from './useSorted';
+import { DEFAULT_EXT } from '@constants/media';
+import { TMediaRecord } from '@t/media';
+import { TImageRecordEntries } from '@t/screens';
+import { resolveMediaDetails } from '@pages/projects/config';
 
 type TProps = {
   itemWidth: number;
-  items: TMediaRecord[];
+  items: TImageRecordEntries;
 };
 export const Items: FC<TProps> = ({ items, itemWidth }) => {
   const sortedItems = useSorted(items);
   return (
     <>
-      {sortedItems.map((media: TMediaRecord, index) => (
+      {sortedItems.map(([filePath], index) => (
         <Button
-          key={media[DEFAULT_EXT].key}
+          key={filePath}
           width={itemWidth}
-          mediaRecord={media}
+          mediaDetails={resolveMediaDetails(filePath)}
           index={index}
         />
       ))}

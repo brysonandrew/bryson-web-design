@@ -2,7 +2,7 @@ import { TUpdateRectProps } from '@components/InView';
 import { type FC, useRef } from 'react';
 import {
   TFake3DMotionChildrenProps,
-  TOptionsConfig,
+  TFake3DOptions,
   TStyleProps,
 } from '../config';
 import { Dispersion } from './values/Dispersion';
@@ -11,7 +11,7 @@ import { Visibility } from './values/Visibility';
 import { useScrollBounds } from './useScrollBounds';
 
 type TProps = TUpdateRectProps &
-  TOptionsConfig & {
+  TFake3DOptions & {
     children(props: TFake3DMotionChildrenProps): void;
   };
 export const Aggregator: FC<TProps> = ({

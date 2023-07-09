@@ -4,8 +4,7 @@ import { TDimensions } from "@t/layout";
 
 type TConfig = { container: TDimensions | null, image: TDimensions | null; };
 export const useImageDimensions = ({ container, image }: TConfig) => {
-  const windowSize = useWindowSize();
-  const isResizing = windowSize?.isResizing;
+  const { isResizing } = useWindowSize();
 
   const dimensions = useMemo(() => {
     let imageHeight = 0;

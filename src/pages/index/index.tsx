@@ -3,7 +3,6 @@ import { Shell as MainShell } from '@main/Shell';
 import { Suspense } from 'react';
 import { Tech } from './tech';
 import { Build } from './build';
-import { Space8 } from '@components/spaces/Space8';
 import { Contact } from './contact';
 import { Projects } from './projects';
 import { Space24 } from '@components/spaces/Space24';

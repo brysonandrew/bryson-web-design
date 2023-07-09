@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import {
@@ -6,9 +6,7 @@ import {
   resolveShadow,
 } from '@constants/colors';
 import {
-  DEFAULT_EXT,
   NAME_KEY,
-  TMediaRecord,
   resolveLoadingItemKey,
 } from '@pages/projects/config';
 import clsx from 'clsx';
@@ -18,8 +16,12 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '../../../hooks/nav/useTo';
-import { useContext } from '@state/Context';
 import * as unoConfig from '@uno/config';
+import { DEFAULT_EXT } from '@constants/media';
+import { TImageRecordValue } from '@t/screens';
+import { useMediaRecord } from '@hooks/media/useMediaRecord';
+import { useContext } from '@state/Context';
+import { TMediaDetails } from '@t/media';
 const COLORS = unoConfig.default.theme.colors;
 
 export const Root = styled(motion.div)``;
@@ -30,15 +32,15 @@ export const Background = styled(motion.div)``;
 export type TProps = {
   index: number;
   width: number;
-  mediaRecord: TMediaRecord;
+  mediaDetails: TMediaDetails
 };
 export const Button: FC<TProps> = ({
   index,
-  mediaRecord,
   width,
+  mediaDetails
 }) => {
-  const { key, name } = mediaRecord[DEFAULT_EXT];
   const { dispatch } = useContext();
+  const { key, name } = mediaDetails;
   const to = useTo(name);
   const isLoading = key === resolveLoadingItemKey(index);
   const [searchParams] = useSearchParams();

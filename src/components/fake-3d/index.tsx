@@ -7,11 +7,11 @@ import { Aggregator } from './aggregator';
 import {
   EMPTY_PROPS,
   TFake3DMotionChildrenProps,
-  TOptionsConfig,
+  TFake3DOptions,
 } from './config';
 import { PRESENCE_OPACITY } from '@constants/animation';
 
-type TProps = TOptionsConfig & {
+type TProps = TFake3DOptions & {
   classValue?: ClassValue;
   inViewOptions?: TInViewOptions;
   children(props: TFake3DMotionChildrenProps): JSX.Element;

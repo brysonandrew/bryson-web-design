@@ -14,9 +14,9 @@ const TITLE_FROM_PATHNAME_LOOKUP: Record<string, string | null> = {
 export const useHtmlTitle = () => {
   const { pathname } = useLocation();
   const currParams = useCurrParams();
-  const { source, name } = currParams;
+  const { project, name } = currParams;
   const route = TITLE_FROM_PATHNAME_LOOKUP[pathname];
-  const titles = (source ? [capitalize(source), name] : [TITLE_BASE, route]).filter(Boolean);
+  const titles = (project ? [capitalize(project), name] : [TITLE_BASE, route]).filter(Boolean);
   const title = resolveCompositeTitle(...titles);
   useEffect(() => {
     document.title = title;

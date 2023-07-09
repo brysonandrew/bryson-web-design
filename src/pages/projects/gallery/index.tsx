@@ -2,57 +2,46 @@ import { useState, type FC } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 import { useWidth } from './hooks/useWidth';
 import styled from '@emotion/styled';
-import { TAppItemKey } from '@constants/apps';
-import { Footer } from './footer';
-import { Sections } from './sections';
+import { TProjectKey } from '@constants/projects';
 import { createPortal } from 'react-dom';
-import { Background } from './Background';
 import { useDelay } from '@hooks/useDelay';
 import { useContext } from '@state/Context';
-import {
-  TMediaRecord,
-  resolveEmptyMedia,
-  resolveLoadingItemKey,
-} from '../config';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
+import { Background } from './Background';
+import { Footer } from './footer';
+import { Sections } from './sections';
+import {
+  TImageRecord,
+  TImageRecordEntries,
+} from '@t/screens';
 
 const Root = styled(motion.div)``;
 
 type TProps = {
-  currSource: TAppItemKey;
+  currProject: TProjectKey;
 };
-export const Gallery: FC<TProps> = ({ currSource }) => {
-  const { clientImageRecord, screensCountRecord } =
-    useContext();
-  const items = Object.values(
-    clientImageRecord[currSource] ?? {},
-  );
+export const Gallery: FC<TProps> = ({ currProject }) => {
+  const { projectImageRecord } = useContext();
   const [isAnimationDone, setAnimationDone] =
     useState(false);
   const motionX = useMotionValue(0);
-  const readyCount = items.length ?? 0;
-  const count = screensCountRecord[currSource];
-  const loadingCount = count - readyCount;
+  const imageRecord: TImageRecord =
+    projectImageRecord[currProject];
+  const items = Object.entries(
+    imageRecord,
+  ) as TImageRecordEntries;
+  console.log(items);
+  const count = items.length;
 
   const { width, isResizing } = useWidth();
   const isDelay = useDelay(400);
   const isReady =
     width.screen > 0 && (isAnimationDone || isDelay);
 
-  const loadingItems: TMediaRecord[] = [
-    ...Array(loadingCount),
-  ].map((_, index) => ({
-    png: resolveEmptyMedia({
-      key: resolveLoadingItemKey(index),
-      name: `${items.length + index + 1}`,
-    }),
-  }));
-
   const galleryProps = {
-    items: [...items, ...loadingItems],
     motionX,
-    readyCount,
+    items,
     count,
     width,
     isReady,
@@ -64,12 +53,12 @@ export const Gallery: FC<TProps> = ({ currSource }) => {
   return (
     <>
       {createPortal(
-        <Root className='fixed inset-0 flex flex-col z-10'>
+        <Root className='cover-fixed column z-10'>
           <Header
             onLayoutAnimationComplete={
               handleLayoutAnimationComplete
             }
-            slug={currSource}
+            slug={currProject}
           />
           {isResizing ? null : (
             <>

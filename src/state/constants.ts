@@ -5,13 +5,9 @@ export const STATE: TState = {
   isInit: true,
   isScroll: false,
   isScrollStart: false,
-  isCursorReady: false,
   isSound: true,
   isTransitioningGallery: false,
   context: new AudioContext(),
-  selectId: null,
-  motionValuePairs: [],
-  images: [],
-  clientImageRecord: {},
+  projectImageRecord: {},
   contact: INIT_CONTACT_STATE
 };

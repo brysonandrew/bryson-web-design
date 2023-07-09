@@ -1,7 +1,7 @@
 import type { TItem } from "@t/projects";
 import { titleToKebab } from "@utils/format";
 
-export const INIT_APP_ITEMS = [
+export const INIT_PROJECT_ITEMS = [
   {
     title: "Insight Factory",
     description: "Process Management System",
@@ -92,11 +92,12 @@ export const INIT_APP_ITEMS = [
   },
 ];
 
-export const APP_ITEMS: TItem[] = INIT_APP_ITEMS.map((item) => ({ ...item, slug: titleToKebab(item.title) }));
-export const APP_ITEMS_RECORD = APP_ITEMS.reduce((a: Record<string, TItem>, item: TItem) => {
+export const PROJECT_ITEMS: TItem[] = INIT_PROJECT_ITEMS.map((item) => ({ ...item, slug: titleToKebab(item.title) }));
+type TProjectItemRecord = Record<string, TItem>;
+export const PROJECT_ITEMS_RECORD = PROJECT_ITEMS.reduce((a: TProjectItemRecord, item: TItem) => {
   a[item.slug] = item;
   return a;
 }, {});
-export type TAppItemKey = keyof typeof APP_ITEMS_RECORD;
+export type TProjectKey = keyof typeof PROJECT_ITEMS_RECORD;
 
-export const CV_ITEMS = APP_ITEMS.filter(({ title }) => title !== "Stock Portfolio" && title !== "Epirus");
+export const CV_ITEMS = PROJECT_ITEMS.filter(({ title }) => title !== "Stock Portfolio" && title !== "Epirus");

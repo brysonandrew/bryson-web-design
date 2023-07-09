@@ -1,6 +1,7 @@
 
 import { TContactState, TFormKey, TStatus } from '@pages/contact/config';
-import { TMediaRecord } from '@pages/projects/config';
+import { TMotionValuePair } from '@t/animation';
+import { TPartialProjectImageRecord, TProjectImageRecord, TScreensLookup } from '@t/screens';
 import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
@@ -9,26 +10,27 @@ import type {
   ReducerAction,
 } from 'react';
 
-export type TScreensCountRecord = Record<string, number>;
-export type TScreensRecord = Record<string, () => Promise<unknown>>;
-
-export type TContext = TState & {
-  scrollX: MotionValue;
-  scrollY: MotionValue;
-  screensCountRecord: TScreensCountRecord;
-  screensRecord: TScreensRecord;
-  images: TMediaRecord[];
-  dispatch: TDispatch;
+export type TState = {
+  projectImageRecord: TProjectImageRecord;
+  isScroll: boolean;
+  isScrollStart: boolean;
+  isInit: boolean;
+  isSound: boolean;
+  isTransitioningGallery: boolean;
+  context: AudioContext;
+  contact: TContactState;
 };
 
-export type TMotionValuePair = [
-  x: MotionValue,
-  y: MotionValue,
-];
+export type TContext = TState & {
+  randomIndicies: number[];
+  screensLookup: TScreensLookup;
+  screensLookupSmall: TScreensLookup;
 
-export type TImageRecord = Record<string, TMediaRecord>;
-export type TClientImageRecord = Record<string, TImageRecord>;
-export type TPartialClientImageRecord = { [key: string]: TImageRecord; };
+  scrollX: MotionValue;
+  scrollY: MotionValue;
+
+  dispatch: TDispatch;
+};
 
 export type TAction =
   | {
@@ -48,12 +50,8 @@ export type TAction =
     value: TFormKey | null;
   }
   | {
-    type: "image-record",
-    value: TPartialClientImageRecord;
-  }
-  | {
-    type: "images",
-    value: TMediaRecord[];
+    type: "project-image-record",
+    value: TPartialProjectImageRecord;
   }
   | {
     type: 'start-motion-blur';
@@ -91,21 +89,6 @@ export type TAction =
     type: 'add-motion-value';
     value: { pair: TMotionValuePair; index: number; };
   };
-
-export type TState = {
-  images: TMediaRecord[];
-  clientImageRecord: TClientImageRecord;
-  isScroll: boolean;
-  isScrollStart: boolean;
-  isInit: boolean;
-  isCursorReady: boolean;
-  isSound: boolean;
-  isTransitioningGallery: boolean;
-  context: AudioContext;
-  selectId: null | string;
-  motionValuePairs: TMotionValuePair[];
-  contact: TContactState;
-};
 
 export type TActionType = null;
 export type TActionValue = any;

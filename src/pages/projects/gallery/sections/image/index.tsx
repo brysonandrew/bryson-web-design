@@ -1,34 +1,40 @@
 import styled from '@emotion/styled';
-import type { TMediaRecord } from '@pages/projects/config';
 import { resolveUrlId } from '@utils/resolveUrlId';
 import { motion } from 'framer-motion';
 import { type FC, useRef } from 'react';
 import { MOTION_BLUR_ID } from '../constants';
 import { useContext } from '@state/Context';
 import { Placeholder } from '../../../../../components/placeholder';
-import { useLoadImage } from './useLoadImage';
 import { TBaseProps } from '../../types';
 import { Control } from './Control';
 import { Picture } from '@components/picture';
 import { isSafari, isBrowser } from 'react-device-detect';
+import { TImageRecordValue } from '@t/screens';
+import { useMediaRecord } from '@hooks/media/useMediaRecord';
+import { useLoadImage } from './useLoadImage';
 
 export const Root = styled(motion.div)``;
 
 type TProps = Pick<TBaseProps, 'width'> & {
-  mediaRecord: TMediaRecord;
+  value: TImageRecordValue;
+  index: number;
 };
 export const Image: FC<TProps> = ({
-  mediaRecord,
+  index,
   width,
+  value,
 }) => {
   const ref = useRef<HTMLImageElement | null>(null);
   const image = ref.current;
+
+  const mediaRecord = useMediaRecord(value);
   const isLoaded = useLoadImage({
     image,
-    src: mediaRecord.png.src,
+    src: mediaRecord?.png.src,
   });
   const { isTransitioningGallery } = useContext();
 
+  if (mediaRecord === null) return null;
   return (
     <Control
       mediaRecord={mediaRecord}

@@ -3,19 +3,20 @@ import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { Image } from './image';
-import type { TMediaRecord } from '@pages/projects/config';
 import { Filter } from './Filter';
 import { TBaseProps } from '../types';
+import { TImageRecordEntry } from '@t/screens';
 
 export const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
-  const { items, count, motionX, width } = props;
+  const { count, motionX, width, items } = props;
 
   const left = useTransform(
     motionX,
-    (v) => v * count * (width.screen / width.footer),
+    (v) =>
+      v * count * (width.screen / width.footer) + width.screen * 0.5 * (count - 1),
   );
 
   return (
@@ -26,15 +27,17 @@ export const Sections: FC<TProps> = (props) => {
         style={{ left, width: width.screen * count }}
         {...PRESENCE_OPACITY_Y_SHIFT}
       >
-        {items.map((mediaRecord: TMediaRecord) => (
-          <motion.li
-            key={mediaRecord.png.key}
-            className='relative flex justify-center'
-            style={{ width: width.screen }}
-          >
-            <Image mediaRecord={mediaRecord} {...props} />
-          </motion.li>
-        ))}
+        {items.map(
+          ([key, value]: TImageRecordEntry, index) => (
+            <motion.li
+              key={key}
+              className='relative flex justify-center'
+              style={{ width: width.screen }}
+            >
+              <Image index={index} value={value} {...props} />
+            </motion.li>
+          ),
+        )}
       </motion.ul>
     </Root>
   );

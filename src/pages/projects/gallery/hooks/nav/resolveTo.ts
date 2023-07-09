@@ -1,11 +1,11 @@
-import { TAppItemKey } from "@constants/apps";
-import { SOURCE_KEY, NAME_KEY, } from "@pages/projects/config";
+import { TProjectKey } from "@constants/projects";
+import { PROJECT_KEY, NAME_KEY, } from "@pages/projects/config";
 
 type TConfig = {
   pathname: string;
-  source: TAppItemKey;
+  project: TProjectKey;
   next: number | string;
 };
-export const resolveTo = ({ pathname, source, next }: TConfig) => {
-  return `${pathname}?${SOURCE_KEY}=${source}&${NAME_KEY}=${next}`;
+export const resolveTo = ({ pathname, project, next }: TConfig) => {
+  return `${pathname}?${PROJECT_KEY}=${project}&${NAME_KEY}=${next}`;
 };

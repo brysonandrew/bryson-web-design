@@ -1,16 +1,17 @@
 import type {
   ErrorInfo,
-  ComponentType,
   PropsWithChildren,
-} from "react";
-import { Component } from "react";
-import type { TFallbackProps } from "./Fallback";
-import { Fallback } from "./Fallback";
+  FC,
+} from 'react';
+import { Component } from 'react';
+import type { TFallbackProps } from './Fallback';
+import { Fallback } from './Fallback';
+import { TChildren } from '@t/index';
 
 export type TBoundaryProps = {
-  children: any;
+  children: TChildren;
   onError?: (error: Error, info: ErrorInfo) => void;
-  Fallback?: ComponentType<TFallbackProps>;
+  Fallback: FC<TFallbackProps>;
 };
 
 export type State =
@@ -46,7 +47,7 @@ export class Boundary extends Component<
 
   override componentDidCatch(
     error: Error,
-    errorInfo: ErrorInfo
+    errorInfo: ErrorInfo,
   ) {
     // You can also log the error to an error reporting service
     //logErrorToMyService(error, errorInfo);
@@ -54,16 +55,16 @@ export class Boundary extends Component<
       this.props.onError(error, errorInfo);
     } else {
       console.error(
-        "Error Rendering Components:",
+        'Error Rendering Components:',
         error,
-        errorInfo
+        errorInfo,
       );
     }
   }
 
   override shouldComponentUpdate(
     nextProps: PropsWithChildren<TBoundaryProps>,
-    nextState: State
+    nextState: State,
   ) {
     if (this.state.hasError !== nextState.hasError) {
       return true;
@@ -84,14 +85,13 @@ export class Boundary extends Component<
   }
 
   override render() {
-    return this.state.hasError ? (
-      // @ts-expect-error Thanks to default Props Fallback is always given
-      <this.props.Fallback
+    if (this.state.hasError) {
+      const Fallback = this.props.Fallback;
+      <Fallback
         reset={this.reset}
         error={this.state.error}
-      />
-    ) : (
-      this.props.children
-    );
+      />;
+    }
+    return this.props.children;
   }
 }

@@ -1,4 +1,4 @@
-import { CV_ITEMS } from "@constants/apps";
+import { CV_ITEMS } from "@constants/projects";
 import { Item } from "./Item";
 import type { TItem } from "@t/projects";
 

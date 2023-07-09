@@ -3,7 +3,7 @@ import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import type { FC } from "react";
-import { SELECT_LAYOUT_ID } from "../cursor/config";
+import { SELECT_LAYOUT_ID } from "./cursor/config";
 import { MOTION_CONFIG } from "@constants/animation";
 import { GLOW_BOX_SHADOW } from "@constants/colors";
 

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { IMAGE_PLACEHOLDER_ID } from '../../pages/projects/gallery/sections/constants';
 import { resolveUrlId } from '@utils/resolveUrlId';
@@ -9,20 +9,24 @@ import { TClassValueProps } from '@t/index';
 
 export const Root = styled(motion.div)``;
 
-type TProps = TClassValueProps;
-export const Placeholder: FC<TProps> = ({ classValue }) => {
+type TProps = TClassValueProps & HTMLMotionProps<'div'>;
+export const Placeholder: FC<TProps> = ({
+  classValue,
+  ...props
+}) => {
   return (
     <Root
-      className='relative flex items-center justify-center w-full h-full'
+      className='relative center w-full h-full'
       {...{
         initial: { opacity: 0 },
         animate: { opacity: 0.28 },
         exit: { opacity: 0 },
         transition: { ease: 'linear', duration: 1.4 },
       }}
+      {...props}
     >
       <div
-        className={clsx('transform', classValue)}
+        className={clsx(classValue)}
         style={{
           width: 24,
           height: 24,

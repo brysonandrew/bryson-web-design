@@ -11,10 +11,6 @@ export type TAnyRecord = Record<string, any>;
 
 export type TChildrenProps = { children: TChildren }
 
-export type TModule = {
-  default: string;
-};
-
 export type TClassValueProps = {
   classValue?: ClassValue;
 };

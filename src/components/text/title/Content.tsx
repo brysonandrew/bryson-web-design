@@ -1,4 +1,3 @@
-import { TextXl } from '@components/text/TextXl';
 import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import type { TChildren } from '@t/index';

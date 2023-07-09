@@ -1,23 +1,23 @@
-import type { FC } from "react";
+import type { FC } from 'react';
+import { motion } from 'framer-motion';
 import type {
   HTMLMotionProps,
   MotionStyle,
-} from "framer-motion";
-import { motion } from "framer-motion";
-import styled from "@emotion/styled";
-import type { ClassValue } from "clsx";
-import { clsx } from "clsx";
+} from 'framer-motion';
+import styled from '@emotion/styled';
+import type { ClassValue } from 'clsx';
+import { clsx } from 'clsx';
+import { resolveUrlId } from '@utils/resolveUrlId';
+import { useDomCondition } from '@hooks/useDomCondition';
+import { POOL_ID } from '@components/effects/pool';
 import {
   CURSOR_SIZE,
   SELECT_LAYOUT_ID,
-} from "../cursor/config";
-import { resolveUrlId } from "@utils/resolveUrlId";
-import { POOL_ID } from "@components/cursor";
-import { useDomCondition } from "@hooks/useDomCondition";
+} from './cursor/config';
 
 const Root = styled(motion.div)``;
 
-type TProps = HTMLMotionProps<"div"> & {
+type TProps = HTMLMotionProps<'div'> & {
   classValue?: ClassValue;
   style?: MotionStyle;
 };
@@ -27,14 +27,14 @@ export const Square: FC<TProps> = ({
   ...props
 }) => {
   const isChrome = useDomCondition(
-    () => window.navigator.userAgent.search("Chrome") > 0,
+    () => window.navigator.userAgent.search('Chrome') > 0,
   );
 
   return (
     <Root
       initial={false}
       layoutId={SELECT_LAYOUT_ID}
-      layout="size"
+      layout='size'
       style={{
         y: 0,
         x: 0,
@@ -42,14 +42,14 @@ export const Square: FC<TProps> = ({
         height: CURSOR_SIZE,
         backdropFilter: isChrome
           ? resolveUrlId(POOL_ID)
-          : "invert(100%)",
+          : 'invert(100%)',
         ...(isChrome
           ? { filter: resolveUrlId(POOL_ID) }
           : {}),
         ...style,
       }}
       className={clsx(
-        "fixed z-40 pointer-events-none cursor-crosshair",
+        'fixed z-40 pointer-events-none cursor-crosshair',
         classValue,
       )}
       animate={{
@@ -58,7 +58,7 @@ export const Square: FC<TProps> = ({
       transition={{
         repeat: Infinity,
         repeatDelay: 0.4,
-        repeatType: "reverse",
+        repeatType: 'reverse',
         duration: 2,
       }}
       {...props}

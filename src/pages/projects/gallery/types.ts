@@ -1,13 +1,12 @@
 import { MotionValue } from "framer-motion";
-import { TMediaRecord } from "../config";
+import { TImageRecordEntries } from "@t/screens";
 import { useWidth } from "./hooks/useWidth";
 
 export type TWidth = ReturnType<typeof useWidth>["width"];
 export type TBaseProps = {
   isReady: boolean;
-  items: TMediaRecord[];
   count: number;
-  readyCount: number;
+  items: TImageRecordEntries;
   motionX: MotionValue;
   width: TWidth;
 };

@@ -9,7 +9,7 @@ import { TBaseProps } from '../types';
 const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
-export const Footer: FC<TProps> = ({ ...props }) => {
+export const Footer: FC<TProps> = (props) => {
   return (
     <Root
       className='relative flex justify-center w-full z-10'
