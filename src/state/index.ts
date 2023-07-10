@@ -41,10 +41,13 @@ export const reducer = (
         },
       };
     }
-    case 'build-images': {
+    case 'build-image-record': {
+      const { index, mediaRecord } = value;
+      const prev = [...state.buildImages];
+      prev[index] = mediaRecord;
       return {
         ...state,
-        buildImages: value,
+        buildImages: prev,
       };
     }
     case 'project-image-record': {
