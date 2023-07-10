@@ -10,7 +10,7 @@ import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
 import {
   MID_MOTION_CONFIG,
-  resolveDynamicMotionConfig,
+  resolveDynamicSlowMotionConfig,
 } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
@@ -20,15 +20,14 @@ export const IMAGE_SIZE = 320;
 
 type TProps = HTMLMotionProps<'img'> & {
   index: number;
+  randomIndex: number;
   count: number;
   mediaRecord: TMediaRecord;
 };
-export const Image: FC<TProps> = ({
-  index,
-  count,
-  mediaRecord,
-  ...props
-}) => {
+export const Image: FC<TProps> = (props) => {
+  const { index, count, mediaRecord, ...pictureProps } =
+    props;
+  console.log(props);
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
@@ -38,6 +37,10 @@ export const Image: FC<TProps> = ({
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: resolveDimensions(image),
+  });
+
+  const motionConfig = resolveDynamicSlowMotionConfig({
+    delay: index / count,
   });
 
   return (
@@ -57,9 +60,7 @@ export const Image: FC<TProps> = ({
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        ...resolveDynamicMotionConfig({
-          delay: index / 10,
-        }),
+        ...motionConfig,
       }}
     >
       {!isLoaded && (
@@ -73,18 +74,14 @@ export const Image: FC<TProps> = ({
         initial={{ opacity: 0 }}
         animate={{
           opacity: isLoaded ? 1 : 0,
-          transition: {
-            ease: 'linear',
-            duration: 1,
-            delay: index / count,
-          },
+          ...motionConfig,
         }}
       >
         <Picture
           imageRef={imageRef}
           mediaRecord={mediaRecord}
           {...dimensions}
-          {...props}
+          {...pictureProps}
         />
       </motion.div>
     </motion.li>

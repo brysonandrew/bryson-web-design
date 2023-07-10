@@ -44,6 +44,11 @@ export type TContext = TState & {
   dispatch: TDispatch;
 };
 
+export type TUpdateBuildImageRecord = {
+  index: number;
+  mediaRecord: TMediaRecord;
+};
+
 export type TUpdateProjectImageRecord = {
   project: TProjectKey;
   filePath: TFilePathKey;
@@ -52,8 +57,12 @@ export type TUpdateProjectImageRecord = {
 
 export type TAction =
   | {
-      type: 'build-images';
-      value: TMediaRecord[];
+      type: 'build-image-record';
+      value: TUpdateBuildImageRecord;
+    }
+  | {
+      type: 'project-image-record';
+      value: TUpdateProjectImageRecord;
     }
   | {
       type: 'gallery-drag';
@@ -70,10 +79,6 @@ export type TAction =
   | {
       type: 'contact-focus';
       value: TFormKey | null;
-    }
-  | {
-      type: 'project-image-record';
-      value: TUpdateProjectImageRecord;
     }
   | {
       type: 'start-motion-blur';

@@ -23,6 +23,7 @@ export const Images: FC<TProps> = ({
   } = useContext();
   const entries = Object.entries(screensLookupSmall.png);
   const { isScroll } = useContext();
+  console.log(randomIndicies)
 
   return (
     <motion.div
@@ -46,13 +47,14 @@ export const Images: FC<TProps> = ({
                 <Image
                   key={mediaRecord.png.key}
                   index={index}
+                  randomIndex={randomIndex}
                   count={length}
                   mediaRecord={mediaRecord as TMediaRecord}
                 />
               );
             } else {
               const entry = entries[randomIndex];
-              const [filePath, value] = entry;
+              const [filePath] = entry;
               const moduleRecord = resolveModuleRecord(
                 entry,
                 screensLookupSmall,

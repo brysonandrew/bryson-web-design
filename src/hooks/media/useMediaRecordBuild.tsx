@@ -11,19 +11,17 @@ export const useMediaRecordBuild = ({
   index,
   moduleRecord,
 }: TMediaRecordBuildConfig) => {
-  const { buildImages, dispatch } = useContext();
+  const { dispatch } = useContext();
 
   useEffect(() => {
     const init = async () => {
       const mediaRecord = await resolveMediaRecord(
         moduleRecord as TModuleRecord,
       );
-      const value = [...buildImages];
-      value[index] = mediaRecord;
 
       dispatch({
-        type: 'build-images',
-        value,
+        type: 'build-image-record',
+        value: { index, mediaRecord },
       });
     };
     init();
