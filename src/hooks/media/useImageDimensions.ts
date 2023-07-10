@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useWindowSize } from "@hooks/useWindowSize";
-import { TDimensions } from "@t/layout";
+import { TDimensions } from "@t/media";
 
 type TConfig = { container: TDimensions | null, image: TDimensions | null; };
 export const useImageDimensions = ({ container, image }: TConfig) => {

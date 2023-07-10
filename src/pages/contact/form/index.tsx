@@ -27,7 +27,6 @@ export const Form = () => {
       className='flex flex-col mt-1 w-full'
       ref={ref}
       onSubmit={(event) => {
-        console.dir(event);
         if (!isDisabled) {
           onSend(event);
         }

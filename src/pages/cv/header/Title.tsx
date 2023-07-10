@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Root = styled(motion.div)``;
 
 export const Title = () => (
-  <Root className="flex items-center justify-center text-gray-2">
+  <Root className="flex items-center justify-center">
     <div className="flex flex-col items-center whitespace-nowrap">
       <h2 style={{ fontSize: 36, lineHeight: 1 }}>
         Andrew Bryson

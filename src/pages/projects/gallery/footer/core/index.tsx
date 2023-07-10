@@ -8,7 +8,6 @@ import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
 import { Items } from './items';
 import { PADDING_X } from './config';
-import { GLOW_BOX_SHADOW } from '@constants/colors';
 import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
@@ -31,10 +30,7 @@ export const Core: FC<TProps> = (props) => {
     <Root className='relative' style={{ width: itemWidth }}>
       <MetalDark />
       <Dragger
-        className={clsx(
-          'relative flex items-center',
-          GLOW_BOX_SHADOW,
-        )}
+        className={clsx('relative row glow-interactive')}
         style={{
           x: motionX,
           left: -PADDING_X,

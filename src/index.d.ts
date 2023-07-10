@@ -147,5 +147,3 @@ declare function registerProcessor(
     parameterDescriptors?: AudioParamDescriptor[];
   },
 ): void;
-
-declare module "lamejs";

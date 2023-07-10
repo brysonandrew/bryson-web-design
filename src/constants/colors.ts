@@ -27,8 +27,6 @@ export const resolveShadow = (spread: number, color: TColorRgbKey = "white") => 
 
 export const TEAL_GLOW_ANIMATE_TRANSITION = { ease: "easeIn", duration: 0.28, delay: 0.08 };
 export const TEAL_GLOW_HOVER_TRANSITION = { ease: "linear", duration: 0.2, delay: 0 };
-export const GLOW_BOX_SHADOW = "glow-interactive";
-export const DISABLED_BOX_SHADOW = 'glow-disabled';
 
 export const PARENT_GLOW_PROPS = {
   initial: false,

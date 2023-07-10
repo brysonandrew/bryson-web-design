@@ -8,6 +8,7 @@ import { useContext } from '@state/Context';
 import { Sound } from './Sound';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { isMobile } from 'react-device-detect';
+import { Left } from './Left';
 
 const Root = styled(motion.footer)``;
 
@@ -30,6 +31,7 @@ export const Footer = () => {
       className='fixed bottom-0 left-0 w-full h-0 z-50'
       {...(isInit ? initAnimation : {})}
     >
+      <Left />
       <FadeUp />
       {!isMobile && <Sound />}
     </Root>

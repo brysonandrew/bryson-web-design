@@ -6,11 +6,7 @@ import {
 import { Link as _Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
-import {
-  GLOW_BOX_SHADOW,
-  PARENT_GLOW_PROPS,
-} from '@constants/colors';
-import clsx from 'clsx';
+import { PARENT_GLOW_PROPS } from '@constants/colors';
 import { Inner } from './Inner';
 
 const Root = styled(motion.div)``;
@@ -32,7 +28,7 @@ export const MenuLink: FC<TProps> = ({
       {...PARENT_GLOW_PROPS}
       {...props}
     >
-      <Link className={clsx("flex", GLOW_BOX_SHADOW)} to={to}>
+      <Link className={'flex glow-interactive'} to={to}>
         <Inner>{children}</Inner>
       </Link>
     </Root>

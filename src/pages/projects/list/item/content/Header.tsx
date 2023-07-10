@@ -1,4 +1,3 @@
-import { TextSm } from '@components/text/TextSm';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { TSlugProps } from '@pages/projects/config';
 import { HTMLMotionProps, motion } from 'framer-motion';
@@ -12,7 +11,7 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
       className='relative flex items-start flex-col h-full md:flex-row md:items-center'
       {...props}
     >
-      <h5 className='+text text-teal-bright'>{title}</h5>
+      <h4 className='+text text-teal-bright'>{title}</h4>
       <div className='hidden md:flex px-2' />
       <h5 className='+text text-baby-blue italic'>
         {description}

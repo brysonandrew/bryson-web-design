@@ -19,7 +19,7 @@ export const Background: FC<TProps> = ({
   children,
 }) => (
   <Root
-    className={clsx('cover-fixed z-0', classValue)}
+    className={clsx('cover-fixed', classValue)}
     width='100%'
     height='100%'
   >
@@ -36,7 +36,7 @@ export const Background: FC<TProps> = ({
       y='0'
       width='100%'
       height='100%'
-      fill='rgba(0,0,0,0.4)'
+      fill='var(--black-04)'
     />
     {children}
   </Root>

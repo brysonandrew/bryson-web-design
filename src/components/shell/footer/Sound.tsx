@@ -2,10 +2,7 @@ import { Glow } from '@components/glow';
 import { VolumeOff } from '@components/icons/VolumeOff';
 import { VolumeOn } from '@components/icons/VolumeOn';
 import { Metal } from '@components/metal';
-import {
-  GLOW_BOX_SHADOW,
-  PARENT_GLOW_PROPS,
-} from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@constants/colors';
 import styled from '@emotion/styled';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
@@ -27,9 +24,8 @@ export const Sound = () => {
   return (
     <Root
       className={clsx(
-        'absolute bottom-4 right-4 p-0.25 z-50',
+        'absolute bottom-7 right-4 p-0.25 glow-interactive z-10',
         SHARED_CLASS,
-        GLOW_BOX_SHADOW,
       )}
       {...PARENT_GLOW_PROPS}
     >

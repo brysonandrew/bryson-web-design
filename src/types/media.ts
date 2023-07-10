@@ -2,6 +2,8 @@ import { EXTS, WEBP_EXT, DEFAULT_EXT } from "@constants/media";
 import { TResolver } from "./screens";
 import { TProjectKey } from "@constants/projects";
 
+export type TDimensions = { width: number; height: number; };
+
 export type TFilePathKey = string;
 export type TFilePathBaseKey = string;
 

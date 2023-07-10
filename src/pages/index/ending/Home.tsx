@@ -5,9 +5,8 @@ import {
   motion,
   type HTMLMotionProps,
 } from 'framer-motion';
-import clsx from 'clsx';
 import { Inner } from './Inner';
-import { GLOW_BOX_SHADOW, PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@constants/colors';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
@@ -20,7 +19,7 @@ export const Home: FC<TProps> = () => {
     <Root style={{ x: '-100%' }} {...PARENT_GLOW_PROPS}>
       <Button
         aria-label='home'
-        className={clsx(GLOW_BOX_SHADOW)}
+        className='glow-interactive'
         onTap={handleTap}
       >
         <Inner>Home</Inner>

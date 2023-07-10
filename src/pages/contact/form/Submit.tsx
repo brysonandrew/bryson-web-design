@@ -5,10 +5,7 @@ import type { FC } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
-import { Metal } from '@components/metal';
-import { Glow } from '@components/glow';
 import {
-  GLOW_BOX_SHADOW,
   PARENT_GLOW_PROPS,
   TEAL_GLOW_ANIMATE_TRANSITION,
   TEAL_GLOW_HOVER_TRANSITION,
@@ -20,8 +17,7 @@ const Decoration = styled(motion.div)``;
 const Input = styled(motion.input)`
   background-color: transparent !important;
 `;
-const Text = styled(motion.h4)`
-`;
+const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
@@ -33,8 +29,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   return (
     <Root
       className={clsx(
-        'relative p-0.5 flex w-full',
-        GLOW_BOX_SHADOW,
+        'relative p-0.5 flex w-full glow-interactive',
         [
           isDisabled
             ? clsx('cursor-not-allowed')

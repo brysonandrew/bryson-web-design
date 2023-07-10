@@ -1,8 +1,7 @@
-import { TMedia } from "@t/media";
-import { TImageRecordEntries } from "@t/screens";
-import { useMemo } from "react";
+import { useMemo } from 'react';
+import { TImageRecordEntries, TImageResolverEntries } from '@t/screens';
 
-export const useSorted = (items: TImageRecordEntries) => {
+export const useSorted = (items: TImageRecordEntries | TImageResolverEntries) => {
   const results = useMemo(() => {
     return items.sort(([_, a], [__, b]) => {
       const an = +a.png.name;
@@ -18,5 +17,4 @@ export const useSorted = (items: TImageRecordEntries) => {
     });
   }, [items]);
   return results;
-
 };

@@ -73,13 +73,14 @@ hr {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   background-color: var(--black-2);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: var(--white);
+  background-color: var(--teal-bright);
+  border: 1px solid var(--baby-blue);
+
 }
 
 ::-webkit-scrollbar-thumb:hover {
