@@ -27,6 +27,7 @@ export const Variables = () => {
           --white: rgb(255, 255, 255);
           --white-01: rgba(255, 255, 255, 0.1);
           --white-02: rgba(255, 255, 255, 0.2);
+          --white-04: rgb(255, 255, 255, 0.4);
           --white-08: rgba(255, 255, 255, 0.8);
 
           --gray: rgb(68, 68, 68);

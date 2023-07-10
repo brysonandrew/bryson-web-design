@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
+import clsx, { ClassValue } from 'clsx';
 import type { FC, SVGAttributes } from 'react';
 
 const Root = styled.svg``;
 
-type TProps = SVGAttributes<SVGElement>;
-export const Github: FC<TProps> = (props) => (
+type TProps = SVGAttributes<SVGElement> & {
+  classValue?: ClassValue;
+};
+export const Github: FC<TProps> = ({
+  classValue,
+  ...props
+}) => (
   <Root
+    className={clsx(classValue)}
     width='24'
     height='24'
     viewBox='0 0 26 28'

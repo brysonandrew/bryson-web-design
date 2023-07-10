@@ -1,4 +1,3 @@
-import { GLOW_BOX_SHADOW } from '@constants/colors';
 import styled from '@emotion/styled';
 import { TChildren, TClassValueProps } from '@t/index';
 import clsx from 'clsx';
@@ -19,8 +18,7 @@ export const Box: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'relative',
-        GLOW_BOX_SHADOW,
+        'relative glow-interactive',
         classValue,
       )}
       {...props}

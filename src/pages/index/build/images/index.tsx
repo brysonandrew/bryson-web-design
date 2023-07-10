@@ -6,7 +6,6 @@ import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { RANGE_Y } from './hooks/useY';
 import { resolveModuleRecord } from '@hooks/media/resolveModuleRecord';
-import { TScreensRecordEntry } from '@t/screens';
 import { TMediaRecord, TModuleRecord } from '@t/media';
 import { Build as Fetch } from '@components/fetch-media/Build';
 
@@ -58,7 +57,7 @@ export const Images: FC<TProps> = ({
                 entry,
                 screensLookupSmall,
               );
-              return (
+              return ( 
                 <Fetch
                   key={filePath}
                   index={randomIndex}

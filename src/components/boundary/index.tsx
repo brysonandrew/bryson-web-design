@@ -14,7 +14,7 @@ export type TBoundaryProps = {
   Fallback: FC<TFallbackProps>;
 };
 
-export type State =
+export type TState =
   | {
       error: Error;
       hasError: true;
@@ -26,7 +26,7 @@ export type State =
 
 export class Boundary extends Component<
   TBoundaryProps,
-  State
+  TState
 > {
   static defaultProps = {
     Fallback: Fallback,
@@ -64,7 +64,7 @@ export class Boundary extends Component<
 
   override shouldComponentUpdate(
     nextProps: PropsWithChildren<TBoundaryProps>,
-    nextState: State,
+    nextState: TState,
   ) {
     if (this.state.hasError !== nextState.hasError) {
       return true;

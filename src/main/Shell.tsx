@@ -18,7 +18,6 @@ import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
-import { Boundary } from '@components/boundary';
 
 type TProps = {
   children: TChildren;
