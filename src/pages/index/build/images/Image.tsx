@@ -70,8 +70,15 @@ export const Image: FC<TProps> = ({
         />
       )}
       <motion.div
-        initial={false}
-        animate={{ opacity: isLoaded ? 1 : 0 }}
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: isLoaded ? 1 : 0,
+          transition: {
+            ease: 'linear',
+            duration: 1,
+            delay: index / count,
+          },
+        }}
       >
         <Picture
           imageRef={imageRef}
