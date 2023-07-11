@@ -15,16 +15,15 @@ import {
   TMoveConfig,
   TSharedConfig,
 } from './config';
-import { Cross } from '@components/icons/Cross';
 import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
 import { TMediaRecord } from '@t/media';
+import { Tag } from './Tag';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 
 export const Root = styled(motion.div)``;
 export const Border = styled(motion.div)``;
-export const Tag = styled.code``;
 
 type TProps = TImageProps & {
   scrollX: MotionValue;
@@ -103,23 +102,11 @@ export const Zoom: FC<TProps> = ({
         <>
           <Border
             className={clsx(
-              'absolute glow-interactive pointer-events-none',
+              'absolute glow-interactive pointer-events-none z-10',
             )}
             {...rootProps}
           >
-            <div
-              className={clsx(
-                'absolute left-full top-full flex items-center px-2 py-0.5 m-2 text-teal-bright opacity-50',
-              )}
-            >
-              <Cross
-                classValue='w-2.5 h-2.5 mt-0.5'
-                stroke='gray'
-                strokeWidth={2}
-              />
-              <div className='p-0.5' />
-              <Tag className='relative text-xs text-gray-stroke whitespace-nowrap'>{`${~~scale}`}</Tag>
-            </div>
+            <Tag>{`${~~scale}`}</Tag>
           </Border>
           <Root
             className='absolute pointer-events-none overflow-hidden'

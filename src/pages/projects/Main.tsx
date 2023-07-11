@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { List } from './list';
 import { PROJECT_ITEMS } from '@constants/projects';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.div)``;
