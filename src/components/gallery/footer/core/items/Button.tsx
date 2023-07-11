@@ -15,11 +15,8 @@ import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-import { useTo } from '../../../hooks/nav/useTo';
+import { useTo } from '../../../../../hooks/media/nav/useTo';
 import * as unoConfig from '@uno/config';
-import { DEFAULT_EXT } from '@constants/media';
-import { TImageRecordValue } from '@t/screens';
-import { useMediaRecord } from '@hooks/media/useMediaRecordBuild';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';
 const COLORS = unoConfig.default.theme.colors;
@@ -32,16 +29,16 @@ export const Background = styled(motion.div)``;
 export type TProps = {
   index: number;
   width: number;
-  mediaDetails: TMediaDetails
+  mediaDetails: TMediaDetails;
 };
 export const Button: FC<TProps> = ({
   index,
   width,
-  mediaDetails
+  mediaDetails,
 }) => {
   const { dispatch } = useContext();
   const { key, name } = mediaDetails;
-  const to = useTo(name);
+  const to = useTo({ next: name });
   const isLoading = key === resolveLoadingItemKey(index);
   const [searchParams] = useSearchParams();
   const imgParam = searchParams.get(NAME_KEY);

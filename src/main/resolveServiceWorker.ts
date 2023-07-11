@@ -2,7 +2,7 @@
   if (navigator.serviceWorker) {
     try {
       const register =
-        await navigator.serviceWorker.register('./sw.js', {
+        await navigator.serviceWorker.register('/sw.js', {
           scope: '/',
         });
       // const subscription =

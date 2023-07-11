@@ -4,12 +4,14 @@ import { Main } from './Main';
 import { STORY } from '@constants/copy';
 import { Section } from '@components/Section';
 import { Space16 } from '@components/spaces/Space16';
+import { Gallery } from '@components/gallery';
 
 export const Projects = () => {
   return (
     <MainShell>
       <Shell>
         <Section title={STORY.projects}>
+          <Gallery />
           <Main />
           <Space16 />
         </Section>

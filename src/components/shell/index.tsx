@@ -19,7 +19,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <Root className='relative text-black-04 z-10 overflow-x-hidden'>
       <Header />
-      <Content className='relative'>
+      <Content className='relative z-0'>
         <HeaderOffset />
         {children}
       </Content>

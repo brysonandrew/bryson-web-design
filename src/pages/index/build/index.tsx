@@ -9,7 +9,6 @@ export const Build: FC = () => {
   return (
     <Section title={STORY.build}>
       <Fake3D
-        inViewOptions={{ once: true }}
         {...FAKE_3D_PROPS}
       >
         {(props) => <Images {...props} />}

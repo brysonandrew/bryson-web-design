@@ -9,13 +9,14 @@ import { Space24 } from '@components/spaces/Space24';
 import { Space12 } from '@components/spaces/Space12';
 import { Space16 } from '@components/spaces/Space16';
 import { Ending } from './ending';
-import { Invert } from '@components/Invert';
+import { Gallery } from '@components/gallery';
 
 export const Index = () => {
   return (
     <Suspense fallback={null}>
       <MainShell>
         <Shell>
+          <Gallery />
           <Build />
           <Space16 />
           <Tech />

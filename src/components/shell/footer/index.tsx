@@ -28,12 +28,13 @@ export const Footer = () => {
 
   return (
     <Root
-      className='fixed bottom-0 left-0 w-full h-0 z-50'
+      className='fixed bottom-0 left-0 w-full h-0'
       {...(isInit ? initAnimation : {})}
     >
-      <Left />
       <FadeUp />
+      <Left />
       {!isMobile && <Sound />}
     </Root>
   );
 };
+ 

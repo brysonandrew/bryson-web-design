@@ -1,6 +1,7 @@
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
@@ -15,6 +16,7 @@ import {
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
+import { useTo } from '@hooks/media/nav/useTo';
 
 export const IMAGE_SIZE = 320;
 
@@ -27,10 +29,13 @@ type TProps = HTMLMotionProps<'img'> & {
 export const Image: FC<TProps> = (props) => {
   const { index, count, mediaRecord, ...pictureProps } =
     props;
-  console.log(props);
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
+  const to = useTo({
+    next: mediaRecord.png.name,
+    project: mediaRecord.png.project,
+  });
 
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
@@ -38,7 +43,6 @@ export const Image: FC<TProps> = (props) => {
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: resolveDimensions(image),
   });
-
   const motionConfig = resolveDynamicSlowMotionConfig({
     delay: index / count,
   });
@@ -47,7 +51,6 @@ export const Image: FC<TProps> = (props) => {
     <motion.li
       className='absolute'
       style={{
-        cursor: 'zoom-in',
         ...xStyle,
         ...depthStyle,
       }}
@@ -63,27 +66,29 @@ export const Image: FC<TProps> = (props) => {
         ...motionConfig,
       }}
     >
-      {!isLoaded && (
-        <Placeholder
-          key='IMAGE_PLACEHOLDER'
-          classValue='origin-top placeholder'
-          {...MID_MOTION_CONFIG}
-        />
-      )}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isLoaded ? 1 : 0,
-          ...motionConfig,
-        }}
-      >
-        <Picture
-          imageRef={imageRef}
-          mediaRecord={mediaRecord}
-          {...dimensions}
-          {...pictureProps}
-        />
-      </motion.div>
+      <Link className='cursor-zoom-in' to={to}>
+        {!isLoaded && (
+          <Placeholder
+            key='IMAGE_PLACEHOLDER'
+            classValue='origin-top placeholder'
+            {...MID_MOTION_CONFIG}
+          />
+        )}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: isLoaded ? 1 : 0,
+            ...motionConfig,
+          }}
+        >
+          <Picture
+            imageRef={imageRef}
+            mediaRecord={mediaRecord}
+            {...dimensions}
+            {...pictureProps}
+          />
+        </motion.div>
+      </Link>
     </motion.li>
   );
 };
