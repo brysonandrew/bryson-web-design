@@ -23,7 +23,6 @@ export const Images: FC<TProps> = ({
   } = useContext();
   const entries = Object.entries(screensLookupSmall.png);
   const { isScroll } = useContext();
-  console.log(randomIndicies)
 
   return (
     <motion.div
@@ -35,7 +34,7 @@ export const Images: FC<TProps> = ({
       }}
     >
       <motion.ul
-        className={'absolute w-full preserve-3d'}
+        className='absolute w-full preserve-3d'
         style={{ rotateX, y }}
       >
         {randomIndicies.map(
@@ -59,7 +58,7 @@ export const Images: FC<TProps> = ({
                 entry,
                 screensLookupSmall,
               );
-              return ( 
+              return (
                 <Fetch
                   key={filePath}
                   index={randomIndex}

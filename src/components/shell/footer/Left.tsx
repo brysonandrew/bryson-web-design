@@ -3,10 +3,10 @@ import { Github } from '@components/icons/Github';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-const Root = styled(motion.footer)``;
+const Root = styled(motion.div)``;
 
 export const Left = () => (
-  <Root className='fixed left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-20'
+  <Root className='absolute left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-20'
   >
     <div>
       <a

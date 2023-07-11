@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { ArrowRight } from '@components/icons/ArrowRight';
-import { useNext } from '../hooks/nav/useNext';
+import { useNext } from '../../../../hooks/media/nav/useNext';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
 

@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useMemo, useReducer } from 'react';
 import type { FC } from 'react';
 import type { TReducer } from './types';
 import { reducer } from '.';
@@ -34,6 +34,9 @@ const screensRecordSmallPng: TScreensRecord =
   import.meta.glob(
     '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.png',
   );
+const screensSmallCount = Object.keys(
+  screensRecordSmallPng,
+).length;
 const screensRecordSmallWebp: TScreensRecord =
   import.meta.glob(
     '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.webp',
@@ -50,6 +53,10 @@ export const Provider: FC<TProviderProps> = ({
     ...STATE,
     isSound: !isMobile,
   });
+  const randomIndicies = useMemo(
+    () => resolveRandomIndicies(screensSmallCount),
+    [screensSmallCount],
+  );
 
   return (
     <Context.Provider
@@ -60,7 +67,7 @@ export const Provider: FC<TProviderProps> = ({
           [PNG_EXT]: screensRecordSmallPng,
           [WEBP_EXT]: screensRecordSmallWebp,
         },
-        randomIndicies: resolveRandomIndicies(),
+        randomIndicies,
         scrollX,
         scrollY,
         dispatch,

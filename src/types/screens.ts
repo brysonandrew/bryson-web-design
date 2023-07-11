@@ -38,15 +38,17 @@ export type TProjectImageRecord = Partial<
 export type TPartialProjectImageRecord = {
   [key: TProjectKey]: TImageRecord;
 };
+
+export type TImageResolverRecord = Record<
+  TFilePathKey,
+  TModuleRecord
+>;
 export type TImageResolverEntry = [
   TFilePathKey,
   TModuleRecord,
 ];
 export type TImageResolverEntries = TImageResolverEntry[];
-export type TImageResolverRecord = Record<
-  TFilePathKey,
-  TModuleRecord
->;
+
 export type TProjectImageResolverRecord = Record<
   TProjectKey,
   TImageResolverRecord

@@ -13,7 +13,6 @@ export const Context = createContext<TContext>({
   screensLookup: EMPTY_SCREENS_LOOKUP,
   screensLookupSmall: EMPTY_SCREENS_LOOKUP,
   projectImageResolverRecord: {},
-  
   scrollX: motionValue(0),
   scrollY: motionValue(0),
   dispatch: (_: TAction) => null,
