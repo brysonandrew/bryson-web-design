@@ -6,11 +6,10 @@ import { motion } from 'framer-motion';
 const Root = styled(motion.div)``;
 
 export const Left = () => (
-  <Root className='absolute left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-20'
-  >
+  <Root className='absolute left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-10'>
     <div>
       <a
-        className='row'
+        className='row cursor-pointer'
         href='https://github.com/brysonandrew'
         target='_blank'
       >
@@ -21,14 +20,16 @@ export const Left = () => (
             github
           </h5>
           <div className='p-1' />
-          <h6 className='uppercase italic text-xs text-teal-bright'>brysonandrew</h6>
+          <h6 className='uppercase italic text-xs text-teal-bright'>
+            brysonandrew
+          </h6>
         </div>
       </a>
     </div>
     <div className='py-0.5' />
     <div>
       <a
-        className='row'
+        className='row cursor-pointer'
         href='mailto:andrewbryson12@gmail.com'
         target='_blank'
       >
@@ -39,7 +40,9 @@ export const Left = () => (
             mail
           </h5>
           <div className='p-1' />
-          <h6 className='text-teal-bright italic uppercase text-xs'>andrewbryson12@gmail.com</h6>
+          <h6 className='text-teal-bright italic uppercase text-xs'>
+            andrewbryson12@gmail.com
+          </h6>
         </div>
       </a>
     </div>

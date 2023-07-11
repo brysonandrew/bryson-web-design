@@ -1,6 +1,5 @@
 import { useState, type FC } from 'react';
-import { motion, useMotionValue } from 'framer-motion';
-import { useWidth } from './hooks/useWidth';
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
 import { createPortal } from 'react-dom';
@@ -12,13 +11,9 @@ import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps, TWidth } from './types';
-import { resolveX } from './hooks/resolveX';
-import { useInitX } from './hooks/useInitX';
-import {
-  TImageResolverEntries,
-  TImageResolverRecord,
-} from '@t/screens';
+import { TImageResolverEntries } from '@t/screens';
 import { useMotionX } from './hooks/useMotionX';
+import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 
 const Root = styled(motion.div)``;
 
@@ -26,10 +21,11 @@ type TProps = {
   width: TWidth;
   currProject: TProjectKey;
 };
-export const Gallery: FC<TProps> = ({
+export const Main: FC<TProps> = ({
   width,
   currProject,
 }) => {
+  useFreezeScrollBar();
   const { projectImageResolverRecord, projectImageRecord } =
     useContext();
   const [isAnimationDone, setAnimationDone] =

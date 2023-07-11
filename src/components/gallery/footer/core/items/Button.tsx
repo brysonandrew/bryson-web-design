@@ -15,7 +15,7 @@ import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-import { useTo } from '../../../../../../hooks/media/nav/useTo';
+import { useTo } from '../../../../../hooks/media/nav/useTo';
 import * as unoConfig from '@uno/config';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';

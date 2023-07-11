@@ -1,4 +1,4 @@
-import { IMAGE_PLACEHOLDER_ID } from '@pages/projects/gallery/sections/constants';
+import { IMAGE_PLACEHOLDER_ID } from '@components/gallery/sections/constants';
 import { ImagePlaceholder } from './icons/ImagePlaceholder';
 
 export const ClipPaths = () => {

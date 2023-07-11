@@ -1,6 +1,7 @@
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
@@ -15,7 +16,6 @@ import {
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
-import { Link } from 'react-router-dom';
 import { useTo } from '@hooks/media/nav/useTo';
 
 export const IMAGE_SIZE = 320;
@@ -66,7 +66,7 @@ export const Image: FC<TProps> = (props) => {
         ...motionConfig,
       }}
     >
-      <Link className='cursor-zoom-in' to={`/projects${to}`}>
+      <Link className='cursor-zoom-in' to={to}>
         {!isLoaded && (
           <Placeholder
             key='IMAGE_PLACEHOLDER'

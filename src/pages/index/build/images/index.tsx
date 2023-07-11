@@ -22,7 +22,6 @@ export const Images: FC<TProps> = ({
     buildImages,
   } = useContext();
   const entries = Object.entries(screensLookupSmall.png);
-  const { isScroll } = useContext();
 
   return (
     <motion.div
@@ -30,7 +29,6 @@ export const Images: FC<TProps> = ({
       style={{
         height: HEIGHT,
         top: 0,
-        pointerEvents: isScroll ? 'none' : 'unset',
       }}
     >
       <motion.ul
@@ -48,7 +46,7 @@ export const Images: FC<TProps> = ({
                   index={index}
                   randomIndex={randomIndex}
                   count={length}
-                  mediaRecord={mediaRecord as TMediaRecord}
+                  mediaRecord={mediaRecord}
                 />
               );
             } else {
