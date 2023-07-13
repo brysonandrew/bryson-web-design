@@ -6,10 +6,10 @@ import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { RANGE_Y } from './hooks/useY';
 import { resolveModuleRecord } from '@hooks/media/resolveModuleRecord';
-import { TMediaRecord, TModuleRecord } from '@t/media';
+import { TModuleRecord } from '@t/media';
 import { Build as Fetch } from '@components/fetch-media/Build';
 
-const BUFFER = 100;
+const BUFFER = 140;
 const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
 
 type TProps = TFake3DMotionChildrenProps;
@@ -25,10 +25,9 @@ export const Images: FC<TProps> = ({
 
   return (
     <motion.div
-      className='relative w-full'
+      className='relative w-full top-0'
       style={{
-        height: HEIGHT,
-        top: 0,
+        height: HEIGHT
       }}
     >
       <motion.ul

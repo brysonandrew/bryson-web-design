@@ -1,5 +1,5 @@
-import { Placeholder } from '@components/placeholder';
-import { MID_MOTION_CONFIG } from '@constants/animation';
+import { Responsive } from '@components/placeholder/Responsive';
+import { resolveKey } from '@components/placeholder/resolveKey';
 import { useMediaRecordGallery } from '@hooks/media/useMediaRecordGallery';
 import { TModuleRecord } from '@t/media';
 import { FC } from 'react';
@@ -11,10 +11,8 @@ export const Gallery: FC<TProps> = ({ moduleRecord }) => {
   useMediaRecordGallery({ moduleRecord });
 
   return (
-    <Placeholder
-      key='IMAGE_PLACEHOLDER'
-      classValue='origin-top placeholder'
-      {...MID_MOTION_CONFIG}
+    <Responsive
+      key={resolveKey(moduleRecord.png.filePath)}
     />
   );
 };
