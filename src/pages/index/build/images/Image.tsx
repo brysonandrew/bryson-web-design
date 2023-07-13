@@ -6,17 +6,15 @@ import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
-import { Placeholder } from '@components/placeholder';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import {
-  MID_MOTION_CONFIG,
-  resolveDynamicSlowMotionConfig,
-} from '@constants/animation';
+import { resolveDynamicSlowMotionConfig } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import { useTo } from '@hooks/media/nav/useTo';
+import { resolveKey } from '@components/placeholder/resolveKey';
+import { Small as Placeholder } from '@components/placeholder/Small';
 
 export const IMAGE_SIZE = 320;
 
@@ -68,11 +66,7 @@ export const Image: FC<TProps> = (props) => {
     >
       <Link className='cursor-zoom-in' to={to}>
         {!isLoaded && (
-          <Placeholder
-            key='IMAGE_PLACEHOLDER'
-            classValue='origin-top placeholder'
-            {...MID_MOTION_CONFIG}
-          />
+          <Placeholder key={resolveKey(index)} />
         )}
         <motion.div
           initial={{ opacity: 0 }}

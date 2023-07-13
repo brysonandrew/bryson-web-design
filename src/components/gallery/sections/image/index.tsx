@@ -11,6 +11,8 @@ import { Picture } from '@components/picture';
 import { isSafari, isBrowser } from 'react-device-detect';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import { TMediaRecord } from '@t/media';
+import { Responsive } from '@components/placeholder/Responsive';
+import { resolveKey } from '@components/placeholder/resolveKey';
 
 export const Root = styled(motion.div)``;
 
@@ -35,9 +37,8 @@ export const Image: FC<TProps> = ({
       {(dimensions) => (
         <>
           {!isLoaded && (
-            <Placeholder
-              key='IMAGE_PLACEHOLDER'
-              classValue='origin-center placeholder sm:+placeholder md:++placeholder'
+            <Responsive
+              key={resolveKey(mediaRecord.png.src)}
             />
           )}
           {mediaRecord && (
