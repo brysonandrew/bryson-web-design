@@ -6,6 +6,7 @@ import { Footer } from './footer';
 import { Header } from './header';
 import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
+import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -15,15 +16,16 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ children }) => {
   useProjectsRedirect();
-
+  const currProject = useCurrProject();
+  const isProject = Boolean(currProject);
   return (
     <Root className='relative text-black-04 z-10 overflow-x-hidden'>
-      <Header />
+      {!isProject && <Header />}
       <Content className='relative z-0'>
         <HeaderOffset />
         {children}
       </Content>
-      <Footer /> 
+      {!isProject && <Footer />}
     </Root>
   );
 };

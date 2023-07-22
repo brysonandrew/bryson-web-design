@@ -14,7 +14,6 @@ export const Root = styled(motion.div)``;
 
 type TConfig = TSharedConfig;
 export const useScale = ({
-  image,
   imageWidth,
   imageHeight,
   cursorX,

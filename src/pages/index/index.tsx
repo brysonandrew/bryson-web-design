@@ -16,7 +16,6 @@ export const Index = () => {
     <Suspense fallback={null}>
       <MainShell>
         <Shell>
-          <Gallery />
           <Build />
           <Space16 />
           <Tech />
@@ -35,6 +34,7 @@ export const Index = () => {
             </>
           )}
           <Space24 />
+          <Gallery />
         </Shell>
       </MainShell>
     </Suspense>

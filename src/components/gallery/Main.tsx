@@ -2,7 +2,6 @@ import { useState, type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { createPortal } from 'react-dom';
 import { useDelay } from '@hooks/useDelay';
 import { useContext } from '@state/Context';
 import { Header } from './Header';
@@ -60,28 +59,23 @@ export const Main: FC<TProps> = ({
     setAnimationDone(true);
 
   return (
-    <>
-      {createPortal(
-        <Root className='cover-fixed column z-10'>
-          <Header
-            onLayoutAnimationComplete={
-              handleLayoutAnimationComplete
-            }
-            slug={currProject}
-          />
+    <Root className='cover-fixed column text-teal-bright z-20'>
+      <Header
+        onLayoutAnimationComplete={
+          handleLayoutAnimationComplete
+        }
+        slug={currProject}
+      />
+      <>
+        {isReady && (
           <>
-            {isReady && (
-              <>
-                <Background />
-                <Sections {...galleryProps} />
-              </>
-            )}
-            <Footer {...galleryProps} />
-            {isReady && <Arrows max={galleryProps.count} />}
+            <Background />
+            <Sections {...galleryProps} />
           </>
-        </Root>,
-        document.body,
-      )}
-    </>
+        )}
+        <Footer {...galleryProps} />
+        {isReady && <Arrows max={galleryProps.count} />}
+      </>
+    </Root>
   );
 };
