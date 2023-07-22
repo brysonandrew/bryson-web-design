@@ -36,7 +36,7 @@ export const Picture: FC<TProps> = ({
       {imageRef ? (
         <ImageWithRef ref={imageRef} {...imageProps} />
       ) : (
-        <motion.img {...imageProps} width='1600px' />
+        <motion.img {...imageProps} />
       )}
     </Root>
   );

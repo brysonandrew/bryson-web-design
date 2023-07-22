@@ -1,11 +1,16 @@
-import { useEventListener } from "@hooks/useEventListener";
-import { useRef } from "react";
-import { TSharedConfig, resolveCoord, CURSOR_SIZE_HALF, SCALE, resolveCursorCoords } from "./config";
+import { useEventListener } from '@hooks/useEventListener';
+import { useRef } from 'react';
+import {
+  TSharedConfig,
+  resolveCoord,
+  CURSOR_SIZE_HALF,
+  SCALE,
+  resolveCursorCoords,
+} from './config';
 
 type TConfig = TSharedConfig & {
   onJumpScale(): void;
   onTuneScale(delta: number): void;
-
 };
 
 export const useTapEvents = ({
@@ -18,13 +23,18 @@ export const useTapEvents = ({
   cursorY,
   onMove,
   onJumpScale,
-  onTuneScale
+  onTuneScale,
 }: TConfig) => {
   const imageRef = { current: image };
   const pinchRef = useRef({ isPinch: false, prevDelta: 0 });
 
   const handleTap = (event: MouseEvent | TouchEvent) => {
-    const { cx, cy } = resolveCursorCoords(event, { imageX, imageY, scrollX, scrollY });
+    const { cx, cy } = resolveCursorCoords(event, {
+      imageX,
+      imageY,
+      scrollX,
+      scrollY,
+    });
 
     const prevX = cursorX.get();
     const prevY = cursorY.get();
@@ -47,10 +57,18 @@ export const useTapEvents = ({
   };
 
   const handleTouchMove = (event: TouchEvent) => {
-    const { cx: x0, cy: y0 } = resolveCursorCoords(event, { imageX, imageY, scrollX, scrollY });
+    const { cx: x0, cy: y0 } = resolveCursorCoords(event, {
+      imageX,
+      imageY,
+      scrollX,
+      scrollY,
+    });
 
     if (pinchRef.current.isPinch) {
-      const { cx: x1, cy: y1 } = resolveCursorCoords(event, { imageX, imageY, scrollX, scrollY, touchIndex: 1 });
+      const { cx: x1, cy: y1 } = resolveCursorCoords(
+        event,
+        { imageX, imageY, scrollX, scrollY, touchIndex: 1 },
+      );
 
       const distance = Math.hypot(x0 - x1, y0 - y1);
       const delta = distance - pinchRef.current.prevDelta;
@@ -79,12 +97,14 @@ export const useTapEvents = ({
     'touchstart',
     handleTouchStart,
     imageRef,
+    { passive: true },
   );
 
   useEventListener<'touchmove', typeof image>(
     'touchmove',
     handleTouchMove,
     imageRef,
+    { passive: true },
   );
 
   useEventListener<'touchend', typeof image>(
@@ -92,5 +112,4 @@ export const useTapEvents = ({
     handleTouchEnd,
     imageRef,
   );
-
 };

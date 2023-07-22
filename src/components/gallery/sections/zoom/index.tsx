@@ -26,15 +26,21 @@ export const Root = styled(motion.div)``;
 export const Border = styled(motion.div)``;
 
 type TProps = TImageProps & {
+  index: number;
+  count: number;
   scrollX: MotionValue;
   scrollY: MotionValue;
   mediaRecord: TMediaRecord;
-  container: HTMLDivElement;
+  viewportWidth: number;
+  container: HTMLElement;
 };
 export const Zoom: FC<TProps> = ({
+  index,
+  count,
   scrollX,
   scrollY,
   mediaRecord,
+  viewportWidth,
   container,
   image,
 }) => {
@@ -51,6 +57,7 @@ export const Zoom: FC<TProps> = ({
   const imageY = imageRect.y;
 
   const rect = container.getBoundingClientRect();
+  console.log(rect);
 
   const handleMove = ({ cx, cy }: TMoveConfig) => {
     if (
@@ -71,6 +78,8 @@ export const Zoom: FC<TProps> = ({
   };
 
   const sharedConfig: TSharedConfig = {
+    index,
+    count,
     image,
     imageRect,
     imageX,
@@ -79,6 +88,7 @@ export const Zoom: FC<TProps> = ({
     imageHeight,
     container,
     rect,
+    viewportWidth,
     cursorX,
     cursorY,
     scrollX,

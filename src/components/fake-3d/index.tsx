@@ -1,7 +1,7 @@
 import { InView, TInViewOptions } from '@components/InView';
 import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Aggregator } from './aggregator';
 import {

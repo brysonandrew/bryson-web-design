@@ -1,4 +1,3 @@
-
 import { useEventListener } from '@hooks/useEventListener';
 import {
   CURSOR_SIZE_HALF,
@@ -9,12 +8,13 @@ import {
 } from './config';
 import { useOutsideClick } from '@hooks/useOutsideClick';
 
-
 type TConfig = TSharedConfig;
 export const useCursor = ({
+  index,
   cursorX,
   cursorY,
   rect,
+  viewportWidth,
   image,
   imageX,
   imageY,
@@ -22,15 +22,16 @@ export const useCursor = ({
   scrollY,
   imageRect,
   onMove,
-  onClose
+  onClose,
 }: TConfig) => {
   const imageRef = { current: image };
-  const resolveViewportOffset = (key: "left" | "top") => imageRect[key] - rect[key] - CURSOR_SIZE_HALF;
-  const viewportOffsetX = resolveViewportOffset("left");
-  const viewportOffsetY = resolveViewportOffset("top");
-
   const handleMove = (event: TInteractiveEvent) => {
-    const { cx, cy } = resolveCursorCoords(event, { imageX, imageY, scrollX, scrollY });
+    const { cx, cy } = resolveCursorCoords(event, {
+      imageX,
+      imageY,
+      scrollX,
+      scrollY,
+    });
     onMove({ cx, cy });
   };
 
@@ -43,12 +44,15 @@ export const useCursor = ({
 
   return {
     style: {
-      top: viewportOffsetY,
-      left: viewportOffsetX,
+      top: imageRect.top - rect.top - CURSOR_SIZE_HALF,
+      left:
+        index * viewportWidth +
+        rect.left -
+        CURSOR_SIZE_HALF,
       x: cursorX,
       y: cursorY,
       width: CURSOR_SIZE,
       height: CURSOR_SIZE,
-    }
+    },
   };
 };

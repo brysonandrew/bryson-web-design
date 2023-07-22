@@ -37,9 +37,12 @@ export const Image: FC<TProps> = (props) => {
 
   const depthStyle = useDepthStyle();
   const xStyle = useX({ index, count });
+
+  const imageDimensions = resolveDimensions(image);
+
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
-    image: resolveDimensions(image),
+    image: imageDimensions,
   });
   const motionConfig = resolveDynamicSlowMotionConfig({
     delay: index / count,
