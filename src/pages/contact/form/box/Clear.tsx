@@ -34,6 +34,7 @@ export const Clear: FC<TProps> = ({
   return (
     <Root className='absolute top-4 md:top-3.75 right-3.75 z-10'>
       <motion.button
+        tabIndex={-1}
         type='button'
         className='relative text-gray-1 backdrop-blur-sm bg-white-01 rounded-md'
         whileHover={{ filter: HIGHLIGHT }}

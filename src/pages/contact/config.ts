@@ -1,37 +1,33 @@
 import { HTMLMotionProps } from 'framer-motion';
 import { ChangeEvent, FocusEvent } from 'react';
 
-export type TStatus =
-  | "idle"
-  | "sending"
-  | "sent"
-  | "error";
+export type TStatus = 'idle' | 'sending' | 'sent' | 'error';
 
-export const resolveButtonValue = (
-  status: TStatus,
-) => {
+export const resolveButtonValue = (status: TStatus) => {
   switch (status) {
-    case "sending":
-      return "Sending...";
-    case "sent":
+    case 'sending':
+      return 'Sending...';
+    case 'sent':
       return `Thank you, I will write back soon.`;
-    case "error":
-      return "Something went wrong ⚠️";
+    case 'error':
+      return 'Something went wrong ⚠️';
     default:
-      return "Send";
+      return 'Send';
   }
 };
 
 type TFormState = {
+  ownersName: string;
   email: string;
   name: string;
   message: string;
 };
 
 export const INIT_STATE: TFormState = {
-  email: "",
-  name: "",
-  message: "",
+  ownersName: 'Andrew',
+  email: '',
+  name: '',
+  message: '',
 };
 
 export type TFormKey = keyof TFormState;
@@ -44,8 +40,8 @@ export type TContactState = {
 
 export const INIT_CONTACT_STATE: TContactState = {
   form: INIT_STATE,
-  status: "idle",
-  focusKey: "name"
+  status: 'idle',
+  focusKey: 'name',
 };
 
 export type TBaseInputProps = {
@@ -66,4 +62,6 @@ export type TInputHandlers = Pick<
   'onChange' | 'onBlur' | 'onFocus'
 >;
 
-export type TInputElement = HTMLInputElement | HTMLTextAreaElement;
+export type TInputElement =
+  | HTMLInputElement
+  | HTMLTextAreaElement;
