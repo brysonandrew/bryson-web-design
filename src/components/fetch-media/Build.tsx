@@ -1,4 +1,4 @@
-import { Responsive } from '@components/placeholder/Responsive';
+import { Small as Placeholder } from '@components/placeholder/Small';
 import { resolveKey } from '@components/placeholder/resolveKey';
 import {
   TMediaRecordBuildConfig,
@@ -10,5 +10,5 @@ type TProps = TMediaRecordBuildConfig;
 export const Build: FC<TProps> = (props) => {
   useMediaRecordBuild(props);
 
-  return <Responsive key={resolveKey(props.index)} />;
+  return <Placeholder key={resolveKey(props.index)} />;
 };

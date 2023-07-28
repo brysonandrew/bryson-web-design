@@ -12,6 +12,7 @@ export const Root = styled(motion.div)``;
 type TProps = TClassValueProps & HTMLMotionProps<'div'>;
 export const Placeholder: FC<TProps> = ({
   classValue,
+  style,
   ...props
 }) => {
   return (

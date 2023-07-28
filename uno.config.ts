@@ -79,6 +79,7 @@ const config = defineConfig({
       'glow-disabled',
       { 'box-shadow': '0 0 1px 1px var(--gray)' },
     ],
+    ['placeholder-scale-4', { transform: 'scale(4)' }],
     ['placeholder', { transform: 'scale(8)' }],
     ['+placeholder', { transform: 'scale(16)' }],
     ['++placeholder', { transform: 'scale(28)' }],

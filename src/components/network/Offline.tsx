@@ -1,21 +1,26 @@
+import { MetalDark } from '@components/metal/MetalDark';
 import { Space12 } from '@components/spaces/Space12';
 import { Space4 } from '@components/spaces/Space4';
-import { motion } from 'framer-motion';
+import { TextXl } from '@components/text/TextXl';
+import { Title } from '@components/text/title';
 import type { FC } from 'react';
 
 export const Offline: FC = () => {
   return (
-    <motion.div className='relative column'>
+    <div className='relative column'>
       <Space12 />
       <div className='column w-core'>
-        <h1 className='++text'>
+        <Title>
           You are <strong>offline</strong>
-        </h1>
+        </Title>
         <Space4 />
-        <h2 className='+text-xl text-center'>
-          Please check your network connection.
-        </h2>
+        <div className='relative px-4 py-2'>
+          <MetalDark />
+          <h2 className='relative text-2xl text-center z-10'>
+            Please check your network connection.
+          </h2>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

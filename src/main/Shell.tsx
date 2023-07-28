@@ -51,7 +51,7 @@ export const Shell: FC<TProps> = ({ children }) => {
             {...PRESENCE_OPACITY_01}
             {...resolveTransition(0.28)}
           />
-        </Background>
+        </Background> 
       </motion.div>
       <motion.div
         {...PRESENCE_OPACITY}
