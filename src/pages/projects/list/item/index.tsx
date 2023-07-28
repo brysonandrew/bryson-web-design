@@ -14,13 +14,11 @@ import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 
-const Root = styled(motion.li)``;
 const InternalLink = styled(motion(Link))``;
 
 type TProps = TSlugProps;
 export const Item: FC<TProps> = ({ slug }) => {
   const { pathname } = useLocation();
-  const handleOnSound = useOnSound();
 
   const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
@@ -28,20 +26,18 @@ export const Item: FC<TProps> = ({ slug }) => {
     handleLoadMedia(slug);
   };
   return (
-    <Root onMouseEnter={handleMouseEnter}>
-      <InternalLink
-        to={
-          item.altTo
-            ? item.altTo
-            : `${pathname}?${PROJECT_KEY}=${slug}&${NAME_KEY}=${1}`
-        }
-        onTap={handleOnSound}
-        {...PARENT_GLOW_PROPS}
-      >
-        <Content {...item}>
-          <Time time={item.time} />
-        </Content>
-      </InternalLink>
-    </Root>
+    <InternalLink
+      onMouseEnter={handleMouseEnter}
+      to={
+        item.altTo
+          ? item.altTo
+          : `${pathname}?${PROJECT_KEY}=${slug}&${NAME_KEY}=${1}`
+      }
+      {...PARENT_GLOW_PROPS}
+    >
+      <Content {...item}>
+        <Time time={item.time} />
+      </Content>
+    </InternalLink>
   );
 };

@@ -72,7 +72,7 @@ export const Main: FC<TProps> = ({
             <Background />
             <Sections {...galleryProps} />
           </>
-        )}
+        )}  
         <Footer {...galleryProps} />
         {isReady && <Arrows max={galleryProps.count} />}
       </>

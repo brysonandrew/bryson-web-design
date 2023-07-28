@@ -13,8 +13,6 @@ export const useLoadImage = (src?: string) => {
           setLoaded(true);
         };
         image.src = src;
-
-        setLoaded(true);
       };
 
       handleLoad();

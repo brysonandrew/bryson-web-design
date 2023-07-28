@@ -16,7 +16,7 @@ export const Network: FC<TProps> = ({ children }) => {
     setOffline(false);
   });
 
-  if (false) {
+  if (isOffline) {
     return <Offline />;
   } else {
     return <>{children}</>;
