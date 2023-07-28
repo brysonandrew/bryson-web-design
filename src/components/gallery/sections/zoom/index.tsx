@@ -57,7 +57,6 @@ export const Zoom: FC<TProps> = ({
   const imageY = imageRect.y;
 
   const rect = container.getBoundingClientRect();
-  console.log(rect);
 
   const handleMove = ({ cx, cy }: TMoveConfig) => {
     if (

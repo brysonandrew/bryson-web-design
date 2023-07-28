@@ -38,6 +38,12 @@ export const Form = () => {
           filter: isDisabled ? DISABLED : ACTIVE,
         }}
       >
+        <input
+          className='hidden'
+          name='ownersName'
+          disabled
+          readOnly
+        />
         <Text
           name='name'
           disabled={isDisabled}

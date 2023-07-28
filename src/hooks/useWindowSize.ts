@@ -47,11 +47,8 @@ export const useWindowSize = (): TWindowSize => {
     }, RESIZE_COOLDOWN);
   };
 
-  useEventListener("resize", handleSize);
-
-  useIsomorphicLayoutEffect(() => {
-    handleSize();
-  }, []);
+  useEventListener('resize', handleSize);
+  useIsomorphicLayoutEffect(handleSize, []);
 
   return windowSize;
 };

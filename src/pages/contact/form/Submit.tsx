@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import type { FC } from 'react';
+import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
@@ -21,13 +21,22 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { contact } = useContext();
-  const title = resolveButtonValue(contact.status);
-
+  const {
+    contact: { status },
+  } = useContext();
+  const ref = useRef<HTMLLabelElement>(null);
+  const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
+
+  useEffect(() => {
+    if (status === 'sent' && ref.current !== null) {
+      ref.current.scrollIntoView({ block: 'center' });
+    }
+  }, [status]);
 
   return (
     <Root
+      ref={ref}
       className={clsx(
         'relative p-0.5 flex w-full glow-interactive',
         [

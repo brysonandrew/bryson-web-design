@@ -8,30 +8,34 @@ import { Space3 } from '@components/spaces/Space3';
 import { Space } from '@components/spaces/Space';
 import { Space4 } from '@components/spaces/Space4';
 import { Invert } from '../../components/Invert';
+import { Variables } from '@css/Variables';
 
 export const Cv = () => {
   return (
-    <Invert>
-      {(filter) => (
-        <Shell>
-          <Page style={{ filter }}>
-            <Margin>
-              <Header />
-            </Margin>
-            <Space4 />
-            <Margin>
-              <Description />
-            </Margin>
-            <Space3 />
-            <Margin>
-              <hr className='bg-white-02 w-full h-px' />
-            </Margin>
-            <Space />
-            <Experience />
-          </Page>
-          <div className='py-2' />
-        </Shell>
-      )}
-    </Invert>
+    <>
+      <Variables />
+      <Invert>
+        {(filter) => (
+          <Shell>
+            <Page style={{ filter }}>
+              <Margin>
+                <Header />
+              </Margin>
+              <Space4 />
+              <Margin>
+                <Description />
+              </Margin>
+              <Space3 />
+              <Margin>
+                <hr className='bg-white-02 w-full h-px' />
+              </Margin>
+              <Space />
+              <Experience />
+            </Page>
+            <div className='py-2' />
+          </Shell>
+        )}
+      </Invert>
+    </>
   );
 };
