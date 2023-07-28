@@ -13,7 +13,7 @@ export const useCoinDropSound = () => {
       frequency: 1200,
       type: "bandpass",
     });
-    const gain = new GainNode(context, { gain: 1 });
+    const gain = new GainNode(context, { gain: 0.05 });
     const opts: TMultiOptions = {
       type: "triangle",
       midi: 120,

@@ -15,6 +15,7 @@ import { useLoadImage } from '@hooks/media/useLoadImage';
 import { useTo } from '@hooks/media/nav/useTo';
 import { resolveKey } from '@components/placeholder/resolveKey';
 import { Small as Placeholder } from '@components/placeholder/Small';
+import { useOnSound } from '@hooks/sounds/useOnSound';
 
 export const IMAGE_SIZE = 320;
 
@@ -27,6 +28,7 @@ type TProps = HTMLMotionProps<'img'> & {
 export const Image: FC<TProps> = (props) => {
   const { index, count, mediaRecord, ...pictureProps } =
     props;
+  const handleOnSound = useOnSound();
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
@@ -66,6 +68,7 @@ export const Image: FC<TProps> = (props) => {
         opacity: 1,
         ...motionConfig,
       }}
+      onClick={handleOnSound}
     >
       <Link className='cursor-zoom-in' to={to}>
         {!isLoaded && (

@@ -16,7 +16,7 @@ export const useFocusSound = () => {
       frequency: 4000,
       type: "highpass",
     });
-    const gain = new GainNode(context, { gain: 0.2 });
+    const gain = new GainNode(context, { gain: 0.01 });
     const opts: TMultiOptions = {
       type: "sine",
       midi: 90,

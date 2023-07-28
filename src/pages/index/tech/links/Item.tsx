@@ -30,17 +30,17 @@ export const Item: FC<TItem> = ({
       {...props}
     >
       {isHover && <Select layoutId={title} />}
-      <Glow text={1} drop={8} color='white'>
+      <Glow drop={8} color='white'>
         <MetalDark />
       </Glow>
       <Box>
-        <Glow text={1} drop={4} color='teal'>
+        <Glow text={2.8} drop={4} color='teal'>
           <Anchor
             className={clsx(
               'inline-flex relative px-4 py-2 lg:py-3 lg:px-5 xl:py-4 xl:px-6',
             )}
             href={href}
-            target='_blank'
+            target='_blank' 
           >
             <div className='relative flex items-center z-10'>
               <Icon classValue='h-10 w-10' />
@@ -50,6 +50,6 @@ export const Item: FC<TItem> = ({
           </Anchor>
         </Glow>
       </Box>
-    </Root>
+    </Root> 
   );
 };
