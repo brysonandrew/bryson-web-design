@@ -15,26 +15,29 @@ export const Text: FC<TProps> = ({ children }) => {
   const {
     darkMode: { isDarkMode },
   } = useContext();
-  const color1 = isDarkMode
+  console.log('isDarkMode ' + isDarkMode);
+  const color = isDarkMode
     ? COLORS['teal-bright']
-    : COLORS['black'];
-  const color2 = isDarkMode
+    : COLORS['gray'];
+  const color1 = isDarkMode
     ? COLORS['white']
-    : COLORS['black'];
+    : COLORS['gray'];
 
   return (
     <Root
       className='text-2xl whitespace-nowrap capitalize'
+      style={{ color, opacity: 1 }}
       variants={{
         idle: {
-          color: color1,
+          color,
+          opacity: 1,
         },
         focus: {
-          color: color1,
+          color,
           opacity: 1,
         },
         value: {
-          color: color2,
+          color: color1,
           opacity: 0.6,
         },
       }}

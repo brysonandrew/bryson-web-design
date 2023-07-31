@@ -6,7 +6,7 @@ import { useContext } from '@state/Context';
 const COLORS = unoConfig.default.theme.colors;
 
 export const THIN_LINE_CLASS =
-  'dark:bg-teal-04 bg-black h-px w-full';
+  'dark:bg-teal-04 bg-gray-2 h-px w-full';
 
 export const ThinLine: FC<{ classValue: ClassValue }> = ({
   classValue,

@@ -34,7 +34,7 @@ export const Item: FC<TItem> = ({
       {...props}
     >
       {isHover && <Select layoutId={title} />}
-      <Glow drop={8} color='white'>
+      <Glow drop={8} color={isDarkMode ? 'white' : 'white'}>
         <MetalDark />
       </Glow>
       <Box>

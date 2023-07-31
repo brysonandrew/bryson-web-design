@@ -17,10 +17,9 @@ export const Title: FC<TProps> = () => {
       <div
         className='relative top-1.25 w-4 h-4 shrink-0 rounded-full background-color glow-interactive md:top-1'
         style={{
-          filter: resolveDropShadow(
-            6,
-            isDarkMode ? 'baby-blue' : 'white',
-          ),
+          filter: isDarkMode
+            ? resolveDropShadow(6, 'baby-blue')
+            : resolveDropShadow(0),
         }}
       />
       <div className='p-1.5' />

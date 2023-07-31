@@ -55,19 +55,19 @@ const config = defineConfig({
     },
     spacing: SPACING,
     fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      base: ['1rem', { lineHeight: '1.5rem' }],
-      lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '1' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }],
+      xs: ['0.75rem', '1rem'],
+      sm: ['0.875rem', '1.25rem'],
+      base: ['1rem', '1.5rem'],
+      lg: ['1.125rem', '1.75rem'],
+      xl: ['1.25rem', '1.75rem'],
+      '2xl': ['1.5rem', '2rem'],
+      '3xl': ['1.875rem', '2.25rem'],
+      '4xl': ['2.25rem', '2.5rem'],
+      '5xl': ['3rem', '1'],
+      '6xl': ['3.75rem', '1'],
+      '7xl': ['4.5rem', '1'],
+      '8xl': ['6rem', '1'],
+      '9xl': ['8rem', '1'],
     },
   },
   rules: [
@@ -82,7 +82,7 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow':
-          '0 0 1px 1px var(--gray-1), 0 0 1px 2px var(--gray)',
+          '0 0 1px 1px var(--gray-1), 0 0 1px 2px var(--gray-2)',
       },
     ],
     [
@@ -99,17 +99,16 @@ const config = defineConfig({
     ],
     [
       'text-gray-stroke',
-      { '-webkit-text-stroke': '1px var(--gray-1)' },
+      { '-webkit-text-stroke': '0.5px var(--gray)' },
     ],
   ],
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white',
-    'background-color-1': 'dark:bg-teal bg-black',
+    'background-color-1': 'dark:bg-teal bg-gray-1',
     'background-color-2': 'dark:bg-black-1 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-white',
-    'text-color': 'dark:text-teal-bright text-black',
+    'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
-    'text-color-2': 'dark:text-black-04 text-gray',
     'text-color-stroke':
       'dark:text-baby-blue-stroke text-gray-stroke',
     'glow-interactive':

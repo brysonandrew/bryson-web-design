@@ -17,14 +17,15 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
     darkMode: { isDarkMode },
   } = useContext();
   const { isHover, ...handlers } = useHover();
+  const variant = isHover ? 'hover' : 'animate';
   return (
     <motion.div
       className={clsx(
-        'absolute center h-full z-0',
+        'absolute center h-full',
         classValue,
       )}
       initial={false}
-      animate={isHover ? 'hover' : 'animate'}
+      animate={variant}
       whileTap='tap'
       style={{
         width: PADDING_X,
@@ -43,22 +44,22 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
             ? resolveDropShadow(2, 'white')
             : resolveDropShadow(0),
           color: isDarkMode
-            ? COLORS['gray']
-            : COLORS['white'],
+            ? COLORS['white']
+            : COLORS['gray'],
         },
         tap: {
           filter: isDarkMode
             ? resolveDropShadow(4, 'teal-bright')
             : resolveDropShadow(0),
           color: isDarkMode
-            ? COLORS['gray']
-            : COLORS['teal-bright'],
+            ? COLORS['teal-bright'] 
+            :COLORS['gray'],
           cursor: 'grabbing',
         },
       }}
       {...handlers}
     >
-      <Drag classValue='cursor-grab' />
+      <Drag />
     </motion.div>
   );
 };
