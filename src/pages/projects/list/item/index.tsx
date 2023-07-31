@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { useOnSound } from '@hooks/sounds/useOnSound';
 import {
   NAME_KEY,
   PROJECT_KEY,

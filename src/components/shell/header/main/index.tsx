@@ -14,7 +14,7 @@ export const Main: FC = () => {
 
   return (
     <Root
-      className='relative flex flex-col relative'
+      className='relative'
       onTap={handleTap}
     >
       <>{pathname === '/' ? <Title /> : <Link />}</>

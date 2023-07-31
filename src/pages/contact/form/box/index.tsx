@@ -46,10 +46,10 @@ export const Box: FC<TProps> = ({
       <MetalGlow />
       {isFocused && <Select key={name} />}
       {children}
-      <AnimatePresence>
+      <AnimatePresence> 
         {isEmpty && (
           <Clear
-            name={name}
+            name={name} 
             isReady={Boolean(isHover)}
             onFocus={handleFocus}
           />

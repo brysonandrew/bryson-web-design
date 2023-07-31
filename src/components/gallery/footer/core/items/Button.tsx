@@ -36,7 +36,10 @@ export const Button: FC<TProps> = ({
   width,
   mediaDetails,
 }) => {
-  const { dispatch } = useContext();
+  const {
+    darkMode: { isDarkMode },
+    dispatch,
+  } = useContext();
   const { key, name } = mediaDetails;
   const to = useTo({ next: name });
   const isLoading = key === resolveLoadingItemKey(index);
@@ -59,17 +62,13 @@ export const Button: FC<TProps> = ({
 
   return (
     <Root
-      className={clsx(
-        'flex items-center justify-center relative h-16',
-      )}
+      className={clsx('center relative h-16')}
       style={{ width }}
     >
       <Link
         to={to}
         onTap={handleTap}
-        className={clsx(
-          'flex items-center justify-center relative w-full h-full',
-        )}
+        className={clsx('center relative w-full h-full')}
         initial='idle'
         animate={animation}
         whileHover={isActive ? 'active' : 'hover'}
@@ -77,11 +76,18 @@ export const Button: FC<TProps> = ({
       >
         {isActive && (
           <motion.div
-            className='absolute w-4 h-0.5 rounded-full bg-teal-bright'
-            style={{
-              boxShadow: resolveShadow(4, 'teal-bright'),
-              filter: resolveDropShadow(6, 'teal'),
-            }}
+            className='absolute w-4 h-0.5 rounded-full background-color'
+            style={
+              isDarkMode
+                ? {
+                    boxShadow: resolveShadow(
+                      4,
+                      'teal-bright',
+                    ),
+                    filter: resolveDropShadow(6, 'teal'),
+                  }
+                : {}
+            }
             layoutId='GALLERY_BUTTON_FILL'
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
@@ -89,42 +95,58 @@ export const Button: FC<TProps> = ({
           />
         )}
         <motion.div
-          className='flex items-center justify-center absolute inset-0 uppercase text-sm text-center'
+          className='center absolute inset-0 uppercase text-sm text-center'
           variants={{
             idle: {
-              opacity: 0.2,
+              opacity: isDarkMode ? 0.2 : 0.4,
               zIndex: 0,
               cursor: 'default',
-              color: COLORS['white'],
+              color: isDarkMode
+                ? COLORS['white']
+                : COLORS['gray'],
               textShadow: resolveShadow(0),
             },
             loading: {
               zIndex: 0,
               cursor: 'wait',
               opacity: 0.8,
-              color: COLORS['gray'],
+              color: isDarkMode
+                ? COLORS['gray']
+                : COLORS['gray'],
               textShadow: resolveShadow(0),
             },
             active: {
               opacity: 1,
               zIndex: 9999,
               cursor: 'default',
-              color: COLORS['teal-bright'],
-              textShadow: resolveShadow(2, 'teal'),
+              color: isDarkMode
+                ? COLORS['teal-bright']
+                : COLORS['gray'],
+              textShadow: isDarkMode
+                ? resolveShadow(2, 'teal')
+                : resolveShadow(0),
             },
             hover: {
               opacity: 1,
               zIndex: 1,
               cursor: 'pointer',
-              color: COLORS['white'],
-              textShadow: resolveShadow(2, 'white'),
+              color: isDarkMode
+                ? COLORS['white']
+                : COLORS['gray'],
+              textShadow: isDarkMode
+                ? resolveShadow(2, 'white')
+                : resolveShadow(0),
             },
             tap: {
               opacity: 1,
               zIndex: 1,
               cursor: 'pointer',
-              color: COLORS['teal-bright'],
-              textShadow: resolveShadow(4, 'teal-bright'),
+              color: isDarkMode
+                ? COLORS['teal-bright']
+                : COLORS['gray'],
+              textShadow: isDarkMode
+                ? resolveShadow(4, 'teal-bright')
+                : resolveShadow(0),
             },
           }}
         >

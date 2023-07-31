@@ -14,6 +14,7 @@ import {
   TScreensRecord,
   TProjectImageResolverRecord,
 } from '@t/screens';
+import { useDarkMode } from '@hooks/useDarkMode';
 
 const screensRecordPng: TScreensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
@@ -57,10 +58,12 @@ export const Provider: FC<TProviderProps> = ({
     () => resolveRandomIndicies(screensSmallCount),
     [screensSmallCount],
   );
+  const darkMode = useDarkMode();
 
   return (
     <Context.Provider
       value={{
+        darkMode,
         projectImageResolverRecord,
         screensLookup,
         screensLookupSmall: {

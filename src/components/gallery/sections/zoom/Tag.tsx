@@ -15,7 +15,7 @@ export const Tag: FC<TProps> = ({ children }) => {
   return (
     <Root
       className={clsx(
-        'absolute right-0 top-0 flex items-center pl-1.5 pr-2 pt-0.25 pb-0.5 text-teal-bright bg-black-1 z-10',
+        'absolute right-0 top-0 flex items-center pl-1.5 pr-2 pt-0.25 pb-0.5 text-color background-color-2 z-10',
       )}
     >
       <Cross

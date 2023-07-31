@@ -3,14 +3,14 @@ Original metal styles from
 https://codepen.io/simurai/pen/DwJdq
 */
 
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
-const FADE_15_1 = "hsla(0, 0%, 15%, 1)";
-const FADE_15_08 = "hsla(0, 0%, 15%, 0.8)";
-const FADE_0_025 = "hsla(0, 0%, 0%, 0.25)";
-const FADE_100_07 = "hsla(0, 0%, 100%, 0.7)";
-const FADE_100_06 = "hsla(0, 0%, 100%, 0.6)";
-const FADE_0_01 = "hsla(0, 0%, 0%, 0.1)";
+const FADE_15_1 = 'hsla(0, 0%, 15%, 1)';
+const FADE_15_08 = 'hsla(0, 0%, 15%, 0.8)';
+const FADE_0_025 = 'hsla(0, 0%, 0%, 0.25)';
+const FADE_100_07 = 'hsla(0, 0%, 100%, 0.7)';
+const FADE_100_06 = 'hsla(0, 0%, 100%, 0.6)';
+const FADE_0_01 = 'hsla(0, 0%, 0%, 0.1)';
 
 export const metalBorderStyle = css`
   box-shadow: inset ${FADE_15_1} 0 0px 0px 4px,
@@ -26,16 +26,16 @@ export const metalBaseCss = css`
   background-color: hsl(0, 0%, 90%);
 `;
 
-const FADE_0_003 = "hsla(0, 0%, 0%, 0.03)";
-const FADE_60_1 = "hsla(0, 0%, 60%, 1)";
-const FADE_85_1 = "hsla(0, 0%, 85%, 1)";
-const FADE_90_1 = "hsla(0, 0%, 90%, 1)";
-const FADE_100_01 = "hsla(0, 0%, 100%, 0.1)";
-const FADE_100_015 = "hsla(0, 0%, 100%, 0.15)";
-const FADE_100_02 = "hsla(0, 0%, 100%, 0.2)";
-const FADE_100_05 = "hsla(0, 0%, 100%, 0.5)";
+const FADE_0_003 = 'hsla(0, 0%, 0%, 0.03)';
+const FADE_60_1 = 'hsla(0, 0%, 60%, 1)';
+const FADE_85_1 = 'hsla(0, 0%, 85%, 1)';
+const FADE_90_1 = 'hsla(0, 0%, 90%, 1)';
+const FADE_100_01 = 'hsla(0, 0%, 100%, 0.1)';
+const FADE_100_015 = 'hsla(0, 0%, 100%, 0.15)';
+const FADE_100_02 = 'hsla(0, 0%, 100%, 0.2)';
+const FADE_100_05 = 'hsla(0, 0%, 100%, 0.5)';
 
-const TRANSPARENT = "hsla(0, 0%, 0%, 0)";
+const TRANSPARENT = 'hsla(0, 0%, 0%, 0)';
 
 export const METAL_RADIAL_GRADIENT = `-webkit-radial-gradient(
   50% 0%,
@@ -73,7 +73,7 @@ const METAL_CONICAL_GRADIENT = `-webkit-radial-gradient(50% 0%, 10% 50%, ${FADE_
 export const metalConicalCss = css`
   &:before,
   &:after {
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     position: absolute;
@@ -92,28 +92,28 @@ export const metalConicalCss = css`
   }
 `;
 
-export const metalRadialLightCss = css`
+const baseRadialMetalCss = css`
   background-image: ${METAL_RADIAL_GRADIENT};
   ${metalConicalCss}
+`;
+
+export const metalRadialLightCss = css`
+  ${baseRadialMetalCss}
   filter: brightness(18%);
 `;
 
-
 export const metalRadialCss = css`
-  background-image: ${METAL_RADIAL_GRADIENT};
-  ${metalConicalCss}
+  ${baseRadialMetalCss}
   filter: brightness(100%);
 `;
 
 export const metalRadialDarkCss = css`
-  background-image: ${METAL_RADIAL_GRADIENT};
-  ${metalConicalCss}
+  ${baseRadialMetalCss}
   filter: brightness(14%);
 `;
 
 export const metalRadialDarkestCss = css`
-  background-image: ${METAL_RADIAL_GRADIENT};
-  ${metalConicalCss}
+  ${baseRadialMetalCss}
   filter: brightness(10%);
 `;
 

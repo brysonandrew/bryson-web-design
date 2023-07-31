@@ -22,7 +22,7 @@ export const Nav: FC = () => {
 
   return (
     <Root
-      className='relative flex items-start justify-between w-full px-4 py-3.5 md:px-6 md:py-4 md:items-center'
+      className='relative row-start-space w-full px-4 py-3.5 md:px-6 md:py-4'
       {...(!isMobile ? animation : {})}
     >
       <Main />

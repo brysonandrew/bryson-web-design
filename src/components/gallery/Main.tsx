@@ -59,7 +59,7 @@ export const Main: FC<TProps> = ({
     setAnimationDone(true);
 
   return (
-    <Root className='cover-fixed column text-teal-bright z-20'>
+    <Root className='cover-fixed column text-color z-20'>
       <Header
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete

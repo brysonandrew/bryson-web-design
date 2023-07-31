@@ -25,7 +25,7 @@ export const Glow: FC<TGlowProps> = ({
         <>
           {children}
           <Effect
-            className={clsx('absolute inset-0', classValue)}
+            className={clsx('absolute inset-0 dark:block hidden', classValue)}
             {...resolveGlowProps(options)}
           >
             {children}

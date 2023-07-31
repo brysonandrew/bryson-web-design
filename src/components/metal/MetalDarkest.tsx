@@ -5,7 +5,10 @@ import type { FC } from 'react';
 import { TRootProps, Metal } from '.';
 
 const Root = styled(motion.div)`
-  ${metalRadialDarkestCss}
+  background-color: var(--white);
+  html.dark & {
+    ${metalRadialDarkestCss}
+  }
 `;
 
 export const MetalDarkest: FC<TRootProps> = ({

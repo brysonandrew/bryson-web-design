@@ -21,7 +21,10 @@ export const Clear: FC<TProps> = ({
   onFocus,
   ...props
 }) => {
-  const { dispatch } = useContext();
+  const {
+    darkMode: { isDarkMode },
+    dispatch,
+  } = useContext();
 
   const handleClear = (_: MouseEvent) => {
     dispatch({
@@ -36,14 +39,17 @@ export const Clear: FC<TProps> = ({
       <motion.button
         tabIndex={-1}
         type='button'
-        className='relative text-gray-1 backdrop-blur-sm bg-white-01 rounded-md'
+        className='relative dark:text-gray-1 text-gray-1 backdrop-blur-sm dark:bg-white-01 bg-white-01 rounded-md'
         whileHover={{ filter: HIGHLIGHT }}
         onTap={handleClear}
         {...PRESENCE_OPACITY_DELAY}
         animate={{ opacity: isReady ? 1 : 0.2 }}
         {...props}
       >
-        <IconGlow Icon={Cross} color='gray' />
+        <IconGlow
+          Icon={Cross}
+          color={isDarkMode ? 'gray' : 'white'}
+        />
       </motion.button>
     </Root>
   );
