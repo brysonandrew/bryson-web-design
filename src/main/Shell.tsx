@@ -47,11 +47,11 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Processor
             width='100%'
             height='100%'
-            fill='var(--gray)'
+            classValue='dark:fill-gray fill-gray-2'
             {...PRESENCE_OPACITY_01}
             {...resolveTransition(0.28)}
           />
-        </Background> 
+        </Background>  
       </motion.div>
       <motion.div
         {...PRESENCE_OPACITY}

@@ -35,7 +35,7 @@ export const Placeholder: FC<TProps> = ({
         }}
       >
         <motion.figure
-          className='relative bg-teal-bright-01 h-full'
+          className='relative background-color-01 h-full'
           style={{
             width: '300%',
             backgroundImage: `linear-gradient(to right, ${resolveGradientStops(

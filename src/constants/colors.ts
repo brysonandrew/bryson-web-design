@@ -45,12 +45,12 @@ export const resolveShadow = (
     0.5,
   )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
-export const TEAL_GLOW_ANIMATE_TRANSITION = {
+export const GLOW_ANIMATE_TRANSITION = {
   ease: 'easeIn',
   duration: 0.28,
   delay: 0.08,
 };
-export const TEAL_GLOW_HOVER_TRANSITION = {
+export const GLOW_HOVER_TRANSITION = {
   ease: 'linear',
   duration: 0.2,
   delay: 0,
@@ -81,11 +81,11 @@ export const resolveGlowProps = ({
       opacity: 0,
       textShadow: resolveShadow(text, color),
       filter: resolveDropShadow(drop, color),
-      transition: TEAL_GLOW_ANIMATE_TRANSITION,
+      transition: GLOW_ANIMATE_TRANSITION,
     },
     hover: {
       opacity: 1,
-      transition: TEAL_GLOW_HOVER_TRANSITION,
+      transition: GLOW_HOVER_TRANSITION,
     },
   },
 });

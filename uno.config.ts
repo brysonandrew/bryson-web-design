@@ -44,8 +44,11 @@ const config = defineConfig({
       'gray-2': 'var(--gray-2)',
 
       white: 'var(--white)',
-      'white-01': 'var(white-01)',
-      'white-02': 'var(white-02)',
+      'white-01': 'var(--white-01)',
+      'white-02': 'var(--white-02)',
+      'white-04': 'var(--white-04)',
+      'white-1': 'var(--white-1)',
+      'white-2': 'var(--white-2)',
 
       current: 'var(--current)',
       transparent: 'var(--transparent)',
@@ -69,10 +72,17 @@ const config = defineConfig({
   },
   rules: [
     [
-      'glow-interactive',
+      'glow-interactive-dark',
       {
         'box-shadow':
           '0 0 1px 1px var(--teal-02), 0 0 1px 2px var(--teal-01)',
+      },
+    ],
+    [
+      'glow-interactive-light',
+      {
+        'box-shadow':
+          '0 0 1px 1px var(--gray-1), 0 0 1px 2px var(--gray)',
       },
     ],
     [
@@ -88,39 +98,49 @@ const config = defineConfig({
       { '-webkit-text-stroke': '1px var(--baby-blue)' },
     ],
     [
-      'text-baby-blue-stroke-09',
-      { '-webkit-text-stroke': '1px var(--baby-blue)' },
-    ],
-    [
       'text-gray-stroke',
-      { '-webkit-text-stroke': '1px var(--gray)' },
+      { '-webkit-text-stroke': '1px var(--gray-1)' },
     ],
   ],
   shortcuts: {
+    'background-color': 'dark:bg-teal-bright bg-white',
+    'background-color-1': 'dark:bg-teal bg-black',
+    'background-color-2': 'dark:bg-black-1 bg-white',
+    'background-color-3': 'dark:bg-baby-blue bg-white',
+    'text-color': 'dark:text-teal-bright text-black',
+    'text-color-1': 'dark:text-baby-blue text-gray',
+    'text-color-2': 'dark:text-black-04 text-gray',
+    'text-color-stroke':
+      'dark:text-baby-blue-stroke text-gray-stroke',
+    'glow-interactive':
+      'dark:glow-interactive-dark glow-interactive-light',
     'w-core':
       'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
     row: 'flex flex-row items-center',
     'row-start': 'flex flex-row items-start',
     'row-space': 'row justify-between',
+    'row-start-space': 'row-start justify-between',
     column: 'flex flex-col items-center',
+    'column-end': 'flex flex-col items-end',
     'column-space': 'column justify-between',
     center: 'flex items-center justify-center',
+    'label-background': 'dark:bg-black-04 bg-white',
+    'input-background': 'dark:bg-black-04 bg-white-1',
     'input-label':
-      'relative flex flex-col items-start w-full p-2 bg-black-04 md:flex-row',
+      'relative flex flex-col items-start w-full p-2 label-background md:flex-row',
     'input-textarea':
-      'relative text-baby-blue text-2xl px-4 py-2 w-full tracking-widest bg-black-04',
+      'relative text-color-1 text-2xl px-4 py-2 w-full tracking-widest input-background',
     'input-text': 'input-textarea px-4',
     '+++text':
-      'text-teal-bright text-left text-3xl tracking-wide px-1 lg:text-4xl',
+      'text-color text-left text-3xl tracking-wide px-1 lg:text-4xl',
     '++text':
-      'relative uppercase text-teal-bright px-2 tracking-widest text-baby-blue-stroke text-3xl md:text-4xl xl:px-4',
-    '+text':
-      'text-left text-teal-bright text-xl md:text-2xl',
+      'text-color text-color-stroke relative uppercase px-2 tracking-widest text-3xl md:text-4xl xl:px-4',
+    '+text': 'text-color text-left text-xl md:text-2xl',
     'cover-fixed': 'fixed inset-0',
     cover: 'absolute inset-0',
   },
   presets: [
-    presetUno(),
+    presetUno({ dark: 'class' }),
     presetWebFonts({
       fonts: {
         sans: 'Bodoni Moda',

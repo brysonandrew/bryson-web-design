@@ -1,4 +1,5 @@
 import { TProjectKey } from '@constants/projects';
+import { TUseDarkMode } from '@hooks/useDarkMode';
 import {
   TContactState,
   TFormKey,
@@ -7,7 +8,6 @@ import {
 import { TMotionValuePair } from '@t/animation';
 import { TFilePathKey, TMediaRecord } from '@t/media';
 import {
-  TPartialProjectImageRecord,
   TProjectImageRecord,
   TProjectImageResolverRecord,
   TScreensLookup,
@@ -33,6 +33,8 @@ export type TState = {
 };
 
 export type TContext = TState & {
+  darkMode: TUseDarkMode;
+
   randomIndicies: number[];
   screensLookup: TScreensLookup;
   screensLookupSmall: TScreensLookup;

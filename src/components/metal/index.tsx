@@ -6,7 +6,10 @@ import type { FC } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
 
 const Fallback = styled(motion.div)`
-  ${metalRadialDarkCss}
+  background-color: var(--white);
+  html.dark & {
+    ${metalRadialDarkCss}
+  }
 `;
 
 export type TRootProps = HTMLMotionProps<'div'> & {

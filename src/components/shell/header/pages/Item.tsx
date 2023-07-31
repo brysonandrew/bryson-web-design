@@ -15,14 +15,14 @@ type TProp = {
 export const Item: FC<TProp> = ({ to, children }) => {
   const handleClick = useOffSound();
   return (
-    <Root className='relative p-1 overflow-hidden'>
+    <Root className='relative px-1 overflow-hidden'>
       <Link
         to={to}
         onTap={handleClick}
         className='relative flex items-center justify-center pb-2'
         whileHover='hover'
       >
-        <h2 className='relative text-md uppercase text-baby-blue italic'>
+        <h2 className='relative text-md uppercase text-color-1 italic'>
           {children}
         </h2>
         <ThinLine classValue='absolute bottom-1 left-0' />

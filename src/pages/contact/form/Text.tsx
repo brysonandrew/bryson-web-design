@@ -31,7 +31,7 @@ export const Text: FC<TProps> = ({
       <Input
         ref={ref}
         className='input-text'
-        type='text'
+        type='text' 
         autoComplete='off'
         name={name}
         value={value}

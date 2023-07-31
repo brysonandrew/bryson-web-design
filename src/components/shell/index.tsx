@@ -19,7 +19,7 @@ export const Shell: FC<TProps> = ({ children }) => {
   const currProject = useCurrProject();
   const isProject = Boolean(currProject);
   return (
-    <Root className='relative text-black-04 z-10 overflow-x-hidden'>
+    <Root className='relative text-color-2 z-10 overflow-x-hidden'>
       {!isProject && <Header />}
       <Content className='relative z-0'>
         <HeaderOffset />

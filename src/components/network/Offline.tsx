@@ -1,7 +1,6 @@
 import { MetalDark } from '@components/metal/MetalDark';
 import { Space12 } from '@components/spaces/Space12';
 import { Space4 } from '@components/spaces/Space4';
-import { TextXl } from '@components/text/TextXl';
 import { Title } from '@components/text/title';
 import type { FC } from 'react';
 

@@ -34,7 +34,7 @@ export const Sound = () => {
       </Glow>
       <Button
         aria-label='sound'
-        className='relative p-3 cursor-pointer text-baby-blue'
+        className='relative p-3 cursor-pointer text-color-1'
         onTap={handleTap}
       >
         <Background variants={{ hover: { scale: 1.15 } }}>

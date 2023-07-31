@@ -34,15 +34,15 @@ export const Left = () => (
             href={href}
             target='_blank'
           >
-            <Icon classValue='text-teal-bright h-5 w-5' />
+            <Icon classValue='text-color h-5 w-5' />
             <div className='p-1' />
             <div className='row items-end'>
-              <h5 className='text-baby-blue text-sm italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.5'>
+              <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.5'>
                 {title}
               </h5>
               <div className='p-1' />
               <motion.h6
-                className='uppercase italic text-xs text-teal-bright'
+                className='uppercase italic text-xs text-color'
                 variants={{
                   animate: { opacity: 0.4 },
                   hover: { opacity: 1 },

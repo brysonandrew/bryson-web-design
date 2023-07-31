@@ -7,8 +7,8 @@ import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
 import {
   PARENT_GLOW_PROPS,
-  TEAL_GLOW_ANIMATE_TRANSITION,
-  TEAL_GLOW_HOVER_TRANSITION,
+  GLOW_ANIMATE_TRANSITION,
+  GLOW_HOVER_TRANSITION,
 } from '@constants/colors';
 import { MetalGlow } from '@components/metal/MetalGlow';
 
@@ -56,23 +56,23 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       >
         <Input
           className={clsx(
-            'absolute inset-0 pointer-events-none',
+            'absolute inset-0 pointer-events-none opacity-0',
           )}
           type='submit'
           disabled={isDisabled}
         />
         <Text
           className={clsx(
-            'flex justify-center relative capitalise text-teal text-baby-blue-stroke-09 text-2xl italic py-2 pointer-events-none',
+            'center relative capitalise text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
           )}
           variants={{
             animate: {
               letterSpacing: '4px',
-              transition: TEAL_GLOW_ANIMATE_TRANSITION,
+              transition: GLOW_ANIMATE_TRANSITION,
             },
             hover: {
               letterSpacing: '8px',
-              transition: TEAL_GLOW_HOVER_TRANSITION,
+              transition: GLOW_HOVER_TRANSITION,
             },
           }}
         >

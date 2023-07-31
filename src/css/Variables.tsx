@@ -29,9 +29,12 @@ export const Variables = () => {
           --white-02: rgba(255, 255, 255, 0.2);
           --white-04: rgb(255, 255, 255, 0.4);
           --white-08: rgba(255, 255, 255, 0.8);
+          --white-1: rgb(222,222,222);
+          --white-2: rgb(240,240,240);
 
           --gray: rgb(68, 68, 68);
           --gray-1: rgb(119, 119, 119);
+          --gray-2: rgb(180, 180, 180);
 
           --black: rgb(0, 0, 0);
           --black-04: rgb(0, 0, 0, 0.4);

@@ -28,6 +28,7 @@ export const Background: FC<TProps> = ({
       y='0'
       width='100%'
       height='100%'
+      className='dark:opacity-100 opacity-2'
       fill={resolveUrlId(PATTERN_ID)}
       filter={resolveUrlId(MORPH_ID)}
     />
@@ -36,7 +37,7 @@ export const Background: FC<TProps> = ({
       y='0'
       width='100%'
       height='100%'
-      fill='var(--black-04)'
+      className='dark:fill-black-04 fill-white-04 dark:opacity-100 opacity-2'
     />
     {children}
   </Root>
