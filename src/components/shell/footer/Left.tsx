@@ -42,7 +42,7 @@ export const Left = () => (
               </h5>
               <div className='p-1' />
               <motion.h6
-                className='uppercase italic text-xs text-color'
+                className='uppercase italic text-xs text-color hidden sm:flex'
                 variants={{
                   animate: { opacity: 0.4 },
                   hover: { opacity: 1 },
