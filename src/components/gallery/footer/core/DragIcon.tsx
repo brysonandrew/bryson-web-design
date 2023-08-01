@@ -1,10 +1,9 @@
 import { Drag } from '@components/icons/Drag';
-import { resolveDropShadow } from '@constants/colors';
+import { COLORS, resolveDropShadow } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import * as unoConfig from '@uno/config';
-const COLORS = unoConfig.default.theme.colors;
+
 import { PADDING_X } from './config';
 import { useHover } from '@hooks/useHover';
 import { useContext } from '@state/Context';

@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   -webkit-overflow-scrolling: touch;
+  transition: background-color 1s, color 1s;
 }
 
 html.dark,

@@ -76,7 +76,7 @@ const config = defineConfig({
       'glow-interactive-dark',
       {
         'box-shadow':
-          '0 0 1px 1px var(--teal-02), 0 0 1px 2px var(--teal-01)',
+          '0 0 1px 1px var(--teal-04), 0 0 1px 2px var(--teal-02)',
       },
     ],
     [
@@ -90,7 +90,6 @@ const config = defineConfig({
       'glow-disabled',
       { 'box-shadow': '0 0 1px 1px var(--gray)' },
     ],
-    ['placeholder-scale-4', { transform: 'scale(4)' }],
     ['placeholder', { transform: 'scale(8)' }],
     ['+placeholder', { transform: 'scale(16)' }],
     ['++placeholder', { transform: 'scale(28)' }],
@@ -100,14 +99,14 @@ const config = defineConfig({
     ],
     [
       'text-gray-stroke',
-      { '-webkit-text-stroke': '0.5px var(--gray)' },
+      { '-webkit-text-stroke': '1px var(--gray-1)' },
     ],
   ],
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white',
     'background-color-1': 'dark:bg-teal bg-gray-1',
     'background-color-2': 'dark:bg-black-1 bg-white',
-    'background-color-3': 'dark:bg-baby-blue bg-white',
+    'background-color-3': 'dark:bg-baby-blue bg-baby-blue',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-stroke':

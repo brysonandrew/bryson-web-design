@@ -5,6 +5,7 @@ import { Link as __Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { useHome } from '@hooks/useHome';
+import { ThinLine } from '@components/thin-line';
 
 const Root = styled(motion.div)``;
 const _Link = styled(motion(__Link))``;
@@ -22,6 +23,8 @@ export const Link: FC = () => {
         whileHover='hover'
       >
         <Title />
+                  <ThinLine classValue='flex absolute bottom-1 left-0' />
+
       </_Link>
     </Root>
   );

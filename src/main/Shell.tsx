@@ -16,6 +16,7 @@ import {
   ZERO_MOTION_CONFIG,
   resolveDynamicSlowMotionConfig,
   PRESENCE_OPACITY_SHIFT,
+  VERY_SLOW_MOTION_CONFIG,
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
@@ -24,6 +25,7 @@ import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
 import styled from '@emotion/styled';
+import { COLORS } from '@constants/colors';
 
 const Root = styled(motion.div)``;
 
@@ -47,9 +49,7 @@ export const Shell: FC<TProps> = ({ children }) => {
       : ZERO_MOTION_CONFIG;
 
   return (
-    <Root
-      key={isDarkMode ? 'dark' : 'light'}
-    >
+    <Root>
       <MotionConfig {...SLOW_MOTION_CONFIG}>
         <Variables />
         <Filters />
