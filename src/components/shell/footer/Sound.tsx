@@ -2,7 +2,10 @@ import { Glow } from '@components/glow';
 import { VolumeOff } from '@components/icons/VolumeOff';
 import { VolumeOn } from '@components/icons/VolumeOn';
 import { Metal } from '@components/metal';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import {
+  PARENT_GLOW_PROPS,
+  resolveDropShadow,
+} from '@constants/colors';
 import styled from '@emotion/styled';
 import { useContext } from '@state/Context';
 import clsx from 'clsx';
@@ -37,7 +40,7 @@ export const Sound = () => {
         className='relative p-3 cursor-pointer text-color-1'
         onTap={handleTap}
       >
-        <Background variants={{ hover: { scale: 1.15 } }}>
+        <Background>
           {isSound ? <VolumeOn /> : <VolumeOff />}
         </Background>
       </Button>

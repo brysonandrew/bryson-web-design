@@ -15,7 +15,7 @@ export const useDarkMode = (
   const [isDarkMode, setDarkMode] =
     useLocalStorage<boolean>(
       BRYSONA_DISPLAY_MODE_KEY,
-      defaultValue ?? false,
+      defaultValue ?? true,
     );
 
   const enable = () => {

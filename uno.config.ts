@@ -42,6 +42,7 @@ const config = defineConfig({
       gray: 'var(--gray)',
       'gray-1': 'var(--gray-1)',
       'gray-2': 'var(--gray-2)',
+      'gray-3': 'var(--gray-3)',
 
       white: 'var(--white)',
       'white-01': 'var(--white-01)',
@@ -82,7 +83,7 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow':
-          '0 0 1px 1px var(--gray-1), 0 0 1px 2px var(--gray-2)',
+          '0 0 1px 1px var(--gray-2), 0 0 1px 2px var(--white)',
       },
     ],
     [
