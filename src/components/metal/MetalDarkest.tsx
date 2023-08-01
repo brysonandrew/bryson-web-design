@@ -1,4 +1,7 @@
-import { metalRadialDarkestCss } from '@css/metal';
+import {
+  metalRadialDarkestCss,
+  metalRadialLightestCss,
+} from '@css/metal';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';

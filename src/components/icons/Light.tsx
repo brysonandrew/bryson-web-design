@@ -10,8 +10,8 @@ export const Light: FC<TProps> = ({
 }) => (
   <svg
     className={clsx(classValue)}
-    width='20'
-    height='20'
+    width='29'
+    height='29'
     viewBox='0 0 50 50'
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'

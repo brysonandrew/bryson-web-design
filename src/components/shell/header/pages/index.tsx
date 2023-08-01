@@ -5,9 +5,6 @@ import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item } from './Item';
 import { PAGE_LINKS } from '@constants/copy';
-import { DarkMode } from '../DarkMode';
-import { Space1_5 } from '@components/spaces/Space1_5';
-import { Space3 } from '@components/spaces/Space3';
 
 const toPathname = (v: string) => `/${v}`;
 
@@ -36,8 +33,6 @@ export const Pages = () => {
           );
         })}
       </List>
-      <Space3 />
-      <DarkMode />
     </Root>
   );
 };
