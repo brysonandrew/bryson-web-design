@@ -24,6 +24,17 @@ export const Variables = () => {
           --baby-blue-01: rgb(153, 204, 255, 0.1);
           --baby-blue-09: rgb(153, 204, 255, 0.9);
 
+          --black: rgb(0, 0, 0);
+          --black-04: rgb(0, 0, 0, 0.4);
+          --black-1: rgb(17, 17, 17);
+          --black-2: rgb(22, 22, 22);
+          --black-3: rgb(34, 34, 34);
+
+          --gray: rgb(100, 100, 100);
+          --gray-1: rgb(122, 122, 122);
+          --gray-2: rgb(180, 180, 180);
+          --gray-3: rgb(200, 200, 200);
+
           --white: rgb(255, 255, 255);
           --white-01: rgba(255, 255, 255, 0.1);
           --white-02: rgba(255, 255, 255, 0.2);
@@ -32,15 +43,6 @@ export const Variables = () => {
           --white-1: rgb(222,222,222);
           --white-2: rgb(240,240,240);
 
-          --gray: rgb(100, 100, 100);
-          --gray-1: rgb(122, 122, 122);
-          --gray-2: rgb(180, 180, 180);
-
-          --black: rgb(0, 0, 0);
-          --black-04: rgb(0, 0, 0, 0.4);
-          --black-1: rgb(17, 17, 17);
-          --black-2: rgb(22, 22, 22);
-          --black-3: rgb(34, 34, 34);
 
           --current: currentColor;
           --transparent: rgba(0, 0, 0, 0);

@@ -5,10 +5,10 @@ import {
   FOOTER_TRANSITION_EXIT,
 } from '@constants/animation';
 import { useContext } from '@state/Context';
-import { Sound } from './Sound';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { isMobile } from 'react-device-detect';
 import { Left } from './Left';
+import { Settings } from './Settings';
 
 const Root = styled(motion.footer)``;
 
@@ -33,8 +33,7 @@ export const Footer = () => {
     >
       <FadeUp />
       <Left />
-      {!isMobile && <Sound />}
+      {!isMobile && <Settings />}
     </Root>
   );
 };
- 

@@ -97,24 +97,33 @@ const baseRadialMetalCss = css`
   ${metalConicalCss}
 `;
 
-export const metalRadialLightCss = css`
-  ${baseRadialMetalCss}
-  filter: brightness(18%);
-`;
-
 export const metalRadialCss = css`
   ${baseRadialMetalCss}
   filter: brightness(100%);
 `;
 
+export const metalRadialLightCss = css`
+  ${baseRadialMetalCss}
+  filter: brightness(100%);
+  opacity: 0.4;
+`;
+
+export const metalRadialLightestCss = css`
+  ${baseRadialMetalCss}
+  filter: brightness(110%);
+  opacity: 0.4;
+`;
+
 export const metalRadialDarkCss = css`
   ${baseRadialMetalCss}
-  filter: brightness(14%);
+  filter: brightness(20%);
+  opacity: 1;
 `;
 
 export const metalRadialDarkestCss = css`
   ${baseRadialMetalCss}
-  filter: brightness(10%);
+  filter: brightness(16%);
+  opacity: 1;
 `;
 
 export const metalLinearCss = css`
