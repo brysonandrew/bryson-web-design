@@ -12,10 +12,14 @@ import { Space2 } from '@components/spaces/Space2';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
 import { Space4 } from '@components/spaces/Space4';
+import { useContext } from '@state/Context';
 
 const Root = styled(motion.form)``;
 
 export const Form = () => {
+  const {
+    darkMode: { isDarkMode },
+  } = useContext();
   const ref = useRef<HTMLFormElement | null>(null);
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
@@ -24,6 +28,7 @@ export const Form = () => {
 
   return (
     <Root
+      key={isDarkMode ? 'dark' : 'light'}
       className='flex flex-col mt-1 w-full'
       ref={ref}
       onSubmit={(event) => {
@@ -38,12 +43,6 @@ export const Form = () => {
           filter: isDisabled ? DISABLED : ACTIVE,
         }}
       >
-        <input
-          className='hidden'
-          name='ownersName'
-          disabled
-          readOnly
-        />
         <Text
           name='name'
           disabled={isDisabled}

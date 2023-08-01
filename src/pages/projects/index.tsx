@@ -11,10 +11,10 @@ export const Projects = () => {
     <MainShell>
       <Shell>
         <Section title={STORY.projects}>
-          <Gallery />
           <Main />
           <Space16 />
         </Section>
+        <Gallery />
       </Shell>
     </MainShell>
   );

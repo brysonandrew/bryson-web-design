@@ -19,6 +19,7 @@ export const Highlight: FC<TProps> = ({
   } = useContext();
   return (
     <Root
+      key={isDarkMode ? 'dark' : 'light'}
       className={clsx(
         'absolute -left-px -top-px -bottom-px background-color-1 pointer-events-none',
         classValue,

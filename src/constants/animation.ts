@@ -1,60 +1,68 @@
-import { TTransition } from "@t/animation";
-import { Keyframes, Transition } from "framer-motion";
+import { TTransition } from '@t/animation';
+import { Keyframes, Transition } from 'framer-motion';
 
 export const BASIC_VARIANT_KEYS = {
-  initial: "initial",
+  initial: 'initial',
   animate: 'animate',
   whileHover: 'hover',
 };
 
 export const MOTION_CONFIG = {
   transition: {
-    ease: "linear",
+    ease: 'linear',
     duration: 0.2,
   },
 };
 
 export const MID_MOTION_CONFIG = {
   transition: {
-    ease: "linear",
+    ease: 'linear',
     duration: 0.2,
   },
 };
-
 
 export const SLOW_MOTION_CONFIG = {
   transition: {
     ease: 'linear',
     duration: 1,
   },
-
 };
 
-export const resolveDynamicMotionConfig = (partial: Partial<TTransition>) => ({
+export const VERY_SLOW_MOTION_CONFIG = {
+  transition: {
+    ease: 'linear',
+    duration: 2,
+  },
+};
+
+
+export const resolveDynamicMotionConfig = (
+  partial: Partial<TTransition>,
+) => ({
   ...MOTION_CONFIG,
-  ...partial
+  ...partial,
 });
 
-export const resolveDynamicSlowMotionConfig = (config: Partial<TTransition>) => ({
+export const resolveDynamicSlowMotionConfig = (
+  config: Partial<TTransition>,
+) => ({
   transition: {
     ...SLOW_MOTION_CONFIG,
-    ...config
+    ...config,
   },
 });
 
 export const ZERO_MOTION_CONFIG = {
   transition: {
-    ease: "linear",
+    ease: 'linear',
     duration: 0,
-    delay: 0
+    delay: 0,
   },
 };
 
-
 export const DURATION_DELAY = {
   ...MOTION_CONFIG,
-  delay:
-    MOTION_CONFIG.transition.duration,
+  delay: MOTION_CONFIG.transition.duration,
 };
 
 export const PRESENCE_OPACITY_SHIFT = {
@@ -64,23 +72,28 @@ export const PRESENCE_OPACITY_SHIFT = {
 };
 
 export const PRESENCE_OPACITY_Y_SHIFT = {
-  initial: { opacity: 0, y: "50%" },
-  animate: { opacity: 1, y: "0%" },
-  exit: { opacity: 0, y: "50%" },
+  initial: { opacity: 0, y: '50%' },
+  animate: { opacity: 1, y: '0%' },
+  exit: { opacity: 0, y: '50%' },
 };
 
 export const PRESENCE_Y_SHIFT = {
-  initial: { y: "100%" },
-  animate: { y: "0%" },
-  exit: { y: "100%" },
+  initial: { y: '100%' },
+  animate: { y: '0%' },
+  exit: { y: '100%' },
 };
-
 
 export const PRESENCE_OPACITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };
+
+export const resolvePresenceOpacity = (opacity: number) => ({
+  initial: { opacity: 0 },
+  animate: { opacity },
+  exit: { opacity: 0 },
+});
 
 export const PRESENCE_OPACITY_01 = {
   initial: { opacity: 0 },
@@ -101,9 +114,9 @@ export const PRESENCE_SCALE = {
 };
 
 export const PRESENCE_Y = {
-  initial: { y: "100%" },
-  animate: { y: "0%" },
-  exit: { y: "100%" },
+  initial: { y: '100%' },
+  animate: { y: '0%' },
+  exit: { y: '100%' },
 };
 
 export const PRESENCE_OPACITY_DELAY = {
@@ -150,5 +163,5 @@ export const DURATION_DELAY_TRANSITION = {
 export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  ...DURATION_DELAY_TRANSITION
+  ...DURATION_DELAY_TRANSITION,
 };
