@@ -15,7 +15,6 @@ export const Text: FC<TProps> = ({ children }) => {
   const {
     darkMode: { isDarkMode },
   } = useContext();
-  console.log('isDarkMode ' + isDarkMode);
   const color = isDarkMode
     ? COLORS['teal-bright']
     : COLORS['gray'];

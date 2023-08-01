@@ -19,7 +19,6 @@ export const useDepthStyle = () => {
   return {
     y,
     z,
-    zIndex: z,
     filter,
   };
 };
