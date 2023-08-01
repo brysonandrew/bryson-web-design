@@ -17,13 +17,10 @@ export const Section: FC<TProps> = ({
   title,
   classValue,
   children,
-}) => { 
+}) => {
   return (
     <Root
-      className={clsx(
-        'flex flex-col items-center',
-        classValue,
-      )}
+      className={clsx('relative column z-10', classValue)}
       layout='position'
     >
       <Title>{title}</Title>
