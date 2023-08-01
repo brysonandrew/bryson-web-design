@@ -16,6 +16,8 @@ import { useTo } from '@hooks/media/nav/useTo';
 import { resolveKey } from '@components/placeholder/resolveKey';
 import { Small as Placeholder } from '@components/placeholder/Small';
 import { useOnSound } from '@hooks/sounds/useOnSound';
+import { useCurrProject } from '@hooks/params/useCurrProject';
+import { useCurrName } from '@hooks/params/useCurrName';
 
 export const IMAGE_SIZE = 320;
 
@@ -28,6 +30,7 @@ type TProps = HTMLMotionProps<'img'> & {
 export const Image: FC<TProps> = (props) => {
   const { index, count, mediaRecord, ...pictureProps } =
     props;
+  const name = useCurrName();
   const handleOnSound = useOnSound();
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
@@ -36,18 +39,26 @@ export const Image: FC<TProps> = (props) => {
     next: mediaRecord.png.name,
     project: mediaRecord.png.project,
   });
-
-  const depthStyle = useDepthStyle();
+  const { z, ...depthStyle } = useDepthStyle();
   const xStyle = useX({ index, count });
-
   const imageDimensions = resolveDimensions(image);
-
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
+
+  const resolveDelay = () => {
+    if (name) {
+      const n = Number(name);
+      if (!isNaN(n)) {
+        return Math.abs(index - n) / count;
+      }
+    }
+    return index / count;
+  };
+  const delay = resolveDelay();
   const motionConfig = resolveDynamicSlowMotionConfig({
-    delay: index / count,
+    delay,
   });
 
   return (
@@ -56,6 +67,7 @@ export const Image: FC<TProps> = (props) => {
       style={{
         ...xStyle,
         ...depthStyle,
+        zIndex: z,
       }}
       whileHover={{
         scale: 1.4,
@@ -63,31 +75,26 @@ export const Image: FC<TProps> = (props) => {
         z: RANGE_Z,
         zIndex: RANGE_Z,
       }}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, scale: 0 }}
       animate={{
-        opacity: 1,
+        opacity: isLoaded ? 1 : 0,
+        z,
+        scale: name ? 0 : 1,
         ...motionConfig,
       }}
+      exit={{ opacity: 0, scale: 0 }}
       onClick={handleOnSound}
     >
       <Link className='cursor-zoom-in' to={to}>
         {!isLoaded && (
           <Placeholder key={resolveKey(index)} />
         )}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: isLoaded ? 1 : 0,
-            ...motionConfig,
-          }}
-        >
-          <Picture
-            imageRef={imageRef}
-            mediaRecord={mediaRecord}
-            {...dimensions}
-            {...pictureProps}
-          />
-        </motion.div>
+        <Picture
+          imageRef={imageRef}
+          mediaRecord={mediaRecord}
+          {...dimensions}
+          {...pictureProps}
+        />
       </Link>
     </motion.li>
   );
