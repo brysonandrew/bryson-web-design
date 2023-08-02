@@ -13,8 +13,8 @@ export const Codewars: FC<TProps> = ({
 }) => (
   <Root
     className={clsx("relative left-px", classValue)}
-    width='16'
-    height='16'
+    width='17'
+    height='17'
     viewBox='0 0 24 24'
     fill='currentColor'
     {...props}

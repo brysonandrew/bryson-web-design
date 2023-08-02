@@ -1,29 +1,23 @@
-import clsx, { ClassValue } from 'clsx';
-import { motion } from 'framer-motion';
+import { TClassValueProps } from '@t/index';
+import clsx from 'clsx';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC } from 'react';
-import { useContext } from '@state/Context';
-import { COLORS } from '@constants/colors';
 
-export const THIN_LINE_CLASS =
-  'dark:bg-teal-04 bg-gray-2 h-px w-full';
-
-export const ThinLine: FC<{ classValue: ClassValue }> = ({
+type TProps = HTMLMotionProps<'hr'> & TClassValueProps;
+export const ThinLine: FC<TProps> = ({
   classValue,
+  ...props
 }) => {
-  const {
-    darkMode: { isDarkMode },
-  } = useContext();
+  const { style, ...rest } = props;
   return (
     <motion.hr
-      key={isDarkMode ? 'dark' : 'light'}
-      className={clsx(THIN_LINE_CLASS, classValue)}
-      variants={{
-        hover: {
-          backgroundColor: isDarkMode
-            ? COLORS['teal']
-            : COLORS['black'],
-        },
-      }}
+      className={clsx(
+        'dark:bg-teal bg-gray-2 h-px w-full',
+        classValue,
+      )}
+      style={{ opacity: 0.4, ...style }}
+      variants={{ hover: { opacity: 0.2 } }}
+      {...rest}
     />
   );
 };

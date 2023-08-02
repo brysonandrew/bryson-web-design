@@ -1,36 +1,60 @@
 import styled from '@emotion/styled';
 import { useOffSound } from '@hooks/sounds/useOffSound';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
+import clsx, { ClassValue } from 'clsx';
 
-const Root = styled(motion.li)``;
+const resolveLineClassProps = (
+  classValue?: ClassValue,
+) => ({
+  classValue: clsx('absolute left-0', classValue),
+});
+
 const Link = styled(motion(_Link))``;
 
-type TProp = HTMLMotionProps<'li'> & {
+type TProp = {
+  isActive: boolean;
   to: string;
   children: string;
 };
 export const Item: FC<TProp> = ({
+  isActive,
   to,
   children,
-  ...props
 }) => {
   const handleClick = useOffSound();
+
   return (
-    <Root className='relative px-1' {...props}>
-      <Link
-        to={to}
-        onTap={handleClick}
-        className='relative flex items-center justify-center pb-2'
-        whileHover='hover'
+    <Link
+      to={to}
+      onTap={handleClick}
+      className={clsx('relative center pb-2', [
+        isActive && 'not-allowed',
+      ])}
+    >
+      <h2
+        className={clsx(
+          'relative uppercase text-color-1 italic',
+          [isActive && 'text-color-3'],
+        )}
       >
-        <h2 className='relative text-md uppercase text-color-1 italic'>
-          {children}
-        </h2>
-        <ThinLine classValue='absolute bottom-1 left-0' />
-      </Link>
-    </Root>
+        {children}
+      </h2>
+      {isActive && (
+        <ThinLine
+          layoutId='PAGE_NAV_LINE'
+          style={{
+            bottom: 6,
+          }}
+          {...resolveLineClassProps('background-3')}
+        />
+      )}
+      <ThinLine
+        style={{ bottom: 4 }}
+        {...resolveLineClassProps()}
+      />
+    </Link>
   );
 };

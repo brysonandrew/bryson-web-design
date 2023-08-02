@@ -8,8 +8,9 @@ import { PARENT_GLOW_PROPS } from '@constants/colors';
 import { Border as Select } from '@components/select/Border';
 import { MetalDark } from '@components/metal/MetalDark';
 import { Box } from '@components/glow/Box';
-import { useHover } from '@hooks/useHover';
 import { useContext } from '@state/Context';
+import { useCursor } from '@components/cursor/useCursor';
+import { Cursor } from '@components/cursor';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -24,7 +25,8 @@ export const Item: FC<TItem> = ({
   const {
     darkMode: { isDarkMode },
   } = useContext();
-  const { isHover, ...handlers } = useHover();
+  const { isHover, cursorX, cursorY, ...handlers } =
+    useCursor();
 
   return (
     <Root
@@ -33,7 +35,12 @@ export const Item: FC<TItem> = ({
       {...handlers}
       {...props}
     >
-      {isHover && <Select layoutId={title} />}
+      {isHover && (
+        <>
+          <Select layoutId={title} />
+          <Cursor {...{ cursorX, cursorY }} />
+        </>
+      )}
       <Glow drop={8} color={isDarkMode ? 'white' : 'white'}>
         <MetalDark />
       </Glow>
