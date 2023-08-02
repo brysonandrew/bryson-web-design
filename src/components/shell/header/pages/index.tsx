@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
@@ -28,7 +28,17 @@ export const Pages = () => {
           return (
             <Fragment key={item}>
               {index !== 0 && <li className='p-2 md:p-2' />}
-              <Item to={to}>{item}</Item>
+              <AnimatePresence mode='wait'>
+                <Item
+                  key={item + '   xxxx'}
+                  initial={{ y: '-100%' }}
+                  animate={{ y: '0%' }}
+                  exit={{ y: '-100%' }}
+                  to={to}
+                >
+                  {item}
+                </Item>
+              </AnimatePresence>
             </Fragment>
           );
         })}

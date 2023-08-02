@@ -23,9 +23,9 @@ export const Shell: FC<TProps> = ({ children }) => {
       {!isProject && <Header />}
       <Content className='relative z-0'>
         <HeaderOffset />
-        {children}
+        {children} 
       </Content>
       {!isProject && <Footer />}
     </Root>
-  );
+  ); 
 };

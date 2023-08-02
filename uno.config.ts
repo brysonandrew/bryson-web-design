@@ -84,7 +84,7 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow':
-          '0 0 1px 1px var(--black-04), 0 0 1px 2px var(--black-02)',
+          '0 0 1px 1px var(--black-02)',
       },
     ],
     [
@@ -100,7 +100,7 @@ const config = defineConfig({
     ],
     [
       'text-gray-stroke',
-      { '-webkit-text-stroke': '1px var(--gray-1)' },
+      { '-webkit-text-stroke': '1px var(--baby-blue-01)' },
     ],
   ],
   shortcuts: {
@@ -122,6 +122,7 @@ const config = defineConfig({
     'row-space': 'row justify-between',
     'row-start-space': 'row-start justify-between',
     column: 'flex flex-col items-center',
+    'column-start': 'flex flex-col items-start',
     'column-end': 'flex flex-col items-end',
     'column-space': 'column justify-between',
     center: 'flex items-center justify-center',
@@ -157,7 +158,7 @@ const config = defineConfig({
         html,
         body {
           color: ${theme.colors.gray};
-          background-color: ${theme.colors['white-2']};
+          background-color: ${theme.colors['white']};
         }
 
         html.dark,

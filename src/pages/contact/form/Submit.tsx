@@ -29,7 +29,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   const handleMoveSound = useMoveSound();
 
   useEffect(() => {
-    if (status === 'sent' && ref.current !== null) {
+    if (status === 'sent' && ref.current !== null) { 
       ref.current.scrollIntoView({ block: 'center' });
     }
   }, [status]);

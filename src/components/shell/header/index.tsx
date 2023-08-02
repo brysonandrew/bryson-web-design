@@ -9,15 +9,14 @@ const Root = styled(motion.header)``;
 
 export const Header: FC = () => {
   const { isScroll } = useContext();
-  const isShown = !isScroll;
 
   return (
     <Root className='fixed top-0 left-0 w-full h-0 z-10'>
-      <AnimatePresence>
-        {isShown ? (
-          <Nav key='NAV' />
-        ) : (
+      <AnimatePresence initial={false} mode="sync">
+        {isScroll ? (
           <Decoration key='DECORATION' />
+        ) : (
+          <Nav key='NAV' />
         )}
       </AnimatePresence>
     </Root>

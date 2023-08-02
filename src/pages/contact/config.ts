@@ -59,7 +59,7 @@ export type TChangeEvent = ChangeEvent<
 
 export type TInputHandlers = Pick<
   HTMLMotionProps<'input'> & HTMLMotionProps<'textarea'>,
-  'onChange' | 'onBlur' | 'onFocus'
+  'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'
 >;
 
 export type TInputElement =

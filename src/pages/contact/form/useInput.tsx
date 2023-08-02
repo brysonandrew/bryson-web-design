@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, KeyboardEvent } from 'react';
 import { useContext } from '@state/Context';
 import { TFormKey } from '../config';
 
@@ -17,5 +17,20 @@ export const useInput = <T extends HTMLElement>({
   const value = form[name];
   const isEmpty = Boolean(value);
 
-  return { ref, input, isFocused, isEmpty, value };
+  const handleKeyDown = () => {
+    if (input) {
+      input.scrollIntoView({
+        block: 'center',
+      });
+    }
+  };
+
+  return {
+    ref,
+    input,
+    isFocused,
+    isEmpty,
+    value,
+    onKeyUp: handleKeyDown,
+  };
 };

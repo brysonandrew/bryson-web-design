@@ -56,7 +56,7 @@ export const Shell: FC<TProps> = ({ children }) => {
             <Processor
               width='100%'
               height='100%'
-              classValue='dark:fill-gray fill-gray-2'
+              classValue='dark:fill-gray fill-gray-3'
               {...PRESENCE_OPACITY_01}
               {...resolveTransition(0.28)}
             />

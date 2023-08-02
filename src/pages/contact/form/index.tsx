@@ -12,7 +12,6 @@ import { Space2 } from '@components/spaces/Space2';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
 import { Space4 } from '@components/spaces/Space4';
-import { useContext } from '@state/Context';
 
 const Root = styled(motion.form)``;
 
@@ -35,6 +34,7 @@ export const Form = () => {
     >
       <motion.div
         className='relative flex flex-col w-full'
+        initial={false}
         animate={{
           filter: isDisabled ? DISABLED : ACTIVE,
         }}

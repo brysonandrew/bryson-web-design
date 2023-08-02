@@ -1,4 +1,5 @@
 import { TTransition } from '@t/animation';
+import { resolvePresence } from '@utils/animation';
 import { Keyframes, Transition } from 'framer-motion';
 
 export const BASIC_VARIANT_KEYS = {
@@ -14,18 +15,22 @@ export const MOTION_CONFIG = {
   },
 };
 
+export const MID_MOTION_TRANSITION = {
+  ease: 'linear',
+  duration: 1,
+};
+
 export const MID_MOTION_CONFIG = {
-  transition: {
-    ease: 'linear',
-    duration: 0.2,
-  },
+  transition: MID_MOTION_TRANSITION,
+};
+
+export const SLOW_MOTION_TRANSITION = {
+  ease: 'linear',
+  duration: 1,
 };
 
 export const SLOW_MOTION_CONFIG = {
-  transition: {
-    ease: 'linear',
-    duration: 1,
-  },
+  transition: SLOW_MOTION_TRANSITION,
 };
 
 export const VERY_SLOW_MOTION_CONFIG = {
@@ -34,7 +39,6 @@ export const VERY_SLOW_MOTION_CONFIG = {
     duration: 2,
   },
 };
-
 
 export const resolveDynamicMotionConfig = (
   partial: Partial<TTransition>,
@@ -83,13 +87,25 @@ export const PRESENCE_Y_SHIFT = {
   exit: { y: '100%' },
 };
 
+export const PRESENCE_SCALE_HALF = resolvePresence(
+  { scale: 1 },
+  { scale: 0.5 },
+);
+
+export const PRESENCE_X_LEFT = resolvePresence(
+  { x: '-140%' },
+  { x: '0%' },
+);
+
 export const PRESENCE_OPACITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
 };
 
-export const resolvePresenceOpacity = (opacity: number) => ({
+export const resolvePresenceOpacity = (
+  opacity: number,
+) => ({
   initial: { opacity: 0 },
   animate: { opacity },
   exit: { opacity: 0 },
@@ -164,4 +180,13 @@ export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   ...DURATION_DELAY_TRANSITION,
+};
+
+export const SCROLL_DECORATION_PRESENCE = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { ease: 'easeOut', duration: 1 },
+  },
+  exit: { opacity: 0 },
 };
