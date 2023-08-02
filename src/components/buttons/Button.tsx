@@ -11,8 +11,8 @@ import { Inner } from './Inner';
 const Link = styled(motion(_Link))``;
 
 export type TButtonProps = TClassValueProps & {
+  onClick(): any;
   to: string;
-  onTap?(): void;
   Icon: TIconComponent;
 };
 export const Button: FC<TButtonProps> = ({

@@ -8,6 +8,7 @@ import { TLinks } from './config';
 import { Link } from './Link';
 
 const Root = styled(motion.ul)``;
+const Item = styled.li``;
 
 type TProps = HTMLMotionProps<'ul'>;
 export const Links: FC<TProps> = (props) => {
@@ -37,10 +38,10 @@ export const Links: FC<TProps> = (props) => {
       {...props}
     >
       {ITEMS.map((item, index) => (
-        <Fragment key={item.title}>
-          {index !== 0 && <li className='pt-px' />}
+        <Item key={item.title}>
+          {index !== 0 && <div className='py-1' />}
           <Link {...item} />
-        </Fragment>
+        </Item>
       ))}
     </Root>
   );

@@ -5,6 +5,7 @@ import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item as Link } from './Item';
 import { PAGE_LINKS } from '@constants/copy';
+import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 
 const toPathname = (v: string) => `/${v}`;
 
@@ -14,6 +15,10 @@ const Item = styled(motion.li)``;
 
 export const Pages = () => {
   const { pathname } = useLocation();
+  const coinDropSound = useCoinDropSound();
+  const handleClick = () => {
+    coinDropSound.play();
+  };
   return (
     <Root>
       <List
@@ -36,7 +41,11 @@ export const Pages = () => {
                 ])}
                 whileHover={isActive ? 'active' : 'hover'}
               >
-                <Link to={to} isActive={isActive}>
+                <Link
+                  to={to}
+                  isActive={isActive}
+                  onClick={handleClick}
+                >
                   {item}
                 </Link>
               </Item>
