@@ -84,7 +84,7 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow':
-          '0 0 1px 1px var(--black-04), 0 0 1px 2px var(--black-02)',
+          '0 0 1px 1px var(--black-02)',
       },
     ],
     [

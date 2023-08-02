@@ -3,22 +3,16 @@ import { motion } from 'framer-motion';
 import { Main } from './main';
 import { Pages } from './pages';
 import { FC } from 'react';
-import { useContext } from '@state/Context';
 import { isMobile } from 'react-device-detect';
+import { resolvePresence } from '@utils/animation';
 
 const Root = styled(motion.nav)``;
 
 export const Nav: FC = () => {
-  const { isInit, isScrollStart } = useContext();
-
-  const animation = {
-    initial:
-      isInit || isScrollStart ? { y: '-100%' } : false,
-    animate: {
-      y: '0%',
-    },
-    exit: { y: '-100%' },
-  };
+  const animation = resolvePresence(
+    { y: '-100%' },
+    { y: '0%' },
+  );
 
   return (
     <Root

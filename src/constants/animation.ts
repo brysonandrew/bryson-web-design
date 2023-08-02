@@ -1,4 +1,5 @@
 import { TTransition } from '@t/animation';
+import { resolvePresence } from '@utils/animation';
 import { Keyframes, Transition } from 'framer-motion';
 
 export const BASIC_VARIANT_KEYS = {
@@ -86,6 +87,16 @@ export const PRESENCE_Y_SHIFT = {
   exit: { y: '100%' },
 };
 
+export const PRESENCE_SCALE_HALF = resolvePresence(
+  { scale: 1 },
+  { scale: 0.5 },
+);
+
+export const PRESENCE_X_LEFT = resolvePresence(
+  { x: '-140%' },
+  { x: '0%' },
+);
+
 export const PRESENCE_OPACITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -169,4 +180,13 @@ export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   ...DURATION_DELAY_TRANSITION,
+};
+
+export const SCROLL_DECORATION_PRESENCE = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { ease: 'easeOut', duration: 1 },
+  },
+  exit: { opacity: 0 },
 };

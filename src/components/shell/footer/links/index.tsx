@@ -1,14 +1,20 @@
 import { Codewars } from '@components/icons/links/Codewars';
 import { Email } from '@components/icons/links/Email';
 import { Github } from '@components/icons/links/Github';
+import { MetalGlow } from '@components/metal/MetalGlow';
+import { PARENT_GLOW_PROPS } from '@constants/colors';
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
-import { Fragment } from 'react';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { FC, Fragment } from 'react';
 
-const Root = styled.ul``;
+const Root = styled(motion.ul)``;
 
-export const Links = () => (
-  <Root className='absolute left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-10'>
+type TProps = HTMLMotionProps<'ul'>;
+export const Links: FC<TProps> = (props) => (
+  <Root
+    className='absolute left-0 bottom-0 column-start w-0 px-8 py-6 z-10'
+    {...props}
+  >
     {[
       {
         title: 'mail',
@@ -30,14 +36,14 @@ export const Links = () => (
       },
     ].map(({ title, subTitle, href, Icon }, index) => (
       <Fragment key={title}>
-        {index !== 0 && <li className='py-0.5' />}
+        {index !== 0 && <li className='py-1' />}
         <motion.li
-          initial={false}
-          animate='animate'
-          whileHover='hover'
+          className='relative -left-2 glow-interactive'
+          {...PARENT_GLOW_PROPS}
         >
+          <MetalGlow />
           <a
-            className='row pt-0.5 cursor-pointer'
+            className='relative row pt-0.75 pb-1 pl-2 pr-3 rounded-sm cursor-pointer'
             href={href}
             target='_blank'
           >
@@ -46,19 +52,21 @@ export const Links = () => (
             </div>
             <div className='p-1' />
             <div className='row items-end'>
-              <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.5'>
+              <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
                 {title}
               </h5>
-              <div className='p-1' />
-              <motion.h6
-                className='uppercase italic text-xs text-color hidden sm:flex'
-                variants={{
-                  animate: { opacity: 0.6 },
-                  hover: { opacity: 1 },
-                }}
-              >
-                {subTitle}
-              </motion.h6>
+              <div className='hidden sm:flex row'>
+                <div className='p-1' />
+                <motion.h6
+                  className='uppercase italic text-xs text-color'
+                  variants={{
+                    animate: { opacity: 0.6 },
+                    hover: { opacity: 1 },
+                  }}
+                >
+                  {subTitle}
+                </motion.h6>
+              </div>
             </div>
           </a>
         </motion.li>
