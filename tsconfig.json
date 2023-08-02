@@ -26,6 +26,6 @@
     "src/**/*.tsx",
     "src/**/*.glsl",
     "assets/sw.js"
-  ],
+, ".assets/links.tsx", ".assets/icons.ts"  ],
   "extends": "./tsconfig.paths.json"
 }

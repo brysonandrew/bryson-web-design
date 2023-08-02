@@ -14,18 +14,22 @@ export const MOTION_CONFIG = {
   },
 };
 
+export const MID_MOTION_TRANSITION = {
+  ease: 'linear',
+  duration: 1,
+};
+
 export const MID_MOTION_CONFIG = {
-  transition: {
-    ease: 'linear',
-    duration: 0.2,
-  },
+  transition: MID_MOTION_TRANSITION,
+};
+
+export const SLOW_MOTION_TRANSITION = {
+  ease: 'linear',
+  duration: 1,
 };
 
 export const SLOW_MOTION_CONFIG = {
-  transition: {
-    ease: 'linear',
-    duration: 1,
-  },
+  transition: SLOW_MOTION_TRANSITION,
 };
 
 export const VERY_SLOW_MOTION_CONFIG = {
@@ -34,7 +38,6 @@ export const VERY_SLOW_MOTION_CONFIG = {
     duration: 2,
   },
 };
-
 
 export const resolveDynamicMotionConfig = (
   partial: Partial<TTransition>,
@@ -89,7 +92,9 @@ export const PRESENCE_OPACITY = {
   exit: { opacity: 0 },
 };
 
-export const resolvePresenceOpacity = (opacity: number) => ({
+export const resolvePresenceOpacity = (
+  opacity: number,
+) => ({
   initial: { opacity: 0 },
   animate: { opacity },
   exit: { opacity: 0 },

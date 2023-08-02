@@ -122,6 +122,7 @@ const config = defineConfig({
     'row-space': 'row justify-between',
     'row-start-space': 'row-start justify-between',
     column: 'flex flex-col items-center',
+    'column-start': 'flex flex-col items-start',
     'column-end': 'flex flex-col items-end',
     'column-space': 'column justify-between',
     center: 'flex items-center justify-center',

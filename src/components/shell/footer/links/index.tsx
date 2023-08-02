@@ -1,12 +1,13 @@
-import { Email } from '@components/icons/Email';
-import { Github } from '@components/icons/Github';
+import { Codewars } from '@components/icons/links/Codewars';
+import { Email } from '@components/icons/links/Email';
+import { Github } from '@components/icons/links/Github';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Fragment } from 'react';
 
 const Root = styled.ul``;
 
-export const Left = () => (
+export const Links = () => (
   <Root className='absolute left-0 bottom-0 column items-start px-4 py-6 md:px-6 md:py-6 z-10'>
     {[
       {
@@ -14,6 +15,12 @@ export const Left = () => (
         subTitle: 'andrewbryson12@gmail.com',
         href: 'mailto:andrewbryson12@gmail.com',
         Icon: Email,
+      },
+      {
+        title: 'codewars',
+        subTitle: 'brysonandrew',
+        href: 'https://www.codewars.com/users/brysonandrew',
+        Icon: Codewars,
       },
       {
         title: 'github',
@@ -34,7 +41,9 @@ export const Left = () => (
             href={href}
             target='_blank'
           >
-            <Icon classValue='text-color h-5 w-5' />
+            <div className='column-start w-5'>
+              <Icon classValue='text-color' />
+            </div>
             <div className='p-1' />
             <div className='row items-end'>
               <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.5'>

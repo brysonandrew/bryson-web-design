@@ -14,8 +14,8 @@ export const Email: FC<TProps> = ({
   <Root
     className={clsx(classValue)}
     viewBox='0 0 24 24'
-    width='24'
-    height='24'
+    width='20'
+    height='20'
     fill='currentColor'
     {...props}
   >

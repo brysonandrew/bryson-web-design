@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import type { FC } from "react";
-import type { TItem } from "./constants";
+import type { TItem } from "../../../../../.assets/links";
 
 const Root = styled.a``;
 

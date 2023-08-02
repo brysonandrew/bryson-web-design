@@ -1,5 +1,5 @@
-import { React } from '@components/icons/React';
-import { Typescript } from '@components/icons/Typescript';
+import { React } from '@components/icons/tech/React';
+import { Typescript } from '@components/icons/tech/Typescript';
 import type { TBaseIconProps } from '@t/icons';
 import { HTMLMotionProps } from 'framer-motion';
 import type { FC } from 'react';
