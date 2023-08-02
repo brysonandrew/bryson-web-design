@@ -84,7 +84,7 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow':
-        '0 0 1px 1px var(--black-04), 0 0 1px 2px var(--black-02)',
+          '0 0 1px 1px var(--black-04), 0 0 1px 2px var(--black-02)',
       },
     ],
     [
@@ -118,6 +118,7 @@ const config = defineConfig({
       'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
     row: 'flex flex-row items-center',
     'row-start': 'flex flex-row items-start',
+    'row-end': 'flex flex-row items-end',
     'row-space': 'row justify-between',
     'row-start-space': 'row-start justify-between',
     column: 'flex flex-col items-center',
@@ -138,6 +139,8 @@ const config = defineConfig({
     '+text': 'text-color text-left text-xl md:text-2xl',
     'cover-fixed': 'fixed inset-0',
     cover: 'absolute inset-0',
+    'dragger-screen': 'absolute h-screen row-end',
+    'dragger-foot': 'relative h-auto row glow-interactive',
   },
   presets: [
     presetUno({ dark: 'class' }),
@@ -147,6 +150,23 @@ const config = defineConfig({
         mono: 'Nova Mono',
       },
     }),
+  ],
+  preflights: [
+    {
+      getCSS: ({ theme }) => `
+        html,
+        body {
+          color: ${theme.colors.gray};
+          background-color: ${theme.colors['white-2']};
+        }
+
+        html.dark,
+        html.dark body {
+          background-color: ${theme.colors.black};
+          color: ${theme.colors['teal-bright']};
+        }
+      `,
+    },
   ],
 });
 

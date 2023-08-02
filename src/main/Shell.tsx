@@ -49,26 +49,19 @@ export const Shell: FC<TProps> = ({ children }) => {
     <Root>
       <MotionConfig {...SLOW_MOTION_CONFIG}>
         <Variables />
-        <Filters />
+        <Filters /> 
         <ClipPaths />
         <AnimatePresence mode='wait'>
-          <motion.div
-            key={isDarkMode ? 'dark' : 'light'}
-            {...PRESENCE_OPACITY}
-            {...resolveTransition(0)}
-          >
-            <Background>
-              <Processor
-                width='100%'
-                height='100%'
-                classValue='dark:fill-gray fill-gray-2'
-                {...PRESENCE_OPACITY_01}
-                {...resolveTransition(0.28)}
-              />
-            </Background>
-          </motion.div>
+          <Background key={isDarkMode ? 'dark' : 'light'}>
+            <Processor
+              width='100%'
+              height='100%'
+              classValue='dark:fill-gray fill-gray-2'
+              {...PRESENCE_OPACITY_01}
+              {...resolveTransition(0.28)}
+            />
+          </Background>
         </AnimatePresence>
-
         <motion.div
           {...PRESENCE_OPACITY}
           {...resolveTransition(0.8)}

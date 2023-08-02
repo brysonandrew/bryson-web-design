@@ -8,7 +8,7 @@ import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import { useContext } from '@state/Context';
 
-const Root = styled(motion.svg)``;
+const Root = styled.svg``;
 const Rect = styled(motion.rect)``;
 
 type TProps = {
@@ -35,7 +35,7 @@ export const Background: FC<TProps> = ({
         height='100%'
         initial={{ opacity: 0 }}
         animate={{ opacity: isDarkMode ? 1 : 0.04 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
         fill={resolveUrlId(PATTERN_ID)}
         filter={resolveUrlId(MORPH_ID)}
       />
