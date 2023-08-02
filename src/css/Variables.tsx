@@ -25,6 +25,7 @@ export const Variables = () => {
           --baby-blue-09: rgb(153, 204, 255, 0.9);
 
           --black: rgb(0, 0, 0);
+          --black-02: rgb(0, 0, 0, 0.2);
           --black-04: rgb(0, 0, 0, 0.4);
           --black-1: rgb(17, 17, 17);
           --black-2: rgb(22, 22, 22);

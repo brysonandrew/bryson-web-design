@@ -89,5 +89,6 @@ export const resolveGlowProps = ({
     },
   },
 });
+
 import * as unoConfig from '@uno/config';
 export const COLORS = unoConfig.default.theme.colors;

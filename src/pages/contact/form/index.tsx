@@ -17,9 +17,6 @@ import { useContext } from '@state/Context';
 const Root = styled(motion.form)``;
 
 export const Form = () => {
-  const {
-    darkMode: { isDarkMode },
-  } = useContext();
   const ref = useRef<HTMLFormElement | null>(null);
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
@@ -28,7 +25,6 @@ export const Form = () => {
 
   return (
     <Root
-      key={isDarkMode ? 'dark' : 'light'}
       className='flex flex-col mt-1 w-full'
       ref={ref}
       onSubmit={(event) => {

@@ -12,3 +12,4 @@ export const Build: FC<TProps> = (props) => {
 
   return <Placeholder key={resolveKey(props.index)} />;
 };
+

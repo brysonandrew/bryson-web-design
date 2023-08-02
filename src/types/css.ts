@@ -1,4 +1,3 @@
-import * as unoConfig from '@uno/config';
-const COLORS = unoConfig.default.theme.colors;
+import { COLORS } from "@constants/colors";
 
 export type TColorKey = keyof typeof COLORS;

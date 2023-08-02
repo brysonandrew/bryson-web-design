@@ -17,5 +17,5 @@ export const Projects = () => {
         <Gallery />
       </Shell>
     </MainShell>
-  );
+  ); 
 };

@@ -24,7 +24,7 @@ export const Images: FC<TProps> = ({
   const entries = Object.entries(screensLookupSmall.png);
 
   return (
-    <motion.div
+    <div
       className='relative w-full top-0'
       style={{
         height: HEIGHT
@@ -68,6 +68,6 @@ export const Images: FC<TProps> = ({
           },
         )}
       </motion.ul>
-    </motion.div>
+    </div>
   );
 };

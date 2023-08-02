@@ -44,7 +44,7 @@ export const Left = () => (
               <motion.h6
                 className='uppercase italic text-xs text-color hidden sm:flex'
                 variants={{
-                  animate: { opacity: 0.4 },
+                  animate: { opacity: 0.6 },
                   hover: { opacity: 1 },
                 }}
               >

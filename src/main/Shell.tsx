@@ -15,8 +15,6 @@ import {
   PRESENCE_OPACITY_01,
   ZERO_MOTION_CONFIG,
   resolveDynamicSlowMotionConfig,
-  PRESENCE_OPACITY_SHIFT,
-  VERY_SLOW_MOTION_CONFIG,
 } from '@constants/animation';
 import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
@@ -25,7 +23,6 @@ import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
 import styled from '@emotion/styled';
-import { COLORS } from '@constants/colors';
 
 const Root = styled(motion.div)``;
 
@@ -54,20 +51,24 @@ export const Shell: FC<TProps> = ({ children }) => {
         <Variables />
         <Filters />
         <ClipPaths />
-        <motion.div
-          {...PRESENCE_OPACITY}
-          {...resolveTransition(0)}
-        >
-          <Background>
-            <Processor
-              width='100%'
-              height='100%'
-              classValue='dark:fill-gray fill-gray-2'
-              {...PRESENCE_OPACITY_01}
-              {...resolveTransition(0.28)}
-            />
-          </Background>
-        </motion.div>
+        <AnimatePresence mode='wait'>
+          <motion.div
+            key={isDarkMode ? 'dark' : 'light'}
+            {...PRESENCE_OPACITY}
+            {...resolveTransition(0)}
+          >
+            <Background>
+              <Processor
+                width='100%'
+                height='100%'
+                classValue='dark:fill-gray fill-gray-2'
+                {...PRESENCE_OPACITY_01}
+                {...resolveTransition(0.28)}
+              />
+            </Background>
+          </motion.div>
+        </AnimatePresence>
+
         <motion.div
           {...PRESENCE_OPACITY}
           {...resolveTransition(0.8)}
