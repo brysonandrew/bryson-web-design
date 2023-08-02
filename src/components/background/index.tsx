@@ -34,7 +34,7 @@ export const Background: FC<TProps> = ({
         width='100%'
         height='100%'
         initial={{ opacity: 0 }}
-        animate={{ opacity: isDarkMode ? 1 : 0.04 }}
+        animate={{ opacity: isDarkMode ? 1 : 0.02 }}
         transition={{ duration: 1, delay: 0.4 }}
         fill={resolveUrlId(PATTERN_ID)}
         filter={resolveUrlId(MORPH_ID)}
@@ -44,7 +44,7 @@ export const Background: FC<TProps> = ({
         y='0'
         width='100%'
         height='100%'
-        className='dark:fill-black-04 fill-white-04'
+        className='dark:fill-black-04 fill-white-02'
       />
       {children}
     </Root>

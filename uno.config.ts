@@ -100,7 +100,7 @@ const config = defineConfig({
     ],
     [
       'text-gray-stroke',
-      { '-webkit-text-stroke': '1px var(--gray-1)' },
+      { '-webkit-text-stroke': '1px var(--baby-blue-01)' },
     ],
   ],
   shortcuts: {
@@ -158,7 +158,7 @@ const config = defineConfig({
         html,
         body {
           color: ${theme.colors.gray};
-          background-color: ${theme.colors['white-2']};
+          background-color: ${theme.colors['white']};
         }
 
         html.dark,

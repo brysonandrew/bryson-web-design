@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useOffSound } from '@hooks/sounds/useOffSound';
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
@@ -8,14 +8,18 @@ import { ThinLine } from '@components/thin-line';
 const Root = styled(motion.li)``;
 const Link = styled(motion(_Link))``;
 
-type TProp = {
+type TProp = HTMLMotionProps<'li'> & {
   to: string;
   children: string;
 };
-export const Item: FC<TProp> = ({ to, children }) => {
+export const Item: FC<TProp> = ({
+  to,
+  children,
+  ...props
+}) => {
   const handleClick = useOffSound();
   return (
-    <Root className='relative px-1 overflow-hidden'>
+    <Root className='relative px-1' {...props}>
       <Link
         to={to}
         onTap={handleClick}

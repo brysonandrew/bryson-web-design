@@ -38,12 +38,12 @@ export const Links: FC<TProps> = (props) => (
       <Fragment key={title}>
         {index !== 0 && <li className='py-1' />}
         <motion.li
-          className='relative -left-2 glow-interactive'
+          className='relative -left-1.5 glow-interactive'
           {...PARENT_GLOW_PROPS}
         >
           <MetalGlow />
           <a
-            className='relative row pt-0.75 pb-1 pl-2 pr-3 rounded-sm cursor-pointer'
+            className='relative row pt-0.75 pb-1 pl-1.5 pr-2 rounded-sm cursor-pointer'
             href={href}
             target='_blank'
           >

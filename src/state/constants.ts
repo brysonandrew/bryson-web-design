@@ -5,7 +5,7 @@ export const STATE: TState = {
   isInit: true,
   isScroll: false,
   isScrollStart: false,
-  isSound: true,
+  isSound: false,
   isTransitioningGallery: false,
   context: new AudioContext(),
   projectImageRecord: {},

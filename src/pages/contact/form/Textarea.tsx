@@ -15,7 +15,7 @@ export const Textarea: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const { ref, input, isEmpty, isFocused, value } =
+  const { ref, input, isEmpty, isFocused, ...inputProps } =
     useInput<HTMLTextAreaElement>({ name });
 
   return (
@@ -35,8 +35,8 @@ export const Textarea: FC<TProps> = ({
           className='input-textarea'
           autoComplete='off'
           name={name}
-          value={value}
           disabled={disabled}
+          {...inputProps}
           {...props}
         />
       </div>

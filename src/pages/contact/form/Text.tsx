@@ -15,8 +15,13 @@ export const Text: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const { ref, input, isEmpty, isFocused, value } =
-    useInput<HTMLInputElement>({ name });
+  const {
+    ref,
+    input,
+    isEmpty,
+    isFocused,
+    ...inputProps
+  } = useInput<HTMLInputElement>({ name });
   return (
     <Box
       name={name}
@@ -31,11 +36,11 @@ export const Text: FC<TProps> = ({
       <Input
         ref={ref}
         className='input-text'
-        type='text' 
+        type='text'
         autoComplete='off'
         name={name}
-        value={value}
         disabled={disabled}
+        {...inputProps}
         {...props}
       />
     </Box>
