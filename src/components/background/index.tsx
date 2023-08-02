@@ -35,7 +35,7 @@ export const Background: FC<TProps> = ({
         height='100%'
         initial={{ opacity: 0 }}
         animate={{ opacity: isDarkMode ? 1 : 0.04 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         fill={resolveUrlId(PATTERN_ID)}
         filter={resolveUrlId(MORPH_ID)}
       />

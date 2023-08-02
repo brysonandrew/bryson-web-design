@@ -35,15 +35,15 @@ export const useDarkMode = (
   };
 
   useEffect(() => {
-    const faviconElement = document.querySelector(
-      'link[rel="icon"]',
-    );
-    if (faviconElement) {
-      faviconElement.setAttribute(
-        'href',
-        isDarkMode ? 'favicon.ico' : 'light/favicon.ico',
-      );
-    }
+    // const faviconElement = document.querySelector(
+    //   'link[rel="icon"]',
+    // );
+    // if (faviconElement) {
+    //   faviconElement.setAttribute(
+    //     'href',
+    //     isDarkMode ? 'favicon.ico' : 'light/favicon.ico',
+    //   );
+    // }
     const darkClass = (operation: 'add' | 'remove') =>
       document.documentElement.classList[operation]('dark');
     darkClass(isDarkMode ? 'add' : 'remove');

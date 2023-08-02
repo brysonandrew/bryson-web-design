@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { Filters } from '../components/filters';
 import type { TChildren } from '@t/index';
 import { type FC } from 'react';
@@ -22,7 +23,6 @@ import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
-import styled from '@emotion/styled';
 
 const Root = styled(motion.div)``;
 
