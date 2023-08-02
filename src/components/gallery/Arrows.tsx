@@ -4,7 +4,7 @@ import { Right } from './buttons/Right';
 import clsx from 'clsx';
 
 const BASE_NAV_BUTTON_CLASS =
-  'absolute bottom-4 translate-y-0 md:bottom-1/2 md:translate-y-1/2';
+  'absolute bottom-4 translate-y-0 md:bottom-1/2 md:translate-y-1/2 z-20';
 
 type TProps = {
   max: number;

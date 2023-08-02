@@ -7,7 +7,6 @@ export const Gallery: FC = () => {
   const currProject = useCurrProject();
   const isSelectedProject = currProject !== null;
   const { isResizing, width } = useWidth();
-  console.log(isResizing, isSelectedProject, "f");
   if (isSelectedProject && !isResizing) {
     return <Main currProject={currProject} width={width} />;
   }

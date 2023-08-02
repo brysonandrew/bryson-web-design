@@ -1,5 +1,8 @@
 import { Drag } from '@components/icons/Drag';
-import { COLORS, resolveDropShadow } from '@constants/colors';
+import {
+  COLORS,
+  resolveDropShadow,
+} from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -20,7 +23,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
   return (
     <motion.div
       className={clsx(
-        'absolute center h-full',
+        'hidden center absolute bottom-0 h-full md:flex',
         classValue,
       )}
       initial={false}
@@ -41,7 +44,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
           cursor: 'grab',
           filter: isDarkMode
             ? resolveDropShadow(2, 'white')
-            : resolveDropShadow(2, 'gray'), 
+            : resolveDropShadow(2, 'gray'),
           color: isDarkMode
             ? COLORS['white']
             : COLORS['gray'],
@@ -51,8 +54,8 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
             ? resolveDropShadow(4, 'teal-bright')
             : resolveDropShadow(4, 'gray'),
           color: isDarkMode
-            ? COLORS['teal-bright'] 
-            :COLORS['gray'],
+            ? COLORS['teal-bright']
+            : COLORS['gray'],
           cursor: 'grabbing',
         },
       }}

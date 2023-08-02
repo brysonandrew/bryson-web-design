@@ -9,6 +9,7 @@ import { TBaseProps } from '../../types';
 import { Items } from './items';
 import { PADDING_X } from './config';
 import clsx from 'clsx';
+import { isDesktop } from 'react-device-detect';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;
@@ -30,7 +31,9 @@ export const Core: FC<TProps> = (props) => {
     <Root className='relative' style={{ width: itemWidth }}>
       <MetalDark />
       <Dragger
-        className={clsx('relative row glow-interactive')}
+        className={clsx('left-0 bottom-0', [
+          isDesktop ? 'dragger-foot' : 'dragger-screen',
+        ])}
         style={{
           x: motionX,
           left: -PADDING_X,
@@ -45,10 +48,14 @@ export const Core: FC<TProps> = (props) => {
         }}
         {...dragHandlers}
       >
-        <MetalDark classValue='opacity-50' />
-        <DragIcon classValue='left-0' />
+        {isDesktop && (
+          <>
+            <MetalDark classValue='opacity-50' />
+            <DragIcon classValue='left-0' />
+            <DragIcon classValue='right-0' />
+          </>
+        )}
         <Items items={items} itemWidth={itemWidth} />
-        <DragIcon classValue='right-0' />
       </Dragger>
     </Root>
   );

@@ -40,7 +40,7 @@ export const Sections: FC<TProps> = (props) => {
             [filePath, value]: TImageResolverEntry,
             index: number,
           ) => (
-            <motion.li
+            <li
               key={filePath}
               className='relative flex justify-center'
               style={{ width: width.screen }}
@@ -57,7 +57,7 @@ export const Sections: FC<TProps> = (props) => {
               ) : (
                 <Fetch moduleRecord={value} />
               )}
-            </motion.li>
+            </li>
           ),
         )}
       </motion.ul>
