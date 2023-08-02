@@ -83,8 +83,7 @@ const config = defineConfig({
     [
       'glow-interactive-light',
       {
-        'box-shadow':
-          '0 0 1px 1px var(--black-02)',
+        'box-shadow': '0 0 1px 1px var(--black-02)',
       },
     ],
     [
@@ -110,6 +109,8 @@ const config = defineConfig({
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
+    'text-color-2': 'dark:text-teal-bright text-gray',
+    'text-color-3': 'dark:text-white text-black',
     'text-color-stroke':
       'dark:text-baby-blue-stroke text-gray-stroke',
     'glow-interactive':

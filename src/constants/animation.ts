@@ -17,7 +17,7 @@ export const MOTION_CONFIG = {
 
 export const MID_MOTION_TRANSITION = {
   ease: 'linear',
-  duration: 1,
+  duration: 0.5,
 };
 
 export const MID_MOTION_CONFIG = {

@@ -12,7 +12,7 @@ export const Header: FC = () => {
 
   return (
     <Root className='fixed top-0 left-0 w-full h-0 z-10'>
-      <AnimatePresence initial={false} mode="sync">
+      <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
           <Decoration key='DECORATION' />
         ) : (

@@ -1,44 +1,45 @@
 import { Fragment } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
-import { Item } from './Item';
+import { Item as Link } from './Item';
 import { PAGE_LINKS } from '@constants/copy';
 
 const toPathname = (v: string) => `/${v}`;
 
-const Root = styled(motion.div)``;
+const Root = styled(motion.nav)``;
 const List = styled(motion.ul)``;
+const Item = styled(motion.li)``;
 
 export const Pages = () => {
   const { pathname } = useLocation();
-
   return (
-    <Root className={clsx('relative column-end')}>
+    <Root>
       <List
         className={clsx(
-          'relative column-end h-full pt-0 pr-1 md:row md:p-0',
+          'relative column-end h-full pt-0 pr-1 md:row md:pr-0',
         )}
       >
-        {PAGE_LINKS.filter(
-          (item) => pathname !== toPathname(item),
-        ).map((item, index) => {
+        {PAGE_LINKS.map((item, index) => {
           const to = toPathname(item);
+          const isActive = pathname === to;
+
           return (
             <Fragment key={item}>
-              {index !== 0 && <li className='p-2 md:p-2' />}
-              <AnimatePresence mode='wait'>
-                <Item
-                  key={item + '   xxxx'}
-                  initial={{ y: '-100%' }}
-                  animate={{ y: '0%' }}
-                  exit={{ y: '-100%' }}
-                  to={to}
-                >
+              {index !== 0 && (
+                <Item className='p-2 md:p-2' />
+              )}
+              <Item
+                className={clsx('relative px-1', [
+                  isActive ? 'z-10' : 'z-0',
+                ])}
+                whileHover={isActive ? 'active' : 'hover'}
+              >
+                <Link to={to} isActive={isActive}>
                   {item}
-                </Item>
-              </AnimatePresence>
+                </Link>
+              </Item>
             </Fragment>
           );
         })}
