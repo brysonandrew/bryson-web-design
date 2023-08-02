@@ -82,7 +82,7 @@ export const Image: FC<TProps> = (props) => {
       }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{
-        opacity: isLoaded ? 1 : 0,
+        opacity: 1,
         z,
         scale: isGallery ? 0 : 1,
         ...motionConfig,
@@ -97,6 +97,10 @@ export const Image: FC<TProps> = (props) => {
         <Picture
           imageRef={imageRef}
           mediaRecord={mediaRecord}
+          initial={false}
+          animate={{
+            opacity: isLoaded ? 1 : 0,
+          }}
           {...dimensions}
           {...pictureProps}
         />

@@ -105,7 +105,7 @@ const config = defineConfig({
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white',
     'background-color-1': 'dark:bg-teal bg-gray-1',
-    'background-color-2': 'dark:bg-black-1 bg-white',
+    'background-color-2': 'dark:bg-black-3 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',

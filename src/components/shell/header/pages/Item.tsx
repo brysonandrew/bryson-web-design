@@ -17,19 +17,20 @@ const Link = styled(motion(_Link))``;
 type TProp = {
   isActive: boolean;
   to: string;
+  onClick(): void;
   children: string;
 };
 export const Item: FC<TProp> = ({
   isActive,
   to,
   children,
+  onClick,
 }) => {
-  const handleClick = useOffSound();
 
   return (
     <Link
       to={to}
-      onTap={handleClick}
+      onClick={onClick}
       className={clsx('relative center pb-2', [
         isActive && 'not-allowed',
       ])}

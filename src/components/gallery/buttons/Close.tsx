@@ -16,7 +16,7 @@ export const Close: FC<TProps> = (props) => {
   return (
     <Button
       to={to}
-      onTap={handleClose}
+      onClick={handleClose}
       Icon={Cross}
       {...props}
     />
