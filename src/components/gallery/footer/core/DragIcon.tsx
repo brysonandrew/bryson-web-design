@@ -41,7 +41,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
           cursor: 'grab',
           filter: isDarkMode
             ? resolveDropShadow(2, 'white')
-            : resolveDropShadow(0),
+            : resolveDropShadow(2, 'gray'), 
           color: isDarkMode
             ? COLORS['white']
             : COLORS['gray'],
@@ -49,7 +49,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
         tap: {
           filter: isDarkMode
             ? resolveDropShadow(4, 'teal-bright')
-            : resolveDropShadow(0),
+            : resolveDropShadow(4, 'gray'),
           color: isDarkMode
             ? COLORS['teal-bright'] 
             :COLORS['gray'],

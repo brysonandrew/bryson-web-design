@@ -6,7 +6,6 @@ import {
 } from '@constants/animation';
 import { useContext } from '@state/Context';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
-import { isMobile } from 'react-device-detect';
 import { Left } from './Left';
 import { Settings } from './Settings';
 
@@ -33,7 +32,7 @@ export const Footer = () => {
     >
       <FadeUp />
       <Left />
-      {!isMobile && <Settings />}
+      <Settings />
     </Root>
   );
 };

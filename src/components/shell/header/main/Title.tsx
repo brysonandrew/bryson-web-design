@@ -1,7 +1,4 @@
-import { ThinLine } from '@components/thin-line';
-import { resolveDropShadow } from '@constants/colors';
 import styled from '@emotion/styled';
-import { useContext } from '@state/Context';
 import { motion } from 'framer-motion';
 import type { CSSProperties, FC } from 'react';
 
@@ -9,9 +6,6 @@ const Root = styled(motion.div)``;
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => {
-  const {
-    darkMode: { isDarkMode },
-  } = useContext();
   return (
     <Root className='row-start'>
       {/* <div

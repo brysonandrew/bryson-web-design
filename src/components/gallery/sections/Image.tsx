@@ -36,6 +36,7 @@ export const Image: FC<TProps> = ({
     image: resolveDimensions(image),
   });
   const isDimensions = dimensions !== null;
+  const isMotionBlur = isSafari && isBrowser;
   return (
     <>
       {!isLoaded && (
@@ -50,8 +51,7 @@ export const Image: FC<TProps> = ({
             opacity: isLoaded && isDimensions ? 1 : 0,
             x: '-50%',
             y: '-50%',
-            ...(isTransitioningGallery &&
-            !(isSafari && isBrowser)
+            ...(isTransitioningGallery && !isMotionBlur
               ? { filter: resolveUrlId(MOTION_BLUR_ID) }
               : {}),
           }}

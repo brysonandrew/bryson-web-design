@@ -18,6 +18,7 @@ import { Small as Placeholder } from '@components/placeholder/Small';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useCurrName } from '@hooks/params/useCurrName';
+import clsx from 'clsx';
 
 export const IMAGE_SIZE = 320;
 
@@ -60,10 +61,14 @@ export const Image: FC<TProps> = (props) => {
   const motionConfig = resolveDynamicSlowMotionConfig({
     delay,
   });
+  const isGallery = Boolean(name);
 
   return (
     <motion.li
-      className='absolute'
+      className={clsx(
+        'absolute',
+        isGallery && 'pointer-events-none',
+      )}
       style={{
         ...xStyle,
         ...depthStyle,
@@ -79,7 +84,7 @@ export const Image: FC<TProps> = (props) => {
       animate={{
         opacity: isLoaded ? 1 : 0,
         z,
-        scale: name ? 0 : 1,
+        scale: isGallery ? 0 : 1,
         ...motionConfig,
       }}
       exit={{ opacity: 0, scale: 0 }}

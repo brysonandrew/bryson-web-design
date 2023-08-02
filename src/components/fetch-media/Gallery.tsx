@@ -14,5 +14,5 @@ export const Gallery: FC<TProps> = ({ moduleRecord }) => {
     <Responsive
       key={resolveKey(moduleRecord.png.filePath)}
     />
-  );
+  ); 
 };

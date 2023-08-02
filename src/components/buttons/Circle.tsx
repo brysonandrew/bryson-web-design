@@ -10,7 +10,6 @@ const SHARED_CLASS = 'rounded-full';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
-const Background = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<'button'>;
 export const Circle: FC<TProps> = ({
@@ -19,7 +18,7 @@ export const Circle: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      'relative glow-interactive w-10 h-10 center',
+      'relative center glow-interactive w-10 h-10',
       SHARED_CLASS,
     )}
     {...PARENT_GLOW_PROPS}
@@ -31,7 +30,7 @@ export const Circle: FC<TProps> = ({
       className='relative p-3 cursor-pointer text-color-1'
       {...props}
     >
-      <Background>{children}</Background>
+      <>{children}</>
     </Button>
   </Root>
 );

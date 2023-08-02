@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import {
+  COLORS,
   resolveDropShadow,
   resolveShadow,
 } from '@constants/colors';
@@ -16,10 +17,8 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '../../../../../hooks/media/nav/useTo';
-import * as unoConfig from '@uno/config';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';
-const COLORS = unoConfig.default.theme.colors;
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

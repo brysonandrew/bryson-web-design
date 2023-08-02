@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Text } from './Text';
 import { resolveCompositeKey } from '@utils/keys';
-import { PRESENCE_OPACITY_DELAY } from '@constants/animation';
+import {
+  PRESENCE_OPACITY_DELAY,
+  SLOW_MOTION_CONFIG,
+} from '@constants/animation';
 
 const Root = styled(motion.div)``;
 
@@ -23,6 +26,7 @@ export const Name: FC<TProps> = ({
     <Root
       className='relative flex shrink-0 w-full pt-1 pb-4 pl-0 justify-center md:w-37 md:pb-2 md:pl-6 md:justify-start'
       {...PRESENCE_OPACITY_DELAY}
+      {...SLOW_MOTION_CONFIG}
     >
       <motion.div
         key={resolveCompositeKey('Name', title)}
@@ -32,7 +36,7 @@ export const Name: FC<TProps> = ({
         }
       >
         <Text>{title}</Text>
-      </motion.div>
+      </motion.div> 
     </Root>
   );
 };

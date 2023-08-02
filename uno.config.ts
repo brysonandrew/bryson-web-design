@@ -34,6 +34,7 @@ const config = defineConfig({
       'baby-blue-09': 'var(--baby-blue-09)',
 
       black: 'var(--black)',
+      'black-02': 'var(--black-02)',
       'black-04': 'var(--black-04)',
       'black-1': 'var(--black-1)',
       'black-2': 'var(--black-2)',
@@ -76,14 +77,14 @@ const config = defineConfig({
       'glow-interactive-dark',
       {
         'box-shadow':
-          '0 0 1px 1px var(--teal-04), 0 0 1px 2px var(--teal-02)',
+          '0 0 1px 1px var(--teal-02), 0 0 1px 2px var(--teal-02)',
       },
     ],
     [
       'glow-interactive-light',
       {
         'box-shadow':
-          '0 0 1px 1px var(--gray-2), 0 0 1px 2px var(--white)',
+        '0 0 1px 1px var(--black-04), 0 0 1px 2px var(--black-02)',
       },
     ],
     [
@@ -106,7 +107,7 @@ const config = defineConfig({
     'background-color': 'dark:bg-teal-bright bg-white',
     'background-color-1': 'dark:bg-teal bg-gray-1',
     'background-color-2': 'dark:bg-black-1 bg-white',
-    'background-color-3': 'dark:bg-baby-blue bg-baby-blue',
+    'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-stroke':
