@@ -1,19 +1,11 @@
-import { useState, type FC, useRef } from 'react';
+import { useState, type FC } from 'react';
 import { NOOP } from '@constants/functions';
 import { useEventListener } from '@hooks/useEventListener';
 import { useContext } from '@state/Context';
 import type { TChildren } from '@t/index';
 import { usePointerEnterLeave } from './usePointerEnterLeave';
 import { Switch } from '@components/select/Switch';
-
-const DELAY_FRAMES = 12;
-
-type TPosition = {
-  nextX: number;
-  nextY: number;
-};
-
-type TPositions = TPosition[];
+import { useTimeoutRef } from '@hooks/useTimeoutRef';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -26,7 +18,7 @@ export const Cursor: FC<TCursorProps> = ({
   const [isReady, setReady] = useState(false);
   const { cursorX, cursorY, scrollX, scrollY, cursorKey } =
     useContext();
-  const positionsRef = useRef<TPositions>([]);
+  const { timeoutRef } = useTimeoutRef();
 
   const cursorOn = (_: PointerEvent) => {
     setReady(true);
@@ -34,21 +26,15 @@ export const Cursor: FC<TCursorProps> = ({
 
   const cursorOff = (_: PointerEvent) => {
     setReady(false);
-    positionsRef.current = [];
   };
 
   const handleMove = (event: PointerEvent) => {
-    const index = positionsRef.current.length;
-    if (index >= DELAY_FRAMES) {
-      const { nextX, nextY } =
-        positionsRef.current[index - DELAY_FRAMES];
-      cursorX.set(nextX);
-      cursorY.set(nextY);
-    }
-
     const nextX = event.pageX - scrollX.get();
     const nextY = event.pageY - scrollY.get();
-    positionsRef.current.push({ nextX, nextY });
+    timeoutRef.current = setTimeout(() => {
+      cursorX.set(nextX);
+      cursorY.set(nextY);
+    }, 200);
   };
 
   useEventListener<'pointermove'>(
