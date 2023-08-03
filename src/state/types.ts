@@ -1,3 +1,4 @@
+import { TCursorKey } from '@components/select/config';
 import { TProjectKey } from '@constants/projects';
 import { TUseDarkMode } from '@hooks/useDarkMode';
 import {
@@ -24,10 +25,10 @@ export type TState = {
   projectImageRecord: TProjectImageRecord;
   buildImages: TMediaRecord[];
   isScroll: boolean;
-  isScrollStart: boolean;
   isInit: boolean;
   isSound: boolean;
   isTransitioningGallery: boolean;
+  cursorKey: TCursorKey;
   context: AudioContext;
   contact: TContactState;
 };
@@ -42,6 +43,9 @@ export type TContext = TState & {
 
   scrollX: MotionValue;
   scrollY: MotionValue;
+
+  cursorX: MotionValue;
+  cursorY: MotionValue;
 
   dispatch: TDispatch;
 };
@@ -58,6 +62,10 @@ export type TUpdateProjectImageRecord = {
 };
 
 export type TAction =
+  | {
+      type: 'cursor-key';
+      value: TCursorKey;
+    }
   | {
       type: 'build-image-record';
       value: TUpdateBuildImageRecord;
@@ -99,16 +107,8 @@ export type TAction =
       value: boolean;
     }
   | {
-      type: 'scroll-start';
-      value: boolean;
-    }
-  | {
       type: 'toggle-sound';
       value: null;
-    }
-  | {
-      type: 'select-id';
-      value: null | string;
     }
   | {
       type: 'cursor-ready';

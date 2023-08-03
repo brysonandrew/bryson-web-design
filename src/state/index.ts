@@ -5,6 +5,12 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'cursor-key': {
+      return {
+        ...state,
+        cursorKey: value,
+      };
+    }
     case 'gallery-drag': {
       return {
         ...state,
@@ -72,15 +78,7 @@ export const reducer = (
     case 'scroll': {
       return {
         ...state,
-        ...(value ? { isScrollStart: true } : {}),
         isScroll: value,
-      };
-    }
-    case 'scroll-start': {
-      return {
-        ...state,
-        ...(value ? {} : { isScroll: false }),
-        isScrollStart: value,
       };
     }
     case 'toggle-sound': {

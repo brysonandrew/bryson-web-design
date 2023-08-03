@@ -5,7 +5,6 @@ import { Link as __Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useHome } from '@hooks/useHome';
 import { ThinLine } from '@components/thin-line';
-import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 
 const Root = styled(motion.div)``;

@@ -5,9 +5,9 @@ import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
 import { useContext } from '@state/Context';
 import { isDesktop } from 'react-device-detect';
-import { useHover } from '@hooks/useHover';
 import { TMediaRecord } from '@t/media';
 import { Image } from './Image';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 export const Root = styled(motion.div)``;
 
@@ -24,7 +24,7 @@ export const Control: FC<TProps> = ({
   container,
   width,
 }) => {
-  const { isHover, ...hoverHandlers } = useHover();
+  const { isHover, ...hoverHandlers } = useHoverKey('none');
   const { scrollX, scrollY } = useContext();
 
   const containerDimensions = {
