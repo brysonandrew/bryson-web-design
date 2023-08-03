@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
+import { NOOP } from '@constants/functions';
 const BRYSONA_DISPLAY_MODE_KEY = 'BRYSONA_DISPLAY_MODE_KEY';
 
 export type TUseDarkMode = {
@@ -7,6 +8,13 @@ export type TUseDarkMode = {
   toggle: () => void;
   enable: () => void;
   disable: () => void;
+};
+
+export const INIT: TUseDarkMode = {
+  isDarkMode: true,
+  toggle: NOOP,
+  enable: NOOP,
+  disable: NOOP,
 };
 
 export const useDarkMode = (

@@ -1,12 +1,12 @@
 import { useMemo, useReducer } from 'react';
 import type { FC } from 'react';
 import type { TReducer } from './types';
+import type { TChildrenElement } from '@t/index';
 import { reducer } from '.';
 import { Context } from './Context';
 import { STATE } from './constants';
-import type { TChildrenElement } from '@t/index';
 import { isMobile } from 'react-device-detect';
-import { useScroll } from 'framer-motion';
+import { useMotionValue, useScroll } from 'framer-motion';
 import { PNG_EXT, WEBP_EXT } from '@constants/media';
 import { resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
 import { resolveProjectImageResolverRecord } from '@hooks/media/resolveProjectScreensRecord';
@@ -49,6 +49,8 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
   const { scrollX, scrollY } = useScroll();
   const [state, dispatch] = useReducer<TReducer>(reducer, {
     ...STATE,
@@ -71,6 +73,8 @@ export const Provider: FC<TProviderProps> = ({
           [WEBP_EXT]: screensRecordSmallWebp,
         },
         randomIndicies,
+        cursorX,
+        cursorY,
         scrollX,
         scrollY,
         dispatch,

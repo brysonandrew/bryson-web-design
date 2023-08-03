@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useCursor } from '../../../cursor/useCursor';
-import { Cursor } from '../../../cursor';
+import { motion } from 'framer-motion';
+import { useHover } from '@hooks/useHover';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 const Root = styled(motion.a)``;
 
@@ -16,8 +16,8 @@ export const Link: FC<TProps> = ({
   subTitle,
   Icon,
 }) => {
-  const { isHover, cursorX, cursorY, ...handlers } =
-    useCursor();
+  const { isHover, ...handlers } =
+    useHoverKey('open-in-new');
 
   return (
     <Root
@@ -28,7 +28,6 @@ export const Link: FC<TProps> = ({
       {...handlers}
     >
       <MetalGlow />
-
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>
@@ -50,11 +49,6 @@ export const Link: FC<TProps> = ({
           </motion.h6>
         </div>
       </div>
-      <AnimatePresence>
-        {isHover && (
-          <Cursor key='CURSOR' {...{ cursorX, cursorY }} />
-        )}
-      </AnimatePresence>
     </Root>
   );
 };

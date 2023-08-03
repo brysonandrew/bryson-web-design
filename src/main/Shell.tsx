@@ -23,6 +23,8 @@ import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
+import { Cursor } from '@components/cursor';
+import { isDesktop } from 'react-device-detect';
 
 const Root = styled(motion.div)``;
 
@@ -46,32 +48,35 @@ export const Shell: FC<TProps> = ({ children }) => {
       : ZERO_MOTION_CONFIG;
 
   return (
-    <Root>
-      <MotionConfig {...SLOW_MOTION_CONFIG}>
-        <Variables />
-        <Filters /> 
-        <ClipPaths />
-        <AnimatePresence mode='wait'>
-          <Background key={isDarkMode ? 'dark' : 'light'}>
-            <Processor
-              width='100%'
-              height='100%'
-              classValue='dark:fill-gray fill-gray-3'
-              {...PRESENCE_OPACITY_01}
-              {...resolveTransition(0.28)}
-            />
-          </Background>
-        </AnimatePresence>
-        <motion.div
-          {...PRESENCE_OPACITY}
-          {...resolveTransition(0.8)}
-          onAnimationComplete={handleAnimationComplete}
-        >
-          <MotionConfig {...MOTION_CONFIG}>
-            <Network>{children}</Network>
-          </MotionConfig>
-        </motion.div>
-      </MotionConfig>
-    </Root>
+    <>
+      <Root>
+        <MotionConfig {...SLOW_MOTION_CONFIG}>
+          <Variables />
+          <Filters />
+          <ClipPaths />
+          <AnimatePresence mode='wait'>
+            <Background key={isDarkMode ? 'dark' : 'light'}>
+              <Processor
+                width='100%'
+                height='100%'
+                classValue='dark:fill-gray fill-gray-3'
+                {...PRESENCE_OPACITY_01}
+                {...resolveTransition(0.28)}
+              />
+            </Background>
+          </AnimatePresence>
+          <motion.div
+            {...PRESENCE_OPACITY}
+            {...resolveTransition(0.8)}
+            onAnimationComplete={handleAnimationComplete}
+          >
+            <MotionConfig {...MOTION_CONFIG}>
+              <Network>{children}</Network>
+            </MotionConfig>
+          </motion.div>
+        </MotionConfig>
+      </Root>
+      {isDesktop && <Cursor />}
+    </>
   );
 };

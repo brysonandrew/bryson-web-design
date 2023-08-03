@@ -3,7 +3,7 @@ import { Email } from '@components/icons/links/Email';
 import { Github } from '@components/icons/links/Github';
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import { TLinks } from './config';
 import { Link } from './Link';
 
@@ -45,4 +45,4 @@ export const Links: FC<TProps> = (props) => {
       ))}
     </Root>
   );
-};
+}; 
