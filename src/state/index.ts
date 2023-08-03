@@ -5,10 +5,10 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
-    case 'cursor-key': {
+    case 'hover-key': {
       return {
         ...state,
-        cursorKey: value,
+        hoverKey: value,
       };
     }
     case 'gallery-drag': {

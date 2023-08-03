@@ -1,6 +1,7 @@
 import { TCursorKey } from '@components/select/config';
 import { TProjectKey } from '@constants/projects';
 import { TUseDarkMode } from '@hooks/useDarkMode';
+import { THoverKey } from '@hooks/useHoverKey';
 import {
   TContactState,
   TFormKey,
@@ -28,7 +29,7 @@ export type TState = {
   isInit: boolean;
   isSound: boolean;
   isTransitioningGallery: boolean;
-  cursorKey: TCursorKey;
+  hoverKey: THoverKey;
   context: AudioContext;
   contact: TContactState;
 };
@@ -63,8 +64,8 @@ export type TUpdateProjectImageRecord = {
 
 export type TAction =
   | {
-      type: 'cursor-key';
-      value: TCursorKey;
+      type: 'hover-key';
+      value: THoverKey;
     }
   | {
       type: 'build-image-record';

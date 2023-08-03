@@ -16,9 +16,9 @@ import { useTo } from '@hooks/media/nav/useTo';
 import { resolveKey } from '@components/placeholder/resolveKey';
 import { Small as Placeholder } from '@components/placeholder/Small';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 export const IMAGE_SIZE = 320;
 
@@ -47,6 +47,7 @@ export const Image: FC<TProps> = (props) => {
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
+  const { ...handlers } = useHoverKey('gallery');
 
   const resolveDelay = () => {
     if (name) {
@@ -89,6 +90,7 @@ export const Image: FC<TProps> = (props) => {
       }}
       exit={{ opacity: 0, scale: 0 }}
       onClick={handleOnSound}
+      {...handlers}
     >
       <Link className='cursor-zoom-in' to={to}>
         {!isLoaded && (

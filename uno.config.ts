@@ -111,6 +111,7 @@ const config = defineConfig({
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',
     'text-color-3': 'dark:text-white text-black',
+    'text-color-4': 'dark:text-black text-white',
     'text-color-stroke':
       'dark:text-baby-blue-stroke text-gray-stroke',
     'glow-interactive':

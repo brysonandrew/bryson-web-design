@@ -4,10 +4,15 @@ import { useOffSound } from '@hooks/sounds/useOffSound';
 import { Button } from '../../buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 type TProps = TClassValueProps;
 export const Close: FC<TProps> = (props) => {
   const to = useTo({});
+  const { isHover, ...handlers } = useHoverKey(
+    'big',
+    'right',
+  );
   const handleOffSound = useOffSound();
   const handleClose = () => {
     handleOffSound();
@@ -19,6 +24,7 @@ export const Close: FC<TProps> = (props) => {
       onClick={handleClose}
       Icon={Cross}
       {...props}
+      {...handlers}
     />
   );
 };
