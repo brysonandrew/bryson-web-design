@@ -12,12 +12,14 @@ import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 const InternalLink = styled(motion(Link))``;
 
 type TProps = TSlugProps;
 export const Item: FC<TProps> = ({ slug }) => {
   const { pathname } = useLocation();
+  const { isHover, ...handlers } = useHoverKey('gallery');
 
   const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
@@ -32,7 +34,9 @@ export const Item: FC<TProps> = ({ slug }) => {
           ? item.altTo
           : `${pathname}?${PROJECT_KEY}=${slug}&${NAME_KEY}=${1}`
       }
+      className='cursor-zoom-in'
       {...PARENT_GLOW_PROPS}
+      {...handlers}
     >
       <Content {...item}>
         <Time time={item.time} />

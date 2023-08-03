@@ -16,7 +16,7 @@ export const Cursor: FC<TCursorProps> = ({
   children,
 }) => {
   const [isReady, setReady] = useState(false);
-  const { cursorX, cursorY, scrollX, scrollY, cursorKey } =
+  const { cursorX, cursorY, scrollX, scrollY } =
     useContext();
   const { timeoutRef } = useTimeoutRef();
 

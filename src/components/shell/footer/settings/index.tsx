@@ -10,6 +10,7 @@ const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<'div'>;
 export const Settings: FC<TProps> = (props) => {
+  
   return (
     <Root
       className={clsx('absolute bottom-6 right-6 row z-10')}

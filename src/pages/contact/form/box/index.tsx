@@ -13,6 +13,7 @@ import {
   TInputElement,
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 const Root = styled(motion.label)``;
 
@@ -33,8 +34,8 @@ export const Box: FC<TProps> = ({
   children,
 }) => {
   const handleFocus = useFocus(input, isFocused);
+  const { isHover, ...handlers } = useHoverKey('big', name);
 
-  const { isHover, ...handlers } = useHover();
   return (
     <Root
       className={clsx('relative input-label', [
@@ -46,10 +47,10 @@ export const Box: FC<TProps> = ({
       <MetalGlow />
       {isFocused && <Select key={name} />}
       {children}
-      <AnimatePresence> 
+      <AnimatePresence>
         {isEmpty && (
           <Clear
-            name={name} 
+            name={name}
             isReady={Boolean(isHover)}
             onFocus={handleFocus}
           />

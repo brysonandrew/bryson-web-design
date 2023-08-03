@@ -5,9 +5,15 @@ import { useContext } from '@state/Context';
 import { resolveVerticalShiftPresence } from '@utils/animation';
 import { AnimatePresence } from 'framer-motion';
 import { ICON_CLASS_VALUE_PROPS } from '../constants';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 export const DarkMode = () => {
   const { darkMode } = useContext();
+
+  const { isHover, ...handlers } = useHoverKey(
+    'big',
+    'dark-mode',
+  );
 
   const handleTap = () => {
     darkMode.toggle();
@@ -24,6 +30,7 @@ export const DarkMode = () => {
       aria-label='dark-mode'
       classValue='overflow-hidden preserve-3d perspective-1000'
       onTap={handleTap}
+      {...handlers}
     >
       <AnimatePresence mode='wait' initial={false}>
         {darkMode.isDarkMode ? (

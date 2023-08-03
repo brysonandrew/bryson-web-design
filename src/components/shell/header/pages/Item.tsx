@@ -5,6 +5,7 @@ import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
 import clsx, { ClassValue } from 'clsx';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -26,6 +27,10 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
+  const { isHover, ...handlers } = useHoverKey(
+    'big',
+    children,
+  );
 
   return (
     <Link
@@ -34,6 +39,7 @@ export const Item: FC<TProp> = ({
       className={clsx('relative center pb-2', [
         isActive && 'not-allowed',
       ])}
+      {...handlers}
     >
       <h2
         className={clsx(

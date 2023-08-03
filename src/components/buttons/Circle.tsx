@@ -2,6 +2,7 @@ import { Glow } from '@components/glow';
 import { Metal } from '@components/metal';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 import styled from '@emotion/styled';
+import { useHoverKey } from '@hooks/useHoverKey';
 import { TClassValueProps } from '@t/index';
 import clsx from 'clsx';
 import { HTMLMotionProps, motion } from 'framer-motion';
@@ -17,23 +18,25 @@ export const Circle: FC<TProps> = ({
   classValue,
   children,
   ...props
-}) => (
-  <Root
-    className={clsx(
-      'relative center glow-interactive w-10 h-10',
-      SHARED_CLASS,
-      classValue,
-    )}
-    {...PARENT_GLOW_PROPS}
-  >
-    <Glow classValue={SHARED_CLASS} drop={0.5}>
-      <Metal classValue={SHARED_CLASS} />
-    </Glow>
-    <Button
-      className='relative p-3 cursor-pointer text-color-1'
-      {...props}
+}) => {
+  return (
+    <Root
+      className={clsx(
+        'relative center glow-interactive w-10 h-10',
+        SHARED_CLASS,
+        classValue,
+      )}
+      {...PARENT_GLOW_PROPS}
     >
-      <>{children}</>
-    </Button>
-  </Root>
-);
+      <Glow classValue={SHARED_CLASS} drop={0.5}>
+        <Metal classValue={SHARED_CLASS} />
+      </Glow>
+      <Button
+        className='relative p-3 cursor-pointer text-color-1'
+        {...props}
+      >
+        <>{children}</>
+      </Button>
+    </Root>
+  );
+};

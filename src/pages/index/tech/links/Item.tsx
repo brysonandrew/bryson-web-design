@@ -9,8 +9,8 @@ import { Border as Select } from '@components/select/Border';
 import { MetalDark } from '@components/metal/MetalDark';
 import { Box } from '@components/glow/Box';
 import { useContext } from '@state/Context';
-import { useHover } from '@hooks/useHover';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { HOVER_KEY_DELIMITER } from '@utils/keys';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -25,8 +25,10 @@ export const Item: FC<TItem> = ({
   const {
     darkMode: { isDarkMode },
   } = useContext();
-  const { isHover, ...handlers } =
-    useHoverKey('open-in-new');
+  const { isHover, ...handlers } = useHoverKey(
+    'open-in-new',
+    title,
+  );
 
   return (
     <Root
