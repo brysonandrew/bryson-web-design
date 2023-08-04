@@ -29,7 +29,7 @@ type TProps = HTMLMotionProps<'img'> & {
   mediaRecord: TMediaRecord;
 };
 export const Image: FC<TProps> = (props) => {
-  const { index, count, mediaRecord, ...pictureProps } =
+  const { index, count, mediaRecord, randomIndex, ...pictureProps } =
     props;
   const name = useCurrName();
   const handleOnSound = useOnSound();

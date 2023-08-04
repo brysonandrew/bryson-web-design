@@ -13,7 +13,7 @@ const Rect = styled(motion.rect)``;
 
 type TProps = {
   classValue?: ClassValue;
-  children: JSX.Element;
+  children?: JSX.Element;
 };
 export const Background: FC<TProps> = ({
   classValue,

@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { SELECT_LAYOUT_ID } from './config';
+import {
+  CURSOR_LAYOUT_ID,
+  SELECT_LAYOUT_ID,
+} from './config';
 import { TChildren, TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/react';
 import { useContext } from '@state/Context';
@@ -38,7 +41,7 @@ export const Sight: FC<TProps> = ({
   } = useContext();
   return (
     <Root
-      layoutId={SELECT_LAYOUT_ID}
+      layoutId={CURSOR_LAYOUT_ID}
       style={{
         mixBlendMode: isDarkMode
           ? 'exclusion'

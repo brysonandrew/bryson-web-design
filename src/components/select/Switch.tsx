@@ -3,17 +3,24 @@ import { Sight } from './Sight';
 import { OpenInNew } from '@components/icons/OpenInNew';
 import { Gallery } from '@components/icons/Gallery';
 import { resolveCursorKeyFromHoverKey } from './config';
+import { MotionStyle } from 'framer-motion';
 
 export const Switch = () => {
-  const { hoverKey } = useContext();
+  const {
+    hoverKey,
+    darkMode: { isDarkMode },
+  } = useContext();
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
+  const iconMixBlend = isDarkMode
+    ? 'hard-light'
+    : 'luminosity';
   switch (cursorKey) {
     case 'open-in-new': {
       return (
         <Sight
           animate={{
             scale: 1.4,
-            mixBlendMode: 'luminosity',
+            mixBlendMode: iconMixBlend,
           }}
         >
           <OpenInNew />
@@ -23,7 +30,7 @@ export const Switch = () => {
     case 'gallery': {
       return (
         <Sight
-          animate={{ scale: 2, mixBlendMode: 'luminosity' }}
+          animate={{ scale: 2, mixBlendMode: iconMixBlend }}
         >
           <Gallery />
         </Sight>
@@ -33,7 +40,7 @@ export const Switch = () => {
       return <Sight animate={{ opacity: 0.4, scale: 2 }} />;
     }
     case 'none': {
-      return <Sight animate={{ opacity: 0 }} />;
+      return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }
     default:
       return <Sight animate={{ scale: 0.2 }} />;

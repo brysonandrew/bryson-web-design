@@ -55,7 +55,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Filters />
           <ClipPaths />
           <AnimatePresence mode='wait'>
-            <Background key={isDarkMode ? 'dark' : 'light'}>
+            <Background>
               <Processor
                 width='100%'
                 height='100%'
