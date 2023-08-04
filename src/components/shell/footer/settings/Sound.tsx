@@ -1,4 +1,4 @@
-import { Circle } from '@components/buttons/Circle';
+import { Circle } from '@components/buttons/circle';
 import { VolumeOff } from '@components/icons/sound/VolumeOff';
 import { useContext } from '@state/Context';
 import {
@@ -10,6 +10,7 @@ import { VolumeOn } from '@components/icons/sound/VolumeOn';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { motion } from 'framer-motion';
+import { Button } from '@components/buttons/circle/Button';
 
 export const Sound = () => {
   const { isSound, isScroll, dispatch } = useContext();
@@ -38,12 +39,14 @@ export const Sound = () => {
       {...SHARED_ANIMATION_PROPS}
       {...handlers}
     >
-      <Circle aria-label='sound' onTap={handleTap}>
-        {isSound ? (
-          <VolumeOn {...iconProps} />
-        ) : (
-          <VolumeOff {...iconProps} />
-        )}
+      <Circle aria-label='sound'>
+        <Button onTap={handleTap}>
+          {isSound ? (
+            <VolumeOn {...iconProps} />
+          ) : (
+            <VolumeOff {...iconProps} />
+          )}
+        </Button>
       </Circle>
     </motion.div>
   );

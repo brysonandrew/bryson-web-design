@@ -37,7 +37,7 @@ export const Link: FC<TProps> = ({
         <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
           {title}
         </h5>
-        <div className='hidden sm:flex row'>
+        {/* <div className='hidden sm:flex row'>
           <div className='p-1' />
           <motion.h6
             className='uppercase italic text-xs text-color'
@@ -48,7 +48,7 @@ export const Link: FC<TProps> = ({
           >
             {subTitle}
           </motion.h6>
-        </div>
+        </div> */}
       </div>
     </Root>
   );

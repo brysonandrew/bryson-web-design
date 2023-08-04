@@ -30,7 +30,7 @@ export const Switch = () => {
         >
           <div className='center overflow-hidden'>
             <OpenInNew classValue='text-color-4' />
-            <motion.span
+            <motion.code
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
@@ -41,7 +41,7 @@ export const Switch = () => {
               className='absolute left-full top-1/2 text-color-1 text-2xl'
             >
               {secondaryKey}
-            </motion.span>
+            </motion.code>
           </div>
         </Sight>
       );

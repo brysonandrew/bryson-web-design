@@ -1,4 +1,4 @@
-import { Circle } from '@components/buttons/Circle';
+import { Circle } from '@components/buttons/circle';
 import { Moon } from '@components/icons/dark-mode/Moon';
 import { Sun } from '@components/icons/dark-mode/Sun';
 import { useContext } from '@state/Context';
@@ -11,6 +11,7 @@ import {
 } from '../config';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
+import { Button } from '@components/buttons/circle/Button';
 
 export const DarkMode = () => {
   const { darkMode, isScroll } = useContext();
@@ -44,15 +45,16 @@ export const DarkMode = () => {
       <Circle
         aria-label='dark-mode'
         classValue='overflow-hidden preserve-3d perspective-1000'
-        onTap={handleTap}
       >
-        <AnimatePresence mode='wait' initial={false}>
-          {darkMode.isDarkMode ? (
-            <Moon {...iconProps('-100%')} />
-          ) : (
-            <Sun {...iconProps('100%')} />
-          )}
-        </AnimatePresence>
+        <Button onTap={handleTap}>
+          <AnimatePresence mode='wait' initial={false}>
+            {darkMode.isDarkMode ? (
+              <Moon {...iconProps('-100%')} />
+            ) : (
+              <Sun {...iconProps('100%')} />
+            )}
+          </AnimatePresence>
+        </Button>
       </Circle>
     </motion.div>
   );

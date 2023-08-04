@@ -5,6 +5,9 @@ import {
 } from 'unocss';
 import { SPACING } from './uno.config-spacing';
 
+const SANS = 'Bodoni Moda';
+const MONO = 'Nova Mono';
+
 const config = defineConfig({
   theme: {
     breakpoints: {
@@ -107,7 +110,7 @@ const config = defineConfig({
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white',
     'background-color-1': 'dark:bg-teal bg-gray-1',
-    'background-color-2': 'dark:bg-black-3 bg-white',
+    'background-color-2': 'dark:bg-black-2 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
@@ -116,6 +119,8 @@ const config = defineConfig({
     'text-color-4': 'dark:text-black text-white',
     'text-color-stroke':
       'dark:text-baby-blue-stroke text-gray-stroke',
+    'circle-interactive':
+      'relative p-3 cursor-pointer text-color-1',
     'glow-interactive':
       'dark:glow-interactive-dark glow-interactive-light',
     'w-core':
@@ -151,14 +156,22 @@ const config = defineConfig({
     presetUno({ dark: 'class' }),
     presetWebFonts({
       fonts: {
-        sans: 'Bodoni Moda',
-        mono: 'Nova Mono',
+        sans: SANS,
+        mono: MONO,
       },
     }),
   ],
   preflights: [
     {
       getCSS: ({ theme }) => `
+        html, body {
+          font-family: ${SANS}, Chakra Petch, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica Neue, sans-serif;
+        }
+        code, tt {
+          font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
+        }
         body {
           color: ${theme.colors.gray};
           background-color: ${theme.colors['white']};
