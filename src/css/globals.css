@@ -76,20 +76,9 @@ hr {
 
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: var(--black-2);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--teal-bright);
-  border: 1px solid var(--baby-blue);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--white-08);
 }
 
 input:-webkit-autofill {
   filter: none;
   box-shadow: 0 0 0 100px #111 inset;
-  -webkit-text-fill-color: var(--baby-blue) !important;
 }

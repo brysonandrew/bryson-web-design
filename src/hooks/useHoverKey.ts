@@ -13,19 +13,10 @@ export type THoverKey =
   | `${TCursorKey}${THoverKeyDelimiter}${string}`
   | null;
 
-type TReturn = Pick<
-  TMotionDivProps,
-  | 'onHoverStart'
-  | 'onHoverEnd'
-  | 'onPointerLeave'
-  | 'onMouseLeave'
-> & {
-  isHover: boolean;
-};
 export const useHoverKey = (
   cursorKey: TCursorKey,
   secondaryKey = 'global',
-): TReturn => {
+) => {
   const { hoverKey, dispatch } = useContext();
   if (!isDesktop) return { isHover: false };
   const key = resolveCompositeHoverKey(

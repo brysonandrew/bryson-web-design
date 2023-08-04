@@ -37,7 +37,7 @@ export const Item: FC<TProp> = ({
       to={to}
       onClick={onClick}
       className={clsx('relative center pb-2', [
-        isActive && 'not-allowed',
+        isActive && 'cursor-default',
       ])}
       {...handlers}
     >

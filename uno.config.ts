@@ -46,11 +46,13 @@ const config = defineConfig({
       'gray-3': 'var(--gray-3)',
 
       white: 'var(--white)',
+      'white-1': 'var(--white-1)',
+      'white-2': 'var(--white-2)',
+      'white-3': 'var(--white-3)',
+
       'white-01': 'var(--white-01)',
       'white-02': 'var(--white-02)',
       'white-04': 'var(--white-04)',
-      'white-1': 'var(--white-1)',
-      'white-2': 'var(--white-2)',
 
       current: 'var(--current)',
       transparent: 'var(--transparent)',
@@ -128,8 +130,8 @@ const config = defineConfig({
     'column-end': 'flex flex-col items-end',
     'column-space': 'column justify-between',
     center: 'flex items-center justify-center',
-    'label-background': 'dark:bg-black-04 bg-white',
-    'input-background': 'dark:bg-black-04 bg-white-1',
+    'label-background': 'dark:bg-black-04 bg-white-2',
+    'input-background': 'dark:bg-black-04 bg-white-3',
     'input-label':
       'relative flex flex-col items-start w-full p-2 label-background md:flex-row',
     'input-textarea':
@@ -157,17 +159,51 @@ const config = defineConfig({
   preflights: [
     {
       getCSS: ({ theme }) => `
-        html,
         body {
           color: ${theme.colors.gray};
           background-color: ${theme.colors['white']};
+          transition: color 0.9s, background-color 0.9s;
         }
 
-        html.dark,
         html.dark body {
           background-color: ${theme.colors.black};
           color: ${theme.colors['teal-bright']};
+        } 
+
+        ::-webkit-scrollbar {
+          background-color: ${theme.colors['white-2']};
         }
+
+        html.dark ::-webkit-scrollbar {
+          background-color: ${theme.colors['black-2']};
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: ${theme.colors['gray']};
+          border: 1px solid ${theme.colors['gray-1']};
+        }
+
+        html.dark ::-webkit-scrollbar-thumb {
+          background-color: ${theme.colors['teal-bright']};
+          border: 1px solid ${theme.colors['baby-blue']};
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: ${theme.colors['gray-3']};
+        }
+
+        html.dark ::-webkit-scrollbar-thumb:hover {
+          background-color: ${theme.colors['white-08']};
+        }
+
+        input:-webkit-autofill {
+          -webkit-text-fill-color: ${theme.colors['black']} !important;
+        }
+
+        html.dark input:-webkit-autofill {
+          -webkit-text-fill-color: ${theme.colors['baby-blue']} !important;
+        }
+
       `,
     },
   ],

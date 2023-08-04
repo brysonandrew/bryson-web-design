@@ -5,7 +5,7 @@ export const WHITE_FILTER = {
 };
 
 export const COLOR_RGB_RECORD = {
-  white: '255,255,255',
+  white: '230,227,225',
   gray: '68,68,68',
   'baby-blue': '153,204,255',
   teal: '45,212,191',
