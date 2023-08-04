@@ -10,7 +10,6 @@ const Root = styled(motion.div)``;
 
 type TProps = HTMLMotionProps<'div'>;
 export const Settings: FC<TProps> = (props) => {
-  
   return (
     <Root
       className={clsx('absolute bottom-6 right-6 row z-10')}
@@ -19,7 +18,7 @@ export const Settings: FC<TProps> = (props) => {
       <DarkMode />
       {!isMobile && (
         <>
-          <div className='px-2' />
+          <motion.div className='px-2' />
           <Sound />
         </>
       )}

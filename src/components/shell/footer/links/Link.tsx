@@ -4,7 +4,6 @@ import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 import { motion } from 'framer-motion';
-import { useHover } from '@hooks/useHover';
 import { useHoverKey } from '@hooks/useHoverKey';
 
 const Root = styled(motion.a)``;
@@ -16,8 +15,10 @@ export const Link: FC<TProps> = ({
   subTitle,
   Icon,
 }) => {
-  const { isHover, ...handlers } =
-    useHoverKey('open-in-new');
+  const { isHover, ...handlers } = useHoverKey(
+    'open-in-new',
+    href,
+  );
 
   return (
     <Root

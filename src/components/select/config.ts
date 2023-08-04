@@ -16,8 +16,11 @@ export type TCursorKey =
 
 export const resolveCursorKeyFromHoverKey = (
   hoverKey: THoverKey,
+  isSecondary?: boolean,
 ) => {
   if (hoverKey === null) return null;
-  const cursorKey = hoverKey.split(HOVER_KEY_DELIMITER)[0];
+  const cursorKey = hoverKey.split(HOVER_KEY_DELIMITER)[
+    isSecondary ? 1 : 0
+  ];
   return cursorKey as TCursorKey;
 };

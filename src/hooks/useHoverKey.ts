@@ -1,5 +1,6 @@
 import { TCursorKey } from '@components/select/config';
 import { useContext } from '@state/Context';
+import { TMotionDivProps } from '@t/react';
 import {
   resolveCompositeHoverKey,
   HOVER_KEY_DELIMITER,
@@ -12,12 +13,21 @@ export type THoverKey =
   | `${TCursorKey}${THoverKeyDelimiter}${string}`
   | null;
 
+type TReturn = Pick<
+  TMotionDivProps,
+  | 'onHoverStart'
+  | 'onHoverEnd'
+  | 'onPointerLeave'
+  | 'onMouseLeave'
+> & {
+  isHover: boolean;
+};
 export const useHoverKey = (
   cursorKey: TCursorKey,
   secondaryKey = 'global',
-) => {
+): TReturn => {
   const { hoverKey, dispatch } = useContext();
-  if (!isDesktop) return {};
+  if (!isDesktop) return { isHover: false };
   const key = resolveCompositeHoverKey(
     cursorKey,
     secondaryKey,
@@ -30,8 +40,10 @@ export const useHoverKey = (
   const onHoverStart = () => update(true);
   const onHoverEnd = () => update(false);
 
+  const isHover = key === hoverKey;
+
   return {
-    isHover: key === hoverKey,
+    isHover,
     onHoverStart,
     onHoverEnd,
     onPointerLeave: onHoverEnd,

@@ -2,10 +2,10 @@ import { Glow } from '@components/glow';
 import { Metal } from '@components/metal';
 import { PARENT_GLOW_PROPS } from '@constants/colors';
 import styled from '@emotion/styled';
-import { useHoverKey } from '@hooks/useHoverKey';
 import { TClassValueProps } from '@t/index';
+import { TMotionButtonProps } from '@t/react';
 import clsx from 'clsx';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 const SHARED_CLASS = 'rounded-full';
@@ -13,7 +13,7 @@ const SHARED_CLASS = 'rounded-full';
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
 
-type TProps = HTMLMotionProps<'button'> & TClassValueProps;
+type TProps = TMotionButtonProps & TClassValueProps;
 export const Circle: FC<TProps> = ({
   classValue,
   children,

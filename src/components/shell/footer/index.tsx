@@ -19,12 +19,8 @@ export const Footer = () => {
         ) : (
           <Links key='LINKS' {...PRESENCE_X_LEFT} />
         )}
-      </AnimatePresence> 
-      <Settings
-        initial={false}
-        style={{ originX: '100%', originY: '100%' }}
-        animate={{ scale: isScroll ? 0.6 : 1 }}
-      />
+      </AnimatePresence>
+      <Settings />
     </Root>
   );
 };
