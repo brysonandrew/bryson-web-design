@@ -39,8 +39,9 @@ export const Shell: FC<TProps> = ({ children }) => {
   } = useContext();
   useHtmlTitle();
   useScrollControl();
+
   const handleAnimationComplete = () =>
-    dispatch({ type: 'init', value: null });
+    dispatch({ type: 'init' });
 
   const resolveTransition = (delay: number) =>
     isInit
@@ -55,11 +56,11 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Filters />
           <ClipPaths />
           <AnimatePresence mode='wait'>
-            <Background>
+            <Background key={isDarkMode ? 'dark' : 'light'}>
               <Processor
                 width='100%'
                 height='100%'
-                classValue='dark:fill-gray fill-gray-3'
+                classValue='dark:fill-black-3 fill-gray-3'
                 {...PRESENCE_OPACITY_01}
                 {...resolveTransition(0.28)}
               />
@@ -76,7 +77,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           </motion.div>
         </MotionConfig>
       </Root>
-      {isDesktop && <Cursor />}
+      {isDesktop && <Cursor/>}
     </>
   );
 };

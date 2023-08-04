@@ -1,4 +1,4 @@
-import { useState, type FC, useRef } from 'react';
+import { type FC, useRef, memo } from 'react';
 import { NOOP } from '@constants/functions';
 import { useEventListener } from '@hooks/useEventListener';
 import { useContext } from '@state/Context';
@@ -11,55 +11,59 @@ export type TCursorProps = {
   children?: TChildren;
   onTap?(event: PointerEvent): void;
 };
-export const Cursor: FC<TCursorProps> = ({
-  onTap,
-  children,
-}) => {
-  const [isReady, setReady] = useState(false);
-  const { cursorX, cursorY, scrollX, scrollY } =
-    useContext();
-  const { timeoutRef } = useTimeoutRef();
-  const isOnscreenRef = useRef(false);
+export const Cursor: FC<TCursorProps> = memo(
+  ({ onTap, children }) => {
+    const {
+      cursorX,
+      cursorY,
+      scrollX,
+      scrollY,
+      isCursorReady,
+      dispatch,
+    } = useContext();
+    const { timeoutRef } = useTimeoutRef();
+    const isOnscreenRef = useRef(false);
 
-  const onPointerEnter = () => {
-    isOnscreenRef.current = true;
-  };
+    const onPointerEnter = () => {
+      isOnscreenRef.current = true;
+    };
 
-  const onPointerLeave = () => {
-    if (isOnscreenRef.current) {
-      setReady(false);
-      isOnscreenRef.current = false;
-    }
-  };
-
-  const handleMove = (event: PointerEvent) => {
-    const nextX = event.pageX - scrollX.get();
-    const nextY = event.pageY - scrollY.get();
-
-    timeoutRef.current = setTimeout(() => {
-      cursorX.set(nextX);
-      cursorY.set(nextY);
-
+    const onPointerLeave = () => {
       if (isOnscreenRef.current) {
-        setReady(true);
+        dispatch({ type: 'cursor-ready', value: false });
+        isOnscreenRef.current = false;
       }
-    }, 200);
-  };
+    };
 
-  useEventListener<'pointermove'>(
-    'pointermove',
-    handleMove,
-  );
+    const handleMove = (event: PointerEvent) => {
+      const nextX = event.pageX - scrollX.get();
+      const nextY = event.pageY - scrollY.get();
 
-  useViewportPresence({ onPointerEnter, onPointerLeave });
+      timeoutRef.current = setTimeout(() => {
+        cursorX.set(nextX);
+        cursorY.set(nextY);
 
-  useEventListener(
-    children && onTap ? 'pointerdown' : null,
-    onTap ?? NOOP,
-  );
+        if (isOnscreenRef.current && !isCursorReady) {
+          dispatch({ type: 'cursor-ready', value: true });
+        }
+      }, 200);
+    };
 
-  if (isReady) {
-    return <Switch />;
-  }
-  return null;
-};
+    useEventListener<'pointermove'>(
+      'pointermove',
+      handleMove,
+    );
+
+    useViewportPresence({ onPointerEnter, onPointerLeave });
+
+    useEventListener(
+      children && onTap ? 'pointerdown' : null,
+      onTap ?? NOOP,
+    );
+
+    if (isCursorReady) {
+      return <Switch />;
+    }
+    return null;
+  },
+);

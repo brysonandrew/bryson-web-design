@@ -5,6 +5,7 @@ export const CURSOR_KEYS = ['React', ''];
 
 export const STATE: TState = {
   isInit: true,
+  isCursorReady: false,
   isScroll: false,
   isSound: false,
   isTransitioningGallery: false,

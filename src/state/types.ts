@@ -23,6 +23,7 @@ import type {
 } from 'react';
 
 export type TState = {
+  isCursorReady: boolean;
   projectImageRecord: TProjectImageRecord;
   buildImages: TMediaRecord[];
   isScroll: boolean;
@@ -64,6 +65,10 @@ export type TUpdateProjectImageRecord = {
 
 export type TAction =
   | {
+      type: 'cursor-ready';
+      value: boolean;
+    }
+  | {
       type: 'hover-key';
       value: THoverKey;
     }
@@ -101,7 +106,7 @@ export type TAction =
     }
   | {
       type: 'init';
-      value: null;
+      value?: null;
     }
   | {
       type: 'scroll';

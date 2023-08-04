@@ -3,17 +3,13 @@ import { Sight } from './Sight';
 import { OpenInNew } from '@components/icons/OpenInNew';
 import { Gallery } from '@components/icons/Gallery';
 import { resolveCursorKeyFromHoverKey } from './config';
-import { MotionStyle } from 'framer-motion';
+import { TMixblendModeKey } from '@t/css';
 
 export const Switch = () => {
-  const {
-    hoverKey,
-    darkMode: { isDarkMode },
-  } = useContext();
+  const { hoverKey } = useContext();
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const iconMixBlend = isDarkMode
-    ? 'hard-light'
-    : 'luminosity';
+  const iconMixBlend: TMixblendModeKey = 'normal';
+
   switch (cursorKey) {
     case 'open-in-new': {
       return (
@@ -37,7 +33,7 @@ export const Switch = () => {
       );
     }
     case 'big': {
-      return <Sight animate={{ opacity: 0.4, scale: 2 }} />;
+      return <Sight animate={{ opacity: 0.2, scale: 2 }} />;
     }
     case 'none': {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
