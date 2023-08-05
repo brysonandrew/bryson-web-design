@@ -16,9 +16,7 @@ const Root = styled(motion.div)``;
 export type TInViewChildrenProps = Omit<
   ReturnType<typeof useInView>,
   'ref'
-> & {
-  rect: TRect;
-};
+>;
 export type TBoxChildrenProps = {
   children(props: TInViewChildrenProps): TChildren;
 };
@@ -38,20 +36,10 @@ export const InView = ({
   children,
   ...props
 }: TInViewProps) => {
-  const [rect, setRect] = useState<TRect>(null);
   const { ref, ...rest } = useInView({
     threshold: 0.2,
-    triggerOnce: true,
-    onChange: (inView, entry) => {
-      if (inView) {
-        const rect = entry.target.getBoundingClientRect();
-        setRect(rect);
-      }
-    },
     ...options,
   });
-
-  console.log(rect)
 
   return (
     <Root
@@ -61,7 +49,7 @@ export const InView = ({
       transition={{ ...SLOW_MOTION_CONFIG, delay: 0 }}
       {...props}
     >
-      {children({ rect, ...rest })}
+      {children(rest)}
     </Root>
   );
 };

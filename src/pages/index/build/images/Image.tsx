@@ -19,6 +19,7 @@ import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { useContext } from '@state/Context';
 
 export const IMAGE_SIZE = 320;
 
@@ -29,8 +30,14 @@ type TProps = HTMLMotionProps<'img'> & {
   mediaRecord: TMediaRecord;
 };
 export const Image: FC<TProps> = (props) => {
-  const { index, count, mediaRecord, randomIndex, ...pictureProps } =
-    props;
+  const { isScrolling } = useContext();
+  const {
+    index,
+    count,
+    mediaRecord,
+    randomIndex,
+    ...pictureProps
+  } = props;
   const name = useCurrName();
   const handleOnSound = useOnSound();
   const { isLoaded, image, imageRef } = useLoadImage(
@@ -75,12 +82,16 @@ export const Image: FC<TProps> = (props) => {
         ...depthStyle,
         zIndex: z,
       }}
-      whileHover={{
-        scale: 1.4,
-        filter: INIT,
-        z: RANGE_Z,
-        zIndex: RANGE_Z,
-      }}
+      whileHover={
+        isScrolling
+          ? {}
+          : {
+              scale: 1.4,
+              filter: INIT,
+              z: RANGE_Z,
+              zIndex: RANGE_Z,
+            }
+      }
       initial={{ opacity: 0, scale: 0 }}
       animate={{
         opacity: 1,

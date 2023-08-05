@@ -26,6 +26,7 @@ export type TState = {
   isCursorReady: boolean;
   projectImageRecord: TProjectImageRecord;
   buildImages: TMediaRecord[];
+  isScrolling: boolean;
   isScroll: boolean;
   isInit: boolean;
   isSound: boolean;
@@ -110,6 +111,10 @@ export type TAction =
     }
   | {
       type: 'scroll';
+      value: boolean;
+    }
+  | {
+      type: 'scrolling';
       value: boolean;
     }
   | {
