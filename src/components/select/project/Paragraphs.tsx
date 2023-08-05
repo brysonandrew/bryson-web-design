@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { Fragment, type FC } from 'react';
 import { TItem } from '@t/projects';
 
 type TProps = Required<Pick<TItem, 'paragraphs'>>;
@@ -7,9 +7,12 @@ export const Paragraphs: FC<TProps> = ({ paragraphs }) => {
     <div>
       <ul>
         {paragraphs.map((paragraph, index) => (
-          <li key={`index-${index}`}>
-            <p>{paragraph}</p>
-          </li>
+          <Fragment key={`index-${index}`}>
+            {index !== 0 && <li className='py-2' />}
+            <li>
+              <p>{paragraph}</p>
+            </li>
+          </Fragment>
         ))}
       </ul>
     </div>

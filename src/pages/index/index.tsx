@@ -21,7 +21,7 @@ export const Index = () => {
           <Projects />
           <Space24 />
           <Contact />
-          <Space24 />
+          <Space24 /> 
           <Gallery />
         </Shell>
       </MainShell>

@@ -14,8 +14,8 @@ export const Right: FC<TProps> = ({ max, ...props }) => {
     'big',
     'right',
   );
-
   if (!to) return null;
+
   return (
     <Nav
       to={to}

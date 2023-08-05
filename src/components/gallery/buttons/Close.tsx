@@ -11,7 +11,7 @@ export const Close: FC<TProps> = (props) => {
   const to = useTo({});
   const { isHover, ...handlers } = useHoverKey(
     'big',
-    'right',
+    'close',
   );
   const handleOffSound = useOffSound();
   const handleClose = () => {

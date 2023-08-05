@@ -1,5 +1,8 @@
 import { TITLE_BASE } from '@constants/copy';
-import { resolveCompositeTitle } from '@utils/keys';
+import {
+  TITLE_KEY_DELIMITER,
+  resolveCompositeTitle,
+} from '@utils/keys';
 import { useCurrParams } from './params/useCurrParams';
 import { useLocation } from 'react-router';
 import { useEffect } from 'react';
@@ -23,7 +26,9 @@ export const useHtmlTitle = () => {
   const route = TITLE_FROM_PATHNAME_LOOKUP[pathname];
   const titles = [TITLE_BASE, route].filter(Boolean);
   const title = project
-    ? `Project / ${capitalize(project)} [ ${name} ]`
+    ? `Project${TITLE_KEY_DELIMITER}${capitalize(
+        project,
+      )}${TITLE_KEY_DELIMITER}${name}`
     : resolveCompositeTitle(...titles);
   useEffect(() => {
     document.title = title;

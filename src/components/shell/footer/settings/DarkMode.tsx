@@ -15,16 +15,13 @@ import { Button } from '@components/buttons/circle/Button';
 
 export const DarkMode = () => {
   const { darkMode, isScroll } = useContext();
-
   const { isHover, ...handlers } = useHoverKey(
-    'big',
+    'dark-mode',
     'dark-mode',
   );
-
   const handleTap = () => {
     darkMode.toggle();
   };
-
   const iconProps = (origin: `${number}%`) => ({
     key: origin,
     ...ICON_CLASS_VALUE_PROPS,

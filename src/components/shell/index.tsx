@@ -18,14 +18,15 @@ export const Shell: FC<TProps> = ({ children }) => {
   useProjectsRedirect();
   const currProject = useCurrProject();
   const isProject = Boolean(currProject);
+
   return (
     <Root className='relative overflow-x-hidden z-10'>
       {!isProject && <Header />}
       <Content className='relative z-0'>
         <HeaderOffset />
-        {children} 
+        {children}
       </Content>
       {!isProject && <Footer />}
     </Root>
-  ); 
+  );
 };

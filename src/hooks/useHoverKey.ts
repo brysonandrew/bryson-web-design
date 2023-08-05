@@ -1,6 +1,5 @@
 import { TCursorKey } from '@components/select/config';
 import { useContext } from '@state/Context';
-import { TMotionDivProps } from '@t/dom';
 import {
   resolveCompositeHoverKey,
   HOVER_KEY_DELIMITER,
@@ -23,11 +22,12 @@ export const useHoverKey = (
     cursorKey,
     secondaryKey,
   );
-  const update = (isOn: boolean) =>
+  const update = (isOn: boolean) => {
     dispatch({
       value: isOn ? key : null,
       type: 'hover-key',
     });
+  };
   const onHoverStart = () => update(true);
   const onHoverEnd = () => update(false);
 

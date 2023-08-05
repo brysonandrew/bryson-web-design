@@ -15,7 +15,7 @@ import { Button } from '@components/buttons/circle/Button';
 export const Sound = () => {
   const { isSound, isScroll, dispatch } = useContext();
   const { isHover, ...handlers } = useHoverKey(
-    'big',
+    'sound',
     'sound',
   );
   const handleTap = () => {

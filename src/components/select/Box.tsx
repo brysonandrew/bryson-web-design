@@ -14,15 +14,19 @@ export const Box: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className='font-mono text-xl px-10 py-6 background-color-2'
+      layout='position'
+      className='font-mono text-color text-xl px-4 py-1 background-color-2'
       {...resolvePresence(
         {
           opacity: 0,
-          transition: { duration: 0.4, delay: 0 + exitDelay },
+          transition: {
+            duration: 0.4,
+            delay: 0 + exitDelay,
+          },
         },
         {
           opacity: 1,
-          transition: { duration: 1, delay: 0 + delay },
+          transition: { duration: 0.4, delay: 0 + delay },
         },
       )}
     >

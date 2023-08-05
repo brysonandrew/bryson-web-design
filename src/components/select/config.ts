@@ -6,12 +6,15 @@ export const CURSOR_LAYOUT_ID = 'CURSOR_LAYOUT_ID';
 
 export const CURSOR_KEYS = [
   'big',
+  'bigger',
   'none',
   'open-in-new',
   'gallery',
   'project',
+  'dark-mode',
+  'sound'
 ] as const;
-export type TCursorKey =
+export type TCursorKey = 
   | (typeof CURSOR_KEYS)[number]
   | null;
 

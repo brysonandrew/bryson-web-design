@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
-import {
-  NAME_KEY,
-  PROJECT_KEY,
-} from '@pages/projects/config';
 import { type FC } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Space } from '@components/spaces/Space';
 import { Space2 } from '@components/spaces/Space2';
 import { Gallery } from '@components/icons/Gallery';
@@ -18,8 +14,14 @@ import { useTo } from '@hooks/media/nav/useTo';
 const Root = styled.div``;
 const InternalLink = styled(motion(Link))``;
 
-type TProps = TItem;
-export const Buttons: FC<TProps> = ({ href, slug }) => {
+type TProps = TItem & {
+  onClose?(): void;
+};
+export const Buttons: FC<TProps> = ({
+  href,
+  slug,
+  onClose,
+}) => {
   const to = useTo({ project: slug, next: 1 });
 
   return (
@@ -31,6 +33,7 @@ export const Buttons: FC<TProps> = ({ href, slug }) => {
           <Circle>
             <InternalLink
               to={to}
+              onClick={onClose}
               className='circle-interactive'
             >
               <Gallery />
