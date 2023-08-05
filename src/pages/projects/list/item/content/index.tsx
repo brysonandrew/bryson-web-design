@@ -11,16 +11,19 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import { Mark } from './Mark';
 import { DELAY_VISIBILITY } from '@constants/animation';
 import { Glow } from '@components/glow';
+import { TClassValueProps } from '@t/index';
 
 const Root = styled(motion.div)``;
 
 type TProps = TSlugProps &
+  TClassValueProps &
   HTMLMotionProps<'div'> & {
     isHeader?: boolean;
   };
 export const Content: FC<TProps> = ({
   slug,
   isHeader,
+  classValue,
   children,
   ...props
 }) => {
@@ -31,6 +34,7 @@ export const Content: FC<TProps> = ({
       className={clsx(
         'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20',
         [!isHeader && 'glow-interactive'],
+        classValue,
       )}
       {...props}
     >

@@ -29,6 +29,7 @@
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.2",
     "react-router": "^6.14.1",
     "react-router-dom": "^6.14.1",
     "react-synthwave": "^1.2.7"

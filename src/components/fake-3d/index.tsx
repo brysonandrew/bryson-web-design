@@ -1,4 +1,4 @@
-import { InView, TInViewOptions } from '@components/InView';
+import { InView } from '@components/InView';
 import { isMobile } from 'react-device-detect';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
@@ -10,16 +10,17 @@ import {
   TFake3DOptions,
 } from './config';
 import { PRESENCE_OPACITY } from '@constants/animation';
+import { IntersectionOptions } from 'react-intersection-observer';
 
 type TProps = TFake3DOptions & {
   classValue?: ClassValue;
-  inViewOptions?: TInViewOptions;
+  intersectionOptions?: IntersectionOptions;
   children(props: TFake3DMotionChildrenProps): JSX.Element;
 };
 export const Fake3D: FC<TProps> = ({
   classValue,
   children,
-  inViewOptions = {},
+  intersectionOptions = {},
   ...optionsConfig
 }) => {
   if (isMobile) return children(EMPTY_PROPS);
@@ -29,23 +30,29 @@ export const Fake3D: FC<TProps> = ({
         'flex flex-col items-center relative w-full',
         classValue,
       )}
-      amount='some'
-      {...inViewOptions}
+      options={intersectionOptions}
     >
-      {({ isInView, ref, ...rectProps }) => {
+      {({ inView, rect }) => {
         return (
           <>
-            {isInView ? (
-              <Aggregator {...rectProps} {...optionsConfig}>
-                {children}
-              </Aggregator>
-            ) : (
-              <motion.div
-                style={{
-                  height: rectProps.rect.height,
-                }}
-                {...PRESENCE_OPACITY}
-              />
+            {true && (
+              <>
+                {inView ? (
+                  <Aggregator
+                    rect={rect}
+                    {...optionsConfig}
+                  >
+                    {children}
+                  </Aggregator>
+                ) : (
+                  <motion.div
+                    style={{
+                      height: rect?.height ?? 1000,
+                    }}
+                    {...PRESENCE_OPACITY}
+                  />
+                )}
+              </>
             )}
           </>
         );

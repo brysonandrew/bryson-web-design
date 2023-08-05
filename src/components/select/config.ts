@@ -9,6 +9,7 @@ export const CURSOR_KEYS = [
   'none',
   'open-in-new',
   'gallery',
+  'project',
 ] as const;
 export type TCursorKey =
   | (typeof CURSOR_KEYS)[number]

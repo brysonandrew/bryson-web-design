@@ -7,7 +7,7 @@ import {
   SELECT_LAYOUT_ID,
 } from './config';
 import { TChildren, TClassValueProps } from '@t/index';
-import { TMotionDivProps } from '@t/react';
+import { TMotionDivProps } from '@t/dom';
 import { useContext } from '@state/Context';
 
 const resolveSize = (size: number) => {

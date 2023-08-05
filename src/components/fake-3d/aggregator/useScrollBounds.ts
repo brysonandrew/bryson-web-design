@@ -1,15 +1,15 @@
-import { TUpdateRectProps } from "@components/InView";
-import { useWindowSize } from "@hooks/useWindowSize";
-import { useContext } from "@state/Context";
-import { useMemo, useEffect } from "react";
+import { useWindowSize } from '@hooks/useWindowSize';
+import { useContext } from '@state/Context';
+import { TRect } from '@t/dom';
+import { useMemo } from 'react';
 
 type TConfig = {
-  rectConfig: TUpdateRectProps;
+  rect: TRect;
 };
-export const useScrollBounds = ({ rectConfig }: TConfig) => {
+export const useScrollBounds = ({ rect }: TConfig) => {
   const { scrollY } = useContext();
   const { height: windowHeight } = useWindowSize();
-  const top = rectConfig.rect.top ?? 0;
+  const top = rect?.top ?? 0;
 
   const startScroll = useMemo(() => {
     const { top: bodyTop } =
@@ -21,9 +21,9 @@ export const useScrollBounds = ({ rectConfig }: TConfig) => {
     return result;
   }, [top, windowHeight]);
 
-  useEffect(() => {
-    rectConfig.onUpdateRect();
-  }, [startScroll]);
+  // useEffect(() => {
+  //   rectConfig.onUpdateRect();
+  // }, [startScroll]);
 
   return { scrollY, startScroll, windowHeight };
 };

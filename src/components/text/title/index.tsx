@@ -1,23 +1,24 @@
 import { type FC } from 'react';
 import { isMobile } from 'react-device-detect';
-import clsx from 'clsx';
 import { InView } from '@components/InView';
 import type { TChildren } from '@t/index';
 import { Content } from './Content';
+import { TitleRoot } from '@components/spaces/TitleRoot';
 
-const ROOT_PROPS = {
-  className: clsx('column w-core'),
-};
 type TProps = { children: TChildren };
 export const Title: FC<TProps> = ({ children }) => {
-  return ((content) => {
-    if (isMobile) {
-      return <div {...ROOT_PROPS}>{content}</div>;
-    }
-    return (
-      <InView {...ROOT_PROPS} margin='400px' once>
-        {(isInView) => isInView && content}
-      </InView>
-    );
-  })(<Content>{children}</Content>);
+  const content = <Content>{children}</Content>;
+  if (isMobile) {
+    return content;
+  }
+  return (
+    <InView>
+      {({ inView }) => {
+        if (inView) {
+          return content;
+        }
+        return <TitleRoot />;
+      }}
+    </InView>
+  );
 };

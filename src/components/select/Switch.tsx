@@ -55,6 +55,11 @@ export const Switch = () => {
         </Sight>
       );
     }
+    case 'project': {
+      return (
+        <Sight animate={{ opacity: 0.1, scale: 2.8 }} />
+      );
+    }
     case 'big': {
       return <Sight animate={{ opacity: 0.1, scale: 2 }} />;
     }

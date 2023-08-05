@@ -1,6 +1,6 @@
 import { TCursorKey } from '@components/select/config';
 import { useContext } from '@state/Context';
-import { TMotionDivProps } from '@t/react';
+import { TMotionDivProps } from '@t/dom';
 import {
   resolveCompositeHoverKey,
   HOVER_KEY_DELIMITER,

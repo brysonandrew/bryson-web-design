@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Title } from '@components/text/title';
-import { TitleOffset } from '@components/spaces/TitleOffset';
 import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
+import { useContext } from '@state/Context';
+import { Space12 } from './spaces/Space12';
+import { Space8 } from './spaces/Space8';
 
 const Root = styled(motion.section)``;
 
@@ -24,7 +26,8 @@ export const Section: FC<TProps> = ({
       layout='position'
     >
       <Title>{title}</Title>
-      <TitleOffset />
+      <Space8/>
+
       {children}
     </Root>
   );

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { TClassValueProps } from '@t/index';
-import { TMotionButtonProps } from '@t/react';
+import { TMotionButtonProps } from '@t/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 

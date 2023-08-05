@@ -14,5 +14,5 @@ export const Build: FC = () => {
         {(props) => <Images {...props} />}
       </Fake3D>
     </Section>
-  );
+  ); 
 };

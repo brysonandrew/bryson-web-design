@@ -1,3 +1,4 @@
+import { TitleRoot } from '@components/spaces/TitleRoot';
 import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import type { TChildren } from '@t/index';
@@ -7,7 +8,7 @@ import { type FC } from 'react';
 type TProps = { children: TChildren };
 export const Content: FC<TProps> = ({ children }) => {
   return (
-    <>
+    <TitleRoot>
       <div>
         <motion.div
           key='TITLE_TEXT'
@@ -16,15 +17,15 @@ export const Content: FC<TProps> = ({ children }) => {
           exit={{ y: 20, opacity: 0 }}
           transition={{
             ...MOTION_CONFIG.transition,
-            delay: 0.1,
+            delay: 0.4,
           }}
         >
           <h3 className='++text text-center'>{children}</h3>
         </motion.div>
       </div>
       <div className='overflow-hidden w-3/4'>
-        <ThinLineGrow />
+        <ThinLineGrow delay={.6} />
       </div>
-    </>
+    </TitleRoot>
   );
-};
+}; 
