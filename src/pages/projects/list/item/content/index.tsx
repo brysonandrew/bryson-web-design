@@ -7,24 +7,33 @@ import {
 } from '@pages/projects/config';
 import { MetalDark } from '@components/metal/MetalDark';
 import styled from '@emotion/styled';
-import { HTMLMotionProps, motion } from 'framer-motion';
-import { Mark } from './Mark';
+import {
+  AnimatePresence,
+  HTMLMotionProps,
+  motion,
+} from 'framer-motion';
 import { DELAY_VISIBILITY } from '@constants/animation';
-import { Glow } from '@components/glow';
+import { Glow } from '@components/filter-animate/Glow';
 import { TClassValueProps } from '@t/index';
+import { Mark } from '@components/mark';
+import { Details } from '../details';
 
 const Root = styled(motion.div)``;
 
 type TProps = TSlugProps &
   TClassValueProps &
   HTMLMotionProps<'div'> & {
+    isHover?: boolean;
+    isOtherHover?: boolean;
     isHeader?: boolean;
   };
 export const Content: FC<TProps> = ({
+  isHover,
   slug,
   isHeader,
   classValue,
   children,
+  style,
   ...props
 }) => {
   const metal = <MetalDark key='FillDark' />;
@@ -54,6 +63,7 @@ export const Content: FC<TProps> = ({
         <div className='p-2' />
         <>{children}</>
       </motion.div>
+      {isHover && <Details key='DETAILS' {...props} />}
     </Root>
   );
 };

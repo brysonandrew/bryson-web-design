@@ -1,11 +1,11 @@
+import styled from '@emotion/styled';
+import clsx from 'clsx';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import styled from '@emotion/styled';
-import clsx from 'clsx';
 import { TIconComponent } from '@t/icons';
 import { TClassValueProps } from '@t/index';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Inner } from './Inner';
 
 const Link = styled(motion(_Link))``;

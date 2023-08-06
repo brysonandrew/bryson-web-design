@@ -40,6 +40,8 @@ const config = defineConfig({
       black: 'var(--black)',
       'black-02': 'var(--black-02)',
       'black-04': 'var(--black-04)',
+      'black-09': 'var(--black-09)',
+
       'black-1': 'var(--black-1)',
       'black-2': 'var(--black-2)',
       'black-3': 'var(--black-3)',
@@ -57,6 +59,7 @@ const config = defineConfig({
       'white-01': 'var(--white-01)',
       'white-02': 'var(--white-02)',
       'white-04': 'var(--white-04)',
+      'white-09': 'var(--white-09)',
 
       current: 'var(--current)',
       transparent: 'var(--transparent)',
@@ -113,6 +116,7 @@ const config = defineConfig({
     'background-color-1': 'dark:bg-teal bg-gray-1',
     'background-color-2': 'dark:bg-black-2 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
+    'background-color-4': 'dark:bg-black-09 bg-white-09',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',

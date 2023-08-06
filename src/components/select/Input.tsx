@@ -1,7 +1,7 @@
-import { Highlight } from '@components/highlight';
+import { Mark } from '@components/mark';
 
 export const Input = () => (
-  <Highlight
+  <Mark
     layoutId='CONTACT_FORM_INPUT_SELECT'
     classValue='z-50'
   />

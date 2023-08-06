@@ -1,4 +1,4 @@
-import { Glow } from '@components/glow';
+import { Glow } from '@components/filter-animate/Glow';
 import { Metal } from '.';
 
 export const MetalGlow = () => {

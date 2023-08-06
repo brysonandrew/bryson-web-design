@@ -1,8 +1,8 @@
-import { Glow } from '@components/glow';
+import { Glow } from '@components/filter-animate/Glow';
 import { Metal } from '@components/metal';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
 import styled from '@emotion/styled';
 import { TChildrenProps, TClassValueProps } from '@t/index';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

@@ -33,7 +33,7 @@ export const Pages = () => {
           return (
             <Fragment key={item}>
               {index !== 0 && (
-                <Item className='p-2 md:p-2' />
+                <Item className='p-2 md:p-0.5' />
               )}
               <Item
                 className={clsx('relative px-1', [

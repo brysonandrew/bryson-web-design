@@ -10,7 +10,7 @@ export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
   const { dispatch } = useContext();
   const handleMoveSound = useMoveSound();
 
-  const handleTap = () => {
+  const handleClick = () => {
     handleMoveSound();
     dispatch({
       type: 'start-motion-blur',
@@ -21,7 +21,7 @@ export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
   return (
     <Button
       to={to}
-      onTap={handleTap}
+      onClick={handleClick}
       Icon={Icon}
       {...props}
     />

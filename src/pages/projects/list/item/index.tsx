@@ -5,36 +5,43 @@ import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { Space2 } from '@components/spaces/Space2';
 import { useContext } from '@state/Context';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { Link } from 'react-router-dom';
-import { Space } from '@components/spaces/Space';
-import { Space_5 } from '@components/spaces/Space_5';
+import clsx from 'clsx';
+import { resolveParentProps } from '@utils/effects';
+import { useCurrProject } from '@hooks/params/useCurrProject';
+import {
+  PROJECT_CURSOR_KEY,
+  resolveCursorKeyFromHoverKey,
+} from '@components/select/config';
 
-const InternalLink = styled(motion(Link))``;
-
-export const DEBOUNCE = 0;
-export const DEBOUNCE_EXIT = 0;
-
-export type TUpdatePrevsConfig = {
-  index: number;
-  value: number | null;
-};
+const Root = styled(motion.li)``;
 
 type TProps = TSlugProps & {
-  isLast: boolean;
+  index: number;
+  count: number;
 };
-export const Item: FC<TProps> = ({ slug, isLast }) => {
-  const { isScrolling } = useContext();
+export const Item: FC<TProps> = ({
+  slug,
+  index,
+  count,
+}) => {
+  const currProject = useCurrProject();
+  const { hoverKey, isScrolling } = useContext();
   const { isHover, ...handlers } = useHoverKey(
-    'project',
+    PROJECT_CURSOR_KEY,
     slug,
   );
+  const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
+  const isOtherHover =
+    !isHover &&
+    hoverKey !== null &&
+    cursorKey === PROJECT_CURSOR_KEY;
+  const isDim = isOtherHover && !Boolean(currProject);
   const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = ({ target }: MouseEvent) => {
@@ -53,23 +60,28 @@ export const Item: FC<TProps> = ({ slug, isLast }) => {
 
   return (
     <>
-      <motion.li
-        layout={isHover ? 'size' : undefined}
+      <Root
+        className={clsx('relative z-0 py-3')}
         onClick={handleOnSound}
+        {...resolveParentProps(isDim)}
         onHoverStart={handleHoverStart}
         onHoverEnd={handleHoverEnd}
-        {...PARENT_GLOW_PROPS}
-        {...handlers}
       >
-        <InternalLink
-          to={to}
-        >
-          <Content {...item}>
+        <Link to={to}>
+          <Content
+            isHover={isHover}
+            style={{ opacity: 1, zIndex: count - index }}
+            variants={{
+              animate: { opacity: 1 },
+              hover: { opacity: 1 },
+              dim: { opacity: 0.6 },
+            }}
+            {...item}
+          >
             <Time time={item.time} />
           </Content>
-        </InternalLink>
-      </motion.li>
-      {!isLast && <Space2 element='li' />}
+        </Link>
+      </Root>
     </>
   );
 };

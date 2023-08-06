@@ -1,11 +1,15 @@
 import styled from '@emotion/styled';
 import type { TItem } from '@t/projects';
-import { type FC } from 'react';
+import { useState, type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';
 import { resolveCompositeKey } from '@utils/keys';
+import { motion } from 'framer-motion';
+import { TSlugProps } from '../config';
 
-const Root = styled.ul``;
+const Root = styled(motion.ul)``;
+
+export type TPrev = { index: number; value: number };
 
 type TProps = {
   currProject: TProjectKey | null;
@@ -34,7 +38,8 @@ export const List: FC<TProps> = ({
             <Item
               key={itemKey}
               slug={slug}
-              isLast={index === count - 1}
+              index={index}
+              count={count}
             />
           );
         },

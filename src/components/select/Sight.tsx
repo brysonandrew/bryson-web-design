@@ -47,6 +47,7 @@ export const Sight: FC<TProps> = ({
         y: cursorY,
         originX: '50%',
         originY: '50%',
+        opacity: 1,
         ...resolveSize(size),
         ...style,
       }}

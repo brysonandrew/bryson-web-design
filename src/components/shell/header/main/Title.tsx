@@ -8,15 +8,6 @@ type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => {
   return (
     <Root className='row-start'>
-      {/* <div
-        className='relative top-4 w-2 h-2 shrink-0 rounded-full dark:bg-white bg-black glow-interactive md:top-2'
-        style={{
-          filter: isDarkMode
-            ? resolveDropShadow(6, 'baby-blue')
-            : resolveDropShadow(0),
-        }}
-      /> */}
-      {/* <div className='p-1.5' /> */}
       <div className='relative flex flex-col pb-2 md:flex-row'>
         <h1 className='relative text-color text-md uppercase'>
           Bryson A.

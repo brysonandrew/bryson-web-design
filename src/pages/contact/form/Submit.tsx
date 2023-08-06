@@ -5,13 +5,13 @@ import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
-import {
-  PARENT_GLOW_PROPS,
-  GLOW_ANIMATE_TRANSITION,
-  GLOW_HOVER_TRANSITION,
-} from '@constants/colors';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import {
+  EFFECT_ANIMATE_TRANSITION,
+  EFFECT_HOVER_TRANSITION,
+} from '@utils/effects';
 
 const Root = styled(motion.label)``;
 const Decoration = styled(motion.div)``;
@@ -74,11 +74,11 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
           variants={{
             animate: {
               letterSpacing: '4px',
-              transition: GLOW_ANIMATE_TRANSITION,
+              transition: EFFECT_ANIMATE_TRANSITION,
             },
             hover: {
               letterSpacing: '8px',
-              transition: GLOW_HOVER_TRANSITION,
+              transition: EFFECT_HOVER_TRANSITION,
             },
           }}
         >

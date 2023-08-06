@@ -3,13 +3,13 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
-import { Glow } from '@components/glow';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { Glow } from '@components/filter-animate/Glow';
 import { Border as Select } from '@components/select/Border';
 import { MetalDark } from '@components/metal/MetalDark';
-import { Box } from '@components/glow/Box';
+import { Box } from '@components/filter-animate/Box';
 import { useContext } from '@state/Context';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;

@@ -1,8 +1,9 @@
-import { Glow, TGlowProps } from '@components/glow';
+import { Glow } from '@components/filter-animate/Glow';
 import { TIconComponent } from '@t/icons';
+import { TPartialGlowConfigOptions } from '@utils/effects/glow';
 import { FC } from 'react';
 
-type TProps = TGlowProps & {
+type TProps = TPartialGlowConfigOptions & {
   Icon: TIconComponent;
 };
 export const IconGlow: FC<TProps> = ({

@@ -1,11 +1,7 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import {
-  COLORS,
-  resolveDropShadow,
-  resolveShadow,
-} from '@constants/colors';
+import { COLORS } from '@constants/colors';
 import {
   NAME_KEY,
   resolveLoadingItemKey,
@@ -19,6 +15,10 @@ import {
 import { useTo } from '../../../../../hooks/media/nav/useTo';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';
+import {
+  resolveShadow,
+  resolveDropShadow,
+} from '@utils/effects/glow';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

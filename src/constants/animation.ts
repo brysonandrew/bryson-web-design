@@ -11,7 +11,7 @@ export const BASIC_VARIANT_KEYS = {
 export const TRANSITION = {
   ease: 'linear',
   duration: 0.2,
-}
+};
 
 export const MOTION_CONFIG = {
   transition: TRANSITION,
@@ -181,6 +181,7 @@ export const DURATION_DELAY_TRANSITION = {
 export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
+  exit: { opacity: 0 },
   ...DURATION_DELAY_TRANSITION,
 };
 

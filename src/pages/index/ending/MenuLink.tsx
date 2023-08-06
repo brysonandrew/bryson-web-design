@@ -6,7 +6,7 @@ import {
 import { Link as _Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Inner } from './Inner';
 
 const Root = styled(motion.div)``;

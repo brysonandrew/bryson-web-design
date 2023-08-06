@@ -4,11 +4,11 @@ import { Gallery } from './gallery';
 import { resolveCursorKeyFromHoverKey } from './config';
 import { TMixblendModeKey } from '@t/css';
 import { OpenInNew } from './open-in-new';
-import { RightCenter } from './RightCenter';
 import { Box } from './Box';
-import { RIGHT_TOP_MD } from './RightTop';
-import { LEFT_TOP_MD, LeftTop } from './LeftTop';
+import { LEFT_TOP_MD, LeftTop } from '../position/LeftTop';
 import { IconWithText } from './IconWithText';
+import { RightCenter } from '@components/position/RightCenter';
+import { RIGHT_TOP_MD } from '@components/position/RightTop';
 
 export const Switch = () => {
   const { hoverKey } = useContext();
@@ -30,7 +30,7 @@ export const Switch = () => {
         >
           {secondaryKey && (
             <RightCenter>
-              <Box>
+              <Box delay={0.2}>
                 <OpenInNew>{secondaryKey}</OpenInNew>
               </Box>
             </RightCenter>
@@ -38,7 +38,8 @@ export const Switch = () => {
         </Sight>
       );
     }
-    case 'gallery': {
+    case 'gallery':
+    case 'project': {
       return (
         <Sight
           animate={{
@@ -46,32 +47,11 @@ export const Switch = () => {
             mixBlendMode: iconMixBlend,
           }}
         >
-          <RightCenter>
-            <Box>
-              <Gallery />
-            </Box>
-          </RightCenter>
-        </Sight>
-      );
-    }
-    case 'project': {
-      return (
-        <Sight
-          animate={{
-            ...RIGHT_TOP_MD,
-          }}
-        >
           {secondaryKey && (
             <RightCenter>
-              <Box>
+              <Box delay={0.2}>
                 <Gallery />
               </Box>
-              {/* <Bottom classValue='w-screen-8xl'>
-                <Space />
-                <Project
-                  {...PROJECT_ITEMS_RECORD[secondaryKey]}
-                />
-              </Bottom> */}
             </RightCenter>
           )}
         </Sight>
@@ -85,7 +65,7 @@ export const Switch = () => {
           }}
         >
           <LeftTop>
-            <Box>
+            <Box delay={0.2}>
               <IconWithText>Toggle dark mode</IconWithText>
             </Box>
           </LeftTop>
@@ -100,7 +80,7 @@ export const Switch = () => {
           }}
         >
           <LeftTop>
-            <Box>
+            <Box delay={0.2}>
               <IconWithText>Toggle sound</IconWithText>
             </Box>
           </LeftTop>
@@ -109,7 +89,10 @@ export const Switch = () => {
     }
     case 'big': {
       return (
-        <Sight animate={{ opacity: 0.1, scale: 12 }} />
+        <Sight
+          style={{ opacity: 0.2 }}
+          animate={{ opacity: 0.1, scale: 12 }}
+        />
       );
     }
     case 'bigger': {
@@ -121,6 +104,6 @@ export const Switch = () => {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }
     default:
-      return <Sight animate={{ scale: 1 }} />;
+      return <Sight animate={{ opacity: 1, scale: 1 }} />;
   }
 };

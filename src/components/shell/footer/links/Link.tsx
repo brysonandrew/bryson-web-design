@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { motion } from 'framer-motion';
 import { useHoverKey } from '@hooks/useHoverKey';
 

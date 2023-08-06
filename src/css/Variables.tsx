@@ -27,6 +27,8 @@ export const Variables = () => {
           --black: rgb(0, 0, 0);
           --black-02: rgb(0, 0, 0, 0.2);
           --black-04: rgb(0, 0, 0, 0.4);
+          --black-09: rgb(0, 0, 0, 0.9);
+
           --black-1: rgb(17, 17, 17);
           --black-2: rgb(22, 22, 22);
           --black-3: rgb(66, 66, 66);
