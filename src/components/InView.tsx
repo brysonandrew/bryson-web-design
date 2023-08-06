@@ -1,72 +1,55 @@
-import { TChildren } from '@t/index';
-import { useInView } from 'framer-motion';
+import { TChildren, TClassValueProps } from '@t/index';
+import { TMotionDivProps, TRect } from '@t/dom';
+import { createElement, useState, useContext } from 'react';
 import {
-  createElement,
-  useRef,
-  ReactHTML,
-  HTMLProps,
-  MutableRefObject,
-  useState,
-  useEffect,
-} from 'react';
-type TInViewParameters = Parameters<typeof useInView>;
-export type TInViewOptions = TInViewParameters[1];
-export type TRect =
-  | DOMRect
-  | Pick<DOMRect, 'height' | 'top'>;
+  IntersectionOptions,
+  useInView,
+} from 'react-intersection-observer';
+import { TProps } from './gallery/footer/core/items/Button';
+import { SLOW_MOTION_CONFIG } from '@constants/animation';
+import styled from '@emotion/styled';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
-type TType = keyof ReactHTML;
-export type TUpdateRectProps = {
-  rect: TRect;
-  onUpdateRect(): void;
+const Root = styled(motion.div)``;
+
+export type TInViewChildrenProps = Omit<
+  ReturnType<typeof useInView>,
+  'ref'
+>;
+export type TBoxChildrenProps = {
+  children(props: TInViewChildrenProps): TChildren;
 };
-type TChildrenProps<T> = TUpdateRectProps & {
-  isInView: boolean;
-  ref: MutableRefObject<T | null>;
-};
-type TProps<T> = Omit<HTMLProps<T>, 'children'> &
-  TInViewOptions & {
-    type?: TType;
-    children(props: TChildrenProps<T>): TChildren;
+
+export type TInViewProps = Omit<
+  TMotionDivProps,
+  'children'
+> &
+  TClassValueProps &
+  TBoxChildrenProps & {
+    options?: IntersectionOptions;
   };
-export const InView = <T extends HTMLElement>({
-  type = 'div',
+export const InView = ({
+  classValue,
+  style,
+  options,
   children,
-  root,
-  margin,
-  once,
-  amount,
   ...props
-}: TProps<T>) => {
-  const ref = useRef<T | null>(null);
-  const [rect, setRect] = useState<TRect>({
-    height: 1000,
-    top: 1000,
+}: TInViewProps) => {
+  const { ref, ...rest } = useInView({
+    threshold: 0.2,
+    ...options,
   });
 
-  const onUpdateRect = () => {
-    if (ref.current) {
-      setRect(ref.current.getBoundingClientRect());
-    }
-  };
-
-  useEffect(onUpdateRect, []);
-
-  const isInView = useInView(ref, {
-    root,
-    margin,
-    amount,
-    once,
-  });
-
-  return createElement(
-    type,
-    { ref, ...props },
-    children({
-      isInView,
-      ref,
-      rect,
-      onUpdateRect,
-    }),
+  return (
+    <Root
+      ref={ref}
+      style={{ ...style }}
+      className={clsx('relative', classValue)}
+      transition={{ ...SLOW_MOTION_CONFIG, delay: 0 }}
+      {...props}
+    >
+      {children(rest)}
+    </Root>
   );
 };

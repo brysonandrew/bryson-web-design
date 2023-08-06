@@ -1,12 +1,15 @@
-import { Space2 } from '@components/spaces/Space2';
 import styled from '@emotion/styled';
 import type { TItem } from '@t/projects';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';
-import { useOnSound } from '@hooks/sounds/useOnSound';
+import { resolveCompositeKey } from '@utils/keys';
+import { motion } from 'framer-motion';
+import { TSlugProps } from '../config';
 
-const Root = styled.ul``;
+const Root = styled(motion.ul)``;
+
+export type TPrev = { index: number; value: number };
 
 type TProps = {
   currProject: TProjectKey | null;
@@ -16,20 +19,31 @@ export const List: FC<TProps> = ({
   items,
   currProject,
 }) => {
-  const handleOnSound = useOnSound();
   return (
-    <Root className='mt-1'>
-      {items.map(({ slug }: TItem, index: number) => {
-        const itemKey = slug;
-        const isSelected = currProject === slug;
-        if (isSelected) return null;
-        return (
-          <li key={itemKey} onClick={handleOnSound}>
-            {index !== 0 && <Space2  />}
-            <Item slug={itemKey} />
-          </li>
-        );
-      })}
+    <Root className='relative mt-1'>
+      {items.map(
+        (
+          { slug }: TItem,
+          index: number,
+          { length: count },
+        ) => {
+          const itemKey = resolveCompositeKey(
+            'List',
+            slug,
+            index,
+          );
+          const isSelected = currProject === slug;
+          if (isSelected) return null;
+          return (
+            <Item
+              key={itemKey}
+              slug={slug}
+              index={index}
+              count={count}
+            />
+          );
+        },
+      )}
     </Root>
   );
 };

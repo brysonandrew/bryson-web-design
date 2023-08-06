@@ -9,14 +9,8 @@ export const Time: FC<TProps> = ({ time, classValue }) => {
     'relative text-right shrink-0',
     classValue,
   );
-  if (!time)
-    return (
-      <TextXs classValue={className} >
-        Present
-      </TextXs>
-    );
   return (
-    <TextXs classValue={className} >
+    <TextXs layout classValue={className}>
       {typeof time === 'undefined'
         ? 'Present'
         : new Intl.DateTimeFormat('en-UK', {

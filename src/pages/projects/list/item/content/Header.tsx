@@ -11,11 +11,11 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
       className='relative flex items-start flex-col h-full md:flex-row md:items-center'
       {...props}
     >
-      <h4 className='+text'>{title}</h4>
+      <motion.h4 layout className='+text'>{title}</motion.h4>
       <div className='hidden md:flex px-2' />
-      <h5 className='+text text-color-1 italic'>
+      <motion.h5 layout className='+text text-color-1 italic'>
         {description}
-      </h5>
+      </motion.h5>
     </motion.header>
   );
 };

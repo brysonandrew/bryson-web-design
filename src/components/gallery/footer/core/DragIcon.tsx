@@ -1,8 +1,5 @@
 import { Drag } from '@components/icons/Drag';
-import {
-  COLORS,
-  resolveDropShadow,
-} from '@constants/colors';
+import { COLORS } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -10,6 +7,7 @@ import { FC } from 'react';
 import { PADDING_X } from './config';
 import { useHover } from '@hooks/useHover';
 import { useContext } from '@state/Context';
+import { resolveDropShadow } from '@utils/effects/glow';
 
 type TProps = {
   classValue?: ClassValue;

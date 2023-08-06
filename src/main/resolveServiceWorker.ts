@@ -1,4 +1,4 @@
-(async () => {
+export const initServiceWorker = async () => {
   if (navigator.serviceWorker) {
     try {
       const register =
@@ -23,4 +23,4 @@
     // .catch((error) => {
     // });
   }
-})();
+};

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { TITLE_OFFSET } from '@components/spaces/TitleOffset';
+import { TITLE_HEIGHT } from '@components/spaces/TitleRoot';
 import { useContext } from '@state/Context';
 import { type FC } from 'react';
 import { Image } from './Image';
@@ -10,7 +10,7 @@ import { TModuleRecord } from '@t/media';
 import { Build as Fetch } from '@components/fetch-media/Build';
 
 const BUFFER = 140;
-const HEIGHT = TITLE_OFFSET + RANGE_Y + BUFFER;
+const HEIGHT = TITLE_HEIGHT + RANGE_Y + BUFFER;
 
 type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({
@@ -27,7 +27,7 @@ export const Images: FC<TProps> = ({
     <div
       className='relative w-full top-0'
       style={{
-        height: HEIGHT
+        height: HEIGHT,
       }}
     >
       <motion.ul

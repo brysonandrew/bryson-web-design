@@ -5,6 +5,9 @@ import {
 } from 'unocss';
 import { SPACING } from './uno.config-spacing';
 
+const SANS = 'Bodoni Moda';
+const MONO = 'Nova Mono';
+
 const config = defineConfig({
   theme: {
     breakpoints: {
@@ -14,6 +17,7 @@ const config = defineConfig({
       xl: '1100px',
     },
     width: {
+      'screen-80': '80vw',
       '+core': '480px',
       '++core': '700px',
       '+++core': '840px',
@@ -36,6 +40,8 @@ const config = defineConfig({
       black: 'var(--black)',
       'black-02': 'var(--black-02)',
       'black-04': 'var(--black-04)',
+      'black-09': 'var(--black-09)',
+
       'black-1': 'var(--black-1)',
       'black-2': 'var(--black-2)',
       'black-3': 'var(--black-3)',
@@ -46,11 +52,14 @@ const config = defineConfig({
       'gray-3': 'var(--gray-3)',
 
       white: 'var(--white)',
+      'white-1': 'var(--white-1)',
+      'white-2': 'var(--white-2)',
+      'white-3': 'var(--white-3)',
+
       'white-01': 'var(--white-01)',
       'white-02': 'var(--white-02)',
       'white-04': 'var(--white-04)',
-      'white-1': 'var(--white-1)',
-      'white-2': 'var(--white-2)',
+      'white-09': 'var(--white-09)',
 
       current: 'var(--current)',
       transparent: 'var(--transparent)',
@@ -105,8 +114,9 @@ const config = defineConfig({
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white',
     'background-color-1': 'dark:bg-teal bg-gray-1',
-    'background-color-2': 'dark:bg-black-3 bg-white',
+    'background-color-2': 'dark:bg-black-2 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
+    'background-color-4': 'dark:bg-black-09 bg-white-09',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',
@@ -114,6 +124,8 @@ const config = defineConfig({
     'text-color-4': 'dark:text-black text-white',
     'text-color-stroke':
       'dark:text-baby-blue-stroke text-gray-stroke',
+    'circle-interactive':
+      'relative p-3 cursor-pointer text-color-1',
     'glow-interactive':
       'dark:glow-interactive-dark glow-interactive-light',
     'w-core':
@@ -128,8 +140,8 @@ const config = defineConfig({
     'column-end': 'flex flex-col items-end',
     'column-space': 'column justify-between',
     center: 'flex items-center justify-center',
-    'label-background': 'dark:bg-black-04 bg-white',
-    'input-background': 'dark:bg-black-04 bg-white-1',
+    'label-background': 'dark:bg-black-04 bg-white-2',
+    'input-background': 'dark:bg-black-04 bg-white-3',
     'input-label':
       'relative flex flex-col items-start w-full p-2 label-background md:flex-row',
     'input-textarea':
@@ -149,25 +161,67 @@ const config = defineConfig({
     presetUno({ dark: 'class' }),
     presetWebFonts({
       fonts: {
-        sans: 'Bodoni Moda',
-        mono: 'Nova Mono',
+        sans: SANS,
+        mono: MONO,
       },
     }),
   ],
   preflights: [
     {
       getCSS: ({ theme }) => `
-        html,
+        html, body {
+          font-family: ${SANS}, Chakra Petch, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica Neue, sans-serif;
+        }
+        code, tt {
+          font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
+        }
         body {
           color: ${theme.colors.gray};
           background-color: ${theme.colors['white']};
+          transition: color 0.9s, background-color 0.9s;
         }
 
-        html.dark,
         html.dark body {
           background-color: ${theme.colors.black};
           color: ${theme.colors['teal-bright']};
+        } 
+
+        ::-webkit-scrollbar {
+          background-color: ${theme.colors['white-2']};
         }
+
+        html.dark ::-webkit-scrollbar {
+          background-color: ${theme.colors['black-2']};
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: ${theme.colors['gray']};
+          border: 1px solid ${theme.colors['gray-1']};
+        }
+
+        html.dark ::-webkit-scrollbar-thumb {
+          background-color: ${theme.colors['teal-bright']};
+          border: 1px solid ${theme.colors['baby-blue']};
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: ${theme.colors['gray-3']};
+        }
+
+        html.dark ::-webkit-scrollbar-thumb:hover {
+          background-color: ${theme.colors['white-08']};
+        }
+
+        input:-webkit-autofill {
+          -webkit-text-fill-color: ${theme.colors['black']} !important;
+        }
+
+        html.dark input:-webkit-autofill {
+          -webkit-text-fill-color: ${theme.colors['baby-blue']} !important;
+        }
+
       `,
     },
   ],

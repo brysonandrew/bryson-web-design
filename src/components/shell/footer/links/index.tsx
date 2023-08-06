@@ -20,16 +20,16 @@ export const Links: FC<TProps> = (props) => {
       Icon: Email,
     },
     {
-      title: 'codewars',
-      subTitle: 'brysonandrew',
-      href: 'https://www.codewars.com/users/brysonandrew',
-      Icon: Codewars,
-    },
-    {
       title: 'github',
       subTitle: 'brysonandrew',
       href: 'https://github.com/brysonandrew',
       Icon: Github,
+    },
+    {
+      title: 'codewars',
+      subTitle: 'brysonandrew',
+      href: 'https://www.codewars.com/users/brysonandrew',
+      Icon: Codewars,
     },
   ];
   return (
@@ -45,4 +45,4 @@ export const Links: FC<TProps> = (props) => {
       ))}
     </Root>
   );
-}; 
+};

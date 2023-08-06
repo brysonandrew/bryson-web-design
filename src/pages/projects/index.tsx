@@ -3,8 +3,8 @@ import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { STORY } from '@constants/copy';
 import { Section } from '@components/Section';
-import { Space16 } from '@components/spaces/Space16';
 import { Gallery } from '@components/gallery';
+import { Space24 } from '@components/spaces/Space24';
 
 export const Projects = () => {
   return (
@@ -12,10 +12,10 @@ export const Projects = () => {
       <Shell>
         <Section title={STORY.projects}>
           <Main />
-          <Space16 />
+          <Space24 />
         </Section>
         <Gallery />
       </Shell>
     </MainShell>
-  ); 
+  );
 };

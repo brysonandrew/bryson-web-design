@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { SELECT_LAYOUT_ID } from './config';
+import { CURSOR_LAYOUT_ID } from './config';
 import { TChildren, TClassValueProps } from '@t/index';
-import { TMotionDivProps } from '@t/react';
+import { TMotionDivProps } from '@t/dom';
 import { useContext } from '@state/Context';
 
 const resolveSize = (size: number) => {
@@ -27,7 +27,7 @@ type TProps = TMotionDivProps &
 export const Sight: FC<TProps> = ({
   classValue,
   style,
-  size = 40,
+  size = 8,
   children,
   ...props
 }) => {
@@ -38,15 +38,16 @@ export const Sight: FC<TProps> = ({
   } = useContext();
   return (
     <Root
-      layoutId={SELECT_LAYOUT_ID}
+      layoutId={CURSOR_LAYOUT_ID}
       style={{
-        mixBlendMode: isDarkMode
-          ? 'exclusion'
-          : 'difference',
+        // mixBlendMode: isDarkMode
+        //   ? 'exclusion'
+        //   : 'difference',
         x: cursorX,
         y: cursorY,
         originX: '50%',
         originY: '50%',
+        opacity: 1,
         ...resolveSize(size),
         ...style,
       }}

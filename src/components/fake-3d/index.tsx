@@ -1,48 +1,57 @@
-import { InView, TInViewOptions } from '@components/InView';
-import { isMobile } from 'react-device-detect';
+import { InView } from '@components/InView';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
-  EMPTY_PROPS,
   TFake3DMotionChildrenProps,
   TFake3DOptions,
 } from './config';
 import { PRESENCE_OPACITY } from '@constants/animation';
+import { IntersectionOptions } from 'react-intersection-observer';
+import { TRect } from '@t/dom';
 
 type TProps = TFake3DOptions & {
   classValue?: ClassValue;
-  inViewOptions?: TInViewOptions;
+  intersectionOptions?: IntersectionOptions;
   children(props: TFake3DMotionChildrenProps): JSX.Element;
 };
 export const Fake3D: FC<TProps> = ({
   classValue,
   children,
-  inViewOptions = {},
+  intersectionOptions = {},
   ...optionsConfig
 }) => {
-  if (isMobile) return children(EMPTY_PROPS);
+  const [rect, setRect] = useState<TRect>(null);
   return (
     <InView
       className={clsx(
         'flex flex-col items-center relative w-full',
         classValue,
       )}
-      amount='some'
-      {...inViewOptions}
+      options={{
+        triggerOnce: true,
+        onChange: (inView, entry) => {
+          if (inView) {
+            const rect =
+              entry.target.getBoundingClientRect();
+            setRect(rect);
+          }
+        },
+        ...intersectionOptions,
+      }}
     >
-      {({ isInView, ref, ...rectProps }) => {
+      {({ inView }) => {
         return (
           <>
-            {isInView ? (
-              <Aggregator {...rectProps} {...optionsConfig}>
+            {inView ? (
+              <Aggregator rect={rect} {...optionsConfig}>
                 {children}
               </Aggregator>
             ) : (
               <motion.div
                 style={{
-                  height: rectProps.rect.height,
+                  height: rect?.height,
                 }}
                 {...PRESENCE_OPACITY}
               />

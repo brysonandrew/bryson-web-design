@@ -6,7 +6,7 @@ import {
   type HTMLMotionProps,
 } from 'framer-motion';
 import { Inner } from './Inner';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;

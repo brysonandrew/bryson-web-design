@@ -1,1 +1,4 @@
-export const Space = () => <div className="p-1" />;
+import { createElement } from 'react';
+
+export const Space = ({ element = 'div' }) =>
+  createElement(element, { className: 'p-1' });

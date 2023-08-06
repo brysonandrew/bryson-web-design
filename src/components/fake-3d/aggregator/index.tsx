@@ -1,4 +1,3 @@
-import { TUpdateRectProps } from '@components/InView';
 import { type FC, useRef } from 'react';
 import {
   TFake3DMotionChildrenProps,
@@ -9,35 +8,36 @@ import { Dispersion } from './values/Dispersion';
 import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
 import { useScrollBounds } from './useScrollBounds';
+import { TRect } from '@t/dom';
 
-type TProps = TUpdateRectProps &
-  TFake3DOptions & {
-    children(props: TFake3DMotionChildrenProps): void;
-  };
+type TProps = TFake3DOptions & {
+  rect: TRect;
+  children(props: TFake3DMotionChildrenProps): void;
+};
 export const Aggregator: FC<TProps> = ({
+  rect,
   dispersion: dispersionRange,
   resistance: resistanceRange,
   visibility: visibilityRange,
   children,
-  ...rectConfig
 }) => {
   const styleRef = useRef<Partial<TStyleProps>>({});
-  const config = useScrollBounds({ rectConfig });
+  const config = useScrollBounds({ rect });
 
   return (
     <>
       {dispersionRange && (
         <Dispersion range={dispersionRange} {...config}>
-          {(v) => { 
+          {(v) => {
             styleRef.current.rotateX = v;
             return null;
           }}
-        </Dispersion> 
+        </Dispersion>
       )}
       {resistanceRange && (
         <Resistance range={resistanceRange} {...config}>
           {(v) => {
-            styleRef.current.y = v; 
+            styleRef.current.y = v;
             return null;
           }}
         </Resistance>
@@ -52,7 +52,6 @@ export const Aggregator: FC<TProps> = ({
       )}
       {children({
         style: styleRef.current,
-        rectConfig,
       })}
     </>
   );

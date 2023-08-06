@@ -5,6 +5,18 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'scrolling': {
+      return {
+        ...state,
+        isScrolling: value,
+      };
+    }
+    case 'cursor-ready': {
+      return {
+        ...state,
+        isCursorReady: value,
+      };
+    }
     case 'hover-key': {
       return {
         ...state,

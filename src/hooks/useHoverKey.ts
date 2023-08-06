@@ -17,21 +17,24 @@ export const useHoverKey = (
   secondaryKey = 'global',
 ) => {
   const { hoverKey, dispatch } = useContext();
-  if (!isDesktop) return {};
+  if (!isDesktop) return { isHover: false };
   const key = resolveCompositeHoverKey(
     cursorKey,
     secondaryKey,
   );
-  const update = (isOn: boolean) =>
+  const update = (isOn: boolean) => {
     dispatch({
       value: isOn ? key : null,
       type: 'hover-key',
     });
+  };
   const onHoverStart = () => update(true);
   const onHoverEnd = () => update(false);
 
+  const isHover = key === hoverKey;
+
   return {
-    isHover: key === hoverKey,
+    isHover,
     onHoverStart,
     onHoverEnd,
     onPointerLeave: onHoverEnd,

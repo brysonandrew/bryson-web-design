@@ -1,4 +1,4 @@
-import { ClassValue } from "clsx";
+import { ClassValue } from 'clsx';
 
 export type TBaseChildren = JSX.Element | null | string;
 export type TChildrenElement =
@@ -9,7 +9,8 @@ export type TError = any | unknown;
 export type TEmptyRecord = Record<string, unknown>;
 export type TAnyRecord = Record<string, any>;
 
-export type TChildrenProps = { children: TChildren }
+export type TChildrenProps = { children: TChildren };
+export type TChildrenPartialProps = Partial<TChildrenProps>;
 
 export type TClassValueProps = {
   classValue?: ClassValue;

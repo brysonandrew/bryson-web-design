@@ -2,9 +2,8 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
-import { PARENT_GLOW_PROPS } from '@constants/colors';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { motion } from 'framer-motion';
-import { useHover } from '@hooks/useHover';
 import { useHoverKey } from '@hooks/useHoverKey';
 
 const Root = styled(motion.a)``;
@@ -16,8 +15,10 @@ export const Link: FC<TProps> = ({
   subTitle,
   Icon,
 }) => {
-  const { isHover, ...handlers } =
-    useHoverKey('open-in-new');
+  const { isHover, ...handlers } = useHoverKey(
+    'open-in-new',
+    href,
+  );
 
   return (
     <Root
@@ -36,7 +37,7 @@ export const Link: FC<TProps> = ({
         <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
           {title}
         </h5>
-        <div className='hidden sm:flex row'>
+        {/* <div className='hidden sm:flex row'>
           <div className='p-1' />
           <motion.h6
             className='uppercase italic text-xs text-color'
@@ -47,7 +48,7 @@ export const Link: FC<TProps> = ({
           >
             {subTitle}
           </motion.h6>
-        </div>
+        </div> */}
       </div>
     </Root>
   );

@@ -1,14 +1,21 @@
-import { Circle } from '@components/buttons/Circle';
+import { Circle } from '@components/buttons/circle';
 import { VolumeOff } from '@components/icons/sound/VolumeOff';
 import { useContext } from '@state/Context';
-import { ICON_CLASS_VALUE_PROPS } from '../constants';
+import {
+  ICON_CLASS_VALUE_PROPS,
+  SHARED_ANIMATION_PROPS,
+  resolveScale,
+} from '../config';
 import { VolumeOn } from '@components/icons/sound/VolumeOn';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { TRANSITION } from '@constants/animation';
+import { motion } from 'framer-motion';
+import { Button } from '@components/buttons/circle/Button';
 
 export const Sound = () => {
-  const { isSound, dispatch } = useContext();
+  const { isSound, isScroll, dispatch } = useContext();
   const { isHover, ...handlers } = useHoverKey(
-    'big',
+    'sound',
     'sound',
   );
   const handleTap = () => {
@@ -20,16 +27,27 @@ export const Sound = () => {
   };
 
   return (
-    <Circle
-      aria-label='sound'
-      onTap={handleTap}
+    <motion.div
+      animate={{
+        scale: resolveScale({ isScroll, isHover }),
+        x: isScroll ? 6 : 0,
+      }}
+      transition={{
+        delay: isScroll ? 0 : 0.1,
+        ...TRANSITION,
+      }}
+      {...SHARED_ANIMATION_PROPS}
       {...handlers}
     >
-      {isSound ? (
-        <VolumeOn {...iconProps} />
-      ) : (
-        <VolumeOff {...iconProps} />
-      )}
-    </Circle>
+      <Circle aria-label='sound'>
+        <Button onTap={handleTap}>
+          {isSound ? (
+            <VolumeOn {...iconProps} />
+          ) : (
+            <VolumeOff {...iconProps} />
+          )}
+        </Button>
+      </Circle>
+    </motion.div>
   );
 };
