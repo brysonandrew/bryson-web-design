@@ -1,6 +1,6 @@
 import { TSlugProps } from '@pages/projects/config';
 import { motion } from 'framer-motion';
-import { type FC } from 'react';
+import { useRef, type FC, useEffect } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
@@ -30,6 +30,7 @@ export const Item: FC<TProps> = ({
   index,
   count,
 }) => {
+  const isEnteredOnScrollRef = useRef(false);
   const currProject = useCurrProject();
   const { hoverKey, isScrolling } = useContext();
   const { isHover, ...handlers } = useHoverKey(
@@ -44,19 +45,25 @@ export const Item: FC<TProps> = ({
   const isDim = isOtherHover && !Boolean(currProject);
   const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
-  const handleHoverStart = ({ target }: MouseEvent) => {
+  const handleHoverStart = () => {
     handleLoadMedia(slug);
-    if (!handlers.onHoverStart || isScrolling || !target)
+    if (!handlers.onHoverStart || isScrolling )
       return;
     handlers.onHoverStart();
   };
   const handleHoverEnd = ({ target }: MouseEvent) => {
-    if (!handlers.onHoverEnd || isScrolling || !target)
-      return;
+    if (!handlers.onHoverEnd || !target) return;
     handlers.onHoverEnd();
   };
   const handleOnSound = useOnSound();
   const to = useTo({ project: slug, next: 1 });
+
+  useEffect(() => {
+    if (!isScrolling && isEnteredOnScrollRef.current) {
+      handleHoverStart();
+      isEnteredOnScrollRef.current = false;
+    }
+  }, [isScrolling]);
 
   return (
     <>
@@ -64,7 +71,11 @@ export const Item: FC<TProps> = ({
         className={clsx('relative z-0 py-3')}
         onClick={handleOnSound}
         {...resolveParentProps(isDim)}
-        onHoverStart={handleHoverStart}
+        onHoverStart={
+          isScrolling
+            ? () => (isEnteredOnScrollRef.current = true)
+            : handleHoverStart
+        }
         onHoverEnd={handleHoverEnd}
       >
         <Link to={to}>

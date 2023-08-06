@@ -48,7 +48,7 @@ export const Switch = () => {
           }}
         >
           {secondaryKey && (
-            <RightCenter>
+            <RightCenter> 
               <Box delay={0.2}>
                 <Gallery />
               </Box>
