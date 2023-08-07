@@ -11,7 +11,7 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
       className='relative flex items-start flex-col h-full md:flex-row md:items-center'
       {...props}
     >
-      <motion.h4 layout className='+text'>{title}</motion.h4>
+      <motion.h4 layout className='+text text-color-stroke-2'>{title}</motion.h4>
       <div className='hidden md:flex px-2' />
       <motion.h5 layout className='+text text-color-1 italic'>
         {description}

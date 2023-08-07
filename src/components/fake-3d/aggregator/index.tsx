@@ -1,8 +1,8 @@
-import { type FC, useRef } from 'react';
+import { type FC, useRef, useEffect } from 'react';
 import {
   TFake3DMotionChildrenProps,
   TFake3DOptions,
-  TStyleProps,
+  TPartialStyle,
 } from '../config';
 import { Dispersion } from './values/Dispersion';
 import { Resistance } from './values/Resistance';
@@ -12,17 +12,23 @@ import { TRect } from '@t/dom';
 
 type TProps = TFake3DOptions & {
   rect: TRect;
+  onUpdateRect(): void;
   children(props: TFake3DMotionChildrenProps): void;
 };
 export const Aggregator: FC<TProps> = ({
   rect,
+  onUpdateRect,
   dispersion: dispersionRange,
   resistance: resistanceRange,
   visibility: visibilityRange,
   children,
 }) => {
-  const styleRef = useRef<Partial<TStyleProps>>({});
+  const styleRef = useRef<TPartialStyle>({});
   const config = useScrollBounds({ rect });
+
+  useEffect(() => {
+    onUpdateRect();
+  }, []);
 
   return (
     <>
@@ -52,6 +58,7 @@ export const Aggregator: FC<TProps> = ({
       )}
       {children({
         style: styleRef.current,
+        onUpdateRect,
       })}
     </>
   );

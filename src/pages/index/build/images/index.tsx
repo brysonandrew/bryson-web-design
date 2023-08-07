@@ -25,7 +25,7 @@ export const Images: FC<TProps> = ({
 
   return (
     <div
-      className='relative w-full top-0'
+      className='images relative w-full'
       style={{
         height: HEIGHT,
       }}

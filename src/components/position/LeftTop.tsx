@@ -14,7 +14,7 @@ type TProps = {
 };
 export const LeftTop: FC<TProps> = ({ children }) => {
   return (
-    <div className='absolute right-full bottom-full -translate-x-2 -translate-y-0'>
+    <div className='absolute right-full bottom-full -translate-x-4 -translate-y-4'>
       {children}
     </div>
   );

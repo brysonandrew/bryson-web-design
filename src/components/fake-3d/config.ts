@@ -1,4 +1,5 @@
-import { MotionValue } from "framer-motion";
+import { TRect } from '@t/dom';
+import { MotionValue } from 'framer-motion';
 
 export const MAX_SCROLL = 600;
 
@@ -12,15 +13,20 @@ export type TFake3DMotionProps = {
   style: TStyleProps;
 };
 
+export type TPartialStyle = Partial<TStyleProps>;
+
 export type TPartialFake3DMotionProps = {
-  style: Partial<TStyleProps>;
+  style: TPartialStyle;
+  onUpdateRect: () => void;
 };
 
 export const EMPTY_PROPS: TPartialFake3DMotionProps = {
-  style: {}
+  style: {},
+  onUpdateRect: () => null,
 };
 
-export type TFake3DMotionChildrenProps = TFake3DMotionProps | TPartialFake3DMotionProps
+export type TFake3DMotionChildrenProps =
+  TPartialFake3DMotionProps;
 
 export type TInputResolverConfig = {
   startScroll: number;
@@ -52,4 +58,3 @@ export type TFake3DOptions = {
   resistance?: TTransformRange;
   visibility?: TVisibilityRange;
 };
- 

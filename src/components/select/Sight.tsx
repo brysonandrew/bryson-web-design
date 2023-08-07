@@ -34,15 +34,11 @@ export const Sight: FC<TProps> = ({
   const {
     cursorX,
     cursorY,
-    darkMode: { isDarkMode },
   } = useContext();
   return (
     <Root
       layoutId={CURSOR_LAYOUT_ID}
       style={{
-        // mixBlendMode: isDarkMode
-        //   ? 'exclusion'
-        //   : 'difference',
         x: cursorX,
         y: cursorY,
         originX: '50%',

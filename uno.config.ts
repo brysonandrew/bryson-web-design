@@ -35,6 +35,8 @@ const config = defineConfig({
 
       'baby-blue': 'var(--baby-blue)',
       'baby-blue-01': 'var(--baby-blue-01)',
+      'baby-blue-02': 'var(--baby-blue-02)',
+      'baby-blue-04': 'var(--baby-blue-04)',
       'baby-blue-09': 'var(--baby-blue-09)',
 
       black: 'var(--black)',
@@ -92,7 +94,7 @@ const config = defineConfig({
     [
       'glow-interactive-light',
       {
-        'box-shadow': '0 0 1px 1px var(--black-02)',
+        'box-shadow': '0 0 1px 1px var(--baby-blue-02)',
       },
     ],
     [
@@ -103,12 +105,20 @@ const config = defineConfig({
     ['+placeholder', { transform: 'scale(16)' }],
     ['++placeholder', { transform: 'scale(28)' }],
     [
-      'text-baby-blue-stroke',
+      'text-stroke-baby-blue',
       { '-webkit-text-stroke': '1px var(--baby-blue)' },
     ],
     [
-      'text-gray-stroke',
+      'text-stroke-baby-blue-02',
+      { '-webkit-text-stroke': '1px var(--baby-blue-02)' },
+    ],
+    [
+      'text-stroke-baby-blue-01',
       { '-webkit-text-stroke': '1px var(--baby-blue-01)' },
+    ],
+    [
+      'text-stroke-gray',
+      { '-webkit-text-stroke': '1px var(--gray-1)' },
     ],
   ],
   shortcuts: {
@@ -117,13 +127,18 @@ const config = defineConfig({
     'background-color-2': 'dark:bg-black-2 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'background-color-4': 'dark:bg-black-09 bg-white-09',
+    'background-color-5': 'dark:bg-teal bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',
     'text-color-3': 'dark:text-white text-black',
     'text-color-4': 'dark:text-black text-white',
     'text-color-stroke':
-      'dark:text-baby-blue-stroke text-gray-stroke',
+      'dark:text-stroke-baby-blue text-stroke-baby-blue-02',
+    'text-color-stroke-1':
+      'dark:text-stroke-baby-blue-02 text-stroke-baby-blue-02',
+    'text-color-stroke-2':
+      'dark:text-stroke-baby-blue-01 text-stroke-baby-blue-01',
     'circle-interactive':
       'relative p-3 cursor-pointer text-color-1',
     'glow-interactive':
@@ -148,10 +163,11 @@ const config = defineConfig({
       'relative text-color-1 text-2xl px-4 py-2 w-full tracking-widest input-background',
     'input-text': 'input-textarea px-4',
     '+++text':
-      'text-color text-left text-3xl tracking-wide px-1 lg:text-4xl',
+      'text-color text-left text-3xl tracking-wide px-1 text-shadow-inherit lg:text-4xl',
     '++text':
-      'text-color text-color-stroke relative uppercase px-2 tracking-widest text-3xl md:text-4xl xl:px-4',
-    '+text': 'text-color text-left text-xl md:text-2xl',
+      'text-color text-color-stroke relative uppercase px-2 tracking-widest text-3xl text-shadow-inherit md:text-4xl xl:px-4',
+    '+text':
+      'text-color text-left text-xl text-shadow-inherit md:text-2xl',
     'cover-fixed': 'fixed inset-0',
     cover: 'absolute inset-0',
     'dragger-screen': 'absolute h-screen row-end',

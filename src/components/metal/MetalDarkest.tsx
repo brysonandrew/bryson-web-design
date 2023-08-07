@@ -1,14 +1,12 @@
-import {
-  metalRadialDarkestCss,
-  metalRadialLightestCss,
-} from '@css/metal';
+import { metalRadialDarkestCss } from '@css/metal';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TRootProps, Metal } from '.';
 
 const Root = styled(motion.div)`
-  background-color: var(--white);
+  background-color: var(--white-2);
+  filter: none;
   html.dark & {
     ${metalRadialDarkestCss}
   }

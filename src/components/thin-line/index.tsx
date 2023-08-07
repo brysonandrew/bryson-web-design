@@ -6,13 +6,14 @@ import { FC } from 'react';
 type TProps = HTMLMotionProps<'hr'> & TClassValueProps;
 export const ThinLine: FC<TProps> = ({
   classValue,
+  
   ...props
 }) => {
   const { style, ...rest } = props;
   return (
     <motion.hr
       className={clsx(
-        'dark:bg-teal bg-gray-2 h-px w-full',
+        'background-color-5 h-px w-full',
         classValue,
       )}
       style={{ opacity: 0.4, ...style }}

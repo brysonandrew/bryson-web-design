@@ -39,7 +39,7 @@ export const Sound = () => {
       {...SHARED_ANIMATION_PROPS}
       {...handlers}
     >
-      <Circle aria-label='sound'>
+      <Circle classValue='relative' aria-label='sound'>
         <Button onTap={handleTap}>
           {isSound ? (
             <VolumeOn {...iconProps} />

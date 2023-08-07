@@ -1,11 +1,9 @@
 import { TChildren, TClassValueProps } from '@t/index';
-import { TMotionDivProps, TRect } from '@t/dom';
-import { createElement, useState, useContext } from 'react';
+import { TMotionDivProps } from '@t/dom';
 import {
   IntersectionOptions,
   useInView,
 } from 'react-intersection-observer';
-import { TProps } from './gallery/footer/core/items/Button';
 import { SLOW_MOTION_CONFIG } from '@constants/animation';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
@@ -45,7 +43,7 @@ export const InView = ({
     <Root
       ref={ref}
       style={{ ...style }}
-      className={clsx('relative', classValue)}
+      className={clsx('in-view relative', classValue)}
       transition={{ ...SLOW_MOTION_CONFIG, delay: 0 }}
       {...props}
     >
