@@ -13,6 +13,7 @@ import { TBaseProps, TWidth } from './types';
 import { TImageResolverEntries } from '@t/screens';
 import { useMotionX } from './hooks/useMotionX';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
+import { RANGE_Z } from '@pages/index/build/images/hooks/useZ';
 
 const Root = styled(motion.div)``;
 
@@ -59,7 +60,10 @@ export const Main: FC<TProps> = ({
     setAnimationDone(true);
 
   return (
-    <Root className='cover-fixed column text-color z-20'>
+    <Root
+      className='cover-fixed column text-color z-20'
+      style={{ z: RANGE_Z * 2 }}
+    >
       <Header
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete
@@ -72,7 +76,7 @@ export const Main: FC<TProps> = ({
             <Background />
             <Sections {...galleryProps} />
           </>
-        )}  
+        )}
         <Footer {...galleryProps} />
         {isReady && <Arrows max={galleryProps.count} />}
       </>

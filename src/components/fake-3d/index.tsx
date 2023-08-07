@@ -31,14 +31,8 @@ export const Fake3D: FC<TProps> = ({
       )}
       options={{
         triggerOnce: false,
-        threshold: 0.2,
-        // onChange: (inView, entry) => {
-        //   if (inView) {
-        //     const rect =
-        //       entry.target.getBoundingClientRect();
-        //     setRect(rect);
-        //   }
-        // },
+        threshold: 0,
+        rootMargin: '200px',
         ...intersectionOptions,
       }}
     >

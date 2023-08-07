@@ -8,6 +8,7 @@ import { Projects } from './projects';
 import { Space24 } from '@components/spaces/Space24';
 import { Space16 } from '@components/spaces/Space16';
 import { Gallery } from '@components/gallery';
+import { Space32 } from '@components/spaces/Space32';
 
 export const Index = () => {
   return (
@@ -15,13 +16,13 @@ export const Index = () => {
       <MainShell>
         <Shell>
           <Build />
-          <Space16 />
+          <Space24 />
           <Tech />
-          <Space24 />
+          <Space32 />
           <Projects />
-          <Space24 />
+          <Space32 />
           <Contact />
-          <Space24 /> 
+          <Space32 />
           <Gallery />
         </Shell>
       </MainShell>
