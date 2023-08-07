@@ -69,7 +69,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         />
         <Text
           className={clsx(
-            'center relative capitalise text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
+            'center relative text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
           )}
           variants={{
             animate: {

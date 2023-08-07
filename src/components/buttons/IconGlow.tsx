@@ -12,7 +12,7 @@ export const IconGlow: FC<TProps> = ({
 }) => {
   return (
     <Glow drop={4} color='white' {...glowProps}>
-      <Icon classValue='relative w-9 h-9' />
+      <Icon classValue='relative' />
     </Glow>
   );
 };

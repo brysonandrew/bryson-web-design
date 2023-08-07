@@ -7,6 +7,7 @@ import { TIconComponent } from '@t/icons';
 import { TClassValueProps } from '@t/index';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Inner } from './Inner';
+import { IconGlow } from './IconGlow';
 
 const Link = styled(motion(_Link))``;
 
@@ -21,16 +22,13 @@ export const Button: FC<TButtonProps> = ({
   ...props
 }) => {
   return (
-    <div className={clsx(classValue)}>
-      <Link
-        className={clsx(
-          'relative row-space glow-interactive cursor-pointer z-10',
-        )}
-        {...PARENT_GLOW_PROPS}
-        {...props}
-      >
-        <Inner Icon={Icon} />
-      </Link>
-    </div>
+    <Link
+      className={clsx(
+        'relative row-space cursor-pointer z-10',
+      )}
+      {...props}
+    >
+      <IconGlow Icon={Icon} />
+    </Link>
   );
 };

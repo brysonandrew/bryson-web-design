@@ -12,7 +12,6 @@ type TProps = TLink;
 export const Link: FC<TProps> = ({
   href,
   title,
-  subTitle,
   Icon,
 }) => {
   const { isHover, ...handlers } = useHoverKey(
@@ -28,7 +27,7 @@ export const Link: FC<TProps> = ({
       {...PARENT_GLOW_PROPS}
       {...handlers}
     >
-      <MetalGlow />
+      <MetalGlow isDarkest /> 
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>
@@ -37,18 +36,6 @@ export const Link: FC<TProps> = ({
         <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
           {title}
         </h5>
-        {/* <div className='hidden sm:flex row'>
-          <div className='p-1' />
-          <motion.h6
-            className='uppercase italic text-xs text-color'
-            variants={{
-              animate: { opacity: 0.6 },
-              hover: { opacity: 1 },
-            }}
-          >
-            {subTitle}
-          </motion.h6>
-        </div> */}
       </div>
     </Root>
   );

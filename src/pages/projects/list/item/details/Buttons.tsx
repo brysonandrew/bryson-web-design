@@ -30,7 +30,7 @@ export const Buttons: FC<TProps> = ({
         <li className='row-space w-full md:w-auto md:row'>
           <h3 className='text-color-1'>Screenshots</h3>
           <Space />
-          <Circle>
+          <Circle classValue='relative'>
             <InternalLink
               to={to}
               onClick={onClose}

@@ -17,7 +17,6 @@ export const Switch = () => {
     hoverKey,
     true,
   );
-  const iconMixBlend: TMixblendModeKey = 'normal';
 
   switch (cursorKey) {
     case 'open-in-new': {
@@ -25,7 +24,6 @@ export const Switch = () => {
         <Sight
           animate={{
             ...RIGHT_TOP_MD,
-            mixBlendMode: iconMixBlend,
           }}
         >
           {secondaryKey && (
@@ -44,7 +42,6 @@ export const Switch = () => {
         <Sight
           animate={{
             ...RIGHT_TOP_MD,
-            mixBlendMode: iconMixBlend,
           }}
         >
           {secondaryKey && (

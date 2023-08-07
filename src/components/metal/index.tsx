@@ -9,7 +9,8 @@ import type { FC } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
 
 const Fallback = styled(motion.div)`
-  background-color: var(--white);
+  background-color: var(--white-1);
+  filter: none;
   html.dark & {
     ${metalRadialDarkCss}
   }

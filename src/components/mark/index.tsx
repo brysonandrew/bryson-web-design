@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BASE_PROPS } from './config';
 import { FC } from 'react';
 import { useContext } from '@state/Context';
@@ -29,8 +29,6 @@ export const Mark: FC<TProps> = ({
       style={{
         width: 'calc(0.5rem + 4px)',
         height: 'calc(100% + 2px)',
-        originX: "0%",
-        originY: "0%",
         ...style,
       }}
       {...(isDarkMode ? BASE_PROPS : {})}

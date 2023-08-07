@@ -41,7 +41,7 @@ export const DarkMode = () => {
     >
       <Circle
         aria-label='dark-mode'
-        classValue='overflow-hidden preserve-3d perspective-1000'
+        classValue='relative overflow-hidden preserve-3d perspective-1000'
       >
         <Button onTap={handleTap}>
           <AnimatePresence mode='wait' initial={false}>

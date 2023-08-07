@@ -5,15 +5,17 @@ import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
 import { Border as Select } from '@components/select/Border';
-import { MetalDark } from '@components/metal/MetalDark';
 import { Box } from '@components/filter-animate/Box';
 import { useContext } from '@state/Context';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
-const Title = styled.h4``;
+const Title = styled.h4`
+
+`;
 
 export const Item: FC<TItem> = ({
   Icon,
@@ -31,20 +33,21 @@ export const Item: FC<TItem> = ({
 
   return (
     <Root
-      className={clsx('relative cursor-pointer')}
+      className={'relative cursor-pointer'}
       {...PARENT_GLOW_PROPS}
       {...handlers}
       {...props}
     >
-      {isHover && <Select layoutId={title} />}
-      <Glow drop={8} color={isDarkMode ? 'white' : 'white'}>
-        <MetalDark />
-      </Glow>
+      {isDarkMode && isHover && <Select layoutId={title} />}
+      <MetalGlow
+        drop={16}
+        color={isDarkMode ? 'white' : 'baby-blue'}
+      />
       <Box>
         <Glow
           text={2.8}
           drop={4}
-          color={isDarkMode ? 'teal' : 'white'}
+          color={isDarkMode ? 'teal' : 'baby-blue'}
         >
           <Anchor
             className={clsx(

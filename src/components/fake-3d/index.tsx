@@ -25,39 +25,54 @@ export const Fake3D: FC<TProps> = ({
   const [rect, setRect] = useState<TRect>(null);
   return (
     <InView
-      className={clsx(
-        'flex flex-col items-center relative w-full',
+      classValue={clsx(
+        'flex flex-col items-center w-full',
         classValue,
       )}
       options={{
-        triggerOnce: true,
-        onChange: (inView, entry) => {
-          if (inView) {
-            const rect =
-              entry.target.getBoundingClientRect();
-            setRect(rect);
-          }
-        },
+        triggerOnce: false,
+        threshold: 0.2,
+        // onChange: (inView, entry) => {
+        //   if (inView) {
+        //     const rect =
+        //       entry.target.getBoundingClientRect();
+        //     setRect(rect);
+        //   }
+        // },
         ...intersectionOptions,
       }}
     >
-      {({ inView }) => {
-        return (
-          <>
-            {inView ? (
-              <Aggregator rect={rect} {...optionsConfig}>
-                {children}
-              </Aggregator>
-            ) : (
-              <motion.div
-                style={{
-                  height: rect?.height,
-                }}
-                {...PRESENCE_OPACITY}
-              />
-            )}
-          </>
-        );
+      {({ inView, entry }) => {
+        if (inView) {
+          return (
+            <Aggregator
+              rect={rect}
+              onUpdateRect={() => {
+                if (entry) {
+                  const rect =
+                    entry.target.getBoundingClientRect();
+                  setRect(rect);
+                }
+              }}
+              {...optionsConfig}
+            >
+              {children}
+            </Aggregator>
+          );
+        }
+
+        if (typeof rect !== 'undefined') {
+          return (
+            <motion.div
+              style={{
+                height: rect?.height,
+              }}
+              {...PRESENCE_OPACITY}
+            />
+          );
+        }
+
+        return null;
       }}
     </InView>
   );

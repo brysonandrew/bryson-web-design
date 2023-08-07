@@ -24,7 +24,7 @@ export const Text: FC<TProps> = ({ children }) => {
   return (
     <Root
       key={isDarkMode ? 'dark' : 'light'}
-      className='text-2xl whitespace-nowrap capitalize'
+      className='text-2xl text-color-stroke-1 whitespace-nowrap capitalize'
       style={{ color, opacity: 1 }}
       variants={{
         idle: {

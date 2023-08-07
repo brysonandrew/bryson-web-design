@@ -5,6 +5,7 @@ import { Button } from '../../buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { Circle } from '@components/buttons/circle';
 
 type TProps = TClassValueProps;
 export const Close: FC<TProps> = (props) => {
@@ -19,12 +20,14 @@ export const Close: FC<TProps> = (props) => {
   };
 
   return (
-    <Button
-      to={to}
-      onClick={handleClose}
-      Icon={Cross}
-      {...props}
-      {...handlers}
-    />
+    <Circle classValue='relative'>
+      <Button
+        to={to}
+        onClick={handleClose}
+        Icon={Cross}
+        {...props}
+        {...handlers}
+      />
+    </Circle>
   );
 };

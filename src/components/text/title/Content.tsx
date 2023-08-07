@@ -1,4 +1,5 @@
 import { TitleRoot } from '@components/spaces/TitleRoot';
+import { ThinLine } from '@components/thin-line';
 import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import type { TChildren } from '@t/index';
@@ -24,8 +25,15 @@ export const Content: FC<TProps> = ({ children }) => {
         </motion.div>
       </div>
       <div className='overflow-hidden w-3/4'>
-        <ThinLineGrow delay={.6} />
+        <ThinLine
+          classValue='relative'
+          style={{
+            bottom: '-1.4rem',
+            backgroundColor: 'var(--baby-blue)',
+          }}
+        />
+        <ThinLineGrow delay={0.6} />
       </div>
     </TitleRoot>
   );
-}; 
+};

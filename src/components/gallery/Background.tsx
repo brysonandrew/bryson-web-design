@@ -7,8 +7,8 @@ import { type FC } from 'react';
 import { isMobile } from 'react-device-detect';
 
 const Root = styled(motion.div)`
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 `;
 
 export const Background: FC = () => {
@@ -21,7 +21,7 @@ export const Background: FC = () => {
       style={{
         backgroundColor: `rgba(${
           isDarkMode ? '12,12,12' : '234,234,234'
-        }, ${isMobile ? 0.95 : 0.7})`,
+        }, ${isMobile ? 0.95 : isDarkMode ? 0.6 : 0.4})`,
       }}
       {...PRESENCE_OPACITY}
     />

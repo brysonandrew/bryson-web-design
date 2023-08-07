@@ -53,7 +53,7 @@ export const Content: FC<TProps> = ({
         <Glow text={1} drop={2} color='teal'>
           {metal}
         </Glow>
-      )}
+      )} 
       <Mark />
       <motion.div
         className='row-space'
@@ -63,7 +63,7 @@ export const Content: FC<TProps> = ({
         <div className='p-2' />
         <>{children}</>
       </motion.div>
-      {isHover && <Details key='DETAILS' {...props} />}
+      {isHover && <Details {...props} />}
     </Root>
   );
 };

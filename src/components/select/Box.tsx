@@ -3,6 +3,7 @@ import { ReactNode, type FC } from 'react';
 import { resolvePresence } from '@utils/animation';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
+import { MetalDarkest } from '@components/metal/MetalDarkest';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -19,7 +20,7 @@ export const Box: FC<TProps> = ({
     <motion.div
       layout='position'
       className={clsx(
-        'relative font-mono text-color text-xl px-4 py-1 background-color-2',
+        'relative font-mono text-color text-xl px-4 py-1',
         classValue,
       )}
       {...resolvePresence(
@@ -36,6 +37,7 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
+      <MetalDarkest />
       {children}
     </motion.div>
   );
