@@ -24,11 +24,11 @@ export const Button: FC<TButtonProps> = ({
   return (
     <Link
       className={clsx(
-        'relative row-space cursor-pointer z-10',
+        'absolute inset-0 center cursor-pointer z-10',
       )}
       {...props}
     >
-      <IconGlow Icon={Icon} />
+      <Icon/>
     </Link>
   );
 };

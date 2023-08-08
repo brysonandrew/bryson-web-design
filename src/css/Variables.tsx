@@ -43,7 +43,7 @@ export const Variables = () => {
           --white: rgb(240, 247, 245);
           --white-1: rgb(220, 217, 215);
           --white-2: rgb(200, 197, 195);
-          --white-3: rgb(190, 192, 190);
+          --white-3: rgb(184, 184, 184);
           --white-01: rgba(225, 225, 225, 0.1);
           --white-02: rgba(225, 225, 225, 0.2);
           --white-04: rgb(225, 225, 225, 0.4);

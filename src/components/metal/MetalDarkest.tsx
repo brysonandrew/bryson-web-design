@@ -6,7 +6,6 @@ import { TRootProps, Metal } from '.';
 
 const Root = styled(motion.div)`
   background-color: var(--white-2);
-  filter: none;
   html.dark & {
     ${metalRadialDarkestCss}
   }
