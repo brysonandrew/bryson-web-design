@@ -23,6 +23,7 @@ export const Fake3D: FC<TProps> = ({
   ...optionsConfig
 }) => {
   const [rect, setRect] = useState<TRect>(null);
+
   return (
     <InView
       classValue={clsx(
@@ -31,18 +32,13 @@ export const Fake3D: FC<TProps> = ({
       )}
       options={{
         triggerOnce: false,
-        threshold: 0.2,
-        // onChange: (inView, entry) => {
-        //   if (inView) {
-        //     const rect =
-        //       entry.target.getBoundingClientRect();
-        //     setRect(rect);
-        //   }
-        // },
+        threshold: 0,
+        rootMargin: '280px',
         ...intersectionOptions,
       }}
     >
       {({ inView, entry }) => {
+
         if (inView) {
           return (
             <Aggregator

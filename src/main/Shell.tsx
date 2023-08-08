@@ -77,8 +77,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           </motion.div>
         </MotionConfig>
       </Root>
-      {isDesktop && <Cursor/>}
+      {isDesktop && <Cursor />}
     </>
   );
 };
- 

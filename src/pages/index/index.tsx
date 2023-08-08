@@ -8,6 +8,8 @@ import { Projects } from './projects';
 import { Space24 } from '@components/spaces/Space24';
 import { Space16 } from '@components/spaces/Space16';
 import { Gallery } from '@components/gallery';
+import { Space48 } from '@components/spaces/Space48';
+import { LayoutGroup } from 'framer-motion';
 
 export const Index = () => {
   return (
@@ -15,14 +17,16 @@ export const Index = () => {
       <MainShell>
         <Shell>
           <Build />
-          <Space16 />
+          <Space24 />
           <Tech />
-          <Space24 />
+          <Space48 />
           <Projects />
-          <Space24 />
-          <Contact />
-          <Space24 /> 
-          <Gallery />
+          <Space48 />
+          <LayoutGroup>
+            <Contact />
+            <Space48 />
+            <Gallery />
+          </LayoutGroup>
         </Shell>
       </MainShell>
     </Suspense>

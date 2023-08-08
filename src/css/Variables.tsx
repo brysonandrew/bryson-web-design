@@ -40,10 +40,10 @@ export const Variables = () => {
           --gray-2: rgb(135, 130, 130);
           --gray-3: rgb(155, 150, 150);
 
-          --white: rgb(230, 227, 225);
-          --white-1: rgb(210, 207, 205);
-          --white-2: rgb(190, 187, 185);
-          --white-3: rgb(185, 182, 180);
+          --white: rgb(240, 247, 245);
+          --white-1: rgb(220, 217, 215);
+          --white-2: rgb(200, 197, 195);
+          --white-3: rgb(184, 184, 184);
           --white-01: rgba(225, 225, 225, 0.1);
           --white-02: rgba(225, 225, 225, 0.2);
           --white-04: rgb(225, 225, 225, 0.4);

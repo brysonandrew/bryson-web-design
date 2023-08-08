@@ -21,7 +21,7 @@ export const Close: FC<TProps> = (props) => {
 
   return (
     <Circle classValue='relative'>
-      <Button
+      <Button 
         to={to}
         onClick={handleClose}
         Icon={Cross}

@@ -190,19 +190,20 @@ const config = defineConfig({
           BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
           Helvetica Neue, sans-serif;
         }
-        code, tt {
-          font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
-        }
-        body {
+
+        body:not(.dark) {
           color: ${theme.colors.gray};
           background-color: ${theme.colors['white']};
-          transition: color 0.9s, background-color 0.9s;
         }
 
         html.dark body {
           background-color: ${theme.colors.black};
           color: ${theme.colors['teal-bright']};
         } 
+
+        code, tt {
+          font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
+        }
 
         ::-webkit-scrollbar {
           background-color: ${theme.colors['white-2']};
