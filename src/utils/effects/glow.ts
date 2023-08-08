@@ -49,10 +49,6 @@ export const resolveGlowProps = ({
     hover: {
       opacity: 1,
       transition: EFFECT_HOVER_TRANSITION,
-    },
-    dim: {
-      opacity: 0.2,
-      transition: EFFECT_HOVER_TRANSITION,
-    },
+    }
   },
 });

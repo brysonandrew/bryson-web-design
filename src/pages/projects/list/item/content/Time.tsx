@@ -10,7 +10,7 @@ export const Time: FC<TProps> = ({ time, classValue }) => {
     classValue,
   );
   return (
-    <TextXs layout classValue={className}>
+    <TextXs layout="position" classValue={className}>
       {typeof time === 'undefined'
         ? 'Present'
         : new Intl.DateTimeFormat('en-UK', {

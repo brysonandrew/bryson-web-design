@@ -12,6 +12,7 @@ import {
 import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { Button } from '@components/buttons/circle/Button';
+import { useMoveSound } from '@hooks/sounds/useMoveSound';
 
 export const DarkMode = () => {
   const { darkMode, isScroll } = useContext();
@@ -19,7 +20,9 @@ export const DarkMode = () => {
     'dark-mode',
     'dark-mode',
   );
+  const handleMove = useMoveSound();
   const handleTap = () => {
+    handleMove();
     darkMode.toggle();
   };
   const iconProps = (origin: `${number}%`) => ({

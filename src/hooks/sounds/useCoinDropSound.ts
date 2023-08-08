@@ -10,15 +10,15 @@ export const useCoinDropSound = () => {
     if (!isSound) return;
     await context.resume();
     const filter = new BiquadFilterNode(context, {
-      frequency: 1200,
+      frequency: 200,
       type: "bandpass",
     });
-    const gain = new GainNode(context, { gain: 0.05 });
+    const gain = new GainNode(context, { gain: 0.004 });
     const opts: TMultiOptions = {
-      type: "triangle",
-      midi: 120,
-      count: 1,
-      spread: 10,
+      type: "sawtooth",
+      midi: 10,
+      count: 10,
+      spread: 1,
       stagger: 0.02,
       decay: 0.4,
       start: context.currentTime,

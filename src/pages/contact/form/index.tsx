@@ -12,15 +12,17 @@ import { Space2 } from '@components/spaces/Space2';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
 import { Space4 } from '@components/spaces/Space4';
+import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.form)``;
 
 export const Form = () => {
   const ref = useRef<HTMLFormElement | null>(null);
+  const currProject = useCurrProject();
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  useAutoFocus(isDisabled);
+  useAutoFocus(isDisabled || Boolean(currProject));
 
   return (
     <Root

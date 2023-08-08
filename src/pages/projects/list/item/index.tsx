@@ -12,7 +12,7 @@ import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { resolveParentProps } from '@utils/effects';
+import { PARENT_PROPS, resolveParentProps } from '@utils/effects';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import {
   PROJECT_CURSOR_KEY,
@@ -70,14 +70,14 @@ export const Item: FC<TProps> = ({
       <Root
         className={clsx('relative z-0 py-3')}
         onClick={handleOnSound}
-        {...resolveParentProps(isDim)}
+        {...PARENT_PROPS}
         onHoverStart={
           isScrolling
             ? () => (isEnteredOnScrollRef.current = true)
             : handleHoverStart
         }
         onHoverEnd={handleHoverEnd}
-      >
+      > 
         <Link to={to}>
           <Content
             isHover={isHover}
@@ -85,7 +85,6 @@ export const Item: FC<TProps> = ({
             variants={{
               animate: { opacity: 1 },
               hover: { opacity: 1 },
-              dim: { opacity: 0.6 },
             }}
             {...item}
           >

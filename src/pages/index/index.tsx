@@ -5,10 +5,10 @@ import { Tech } from './tech';
 import { Build } from './build';
 import { Contact } from './contact';
 import { Projects } from './projects';
-import { Space24 } from '@components/spaces/Space24';
-import { Space16 } from '@components/spaces/Space16';
 import { Gallery } from '@components/gallery';
+import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
+import { Space60 } from '@components/spaces/Space60';
 import { LayoutGroup } from 'framer-motion';
 
 export const Index = () => {
@@ -17,16 +17,16 @@ export const Index = () => {
       <MainShell>
         <Shell>
           <Build />
-          <Space24 />
+          <Space32 />
           <Tech />
           <Space48 />
-          <Projects />
-          <Space48 />
           <LayoutGroup>
+            <Projects />
+            <Space60 />
             <Contact />
-            <Space48 />
-            <Gallery />
           </LayoutGroup>
+          <Space48 />
+          <Gallery />
         </Shell>
       </MainShell>
     </Suspense>

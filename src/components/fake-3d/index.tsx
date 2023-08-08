@@ -32,8 +32,8 @@ export const Fake3D: FC<TProps> = ({
       )}
       options={{
         triggerOnce: false,
-        threshold: 0,
-        rootMargin: '280px',
+        threshold: 0.2,
+        rootMargin: '0px',
         ...intersectionOptions,
       }}
     >
