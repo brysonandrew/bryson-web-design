@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FC, ForwardedRef } from 'react';
 import { ImageWithRef } from './ImageWithRef';
 import { TMediaRecord } from '@t/media';
+import { TMotionImgProps } from '@t/dom';
 
 const Root = styled.picture``;
 const Source = styled.source``;
 
-type TProps = HTMLMotionProps<'img'> & {
+type TProps = TMotionImgProps & {
   imageRef?: ForwardedRef<HTMLImageElement>;
   mediaRecord: TMediaRecord;
 };

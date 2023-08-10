@@ -105,7 +105,7 @@ export const Image: FC<TProps> = (props) => {
       {...handlers}
     >
       <Link
-        className='cursor-zoom-in'
+        className='relative cursor-zoom-in'
         to={to}
         {...resolveInteractiveLabels(
           `View in image gallery`,
@@ -121,8 +121,8 @@ export const Image: FC<TProps> = (props) => {
           animate={{
             opacity: isLoaded ? 1 : 0,
           }}
-          {...dimensions}
           {...pictureProps}
+          {...dimensions}
         />
       </Link>
     </motion.li>

@@ -1,35 +1,40 @@
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
-import { Suspense } from 'react';
-import { Tech } from './tech';
+import { Suspense, lazy } from 'react';
 import { Build } from './build';
-import { Contact } from './contact';
-import { Projects } from './projects';
-import { Gallery } from '@components/gallery';
 import { Space24 } from '@components/spaces/Space24';
 import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
-import { Space60 } from '@components/spaces/Space60';
 import { LayoutGroup } from 'framer-motion';
+const Tech = lazy(() => import('./tech'));
+const Contact = lazy(() => import('./contact'));
+const Projects = lazy(() => import('./projects'));
+const Gallery = lazy(() => import('@components/gallery'));
 
 export const Index = () => {
   return (
-    <Suspense fallback={null}>
-      <MainShell>
-        <Shell>
-          <Build />
-          <Space24 />
+    <MainShell>
+      <Shell>
+        <Build />
+        <Space24 />
+        <Suspense fallback={null}>
           <Tech />
-          <Space32 />
-          <LayoutGroup>
+        </Suspense>
+        <Space32 />
+        <LayoutGroup>
+          <Suspense fallback={null}>
             <Projects />
-            <Space48 /> 
-            <Contact />
-          </LayoutGroup>
+          </Suspense>
           <Space48 />
+          <Suspense fallback={null}>
+            <Contact />
+          </Suspense>
+        </LayoutGroup>
+        <Space48 />
+        <Suspense fallback={null}>
           <Gallery />
-        </Shell>
-      </MainShell>
-    </Suspense>
+        </Suspense>
+      </Shell>
+    </MainShell>
   );
 };

@@ -122,6 +122,8 @@ export const Zoom: FC<TProps> = ({
             {...rootProps}
           >
             <Picture
+              width={imageWidth}
+              height={imageHeight}
               mediaRecord={mediaRecord}
               className='absolute'
               {...copyProps}

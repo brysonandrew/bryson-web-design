@@ -12,3 +12,5 @@ export const Gallery: FC = () => {
   }
   return null;
 };
+
+export default Gallery;

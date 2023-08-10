@@ -7,6 +7,8 @@ import { resolveGradientStops } from './resolveGradientStops';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
 
+const PLACEHOLDER_LAYOUT_ID = 'PLACEHOLDER_LAYOUT_ID';
+
 export const Root = styled(motion.div)``;
 
 type TProps = TClassValueProps & HTMLMotionProps<'div'>;
@@ -17,7 +19,8 @@ export const Placeholder: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className='relative center w-full h-full'
+      className='absolute center w-full h-full'
+      layoutId={PLACEHOLDER_LAYOUT_ID}
       {...{
         initial: { opacity: 0 },
         animate: { opacity: 0.28 },

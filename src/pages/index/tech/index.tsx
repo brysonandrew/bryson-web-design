@@ -11,4 +11,5 @@ export const Tech = () => (
     </Fake3D>
   </Section>
 );
-   
+
+export default Tech;

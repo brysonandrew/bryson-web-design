@@ -46,9 +46,6 @@ export const Pages = () => {
                   to={to}
                   isActive={isActive}
                   onClick={handleClick}
-                  {...resolveInteractiveLabels(
-                    `Go to ${item} page`,
-                  )}
                 >
                   {item}
                 </Link>

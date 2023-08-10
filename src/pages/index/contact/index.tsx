@@ -6,12 +6,12 @@ import { Section } from '@components/Section';
 
 export const Contact = () => {
   return (
-    <Section
-      title={STORY.contact}
-    >
+    <Section title={STORY.contact}>
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>
     </Section>
   );
 };
+
+export default Contact;
