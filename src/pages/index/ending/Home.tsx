@@ -19,6 +19,7 @@ export const Home: FC<TProps> = () => {
     <Root style={{ x: '-100%' }} {...PARENT_GLOW_PROPS}>
       <Button
         aria-label='home'
+        title='home'
         className='glow-interactive'
         onTap={handleTap}
       >

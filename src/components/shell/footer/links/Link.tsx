@@ -23,6 +23,8 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       href={href}
       target='_blank'
       onClick={handleOn}
+      aria-label={title}
+      title={title}
       {...PARENT_GLOW_PROPS}
       {...handlers}
     >

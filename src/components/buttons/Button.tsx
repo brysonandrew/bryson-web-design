@@ -4,14 +4,11 @@ import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TIconComponent } from '@t/icons';
-import { TClassValueProps } from '@t/index';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
-import { Inner } from './Inner';
-import { IconGlow } from './IconGlow';
+import { TClassValueProps, TTitleProps } from '@t/index';
 
 const Link = styled(motion(_Link))``;
 
-export type TButtonProps = TClassValueProps & {
+export type TButtonProps = TClassValueProps & TTitleProps & {
   onClick(): any;
   to: string;
   Icon: TIconComponent;
@@ -28,7 +25,7 @@ export const Button: FC<TButtonProps> = ({
       )}
       {...props}
     >
-      <Icon/>
+      <Icon />
     </Link>
   );
 };

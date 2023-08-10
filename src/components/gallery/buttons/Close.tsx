@@ -2,7 +2,7 @@ import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { Button } from '../../buttons/Button';
-import { TClassValueProps } from '@t/index';
+import { TClassValueProps, TTitleProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { Circle } from '@components/buttons/circle';
@@ -21,10 +21,11 @@ export const Close: FC<TProps> = (props) => {
 
   return (
     <Circle classValue='relative'>
-      <Button 
+      <Button
         to={to}
         onClick={handleClose}
         Icon={Cross}
+        title='Close'
         {...props}
         {...handlers}
       />
