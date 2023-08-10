@@ -8,6 +8,7 @@ import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
+import { TPageLink } from '@constants/copy';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -21,7 +22,7 @@ type TProp = {
   isActive: boolean;
   to: string;
   onClick(): void;
-  children: string;
+  children: TPageLink
 };
 export const Item: FC<TProp> = ({
   isActive,
@@ -41,7 +42,7 @@ export const Item: FC<TProp> = ({
       className={clsx('relative center pb-2', [
         isActive && 'cursor-default',
       ])}
-      {...resolveInteractiveLabels(`Go to ${children}`)}
+      {...resolveInteractiveLabels(children)}
       {...handlers}
     >
       <h2

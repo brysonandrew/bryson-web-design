@@ -26,6 +26,7 @@ export const Shell: FC<TProps> = ({ children }) => {
         <HeaderOffset />
         {children}
       </Content>
+      
       {!isProject && <Footer />}
     </Root>
   );

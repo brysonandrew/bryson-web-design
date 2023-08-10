@@ -39,12 +39,12 @@ export const Links: FC<TProps> = (props) => {
     >
       {ITEMS.map((item, index) => (
         <Fragment key={item.title}>
-          {index !== 0 && <div className='py-1' />}
-          <Item key={item.title}>
+          {index !== 0 && <Item className='py-1' />}
+          <Item>
             <Link {...item} />
           </Item>
         </Fragment>
       ))}
     </Root>
-  ); 
+  );
 };

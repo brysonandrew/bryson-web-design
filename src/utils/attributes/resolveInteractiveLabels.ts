@@ -9,5 +9,5 @@ export const resolveInteractiveLabels = (
   title: string,
 ): TInteractiveLabelProps => ({
   title,
-  'aria-label': 'title',
+  'aria-label': title,
 });
