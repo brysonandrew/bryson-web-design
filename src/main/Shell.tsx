@@ -73,7 +73,7 @@ export const Shell: FC<TProps> = ({ children }) => {
             onAnimationComplete={handleAnimationComplete}
           >
             <MotionConfig {...MOTION_CONFIG}>
-              <Network>{children}</Network>
+              <>{children}</>
             </MotionConfig>
           </motion.div>
         </MotionConfig>
