@@ -3,86 +3,13 @@ import {
   presetWebFonts,
   presetUno,
 } from 'unocss';
-import { SPACING } from './uno.config-spacing';
+import { THEME } from './uno.config-theme';
 
 const SANS = 'Bodoni Moda';
 const MONO = 'Nova Mono';
 
 const config = defineConfig({
-  theme: {
-    breakpoints: {
-      sm: '480px',
-      md: '768px',
-      lg: '900px',
-      xl: '1100px',
-    },
-    width: {
-      'screen-80': '80vw',
-      '+core': '480px',
-      '++core': '700px',
-      '+++core': '840px',
-      '++++core': '1000px',
-    },
-    colors: {
-      teal: 'var(--teal)',
-      'teal-01': 'var(--teal-01)',
-      'teal-02': 'var(--teal-02)',
-      'teal-04': 'var(--teal-04)',
-
-      'teal-bright': 'var(--teal-bright)',
-      'teal-bright-04': 'var(--teal-bright-04)',
-      'teal-bright-01': 'var(--teal-bright-01)',
-
-      'baby-blue': 'var(--baby-blue)',
-      'baby-blue-01': 'var(--baby-blue-01)',
-      'baby-blue-02': 'var(--baby-blue-02)',
-      'baby-blue-04': 'var(--baby-blue-04)',
-      'baby-blue-09': 'var(--baby-blue-09)',
-
-      black: 'var(--black)',
-      'black-02': 'var(--black-02)',
-      'black-04': 'var(--black-04)',
-      'black-09': 'var(--black-09)',
-
-      'black-1': 'var(--black-1)',
-      'black-2': 'var(--black-2)',
-      'black-3': 'var(--black-3)',
-
-      gray: 'var(--gray)',
-      'gray-1': 'var(--gray-1)',
-      'gray-2': 'var(--gray-2)',
-      'gray-3': 'var(--gray-3)',
-
-      white: 'var(--white)',
-      'white-1': 'var(--white-1)',
-      'white-2': 'var(--white-2)',
-      'white-3': 'var(--white-3)',
-
-      'white-01': 'var(--white-01)',
-      'white-02': 'var(--white-02)',
-      'white-04': 'var(--white-04)',
-      'white-09': 'var(--white-09)',
-
-      current: 'var(--current)',
-      transparent: 'var(--transparent)',
-    },
-    spacing: SPACING,
-    fontSize: {
-      xs: ['0.75rem', '1rem'],
-      sm: ['0.875rem', '1.25rem'],
-      base: ['1rem', '1.5rem'],
-      lg: ['1.125rem', '1.75rem'],
-      xl: ['1.25rem', '1.75rem'],
-      '2xl': ['1.5rem', '2rem'],
-      '3xl': ['1.875rem', '2.25rem'],
-      '4xl': ['2.25rem', '2.5rem'],
-      '5xl': ['3rem', '1'],
-      '6xl': ['3.75rem', '1'],
-      '7xl': ['4.5rem', '1'],
-      '8xl': ['6rem', '1'],
-      '9xl': ['8rem', '1'],
-    },
-  },
+  theme: THEME,
   rules: [
     [
       'glow-interactive-dark',
@@ -94,7 +21,7 @@ const config = defineConfig({
     [
       'glow-interactive-light',
       {
-        'box-shadow': '0 0 1px 1px var(--baby-blue-02)',
+        'box-shadow': '0 0 1px 1px var(--baby-blue-04)',
       },
     ],
     [

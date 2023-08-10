@@ -2,8 +2,7 @@ import { Paragraphs } from '@pages/projects/list/item/details/Paragraphs';
 import { TItem } from '@t/projects';
 import { Tech } from './Tech';
 import { FC } from 'react';
-import { Space } from '@components/spaces/Space';
-import { Space2 } from '@components/spaces/Space2';
+import { Space3 } from '@components/spaces/Space3';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { DELAY_VISIBILITY } from '@constants/animation';
@@ -19,13 +18,13 @@ export const Details: FC<TProps> = ({
     <Root {...DELAY_VISIBILITY}>
       {paragraphs && (
         <>
-          <Space2 />
+          <Space3 />
           <Paragraphs paragraphs={paragraphs} />
         </>
       )}
       {tags && (
         <>
-          <Space2 />
+          <Space3 />
           <Tech tags={tags} />
         </>
       )}

@@ -8,19 +8,21 @@ import {
   ACTIVE,
   DISABLED,
 } from '@components/filters/presets';
-import { Space2 } from '@components/spaces/Space2';
+import { Space3 } from '@components/spaces/Space3';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
-import { Space4 } from '@components/spaces/Space4';
+import { Space6 } from '@components/spaces/Space6';
+import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.form)``;
 
 export const Form = () => {
   const ref = useRef<HTMLFormElement | null>(null);
+  const currProject = useCurrProject();
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  useAutoFocus(isDisabled);
+  useAutoFocus(isDisabled || Boolean(currProject));
 
   return (
     <Root
@@ -46,7 +48,7 @@ export const Form = () => {
           required
           {...inputHandlers}
         />
-        <Space2 />
+        <Space3 />
         <Text
           disabled={isDisabled}
           type='email'
@@ -55,7 +57,7 @@ export const Form = () => {
           required
           {...inputHandlers}
         />
-        <Space2 />
+        <Space3 />
         <Textarea
           name='message'
           disabled={isDisabled}
@@ -65,7 +67,7 @@ export const Form = () => {
           {...inputHandlers}
         />
       </motion.div>
-      <Space4 />
+      <Space6 />
       <Submit isDisabled={isDisabled} />
     </Root>
   );

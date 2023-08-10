@@ -1,10 +1,10 @@
 import { ThinLine } from '.';
-import { Space4 } from '@components/spaces/Space4';
+import { Space6 } from '@components/spaces/Space6';
 
 export const ThinLineGap = () => (
   <>
-    <Space4 />
+    <Space6 />
     <ThinLine classValue='w-3/4' />
-    <Space4 />
+    <Space6 />
   </>
 );

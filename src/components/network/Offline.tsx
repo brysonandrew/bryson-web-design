@@ -1,6 +1,6 @@
 import { MetalDark } from '@components/metal/MetalDark';
 import { Space12 } from '@components/spaces/Space12';
-import { Space4 } from '@components/spaces/Space4';
+import { Space6 } from '@components/spaces/Space6';
 import { Title } from '@components/text/title';
 import type { FC } from 'react';
 
@@ -12,7 +12,7 @@ export const Offline: FC = () => {
         <Title>
           You are <strong>offline</strong>
         </Title>
-        <Space4 />
+        <Space6 />
         <div className='relative px-4 py-2'>
           <MetalDark />
           <h2 className='relative text-2xl text-center z-10'>

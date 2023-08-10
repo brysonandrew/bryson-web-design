@@ -1,5 +1,5 @@
 import { Fragment, type FC } from 'react';
-import { Space2 } from '@components/spaces/Space2';
+import { Space3 } from '@components/spaces/Space3';
 import { TItem } from '@t/projects';
 
 type TProps = Required<Pick<TItem, 'tags'>>;
@@ -7,7 +7,7 @@ export const Tech: FC<TProps> = ({ tags }) => {
   return (
     <div className='relative row'>
       <h4 className='text-xl'>Tech</h4>
-      <Space2 />
+      <Space3 />
       <ul className='column-end sm:row w-full flex-wrap'>
         {tags.map((tag, index) => {
           return (

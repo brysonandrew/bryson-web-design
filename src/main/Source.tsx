@@ -4,6 +4,7 @@ import { Projects } from '@pages/projects';
 import { Navigate, useRoutes } from 'react-router-dom';
 import { Card } from '@pages/card';
 import { Cv } from '@pages/cv';
+import { Logo } from '@pages/logo';
 
 export const Source = () => {
   const COMMON_ROUTES = [
@@ -35,6 +36,10 @@ export const Source = () => {
         {
           path: '/cv',
           element: <Cv />,
+        },
+        {
+          path: '/logo',
+          element: <Logo />,
         },
       ]
     : [...COMMON_ROUTES];
