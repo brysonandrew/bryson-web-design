@@ -105,7 +105,7 @@ export const Image: FC<TProps> = (props) => {
       {...handlers}
     >
       <Link
-        className='cursor-zoom-in'
+        className='relative cursor-zoom-in'
         to={to}
         {...resolveInteractiveLabels(
           `View in image gallery`,
