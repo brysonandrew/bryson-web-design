@@ -15,3 +15,7 @@ export type TChildrenPartialProps = Partial<TChildrenProps>;
 export type TClassValueProps = {
   classValue?: ClassValue;
 };
+
+export type TTitleProps = {
+  title: string;
+};

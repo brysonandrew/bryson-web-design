@@ -12,6 +12,7 @@ type TProps = TClassValueProps & TChildrenProps;
 export const Circle: FC<TProps> = ({
   classValue,
   children,
+  ...props
 }) => {
   return (
     <Root
@@ -20,6 +21,7 @@ export const Circle: FC<TProps> = ({
         classValue,
       )}
       {...PARENT_GLOW_PROPS}
+      {...props}
     >
       <MetalGlow isDarkest />
       {children}

@@ -45,7 +45,11 @@ export const Buttons: FC<TProps> = ({
           <h3 className='text-color-1'>Link</h3>
           <Space />
           <Circle>
-            <Anchor href={href} target='_blank'>
+            <Anchor
+              href={href}
+              title='Open in new'
+              target='_blank'
+            >
               <OpenInNew />
             </Anchor>
           </Circle>

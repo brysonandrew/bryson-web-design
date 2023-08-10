@@ -20,6 +20,7 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
     <Nav
       to={to}
       Icon={ArrowLeft}
+      title='Left'
       {...props}
       {...handlers}
     />

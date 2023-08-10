@@ -1,11 +1,12 @@
 import type { FC } from 'react';
 import { Button, TButtonProps } from '../../buttons/Button';
-import { TClassValueProps } from '@t/index';
+import { TClassValueProps, TTitleProps } from '@t/index';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
 
 type TProps = TClassValueProps &
-  Pick<TButtonProps, 'Icon' | 'to'>;
+  Pick<TButtonProps, 'Icon' | 'to'> &
+  TTitleProps;
 export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
   const { dispatch } = useContext();
   const handleMoveSound = useMoveSound();
