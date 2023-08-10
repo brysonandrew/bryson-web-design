@@ -40,7 +40,10 @@ export const Sound = () => {
       {...handlers}
     >
       <Circle classValue='relative' aria-label='sound'>
-        <Button onTap={handleTap}>
+        <Button
+          title={`Turn ${isSound ? 'off' : 'on'} sound`}
+          onTap={handleTap}
+        >
           {isSound ? (
             <VolumeOn {...iconProps} />
           ) : (

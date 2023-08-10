@@ -16,6 +16,7 @@ import { useMoveSound } from '@hooks/sounds/useMoveSound';
 
 export const DarkMode = () => {
   const { darkMode, isScroll } = useContext();
+  const isDarkMode = darkMode.isDarkMode;
   const { isHover, ...handlers } = useHoverKey(
     'dark-mode',
     'dark-mode',
@@ -46,9 +47,14 @@ export const DarkMode = () => {
         aria-label='dark-mode'
         classValue='relative overflow-hidden preserve-3d perspective-1000'
       >
-        <Button onTap={handleTap}>
+        <Button
+          title={`Switch to ${
+            isDarkMode ? 'light' : 'dark'
+          } mode`}
+          onTap={handleTap}
+        >
           <AnimatePresence mode='wait' initial={false}>
-            {darkMode.isDarkMode ? (
+            {isDarkMode ? (
               <Moon {...iconProps('-100%')} />
             ) : (
               <Sun {...iconProps('100%')} />
