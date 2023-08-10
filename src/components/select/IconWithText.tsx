@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { Space } from '@components/spaces/Space';
 import { ThinLine } from '@components/thin-line';
 import { TBaseIconProps } from '@t/icons';
-import { Space1_5 } from '@components/spaces/Space1_5';
+import { Space2 } from '@components/spaces/Space2';
 
 type TProps = {
   children: string;
@@ -21,7 +21,7 @@ export const IconWithText: FC<TProps> = ({
         {Icon && (
           <>
             <Icon classValue='text-color' />
-            <Space1_5 />
+            <Space2 />
           </>
         )}
         <motion.code

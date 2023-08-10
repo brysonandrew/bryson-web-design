@@ -1,10 +1,10 @@
-import { TColorRgbKey } from '@constants/colors';
 import { resolveColor, resolveWhite } from '@utils/colors';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   PARENT_PROPS,
 } from '.';
+import { TColorRgbKey } from '@t/colors';
 
 export const resolveDropShadow = (
   spread: number,
@@ -49,6 +49,6 @@ export const resolveGlowProps = ({
     hover: {
       opacity: 1,
       transition: EFFECT_HOVER_TRANSITION,
-    }
+    },
   },
 });

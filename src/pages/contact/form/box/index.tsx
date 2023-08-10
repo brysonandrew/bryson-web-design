@@ -5,7 +5,6 @@ import type { FC } from 'react';
 import { Input as Select } from '@components/select/Input';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { TChildren } from '@t/index';
-import { useHover } from '@hooks/useHover';
 import { Clear } from './Clear';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import {
@@ -52,6 +51,7 @@ export const Box: FC<TProps> = ({
       <AnimatePresence>
         {isEmpty && (
           <Clear
+            key={name}
             name={name}
             isReady={Boolean(isHover)}
             onFocus={handleFocus}

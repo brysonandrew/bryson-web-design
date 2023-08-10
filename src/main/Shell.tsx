@@ -25,6 +25,7 @@ import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { Network } from '@components/network';
 import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
+import { Head } from './Head';
 
 const Root = styled(motion.div)``;
 
@@ -60,7 +61,7 @@ export const Shell: FC<TProps> = ({ children }) => {
               <Processor
                 width='100%'
                 height='100%'
-                classValue='dark:fill-black-3 fill-gray-3'
+                classValue='dark:fill-black-3 fill-baby-blue'
                 {...PRESENCE_OPACITY_01}
                 {...resolveTransition(0.28)}
               />

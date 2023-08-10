@@ -1,1 +1,1 @@
-export const Space8 = () => <div className="py-12" />;
+export const Space8 = () => <div className="p-8" />;

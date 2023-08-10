@@ -1,5 +1,6 @@
 import { Metal } from '@components/metal';
-import { Space2 } from '@components/spaces/Space2';
+import { Space } from '@components/spaces/Space';
+import { Space3 } from '@components/spaces/Space3';
 import styled from '@emotion/styled';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
@@ -7,7 +8,6 @@ import { type FC } from 'react';
 import { Contact } from './Contact';
 import { Projects } from './Projects';
 import { Home } from './Home';
-import { Space } from '@components/spaces/Space';
 
 const Root = styled(motion.div)``;
 
@@ -26,9 +26,9 @@ export const Ending: FC<TProps> = () => (
       </div>
       <Space />
       <Contact />
-      <Space2 />
+      <Space3 />
       <Projects />
-      <Space2 />
+      <Space3 />
       <Home />
     </motion.div>
   </Root>

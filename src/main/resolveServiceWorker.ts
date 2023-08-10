@@ -1,26 +1,21 @@
+const logStorageQuota = async () => {
+  const storageQuota = await navigator.storage.estimate();
+  console.log(storageQuota);
+};
+
 export const initServiceWorker = async () => {
+  await logStorageQuota();
   if (navigator.serviceWorker) {
     try {
       const register =
-        await navigator.serviceWorker.register('/sw.js', {
+        await navigator.serviceWorker.register('/service-worker.js', {
           scope: '/',
         });
-      // const subscription =
-      //   await register.pushManager.subscribe();
     } catch (error) {
       console.log(
         'ServiceWorker registration failed:',
         error,
       );
     }
-
-    // .then((registration) => {
-    //   console.log(
-    //     'ServiceWorker registration successful with scope:',
-    //     registration.scope,
-    //   );
-    // })
-    // .catch((error) => {
-    // });
   }
 };

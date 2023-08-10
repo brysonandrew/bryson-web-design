@@ -6,6 +6,7 @@ import { Build } from './build';
 import { Contact } from './contact';
 import { Projects } from './projects';
 import { Gallery } from '@components/gallery';
+import { Space24 } from '@components/spaces/Space24';
 import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
 import { Space60 } from '@components/spaces/Space60';
@@ -17,12 +18,12 @@ export const Index = () => {
       <MainShell>
         <Shell>
           <Build />
-          <Space32 />
+          <Space24 />
           <Tech />
-          <Space48 />
+          <Space32 />
           <LayoutGroup>
             <Projects />
-            <Space60 />
+            <Space48 /> 
             <Contact />
           </LayoutGroup>
           <Space48 />

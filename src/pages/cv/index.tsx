@@ -6,7 +6,7 @@ import { Page } from './layout/Page';
 import { Shell } from './layout/Shell';
 import { Space3 } from '@components/spaces/Space3';
 import { Space } from '@components/spaces/Space';
-import { Space4 } from '@components/spaces/Space4';
+import { Space6 } from '@components/spaces/Space6';
 import { Invert } from '../../components/Invert';
 import { Variables } from '@css/Variables';
 
@@ -21,7 +21,7 @@ export const Cv = () => {
               <Margin>
                 <Header />
               </Margin>
-              <Space4 />
+              <Space6 />
               <Margin>
                 <Description />
               </Margin>

@@ -50,4 +50,4 @@ export const SPACING = {
   114: '28rem',
   128: '32rem',
   144: '36rem',
-};
+} as const;
