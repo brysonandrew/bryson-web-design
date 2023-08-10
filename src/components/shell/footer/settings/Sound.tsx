@@ -11,6 +11,7 @@ import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { motion } from 'framer-motion';
 import { Button } from '@components/buttons/circle/Button';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 export const Sound = () => {
   const { isSound, isScroll, dispatch } = useContext();

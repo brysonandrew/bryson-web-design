@@ -6,6 +6,8 @@ import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
 import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -39,6 +41,7 @@ export const Item: FC<TProp> = ({
       className={clsx('relative center pb-2', [
         isActive && 'cursor-default',
       ])}
+      {...resolveInteractiveLabels(`Go to ${children}`)}
       {...handlers}
     >
       <h2
@@ -54,10 +57,11 @@ export const Item: FC<TProp> = ({
           layoutId='PAGE_NAV_LINE'
           style={{
             bottom: 6,
-            backgroundColor: "var(--baby-blue)"
+            backgroundColor:
+              COLOR_VARIABLES_LOOKUP['baby-blue'],
           }}
           {...resolveLineClassProps()}
-        /> 
+        />
       )}
       <ThinLine
         style={{ bottom: 4 }}

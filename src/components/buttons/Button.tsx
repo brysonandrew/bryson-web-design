@@ -5,17 +5,20 @@ import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { TIconComponent } from '@t/icons';
 import { TClassValueProps, TTitleProps } from '@t/index';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Link = styled(motion(_Link))``;
 
-export type TButtonProps = TClassValueProps & TTitleProps & {
-  onClick(): any;
-  to: string;
-  Icon: TIconComponent;
-};
+export type TButtonProps = TClassValueProps &
+  TTitleProps & {
+    onClick(): any;
+    to: string;
+    Icon: TIconComponent;
+  };
 export const Button: FC<TButtonProps> = ({
   Icon,
   classValue,
+  title,
   ...props
 }) => {
   return (
@@ -23,6 +26,7 @@ export const Button: FC<TButtonProps> = ({
       className={clsx(
         'absolute inset-0 center cursor-pointer z-10',
       )}
+      {...resolveInteractiveLabels(title)}
       {...props}
     >
       <Icon />

@@ -3,6 +3,7 @@ import { TClassValueProps, TTitleProps } from '@t/index';
 import { TMotionButtonProps } from '@t/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.button)``;
 
@@ -12,12 +13,13 @@ type TProps = TMotionButtonProps &
 export const Button: FC<TProps> = ({
   classValue,
   children,
+  title,
   ...props
 }) => {
   return (
     <Root
       className='circle-interactive'
-      aria-label={props.title}
+      {...resolveInteractiveLabels(title)}
       {...props}
     >
       <>{children}</>

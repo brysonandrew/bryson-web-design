@@ -7,6 +7,7 @@ import { IconGlow } from '@components/buttons/IconGlow';
 import { HIGHLIGHT } from '@components/filters/presets';
 import { PRESENCE_OPACITY_DELAY } from '@constants/animation';
 import { TFormKey } from '@pages/contact/config';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled.div``;
 
@@ -19,6 +20,7 @@ export const Clear: FC<TProps> = ({
   isReady,
   name,
   onFocus,
+  title,
   ...props
 }) => {
   const {
@@ -42,7 +44,7 @@ export const Clear: FC<TProps> = ({
         className='relative dark:text-gray-1 text-gray-1 backdrop-blur-sm dark:bg-black-02 bg-white-02 rounded-md'
         whileHover={{ filter: HIGHLIGHT }}
         onTap={handleClear}
-        aria-label={props.title}
+        {...resolveInteractiveLabels('Clear')}
         {...PRESENCE_OPACITY_DELAY}
         animate={{ opacity: isReady ? 1 : 0.2 }}
         {...props}

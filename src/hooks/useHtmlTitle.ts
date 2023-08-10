@@ -30,7 +30,5 @@ export const useHtmlTitle = () => {
         project,
       )}${TITLE_KEY_DELIMITER}${name}`
     : resolveCompositeTitle(...titles);
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
+  return title;
 };

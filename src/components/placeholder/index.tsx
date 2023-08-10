@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { IMAGE_PLACEHOLDER_ID } from '../gallery/sections/constants';
-import { resolveUrlId } from '@utils/resolveUrlId';
+import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './resolveGradientStops';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';

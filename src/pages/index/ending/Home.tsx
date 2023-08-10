@@ -7,6 +7,7 @@ import {
 } from 'framer-motion';
 import { Inner } from './Inner';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.div)``;
 const Button = styled(motion.button)``;
@@ -18,8 +19,7 @@ export const Home: FC<TProps> = () => {
   return (
     <Root style={{ x: '-100%' }} {...PARENT_GLOW_PROPS}>
       <Button
-        aria-label='home'
-        title='home'
+        {...resolveInteractiveLabels('Home')}
         className='glow-interactive'
         onTap={handleTap}
       >

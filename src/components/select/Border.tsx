@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { resolveUrlId } from '@utils/resolveUrlId';
+import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { POOL_ID } from '@components/effects/pool';
 import { SELECT_LAYOUT_ID } from './config';
 import { TClassValueProps } from '@t/index';

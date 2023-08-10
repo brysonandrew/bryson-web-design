@@ -12,12 +12,13 @@ import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { PARENT_PROPS, resolveParentProps } from '@utils/effects';
+import { PARENT_PROPS } from '@utils/effects';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@components/select/config';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.li)``;
 
@@ -47,8 +48,7 @@ export const Item: FC<TProps> = ({
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
     handleLoadMedia(slug);
-    if (!handlers.onHoverStart || isScrolling )
-      return;
+    if (!handlers.onHoverStart || isScrolling) return;
     handlers.onHoverStart();
   };
   const handleHoverEnd = ({ target }: MouseEvent) => {
@@ -77,8 +77,13 @@ export const Item: FC<TProps> = ({
             : handleHoverStart
         }
         onHoverEnd={handleHoverEnd}
-      > 
-        <Link to={to}>
+      >
+        <Link
+          to={to}
+          {...resolveInteractiveLabels(
+            `Open project ${item.title}`,
+          )}
+        >
           <Content
             isHover={isHover}
             style={{ opacity: 1, zIndex: count - index }}
