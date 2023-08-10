@@ -34,9 +34,9 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       </div>
       <div className='p-1' />
       <div className='relative row items-end'>
-        <h5 className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
+        <span className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
           {title}
-        </h5>
+        </span>
       </div>
     </Root>
   );

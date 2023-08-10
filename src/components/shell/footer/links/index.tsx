@@ -3,7 +3,7 @@ import { Email } from '@components/icons/links/Email';
 import { Github } from '@components/icons/links/Github';
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import { TLinks } from './config';
 import { Link } from './Link';
 
@@ -38,11 +38,13 @@ export const Links: FC<TProps> = (props) => {
       {...props}
     >
       {ITEMS.map((item, index) => (
-        <Item key={item.title}>
+        <Fragment key={item.title}>
           {index !== 0 && <div className='py-1' />}
-          <Link {...item} />
-        </Item>
+          <Item key={item.title}>
+            <Link {...item} />
+          </Item>
+        </Fragment>
       ))}
     </Root>
-  );
+  ); 
 };
