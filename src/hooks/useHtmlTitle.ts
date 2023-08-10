@@ -5,7 +5,6 @@ import {
 } from '@utils/keys';
 import { useCurrParams } from './params/useCurrParams';
 import { useLocation } from 'react-router';
-import { useEffect } from 'react';
 import { capitalize } from '@utils/format';
 
 const PROJECTS_TITLE = 'Projects';

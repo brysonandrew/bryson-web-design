@@ -1,3 +1,4 @@
+import { useAnalytics } from '@hooks/useAnalytics';
 import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { useContext } from '@state/Context';
 import { Helmet } from 'react-helmet-async';
@@ -8,7 +9,8 @@ export const Head = () => {
   } = useContext();
   const prefix = isDarkMode ? '' : '/light';
   const title = useHtmlTitle();
-
+  useAnalytics(title);
+  
   return (
     <Helmet>
       <title>{title}</title>

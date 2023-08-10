@@ -23,7 +23,9 @@
   "types": "src/index.d.ts",
   "private": true,
   "dependencies": {
+    "@analytics/google-tag-manager": "^0.5.5",
     "@emailjs/browser": "^3.10.0",
+    "analytics": "^0.8.9",
     "clsx": "^1.2.1",
     "framer-motion": "^10.3.2",
     "react": "^18.2.0",
@@ -41,6 +43,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.6",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.0.0",
     "@vite/vitejs-client": "^2.2.10",

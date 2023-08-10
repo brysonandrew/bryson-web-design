@@ -1,5 +1,5 @@
 console.log('SERVICE WORKER PAGE REGISTERED');
-const VERSION_NUMBER = 3;
+const VERSION_NUMBER = 4;
 const CACHE_NAME = `V${VERSION_NUMBER}`;
 
 self.addEventListener('install', (event) => {
