@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { Item as Link } from './Item';
 import { PAGE_LINKS } from '@constants/copy';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const toPathname = (v: string) => `/${v}`;
 
@@ -45,6 +46,9 @@ export const Pages = () => {
                   to={to}
                   isActive={isActive}
                   onClick={handleClick}
+                  {...resolveInteractiveLabels(
+                    `Go to ${item} page`,
+                  )}
                 >
                   {item}
                 </Link>

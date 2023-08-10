@@ -6,6 +6,7 @@ import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { motion } from 'framer-motion';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.a)``;
 
@@ -23,8 +24,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       href={href}
       target='_blank'
       onClick={handleOn}
-      aria-label={title}
-      title={title}
+      {...resolveInteractiveLabels(title)}
       {...PARENT_GLOW_PROPS}
       {...handlers}
     >

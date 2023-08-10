@@ -1,3 +1,4 @@
+import { useHtmlTitle } from '@hooks/useHtmlTitle';
 import { useContext } from '@state/Context';
 import { Helmet } from 'react-helmet-async';
 
@@ -6,9 +7,11 @@ export const Head = () => {
     darkMode: { isDarkMode },
   } = useContext();
   const prefix = isDarkMode ? '' : '/light';
+  const title = useHtmlTitle();
 
   return (
     <Helmet>
+      <title>{title}</title>
       <link
         rel='apple-touch-icon'
         sizes='180x180'

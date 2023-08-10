@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { resolveUrlId } from '@utils/resolveUrlId';
+import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { MOTION_BLUR_ID } from './constants';

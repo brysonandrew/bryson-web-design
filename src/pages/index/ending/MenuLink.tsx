@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Inner } from './Inner';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.div)``;
 
@@ -28,7 +29,11 @@ export const MenuLink: FC<TProps> = ({
       {...PARENT_GLOW_PROPS}
       {...props}
     >
-      <Link className={'flex glow-interactive'} to={to}>
+      <Link
+        className={'flex glow-interactive'}
+        to={to}
+        {...resolveInteractiveLabels(`Go to ${children}`)}
+      >
         <Inner>{children}</Inner>
       </Link>
     </Root>

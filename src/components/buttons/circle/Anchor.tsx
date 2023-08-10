@@ -3,6 +3,7 @@ import { TClassValueProps, TTitleProps } from '@t/index';
 import { TMotionAnchorProps } from '@t/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.a)``;
 
@@ -12,12 +13,13 @@ type TProps = TMotionAnchorProps &
 export const Anchor: FC<TProps> = ({
   classValue,
   children,
+  title,
   ...props
 }) => {
   return (
     <Root
       className='circle-interactive'
-      aria-label={props.title}
+      {...resolveInteractiveLabels(title)}
       {...props}
     >
       <>{children}</>

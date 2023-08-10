@@ -19,6 +19,7 @@ import {
   resolveShadow,
   resolveDropShadow,
 } from '@utils/effects/glow';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -67,11 +68,12 @@ export const Button: FC<TProps> = ({
       <Link
         to={to}
         onTap={handleTap}
-        className={clsx('center relative w-full h-full')}
+        className={('center relative w-full h-full')}
         initial='idle'
         animate={animation}
         whileHover={isActive ? 'active' : 'hover'}
         whileTap='tap'
+        {...resolveInteractiveLabels(name)}
       >
         {isActive && (
           <motion.div

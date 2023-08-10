@@ -20,6 +20,7 @@ import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { useContext } from '@state/Context';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 export const IMAGE_SIZE = 320;
 
@@ -103,7 +104,13 @@ export const Image: FC<TProps> = (props) => {
       onClick={handleOnSound}
       {...handlers}
     >
-      <Link className='cursor-zoom-in' to={to}>
+      <Link
+        className='cursor-zoom-in'
+        to={to}
+        {...resolveInteractiveLabels(
+          `View in image gallery`,
+        )}
+      >
         {!isLoaded && (
           <Placeholder key={resolveKey(index)} />
         )}

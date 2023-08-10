@@ -21,11 +21,8 @@ import { Processor } from '@components/icons/Processor';
 import { useContext } from '@state/Context';
 import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';
-import { useHtmlTitle } from '@hooks/useHtmlTitle';
-import { Network } from '@components/network';
 import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
-import { Head } from './Head';
 
 const Root = styled(motion.div)``;
 
@@ -38,7 +35,6 @@ export const Shell: FC<TProps> = ({ children }) => {
     darkMode: { isDarkMode },
     dispatch,
   } = useContext();
-  useHtmlTitle();
   useScrollControl();
 
   const handleAnimationComplete = () =>
