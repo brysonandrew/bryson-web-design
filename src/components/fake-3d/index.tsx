@@ -10,6 +10,8 @@ import {
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { TRect } from '@t/dom';
+import { useRect } from '@hooks/useRect';
+import { NOOP } from '@constants/functions';
 
 type TProps = TFake3DOptions & {
   classValue?: ClassValue;
@@ -22,7 +24,7 @@ export const Fake3D: FC<TProps> = ({
   intersectionOptions = {},
   ...optionsConfig
 }) => {
-  const [rect, setRect] = useState<TRect>(null);
+  const { rect, onUpdate } = useRect();
 
   return (
     <InView
@@ -38,18 +40,13 @@ export const Fake3D: FC<TProps> = ({
       }}
     >
       {({ inView, entry }) => {
-
         if (inView) {
           return (
             <Aggregator
               rect={rect}
-              onUpdateRect={() => {
-                if (entry) {
-                  const rect =
-                    entry.target.getBoundingClientRect();
-                  setRect(rect);
-                }
-              }}
+              onUpdateRect={() =>
+                entry ? onUpdate(entry.target) : NOOP
+              }
               {...optionsConfig}
             >
               {children}

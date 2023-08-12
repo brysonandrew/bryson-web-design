@@ -87,7 +87,6 @@ export const Item: FC<TProps> = ({
 
   return (
     <Root
-      className='py-3 w-full'
       style={{ zIndex: index }}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
@@ -97,18 +96,13 @@ export const Item: FC<TProps> = ({
         onClick={handleClick}
         {...resolveInteractiveLabels(item.title)}
       >
-        {/* <motion.div
-          layout='position'
-          className='relative left-0 top-5 w-full h-10 bg-teal blur-lg'
-          style={{ y: '-50%' }}
-        /> */}
         <Content
           slug={item.slug}
           isHover={isHover}
           rightHeader={<Time time={item.time} />}
           onLayoutAnimationComplete={
             handleLayoutAnimationComplete
-          } 
+          }
         >
           {isHover && (
             <>

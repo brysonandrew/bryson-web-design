@@ -9,16 +9,16 @@ import { useCurrProject } from '@hooks/params/useCurrProject';
 const Root = styled(motion.div)``;
 
 type TProps = Partial<TFake3DMotionChildrenProps>;
-export const Main: FC<TProps> = ({ style }) => {
+export const Main: FC<TProps> = ({ style, rect }) => {
   const currProject = useCurrProject();
-
   return (
     <Root
       className='relative w-core'
-      // style={{
-      //   rotateX: style?.rotateX,
-      //   top: style?.y,
-      // }}
+      style={{
+        rotateX: style?.rotateX,
+        y: style?.y,
+        height: rect?.height,
+      }}
     >
       <List
         items={PROJECT_ITEMS}

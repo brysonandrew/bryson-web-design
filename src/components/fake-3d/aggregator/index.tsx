@@ -57,6 +57,7 @@ export const Aggregator: FC<TProps> = ({
         </Visibility>
       )}
       {children({
+        rect: rect ?? {},
         style: styleRef.current,
         onUpdateRect,
       })}

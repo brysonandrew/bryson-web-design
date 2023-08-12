@@ -10,7 +10,7 @@ export const Projects = () => {
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>
-    </Section>
+    </Section> 
   );
 };
 

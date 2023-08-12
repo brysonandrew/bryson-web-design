@@ -1,9 +1,9 @@
+import clsx from 'clsx';
+import type { FC } from 'react';
 import {
   TTextXsProps,
   TextXs,
 } from '@components/text/TextXs';
-import clsx from 'clsx';
-import type { FC } from 'react';
 
 type TProps = { time?: Date } & TTextXsProps;
 export const Time: FC<TProps> = ({
@@ -13,7 +13,6 @@ export const Time: FC<TProps> = ({
 }) => {
   return (
     <TextXs
-      layout='position'
       classValue={clsx(
         'relative text-right shrink-0',
         classValue,

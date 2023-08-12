@@ -25,10 +25,9 @@ export const Header: FC<TProps> = ({
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
       <Content
-        isHeader
         slug={slug}
         rightHeader={
-          <Close key='CLOSE' onClick={handleClose} />
+          <Close onClick={handleClose} />
         }
         {...props}
       />

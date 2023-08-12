@@ -7,6 +7,7 @@ import {
 } from '@pages/projects/config';
 import styled from '@emotion/styled';
 import {
+  AnimatePresence,
   motion,
   useMotionTemplate,
   useMotionValue,
@@ -22,6 +23,8 @@ import { Blur } from '@components/effects/blur';
 import { MetalDark } from '@components/metal/MetalDark';
 import {
   MOTION_CONFIG,
+  PRESENCE_OPACITY,
+  SLOW_MOTION_CONFIG,
   TRANSITION,
 } from '@constants/animation';
 import {
@@ -29,6 +32,8 @@ import {
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/config-shadows';
 import { useContext } from '@state/Context';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { Glow } from '@components/filter-animate/Glow';
 
 const Root = styled(motion.div)``;
 
@@ -36,12 +41,10 @@ type TProps = TSlugProps &
   TClassValueProps &
   TMotionDivProps & {
     isHover?: boolean;
-    isHeader?: boolean;
     rightHeader: TChildren;
   };
 export const Content: FC<TProps> = ({
   isHover,
-  isHeader,
   slug,
   classValue,
   children,
@@ -53,6 +56,9 @@ export const Content: FC<TProps> = ({
   const {
     darkMode: { isDarkMode },
   } = useContext();
+  const [isTransitioning, setTransitioning] =
+    useState(false);
+  const [isExpanding, setExpanding] = useState(false);
   const project = useCurrProject();
   const isInitRef = useRef(false);
 
@@ -62,10 +68,11 @@ export const Content: FC<TProps> = ({
   useDelayCallback(handleInit, 100);
 
   const isTarget = project === slug;
-  const [isTransitioning, setTransitioning] =
-    useState(false);
 
   const handleLayoutAnimationStart = () => {
+    if (isHover) {
+      setExpanding(true);
+    }
     if (
       isTarget ||
       (typeof isHover === 'boolean' &&
@@ -82,19 +89,20 @@ export const Content: FC<TProps> = ({
   };
   const handleLayoutAnimationComplete = () => {
     setTransitioning(false);
+    setExpanding(false);
 
     if (onLayoutAnimationComplete) {
       onLayoutAnimationComplete();
     }
   };
 
-  //console.log(boxShadow);
   return (
     <Root
       layoutId={resolveTitleLayoutId(slug)}
       className={clsx(
         'relative w-full',
         'pl-6 pr-4 md:pl-8 md:pr-6',
+        [isExpanding && 'overflow-hidden'],
         classValue,
       )}
       onAnimationComplete={console.log}
@@ -109,19 +117,23 @@ export const Content: FC<TProps> = ({
       }}
       {...props}
     >
-      {/* <div className='absolute left-0 -top-1 right-0 w-full h-px glow-interactive' /> */}
-
       <MetalDark className='absolute inset-0' />
-      <Mark classValue='z-20' layout='position' />
+      <Mark classValue='z-20' />
       <Space2 />
       <motion.div
-        layout={isTransitioning ? false : true}
-        className={clsx(
-          'relative left-0 top-0 row-space w-full',
-        )}
+        layout={!isTransitioning}
+        className={clsx('relative left-0 top-0 row-space')}
       >
         <Header slug={slug} />
-        <>{rightHeader}</>
+        {
+          <AnimatePresence>
+            {!isTransitioning && (
+              <motion.div {...PRESENCE_OPACITY}>
+                {rightHeader}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        }
       </motion.div>
       {children && <>{children}</>}
       <Space2 />

@@ -14,13 +14,16 @@ export type TFake3DMotionProps = {
 };
 
 export type TPartialStyle = Partial<TStyleProps>;
+export type TPartialRect = Partial<DOMRect>;
 
 export type TPartialFake3DMotionProps = {
+  rect: TPartialRect;
   style: TPartialStyle;
   onUpdateRect: () => void;
 };
 
 export const EMPTY_PROPS: TPartialFake3DMotionProps = {
+  rect: {},
   style: {},
   onUpdateRect: () => null,
 };
