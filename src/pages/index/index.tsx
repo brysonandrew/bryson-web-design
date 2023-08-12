@@ -5,15 +5,16 @@ import { Build } from './build';
 import { Space24 } from '@components/spaces/Space24';
 import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
-import { LayoutGroup } from 'framer-motion';
-import { Gallery } from '@components/gallery';
-import { Contact } from './contact';
-import { Projects } from './projects';
-import { Tech } from './tech';
-// const Tech = lazy(() => import('./tech'));
-// const Contact = lazy(() => import('./contact'));
-// const Projects = lazy(() => import('./projects'));
-// const Gallery = lazy(() => import('@components/gallery'));
+
+// import { Projects } from './projects';
+// import { Tech } from './tech';
+// import { Contact } from './contact';
+// import { Gallery } from '@components/gallery';
+
+const Tech = lazy(() => import('./tech'));
+const Projects = lazy(() => import('./projects'));
+const Contact = lazy(() => import('./contact'));
+const Gallery = lazy(() => import('@components/gallery'));
 
 export const Index = () => {
   return (

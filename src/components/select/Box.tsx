@@ -26,7 +26,7 @@ export const Box: FC<TProps> = ({
   } = useContext();
   return (
     <motion.div
-      layout
+      layout='size'
       className={clsx(
         'relative text-xl pl-3 pr-4 pb-1',
         classValue,
