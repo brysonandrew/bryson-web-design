@@ -21,6 +21,10 @@ export const Source = () => {
       element: <Projects />,
     },
     {
+      path: '/offline',
+      element: <div>offline</div>,
+    },
+    {
       path: '*',
       element: <Navigate to='/' replace />,
     },
