@@ -30,7 +30,7 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'big',
     children,
   );

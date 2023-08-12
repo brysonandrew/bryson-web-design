@@ -22,7 +22,7 @@ export const DarkMode = () => {
   const key = isDarkMode ? 'light' : 'dark';
   const title = `Switch to ${key} mode`;
 
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'dark-mode',
     title,
   );

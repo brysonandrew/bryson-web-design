@@ -15,11 +15,16 @@ export const GLOW_INTERACTIVE_DISABLED = resolveShadow(
   'gray',
   4,
 );
+export const GLOW_BOX = resolveShadow(
+  'baby-blue',
+  4,
+);
+
 export const GLOW_MARK_DARK = resolveShadow(
   'teal-bright',
   12,
 );
 export const GLOW_MARK_LIGHT = resolveShadow(
-  'baby-blue',
-  12,
+  'black',
+  0,
 );

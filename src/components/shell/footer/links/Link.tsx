@@ -12,7 +12,7 @@ const Root = styled(motion.a)``;
 
 type TProps = TLink;
 export const Link: FC<TProps> = ({ href, title, Icon }) => {
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'open-in-new',
     href,
   );

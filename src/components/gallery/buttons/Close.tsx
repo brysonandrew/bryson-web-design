@@ -1,6 +1,5 @@
 import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
-import { useOffSound } from '@hooks/sounds/useOffSound';
 import { Button } from '../../buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
@@ -8,18 +7,16 @@ import { useHoverKey } from '@hooks/useHoverKey';
 import { Circle } from '@components/buttons/circle';
 import { TMotionDivProps } from '@t/dom';
 
-type TProps = TClassValueProps & TMotionDivProps & {
-  onClick(): void
-};
+type TProps = TClassValueProps &
+  TMotionDivProps & {
+    onClick(): void;
+  };
 export const Close: FC<TProps> = ({
   onClick,
   ...props
 }) => {
   const to = useTo({});
-  const { isHover, ...handlers } = useHoverKey(
-    'big',
-    'close',
-  );
+  const { isHover, handlers } = useHoverKey('big', 'close');
 
   return (
     <Circle classValue='relative' {...props}>

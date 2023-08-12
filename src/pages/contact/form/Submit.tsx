@@ -19,12 +19,13 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'bigger',
     'form-submit',
   );
   const {
     contact: { status },
+    darkMode: { isDarkMode },
   } = useContext();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
@@ -51,7 +52,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}
     >
-      <MetalGlow />
+      <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',

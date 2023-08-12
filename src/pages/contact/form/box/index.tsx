@@ -13,6 +13,7 @@ import {
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@hooks/useHoverKey';
+import { useContext } from '@state/Context';
 
 const Root = styled(motion.label)``;
 
@@ -32,8 +33,11 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
+  const {
+    darkMode: { isDarkMode },
+  } = useContext();
   const handleFocus = useFocus(input, isFocused);
-  const { isHover, ...handlers } = useHoverKey('big', name);
+  const { isHover, handlers } = useHoverKey('big', name);
 
   return (
     <Root
@@ -43,9 +47,8 @@ export const Box: FC<TProps> = ({
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}
     >
-      <MetalGlow />
+      <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />
       {isFocused && <Select key={name} />}
-      {/* // */}
       {children}
       <AnimatePresence>
         {isEmpty && (

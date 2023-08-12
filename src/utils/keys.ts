@@ -14,6 +14,7 @@ export const resolveCompositeTitle = (
 export const HOVER_KEY_DELIMITER = '=[hover]>';
 export const resolveCompositeHoverKey = (
   cursorKey: TCursorKey,
-  secondaryKey: string,
+  key1: string,
+  key2: string,
 ): THoverKey =>
-  `${cursorKey}${HOVER_KEY_DELIMITER}${secondaryKey}`;
+  `${cursorKey}${HOVER_KEY_DELIMITER}${key1}${HOVER_KEY_DELIMITER}${key2}`;

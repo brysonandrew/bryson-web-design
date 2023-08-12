@@ -1,23 +1,26 @@
 import { useContext } from '@state/Context';
 import { Sight } from './Sight';
 import { Gallery } from './gallery';
-import { resolveCursorKeyFromHoverKey } from './config';
 import { OpenInNew } from './open-in-new';
 import { Box } from './Box';
 import { LEFT_TOP_MD, LeftTop } from '../position/LeftTop';
 import { IconWithText } from './IconWithText';
 import { RightCenter } from '@components/position/RightCenter';
 import { RIGHT_TOP_MD } from '@components/position/RightTop';
+import { HOVER_KEY_DELIMITER } from '@utils/keys';
+import { GLOBAL_KEY } from '@hooks/useHoverKey';
 
 export const Switch = () => {
   const { hoverKey } = useContext();
-  const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const secondaryKey = resolveCursorKeyFromHoverKey(
-    hoverKey,
-    true,
-  );
+
+  const [cursorKey, key1, key2] = hoverKey
+    ?.split(HOVER_KEY_DELIMITER)
+    .map((v) => (v === GLOBAL_KEY ? null : v)) ?? [null];
+
+  const lastKey = key2 ?? key1;
 
   switch (cursorKey) {
+    case 'tag-open-in-new':
     case 'open-in-new': {
       return (
         <Sight
@@ -25,10 +28,10 @@ export const Switch = () => {
             ...RIGHT_TOP_MD,
           }}
         >
-          {secondaryKey && (
+          {lastKey && (
             <RightCenter>
               <Box delay={0.2}>
-                <OpenInNew>{secondaryKey}</OpenInNew>
+                <OpenInNew>{lastKey}</OpenInNew>
               </Box>
             </RightCenter>
           )}
@@ -43,7 +46,7 @@ export const Switch = () => {
             ...RIGHT_TOP_MD,
           }}
         >
-          {secondaryKey && (
+          {key1 && (
             <RightCenter>
               <Box delay={0.2}>
                 <Gallery />
@@ -53,6 +56,7 @@ export const Switch = () => {
         </Sight>
       );
     }
+    case 'gallery-background':
     case 'sound':
     case 'dark-mode': {
       return (
@@ -64,7 +68,7 @@ export const Switch = () => {
           <LeftTop>
             <Box delay={0.2}>
               <IconWithText>
-                {secondaryKey ?? 'Toggle'}
+                {lastKey ?? 'Toggle'}
               </IconWithText>
             </Box>
           </LeftTop>

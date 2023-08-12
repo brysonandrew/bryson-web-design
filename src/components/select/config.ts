@@ -5,11 +5,14 @@ export const SELECT_LAYOUT_ID = 'SELECT_LAYOUT_ID';
 export const CURSOR_LAYOUT_ID = 'CURSOR_LAYOUT_ID';
 
 export const PROJECT_CURSOR_KEY = 'project';
+export const TAG_CURSOR_KEY = 'tag-open-in-new';
 
 export const CURSOR_KEYS = [
+  'gallery-background',
   'big',
   'bigger',
   'none',
+  TAG_CURSOR_KEY,
   'open-in-new',
   'gallery',
   PROJECT_CURSOR_KEY,
@@ -22,11 +25,11 @@ export type TCursorKey =
 
 export const resolveCursorKeyFromHoverKey = (
   hoverKey: THoverKey,
-  isSecondary?: boolean,
+  index = 0,
 ) => {
   if (hoverKey === null) return null;
   const cursorKey = hoverKey.split(HOVER_KEY_DELIMITER)[
-    isSecondary ? 1 : 0
+    index
   ];
-  return cursorKey as TCursorKey;
+  return cursorKey as TCursorKey | string;
 };

@@ -1,8 +1,7 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { useDelay } from '@hooks/useDelay';
 import { useContext } from '@state/Context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
@@ -28,8 +27,6 @@ export const Main: FC<TProps> = ({
   useFreezeScrollBar();
   const { projectImageResolverRecord, projectImageRecord } =
     useContext();
-  const [isAnimationDone, setAnimationDone] =
-    useState(false);
   const items: TImageResolverEntries = Object.entries(
     projectImageResolverRecord[currProject],
   );
@@ -43,9 +40,7 @@ export const Main: FC<TProps> = ({
 
   const count = items.length;
 
-  //const isDelay = useDelay(400);
-  const isReady =
-    width.screen > 0 //&& (isAnimationDone || isDelay);
+  const isReady = width.screen > 0;
 
   const galleryProps: TBaseProps = {
     motionX,
@@ -61,13 +56,7 @@ export const Main: FC<TProps> = ({
       className='cover-fixed column text-color z-20'
       style={{ z: RANGE_Z * 2 }}
     >
-      <Header
-        isReady={isReady}
-        // onLayoutAnimationComplete={
-        //   handleLayoutAnimationComplete
-        // }
-        slug={currProject}
-      />
+      <Header isReady={isReady} slug={currProject} />
       <>
         {isReady && (
           <>
