@@ -13,15 +13,29 @@ export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',
 };
 
+const GRAY_1 = '68, 68, 68';
+const GRAY_2 = '120, 120, 120';
+const GRAY_3 = '155, 150, 150';
+
 export const COLOR_RGB_RECORD: Record<
   Extract<
     TColorKey,
-    'teal' | 'white' | 'gray' | 'baby-blue' | 'teal-bright'
+    | 'teal'
+    | 'white'
+    | 'gray'
+    | 'gray-1'
+    | 'gray-2'
+    | 'gray-3'
+    | 'baby-blue'
+    | 'teal-bright'
   >,
   TRgb
 > = {
   white: '230, 227, 225',
   gray: '68, 68, 68',
+  'gray-1': GRAY_1,
+  'gray-2': GRAY_2,
+  'gray-3': GRAY_3,
   'baby-blue': '153, 204, 255',
   teal: '45, 212, 191',
   'teal-bright': '207, 250, 254',
@@ -63,9 +77,9 @@ export const WHITE = {
 };
 export const GRAY = resolveColorSeries('gray', [
   COLOR_RGB_RECORD['gray'],
-  '77, 72, 72',
-  '135, 130, 130',
-  '155, 150, 150',
+  GRAY_1,
+  GRAY_2,
+  GRAY_3,
 ]);
 
 export const COLOR_VARIABLES_LOOKUP: TColorVariablesLookup =

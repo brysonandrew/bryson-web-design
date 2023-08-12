@@ -6,6 +6,7 @@ import { TBaseProps } from '../types';
 import { TImageResolverEntry } from '@t/screens';
 import { Gallery as Fetch } from '@components/fetch-media/Gallery';
 import { Control } from './Control';
+import { useHoverKey } from '@hooks/useHoverKey';
 
 export const Root = styled(motion.div)``;
 
@@ -14,6 +15,7 @@ export const Sections: FC<TProps> = (props) => {
   const { count, width, items, imageRecord } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
+  const { isHover, handlers } = useHoverKey('none');
   const left = useTransform(
     props.motionX,
     (v) =>
@@ -21,7 +23,7 @@ export const Sections: FC<TProps> = (props) => {
       width.screen * 0.5 * (count - 1),
   );
   return (
-    <Root className='h-full grow'>
+    <Root className='h-full grow' {...handlers}>
       <motion.ul
         className='flex relative h-full'
         style={{ left, width: width.screen * count }}
@@ -49,6 +51,7 @@ export const Sections: FC<TProps> = (props) => {
                   index={index}
                   container={container}
                   mediaRecord={imageRecord[filePath]}
+                  isHover={isHover}
                   {...props}
                 />
               ) : (

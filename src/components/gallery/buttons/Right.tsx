@@ -10,7 +10,7 @@ type TProps = TClassValueProps & {
 };
 export const Right: FC<TProps> = ({ max, ...props }) => {
   const to = useNext(max);
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'big',
     'right',
   );

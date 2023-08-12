@@ -16,7 +16,8 @@ type TProps = Pick<TBaseProps, 'width'> & {
   count: number;
   mediaRecord: TMediaRecord;
   container: HTMLElement;
-  motionX: MotionValue
+  motionX: MotionValue;
+  isHover: boolean;
 };
 export const Control: FC<TProps> = ({
   index,
@@ -24,24 +25,22 @@ export const Control: FC<TProps> = ({
   mediaRecord,
   container,
   width,
-  motionX
+  motionX,
+  isHover,
 }) => {
-  const { isHover, ...hoverHandlers } = useHoverKey('none');
   const { scrollX, scrollY } = useContext();
 
   const containerDimensions = {
     height: container.clientHeight,
     width: width.footer,
   };
-
   return (
     <motion.div
       className='relative'
       style={{ width: width.footer }}
       {...(isDesktop
         ? {
-            ...hoverHandlers,
-            onPointerDown: (e) => e.preventDefault(),
+            onPointerDown: (e: any) => e.preventDefault(),
           }
         : {})}
     >

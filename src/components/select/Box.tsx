@@ -3,7 +3,12 @@ import { ReactNode, type FC } from 'react';
 import { resolvePresence } from '@utils/animation';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
-import { MetalDarkest } from '@components/metal/MetalDarkest';
+import { Metal } from '@components/metal';
+import {
+  GLOW_BOX,
+  GLOW_INTERACTIVE_LIGHT,
+} from '@uno/config-shadows';
+import { useContext } from '@state/Context';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -16,13 +21,21 @@ export const Box: FC<TProps> = ({
   delay = 0,
   exitDelay = 0,
 }) => {
+  const {
+    darkMode: { isDarkMode },
+  } = useContext();
   return (
     <motion.div
-      layout='position'
+      layout
       className={clsx(
-        'relative font-mono text-color text-xl px-4 py-1',
+        'relative text-xl pl-3 pr-4 pb-1',
         classValue,
       )}
+      style={{
+        boxShadow: isDarkMode
+          ? GLOW_BOX
+          : GLOW_INTERACTIVE_LIGHT,
+      }}
       {...resolvePresence(
         {
           opacity: 0,
@@ -37,7 +50,7 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
-      <MetalDarkest />
+      <Metal />
       {children}
     </motion.div>
   );

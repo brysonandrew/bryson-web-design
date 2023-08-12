@@ -23,7 +23,7 @@ export const Border: FC<TProps> = ({
       }}
       className={clsx(
         'absolute mt-1.5 ml-1 pointer-events-none rounded-sm cursor-default',
-        classValue ?? 'background-color-3 -inset-1',
+        classValue ?? 'background-color-6 -inset-1',
       )}
       {...props}
     />

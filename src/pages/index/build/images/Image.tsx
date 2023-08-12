@@ -55,10 +55,10 @@ export const Image: FC<TProps> = (props) => {
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
-  const { ...handlers } = useHoverKey('gallery');
+  const { handlers } = useHoverKey('gallery',"view");
 
   const resolveDelay = () => {
-    if (name) {
+    if (name) { 
       const n = Number(name);
       if (!isNaN(n)) {
         return Math.abs(index - n) / count;

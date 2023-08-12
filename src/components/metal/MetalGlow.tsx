@@ -18,7 +18,11 @@ export const MetalGlow: FC<TProps> = ({
 }) => {
   const Root = isDarkest ? MetalDarkest : MetalDark;
   return (
-    <Glow drop={drop ?? 2} {...rest}>
+    <Glow
+      drop={drop ?? 2}
+      {...rest}
+      classValue={classValue}
+    >
       <Metal Root={Root} classValue={classValue} />
     </Glow>
   );

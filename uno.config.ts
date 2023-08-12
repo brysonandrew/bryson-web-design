@@ -11,7 +11,7 @@ import {
 } from './uno.config-shadows';
 
 const SANS = 'Bodoni Moda';
-const MONO = 'Nova Mono';
+const MONO = 'Cutive Mono';
 
 const config = defineConfig({
   theme: THEME,
@@ -54,16 +54,19 @@ const config = defineConfig({
   ],
   shortcuts: {
     'background-color': 'dark:bg-teal-bright bg-white-1',
-    'background-color-1': 'dark:bg-teal bg-black',
+    'background-color-1': 'dark:bg-teal bg-gray',
     'background-color-2': 'dark:bg-black-2 bg-white',
     'background-color-3': 'dark:bg-baby-blue bg-gray-2',
     'background-color-4': 'dark:bg-black-09 bg-white-09',
     'background-color-5': 'dark:bg-teal bg-black',
+    'background-color-6': 'dark:bg-baby-blue bg-white-3',
+    'background-color-7': 'dark:bg-teal-bright bg-black',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',
     'text-color-3': 'dark:text-white text-black',
     'text-color-4': 'dark:text-black text-white',
+    'text-color-5': 'dark:text-teal-bright text-gray-2',
     'text-color-stroke':
       'dark:text-stroke-baby-blue text-stroke-baby-blue-02',
     'text-color-stroke-1':
@@ -131,7 +134,11 @@ const config = defineConfig({
           color: ${theme.colors['teal-bright']};
         } 
 
-        code, tt {
+        code,
+        kbd,
+        samp,
+        pre, 
+        tt {
           font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
         }
 

@@ -13,7 +13,7 @@ export const ThinLine: FC<TProps> = ({
   return (
     <motion.hr
       className={clsx(
-        'background-color-5 h-px w-full',
+        'bg-current h-px w-full',
         classValue,
       )}
       style={{ opacity: 0.4, ...style }}

@@ -24,29 +24,33 @@ export const Item: FC<TItem> = ({
   const {
     darkMode: { isDarkMode },
   } = useContext();
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'open-in-new',
     href,
   );
+  const BORDER_RADIUS = {
+    classValue: clsx( 'rounded-lg'),
+  };
 
   return (
     <Root
-      className={'relative cursor-pointer'}
+      className='relative cursor-pointer'
       {...PARENT_GLOW_PROPS}
       {...handlers}
       {...props}
     >
-      {isDarkMode && isHover && <Select layoutId={title} />}
+      {isHover && <Select layoutId={title} />}
       <MetalGlow
-        classValue={clsx(isDarkMode && 'rounded-lg')}
-        drop={isDarkMode ? 16 : 12}
-        color={isDarkMode ? 'white' : 'teal'}
+        drop={isDarkMode ? 16 : 8}
+        color={isDarkMode ? 'white' : 'gray-3'}
+        {...BORDER_RADIUS}
       />
-      <Box>
+      <Box {...BORDER_RADIUS}>
         <Glow
-          text={isDarkMode ? 2.8 : 1}
-          drop={isDarkMode ? 4 : 2}
-          color={isDarkMode ? 'teal' : 'baby-blue'}
+          {...BORDER_RADIUS}
+          text={isDarkMode ? 2.8 : 0.5}
+          drop={isDarkMode ? 4 : 0.5}
+          color={isDarkMode ? 'teal' : 'gray-3'}
         >
           <Anchor
             className={clsx(

@@ -17,11 +17,11 @@ export const IconWithText: FC<TProps> = ({
   return (
     <>
       <Space />
-      <div className='relative row z-50'>
+      <div className='relative text-color-5 row z-50'>
         {Icon && (
           <>
-            <Icon classValue='text-color' />
-            <Space2 />
+            <Icon />
+            <Space />
           </>
         )}
         <motion.code
@@ -30,7 +30,7 @@ export const IconWithText: FC<TProps> = ({
             opacity: 1,
             transition: { ...TRANSITION, delay: 0.4 },
           }}
-          className='text-color-1 text-xl whitespace-nowrap'
+          className='text-2xl whitespace-nowrap'
         >
           {children}
         </motion.code>

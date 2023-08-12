@@ -3,11 +3,7 @@ import type { TItem } from '@t/projects';
 import { Fragment, type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';
-import { resolveCompositeKey } from '@utils/keys';
-import { motion, useMotionValue } from 'framer-motion';
-import { Space } from '@components/spaces/Space';
-import { Space2 } from '@components/spaces/Space2';
-import { Space4 } from '@components/spaces/Space4';
+import { motion } from 'framer-motion';
 import { Space3 } from '@components/spaces/Space3';
 
 const Root = styled(motion.ul)``;

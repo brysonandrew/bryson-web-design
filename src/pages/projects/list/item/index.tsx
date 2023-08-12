@@ -15,13 +15,11 @@ import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useContext } from '@state/Context';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
-import { Link } from 'react-router-dom';
-import { useCurrProject } from '@hooks/params/useCurrProject';
+import { useNavigate } from 'react-router-dom';
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@components/select/config';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { Details } from './details';
 import { Space2 } from '@components/spaces/Space2';
 
@@ -37,19 +35,19 @@ export const Item: FC<TProps> = ({
   count,
 }) => {
   const isEnteredOnScrollRef = useRef(false);
-  const currProject = useCurrProject();
   const { hoverKey, isScrolling } = useContext();
-  const { isHover, ...handlers } = useHoverKey(
+  const { handlers } = useHoverKey(
     PROJECT_CURSOR_KEY,
     slug,
   );
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const isOtherHover =
-    !isHover &&
-    hoverKey !== null &&
-    cursorKey === PROJECT_CURSOR_KEY;
-  const isDim = isOtherHover && !Boolean(currProject);
+  const secondaryKey = resolveCursorKeyFromHoverKey(
+    hoverKey,
+    1,
+  );
+  const isHover = secondaryKey === slug;
   const item = PROJECT_ITEMS_RECORD[slug];
+  const navigate = useNavigate();
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
     if (isScrolling) {
@@ -82,36 +80,33 @@ export const Item: FC<TProps> = ({
   };
 
   const handleClick = () => {
-    handleOnSound();
+    if (cursorKey === PROJECT_CURSOR_KEY) {
+      navigate(to);
+      handleOnSound();
+    }
   };
 
   return (
     <Root
+      className='cursor-pointer'
       style={{ zIndex: index }}
+      onClick={handleClick}
+      {...handlers}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <Link
-        to={to}
-        onClick={handleClick}
-        {...resolveInteractiveLabels(item.title)}
+      <Content
+        slug={item.slug}
+        isHover={isHover}
+        rightHeader={<Time time={item.time} />}
+        onLayoutAnimationComplete={
+          handleLayoutAnimationComplete
+        }
       >
-        <Content
-          slug={item.slug}
-          isHover={isHover}
-          rightHeader={<Time time={item.time} />}
-          onLayoutAnimationComplete={
-            handleLayoutAnimationComplete
-          }
-        >
-          {isHover && (
-            <>
-              <Space2 />
-              <Details isVisible={isExpanded} {...item} />
-            </>
-          )}
-        </Content>
-      </Link>
+        {isHover && (
+          <Details isVisible={isExpanded} {...item} />
+        )}
+      </Content>
     </Root>
   );
 };

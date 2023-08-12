@@ -17,7 +17,7 @@ export const Sound = () => {
 
   const title = `Turn ${isSound ? 'off' : 'on'} sound`;
 
-  const { isHover, ...handlers } = useHoverKey(
+  const { isHover, handlers } = useHoverKey(
     'sound',
     title,
   );
