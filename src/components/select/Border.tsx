@@ -7,8 +7,6 @@ import { POOL_ID } from '@components/effects/pool';
 import { SELECT_LAYOUT_ID } from './config';
 import { TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/dom';
-import { DISPLACEMENT_ID } from '@components/effects/displacement';
-import { useContext } from '@state/Context';
 
 const Root = styled(motion.div)``;
 

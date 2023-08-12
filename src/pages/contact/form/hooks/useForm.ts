@@ -55,7 +55,7 @@ export const useForm = ({ element }: TConfig) => {
     if (
       target.name === currentRef.current.contact.focusKey
     ) {
-      updateFocus(null);
+      // updateFocus(null);
     }
   };
 

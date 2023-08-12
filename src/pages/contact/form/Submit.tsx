@@ -14,10 +14,7 @@ import {
 } from '@utils/effects';
 
 const Root = styled(motion.label)``;
-const Decoration = styled(motion.div)``;
-const Input = styled(motion.input)`
-  background-color: transparent !important;
-`;
+const Input = styled(motion.input)``;
 const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
@@ -43,11 +40,11 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     <Root
       ref={ref}
       className={clsx(
-        'relative p-0.5 flex w-full glow-interactive',
+        'relative p-0.5 w-full label-background',
         [
           isDisabled
-            ? clsx('cursor-not-allowed')
-            : clsx('cursor-pointer'),
+            ? 'glow-disabled cursor-not-allowed'
+            : 'glow-interactive cursor-pointer',
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
@@ -55,36 +52,30 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       {...handlers}
     >
       <MetalGlow />
-      <Decoration
+      <Input
         className={clsx(
-          'relative w-full pointer-events-none',
+          'absolute inset-0 pointer-events-none opacity-0',
         )}
+        type='submit'
+        disabled={isDisabled}
+      />
+      <Text
+        className={clsx(
+          'center relative text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
+        )}
+        variants={{
+          animate: {
+            letterSpacing: '4px',
+            transition: EFFECT_ANIMATE_TRANSITION,
+          },
+          hover: {
+            letterSpacing: '8px',
+            transition: EFFECT_HOVER_TRANSITION,
+          },
+        }}
       >
-        <Input
-          className={clsx(
-            'absolute inset-0 pointer-events-none opacity-0',
-          )}
-          type='submit'
-          disabled={isDisabled}
-        />
-        <Text
-          className={clsx(
-            'center relative text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
-          )}
-          variants={{
-            animate: {
-              letterSpacing: '4px',
-              transition: EFFECT_ANIMATE_TRANSITION,
-            },
-            hover: {
-              letterSpacing: '8px',
-              transition: EFFECT_HOVER_TRANSITION,
-            },
-          }}
-        >
-          {title}
-        </Text>
-      </Decoration>
+        {title}
+      </Text>
     </Root>
   );
 };

@@ -7,7 +7,7 @@ import type { FC } from 'react';
 import { Item } from './Item';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 
-const Root = styled(motion.div)``;
+const Root = styled.div``;
 const Inner = styled(motion.div)``;
 
 type TProps = TFake3DMotionChildrenProps;
@@ -22,16 +22,16 @@ export const Links: FC<TProps> = ({
         )}
         style={{ rotateX, y, filter }}
       >
-        <Item style={{z: 0}} {...TECH.REACT} />
+        <Item style={{ z: 0 }} {...TECH.REACT} />
         <div className='p-2' />
         <motion.div
           className='center w-full xl:pt-1'
           style={{ z: 60 }}
-        > 
+        >
           <Plus classValue={clsx('h-7 w-7')} />
         </motion.div>
         <div className='p-2' />
-        <Item style={{z: 120}}  {...TECH.TYPESCRIPT} />
+        <Item style={{ z: 120 }} {...TECH.TYPESCRIPT} />
       </Inner>
     </Root>
   );

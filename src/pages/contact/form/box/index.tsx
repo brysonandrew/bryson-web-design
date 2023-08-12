@@ -42,11 +42,10 @@ export const Box: FC<TProps> = ({
       ])}
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}
-    > 
-      <div className='hidden dark:flex'>
-        <MetalGlow />
-      </div>
+    >
+      <MetalGlow />
       {isFocused && <Select key={name} />}
+      {/* // */}
       {children}
       <AnimatePresence>
         {isEmpty && (

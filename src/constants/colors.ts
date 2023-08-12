@@ -1,4 +1,5 @@
-import { TColorVariablesLookup } from '@t/colors';
+import { TColorVariablesLookup, TRgb } from '@t/colors';
+import { TColorKey } from '@t/css';
 import {
   resolveColorOpacityVariations,
   resolveColorSeries,
@@ -12,25 +13,31 @@ export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',
 };
 
-export const COLOR_RGB_RECORD = {
-  white: '230,227,225',
-  gray: '68,68,68',
-  'baby-blue': '153,204,255',
-  teal: '45,212,191',
-  'teal-bright': '202,248,255',
+export const COLOR_RGB_RECORD: Record<
+  Extract<
+    TColorKey,
+    'teal' | 'white' | 'gray' | 'baby-blue' | 'teal-bright'
+  >,
+  TRgb
+> = {
+  white: '230, 227, 225',
+  gray: '68, 68, 68',
+  'baby-blue': '153, 204, 255',
+  teal: '45, 212, 191',
+  'teal-bright': '207, 250, 254',
 };
 
 export const BABY_BLUE = resolveColorOpacityVariations(
   'baby-blue',
-  '153, 204, 255',
+  COLOR_RGB_RECORD['baby-blue'],
 );
 export const TEAL = resolveColorOpacityVariations(
   'teal',
-  '45, 212, 191',
+  COLOR_RGB_RECORD.teal,
 );
 export const TEAL_BRIGHT = resolveColorOpacityVariations(
   'teal-bright',
-  '207, 250, 254',
+  COLOR_RGB_RECORD['teal-bright'],
 );
 export const BLACK = {
   ...resolveColorOpacityVariations('black', '0, 0, 0'),
@@ -45,17 +52,17 @@ export const BLACK = {
 export const WHITE = {
   ...resolveColorOpacityVariations(
     'white',
-    '240, 247, 245',
+    COLOR_RGB_RECORD['white'],
   ),
   ...resolveColorSeries('white', [
     null,
-    '220, 217, 215',
-    '200, 197, 195',
+    '222, 219, 217',
+    '210, 207, 205',
     '184, 184, 184',
   ]),
 };
 export const GRAY = resolveColorSeries('gray', [
-  '55, 50, 50',
+  COLOR_RGB_RECORD['gray'],
   '77, 72, 72',
   '135, 130, 130',
   '155, 150, 150',

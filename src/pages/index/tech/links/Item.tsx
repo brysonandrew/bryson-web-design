@@ -13,9 +13,7 @@ import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
-const Title = styled.h4`
-
-`;
+const Title = styled.h4``;
 
 export const Item: FC<TItem> = ({
   Icon,
@@ -40,13 +38,14 @@ export const Item: FC<TItem> = ({
     >
       {isDarkMode && isHover && <Select layoutId={title} />}
       <MetalGlow
-        drop={16}
-        color={isDarkMode ? 'white' : 'baby-blue'}
+        classValue={clsx(isDarkMode && 'rounded-lg')}
+        drop={isDarkMode ? 16 : 12}
+        color={isDarkMode ? 'white' : 'teal'}
       />
       <Box>
         <Glow
-          text={2.8}
-          drop={4}
+          text={isDarkMode ? 2.8 : 1}
+          drop={isDarkMode ? 4 : 2}
           color={isDarkMode ? 'teal' : 'baby-blue'}
         >
           <Anchor

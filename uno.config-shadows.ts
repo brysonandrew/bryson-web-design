@@ -8,8 +8,8 @@ export const GLOW_INTERACTIVE_DARK = resolveShadow(
   2,
 );
 export const GLOW_INTERACTIVE_LIGHT = resolveShadow(
-  'baby-blue',
-  4,
+  'black',
+  1,
 );
 export const GLOW_INTERACTIVE_DISABLED = resolveShadow(
   'gray',
@@ -17,5 +17,9 @@ export const GLOW_INTERACTIVE_DISABLED = resolveShadow(
 );
 export const GLOW_MARK_DARK = resolveShadow(
   'teal-bright',
+  12,
+);
+export const GLOW_MARK_LIGHT = resolveShadow(
+  'baby-blue',
   12,
 );
