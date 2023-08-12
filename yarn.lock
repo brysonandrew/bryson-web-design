@@ -1871,6 +1871,7 @@ __metadata:
     react-router: ^6.14.1
     react-router-dom: ^6.14.1
     react-synthwave: ^1.2.7
+    rollup: ^3.28.0
     rollup-plugin-typescript: ^1.0.1
     typescript: ^4.9.4
     unocss: ^0.53.4
@@ -4720,6 +4721,20 @@ __metadata:
   bin:
     rollup: dist/bin/rollup
   checksum: 7186beeba0e6fd33b37aa33ede7157e77af0a0be4b75d345a51dab4be5962a8e7a1c5ec8868e7c4cd361b456eb1b47bdb75e5db32ab37a546bed383d06b40384
+  languageName: node
+  linkType: hard
+
+"rollup@npm:^3.28.0":
+  version: 3.28.0
+  resolution: "rollup@npm:3.28.0"
+  dependencies:
+    fsevents: ~2.3.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    rollup: dist/bin/rollup
+  checksum: 6ded4a0d3ca531d68e82897d5eebaa9d085014a062620bc328f2859ccf78d6a148a51ed53f1275a5f89b55cc6d7b1440b7cee44e5a9e3a51442f809b4b26f727
   languageName: node
   linkType: hard
 
