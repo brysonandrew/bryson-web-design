@@ -17,7 +17,7 @@ export const Content: FC<TProps> = ({ children }) => {
         exit={{ y: 20, opacity: 0 }}
         transition={{
           ...MOTION_CONFIG.transition,
-          delay: 0.4,
+          delay: 0,
         }}
       >
         <h3 className='++text text-center'>{children}</h3>
@@ -30,7 +30,7 @@ export const Content: FC<TProps> = ({ children }) => {
             backgroundColor: 'var(--baby-blue)',
           }}
         />
-        <ThinLineGrow delay={0.6} />
+        <ThinLineGrow delay={0.2} />
       </div>
     </TitleRoot>
   );

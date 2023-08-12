@@ -5,7 +5,7 @@ import { BASE_PROPS } from './config';
 import { FC } from 'react';
 import { useContext } from '@state/Context';
 import { TMotionDivProps } from '@t/dom';
-import { GLOW_MARK_DARK } from '@uno/config-shadows';
+import { GLOW_MARK_DARK, GLOW_MARK_LIGHT } from '@uno/config-shadows';
 
 const Root = styled(motion.div)``;
 
@@ -29,12 +29,9 @@ export const Mark: FC<TProps> = ({
       style={{
         width: 'calc(0.5rem + 4px)',
         height: '100%',
-        // x: '0%',
-        // y: '0%',
-        boxShadow: GLOW_MARK_DARK,
+        boxShadow: isDarkMode ? GLOW_MARK_DARK : GLOW_MARK_LIGHT,
         ...(style ?? {}),
       }}
-      // {...(isDarkMode ? BASE_PROPS : {})}
       {...props}
     />
   );

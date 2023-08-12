@@ -5,7 +5,7 @@ import { STORY } from '@constants/copy';
 import { Section } from '@components/Section';
 import { Gallery } from '@components/gallery';
 import { useRect } from '@hooks/useRect';
-import { Space32 } from '@components/spaces/Space32';
+import { Space60 } from '@components/spaces/Space60';
 
 export const Projects = () => {
   const { rect, onUpdate } = useRect();
@@ -24,7 +24,7 @@ export const Projects = () => {
           >
             <Main />
           </div>
-          <Space32 />
+          <Space60 />
         </Section>
         <Gallery />
       </Shell>

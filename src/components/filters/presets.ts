@@ -14,7 +14,7 @@ export const DISTANT = resolveFilter({
 
 export const ACTIVE = resolveFilter({
   blur: 0,
-  brightness: 110,
+  brightness: 100,
   grayscale: 0,
 });
 

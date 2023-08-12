@@ -105,7 +105,6 @@ export const Content: FC<TProps> = ({
         [isExpanding && 'overflow-hidden'],
         classValue,
       )}
-      onAnimationComplete={console.log}
       onLayoutAnimationStart={handleLayoutAnimationStart}
       onLayoutAnimationComplete={
         handleLayoutAnimationComplete
@@ -118,10 +117,12 @@ export const Content: FC<TProps> = ({
       {...props}
     >
       <MetalDark className='absolute inset-0' />
-      <Mark classValue='z-20' />
+      <Mark
+        classValue={clsx('z-20')}
+      />
       <Space2 />
       <motion.div
-        layout={!isTransitioning}
+        layout={!isTransitioning && !isExpanding}
         className={clsx('relative left-0 top-0 row-space')}
       >
         <Header slug={slug} />

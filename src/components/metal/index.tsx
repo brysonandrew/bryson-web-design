@@ -7,7 +7,6 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 
 const DefaultRoot = styled(motion.div)`
   background-color: var(--white-1);
-  filter: none;
   html.dark & {
     ${metalRadialDarkCss}
   }
