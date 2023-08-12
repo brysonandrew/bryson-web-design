@@ -4,6 +4,7 @@ import { TMotionButtonProps } from '@t/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import clsx from 'clsx';
 
 const Root = styled(motion.button)``;
 
@@ -18,7 +19,7 @@ export const Button: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className='circle-interactive'
+      className={clsx('circle-interactive', classValue)}
       {...resolveInteractiveLabels(title)}
       {...props}
     >
