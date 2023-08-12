@@ -5,27 +5,39 @@ import { FC } from 'react';
 import { Space3 } from '@components/spaces/Space3';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { DELAY_VISIBILITY } from '@constants/animation';
+import { Space2 } from '@components/spaces/Space2';
+import { TMotionDivProps } from '@t/dom';
 
 const Root = styled(motion.div)``;
 
-type TProps = Pick<TItem, 'paragraphs' | 'tags'>;
+type TProps = TMotionDivProps & {
+  isVisible: boolean;
+} & Pick<TItem, 'paragraphs' | 'tags'>;
 export const Details: FC<TProps> = ({
+  isVisible,
   paragraphs,
   tags,
+  ...props
 }) => {
   return (
-    <Root {...DELAY_VISIBILITY}>
+    <Root
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      {...props}
+    >
       {paragraphs && (
         <>
           <Space3 />
-          <Paragraphs paragraphs={paragraphs} />
+          <Paragraphs
+            key='PARAGRAPHS'
+            paragraphs={paragraphs}
+          />
         </>
       )}
       {tags && (
         <>
-          <Space3 />
-          <Tech tags={tags} />
+          <Space2 />
+          <Tech key='TECH' tags={tags} />
         </>
       )}
     </Root>

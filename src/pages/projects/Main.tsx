@@ -15,13 +15,12 @@ export const Main: FC<TProps> = ({ style }) => {
   return (
     <Root
       className='relative w-core'
-      style={{
-        rotateX: style?.rotateX,
-        top: style?.y,
-      }}
+      // style={{
+      //   rotateX: style?.rotateX,
+      //   top: style?.y,
+      // }}
     >
       <List
-        key='SHOWCASE_MAIN_LIST'
         items={PROJECT_ITEMS}
         currProject={currProject}
       />

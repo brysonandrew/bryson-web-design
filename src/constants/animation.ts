@@ -8,27 +8,33 @@ export const BASIC_VARIANT_KEYS = {
   whileHover: 'hover',
 };
 
+export const DURATION = 0.2;
+
 export const TRANSITION = {
   ease: 'linear',
-  duration: 0.2,
+  duration: DURATION,
 };
 
 export const MOTION_CONFIG = {
   transition: TRANSITION,
 };
 
+export const DURATION_MID = 0.5;
+
 export const MID_MOTION_TRANSITION = {
   ease: 'linear',
-  duration: 0.5,
+  duration: DURATION_MID,
 };
 
 export const MID_MOTION_CONFIG = {
   transition: MID_MOTION_TRANSITION,
 };
 
+export const DURATION_SLOW = 1;
+
 export const SLOW_MOTION_TRANSITION = {
   ease: 'linear',
-  duration: 1,
+  duration: DURATION_SLOW,
 };
 
 export const SLOW_MOTION_CONFIG = {
@@ -182,7 +188,10 @@ export const DELAY_VISIBILITY = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
-  ...DURATION_DELAY_TRANSITION,
+  transition: {
+    ...MOTION_CONFIG,
+    delay: DURATION * 1.5,
+  },
 };
 
 export const SCROLL_DECORATION_PRESENCE = {

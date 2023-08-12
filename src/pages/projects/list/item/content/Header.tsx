@@ -1,21 +1,18 @@
+import { Space2 } from '@components/spaces/Space2';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { TSlugProps } from '@pages/projects/config';
-import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC } from 'react';
 
-type TProps = TSlugProps & HTMLMotionProps<'header'>;
-export const Header: FC<TProps> = ({ slug, ...props }) => {
+type TProps = TSlugProps;
+export const Header: FC<TProps> = ({ slug }) => {
   const { title, description } = PROJECT_ITEMS_RECORD[slug];
   return (
-    <motion.header
-      className='relative flex items-start flex-col h-full md:flex-row md:items-center'
-      {...props}
-    >
-      <motion.h4 layout="position" className='+text text-color-stroke-2'>{title}</motion.h4>
-      <div className='hidden md:flex px-2' />
-      <motion.h5 layout="position" className='+text text-color-1 italic'>
+    <header className='relative column-start h-full md:row'>
+      <h4 className='+text text-color-stroke-2'>{title}</h4>
+      <Space2 classValue='hidden md:flex' />
+      <h5 className='+text text-color-1 italic'>
         {description}
-      </motion.h5>
-    </motion.header>
+      </h5>
+    </header>
   );
 };

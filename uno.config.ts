@@ -4,6 +4,11 @@ import {
   presetUno,
 } from 'unocss';
 import { THEME } from './uno.config-theme';
+import {
+  GLOW_INTERACTIVE_DARK,
+  GLOW_INTERACTIVE_DISABLED,
+  GLOW_INTERACTIVE_LIGHT,
+} from './uno.config-shadows';
 
 const SANS = 'Bodoni Moda';
 const MONO = 'Nova Mono';
@@ -14,19 +19,18 @@ const config = defineConfig({
     [
       'glow-interactive-dark',
       {
-        'box-shadow':
-          '0 0 1px 1px var(--teal-02), 0 0 1px 2px var(--teal-02)',
+        'box-shadow': GLOW_INTERACTIVE_DARK,
       },
     ],
     [
       'glow-interactive-light',
       {
-        'box-shadow': '0 0 1px 1px var(--baby-blue-04)',
+        'box-shadow': GLOW_INTERACTIVE_LIGHT,
       },
     ],
     [
       'glow-disabled',
-      { 'box-shadow': '0 0 1px 1px var(--gray)' },
+      { 'box-shadow': GLOW_INTERACTIVE_DISABLED },
     ],
     ['placeholder', { transform: 'scale(8)' }],
     ['+placeholder', { transform: 'scale(16)' }],

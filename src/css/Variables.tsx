@@ -9,7 +9,7 @@ const resolveWidth = (value: number) => `${value * 24}px`;
 
 export const Variables = () => {
   return (
-    <Global
+    <Global 
       styles={css`
         :root {
           ${COLOR_VARIABLES_CSS};

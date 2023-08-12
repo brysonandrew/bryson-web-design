@@ -1,14 +1,11 @@
 import styled from '@emotion/styled';
-import {
-  metalRadialDarkCss,
-  metalRadialLightCss,
-} from '@css/metal';
+import { metalRadialDarkCss } from '@css/metal';
 import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
 
-const Fallback = styled(motion.div)`
+const DefaultRoot = styled(motion.div)`
   background-color: var(--white-1);
   filter: none;
   html.dark & {
@@ -23,7 +20,7 @@ type TProps = TRootProps & {
   Root?: FC<TRootProps>;
 };
 export const Metal: FC<TProps> = ({
-  Root = Fallback,
+  Root = DefaultRoot,
   classValue,
   ...props
 }) => (

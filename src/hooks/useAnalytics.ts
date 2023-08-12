@@ -4,7 +4,7 @@ import googleTagManager from '@analytics/google-tag-manager';
 export const useAnalytics = (title: string) => {
   try {
     const analytics = Analytics({
-      app: 'brysona',
+      app: 'brysona.dev',
       plugins: [
         googleTagManager({
           containerId: import.meta.env.VITE_ANALYTICS_ID,

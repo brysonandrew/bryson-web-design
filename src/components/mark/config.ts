@@ -1,4 +1,4 @@
-import { resolveDropShadow } from "@utils/effects/glow";
+import { resolveDropShadow } from '@utils/effects/glow';
 
 export const BASE_PROPS = {
   variants: {

@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 import type { TItem } from '@t/projects';
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';
 import { resolveCompositeKey } from '@utils/keys';
-import { motion } from 'framer-motion';
-import { TSlugProps } from '../config';
+import { motion, useMotionValue } from 'framer-motion';
 
 const Root = styled(motion.ul)``;
 
@@ -20,23 +19,18 @@ export const List: FC<TProps> = ({
   currProject,
 }) => {
   return (
-    <Root className='relative mt-1'>
+    <Root className='relative mt-1 z-0'>
       {items.map(
         (
           { slug }: TItem,
           index: number,
           { length: count },
         ) => {
-          const itemKey = resolveCompositeKey(
-            'List',
-            slug,
-            index,
-          );
           const isSelected = currProject === slug;
           if (isSelected) return null;
           return (
             <Item
-              key={itemKey}
+              key={slug}
               slug={slug}
               index={index}
               count={count}

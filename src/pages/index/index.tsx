@@ -6,10 +6,14 @@ import { Space24 } from '@components/spaces/Space24';
 import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
 import { LayoutGroup } from 'framer-motion';
-const Tech = lazy(() => import('./tech'));
-const Contact = lazy(() => import('./contact'));
-const Projects = lazy(() => import('./projects'));
-const Gallery = lazy(() => import('@components/gallery'));
+import { Gallery } from '@components/gallery';
+import { Contact } from './contact';
+import { Projects } from './projects';
+import { Tech } from './tech';
+// const Tech = lazy(() => import('./tech'));
+// const Contact = lazy(() => import('./contact'));
+// const Projects = lazy(() => import('./projects'));
+// const Gallery = lazy(() => import('@components/gallery'));
 
 export const Index = () => {
   return (
@@ -21,15 +25,13 @@ export const Index = () => {
           <Tech />
         </Suspense>
         <Space32 />
-        <LayoutGroup>
-          <Suspense fallback={null}>
-            <Projects />
-          </Suspense>
-          <Space48 />
-          <Suspense fallback={null}>
-            <Contact />
-          </Suspense>
-        </LayoutGroup>
+        <Suspense fallback={null}>
+          <Projects />
+        </Suspense>
+        <Space48 />
+        <Suspense fallback={null}>
+          <Contact />
+        </Suspense>
         <Space48 />
         <Suspense fallback={null}>
           <Gallery />
