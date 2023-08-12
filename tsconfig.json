@@ -3,7 +3,7 @@
     "types": ["vite/client"],
     "experimentalDecorators": true,
     "target": "ESNext",
-    "lib": ["ESNext", "dom"],
+    "lib": ["WebWorker", "ESNext", "dom"],
     "useDefineForClassFields": true,
     "allowJs": true,
     "skipLibCheck": true,
