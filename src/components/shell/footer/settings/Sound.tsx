@@ -9,15 +9,17 @@ import {
 import { VolumeOn } from '@components/icons/sound/VolumeOn';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@components/buttons/circle/Button';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 export const Sound = () => {
   const { isSound, isScroll, dispatch } = useContext();
+
+  const title = `Turn ${isSound ? 'off' : 'on'} sound`;
+
   const { isHover, ...handlers } = useHoverKey(
     'sound',
-    'sound',
+    title,
   );
   const handleTap = () => {
     dispatch({ type: 'toggle-sound', value: null });
@@ -28,30 +30,30 @@ export const Sound = () => {
   };
 
   return (
-    <motion.div
-      animate={{
-        scale: resolveScale({ isScroll, isHover }),
-        x: isScroll ? 6 : 0,
-      }}
-      transition={{
-        delay: isScroll ? 0 : 0.1,
-        ...TRANSITION,
-      }}
-      {...SHARED_ANIMATION_PROPS}
-      {...handlers}
-    >
-      <Circle classValue='relative' aria-label='sound'>
-        <Button
-          title={`Turn ${isSound ? 'off' : 'on'} sound`}
-          onTap={handleTap}
-        >
-          {isSound ? (
-            <VolumeOn {...iconProps} />
-          ) : (
-            <VolumeOff {...iconProps} />
-          )}
-        </Button>
-      </Circle>
-    </motion.div>
+    <AnimatePresence initial={false} mode='wait'>
+      <motion.div
+        key={title}
+        animate={{
+          scale: resolveScale({ isScroll, isHover }),
+          x: isScroll ? 6 : 0,
+        }}
+        transition={{
+          delay: isScroll ? 0 : 0.1,
+          ...TRANSITION,
+        }}
+        {...SHARED_ANIMATION_PROPS}
+        {...handlers}
+      >
+        <Circle classValue='relative'>
+          <Button title={title} onTap={handleTap}>
+            {isSound ? (
+              <VolumeOn {...iconProps} />
+            ) : (
+              <VolumeOff {...iconProps} />
+            )}
+          </Button>
+        </Circle>
+      </motion.div>
+    </AnimatePresence>
   );
 };

@@ -22,10 +22,7 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
         <>
           {children}
           <Effect
-            className={clsx(
-              'absolute inset-0 dark:block hidden',
-              classValue,
-            )}
+            className={clsx('absolute inset-0', classValue)}
             {...props}
           >
             {children}

@@ -43,9 +43,9 @@ export const Main: FC<TProps> = ({
 
   const count = items.length;
 
-  const isDelay = useDelay(400);
+  //const isDelay = useDelay(400);
   const isReady =
-    width.screen > 0 && (isAnimationDone || isDelay);
+    width.screen > 0 //&& (isAnimationDone || isDelay);
 
   const galleryProps: TBaseProps = {
     motionX,
@@ -56,18 +56,16 @@ export const Main: FC<TProps> = ({
     isReady,
   };
 
-  const handleLayoutAnimationComplete = () =>
-    setAnimationDone(true);
-
   return (
     <Root
       className='cover-fixed column text-color z-20'
       style={{ z: RANGE_Z * 2 }}
     >
       <Header
-        onLayoutAnimationComplete={
-          handleLayoutAnimationComplete
-        }
+        isReady={isReady}
+        // onLayoutAnimationComplete={
+        //   handleLayoutAnimationComplete
+        // }
         slug={currProject}
       />
       <>

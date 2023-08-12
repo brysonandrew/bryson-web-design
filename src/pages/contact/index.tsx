@@ -3,7 +3,7 @@ import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { Section } from '@components/Section';
 import { STORY } from '@constants/copy';
-import { Space24 } from '@components/spaces/Space24';
+import { Space32 } from '@components/spaces/Space32';
 
 export const Contact = () => {
   return (
@@ -11,10 +11,9 @@ export const Contact = () => {
       <Shell>
         <Section title={STORY.contact}>
           <Main />
-          <Space24 />
+          <Space32 />
         </Section>
       </Shell>
     </MainShell>
   );
 };
- 

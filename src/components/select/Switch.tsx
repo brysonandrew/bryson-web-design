@@ -2,7 +2,6 @@ import { useContext } from '@state/Context';
 import { Sight } from './Sight';
 import { Gallery } from './gallery';
 import { resolveCursorKeyFromHoverKey } from './config';
-import { TMixblendModeKey } from '@t/css';
 import { OpenInNew } from './open-in-new';
 import { Box } from './Box';
 import { LEFT_TOP_MD, LeftTop } from '../position/LeftTop';
@@ -45,7 +44,7 @@ export const Switch = () => {
           }}
         >
           {secondaryKey && (
-            <RightCenter> 
+            <RightCenter>
               <Box delay={0.2}>
                 <Gallery />
               </Box>
@@ -54,6 +53,7 @@ export const Switch = () => {
         </Sight>
       );
     }
+    case 'sound':
     case 'dark-mode': {
       return (
         <Sight
@@ -63,22 +63,9 @@ export const Switch = () => {
         >
           <LeftTop>
             <Box delay={0.2}>
-              <IconWithText>Toggle dark mode</IconWithText>
-            </Box>
-          </LeftTop>
-        </Sight>
-      );
-    }
-    case 'sound': {
-      return (
-        <Sight
-          animate={{
-            ...LEFT_TOP_MD,
-          }}
-        >
-          <LeftTop>
-            <Box delay={0.2}>
-              <IconWithText>Toggle sound</IconWithText>
+              <IconWithText>
+                {secondaryKey ?? 'Toggle'}
+              </IconWithText>
             </Box>
           </LeftTop>
         </Sight>

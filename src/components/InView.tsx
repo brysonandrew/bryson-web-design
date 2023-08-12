@@ -41,7 +41,6 @@ export const InView = ({
 
   return (
     <Root
-      layout
       ref={ref}
       style={{ ...style }}
       className={clsx('in-view relative', classValue)}

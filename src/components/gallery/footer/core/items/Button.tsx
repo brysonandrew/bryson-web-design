@@ -99,7 +99,7 @@ export const Button: FC<TProps> = ({
           className='center absolute inset-0 uppercase text-sm text-center'
           variants={{
             idle: {
-              opacity: isDarkMode ? 0.2 : 0.4,
+              opacity: isDarkMode ? 0.4 : 0.6,
               zIndex: 0,
               cursor: 'default',
               color: isDarkMode

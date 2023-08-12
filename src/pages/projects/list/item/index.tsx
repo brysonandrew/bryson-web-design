@@ -1,6 +1,11 @@
 import { TSlugProps } from '@pages/projects/config';
 import { motion } from 'framer-motion';
-import { useRef, type FC, useEffect } from 'react';
+import {
+  useRef,
+  type FC,
+  useEffect,
+  useState,
+} from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
@@ -11,14 +16,14 @@ import { useContext } from '@state/Context';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { Link } from 'react-router-dom';
-import clsx from 'clsx';
-import { PARENT_PROPS } from '@utils/effects';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@components/select/config';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { Details } from './details';
+import { Space2 } from '@components/spaces/Space2';
 
 const Root = styled(motion.li)``;
 
@@ -47,11 +52,16 @@ export const Item: FC<TProps> = ({
   const item = PROJECT_ITEMS_RECORD[slug];
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
-    handleLoadMedia(slug);
-    if (!handlers.onHoverStart || isScrolling) return;
-    handlers.onHoverStart();
+    if (isScrolling) {
+      isEnteredOnScrollRef.current = true;
+    } else {
+      handleLoadMedia(slug);
+      if (!handlers.onHoverStart || isScrolling) return;
+      handlers.onHoverStart();
+    }
   };
   const handleHoverEnd = ({ target }: MouseEvent) => {
+    isEnteredOnScrollRef.current = false;
     if (!handlers.onHoverEnd || !target) return;
     handlers.onHoverEnd();
   };
@@ -65,38 +75,43 @@ export const Item: FC<TProps> = ({
     }
   }, [isScrolling]);
 
+  const [isExpanded, setExpanded] = useState(false);
+
+  const handleLayoutAnimationComplete = () => {
+    setExpanded(isHover);
+  };
+
+  const handleClick = () => {
+    handleOnSound();
+  };
+
   return (
-    <>
-      <Root
-        className={clsx('relative z-0 py-3')}
-        onClick={handleOnSound}
-        {...PARENT_PROPS}
-        onHoverStart={
-          isScrolling
-            ? () => (isEnteredOnScrollRef.current = true)
-            : handleHoverStart
-        }
-        onHoverEnd={handleHoverEnd}
+    <Root
+      style={{ zIndex: index }}
+      onHoverStart={handleHoverStart}
+      onHoverEnd={handleHoverEnd}
+    >
+      <Link
+        to={to}
+        onClick={handleClick}
+        {...resolveInteractiveLabels(item.title)}
       >
-        <Link
-          to={to}
-          {...resolveInteractiveLabels(
-            `Open project ${item.title}`,
-          )}
+        <Content
+          slug={item.slug}
+          isHover={isHover}
+          rightHeader={<Time time={item.time} />}
+          onLayoutAnimationComplete={
+            handleLayoutAnimationComplete
+          }
         >
-          <Content
-            isHover={isHover}
-            style={{ opacity: 1, zIndex: count - index }}
-            variants={{
-              animate: { opacity: 1 },
-              hover: { opacity: 1 },
-            }}
-            {...item}
-          >
-            <Time time={item.time} />
-          </Content>
-        </Link>
-      </Root>
-    </>
+          {isHover && (
+            <>
+              <Space2 />
+              <Details isVisible={isExpanded} {...item} />
+            </>
+          )}
+        </Content>
+      </Link>
+    </Root>
   );
 };

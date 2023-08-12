@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 import type { TItem } from '@t/projects';
-import { useState, type FC } from 'react';
+import { Fragment, type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';
 import { resolveCompositeKey } from '@utils/keys';
-import { motion } from 'framer-motion';
-import { TSlugProps } from '../config';
+import { motion, useMotionValue } from 'framer-motion';
+import { Space } from '@components/spaces/Space';
+import { Space2 } from '@components/spaces/Space2';
+import { Space4 } from '@components/spaces/Space4';
+import { Space3 } from '@components/spaces/Space3';
 
 const Root = styled(motion.ul)``;
 
@@ -20,27 +23,24 @@ export const List: FC<TProps> = ({
   currProject,
 }) => {
   return (
-    <Root className='relative mt-1'>
+    <Root className='relative mt-1 z-0'>
       {items.map(
         (
           { slug }: TItem,
           index: number,
           { length: count },
         ) => {
-          const itemKey = resolveCompositeKey(
-            'List',
-            slug,
-            index,
-          );
           const isSelected = currProject === slug;
           if (isSelected) return null;
           return (
-            <Item
-              key={itemKey}
-              slug={slug}
-              index={index}
-              count={count}
-            />
+            <Fragment key={slug}>
+              {index !== 0 && <Space3 element='li' />}
+              <Item
+                slug={slug}
+                index={index}
+                count={count}
+              />
+            </Fragment>
           );
         },
       )}

@@ -13,13 +13,18 @@ import { useHoverKey } from '@hooks/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { Button } from '@components/buttons/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
+import { createElement, useState } from 'react';
+import clsx from 'clsx';
 
 export const DarkMode = () => {
   const { darkMode, isScroll } = useContext();
   const isDarkMode = darkMode.isDarkMode;
+  const key = isDarkMode ? 'light' : 'dark';
+  const title = `Switch to ${key} mode`;
+
   const { isHover, ...handlers } = useHoverKey(
     'dark-mode',
-    'dark-mode',
+    title,
   );
   const handleMove = useMoveSound();
   const handleTap = () => {
@@ -34,34 +39,31 @@ export const DarkMode = () => {
   const scale = resolveScale({ isHover, isScroll });
 
   return (
-    <motion.div
-      animate={{ scale, x: isScroll ? 20 : 0 }}
-      transition={{
-        delay: isScroll ? 0.1 : 0,
-        ...TRANSITION,
-      }}
-      {...SHARED_ANIMATION_PROPS}
-      {...handlers}
-    >
-      <Circle
-        aria-label='dark-mode'
-        classValue='relative overflow-hidden preserve-3d perspective-1000'
+    <AnimatePresence initial={false} mode='wait'>
+      <motion.div
+        key={title}
+        animate={{ scale, x: isScroll ? 20 : 0 }}
+        transition={{
+          delay: isScroll ? 0.1 : 0,
+          ...TRANSITION,
+        }}
+        {...SHARED_ANIMATION_PROPS}
+        {...handlers}
       >
-        <Button
-          title={`Switch to ${
-            isDarkMode ? 'light' : 'dark'
-          } mode`}
-          onTap={handleTap}
+        <Circle
+          classValue={clsx(
+            'relative preserve-3d perspective-1000',
+          )}
         >
-          <AnimatePresence mode='wait' initial={false}>
-            {isDarkMode ? (
-              <Moon {...iconProps('-100%')} />
-            ) : (
-              <Sun {...iconProps('100%')} />
-            )}
-          </AnimatePresence>
-        </Button>
-      </Circle>
-    </motion.div>
+          <Button title={title} onTap={handleTap}>
+            <div className='absolute -inset-2 center overflow-hidden rounded-full'>
+              {createElement(isDarkMode ? Moon : Sun, {
+                ...iconProps(isDarkMode ? '-100%' : '100%'),
+              })}
+            </div>
+          </Button>
+        </Circle>
+      </motion.div>
+    </AnimatePresence>
   );
 };

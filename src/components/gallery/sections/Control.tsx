@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
@@ -16,6 +16,7 @@ type TProps = Pick<TBaseProps, 'width'> & {
   count: number;
   mediaRecord: TMediaRecord;
   container: HTMLElement;
+  motionX: MotionValue
 };
 export const Control: FC<TProps> = ({
   index,
@@ -23,6 +24,7 @@ export const Control: FC<TProps> = ({
   mediaRecord,
   container,
   width,
+  motionX
 }) => {
   const { isHover, ...hoverHandlers } = useHoverKey('none');
   const { scrollX, scrollY } = useContext();
@@ -46,6 +48,7 @@ export const Control: FC<TProps> = ({
       <Image
         mediaRecord={mediaRecord}
         container={containerDimensions}
+        motionX={motionX}
       >
         {(image) => (
           <>

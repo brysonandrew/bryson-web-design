@@ -1,69 +1,142 @@
-import type { FC } from 'react';
+import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
 import {
   TSlugProps,
   resolveTitleLayoutId,
 } from '@pages/projects/config';
-import { MetalDark } from '@components/metal/MetalDark';
 import styled from '@emotion/styled';
 import {
   AnimatePresence,
-  HTMLMotionProps,
   motion,
+  useMotionTemplate,
+  useMotionValue,
+  useMotionValueEvent,
 } from 'framer-motion';
-import { DELAY_VISIBILITY } from '@constants/animation';
-import { Glow } from '@components/filter-animate/Glow';
-import { TClassValueProps } from '@t/index';
+import { TChildren, TClassValueProps } from '@t/index';
 import { Mark } from '@components/mark';
-import { Details } from '../details';
+import { TMotionDivProps } from '@t/dom';
+import { Space2 } from '@components/spaces/Space2';
+import { useCurrProject } from '@hooks/params/useCurrProject';
+import { useDelayCallback } from '@hooks/useDelayCallback';
+import { Blur } from '@components/effects/blur';
+import { MetalDark } from '@components/metal/MetalDark';
+import {
+  MOTION_CONFIG,
+  PRESENCE_OPACITY,
+  SLOW_MOTION_CONFIG,
+  TRANSITION,
+} from '@constants/animation';
+import {
+  GLOW_INTERACTIVE_DARK,
+  GLOW_INTERACTIVE_LIGHT,
+} from '@uno/config-shadows';
+import { useContext } from '@state/Context';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { Glow } from '@components/filter-animate/Glow';
 
 const Root = styled(motion.div)``;
 
 type TProps = TSlugProps &
   TClassValueProps &
-  HTMLMotionProps<'div'> & {
+  TMotionDivProps & {
     isHover?: boolean;
-    isOtherHover?: boolean;
-    isHeader?: boolean;
+    rightHeader: TChildren;
   };
 export const Content: FC<TProps> = ({
   isHover,
   slug,
-  isHeader,
   classValue,
   children,
-  style,
+  rightHeader,
+  onLayoutAnimationStart,
+  onLayoutAnimationComplete,
   ...props
 }) => {
-  const metal = <MetalDark key='FillDark' />;
+  const {
+    darkMode: { isDarkMode },
+  } = useContext();
+  const [isTransitioning, setTransitioning] =
+    useState(false);
+  const [isExpanding, setExpanding] = useState(false);
+  const project = useCurrProject();
+  const isInitRef = useRef(false);
+
+  const handleInit = () => {
+    isInitRef.current = !project;
+  };
+  useDelayCallback(handleInit, 100);
+
+  const isTarget = project === slug;
+
+  const handleLayoutAnimationStart = () => {
+    if (isHover) {
+      setExpanding(true);
+    }
+    if (
+      isTarget ||
+      (typeof isHover === 'boolean' &&
+        !isHover &&
+        !isInitRef.current)
+    ) {
+      isInitRef.current = true;
+      setTransitioning(true);
+
+      if (onLayoutAnimationStart) {
+        onLayoutAnimationStart();
+      }
+    }
+  };
+  const handleLayoutAnimationComplete = () => {
+    setTransitioning(false);
+    setExpanding(false);
+
+    if (onLayoutAnimationComplete) {
+      onLayoutAnimationComplete();
+    }
+  };
+
   return (
     <Root
       layoutId={resolveTitleLayoutId(slug)}
       className={clsx(
-        'relative w-full pl-6 pr-4 md:pl-8 md:pr-6 py-4 z-20',
-        [!isHeader && 'glow-interactive'],
+        'relative w-full',
+        'pl-6 pr-4 md:pl-8 md:pr-6',
+        [isExpanding && 'overflow-hidden'],
         classValue,
       )}
+      onAnimationComplete={console.log}
+      onLayoutAnimationStart={handleLayoutAnimationStart}
+      onLayoutAnimationComplete={
+        handleLayoutAnimationComplete
+      }
+      style={{
+        boxShadow: isDarkMode
+          ? GLOW_INTERACTIVE_DARK
+          : GLOW_INTERACTIVE_LIGHT,
+      }}
       {...props}
     >
-      {isHeader ? (
-        metal
-      ) : (
-        <Glow text={1} drop={2} color='teal'>
-          {metal}
-        </Glow>
-      )} 
-      <Mark />
+      <MetalDark className='absolute inset-0' />
+      <Mark classValue='z-20' />
+      <Space2 />
       <motion.div
-        className='row-space'
-        {...DELAY_VISIBILITY}
+        layout={!isTransitioning}
+        className={clsx('relative left-0 top-0 row-space')}
       >
         <Header slug={slug} />
-        <div className='p-2' />
-        <>{children}</>
+        {
+          <AnimatePresence>
+            {!isTransitioning && (
+              <motion.div {...PRESENCE_OPACITY}>
+                {rightHeader}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        }
       </motion.div>
-      {isHover && <Details {...props} />}
+      {children && <>{children}</>}
+      <Space2 />
     </Root>
   );
 };

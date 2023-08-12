@@ -7,10 +7,10 @@ import type { FC } from "react";
 
 const Root = styled(motion.h6)``;
 
-type TProps = HTMLMotionProps<"h6"> & {
+export type TTextXsProps = HTMLMotionProps<"h6"> & {
   classValue?: ClassValue;
 };
-export const TextXs: FC<TProps> = ({
+export const TextXs: FC<TTextXsProps> = ({
   classValue,
   style,
   children,
