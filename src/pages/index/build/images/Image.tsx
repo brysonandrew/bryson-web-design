@@ -8,7 +8,7 @@ import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import { resolveDynamicSlowMotionConfig } from '@constants/animation';
+import { DURATION_MID, DURATION_SLOW, MID_MOTION_TRANSITION, resolveDynamicSlowMotionConfig } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
@@ -55,16 +55,16 @@ export const Image: FC<TProps> = (props) => {
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
-  const { handlers } = useHoverKey('gallery',"view");
+  const { handlers } = useHoverKey('gallery', 'view');
 
   const resolveDelay = () => {
-    if (name) { 
+    if (name) {
       const n = Number(name);
       if (!isNaN(n)) {
         return Math.abs(index - n) / count;
       }
     }
-    return index / count;
+    return (index / count) * 0.5;
   };
   const delay = resolveDelay();
   const motionConfig = resolveDynamicSlowMotionConfig({
@@ -97,8 +97,11 @@ export const Image: FC<TProps> = (props) => {
       animate={{
         opacity: 1,
         z,
-        scale: isGallery ? 0 : 1,
-        ...motionConfig,
+        scale: isGallery ? 0.6 : 1,
+        transition: {
+          ...motionConfig.transition,
+          duration: DURATION_MID
+        },
       }}
       exit={{ opacity: 0, scale: 0 }}
       onClick={handleOnSound}
