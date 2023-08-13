@@ -1,14 +1,16 @@
-import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as _Link } from 'react-router-dom';
 import { useDepthStyle } from './hooks/useDepthStyle';
 import { RANGE_Z } from './hooks/useZ';
 import { useX } from './hooks/useX';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import { DURATION_MID, DURATION_SLOW, MID_MOTION_TRANSITION, resolveDynamicSlowMotionConfig } from '@constants/animation';
+import {
+  DURATION_MID,
+  resolveDynamicSlowMotionConfig,
+} from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
@@ -21,17 +23,22 @@ import clsx from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { useContext } from '@state/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { TMotionImgProps } from '@t/dom';
+import styled from '@emotion/styled';
 
 export const IMAGE_SIZE = 320;
 
-type TProps = HTMLMotionProps<'img'> & {
+const Link = styled(motion(_Link))``;
+
+type TProps = TMotionImgProps & {
   index: number;
   randomIndex: number;
   count: number;
   mediaRecord: TMediaRecord;
 };
 export const Image: FC<TProps> = (props) => {
-  const { isScrolling } = useContext();
+  const { isScroll, isScrolling } = useContext();
   const {
     index,
     count,
@@ -41,6 +48,16 @@ export const Image: FC<TProps> = (props) => {
   } = props;
   const name = useCurrName();
   const handleOnSound = useOnSound();
+  const handleClick = () => {
+    const projectsElement =
+      document.getElementById('projects');
+    if (projectsElement) {
+      projectsElement.scrollIntoView({
+        block: 'start',
+      });
+    }
+    handleOnSound();
+  };
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
@@ -71,45 +88,48 @@ export const Image: FC<TProps> = (props) => {
     delay,
   });
   const isGallery = Boolean(name);
+  const isInteractionDisabled =
+    isGallery || isScrolling || isScroll;
 
   return (
     <motion.li
       className={clsx(
         'absolute',
-        isGallery && 'pointer-events-none',
+        isInteractionDisabled && 'pointer-events-none',
       )}
       style={{
         ...xStyle,
         ...depthStyle,
         zIndex: z,
       }}
-      whileHover={
-        isScrolling
+      onClick={handleClick}
+      variants={{
+        hover: isInteractionDisabled
           ? {}
           : {
               scale: 1.4,
               filter: INIT,
               z: RANGE_Z,
               zIndex: RANGE_Z,
-            }
-      }
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{
-        opacity: 1,
-        z,
-        scale: isGallery ? 0.6 : 1,
-        transition: {
-          ...motionConfig.transition,
-          duration: DURATION_MID
+            },
+        initial: { opacity: 0, scale: 0 },
+        animate: {
+          opacity: isLoaded ? 1 : 0,
+          z,
+          scale: isGallery ? 0.6 : 1,
+          transition: {
+            ...motionConfig.transition,
+            duration: DURATION_MID,
+          },
         },
+        exit: { opacity: 0, scale: 0 },
       }}
-      exit={{ opacity: 0, scale: 0 }}
-      onClick={handleOnSound}
+      {...PARENT_GLOW_PROPS}
       {...handlers}
     >
       <Link
         className='relative cursor-zoom-in'
-        to={to}
+        to={`${to}#projects`}
         {...resolveInteractiveLabels(
           `View in image gallery`,
         )}
@@ -120,10 +140,6 @@ export const Image: FC<TProps> = (props) => {
         <Picture
           imageRef={imageRef}
           mediaRecord={mediaRecord}
-          initial={false}
-          animate={{
-            opacity: isLoaded ? 1 : 0,
-          }}
           {...pictureProps}
           {...dimensions}
         />

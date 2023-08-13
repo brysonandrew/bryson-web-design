@@ -14,7 +14,7 @@ export const WHITE_FILTER = {
 };
 
 const GRAY_1 = '68, 68, 68';
-const GRAY_2 = '120, 120, 120';
+const GRAY_2 = '106, 106, 106';
 const GRAY_3 = '155, 150, 150';
 
 export const COLOR_RGB_RECORD: Record<
@@ -71,7 +71,7 @@ export const WHITE = {
   ...resolveColorSeries('white', [
     null,
     '222, 219, 217',
-    '210, 207, 205',
+    '215, 212, 210',
     '184, 184, 184',
   ]),
 };

@@ -8,7 +8,7 @@ import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
-import { TPageLink } from '@constants/copy';
+import { TPageTitle } from '@constants/copy';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -22,7 +22,7 @@ type TProp = {
   isActive: boolean;
   to: string;
   onClick(): void;
-  children: TPageLink
+  children: TPageTitle
 };
 export const Item: FC<TProp> = ({
   isActive,

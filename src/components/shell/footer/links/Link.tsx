@@ -28,7 +28,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       {...PARENT_GLOW_PROPS}
       {...handlers}
     >
-      <MetalGlow isDarkest />
+      <MetalGlow isDarkest classValue="rounded-sm" />
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>

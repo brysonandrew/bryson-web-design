@@ -4,11 +4,10 @@ import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item as Link } from './Item';
-import { PAGE_LINKS } from '@constants/copy';
+import { PAGE_TITLES } from '@constants/copy';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
-const toPathname = (v: string) => `/${v}`;
+const toPathname = (v: string) => `/${v.toLowerCase()}`;
 
 const Root = styled(motion.nav)``;
 const List = styled(motion.ul)``;
@@ -27,7 +26,7 @@ export const Pages = () => {
           'relative column-end h-full pt-0 pr-1 md:row md:pr-0',
         )}
       >
-        {PAGE_LINKS.map((item, index) => {
+        {PAGE_TITLES.map((item, index) => {
           const to = toPathname(item);
           const isActive = pathname === to;
 

@@ -1,7 +1,7 @@
 import { InView } from '@components/InView';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
   TFake3DMotionChildrenProps,
@@ -9,7 +9,6 @@ import {
 } from './config';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
-import { TRect } from '@t/dom';
 import { useRect } from '@hooks/useRect';
 import { NOOP } from '@constants/functions';
 

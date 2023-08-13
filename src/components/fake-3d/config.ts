@@ -1,4 +1,3 @@
-import { TRect } from '@t/dom';
 import { MotionValue } from 'framer-motion';
 
 export const MAX_SCROLL = 600;
@@ -6,7 +5,7 @@ export const MAX_SCROLL = 600;
 export type TStyleProps = {
   y: MotionValue;
   rotateX: MotionValue;
-  filter: MotionValue<string>;
+  opacity: MotionValue;
 };
 
 export type TFake3DMotionProps = {
@@ -51,9 +50,9 @@ export type TTransformRange = TInputResolver & {
 };
 
 export type TVisibilityRange = TInputResolver & {
-  blur?: TRange;
+  // blur?: TRange;
   opacity?: TRange;
-  grayscale?: TRange;
+  // grayscale?: TRange;
 };
 
 export type TFake3DOptions = {
