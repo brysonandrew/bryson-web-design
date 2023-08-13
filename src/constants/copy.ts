@@ -6,5 +6,5 @@ export const STORY: Record<string, string> = {
   contact: 'Get in touch',
 };
 
-export const PAGE_LINKS = ['projects', 'contact'] as const;
-export type TPageLink = (typeof PAGE_LINKS)[number];
+export const PAGE_TITLES = ['Projects', 'Contact'] as const;
+export type TPageTitle = (typeof PAGE_TITLES)[number];

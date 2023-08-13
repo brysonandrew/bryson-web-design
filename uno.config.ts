@@ -80,6 +80,7 @@ const config = defineConfig({
     'w-core':
       'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
     row: 'flex flex-row items-center',
+    'row-wrap': 'flex flex-row items-center flex-wrap',
     'row-start': 'flex flex-row items-start',
     'row-end': 'flex flex-row items-end',
     'row-space': 'row justify-between',

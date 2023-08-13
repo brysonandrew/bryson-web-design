@@ -2,7 +2,6 @@ import { Paragraphs } from '@pages/projects/list/item/details/Paragraphs';
 import { TItem } from '@t/projects';
 import { Tags } from './Tags';
 import { FC } from 'react';
-import { Space3 } from '@components/spaces/Space3';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Space2 } from '@components/spaces/Space2';
@@ -28,7 +27,12 @@ export const Details: FC<TProps> = ({
     >
       {paragraphs && (
         <>
-          <Space3 />
+          <Space2 />
+          <hr
+            className='relative -left-6 h-px bg-black-3 dark:opacity-100 opacity-10'
+            style={{ width: `calc(100% + 3rem)` }}
+          />
+          <Space2 />
           <Paragraphs
             key='PARAGRAPHS'
             paragraphs={paragraphs}

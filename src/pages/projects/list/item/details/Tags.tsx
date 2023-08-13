@@ -1,28 +1,31 @@
 import { Fragment, type FC } from 'react';
-import { Space3 } from '@components/spaces/Space3';
 import { TItem } from '@t/projects';
 import { TagLink } from './TagLink';
+import styled from '@emotion/styled';
+
+const Root = styled.div``;
+const List = styled.ul``;
+const Item = styled.li``;
 
 type TProps = Required<Pick<TItem, 'slug' | 'tags'>>;
 export const Tags: FC<TProps> = ({ slug, tags }) => {
   return (
-    <div className='relative row'>
-      <h4 className='text-xl'>Tech</h4>
-      <Space3 />
-      <ul className='column-end sm:row w-full flex-wrap'>
+    <Root className='relative'>
+      <List className='row-wrap gap-2'>
         {tags.map((item, index) => {
           const { title, href } = item;
           const content = (
-            <code className='flex text-md text-color-4 background-color-3 px-2 py-1 rounded-sm whitespace-nowrap'>
+            <code
+              style={{ fontWeight: 700 }}
+              className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
+            >
               {title}
             </code>
           );
           return (
             <Fragment key={`title-${title}`}>
-              {index !== 0 && (
-                <li className='px-1 py-1 sm:py-6' />
-              )}
-              <li
+              {/* {index !== 0 && <li className='px-1 py-1' />} */}
+              <Item
                 onPointerDown={(e) => e.stopPropagation()}
               >
                 {typeof href === 'string' ? (
@@ -36,11 +39,11 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
                 ) : (
                   <>{content}</>
                 )}
-              </li>
+              </Item>
             </Fragment>
           );
         })}
-      </ul>
-    </div>
+      </List>
+    </Root>
   );
 };

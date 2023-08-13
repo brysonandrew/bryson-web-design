@@ -9,9 +9,9 @@ export const FAKE_3D_PROPS: TFake3DOptions = {
   dispersion: {
     input: ({ startScroll }) => [
       startScroll,
-      startScroll + MAX_SCROLL,
+      startScroll + MAX_SCROLL * 2,
     ],
-    output: [-4, -28],
+    output: [0, -20],
   },
   resistance: {
     input: ({ startScroll }) => [
@@ -19,5 +19,12 @@ export const FAKE_3D_PROPS: TFake3DOptions = {
       startScroll + MAX_SCROLL,
     ],
     output: [START_Y, START_Y - RANGE_Y],
+  },
+  visibility: {
+    input: ({ startScroll }) => [
+      startScroll,
+      startScroll + MAX_SCROLL * 2,
+    ],
+    opacity: [1, 0],
   },
 };

@@ -8,7 +8,7 @@ import {
 import { TChildren } from '@t/index';
 
 type TProps = TBaseConfig & {
-  children(result: MotionValue<string>): TChildren;
+  children(result: MotionValue<number>): TChildren;
   range: TVisibilityRange;
 };
 export const Visibility: FC<TProps> = ({

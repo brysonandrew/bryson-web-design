@@ -41,16 +41,15 @@ export const Item: FC<TItem> = ({
     >
       {isHover && <Select layoutId={title} />}
       <MetalGlow
-        drop={isDarkMode ? 16 : 8}
+        drop={isDarkMode ? 16 : 4}
         color={isDarkMode ? 'white' : 'gray-3'}
         {...BORDER_RADIUS}
       />
       <Box {...BORDER_RADIUS}>
         <Glow
           {...BORDER_RADIUS}
-          text={isDarkMode ? 2.8 : 0.5}
+          text={isDarkMode ? 2.8 : 0.5} 
           drop={isDarkMode ? 4 : 0.5}
-          color={isDarkMode ? 'teal' : 'gray-3'}
         >
           <Anchor
             className={clsx(
@@ -59,7 +58,7 @@ export const Item: FC<TItem> = ({
             href={href}
             target='_blank'
           >
-            <div className='relative flex items-center z-10'>
+            <div className='relative row z-10'>
               <Icon classValue='h-10 w-10' />
               <div className='p-2' />
               <Title className='+++text'>{title}</Title>

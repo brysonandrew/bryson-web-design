@@ -1,5 +1,5 @@
 export const PARENT_PROPS = {
-  initial: false,
+  initial: "initial",
   animate: 'animate',
   whileHover: 'hover',
   exit: 'exit',

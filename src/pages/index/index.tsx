@@ -5,6 +5,7 @@ import { Build } from './build';
 import { Space24 } from '@components/spaces/Space24';
 import { Space32 } from '@components/spaces/Space32';
 import { Space48 } from '@components/spaces/Space48';
+import { Space16 } from '@components/spaces/Space16';
 
 // import { Projects } from './projects';
 // import { Tech } from './tech';
@@ -25,7 +26,8 @@ export const Index = () => {
         <Suspense fallback={null}>
           <Tech />
         </Suspense>
-        <Space32 />
+        <Space16 />
+        <Space16 id='projects' />
         <Suspense fallback={null}>
           <Projects />
         </Suspense>

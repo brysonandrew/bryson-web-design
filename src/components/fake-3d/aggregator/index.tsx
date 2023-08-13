@@ -51,7 +51,7 @@ export const Aggregator: FC<TProps> = ({
       {visibilityRange && (
         <Visibility range={visibilityRange} {...config}>
           {(v) => {
-            styleRef.current.filter = v;
+            styleRef.current.opacity = v;
             return null;
           }}
         </Visibility>

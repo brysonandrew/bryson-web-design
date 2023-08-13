@@ -5,6 +5,7 @@ export const COLORS = {
   'teal-04': 'var(--teal-04)',
 
   'teal-bright': 'var(--teal-bright)',
+  'teal-bright-08': 'var(--teal-bright-08)',
   'teal-bright-04': 'var(--teal-bright-04)',
   'teal-bright-01': 'var(--teal-bright-01)',
 
