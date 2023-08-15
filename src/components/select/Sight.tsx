@@ -31,12 +31,13 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { cursorX, cursorY } = useContext();
+  const { cursorX, cursorY, cursorLabelX, cursorLabelY } = useContext();
 
   return (
     <Root
-      layoutId={CURSOR_LAYOUT_ID}
       style={{
+        x: cursorLabelX,
+        y: cursorLabelY,
         left: cursorX,
         top: cursorY,
         originX: '50%',

@@ -45,10 +45,9 @@ export const Zoom: FC<TProps> = ({
   container,
   image,
 }) => {
-  const { cursorX, cursorY } = useContext();
   const [isCursorReady, setCursorReady] = useState(false);
-  // const cursorX = useMotionValue(0);
-  // const cursorY = useMotionValue(0);
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
 
   const imageRect = image.getBoundingClientRect();
 

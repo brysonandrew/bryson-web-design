@@ -7,6 +7,7 @@ import { useViewportPresence } from './useViewportPresence';
 import { Switch } from '@components/select/Switch';
 import { useTimeoutRef } from '@hooks/useTimeoutRef';
 import { useCursorOffset } from '@hooks/cursor/useCursorOffset';
+import { resolveCursorKeyFromHoverKey } from '@components/select/config';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -29,6 +30,8 @@ export const Cursor: FC<TCursorProps> = memo(
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
     const handler = useCursorOffset(offsetRef);
+    const cursorKey =
+      resolveCursorKeyFromHoverKey(hoverKey);
 
     const onPointerEnter = () => {
       isOnscreenRef.current = true;
@@ -59,7 +62,7 @@ export const Cursor: FC<TCursorProps> = memo(
 
     useEventListener<'pointermove'>(
       'pointermove',
-      handleMove,
+      cursorKey === 'none' ? NOOP : handleMove,
     );
 
     useViewportPresence({ onPointerEnter, onPointerLeave });

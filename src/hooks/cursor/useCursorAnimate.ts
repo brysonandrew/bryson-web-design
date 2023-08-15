@@ -8,37 +8,12 @@ import {
   ValueTarget,
   ValueAnimationTransition,
   animate,
-  AnimationPlaybackControls,
 } from 'framer-motion';
-import { useRef } from 'react';
 import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';
 
-// if (!cursorX.isAnimating()) {
-
-// animate(cursorX, nextX, { duration: 0.1 });
-
-// if (x !== offsetXRef.current) {
-//   animate(cursorX, nextX, { duration: 1 });
-//   offsetXRef.current = x;
-// } else {
-
-// }
-// }
-// const animateY = animate(
-//   cursorY,
-//   nextY + y * OFFSET,
-//   {
-//     duration: 0.1,
-//   },
-// );
-// if (y !== offsetYRef.current) {
-//   offsetYRef.current = y;
-// } else {
-// }
-
 export const LABEL_SIZE = 280;
-const OFFSET = 40;
+const OFFSET = 20;
 
 const resolveCalc = (
   percent: number,
@@ -58,30 +33,14 @@ type THandlerConfig = {
   nextSignX?: TSign;
   nextSignY?: TSign;
 };
-
-type TAnimateControls = {
-  x: null | AnimationPlaybackControls;
-  y: null | AnimationPlaybackControls;
-};
-
 export const useCursorAnimate = () => {
   const {
     offsetRef,
     hoverKey,
-    cursorX,
-    cursorY,
     cursorLabelX,
     cursorLabelY,
-    scrollX,
-    scrollY,
-    isCursorReady,
-    dispatch,
   } = useContext();
 
-  const animationRef = useRef<TAnimateControls>({
-    x: null,
-    y: null,
-  });
   const handler = ({
     nextHoverKey = hoverKey,
     nextSignX = offsetRef.current.x,
@@ -102,24 +61,18 @@ export const useCursorAnimate = () => {
       const percentX = nextSignX < 0 ? -100 : 0;
       const percentY = nextSignY < 0 ? -100 : 0;
 
-      labelXValue = //`${percentX}px`;
-        resolveCalc(percentX, nextSignX, OFFSET);
-      labelYValue = //`${percentY}px`;
-        resolveCalc(percentY, nextSignY, OFFSET);
+      labelXValue = resolveCalc(
+        percentX,
+        nextSignX,
+        OFFSET,
+      );
+      labelYValue = resolveCalc(
+        percentY,
+        nextSignY,
+        OFFSET,
+      );
     }
-
-    console.log('animate');
-    console.log(cursorKey);
-
-    console.log('animate labelY');
-    console.log(labelYValue);
-    // animationRef.current.y?.stop();
-    // animationRef.current.y?.cancel();
     animate(cursorLabelY, labelYValue, ANIMATION_OPTIONS);
-
-    console.log('animate labelX');
-    console.log(labelXValue);
-
     animate(cursorLabelX, labelXValue, ANIMATION_OPTIONS);
   };
 

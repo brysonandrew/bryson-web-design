@@ -1,9 +1,9 @@
-import { TCursorKey } from '@components/select/config';
 import { useContext } from '@state/Context';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { isDesktop } from 'react-device-detect';
 import { GLOBAL_KEY, EMPTY_HANDLERS } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
+import { TCursorKey } from '@components/select/config';
 
 export const useHoverKey = (
   cursorKey: TCursorKey,
@@ -21,7 +21,6 @@ export const useHoverKey = (
   );
   const update = (isOn: boolean) => {
     const next = isOn ? key : null;
-    console.log('UPDATE ANIMATE useHoverKey ' + key);
     animate({ nextHoverKey: next });
     dispatch({
       value: next,

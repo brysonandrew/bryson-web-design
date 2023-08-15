@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { TRANSITION } from '@constants/animation';
 import { FC } from 'react';
-import { Space } from '@components/spaces/Space';
+import { Space_5 } from '@components/spaces/Space_5';
 import { ThinLine } from '@components/thin-line';
 import { TBaseIconProps } from '@t/icons';
-import { Space2 } from '@components/spaces/Space2';
+import { Space } from '@components/spaces/Space';
+import { TRANSITION } from '@constants/animation';
 
 type TProps = {
   children: string;
@@ -16,31 +16,27 @@ export const IconWithText: FC<TProps> = ({
 }) => {
   return (
     <>
-      <Space />
-      <motion.div
-        layout
-        className='relative text-color-5 row z-50'
-      >
+      <Space_5 />
+      <motion.div className='relative text-color-5 row z-50'>
         {Icon && (
           <>
-            <Icon />
+            <Icon classValue='w-4 h-4' />
             <Space />
           </>
         )}
         <motion.code
-          layout='size'
-          // initial={{ opacity: 0 }}
-          // animate={{
-          //   opacity: 1,
-          //   transition: { ...TRANSITION, delay: 0.4 },
-          // }}
-          className='text-2xl whitespace-nowrap'
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { ...TRANSITION, delay: 0.4 },
+          }}
+          className='text-xl whitespace-nowrap'
         >
           {children}
         </motion.code>
-        <ThinLine classValue='absolute left-0 -bottom-1 w-full' />
+        <ThinLine classValue='absolute left-0 bottom-0 w-full' />
       </motion.div>
-      <Space />
+      <Space_5 />
     </>
   );
 };

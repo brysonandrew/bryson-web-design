@@ -1,4 +1,4 @@
-import { motion, useMotionValueEvent } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
 import { resolvePresence } from '@utils/animation';
 import clsx from 'clsx';
@@ -27,13 +27,10 @@ export const Box: FC<TProps> = ({
     darkMode: { isDarkMode },
   } = useContext();
 
-  // useMotionValueEvent(cursorLabelX, 'change', console.log);
-  // useMotionValueEvent(cursorLabelY, 'change', console.log);
-
   return (
     <motion.div
       className={clsx(
-        'absolute top-1/2 left-1/2 text-xl pl-3 pr-4 pb-1 rounded-md',
+        'absolute top-1/2 left-1/2 text-xl px-2 rounded-md',
         classValue,
       )}
       style={{

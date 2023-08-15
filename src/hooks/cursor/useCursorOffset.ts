@@ -34,15 +34,8 @@ export const useCursorOffset = (offsetRef: TOffsetRef) => {
       offsetRef.current.x !== signX ||
       offsetRef.current.y !== signY
     ) {
-      console.log(
-        offsetRef.current.x,
-        signX,
-        offsetRef.current.y,
-        signY,
-      );
       offsetRef.current.x = signX;
       offsetRef.current.y = signY;
-
       animate({ nextSignX: signX, nextSignY: signY });
     }
   };
