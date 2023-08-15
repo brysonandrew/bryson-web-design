@@ -1,4 +1,4 @@
-import { THoverKey } from '@hooks/cursor/useHoverKey';
+import { THoverKey } from '@hooks/cursor/config';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 
 export const SELECT_LAYOUT_ID = 'SELECT_LAYOUT_ID';
@@ -18,7 +18,6 @@ export type TTipCursorKey =
   (typeof TIP_CURSOR_KEYS)[number];
 
 export const CURSOR_KEYS = [
-  'gallery-background',
   'big',
   'bigger',
   'none',

@@ -24,7 +24,6 @@ export const List: FC<TProps> = ({
         (
           { slug }: TItem,
           index: number,
-          { length: count },
         ) => {
           const isSelected = currProject === slug;
           if (isSelected) return null;
@@ -34,7 +33,6 @@ export const List: FC<TProps> = ({
               <Item
                 slug={slug}
                 index={index}
-                count={count}
               />
             </Fragment>
           );

@@ -9,6 +9,10 @@ import {
 } from '@uno/config-shadows';
 import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
+import {
+  PRESENCE_OPACITY,
+  SLOW_MOTION_CONFIG,
+} from '@constants/animation';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -22,6 +26,7 @@ export const Box: FC<TProps> = ({
   exitDelay = 0,
 }) => {
   const {
+    hoverKey,
     cursorLabelX,
     cursorLabelY,
     darkMode: { isDarkMode },

@@ -21,18 +21,15 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/select/config';
 import { Details } from './details';
-import { Space2 } from '@components/spaces/Space2';
 
 const Root = styled(motion.li)``;
 
 type TProps = TSlugProps & {
   index: number;
-  count: number;
 };
 export const Item: FC<TProps> = ({
   slug,
   index,
-  count,
 }) => {
   const isEnteredOnScrollRef = useRef(false);
   const { hoverKey, isScrolling } = useContext();

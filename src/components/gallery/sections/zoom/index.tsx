@@ -19,7 +19,6 @@ import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
 import { TMediaRecord } from '@t/media';
 import { Tag } from './Tag';
-import { useContext } from '@state/Context';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 

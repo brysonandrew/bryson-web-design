@@ -19,8 +19,6 @@ export const Cursor: FC<TCursorProps> = memo(
       hoverKey,
       cursorX,
       cursorY,
-      cursorLabelX,
-      cursorLabelY,
       offsetRef,
       scrollX,
       scrollY,
@@ -72,9 +70,6 @@ export const Cursor: FC<TCursorProps> = memo(
       onTap ?? NOOP,
     );
 
-    if (isCursorReady) {
-      return <Switch />;
-    }
-    return null;
+    return <>{isCursorReady && <Switch />}</>;
   },
 );

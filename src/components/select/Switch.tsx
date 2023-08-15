@@ -6,6 +6,7 @@ import { Box } from './Box';
 import { IconWithText } from './IconWithText';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
+import { AnimatePresence } from 'framer-motion';
 
 export const Switch = () => {
   const { hoverKey } = useContext();
@@ -22,7 +23,7 @@ export const Switch = () => {
         <Sight>
           <Box delay={0.2}>
             <OpenInNew>{lastKey ?? 'Open'}</OpenInNew>
-          </Box> 
+          </Box>
         </Sight>
       );
     }
@@ -34,9 +35,8 @@ export const Switch = () => {
             <Gallery />
           </Box>
         </Sight>
-      ); 
+      );
     }
-    case 'gallery-background':
     case 'sound':
     case 'dark-mode': {
       return (

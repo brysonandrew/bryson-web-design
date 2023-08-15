@@ -11,8 +11,8 @@ export type TDimConfigOptions = {
 };
 export type TPartialDimConfigOptions =
   Partial<TDimConfigOptions>;
-export const resolveDimProps = ({
-  brightness = 50,
+export const resolveBrightenProps = ({
+  brightness = 120,
 }: TDimConfigOptions) => ({
   style: {
     opacity: 0,
@@ -23,7 +23,7 @@ export const resolveDimProps = ({
       opacity: 0,
       transition: EFFECT_ANIMATE_TRANSITION,
     },
-    dim: {
+    hover: {
       opacity: 1,
       transition: EFFECT_HOVER_TRANSITION,
     },
