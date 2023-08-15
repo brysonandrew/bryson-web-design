@@ -22,7 +22,6 @@ export const Filter = ({ motionValue }: TProps) => {
   const velocity = useVelocity(motionValue);
   const acceleration = useVelocity(velocity);
   const v = useTransform(velocity, (v) => {
-    console.log(v);
     return Math.abs(v) * 0.5;
   });
   const a = useTransform(

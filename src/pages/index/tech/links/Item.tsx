@@ -7,7 +7,7 @@ import { Glow } from '@components/filter-animate/Glow';
 import { Border as Select } from '@components/select/Border';
 import { Box } from '@components/filter-animate/Box';
 import { useContext } from '@state/Context';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { MetalGlow } from '@components/metal/MetalGlow';
 

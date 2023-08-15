@@ -6,6 +6,8 @@ import type { TChildren } from '@t/index';
 import { useViewportPresence } from './useViewportPresence';
 import { Switch } from '@components/select/Switch';
 import { useTimeoutRef } from '@hooks/useTimeoutRef';
+import { useCursorOffset } from '@hooks/cursor/useCursorOffset';
+import { resolveCursorKeyFromHoverKey } from '@components/select/config';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -14,8 +16,12 @@ export type TCursorProps = {
 export const Cursor: FC<TCursorProps> = memo(
   ({ onTap, children }) => {
     const {
+      hoverKey,
       cursorX,
       cursorY,
+      cursorLabelX,
+      cursorLabelY,
+      offsetRef,
       scrollX,
       scrollY,
       isCursorReady,
@@ -23,6 +29,9 @@ export const Cursor: FC<TCursorProps> = memo(
     } = useContext();
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
+    const handler = useCursorOffset(offsetRef);
+    const cursorKey =
+      resolveCursorKeyFromHoverKey(hoverKey);
 
     const onPointerEnter = () => {
       isOnscreenRef.current = true;
@@ -35,23 +44,25 @@ export const Cursor: FC<TCursorProps> = memo(
       }
     };
 
-    const handleMove = (event: PointerEvent) => {
+    const handleMove = async (event: PointerEvent) => {
       const nextX = event.pageX - scrollX.get();
       const nextY = event.pageY - scrollY.get();
+
+      handler({ nextX, nextY });
 
       timeoutRef.current = setTimeout(() => {
         cursorX.set(nextX);
         cursorY.set(nextY);
-
-        if (isOnscreenRef.current && !isCursorReady) {
-          dispatch({ type: 'cursor-ready', value: true });
-        }
       }, 200);
+
+      if (isOnscreenRef.current && !isCursorReady) {
+        dispatch({ type: 'cursor-ready', value: true });
+      }
     };
 
     useEventListener<'pointermove'>(
       'pointermove',
-      handleMove,
+      cursorKey === 'none' ? NOOP : handleMove,
     );
 
     useViewportPresence({ onPointerEnter, onPointerLeave });

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { Button } from '../../buttons/Button';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { Circle } from '@components/buttons/circle';
 import { TMotionDivProps } from '@t/dom';
 

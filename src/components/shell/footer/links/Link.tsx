@@ -4,7 +4,7 @@ import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { motion } from 'framer-motion';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 

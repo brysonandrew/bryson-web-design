@@ -20,7 +20,7 @@ import { Small as Placeholder } from '@components/placeholder/Small';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@state/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';

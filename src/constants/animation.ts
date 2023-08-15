@@ -1,6 +1,5 @@
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
-import { Keyframes, Transition } from 'framer-motion';
 
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',

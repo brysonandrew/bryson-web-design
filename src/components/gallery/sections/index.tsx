@@ -6,7 +6,7 @@ import { TBaseProps } from '../types';
 import { TImageResolverEntry } from '@t/screens';
 import { Gallery as Fetch } from '@components/fetch-media/Gallery';
 import { Control } from './Control';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 export const Root = styled(motion.div)``;
 

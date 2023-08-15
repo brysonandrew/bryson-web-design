@@ -1,7 +1,7 @@
-import { TCursorKey } from '@components/select/config';
 import { TProjectKey } from '@constants/projects';
+import { THoverKey } from '@hooks/cursor/config';
+import { TOffsetRef } from '@hooks/cursor/useCursorOffset';
 import { TUseDarkMode } from '@hooks/useDarkMode';
-import { THoverKey } from '@hooks/useHoverKey';
 import {
   TContactState,
   TFormKey,
@@ -37,6 +37,8 @@ export type TState = {
 };
 
 export type TContext = TState & {
+  offsetRef: TOffsetRef;
+
   darkMode: TUseDarkMode;
 
   randomIndicies: number[];
@@ -49,6 +51,9 @@ export type TContext = TState & {
 
   cursorX: MotionValue;
   cursorY: MotionValue;
+
+  cursorLabelX: MotionValue;
+  cursorLabelY: MotionValue;
 
   dispatch: TDispatch;
 };

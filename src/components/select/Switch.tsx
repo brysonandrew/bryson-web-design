@@ -3,12 +3,9 @@ import { Sight } from './Sight';
 import { Gallery } from './gallery';
 import { OpenInNew } from './open-in-new';
 import { Box } from './Box';
-import { LEFT_TOP_MD, LeftTop } from '../position/LeftTop';
 import { IconWithText } from './IconWithText';
-import { RightCenter } from '@components/position/RightCenter';
-import { RIGHT_TOP_MD } from '@components/position/RightTop';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
-import { GLOBAL_KEY } from '@hooks/useHoverKey';
+import { GLOBAL_KEY } from '@hooks/cursor/config';
 
 export const Switch = () => {
   const { hoverKey } = useContext();
@@ -20,58 +17,35 @@ export const Switch = () => {
   const lastKey = key2 ?? key1;
 
   switch (cursorKey) {
-    case 'tag-open-in-new':
     case 'open-in-new': {
       return (
-        <Sight
-          animate={{
-            ...RIGHT_TOP_MD,
-          }}
-        >
-          {lastKey && (
-            <RightCenter>
-              <Box delay={0.2}>
-                <OpenInNew>{lastKey}</OpenInNew>
-              </Box>
-            </RightCenter>
-          )}
+        <Sight>
+          <Box delay={0.2}>
+            <OpenInNew>{lastKey ?? 'Open'}</OpenInNew>
+          </Box> 
         </Sight>
       );
     }
     case 'gallery':
     case 'project': {
       return (
-        <Sight
-          animate={{
-            ...RIGHT_TOP_MD,
-          }}
-        >
-          {key1 && (
-            <RightCenter>
-              <Box delay={0.2}>
-                <Gallery />
-              </Box>
-            </RightCenter>
-          )}
+        <Sight>
+          <Box delay={0.2}>
+            <Gallery />
+          </Box>
         </Sight>
-      );
+      ); 
     }
     case 'gallery-background':
     case 'sound':
     case 'dark-mode': {
       return (
-        <Sight
-          animate={{
-            ...LEFT_TOP_MD,
-          }}
-        >
-          <LeftTop>
-            <Box delay={0.2}>
-              <IconWithText>
-                {lastKey ?? 'Toggle'}
-              </IconWithText>
-            </Box>
-          </LeftTop>
+        <Sight>
+          <Box delay={0.2}>
+            <IconWithText>
+              {lastKey ?? 'Toggle'}
+            </IconWithText>
+          </Box>
         </Sight>
       );
     }

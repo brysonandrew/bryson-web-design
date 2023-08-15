@@ -3,12 +3,12 @@ import { ReactNode, type FC } from 'react';
 import { resolvePresence } from '@utils/animation';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
-import { Metal } from '@components/metal';
 import {
   GLOW_BOX,
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/config-shadows';
 import { useContext } from '@state/Context';
+import { Metal } from '@components/metal';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -22,16 +22,20 @@ export const Box: FC<TProps> = ({
   exitDelay = 0,
 }) => {
   const {
+    cursorLabelX,
+    cursorLabelY,
     darkMode: { isDarkMode },
   } = useContext();
+
   return (
     <motion.div
-      layout='size'
       className={clsx(
-        'relative text-xl pl-3 pr-4 pb-1 rounded-md',
+        'absolute top-1/2 left-1/2 text-xl px-2 rounded-md',
         classValue,
       )}
       style={{
+        x: cursorLabelX,
+        y: cursorLabelY,
         boxShadow: isDarkMode
           ? GLOW_BOX
           : GLOW_INTERACTIVE_LIGHT,

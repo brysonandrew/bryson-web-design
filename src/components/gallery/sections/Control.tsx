@@ -7,7 +7,7 @@ import { useContext } from '@state/Context';
 import { isDesktop } from 'react-device-detect';
 import { TMediaRecord } from '@t/media';
 import { Image } from './Image';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 export const Root = styled(motion.div)``;
 

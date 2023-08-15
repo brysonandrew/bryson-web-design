@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useHover = () => {
   const [isHover, setHover] = useState<boolean | null>(
@@ -8,5 +8,11 @@ export const useHover = () => {
   const onHoverStart = () => setHover(true);
   const onHoverEnd = () => setHover(false);
 
-  return { isHover, onHoverStart, onHoverEnd, onPointerLeave: onHoverEnd, onMouseLeave: onHoverEnd };
+  return {
+    isHover,
+    onHoverStart,
+    onHoverEnd,
+    onPointerLeave: onHoverEnd,
+    onMouseLeave: onHoverEnd,
+  };
 };

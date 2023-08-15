@@ -6,7 +6,7 @@ import { Title } from './Title';
 import { useHome } from '@hooks/useHome';
 import { ThinLine } from '@components/thin-line';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 const Root = styled(motion.div)``;
 const _Link = styled(motion(__Link))``;
