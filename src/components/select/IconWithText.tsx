@@ -17,7 +17,10 @@ export const IconWithText: FC<TProps> = ({
   return (
     <>
       <Space />
-      <div className='relative text-color-5 row z-50'>
+      <motion.div
+        layout
+        className='relative text-color-5 row z-50'
+      >
         {Icon && (
           <>
             <Icon />
@@ -25,17 +28,18 @@ export const IconWithText: FC<TProps> = ({
           </>
         )}
         <motion.code
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { ...TRANSITION, delay: 0.4 },
-          }}
+          layout='size'
+          // initial={{ opacity: 0 }}
+          // animate={{
+          //   opacity: 1,
+          //   transition: { ...TRANSITION, delay: 0.4 },
+          // }}
           className='text-2xl whitespace-nowrap'
         >
           {children}
         </motion.code>
         <ThinLine classValue='absolute left-0 -bottom-1 w-full' />
-      </div>
+      </motion.div>
       <Space />
     </>
   );

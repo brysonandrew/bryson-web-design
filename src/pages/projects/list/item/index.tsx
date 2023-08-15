@@ -10,7 +10,7 @@ import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useContext } from '@state/Context';
 import styled from '@emotion/styled';

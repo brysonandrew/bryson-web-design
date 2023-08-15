@@ -9,7 +9,7 @@ import {
   SHARED_ANIMATION_PROPS,
   resolveScale,
 } from '../config';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { Button } from '@components/buttons/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';

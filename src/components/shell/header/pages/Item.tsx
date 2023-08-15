@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
 import clsx, { ClassValue } from 'clsx';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
 import { TPageTitle } from '@constants/copy';

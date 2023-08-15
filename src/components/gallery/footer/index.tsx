@@ -5,7 +5,7 @@ import { PRESENCE_Y } from '@constants/animation';
 import { MetalDarkest } from '@components/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 const Root = styled(motion.footer)``;
 

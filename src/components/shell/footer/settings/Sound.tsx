@@ -7,7 +7,7 @@ import {
   resolveScale,
 } from '../config';
 import { VolumeOn } from '@components/icons/sound/VolumeOn';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@components/buttons/circle/Button';

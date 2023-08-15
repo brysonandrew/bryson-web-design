@@ -19,6 +19,7 @@ import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
 import { TMediaRecord } from '@t/media';
 import { Tag } from './Tag';
+import { useContext } from '@state/Context';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 
@@ -44,9 +45,10 @@ export const Zoom: FC<TProps> = ({
   container,
   image,
 }) => {
+  const { cursorX, cursorY } = useContext();
   const [isCursorReady, setCursorReady] = useState(false);
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
+  // const cursorX = useMotionValue(0);
+  // const cursorY = useMotionValue(0);
 
   const imageRect = image.getBoundingClientRect();
 

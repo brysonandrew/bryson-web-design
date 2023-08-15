@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from 'react';
+import { useMemo, useReducer, useRef } from 'react';
 import type { FC } from 'react';
 import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
@@ -15,6 +15,7 @@ import {
   TProjectImageResolverRecord,
 } from '@t/screens';
 import { useDarkMode } from '@hooks/useDarkMode';
+import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
 
 const screensRecordPng: TScreensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
@@ -49,6 +50,12 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
+  const offsetRef = useRef<TCursorOffset>({
+    x: 1,
+    y: -1,
+  });
+  const cursorLabelX = useMotionValue(0);
+  const cursorLabelY = useMotionValue(0);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   const { scrollX, scrollY } = useScroll();
@@ -65,6 +72,7 @@ export const Provider: FC<TProviderProps> = ({
   return (
     <Context.Provider
       value={{
+        offsetRef,
         darkMode,
         projectImageResolverRecord,
         screensLookup,
@@ -73,6 +81,8 @@ export const Provider: FC<TProviderProps> = ({
           [WEBP_EXT]: screensRecordSmallWebp,
         },
         randomIndicies,
+        cursorLabelX,
+        cursorLabelY,
         cursorX,
         cursorY,
         scrollX,

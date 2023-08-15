@@ -61,6 +61,7 @@ const config = defineConfig({
     'background-color-5': 'dark:bg-teal bg-black',
     'background-color-6': 'dark:bg-baby-blue bg-white-3',
     'background-color-7': 'dark:bg-teal-bright bg-black',
+    'background-color-8': 'dark:bg-teal-bright bg-gray-2',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',

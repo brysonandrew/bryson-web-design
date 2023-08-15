@@ -12,7 +12,7 @@ import {
   TInputElement,
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@state/Context';
 
 const Root = styled(motion.label)``;

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 import { PADDING_X } from './config';
-import { useHover } from '@hooks/useHover';
+import { useHover } from '@hooks/cursor/useHover';
 import { useContext } from '@state/Context';
 import { resolveDropShadow } from '@utils/effects/glow';
 

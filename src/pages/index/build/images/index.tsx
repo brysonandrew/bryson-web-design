@@ -10,8 +10,6 @@ import { TModuleRecord } from '@t/media';
 import { Build as Fetch } from '@components/fetch-media/Build';
 import styled from '@emotion/styled';
 import { RANGE_Z } from './hooks/useZ';
-import { Space24 } from '@components/spaces/Space24';
-import { Space12 } from '@components/spaces/Space12';
 import { Space8 } from '@components/spaces/Space8';
 
 const BUFFER = 140;

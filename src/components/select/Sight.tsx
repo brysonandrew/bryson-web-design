@@ -8,10 +8,10 @@ import { TMotionDivProps } from '@t/dom';
 import { useContext } from '@state/Context';
 
 const resolveSize = (size: number) => {
-  const offset = -size * 0.5;
+  // const offset = -size * 0.5;
   return {
-    left: offset,
-    top: offset,
+    // left: offset,
+    // top: offset,
     width: size,
     height: size,
   };
@@ -31,16 +31,14 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const {
-    cursorX,
-    cursorY,
-  } = useContext();
+  const { cursorX, cursorY } = useContext();
+
   return (
     <Root
       layoutId={CURSOR_LAYOUT_ID}
       style={{
-        x: cursorX,
-        y: cursorY,
+        left: cursorX,
+        top: cursorY,
         originX: '50%',
         originY: '50%',
         opacity: 1,
@@ -48,7 +46,7 @@ export const Sight: FC<TProps> = ({
         ...style,
       }}
       className={clsx(
-        'fixed center background-color-1 text-color-4 pointer-events-none rounded-full cursor-default z-50',
+        'fixed center background-color-8 text-color-4 pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
       {...props}

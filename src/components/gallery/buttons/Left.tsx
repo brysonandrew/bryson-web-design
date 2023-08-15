@@ -3,7 +3,7 @@ import { ArrowLeft } from '@components/icons/ArrowLeft';
 import { usePrev } from '../../../hooks/media/nav/usePrev';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 type TProps = TClassValueProps & {
   max: number;

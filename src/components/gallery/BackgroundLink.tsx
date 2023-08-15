@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
-import { useHoverKey } from '@hooks/useHoverKey';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';

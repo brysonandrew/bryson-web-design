@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { TTag } from '@t/projects';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { GLOBAL_KEY } from '@hooks/useHoverKey';
+import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { motion } from 'framer-motion';
 import { TMotionAnchorProps } from '@t/dom';
 import { TSlugProps } from '@pages/projects/config';
