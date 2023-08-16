@@ -14,7 +14,7 @@ export const Main: FC<TProps> = ({ style, rect }) => {
   return (
     <Root
 
-      className='relative w-core'
+      className='relative w-core will-change-transform'
       style={{
         rotateX: style?.rotateX,
         y: style?.y,

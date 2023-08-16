@@ -1,4 +1,4 @@
-import { useEventListener } from '@hooks/useEventListener';
+import { useEventListener } from '@hooks/events/useEventListener';
 import { useState } from 'react';
 import type { FC, ReactElement } from 'react';
 import { Offline } from './Offline';

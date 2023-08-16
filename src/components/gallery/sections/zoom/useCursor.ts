@@ -1,4 +1,4 @@
-import { useEventListener } from '@hooks/useEventListener';
+import { useEventListener } from '@hooks/events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   CURSOR_SIZE,

@@ -1,6 +1,6 @@
 import { type FC, useRef, memo } from 'react';
 import { NOOP } from '@constants/functions';
-import { useEventListener } from '@hooks/useEventListener';
+import { useEventListener } from '@hooks/events/useEventListener';
 import { useContext } from '@state/Context';
 import type { TChildren } from '@t/index';
 import { useViewportPresence } from './useViewportPresence';

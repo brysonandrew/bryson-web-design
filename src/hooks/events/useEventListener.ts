@@ -1,6 +1,6 @@
 import type { RefObject } from "react";
 import { useEffect, useRef } from "react";
-import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+import { useIsomorphicLayoutEffect } from "../useIsomorphicLayoutEffect";
 
 // Window Event based useEventListener interface
 export function useEventListener<
