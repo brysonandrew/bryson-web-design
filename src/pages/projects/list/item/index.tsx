@@ -21,16 +21,14 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/select/config';
 import { Details } from './details';
+import { isDesktop } from 'react-device-detect';
 
 const Root = styled(motion.li)``;
 
 type TProps = TSlugProps & {
   index: number;
 };
-export const Item: FC<TProps> = ({
-  slug,
-  index,
-}) => {
+export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
   const { hoverKey, isScrolling } = useContext();
   const { handlers } = useHoverKey(
@@ -76,21 +74,25 @@ export const Item: FC<TProps> = ({
     setExpanded(isHover);
   };
 
-  const handleClick = () => {
-    if (cursorKey === PROJECT_CURSOR_KEY) {
+  const handleTap = () => {
+    if (cursorKey === PROJECT_CURSOR_KEY || !isDesktop) {
       navigate(to);
       handleOnSound();
     }
+  };
+
+  const eventHandlers = {
+    ...handlers,
+    onHoverStart: handleHoverStart,
+    onHoverEnd: handleHoverEnd,
   };
 
   return (
     <Root
       className='cursor-pointer'
       style={{ zIndex: index }}
-      onClick={handleClick}
-      {...handlers}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
+      onTap={handleTap}
+      {...eventHandlers}
     >
       <Content
         slug={item.slug}
