@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { clamp, motion, useTransform } from 'framer-motion';
 import { useState } from 'react';
-import { useEventListener } from '@hooks/useEventListener';
+import { useEventListener } from '@hooks/events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   DELTA_FACTOR,

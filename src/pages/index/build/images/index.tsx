@@ -40,7 +40,7 @@ export const Images: FC<TProps> = ({ style }) => {
         }}
       >
         <List
-          className='absolute inset-0 preserve-3d'
+          className='absolute inset-0 preserve-3d will-change-transform'
           style={{
             rotateX,
             y,

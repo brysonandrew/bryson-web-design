@@ -41,20 +41,17 @@ export const Fake3D: FC<TProps> = ({
     >
       {({ inView, entry }) => {
         if (inView) {
-          if (isDesktop) {
-            return (
-              <Aggregator
-                rect={rect}
-                onUpdateRect={() =>
-                  entry ? onUpdate(entry.target) : NOOP
-                }
-                {...optionsConfig}
-              >
-                {children}
-              </Aggregator>
-            );
-          }
-          return <>{children}</>;
+          return (
+            <Aggregator
+              rect={rect}
+              onUpdateRect={() =>
+                entry ? onUpdate(entry.target) : NOOP
+              }
+              {...optionsConfig}
+            >
+              {children}
+            </Aggregator>
+          );
         }
 
         if (typeof rect !== 'undefined') {

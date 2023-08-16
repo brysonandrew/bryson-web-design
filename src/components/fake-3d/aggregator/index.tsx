@@ -9,6 +9,7 @@ import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
 import { useScrollBounds } from './useScrollBounds';
 import { TRect } from '@t/dom';
+import { isDesktop } from 'react-device-detect';
 
 type TProps = TFake3DOptions & {
   rect: TRect;
@@ -32,29 +33,33 @@ export const Aggregator: FC<TProps> = ({
 
   return (
     <>
-      {dispersionRange && (
-        <Dispersion range={dispersionRange} {...config}>
-          {(v) => {
-            styleRef.current.rotateX = v;
-            return null;
-          }}
-        </Dispersion>
-      )}
-      {resistanceRange && (
-        <Resistance range={resistanceRange} {...config}>
-          {(v) => {
-            styleRef.current.y = v;
-            return null;
-          }}
-        </Resistance>
-      )}
-      {visibilityRange && (
-        <Visibility range={visibilityRange} {...config}>
-          {(v) => {
-            styleRef.current.opacity = v;
-            return null;
-          }}
-        </Visibility>
+      {isDesktop && (
+        <>
+          {dispersionRange && (
+            <Dispersion range={dispersionRange} {...config}>
+              {(v) => {
+                styleRef.current.rotateX = v;
+                return null;
+              }}
+            </Dispersion>
+          )}
+          {resistanceRange && (
+            <Resistance range={resistanceRange} {...config}>
+              {(v) => {
+                styleRef.current.y = v;
+                return null;
+              }}
+            </Resistance>
+          )}
+          {visibilityRange && (
+            <Visibility range={visibilityRange} {...config}>
+              {(v) => {
+                styleRef.current.opacity = v;
+                return null;
+              }}
+            </Visibility>
+          )}
+        </>
       )}
       {children({
         rect: rect ?? {},

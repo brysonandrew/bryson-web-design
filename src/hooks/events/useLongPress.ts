@@ -1,4 +1,4 @@
-import { useEventListener } from '@hooks/useEventListener';
+import { useEventListener } from '@hooks/events/useEventListener';
 import { useTimeoutRef } from '@hooks/useTimeoutRef';
 import { useRef } from 'react';
 
