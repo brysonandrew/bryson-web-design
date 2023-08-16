@@ -44,7 +44,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         'relative p-0.5 w-full label-background',
         [
           isDisabled
-            ? 'glow-disabled cursor-not-allowed'
+            ? 'cursor-not-allowed'
             : 'glow-interactive cursor-pointer',
         ],
       )}

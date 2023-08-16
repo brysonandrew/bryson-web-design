@@ -6,10 +6,14 @@ export const useLongPress = (callback: () => any) => {
   const { timeoutRef, endTimeout } = useTimeoutRef();
   const ref = useRef<HTMLElement | null>(null);
 
+  const handler = (event: TouchEvent) => {
+    event.preventDefault();
+  };
+
   useEventListener<'touchstart', HTMLElement>(
     'touchstart',
     () => {
-      timeoutRef.current = setTimeout(callback, 500);
+      timeoutRef.current = setTimeout(handler, 500);
     },
     ref,
   );

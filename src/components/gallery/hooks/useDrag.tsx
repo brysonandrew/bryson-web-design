@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from '../../../hooks/media/nav/resolveTo';
 import { useCurrParams } from '@hooks/params/useCurrParams';
 import { TBaseProps } from '../types';
+import { DURATION_MID } from '@constants/animation';
 
 type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
   width: number;
@@ -48,7 +49,7 @@ export const useDrag = ({
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
       ease: 'easeIn',
-      duration: 0.4,
+      duration: DURATION_MID,
       onComplete: handleComplete,
     });
     return subscribe.stop;

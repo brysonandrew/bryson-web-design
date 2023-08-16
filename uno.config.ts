@@ -6,8 +6,9 @@ import {
 import { THEME } from './uno.config-theme';
 import {
   GLOW_INTERACTIVE_DARK,
-  GLOW_INTERACTIVE_DISABLED,
+  GLOW_CURSOR_LIGHT,
   GLOW_INTERACTIVE_LIGHT,
+  GLOW_BABY_BLUE,
 } from './uno.config-shadows';
 
 const SANS = 'Bodoni Moda';
@@ -23,14 +24,20 @@ const config = defineConfig({
       },
     ],
     [
+      'glow-baby-blue',
+      {
+        'box-shadow': GLOW_BABY_BLUE,
+      },
+    ],
+    [
       'glow-interactive-light',
       {
         'box-shadow': GLOW_INTERACTIVE_LIGHT,
       },
     ],
     [
-      'glow-disabled',
-      { 'box-shadow': GLOW_INTERACTIVE_DISABLED },
+      'glow-cursor-light',
+      { 'box-shadow': GLOW_CURSOR_LIGHT },
     ],
     ['placeholder', { transform: 'scale(8)' }],
     ['+placeholder', { transform: 'scale(16)' }],
@@ -56,12 +63,8 @@ const config = defineConfig({
     'background-color': 'dark:bg-teal-bright bg-white-1',
     'background-color-1': 'dark:bg-teal bg-gray',
     'background-color-2': 'dark:bg-black-2 bg-white',
-    'background-color-3': 'dark:bg-baby-blue bg-gray-2',
-    'background-color-4': 'dark:bg-black-09 bg-white-09',
-    'background-color-5': 'dark:bg-teal bg-black',
-    'background-color-6': 'dark:bg-baby-blue bg-white-3',
-    'background-color-7': 'dark:bg-teal-bright bg-black',
-    'background-color-8': 'dark:bg-teal-bright bg-gray-2',
+    'background-color-3':
+      'dark:bg-teal-bright bg-baby-blue',
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',

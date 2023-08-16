@@ -26,7 +26,7 @@ export const Circle: FC<TProps> = ({
       {...PARENT_GLOW_PROPS}
       {...props}
     >
-      <MetalGlow isDarkest classValue='rounded-full' />
+      <MetalGlow isDarkest classValue='rounded-full glow-baby-blue' />
       {children}
     </Root>
   );

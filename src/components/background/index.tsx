@@ -7,6 +7,7 @@ import { MORPH_ID } from './morph';
 import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import { useContext } from '@state/Context';
+import { SLOW_MOTION_CONFIG } from '@constants/animation';
 
 const Root = styled.svg``;
 const Rect = styled(motion.rect)``;
@@ -35,7 +36,7 @@ export const Background: FC<TProps> = ({
         height='100%'
         initial={{ opacity:  0.02 }}
         animate={{ opacity: isDarkMode ? 1 : 0.02 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ ...SLOW_MOTION_CONFIG, delay: 1 }}
         fill={resolveUrlId(PATTERN_ID)}
         filter={resolveUrlId(MORPH_ID)}
       />

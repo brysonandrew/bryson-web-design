@@ -9,10 +9,7 @@ import {
 } from '@uno/config-shadows';
 import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
-import {
-  PRESENCE_OPACITY,
-  SLOW_MOTION_CONFIG,
-} from '@constants/animation';
+import { DURATION_MID } from '@constants/animation';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -49,13 +46,16 @@ export const Box: FC<TProps> = ({
         {
           opacity: 0,
           transition: {
-            duration: 0.4,
+            duration: DURATION_MID,
             delay: 0 + exitDelay,
           },
         },
         {
           opacity: 1,
-          transition: { duration: 0.4, delay: 0 + delay },
+          transition: {
+            duration: DURATION_MID,
+            delay: 0 + delay,
+          },
         },
       )}
     >
