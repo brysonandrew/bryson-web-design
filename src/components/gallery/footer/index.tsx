@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { PRESENCE_Y } from '@constants/animation';
+import { DURATION, PRESENCE_Y } from '@constants/animation';
 import { MetalDarkest } from '@components/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
@@ -20,7 +20,7 @@ export const Footer: FC<TProps> = (props) => {
       className='relative flex justify-center w-full z-10'
       transition={{
         ease: 'easeIn',
-        duration: 0.2,
+        duration: DURATION,
         delay: 0.2,
       }}
       {...PRESENCE_Y}

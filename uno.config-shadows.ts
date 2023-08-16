@@ -10,12 +10,21 @@ export const GLOW_INTERACTIVE_DARK = resolveShadow(
   2,
 );
 
+export const GLOW_BABY_BLUE = resolveShadow(
+  'baby-blue',
+  4,
+);
+
+
 export const GLOW_INTERACTIVE_LIGHT = resolveShadow(
   'black',
   1,
 );
 
-export const GLOW_INTERACTIVE_DISABLED = resolveShadow(
+
+
+
+export const GLOW_CURSOR_LIGHT = resolveShadow(
   'gray',
   4,
 );

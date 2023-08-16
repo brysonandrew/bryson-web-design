@@ -1,5 +1,7 @@
+import { DURATION } from '@constants/animation';
+
 export const PARENT_PROPS = {
-  initial: "initial",
+  initial: 'initial',
   animate: 'animate',
   whileHover: 'hover',
   exit: 'exit',
@@ -15,12 +17,12 @@ export const resolveParentProps = (
 
 export const EFFECT_ANIMATE_TRANSITION = {
   ease: 'easeIn',
-  duration: 0.28,
+  duration: DURATION ? DURATION + 0.08 : DURATION,
   delay: 0.08,
 };
 
 export const EFFECT_HOVER_TRANSITION = {
   ease: 'linear',
-  duration: 0.2,
+  duration: DURATION,
   delay: 0,
 };

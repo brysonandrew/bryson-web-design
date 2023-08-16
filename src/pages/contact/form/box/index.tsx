@@ -42,7 +42,7 @@ export const Box: FC<TProps> = ({
   return (
     <Root
       className={clsx('relative input-label', [
-        isDisabled ? 'glow-disabled' : 'glow-interactive',
+        isDisabled ? '' : 'glow-interactive',
       ])}
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}

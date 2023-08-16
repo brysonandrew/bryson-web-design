@@ -2,16 +2,12 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { CURSOR_LAYOUT_ID } from './config';
 import { TChildren, TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/dom';
 import { useContext } from '@state/Context';
 
 const resolveSize = (size: number) => {
-  // const offset = -size * 0.5;
   return {
-    // left: offset,
-    // top: offset,
     width: size,
     height: size,
   };
@@ -31,7 +27,8 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { cursorX, cursorY, cursorLabelX, cursorLabelY } = useContext();
+  const { cursorX, cursorY, cursorLabelX, cursorLabelY } =
+    useContext();
 
   return (
     <Root
@@ -47,7 +44,7 @@ export const Sight: FC<TProps> = ({
         ...style,
       }}
       className={clsx(
-        'fixed center background-color-8 text-color-4 pointer-events-none rounded-full cursor-default z-50',
+        'fixed center background-color-3 text-color-4 glow-interactive-light pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
       {...props}

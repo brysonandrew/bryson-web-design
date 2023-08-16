@@ -102,7 +102,6 @@ export const Image: FC<TProps> = (props) => {
         ...depthStyle,
         zIndex: z,
       }}
-      onClick={handleClick}
       variants={{
         hover: isInteractionDisabled
           ? {}
@@ -133,6 +132,7 @@ export const Image: FC<TProps> = (props) => {
         {...resolveInteractiveLabels(
           `View in image gallery`,
         )}
+        onClick={handleClick}
       >
         {!isLoaded && (
           <Placeholder key={resolveKey(index)} />

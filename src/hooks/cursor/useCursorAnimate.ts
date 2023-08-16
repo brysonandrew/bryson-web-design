@@ -8,9 +8,11 @@ import {
   ValueTarget,
   ValueAnimationTransition,
   animate,
+  AnimationPlaybackControls,
 } from 'framer-motion';
 import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';
+import { useEffect, useRef } from 'react';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;
@@ -23,8 +25,6 @@ const resolveCalc = (
   `calc(${percent}% ${sign < 0 ? '-' : '+'} ${px}px)`;
 
 const ANIMATION_OPTIONS: ValueAnimationTransition = {
-  // duration: 0.2,
-  // ease: 'linear',
   type: 'tween',
 };
 
@@ -40,6 +40,11 @@ export const useCursorAnimate = () => {
     cursorLabelX,
     cursorLabelY,
   } = useContext();
+
+  const animateRef = useRef<{
+    x: null | AnimationPlaybackControls;
+    y: null | AnimationPlaybackControls;
+  }>({ x: null, y: null });
 
   const handler = ({
     nextHoverKey = hoverKey,
@@ -72,9 +77,28 @@ export const useCursorAnimate = () => {
         OFFSET,
       );
     }
-    animate(cursorLabelY, labelYValue, ANIMATION_OPTIONS);
-    animate(cursorLabelX, labelXValue, ANIMATION_OPTIONS);
+    animateRef.current.x = animate(
+      cursorLabelX,
+      labelXValue,
+      ANIMATION_OPTIONS,
+    );
+    animateRef.current.y = animate(
+      cursorLabelY,
+      labelYValue,
+      ANIMATION_OPTIONS,
+    );
   };
+
+  useEffect(() => {
+    return () => {
+      if (animateRef.current.x) {
+        animateRef.current.x.stop();
+      }
+      if (animateRef.current.y) {
+        animateRef.current.y.stop();
+      }
+    };
+  }, []);
 
   return handler;
 };

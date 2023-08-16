@@ -6,6 +6,7 @@ import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './resolveGradientStops';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
+import { DURATION_VERY_SLOW } from '@constants/animation';
 
 const PLACEHOLDER_LAYOUT_ID = 'PLACEHOLDER_LAYOUT_ID';
 
@@ -25,7 +26,10 @@ export const Placeholder: FC<TProps> = ({
         initial: { opacity: 0 },
         animate: { opacity: 0.28 },
         exit: { opacity: 0 },
-        transition: { ease: 'linear', duration: 1.4 },
+        transition: {
+          ease: 'linear',
+          duration: DURATION_VERY_SLOW,
+        },
       }}
       {...props}
     >
@@ -52,7 +56,7 @@ export const Placeholder: FC<TProps> = ({
             },
             transition: {
               repeat: Infinity,
-              duration: 2,
+              duration: DURATION_VERY_SLOW,
               ease: 'linear',
             },
           }}

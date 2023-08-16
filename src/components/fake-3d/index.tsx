@@ -11,6 +11,7 @@ import { PRESENCE_OPACITY } from '@constants/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { useRect } from '@hooks/useRect';
 import { NOOP } from '@constants/functions';
+import { isDesktop } from 'react-device-detect';
 
 type TProps = TFake3DOptions & {
   classValue?: ClassValue;
@@ -40,17 +41,20 @@ export const Fake3D: FC<TProps> = ({
     >
       {({ inView, entry }) => {
         if (inView) {
-          return (
-            <Aggregator
-              rect={rect}
-              onUpdateRect={() =>
-                entry ? onUpdate(entry.target) : NOOP
-              }
-              {...optionsConfig}
-            >
-              {children}
-            </Aggregator>
-          );
+          if (isDesktop) {
+            return (
+              <Aggregator
+                rect={rect}
+                onUpdateRect={() =>
+                  entry ? onUpdate(entry.target) : NOOP
+                }
+                {...optionsConfig}
+              >
+                {children}
+              </Aggregator>
+            );
+          }
+          return <>{children}</>;
         }
 
         if (typeof rect !== 'undefined') {

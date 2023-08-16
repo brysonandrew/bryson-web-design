@@ -1,5 +1,6 @@
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
+import { isMobile } from 'react-device-detect';
 
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',
@@ -7,7 +8,7 @@ export const BASIC_VARIANT_KEYS = {
   whileHover: 'hover',
 };
 
-export const DURATION = 0.2;
+export const DURATION = isMobile ? 0 : 0.2;
 
 export const TRANSITION = {
   ease: 'linear',
@@ -18,7 +19,7 @@ export const MOTION_CONFIG = {
   transition: TRANSITION,
 };
 
-export const DURATION_MID = 0.5;
+export const DURATION_MID = isMobile ? 0 : 0.5;
 
 export const MID_MOTION_TRANSITION = {
   ease: 'linear',
@@ -29,7 +30,7 @@ export const MID_MOTION_CONFIG = {
   transition: MID_MOTION_TRANSITION,
 };
 
-export const DURATION_SLOW = 1;
+export const DURATION_SLOW = isMobile ? 0 : 1;
 
 export const SLOW_MOTION_TRANSITION = {
   ease: 'linear',
@@ -40,10 +41,12 @@ export const SLOW_MOTION_CONFIG = {
   transition: SLOW_MOTION_TRANSITION,
 };
 
+export const DURATION_VERY_SLOW = isMobile ? 0 : 1;
+
 export const VERY_SLOW_MOTION_CONFIG = {
   transition: {
     ease: 'linear',
-    duration: 2,
+    duration: DURATION_VERY_SLOW,
   },
 };
 
@@ -154,18 +157,6 @@ export const PRESENCE_OPACITY_DELAY = {
   exit: { opacity: 0 },
 };
 
-export const MUGSHOT_TRANSITION = {
-  ...MOTION_CONFIG,
-  duration: 0.6,
-  delay: MOTION_CONFIG.transition.duration * 1.5,
-};
-
-export const MUGSHOT_TRANSITION_EXIT = {
-  ...MOTION_CONFIG,
-  duration: 0.1,
-  delay: 0,
-};
-
 export const FOOTER_TRANSITION = {
   ...MOTION_CONFIG,
   delay: MOTION_CONFIG.transition.duration * 2,
@@ -197,7 +188,7 @@ export const SCROLL_DECORATION_PRESENCE = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition: { ease: 'easeOut', duration: 1 },
+    transition: { ease: 'easeOut', duration: DURATION_MID },
   },
   exit: { opacity: 0 },
 };
