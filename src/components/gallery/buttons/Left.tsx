@@ -12,7 +12,7 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
   const to = usePrev(max);
   const { isHover, handlers } = useHoverKey(
     'big',
-    'left',
+    'left', 
   );
 
   if (!to) return null;

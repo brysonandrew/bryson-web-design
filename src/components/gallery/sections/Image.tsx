@@ -49,7 +49,7 @@ export const Image: FC<TProps> = ({
               mediaRecord={mediaRecord}
               className='absolute left-1/2 top-1/2'
               style={{
-                opacity: isLoaded && isDimensions ? 1 : 0,
+                opacity: isLoaded && isDimensions ? 1 : 0, 
                 x: '-50%',
                 y: '-50%',
                 ...filterProps,

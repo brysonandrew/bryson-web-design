@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { Close } from './buttons/Close';
 import styled from '@emotion/styled';
 import { Content } from '../../pages/projects/list/item/content';
@@ -6,6 +6,8 @@ import { TSlugProps } from '../../pages/projects/config';
 import { TMotionDivProps } from '@t/dom';
 import { TChildrenProps } from '@t/index';
 import { useOffSound } from '@hooks/sounds/useOffSound';
+import { NOOP } from '@constants/functions';
+import { isDesktop } from 'react-device-detect';
 
 const Root = styled.header``;
 
@@ -27,7 +29,7 @@ export const Header: FC<TProps> = ({
       <Content
         slug={slug}
         rightHeader={
-          <Close onClick={handleClose} />
+          <Close onClick={isDesktop ? handleClose : NOOP} />
         }
         {...props}
       />

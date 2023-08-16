@@ -3,6 +3,8 @@ import { Button, TButtonProps } from '../../buttons/Button';
 import { TClassValueProps, TTitleProps } from '@t/index';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
+import { NOOP } from '@constants/functions';
+import { isDesktop } from 'react-device-detect';
 
 type TProps = TClassValueProps &
   Pick<TButtonProps, 'Icon' | 'to'> &
@@ -22,7 +24,7 @@ export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
   return (
     <Button
       to={to}
-      onClick={handleClick}
+      onClick={isDesktop ? handleClick : NOOP}
       Icon={Icon}
       {...props}
     />
