@@ -6,18 +6,18 @@ import {
 } from '@t/index';
 import {
   TPartialDimConfigOptions,
-  resolveDimProps,
-} from '@utils/effects/dim';
+  resolveBrightenProps,
+} from '@utils/effects/brighten';
 
 type TProps = TPartialDimConfigOptions &
   TClassValueProps &
   TChildrenPartialProps;
-export const Dim: FC<TProps> = ({
+export const Brighten: FC<TProps> = ({
   children,
   ...options
 }) => {
   return (
-    <FilterAnimate {...resolveDimProps(options)}>
+    <FilterAnimate {...resolveBrightenProps(options)}>
       {children}
     </FilterAnimate>
   );

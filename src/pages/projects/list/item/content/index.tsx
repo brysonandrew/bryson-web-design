@@ -34,6 +34,7 @@ import {
 import { useContext } from '@state/Context';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Glow } from '@components/filter-animate/Glow';
+import { Space } from '@components/spaces/Space';
 
 const Root = styled(motion.div)``;
 
@@ -127,9 +128,15 @@ export const Content: FC<TProps> = ({
         {
           <AnimatePresence>
             {!isTransitioning && (
-              <motion.div {...PRESENCE_OPACITY}>
-                {rightHeader}
-              </motion.div>
+              <>
+                <Space />
+                <motion.div
+                  key={Boolean(project) ? 'project' : slug}
+                  {...PRESENCE_OPACITY}
+                >
+                  {rightHeader}
+                </motion.div>
+              </>
             )}
           </AnimatePresence>
         }

@@ -19,14 +19,17 @@ export const TagLink: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { dispatch } = useContext();
+  const { hoverKey, dispatch } = useContext();
+
+  const hoverKeyIn = resolveCompositeHoverKey(
+    'open-in-new',
+    slug,
+    href,
+  );
+
+  const isHover = hoverKey === hoverKeyIn;
 
   const handleHoverStart = () => {
-    const hoverKeyIn = resolveCompositeHoverKey(
-      'open-in-new',
-      slug,
-      href,
-    );
     dispatch({ type: 'hover-key', value: hoverKeyIn });
   };
   const handleHoverEnd = () => {
@@ -39,12 +42,13 @@ export const TagLink: FC<TProps> = ({
   };
   return (
     <motion.a
-      className='text-xl'
+      className='text-xl cursor-pointer'
       href={href}
       target='_blank'
-      {...resolveInteractiveLabels(title)}
+      animate={isHover ? 'hover' : 'animate'}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
+      {...resolveInteractiveLabels(title)}
       {...props}
     >
       {children}

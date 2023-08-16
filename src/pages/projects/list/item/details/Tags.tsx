@@ -1,7 +1,8 @@
-import { Fragment, type FC } from 'react';
+import { type FC } from 'react';
 import { TItem } from '@t/projects';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
+import { Brighten } from '@components/filter-animate/Brighten';
 
 const Root = styled.div``;
 const List = styled.ul``;
@@ -12,35 +13,28 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
   return (
     <Root className='relative'>
       <List className='row-wrap gap-2'>
-        {tags.map((item, index) => {
+        {tags.map((item) => {
           const { title, href } = item;
           const content = (
-            <code
-              style={{ fontWeight: 700 }}
-              className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
-            >
-              {title}
-            </code>
+            <Brighten>
+              <code
+                style={{ fontWeight: 700 }}
+                className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
+              >
+                {title}
+              </code>
+            </Brighten>
           );
           return (
-            <Fragment key={`title-${title}`}>
-              {/* {index !== 0 && <li className='px-1 py-1' />} */}
-              <Item
-                onPointerDown={(e) => e.stopPropagation()}
-              >
-                {typeof href === 'string' ? (
-                  <TagLink
-                    slug={slug}
-                    href={href}
-                    {...item}
-                  >
-                    {content}
-                  </TagLink>
-                ) : (
-                  <>{content}</>
-                )}
-              </Item>
-            </Fragment>
+            <Item key={title} className='relative'>
+              {typeof href === 'string' ? (
+                <TagLink slug={slug} href={href} {...item}>
+                  {content}
+                </TagLink>
+              ) : (
+                <>{content}</>
+              )}
+            </Item>
           );
         })}
       </List>
