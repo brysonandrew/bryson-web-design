@@ -22,7 +22,7 @@ type TProp = {
   isActive: boolean;
   to: string;
   onClick(): void;
-  children: TPageTitle
+  children: TPageTitle;
 };
 export const Item: FC<TProp> = ({
   isActive,
@@ -30,27 +30,20 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
-  const { isHover, handlers } = useHoverKey(
-    'big',
-    children,
-  );
+  const { handlers } = useHoverKey('big', children);
 
   return (
     <Link
       to={to}
       onClick={onClick}
-      className={clsx('relative center pb-2', [
-        isActive && 'cursor-default',
+      className={clsx('relative center pb-2 text-color-1', [
+        isActive &&
+          'text-color-3 text-stroke-baby-blue-02 cursor-default',
       ])}
       {...resolveInteractiveLabels(children)}
       {...handlers}
     >
-      <h2
-        className={clsx(
-          'relative uppercase text-color-1 italic',
-          [isActive && 'text-color-3'],
-        )}
-      >
+      <h2 className='relative uppercase italic'>
         {children}
       </h2>
       {isActive && (

@@ -23,7 +23,6 @@ export const Box: FC<TProps> = ({
   exitDelay = 0,
 }) => {
   const {
-    hoverKey,
     cursorLabelX,
     cursorLabelY,
     darkMode: { isDarkMode },

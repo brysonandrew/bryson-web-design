@@ -35,6 +35,7 @@ import { useContext } from '@state/Context';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { Glow } from '@components/filter-animate/Glow';
 import { Space } from '@components/spaces/Space';
+import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.div)``;
 
@@ -117,12 +118,14 @@ export const Content: FC<TProps> = ({
       }}
       {...props}
     >
-      <MetalDark className='absolute inset-0' />
+      {/* <MetalDark className='absolute inset-0' /> */}
+      <MetalGlow color='baby-blue' />
+
       <Mark classValue={clsx('z-20')} />
       <Space2 />
       <motion.div
         layout={!isTransitioning}
-        className={clsx('relative left-0 top-0 row-space')}
+        className={('relative left-0 top-0 row-space')}
       >
         <Header slug={slug} />
         {

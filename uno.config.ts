@@ -9,6 +9,8 @@ import {
   GLOW_CURSOR_LIGHT,
   GLOW_INTERACTIVE_LIGHT,
   GLOW_BABY_BLUE,
+  GLOW_INTERACTIVE_DARK_LG,
+  GLOW_INTERACTIVE_LIGHT_LG,
 } from './uno.config-shadows';
 
 const SANS = 'Bodoni Moda';
@@ -24,6 +26,12 @@ const config = defineConfig({
       },
     ],
     [
+      'glow-interactive-dark-lg',
+      {
+        'box-shadow': GLOW_INTERACTIVE_DARK_LG,
+      },
+    ],
+    [
       'glow-baby-blue',
       {
         'box-shadow': GLOW_BABY_BLUE,
@@ -33,6 +41,12 @@ const config = defineConfig({
       'glow-interactive-light',
       {
         'box-shadow': GLOW_INTERACTIVE_LIGHT,
+      },
+    ],
+    [
+      'glow-interactive-light-lg',
+      {
+        'box-shadow': GLOW_INTERACTIVE_LIGHT_LG,
       },
     ],
     [
@@ -68,7 +82,7 @@ const config = defineConfig({
     'text-color': 'dark:text-teal-bright text-gray-1',
     'text-color-1': 'dark:text-baby-blue text-gray',
     'text-color-2': 'dark:text-teal-bright text-gray',
-    'text-color-3': 'dark:text-white text-black',
+    'text-color-3': 'dark:text-white text-black-2',
     'text-color-4': 'dark:text-black text-white',
     'text-color-5': 'dark:text-teal-bright text-gray-2',
     'text-color-stroke':
@@ -81,6 +95,8 @@ const config = defineConfig({
       'relative p-3 cursor-pointer text-color-1',
     'glow-interactive':
       'dark:glow-interactive-dark glow-interactive-light',
+    'glow-interactive-lg':
+      'dark:glow-interactive-dark-lg glow-interactive-light-lg',
     'w-core':
       'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
     row: 'flex flex-row items-center',
