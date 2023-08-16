@@ -12,8 +12,8 @@ export const useHoverKey = (
 ) => {
   const animate = useCursorAnimate();
   const { hoverKey, dispatch } = useContext();
-  if (!isDesktop)
-    return { isHover: false, handlers: EMPTY_HANDLERS };
+  // if (!isDesktop)
+  //   return { isHover: false, handlers: EMPTY_HANDLERS };
   const key = resolveCompositeHoverKey(
     cursorKey,
     key1,
