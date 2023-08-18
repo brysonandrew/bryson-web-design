@@ -3,9 +3,10 @@ import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { SECTION_TITLES } from '@constants/copy';
 import { Section } from '@components/Section';
-import { Gallery } from '@components/gallery';
+const Gallery = lazy(() => import('@components/gallery'));
 import { useRect } from '@hooks/useRect';
 import { P60Y } from '@components/space/P60Y';
+import { lazy } from 'react';
 
 export const Projects = () => {
   const { rect, onUpdate } = useRect();

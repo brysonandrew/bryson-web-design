@@ -1,23 +1,13 @@
 import clsx from 'clsx';
 import type { FC } from 'react';
-import {
-  TTextXsProps,
-  TextXs,
-} from '@components/text/TextXs';
 
-type TProps = { time?: Date } & TTextXsProps;
-export const Time: FC<TProps> = ({
-  time,
-  classValue,
-  ...props
-}) => {
+type TProps = { time?: Date };
+export const Time: FC<TProps> = ({ time }) => {
   return (
-    <TextXs
-      classValue={clsx(
-        'relative text-right shrink-0',
-        classValue,
+    <h6
+      className={clsx(
+        'relative text-right shrink-0 text-left text-color text-lg md:text-xl',
       )}
-      {...props}
     >
       {typeof time === 'undefined'
         ? 'Present'
@@ -25,6 +15,6 @@ export const Time: FC<TProps> = ({
             month: 'short',
             year: 'numeric',
           }).format(time)}
-    </TextXs>
+    </h6>
   );
 };

@@ -4,7 +4,7 @@ import { MOTION_CONFIG } from '@constants/animation';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TContent } from './config';
-import { TitleRoot } from '@components/spaces/TitleRoot';
+import { TitleRoot } from '@components/space/TitleRoot';
 
 type TProps = { children: TContent };
 export const Content: FC<TProps> = ({ children }) => {
