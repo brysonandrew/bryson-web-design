@@ -6,7 +6,7 @@ import type { FC } from 'react';
 import { PATTERN_ID } from './pattern';
 import { MORPH_ID } from './morph';
 import type { ClassValue } from 'clsx';
-import { SLOW_MOTION_CONFIG } from '@constants/animation';
+import { SLOW_MOTION_TRANSITION } from '@constants/animation';
 
 const Root = styled.svg``;
 const Rect = styled(motion.rect)``;
@@ -31,7 +31,10 @@ export const Background: FC<TProps> = ({
         width='100%'
         height='100%'
         style={{ opacity: 0.06 }}
-        transition={{ ...SLOW_MOTION_CONFIG, delay: 1 }}
+        transition={{
+          ...SLOW_MOTION_TRANSITION,
+          delay: 1,
+        }}
         fill={resolveUrlId(PATTERN_ID)}
         filter={resolveUrlId(MORPH_ID)}
       />

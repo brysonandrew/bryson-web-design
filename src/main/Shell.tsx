@@ -4,14 +4,8 @@ import type { TChildren } from '@t/index';
 import { type FC } from 'react';
 import { Variables } from '@css/Variables';
 import { Background } from '@components/background';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
-  AnimatePresence,
-  MotionConfig,
-  motion,
-} from 'framer-motion';
-import {
-  SLOW_MOTION_CONFIG,
-  MOTION_CONFIG,
   PRESENCE_OPACITY,
   PRESENCE_OPACITY_01,
   ZERO_MOTION_CONFIG,
@@ -48,31 +42,27 @@ export const Shell: FC<TProps> = ({ children }) => {
   return (
     <>
       <Root>
-        <MotionConfig {...SLOW_MOTION_CONFIG}>
-          <Variables />
-          <Filters />
-          <ClipPaths />
-          <AnimatePresence mode='wait'>
-            <Background>
-              <Processor
-                width='100%'
-                height='100%'
-                classValue='dark:fill-gray fill-baby-blue'
-                {...PRESENCE_OPACITY_01}
-                {...resolveTransition(0.28)}
-              />
-            </Background>
-          </AnimatePresence>
-          <motion.div
-            {...PRESENCE_OPACITY}
-            {...resolveTransition(0.8)}
-            onAnimationComplete={handleAnimationComplete}
-          >
-            <MotionConfig {...MOTION_CONFIG}>
-              <>{children}</>
-            </MotionConfig>
-          </motion.div>
-        </MotionConfig>
+        <Variables />
+        <Filters />
+        <ClipPaths />
+        <AnimatePresence mode='wait'>
+          <Background>
+            <Processor
+              width='100%'
+              height='100%'
+              classValue='dark:fill-gray fill-baby-blue'
+              {...PRESENCE_OPACITY_01}
+              {...resolveTransition(0.28)}
+            />
+          </Background>
+        </AnimatePresence>
+        <motion.div
+          {...PRESENCE_OPACITY}
+          {...resolveTransition(0.8)}
+          onAnimationComplete={handleAnimationComplete}
+        >
+          {children}
+        </motion.div>
       </Root>
       {isDesktop && <Cursor />}
     </>
