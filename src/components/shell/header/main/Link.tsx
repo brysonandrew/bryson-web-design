@@ -12,7 +12,7 @@ const Root = styled(motion.div)``;
 const _Link = styled(motion(__Link))``;
 
 export const Link: FC = () => {
-  const { isHover, handlers } = useHoverKey(
+  const { handlers } = useHoverKey(
     'big',
     'home',
   );

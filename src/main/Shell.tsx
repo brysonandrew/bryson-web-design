@@ -11,7 +11,7 @@ import {
   ZERO_MOTION_CONFIG,
   resolveDynamicSlowMotionConfig,
 } from '@constants/animation';
-import { Processor } from '@components/icons/Processor';
+import { Processor } from '@components/icons/background/Processor';
 import { useContext } from '@state/Context';
 import { ClipPaths } from '@components/ClipPaths';
 import { useScrollControl } from '@hooks/scroll/useScrollControl';

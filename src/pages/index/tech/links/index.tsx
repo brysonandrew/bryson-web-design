@@ -1,4 +1,4 @@
-import { Plus } from '@components/icons/Plus';
+import { Plus } from '@components/icons/tech/Plus';
 import { TECH } from '@constants/tech';
 import styled from '@emotion/styled';
 import clsx from 'clsx';

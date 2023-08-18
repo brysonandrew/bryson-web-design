@@ -1,4 +1,4 @@
-import { Gallery as Icon } from '@components/icons/Gallery';
+import { Gallery as Icon } from '@components/icons/gallery/Gallery';
 import { FC } from 'react';
 import { IconWithText } from '../IconWithText';
 

@@ -1,4 +1,4 @@
-import { OpenInNew as Icon } from '@components/icons/OpenInNew';
+import { OpenInNew as Icon } from '@components/icons/links/OpenInNew';
 import { FC } from 'react';
 import { IconWithText } from '../IconWithText';
 

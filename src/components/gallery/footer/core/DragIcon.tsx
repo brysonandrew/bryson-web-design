@@ -1,4 +1,4 @@
-import { Drag } from '@components/icons/Drag';
+import { Drag } from '@components/icons/gallery/Drag';
 import { COLORS } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';

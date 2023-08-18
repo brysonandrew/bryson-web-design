@@ -4,10 +4,29 @@ import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { compileTsServiceWorker } from './vite.compile-ts-service-worker';
+import { ViteFaviconsPlugin } from 'vite-plugin-favicon2';
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+          return;
+        }
+        warn(warning);
+      },
+    },
+  },
   plugins: [
     compileTsServiceWorker(),
+    ViteFaviconsPlugin({
+      logo: 'src/components/icons/logo/laptop-dark.svg',
+    }),
+    ViteFaviconsPlugin({
+      logo: 'src/components/icons/logo/laptop.svg',
+      outputPath: '/light',
+    }),
+
     nodePolyfills({
       globals: {
         Buffer: false,

@@ -1,4 +1,4 @@
-import { Cross } from '@components/icons/Cross';
+import { Cross } from '@components/icons/gallery/Cross';
 import type { FC } from 'react';
 import { IconLink } from '../../buttons/IconLink';
 import { TClassValueProps } from '@t/index';
