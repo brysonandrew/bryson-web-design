@@ -10,7 +10,7 @@ import { Build as Fetch } from '@components/fetch-media/Build';
 import styled from '@emotion/styled';
 import { RANGE_Z } from './hooks/useZ';
 import { P8 } from '@components/space/P8';
-import { TITLE_HEIGHT } from '@components/spaces/TitleRoot';
+import { TITLE_HEIGHT } from '@components/space/TitleRoot';
 
 const BUFFER = 140;
 const HEIGHT = TITLE_HEIGHT + RANGE_Y + BUFFER;

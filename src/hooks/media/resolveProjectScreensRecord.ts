@@ -18,7 +18,7 @@ export const resolveProjectImageResolverRecord = (
       a[details.project] = {
         ...(a[details.project] ?? []),
         [filePath]: {
-          [PNG_EXT]: {
+          [PNG_EXT]: { 
             filePath,
             resolver: screensLookup[PNG_EXT][filePath],
             ...details,

@@ -3,7 +3,7 @@ import { isMobile } from 'react-device-detect';
 import { InView } from '@components/InView';
 import { Content } from './Content';
 import { TContent } from './config';
-import { TitleRoot } from '@components/spaces/TitleRoot';
+import { TitleRoot } from '@components/space/TitleRoot';
 
 type TProps = { children: TContent };
 export const Title: FC<TProps> = ({ children }) => {
