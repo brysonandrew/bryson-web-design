@@ -1,5 +1,5 @@
 export const initServiceWorker = async () => {
-  if (import.meta.env.DEV && navigator.serviceWorker) {
+  if (!import.meta.env.DEV && navigator.serviceWorker) {
     try {
       const path = '/service-worker.js';
       await navigator.serviceWorker.register(path, {
