@@ -1,12 +1,12 @@
-import { lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { SECTION_TITLES } from '@constants/copy';
 import { Section } from '@components/Section';
 const Gallery = lazy(() => import('@components/gallery'));
-import { useRect } from '@hooks/useRect';
 import { P60Y } from '@components/space/P60Y';
+import { useRect } from '@hooks/dom/useRect';
 
 export const Projects = () => {
   const { rect, onUpdate } = useRect();
@@ -27,7 +27,9 @@ export const Projects = () => {
           </div>
           <P60Y />
         </Section>
-        <Gallery />
+        <Suspense fallback={null}>
+          <Gallery />
+        </Suspense>
       </Shell>
     </MainShell>
   );

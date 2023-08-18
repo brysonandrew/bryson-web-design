@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
-import { CSSProperties, type FC } from 'react';
+import { type FC } from 'react';
 import { useContext } from '@state/Context';
 import { Picture } from '@components/picture';
 import { useLoadImage } from '@hooks/media/useLoadImage';
@@ -10,7 +10,7 @@ import { resolveKey } from '@components/placeholder/resolveKey';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { TChildren } from '@t/index';
-import { MotionBlur } from '@components/effects/motion-blur';
+import { MotionBlur } from '@components/filters/motion-blur';
 
 export const Root = styled(motion.div)``;
 
@@ -42,14 +42,17 @@ export const Image: FC<TProps> = ({
         <Responsive key={resolveKey(mediaRecord.png.src)} />
       )}
       {mediaRecord && (
-        <MotionBlur isOn={isTransitioningGallery} motionValue={motionX}>
+        <MotionBlur
+          isOn={isTransitioningGallery}
+          motionValue={motionX}
+        >
           {(filterProps) => (
             <Picture
               imageRef={imageRef}
               mediaRecord={mediaRecord}
               className='absolute left-1/2 top-1/2'
               style={{
-                opacity: isLoaded && isDimensions ? 1 : 0, 
+                opacity: isLoaded && isDimensions ? 1 : 0,
                 x: '-50%',
                 y: '-50%',
                 ...filterProps,

@@ -22,15 +22,18 @@ export const Content: FC<TProps> = ({ children }) => {
       >
         <h3 className='++text text-center'>{children}</h3>
       </motion.div>
-      <div className='overflow-hidden w-3/4'>
+      <div className='relative overflow-hidden w-3/4 top-4 h-4'>
         <ThinLine
-          classValue='relative'
+          classValue='absolute left-0 w-full top-0'
           style={{
-            bottom: '-1.4rem',
+            bottom: '0',
             backgroundColor: 'var(--baby-blue)',
           }}
         />
-        <ThinLineGrow delay={0.2} />
+        <ThinLineGrow
+          delay={0.2}
+          classValue='absolute left-0 w-full top-1'
+        />
       </div>
     </TitleRoot>
   );

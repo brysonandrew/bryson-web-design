@@ -1,5 +1,5 @@
 
-import { useTimeoutRef } from '@hooks/useTimeoutRef';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 import { useContext } from '@state/Context';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';

@@ -1,4 +1,4 @@
-import { useWindowSize } from '@hooks/useWindowSize';
+import { useWindowSize } from '@hooks/window/useWindowSize';
 import { useContext } from '@state/Context';
 import { TRect } from '@t/dom';
 import { useMemo } from 'react';

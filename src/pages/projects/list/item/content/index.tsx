@@ -12,7 +12,6 @@ import { Mark } from '@components/mark';
 import { TMotionDivProps } from '@t/dom';
 import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
-import { useDelayCallback } from '@hooks/useDelayCallback';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import {
   GLOW_INTERACTIVE_DARK,
@@ -21,6 +20,7 @@ import {
 import { useContext } from '@state/Context';
 import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
+import { useDelayCallback } from '@hooks/window/useDelayCallback';
 
 const Root = styled(motion.div)``;
 
@@ -104,7 +104,10 @@ export const Content: FC<TProps> = ({
       {...props}
     >
       <MetalGlow color='baby-blue' />
-      <Mark classValue={clsx('z-20')} />
+      <Mark
+        // layoutId='PROJECTS_LIST_ITEM_LAYOUT_ID'
+        classValue={clsx('z-20')}
+      />
       <P2 />
       <motion.div
         layout={!isTransitioning}

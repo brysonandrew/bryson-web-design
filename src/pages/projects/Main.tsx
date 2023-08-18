@@ -13,7 +13,6 @@ export const Main: FC<TProps> = ({ style, rect }) => {
   const currProject = useCurrProject();
   return (
     <Root
-
       className='relative w-core will-change-transform'
       style={{
         rotateX: style?.rotateX,

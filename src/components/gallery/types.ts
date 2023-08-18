@@ -3,7 +3,7 @@ import {
   TImageRecord,
   TImageResolverEntries,
 } from '@t/screens';
-import { useWidth } from './hooks/useWidth';
+import { useWidth } from '@hooks/gallery/useWidth';
 
 export type TWidth = ReturnType<typeof useWidth>['width'];
 export type TBaseProps = {

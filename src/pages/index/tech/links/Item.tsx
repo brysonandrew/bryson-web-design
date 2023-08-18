@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
-import { Border as Select } from '@components/select/Border';
 import { Box } from '@components/filter-animate/Box';
 import { useContext } from '@state/Context';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { MetalGlow } from '@components/metal/MetalGlow';
+import { Aura } from '@components/filters/aura/Aura';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -39,7 +39,7 @@ export const Item: FC<TItem> = ({
       {...handlers}
       {...props}
     >
-      {isHover && <Select layoutId={title} />}
+      {isHover && <Aura layoutId={title} />}
       <MetalGlow
         drop={isDarkMode ? 16 : 4}
         color={isDarkMode ? 'white' : 'gray-3'}

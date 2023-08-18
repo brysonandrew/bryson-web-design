@@ -1,7 +1,7 @@
 import { TProjectKey } from '@constants/projects';
 import { THoverKey } from '@hooks/cursor/config';
 import { TOffsetRef } from '@hooks/cursor/useCursorOffset';
-import { TUseDarkMode } from '@hooks/useDarkMode';
+import { TUseDarkMode } from '@hooks/dom/useDarkMode';
 import {
   TContactState,
   TFormKey,

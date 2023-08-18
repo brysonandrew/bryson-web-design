@@ -6,7 +6,7 @@ import {
   TInteractiveEvent,
   resolveCursorCoords,
 } from './config';
-import { useOutsideClick } from '@hooks/useOutsideClick';
+import { useOutsideClick } from '@hooks/dom/useOutsideClick';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({

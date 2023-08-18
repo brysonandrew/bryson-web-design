@@ -6,7 +6,7 @@ import { STATE } from './constants';
 import type { TAction, TContext } from './types';
 import { motionValue } from 'framer-motion';
 import { EMPTY_SCREENS_LOOKUP } from '@constants/media';
-import { INIT } from '@hooks/useDarkMode';
+import { INIT } from '@hooks/dom/useDarkMode';
 
 export const Context = createContext<TContext>({
   ...STATE,

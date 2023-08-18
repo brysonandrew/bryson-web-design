@@ -1,8 +1,3 @@
-import {
-  TIP_CURSOR_KEYS,
-  TTipCursorKey,
-  resolveCursorKeyFromHoverKey,
-} from '@components/select/config';
 import { useContext } from '@state/Context';
 import {
   ValueTarget,
@@ -13,6 +8,7 @@ import {
 import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';
 import { useEffect, useRef } from 'react';
+import { resolveCursorKeyFromHoverKey, TIP_CURSOR_KEYS, TTipCursorKey } from '@components/cursor/switch/config';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;

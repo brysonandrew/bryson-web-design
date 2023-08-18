@@ -14,7 +14,7 @@ import {
   TScreensRecord,
   TProjectImageResolverRecord,
 } from '@t/screens';
-import { useDarkMode } from '@hooks/useDarkMode';
+import { useDarkMode } from '@hooks/dom/useDarkMode';
 import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
 
 const screensRecordPng: TScreensRecord = import.meta.glob(

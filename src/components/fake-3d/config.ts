@@ -50,9 +50,7 @@ export type TTransformRange = TInputResolver & {
 };
 
 export type TVisibilityRange = TInputResolver & {
-  // blur?: TRange;
   opacity?: TRange;
-  // grayscale?: TRange;
 };
 
 export type TFake3DOptions = {

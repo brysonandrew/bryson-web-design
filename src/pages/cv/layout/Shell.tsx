@@ -1,5 +1,5 @@
-import { Displacement } from '@components/effects/displacement';
 import { FilterShell } from '@components/filters/FilterShell';
+import { Displacement } from '@components/filters/displacement';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import { motion } from 'framer-motion';

@@ -1,4 +1,4 @@
-import { TCursorKey } from '@components/select/config';
+import { TCursorKey } from '@components/cursor/switch/config';
 import { THoverKey } from '@hooks/cursor/config';
 
 export const COMPOSITE_KEY_DELIMITER = '-';

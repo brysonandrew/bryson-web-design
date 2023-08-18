@@ -4,10 +4,10 @@ import { useEventListener } from '@hooks/events/useEventListener';
 import { useContext } from '@state/Context';
 import type { TChildren } from '@t/index';
 import { useViewportPresence } from './useViewportPresence';
-import { Switch } from '@components/select/Switch';
-import { useTimeoutRef } from '@hooks/useTimeoutRef';
+import { Switch } from '@components/cursor/switch';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 import { useCursorOffset } from '@hooks/cursor/useCursorOffset';
-import { resolveCursorKeyFromHoverKey } from '@components/select/config';
+import { resolveCursorKeyFromHoverKey } from './switch/config';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -70,6 +70,6 @@ export const Cursor: FC<TCursorProps> = memo(
       onTap ?? NOOP,
     );
 
-    return <>{isCursorReady && <Switch />}</>;
+    return <>{isCursorReady && <Switch />}</>; 
   },
 );

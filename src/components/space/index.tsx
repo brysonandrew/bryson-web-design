@@ -14,8 +14,11 @@ type TAmount =
   | '12'
   | '16'
   | '24'
+  | '32'
   | '48'
-  | '60';
+  | '60'
+  | '72'
+  | '86';
 
 type TProps = TSpaceProps & {
   spaceClass: `p-${TAmount}` | `py-${TAmount}`;

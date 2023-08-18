@@ -2,9 +2,10 @@ import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Suspense, lazy } from 'react';
 import { Build } from './build';
-import { P24Y } from '@components/space/P24Y';
+import { P32Y } from '@components/space/P32Y';
+import { P60Y } from '@components/space/P60Y';
 import { P48Y } from '@components/space/P48Y';
-import { P16Y } from '@components/space/P16Y';
+import { P24Y } from '@components/space/P24Y';
 const Tech = lazy(() => import('./tech'));
 const Projects = lazy(() => import('./projects'));
 const Contact = lazy(() => import('./contact'));
@@ -15,12 +16,12 @@ export const Index = () => {
     <MainShell>
       <Shell>
         <Build />
-        <P24Y />
+        <P48Y />
         <Suspense fallback={null}>
           <Tech />
         </Suspense>
-        <P16Y />
-        <P16Y id='projects' />
+        <P24Y />
+        <P24Y id='projects' />
         <Suspense fallback={null}>
           <Projects />
         </Suspense>
