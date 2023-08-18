@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
 import { Mark } from '@components/mark';
 import { TMotionDivProps } from '@t/dom';
-import { Space2 } from '@components/spaces/Space2';
+import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useDelayCallback } from '@hooks/useDelayCallback';
 import { PRESENCE_OPACITY } from '@constants/animation';
@@ -19,7 +19,7 @@ import {
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/shadows';
 import { useContext } from '@state/Context';
-import { Space } from '@components/spaces/Space';
+import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.div)``;
@@ -105,7 +105,7 @@ export const Content: FC<TProps> = ({
     >
       <MetalGlow color='baby-blue' />
       <Mark classValue={clsx('z-20')} />
-      <Space2 />
+      <P2 />
       <motion.div
         layout={!isTransitioning}
         className={'relative left-0 top-0 row-space'}
@@ -115,7 +115,7 @@ export const Content: FC<TProps> = ({
           <AnimatePresence>
             {!isTransitioning && (
               <>
-                <Space />
+                <P1 />
                 <motion.div
                   key={Boolean(project) ? 'project' : slug}
                   {...PRESENCE_OPACITY}
@@ -128,7 +128,7 @@ export const Content: FC<TProps> = ({
         }
       </motion.div>
       {children && <>{children}</>}
-      <Space2 />
+      <P2 />
     </Root>
   );
 };

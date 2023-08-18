@@ -5,7 +5,6 @@ import { PRE_FLIGHT } from './preflights';
 import { SHORTCUTS } from './shortcuts';
 import { PRESETS } from './presets';
 import type { TTheme } from './theme';
-console.log(RULES);
 
 const config = defineConfig<TTheme>({
   theme: THEME,

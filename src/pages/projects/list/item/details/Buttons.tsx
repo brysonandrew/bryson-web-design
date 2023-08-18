@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Space } from '@components/spaces/Space';
-import { Space3 } from '@components/spaces/Space3';
+import { P1 } from '@components/space/P1';
+import { P3 } from '@components/space/P3';
 import { Gallery } from '@components/icons/Gallery';
 import { OpenInNew } from '@components/icons/OpenInNew';
 import { Circle } from '@components/buttons/circle';
@@ -29,7 +29,7 @@ export const Buttons: FC<TProps> = ({
       <ul className='column-start w-full md:row'>
         <li className='row-space w-full md:w-auto md:row'>
           <h3 className='text-color-1'>Screenshots</h3>
-          <Space />
+          <P1 />
           <Circle classValue='relative'>
             <InternalLink
               to={to}
@@ -40,10 +40,10 @@ export const Buttons: FC<TProps> = ({
             </InternalLink>
           </Circle>
         </li>
-        <Space3 element='li' />
+        <P3 element='li' />
         <li className='row-space w-full md:w-auto md:row'>
           <h3 className='text-color-1'>Link</h3>
-          <Space />
+          <P1 />
           <Circle>
             <Anchor
               href={href}

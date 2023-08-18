@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
-import { BASE_PROPS } from './config';
 import { FC } from 'react';
 import { useContext } from '@state/Context';
 import { TMotionDivProps } from '@t/dom';

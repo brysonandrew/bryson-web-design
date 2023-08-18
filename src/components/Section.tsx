@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { Title } from '@components/text/title';
 import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
-import { Space6 } from './spaces/Space6';
+import { P6 } from './space/P6';
 
 const Root = styled(motion.section)``;
 
@@ -25,7 +25,7 @@ export const Section: FC<TProps> = ({
       layout='position'
     >
       <Title>{title}</Title>
-      <Space6 />
+      <P6 />
       {children} 
     </Root>
   );

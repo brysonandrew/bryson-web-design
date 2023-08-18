@@ -27,10 +27,14 @@ export const useInput = <T extends HTMLElement>({
 
   return {
     ref,
-    input,
-    isFocused,
-    isEmpty,
-    value,
-    onKeyUp: handleKeyDown,
+    boxInputs: {
+      input,
+      isFocused,
+      isEmpty,
+    },
+    inputProps: {
+      value,
+      onKeyUp: handleKeyDown,
+    },
   };
 };

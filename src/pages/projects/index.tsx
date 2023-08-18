@@ -5,7 +5,7 @@ import { SECTION_TITLES } from '@constants/copy';
 import { Section } from '@components/Section';
 import { Gallery } from '@components/gallery';
 import { useRect } from '@hooks/useRect';
-import { Space60 } from '@components/spaces/Space60';
+import { P60Y } from '@components/space/P60Y';
 
 export const Projects = () => {
   const { rect, onUpdate } = useRect();
@@ -24,7 +24,7 @@ export const Projects = () => {
           >
             <Main />
           </div>
-          <Space60 />
+          <P60Y />
         </Section>
         <Gallery />
       </Shell>

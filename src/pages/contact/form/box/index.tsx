@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Input as Select } from '@components/select/Input';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { TChildren } from '@t/index';
 import { Clear } from './Clear';
@@ -14,6 +13,7 @@ import {
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@state/Context';
+import { Mark } from '@components/mark';
 
 const Root = styled(motion.label)``;
 
@@ -33,9 +33,6 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
-  const {
-    darkMode: { isDarkMode },
-  } = useContext();
   const handleFocus = useFocus(input, isFocused);
   const { isHover, handlers } = useHoverKey('big', name);
 
@@ -47,8 +44,13 @@ export const Box: FC<TProps> = ({
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}
     >
-      <MetalGlow color='baby-blue' />
-      {isFocused && <Select key={name} />}
+      <MetalGlow color='baby-blue' drop={1} />
+      {isFocused && (
+        <Mark
+          layoutId='CONTACT_FORM_INPUT_SELECT'
+          classValue='z-50'
+        />
+      )}
       {children}
       <AnimatePresence>
         {isEmpty && (

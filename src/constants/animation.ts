@@ -2,13 +2,15 @@ import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
 import { isMobile } from 'react-device-detect';
 
+const isDisabled = isMobile
+
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',
   animate: 'animate',
   whileHover: 'hover',
 };
 
-export const DURATION = isMobile ? 0 : 0.2;
+export const DURATION = isDisabled ? 0 : 0.2;
 
 export const TRANSITION = {
   ease: 'linear',
@@ -19,7 +21,7 @@ export const MOTION_CONFIG = {
   transition: TRANSITION,
 };
 
-export const DURATION_MID = isMobile ? 0 : 0.5;
+export const DURATION_MID = isDisabled ? 0 : 0.5;
 
 export const MID_MOTION_TRANSITION = {
   ease: 'linear',
@@ -30,7 +32,7 @@ export const MID_MOTION_CONFIG = {
   transition: MID_MOTION_TRANSITION,
 };
 
-export const DURATION_SLOW = isMobile ? 0 : 1;
+export const DURATION_SLOW = isDisabled ? 0 : 1;
 
 export const SLOW_MOTION_TRANSITION = {
   ease: 'linear',
@@ -41,7 +43,7 @@ export const SLOW_MOTION_CONFIG = {
   transition: SLOW_MOTION_TRANSITION,
 };
 
-export const DURATION_VERY_SLOW = isMobile ? 0 : 1;
+export const DURATION_VERY_SLOW = isDisabled ? 0 : 1;
 
 export const VERY_SLOW_MOTION_CONFIG = {
   transition: {

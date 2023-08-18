@@ -4,7 +4,7 @@ import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { Space2 } from '@components/spaces/Space2';
+import { P2 } from '@components/space/P2';
 import { TMotionDivProps } from '@t/dom';
 
 const Root = styled(motion.div)``;
@@ -27,12 +27,12 @@ export const Details: FC<TProps> = ({
     >
       {paragraphs && (
         <>
-          <Space2 />
+          <P2 />
           <hr
             className='relative -left-6 h-px bg-black-3 dark:opacity-100 opacity-10'
             style={{ width: `calc(100% + 3rem)` }}
           />
-          <Space2 />
+          <P2 />
           <Paragraphs
             key='PARAGRAPHS'
             paragraphs={paragraphs}
@@ -41,7 +41,7 @@ export const Details: FC<TProps> = ({
       )}
       {tags && (
         <>
-          <Space2 />
+          <P2 />
           <Tags key='TAGS' slug={slug} tags={tags} />
         </>
       )}

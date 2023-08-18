@@ -4,9 +4,9 @@ import { Header } from './header';
 import { Margin } from './layout/Margin';
 import { Page } from './layout/Page';
 import { Shell } from './layout/Shell';
-import { Space3 } from '@components/spaces/Space3';
-import { Space } from '@components/spaces/Space';
-import { Space6 } from '@components/spaces/Space6';
+import { P3 } from '@components/space/P3';
+import { P1 } from '@components/space/P1';
+import { P6 } from '@components/space/P6';
 import { Invert } from '../../components/Invert';
 import { Variables } from '@css/Variables';
 
@@ -21,15 +21,15 @@ export const Cv = () => {
               <Margin>
                 <Header />
               </Margin>
-              <Space6 />
+              <P6 />
               <Margin>
                 <Description />
               </Margin>
-              <Space3 />
+              <P3 />
               <Margin>
                 <hr className='bg-white-02 w-full h-px' />
               </Margin>
-              <Space />
+              <P1 />
               <Experience />
             </Page>
             <div className='py-2' />
