@@ -1,6 +1,4 @@
-import type { Rule } from 'unocss';
 import { COLORS } from '../colors';
-import type { TTheme } from '../theme';
 
 const resolveShadow = (
   colorKey: keyof typeof COLORS,
