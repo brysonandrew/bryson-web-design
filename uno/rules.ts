@@ -1,26 +1,13 @@
-import type { Rule } from 'unocss';
-import type { TTheme } from './theme';
+import { Rule } from 'unocss';
 import { RULES as SHADOW_RULES } from './shadows/rules';
+import { RULES as TEXT_STROKE_BABY_BLUE } from './text-stroke';
+
+import { TTheme } from './theme';
 
 export const RULES: Rule<TTheme>[] = [
-  ...SHADOW_RULES,
   ['placeholder', { transform: 'scale(8)' }],
   ['+placeholder', { transform: 'scale(16)' }],
   ['++placeholder', { transform: 'scale(28)' }],
-  [
-    'text-stroke-baby-blue',
-    { '-webkit-text-stroke': '1px var(--baby-blue)' },
-  ],
-  [
-    'text-stroke-baby-blue-02',
-    { '-webkit-text-stroke': '1px var(--baby-blue-02)' },
-  ],
-  [
-    'text-stroke-baby-blue-01',
-    { '-webkit-text-stroke': '1px var(--baby-blue-01)' },
-  ],
-  [
-    'text-stroke-gray',
-    { '-webkit-text-stroke': '1px var(--gray-1)' },
-  ],
+  ...SHADOW_RULES,
+  ...TEXT_STROKE_BABY_BLUE,
 ];

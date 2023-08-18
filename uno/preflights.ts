@@ -6,8 +6,8 @@ export const PRE_FLIGHT: Preflight<TAnyTheme> = {
   getCSS: ({ theme }: PreflightContext<TTheme>) => `
       html, body {
         font-family: ${SANS}, Chakra Petch, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system,
-        BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-        Helvetica Neue, sans-serif;
+          BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica Neue, sans-serif;
       }
 
       body:not(.dark) {
@@ -56,10 +56,12 @@ export const PRE_FLIGHT: Preflight<TAnyTheme> = {
 
       input:-webkit-autofill {
         -webkit-text-fill-color: ${theme.colors['black-1']} !important;
+        text-fill-color: ${theme.colors['black-1']} !important;
       }
 
       html.dark input:-webkit-autofill {
         -webkit-text-fill-color: ${theme.colors['baby-blue']} !important;
+        text-fill-color: ${theme.colors['baby-blue']} !important;
       }
 
     `,
