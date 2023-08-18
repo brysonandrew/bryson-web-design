@@ -19,3 +19,11 @@
     max-age=31536000,
     immutable
     '''
+
+
+  # Configuration for a plugin published to npm
+[[plugins]]
+package = "netlify-plugin-lighthouse"
+
+  [plugins.inputs]
+  output_path = "reports/lighthouse.html"

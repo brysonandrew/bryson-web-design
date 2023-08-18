@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { compileTsServiceWorker } from './vite.compile-ts-service-worker';
-import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   build: {
@@ -18,7 +17,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    VitePWA(),
+    compileTsServiceWorker(),
     nodePolyfills({
       globals: {
         Buffer: false,
