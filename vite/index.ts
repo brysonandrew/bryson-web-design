@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import { compileTsServiceWorker } from './vite.compile-ts-service-worker';
-import { ViteFaviconsPlugin } from 'vite-plugin-favicon2';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   build: {
@@ -19,14 +19,7 @@ export default defineConfig({
   },
   plugins: [
     compileTsServiceWorker(),
-    ViteFaviconsPlugin({
-      logo: 'src/components/icons/logo/laptop-dark.svg',
-    }),
-    ViteFaviconsPlugin({
-      logo: 'src/components/icons/logo/laptop.svg',
-      outputPath: '/light',
-    }),
-
+    VitePWA(),
     nodePolyfills({
       globals: {
         Buffer: false,
