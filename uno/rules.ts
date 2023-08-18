@@ -9,18 +9,18 @@ export const RULES: Rule<TTheme>[] = [
   ['++placeholder', { transform: 'scale(28)' }],
   [
     'text-stroke-baby-blue',
-    { '-webkit-text-stroke': '1px var(--baby-blue)' },
+    { 'text-stroke': '1px var(--baby-blue)' },
   ],
   [
     'text-stroke-baby-blue-02',
-    { '-webkit-text-stroke': '1px var(--baby-blue-02)' },
+    { 'text-stroke': '1px var(--baby-blue-02)' },
   ],
   [
     'text-stroke-baby-blue-01',
-    { '-webkit-text-stroke': '1px var(--baby-blue-01)' },
+    { 'text-stroke': '1px var(--baby-blue-01)' },
   ],
   [
     'text-stroke-gray',
-    { '-webkit-text-stroke': '1px var(--gray-1)' },
+    { 'text-stroke': '1px var(--gray-1)' },
   ],
 ];
