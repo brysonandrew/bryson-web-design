@@ -6,6 +6,7 @@ import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { Box } from './box';
 import { useInput } from './useInput';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Input = styled(motion.input)``;
 
@@ -15,13 +16,8 @@ export const Text: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const {
-    ref,
-    input,
-    isEmpty,
-    isFocused,
-    ...inputProps
-  } = useInput<HTMLInputElement>({ name });
+  const { ref, input, isEmpty, isFocused, ...inputProps } =
+    useInput<HTMLInputElement>({ name });
   return (
     <Box
       name={name}
@@ -31,7 +27,7 @@ export const Text: FC<TProps> = ({
       input={input}
     >
       <div className='pt-1 w-full md:w-auto'>
-        <Name title={name} isFocused={isFocused} />
+        <Name title={name} />
       </div>
       <Input
         ref={ref}
@@ -40,6 +36,7 @@ export const Text: FC<TProps> = ({
         autoComplete='off'
         name={name}
         disabled={disabled}
+        {...resolveInteractiveLabels(name)}
         {...inputProps}
         {...props}
       />

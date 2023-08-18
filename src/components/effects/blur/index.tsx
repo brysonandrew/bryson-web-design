@@ -7,7 +7,7 @@ type TProps = {
   children(filterProps: MotionStyle): TChildren;
 };
 export const Blur: FC<TProps> = ({ isOn, children }) => {
-  if (!isOn) return children({});
+  if (!isOn) return <>{children({})}</>;
   return (
     <>
       {children({

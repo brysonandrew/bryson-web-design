@@ -47,7 +47,7 @@ export const Box: FC<TProps> = ({
       {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
       {...handlers}
     >
-      <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />
+      <MetalGlow color='baby-blue' />
       {isFocused && <Select key={name} />}
       {children}
       <AnimatePresence>

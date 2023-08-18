@@ -6,7 +6,7 @@ import { TClassValueProps } from '@t/index';
 import {
   GLOW_BOX,
   GLOW_INTERACTIVE_LIGHT,
-} from '@uno/config-shadows';
+} from '@uno/shadows';
 import { useContext } from '@state/Context';
 import { Metal } from '@components/metal';
 import { DURATION_MID } from '@constants/animation';
@@ -23,7 +23,6 @@ export const Box: FC<TProps> = ({
   exitDelay = 0,
 }) => {
   const {
-    hoverKey,
     cursorLabelX,
     cursorLabelY,
     darkMode: { isDarkMode },

@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@t/react';
+import { TClassValueProps } from '@t/index';
 import { HTMLProps } from 'react';
 
 export type TSpaceProps = Omit<HTMLProps<HTMLElement>, 'className'> &

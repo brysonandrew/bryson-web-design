@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import { useOffSound } from '@hooks/sounds/useOffSound';
 import { motion } from 'framer-motion';
-import type { FC } from 'react';
+import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
 import clsx, { ClassValue } from 'clsx';
@@ -22,7 +21,7 @@ type TProp = {
   isActive: boolean;
   to: string;
   onClick(): void;
-  children: TPageTitle
+  children: TPageTitle;
 };
 export const Item: FC<TProp> = ({
   isActive,
@@ -30,29 +29,24 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
-  const { isHover, handlers } = useHoverKey(
-    'big',
-    children,
-  );
+  const { handlers } = useHoverKey('big', children);
 
   return (
     <Link
       to={to}
       onClick={onClick}
-      className={clsx('relative center pb-2', [
-        isActive && 'cursor-default',
+      className={clsx('relative center pb-2 text-color-1', [
+        isActive &&
+          'text-color-3 text-stroke-baby-blue-02 cursor-default',
       ])}
       {...resolveInteractiveLabels(children)}
       {...handlers}
     >
-      <h2
-        className={clsx(
-          'relative uppercase text-color-1 italic',
-          [isActive && 'text-color-3'],
-        )}
-      >
-        {children}
-      </h2>
+      {createElement(
+        isActive ? 'h1' : 'h2',
+        { className: 'relative uppercase italic' },
+        children,
+      )}
       {isActive && (
         <ThinLine
           layoutId='PAGE_NAV_LINE'

@@ -7,6 +7,8 @@ export type TMotionButtonProps = HTMLMotionProps<'button'> &
 export type TMotionAnchorProps = HTMLMotionProps<'a'> &
   TTitleProps;
 export type TMotionImgProps = HTMLMotionProps<'img'>;
-export type TMotionInputProps = HTMLMotionProps<'input'>
+export type TMotionInputProps = HTMLMotionProps<'input'>;
+
+export type TTextareaProps = HTMLMotionProps<'textarea'>;
 
 export type TRect = DOMRect | null;

@@ -9,8 +9,8 @@ import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 
 const toPathname = (v: string) => `/${v.toLowerCase()}`;
 
-const Root = styled(motion.nav)``;
-const List = styled(motion.ul)``;
+const Root = styled.nav``;
+const List = styled.ul``;
 const Item = styled(motion.li)``;
 
 export const Pages = () => {
@@ -21,11 +21,7 @@ export const Pages = () => {
   };
   return (
     <Root>
-      <List
-        className={clsx(
-          'relative column-end h-full pt-0 pr-1 md:row md:pr-0',
-        )}
-      >
+      <List className='relative column-end h-full pt-0 pr-1 md:row md:pr-0'>
         {PAGE_TITLES.map((item, index) => {
           const to = toPathname(item);
           const isActive = pathname === to;

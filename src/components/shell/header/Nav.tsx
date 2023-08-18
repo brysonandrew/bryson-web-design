@@ -19,7 +19,7 @@ export const Nav: FC = () => {
       className='relative row-start-space w-full px-4 py-3.5 md:px-6 md:py-4'
       {...(!isMobile ? animation : {})}
     >
-      <Main />
+      <Main /> 
       <Pages />
     </Root>
   );

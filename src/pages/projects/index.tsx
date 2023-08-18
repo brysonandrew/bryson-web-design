@@ -1,7 +1,7 @@
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
-import { STORY } from '@constants/copy';
+import { SECTION_TITLES } from '@constants/copy';
 import { Section } from '@components/Section';
 import { Gallery } from '@components/gallery';
 import { useRect } from '@hooks/useRect';
@@ -13,7 +13,7 @@ export const Projects = () => {
   return (
     <MainShell>
       <Shell>
-        <Section title={STORY.projects}>
+        <Section title={SECTION_TITLES.projects}>
           <div
             ref={(instance) => {
               if (instance && !rect) {

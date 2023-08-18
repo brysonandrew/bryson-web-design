@@ -1,5 +1,5 @@
-import { COLORS } from './uno.config-colors';
-import { SPACING } from './uno.config-spacing';
+import { COLORS } from './colors';
+import { SPACING } from './spacing';
 
 export const THEME = {
   breakpoints: {
@@ -33,3 +33,6 @@ export const THEME = {
     '9xl': ['8rem', '1'],
   },
 } as const;
+
+export type TTheme = typeof THEME;
+export type TAnyTheme = TTheme & any;

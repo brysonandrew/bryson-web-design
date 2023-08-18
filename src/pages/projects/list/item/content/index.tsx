@@ -6,35 +6,21 @@ import {
   resolveTitleLayoutId,
 } from '@pages/projects/config';
 import styled from '@emotion/styled';
-import {
-  AnimatePresence,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useMotionValueEvent,
-} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
 import { Mark } from '@components/mark';
 import { TMotionDivProps } from '@t/dom';
 import { Space2 } from '@components/spaces/Space2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useDelayCallback } from '@hooks/useDelayCallback';
-import { Blur } from '@components/effects/blur';
-import { MetalDark } from '@components/metal/MetalDark';
-import {
-  MOTION_CONFIG,
-  PRESENCE_OPACITY,
-  SLOW_MOTION_CONFIG,
-  TRANSITION,
-} from '@constants/animation';
+import { PRESENCE_OPACITY } from '@constants/animation';
 import {
   GLOW_INTERACTIVE_DARK,
   GLOW_INTERACTIVE_LIGHT,
-} from '@uno/config-shadows';
+} from '@uno/shadows';
 import { useContext } from '@state/Context';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
-import { Glow } from '@components/filter-animate/Glow';
 import { Space } from '@components/spaces/Space';
+import { MetalGlow } from '@components/metal/MetalGlow';
 
 const Root = styled(motion.div)``;
 
@@ -117,12 +103,12 @@ export const Content: FC<TProps> = ({
       }}
       {...props}
     >
-      <MetalDark className='absolute inset-0' />
+      <MetalGlow color='baby-blue' />
       <Mark classValue={clsx('z-20')} />
       <Space2 />
       <motion.div
         layout={!isTransitioning}
-        className={clsx('relative left-0 top-0 row-space')}
+        className={'relative left-0 top-0 row-space'}
       >
         <Header slug={slug} />
         {

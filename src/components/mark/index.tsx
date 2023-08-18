@@ -8,7 +8,7 @@ import { TMotionDivProps } from '@t/dom';
 import {
   GLOW_MARK_DARK,
   GLOW_MARK_LIGHT,
-} from '@uno/config-shadows';
+} from '@uno/shadows';
 
 const Root = styled(motion.div)``;
 
