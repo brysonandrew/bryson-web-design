@@ -1,4 +1,4 @@
-import { STORY } from '@constants/copy';
+import { SECTION_TITLES} from '@constants/copy';
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@components/Section';
@@ -7,7 +7,7 @@ import { FAKE_3D_PROPS } from './constants';
 
 export const Build: FC = () => {
   return (
-    <Section title={STORY.build}>
+    <Section title={SECTION_TITLES.build}>
       <Fake3D
         {...FAKE_3D_PROPS}
       >

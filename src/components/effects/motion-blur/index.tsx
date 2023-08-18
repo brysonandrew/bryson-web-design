@@ -1,5 +1,5 @@
 import { MOTION_BLUR_ID } from '@components/gallery/sections/constants';
-import { TChildren, TChildrenProps } from '@t/index';
+import { TChildren } from '@t/index';
 import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';
 import {
@@ -24,8 +24,9 @@ export const MotionBlur: FC<TProps> = ({
   motionValue,
   children,
 }) => {
-  if (!isMotionBlur || !isOn || !isDesktop)
-    return children({});
+  if (!isMotionBlur || !isOn || !isDesktop) {
+    return <>{children({})}</>;
+  }
   return (
     <>
       <Filter motionValue={motionValue} />

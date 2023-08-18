@@ -31,7 +31,7 @@ export const Text: FC<TProps> = ({
       input={input}
     >
       <div className='pt-1 w-full md:w-auto'>
-        <Name title={name} isFocused={isFocused} />
+        <Name title={name} />
       </div>
       <Input
         ref={ref}

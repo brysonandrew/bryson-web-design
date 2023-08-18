@@ -1,5 +1,5 @@
 import { TCursorKey } from '@components/select/config';
-import { THoverKey } from '@hooks/cursor/useHoverKey';
+import { THoverKey } from '@hooks/cursor/config';
 
 export const COMPOSITE_KEY_DELIMITER = '-';
 export const resolveCompositeKey = (

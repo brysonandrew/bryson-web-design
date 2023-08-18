@@ -2,11 +2,11 @@ import { TitleRoot } from '@components/spaces/TitleRoot';
 import { ThinLine } from '@components/thin-line';
 import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
-import type { TChildren } from '@t/index';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
+import { TContent } from './config';
 
-type TProps = { children: TChildren };
+type TProps = { children: TContent };
 export const Content: FC<TProps> = ({ children }) => {
   return (
     <TitleRoot>

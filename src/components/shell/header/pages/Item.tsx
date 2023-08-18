@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { useOffSound } from '@hooks/sounds/useOffSound';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';

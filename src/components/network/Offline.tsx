@@ -9,7 +9,7 @@ export const Offline: FC = () => {
     <div className='relative column'>
       <Space12 />
       <div className='column w-core'>
-        <Title>
+        <Title> 
           You are <strong>offline</strong>
         </Title>
         <Space6 />

@@ -27,7 +27,7 @@ export const Textarea: FC<TProps> = ({
       input={input}
     >
       <div className='pt-0.75 w-full md:w-auto'>
-        <Name title={name} isFocused={isFocused} />
+        <Name title={name} />
       </div>
       <div className={'flex grow'}>
         <Input
