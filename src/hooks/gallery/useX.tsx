@@ -1,5 +1,5 @@
-import { resolveX } from './resolveX';
-import { TBaseProps } from '../types';
+import { TBaseProps } from "@components/gallery/types";
+import { resolveX } from "@utils/gallery/resolveX";
 
 type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
   currName: string | null;

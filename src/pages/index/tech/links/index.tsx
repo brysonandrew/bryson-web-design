@@ -15,9 +15,7 @@ export const Links: FC<TProps> = ({ style }) => {
   return (
     <Root className='center'>
       <Inner
-        className={clsx(
-          'inline-flex flex-col items-center justify-center text-color ml-2 lg:flex-row preserve-3d',
-        )}
+        className='inline-flex flex-col items-center justify-center text-color ml-2 lg:flex-row preserve-3d'
         style={style}
       >
         <Item style={{ z: 0 }} {...TECH.REACT} />

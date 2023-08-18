@@ -4,7 +4,7 @@
   "description": "Building websites and apps",
   "main": "src/main/index.tsx",
   "config": {
-    "vite_config_path": "vite/vite.config.ts"
+    "vite_config_path": "vite.config.ts"
   },
   "scripts": {
     "dev": "vite --config $npm_package_config_vite_config_path",

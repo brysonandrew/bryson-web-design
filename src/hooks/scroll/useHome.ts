@@ -1,10 +1,7 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
-import { useTimeoutRef } from "./useTimeoutRef";
+import { useEffect } from 'react';
+import { useTimeoutRef } from '../window/useTimeoutRef';
 
 export const useHome = (delay?: number) => {
-  const { pathname } = useLocation();
-
   const { timeoutRef, endTimeout } = useTimeoutRef();
 
   const reset = () => {
@@ -12,7 +9,7 @@ export const useHome = (delay?: number) => {
   };
 
   const handler = () => {
-    if (typeof delay === "number") {
+    if (typeof delay === 'number') {
       timeoutRef.current = setTimeout(() => {
         reset();
       }, delay);
@@ -23,7 +20,7 @@ export const useHome = (delay?: number) => {
 
   useEffect(() => {
     return endTimeout;
-  }, [pathname]);
+  }, []);
 
   return handler;
 };

@@ -1,6 +1,6 @@
 import { Cross } from '@components/icons/Cross';
 import type { FC } from 'react';
-import { Button } from '../../buttons/Button';
+import { IconLink } from '../../buttons/IconLink';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
@@ -20,7 +20,7 @@ export const Close: FC<TProps> = ({
 
   return (
     <Circle classValue='relative' {...props}>
-      <Button
+      <IconLink
         to={to}
         Icon={Cross}
         title='Close'

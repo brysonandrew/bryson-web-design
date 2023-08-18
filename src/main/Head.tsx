@@ -1,5 +1,5 @@
-import { useAnalytics } from '@hooks/useAnalytics';
-import { useHtmlTitle } from '@hooks/useHtmlTitle';
+import { useAnalytics } from '@hooks/analytics/useAnalytics';
+import { useHtmlTitle } from '@hooks/dom/useHtmlTitle';
 import { useContext } from '@state/Context';
 import { Helmet } from 'react-helmet-async';
 

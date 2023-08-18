@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useWindowSize } from '@hooks/useWindowSize';
 import { TDimensions } from '@t/media';
 
 type TConfig = {

@@ -1,4 +1,4 @@
-import { TCursorKey } from '@components/select/config';
+import { TCursorKey } from '@components/cursor/switch/config';
 import { NOOP } from '@constants/functions';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 

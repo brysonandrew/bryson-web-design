@@ -10,9 +10,9 @@ import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps, TWidth } from './types';
 import { TImageResolverEntries } from '@t/screens';
-import { useMotionX } from './hooks/useMotionX';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 import { RANGE_Z } from '@pages/index/build/images/hooks/useZ';
+import { useMotionX } from '@hooks/gallery/useMotionX';
 
 const Root = styled(motion.div)``;
 

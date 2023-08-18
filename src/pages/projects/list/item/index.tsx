@@ -5,6 +5,7 @@ import {
   type FC,
   useEffect,
   useState,
+  PointerEvent,
 } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
@@ -16,12 +17,13 @@ import { useContext } from '@state/Context';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useNavigate } from 'react-router-dom';
+import { Details } from './details';
+import { isDesktop } from 'react-device-detect';
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@components/select/config';
-import { Details } from './details';
-import { isDesktop } from 'react-device-detect';
+} from '@components/cursor/switch/config';
+import { TTapEvent } from '@t/events';
 
 const Root = styled(motion.li)``;
 
@@ -72,6 +74,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
 
   const handleLayoutAnimationComplete = () => {
     setExpanded(isHover);
+
   };
 
   const handleTap = () => {
@@ -89,6 +92,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
 
   return (
     <Root
+      id={slug}
       className='cursor-pointer'
       style={{ zIndex: index }}
       onTap={handleTap}

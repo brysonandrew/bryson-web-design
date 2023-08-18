@@ -1,4 +1,3 @@
-import { isMobile } from 'react-device-detect';
 import type { MotionValue } from 'framer-motion';
 import {
   useVelocity,
@@ -22,11 +21,11 @@ export const Filter = ({ motionValue }: TProps) => {
   const velocity = useVelocity(motionValue);
   const acceleration = useVelocity(velocity);
   const v = useTransform(velocity, (v) => {
-    return Math.abs(v) * 0.5;
+    return Math.abs(v) * 100;
   });
   const a = useTransform(
     acceleration,
-    (v) => Math.abs(v) * 0.5,
+    (v) => Math.abs(v) * 200,
   );
   const turbulence = useMotionTemplate`0 ${a}`;
   const blur = useMotionTemplate`${v} 0`;
@@ -35,9 +34,9 @@ export const Filter = ({ motionValue }: TProps) => {
       <filter
         id={id}
         x='-25%'
-        y='-25%'
+        y='-50%'
         height='150%'
-        width='150%'
+        width='200%'
       >
         <motion.feTurbulence
           baseFrequency={turbulence}

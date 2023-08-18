@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-export const POOL_ID = 'POOL_ID';
+export const AURA_ID = 'AURA_ID';
 
 const BASE_ANIMATION = {
   dur: '6s',
@@ -11,8 +11,8 @@ type TProps = {
   intensity?: number;
   id?: string;
 };
-export const Pool: FC<TProps> = ({
-  id = POOL_ID,
+export const Filter: FC<TProps> = ({
+  id = AURA_ID,
   intensity = 120,
 }) => (
   <filter

@@ -1,7 +1,7 @@
 import { useContext } from '@state/Context';
 import { useMotionValueEvent } from 'framer-motion';
 import { useScrollToTop } from './useScrollToTop';
-import { useTimeoutRef } from '@hooks/useTimeoutRef';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 
 export const SCROLL = 80;
 export const SCROLL_COOLDOWN = 80;

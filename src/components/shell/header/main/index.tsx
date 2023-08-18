@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useHome } from '@hooks/useHome';
+import { useHome } from '@hooks/scroll/useHome';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useLocation } from 'react-router-dom';

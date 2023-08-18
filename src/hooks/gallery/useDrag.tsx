@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useX } from './useX';
 import { useContext } from '@state/Context';
-import { resolveActiveIndex } from './resolveActiveIndex';
+import { resolveActiveIndex } from '../../utils/gallery/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { resolveTo } from '../../../hooks/media/nav/resolveTo';
+import { resolveTo } from '../media/nav/resolveTo';
 import { useCurrParams } from '@hooks/params/useCurrParams';
-import { TBaseProps } from '../types';
+import { TBaseProps } from '../../components/gallery/types';
 import { DURATION_MID } from '@constants/animation';
+import { useX } from './useX';
 
 type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
   width: number;

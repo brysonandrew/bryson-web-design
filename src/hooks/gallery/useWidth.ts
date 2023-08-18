@@ -1,4 +1,4 @@
-import { useWindowSize } from "@hooks/useWindowSize";
+import { useWindowSize } from "@hooks/window/useWindowSize";
 
 const MAX_WIDTH = 800;
 

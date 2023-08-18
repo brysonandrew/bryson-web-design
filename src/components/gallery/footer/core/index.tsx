@@ -1,15 +1,15 @@
 import { DragIcon } from './DragIcon';
 import { MetalDark } from '@components/metal/MetalDark';
-import { useDrag } from '../../hooks/useDrag';
+import { useDrag } from '../../../../hooks/gallery/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useKeys } from '../../hooks/useKeys';
 import { TBaseProps } from '../../types';
 import { Items } from './items';
 import { PADDING_X } from './config';
 import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
+import { useKeys } from '@hooks/gallery/useKeys';
 
 const Root = styled(motion.div)``;
 const Dragger = styled(motion.div)``;

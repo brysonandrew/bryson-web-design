@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { MotionConfig } from 'framer-motion';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -25,7 +25,9 @@ if (root) {
             <Boundary>
               <Router>
                 <Head />
-                <Source />
+                <Suspense fallback={null}>
+                  <Source />
+                </Suspense>
               </Router>
             </Boundary>
           </MotionConfig>

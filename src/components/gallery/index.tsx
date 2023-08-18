@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { useCurrProject } from '@hooks/params/useCurrProject';
-import { useWidth } from './hooks/useWidth';
 import { Main } from './Main';
+import { useWidth } from '@hooks/gallery/useWidth';
 
 export const Gallery: FC = () => {
   const currProject = useCurrProject();

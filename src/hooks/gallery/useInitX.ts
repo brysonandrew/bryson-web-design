@@ -1,7 +1,7 @@
 import { useCurrName } from '@hooks/params/useCurrName';
 import { TImageResolverEntries } from '@t/screens';
+import { resolveX } from '@utils/gallery/resolveX';
 import { useMemo } from 'react';
-import { resolveX } from './resolveX';
 
 export type TInitXConfig = {
   width: number;

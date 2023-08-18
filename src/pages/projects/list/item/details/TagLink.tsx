@@ -5,9 +5,9 @@ import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { motion } from 'framer-motion';
 import { TMotionAnchorProps } from '@t/dom';
 import { TSlugProps } from '@pages/projects/config';
-import { PROJECT_CURSOR_KEY } from '@components/select/config';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { useContext } from '@state/Context';
+import { PROJECT_CURSOR_KEY } from '@components/cursor/switch/config';
 
 type TProps = Required<TTag> &
   TMotionAnchorProps &

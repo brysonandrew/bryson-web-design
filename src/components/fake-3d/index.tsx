@@ -9,9 +9,8 @@ import {
 } from './config';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
-import { useRect } from '@hooks/useRect';
 import { NOOP } from '@constants/functions';
-import { isDesktop } from 'react-device-detect';
+import { useRect } from '@hooks/dom/useRect';
 
 type TProps = TFake3DOptions & {
   classValue?: ClassValue;

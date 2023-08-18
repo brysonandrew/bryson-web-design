@@ -12,7 +12,7 @@ import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
-import { useTo } from '../../../../../hooks/media/nav/useTo';
+import { useTo } from '@hooks/media/nav/useTo';
 import { useContext } from '@state/Context';
 import { TMediaDetails } from '@t/media';
 import {
@@ -23,7 +23,6 @@ import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLa
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
-
 export const Background = styled(motion.div)``;
 
 export type TProps = {
@@ -68,7 +67,7 @@ export const Button: FC<TProps> = ({
       <Link
         to={to}
         onTap={handleTap}
-        className={('center relative w-full h-full')}
+        className='center relative w-full h-full'
         initial='idle'
         animate={animation}
         whileHover={isActive ? 'active' : 'hover'}

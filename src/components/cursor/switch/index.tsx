@@ -1,12 +1,11 @@
 import { useContext } from '@state/Context';
-import { Sight } from './Sight';
 import { Gallery } from './gallery';
-import { OpenInNew } from './open-in-new';
-import { Box } from './Box';
-import { IconWithText } from './IconWithText';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
-import { AnimatePresence } from 'framer-motion';
+import { IconWithText } from './IconWithText';
+import { Sight } from './Sight';
+import { OpenInNew } from './open-in-new';
+import { Box } from './Box';
 
 export const Switch = () => {
   const { hoverKey } = useContext();

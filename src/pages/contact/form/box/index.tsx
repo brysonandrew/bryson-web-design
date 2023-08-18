@@ -47,7 +47,7 @@ export const Box: FC<TProps> = ({
       <MetalGlow color='baby-blue' drop={1} />
       {isFocused && (
         <Mark
-          layoutId='CONTACT_FORM_INPUT_SELECT'
+          layoutId='CONTACT_FORM_INPUT_LAYOUT_ID'
           classValue='z-50'
         />
       )}

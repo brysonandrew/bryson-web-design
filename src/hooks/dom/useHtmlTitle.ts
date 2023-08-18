@@ -3,7 +3,7 @@ import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
 } from '@utils/keys';
-import { useCurrParams } from './params/useCurrParams';
+import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
 

@@ -9,13 +9,13 @@ import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLa
 
 const Link = styled(motion(_Link))``;
 
-export type TButtonProps = TClassValueProps &
+export type TProps = TClassValueProps &
   TTitleProps & {
     onClick(): any;
     to: string;
     Icon: TIconComponent;
   };
-export const Button: FC<TButtonProps> = ({
+export const IconLink: FC<TProps> = ({
   Icon,
   classValue,
   title,

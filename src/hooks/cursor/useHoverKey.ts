@@ -3,7 +3,7 @@ import { useContext } from '@state/Context';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
-import { TCursorKey } from '@components/select/config';
+import { TCursorKey } from '@components/cursor/switch/config';
 
 export const useHoverKey = (
   cursorKey: TCursorKey,

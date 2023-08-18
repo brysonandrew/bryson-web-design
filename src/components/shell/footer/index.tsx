@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_X_LEFT } from '@constants/animation';
+import {
+  PRESENCE_X_LEFT,
+  SCROLL_DECORATION_PRESENCE,
+} from '@constants/animation';
 import { useContext } from '@state/Context';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { Links } from './links';
@@ -19,7 +22,7 @@ export const Footer = () => {
     >
       <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
-          <FadeUp key='FADE_UP' />
+          <FadeUp classValue='h-32' {...SCROLL_DECORATION_PRESENCE} />
         ) : (
           <Links key='LINKS' {...PRESENCE_X_LEFT} />
         )}

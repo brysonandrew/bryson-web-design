@@ -1,5 +1,5 @@
-import { useTimeoutRef } from "@hooks/useTimeoutRef";
 import { useState, useEffect } from "react";
+import { useTimeoutRef } from "./useTimeoutRef";
 
 export const useDelay = (ms = 200) => {
   const [isReady, setReady] = useState(false);

@@ -18,17 +18,13 @@ import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
 
-const Root = styled(motion.div)``;
+const Root = styled.div``;
 
 type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  const {
-    isInit,
-    darkMode: { isDarkMode },
-    dispatch,
-  } = useContext();
+  const { isInit, dispatch } = useContext();
   useScrollControl();
 
   const handleAnimationComplete = () =>
