@@ -19,10 +19,9 @@ const Root = styled(motion.form)``;
 export const Form = () => {
   const ref = useRef<HTMLFormElement | null>(null);
   const currProject = useCurrProject();
-  const { onSend, inputHandlers } = useForm({
+  const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  const isDisabled = true;
   useAutoFocus(isDisabled || Boolean(currProject));
 
   return (

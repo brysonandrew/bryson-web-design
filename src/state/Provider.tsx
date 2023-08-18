@@ -23,7 +23,7 @@ const screensRecordPng: TScreensRecord = import.meta.glob(
 const screensRecordWebp: TScreensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).webp',
 );
-
+ 
 const screensLookup = {
   [PNG_EXT]: screensRecordPng,
   [WEBP_EXT]: screensRecordWebp,

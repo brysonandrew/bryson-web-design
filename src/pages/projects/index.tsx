@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
@@ -6,7 +7,6 @@ import { Section } from '@components/Section';
 const Gallery = lazy(() => import('@components/gallery'));
 import { useRect } from '@hooks/useRect';
 import { P60Y } from '@components/space/P60Y';
-import { lazy } from 'react';
 
 export const Projects = () => {
   const { rect, onUpdate } = useRect();

@@ -21,3 +21,20 @@ Second attempt
 Webp convert
 
 for file in screens/**/*.png ; do cwebp "$file" -o "${file%.png}.webp"; done
+
+Features
+
+- full screen svg background
+- fake 3D parallax
+- light and dark designs
+- contact form
+- image gallery
+  - drag to next/prev
+  - zoom
+- animated svg turbulance filter
+- layout animation from project page to gallery
+- service worker in typescript for caching
+
+Future
+
+- WebGL for images

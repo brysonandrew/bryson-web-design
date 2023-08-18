@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --config $npm_package_config_vite_config_path",
-    "dev-sw": "npx nodemon --exec 'npx vite build && npx vite' -w src -w $npm_package_config_vite_config_path -e 'ts,js'",
+    "dev-sw": "npx nodemon --exec 'npx vite build && npx vite' -w src -w $npm_package_config_vite_config_path -e 'ts,js,tsx,jsx'",
     "build": "vite build --config $npm_package_config_vite_config_path",
     "preview": "npx nodemon --exec 'npx vite build && npx vite preview' -w src -w $npm_package_config_vite_config_path -e 'ts,js'",
     "format": "prettier .",

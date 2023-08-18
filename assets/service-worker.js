@@ -1,20 +1,19 @@
-const VERSION_NUMBER = '0.0.7';
+const VERSION_NUMBER = '0.1.0';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
-self.addEventListener('install', (event) => {
-    event.waitUntil((async function () {
+self.addEventListener('install', async (event) => {
+    event.waitUntil((async () => {
+        // precache
         const cache = await caches.open(CACHE_NAME);
         const ASSET_PATHS = [
-            '/android-chrome-192x192.png',
-            '/android-chrome-512x512.png',
-            '/apple-touch-icon.png',
-            '/favicon-16x16.png',
-            '/favicon-32x32',
+            '/light/favicon.ico',
+            '/favicon.ico',
         ];
         await cache.addAll(ASSET_PATHS);
     })());
 });
-self.addEventListener('activate', (event) => {
-    event.waitUntil((async function () {
+self.addEventListener('activate', async (event) => {
+    event.waitUntil((async () => {
+        // remove old
         const cacheNames = await caches.keys();
         await Promise.all(cacheNames
             .filter((cacheName) => cacheName !== CACHE_NAME)
@@ -24,9 +23,10 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const request = event.request;
     const requestURL = new URL(request.url);
-    if (request.headers.get('Accept')?.indexOf('text/html') !==
-        -1 &&
+    const acceptHeaders = request.headers.get('Accept');
+    if (acceptHeaders?.includes('text/html') &&
         request.url.startsWith(location.origin)) {
+        // HTML cache
         const handler = async () => {
             let response = await fetch(request);
             try {
@@ -47,11 +47,12 @@ self.addEventListener('fetch', (event) => {
         event.respondWith(handler());
     }
     if (requestURL.origin === location.origin) {
-        event.respondWith((async function () {
+        event.respondWith((async () => {
+            // HTML cache first then network
             const cache = await caches.open(CACHE_NAME);
             const cachedResponse = await cache.match(request);
             const networkResponsePromise = fetch(request);
-            event.waitUntil((async function () {
+            event.waitUntil((async () => {
                 const networkResponse = await networkResponsePromise;
                 cache.put(request, networkResponse.clone());
             })());
