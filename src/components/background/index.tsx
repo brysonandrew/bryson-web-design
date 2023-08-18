@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styled from '@emotion/styled';
 import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { motion } from 'framer-motion';
@@ -5,7 +6,6 @@ import type { FC } from 'react';
 import { PATTERN_ID } from './pattern';
 import { MORPH_ID } from './morph';
 import type { ClassValue } from 'clsx';
-import clsx from 'clsx';
 import { useContext } from '@state/Context';
 import { SLOW_MOTION_CONFIG } from '@constants/animation';
 
@@ -34,7 +34,7 @@ export const Background: FC<TProps> = ({
         y='0'
         width='100%'
         height='100%'
-        initial={{ opacity:  0.02 }}
+        initial={{ opacity: 0.02 }}
         animate={{ opacity: isDarkMode ? 1 : 0.02 }}
         transition={{ ...SLOW_MOTION_CONFIG, delay: 1 }}
         fill={resolveUrlId(PATTERN_ID)}

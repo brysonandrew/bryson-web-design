@@ -6,12 +6,13 @@ import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { Box } from './box';
 import { useInput } from './useInput';
+import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 
 const Input = styled(motion.textarea)``;
 
 type TProps = HTMLMotionProps<'textarea'> & TBaseInputProps;
 export const Textarea: FC<TProps> = ({
-  name,
+  name, 
   disabled,
   ...props
 }) => {
@@ -36,6 +37,7 @@ export const Textarea: FC<TProps> = ({
           autoComplete='off'
           name={name}
           disabled={disabled}
+          {...resolveInteractiveLabels(name)}
           {...inputProps}
           {...props}
         />

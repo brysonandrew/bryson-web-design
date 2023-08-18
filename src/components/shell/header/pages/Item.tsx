@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import type { FC } from 'react';
+import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { ThinLine } from '@components/thin-line';
 import clsx, { ClassValue } from 'clsx';
@@ -42,9 +42,11 @@ export const Item: FC<TProp> = ({
       {...resolveInteractiveLabels(children)}
       {...handlers}
     >
-      <h2 className='relative uppercase italic'>
-        {children}
-      </h2>
+      {createElement(
+        isActive ? 'h1' : 'h2',
+        { className: 'relative uppercase italic' },
+        children,
+      )}
       {isActive && (
         <ThinLine
           layoutId='PAGE_NAV_LINE'

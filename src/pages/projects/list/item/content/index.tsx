@@ -17,7 +17,7 @@ import { PRESENCE_OPACITY } from '@constants/animation';
 import {
   GLOW_INTERACTIVE_DARK,
   GLOW_INTERACTIVE_LIGHT,
-} from '@uno/config-shadows';
+} from '@uno/shadows';
 import { useContext } from '@state/Context';
 import { Space } from '@components/spaces/Space';
 import { MetalGlow } from '@components/metal/MetalGlow';

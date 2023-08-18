@@ -1,7 +1,3 @@
-import {
-  MID_MOTION_TRANSITION,
-  SLOW_MOTION_TRANSITION,
-} from '@constants/animation';
 import { Variant, Variants } from 'framer-motion';
 
 export const resolveFadeRight = (isI: boolean) => {

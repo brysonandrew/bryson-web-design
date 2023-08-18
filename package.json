@@ -1,13 +1,16 @@
 {
   "name": "brysona.dev",
   "version": "1.0.0",
-  "description": "work, experiments",
+  "description": "Building websites and apps",
   "main": "src/main/index.tsx",
+  "config": {
+    "vite_config_path": "vite/vite.config.ts"
+  },
   "scripts": {
-    "dev": "vite",
-    "dev-sw": "npx nodemon --exec 'npx vite build && npx vite' -w src -w vite.config.ts -e 'ts,js'",
-    "build": "vite build",
-    "preview": "npx nodemon --exec 'npx vite build && npx vite preview' -w src -w vite.config.ts -e 'ts,js'",
+    "dev": "vite --config $npm_package_config_vite_config_path",
+    "dev-sw": "npx nodemon --exec 'npx vite build && npx vite' -w src -w $npm_package_config_vite_config_path -e 'ts,js'",
+    "build": "vite build --config $npm_package_config_vite_config_path",
+    "preview": "npx nodemon --exec 'npx vite build && npx vite preview' -w src -w $npm_package_config_vite_config_path -e 'ts,js'",
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/brysonandrew/brysona.dev/issues"
   },
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@1.22.19",
   "types": "src/index.d.ts",
   "private": true,
   "dependencies": {

@@ -18,7 +18,7 @@ export default defineConfig({
     }),
     tsConfigPaths(),
     react(),
-    unoCss(),
+    unoCss({ inspector: true }),
   ],
   server: {
     port: 3000,

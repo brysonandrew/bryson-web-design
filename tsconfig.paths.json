@@ -11,7 +11,7 @@
       "@pages/*": ["src/pages/*"],
       "@state/*": ["src/state/*"],
       "@utils/*": ["src/utils/*"],
-      "@uno/*": ["uno.*"],
+      "@uno/*": ["uno/*"],
       "@css/*": ["src/css/*"],
       "@t/*": ["src/types/*"],
       "@moth/*": ["moth/src/*"],
