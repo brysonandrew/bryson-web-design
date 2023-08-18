@@ -3,7 +3,7 @@ import { Shell as MainShell } from '@main/Shell';
 import { Main } from './Main';
 import { Section } from '@components/Section';
 import { SECTION_TITLES} from '@constants/copy';
-import { Space60 } from '@components/spaces/Space60';
+import { P60Y } from '@components/space/P60Y';
 
 export const Contact = () => {
   return (
@@ -11,7 +11,7 @@ export const Contact = () => {
       <Shell>
         <Section title={SECTION_TITLES.contact}>
           <Main />
-          <Space60 />
+          <P60Y />
         </Section>
       </Shell>
     </MainShell>

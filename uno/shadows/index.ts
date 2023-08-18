@@ -10,20 +10,26 @@ export const GLOW_INTERACTIVE_DARK = resolveShadow(
   2,
 );
 
-export const GLOW_INTERACTIVE_LIGHT = resolveShadow(
+export const GLOW_INTERACTIVE_LIGHT = `${resolveShadow(
   'black',
   1,
-);
+)}, ${resolveShadow(
+  'baby-blue',
+  2,
+)}`;
 
 export const GLOW_INTERACTIVE_DARK_LG = resolveShadow(
   'teal',
   4,
 );
 
-export const GLOW_INTERACTIVE_LIGHT_LG = resolveShadow(
+export const GLOW_INTERACTIVE_LIGHT_LG = `${resolveShadow(
   'black',
   2,
-);
+)}, ${resolveShadow(
+  'baby-blue',
+  4,
+)}`;
 
 export const GLOW_BABY_BLUE = resolveShadow('baby-blue', 4);
 

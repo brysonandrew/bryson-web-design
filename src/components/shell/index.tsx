@@ -4,9 +4,9 @@ import { type FC } from 'react';
 import type { TChildren } from '../../types';
 import { Footer } from './footer';
 import { Header } from './header';
-import { HeaderOffset } from '../spaces/HeaderOffset';
 import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
 import { useCurrProject } from '@hooks/params/useCurrProject';
+import { HeaderOffset } from '@components/spaces/HeaderOffset';
 
 const Root = styled(motion.div)``;
 const Content = styled(motion.div)``;
@@ -21,11 +21,13 @@ export const Shell: FC<TProps> = ({ children }) => {
 
   return (
     <Root className='relative overflow-x-hidden z-10'>
-      {!isProject && <Header />}
-      <Content className='relative z-0'>
-        <HeaderOffset />
-        {children}
-      </Content>
+      {!isProject && (
+        <>
+          <Header />
+          <HeaderOffset />
+        </>
+      )}
+      <Content className='relative z-0'>{children}</Content>
       {!isProject && <Footer />}
     </Root>
   );

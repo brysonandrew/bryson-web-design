@@ -12,25 +12,19 @@ const Input = styled(motion.textarea)``;
 
 type TProps = HTMLMotionProps<'textarea'> & TBaseInputProps;
 export const Textarea: FC<TProps> = ({
-  name, 
+  name,
   disabled,
   ...props
 }) => {
-  const { ref, input, isEmpty, isFocused, ...inputProps } =
+  const { ref, boxInputs, inputProps } =
     useInput<HTMLTextAreaElement>({ name });
 
   return (
-    <Box
-      name={name}
-      isFocused={isFocused}
-      isDisabled={disabled}
-      isEmpty={isEmpty}
-      input={input}
-    >
+    <Box name={name} isDisabled={disabled} {...boxInputs}>
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={name} />
       </div>
-      <div className={'flex grow'}>
+      <div className='flex grow'>
         <Input
           ref={ref}
           className='input-textarea'

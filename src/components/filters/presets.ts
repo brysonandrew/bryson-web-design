@@ -2,14 +2,8 @@ import { resolveFilter } from "./resolveFilter";
 
 export const DISABLED = resolveFilter({
   blur: 0,
-  brightness: 60,
-  grayscale: 60,
-});
-
-export const DISTANT = resolveFilter({
-  blur: 10,
-  brightness: 60,
-  grayscale: 60,
+  brightness: 80,
+  grayscale: 0,
 });
 
 export const ACTIVE = resolveFilter({

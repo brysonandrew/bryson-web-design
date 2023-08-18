@@ -1,7 +1,7 @@
 import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
 import { Laptop } from './Laptop';
 import { Shell } from '@main/Shell';
-import { Space8 } from '@components/spaces/Space8';
+import { P8 } from '@components/space/P8';
 
 const SIZE = 200;
 const box = {
@@ -22,7 +22,7 @@ export const Logo = () => {
               body={COLOR_VARIABLES_LOOKUP['black-3']}
             />
           </div>
-          <Space8 />
+          <P8 />
           <div {...box}>
             <Laptop
               screen={COLOR_VARIABLES_LOOKUP['baby-blue']}

@@ -20,13 +20,16 @@ export const Circle: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'center glow-interactive-lg w-10 h-10 rounded-full',
+        'center w-10 h-10 rounded-full',
         classValue,
       )}
       {...PARENT_GLOW_PROPS}
       {...props}
     >
-      <MetalGlow isDarkest classValue='rounded-full glow-baby-blue' />
+      <MetalGlow
+        isDarkest
+        classValue='rounded-full glow-baby-blue'
+      />
       {children}
     </Root>
   );

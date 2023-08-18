@@ -16,16 +16,10 @@ export const Text: FC<TProps> = ({
   disabled,
   ...props
 }) => {
-  const { ref, input, isEmpty, isFocused, ...inputProps } =
+  const { ref, inputProps, boxInputs } =
     useInput<HTMLInputElement>({ name });
   return (
-    <Box
-      name={name}
-      isDisabled={disabled}
-      isFocused={isFocused}
-      isEmpty={isEmpty}
-      input={input}
-    >
+    <Box name={name} isDisabled={disabled} {...boxInputs}>
       <div className='pt-1 w-full md:w-auto'>
         <Name title={name} />
       </div>

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { Space_5 } from '@components/spaces/Space_5';
+import { P_5 } from '@components/space/P_5';
 import { ThinLine } from '@components/thin-line';
 import { TBaseIconProps } from '@t/icons';
-import { Space } from '@components/spaces/Space';
 import { TRANSITION } from '@constants/animation';
+import { P1 } from '@components/space/P1';
 
 type TProps = {
   children: string;
@@ -16,12 +16,12 @@ export const IconWithText: FC<TProps> = ({
 }) => {
   return (
     <>
-      <Space_5 />
+      <P_5 />
       <motion.div className='relative text-color-5 row z-50'>
         {Icon && (
           <>
             <Icon classValue='w-4 h-4' />
-            <Space />
+            <P1 />
           </>
         )}
         <motion.code
@@ -36,7 +36,7 @@ export const IconWithText: FC<TProps> = ({
         </motion.code>
         <ThinLine classValue='absolute left-0 bottom-0 w-full' />
       </motion.div>
-      <Space_5 />
+      <P_5 />
     </>
   );
 };

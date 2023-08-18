@@ -8,10 +8,10 @@ import {
   ACTIVE,
   DISABLED,
 } from '@components/filters/presets';
-import { Space3 } from '@components/spaces/Space3';
+import { P3 } from '@components/space/P3';
 import { Text } from './Text';
 import { Textarea } from './Textarea';
-import { Space6 } from '@components/spaces/Space6';
+import { P6 } from '@components/space/P6';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.form)``;
@@ -19,14 +19,20 @@ const Root = styled(motion.form)``;
 export const Form = () => {
   const ref = useRef<HTMLFormElement | null>(null);
   const currProject = useCurrProject();
-  const { isDisabled, onSend, inputHandlers } = useForm({
+  const { onSend, inputHandlers } = useForm({
     element: ref.current,
   });
+  const isDisabled = true;
   useAutoFocus(isDisabled || Boolean(currProject));
 
   return (
     <Root
-      className='flex flex-col mt-1 w-full'
+      className='column-start mt-1'
+      initial={false}
+      animate={{
+        filter: isDisabled ? DISABLED : ACTIVE,
+        opacity: isDisabled ? 0.6 : 1,
+      }}
       ref={ref}
       onSubmit={(event) => {
         if (!isDisabled) {
@@ -34,40 +40,32 @@ export const Form = () => {
         }
       }}
     >
-      <motion.div
-        className='relative flex flex-col w-full'
-        initial={false}
-        animate={{
-          filter: isDisabled ? DISABLED : ACTIVE,
-        }}
-      >
-        <Text
-          name='name'
-          disabled={isDisabled}
-          placeholder=''
-          required
-          {...inputHandlers}
-        />
-        <Space3 />
-        <Text
-          disabled={isDisabled}
-          type='email'
-          name='email'
-          placeholder=''
-          required
-          {...inputHandlers}
-        />
-        <Space3 />
-        <Textarea
-          name='message'
-          disabled={isDisabled}
-          rows={4}
-          cols={50}
-          required
-          {...inputHandlers}
-        />
-      </motion.div>
-      <Space6 />
+      <Text
+        name='name'
+        disabled={isDisabled}
+        placeholder=''
+        required
+        {...inputHandlers}
+      />
+      <P3 />
+      <Text
+        disabled={isDisabled}
+        type='email'
+        name='email'
+        placeholder=''
+        required
+        {...inputHandlers}
+      />
+      <P3 />
+      <Textarea
+        name='message'
+        disabled={isDisabled}
+        rows={4}
+        cols={50}
+        required
+        {...inputHandlers}
+      />
+      <P6 />
       <Submit isDisabled={isDisabled} />
     </Root>
   );
