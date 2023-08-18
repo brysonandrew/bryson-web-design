@@ -53,11 +53,11 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Filters />
           <ClipPaths />
           <AnimatePresence mode='wait'>
-            <Background key={isDarkMode ? 'dark' : 'light'}>
+            <Background>
               <Processor
                 width='100%'
                 height='100%'
-                classValue='dark:fill-gray-2 fill-baby-blue'
+                classValue='dark:fill-gray fill-baby-blue'
                 {...PRESENCE_OPACITY_01}
                 {...resolveTransition(0.28)}
               />

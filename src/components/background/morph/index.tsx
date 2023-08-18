@@ -3,10 +3,10 @@ export const MORPH_ID = 'MORPH_ID';
 export const Morph = () => (
   <filter
     id={MORPH_ID}
-    x='-20%'
-    y='-20%'
-    width='140%'
-    height='140%'
+    x='0%'
+    y='0%'
+    width='100%'
+    height='100%'
     filterUnits='objectBoundingBox'
     primitiveUnits='userSpaceOnUse'
     colorInterpolationFilters='sRGB'
@@ -15,16 +15,15 @@ export const Morph = () => (
       operator='dilate'
       radius='2.8 0'
       in='SourceAlpha'
-      result='morphology'
+      result='MORPHOLOGY'
     />
     <feFlood
-      floodColor='var(--white-01)'
-      floodOpacity='0.8'
-      result='flood'
+      floodColor='gray'
+      result='FLOOD'
     />
     <feComposite
-      in='flood'
-      in2='morphology'
+      in='FLOOD'
+      in2='MORPHOLOGY'
       operator='atop'
       result='composite'
     />
