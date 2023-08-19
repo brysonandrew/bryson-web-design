@@ -34,7 +34,7 @@ export const IconWithText: FC<TProps> = ({
         >
           {children}
         </motion.code>
-        <ThinLine classValue='absolute left-0 bottom-0 w-full' />
+        <ThinLine classValue='absolute left-0 bottom-0 w-full via-current' />
       </motion.div>
       <P_5 />
     </>

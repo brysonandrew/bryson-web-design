@@ -24,7 +24,7 @@ export const ThinLineGrow: FC<TProps> = ({
         delay,
       }}
     >
-      <ThinLine classValue='shrink-0 w-3/4' />
+      <ThinLine classValue='via-current' />
     </motion.div>
   );
 };
