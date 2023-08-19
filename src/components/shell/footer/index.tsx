@@ -27,7 +27,7 @@ export const Footer = () => {
         {isScroll ? (
           <FadeUp
             key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
-            classValue='h-48'
+            style={{height: "24vh"}}
             {...SCROLL_DECORATION_PRESENCE}
           />
         ) : (

@@ -22,7 +22,6 @@ import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@components/cursor/switch/config';
-import { TTapEvent } from '@t/events';
 import { NOOP } from '@constants/functions';
 import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 

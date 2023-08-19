@@ -42,14 +42,14 @@ export const Item: FC<TItem> = ({
     >
       {isHover && <Aura layoutId={title} />}
       <MetalGlow
-        drop={isDarkMode ? 16 : 4}
+        drop={isDarkMode ? 12 : 4}
         color={isDarkMode ? 'white' : 'gray-3'}
         {...BORDER_RADIUS}
       />
       <Box {...BORDER_RADIUS}>
         <Glow
           {...BORDER_RADIUS}
-          text={isDarkMode ? 2.8 : 0.5}
+          text={isDarkMode ? 1.4 : 0.5}
           drop={isDarkMode ? 4 : 0.5}
         >
           <Anchor
