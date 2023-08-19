@@ -5,9 +5,14 @@ import { FC } from 'react';
 import { useContext } from '@state/Context';
 import { TMotionDivProps } from '@t/dom';
 import {
+  GLOW_BABY_BLUE,
   GLOW_MARK_DARK,
   GLOW_MARK_LIGHT,
 } from '@uno/shadows';
+import { COLORS } from '@uno/colors';
+const BORDER_SIZE = 2;
+const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
+const X = `calc(0.5rem + ${0}px)`;
 
 const Root = styled(motion.div)``;
 
@@ -24,24 +29,43 @@ export const Mark: FC<TProps> = ({
   } = useContext();
   return (
     <Root
+      key={isDarkMode ? 'DARK' : 'LIGHT'}
       className={clsx(
-        'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 background-color-1 pointer-events-none',
+        'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 pointer-events-none',
         classValue,
       )}
       style={{
-        width: 'calc(0.5rem + 4px)',
+        width: WIDTH,
         height: '100%',
-        boxShadow: isDarkMode
-          ? GLOW_MARK_DARK
-          : GLOW_MARK_LIGHT,
         ...(style ?? {}),
+      }}
+      variants={{
+        animate: {
+          backgroundColor: isDarkMode
+            ? COLORS['teal']
+            : COLORS['gray-1'],
+          boxShadow: isDarkMode
+            ? GLOW_MARK_DARK
+            : GLOW_MARK_LIGHT,
+        },
+        hover: {
+          // boxShadow: GLOW_BABY_BLUE,
+          backgroundColor: isDarkMode
+            ? COLORS['baby-blue']
+            : COLORS['black'],
+        },
       }}
       {...props}
     >
       {!isDarkMode && (
-        <div
-          style={{ height: '100%', width: 2 }}
-          className='absolute left-0 top-1/2 -translate-y-1/2 translate-x-0 bg-baby-blue'
+        <motion.div
+          style={{
+            height: '100%',
+            width: BORDER_SIZE,
+            y: 'calc(-50% - 1px)',
+            x: 0,
+          }}
+          className='absolute left-0 top-1/2 bg-baby-blue'
         />
       )}
     </Root>

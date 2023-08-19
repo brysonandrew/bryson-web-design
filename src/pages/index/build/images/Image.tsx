@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Link as _Link } from 'react-router-dom';
+import {
+  Link as _Link,
+  useNavigate,
+} from 'react-router-dom';
 import { useDepthStyle } from '../../../../hooks/media/fake-3D/useDepthStyle';
 import { RANGE_Z } from '../../../../hooks/media/fake-3D/useZ';
 import { useX } from '../../../../hooks/media/fake-3D/useX';
@@ -25,14 +28,12 @@ import { useContext } from '@state/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
-import {
-  PARENT_ANIMATE_CONFIG,
-  resolveParentAnimateConfig,
-} from '@utils/effects';
+import { resolveParentAnimateConfig } from '@utils/effects';
+import { isDesktop } from 'react-device-detect';
 
 export const IMAGE_SIZE = 320;
 
-const Link = styled(motion(_Link))``;
+const Button = styled(motion.button)``;
 
 type TProps = TMotionImgProps & {
   index: number;
@@ -41,6 +42,7 @@ type TProps = TMotionImgProps & {
   mediaRecord: TMediaRecord;
 };
 export const Image: FC<TProps> = (props) => {
+  const navigate = useNavigate();
   const { isScroll, isScrolling } = useContext();
   const {
     index,
@@ -50,17 +52,7 @@ export const Image: FC<TProps> = (props) => {
     ...pictureProps
   } = props;
   const name = useCurrName();
-  const handleOnSound = useOnSound();
-  const handleClick = () => {
-    const projectsElement =
-      document.getElementById('projects');
-    if (projectsElement) {
-      projectsElement.scrollIntoView({
-        block: 'start',
-      });
-    }
-    handleOnSound();
-  };
+
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
@@ -81,6 +73,27 @@ export const Image: FC<TProps> = (props) => {
     mediaRecord.png.src,
   );
 
+  const handleGallery = () => {
+    navigate(`${to}#projects`);
+    const projectsElement =
+      document.getElementById('projects');
+    if (projectsElement) {
+      projectsElement.scrollIntoView({
+        block: 'start',
+      });
+    }
+  };
+
+  const handleOnSound = useOnSound();
+  const handleTap = () => {
+    if (isHover) {
+      handleGallery();
+      handleOnSound();
+    } else if (!isDesktop) {
+      handlers.onHoverStart();
+    }
+  };
+
   const resolveDelay = () => {
     if (name) {
       const n = Number(name);
@@ -96,7 +109,7 @@ export const Image: FC<TProps> = (props) => {
   });
   const isGallery = Boolean(name);
   const isInteractionDisabled =
-    isGallery || isScrolling || isScroll;
+    isGallery || isScrolling || (isDesktop && isScroll);
 
   return (
     <motion.li
@@ -111,11 +124,11 @@ export const Image: FC<TProps> = (props) => {
       }}
       variants={{
         hover: {
-              scale: 1.4,
-              filter: INIT,
-              z: RANGE_Z,
-              zIndex: RANGE_Z,
-            },
+          scale: 1.4,
+          filter: INIT,
+          z: RANGE_Z,
+          zIndex: RANGE_Z,
+        },
         initial: { opacity: 0, scale: 0 },
         animate: {
           opacity: isLoaded ? 1 : 0,
@@ -129,15 +142,14 @@ export const Image: FC<TProps> = (props) => {
         exit: { opacity: 0, scale: 0 },
       }}
       {...resolveParentAnimateConfig({ isHover })}
-      {...handlers}
+      {...(isDesktop ? handlers : {})}
     >
-      <Link
+      <Button
         className='relative cursor-zoom-in'
-        to={`${to}#projects`}
         {...resolveInteractiveLabels(
           `View in image gallery`,
         )}
-        onClick={handleClick}
+        onTap={handleTap}
       >
         {!isLoaded && (
           <Placeholder key={resolveKey(index)} />
@@ -148,7 +160,7 @@ export const Image: FC<TProps> = (props) => {
           {...pictureProps}
           {...dimensions}
         />
-      </Link>
+      </Button>
     </motion.li>
   );
 };

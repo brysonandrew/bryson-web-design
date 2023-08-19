@@ -23,7 +23,7 @@ export const useScrollControl = () => {
     timeoutRef.current = setTimeout(() => {
       dispatch({ type: 'scrolling', value: false });
     }, SCROLL_COOLDOWN);
-    
+
     if (!isScroll && value > SCROLL) {
       handleScroll(true);
     }

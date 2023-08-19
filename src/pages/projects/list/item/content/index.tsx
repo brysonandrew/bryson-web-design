@@ -21,6 +21,7 @@ import { useContext } from '@state/Context';
 import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 const Root = styled(motion.div)``;
 
@@ -101,10 +102,11 @@ export const Content: FC<TProps> = ({
           ? GLOW_INTERACTIVE_DARK
           : GLOW_INTERACTIVE_LIGHT,
       }}
+      {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
       <MetalGlow color='baby-blue' />
-      <Mark classValue={clsx('z-20')} />
+      <Mark classValue='z-20' />
       <P2 />
       <motion.div
         layout={!isTransitioning}
