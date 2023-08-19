@@ -23,14 +23,14 @@ export const Buttons: FC<TProps> = ({
   onClose,
 }) => {
   const to = useTo({ project: slug, next: 1 });
-
+ 
   return (
     <Root className='row-space'>
       <ul className='column-start w-full md:row'>
         <li className='row-space w-full md:w-auto md:row'>
           <h3 className='text-color-1'>Screenshots</h3>
           <P1 />
-          <Circle classValue='relative'>
+          <Circle>
             <InternalLink
               to={to}
               onClick={onClose}

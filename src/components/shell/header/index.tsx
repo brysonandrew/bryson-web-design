@@ -15,7 +15,7 @@ export const Header: FC = () => {
     <Root className='fixed top-0 left-0 w-full h-0 z-10'>
       <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
-          <FadeDown classValue='h-32' {...SCROLL_DECORATION_PRESENCE} />
+          <FadeDown classValue='h-48' {...SCROLL_DECORATION_PRESENCE} />
         ) : (
           <Nav key='NAV' />
         )}

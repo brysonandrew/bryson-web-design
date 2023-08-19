@@ -6,7 +6,7 @@ import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
 import { P6 } from './space/P6';
 
-const Root = styled(motion.section)``;
+const Root = styled.div``;
 
 type TProps = {
   title: string;
@@ -22,7 +22,6 @@ export const Section: FC<TProps> = ({
   return (
     <Root
       className={clsx('relative column z-10', classValue)}
-      layout='position'
     >
       <Title>{title}</Title>
       <P6 />

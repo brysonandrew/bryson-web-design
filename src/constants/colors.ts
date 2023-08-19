@@ -5,8 +5,6 @@ import {
   resolveColorSeries,
 } from '@utils/colors/variables';
 
-export const HEADER_OFFSET_Y = 240;
-
 export { COLORS } from '@uno/colors';
 
 export const WHITE_FILTER = {

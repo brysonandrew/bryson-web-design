@@ -4,7 +4,7 @@ import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
 import { TCursorKey } from '@components/cursor/switch/config';
 
-export const useHoverKey = (
+export const useTouchKey = (
   cursorKey: TCursorKey,
   key1 = GLOBAL_KEY,
   key2 = GLOBAL_KEY,
@@ -25,25 +25,19 @@ export const useHoverKey = (
     });
   };
   const onInteractStart = () => {
-    console.log("START")
     update(true);
   };
   const onInteractEnd = () => {
-    console.log("END")
-
     update(false);
   };
-  const isHover = key === hoverKey;
-
+  const isTouch = key === hoverKey;
   const handlers = {
-    onHoverStart: onInteractStart,
-    onHoverEnd: onInteractEnd,
-    // onPointerLeave: onInteractEnd,
-    // onMouseLeave: onInteractEnd,
+    onTouchStart: onInteractStart,
+    onTouchEnd: onInteractEnd,
   };
 
   return {
-    isHover,
+    isTouch,
     handlers,
   };
 };

@@ -17,10 +17,7 @@ export const Sound = () => {
 
   const title = `Turn ${isSound ? 'off' : 'on'} sound`;
 
-  const { isHover, handlers } = useHoverKey(
-    'sound',
-    title,
-  );
+  const { isHover, handlers } = useHoverKey('sound', title);
   const handleTap = () => {
     dispatch({ type: 'toggle-sound', value: null });
   };
@@ -44,7 +41,7 @@ export const Sound = () => {
         {...SHARED_ANIMATION_PROPS}
         {...handlers}
       >
-        <Circle classValue='relative'>
+        <Circle>
           <Button title={title} onTap={handleTap}>
             {isSound ? (
               <VolumeOn {...iconProps} />

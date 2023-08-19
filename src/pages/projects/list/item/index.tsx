@@ -35,7 +35,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
   const { hoverKey, isScrolling } = useContext();
   const [isExpanded, setExpanded] = useState(false);
-  const { handlers } = useHoverKey(
+  const { isHover: isProjectHover, handlers } = useHoverKey(
     PROJECT_CURSOR_KEY,
     slug,
   );
@@ -44,22 +44,27 @@ export const Item: FC<TProps> = ({ slug, index }) => {
     hoverKey,
     1,
   );
-  const isHover = secondaryKey === slug;
+  const isHover = isProjectHover && secondaryKey === slug;
   const item = PROJECT_ITEMS_RECORD[slug];
   const navigate = useNavigate();
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
+    console.log('START HOVER');
     if (isScrolling) {
       isEnteredOnScrollRef.current = true;
     } else {
       handleLoadMedia(slug);
+      console.log('START HOVER.handleLoadMedia');
+
       if (!handlers.onHoverStart || isScrolling) return;
+      console.log('START HOVER.onHoverStart');
+
       handlers.onHoverStart();
     }
   };
-  const handleHoverEnd = ({ target }: MouseEvent) => {
+  const handleHoverEnd = () => {
     isEnteredOnScrollRef.current = false;
-    if (!handlers.onHoverEnd || !target) return;
+    if (!handlers.onHoverEnd) return;
     handlers.onHoverEnd();
   };
   const handleOnSound = useOnSound();
@@ -67,6 +72,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
 
   useEffect(() => {
     if (!isScrolling && isEnteredOnScrollRef.current) {
+      console.log('ENTERED HOVER');
       handleHoverStart();
       isEnteredOnScrollRef.current = false;
     }
@@ -82,23 +88,33 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   };
 
   const handleTap = () => {
-    if (isExpanded) {
+    console.log('TAP.isHover: ' + isHover);
+    if (isHover) {
       handleGallery();
+    } else if (!isDesktop) {
+      handleHoverStart();
     }
   };
 
   const eventHandlers = {
-    ...handlers,
-    onHoverStart: handleHoverStart,
-    onHoverEnd: handleHoverEnd,
+    onTap: handleTap,
+    ...(isDesktop
+      ? {
+          ...handlers,
+          onHoverStart: handleHoverStart,
+          onHoverEnd: handleHoverEnd,
+        }
+      : {}),
   };
+  if (isHover) {
+    console.log('HOVER : ' + slug);
+  }
 
   return (
     <Root
       id={slug}
       className='cursor-pointer'
       style={{ zIndex: index }}
-      onTap={handleTap}
       {...eventHandlers}
     >
       <Content
