@@ -20,7 +20,7 @@ export const Nav: FC = () => {
       {...(!isMobile ? animation : {})}
     >
       <Main /> 
-      <Pages />
+      <Pages /> 
     </Root>
   );
 };

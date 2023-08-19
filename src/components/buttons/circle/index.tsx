@@ -9,10 +9,15 @@ import { FC } from 'react';
 
 const Root = styled(motion.div)``;
 
-type TProps = TClassValueProps &
-  TChildrenProps &
-  TMotionDivProps;
+type TPosition = 'relative' | 'absolute';
+
+type TProps = TMotionDivProps &
+  TClassValueProps &
+  TChildrenProps & {
+    position?: TPosition;
+  };
 export const Circle: FC<TProps> = ({
+  position = 'relative',
   classValue,
   children,
   ...props
@@ -20,13 +25,15 @@ export const Circle: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'center w-10 h-10 rounded-full',
+        position,
+        'center w-10 h-10 rounded-full glow-interactive-lg',
         classValue,
       )}
       {...PARENT_GLOW_PROPS}
       {...props}
     >
       <MetalGlow
+        drop={1}
         isDarkest
         classValue='rounded-full glow-baby-blue'
       />

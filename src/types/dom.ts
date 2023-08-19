@@ -1,7 +1,17 @@
 import { HTMLMotionProps } from 'framer-motion';
 import { TTitleProps } from '.';
+import { ClassValue } from 'clsx';
+import {
+  HTMLAttributes,
+  ButtonHTMLAttributes,
+  AnchorHTMLAttributes,
+  ImgHTMLAttributes,
+  ThHTMLAttributes,
+  TdHTMLAttributes,
+} from 'react';
 
 export type TMotionDivProps = HTMLMotionProps<'div'>;
+
 export type TMotionButtonProps = HTMLMotionProps<'button'> &
   TTitleProps;
 export type TMotionAnchorProps = HTMLMotionProps<'a'> &
@@ -12,3 +22,31 @@ export type TMotionInputProps = HTMLMotionProps<'input'>;
 export type TTextareaProps = HTMLMotionProps<'textarea'>;
 
 export type TRect = DOMRect | null;
+
+export type TElementProps = HTMLAttributes<HTMLElement>;
+
+export type TDivProps = HTMLAttributes<HTMLDivElement>;
+
+export type THeadingProps =
+  HTMLAttributes<HTMLHeadingElement>;
+
+export type TUlProps = HTMLAttributes<HTMLUListElement>;
+
+export type TButtonProps =
+  ButtonHTMLAttributes<HTMLButtonElement>;
+
+export type TAnchorProps =
+  AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export type TParagraphProps =
+  HTMLAttributes<HTMLParagraphElement>;
+
+export type TImgProps = ImgHTMLAttributes<HTMLImageElement>;
+
+export type TClassValueProps = { classValue?: ClassValue };
+
+export type TThProps =
+  ThHTMLAttributes<HTMLTableCellElement>;
+
+export type TTdProps =
+  TdHTMLAttributes<HTMLTableCellElement>;

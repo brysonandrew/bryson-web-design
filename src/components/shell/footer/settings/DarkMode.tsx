@@ -52,7 +52,7 @@ export const DarkMode = () => {
       >
         <Circle
           classValue={clsx(
-            'relative preserve-3d perspective-1000',
+            'preserve-3d perspective-1000',
           )}
         >
           <Button title={title} onTap={handleTap}>

@@ -10,6 +10,8 @@ import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
+import { P1 } from '@components/space/P1';
+import { P1_5 } from '@components/space/P1_5';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -29,7 +31,7 @@ export const Item: FC<TItem> = ({
     href,
   );
   const BORDER_RADIUS = {
-    classValue: clsx( 'rounded-lg'),
+    classValue: clsx('rounded-lg'),
   };
 
   return (
@@ -48,19 +50,17 @@ export const Item: FC<TItem> = ({
       <Box {...BORDER_RADIUS}>
         <Glow
           {...BORDER_RADIUS}
-          text={isDarkMode ? 2.8 : 0.5} 
+          text={isDarkMode ? 2.8 : 0.5}
           drop={isDarkMode ? 4 : 0.5}
         >
           <Anchor
-            className={clsx(
-              'inline-flex relative px-4 py-2 lg:py-3 lg:px-5 xl:py-4 xl:px-6',
-            )}
+            className='inline-flex relative pl-4 pr-3 py-3'
             href={href}
             target='_blank'
           >
             <div className='relative row z-10'>
-              <Icon classValue='h-10 w-10' />
-              <div className='p-2' />
+              <Icon classValue='w-10 h-10 lg:w-12 lg:h-12' />
+              <P1_5 />
               <Title className='+++text'>{title}</Title>
             </div>
           </Anchor>

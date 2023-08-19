@@ -22,7 +22,7 @@ export const Footer = () => {
     >
       <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
-          <FadeUp classValue='h-32' {...SCROLL_DECORATION_PRESENCE} />
+          <FadeUp classValue='h-48' {...SCROLL_DECORATION_PRESENCE} />
         ) : (
           <Links key='LINKS' {...PRESENCE_X_LEFT} />
         )}

@@ -1,10 +1,10 @@
 import { React } from '@components/icons/tech/React';
 import { Typescript } from '@components/icons/tech/Typescript';
+import { TMotionDivProps } from '@t/dom';
 import type { TBaseIconProps } from '@t/icons';
-import { HTMLMotionProps } from 'framer-motion';
 import type { FC } from 'react';
 
-export type TItem = HTMLMotionProps<'div'> & {
+export type TItem = TMotionDivProps & {
   title: string;
   href: string;
   Icon: FC<TBaseIconProps>;
@@ -21,4 +21,4 @@ export const TECH = {
     href: 'https://www.typescriptlang.org/',
     Icon: Typescript,
   },
-};
+} as const;
