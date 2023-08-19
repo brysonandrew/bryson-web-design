@@ -1,6 +1,9 @@
 # brysona.dev
 work, experiments
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/332644c8-26a8-4f71-ae8c-8c8a9c3dce9c/deploy-status)](https://app.netlify.com/sites/cerulean-choux-149d28/deploys)
+
+
 convert .pcm to .wav 
 
 First attempt

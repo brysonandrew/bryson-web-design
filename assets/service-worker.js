@@ -1,4 +1,4 @@
-const VERSION_NUMBER = '0.1.0';
+const VERSION_NUMBER = '0.1.1';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 self.addEventListener('install', async (event) => {
     event.waitUntil((async () => {

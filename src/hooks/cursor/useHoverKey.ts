@@ -1,9 +1,10 @@
 import type { TouchEvent } from 'react';
 import { useContext } from '@state/Context';
 import { resolveCompositeHoverKey } from '@utils/keys';
-import { GLOBAL_KEY } from './config';
+import { EMPTY_HANDLERS, GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
 import { TCursorKey } from '@components/cursor/switch/config';
+import { isDesktop } from 'react-device-detect';
 
 export const useHoverKey = (
   cursorKey: TCursorKey,
@@ -12,8 +13,8 @@ export const useHoverKey = (
 ) => {
   const animate = useCursorAnimate();
   const { hoverKey, dispatch } = useContext();
-  // if (!isDesktop)
-  //   return { isHover: false, handlers: EMPTY_HANDLERS };
+  if (!isDesktop)
+    return { isHover: false, handlers: EMPTY_HANDLERS };
   const key = resolveCompositeHoverKey(
     cursorKey,
     key1,
@@ -35,8 +36,6 @@ export const useHoverKey = (
   const isHover = key === hoverKey;
 
   const handlers = {
-    onTouchStart: (event: TouchEvent<HTMLElement>) =>
-      event.preventDefault(),
     onHoverStart,
     onHoverEnd,
     onPointerLeave: onHoverEnd,
