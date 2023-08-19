@@ -3,12 +3,12 @@ import { useContext } from '@state/Context';
 import { type FC } from 'react';
 import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { RANGE_Y } from './hooks/useY';
+import { RANGE_Y } from '../../../../hooks/media/fake-3D/useY';
 import { resolveModuleRecord } from '@hooks/media/resolveModuleRecord';
 import { TModuleRecord } from '@t/media';
 import { Build as Fetch } from '@components/fetch-media/Build';
 import styled from '@emotion/styled';
-import { RANGE_Z } from './hooks/useZ';
+import { RANGE_Z } from '../../../../hooks/media/fake-3D/useZ';
 import { P8 } from '@components/space/P8';
 import { TITLE_HEIGHT } from '@components/space/TitleRoot';
 

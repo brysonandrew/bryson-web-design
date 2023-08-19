@@ -7,10 +7,10 @@ import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useContext } from '@state/Context';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
+  resolveParentAnimateConfig,
 } from '@utils/effects';
 
 const Root = styled(motion.label)``;
@@ -49,7 +49,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
+      {...(isDisabled ? {} : resolveParentAnimateConfig({isHover}))}
       {...handlers}
     >
       <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />

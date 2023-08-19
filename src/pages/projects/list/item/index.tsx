@@ -5,7 +5,6 @@ import {
   type FC,
   useEffect,
   useState,
-  PointerEvent,
 } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
@@ -25,6 +24,7 @@ import {
 } from '@components/cursor/switch/config';
 import { TTapEvent } from '@t/events';
 import { NOOP } from '@constants/functions';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 
 const Root = styled(motion.li)``;
 
@@ -35,35 +35,27 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
   const { hoverKey, isScrolling } = useContext();
   const [isExpanded, setExpanded] = useState(false);
+  const { timeoutRef, endTimeout } = useTimeoutRef();
   const { isHover: isProjectHover, handlers } = useHoverKey(
     PROJECT_CURSOR_KEY,
     slug,
   );
-  const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
   const secondaryKey = resolveCursorKeyFromHoverKey(
     hoverKey,
     1,
   );
-  const isHover = isProjectHover && secondaryKey === slug;
+  const isHover = secondaryKey === slug;
+  const isChildHover = isHover && !isProjectHover;
+
   const item = PROJECT_ITEMS_RECORD[slug];
   const navigate = useNavigate();
   const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
-    console.log('START HOVER');
-    if (isScrolling) {
-      isEnteredOnScrollRef.current = true;
-    } else {
-      handleLoadMedia(slug);
-      console.log('START HOVER.handleLoadMedia');
-
-      if (!handlers.onHoverStart || isScrolling) return;
-      console.log('START HOVER.onHoverStart');
-
-      handlers.onHoverStart();
-    }
+    handleLoadMedia(slug);
+    if (!handlers.onHoverStart) return;
+    handlers.onHoverStart();
   };
   const handleHoverEnd = () => {
-    isEnteredOnScrollRef.current = false;
     if (!handlers.onHoverEnd) return;
     handlers.onHoverEnd();
   };
@@ -72,7 +64,6 @@ export const Item: FC<TProps> = ({ slug, index }) => {
 
   useEffect(() => {
     if (!isScrolling && isEnteredOnScrollRef.current) {
-      console.log('ENTERED HOVER');
       handleHoverStart();
       isEnteredOnScrollRef.current = false;
     }
@@ -88,7 +79,6 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   };
 
   const handleTap = () => {
-    console.log('TAP.isHover: ' + isHover);
     if (isHover) {
       handleGallery();
     } else if (!isDesktop) {
@@ -97,19 +87,32 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   };
 
   const eventHandlers = {
-    onTap: handleTap,
+    onTap: isChildHover ? NOOP : handleTap,
     ...(isDesktop
       ? {
           ...handlers,
-          onHoverStart: handleHoverStart,
-          onHoverEnd: handleHoverEnd,
+          onHoverStart: () => {
+            if (isScrolling) {
+              isEnteredOnScrollRef.current = true;
+            } else {
+              if (hoverKey === null) {
+                endTimeout();
+                timeoutRef.current = setTimeout(() => {
+                  handleHoverStart();
+                }, 20);
+              } else {
+                handleHoverStart();
+              }
+            }
+          },
+          onHoverEnd: () => {
+            isEnteredOnScrollRef.current = false;
+            endTimeout();
+            handleHoverEnd();
+          },
         }
       : {}),
   };
-  if (isHover) {
-    console.log('HOVER : ' + slug);
-  }
-
   return (
     <Root
       id={slug}

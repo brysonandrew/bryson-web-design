@@ -11,7 +11,7 @@ import { Sections } from './sections';
 import { TBaseProps, TWidth } from './types';
 import { TImageResolverEntries } from '@t/screens';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { RANGE_Z } from '@pages/index/build/images/hooks/useZ';
+import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
 import { useMotionX } from '@hooks/gallery/useMotionX';
 
 const Root = styled(motion.div)``;

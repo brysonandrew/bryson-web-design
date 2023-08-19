@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { TChildren } from '@t/index';
 import { Clear } from './Clear';
 import { MetalGlow } from '@components/metal/MetalGlow';
@@ -12,8 +11,8 @@ import {
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { useContext } from '@state/Context';
 import { Mark } from '@components/mark';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 const Root = styled(motion.label)``;
 
@@ -41,7 +40,7 @@ export const Box: FC<TProps> = ({
       className={clsx('relative input-label', [
         isDisabled ? '' : 'glow-interactive',
       ])}
-      {...(isDisabled ? {} : PARENT_GLOW_PROPS)}
+      {...(isDisabled ? {} : resolveParentAnimateConfig({isHover}))}
       {...handlers}
     >
       <MetalGlow color='baby-blue' drop={1} />

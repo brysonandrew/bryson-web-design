@@ -16,10 +16,10 @@ export const Close: FC<TProps> = ({
   ...props
 }) => {
   const to = useTo({});
-  const { handlers } = useHoverKey('big', 'close');
+  const { isHover, handlers } = useHoverKey('big', 'close');
 
   return (
-    <Circle {...props}>
+    <Circle isHover={isHover} {...props}>
       <IconLink
         to={to}
         Icon={Cross}

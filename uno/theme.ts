@@ -4,7 +4,7 @@ import { SPACING } from './spacing';
 export const THEME = {
   breakpoints: {
     sm: '480px',
-    md: '768px',
+    md: '700px',
     lg: '900px',
     xl: '1100px',
   },

@@ -2,7 +2,7 @@ import { MetalGlow } from '@components/metal/MetalGlow';
 import styled from '@emotion/styled';
 import { TMotionDivProps } from '@t/dom';
 import { TChildrenProps, TClassValueProps } from '@t/index';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
+import { resolveParentAnimateConfig } from '@utils/effects';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -14,10 +14,12 @@ type TPosition = 'relative' | 'absolute';
 type TProps = TMotionDivProps &
   TClassValueProps &
   TChildrenProps & {
+    isHover?: boolean;
     position?: TPosition;
   };
 export const Circle: FC<TProps> = ({
   position = 'relative',
+  isHover,
   classValue,
   children,
   ...props
@@ -29,7 +31,7 @@ export const Circle: FC<TProps> = ({
         'center w-10 h-10 rounded-full glow-interactive-lg',
         classValue,
       )}
-      {...PARENT_GLOW_PROPS}
+      {...resolveParentAnimateConfig({isHover})}
       {...props}
     >
       <MetalGlow

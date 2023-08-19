@@ -14,16 +14,11 @@ import { Button } from '@components/buttons/circle/Button';
 
 export const Sound = () => {
   const { isSound, isScroll, dispatch } = useContext();
-
+  const Icon = isSound ? VolumeOn : VolumeOff;
   const title = `Turn ${isSound ? 'off' : 'on'} sound`;
-
   const { isHover, handlers } = useHoverKey('sound', title);
   const handleTap = () => {
     dispatch({ type: 'toggle-sound', value: null });
-  };
-
-  const iconProps = {
-    ...ICON_CLASS_VALUE_PROPS,
   };
 
   return (
@@ -41,13 +36,9 @@ export const Sound = () => {
         {...SHARED_ANIMATION_PROPS}
         {...handlers}
       >
-        <Circle>
+        <Circle isHover={isHover}>
           <Button title={title} onTap={handleTap}>
-            {isSound ? (
-              <VolumeOn {...iconProps} />
-            ) : (
-              <VolumeOff {...iconProps} />
-            )}
+            <Icon {...ICON_CLASS_VALUE_PROPS} />
           </Button>
         </Circle>
       </motion.div>
