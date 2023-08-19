@@ -24,6 +24,7 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/cursor/switch/config';
 import { TTapEvent } from '@t/events';
+import { NOOP } from '@constants/functions';
 
 const Root = styled(motion.li)``;
 
@@ -80,13 +81,10 @@ export const Item: FC<TProps> = ({ slug, index }) => {
     handleOnSound();
   };
 
-  const handleTap = handleGallery;
-
-  const handleTouchStart = () => {
+  const handleTap = () => {
     if (isExpanded) {
       handleGallery();
     }
-    handlers.onTouchStart();
   };
 
   const eventHandlers = {
@@ -102,7 +100,6 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       style={{ zIndex: index }}
       onTap={handleTap}
       {...eventHandlers}
-      onTouchStart={handleTouchStart}
     >
       <Content
         slug={item.slug}
