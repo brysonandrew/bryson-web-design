@@ -11,7 +11,7 @@ export const ThinLine: FC<TProps> = ({
   const { style, ...rest } = props;
   return (
     <motion.hr
-      className={clsx('bg-current h-px w-full', classValue)}
+      className={clsx('bg-transparent bg-gradient-to-r from-transparent to-transparent h-px w-full', classValue)}
       style={{ opacity: 0.4, ...style }}
       variants={{ hover: { opacity: 0.2 } }}
       {...rest}

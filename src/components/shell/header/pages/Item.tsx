@@ -51,16 +51,14 @@ export const Item: FC<TProp> = ({
         <ThinLine
           layoutId='PAGE_NAV_LINE'
           style={{
-            bottom: 6,
-            backgroundColor:
-              COLOR_VARIABLES_LOOKUP['baby-blue'],
+            bottom: 6
           }}
-          {...resolveLineClassProps()}
+          {...resolveLineClassProps("via-baby-blue")}
         />
       )}
       <ThinLine
         style={{ bottom: 4 }}
-        {...resolveLineClassProps()}
+        {...resolveLineClassProps('via-current')}
       />
     </Link>
   );
