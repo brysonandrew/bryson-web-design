@@ -80,17 +80,13 @@ export const Item: FC<TProps> = ({ slug, index }) => {
     handleOnSound();
   };
 
-  const handleTap = () => {
-    if (cursorKey === PROJECT_CURSOR_KEY) {
-      handleGallery();
-    }
-  };
+  const handleTap = handleGallery;
 
   const handleTouchStart = () => {
     if (isExpanded) {
       handleGallery();
     }
-    setExpanded(!isExpanded);
+    handlers.onTouchStart();
   };
 
   const eventHandlers = {
@@ -105,8 +101,8 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       className='cursor-pointer'
       style={{ zIndex: index }}
       onTap={handleTap}
-      onTouchStart={handleTouchStart}
       {...eventHandlers}
+      onTouchStart={handleTouchStart}
     >
       <Content
         slug={item.slug}
