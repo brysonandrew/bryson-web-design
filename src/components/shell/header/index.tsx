@@ -22,7 +22,7 @@ export const Header: FC = () => {
             key={`FADE_DOWN_${
               isDarkMode ? 'DARK' : 'LIGHT'
             }`}
-            classValue='h-48'
+            style={{ height: '24vh' }}
             {...SCROLL_DECORATION_PRESENCE}
           />
         ) : (

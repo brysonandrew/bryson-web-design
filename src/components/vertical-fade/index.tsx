@@ -11,6 +11,7 @@ export type TBaseProps = TMotionDivProps & {
 };
 export const VerticalFade: FC<TBaseProps> = ({
   classValue,
+  style,
   ...props
 }) => (
   <Root
@@ -18,6 +19,7 @@ export const VerticalFade: FC<TBaseProps> = ({
       'absolute left-0 right-0 w-full dark:from-black from-white pointer-events-none z-10',
       classValue,
     )}
+    style={style}
     {...props}
   />
 );
