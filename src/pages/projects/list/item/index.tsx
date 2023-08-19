@@ -33,6 +33,7 @@ type TProps = TSlugProps & {
 export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
   const { hoverKey, isScrolling } = useContext();
+  const [isExpanded, setExpanded] = useState(false);
   const { handlers } = useHoverKey(
     PROJECT_CURSOR_KEY,
     slug,
@@ -70,18 +71,26 @@ export const Item: FC<TProps> = ({ slug, index }) => {
     }
   }, [isScrolling]);
 
-  const [isExpanded, setExpanded] = useState(false);
-
   const handleLayoutAnimationComplete = () => {
     setExpanded(isHover);
+  };
 
+  const handleGallery = () => {
+    navigate(to);
+    handleOnSound();
   };
 
   const handleTap = () => {
-    if (cursorKey === PROJECT_CURSOR_KEY || !isDesktop) {
-      navigate(to);
-      handleOnSound();
+    if (cursorKey === PROJECT_CURSOR_KEY) {
+      handleGallery();
     }
+  };
+
+  const handleTouchStart = () => {
+    if (isExpanded) {
+      handleGallery();
+    }
+    setExpanded(!isExpanded);
   };
 
   const eventHandlers = {
@@ -96,6 +105,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       className='cursor-pointer'
       style={{ zIndex: index }}
       onTap={handleTap}
+      onTouchStart={handleTouchStart}
       {...eventHandlers}
     >
       <Content
