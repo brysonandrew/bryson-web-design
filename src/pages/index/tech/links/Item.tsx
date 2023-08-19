@@ -7,11 +7,10 @@ import { Glow } from '@components/filter-animate/Glow';
 import { Box } from '@components/filter-animate/Box';
 import { useContext } from '@state/Context';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
-import { P1 } from '@components/space/P1';
 import { P1_5 } from '@components/space/P1_5';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -37,7 +36,7 @@ export const Item: FC<TItem> = ({
   return (
     <Root
       className='relative cursor-pointer'
-      {...PARENT_GLOW_PROPS}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
       {...props}
     >

@@ -2,7 +2,7 @@ import {
   MAX_SCROLL,
   TFake3DOptions,
 } from '@components/fake-3d/config';
-import { RANGE_Y } from './images/hooks/useY';
+import { RANGE_Y } from '../../../hooks/media/fake-3D/useY';
 const START_Y = -60;
 
 export const FAKE_3D_PROPS: TFake3DOptions = {

@@ -22,14 +22,12 @@ export const Placeholder: FC<TProps> = ({
     <Root
       className='absolute center w-full h-full'
       layoutId={PLACEHOLDER_LAYOUT_ID}
-      {...{
-        initial: { opacity: 0 },
-        animate: { opacity: 0.28 },
-        exit: { opacity: 0 },
-        transition: {
-          ease: 'linear',
-          duration: DURATION_VERY_SLOW,
-        },
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.28 }}
+      exit={{ opacity: 0 }}
+      transition={{
+        ease: 'linear',
+        duration: DURATION_VERY_SLOW,
       }}
       {...props}
     >

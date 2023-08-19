@@ -8,12 +8,15 @@ import { useContext } from '@state/Context';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { Links } from './links';
 import { Settings } from './settings';
-import { RANGE_Z } from '@pages/index/build/images/hooks/useZ';
+import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
 
 const Root = styled(motion.footer)``;
 
 export const Footer = () => {
-  const { isScroll } = useContext();
+  const {
+    isScroll,
+    darkMode: { isDarkMode },
+  } = useContext();
 
   return (
     <Root
@@ -22,7 +25,11 @@ export const Footer = () => {
     >
       <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
-          <FadeUp classValue='h-48' {...SCROLL_DECORATION_PRESENCE} />
+          <FadeUp
+            key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
+            classValue='h-48'
+            {...SCROLL_DECORATION_PRESENCE}
+          />
         ) : (
           <Links key='LINKS' {...PRESENCE_X_LEFT} />
         )}

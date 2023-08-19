@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
-import { useDepthStyle } from './hooks/useDepthStyle';
-import { RANGE_Z } from './hooks/useZ';
-import { useX } from './hooks/useX';
+import { useDepthStyle } from '../../../../hooks/media/fake-3D/useDepthStyle';
+import { RANGE_Z } from '../../../../hooks/media/fake-3D/useZ';
+import { useX } from '../../../../hooks/media/fake-3D/useX';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
 import {
   DURATION_MID,
-  resolveDynamicSlowMotionConfig,
+  resolveDynamicMidMotionConfig,
 } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
@@ -23,9 +23,12 @@ import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@state/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
+import {
+  PARENT_ANIMATE_CONFIG,
+  resolveParentAnimateConfig,
+} from '@utils/effects';
 
 export const IMAGE_SIZE = 320;
 
@@ -72,7 +75,11 @@ export const Image: FC<TProps> = (props) => {
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
-  const { handlers } = useHoverKey('gallery', 'view');
+  const { isHover, handlers } = useHoverKey(
+    'gallery',
+    'view',
+    mediaRecord.png.src,
+  );
 
   const resolveDelay = () => {
     if (name) {
@@ -84,7 +91,7 @@ export const Image: FC<TProps> = (props) => {
     return (index / count) * 0.5;
   };
   const delay = resolveDelay();
-  const motionConfig = resolveDynamicSlowMotionConfig({
+  const motionConfig = resolveDynamicMidMotionConfig({
     delay,
   });
   const isGallery = Boolean(name);
@@ -103,9 +110,7 @@ export const Image: FC<TProps> = (props) => {
         zIndex: z,
       }}
       variants={{
-        hover: isInteractionDisabled
-          ? {}
-          : {
+        hover: {
               scale: 1.4,
               filter: INIT,
               z: RANGE_Z,
@@ -123,7 +128,7 @@ export const Image: FC<TProps> = (props) => {
         },
         exit: { opacity: 0, scale: 0 },
       }}
-      {...PARENT_GLOW_PROPS}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
     >
       <Link

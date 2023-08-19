@@ -88,7 +88,7 @@ export const Content: FC<TProps> = ({
       layoutId={resolveTitleLayoutId(slug)}
       className={clsx(
         'relative w-full',
-        'pl-6 pr-4 md:pl-8 md:pr-6',
+        'pl-6 pr-4 sm:pl-8 sm:pr-6',
         [isExpanding && 'overflow-hidden'],
         classValue,
       )}
@@ -104,14 +104,11 @@ export const Content: FC<TProps> = ({
       {...props}
     >
       <MetalGlow color='baby-blue' />
-      <Mark
-        // layoutId='PROJECTS_LIST_ITEM_LAYOUT_ID'
-        classValue={clsx('z-20')}
-      />
+      <Mark classValue={clsx('z-20')} />
       <P2 />
       <motion.div
         layout={!isTransitioning}
-        className={'relative left-0 top-0 row-space'}
+        className='relative left-0 top-0 row-space'
       >
         <Header slug={slug} />
         {

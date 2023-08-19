@@ -25,12 +25,9 @@ export const useHoverKey = (
     });
   };
   const onInteractStart = () => {
-    console.log("START")
     update(true);
   };
   const onInteractEnd = () => {
-    console.log("END")
-
     update(false);
   };
   const isHover = key === hoverKey;
@@ -38,8 +35,8 @@ export const useHoverKey = (
   const handlers = {
     onHoverStart: onInteractStart,
     onHoverEnd: onInteractEnd,
-    // onPointerLeave: onInteractEnd,
-    // onMouseLeave: onInteractEnd,
+    onPointerLeave: onInteractEnd,
+    onMouseLeave: onInteractEnd,
   };
 
   return {

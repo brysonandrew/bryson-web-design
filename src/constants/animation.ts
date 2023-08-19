@@ -2,7 +2,7 @@ import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
 import { isMobile } from 'react-device-detect';
 
-const isDisabled = isMobile
+const isDisabled = isMobile;
 
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',
@@ -59,6 +59,14 @@ export const resolveDynamicMotionConfig = (
   ...partial,
 });
 
+export const resolveDynamicMidMotionConfig = (
+  config: Partial<TTransition>,
+) => ({
+  transition: {
+    ...MID_MOTION_CONFIG,
+    ...config,
+  },
+});
 export const resolveDynamicSlowMotionConfig = (
   config: Partial<TTransition>,
 ) => ({

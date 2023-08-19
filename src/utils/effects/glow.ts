@@ -2,7 +2,6 @@ import { resolveColor, resolveWhite } from '@utils/colors';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
-  PARENT_PROPS,
 } from '.';
 import { TColorRgbKey } from '@t/colors';
 
@@ -22,9 +21,8 @@ export const resolveShadow = (
     0.5,
   )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
-export const PARENT_GLOW_PROPS = PARENT_PROPS;
 
-export type TGlowConfigOptions = {
+export type TGlowConfigOptions = { 
   text?: number;
   drop?: number;
   color?: TColorRgbKey;

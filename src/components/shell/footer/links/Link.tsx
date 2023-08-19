@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/metal/MetalGlow';
-import { PARENT_GLOW_PROPS } from '@utils/effects/glow';
 import { motion } from 'framer-motion';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 const Root = styled(motion.a)``;
 
@@ -25,7 +25,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       target='_blank'
       onClick={handleOn}
       {...resolveInteractiveLabels(title)}
-      {...PARENT_GLOW_PROPS}
+      {...resolveParentAnimateConfig({isHover})}
       {...handlers}
     >
       <MetalGlow
