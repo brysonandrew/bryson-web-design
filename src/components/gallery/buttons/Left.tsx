@@ -4,16 +4,14 @@ import { usePrev } from '../../../hooks/media/nav/usePrev';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 type TProps = TClassValueProps & {
   max: number;
 };
 export const Left: FC<TProps> = ({ max, ...props }) => {
   const to = usePrev(max);
-  const { isHover, handlers } = useHoverKey(
-    'big',
-    'left', 
-  );
+  const { isHover, handlers } = useHoverKey('big', 'left');
 
   if (!to) return null;
   return (
@@ -21,8 +19,9 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
       to={to}
       Icon={ArrowLeft}
       title='Left'
-      {...props}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
+      {...props}
     />
   );
 };

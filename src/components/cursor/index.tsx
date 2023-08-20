@@ -23,6 +23,7 @@ export const Cursor: FC<TCursorProps> = memo(
       isCursorReady,
       dispatch,
     } = useContext();
+    
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
     const handler = useCursorOffset(offsetRef);

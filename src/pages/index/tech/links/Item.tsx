@@ -11,6 +11,7 @@ import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
 import { P1_5 } from '@components/space/P1_5';
 import { resolveParentAnimateConfig } from '@utils/effects';
+import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -26,7 +27,7 @@ export const Item: FC<TItem> = ({
     darkMode: { isDarkMode },
   } = useContext();
   const { isHover, handlers } = useHoverKey(
-    'open-in-new',
+    OPEN_IN_NEW_CURSOR_KEY,
     href,
   );
   const BORDER_RADIUS = {
@@ -48,9 +49,9 @@ export const Item: FC<TItem> = ({
       />
       <Box {...BORDER_RADIUS}>
         <Glow
-          {...BORDER_RADIUS}
           text={isDarkMode ? 1.4 : 0.5}
           drop={isDarkMode ? 4 : 0.5}
+          {...BORDER_RADIUS}
         >
           <Anchor
             className='inline-flex relative pl-4 pr-3 py-3'

@@ -4,6 +4,7 @@ import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { ArrowRight } from '@components/icons/gallery/ArrowRight';
+import { resolveParentAnimateConfig } from '@utils/effects';
 
 type TProps = TClassValueProps & {
   max: number;
@@ -21,8 +22,10 @@ export const Right: FC<TProps> = ({ max, ...props }) => {
       to={to}
       Icon={ArrowRight}
       title='Right'
-      {...props}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
+      {...props}
+
     />
   );
 };

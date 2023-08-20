@@ -19,7 +19,7 @@ type TProps = TClassValueProps & {
 export const Box: FC<TProps> = ({
   classValue,
   children,
-  delay = 0,
+  delay = 0.2,
   exitDelay = 0,
 }) => {
   const {

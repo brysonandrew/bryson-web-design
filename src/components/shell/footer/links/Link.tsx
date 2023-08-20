@@ -7,13 +7,14 @@ import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { resolveParentAnimateConfig } from '@utils/effects';
+import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
 
 const Root = styled(motion.a)``;
 
 type TProps = TLink;
 export const Link: FC<TProps> = ({ href, title, Icon }) => {
   const { isHover, handlers } = useHoverKey(
-    'open-in-new',
+    OPEN_IN_NEW_CURSOR_KEY,
     href,
   );
   const handleOn = useOnSound();

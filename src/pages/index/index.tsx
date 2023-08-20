@@ -2,8 +2,6 @@ import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Suspense, lazy } from 'react';
 import { Build } from './build';
-import { P32Y } from '@components/space/P32Y';
-import { P60Y } from '@components/space/P60Y';
 import { P48Y } from '@components/space/P48Y';
 import { P24Y } from '@components/space/P24Y';
 const Tech = lazy(() => import('./tech'));
