@@ -50,3 +50,21 @@ export type TMediaRecordEntry = [string, TMediaRecord];
 export type TMediaRecordEntrys = TMediaRecordEntry[];
 
 export type TMediaRecords = TMediaRecord[];
+
+
+// ---- NEW
+
+
+// export type TDimensions = { width: number; height: number };
+
+// export type TFilePathKey = string;
+// export type TFilePathBaseKey = string;
+
+// export type TExtKey = typeof EXTS[number];
+
+// export type TMedia = { src: string; alt: string };
+// export type TSources = TSource[];
+
+// export type TMediaRecord = TMedia & {
+//   sources: TSource[];
+// };

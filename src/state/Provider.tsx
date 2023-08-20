@@ -1,4 +1,9 @@
-import { useMemo, useReducer, useRef } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+} from 'react';
 import type { FC } from 'react';
 import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
@@ -69,6 +74,19 @@ export const Provider: FC<TProviderProps> = ({
   );
   const darkMode = useDarkMode();
 
+  useEffect(() => {
+    const sw: ServiceWorkerContainer =
+      navigator.serviceWorker;
+    sw.onmessage = (event) => {
+      // if (event.data.type === 'random-indicies') {
+      //   console.log(event.data);
+      // }
+    };
+    sw.onmessageerror = (event) => {
+      console.log('MESSAGE ERROR', event);
+    };
+  }, []);
+
   return (
     <Context.Provider
       value={{
@@ -87,7 +105,6 @@ export const Provider: FC<TProviderProps> = ({
           x: cursorLabelX,
           y: cursorLabelY,
         },
-
         dispatch,
         ...state,
       }}

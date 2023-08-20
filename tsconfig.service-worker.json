@@ -3,5 +3,5 @@
   "compilerOptions": {
     "lib": ["ES2015"]
   },
-  "files": ["src/main/service-worker/service-worker.ts"]
+  "files": ["src/main/service-worker/index.ts"]
 }

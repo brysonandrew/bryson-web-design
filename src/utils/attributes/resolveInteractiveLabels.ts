@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react';
+import { TElementProps } from '@t/dom';
 
 export type TInteractiveLabelProps = Pick<
-  HTMLAttributes<HTMLElement>,
+  TElementProps,
   'title' | 'aria-label'
 >;
 

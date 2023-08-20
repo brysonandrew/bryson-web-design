@@ -6,7 +6,7 @@ import { Source } from './Source';
 import { Provider } from '@state/Provider';
 import { Boundary } from '@components/boundary';
 import { MOTION_CONFIG } from '@constants/animation';
-import { initServiceWorker } from './service-worker';
+import { init as initServiceWorker } from './service-worker/init';
 import { HelmetProvider } from 'react-helmet-async';
 
 initServiceWorker();

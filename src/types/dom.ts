@@ -8,6 +8,7 @@ import {
   ImgHTMLAttributes,
   ThHTMLAttributes,
   TdHTMLAttributes,
+  SourceHTMLAttributes,
 } from 'react';
 
 export type TMotionDivProps = HTMLMotionProps<'div'>;
@@ -50,3 +51,5 @@ export type TThProps =
 
 export type TTdProps =
   TdHTMLAttributes<HTMLTableCellElement>;
+
+export type TSource = SourceHTMLAttributes<HTMLSourceElement>;

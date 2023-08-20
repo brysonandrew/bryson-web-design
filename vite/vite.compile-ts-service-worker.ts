@@ -11,7 +11,7 @@ export const compileTsServiceWorker = () => ({
   async writeBundle(_options, _outputBundle) {
     const inputOptions: InputOptions = {
       input:
-        'src/main/service-worker/service-worker.ts',
+        'src/main/service-worker/index.ts',
       plugins: [rollupPluginTypescript(), nodeResolve()],
     };
     const outputOptions: OutputOptions = {
