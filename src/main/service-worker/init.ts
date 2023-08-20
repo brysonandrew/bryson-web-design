@@ -1,6 +1,7 @@
 export const init = async () => {
   const isEnabled =
-    !import.meta.env.DEV && navigator.serviceWorker;
+    // !import.meta.env.DEV && 
+    navigator.serviceWorker;
   if (isEnabled) {
     try {
       const path = '/service-worker.js';

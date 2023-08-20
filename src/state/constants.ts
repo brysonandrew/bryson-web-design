@@ -7,6 +7,7 @@ import { INIT } from '@hooks/style/useDarkMode';
 export const CURSOR_KEYS = ['React', ''];
 
 export const STATE: TState = {
+  isOffline: false,
   isInit: true,
   isCursorReady: false,
   isScrolling: false,

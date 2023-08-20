@@ -3,7 +3,8 @@ import { metalRadialDarkCss } from '@css/metal';
 import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import type { FC } from 'react';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { TMotionDivProps } from '@t/dom';
 
 const DefaultRoot = styled(motion.div)`
   background-color: var(--white-1);
@@ -12,7 +13,7 @@ const DefaultRoot = styled(motion.div)`
   }
 `;
 
-export type TRootProps = HTMLMotionProps<'div'> & {
+export type TRootProps = TMotionDivProps & {
   classValue?: ClassValue;
 };
 type TProps = TRootProps & {

@@ -4,7 +4,7 @@ import { useScrollToTop } from './useScrollToTop';
 import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 
 export const SCROLL = 80;
-export const SCROLL_COOLDOWN = 80;
+export const SCROLL_COOLDOWN = 200;
 
 export const useScrollControl = () => {
   const { isScroll, isScrolling, scroll, dispatch } =

@@ -12,7 +12,16 @@ const matchRequest = async (
 ) => await cache.match(request);
 
 self.addEventListener('install', async (event) => {
-  // console.log('install', event);
+  console.log('~~~~install', event);
+
+  const img = new Image();
+
+  img.onload = (e: any) => {
+    console.log(e);
+    console.dir(e.target);
+
+  };
+  img.src = '/favicon.ico';
 
   const precache = async () => {
     const cache = await resolveCache();

@@ -5,6 +5,18 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
+    case 'online': {
+      return {
+        ...state,
+        isOffline: false,
+      };
+    }
+    case 'offline': {
+      return {
+        ...state,
+        isOffline: true,
+      };
+    }
     case 'cursor-ready': {
       return {
         ...state,

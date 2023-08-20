@@ -32,8 +32,8 @@ export const Header: FC = () => {
             <Nav key='NAV' />
           )}
         </>
-        <P2 />
-        <Network />
+        <P2 key='P2' />
+        <Network key='Network' />
       </AnimatePresence>
     </Root>
   );

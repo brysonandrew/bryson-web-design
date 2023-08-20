@@ -10,7 +10,7 @@ import { Links } from './links';
 import { Settings } from './settings';
 import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
 
-const Root = styled(motion.footer)``;
+const Root = styled.footer``;
 
 export const Footer = () => {
   const {
@@ -21,13 +21,16 @@ export const Footer = () => {
   return (
     <Root
       className='fixed bottom-0 left-0 w-full h-0'
-      style={{ zIndex: RANGE_Z, z: RANGE_Z }}
+      style={{
+        zIndex: RANGE_Z,
+        transform: `translateZ(${RANGE_Z})`,
+      }}
     >
       <AnimatePresence initial={false} mode='sync'>
         {isScroll ? (
           <FadeUp
             key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
-            style={{height: "24vh"}}
+            style={{ height: '24vh' }}
             {...SCROLL_DECORATION_PRESENCE}
           />
         ) : (

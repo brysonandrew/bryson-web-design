@@ -20,18 +20,15 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
 
   return (
     <Root
-      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 rounded-sm cursor-pointer glow-interactive-lg'
+      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 cursor-pointer glow-interactive'
       href={href}
       target='_blank'
       onClick={handleOn}
       {...resolveInteractiveLabels(title)}
-      {...resolveParentAnimateConfig({isHover})}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
     >
-      <MetalGlow
-        isDarkest
-        classValue='rounded-sm glow-baby-blue'
-      />
+      <MetalGlow isDarkest classValue='glow-baby-blue' />
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>

@@ -1,15 +1,15 @@
 import { useEventListener } from '@hooks/events/useEventListener';
-import { useState } from 'react';
 import type { FC } from 'react';
 import { Offline } from './Offline';
+import { useContext } from '@state/Context';
 
 export const Network: FC = () => {
-  const [isOffline, setOffline] = useState<boolean>(false);
+  const { isOffline, dispatch } = useContext();
   useEventListener('offline', () => {
-    setOffline(true);
+    dispatch({ type: 'offline' });
   });
   useEventListener('online', () => {
-    setOffline(false);
+    dispatch({ type: 'online' });
   });
 
   if (isOffline) {

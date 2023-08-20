@@ -6,14 +6,14 @@ import {
 export const resolveBrightness = (value: number) =>
   `brightness(${value}%)`;
 
-export type TDimConfigOptions = {
+export type TBrightenConfigOptions = {
   brightness?: number;
 };
-export type TPartialDimConfigOptions =
-  Partial<TDimConfigOptions>;
+export type TPartialBrightenConfigOptions =
+  Partial<TBrightenConfigOptions>;
 export const resolveBrightenProps = ({
   brightness = 120,
-}: TDimConfigOptions) => ({
+}: TBrightenConfigOptions) => ({
   style: {
     opacity: 0,
     filter: resolveBrightness(brightness),
