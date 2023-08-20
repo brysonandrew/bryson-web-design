@@ -5,11 +5,11 @@ import {
   TClassValueProps,
 } from '@t/index';
 import {
-  TPartialDimConfigOptions,
+  TPartialBrightenConfigOptions,
   resolveBrightenProps,
 } from '@utils/effects/brighten';
 
-type TProps = TPartialDimConfigOptions &
+type TProps = TPartialBrightenConfigOptions &
   TClassValueProps &
   TChildrenPartialProps;
 export const Brighten: FC<TProps> = ({

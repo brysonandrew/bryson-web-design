@@ -2,15 +2,16 @@ import { Codewars } from '@components/icons/links/Codewars';
 import { Email } from '@components/icons/links/Email';
 import { Github } from '@components/icons/links/Github';
 import styled from '@emotion/styled';
-import { HTMLMotionProps, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FC, Fragment } from 'react';
 import { TLinks } from './config';
 import { Link } from './Link';
+import { TMotionUlProps } from '@t/dom';
 
 const Root = styled(motion.ul)``;
 const Item = styled.li``;
 
-type TProps = HTMLMotionProps<'ul'>;
+type TProps = TMotionUlProps;
 export const Links: FC<TProps> = (props) => {
   const ITEMS: TLinks = [
     {

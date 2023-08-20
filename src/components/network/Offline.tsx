@@ -6,16 +6,18 @@ import { motion } from 'framer-motion';
 export const Offline: FC = () => {
   return (
     <motion.div
-      layout
-      className='relative text-color-3 px-6 flex uppercase z-10'
+      layoutId='OFFLINE_LAYOUT_ID'
+      className='relative text-color-3 px-6 uppercase z-10'
     >
-      <Icon />
-      <P1 />
-      <p className='row'>
-        <span>You are</span>
+      <motion.div className='row' layout='position'>
+        <Icon />
         <P1 />
-        <strong>offline</strong>
-      </p>
+        <p className='row'>
+          <span>You are</span>
+          <P1 element='span' />
+          <strong>offline</strong>
+        </p>
+      </motion.div>
     </motion.div>
   );
 };

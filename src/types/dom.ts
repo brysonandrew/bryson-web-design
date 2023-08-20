@@ -13,6 +13,8 @@ import {
 
 export type TMotionDivProps = HTMLMotionProps<'div'>;
 
+export type TMotionUlProps = HTMLMotionProps<'ul'>;
+
 export type TMotionButtonProps = HTMLMotionProps<'button'> &
   TTitleProps;
 export type TMotionAnchorProps = HTMLMotionProps<'a'> &
@@ -52,4 +54,5 @@ export type TThProps =
 export type TTdProps =
   TdHTMLAttributes<HTMLTableCellElement>;
 
-export type TSource = SourceHTMLAttributes<HTMLSourceElement>;
+export type TSource =
+  SourceHTMLAttributes<HTMLSourceElement>;

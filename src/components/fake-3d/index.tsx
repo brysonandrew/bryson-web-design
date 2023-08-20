@@ -11,7 +11,6 @@ import {
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { NOOP } from '@constants/functions';
-import { useRect } from '@hooks/dom/useRect';
 import { isDesktop } from 'react-device-detect';
 import { Rect } from '@components/space/Rect';
 

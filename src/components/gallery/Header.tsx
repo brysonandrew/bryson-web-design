@@ -8,6 +8,8 @@ import { TChildrenProps } from '@t/index';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { NOOP } from '@constants/functions';
 import { isDesktop } from 'react-device-detect';
+import { Offline } from '@components/network/Offline';
+import { Network } from '@components/network';
 
 const Root = styled.header``;
 
@@ -27,12 +29,16 @@ export const Header: FC<TProps> = ({
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
       <Content
+        isHover
         slug={slug}
         rightHeader={
           <Close onClick={isDesktop ? handleClose : NOOP} />
         }
         {...props}
       />
+      <div className='absolute top-full left-0 translate-y-4'>
+        <Network />
+      </div>
     </Root>
   );
 };

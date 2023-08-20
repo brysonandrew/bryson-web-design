@@ -7,31 +7,29 @@ import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { resolveParentAnimateConfig } from '@utils/effects';
+import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
 
 const Root = styled(motion.a)``;
 
 type TProps = TLink;
 export const Link: FC<TProps> = ({ href, title, Icon }) => {
   const { isHover, handlers } = useHoverKey(
-    'open-in-new',
+    OPEN_IN_NEW_CURSOR_KEY,
     href,
   );
   const handleOn = useOnSound();
 
   return (
     <Root
-      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 rounded-sm cursor-pointer glow-interactive-lg'
+      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 cursor-pointer glow-interactive'
       href={href}
       target='_blank'
       onClick={handleOn}
       {...resolveInteractiveLabels(title)}
-      {...resolveParentAnimateConfig({isHover})}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
     >
-      <MetalGlow
-        isDarkest
-        classValue='rounded-sm glow-baby-blue'
-      />
+      <MetalGlow isDarkest classValue='glow-baby-blue' />
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>

@@ -22,6 +22,7 @@ import type {
 } from 'react';
 
 export type TState = {
+  isOffline: boolean;
   isCursorReady: boolean;
   projectImageRecord: TProjectImageRecord;
   buildImages: TMediaRecord[];
@@ -105,6 +106,14 @@ export type TAction =
     }
   | {
       type: 'init';
+      value?: null;
+    }
+  | {
+      type: 'offline';
+      value?: null;
+    }
+  | {
+      type: 'online';
       value?: null;
     }
   | {

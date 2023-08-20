@@ -5,7 +5,6 @@ import { FC } from 'react';
 import { useContext } from '@state/Context';
 import { TMotionDivProps } from '@t/dom';
 import {
-  GLOW_BABY_BLUE,
   GLOW_MARK_DARK,
   GLOW_MARK_LIGHT,
 } from '@uno/shadows';
@@ -43,13 +42,12 @@ export const Mark: FC<TProps> = ({
         animate: {
           backgroundColor: isDarkMode
             ? COLORS['teal']
-            : COLORS['gray-1'],
+            : COLORS['gray-3'],
           boxShadow: isDarkMode
             ? GLOW_MARK_DARK
             : GLOW_MARK_LIGHT,
         },
         hover: {
-          // boxShadow: GLOW_BABY_BLUE,
           backgroundColor: isDarkMode
             ? COLORS['baby-blue']
             : COLORS['black'],

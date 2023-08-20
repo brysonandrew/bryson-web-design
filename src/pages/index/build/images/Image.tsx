@@ -30,6 +30,7 @@ import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { isDesktop } from 'react-device-detect';
+import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
 
 export const IMAGE_SIZE = 320;
 
@@ -68,7 +69,7 @@ export const Image: FC<TProps> = (props) => {
     image: imageDimensions,
   });
   const { isHover, handlers } = useHoverKey(
-    'gallery',
+   GALLERY_CURSOR_KEY,
     'view',
     mediaRecord.png.src,
   );

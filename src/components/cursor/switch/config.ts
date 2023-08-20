@@ -3,15 +3,18 @@ import { HOVER_KEY_DELIMITER } from '@utils/keys';
 
 export const CURSOR_LAYOUT_ID = 'CURSOR_LAYOUT_ID';
 
-export const PROJECT_CURSOR_KEY = 'project';
 export const OPEN_IN_NEW_CURSOR_KEY = 'open-in-new';
+export const GALLERY_CURSOR_KEY = 'gallery';
+export const PROJECT_CURSOR_KEY = 'project';
+export const DARK_MODE_CURSOR_KEY = 'dark-mode';
+export const SOUND_CURSOR_KEY = 'sound';
 
 export const TIP_CURSOR_KEYS = [
   OPEN_IN_NEW_CURSOR_KEY,
-  'gallery',
+  GALLERY_CURSOR_KEY,
   PROJECT_CURSOR_KEY,
-  'dark-mode',
-  'sound',
+  DARK_MODE_CURSOR_KEY,
+  SOUND_CURSOR_KEY,
 ] as const;
 export type TTipCursorKey =
   (typeof TIP_CURSOR_KEYS)[number];

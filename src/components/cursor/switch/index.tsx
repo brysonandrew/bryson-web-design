@@ -1,11 +1,18 @@
 import { useContext } from '@state/Context';
-import { Gallery } from './gallery';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
-import { OpenInNew } from './open-in-new';
+import { OpenInNew as OpenInNewIcon } from '@components/icons/links/OpenInNew';
 import { Box } from './Box';
+import { Gallery } from '@components/icons/gallery/Gallery';
+import {
+  DARK_MODE_CURSOR_KEY,
+  GALLERY_CURSOR_KEY,
+  OPEN_IN_NEW_CURSOR_KEY,
+  PROJECT_CURSOR_KEY,
+  SOUND_CURSOR_KEY,
+} from './config';
 
 export const Switch = () => {
   const { hoverKey } = useContext();
@@ -17,30 +24,34 @@ export const Switch = () => {
   const lastKey = key2 ?? key1;
 
   switch (cursorKey) {
-    case 'open-in-new': {
+    case OPEN_IN_NEW_CURSOR_KEY: {
       return (
         <Sight>
-          <Box delay={0.2}>
-            <OpenInNew>{lastKey ?? 'Open'}</OpenInNew>
+          <Box>
+            <IconWithText Icon={OpenInNewIcon}>
+              {lastKey ?? 'Open'}
+            </IconWithText>
           </Box>
         </Sight>
       );
     }
-    case 'gallery':
-    case 'project': {
+    case GALLERY_CURSOR_KEY:
+    case PROJECT_CURSOR_KEY: {
       return (
         <Sight>
-          <Box delay={0.2}>
-            <Gallery />
+          <Box>
+            <IconWithText Icon={Gallery}>
+              View in image gallery
+            </IconWithText>
           </Box>
         </Sight>
       );
     }
-    case 'sound':
-    case 'dark-mode': {
+    case SOUND_CURSOR_KEY:
+    case DARK_MODE_CURSOR_KEY: {
       return (
         <Sight>
-          <Box delay={0.2}>
+          <Box>
             <IconWithText>
               {lastKey ?? 'Toggle'}
             </IconWithText>

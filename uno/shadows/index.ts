@@ -15,7 +15,7 @@ export const GLOW_INTERACTIVE_LIGHT = `${resolveShadow(
   1,
 )}, ${resolveShadow(
   'baby-blue',
-  2,
+  1,
 )}`;
 
 export const GLOW_INTERACTIVE_DARK_LG = resolveShadow(
