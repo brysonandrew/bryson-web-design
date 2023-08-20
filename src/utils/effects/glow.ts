@@ -1,4 +1,4 @@
-import { resolveColor, resolveWhite } from '@utils/colors';
+import { resolveColor } from '@utils/colors';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
@@ -17,12 +17,12 @@ export const resolveShadow = (
   spread: number,
   color: TColorRgbKey = 'white',
 ) =>
-  `0px 0px ${spread}px ${resolveWhite(
+  `0px 0px ${spread}px ${resolveColor(
+    'white',
     0.5,
   )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
-
-export type TGlowConfigOptions = { 
+export type TGlowConfigOptions = {
   text?: number;
   drop?: number;
   color?: TColorRgbKey;
