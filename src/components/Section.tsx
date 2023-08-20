@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Title } from '@components/text/title';
 import { TChildren } from '@t/index';
@@ -18,14 +17,13 @@ export const Section: FC<TProps> = ({
   classValue,
   children,
 }) => {
-  
   return (
     <Root
       className={clsx('relative column z-10', classValue)}
     >
       <Title>{title}</Title>
       <P6 />
-      {children} 
+      {children}
     </Root>
   );
 };

@@ -2,12 +2,10 @@ import { Contact } from '@pages/contact';
 import { Index } from '@pages/index';
 import { Projects } from '@pages/projects';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { Card } from '@pages/card';
 import { Cv } from '@pages/cv';
-import { Logo } from '@pages/logo';
 
 export const Source = () => {
-  const COMMON_ROUTES = [
+  const ROUTES = [
     {
       path: '/',
       element: <Index />,
@@ -21,8 +19,8 @@ export const Source = () => {
       element: <Projects />,
     },
     {
-      path: '/offline',
-      element: <div>offline</div>,
+      path: '/cv',
+      element: <Cv />,
     },
     {
       path: '*',
@@ -30,23 +28,6 @@ export const Source = () => {
     },
   ];
 
-  const ROUTES = import.meta.env.DEV
-    ? [
-        ...COMMON_ROUTES,
-        {
-          path: '/card',
-          element: <Card />,
-        },
-        {
-          path: '/cv',
-          element: <Cv />,
-        },
-        {
-          path: '/logo',
-          element: <Logo />,
-        },
-      ]
-    : [...COMMON_ROUTES];
   const element = useRoutes(ROUTES);
   if (!element) return null;
 

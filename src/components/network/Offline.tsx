@@ -1,25 +1,21 @@
-import { MetalDark } from '@components/metal/MetalDark';
-import { P12 } from '@components/space/P12';
-import { P6 } from '@components/space/P6';
-import { Title } from '@components/text/title';
 import type { FC } from 'react';
+import { Offline as Icon } from '@components/icons/network/Offline';
+import { P1 } from '@components/space/P1';
+import { motion } from 'framer-motion';
 
 export const Offline: FC = () => {
   return (
-    <div className='relative column'>
-      <P12 />
-      <div className='column w-core'>
-        <Title> 
-          You are <strong>offline</strong>
-        </Title>
-        <P6 />
-        <div className='relative px-4 py-2'>
-          <MetalDark />
-          <h2 className='relative text-2xl text-center z-10'>
-            Please check your network connection.
-          </h2>
-        </div>
-      </div>
-    </div>
+    <motion.div
+      layout
+      className='relative text-color-3 px-6 flex uppercase z-10'
+    >
+      <Icon />
+      <P1 />
+      <p className='row'>
+        <span>You are</span>
+        <P1 />
+        <strong>offline</strong>
+      </p>
+    </motion.div>
   );
 };
