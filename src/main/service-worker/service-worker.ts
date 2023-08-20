@@ -19,17 +19,24 @@ self.addEventListener('install', async (event) => {
 });
 
 self.addEventListener('activate', async (event) => {
-  event.waitUntil(
-    (async () => {
-      // remove old
-      const cacheNames = await caches.keys();
-      await Promise.all(
-        cacheNames
-          .filter((cacheName) => cacheName !== CACHE_NAME)
-          .map((cacheName) => caches.delete(cacheName)),
-      );
-    })(),
-  );
+  const deleteExpiredCaches = async () => {
+    const names = await caches.keys();
+    const deleteHandlers = names.reduce(
+      (a: Promise<boolean>[], cacheName) => {
+        if (cacheName !== CACHE_NAME) {
+          a.push(caches.delete(cacheName));
+        }
+        return a;
+      },
+      [],
+    );
+    await Promise.all(deleteHandlers);
+  };
+  const activateHandlers = async () => {
+    await deleteExpiredCaches();
+    self.clients.claim();
+  };
+  event.waitUntil(activateHandlers());
 });
 
 self.addEventListener('fetch', (event) => {

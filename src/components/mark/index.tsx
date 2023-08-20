@@ -25,11 +25,11 @@ export const Mark: FC<TProps> = ({
   ...props
 }) => {
   const {
-    darkMode: { isDarkMode },
+    darkMode: { isDarkMode, darkKey },
   } = useContext();
   return (
     <Root
-      key={isDarkMode ? 'DARK' : 'LIGHT'}
+      key={darkKey}
       className={clsx(
         'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 pointer-events-none',
         classValue,

@@ -23,8 +23,7 @@ export const Box: FC<TProps> = ({
   exitDelay = 0,
 }) => {
   const {
-    cursorLabelX,
-    cursorLabelY,
+    cursorLabel,
     darkMode: { isDarkMode },
   } = useContext();
 
@@ -35,8 +34,7 @@ export const Box: FC<TProps> = ({
         classValue,
       )}
       style={{
-        x: cursorLabelX,
-        y: cursorLabelY,
+        ...cursorLabel,
         boxShadow: isDarkMode
           ? GLOW_BOX
           : GLOW_INTERACTIVE_LIGHT,

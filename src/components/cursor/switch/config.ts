@@ -1,7 +1,6 @@
 import { THoverKey } from '@hooks/cursor/config';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 
-export const SELECT_LAYOUT_ID = 'SELECT_LAYOUT_ID';
 export const CURSOR_LAYOUT_ID = 'CURSOR_LAYOUT_ID';
 
 export const PROJECT_CURSOR_KEY = 'project';

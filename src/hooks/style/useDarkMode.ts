@@ -1,17 +1,22 @@
 import { useEffect } from 'react';
-import { useLocalStorage } from './useLocalStorage';
+import { useLocalStorage } from '../dom/useLocalStorage';
 import { NOOP } from '@constants/functions';
 const BRYSONA_DISPLAY_MODE_KEY = 'BRYSONA_DISPLAY_MODE_KEY';
 
+const MODES = ['dark', 'light'] as const;
+export type TDarkKey = (typeof MODES)[number];
 export type TUseDarkMode = {
   isDarkMode: boolean;
+  darkKey: TDarkKey;
   toggle: () => void;
   enable: () => void;
   disable: () => void;
 };
 
+const INIT_MODE = 'dark';
 export const INIT: TUseDarkMode = {
-  isDarkMode: true,
+  isDarkMode: INIT_MODE === 'dark',
+  darkKey: INIT_MODE,
   toggle: NOOP,
   enable: NOOP,
   disable: NOOP,
@@ -54,6 +59,7 @@ export const useDarkMode = (
   }, []);
 
   return {
+    darkKey: isDarkMode ? 'dark' : 'light',
     isDarkMode,
     toggle,
     enable,

@@ -4,7 +4,7 @@ import { FAKE_3D_PROPS } from './constants';
 import { Links } from './links';
 import { Section } from '@components/Section';
 
-export const Tech = () => (
+const Tech = () => (
   <Section title={SECTION_TITLES.tech}>
     <Fake3D {...FAKE_3D_PROPS}>
       {(props) => <Links {...props} />}

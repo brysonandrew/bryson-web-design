@@ -24,7 +24,11 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  const { isInit, dispatch } = useContext();
+  const {
+    isInit,
+    darkMode: { darkKey },
+    dispatch,
+  } = useContext();
   useScrollControl();
 
   const handleAnimationComplete = () =>
@@ -44,6 +48,7 @@ export const Shell: FC<TProps> = ({ children }) => {
         <AnimatePresence mode='wait'>
           <Background>
             <Processor
+              key={darkKey}
               width='100%'
               height='100%'
               classValue='dark:fill-gray fill-baby-blue'

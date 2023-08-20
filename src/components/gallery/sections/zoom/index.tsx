@@ -19,6 +19,7 @@ import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
 import { TMediaRecord } from '@t/media';
 import { Tag } from './Tag';
+import { TMotionPoint } from '@t/animation';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 
@@ -28,8 +29,7 @@ export const Border = styled(motion.div)``;
 type TProps = TImageProps & {
   index: number;
   count: number;
-  scrollX: MotionValue;
-  scrollY: MotionValue;
+  scroll: TMotionPoint;
   mediaRecord: TMediaRecord;
   viewportWidth: number;
   container: HTMLElement;
@@ -37,8 +37,7 @@ type TProps = TImageProps & {
 export const Zoom: FC<TProps> = ({
   index,
   count,
-  scrollX,
-  scrollY,
+  scroll,
   mediaRecord,
   viewportWidth,
   container,
@@ -90,8 +89,7 @@ export const Zoom: FC<TProps> = ({
     viewportWidth,
     cursorX,
     cursorY,
-    scrollX,
-    scrollY,
+    scroll,
     onMove: handleMove,
     onClose: () => setCursorReady(false),
   };

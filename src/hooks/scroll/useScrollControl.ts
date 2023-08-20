@@ -7,7 +7,7 @@ export const SCROLL = 80;
 export const SCROLL_COOLDOWN = 80;
 
 export const useScrollControl = () => {
-  const { isScroll, isScrolling, scrollY, dispatch } =
+  const { isScroll, isScrolling, scroll, dispatch } =
     useContext();
 
   const { timeoutRef, endTimeout } = useTimeoutRef();
@@ -32,5 +32,5 @@ export const useScrollControl = () => {
     }
   };
   useScrollToTop(handleUpdate);
-  useMotionValueEvent(scrollY, 'change', handleUpdate);
+  useMotionValueEvent(scroll.y, 'change', handleUpdate);
 };

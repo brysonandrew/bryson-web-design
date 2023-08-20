@@ -18,8 +18,7 @@ export const useCursor = ({
   image,
   imageX,
   imageY,
-  scrollX,
-  scrollY,
+  scroll,
   imageRect,
   onMove,
   onClose,
@@ -29,8 +28,7 @@ export const useCursor = ({
     const { cx, cy } = resolveCursorCoords(event, {
       imageX,
       imageY,
-      scrollX,
-      scrollY,
+      scroll,
     });
     onMove({ cx, cy });
   };

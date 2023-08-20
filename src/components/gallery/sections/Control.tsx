@@ -7,7 +7,6 @@ import { useContext } from '@state/Context';
 import { isDesktop } from 'react-device-detect';
 import { TMediaRecord } from '@t/media';
 import { Image } from './Image';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 export const Root = styled(motion.div)``;
 
@@ -28,7 +27,7 @@ export const Control: FC<TProps> = ({
   motionX,
   isHover,
 }) => {
-  const { scrollX, scrollY } = useContext();
+  const { scroll } = useContext();
 
   const containerDimensions = {
     height: container.clientHeight,
@@ -60,7 +59,7 @@ export const Control: FC<TProps> = ({
                 viewportWidth={width.screen}
                 image={image}
                 mediaRecord={mediaRecord}
-                {...{ scrollX, scrollY }}
+                scroll={scroll}
               />
             )}
           </>

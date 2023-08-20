@@ -4,7 +4,7 @@ import { SECTION_TITLES} from '@constants/copy';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <Section title={SECTION_TITLES.contact}>
       <Fake3D {...FAKE_3D_PROPS}>
