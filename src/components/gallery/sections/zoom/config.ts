@@ -1,3 +1,4 @@
+import { TMotionPoint } from '@t/animation';
 import { MotionValue } from 'framer-motion';
 
 export const SCALE = {
@@ -31,8 +32,7 @@ export type TSharedConfig = TImageProps & {
   viewportWidth: number;
   cursorX: MotionValue;
   cursorY: MotionValue;
-  scrollX: MotionValue;
-  scrollY: MotionValue;
+  scroll: TMotionPoint;
   onMove(onMoveConfig: TMoveConfig): void;
   onClose(): void;
 };
@@ -49,23 +49,22 @@ export type TInteractiveEvent =
   | TouchEvent;
 export type TCursorCoordsConfig = Pick<
   TSharedConfig,
-  'imageX' | 'imageY' | 'scrollX' | 'scrollY'
+  'imageX' | 'imageY' | 'scroll'
 > & { touchIndex?: number };
 export const resolveCursorCoords = (
   event: TInteractiveEvent,
   {
     imageX,
     imageY,
-    scrollX,
-    scrollY,
+    scroll,
     touchIndex = 0,
   }: TCursorCoordsConfig,
 ) => {
   const pageX = resolveCoord(event, 'pageX');
   const pageY = resolveCoord(event, 'pageY');
 
-  const cx = pageX - scrollX.get() - imageX;
-  const cy = pageY - scrollY.get() - imageY;
+  const cx = pageX - scroll.x.get() - imageX;
+  const cy = pageY - scroll.y.get() - imageY;
 
   return { cx, cy };
 };

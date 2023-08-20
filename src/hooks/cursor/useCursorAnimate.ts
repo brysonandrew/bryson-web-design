@@ -8,7 +8,12 @@ import {
 import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';
 import { useEffect, useRef } from 'react';
-import { resolveCursorKeyFromHoverKey, TIP_CURSOR_KEYS, TTipCursorKey } from '@components/cursor/switch/config';
+import {
+  resolveCursorKeyFromHoverKey,
+  TIP_CURSOR_KEYS,
+  TTipCursorKey,
+} from '@components/cursor/switch/config';
+import { TAnimationControlsPoint } from '@t/animation';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;
@@ -30,17 +35,11 @@ type THandlerConfig = {
   nextSignY?: TSign;
 };
 export const useCursorAnimate = () => {
-  const {
-    offsetRef,
-    hoverKey,
-    cursorLabelX,
-    cursorLabelY,
-  } = useContext();
+  const { offsetRef, hoverKey, cursorLabel } = useContext();
 
-  const animateRef = useRef<{
-    x: null | AnimationPlaybackControls;
-    y: null | AnimationPlaybackControls;
-  }>({ x: null, y: null });
+  const animateRef = useRef<
+    Partial<TAnimationControlsPoint>
+  >({});
 
   const handler = ({
     nextHoverKey = hoverKey,
@@ -50,11 +49,11 @@ export const useCursorAnimate = () => {
     const cursorKey =
       resolveCursorKeyFromHoverKey(nextHoverKey);
 
-    const ZERO_X = resolveCalc(0, nextSignX, 0);
-    const ZERO_Y = resolveCalc(0, nextSignY, 0);
+    const zeroX = resolveCalc(0, nextSignX, 0);
+    const zeroY = resolveCalc(0, nextSignY, 0);
 
-    let labelXValue: ValueTarget = ZERO_X;
-    let labelYValue: ValueTarget = ZERO_Y;
+    let labelXValue: ValueTarget = zeroX;
+    let labelYValue: ValueTarget = zeroY;
 
     if (
       TIP_CURSOR_KEYS.includes(cursorKey as TTipCursorKey)
@@ -73,13 +72,14 @@ export const useCursorAnimate = () => {
         OFFSET,
       );
     }
+
     animateRef.current.x = animate(
-      cursorLabelX,
+      cursorLabel.x,
       labelXValue,
       ANIMATION_OPTIONS,
     );
     animateRef.current.y = animate(
-      cursorLabelY,
+      cursorLabel.y,
       labelYValue,
       ANIMATION_OPTIONS,
     );

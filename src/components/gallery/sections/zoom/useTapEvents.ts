@@ -17,8 +17,7 @@ export const useTapEvents = ({
   imageX,
   imageY,
   image,
-  scrollX,
-  scrollY,
+  scroll,
   cursorX,
   cursorY,
   onMove,
@@ -32,8 +31,7 @@ export const useTapEvents = ({
     const { cx, cy } = resolveCursorCoords(event, {
       imageX,
       imageY,
-      scrollX,
-      scrollY,
+      scroll,
     });
 
     const prevX = cursorX.get();
@@ -60,14 +58,13 @@ export const useTapEvents = ({
     const { cx: x0, cy: y0 } = resolveCursorCoords(event, {
       imageX,
       imageY,
-      scrollX,
-      scrollY,
+      scroll,
     });
 
     if (pinchRef.current.isPinch) {
       const { cx: x1, cy: y1 } = resolveCursorCoords(
         event,
-        { imageX, imageY, scrollX, scrollY, touchIndex: 1 },
+        { imageX, imageY, scroll, touchIndex: 1 },
       );
 
       const distance = Math.hypot(x0 - x1, y0 - y1);

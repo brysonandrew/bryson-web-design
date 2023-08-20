@@ -27,20 +27,19 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { cursorX, cursorY, cursorLabelX, cursorLabelY } =
+  const { cursor, cursorLabel } =
     useContext();
 
   return (
     <Root
       style={{
-        x: cursorLabelX,
-        y: cursorLabelY,
-        left: cursorX,
-        top: cursorY,
+        left: cursor.x,
+        top: cursor.y,
         originX: '50%',
         originY: '50%',
         opacity: 1,
         ...resolveSize(size),
+        ...cursorLabel,
         ...style,
       }}
       className={clsx(

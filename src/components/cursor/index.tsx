@@ -17,11 +17,9 @@ export const Cursor: FC<TCursorProps> = memo(
   ({ onTap, children }) => {
     const {
       hoverKey,
-      cursorX,
-      cursorY,
       offsetRef,
-      scrollX,
-      scrollY,
+      cursor,
+      scroll,
       isCursorReady,
       dispatch,
     } = useContext();
@@ -43,14 +41,14 @@ export const Cursor: FC<TCursorProps> = memo(
     };
 
     const handleMove = async (event: PointerEvent) => {
-      const nextX = event.pageX - scrollX.get();
-      const nextY = event.pageY - scrollY.get();
+      const nextX = event.pageX - scroll.x.get();
+      const nextY = event.pageY - scroll.y.get();
 
       handler({ nextX, nextY });
 
       timeoutRef.current = setTimeout(() => {
-        cursorX.set(nextX);
-        cursorY.set(nextY);
+        cursor.x.set(nextX);
+        cursor.y.set(nextY);
       }, 200);
 
       if (isOnscreenRef.current && !isCursorReady) {
@@ -70,6 +68,6 @@ export const Cursor: FC<TCursorProps> = memo(
       onTap ?? NOOP,
     );
 
-    return <>{isCursorReady && <Switch />}</>; 
+    return <>{isCursorReady && <Switch />}</>;
   },
 );

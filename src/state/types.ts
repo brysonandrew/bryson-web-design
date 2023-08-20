@@ -1,20 +1,19 @@
 import { TProjectKey } from '@constants/projects';
 import { THoverKey } from '@hooks/cursor/config';
 import { TOffsetRef } from '@hooks/cursor/useCursorOffset';
-import { TUseDarkMode } from '@hooks/dom/useDarkMode';
+import { TUseDarkMode } from '@hooks/style/useDarkMode';
 import {
   TContactState,
   TFormKey,
   TStatus,
 } from '@pages/contact/config';
-import { TMotionValuePair } from '@t/animation';
+import { TMotionPoint } from '@t/animation';
 import { TFilePathKey, TMediaRecord } from '@t/media';
 import {
   TProjectImageRecord,
   TProjectImageResolverRecord,
   TScreensLookup,
 } from '@t/screens';
-import type { MotionValue } from 'framer-motion';
 import type {
   Dispatch,
   Reducer,
@@ -37,8 +36,6 @@ export type TState = {
 };
 
 export type TContext = TState & {
-  offsetRef: TOffsetRef;
-
   darkMode: TUseDarkMode;
 
   randomIndicies: number[];
@@ -46,14 +43,10 @@ export type TContext = TState & {
   screensLookupSmall: TScreensLookup;
   projectImageResolverRecord: TProjectImageResolverRecord;
 
-  scrollX: MotionValue;
-  scrollY: MotionValue;
-
-  cursorX: MotionValue;
-  cursorY: MotionValue;
-
-  cursorLabelX: MotionValue;
-  cursorLabelY: MotionValue;
+  offsetRef: TOffsetRef;
+  scroll: TMotionPoint;
+  cursor: TMotionPoint;
+  cursorLabel: TMotionPoint;
 
   dispatch: TDispatch;
 };
@@ -129,10 +122,6 @@ export type TAction =
   | {
       type: 'cursor-ready';
       value: boolean;
-    }
-  | {
-      type: 'add-motion-value';
-      value: { pair: TMotionValuePair; index: number };
     };
 
 export type TActionType = null;

@@ -6,11 +6,11 @@ export const useFocus = (
   input: TInputElement | null,
   isFocused: boolean,
 ) => {
-  const { scrollY } = useContext();
+  const { scroll } = useContext();
   const handler = () => {
     if (input) {
       input.focus();
-      const currScrollY = scrollY.get();
+      const currScrollY = scroll.y.get();
       window.scrollTo(0, currScrollY); // prevent autofocus issues
     }
   };

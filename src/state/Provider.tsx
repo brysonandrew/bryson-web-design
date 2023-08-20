@@ -14,7 +14,7 @@ import {
   TScreensRecord,
   TProjectImageResolverRecord,
 } from '@t/screens';
-import { useDarkMode } from '@hooks/dom/useDarkMode';
+import { useDarkMode } from '@hooks/style/useDarkMode';
 import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
 
 const screensRecordPng: TScreensRecord = import.meta.glob(
@@ -23,7 +23,7 @@ const screensRecordPng: TScreensRecord = import.meta.glob(
 const screensRecordWebp: TScreensRecord = import.meta.glob(
   '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).webp',
 );
- 
+
 const screensLookup = {
   [PNG_EXT]: screensRecordPng,
   [WEBP_EXT]: screensRecordWebp,
@@ -81,12 +81,13 @@ export const Provider: FC<TProviderProps> = ({
           [WEBP_EXT]: screensRecordSmallWebp,
         },
         randomIndicies,
-        cursorLabelX,
-        cursorLabelY,
-        cursorX,
-        cursorY,
-        scrollX,
-        scrollY,
+        scroll: { x: scrollX, y: scrollY },
+        cursor: { x: cursorX, y: cursorY },
+        cursorLabel: {
+          x: cursorLabelX,
+          y: cursorLabelY,
+        },
+
         dispatch,
         ...state,
       }}

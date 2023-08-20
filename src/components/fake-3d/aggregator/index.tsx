@@ -7,8 +7,9 @@ import {
 import { Dispersion } from './values/Dispersion';
 import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
-import { useScrollBounds } from './useScrollBounds';
+import { useScrollYBounds } from './useScrollYBounds';
 import { TRect } from '@t/dom';
+import { useContext } from '@state/Context';
 
 type TProps = TFake3DOptions & {
   rect: TRect;
@@ -23,8 +24,13 @@ export const Aggregator: FC<TProps> = ({
   visibility: visibilityRange,
   children,
 }) => {
+  const { scroll } = useContext();
   const styleRef = useRef<TPartialStyle>({});
-  const config = useScrollBounds({ rect });
+  const scrollBounds = useScrollYBounds({ rect });
+  const config = {
+    scrollY: scroll.y,
+    ...scrollBounds,
+  };
 
   useEffect(() => {
     onUpdateRect();

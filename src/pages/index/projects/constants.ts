@@ -14,5 +14,5 @@ export const FAKE_3D_PROPS: TFake3DOptions = {
       startScroll + MAX_SCROLL,
     ],
     output: [-20, 60],
-  },
+  }
 };
