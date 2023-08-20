@@ -16,7 +16,7 @@ export const Nav: FC = () => {
 
   return (
     <Root
-      className='relative row-start-space w-full px-4 py-3.5 md:px-6 md:py-4'
+      className='relative row-start-space w-full px-4 pt-3.5 md:px-6 md:pt-4'
       {...(!isMobile ? animation : {})}
     >
       <Main /> 

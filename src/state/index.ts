@@ -5,12 +5,6 @@ export const reducer = (
   { type, value }: TReducerAction,
 ) => {
   switch (type) {
-    case 'scrolling': {
-      return {
-        ...state,
-        isScrolling: value,
-      };
-    }
     case 'cursor-ready': {
       return {
         ...state,
@@ -91,6 +85,12 @@ export const reducer = (
       return {
         ...state,
         isScroll: value,
+      };
+    }
+    case 'scrolling': {
+      return {
+        ...state,
+        isScrolling: value,
       };
     }
     case 'toggle-sound': {

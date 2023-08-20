@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import type { CSSProperties, FC } from 'react';
 
-const Root = styled(motion.div)``;
+const Root = styled.div``;
 
 type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => {
