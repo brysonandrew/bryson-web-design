@@ -30,9 +30,6 @@ export const Item: FC<TItem> = ({
     OPEN_IN_NEW_CURSOR_KEY,
     href,
   );
-  const BORDER_RADIUS = {
-    classValue: clsx('rounded-lg'),
-  };
 
   return (
     <Root
@@ -45,13 +42,11 @@ export const Item: FC<TItem> = ({
       <MetalGlow
         drop={isDarkMode ? 12 : 4}
         color={isDarkMode ? 'white' : 'gray-3'}
-        {...BORDER_RADIUS}
       />
-      <Box {...BORDER_RADIUS}>
+      <Box>
         <Glow
           text={isDarkMode ? 1.4 : 0.5}
           drop={isDarkMode ? 4 : 0.5}
-          {...BORDER_RADIUS}
         >
           <Anchor
             className='inline-flex relative pl-4 pr-3 py-3'

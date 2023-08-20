@@ -23,7 +23,7 @@ export const FAKE_3D_PROPS: TFake3DOptions = {
   visibility: {
     input: ({ startScroll }) => [
       startScroll,
-      startScroll + MAX_SCROLL,
+      startScroll + MAX_SCROLL * 4,
     ],
     opacity: [1, 0],
   },

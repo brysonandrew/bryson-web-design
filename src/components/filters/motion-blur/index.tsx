@@ -9,6 +9,8 @@ import {
 } from 'react-device-detect';
 import { Filter } from './Filter';
 import { MotionValue } from 'framer-motion';
+import { Speed } from './Speed';
+import { Transformer } from './Transformer';
 
 const isMotionBlur = !(isSafari && isBrowser);
 
@@ -29,7 +31,13 @@ export const MotionBlur: FC<TProps> = ({
   }
   return (
     <>
-      <Filter motionValue={motionValue} />
+      <Speed motionValue={motionValue}>
+        {(props) => (
+          <Transformer {...props}>
+            {(props) => <Filter {...props} />}
+          </Transformer>
+        )}
+      </Speed>
       {children({
         filter: resolveUrlId(MOTION_BLUR_ID),
       })}

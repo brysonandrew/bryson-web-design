@@ -1,10 +1,10 @@
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Suspense, lazy } from 'react';
-import { Build } from './build';
 import { P48Y } from '@components/space/P48Y';
 import { P24Y } from '@components/space/P24Y';
 const Tech = lazy(() => import('./tech'));
+const Build = lazy(() => import('./build'));
 const Projects = lazy(() => import('./projects'));
 const Contact = lazy(() => import('./contact'));
 const Gallery = lazy(() => import('@components/gallery'));
