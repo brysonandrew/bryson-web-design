@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren, TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/dom';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/cursor/Context';
 
 const resolveSize = (size: number) => {
   return {
@@ -27,8 +27,7 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { cursor, cursorLabel } =
-    useContext();
+  const { cursor, cursorLabel } = useContext();
 
   return (
     <Root

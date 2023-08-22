@@ -8,14 +8,16 @@ import { Dispersion } from './values/Dispersion';
 import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
 import { useScrollYBounds } from './useScrollYBounds';
+import { useContext } from '@context/scroll/Context';
 import { TRect } from '@t/dom';
-import { useContext } from '@state/Context';
 
 type TProps = TFake3DOptions & {
   rect: TRect;
   onUpdateRect(): void;
   children(props: TFake3DMotionChildrenProps): void;
 };
+
+let render = 0;
 export const Aggregator: FC<TProps> = ({
   rect,
   onUpdateRect,
@@ -31,6 +33,7 @@ export const Aggregator: FC<TProps> = ({
     scrollY: scroll.y,
     ...scrollBounds,
   };
+  console.log('AGG ' + ++render);
 
   useEffect(() => {
     onUpdateRect();

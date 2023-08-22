@@ -17,7 +17,8 @@ import {
   GLOW_INTERACTIVE_DARK,
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/shadows';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
@@ -41,9 +42,10 @@ export const Content: FC<TProps> = ({
   onLayoutAnimationComplete,
   ...props
 }) => {
-  const {
+    const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
+
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);

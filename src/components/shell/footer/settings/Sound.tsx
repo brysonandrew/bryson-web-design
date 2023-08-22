@@ -1,6 +1,7 @@
 import { Circle } from '@components/buttons/circle';
 import { VolumeOff } from '@components/icons/sound/VolumeOff';
-import { useContext } from '@state/Context';
+import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useContext as useSoundContext } from '@context/sound/Context';
 import {
   ICON_CLASS_VALUE_PROPS,
   SHARED_ANIMATION_PROPS,
@@ -13,13 +14,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@components/buttons/circle/Button';
 
 export const Sound = () => {
-  const { isSound, isScroll, dispatch } = useContext();
+  const { isScroll } = useScrollContext();
+  const { isSound, toggleSound } = useSoundContext();
+
   const Icon = isSound ? VolumeOn : VolumeOff;
   const title = `Turn ${isSound ? 'off' : 'on'} sound`;
   const { isHover, handlers } = useHoverKey('sound', title);
-  const handleTap = () => {
-    dispatch({ type: 'toggle-sound', value: null });
-  };
+  const handleTap = toggleSound;
 
   return (
     <AnimatePresence initial={false} mode='wait'>

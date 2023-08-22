@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -11,7 +11,7 @@ import { Sections } from './sections';
 import { TBaseProps, TWidth } from './types';
 import { TImageResolverEntries } from '@t/screens';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
+import { RADIUS_Z } from '@hooks/media/fake-3D/useZ';
 import { useMotionX } from '@hooks/gallery/useMotionX';
 
 const Root = styled(motion.div)``;
@@ -54,7 +54,7 @@ export const Main: FC<TProps> = ({
   return (
     <Root
       className='cover-fixed column text-color z-20'
-      style={{ z: RANGE_Z * 2 }}
+      style={{ z: RADIUS_Z * 2 }}
     >
       <Header isReady={isReady} slug={currProject} />
       <>

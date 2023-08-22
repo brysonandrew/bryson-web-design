@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import { Picture } from '@components/picture';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import { TDimensions, TMediaRecord } from '@t/media';

@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/contact/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import {
@@ -14,7 +15,7 @@ import {
 } from '@utils/effects';
 
 const Root = styled(motion.label)``;
-const Input = styled(motion.input)``;
+const Input = styled.input``;
 const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
@@ -25,8 +26,10 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   );
   const {
     contact: { status },
-    darkMode: { isDarkMode },
   } = useContext();
+  const {
+    darkMode: { isDarkMode },
+  } = useDarkModeContext();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
@@ -49,7 +52,9 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
-      {...(isDisabled ? {} : resolveParentAnimateConfig({isHover}))}
+      {...(isDisabled
+        ? {}
+        : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
       <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />

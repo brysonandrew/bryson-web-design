@@ -9,7 +9,10 @@ const Root = styled(motion.div)``;
 type TProps = Partial<TFake3DMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
   return (
-    <Root className='w-core will-change-transform' style={style}>
+    <Root
+      className='w-core will-change-transform'
+      style={style}
+    >
       <Form />
     </Root>
   );

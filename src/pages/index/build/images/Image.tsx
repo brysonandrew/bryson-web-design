@@ -1,19 +1,15 @@
 import { motion } from 'framer-motion';
-import { type FC } from 'react';
 import {
-  Link as _Link,
-  useNavigate,
-} from 'react-router-dom';
-import { useDepthStyle } from '../../../../hooks/media/fake-3D/useDepthStyle';
-import { RANGE_Z } from '../../../../hooks/media/fake-3D/useZ';
-import { useX } from '../../../../hooks/media/fake-3D/useX';
+  type FC,
+  useContext as useReactContext,
+} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDepthStyle } from '@hooks/media/fake-3D/useDepthStyle';
+import { RADIUS_Z } from '@hooks/media/fake-3D/useZ';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import {
-  DURATION_MID,
-  resolveDynamicMidMotionConfig,
-} from '@constants/animation';
+import { DURATION_MID } from '@constants/animation';
 import { INIT } from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
@@ -24,15 +20,17 @@ import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/scroll/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { isDesktop } from 'react-device-detect';
 import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
+import { resolveMotionConfig } from './resolveMotionConfig';
+import { PROJECTS_ID } from '@constants/copy';
 
-export const IMAGE_SIZE = 320;
+export const IMAGE_SIZE = 200;
 
 const Button = styled(motion.button)``;
 
@@ -61,25 +59,24 @@ export const Image: FC<TProps> = (props) => {
     next: mediaRecord.png.name,
     project: mediaRecord.png.project,
   });
-  const { z, ...depthStyle } = useDepthStyle();
-  const xStyle = useX({ index, count });
+  const depthConfig = { index, name, count };
+  const { z, ...depthStyle } = useDepthStyle(depthConfig);
   const imageDimensions = resolveDimensions(image);
   const dimensions = useImageDimensions({
     container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
     image: imageDimensions,
   });
   const { isHover, handlers } = useHoverKey(
-   GALLERY_CURSOR_KEY,
+    GALLERY_CURSOR_KEY,
     'view',
     mediaRecord.png.src,
   );
-
   const handleGallery = () => {
-    navigate(`${to}#projects`);
-    const projectsElement =
-      document.getElementById('projects');
-    if (projectsElement) {
-      projectsElement.scrollIntoView({
+    navigate(`${to}#${PROJECTS_ID}`);
+    const projectsMarker =
+      document.getElementById(PROJECTS_ID);
+    if (projectsMarker) {
+      projectsMarker.scrollIntoView({
         block: 'start',
       });
     }
@@ -95,19 +92,6 @@ export const Image: FC<TProps> = (props) => {
     }
   };
 
-  const resolveDelay = () => {
-    if (name) {
-      const n = Number(name);
-      if (!isNaN(n)) {
-        return Math.abs(index - n) / count;
-      }
-    }
-    return (index / count) * 0.5;
-  };
-  const delay = resolveDelay();
-  const motionConfig = resolveDynamicMidMotionConfig({
-    delay,
-  });
   const isGallery = Boolean(name);
   const isInteractionDisabled =
     isGallery || isScrolling || (isDesktop && isScroll);
@@ -119,7 +103,6 @@ export const Image: FC<TProps> = (props) => {
         isInteractionDisabled && 'pointer-events-none',
       )}
       style={{
-        ...xStyle,
         ...depthStyle,
         zIndex: z,
       }}
@@ -127,8 +110,8 @@ export const Image: FC<TProps> = (props) => {
         hover: {
           scale: 1.4,
           filter: INIT,
-          z: RANGE_Z,
-          zIndex: RANGE_Z,
+          z: RADIUS_Z,
+          zIndex: RADIUS_Z,
         },
         initial: { opacity: 0, scale: 0 },
         animate: {
@@ -136,7 +119,7 @@ export const Image: FC<TProps> = (props) => {
           z,
           scale: isGallery ? 0.6 : 1,
           transition: {
-            ...motionConfig.transition,
+            ...resolveMotionConfig(depthConfig).transition,
             duration: DURATION_MID,
           },
         },

@@ -1,12 +1,20 @@
 import { useMemo } from 'react';
+import { TDepthConfig } from './useDepthStyle';
 
-export const RANGE_Z = 2000;
-const f = 0.9
+export const RADIUS_Z = 2000;
 
-export const useZ = (y: number) => {
-  const z = useMemo(
-    () => RANGE_Z * (1 - f) + ~~(RANGE_Z * f * Math.random()),
-    [y],
-  );
-  return z;
+type TStyle = {
+  z: number;
+  rotateY: number;
+};
+
+export const useZ = ({ index, count }: TDepthConfig) => {
+  const style = useMemo<TStyle>(() => {
+    const radians = Math.PI * (index / count);
+    return {
+      z: Math.cos(radians * 2) * RADIUS_Z,
+      rotateY: radians * (180 / Math.PI) + 90,
+    };
+  }, []);
+  return style;
 };

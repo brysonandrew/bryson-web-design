@@ -9,5 +9,15 @@ export type TSectionTitleKey = keyof typeof SECTION_TITLES;
 export type TSectionTitle =
   (typeof SECTION_TITLES)[TSectionTitleKey];
 
-export const PAGE_TITLES = ['Projects', 'Contact'] as const;
+const PROJECTS_TITLE = 'Projects';
+const CONTACT_TITLE = 'Contact';
+
+export const PAGE_TITLES = [
+  PROJECTS_TITLE,
+  CONTACT_TITLE,
+] as const;
 export type TPageTitle = (typeof PAGE_TITLES)[number];
+export const INTRO_ID = CONTACT_TITLE.toLowerCase();
+export const TECH_ID = CONTACT_TITLE.toLowerCase();
+export const PROJECTS_ID = PROJECTS_TITLE.toLowerCase();
+export const CONTACT_ID = CONTACT_TITLE.toLowerCase();

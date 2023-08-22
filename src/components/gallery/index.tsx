@@ -8,7 +8,9 @@ export const Gallery: FC = () => {
   const isSelectedProject = currProject !== null;
   const { isResizing, width } = useWidth();
   if (isSelectedProject && !isResizing) {
-    return <Main currProject={currProject} width={width} />;
+    return (
+        <Main currProject={currProject} width={width} />
+    );
   }
   return null;
 };

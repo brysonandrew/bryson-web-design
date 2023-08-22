@@ -1,11 +1,10 @@
-import clsx from 'clsx';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
 import { Box } from '@components/filter-animate/Box';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
@@ -25,7 +24,8 @@ export const Item: FC<TItem> = ({
 }) => {
   const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
+
   const { isHover, handlers } = useHoverKey(
     OPEN_IN_NEW_CURSOR_KEY,
     href,

@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 import { PADDING_X } from './config';
-import { useHover } from '@hooks/cursor/useHover';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { resolveDropShadow } from '@utils/effects/glow';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
 type TProps = {
   classValue?: ClassValue;
@@ -15,8 +15,12 @@ type TProps = {
 export const DragIcon: FC<TProps> = ({ classValue }) => {
   const {
     darkMode: { isDarkMode },
-  } = useContext();
-  const { isHover, ...handlers } = useHover();
+  } = useDarkModeContext();
+
+  const { isHover, ...handlers } = useHoverKey(
+    'big',
+    'drag',
+  );
   const variant = isHover ? 'hover' : 'animate';
   return (
     <motion.div

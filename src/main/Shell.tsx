@@ -7,16 +7,17 @@ import { Background } from '@components/background';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   PRESENCE_OPACITY,
-  PRESENCE_OPACITY_01,
+  PRESENCE_OPACITY_005,
   ZERO_MOTION_CONFIG,
   resolveDynamicSlowMotionConfig,
 } from '@constants/animation';
 import { Processor } from '@components/icons/background/Processor';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { ClipPaths } from '@components/ClipPaths';
-import { useScrollControl } from '@hooks/scroll/useScrollControl';
 import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
+import { useScrollControl } from '@hooks/scroll/useScrollControl';
+import { useContext as useAppContext } from '@context/app/Context';
 
 const Root = styled.div``;
 
@@ -24,15 +25,13 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
+  const { isInit, onInit } = useAppContext();
   const {
-    isInit,
     darkMode: { darkKey },
-    dispatch,
-  } = useContext();
+  } = useDarkModeContext();
   useScrollControl();
 
-  const handleAnimationComplete = () =>
-    dispatch({ type: 'init' });
+  const handleAnimationComplete = onInit;
 
   const resolveTransition = (delay: number) =>
     isInit
@@ -52,14 +51,14 @@ export const Shell: FC<TProps> = ({ children }) => {
               width='100%'
               height='100%'
               classValue='dark:fill-gray fill-baby-blue'
-              {...PRESENCE_OPACITY_01}
+              {...PRESENCE_OPACITY_005}
               {...resolveTransition(0.28)}
             />
           </Background>
         </AnimatePresence>
         <motion.div
           {...PRESENCE_OPACITY}
-          {...resolveTransition(0.8)}
+          {...resolveTransition(isInit ? 0 : 0)}
           onAnimationComplete={handleAnimationComplete}
         >
           {children}

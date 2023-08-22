@@ -1,29 +1,31 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import styled from '@emotion/styled';
 import {
   PRESENCE_X_LEFT,
   SCROLL_DECORATION_PRESENCE,
 } from '@constants/animation';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
+import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { Links } from './links';
 import { Settings } from './settings';
-import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
+import { RADIUS_Z } from '@hooks/media/fake-3D/useZ';
 
 const Root = styled.footer``;
 
 export const Footer = () => {
-  const {
-    isScroll,
+    const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
 
+  const { isScroll } = useScrollContext();
   return (
     <Root
       className='fixed bottom-0 left-0 w-full h-0'
       style={{
-        zIndex: RANGE_Z,
-        transform: `translateZ(${RANGE_Z})`,
+        zIndex: RADIUS_Z,
+        transform: `translateZ(${RADIUS_Z})`,
       }}
     >
       <AnimatePresence initial={false} mode='sync'>

@@ -1,4 +1,4 @@
-import { useContext } from '@state/Context';
+import { useContext } from '@context/cursor/Context';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';

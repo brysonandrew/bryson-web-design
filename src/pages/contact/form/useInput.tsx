@@ -1,6 +1,6 @@
-import { useRef, KeyboardEvent } from 'react';
-import { useContext } from '@state/Context';
+import { useRef } from 'react';
 import { TFormKey } from '../config';
+import { useContext } from '@context/domains/contact/Context';
 
 type TConfig = {
   name: TFormKey;
@@ -17,7 +17,7 @@ export const useInput = <T extends HTMLElement>({
   const value = form[name];
   const isEmpty = Boolean(value);
 
-  const handleKeyDown = () => {
+  const handleTap = () => {
     if (input) {
       input.scrollIntoView({
         block: 'center',
@@ -34,7 +34,7 @@ export const useInput = <T extends HTMLElement>({
     },
     inputProps: {
       value,
-      onKeyUp: handleKeyDown,
+      onTap: handleTap,
     },
   };
 };

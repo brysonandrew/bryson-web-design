@@ -137,6 +137,13 @@ export const PRESENCE_OPACITY_01 = {
   exit: { opacity: 0 },
 };
 
+
+export const PRESENCE_OPACITY_005 = {
+  initial: { opacity: 0 },
+  animate: { opacity: 0.05 },
+  exit: { opacity: 0 },
+};
+
 export const PRESENCE_OPACITY_06 = {
   initial: { opacity: 0 },
   animate: { opacity: 0.1 },

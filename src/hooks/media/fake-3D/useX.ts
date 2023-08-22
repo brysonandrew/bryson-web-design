@@ -1,9 +1,10 @@
 import { useMemo } from "react";
+import { TDepthConfig } from "./useDepthStyle";
 
 const MIN = 10;
 const MAX = 90
 
-export const useX = ({ index, count }: { index: number, count: number; }) => {
+export const useX = ({ index, count }:TDepthConfig) => {
   const style = useMemo(() => {
     return {
       left: `${~~((MAX - MIN) * ((index + 0.5) / count) + MIN)}%`,

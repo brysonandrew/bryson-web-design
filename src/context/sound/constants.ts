@@ -1,0 +1,8 @@
+import type { TContext } from './types';
+import { NOOP } from '@constants/functions';
+
+export const CONTEXT: TContext = {
+  context: new AudioContext(),
+  isSound: false,
+  toggleSound: NOOP,
+};
