@@ -27,7 +27,7 @@ export const Footer: FC<TProps> = (props) => {
       {...handlers}
     >
       <MetalDarkest />
-      {props.isReady && <Core {...props} />}
+      <Core {...props} />
     </Root>
   );
 };

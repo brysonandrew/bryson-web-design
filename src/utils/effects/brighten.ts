@@ -3,7 +3,7 @@ import {
   EFFECT_HOVER_TRANSITION,
 } from '.';
 
-export const resolveBrightness = (value: number) =>
+export const resolveBrightness = (value = 100) =>
   `brightness(${value}%)`;
 
 export type TBrightenConfigOptions = {

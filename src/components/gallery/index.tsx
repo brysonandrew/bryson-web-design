@@ -1,15 +1,22 @@
 import { type FC } from 'react';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { Main } from './Main';
-import { useWidth } from '@hooks/gallery/useWidth';
+import { useContext } from '@context/viewport/Context';
 
 export const Gallery: FC = () => {
   const currProject = useCurrProject();
   const isSelectedProject = currProject !== null;
-  const { isResizing, width } = useWidth();
-  if (isSelectedProject && !isResizing) {
+  const { isResizing, width } = useContext();
+  if (
+    isSelectedProject &&
+    !isResizing &&
+    typeof width === 'number'
+  ) {
     return (
-        <Main currProject={currProject} width={width} />
+      <Main
+        currProject={currProject}
+        viewportWidth={width}
+      />
     );
   }
   return null;

@@ -7,11 +7,13 @@ import { TImageResolverEntry } from '@t/screens';
 import { Gallery as Fetch } from '@components/fetch-media/Gallery';
 import { Control } from './Control';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useContext } from '@context/viewport/Context';
 
 export const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
+  const { width: viewportWidth = 0 } = useContext();
   const { count, width, items, imageRecord } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
@@ -19,14 +21,14 @@ export const Sections: FC<TProps> = (props) => {
   const left = useTransform(
     props.motionX,
     (v) =>
-      v * count * (width.screen / width.footer) +
-      width.screen * 0.5 * (count - 1),
+      v * count * (viewportWidth / width) +
+      viewportWidth * 0.5 * (count - 1),
   );
   return (
     <Root className='h-full grow' {...handlers}>
       <motion.ul
         className='flex relative h-full'
-        style={{ left, width: width.screen * count }}
+        style={{ left, width: viewportWidth * count }}
         ref={(instance) => {
           if (instance && !container) {
             setContainer(instance);
@@ -42,7 +44,7 @@ export const Sections: FC<TProps> = (props) => {
             <li
               key={filePath}
               className='relative flex justify-center'
-              style={{ width: width.screen }}
+              style={{ width: viewportWidth }}
             >
               {imageRecord?.[filePath] &&
               container !== null ? (
@@ -50,6 +52,7 @@ export const Sections: FC<TProps> = (props) => {
                   key={value.png.key}
                   index={index}
                   container={container}
+                  viewportWidth={viewportWidth}
                   mediaRecord={imageRecord[filePath]}
                   isHover={isHover}
                   {...props}

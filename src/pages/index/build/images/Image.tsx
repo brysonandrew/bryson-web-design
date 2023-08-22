@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
-import {
-  type FC,
-  useContext as useReactContext,
-} from 'react';
+import { type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDepthStyle } from '@hooks/media/fake-3D/useDepthStyle';
-import { RADIUS_Z } from '@hooks/media/fake-3D/useZ';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
@@ -21,6 +17,8 @@ import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@context/scroll/Context';
+import { useContext as useViewportContext } from '@context/viewport/Context';
+
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
@@ -29,8 +27,7 @@ import { isDesktop } from 'react-device-detect';
 import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
 import { resolveMotionConfig } from './resolveMotionConfig';
 import { PROJECTS_ID } from '@constants/copy';
-
-export const IMAGE_SIZE = 200;
+import { resolveFilter } from '@components/filters/resolveFilter';
 
 const Button = styled(motion.button)``;
 
@@ -42,7 +39,9 @@ type TProps = TMotionImgProps & {
 };
 export const Image: FC<TProps> = (props) => {
   const navigate = useNavigate();
-  const { isScroll, isScrolling } = useContext();
+  const { isScrolling } = useContext();
+  const { width: viewportWidth = 0 } = useViewportContext();
+
   const {
     index,
     count,
@@ -59,11 +58,20 @@ export const Image: FC<TProps> = (props) => {
     next: mediaRecord.png.name,
     project: mediaRecord.png.project,
   });
-  const depthConfig = { index, name, count };
+  const halfViewportWidth = viewportWidth * 0.5;
+  const imageWidth = (halfViewportWidth * Math.PI) / count;
+  const depthConfig = {
+    index,
+    name,
+    count,
+    imageWidth,
+    halfViewportWidth,
+    viewportWidth,
+  };
   const { z, ...depthStyle } = useDepthStyle(depthConfig);
   const imageDimensions = resolveDimensions(image);
   const dimensions = useImageDimensions({
-    container: { width: IMAGE_SIZE, height: IMAGE_SIZE },
+    container: { width: imageWidth, height: imageWidth },
     image: imageDimensions,
   });
   const { isHover, handlers } = useHoverKey(
@@ -93,8 +101,7 @@ export const Image: FC<TProps> = (props) => {
   };
 
   const isGallery = Boolean(name);
-  const isInteractionDisabled =
-    isGallery || isScrolling || (isDesktop && isScroll);
+  const isInteractionDisabled = isGallery || isScrolling;
 
   return (
     <motion.li
@@ -104,14 +111,12 @@ export const Image: FC<TProps> = (props) => {
       )}
       style={{
         ...depthStyle,
+        filter: resolveFilter({ grayscale: 100 }),
         zIndex: z,
       }}
       variants={{
         hover: {
-          scale: 1.4,
           filter: INIT,
-          z: RADIUS_Z,
-          zIndex: RADIUS_Z,
         },
         initial: { opacity: 0, scale: 0 },
         animate: {

@@ -17,6 +17,7 @@ type TProps = Pick<TBaseProps, 'width'> & {
   container: HTMLElement;
   motionX: MotionValue;
   isHover: boolean;
+  viewportWidth: number;
 };
 export const Control: FC<TProps> = ({
   index,
@@ -26,17 +27,18 @@ export const Control: FC<TProps> = ({
   width,
   motionX,
   isHover,
+  viewportWidth,
 }) => {
   const { scroll } = useContext();
 
   const containerDimensions = {
     height: container.clientHeight,
-    width: width.footer,
+    width,
   };
   return (
     <motion.div
       className='relative'
-      style={{ width: width.footer }}
+      style={{ width }}
       {...(isDesktop
         ? {
             onPointerDown: (e: any) => e.preventDefault(),
@@ -56,7 +58,7 @@ export const Control: FC<TProps> = ({
                 index={index}
                 count={count}
                 container={container}
-                viewportWidth={width.screen}
+                viewportWidth={viewportWidth}
                 image={image}
                 mediaRecord={mediaRecord}
                 scroll={scroll}

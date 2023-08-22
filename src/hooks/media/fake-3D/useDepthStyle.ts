@@ -1,31 +1,36 @@
 import { transform } from 'framer-motion';
-import { useZ, RADIUS_Z } from './useZ';
+import { usePosition } from './usePosition';
 import { resolveFilter } from '@components/filters/resolveFilter';
-import { useX } from './useX';
 
 export type TDepthConfig = {
   name: string | null;
   index: number;
   count: number;
+  imageWidth: number;
+  halfViewportWidth: number;
+  viewportWidth: number;
 };
 export const useDepthStyle = (config: TDepthConfig) => {
-  const xStyle = useX(config);
-  const zStyle = useZ(config);
+  const position = usePosition(config);
+  const { halfViewportWidth } = config;
 
-  const y = 0; // useY();
-  const z = zStyle.z;
-  const brightness = transform([0, RADIUS_Z], [70, 110])(z);
-  const blur = transform([0, RADIUS_Z], [0.5, 0])(z);
-  const filter = resolveFilter({
-    blur,
-    brightness,
-    grayscale: 0,
-  });
+  // const z = position.z;
+  // const brightness = transform(
+  //   [0, -halfViewportWidth],
+  //   [100, 100],
+  // )(z);
+  // const blur = transform(
+  //   [0, -halfViewportWidth],
+  //   [0, 0],
+  // )(z);
+  // const filter = resolveFilter({
+  //   blur,
+  //   brightness,
+  //   grayscale: 100,
+  // });
 
   return {
-    ...xStyle,
-    ...zStyle,
-    y,
-    filter,
+    ...position,
+    // filter,
   };
 };

@@ -5,11 +5,9 @@ import { useContext } from '@context/scroll/Context';
 
 export const SCROLL = 80;
 export const SCROLL_COOLDOWN = 200;
-let render = 0;
 export const useScrollControl = () => {
   const { isScroll, isScrolling, scroll, dispatch } =
     useContext();
-  console.log('cont: ' + ++render);
   const { timeoutRef, endTimeout } = useTimeoutRef();
 
   const handleScroll = (value: boolean) =>

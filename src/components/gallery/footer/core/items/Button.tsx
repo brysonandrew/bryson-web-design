@@ -62,7 +62,7 @@ export const Button: FC<TProps> = ({
 
   return (
     <Root
-      className={clsx('center relative h-16')}
+      className='center relative h-16'
       style={{ width }}
     >
       <Link

@@ -11,21 +11,21 @@ import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
 import { useKeys } from '@hooks/gallery/useKeys';
 
-const Root = styled(motion.div)``;
+const Root = styled.div``;
 const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
   const { count, motionX, width, items } = props;
   useKeys({ readyCount: count });
-  const itemWidth = width.footer / count;
+  const itemWidth = width / count;
   const dragHandlers = useDrag({
-    width: width.footer,
+    width,
     items,
     motionX,
   });
 
-  const left = -width.footer + itemWidth;
+  const left = -width + itemWidth;
 
   return (
     <Root className='relative' style={{ width: itemWidth }}>
@@ -37,7 +37,7 @@ export const Core: FC<TProps> = (props) => {
         style={{
           x: motionX,
           left: -PADDING_X,
-          width: width.footer + PADDING_X * 2,
+          width: width + PADDING_X * 2,
           padding: `0.25rem ${PADDING_X}px`,
         }}
         dragConstraints={{
@@ -49,7 +49,7 @@ export const Core: FC<TProps> = (props) => {
         {...dragHandlers}
       >
         {isDesktop && (
-          <>
+          <> 
             <MetalDark classValue='opacity-50' />
             <DragIcon classValue='left-0' />
             <DragIcon classValue='right-0' />

@@ -10,6 +10,7 @@ import { Provider as AppProvider } from '@context/app/Provider';
 import { Provider as CursorProvider } from '@context/cursor/Provider';
 import { Provider as GalleryProvider } from '@context/domains/gallery/Provider';
 import { Provider as ContactProvider } from '@context/domains/contact/Provider';
+import { Provider as ViewportProvider } from '@context/viewport/Provider';
 
 import { Boundary } from '@components/boundary';
 import { MOTION_CONFIG } from '@constants/animation';
@@ -30,24 +31,26 @@ if (root) {
         <DarkModeProvider>
           <SoundProvider>
             <AppProvider>
-              <CursorProvider>
-                <GalleryProvider>
-                  <ContactProvider>
-                    <HelmetProvider>
-                      <MotionConfig {...MOTION_CONFIG}>
-                        <Boundary>
-                          <Router>
-                            <Head />
-                            <Suspense fallback={null}>
-                              <Source />
-                            </Suspense>
-                          </Router>
-                        </Boundary>
-                      </MotionConfig>
-                    </HelmetProvider>
-                  </ContactProvider>
-                </GalleryProvider>
-              </CursorProvider>
+              <ViewportProvider>
+                <CursorProvider>
+                  <GalleryProvider>
+                    <ContactProvider>
+                      <HelmetProvider>
+                        <MotionConfig {...MOTION_CONFIG}>
+                          <Boundary>
+                            <Router>
+                              <Head />
+                              <Suspense fallback={null}>
+                                <Source />
+                              </Suspense>
+                            </Router>
+                          </Boundary>
+                        </MotionConfig>
+                      </HelmetProvider>
+                    </ContactProvider>
+                  </GalleryProvider>
+                </CursorProvider>
+              </ViewportProvider>
             </AppProvider>
           </SoundProvider>
         </DarkModeProvider>
