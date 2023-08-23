@@ -57,7 +57,10 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <MetalGlow color={isDarkMode ? 'white' : 'gray-3'} />
+      <MetalGlow
+        color={isDarkMode ? 'baby-blue' : 'gray-3'}
+        drop={1}
+      />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',

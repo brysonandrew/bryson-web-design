@@ -23,6 +23,7 @@ import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
+import { Metal } from '@components/metal';
 
 const Root = styled(motion.div)``;
 
@@ -109,7 +110,7 @@ export const Content: FC<TProps> = ({
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <MetalGlow color='baby-blue' />
+      <Metal />
       <Mark classValue='z-20' />
       <P2 />
       <motion.div

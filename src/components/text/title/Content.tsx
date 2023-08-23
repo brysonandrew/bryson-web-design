@@ -5,14 +5,12 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TContent } from './config';
 import { TitleRoot } from '@components/space/TitleRoot';
-import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
 
 type TProps = { children: TContent };
 export const Content: FC<TProps> = ({ children }) => {
   return (
     <TitleRoot>
       <motion.div
-        key='TITLE_TEXT'
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 20, opacity: 0 }}

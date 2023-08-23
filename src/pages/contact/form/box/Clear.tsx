@@ -24,9 +24,7 @@ export const Clear: FC<TProps> = ({
   title,
   ...props
 }) => {
-  const {
-    dispatch,
-  } = useContext();
+  const { dispatch } = useContext();
   const {
     darkMode: { isDarkMode },
   } = useDarkModeContext();
@@ -44,7 +42,7 @@ export const Clear: FC<TProps> = ({
       <motion.button
         tabIndex={-1}
         type='button'
-        className='relative dark:text-gray-1 text-gray-1 backdrop-blur-sm dark:bg-black-02 bg-white-02 rounded-md'
+        className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-02 rounded-full'
         whileHover={{ filter: HIGHLIGHT }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}

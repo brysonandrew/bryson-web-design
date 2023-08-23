@@ -13,7 +13,7 @@ export const Title: FC<TProps> = ({ children }) => {
   }
   return (
     <InView
-      options={{ rootMargin: '-200px', triggerOnce: true }}
+      options={{ rootMargin: '-20px', triggerOnce: true }}
     >
       {({ inView }) => {
         if (inView) {

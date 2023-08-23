@@ -41,7 +41,6 @@ export const Image: FC<TProps> = (props) => {
   const navigate = useNavigate();
   const { isScrolling } = useContext();
   const { width: viewportWidth = 0 } = useViewportContext();
-
   const {
     index,
     count,
