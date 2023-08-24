@@ -45,7 +45,6 @@ export const useMediaFromKey = () => {
       const promise = resolveRecord(value);
       return promise;
     };
-    console.log(projectImageResolverRecord);
     const imageRecord = projectImageRecord[currProject];
     const resolverRecord =
       projectImageResolverRecord[currProject];

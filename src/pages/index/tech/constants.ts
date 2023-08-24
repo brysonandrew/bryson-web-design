@@ -9,7 +9,7 @@ export const FAKE_3D_PROPS: TFake3DOptions = {
       startScroll,
       startScroll + windowHeight * 0.5 + MAX_SCROLL,
     ],
-    output: [-10, 10],
+    output: [-1, 3],
   },
   resistance: {
     input: ({ startScroll }) => [

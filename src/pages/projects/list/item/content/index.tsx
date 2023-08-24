@@ -20,7 +20,6 @@ import {
 } from '@uno/shadows';
 import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { P1 } from '@components/space/P1';
-import { MetalGlow } from '@components/metal/MetalGlow';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { Metal } from '@components/metal';
@@ -46,7 +45,6 @@ export const Content: FC<TProps> = ({
   const {
     darkMode: { isDarkMode },
   } = useDarkModeContext();
-
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);

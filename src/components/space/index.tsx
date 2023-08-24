@@ -1,25 +1,6 @@
 import { FC, createElement } from 'react';
 import { clsx } from 'clsx';
-import { TSpaceProps } from './config';
-
-type TAmount =
-  | '0.25'
-  | '0.5'
-  | '1'
-  | '1.5'
-  | '2'
-  | '3'
-  | '4'
-  | '6'
-  | '8'
-  | '12'
-  | '16'
-  | '24'
-  | '32'
-  | '48'
-  | '60'
-  | '72'
-  | '86';
+import { TAmount, TSpaceProps } from './config';
 
 type TProps = TSpaceProps & {
   spaceClass: `p-${TAmount}` | `py-${TAmount}`;

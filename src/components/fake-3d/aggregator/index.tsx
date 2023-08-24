@@ -28,7 +28,7 @@ export const Aggregator: FC<TProps> = ({
   const { scroll } = useContext();
   const styleRef = useRef<TPartialStyle>({});
   const scrollBounds = useScrollYBounds({ rect });
-  const config = {
+  const config = { 
     scrollY: scroll.y,
     ...scrollBounds,
   };
