@@ -8,27 +8,21 @@ import { TChildrenProps } from '@t/index';
 import { useOffSound } from '@hooks/sounds/useOffSound';
 import { NOOP } from '@constants/functions';
 import { isDesktop } from 'react-device-detect';
-import { Offline } from '@components/network/Offline';
 import { Network } from '@components/network';
 
 const Root = styled.header``;
 
 type TProps = TMotionDivProps &
-  TSlugProps & {
-    isReady: boolean;
-  } & Partial<TChildrenProps>;
-export const Header: FC<TProps> = ({
-  isReady,
-  slug,
-  ...props
-}) => {
+  TSlugProps &
+  Partial<TChildrenProps>;
+export const Header: FC<TProps> = ({ slug, ...props }) => {
   const handleOffSound = useOffSound();
   const handleClose = () => {
     handleOffSound();
   };
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
-      <Content
+      <Content 
         isHover
         slug={slug}
         rightHeader={

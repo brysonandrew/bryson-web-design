@@ -1,6 +1,6 @@
 import type { TMultiOptions } from 'react-synthwave';
 import { useSynthMulti } from 'react-synthwave';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/sound/Context';
 
 export const useOnSound = () => {
   const { context, isSound } = useContext();

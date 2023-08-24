@@ -8,8 +8,8 @@ import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { P32Y } from '@components/space/P32Y';
 
-const Root = styled(motion.div)``;
-const Content = styled(motion.div)``;
+const Root = styled.div``;
+const Content = styled.div``;
 
 type TProps = {
   children: TChildren;

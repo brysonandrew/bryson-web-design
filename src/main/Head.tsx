@@ -1,16 +1,16 @@
 import { useAnalytics } from '@hooks/analytics/useAnalytics';
 import { useHtmlTitle } from '@hooks/dom/useHtmlTitle';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { Helmet } from 'react-helmet-async';
 
 export const Head = () => {
   const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
   const prefix = isDarkMode ? '' : '/light';
   const title = useHtmlTitle();
   useAnalytics(title);
-  
+
   return (
     <Helmet>
       <title>{title}</title>

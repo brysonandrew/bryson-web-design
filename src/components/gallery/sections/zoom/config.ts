@@ -6,6 +6,7 @@ export const SCALE = {
   MIN: 1,
   MAX: 20,
 } as const;
+
 export const LOCAL_HOST_SCALE_KEY = 'LOCAL_HOST_SCALE_KEY';
 export const WHEEL_DELTA_THRESHOLD = 0.2;
 export const DELTA_FACTOR = 0.001;

@@ -2,9 +2,7 @@ import { useEventListener } from '@hooks/events/useEventListener';
 import { useRef } from 'react';
 import {
   TSharedConfig,
-  resolveCoord,
   CURSOR_SIZE_HALF,
-  SCALE,
   resolveCursorCoords,
 } from './config';
 

@@ -13,7 +13,8 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '@hooks/media/nav/useTo';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { TMediaDetails } from '@t/media';
 import {
   resolveShadow,
@@ -35,10 +36,10 @@ export const Button: FC<TProps> = ({
   width,
   mediaDetails,
 }) => {
+  const { dispatch } = useContext();
   const {
     darkMode: { isDarkMode },
-    dispatch,
-  } = useContext();
+  } = useDarkModeContext();
   const { key, name } = mediaDetails;
   const to = useTo({ next: name });
   const isLoading = key === resolveLoadingItemKey(index);
@@ -61,7 +62,7 @@ export const Button: FC<TProps> = ({
 
   return (
     <Root
-      className={clsx('center relative h-16')}
+      className='center relative h-16'
       style={{ width }}
     >
       <Link

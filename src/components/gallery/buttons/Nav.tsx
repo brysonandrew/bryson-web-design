@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { IconLink, TProps as TIconLinkProps } from '../../buttons/IconLink';
 import { TClassValueProps, TTitleProps } from '@t/index';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import { NOOP } from '@constants/functions';
 import { isDesktop } from 'react-device-detect';
 

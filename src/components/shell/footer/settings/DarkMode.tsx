@@ -1,7 +1,6 @@
 import { Circle } from '@components/buttons/circle';
 import { Moon } from '@components/icons/dark-mode/Moon';
 import { Sun } from '@components/icons/dark-mode/Sun';
-import { useContext } from '@state/Context';
 import { resolveVerticalShiftPresence } from '@utils/animation';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -13,11 +12,16 @@ import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { TRANSITION } from '@constants/animation';
 import { Button } from '@components/buttons/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { createElement, useState } from 'react';
+import { createElement } from 'react';
+import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+
 import clsx from 'clsx';
 
 export const DarkMode = () => {
-  const { darkMode, isScroll } = useContext();
+  const { isScroll } = useScrollContext();
+  const { darkMode } = useDarkModeContext();
+
   const isDarkMode = darkMode.isDarkMode;
   const key = isDarkMode ? 'light' : 'dark';
   const title = `Switch to ${key} mode`;
@@ -51,9 +55,7 @@ export const DarkMode = () => {
         {...handlers}
       >
         <Circle
-          classValue={clsx(
-            'preserve-3d perspective-1000',
-          )}
+          classValue={clsx('preserve-3d perspective-1000')}
         >
           <Button title={title} onTap={handleTap}>
             <div className='absolute -inset-2 center overflow-hidden rounded-full'>

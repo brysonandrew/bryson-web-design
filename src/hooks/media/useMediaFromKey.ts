@@ -1,6 +1,6 @@
 import { TProjectKey } from '@constants/projects';
 import { resolveMediaRecord } from '@pages/projects/config';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import {
   TMediaRecord,
   TMediaRecords,
@@ -45,6 +45,7 @@ export const useMediaFromKey = () => {
       const promise = resolveRecord(value);
       return promise;
     };
+    console.log(projectImageResolverRecord);
     const imageRecord = projectImageRecord[currProject];
     const resolverRecord =
       projectImageResolverRecord[currProject];

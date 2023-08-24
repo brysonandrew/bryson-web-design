@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import styled from '@emotion/styled';
 import {
-  MotionValue,
   clamp,
   motion,
   useMotionValue,

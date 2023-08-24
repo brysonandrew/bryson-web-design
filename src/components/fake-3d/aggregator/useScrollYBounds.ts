@@ -1,4 +1,4 @@
-import { useWindowSize } from '@hooks/window/useWindowSize';
+import { useContext } from '@context/viewport/Context';
 import { TRect } from '@t/dom';
 import { useMemo } from 'react';
 
@@ -6,7 +6,7 @@ type TConfig = {
   rect: TRect;
 };
 export const useScrollYBounds = ({ rect }: TConfig) => {
-  const { height: windowHeight } = useWindowSize();
+  const { height: windowHeight = 0 } = useContext();
   const top = rect?.top ?? 0;
 
   const startScroll = useMemo(() => {

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { TMotionAnchorProps } from '@t/dom';
 import { TSlugProps } from '@pages/projects/config';
 import { resolveCompositeHoverKey } from '@utils/keys';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/cursor/Context';
 import { PROJECT_CURSOR_KEY } from '@components/cursor/switch/config';
 
 type TProps = Required<TTag> &

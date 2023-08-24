@@ -14,7 +14,7 @@ export const ACTIVE = resolveFilter({
 
 export const HIGHLIGHT = resolveFilter({
   blur: 0,
-  brightness: 140,
+  brightness: 110,
   grayscale: 0,
 });
 

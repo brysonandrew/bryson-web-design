@@ -1,7 +1,8 @@
 import { type FC, useRef, memo } from 'react';
 import { NOOP } from '@constants/functions';
 import { useEventListener } from '@hooks/events/useEventListener';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/cursor/Context';
+import { useContext as useScrollContext } from '@context/scroll/Context';
 import type { TChildren } from '@t/index';
 import { useViewportPresence } from './useViewportPresence';
 import { Switch } from '@components/cursor/switch';
@@ -19,11 +20,11 @@ export const Cursor: FC<TCursorProps> = memo(
       hoverKey,
       offsetRef,
       cursor,
-      scroll,
       isCursorReady,
       dispatch,
     } = useContext();
-    
+    const { scroll } = useScrollContext();
+
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
     const handler = useCursorOffset(offsetRef);

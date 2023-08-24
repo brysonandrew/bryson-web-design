@@ -2,26 +2,26 @@ import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
-import { TBaseProps, TWidth } from './types';
+import { TBaseProps } from './types';
 import { TImageResolverEntries } from '@t/screens';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { RANGE_Z } from '@hooks/media/fake-3D/useZ';
 import { useMotionX } from '@hooks/gallery/useMotionX';
+import { resolveGalleryWidth } from '@hooks/gallery/resolveGalleryWidth';
 
 const Root = styled(motion.div)``;
 
 type TProps = {
-  width: TWidth;
+  viewportWidth: number;
   currProject: TProjectKey;
 };
 export const Main: FC<TProps> = ({
-  width,
+  viewportWidth,
   currProject,
 }) => {
   useFreezeScrollBar();
@@ -30,9 +30,10 @@ export const Main: FC<TProps> = ({
   const items: TImageResolverEntries = Object.entries(
     projectImageResolverRecord[currProject],
   );
+  const width = resolveGalleryWidth(viewportWidth);
 
   const motionX = useMotionX({
-    width: width.footer,
+    width: viewportWidth * 0.9,
     items,
   });
 
@@ -40,33 +41,24 @@ export const Main: FC<TProps> = ({
 
   const count = items.length;
 
-  const isReady = width.screen > 0;
-
   const galleryProps: TBaseProps = {
     motionX,
     items,
     imageRecord,
     count,
     width,
-    isReady,
   };
 
   return (
     <Root
       className='cover-fixed column text-color z-20'
-      style={{ z: RANGE_Z * 2 }}
+      style={{ z: viewportWidth }}
     >
-      <Header isReady={isReady} slug={currProject} />
-      <>
-        {isReady && (
-          <>
-            <Background />
-            <Sections {...galleryProps} />
-          </>
-        )}
-        <Footer {...galleryProps} />
-        {isReady && <Arrows max={galleryProps.count} />}
-      </>
+      <Header slug={currProject} />
+      <Background />
+      <Sections {...galleryProps} />
+      <Footer {...galleryProps} />
+      <Arrows max={galleryProps.count} />
     </Root>
   );
 };

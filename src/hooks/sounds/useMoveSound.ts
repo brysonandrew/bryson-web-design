@@ -1,9 +1,6 @@
-import type {
-  TMultiOptions} from "react-synthwave";
-import {
-  useSynthMulti,
-} from "react-synthwave";
-import { useContext } from "@state/Context";
+import type { TMultiOptions } from 'react-synthwave';
+import { useSynthMulti } from 'react-synthwave';
+import { useContext } from '@context/sound/Context';
 
 export const useMoveSound = () => {
   const { context, isSound } = useContext();
@@ -14,11 +11,11 @@ export const useMoveSound = () => {
     await context.resume();
     const filter = new BiquadFilterNode(context, {
       frequency: 4000,
-      type: "bandpass",
+      type: 'bandpass',
     });
     const gain = new GainNode(context, { gain: 0.01 });
     const opts: TMultiOptions = {
-      type: "sine",
+      type: 'sine',
       midi: 60,
       count: 40,
       attack: 0.1,

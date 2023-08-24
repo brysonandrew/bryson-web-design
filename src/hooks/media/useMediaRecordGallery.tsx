@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { TModuleRecord } from '@t/media';
 import { resolveMediaRecord } from '@pages/projects/config';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 
 export type TMediaRecordGalleryConfig = {
   moduleRecord: TModuleRecord;

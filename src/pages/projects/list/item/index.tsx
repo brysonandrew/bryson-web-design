@@ -12,7 +12,7 @@ import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { useContext } from '@state/Context';
+import { useContext as useScrollContext } from '@context/scroll/Context';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +24,7 @@ import {
 } from '@components/cursor/switch/config';
 import { NOOP } from '@constants/functions';
 import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
+import { useContext } from '@context/cursor/Context';
 
 const Root = styled(motion.li)``;
 
@@ -32,7 +33,9 @@ type TProps = TSlugProps & {
 };
 export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
-  const { hoverKey, isScrolling } = useContext();
+  const { hoverKey } = useContext();
+  const { isScrolling } = useScrollContext();
+
   const [isExpanded, setExpanded] = useState(false);
   const { timeoutRef, endTimeout } = useTimeoutRef();
   const { isHover: isProjectHover, handlers } = useHoverKey(

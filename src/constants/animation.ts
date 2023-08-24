@@ -1,5 +1,6 @@
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
+import { Transition } from 'framer-motion';
 import { isMobile } from 'react-device-detect';
 
 const isDisabled = isMobile;
@@ -23,7 +24,8 @@ export const MOTION_CONFIG = {
 
 export const DURATION_MID = isDisabled ? 0 : 0.5;
 
-export const MID_MOTION_TRANSITION = {
+export const MID_MOTION_TRANSITION: Transition = {
+  type: "inertia",
   ease: 'linear',
   duration: DURATION_MID,
 };
@@ -34,7 +36,8 @@ export const MID_MOTION_CONFIG = {
 
 export const DURATION_SLOW = isDisabled ? 0 : 1;
 
-export const SLOW_MOTION_TRANSITION = {
+export const SLOW_MOTION_TRANSITION: Transition = {
+  type: "inertia",
   ease: 'linear',
   duration: DURATION_SLOW,
 };
@@ -137,6 +140,12 @@ export const PRESENCE_OPACITY_01 = {
   exit: { opacity: 0 },
 };
 
+export const PRESENCE_OPACITY_005 = {
+  initial: { opacity: 0 },
+  animate: { opacity: 0.05 },
+  exit: { opacity: 0 },
+};
+
 export const PRESENCE_OPACITY_06 = {
   initial: { opacity: 0 },
   animate: { opacity: 0.1 },
@@ -201,4 +210,10 @@ export const SCROLL_DECORATION_PRESENCE = {
     transition: { ease: 'easeOut', duration: DURATION_MID },
   },
   exit: { opacity: 0 },
+};
+
+export const ORIGIN_50 = {
+  originX: '50%',
+  originY: '50%',
+  originZ: '50%',
 };

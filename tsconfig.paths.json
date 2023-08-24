@@ -9,7 +9,7 @@
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
       "@pages/*": ["src/pages/*"],
-      "@state/*": ["src/state/*"],
+      "@context/*": ["src/context/*"],
       "@utils/*": ["src/utils/*"],
       "@uno/*": ["uno/*"],
       "@css/*": ["src/css/*"],

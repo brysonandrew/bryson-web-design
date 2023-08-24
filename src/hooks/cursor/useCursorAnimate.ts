@@ -1,9 +1,8 @@
-import { useContext } from '@state/Context';
+import { useContext } from '@context/cursor/Context';
 import {
   ValueTarget,
   ValueAnimationTransition,
   animate,
-  AnimationPlaybackControls,
 } from 'framer-motion';
 import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';

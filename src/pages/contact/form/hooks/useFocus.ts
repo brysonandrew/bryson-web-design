@@ -1,5 +1,5 @@
 import { TInputElement } from '@pages/contact/config';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/scroll/Context';
 import { useEffect } from 'react';
 
 export const useFocus = (
@@ -10,8 +10,9 @@ export const useFocus = (
   const handler = () => {
     if (input) {
       input.focus();
+      const currScrollX = scroll.x.get();
       const currScrollY = scroll.y.get();
-      window.scrollTo(0, currScrollY); // prevent autofocus issues
+      window.scrollTo(currScrollX, currScrollY); // prevent autofocus issues
     }
   };
   useEffect(() => {

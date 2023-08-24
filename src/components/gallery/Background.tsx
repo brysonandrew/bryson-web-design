@@ -1,6 +1,6 @@
 import { PRESENCE_OPACITY } from '@constants/animation';
 import styled from '@emotion/styled';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -14,7 +14,8 @@ const Root = styled(motion.div)`
 export const Background: FC = () => {
   const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
+
   return (
     <Root
       className={clsx('absolute inset-0')}

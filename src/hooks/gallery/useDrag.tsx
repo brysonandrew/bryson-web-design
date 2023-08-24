@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useContext } from '@state/Context';
+import { useContext } from '@context/domains/gallery/Context';
 import { resolveActiveIndex } from '../../utils/gallery/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { resolveTo } from '../media/nav/resolveTo';

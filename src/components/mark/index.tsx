@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { TMotionDivProps } from '@t/dom';
 import {
   GLOW_MARK_DARK,
@@ -25,7 +25,7 @@ export const Mark: FC<TProps> = ({
 }) => {
   const {
     darkMode: { isDarkMode, darkKey },
-  } = useContext();
+  } = useDarkModeContext();
   return (
     <Root
       key={darkKey}

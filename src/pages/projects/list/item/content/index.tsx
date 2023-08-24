@@ -14,14 +14,16 @@ import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import {
+  GLOW_BABY_BLUE,
   GLOW_INTERACTIVE_DARK,
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/shadows';
-import { useContext } from '@state/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
 import { P1 } from '@components/space/P1';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
+import { Metal } from '@components/metal';
 
 const Root = styled(motion.div)``;
 
@@ -43,7 +45,8 @@ export const Content: FC<TProps> = ({
 }) => {
   const {
     darkMode: { isDarkMode },
-  } = useContext();
+  } = useDarkModeContext();
+
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -98,14 +101,16 @@ export const Content: FC<TProps> = ({
         handleLayoutAnimationComplete
       }
       style={{
-        boxShadow: isDarkMode
+        boxShadow: isHover
+          ? GLOW_BABY_BLUE
+          : isDarkMode
           ? GLOW_INTERACTIVE_DARK
           : GLOW_INTERACTIVE_LIGHT,
       }}
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <MetalGlow color='baby-blue' />
+      <Metal />
       <Mark classValue='z-20' />
       <P2 />
       <motion.div
