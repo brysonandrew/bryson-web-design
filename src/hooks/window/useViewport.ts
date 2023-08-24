@@ -13,6 +13,7 @@ export type TViewport = {
   isResizing: boolean;
   width?: number;
   height?: number;
+
 };
 
 export const useViewport = (): TViewport => {

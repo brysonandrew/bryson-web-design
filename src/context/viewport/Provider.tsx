@@ -1,7 +1,10 @@
 import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Context } from './Context';
-import { useViewport } from '@hooks/window/useViewport';
+import {
+  TViewport,
+  useViewport,
+} from '@hooks/window/useViewport';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -9,12 +12,20 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const windowSize = useViewport();
+  const viewport = useViewport();
+
+  const isFlipped = ({
+    width = 0,
+    height = 0,
+  }: TViewport) => {
+    return (width ?? 0) < (height ?? 0) && width < 700;
+  };
 
   return (
     <Context.Provider
       value={{
-        ...windowSize,
+        ...viewport,
+        isFlipped: isFlipped(viewport),
       }}
     >
       {children}

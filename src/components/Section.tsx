@@ -5,11 +5,12 @@ import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
 import { P6 } from './space/P6';
 import { TDivProps } from '@t/dom';
+import { TContent } from './text/title/config';
 
 const Root = styled.div``;
 
-type TProps = TDivProps & {
-  title: string;
+type TProps = Omit<TDivProps, 'title'> & {
+  title: TContent;
   classValue?: ClassValue;
   children: TChildren;
 };
