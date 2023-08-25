@@ -27,6 +27,8 @@ export const Picture: FC<TProps> = ({
     ...props,
   };
 
+  // console.log(imageProps);
+
   return (
     <Root>
       <Source
