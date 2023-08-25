@@ -1,7 +1,7 @@
 import type { MotionValue } from 'framer-motion';
 import { useVelocity, useTransform } from 'framer-motion';
 import { TChildren } from '@t/index';
-import { TTransformerProps } from './Transformer';
+import { TTransformerProps } from './TransformerY';
 
 
 type TProps = {
@@ -13,9 +13,7 @@ export const Speed = ({
   children,
 }: TProps) => {
   const v = useVelocity(motionValue);
-  const velocity = useTransform(v, (v) => {
-    return Math.abs(v);
-  });
+  const velocity = useTransform(v, (v) => Math.abs(v));
   const a = useVelocity(velocity);
   const acceleration = useTransform(a, (v) => Math.abs(v));
 

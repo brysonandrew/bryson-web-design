@@ -1,4 +1,4 @@
-import { useContext } from '@context/cursor/Context';
+import { useContext } from '@context/cursor';
 import {
   ValueTarget,
   ValueAnimationTransition,

@@ -7,24 +7,23 @@ import { TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/dom';
 import { AURA_ID } from './Filter';
 
-const SELECT_LAYOUT_ID = 'SELECT_LAYOUT_ID';
-
 const Root = styled(motion.div)``;
 
 type TProps = TMotionDivProps & TClassValueProps;
 export const Aura: FC<TProps> = ({
   classValue,
+  style,
   ...props
 }) => {
   return (
     <Root
-      layoutId={SELECT_LAYOUT_ID}
       style={{
         filter: resolveUrlId(AURA_ID),
+        ...style,
       }}
       className={clsx(
-        'absolute mt-1.5 ml-1 pointer-events-none rounded-sm cursor-default',
-        classValue ?? 'bg-baby-blue-04 -inset-1',
+        'absolute mt-1.5 ml-1 rounded-sm pointer-events-none cursor-default',
+        classValue ?? 'bg-baby-blue-04 -inset-2',
       )}
       {...props}
     />

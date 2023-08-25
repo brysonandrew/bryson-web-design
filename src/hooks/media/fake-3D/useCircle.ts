@@ -1,5 +1,4 @@
-import { useContext } from '@context/scroll/Context';
-import { useTransform } from 'framer-motion';
+import { MotionValue, useTransform } from 'framer-motion';
 const MIN_OPACITY = 0.2;
 
 export type TDepthConfig = {
@@ -9,19 +8,20 @@ export type TDepthConfig = {
   imageSize: number;
   radius: number;
   isVertical: boolean;
+  spin: MotionValue;
 };
-export const usePosition = ({
+export const useCircle = ({
   index,
   count,
   imageSize,
   isVertical,
   radius,
+  spin,
 }: TDepthConfig) => {
-  const { scroll } = useContext();
   const progress = index / count;
 
-  const radians = useTransform(scroll.y, (v) => {
-    return v * 0.002 + Math.PI * 2 * progress;
+  const radians = useTransform(spin, (v) => {
+    return v + Math.PI * 2 * progress;
   });
   const depth = useTransform(radians, (v) => {
     return Math.sin(v);
@@ -54,7 +54,7 @@ export const usePosition = ({
         opacity,
       }
     : {
-        x: spread, // ,
+        x: spread,
         y: 0,
         z,
         rotateX: 0,

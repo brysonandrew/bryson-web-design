@@ -1,12 +1,10 @@
-import { useReducer, useRef } from 'react';
+import { useRef, useState } from 'react';
 import type { FC } from 'react';
-import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
-import { reducer } from '.';
-import { Context } from './Context';
 import { STATE } from './constants';
 import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
+import { Context } from '.';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -14,6 +12,11 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
+  const [isCursorReady, setCursorReady] = useState(
+    STATE.isCursorReady,
+  );
+  const [hoverKey, setHoverKey] = useState(STATE.hoverKey);
+
   const offsetRef = useRef<TCursorOffset>({
     x: 1,
     y: -1,
@@ -22,9 +25,6 @@ export const Provider: FC<TProviderProps> = ({
   const cursorLabelY = useMotionValue(0);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
   return (
     <Context.Provider
       value={{
@@ -34,8 +34,10 @@ export const Provider: FC<TProviderProps> = ({
           x: cursorLabelX,
           y: cursorLabelY,
         },
-        dispatch,
-        ...state,
+        hoverKey,
+        isCursorReady,
+        onHoverKey: setHoverKey,
+        onCursorReady: setCursorReady,
       }}
     >
       {children}

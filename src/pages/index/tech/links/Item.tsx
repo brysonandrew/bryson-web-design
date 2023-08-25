@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
 import { Box } from '@components/filter-animate/Box';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
@@ -16,14 +16,15 @@ const Root = styled(motion.div)``;
 const Anchor = styled.a``;
 const Title = styled.h4``;
 
-export const Item: FC<TItem> = ({
+export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,
   title,
   href,
+  glow,
   ...props
 }) => {
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   const { isHover, handlers } = useHoverKey(
@@ -39,9 +40,16 @@ export const Item: FC<TItem> = ({
       {...props}
     >
       {isHover && <Aura layoutId={title} />}
+      {typeof glow !== 'undefined' && (
+        <MetalGlow
+          drop={isDarkMode ? 16 : 8}
+          color={isDarkMode ? 'baby-blue' : 'gray-3'}
+          value={glow}
+        />
+      )}
       <MetalGlow
         drop={isDarkMode ? 12 : 4}
-        color={isDarkMode ? 'white' : 'gray-3'}
+        color={isDarkMode ? 'teal-bright' : 'baby-blue'}
       />
       <Box>
         <Glow
@@ -54,7 +62,7 @@ export const Item: FC<TItem> = ({
             target='_blank'
           >
             <div className='relative row z-10'>
-              <Icon classValue='w-10 h-10 lg:w-12 lg:h-12' />
+              <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
               <P1_5 />
               <Title className='+++text'>{title}</Title>
             </div>

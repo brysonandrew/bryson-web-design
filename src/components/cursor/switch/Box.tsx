@@ -7,8 +7,8 @@ import {
   GLOW_BOX,
   GLOW_INTERACTIVE_LIGHT,
 } from '@uno/shadows';
-import { useContext } from '@context/cursor/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext } from '@context/cursor';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { Metal } from '@components/metal';
 import { DURATION_MID } from '@constants/animation';
 
@@ -25,7 +25,7 @@ export const Box: FC<TProps> = ({
 }) => {
   const { cursorLabel } = useContext();
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   return (

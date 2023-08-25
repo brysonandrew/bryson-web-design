@@ -1,11 +1,17 @@
-import { definePreset, presetUno, presetWebFonts, type Preset } from 'unocss';
+import {
+  definePreset,
+  presetUno,
+  presetWebFonts,
+  type Preset,
+} from 'unocss';
 import { TAnyTheme, TTheme } from './theme';
 import { SANS, MONO } from './typography';
 
-export const PRESETS: (
+export type TPresets = (
   | Preset<TTheme>
   | Preset<TTheme>[]
-)[] = [
+)[];
+export const PRESETS: TPresets = [
   definePreset<TAnyTheme>(presetUno({ dark: 'class' })),
   presetWebFonts({
     fonts: {

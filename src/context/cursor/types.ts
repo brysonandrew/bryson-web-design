@@ -17,23 +17,6 @@ export type TContext = TState & {
   offsetRef: TOffsetRef;
   cursor: TMotionPoint;
   cursorLabel: TMotionPoint;
-  dispatch: TDispatch;
+  onHoverKey: (hoverKey: THoverKey) => void;
+  onCursorReady: (setCursorReady: boolean) => void;
 };
-
-export type TAction =
-| {
-  type: 'cursor-ready';
-  value: boolean;
-}
-| {
-  type: 'hover-key';
-  value: THoverKey;
-}
-
-export type TActionType = null;
-export type TActionValue = any;
-
-export type TDispatch = Dispatch<TAction>;
-export type TReducer = Reducer<TState, TAction>;
-export type TReducerState = ReducerState<TReducer>;
-export type TReducerAction = ReducerAction<TReducer>;

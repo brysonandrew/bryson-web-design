@@ -1,12 +1,12 @@
 import { TInputElement } from '@pages/contact/config';
-import { useContext } from '@context/scroll/Context';
+import { useScroll } from '@context/scroll';
 import { useEffect } from 'react';
 
 export const useFocus = (
   input: TInputElement | null,
   isFocused: boolean,
 ) => {
-  const { scroll } = useContext();
+  const { scroll } = useScroll();
   const handler = () => {
     if (input) {
       input.focus();

@@ -3,7 +3,10 @@ import { type FC } from 'react';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { resolveDimensions } from '@hooks/media/resolveDimensions';
-import { INIT } from '@components/filters/presets';
+import {
+  GRAYED_OUT,
+  INIT as INIT_FILTER,
+} from '@components/filters/presets';
 import { TMediaRecord } from '@t/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import { resolveKey } from '@components/placeholder/resolveKey';
@@ -11,7 +14,6 @@ import { Small as Placeholder } from '@components/placeholder/Small';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { useContext } from '@context/scroll/Context';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
@@ -19,17 +21,17 @@ import { resolveParentAnimateConfig } from '@utils/effects';
 import { isDesktop } from 'react-device-detect';
 import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
 import { resolveMotionConfig } from '../../../../hooks/media/resolveMotionConfig';
-import { resolveFilter } from '@components/filters/resolveFilter';
 import {
   TDepthConfig,
-  usePosition,
-} from '@hooks/media/fake-3D/usePosition';
+  useCircle,
+} from '@hooks/media/fake-3D/useCircle';
 import { ORIGIN_50 } from '@constants/animation';
 import { useTapHandler } from '@hooks/media/useTapHandler';
 
 const Button = styled(motion.button)``;
 
 type TProps = TMotionImgProps & {
+  isScrolling: boolean;
   index: number;
   randomIndex: number;
   count: number;
@@ -37,8 +39,8 @@ type TProps = TMotionImgProps & {
   depthConfig: TDepthConfig;
 };
 export const Image: FC<TProps> = (props) => {
-  const { isScrolling } = useContext();
   const {
+    isScrolling,
     index,
     count,
     mediaRecord,
@@ -54,7 +56,7 @@ export const Image: FC<TProps> = (props) => {
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.png.src,
   );
-  const position = usePosition(depthConfig);
+  const circleStyle = useCircle(depthConfig);
   const imageDimensions = resolveDimensions(image);
   const dimensions = useImageDimensions({
     container: { width: size, height: size },
@@ -76,7 +78,6 @@ export const Image: FC<TProps> = (props) => {
       handlers.onHoverStart();
     }
   };
-
   return (
     <motion.li
       className={clsx(
@@ -84,22 +85,15 @@ export const Image: FC<TProps> = (props) => {
         isInteractionDisabled && 'pointer-events-none',
       )}
       style={{
-        filter: resolveFilter({ grayscale: 100 }),
-        zIndex: position.z,
-        ...position,
+        filter: isHover ? INIT_FILTER : GRAYED_OUT,
+        zIndex: circleStyle.z,
+        ...circleStyle,
         ...ORIGIN_50,
       }}
       variants={{
-        hover: {
-          filter: INIT,
-        },
-        initial: { opacity: 0, scale: 0 },
-        animate: {
-          opacity: isLoaded ? 1 : 0,
-          scale: isGallery ? 0.6 : 1,
-          ...resolveMotionConfig(depthConfig),
-        },
-        exit: { opacity: 0, scale: 0 },
+        initial: { opacity: 0 },
+        animate: resolveMotionConfig(depthConfig),
+        exit: { opacity: 0 },
       }}
       {...resolveParentAnimateConfig({ isHover })}
       {...(isDesktop ? handlers : {})}

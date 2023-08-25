@@ -14,7 +14,7 @@ export const Provider: FC<TProviderProps> = ({
 }) => {
   const viewport = useViewport();
 
-  const isFlipped = ({
+  const isVertical = ({
     width = 0,
     height = 0,
   }: TViewport) => {
@@ -25,7 +25,9 @@ export const Provider: FC<TProviderProps> = ({
     <Context.Provider
       value={{
         ...viewport,
-        isFlipped: isFlipped(viewport),
+        halfWidth: (viewport.width ?? 0) * 0.5,
+        halfHeight: (viewport.height ?? 0) * 0.5,
+        isVertical: isVertical(viewport),
       }}
     >
       {children}

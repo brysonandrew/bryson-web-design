@@ -9,9 +9,11 @@ import { Build as Fetch } from '@components/fetch-media/Build';
 import styled from '@emotion/styled';
 import { P8 } from '@components/space/P8';
 import { TITLE_HEIGHT } from '@components/space/TitleRoot';
+import { useScroll as useScrollContext } from '@context/scroll';
 import { useContext as useViewportContext } from '@context/viewport/Context';
-import { TDepthConfig } from '@hooks/media/fake-3D/usePosition';
+import { TDepthConfig } from '@hooks/media/fake-3D/useCircle';
 import { ORIGIN_50 } from '@constants/animation';
+import { useSpin } from '@hooks/media/fake-3D/useSpin';
 
 const BUFFER = 400;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
@@ -27,15 +29,16 @@ export const Images: FC<TProps> = ({ style }) => {
     screensLookupSmall,
     buildImages,
   } = useContext();
+  const { isScrolling } = useScrollContext();
+  const spin = useSpin();
+
   const entries = Object.entries(screensLookupSmall.png);
   const {
     width: viewportWidth = 0,
+    halfWidth: halfViewportWidth,
     isResizing,
-    isFlipped,
+    isVertical,
   } = useViewportContext();
-  const isVertical = isFlipped;
-  const halfViewportWidth = viewportWidth * 0.5;
-
   const radius = isVertical
     ? viewportWidth
     : halfViewportWidth; // Math.max(viewportWidth, halfViewportWidth);
@@ -44,7 +47,6 @@ export const Images: FC<TProps> = ({ style }) => {
     : ((radius * Math.PI) / (randomIndicies.length * 0.5)) *
       0.7;
 
-  // const rotate = useTransform(scroll.y, (v) => v * 0.5);
   const listStyle = isVertical
     ? {
         rotateY: 0, // -2,
@@ -93,10 +95,12 @@ export const Images: FC<TProps> = ({ style }) => {
                   imageSize,
                   radius,
                   isVertical,
+                  spin,
                 };
                 if (isResizing) return null;
                 return (
                   <Image
+                    isScrolling={isScrolling}
                     key={mediaRecord.png.key}
                     index={index}
                     randomIndex={randomIndex}

@@ -2,13 +2,18 @@ import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { TMotionDivProps } from '@t/dom';
 import {
   GLOW_MARK_DARK,
   GLOW_MARK_LIGHT,
 } from '@uno/shadows';
 import { COLORS } from '@uno/colors';
+import {
+  resolveColor,
+  resolveGlowColor,
+  resolveHoverColor,
+} from './config';
 const BORDER_SIZE = 2;
 const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
 const X = `calc(0.5rem + ${0}px)`;
@@ -24,7 +29,7 @@ export const Mark: FC<TProps> = ({
   ...props
 }) => {
   const {
-    darkMode: { isDarkMode, darkKey },
+     isDarkMode, darkKey ,
   } = useDarkModeContext();
   return (
     <Root
@@ -40,17 +45,11 @@ export const Mark: FC<TProps> = ({
       }}
       variants={{
         animate: {
-          backgroundColor: isDarkMode
-            ? COLORS['teal']
-            : COLORS['gray-3'],
-          boxShadow: isDarkMode
-            ? GLOW_MARK_DARK
-            : GLOW_MARK_LIGHT,
+          ...resolveColor(isDarkMode),
+          ...resolveGlowColor(isDarkMode),
         },
         hover: {
-          backgroundColor: isDarkMode
-            ? COLORS['baby-blue']
-            : COLORS['black'],
+          ...resolveHoverColor(isDarkMode),
         },
       }}
       {...props}

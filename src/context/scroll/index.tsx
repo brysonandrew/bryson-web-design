@@ -5,7 +5,7 @@ import {
 import { CONTEXT } from './constants';
 import { TContext } from './types';
 
-export const Context = createContext<TContext>(CONTEXT);
+export const Scroll = createContext<TContext>(CONTEXT);
 
-export const useContext = (): TContext =>
-  useReactContext<TContext>(Context);
+export const useScroll = (): TContext =>
+  useReactContext<TContext>(Scroll);

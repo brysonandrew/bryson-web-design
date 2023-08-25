@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren, TClassValueProps } from '@t/index';
 import { TMotionDivProps } from '@t/dom';
-import { useContext } from '@context/cursor/Context';
+import { useContext } from '@context/cursor';
 
 const resolveSize = (size: number) => {
   return {

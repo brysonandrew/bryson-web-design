@@ -4,6 +4,7 @@ import {
   EFFECT_HOVER_TRANSITION,
 } from '.';
 import { TColorRgbKey } from '@t/colors';
+import { MotionValue } from 'framer-motion';
 
 export const resolveDropShadow = (
   spread: number,
@@ -26,6 +27,7 @@ export type TGlowConfigOptions = {
   text?: number;
   drop?: number;
   color?: TColorRgbKey;
+  value?: MotionValue;
 };
 export type TPartialGlowConfigOptions =
   Partial<TGlowConfigOptions>;
@@ -33,20 +35,23 @@ export const resolveGlowProps = ({
   text = 0,
   drop = 0,
   color = 'teal',
+  value,
 }: TGlowConfigOptions) => ({
   style: {
-    opacity: 0,
+    opacity: value ?? 0,
     textShadow: resolveShadow(text, color),
     filter: resolveDropShadow(drop, color),
   },
-  variants: {
-    animate: {
-      opacity: 0,
-      transition: EFFECT_ANIMATE_TRANSITION,
-    },
-    hover: {
-      opacity: 1,
-      transition: EFFECT_HOVER_TRANSITION,
-    },
-  },
+  variants: value
+    ? {}
+    : {
+        animate: {
+          opacity: 0,
+          transition: EFFECT_ANIMATE_TRANSITION,
+        },
+        hover: {
+          opacity: 1,
+          transition: EFFECT_HOVER_TRANSITION,
+        },
+      },
 });

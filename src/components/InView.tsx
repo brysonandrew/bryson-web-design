@@ -42,9 +42,8 @@ export const InView = ({
   return (
     <Root
       ref={ref}
-      style={{ ...style }}
+      style={style}
       className={clsx('in-view relative', classValue)}
-      transition={{ ...SLOW_MOTION_CONFIG, delay: 0 }}
       {...props}
     >
       {children(rest)}

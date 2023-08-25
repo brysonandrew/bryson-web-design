@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { TContext } from "./types";
-import { Context } from "./Context";
+import { Context } from ".";
 
 type TConsumerProps = {
   children(

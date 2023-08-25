@@ -1,11 +1,15 @@
-import { useReducer } from 'react';
+import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
-import { reducer } from '.';
-import { Context } from './Context';
-import { STATE } from './constants';
-import { useScroll } from 'framer-motion';
+import { Scroll } from '.';
+import {
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
+import { useLocation } from 'react-router';
+export const SCROLL = 200;
+export const SCROLL_COOLDOWN = 200;
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -14,18 +18,49 @@ export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
   const { scrollX, scrollY } = useScroll();
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
+  const [isScroll, setScroll] = useState(false);
+  const [isScrolling, setScrolling] = useState(false);
+  const { timeoutRef, endTimeout } = useTimeoutRef();
+  const { pathname } = useLocation();
+  
+  const handleUpdate = (value: number) => {
+    if (!isScrolling) {
+      setScrolling(true);
+    }
+    endTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setScrolling(false);
+    }, SCROLL_COOLDOWN);
+
+    if (!isScroll && value > SCROLL) {
+      setScroll(true);
+    }
+    if (isScroll && value < SCROLL) {
+      setScroll(false);
+    }
+  };
+  useMotionValueEvent(scrollY, 'change', handleUpdate);
+
+  useEffect(() => {
+    const setY = () => {
+      scrollX.set(0);
+      scrollY.set(0);
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      handleUpdate(0);
+    };
+    timeoutRef.current = setTimeout(setY);
+  }, [pathname]);
+
   return (
-    <Context.Provider
+    <Scroll.Provider
       value={{
         scroll: { x: scrollX, y: scrollY },
-        dispatch,
-        ...state,
+        isScroll,
+        isScrolling,
       }}
     >
       {children}
-    </Context.Provider>
+    </Scroll.Provider>
   );
 };
