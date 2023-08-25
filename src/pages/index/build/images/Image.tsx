@@ -87,6 +87,7 @@ export const Image: FC<TProps> = (props) => {
       style={{
         filter: isHover ? INIT_FILTER : GRAYED_OUT,
         zIndex: circleStyle.z,
+        display: isLoaded ? 'block' : 'hidden',
         ...circleStyle,
         ...ORIGIN_50,
       }}
