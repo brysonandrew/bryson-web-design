@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContext } from '@context/domains/contact/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { Cross } from '@components/icons/gallery/Cross';
 import { IconGlow } from '@components/buttons/IconGlow';
 import { HIGHLIGHT } from '@components/filters/presets';
@@ -26,7 +26,7 @@ export const Clear: FC<TProps> = ({
 }) => {
   const { dispatch } = useContext();
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   const handleClear = (_: MouseEvent) => {

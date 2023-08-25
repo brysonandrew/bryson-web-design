@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Context } from './Context';
+import { DarkMode } from '.';
 import { useDarkMode } from '@hooks/style/useDarkMode';
 
 type TProviderProps = {
@@ -12,12 +12,8 @@ export const Provider: FC<TProviderProps> = ({
   const darkMode = useDarkMode();
 
   return (
-    <Context.Provider
-      value={{
-        darkMode,
-      }}
-    >
+    <DarkMode.Provider value={darkMode}>
       {children}
-    </Context.Provider>
+    </DarkMode.Provider>
   );
 };

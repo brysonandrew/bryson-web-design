@@ -3,11 +3,10 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/cursor/switch/config';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { useContext } from '@context/cursor/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
-
+import { useContext } from '@context/cursor';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import styled from '@emotion/styled';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Touch } from '@components/icons/tips/Touch';
 import { P2 } from '@components/space/P2';
 import {
@@ -22,9 +21,7 @@ const Root = styled(motion.ul)``;
 export const Tips = () => {
   const { hoverKey } = useContext();
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const {
-    darkMode: { isDarkMode },
-  } = useDarkModeContext();
+  const { isDarkMode } = useDarkModeContext();
   return (
     <>
       {createPortal(

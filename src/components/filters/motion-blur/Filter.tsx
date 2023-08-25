@@ -5,51 +5,70 @@ import {
   MOTION_BLUR_INTENSITY,
 } from '../../gallery/sections/constants';
 import { FilterShell } from '@components/filters/FilterShell';
+import { TFilterProps } from './config';
+import { resolveCompositeKey } from '@utils/keys';
 
-const id = MOTION_BLUR_ID;
 const intensity = MOTION_BLUR_INTENSITY;
 
-export type TFilterProps = {
-  turbulence: MotionValue;
-  blur: MotionValue;
-};
 export const Filter = ({
+  id = MOTION_BLUR_ID,
   turbulence,
   blur,
+  direction = 'x',
 }: TFilterProps) => {
+  const TURBULANCE_KEY = resolveCompositeKey(
+    id,
+    'TURBULANCE',
+  );
+  const MORPH_KEY = resolveCompositeKey(id, 'MORPH');
+  const DISPLACEMENT_KEY = resolveCompositeKey(
+    id,
+    'DISPLACEMENT',
+  );
+  const OFFSET_KEY = resolveCompositeKey(id, 'OFFSET');
+
   return (
     <FilterShell>
       <filter
         id={id}
-        x='-25%'
+        x='-50%'
         y='-50%'
-        height='150%'
+        height='200%'
         width='200%'
       >
+        <feOffset
+          in='SourceGraphic'
+          y1='-100px'
+          y2='100px'
+          x1='-100px'
+          x2='100px'
+          result={OFFSET_KEY}
+        />
         <motion.feTurbulence
           baseFrequency={turbulence}
           numOctaves='4'
           seed='2'
           type='turbulence'
-          in='SourceGraphic'
-          result={`${id}-turbulence`}
+          in={OFFSET_KEY}
+          result={TURBULANCE_KEY}
         />
         <feMorphology
-          in={`${id}-turbulence`}
+          in={TURBULANCE_KEY}
           operator='dilate'
           radius='8'
-          result={`${id}-morph`}
+          result={MORPH_KEY}
         />
+
         <feDisplacementMap
-          in2={`${id}-morph`}
-          in='SourceGraphic'
+          in2={MORPH_KEY}
+          in={OFFSET_KEY}
           scale={intensity}
           xChannelSelector='R'
           yChannelSelector='G'
-          result='DISPLACEMENT'
+          result={DISPLACEMENT_KEY}
         />
         <motion.feGaussianBlur
-          in='DISPLACEMENT'
+          in={DISPLACEMENT_KEY}
           stdDeviation={blur}
         />
       </filter>

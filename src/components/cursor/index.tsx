@@ -1,8 +1,8 @@
 import { type FC, useRef, memo } from 'react';
 import { NOOP } from '@constants/functions';
 import { useEventListener } from '@hooks/events/useEventListener';
-import { useContext } from '@context/cursor/Context';
-import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useContext } from '@context/cursor';
+import { useScroll as useScrollContext } from '@context/scroll';
 import type { TChildren } from '@t/index';
 import { useViewportPresence } from './useViewportPresence';
 import { Switch } from '@components/cursor/switch';
@@ -21,7 +21,8 @@ export const Cursor: FC<TCursorProps> = memo(
       offsetRef,
       cursor,
       isCursorReady,
-      dispatch,
+      onCursorReady,
+      onHoverKey,
     } = useContext();
     const { scroll } = useScrollContext();
 
@@ -37,7 +38,7 @@ export const Cursor: FC<TCursorProps> = memo(
 
     const onPointerLeave = () => {
       if (isOnscreenRef.current) {
-        dispatch({ type: 'cursor-ready', value: false });
+        onCursorReady(false);
         isOnscreenRef.current = false;
       }
     };
@@ -54,7 +55,7 @@ export const Cursor: FC<TCursorProps> = memo(
       }, 200);
 
       if (isOnscreenRef.current && !isCursorReady) {
-        dispatch({ type: 'cursor-ready', value: true });
+        onCursorReady(true);
       }
     };
 

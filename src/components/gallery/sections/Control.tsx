@@ -3,7 +3,7 @@ import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
-import { useContext } from '@context/scroll/Context';
+import { useScroll } from '@context/scroll';
 import { isDesktop } from 'react-device-detect';
 import { TMediaRecord } from '@t/media';
 import { Image } from './Image';
@@ -29,7 +29,7 @@ export const Control: FC<TProps> = ({
   isHover,
   viewportWidth,
 }) => {
-  const { scroll } = useContext();
+  const { scroll } = useScroll();
 
   const containerDimensions = {
     height: container.clientHeight,

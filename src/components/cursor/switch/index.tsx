@@ -1,4 +1,4 @@
-import { useContext } from '@context/cursor/Context';
+import { useContext } from '@context/cursor';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { IconWithText } from './IconWithText';

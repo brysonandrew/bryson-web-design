@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
 import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
-import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useScroll as useScrollContext } from '@context/scroll';
 import { Nav } from './Nav';
 import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { SCROLL_DECORATION_PRESENCE } from '@constants/animation';
 import { Network } from '@components/network';
 import { P2 } from '@components/space/P2';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 
 const Root = styled.header``;
 
 export const Header: FC = () => {
   const {
-    darkMode: { darkKey },
+     darkKey ,
   } = useDarkModeContext();
   const { isScroll } = useScrollContext();
 

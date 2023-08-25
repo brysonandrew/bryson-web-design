@@ -13,16 +13,12 @@ import { TMotionDivProps } from '@t/dom';
 import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import {
-  GLOW_BABY_BLUE,
-  GLOW_INTERACTIVE_DARK,
-  GLOW_INTERACTIVE_LIGHT,
-} from '@uno/shadows';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { P1 } from '@components/space/P1';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { Metal } from '@components/metal';
+import { resolveGlow } from './config';
 
 const Root = styled(motion.div)``;
 
@@ -40,11 +36,10 @@ export const Content: FC<TProps> = ({
   rightHeader,
   onLayoutAnimationStart,
   onLayoutAnimationComplete,
+  style,
   ...props
 }) => {
-  const {
-    darkMode: { isDarkMode },
-  } = useDarkModeContext();
+  const { isDarkMode } = useDarkModeContext();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -99,11 +94,8 @@ export const Content: FC<TProps> = ({
         handleLayoutAnimationComplete
       }
       style={{
-        boxShadow: isHover
-          ? GLOW_BABY_BLUE
-          : isDarkMode
-          ? GLOW_INTERACTIVE_DARK
-          : GLOW_INTERACTIVE_LIGHT,
+        ...resolveGlow(Boolean(isHover), isDarkMode),
+        ...style,
       }}
       {...resolveParentAnimateConfig({ isHover })}
       {...props}

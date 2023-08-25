@@ -10,11 +10,13 @@ import {
 import { Filter } from './Filter';
 import { MotionValue } from 'framer-motion';
 import { Speed } from './Speed';
-import { Transformer } from './Transformer';
+import { TransformerX } from './TransformerX';
+import { TransformerY } from './TransformerY';
+import { TDirectionProps } from './config';
 
 const isMotionBlur = !(isSafari && isBrowser);
 
-type TProps = {
+type TProps = TDirectionProps & {
   isOn: boolean;
   motionValue: MotionValue;
   children(
@@ -23,6 +25,7 @@ type TProps = {
 };
 export const MotionBlur: FC<TProps> = ({
   isOn,
+  direction = 'x',
   motionValue,
   children,
 }) => {
@@ -32,11 +35,27 @@ export const MotionBlur: FC<TProps> = ({
   return (
     <>
       <Speed motionValue={motionValue}>
-        {(props) => (
-          <Transformer {...props}>
-            {(props) => <Filter {...props} />}
-          </Transformer>
-        )}
+        {(transformerProps) => {
+          const Transformer = {
+            x: TransformerX,
+            y: TransformerY, 
+          }[direction];
+
+          const props = {
+            ...transformerProps,
+            direction,
+          };
+          return (
+            <Transformer {...props}>
+              {(filterProps) => (
+                <Filter
+                  {...filterProps}
+                  direction={direction}
+                />
+              )}
+            </Transformer>
+          );
+        }}
       </Speed>
       {children({
         filter: resolveUrlId(MOTION_BLUR_ID),

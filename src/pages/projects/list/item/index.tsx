@@ -12,7 +12,7 @@ import { Time } from './content/Time';
 import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { useContext as useScrollContext } from '@context/scroll/Context';
+import { useScroll as useScrollContext } from '@context/scroll';
 import styled from '@emotion/styled';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ import {
 } from '@components/cursor/switch/config';
 import { NOOP } from '@constants/functions';
 import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
-import { useContext } from '@context/cursor/Context';
+import { useContext } from '@context/cursor';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.li)``;

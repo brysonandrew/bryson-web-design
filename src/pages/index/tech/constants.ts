@@ -6,8 +6,8 @@ import {
 export const FAKE_3D_PROPS: TFake3DOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
-      startScroll,
-      startScroll + windowHeight * 0.5 + MAX_SCROLL,
+      startScroll + windowHeight * 0.25,
+      startScroll + windowHeight * 0.25 + MAX_SCROLL,
     ],
     output: [-1, 3],
   },

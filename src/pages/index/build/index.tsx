@@ -9,25 +9,25 @@ import { Fade } from './Fade';
 
 const Build: FC = () => {
   return (
-    <>
-      <Section
-        id={INTRO_ID}
-        title={
-          <>
-            <Fade />
-            <div className='relative z-0'>{SECTION_TITLES.build}</div>
-          </>
-        }
-      >
-        <Fake3D {...FAKE_3D_PROPS}>
-          {(props) => (
-            <Provider>
-              <Images {...props} />
-            </Provider>
-          )}
-        </Fake3D>
-      </Section>
-    </>
+    <Section
+      id={INTRO_ID}
+      title={
+        <>
+          <Fade />
+          <div className='relative z-0'>
+            {SECTION_TITLES.build}
+          </div>
+        </>
+      }
+    >
+      <Fake3D {...FAKE_3D_PROPS}>
+        {(props) => (
+          <Provider>
+            <Images {...props} />
+          </Provider>
+        )}
+      </Fake3D>
+    </Section>
   );
 };
 

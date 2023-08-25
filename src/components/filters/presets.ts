@@ -23,3 +23,9 @@ export const INIT = resolveFilter({
   brightness: 100,
   grayscale: 0,
 });
+
+export const GRAYED_OUT = resolveFilter({
+  blur: 0.1,
+  brightness: 80,
+  grayscale: 100,
+});

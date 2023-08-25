@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 import { PADDING_X } from './config';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { resolveDropShadow } from '@utils/effects/glow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 
@@ -14,7 +14,7 @@ type TProps = {
 };
 export const DragIcon: FC<TProps> = ({ classValue }) => {
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   const { isHover, ...handlers } = useHoverKey(

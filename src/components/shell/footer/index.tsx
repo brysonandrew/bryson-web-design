@@ -4,8 +4,8 @@ import {
   PRESENCE_X_LEFT,
   SCROLL_DECORATION_PRESENCE,
 } from '@constants/animation';
-import { useContext as useScrollContext } from '@context/scroll/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useScroll as useScrollContext } from '@context/scroll';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { useContext as useViewportContext } from '@context/viewport/Context';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { Links } from './links';
@@ -15,7 +15,7 @@ const Root = styled.footer``;
 
 export const Footer = () => {
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
   const { isScroll } = useScrollContext();
   const { width } = useViewportContext();

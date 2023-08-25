@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
 import { Box } from '@components/filter-animate/Box';
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { Aura } from '@components/filters/aura/Aura';
@@ -24,7 +24,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   ...props
 }) => {
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   const { isHover, handlers } = useHoverKey(

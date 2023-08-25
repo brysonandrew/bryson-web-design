@@ -31,6 +31,9 @@ export const GLOW_INTERACTIVE_LIGHT_LG = `${resolveShadow(
   4,
 )}`;
 
+
+export const GLOW_BLACK = resolveShadow('black', 2);
+
 export const GLOW_BABY_BLUE = resolveShadow('baby-blue', 4);
 
 export const GLOW_CURSOR_LIGHT = resolveShadow('gray', 4);

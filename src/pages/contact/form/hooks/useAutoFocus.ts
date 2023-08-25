@@ -1,4 +1,4 @@
-import { useContext as useDarkModeContext } from '@context/dark-mode/Context';
+import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { useEffect } from 'react';
 import { useContext } from '@context/domains/contact/Context';
 
@@ -8,7 +8,7 @@ export const useAutoFocus = (isDisabled: boolean) => {
     dispatch,
   } = useContext();
   const {
-    darkMode: { isDarkMode },
+     isDarkMode ,
   } = useDarkModeContext();
 
   useEffect(() => {
