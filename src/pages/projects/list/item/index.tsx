@@ -125,7 +125,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   };
   return (
     <Root
-      id={slug}
+      id={slug} 
       className='cursor-pointer'
       style={{ zIndex: index }}
       {...eventHandlers}

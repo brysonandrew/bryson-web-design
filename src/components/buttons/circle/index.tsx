@@ -35,12 +35,13 @@ export const Circle: FC<TProps> = ({
         'center w-10 h-10 rounded-full',
         [
           isGallery
-            ? 'glow-baby-blue'
+            ? 'dark:glow-baby-blue glow-interactive-lg'
             : 'glow-interactive-lg',
         ],
         classValue,
       )}
       {...resolveParentAnimateConfig({ isHover })}
+
       {...props}
     >
       <MetalGlow
