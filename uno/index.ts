@@ -1,4 +1,7 @@
-import { defineConfig } from 'unocss';
+import {
+  SourceCodeTransformer,
+  defineConfig,
+} from 'unocss';
 import { THEME } from './theme';
 import { RULES } from './rules';
 import { PRE_FLIGHT } from './preflights';
@@ -29,7 +32,11 @@ const config = defineConfig<TTheme>({
   ],
   presets: PRESETS,
   preflights: [PRE_FLIGHT],
-  transformers: [transformerVariantGroup()],
+  transformers: [
+    transformerVariantGroup({
+      separators: ['-', ':'],
+    }) as any,
+  ],
 });
 
 export default config;

@@ -7,6 +7,7 @@ import { TMotionImgProps } from '@t/dom';
 
 const Root = styled.picture``;
 const Source = styled.source``;
+// type TProps = HTMLMotionProps<'img'> & TImageDimensionsConfig & TClassValueProps & TMediaRecord;
 
 type TProps = TMotionImgProps & {
   imageRef?: ForwardedRef<HTMLImageElement>;

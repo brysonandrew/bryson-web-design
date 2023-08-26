@@ -51,6 +51,6 @@ export const SHORTCUTS: StaticShortcutMap = {
   'cover-fixed': 'fixed inset-0',
   cover: 'absolute inset-0',
   'dragger-screen': 'absolute h-screen row-end',
-  'dragger-foot': 'relative h-auto row glow-baby-blue',
+  'dragger-foot': 'relative h-auto row dark:glow-baby-blue glow-interactive-light-lg',
 
 } as const;

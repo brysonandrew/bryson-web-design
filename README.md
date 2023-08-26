@@ -3,26 +3,15 @@ work, experiments
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/332644c8-26a8-4f71-ae8c-8c8a9c3dce9c/deploy-status)](https://app.netlify.com/sites/cerulean-choux-149d28/deploys)
 
+## Image conversion
 
-convert .pcm to .wav 
+# 480 sizes
+for file in screens/**/*.png ; do ffmpeg -i "$file" -vf scale=480:-1 "${file%.png}-480w.png"; done
 
-First attempt
+# 800 sizes
+for file in screens/**/*.png ; do ffmpeg -i "$file" -vf scale=800:-1 "${file%.png}-800w.png"; done
 
-`ffmpeg -f f32le -ar 44.1k -ac 2 -i test.pcm file.wav`
-
--f s16le … signed 16-bit little endian samples
--ar 44.1k … sample rate 44.1kHz
--ac 2 … 2 channels (stereo)
--i file.pcm … input file
-file.wav … output file
-//-filter:a "setpts=0.5*PTS" 
-
-Second attempt
-
-`ffmpeg -loglevel panic -f f32le -y -i test.pcm output.wav`
-
-Webp convert
-
+# webp sizes
 for file in screens/**/*.png ; do cwebp "$file" -o "${file%.png}.webp"; done
 
 Features

@@ -98,6 +98,7 @@ export const Images: FC<TProps> = ({ style }) => {
                   spin,
                 };
                 if (isResizing) return null;
+
                 return (
                   <Image
                     isScrolling={isScrolling}
