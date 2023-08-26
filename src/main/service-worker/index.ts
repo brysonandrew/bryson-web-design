@@ -1,15 +1,25 @@
 export type {};
 declare const self: ServiceWorkerGlobalScope;
 
-const VERSION_NUMBER = '0.1.6';
+const VERSION_NUMBER = '0.1.7';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 
-const resolveCache = async () =>
-  await caches.open(CACHE_NAME);
+const resolveCache = async (): Promise<Cache> =>
+  caches.open(CACHE_NAME);
+
 const matchRequest = async (
   cache: Cache,
   request: Request,
-) => await cache.match(request);
+): Promise<Response | undefined> => cache.match(request);
+
+const putRequest = async (
+  cache: Cache,
+  request: Request,
+  response: Response,
+): Promise<void | null> =>
+  request.method === 'GET'
+    ? cache.put(request, response)
+    : null;
 
 self.addEventListener('install', async (event) => {
   const precache = async () => {
@@ -64,7 +74,7 @@ self.addEventListener('fetch', (event) => {
     let response = await fetch(request);
     try {
       const copy = response.clone();
-      cache.put(request, copy);
+      putRequest(cache, request, copy);
     } catch (error) {
       const cachedResponse = await matchRequest(
         cache,
@@ -88,7 +98,8 @@ self.addEventListener('fetch', (event) => {
 
     const updateCache = async () => {
       const networkResponse = await networkResponsePromise;
-      cache.put(request, networkResponse.clone());
+      const copy = networkResponse.clone();
+      putRequest(cache, request, copy);
     };
     event.waitUntil(updateCache());
 
@@ -106,7 +117,6 @@ self.addEventListener('fetch', (event) => {
 });
 
 // self.addEventListener('message', async (event) => {
-
 //   const logMessage = () => {
 //     console.log('message', event);
 //   };
