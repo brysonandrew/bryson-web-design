@@ -1,19 +1,26 @@
-const VERSION_NUMBER = '0.1.6';
+const VERSION_NUMBER = '0.1.8';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
-const resolveCache = async () => await caches.open(CACHE_NAME);
-const matchRequest = async (cache, request) => await cache.match(request);
+const resolveCache = async () => caches.open(CACHE_NAME);
+const matchRequest = async (cache, request) => cache.match(request);
+const putRequest = async (cache, request, response) => request.method === 'GET'
+    ? cache.put(request, response)
+    : null;
 self.addEventListener('install', async (event) => {
-    // console.log('install', event);
     const precache = async () => {
         const cache = await resolveCache();
-        const ASSET_PATHS = [
-            '/light/favicon.ico',
-            '/favicon.ico',
-        ];
+        const ASSET_PATHS = ['/favicon.ico'];
+        // console.time('install');
+        // console.log(`processing ... ${ASSET_PATHS.join(',')}`);
         await cache.addAll(ASSET_PATHS);
+        //console.timeEnd('install');
     };
     const installHandlers = async () => {
-        await precache();
+        try {
+            await precache();
+        }
+        catch (error) {
+            console.error(error);
+        }
     };
     event.waitUntil(installHandlers());
 });
@@ -30,8 +37,13 @@ self.addEventListener('activate', (event) => {
         await Promise.all(deleteHandlers);
     };
     const activateHandlers = async () => {
-        await deleteExpiredCaches();
-        self.clients.claim();
+        try {
+            await deleteExpiredCaches();
+            self.clients.claim();
+        }
+        catch (error) {
+            console.error(error);
+        }
     };
     event.waitUntil(activateHandlers());
 });
@@ -45,7 +57,7 @@ self.addEventListener('fetch', (event) => {
         let response = await fetch(request);
         try {
             const copy = response.clone();
-            cache.put(request, copy);
+            putRequest(cache, request, copy);
         }
         catch (error) {
             const cachedResponse = await matchRequest(cache, request);
@@ -63,7 +75,8 @@ self.addEventListener('fetch', (event) => {
         const networkResponsePromise = fetch(request);
         const updateCache = async () => {
             const networkResponse = await networkResponsePromise;
-            cache.put(request, networkResponse.clone());
+            const copy = networkResponse.clone();
+            putRequest(cache, request, copy);
         };
         event.waitUntil(updateCache());
         return cachedResponse || networkResponsePromise;
@@ -74,7 +87,12 @@ self.addEventListener('fetch', (event) => {
         }
         return staleWhileRevalidate();
     };
-    event.respondWith(messageHandlers());
+    try {
+        event.respondWith(messageHandlers());
+    }
+    catch (error) {
+        console.error(error);
+    }
 });
 // self.addEventListener('message', async (event) => {
 //   const logMessage = () => {

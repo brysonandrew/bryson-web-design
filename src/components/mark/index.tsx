@@ -5,8 +5,8 @@ import { FC } from 'react';
 import { useContext as useDarkModeContext } from '@context/dark-mode';
 import { TMotionDivProps } from '@t/dom';
 import {
-  GLOW_MARK_DARK,
-  GLOW_MARK_LIGHT,
+  GLOW_TEAL_BRIGHT_12,
+  GLOW_BLACK_4,
 } from '@uno/shadows';
 import { COLORS } from '@uno/colors';
 import {

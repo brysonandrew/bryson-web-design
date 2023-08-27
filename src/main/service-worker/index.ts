@@ -1,7 +1,7 @@
 export type {};
 declare const self: ServiceWorkerGlobalScope;
 
-const VERSION_NUMBER = '0.1.7';
+const VERSION_NUMBER = '0.1.8';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 
 const resolveCache = async (): Promise<Cache> =>
@@ -24,15 +24,19 @@ const putRequest = async (
 self.addEventListener('install', async (event) => {
   const precache = async () => {
     const cache = await resolveCache();
-    const ASSET_PATHS = [
-      '/light/favicon.ico',
-      '/favicon.ico',
-    ];
+    const ASSET_PATHS = ['/favicon.ico'];
+    // console.time('install');
+    // console.log(`processing ... ${ASSET_PATHS.join(',')}`);
     await cache.addAll(ASSET_PATHS);
+    //console.timeEnd('install');
   };
 
   const installHandlers = async () => {
-    await precache();
+    try {
+      await precache();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   event.waitUntil(installHandlers());
@@ -55,8 +59,12 @@ self.addEventListener('activate', (event) => {
     await Promise.all(deleteHandlers);
   };
   const activateHandlers = async () => {
-    await deleteExpiredCaches();
-    self.clients.claim();
+    try {
+      await deleteExpiredCaches();
+      self.clients.claim();
+    } catch (error) {
+      console.error(error);
+    }
   };
   event.waitUntil(activateHandlers());
 });
@@ -113,7 +121,11 @@ self.addEventListener('fetch', (event) => {
     return staleWhileRevalidate();
   };
 
-  event.respondWith(messageHandlers());
+  try {
+    event.respondWith(messageHandlers());
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 // self.addEventListener('message', async (event) => {
