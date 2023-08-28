@@ -9,7 +9,6 @@ import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps } from './types';
-import { TImageResolverEntries } from '@t/screens';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
 import { useMotionX } from '@hooks/gallery/useMotionX';
 import { resolveGalleryWidth } from '@hooks/gallery/resolveGalleryWidth';

@@ -6,7 +6,7 @@ import {
 } from '@constants/animation';
 import { useScroll as useScrollContext } from '@context/scroll';
 import { useDarkMode } from '@context/dark-mode';
-import { useContext as useViewportContext } from '@context/viewport/Context';
+import { useViewport as useViewportContext } from '@context/viewport';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import { Links } from './links';
 import { Settings } from './settings';

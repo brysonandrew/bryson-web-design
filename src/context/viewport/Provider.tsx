@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Context } from './Context';
+import { Viewport } from '.';
 import {
   TViewport,
   useViewport,
@@ -22,7 +22,7 @@ export const Provider: FC<TProviderProps> = ({
   };
 
   return (
-    <Context.Provider
+    <Viewport.Provider
       value={{
         ...viewport,
         halfWidth: (viewport.width ?? 0) * 0.5,
@@ -31,6 +31,6 @@ export const Provider: FC<TProviderProps> = ({
       }}
     >
       {children}
-    </Context.Provider>
+    </Viewport.Provider>
   );
 };
