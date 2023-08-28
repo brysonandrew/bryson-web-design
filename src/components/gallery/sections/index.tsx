@@ -5,14 +5,14 @@ import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { useContext } from '@context/viewport/Context';
+import { useViewport } from '@context/viewport';
 import { TMediaRecord } from '@ops/screens/types/media';
 
 export const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
-  const { width: viewportWidth = 0 } = useContext();
+  const { width: viewportWidth = 0 } = useViewport();
   const { count, width, mediaRecords } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);

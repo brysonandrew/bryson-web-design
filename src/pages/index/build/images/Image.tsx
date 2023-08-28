@@ -48,7 +48,6 @@ export const Image: FC<TProps> = (props) => {
   const size = depthConfig.imageSize;
 
   const circleStyle = useCircle(depthConfig);
-  // const imageDimensions = resolveDimensions(image);
   const dimensions = useImageDimensions({
     container: { width: size, height: size },
     image: mediaRecord,
@@ -78,7 +77,6 @@ export const Image: FC<TProps> = (props) => {
       style={{
         filter: isHover ? INIT_FILTER : GRAYED_OUT,
         zIndex: circleStyle.z,
-        // display: isLoaded ? 'block' : 'hidden',
         ...circleStyle,
         ...ORIGIN_50,
       }}
@@ -97,9 +95,6 @@ export const Image: FC<TProps> = (props) => {
         )}
         onTap={handleTap}
       >
-        {/* {!isLoaded && (
-          <Placeholder key={resolveKey(index)} />
-        )} */}
         <Picture
           mediaRecord={mediaRecord}
           {...pictureProps}

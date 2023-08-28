@@ -1,12 +1,12 @@
 import { type FC } from 'react';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { Main } from './Main';
-import { useContext } from '@context/viewport/Context';
+import { useViewport } from '@context/viewport';
 
 export const Gallery: FC = () => {
   const currProject = useCurrProject();
   const isSelectedProject = currProject !== null;
-  const { isResizing, width } = useContext();
+  const { isResizing, width } = useViewport();
   if (
     isSelectedProject &&
     !isResizing &&

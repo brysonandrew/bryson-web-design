@@ -17,7 +17,7 @@ export const PAGE_TITLES = [
   CONTACT_TITLE,
 ] as const;
 export type TPageTitle = (typeof PAGE_TITLES)[number];
-export const INTRO_ID = CONTACT_TITLE.toLowerCase();
-export const TECH_ID = CONTACT_TITLE.toLowerCase();
+export const INTRO_ID = 'intro';
+export const TECH_ID = 'tech';
 export const PROJECTS_ID = PROJECTS_TITLE.toLowerCase();
 export const CONTACT_ID = CONTACT_TITLE.toLowerCase();

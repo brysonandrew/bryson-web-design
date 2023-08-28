@@ -1,6 +1,6 @@
 import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
-import { useContext as useViewportContext } from '@context/viewport/Context';
+import { useViewport as useViewportContext } from '@context/viewport';
 
 export const Fade = () => {
   const { isVertical } = useViewportContext();
