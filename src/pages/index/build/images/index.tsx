@@ -36,7 +36,9 @@ export const Images: FC<TProps> = ({ style }) => {
     : halfViewportWidth;
   const imageSize = isVertical
     ? halfViewportWidth
-    : ((radius * Math.PI) / (records.length * 0.5)) * 0.7;
+    : ((radius * Math.PI) /
+        ((records ?? []).length * 0.5)) *
+      0.7;
 
   const listStyle = isVertical
     ? {
@@ -75,7 +77,7 @@ export const Images: FC<TProps> = ({ style }) => {
               ...listStyle,
             }}
           >
-            {records.map(
+            {records?.map(
               (record, index, { length: count }) => {
                 const depthConfig: TDepthConfig = {
                   index,
