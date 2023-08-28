@@ -5,7 +5,7 @@ import { MetalDarkest } from './MetalDarkest';
 import { MetalDark } from './MetalDark';
 import { TPartialGlowConfigOptions } from '@utils/effects/glow';
 import { TClassValueProps } from '@t/index';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useDarkMode } from '@context/dark-mode';
 
 type TProps = {
   isDarkest?: boolean;
@@ -21,7 +21,7 @@ export const MetalGlow: FC<TProps> = ({
   const Root = isDarkest ? MetalDarkest : MetalDark;
   const {
      isDarkMode ,
-  } = useDarkModeContext();
+  } = useDarkMode();
 
   return (
     <Glow

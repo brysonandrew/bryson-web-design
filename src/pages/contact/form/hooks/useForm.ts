@@ -7,7 +7,7 @@ import {
   TInputHandlers,
   TStatus,
 } from '../../config';
-import { useContext } from '@context/domains/contact/Context';
+import { useContext } from '@context/domains/contact';
 
 type TConfig = {
   element: HTMLFormElement | null;

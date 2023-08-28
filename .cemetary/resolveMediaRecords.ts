@@ -1,6 +1,6 @@
-import { TImageRecord, TScreensLookup } from '@t/screens';
+import { TMediaRecord } from '../ops/screens/types/media';
 import { resolveMediaRecordByIndex } from '../src/hooks/media/resolveMediaRecordByIndex';
-import { TMediaRecord, TMediaRecords } from '@t/media';
+import { TScreensLookup } from '../src/types/screens';
 
 export type TResolveMediaConfig = {
   screensLookup: TScreensLookup;

@@ -3,8 +3,7 @@ import {
   TExtKey,
   TFilePathKey,
   TMediaRecord,
-  TModuleRecord,
-} from './media';
+} from '../../ops/screens/types/media';
 
 export type TModule = {
   default: string;
@@ -30,7 +29,7 @@ export type TImageRecordEntries = TImageRecordEntry[];
 
 export type TImageRecord = Record<
   TFilePathKey,
-  TMediaRecord
+  TMediaRecord[]
 >;
 export type TProjectImageRecord = Partial<
   Record<TProjectKey, TImageRecord>
@@ -41,11 +40,11 @@ export type TPartialProjectImageRecord = {
 
 export type TImageResolverRecord = Record<
   TFilePathKey,
-  TModuleRecord
+  any
 >;
 export type TImageResolverEntry = [
   TFilePathKey,
-  TModuleRecord,
+  any,
 ];
 export type TImageResolverEntries = TImageResolverEntry[];
 

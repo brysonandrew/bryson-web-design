@@ -7,5 +7,5 @@ import { TContext } from './types';
 
 export const DarkMode = createContext<TContext>(CONTEXT);
 
-export const useContext = (): TContext =>
+export const useDarkMode = (): TContext =>
   useReactContext<TContext>(DarkMode);

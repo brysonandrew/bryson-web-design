@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Context } from './Context';
+import { Sound } from '.';
 import { CONTEXT } from './constants';
 
 type TProviderProps = {
@@ -12,7 +12,7 @@ export const Provider: FC<TProviderProps> = ({
   const [isSound, setSound] = useState(CONTEXT.isSound);
 
   return (
-    <Context.Provider
+    <Sound.Provider
       value={{
         context: CONTEXT.context,
         isSound,
@@ -20,6 +20,6 @@ export const Provider: FC<TProviderProps> = ({
       }}
     >
       {children}
-    </Context.Provider>
+    </Sound.Provider>
   );
 };

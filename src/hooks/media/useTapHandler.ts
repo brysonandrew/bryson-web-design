@@ -1,7 +1,7 @@
 import { PROJECTS_ID } from '@constants/copy';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { TMediaRecord } from '@t/media';
+import { TMediaRecord } from '@ops/screens/types/media';
 import { useNavigate } from 'react-router';
 
 type TConfig = {
@@ -11,8 +11,8 @@ export const useTapHandler = ({ mediaRecord }: TConfig) => {
   const navigate = useNavigate();
 
   const to = useTo({
-    next: mediaRecord.png.name,
-    project: mediaRecord.png.project,
+    next: mediaRecord.name,
+    project: mediaRecord.dir,
   });
 
   const handleGallery = () => {

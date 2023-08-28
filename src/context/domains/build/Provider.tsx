@@ -1,26 +1,10 @@
-import { useMemo, useReducer } from 'react';
+import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
-import { reducer } from '.';
-import { Context } from './Context';
-import { STATE } from './constants';
-import { PNG_EXT, WEBP_EXT } from '@constants/media';
-import { resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
-import { TScreensRecord } from '@t/screens';
-
-const screensRecordSmallPng: TScreensRecord =
-  import.meta.glob(
-    '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.png',
-  );
-const screensSmallCount = Object.keys(
-  screensRecordSmallPng,
-).length;
-
-const screensRecordSmallWebp: TScreensRecord =
-  import.meta.glob(
-    '/screens/**/+([0-9]|!(*[a-z]*)[0-9])-sm.webp',
-  );
+import { resolveRandomIndicies as _resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
+import { Build } from '.';
+import { TMediaRecords } from '@ops/screens/types/media';
+import allRecords from './lookup-320w.json';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -28,40 +12,45 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
+  const [records, setRecords] = useState<TMediaRecords>([]);
 
-  const randomIndicies = useMemo(
-    () => resolveRandomIndicies(screensSmallCount),
-    [screensSmallCount],
-  );
+  useEffect(() => {
+    const initScreens = async () => {
+      if ('serviceWorker' in navigator) {
+        const sw: ServiceWorkerContainer =
+          navigator.serviceWorker;
+        sw.ready.then((registration) => {
+          if (!registration.active) return null;
+          registration.active.postMessage({
+            type: 'init-screens',
+            records: allRecords as TMediaRecords,
+            from: 'PROVIDER',
+          });
+        });
+        sw.onmessage = (event) => {
+          if (event.data.type === 'init-screens') {
+            setRecords(event.data.records);
+          }
+        };
+        sw.onmessageerror = (event) => {
+          console.error(event);
+        };
+      } else {
+        setRecords(
+          (allRecords as TMediaRecords).slice(0, 8),
+        );
+      }
+    };
 
-  // useEffect(() => {
-  //   const sw: ServiceWorkerContainer =
-  //     navigator.serviceWorker;
-  //   sw.onmessage = (event) => {
-  //     // if (event.data.type === 'random-indicies') {
-  //     //   console.log(event.data);
-  //     // }
-  //   };
-  //   sw.onmessageerror = (event) => {
-  //     console.log('MESSAGE ERROR', event);
-  //   };
-  // }, []);
+    initScreens();
+  }, []);
   return (
-    <Context.Provider
+    <Build.Provider
       value={{
-        screensLookupSmall: {
-          [PNG_EXT]: screensRecordSmallPng,
-          [WEBP_EXT]: screensRecordSmallWebp,
-        },
-        randomIndicies,
-        dispatch,
-        ...state,
+        records,
       }}
     >
       {children}
-    </Context.Provider>
+    </Build.Provider>
   );
 };

@@ -1,6 +1,6 @@
 import { DragIcon } from './DragIcon';
 import { MetalDark } from '@components/metal/MetalDark';
-import { useDrag } from '../../../../hooks/gallery/useDrag';
+import { useDrag } from '@hooks/gallery/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -16,12 +16,12 @@ const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { count, motionX, width, items } = props;
+  const { count, motionX, width, mediaRecords } = props;
   useKeys({ readyCount: count });
   const itemWidth = width / count;
   const dragHandlers = useDrag({
     width,
-    items,
+    mediaRecords,
     motionX,
   });
 
@@ -55,7 +55,7 @@ export const Core: FC<TProps> = (props) => {
             <DragIcon classValue='right-0' />
           </>
         )}
-        <Items items={items} itemWidth={itemWidth} />
+        <Items mediaRecords={mediaRecords} itemWidth={itemWidth} />
       </Dragger>
     </Root>
   );

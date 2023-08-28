@@ -1,4 +1,4 @@
-import { useContext } from '@context/cursor';
+import { useCursor } from '@context/cursor';
 import { HOVER_KEY_DELIMITER } from '@utils/keys';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { IconWithText } from './IconWithText';
@@ -15,7 +15,7 @@ import {
 } from './config';
 
 export const Switch = () => {
-  const { hoverKey } = useContext();
+  const { hoverKey } = useCursor();
 
   const [cursorKey, key1, key2] = hoverKey
     ?.split(HOVER_KEY_DELIMITER)

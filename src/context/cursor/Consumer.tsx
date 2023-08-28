@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { TContext } from "./types";
-import { Context } from ".";
+import { Cursor } from ".";
 
 type TConsumerProps = {
   children(
@@ -10,7 +10,7 @@ type TConsumerProps = {
 export const Consumer: FC<
   TConsumerProps
 > = ({ children }) => (
-  <Context.Consumer>
+  <Cursor.Consumer>
     {children}
-  </Context.Consumer>
+  </Cursor.Consumer>
 );

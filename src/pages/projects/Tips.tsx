@@ -3,8 +3,8 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/cursor/switch/config';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { useContext } from '@context/cursor';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useCursor } from '@context/cursor';
+import { useDarkMode } from '@context/dark-mode';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Touch } from '@components/icons/tips/Touch';
@@ -16,12 +16,12 @@ import {
 } from '@components/mark/config';
 import { createPortal } from 'react-dom';
 
-const Root = styled(motion.ul)``;
+const Root = styled.ul``;
 
 export const Tips = () => {
-  const { hoverKey } = useContext();
+  const { hoverKey } = useCursor();
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const { isDarkMode } = useDarkModeContext();
+  const { isDarkMode } = useDarkMode();
   return (
     <>
       {createPortal(

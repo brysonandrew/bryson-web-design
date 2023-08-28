@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { TMotionAnchorProps } from '@t/dom';
 import { TSlugProps } from '@pages/projects/config';
 import { resolveCompositeHoverKey } from '@utils/keys';
-import { useContext } from '@context/cursor';
+import { useCursor } from '@context/cursor';
 import { PROJECT_CURSOR_KEY } from '@components/cursor/switch/config';
 
 type TProps = Required<TTag> &
@@ -19,7 +19,7 @@ export const TagLink: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { hoverKey, onHoverKey } = useContext();
+  const { hoverKey, onHoverKey } = useCursor();
 
   const hoverKeyIn = resolveCompositeHoverKey(
     'open-in-new',

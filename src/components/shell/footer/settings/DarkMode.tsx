@@ -14,13 +14,13 @@ import { Button } from '@components/buttons/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { createElement } from 'react';
 import { useScroll as useScrollContext } from '@context/scroll';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useDarkMode } from '@context/dark-mode';
 
 import clsx from 'clsx';
 
 export const DarkMode = () => {
   const { isScroll } = useScrollContext();
-  const darkMode = useDarkModeContext();
+  const darkMode = useDarkMode();
 
   const isDarkMode = darkMode.isDarkMode;
   const key = isDarkMode ? 'light' : 'dark';

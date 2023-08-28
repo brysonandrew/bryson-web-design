@@ -13,7 +13,7 @@ import { TMotionDivProps } from '@t/dom';
 import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useDarkMode } from '@context/dark-mode';
 import { P1 } from '@components/space/P1';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
@@ -39,7 +39,7 @@ export const Content: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { isDarkMode } = useDarkModeContext();
+  const { isDarkMode } = useDarkMode();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);

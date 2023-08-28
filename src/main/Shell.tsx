@@ -12,11 +12,11 @@ import {
   resolveDynamicSlowMotionConfig,
 } from '@constants/animation';
 import { Processor } from '@components/icons/background/Processor';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useDarkMode } from '@context/dark-mode';
 import { ClipPaths } from '@components/ClipPaths';
 import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
-import { useContext as useAppContext } from '@context/app/Context';
+import { useApp } from '@context/app';
 import { Providers } from '@context/Providers';
 
 const Root = styled.div``;
@@ -25,8 +25,8 @@ type TProps = {
   children: TChildren;
 };
 export const Shell: FC<TProps> = ({ children }) => {
-  const { isInit, onInit } = useAppContext();
-  const { darkKey } = useDarkModeContext();
+  const { isInit, onInit } = useApp();
+  const { darkKey } = useDarkMode();
   const handleAnimationComplete = onInit;
   const resolveTransition = (delay: number) =>
     isInit

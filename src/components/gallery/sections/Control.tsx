@@ -5,7 +5,7 @@ import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
 import { useScroll } from '@context/scroll';
 import { isDesktop } from 'react-device-detect';
-import { TMediaRecord } from '@t/media';
+import { TMediaRecord } from '@ops/screens/types/media';
 import { Image } from './Image';
 
 export const Root = styled(motion.div)``;
@@ -54,7 +54,7 @@ export const Control: FC<TProps> = ({
           <>
             {isHover && image && isDesktop && (
               <Zoom
-                key={mediaRecord.png.key}
+                key={mediaRecord.src}
                 index={index}
                 count={count}
                 container={container}

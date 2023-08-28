@@ -1,11 +1,10 @@
 import { INIT_CONTACT_STATE } from '@pages/contact/config';
-import type { TState, TAction, TContext } from './types';
-
-export const STATE: TState = {
-  contact: INIT_CONTACT_STATE,
-};
+import type { TContext } from './types';
+import { NOOP } from '@constants/functions';
 
 export const CONTEXT: TContext = {
-  ...STATE,
-  dispatch: (_: TAction) => null,
+  ...INIT_CONTACT_STATE,
+  onFocus: NOOP,
+  onForm: NOOP,
+  onStatus: NOOP,
 };

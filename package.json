@@ -13,7 +13,12 @@
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "delete-screens": "esrun ./ops/delete-screens.ts"
+    "screens-copy": "esrun ./ops/screens/copy.ts",
+    "screens-folders": "esrun ./ops/screens/folders.ts",
+    "screens-delete": "esrun ./ops/screens/delete.ts",
+    "screens-process": "esrun ./ops/screens/process.ts",
+    "screens-all": "yarn screens-copy && yarn screens-folders && yarn screens-delete && yarn screens-process",
+    "screens": "yarn screens-delete && yarn screens-process"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",

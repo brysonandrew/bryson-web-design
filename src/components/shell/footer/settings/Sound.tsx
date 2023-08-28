@@ -1,7 +1,7 @@
 import { Circle } from '@components/buttons/circle';
 import { VolumeOff } from '@components/icons/sound/VolumeOff';
 import { useScroll as useScrollContext } from '@context/scroll';
-import { useContext as useSoundContext } from '@context/sound/Context';
+import { useSound as useSoundContext } from '@context/sound';
 import {
   ICON_CLASS_VALUE_PROPS,
   SHARED_ANIMATION_PROPS,

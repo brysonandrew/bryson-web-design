@@ -1,4 +1,4 @@
-import { useContext } from '@context/cursor';
+import { useCursor } from '@context/cursor';
 import {
   ValueTarget,
   ValueAnimationTransition,
@@ -34,7 +34,7 @@ type THandlerConfig = {
   nextSignY?: TSign;
 };
 export const useCursorAnimate = () => {
-  const { offsetRef, hoverKey, cursorLabel } = useContext();
+  const { offsetRef, hoverKey, cursorLabel } = useCursor();
 
   const animateRef = useRef<
     Partial<TAnimationControlsPoint>

@@ -9,7 +9,6 @@ import {
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
-import { useMediaFromKey } from '@hooks/media/useMediaFromKey';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { useScroll as useScrollContext } from '@context/scroll';
@@ -24,7 +23,7 @@ import {
 } from '@components/cursor/switch/config';
 import { NOOP } from '@constants/functions';
 import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
-import { useContext } from '@context/cursor';
+import { useCursor } from '@context/cursor';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.li)``;
@@ -34,7 +33,7 @@ type TProps = TSlugProps & {
 };
 export const Item: FC<TProps> = ({ slug, index }) => {
   const isEnteredOnScrollRef = useRef(false);
-  const { hoverKey } = useContext();
+  const { hoverKey } = useCursor();
   const { isScrolling } = useScrollContext();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject()
@@ -53,9 +52,9 @@ export const Item: FC<TProps> = ({ slug, index }) => {
 
   const item = PROJECT_ITEMS_RECORD[slug];
   const navigate = useNavigate();
-  const handleLoadMedia = useMediaFromKey();
+  // const handleLoadMedia = useMediaFromKey();
   const handleHoverStart = () => {
-    handleLoadMedia(slug);
+    // handleLoadMedia(slug);
     if (!handlers.onHoverStart) return;
     handlers.onHoverStart();
   };

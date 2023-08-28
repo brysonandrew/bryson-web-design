@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion';
-import { useContext } from '@context/domains/build/Context';
+import { useBuild } from '@context/domains/build';
 import { type FC } from 'react';
 import { Image } from './Image';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
-import { resolveModuleRecord } from '@hooks/media/resolveModuleRecord';
-import { TModuleRecord } from '@t/media';
-import { Build as Fetch } from '@components/fetch-media/Build';
 import styled from '@emotion/styled';
 import { P8 } from '@components/space/P8';
 import { TITLE_HEIGHT } from '@components/space/TitleRoot';
@@ -24,15 +21,10 @@ const List = styled(motion.ul)``;
 type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
-  const {
-    randomIndicies,
-    screensLookupSmall,
-    buildImages,
-  } = useContext();
+  const { records } = useBuild();
   const { isScrolling } = useScrollContext();
   const spin = useSpin();
 
-  const entries = Object.entries(screensLookupSmall.png);
   const {
     width: viewportWidth = 0,
     halfWidth: halfViewportWidth,
@@ -44,8 +36,7 @@ export const Images: FC<TProps> = ({ style }) => {
     : halfViewportWidth; // Math.max(viewportWidth, halfViewportWidth);
   const imageSize = isVertical
     ? halfViewportWidth
-    : ((radius * Math.PI) / (randomIndicies.length * 0.5)) *
-      0.7;
+    : ((radius * Math.PI) / (records.length * 0.5)) * 0.7;
 
   const listStyle = isVertical
     ? {
@@ -83,51 +74,49 @@ export const Images: FC<TProps> = ({ style }) => {
             ...listStyle,
           }}
         >
-          {randomIndicies.map(
-            (randomIndex, index, { length: count }) => {
-              const mediaRecord = buildImages[randomIndex];
+          {records.map(
+            (record, index, { length: count }) => {
+              // if (mediaRecord) {
+              const depthConfig: TDepthConfig = {
+                index,
+                count,
+                imageSize,
+                radius,
+                isVertical,
+                spin,
+              };
+              if (isResizing) return null;
 
-              if (mediaRecord) {
-                const depthConfig: TDepthConfig = {
-                  index,
-                  name: mediaRecord.png.name,
-                  count,
-                  imageSize,
-                  radius,
-                  isVertical,
-                  spin,
-                };
-                if (isResizing) return null;
-
-                return (
-                  <Image
-                    isScrolling={isScrolling}
-                    key={mediaRecord.png.key}
-                    index={index}
-                    randomIndex={randomIndex}
-                    count={count}
-                    mediaRecord={mediaRecord}
-                    depthConfig={depthConfig}
-                  />
-                );
-              } else {
-                const entry = entries[randomIndex];
-                const [filePath] = entry;
-                const moduleRecord = resolveModuleRecord(
-                  entry,
-                  screensLookupSmall,
-                );
-                return (
-                  <Fetch
-                    key={filePath}
-                    index={randomIndex}
-                    moduleRecord={
-                      moduleRecord as TModuleRecord
-                    }
-                  />
-                );
-              }
+              return (
+                <Image
+                  isScrolling={isScrolling}
+                  key={record.src}
+                  index={index}
+                  count={count}
+                  mediaRecord={record}
+                  depthConfig={depthConfig}
+                />
+              );
+              // } else {
+              //   return null;
+              //   const entry = entries[randomIndex];
+              //   const [filePath] = entry;
+              //   const moduleRecord = resolveModuleRecord(
+              //     entry,
+              //     screensLookupSmall,
+              //   );
+              //   return (
+              //     <Fetch
+              //       key={filePath}
+              //       index={randomIndex}
+              //       moduleRecord={
+              //         moduleRecord as TModuleRecord
+              //       }
+              //     />
+              //   );
+              // }
             },
+            // },
           )}
         </List>
       </Root>

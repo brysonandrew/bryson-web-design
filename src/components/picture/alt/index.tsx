@@ -1,7 +1,7 @@
 export const hey = 'ho';
 // import styled from '@emotion/styled';
 // import { FC, Fragment, HTMLAttributes, useRef } from 'react';
-// import { TMediaRecord, TSource } from '@t/media';
+// import { TMediaRecord, TSource } from '@ops/screens/types/media';
 // import { resolveAspectRatio } from '@utils/resolveAspectRatio';
 // import { useContext } from '@context/domains/gallery/Context';
 // import { useLoadImage } from '@hooks/useLoadImage';

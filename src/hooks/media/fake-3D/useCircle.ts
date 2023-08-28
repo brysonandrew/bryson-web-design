@@ -2,7 +2,6 @@ import { MotionValue, useTransform } from 'framer-motion';
 const MIN_OPACITY = 0.2;
 
 export type TDepthConfig = {
-  name: string | null;
   index: number;
   count: number;
   imageSize: number;

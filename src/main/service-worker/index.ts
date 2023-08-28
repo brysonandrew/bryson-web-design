@@ -1,9 +1,15 @@
+import type { TMediaRecords } from '@ops/screens/types/media';
+
 export type {};
 declare const self: ServiceWorkerGlobalScope;
 
-const VERSION_NUMBER = '0.1.8';
+const VERSION_NUMBER = '0.2.3';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 
+console.log(
+  '🚀 ~ file: index.ts:11 ~ CACHE_NAME:',
+  CACHE_NAME,
+);
 const resolveCache = async (): Promise<Cache> =>
   caches.open(CACHE_NAME);
 
@@ -21,30 +27,65 @@ const putRequest = async (
     ? cache.put(request, response)
     : null;
 
-self.addEventListener('install', async (event) => {
-  const precache = async () => {
-    const cache = await resolveCache();
-    const ASSET_PATHS = ['/favicon.ico'];
-    // console.time('install');
-    // console.log(`processing ... ${ASSET_PATHS.join(',')}`);
-    await cache.addAll(ASSET_PATHS);
-    //console.timeEnd('install');
-  };
+const resolveRandomMedia = (records: TMediaRecords) => {
+  const count = records.length;
+  const indicies: number[] = [];
+  const requiredCount = Math.min(count, 8);
+  while (indicies.length < requiredCount) {
+    const next = ~~(count * Math.random());
+    if (!indicies.includes(next)) {
+      indicies.push(next);
+    }
+  }
+  const nextRecords = indicies.map(
+    (index) => records[index],
+  );
+  return nextRecords;
+};
 
+type TMessage = any;
+const sendMessage = async (message: TMessage) => {
+  const recipients = await self.clients.matchAll();
+  recipients.forEach((client) => {
+    client.postMessage(message);
+  });
+};
+
+const precache = async (paths: string[]) => {
+  const cache = await resolveCache();
+  console.time('precache');
+  await cache.addAll(paths);
+  console.timeEnd('precache');
+};
+
+self.addEventListener('message', async (event) => {
+  const data = event.data;
+  if (data.type === 'init-screens') {
+    console.log('INIT ', data);
+    const records = resolveRandomMedia(data.records);
+    sendMessage({
+      type: 'init-screens',
+      records,
+      from: 'MESSAGE',
+    });
+  }
+  if (data.type === 'precache') {
+    const paths = data.entries;
+    await precache(paths);
+  }
+});
+self.addEventListener('install', (event) => {
   const installHandlers = async () => {
     try {
-      await precache();
+      await precache(['/favicon.ico']);
     } catch (error) {
       console.error(error);
     }
   };
-
   event.waitUntil(installHandlers());
 });
 
 self.addEventListener('activate', (event) => {
-  // console.log('activate', event);
-
   const deleteExpiredCaches = async () => {
     const names = await caches.keys();
     const deleteHandlers = names.reduce(
@@ -127,48 +168,3 @@ self.addEventListener('fetch', (event) => {
     console.error(error);
   }
 });
-
-// self.addEventListener('message', async (event) => {
-//   const logMessage = () => {
-//     console.log('message', event);
-//   };
-
-//   // const postMessage = async () => {};
-//   const messageHandlers = async () => {
-//     logMessage();
-//     await postMessage();
-//   };
-//   event.waitUntil(messageHandlers());
-// })
-// const randomIndiciesMessage = () => {
-//   if (type === 'random-indicies') {
-//     console.log('postMessage.random-indicies', event);
-
-//     const indicies: number[] = [];
-//     const countAvailable = 6;
-//     const countRequired = event.data.isMobile ? 4 : 6;
-//     while (indicies.length < countRequired) {
-//       const next = ~~(countAvailable * Math.random());
-//       if (!indicies.includes(next)) {
-//         indicies.push(next);
-//       }
-//     }
-//     const images = indicies.map(
-//       (_, index) => `/images/${index}-sm.png`,
-//     );
-
-//     const clients = await self.clients.matchAll();
-//     console.log(clients);
-//     clients.forEach((client) => {
-//       client.postMessage({
-//         type,
-//         client: senderId,
-//         message: images,
-//       });
-//     });
-
-//     console.log(images);
-//     const cache = await resolveCache();
-//     await cache.addAll(images);
-//   }
-// };

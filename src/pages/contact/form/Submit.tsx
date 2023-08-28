@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useContext } from '@context/domains/contact/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useContext } from '@context/domains/contact';
+import { useDarkMode } from '@context/dark-mode';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import {
@@ -29,7 +29,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   } = useContext();
   const {
      isDarkMode ,
-  } = useDarkModeContext();
+  } = useDarkMode();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();

@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Context } from './Context';
+import { App } from '.';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -15,7 +15,7 @@ export const Provider: FC<TProviderProps> = ({
   const onOnline = () => setOffline(false);
 
   return (
-    <Context.Provider
+    <App.Provider
       value={{
         isInit,
         isOffline,
@@ -25,6 +25,6 @@ export const Provider: FC<TProviderProps> = ({
       }}
     >
       {children}
-    </Context.Provider>
+    </App.Provider>
   );
 };
