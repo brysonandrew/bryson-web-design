@@ -2,15 +2,11 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Picture } from '@components/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
-import { resolveDimensions } from '@hooks/media/resolveDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
 } from '@components/filters/presets';
 import { TMediaRecord } from '@ops/screens/types/media';
-import { useLoadImage } from '@hooks/media/useLoadImage';
-import { resolveKey } from '@components/placeholder/resolveKey';
-import { Small as Placeholder } from '@components/placeholder/Small';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';

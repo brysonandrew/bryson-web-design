@@ -6,6 +6,8 @@ import {
 import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
+import { useEffect } from 'react';
+import { analytics } from '@utils/analytics';
 
 const PROJECTS_TITLE = 'Projects';
 
@@ -29,5 +31,8 @@ export const useHtmlTitle = () => {
         project,
       )}${TITLE_KEY_DELIMITER}${name}`
     : resolveCompositeTitle(...titles);
+  useEffect(() => {
+    analytics.page({ title });
+  }, []);
   return title;
 };

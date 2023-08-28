@@ -47,10 +47,14 @@ export const resolveGlowProps = ({
     : {
         animate: {
           opacity: 0,
+          textShadow: resolveShadow(text, color),
+          filter: resolveDropShadow(drop, color),
           transition: EFFECT_ANIMATE_TRANSITION,
         },
         hover: {
           opacity: 1,
+          textShadow: resolveShadow(text, color),
+          filter: resolveDropShadow(drop, color),
           transition: EFFECT_HOVER_TRANSITION,
         },
       },

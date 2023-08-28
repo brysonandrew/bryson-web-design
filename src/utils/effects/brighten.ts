@@ -21,10 +21,12 @@ export const resolveBrightenProps = ({
   variants: {
     animate: {
       opacity: 0,
+      filter: resolveBrightness(brightness),
       transition: EFFECT_ANIMATE_TRANSITION,
     },
     hover: {
       opacity: 1,
+      filter: resolveBrightness(brightness),
       transition: EFFECT_HOVER_TRANSITION,
     },
   },
