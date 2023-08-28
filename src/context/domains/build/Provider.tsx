@@ -12,7 +12,8 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const [records, setRecords] = useState<TMediaRecords>([]);
+  const [records, setRecords] =
+    useState<TMediaRecords | null>(null);
 
   useEffect(() => {
     const initScreens = async () => {
@@ -44,6 +45,7 @@ export const Provider: FC<TProviderProps> = ({
 
     initScreens();
   }, []);
+
   return (
     <Build.Provider
       value={{
