@@ -1,5 +1,5 @@
+import { TDimensions } from '@ops/screens/types/media';
 import { useMemo } from 'react';
-import { TDimensions } from '@t/media';
 
 type TConfig = {
   container: TDimensions | null;

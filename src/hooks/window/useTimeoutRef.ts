@@ -1,9 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
+
+type TTimeoutReturn = ReturnType<typeof setTimeout>;
 
 export const useTimeoutRef = () => {
-  const timeoutRef = useRef<ReturnType<
-    typeof setTimeout
-  > | null>(null);
+  const timeoutRef = useRef<TTimeoutReturn | number | null>(
+    null,
+  );
 
   const endTimeout = () => {
     if (timeoutRef.current !== null) {

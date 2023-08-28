@@ -6,8 +6,9 @@ import { Source } from './Source';
 
 import { Boundary } from '@components/boundary';
 import { MOTION_CONFIG } from '@constants/animation';
-import { init as initServiceWorker } from './service-worker/init';
 import { HelmetProvider } from 'react-helmet-async';
+import { resolveRandomIndicies as _resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
+import { init as initServiceWorker } from './service-worker/init';
 
 initServiceWorker();
 import 'virtual:uno.css';

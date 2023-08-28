@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "types": ["vite/client"],
+    "types": ["vite/client", "@types/node"],
     "experimentalDecorators": true,
     "target": "ESNext",
-    "lib": ["WebWorker", "ESNext", "dom"],
+    "lib": ["ESNext", "dom", "WebWorker"],
     "useDefineForClassFields": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,9 +17,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "noImplicitThis": false
   },
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/**/*.glsl"],
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "extends": "./tsconfig.paths.json"
 }

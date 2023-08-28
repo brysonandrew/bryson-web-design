@@ -16,15 +16,13 @@ export const resolveButtonValue = (status: TStatus) => {
   }
 };
 
-type TFormState = {
-  ownersName: string;
+export type TFormState = {
   email: string;
   name: string;
   message: string;
 };
 
 export const INIT_STATE: TFormState = {
-  ownersName: 'Andrew',
   email: '',
   name: '',
   message: '',

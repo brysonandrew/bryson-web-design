@@ -1,13 +1,9 @@
 import { MotionValue } from 'framer-motion';
-import {
-  TImageRecord,
-  TImageResolverEntries,
-} from '@t/screens';
+import { TMediaRecords } from '@ops/screens/types/media';
 
 export type TBaseProps = {
   count: number;
-  items: TImageResolverEntries;
-  imageRecord?: TImageRecord;
+  mediaRecords: TMediaRecords;
   motionX: MotionValue;
   width: number;
 };

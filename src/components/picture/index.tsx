@@ -1,47 +1,80 @@
 import styled from '@emotion/styled';
+import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
-import { FC, ForwardedRef } from 'react';
-import { ImageWithRef } from './ImageWithRef';
-import { TMediaRecord } from '@t/media';
-import { TMotionImgProps } from '@t/dom';
+import { TClassValueProps } from '@t/index';
+import clsx from 'clsx';
+import { TMotionImgProps, TSource } from '@t/dom';
+import { TMediaRecord } from '@ops/screens/types/media';
 
 const Root = styled.picture``;
 const Source = styled.source``;
-// type TProps = HTMLMotionProps<'img'> & TImageDimensionsConfig & TClassValueProps & TMediaRecord;
+const Img = styled(motion.img)``;
 
-type TProps = TMotionImgProps & {
-  imageRef?: ForwardedRef<HTMLImageElement>;
-  mediaRecord: TMediaRecord;
-};
+type TProps = TMotionImgProps &
+  TClassValueProps & {
+    mediaRecord: TMediaRecord;
+    imageRef?: MutableRefObject<HTMLImageElement | null>;
+  };
+
 export const Picture: FC<TProps> = ({
-  mediaRecord,
+  mediaRecord: { src, sources, alt },
+  classValue,
+  width,
+  height,
   imageRef,
-  ...props
+  ...imageProps
 }) => {
-  const src = mediaRecord.png.src;
-  const mainImg = {
-    src,
-    alt: mediaRecord.png.name,
-  };
-  const imageProps = {
-    ...mainImg,
-    ...props,
-  };
+  // const ref = useRef<HTMLImageElement | null>(null);
+  // const image = ref.current;
 
-  // console.log(imageProps);
+  // const { isLoaded, image, imageRef } = useLoadImage(
+  //   mediaRecord.src,
+  // );
+
+  // const handleLoad = (image: HTMLImageElement) => {
+  //   const imageAspectRatio = resolveAspectRatio(image);
+  //   dispatch({
+  //     type: 'image-aspect-ratio-record',
+  //     value: { [src]: imageAspectRatio },
+  //   });
+  // };
+  // useLoadImage({
+  //   src,
+  //   isLoaded,
+  //   onLoad: handleLoad,
+  //   image,
+  // });
+
+  // const handleAnimationComplete = ({
+  //   y,
+  // }: TargetAndTransition) => {
+  //   if (!isAlreadyShown && y === Y_SHOW_VALUE) {
+  //     dispatch({ type: 'image-shown', value: src });
+  //   }
+  // };
 
   return (
-    <Root>
-      <Source
-        type='image/webp'
-        srcSet={mediaRecord.webp.src}
-      />
-      <Source type='image/png' srcSet={src} />
-      {imageRef ? (
-        <ImageWithRef ref={imageRef} {...imageProps} />
-      ) : (
-        <motion.img {...imageProps} />
-      )}
-    </Root>
+    <>
+      {/* {!isLoaded && <Placeholder />} */}
+      <Root>
+        {sources.map((sourceProps: TSource) => (
+          <Source
+            key={sourceProps.srcSet}
+            {...sourceProps}
+          />
+        ))}
+        <Img
+          ref={imageRef}
+          className={clsx(classValue)}
+          // onAnimationComplete={handleAnimationComplete}
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          {...imageProps}
+          // {...(isDimensions ? dimensions : {})}
+        />
+      </Root>
+    </>
   );
 };

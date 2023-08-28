@@ -3,18 +3,17 @@ import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
 import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { TBaseProps } from '../types';
-import { TImageResolverEntry } from '@t/screens';
-import { Gallery as Fetch } from '@components/fetch-media/Gallery';
 import { Control } from './Control';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useContext } from '@context/viewport/Context';
+import { TMediaRecord } from '@ops/screens/types/media';
 
 export const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
   const { width: viewportWidth = 0 } = useContext();
-  const { count, width, items, imageRecord } = props;
+  const { count, width, mediaRecords } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
   const { isHover, handlers } = useHoverKey('none');
@@ -36,29 +35,23 @@ export const Sections: FC<TProps> = (props) => {
         }}
         {...PRESENCE_OPACITY_Y_SHIFT}
       >
-        {items.map(
-          (
-            [filePath, value]: TImageResolverEntry,
-            index: number,
-          ) => (
+        {mediaRecords.map(
+          (mediaRecord: TMediaRecord, index: number) => (
             <li
-              key={filePath}
+              key={mediaRecord.src}
               className='relative flex justify-center'
               style={{ width: viewportWidth }}
             >
-              {imageRecord?.[filePath] &&
-              container !== null ? (
+              {container && (
                 <Control
-                  key={value.png.key}
+                  key={mediaRecord.src}
                   index={index}
                   container={container}
                   viewportWidth={viewportWidth}
-                  mediaRecord={imageRecord[filePath]}
+                  mediaRecord={mediaRecord}
                   isHover={isHover}
                   {...props}
                 />
-              ) : (
-                <Fetch moduleRecord={value} />
               )}
             </li>
           ),

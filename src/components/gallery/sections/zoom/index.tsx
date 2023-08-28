@@ -16,7 +16,7 @@ import {
 } from './config';
 import { Picture } from '@components/picture';
 import { useTapEvents } from './useTapEvents';
-import { TMediaRecord } from '@t/media';
+import { TMediaRecord } from '@ops/screens/types/media';
 import { Tag } from './Tag';
 import { TMotionPoint } from '@t/animation';
 

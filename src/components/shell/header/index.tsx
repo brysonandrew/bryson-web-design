@@ -7,14 +7,14 @@ import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { SCROLL_DECORATION_PRESENCE } from '@constants/animation';
 import { Network } from '@components/network';
 import { P2 } from '@components/space/P2';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useDarkMode } from '@context/dark-mode';
 
 const Root = styled.header``;
 
 export const Header: FC = () => {
   const {
      darkKey ,
-  } = useDarkModeContext();
+  } = useDarkMode();
   const { isScroll } = useScrollContext();
 
   return (

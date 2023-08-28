@@ -9,8 +9,8 @@ export const STATE: TState = {
 
 export const CONTEXT: TContext = {
   ...STATE,
-  onHoverKey: (hoverKey: THoverKey) => null,
-  onCursorReady: (setCursorReady: boolean) => null,
+  onHoverKey: (_: THoverKey) => null,
+  onCursorReady: (_: boolean) => null,
   offsetRef: { current: { x: 1, y: 1 } },
   cursorLabel: { x: motionValue(0), y: motionValue(0) },
   cursor: { x: motionValue(0), y: motionValue(0) },

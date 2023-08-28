@@ -1,12 +1,7 @@
 import { Plus } from '@components/icons/tech/Plus';
 import { TECH } from '@constants/tech';
 import styled from '@emotion/styled';
-import clsx from 'clsx';
-import {
-  MotionValue,
-  motion,
-  useTransform,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';

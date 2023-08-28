@@ -1,31 +1,10 @@
-import { useReducer } from 'react';
+import { useState } from 'react';
 import type { FC } from 'react';
-import type { TReducer } from './types';
 import type { TChildrenElement } from '@t/index';
-import { reducer } from '.';
-import { Context } from './Context';
-import { STATE } from './constants';
-import { PNG_EXT, WEBP_EXT } from '@constants/media';
-import { resolveProjectImageResolverRecord } from '@hooks/media/resolveProjectScreensRecord';
-import {
-  TProjectImageResolverRecord,
-  TScreensRecord,
-} from '@t/screens';
-
-const screensRecordPng: TScreensRecord = import.meta.glob(
-  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).png',
-);
-const screensRecordWebp: TScreensRecord = import.meta.glob(
-  '/screens/**/+([0-9]|!(*[a-z]*)[0-9]).webp',
-);
-
-const screensLookup = {
-  [PNG_EXT]: screensRecordPng,
-  [WEBP_EXT]: screensRecordWebp,
-};
-
-const projectImageResolverRecord: TProjectImageResolverRecord =
-  resolveProjectImageResolverRecord(screensLookup);
+import screensRecordJson from './lookup.json';
+import { TScreensRecord } from '@ops/screens/types';
+const screensRecord = screensRecordJson as TScreensRecord;
+import { Gallery } from '.';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -33,19 +12,25 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const [state, dispatch] = useReducer<TReducer>(reducer, {
-    ...STATE,
-  });
+  const [isTransitioningGallery, setTransitioningGallery] =
+    useState(false);
+  const onDrag = setTransitioningGallery;
+  const onMotionBlurStart = () =>
+    setTransitioningGallery(true);
+  const onMotionBlurEnd = () =>
+    setTransitioningGallery(false);
+
   return (
-    <Context.Provider
+    <Gallery.Provider
       value={{
-        screensLookup,
-        projectImageResolverRecord,
-        dispatch,
-        ...state,
+        screensRecord,
+        isTransitioningGallery,
+        onDrag,
+        onMotionBlurStart,
+        onMotionBlurEnd,
       }}
     >
       {children}
-    </Context.Provider>
+    </Gallery.Provider>
   );
 };

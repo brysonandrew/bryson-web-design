@@ -1,5 +1,8 @@
-import { useSearchParams } from "react-router-dom";
-import { NAME_KEY, PROJECT_KEY } from "../../pages/projects/config";
+import {
+  NAME_KEY,
+  PROJECT_KEY,
+} from '@pages/projects/config';
+import { useSearchParams } from 'react-router-dom';
 
 export const useCurrParams = () => {
   const [searchParams] = useSearchParams();

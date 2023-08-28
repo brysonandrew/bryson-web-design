@@ -1,9 +1,8 @@
 import {
-  GLOW_BABY_BLUE,
-  GLOW_BLACK,
-  GLOW_INTERACTIVE_DARK,
-  GLOW_INTERACTIVE_LIGHT,
-  GLOW_INTERACTIVE_LIGHT_LG,
+  GLOW_BABY_BLUE_4,
+  GLOW_BLACK_1_BABY_BLUE_1,
+  GLOW_BLACK_2_BABY_BLUE_4,
+  GLOW_TEAL_2,
 } from '@uno/shadows';
 
 export const resolveGlow = (
@@ -12,9 +11,9 @@ export const resolveGlow = (
 ) => ({
   boxShadow: isHover
     ? isDarkMode
-      ? GLOW_BABY_BLUE
-      : GLOW_INTERACTIVE_LIGHT_LG
+      ? GLOW_BABY_BLUE_4
+      : GLOW_BLACK_2_BABY_BLUE_4
     : isDarkMode
-    ? GLOW_INTERACTIVE_DARK
-    : GLOW_INTERACTIVE_LIGHT,
+    ? GLOW_TEAL_2
+    : GLOW_BLACK_1_BABY_BLUE_1,
 });

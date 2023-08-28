@@ -9,7 +9,6 @@ export const THEME = {
     xl: '1100px',
   },
   width: {
-    'screen-80': '80vw',
     '+core': '480px',
     '++core': '700px',
     '+++core': '840px',

@@ -1,18 +1,21 @@
-import { TBaseProps } from "@components/gallery/types";
-import { resolveX } from "@utils/gallery/resolveX";
+import { TBaseProps } from '@components/gallery/types';
+import { resolveX } from '@utils/gallery/resolveX';
 
-type TConfig = Pick<TBaseProps, 'items' | 'motionX'> & {
+type TConfig = Pick<
+  TBaseProps,
+  'mediaRecords' | 'motionX'
+> & {
   currName: string | null;
   width: number;
 };
 export const useX = ({
   motionX,
   currName,
-  items,
+  mediaRecords,
   width,
 }: TConfig) => {
-  const activeIndex = items.findIndex(
-    ([_, item]) => item.png.name === currName,
+  const activeIndex = mediaRecords.findIndex(
+    (mediaRecord) => mediaRecord.name === currName,
   );
   const x =
     activeIndex < 0
@@ -20,7 +23,7 @@ export const useX = ({
       : resolveX({
           activeIndex,
           width,
-          count: items.length,
+          count: mediaRecords.length,
         });
   return x;
 };

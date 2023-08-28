@@ -1,24 +1,64 @@
-const VERSION_NUMBER = '0.1.6';
+const VERSION_NUMBER = '0.2.3';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
-const resolveCache = async () => await caches.open(CACHE_NAME);
-const matchRequest = async (cache, request) => await cache.match(request);
-self.addEventListener('install', async (event) => {
-    // console.log('install', event);
-    const precache = async () => {
-        const cache = await resolveCache();
-        const ASSET_PATHS = [
-            '/light/favicon.ico',
-            '/favicon.ico',
-        ];
-        await cache.addAll(ASSET_PATHS);
-    };
+console.log('🚀 ~ file: index.ts:11 ~ CACHE_NAME:', CACHE_NAME);
+const resolveCache = async () => caches.open(CACHE_NAME);
+const matchRequest = async (cache, request) => cache.match(request);
+const putRequest = async (cache, request, response) => request.method === 'GET'
+    ? cache.put(request, response)
+    : null;
+const resolveRandomMedia = (records) => {
+    const count = records.length;
+    const indicies = [];
+    const requiredCount = Math.min(count, 8);
+    while (indicies.length < requiredCount) {
+        const next = ~~(count * Math.random());
+        if (!indicies.includes(next)) {
+            indicies.push(next);
+        }
+    }
+    const nextRecords = indicies.map((index) => records[index]);
+    return nextRecords;
+};
+const sendMessage = async (message) => {
+    const recipients = await self.clients.matchAll();
+    recipients.forEach((client) => {
+        client.postMessage(message);
+    });
+};
+const precache = async (paths) => {
+    const cache = await resolveCache();
+    console.time('precache');
+    await cache.addAll(paths);
+    console.timeEnd('precache');
+};
+self.addEventListener('message', async (event) => {
+    const data = event.data;
+    if (data.type === 'init-screens') {
+        console.log('INIT ', data);
+        const records = resolveRandomMedia(data.records);
+        sendMessage({
+            type: 'init-screens',
+            records,
+            from: 'MESSAGE',
+        });
+    }
+    if (data.type === 'precache') {
+        const paths = data.entries;
+        await precache(paths);
+    }
+});
+self.addEventListener('install', (event) => {
     const installHandlers = async () => {
-        await precache();
+        try {
+            await precache(['/favicon.ico']);
+        }
+        catch (error) {
+            console.error(error);
+        }
     };
     event.waitUntil(installHandlers());
 });
 self.addEventListener('activate', (event) => {
-    // console.log('activate', event);
     const deleteExpiredCaches = async () => {
         const names = await caches.keys();
         const deleteHandlers = names.reduce((a, cacheName) => {
@@ -30,8 +70,13 @@ self.addEventListener('activate', (event) => {
         await Promise.all(deleteHandlers);
     };
     const activateHandlers = async () => {
-        await deleteExpiredCaches();
-        self.clients.claim();
+        try {
+            await deleteExpiredCaches();
+            self.clients.claim();
+        }
+        catch (error) {
+            console.error(error);
+        }
     };
     event.waitUntil(activateHandlers());
 });
@@ -45,7 +90,7 @@ self.addEventListener('fetch', (event) => {
         let response = await fetch(request);
         try {
             const copy = response.clone();
-            cache.put(request, copy);
+            putRequest(cache, request, copy);
         }
         catch (error) {
             const cachedResponse = await matchRequest(cache, request);
@@ -63,7 +108,8 @@ self.addEventListener('fetch', (event) => {
         const networkResponsePromise = fetch(request);
         const updateCache = async () => {
             const networkResponse = await networkResponsePromise;
-            cache.put(request, networkResponse.clone());
+            const copy = networkResponse.clone();
+            putRequest(cache, request, copy);
         };
         event.waitUntil(updateCache());
         return cachedResponse || networkResponsePromise;
@@ -74,45 +120,10 @@ self.addEventListener('fetch', (event) => {
         }
         return staleWhileRevalidate();
     };
-    event.respondWith(messageHandlers());
+    try {
+        event.respondWith(messageHandlers());
+    }
+    catch (error) {
+        console.error(error);
+    }
 });
-// self.addEventListener('message', async (event) => {
-//   const logMessage = () => {
-//     console.log('message', event);
-//   };
-//   // const postMessage = async () => {};
-//   const messageHandlers = async () => {
-//     logMessage();
-//     await postMessage();
-//   };
-//   event.waitUntil(messageHandlers());
-// })
-// const randomIndiciesMessage = () => {
-//   if (type === 'random-indicies') {
-//     console.log('postMessage.random-indicies', event);
-//     const indicies: number[] = [];
-//     const countAvailable = 6;
-//     const countRequired = event.data.isMobile ? 4 : 6;
-//     while (indicies.length < countRequired) {
-//       const next = ~~(countAvailable * Math.random());
-//       if (!indicies.includes(next)) {
-//         indicies.push(next);
-//       }
-//     }
-//     const images = indicies.map(
-//       (_, index) => `/images/${index}-sm.png`,
-//     );
-//     const clients = await self.clients.matchAll();
-//     console.log(clients);
-//     clients.forEach((client) => {
-//       client.postMessage({
-//         type,
-//         client: senderId,
-//         message: images,
-//       });
-//     });
-//     console.log(images);
-//     const cache = await resolveCache();
-//     await cache.addAll(images);
-//   }
-// };

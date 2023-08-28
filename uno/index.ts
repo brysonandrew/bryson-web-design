@@ -13,30 +13,10 @@ import transformerVariantGroup from '@unocss/transformer-variant-group';
 const config = defineConfig<TTheme>({
   theme: THEME,
   rules: RULES,
-
-  shortcuts: [
-    SHORTCUTS,
-    // [
-    //   /^s-(.*)$/,
-    //   ([, c]) =>
-    //     `bg-${c}-400 text-${c}-100 py-2 px-4 rounded-lg`,
-    // ],
-    // [
-    //   /^s-(\d)$/,
-    //   (...args: any[]) => {
-    //     console.log(args);
-    //     const [, d] = args[0];
-    //     return `w-${d} h-${d}`;
-    //   },
-    // ],
-  ],
+  shortcuts: SHORTCUTS,
   presets: PRESETS,
   preflights: [PRE_FLIGHT],
-  transformers: [
-    transformerVariantGroup({
-      separators: ['-', ':'],
-    }) as any,
-  ],
+  transformers: [transformerVariantGroup() as any],
 });
 
 export default config;

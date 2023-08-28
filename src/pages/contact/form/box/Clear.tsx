@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContext } from '@context/domains/contact/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useContact } from '@context/domains/contact';
+import { useDarkMode } from '@context/dark-mode';
 import { Cross } from '@components/icons/gallery/Cross';
 import { IconGlow } from '@components/buttons/IconGlow';
 import { HIGHLIGHT } from '@components/filters/presets';
@@ -24,16 +24,11 @@ export const Clear: FC<TProps> = ({
   title,
   ...props
 }) => {
-  const { dispatch } = useContext();
-  const {
-     isDarkMode ,
-  } = useDarkModeContext();
+  const { onForm } = useContact();
+  const { isDarkMode } = useDarkMode();
 
   const handleClear = (_: MouseEvent) => {
-    dispatch({
-      type: 'contact-form',
-      value: { [name]: '' },
-    });
+    onForm({ [name]: '' });
     onFocus();
   };
 

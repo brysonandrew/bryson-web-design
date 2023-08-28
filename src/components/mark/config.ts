@@ -1,5 +1,5 @@
 import { COLORS } from '@uno/colors';
-import { GLOW_MARK_DARK, GLOW_MARK_LIGHT } from '@uno/shadows';
+import { GLOW_TEAL_BRIGHT_12, GLOW_BLACK_4 } from '@uno/shadows';
 import { resolveDropShadow } from '@utils/effects/glow';
 
 export const BASE_PROPS = {
@@ -28,6 +28,6 @@ export const resolveHoverColor = (isDarkMode: boolean) => ({
 });
 export const resolveGlowColor = (isDarkMode: boolean) => ({
   boxShadow: isDarkMode
-  ? GLOW_MARK_DARK
-  : GLOW_MARK_LIGHT,
+  ? GLOW_TEAL_BRIGHT_12
+  : GLOW_BLACK_4,
 });

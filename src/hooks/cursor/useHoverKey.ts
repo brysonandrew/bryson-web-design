@@ -1,4 +1,4 @@
-import { useContext } from '@context/cursor';
+import { useCursor } from '@context/cursor';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
@@ -10,7 +10,7 @@ export const useHoverKey = (
   key2 = GLOBAL_KEY,
 ) => {
   const animate = useCursorAnimate();
-  const { hoverKey, onHoverKey } = useContext();
+  const { hoverKey, onHoverKey } = useCursor();
   const key = resolveCompositeHoverKey(
     cursorKey,
     key1,

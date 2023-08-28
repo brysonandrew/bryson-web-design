@@ -4,11 +4,11 @@ import { resolvePresence } from '@utils/animation';
 import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
 import {
-  GLOW_BOX,
-  GLOW_INTERACTIVE_LIGHT,
+  GLOW_TEAL_BRIGHT_4,
+  GLOW_BLACK_1_BABY_BLUE_1,
 } from '@uno/shadows';
-import { useContext } from '@context/cursor';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
+import { useCursor } from '@context/cursor';
+import { useDarkMode } from '@context/dark-mode';
 import { Metal } from '@components/metal';
 import { DURATION_MID } from '@constants/animation';
 
@@ -23,10 +23,8 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { cursorLabel } = useContext();
-  const {
-     isDarkMode ,
-  } = useDarkModeContext();
+  const { cursorLabel } = useCursor();
+  const { isDarkMode } = useDarkMode();
 
   return (
     <motion.div
@@ -37,8 +35,8 @@ export const Box: FC<TProps> = ({
       style={{
         ...cursorLabel,
         boxShadow: isDarkMode
-          ? GLOW_BOX
-          : GLOW_INTERACTIVE_LIGHT,
+          ? GLOW_TEAL_BRIGHT_4
+          : GLOW_BLACK_1_BABY_BLUE_1,
       }}
       {...resolvePresence(
         {

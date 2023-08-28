@@ -7,7 +7,7 @@ import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
 } from '@components/filters/presets';
-import { TMediaRecord } from '@t/media';
+import { TMediaRecord } from '@ops/screens/types/media';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import { resolveKey } from '@components/placeholder/resolveKey';
 import { Small as Placeholder } from '@components/placeholder/Small';
@@ -33,7 +33,6 @@ const Button = styled(motion.button)``;
 type TProps = TMotionImgProps & {
   isScrolling: boolean;
   index: number;
-  randomIndex: number;
   count: number;
   mediaRecord: TMediaRecord;
   depthConfig: TDepthConfig;
@@ -44,7 +43,6 @@ export const Image: FC<TProps> = (props) => {
     index,
     count,
     mediaRecord,
-    randomIndex,
     depthConfig,
     ...pictureProps
   } = props;
@@ -53,20 +51,17 @@ export const Image: FC<TProps> = (props) => {
   const isInteractionDisabled = isGallery || isScrolling;
   const size = depthConfig.imageSize;
 
-  const { isLoaded, image, imageRef } = useLoadImage(
-    mediaRecord.png.src,
-  );
   const circleStyle = useCircle(depthConfig);
-  const imageDimensions = resolveDimensions(image);
+  // const imageDimensions = resolveDimensions(image);
   const dimensions = useImageDimensions({
     container: { width: size, height: size },
-    image: imageDimensions,
+    image: mediaRecord,
   });
 
   const { isHover, handlers } = useHoverKey(
     GALLERY_CURSOR_KEY,
     'view',
-    mediaRecord.png.src,
+    mediaRecord.src,
   );
 
   const handler = useTapHandler({ mediaRecord });
@@ -87,7 +82,7 @@ export const Image: FC<TProps> = (props) => {
       style={{
         filter: isHover ? INIT_FILTER : GRAYED_OUT,
         zIndex: circleStyle.z,
-        display: isLoaded ? 'block' : 'hidden',
+        // display: isLoaded ? 'block' : 'hidden',
         ...circleStyle,
         ...ORIGIN_50,
       }}
@@ -106,11 +101,10 @@ export const Image: FC<TProps> = (props) => {
         )}
         onTap={handleTap}
       >
-        {!isLoaded && (
+        {/* {!isLoaded && (
           <Placeholder key={resolveKey(index)} />
-        )}
+        )} */}
         <Picture
-          imageRef={imageRef}
           mediaRecord={mediaRecord}
           {...pictureProps}
           {...dimensions}

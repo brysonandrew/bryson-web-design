@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { TProjectKey } from '@constants/projects';
-import { useContext } from '@context/domains/gallery/Context';
+import { useGallery as useContext } from '@context/domains/gallery';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -25,26 +25,20 @@ export const Main: FC<TProps> = ({
   currProject,
 }) => {
   useFreezeScrollBar();
-  const { projectImageResolverRecord, projectImageRecord } =
-    useContext();
-  const items: TImageResolverEntries = Object.entries(
-    projectImageResolverRecord[currProject],
-  );
+  const { screensRecord } = useContext();
+  const mediaRecords = screensRecord[currProject];
+
   const width = resolveGalleryWidth(viewportWidth);
+  const count = mediaRecords.length;
 
   const motionX = useMotionX({
     width: viewportWidth * 0.9,
-    items,
+    mediaRecords,
   });
-
-  const imageRecord = projectImageRecord[currProject];
-
-  const count = items.length;
 
   const galleryProps: TBaseProps = {
     motionX,
-    items,
-    imageRecord,
+    mediaRecords,
     count,
     width,
   };

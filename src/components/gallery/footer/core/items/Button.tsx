@@ -2,20 +2,19 @@ import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { COLORS } from '@constants/colors';
-import {
-  NAME_KEY,
-  resolveLoadingItemKey,
-} from '@pages/projects/config';
-import clsx from 'clsx';
+import { NAME_KEY } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import {
   Link as _Link,
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '@hooks/media/nav/useTo';
-import { useContext } from '@context/domains/gallery/Context';
-import { useContext as useDarkModeContext } from '@context/dark-mode';
-import { TMediaDetails } from '@t/media';
+import { useGallery as useContext } from '@context/domains/gallery';
+import { useDarkMode } from '@context/dark-mode';
+import {
+  TMediaDetails,
+  TMediaRecord,
+} from '@ops/screens/types/media';
 import {
   resolveShadow,
   resolveDropShadow,
@@ -29,20 +28,18 @@ export const Background = styled(motion.div)``;
 export type TProps = {
   index: number;
   width: number;
-  mediaDetails: TMediaDetails;
+  mediaRecord: TMediaRecord;
 };
 export const Button: FC<TProps> = ({
   index,
   width,
-  mediaDetails,
+  mediaRecord,
 }) => {
-  const { dispatch } = useContext();
-  const {
-     isDarkMode ,
-  } = useDarkModeContext();
-  const { key, name } = mediaDetails;
+  const { onMotionBlurStart } = useContext();
+  const { isDarkMode } = useDarkMode();
+  const { src, name } = mediaRecord;
   const to = useTo({ next: name });
-  const isLoading = key === resolveLoadingItemKey(index);
+  const isLoading = false;
   const [searchParams] = useSearchParams();
   const imgParam = searchParams.get(NAME_KEY);
   const isActive = imgParam === to.split(`${NAME_KEY}=`)[1];
@@ -53,10 +50,7 @@ export const Button: FC<TProps> = ({
     : 'idle';
   const handleMoveSound = useMoveSound();
   const handleTap = () => {
-    dispatch({
-      type: 'start-motion-blur',
-      value: null,
-    });
+    onMotionBlurStart();
     handleMoveSound();
   };
 

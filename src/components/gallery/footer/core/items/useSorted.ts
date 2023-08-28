@@ -1,20 +1,25 @@
 import { useMemo } from 'react';
-import { TImageRecordEntries, TImageResolverEntries } from '@t/screens';
+import {
+  TMediaRecord,
+  TMediaRecords,
+} from '@ops/screens/types/media';
 
-export const useSorted = (items: TImageRecordEntries | TImageResolverEntries) => {
+export const useSorted = (mediaRecords: TMediaRecords) => {
   const results = useMemo(() => {
-    return items.sort(([_, a], [__, b]) => {
-      const an = +a.png.name;
-      const bn = +b.png.name;
+    return mediaRecords.sort(
+      (a: TMediaRecord, b: TMediaRecord) => {
+        const an = +a.name;
+        const bn = +b.name;
 
-      if (an < bn) {
-        return -1;
-      }
-      if (bn < an) {
-        return 1;
-      }
-      return 0;
-    });
-  }, [items]);
+        if (an < bn) {
+          return -1;
+        }
+        if (bn < an) {
+          return 1;
+        }
+        return 0;
+      },
+    );
+  }, [mediaRecords]);
   return results;
 };

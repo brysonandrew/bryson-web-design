@@ -4,7 +4,7 @@ import type { TChildrenElement } from '@t/index';
 import { STATE } from './constants';
 import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
-import { Context } from '.';
+import { Cursor } from '.';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -26,7 +26,7 @@ export const Provider: FC<TProviderProps> = ({
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
   return (
-    <Context.Provider
+    <Cursor.Provider
       value={{
         offsetRef,
         cursor: { x: cursorX, y: cursorY },
@@ -41,6 +41,6 @@ export const Provider: FC<TProviderProps> = ({
       }}
     >
       {children}
-    </Context.Provider>
+    </Cursor.Provider>
   );
 };

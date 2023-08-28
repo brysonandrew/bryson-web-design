@@ -8,6 +8,7 @@
       "@icons/*": ["src/icons/*"],
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
+      "@ops/*": ["ops/*"],
       "@pages/*": ["src/pages/*"],
       "@context/*": ["src/context/*"],
       "@utils/*": ["src/utils/*"],

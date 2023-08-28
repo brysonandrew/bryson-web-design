@@ -1,10 +1,10 @@
-import { resolveCountRequired } from "./resolveCountRequired";
-
-export const resolveRandomIndicies = (countAvailable: number) => {
+export const resolveRandomIndicies = (
+  availableCount: number,
+) => {
   const indicies: number[] = [];
-  const countRequired = resolveCountRequired();
-  while (indicies.length < countRequired) {
-    const next = ~~(countAvailable * Math.random());
+  const requiredCount = Math.min(availableCount, 8);
+  while (indicies.length < requiredCount) {
+    const next = ~~(availableCount * Math.random());
     if (!indicies.includes(next)) {
       indicies.push(next);
     }
