@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { TFormKey } from '../config';
-import { useContext } from '@context/domains/contact';
+import { useContact } from '@context/domains/contact';
 
 type TConfig = {
   name: TFormKey;
@@ -10,9 +10,7 @@ export const useInput = <T extends HTMLElement>({
 }: TConfig) => {
   const ref = useRef<T | null>(null);
   const input = ref.current;
-  const {
-    contact: { focusKey, form },
-  } = useContext();
+  const { focusKey, form } = useContact();
   const isFocused = focusKey === name;
   const value = form[name];
   const isEmpty = Boolean(value);

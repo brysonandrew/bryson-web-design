@@ -1,19 +1,12 @@
-import { useDarkMode } from '@context/dark-mode';
 import { useEffect } from 'react';
-import { useContext } from '@context/domains/contact';
+import { useContact } from '@context/domains/contact';
 
 export const useAutoFocus = (isDisabled: boolean) => {
-  const {
-    contact: { focusKey },
-    dispatch,
-  } = useContext();
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { focusKey, onFocus } = useContact();
 
   useEffect(() => {
     if (focusKey === null && !isDisabled) {
-      dispatch({ type: 'contact-focus', value: 'name' });
+      onFocus('name');
     }
-  }, [isDarkMode]); // no deps
+  }, []);
 };

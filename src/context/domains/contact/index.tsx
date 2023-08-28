@@ -7,5 +7,5 @@ import { TContext } from './types';
 
 export const Contact = createContext<TContext>(CONTEXT);
 
-export const useContext = (): TContext =>
+export const useContact = (): TContext =>
   useReactContext<TContext>(Contact);

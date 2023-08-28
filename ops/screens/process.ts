@@ -15,6 +15,9 @@ import { resolveMediaRecord } from './utils/resolveMediaRecord';
 import { TScreensRecord } from './types';
 import { removePublicDir } from './utils';
 
+const resolveSmallEntry = (path: string, ext = 'png') =>
+  `${path}${SMALL_SUFFIX}.${ext}`;
+
 const writeFileData = (path: string, data: object) => {
   fs.writeFile(path, JSON.stringify(data));
 };
@@ -45,13 +48,15 @@ const resolveWebp = async (entry, path) => {
     const smallRecords: TMediaRecords = [];
 
     const entries = await fg([IMAGES_GLOB]);
-    writeFileData(
-      PRECACHE_PATH,
-      entries.map((entry) => removePublicDir(entry)),
+    const originals = entries.map((entry) =>
+      removePublicDir(entry),
     );
+    const smalls = originals.map((entry) =>
+      resolveSmallEntry(entry, 'png'),
+    );
+    writeFileData(PRECACHE_PATH, [...smalls, ...originals]);
     for await (const entry of entries) {
-      const { dir, path, ext } =
-        resolveFsInfo(entry);
+      const { dir, path, ext } = resolveFsInfo(entry);
 
       const originalMetaData = await resolveMetaDataFile(
         entry,
@@ -73,7 +78,7 @@ const resolveWebp = async (entry, path) => {
         ];
       }
 
-      const smallEntry = `${path}${SMALL_SUFFIX}.${ext}`;
+      const smallEntry = resolveSmallEntry(path, ext);
       const small: OutputInfo = await sharp(entry)
         .resize({ width: SMALL_W })
         .toFile(smallEntry);

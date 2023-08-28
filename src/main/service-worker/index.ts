@@ -6,10 +6,6 @@ declare const self: ServiceWorkerGlobalScope;
 const VERSION_NUMBER = '0.2.3';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 
-console.log(
-  '🚀 ~ file: index.ts:11 ~ CACHE_NAME:',
-  CACHE_NAME,
-);
 const resolveCache = async (): Promise<Cache> =>
   caches.open(CACHE_NAME);
 
@@ -61,7 +57,6 @@ const precache = async (paths: string[]) => {
 self.addEventListener('message', async (event) => {
   const data = event.data;
   if (data.type === 'init-screens') {
-    console.log('INIT ', data);
     const records = resolveRandomMedia(data.records);
     sendMessage({
       type: 'init-screens',

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useContext } from '@context/domains/contact';
+import { useContact } from '@context/domains/contact';
 import { useDarkMode } from '@context/dark-mode';
 import { MetalGlow } from '@components/metal/MetalGlow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
@@ -24,12 +24,8 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     'bigger',
     'form-submit',
   );
-  const {
-    contact: { status },
-  } = useContext();
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { status } = useContact();
+  const { isDarkMode } = useDarkMode();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();

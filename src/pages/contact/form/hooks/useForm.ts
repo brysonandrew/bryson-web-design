@@ -1,25 +1,20 @@
 import emailjs from '@emailjs/browser';
-import { FormEvent, useRef } from 'react';
+import { FormEvent } from 'react';
 import {
   TChangeEvent,
   TFocusEvent,
   TFormKey,
   TInputHandlers,
-  TStatus,
 } from '../../config';
-import { useContext } from '@context/domains/contact';
+import { useContact } from '@context/domains/contact';
 
 type TConfig = {
   element: HTMLFormElement | null;
 };
 export const useForm = ({ element }: TConfig) => {
-  const { contact, dispatch } = useContext();
-  const current = { contact };
-  const currentRef = useRef(current);
-  currentRef.current = current;
-
-  const handleStatus = (value: TStatus) =>
-    dispatch({ type: 'contact-status', value });
+  const { onStatus, onFocus, onForm, status, focusKey } =
+    useContact();
+  const handleStatus = onStatus;
 
   const onSend = async (event: FormEvent) => {
     if (element === null) return;
@@ -40,8 +35,7 @@ export const useForm = ({ element }: TConfig) => {
     }
   };
 
-  const updateFocus = (value: TFormKey | null) =>
-    dispatch({ type: 'contact-focus', value });
+  const updateFocus = onFocus;
 
   const handleFocus = (event: TFocusEvent) => {
     const target = event.currentTarget;
@@ -52,23 +46,15 @@ export const useForm = ({ element }: TConfig) => {
   const handleBlur = (event: TFocusEvent) => {
     const target = event.currentTarget;
     if (!target) return;
-    if (
-      target.name === currentRef.current.contact.focusKey
-    ) {
+    if (target.name === focusKey) {
       // updateFocus(null);
     }
   };
 
   const handleChange = ({
     currentTarget: { name, value },
-  }: TChangeEvent) => {
-    dispatch({
-      type: 'contact-form',
-      value: { [name]: value },
-    });
-  };
+  }: TChangeEvent) => onForm({ [name]: value });
 
-  const isDisabled = contact.status !== 'idle';
   const inputHandlers: TInputHandlers = {
     onBlur: handleBlur,
     onFocus: handleFocus,
@@ -76,7 +62,7 @@ export const useForm = ({ element }: TConfig) => {
   };
 
   return {
-    isDisabled,
+    isDisabled: status !== 'idle',
     inputHandlers,
     onSend,
   };
