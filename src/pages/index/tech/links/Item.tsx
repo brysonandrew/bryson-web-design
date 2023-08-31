@@ -23,9 +23,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   glow,
   ...props
 }) => {
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   const { isHover, handlers } = useHoverKey(
     OPEN_IN_NEW_CURSOR_KEY,
@@ -40,7 +38,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...props}
     >
       {isHover && <Aura layoutId={title} />}
-      {typeof glow !== 'undefined' && (
+      {typeof glow !== 'undefined' && ( 
         <MetalGlow
           drop={isDarkMode ? 16 : 8}
           color={isDarkMode ? 'baby-blue' : 'gray-3'}
