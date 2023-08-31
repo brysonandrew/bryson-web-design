@@ -34,12 +34,12 @@ export const resolveMediaRecord = ({
       height,
       sources: [
         {
-          type: `image/${ext}`,
-          srcSet: entry,
-        },
-        {
           type: 'image/webp',
           srcSet: webpEntry,
+        },
+        {
+          type: `image/${ext}`,
+          srcSet: entry,
         },
       ],
     };

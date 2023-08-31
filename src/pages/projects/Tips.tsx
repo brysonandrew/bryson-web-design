@@ -31,7 +31,7 @@ export const Tips = () => {
         >
           <motion.li
             key='FIRST'
-            className='relative top-0 p-1 rounded-full'
+            className='relative row top-0 p-1 rounded-full'
             style={{
               ...resolveColor(isDarkMode),
               ...resolveGlowColor(isDarkMode),
@@ -40,11 +40,11 @@ export const Tips = () => {
           >
             <Touch />
           </motion.li>
-          <P2 as='li' />
+          <P2 element='li' />
           {cursorKey === PROJECT_CURSOR_KEY && (
             <motion.li
               key='SECOND'
-              className='p-1 rounded-full'
+              className='p-1 row rounded-full'
               style={{
                 ...resolveHoverColor(isDarkMode),
                 ...resolveGlowColor(isDarkMode),
