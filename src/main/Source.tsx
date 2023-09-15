@@ -5,8 +5,9 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import { Cv } from '@pages/cv';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
+import { Kino } from '@pages/kino';
 
-const SHELL_ROUTES = [
+const SHELL_ROUTES: any[] = [
   {
     path: '/',
     element: <Index />,
@@ -21,6 +22,10 @@ const SHELL_ROUTES = [
   },
 ];
 const STANDALONE_ROUTES = [
+  {
+    path: '/kino',
+    element: <Kino />,
+  },
   {
     path: '/cv',
     element: <Cv />,
@@ -38,7 +43,7 @@ export const Source = () => {
     return (
       <MainShell>
         <Shell>{shellPage}</Shell>
-      </MainShell> 
+      </MainShell>
     );
   }
   return standalonePage ?? null;

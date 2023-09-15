@@ -23,8 +23,7 @@ export const PRE_FLIGHT: Preflight<TAnyTheme> = {
       code,
       kbd,
       samp,
-      pre, 
-      tt {
+      pre {
         font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
       }
 
