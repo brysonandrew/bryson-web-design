@@ -26,7 +26,6 @@ export const Provider: FC<TProviderProps> = ({
     onUpdateLocalState: setLocalState,
     onUpdateRemoteState: setRemoteState,
   };
-  console.log(value);
 
   return (
     <Kino.Provider value={value}>{children}</Kino.Provider>

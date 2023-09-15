@@ -1,5 +1,5 @@
 import { TError } from '@t/index';
-import { useKino } from '../../../context';
+import { useKino } from '../../context';
 
 export const useConnect = () => {
   const { localConnection, remoteConnection } = useKino();

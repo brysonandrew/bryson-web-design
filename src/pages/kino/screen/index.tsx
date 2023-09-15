@@ -1,25 +1,17 @@
 import { P2 } from '@components/space/P2';
-import { Subtitle } from '../common/Subtitle';
-import { Title } from '../common/Title';
 import { useRemoteConnection } from './useRemoteConnection';
+import { Header } from '../components/Header';
+import { Messages } from './components/Messages';
+import { useKino } from '../context';
 
 export const Screen = () => {
-  const { remoteState, messages } = useRemoteConnection();
+  const { remoteState } = useKino();
+  useRemoteConnection();
   return (
     <div>
-      <div className='row-space'>
-        <Title>Screen</Title>
-        <samp>{remoteState}</samp>
-      </div>
+      <Header left='screen' right={remoteState} />
       <P2 />
-      <div>
-        <Subtitle>Messages received:</Subtitle>
-        <ul>
-          {messages.map((m, index) => (
-            <li key={`${index}`}>{m}</li>
-          ))}
-        </ul>
-      </div>
+      <Messages />
     </div>
   );
 };

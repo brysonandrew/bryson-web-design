@@ -1,16 +1,12 @@
-import { useState } from 'react';
-import { useKino } from '../context';
+import { useKino } from '../../context';
 
 export const useReceiveChannel = () => {
-  const [messages, setMessages] = useState<string[]>([]);
   const { onUpdateReceiveChannel, onUpdateRemoteState } =
     useKino();
 
   const handler = (event: RTCDataChannelEvent) => {
-    console.log('HANDLE RECEIVE MESSAGE');
-
     const handleReceiveMessage = (event: MessageEvent) => {
-      setMessages((prev) => [...prev, event.data]);
+      console.log(event.data);
     };
 
     const handleReceiveChannelStatusChange = () => {
@@ -23,13 +19,19 @@ export const useReceiveChannel = () => {
     };
 
     const receiveChannel = event.channel;
+    
     receiveChannel.onmessage = handleReceiveMessage;
     receiveChannel.onopen =
       handleReceiveChannelStatusChange;
     receiveChannel.onclose =
       handleReceiveChannelStatusChange;
     onUpdateReceiveChannel(receiveChannel);
+    receiveChannel.onclosing =
+      handleReceiveChannelStatusChange;
+    receiveChannel.onerror = (e: Event) => {
+      console.log(e, 'receive channel error');
+    };
   };
 
-  return { messages, handler };
+  return handler;
 };

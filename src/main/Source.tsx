@@ -7,6 +7,8 @@ import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Kino } from '@pages/kino';
 
+const STANDALONE_KEY = 'standalone';
+
 const SHELL_ROUTES: any[] = [
   {
     path: '/',
@@ -34,17 +36,21 @@ const STANDALONE_ROUTES = [
     path: '*',
     element: <Navigate to='/' replace />,
   },
-];
-export const Source = () => {
-  const shellPage = useRoutes(SHELL_ROUTES);
-  const standalonePage = useRoutes(STANDALONE_ROUTES);
+].map((v) => ({ ...v, key: STANDALONE_KEY }));
 
-  if (shellPage) {
-    return (
-      <MainShell>
-        <Shell>{shellPage}</Shell>
-      </MainShell>
-    );
+const ROUTES = [...SHELL_ROUTES, ...STANDALONE_ROUTES];
+
+export const Source = () => {
+  const page = useRoutes(ROUTES);
+
+  switch (page?.key) {
+    case STANDALONE_KEY:
+      return (
+        <MainShell>
+          <Shell>{page}</Shell>
+        </MainShell>
+      );
+    default:
+      return page;
   }
-  return standalonePage ?? null;
 };

@@ -1,19 +1,16 @@
-import { P2 } from '@components/space/P2';
-import { Message } from './message';
-import { Title } from '../common/Title';
+import { Video } from './stream';
 import { useLocalConnection } from './useLocalConnection';
+import { P4 } from '@components/space/P4';
+import { Header } from '../components/Header';
 
 export const Audience = () => {
   const localState = useLocalConnection();
-console.log(localState)
+
   return (
     <div>
-      <div className='row-space'>
-        <Title>audience</Title>
-        <samp>{localState}</samp>
-      </div>
-      <P2 />
-      <Message />
+      <Header left='audience' right={localState} />
+      <P4 />
+      <Video />
     </div>
   );
 };

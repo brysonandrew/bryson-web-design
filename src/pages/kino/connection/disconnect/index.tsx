@@ -1,17 +1,17 @@
-import { Button } from '@pages/kino/common/Button';
-import { useKino } from '../../../context';
+import { Button } from '@pages/kino/components/Button';
+import { useKino } from '../../context';
 import { useDisconnectPeers } from './useDisconnectPeers';
 
 export const Disconnect = () => {
-  const { localState } = useKino();
+  const { remoteState } = useKino();
   const handleDisconnectPeers = useDisconnectPeers();
 
   return (
     <Button
-      disabled={localState !== 'open'}
+      disabled={remoteState !== 'open'}
       onClick={handleDisconnectPeers}
     >
-      <pre>Disconnect</pre>
+      <>Disconnect</>
     </Button>
   );
 };

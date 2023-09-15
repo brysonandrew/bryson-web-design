@@ -1,17 +1,17 @@
-import { Button } from '@pages/kino/common/Button';
-import { useKino } from '../../../context';
+import { Button } from '@pages/kino/components/Button';
+import { useKino } from '../../context';
 import { useConnect } from './useConnect';
 
 export const Connect = () => {
-  const { localState } = useKino();
+  const { remoteState } = useKino();
   const handleConnect = useConnect();
  
   return (
     <Button
-      disabled={localState === 'open'}
+      disabled={remoteState === 'open'}
       onClick={handleConnect}
     >
-      <pre>Connect</pre>
+      <>Connect</>
     </Button>
   );
 };

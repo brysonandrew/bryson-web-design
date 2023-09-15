@@ -6,16 +6,16 @@ import '@css/reset.css';
 import '@css/globals.css';
 import 'virtual:uno.css';
 import { Variables } from '@css/Variables';
-import { Buttons } from './audience/buttons';
-import { Line } from './common/Line';
+import { Connection } from './connection';
+import { Line } from './components/Line';
 import { P6 } from '@components/space/P6';
 import { P8 } from '@components/space/P8';
 
 export const Kino = () => (
   <div className='text-xl'>
     <Variables />
-    <Provider> 
-      <P24Y />
+    <Provider>
+      <P24Y /> 
       <div className='column'>
         <div className='w-3/4'>
           <Screen />
@@ -23,7 +23,9 @@ export const Kino = () => (
         <P8 />
         <Line />
         <P6 />
-        <Buttons />
+        <div className='w-3/4'>
+          <Connection />
+        </div>
         <P6 />
         <Line />
         <P8 />

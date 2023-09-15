@@ -1,4 +1,4 @@
-import { useKino } from '../../../context';
+import { useKino } from '../../context';
 
 export const useDisconnectPeers = () => {
   const {

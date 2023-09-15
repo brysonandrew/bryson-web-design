@@ -1,18 +1,26 @@
-import { useEffect } from 'react';
 import { useKino } from '../context';
+import { useChannelListeners } from '../hooks/useChannelListeners';
 
 export const useSendChannel = () => {
   const { sendChannel, onUpdateLocalState } = useKino();
 
-  useEffect(() => {
-    const handleSendChannelStatusChange = () => {
-      console.log('handleSendChannelStatusChange');
-      if (sendChannel) {
-        const state = sendChannel.readyState;
-        onUpdateLocalState(state);
-      }
-    };
-    sendChannel.onopen = handleSendChannelStatusChange;
-    sendChannel.onclose = handleSendChannelStatusChange;
-  }, []);
+  const handleSendChannelStatusChange = () => {
+    if (sendChannel) {
+      const state = sendChannel.readyState;
+      onUpdateLocalState(state);
+    }
+  };
+  const handleMessage = (event: MessageEvent) => {
+    console.log(event, 'send channel message');
+  };
+  const handleError = (event: Event) => {
+    console.log(event, 'send channel error');
+  };
+  useChannelListeners({
+    channel: sendChannel,
+    onSendChannelStatusChange:
+      handleSendChannelStatusChange,
+    onMessage: handleMessage,
+    onError: handleError,
+  });
 };

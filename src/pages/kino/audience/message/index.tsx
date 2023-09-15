@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 import { useKino } from '../../context';
-import { Button } from '../../common/Button';
+import { Button } from '../../components/Button';
 import { P4 } from '@components/space/P4';
 import { Input } from './Input';
-import { useKey } from '@hooks/dom/useKey';
+import { useEnterKeyCallback } from '@pages/kino/hooks/useEnterKey';
 
 export const Message = () => {
   const { sendChannel, remoteState } = useKino();
@@ -14,16 +14,7 @@ export const Message = () => {
     setValue('');
   };
 
-  useKey({
-    handlers: {
-      onKeyDown: ({ key }: KeyboardEvent) => {
-        if (key === 'Enter') {
-          handleSendMessage();
-        }
-      },
-    },
-    isActive: true,
-  });
+  useEnterKeyCallback(handleSendMessage);
 
   const handleChange = ({
     currentTarget: { value },
@@ -39,7 +30,7 @@ export const Message = () => {
         disabled={remoteState !== 'open'}
         onClick={handleSendMessage}
       >
-        <pre>Send</pre>
+        <>Send</>
       </Button>
     </div>
   );
