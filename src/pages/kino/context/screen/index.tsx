@@ -5,7 +5,7 @@ import {
 import { CONTEXT } from './constants';
 import { TContext } from './types';
 
-export const Kino = createContext<TContext>(CONTEXT);
+export const Screen = createContext<TContext>(CONTEXT);
 
-export const useKino = (): TContext =>
-  useReactContext<TContext>(Kino);
+export const useScreen = (): TContext =>
+  useReactContext<TContext>(Screen);

@@ -4,12 +4,14 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import { useKino } from '../context';
+import { useScreen } from '../context/screen';
+import { P2 } from '@components/space/P2';
+import { Subtitle } from '../components/Subtitle';
 
 type TProps = VideoHTMLAttributes<HTMLVideoElement>;
 export const Video: FC<TProps> = ({ ...props }) => {
   const ref = useRef<HTMLVideoElement | null>(null);
-  const { activeStream } = useKino();
+  const { activeStream } = useScreen();
 
   useEffect(() => {
     if (activeStream && ref.current) {
@@ -18,13 +20,17 @@ export const Video: FC<TProps> = ({ ...props }) => {
   }, [activeStream]);
 
   return (
-    <video
-      playsInline
-      autoPlay
-      muted
-      className='glow-interactive-dark'
-      ref={ref}
-      {...props}
-    />
+    <div>
+      <Subtitle>Screen</Subtitle>
+      <P2 />
+      <video
+        playsInline
+        autoPlay
+        muted
+        className='border-black-2 border-1'
+        ref={ref}
+        {...props}
+      />
+    </div>
   );
 };

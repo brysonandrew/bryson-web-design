@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react';
-import { useKino } from '../../context';
 import { Button } from '../../components/Button';
 import { P4 } from '@components/space/P4';
 import { Input } from './Input';
+import { useProjector } from '@pages/kino/context/projector';
 import { useEnterKeyCallback } from '@pages/kino/hooks/useEnterKey';
 
 export const Message = () => {
-  const { sendChannel, statusRecord } = useKino();
+  const { sendChannel, statusRecord } = useProjector();
   const [value, setValue] = useState('');
 
   const handleSendMessage = () => {

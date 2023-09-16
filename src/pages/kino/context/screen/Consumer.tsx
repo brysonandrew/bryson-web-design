@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import type { TContext } from './types';
-import { Kino } from '.';
+import { Screen } from '.';
 
 type TConsumerProps = {
   children(values: TContext): JSX.Element;
 };
 export const Consumer: FC<TConsumerProps> = ({
   children,
-}) => <Kino.Consumer>{children}</Kino.Consumer>;
+}) => <Screen.Consumer>{children}</Screen.Consumer>;

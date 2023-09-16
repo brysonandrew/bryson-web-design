@@ -1,16 +1,17 @@
 import { P1 } from '@components/space/P1';
-import { useKino } from '../context';
+import { useProjector } from '../context/projector';
 import { FadeDown } from '@components/vertical-fade/FadeDown';
+import { Subtitle } from '../components/Subtitle';
 
 export const Logs = () => {
-  const { logs } = useKino();
+  const { logs } = useProjector();
   return (
     <div className='relative h-44 overflow-auto'>
       <div className='sticky top-0 p-1'>
         <FadeDown classValue='h-full' />
-        <kbd className='relative z-20'>Logs:</kbd>
+        <Subtitle classValue='relative z-20'>Logs</Subtitle>
+        <P1 />
       </div>
-      <P1 />
       <ul>
         {logs.map(([id, text]) => (
           <li key={id}>

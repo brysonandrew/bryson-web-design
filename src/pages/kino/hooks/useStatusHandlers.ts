@@ -1,5 +1,5 @@
-import { useKino } from '../context';
-import { TStatusRecord } from '../context/types';
+import { useProjector } from "../context/projector";
+import { TStatusRecord } from "../context/projector/types";
 
 export const useUpdateStatusRecord = (
   onUpdateStatusRecord: (next: TStatusRecord) => void,
@@ -9,7 +9,7 @@ export const useUpdateStatusRecord = (
     receiveChannel,
     localConnection,
     remoteConnection,
-  } = useKino();
+  } = useProjector();
   const handleUpdateStatusRecord = () => {
     onUpdateStatusRecord({
       localChannelState: sendChannel.readyState,

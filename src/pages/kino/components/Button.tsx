@@ -1,15 +1,37 @@
-import { TChildrenProps } from '@t/index';
+import { TChildrenProps, TClassValueProps } from '@t/index';
+import clsx from 'clsx';
 import { ButtonHTMLAttributes, FC } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { PRESENCE_OPACITY } from '@constants/animation';
 
-export const Button: FC<
-  TChildrenProps & ButtonHTMLAttributes<HTMLButtonElement>
-> = ({ children, ...props }) => {
+type TProps = TClassValueProps &
+  TChildrenProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    isLoading?: boolean;
+  };
+export const Button: FC<TProps> = ({
+  classValue,
+  isLoading = false,
+  children,
+  ...props
+}) => {
   return (
     <button
-      className='uppercase font-mono text-2xl px-3 py-1 bg-black-1 text-teal-bright disabled:(text-gray cursor-not-allowed)'
+      className={clsx(
+        'relative uppercase font-mono text-xl px-3 py-1 bg-black-1 text-teal-bright disabled:(text-gray cursor-not-allowed)',
+        classValue,
+      )}
       {...props}
     >
-      {children}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            className='absolute inset-0 bg-teal-bright'
+            {...PRESENCE_OPACITY}
+          />
+        )}
+      </AnimatePresence>
+      <div className='relative'>{children}</div>
     </button>
   );
 };

@@ -7,11 +7,11 @@ type TProps = {
   left: TChildren;
   variant: TVariant;
 };
-export const Header: FC<TProps> = ({ left, variant }) => {
+export const StatusRow: FC<TProps> = ({ left, variant }) => {
   return (
-    <header className='row-space'>
+    <div className='row-space'>
       <>{left}</>
       <Status variant={variant} />
-    </header>
+    </div>
   );
 };

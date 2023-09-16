@@ -1,4 +1,4 @@
-import { TStatusRecordKey } from '@pages/kino/context/types';
+import { TStatusRecordKey } from "@pages/kino/context/projector/types";
 
 export type TIncludes = TStatusRecordKey[];
 

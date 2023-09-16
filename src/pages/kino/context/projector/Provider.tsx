@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Kino, useKino } from '.';
+import { Projector, useProjector } from '.';
 import {
   TContext,
   TLogEntries,
@@ -12,7 +12,7 @@ import {
   resolveStatusHandlers,
 } from './constants';
 import { generateId } from '@utils/keys/generateRandomId';
-import { useUpdateStatusRecord } from '../hooks/useStatusHandlers';
+import { useUpdateStatusRecord } from '@pages/kino/hooks/useStatusHandlers';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -20,13 +20,11 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const kino = useKino();
+  const projector = useProjector();
   const [statusRecord, setUpdateStatusRecord] =
     useState<TStatusRecord>(STATUS_RECORD);
   const [receiveChannel, setReceiveChannel] =
     useState<RTCDataChannel | null>(null);
-  const [activeStream, setActiveStream] =
-    useState<MediaStream | null>(null);
   const [logs, setLogs] = useState<TLogEntries>([]);
 
   const handleUpdateStatusRecord = useUpdateStatusRecord(
@@ -38,21 +36,21 @@ export const Provider: FC<TProviderProps> = ({
   };
 
   const value: TContext = {
-    ...kino,
+    ...projector,
     logs,
     statusRecord,
-    activeStream,
     receiveChannel,
     statusHandlers: resolveStatusHandlers(
       handleUpdateStatusRecord,
     ),
     onUpdateReceiveChannel: setReceiveChannel,
-    onUpdateActiveStream: setActiveStream,
     onUpdateStatusRecord: handleUpdateStatusRecord,
     onLog: handleLog,
   };
 
   return (
-    <Kino.Provider value={value}>{children}</Kino.Provider>
+    <Projector.Provider value={value}>
+      {children}
+    </Projector.Provider>
   );
 };

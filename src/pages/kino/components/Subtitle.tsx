@@ -1,8 +1,15 @@
-import { TChildrenProps } from '@t/index';
+import { TChildrenProps, TClassValueProps } from '@t/index';
+import clsx from 'clsx';
 import { FC } from 'react';
 
-export const Subtitle: FC<TChildrenProps> = ({
+type TProps = TClassValueProps & TChildrenProps;
+export const Subtitle: FC<TProps> = ({
+  classValue,
   children,
 }) => {
-  return <kbd className='text-2xl'>{children}</kbd>;
+  return (
+    <kbd className={clsx('text-xl uppercase', classValue)}>
+      {children}
+    </kbd>
+  );
 };

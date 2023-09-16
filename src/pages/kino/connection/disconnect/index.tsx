@@ -1,17 +1,18 @@
 import { Button } from '@pages/kino/components/Button';
-import { useKino } from '../../context';
 import { useDisconnect } from './useDisconnect';
+import { useProjector } from '@pages/kino/context/projector';
 
 export const Disconnect = () => {
   const {
     statusRecord: { remoteChannelState },
-  } = useKino();
-  const handleDisconnect = useDisconnect();
+  } = useProjector();
+  const { isLoading, handler } = useDisconnect();
 
   return (
     <Button
+      isLoading={isLoading}
       disabled={remoteChannelState !== 'open'}
-      onClick={handleDisconnect}
+      onClick={handler}
     >
       Disconnect
     </Button>

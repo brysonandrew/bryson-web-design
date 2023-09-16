@@ -1,16 +1,20 @@
-import { useKino } from '../../context';
+import { useState } from 'react';
+import { useProjector } from '../../context/projector';
 
 export const useDisconnect = () => {
+  const [isLoading, setLoading] = useState(false);
+
   const {
     sendChannel,
     localConnection,
     remoteConnection,
     receiveChannel,
     onLog,
-  } = useKino();
+  } = useProjector();
 
   const handler = async () => {
     onLog('disconnecting...');
+    setLoading(true);
     try {
       sendChannel.close();
       if (receiveChannel) {
@@ -19,12 +23,13 @@ export const useDisconnect = () => {
       localConnection.close();
       remoteConnection.close();
     } catch (error) {
-      onLog('error disconnecting');
+      onLog('⚠ error disconnecting');
       console.error(error);
     } finally {
       onLog('disconnected');
+      setLoading(false);
     }
   };
 
-  return handler;
+  return { isLoading, handler };
 };

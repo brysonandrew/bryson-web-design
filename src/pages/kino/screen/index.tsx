@@ -1,8 +1,10 @@
-import { Header } from '../components/Header';
-import { useRemoteConnection } from './useRemoteConnection';
 import { Video } from './Video';
+import { Provider as ScreenProvider } from '../context/screen/Provider';
 
 export const Screen = () => {
-  useRemoteConnection();
-  return <Header left={<Video />} variant='remote' />;
+  return (
+    <ScreenProvider>
+      <Video />
+    </ScreenProvider>
+  );
 };

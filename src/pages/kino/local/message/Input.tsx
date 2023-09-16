@@ -4,15 +4,15 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import { useKino } from '../../context';
 import { P2 } from '@components/space/P2';
+import { useProjector } from '@pages/kino/context/projector';
 
 type TProps = InputHTMLAttributes<HTMLInputElement>;
 export const Input: FC<TProps> = ({ value, onChange }) => {
   const ref = useRef<HTMLInputElement | null>(null);
   const {
     statusRecord: { localChannelState, remoteChannelState },
-  } = useKino();
+  } = useProjector();
 
   useEffect(() => {
     if (localChannelState === 'open' && ref.current) {
