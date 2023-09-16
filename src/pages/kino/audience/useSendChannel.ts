@@ -2,24 +2,22 @@ import { useKino } from '../context';
 import { useChannelListeners } from '../hooks/useChannelListeners';
 
 export const useSendChannel = () => {
-  const { sendChannel, onUpdateLocalState } = useKino();
+  const { sendChannel, onUpdateStatusRecord, onLog } =
+    useKino();
 
-  const handleSendChannelStatusChange = () => {
-    if (sendChannel) {
-      const state = sendChannel.readyState;
-      onUpdateLocalState(state);
-    }
-  };
   const handleMessage = (event: MessageEvent) => {
-    console.log(event, 'send channel message');
+    onLog('send channel message');
+    console.log(event);
   };
+
   const handleError = (event: Event) => {
-    console.log(event, 'send channel error');
+    onLog('send channel error');
+    console.log(event);
   };
+  
   useChannelListeners({
     channel: sendChannel,
-    onSendChannelStatusChange:
-      handleSendChannelStatusChange,
+    onSendChannelStatusChange: onUpdateStatusRecord,
     onMessage: handleMessage,
     onError: handleError,
   });

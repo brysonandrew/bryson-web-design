@@ -2,27 +2,43 @@ import { TError } from '@t/index';
 import { useKino } from '../../context';
 
 export const useConnect = () => {
-  const { localConnection, remoteConnection } = useKino();
+  const { localConnection, remoteConnection, onLog } =
+    useKino();
   const handler = async () => {
-    console.log('CONNECT');
+    onLog('establishing connection');
     try {
+      onLog('local creating offer');
       const offer = await localConnection.createOffer();
+      onLog('done');
+      onLog('local setting offer to local description');
       await localConnection.setLocalDescription(offer);
-      if (!localConnection.localDescription) return null;
-      remoteConnection.setRemoteDescription(
-        localConnection.localDescription,
+      const localSessionDescription =
+        localConnection.localDescription;
+      if (!localSessionDescription) return null;
+      onLog(
+        'remote setting local description to remote description',
+      );
+      await remoteConnection.setRemoteDescription(
+        localSessionDescription,
       );
 
+      onLog('remote creating answer');
       const answer = await remoteConnection.createAnswer();
+      onLog('done');
+      onLog('remote setting answer to local description');
       await remoteConnection.setLocalDescription(answer);
-      if (!remoteConnection.localDescription) return null;
+      const remoteSessionDescription =
+        remoteConnection.localDescription;
+      if (!remoteSessionDescription) return null;
+      onLog(
+        'local setting remote description to remote description',
+      );
       await localConnection.setRemoteDescription(
-        remoteConnection.localDescription,
+        remoteSessionDescription,
       );
     } catch (error: TError) {
-      console.log(
-        `Unable to create an offer: ${error.toString()}`,
-      );
+      onLog('connection failed');
+      console.error(error);
     }
   };
 

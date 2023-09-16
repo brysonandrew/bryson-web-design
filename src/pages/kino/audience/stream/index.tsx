@@ -1,30 +1,27 @@
-import { useState } from 'react';
 import { useKino } from '../../context';
 import { Button } from '../../components/Button';
-import { useEnterKeyCallback } from '@pages/kino/hooks/useEnterKey';
 
 export const Video = () => {
-  const { sendChannel, remoteState } = useKino();
-  const [value, setValue] = useState('');
+  const { onUpdateActiveStream, statusRecord } = useKino();
 
-  const handleSend = async () => {
+  const initiateStream = async () => {
     const stream =
       await navigator.mediaDevices.getUserMedia({
         audio: true,
         video: true,
       });
-    console.log(stream);
+    onUpdateActiveStream(stream);
   };
 
-  useEnterKeyCallback(handleSend);
-
   return (
-    <div className='text-2xl'>
+    <div>
       <Button
-        disabled={remoteState !== 'open'}
-        onClick={handleSend}
+        disabled={
+          statusRecord.remoteChannelState !== 'open'
+        }
+        onClick={initiateStream}
       >
-        <>Request Stream</>
+        Request Stream
       </Button>
     </div>
   );

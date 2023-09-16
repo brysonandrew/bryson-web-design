@@ -1,7 +1,18 @@
 import { useState, type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Kino, useKino } from '.';
-import { TContext } from './types';
+import {
+  TContext,
+  TLogEntries,
+  TLogEntry,
+  TStatusRecord,
+} from './types';
+import {
+  STATUS_RECORD,
+  resolveStatusHandlers,
+} from './constants';
+import { generateId } from '@utils/keys/generateRandomId';
+import { useUpdateStatusRecord } from '../hooks/useStatusHandlers';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -10,21 +21,35 @@ export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
   const kino = useKino();
+  const [statusRecord, setUpdateStatusRecord] =
+    useState<TStatusRecord>(STATUS_RECORD);
   const [receiveChannel, setReceiveChannel] =
     useState<RTCDataChannel | null>(null);
-  const [localState, setLocalState] =
-    useState<RTCDataChannelState | null>(null);
-  const [remoteState, setRemoteState] =
-    useState<RTCDataChannelState | null>(null);
+  const [activeStream, setActiveStream] =
+    useState<MediaStream | null>(null);
+  const [logs, setLogs] = useState<TLogEntries>([]);
+
+  const handleUpdateStatusRecord = useUpdateStatusRecord(
+    setUpdateStatusRecord,
+  );
+
+  const handleLog = (text: TLogEntry[1]) => {
+    setLogs((prev) => [...prev, [generateId(), text]]);
+  };
 
   const value: TContext = {
     ...kino,
-    localState,
-    remoteState,
+    logs,
+    statusRecord,
+    activeStream,
     receiveChannel,
+    statusHandlers: resolveStatusHandlers(
+      handleUpdateStatusRecord,
+    ),
     onUpdateReceiveChannel: setReceiveChannel,
-    onUpdateLocalState: setLocalState,
-    onUpdateRemoteState: setRemoteState,
+    onUpdateActiveStream: setActiveStream,
+    onUpdateStatusRecord: handleUpdateStatusRecord,
+    onLog: handleLog,
   };
 
   return (

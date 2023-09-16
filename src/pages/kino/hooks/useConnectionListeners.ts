@@ -5,66 +5,59 @@ type TConfig = {
   connection: RTCPeerConnection;
   onDataChannel(event: RTCDataChannelEvent): void;
   onIceCandidate(event: RTCPeerConnectionIceEvent): void;
+  onIceConnectionStateChange(event: Event): void;
+  onConnectionStateChange(event: Event): void;
+  onIceGatheringStateChange(event: Event): void;
+  onNegotiationNeeded(event: Event): void;
+  onSignalingStateChange(event: Event): void;
+  onTrack(event: RTCTrackEvent): void;
+  onIceCandidateError(event: Event): void;
 };
 export const useConnectionListeners = ({
   connection,
   onDataChannel,
   onIceCandidate,
+  onIceConnectionStateChange,
+  onConnectionStateChange,
+  onIceGatheringStateChange,
+  onNegotiationNeeded,
+  onSignalingStateChange,
+  onTrack,
+  onIceCandidateError,
 }: TConfig) => {
   const ref = useRef<RTCPeerConnection>(connection);
 
   useEventListener('datachannel', onDataChannel, ref);
   useEventListener('icecandidate', onIceCandidate, ref);
-
-  const handleIceConnectionStateChange = (event: Event) =>
-    console.log(event);
   useEventListener(
     'iceconnectionstatechange',
-    handleIceConnectionStateChange,
+    onIceConnectionStateChange,
     ref,
   );
-
-  const handleConnectionStateChange = (event: Event) =>
-    console.log(event);
   useEventListener(
     'connectionstatechange',
-    handleConnectionStateChange,
+    onConnectionStateChange,
     ref,
   );
-
-  const handleIceGatheringStateChange = (event: Event) =>
-    console.log(event);
   useEventListener(
     'icegatheringstatechange',
-    handleIceGatheringStateChange,
+    onIceGatheringStateChange,
     ref,
   );
-
-  const handleNegotiationNeeded = (event: Event) =>
-    console.log(event);
   useEventListener(
     'negotiationneeded',
-    handleNegotiationNeeded,
+    onNegotiationNeeded,
     ref,
   );
-
-  const handleSignalingStateChange = (event: Event) =>
-    console.log(event);
   useEventListener(
     'signalingstatechange',
-    handleSignalingStateChange,
+    onSignalingStateChange,
     ref,
   );
-
-  const handleTrack = (event: RTCTrackEvent) =>
-    console.log(event);
-  useEventListener('track', handleTrack, ref);
-
-  const handleIceCandidateError = (event: Event) =>
-    console.log(event, 'icecandidateerror');
+  useEventListener('track', onTrack, ref);
   useEventListener(
     'icecandidateerror',
-    handleIceCandidateError,
+    onIceCandidateError,
     ref,
   );
 };

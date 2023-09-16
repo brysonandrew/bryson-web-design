@@ -1,19 +1,46 @@
-import { NOOP } from '@constants/functions';
-import type { TContext } from './types';
+import { VOIDOP } from '@constants/functions';
+import type { TContext, TStatusHandlers } from './types';
 
+// connections
 const localConnection = new RTCPeerConnection();
 const remoteConnection = new RTCPeerConnection();
+
+// senders
 const sendChannel =
   localConnection.createDataChannel('sendChannel');
+const receiveChannel = null; // set later
+
+export const STATUS_RECORD = {
+  localChannelState: null,
+  remoteChannelState: null,
+  localSignalingState: null,
+  remoteSignalingState: null,
+  localIceGatheringState: null,
+  remoteIceGatheringState: null,
+  localConnectionState: null,
+  remoteConnectionState: null,
+};
+
+export const resolveStatusHandlers = (
+  handler = VOIDOP,
+): TStatusHandlers => ({
+  onConnectionStateChange: handler,
+  onIceConnectionStateChange: handler,
+  onIceGatheringStateChange: handler,
+  onSignalingStateChange: handler,
+});
 
 export const CONTEXT: TContext = {
-  localState: sendChannel.readyState,
-  remoteState: sendChannel.readyState,
+  logs: [],
+  statusRecord: STATUS_RECORD,
   localConnection,
   remoteConnection,
-  receiveChannel: null,
+  receiveChannel,
   sendChannel,
-  onUpdateReceiveChannel: NOOP,
-  onUpdateLocalState: NOOP,
-  onUpdateRemoteState: NOOP,
+  activeStream: null,
+  statusHandlers: resolveStatusHandlers(),
+  onUpdateReceiveChannel: VOIDOP,
+  onUpdateActiveStream: VOIDOP,
+  onUpdateStatusRecord: VOIDOP,
+  onLog: VOIDOP,
 };

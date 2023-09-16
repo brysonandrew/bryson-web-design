@@ -6,6 +6,7 @@ import { Cv } from '@pages/cv';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Kino } from '@pages/kino';
+import { Screen } from '@pages/screen';
 
 const STANDALONE_KEY = 'standalone';
 
@@ -27,6 +28,10 @@ const STANDALONE_ROUTES = [
   {
     path: '/kino',
     element: <Kino />,
+  },
+  {
+    path: '/screen',
+    element: <Screen />,
   },
   {
     path: '/cv',

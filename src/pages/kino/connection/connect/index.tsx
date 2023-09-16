@@ -3,12 +3,14 @@ import { useKino } from '../../context';
 import { useConnect } from './useConnect';
 
 export const Connect = () => {
-  const { remoteState } = useKino();
+  const {
+    statusRecord: { remoteChannelState },
+  } = useKino();
   const handleConnect = useConnect();
- 
+
   return (
     <Button
-      disabled={remoteState === 'open'}
+      disabled={remoteChannelState === 'open'}
       onClick={handleConnect}
     >
       <>Connect</>

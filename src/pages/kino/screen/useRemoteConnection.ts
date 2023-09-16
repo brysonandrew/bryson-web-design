@@ -1,53 +1,47 @@
-import { TError } from '@t/index';
 import { useKino } from '../context';
-import { useConnectionListeners } from '../hooks/useConnectionListeners';
+import { useReceiveChannel } from './useReceiveChannel';
+import { useConnectionListeners } from '@pages/kino/hooks/useConnectionListeners';
 
-export const useLocalConnection = () => {
+export const useRemoteConnection = () => {
   const {
     localConnection,
     remoteConnection,
+    onUpdateActiveStream,
     statusHandlers,
-    onLog,
   } = useKino();
 
-  const handleReceiveChannel = (event: Event) => {
-    onLog('data received');
-    console.log(event);
-  };
+  const handleReceiveChannel = useReceiveChannel();
 
   const handleIceCandidate = async (
     event: RTCPeerConnectionIceEvent,
   ) => {
-    const candidate: RTCIceCandidate | null =
-      event.candidate;
-    if (!candidate) return;
     try {
-      onLog('adding candidate');
-      await remoteConnection.addIceCandidate(candidate);
-      onLog('candidate added');
-    } catch (error: TError) {
-      onLog('adding candidate error');
+      const candidate = event.candidate;
+      if (!candidate) return;
+      await localConnection.addIceCandidate(candidate);
+    } catch (error) {
       console.log(error);
     }
   };
 
   const handleTrack = (event: RTCTrackEvent) => {
-    onLog('local track received');
+    onUpdateActiveStream(event.streams[0]);
+    console.log('remote track received');
     console.log(event);
   };
 
   const handleNegotiationNeeded = (event: Event) => {
-    console.log('local negotiation needed');
+    console.log('remote negotiation needed');
     console.log(event);
   };
 
   const handleIceCandidateError = (event: Event) => {
-    console.log('local ice candidate error');
+    console.log('remote ice candidate error');
     console.log(event);
   };
 
   useConnectionListeners({
-    connection: localConnection,
+    connection: remoteConnection,
     onDataChannel: handleReceiveChannel,
     onIceCandidate: handleIceCandidate,
     onTrack: handleTrack,

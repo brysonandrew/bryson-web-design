@@ -10,13 +10,15 @@ import { P2 } from '@components/space/P2';
 type TProps = InputHTMLAttributes<HTMLInputElement>;
 export const Input: FC<TProps> = ({ value, onChange }) => {
   const ref = useRef<HTMLInputElement | null>(null);
-  const { localState, remoteState } = useKino();
+  const {
+    statusRecord: { localChannelState, remoteChannelState },
+  } = useKino();
 
   useEffect(() => {
-    if (localState === 'open' && ref.current) {
+    if (localChannelState === 'open' && ref.current) {
       ref.current.focus();
     }
-  }, [localState]);
+  }, [localChannelState]);
 
   return (
     <label className='row'>
@@ -35,7 +37,7 @@ export const Input: FC<TProps> = ({ value, onChange }) => {
         maxLength={120}
         value={value}
         onChange={onChange}
-        disabled={remoteState !== 'open'}
+        disabled={remoteChannelState !== 'open'}
       />
     </label>
   );

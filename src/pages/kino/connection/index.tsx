@@ -4,7 +4,7 @@ import { P4 } from '@components/space/P4';
 
 export const Connection = () => (
   <div className='row justify-start w-full'>
-    <Connect />
+    <Connect /> 
     <P4 />
     <Disconnect />
   </div>

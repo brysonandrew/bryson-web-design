@@ -26,6 +26,9 @@ export const PRE_FLIGHT: Preflight<TAnyTheme> = {
       pre {
         font-family: ${MONO}, Courier, Menlo, and Consolas, monospace;
       }
+      kbd {
+        font-weight: bold;
+      }
 
       ::-webkit-scrollbar {
         background-color: ${theme.colors['white-2']};

@@ -6,7 +6,7 @@ import { Input } from './Input';
 import { useEnterKeyCallback } from '@pages/kino/hooks/useEnterKey';
 
 export const Message = () => {
-  const { sendChannel, remoteState } = useKino();
+  const { sendChannel, statusRecord } = useKino();
   const [value, setValue] = useState('');
 
   const handleSendMessage = () => {
@@ -27,10 +27,12 @@ export const Message = () => {
       <Input value={value} onChange={handleChange} />
       <P4 />
       <Button
-        disabled={remoteState !== 'open'}
+        disabled={
+          statusRecord.remoteChannelState !== 'open'
+        }
         onClick={handleSendMessage}
       >
-        <>Send</>
+        Send
       </Button>
     </div>
   );
