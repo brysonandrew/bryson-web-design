@@ -8,7 +8,7 @@ import { Shell as MainShell } from '@main/Shell';
 import { Kino } from '@pages/kino';
 import { Screen } from '@pages/screen';
 
-const STANDALONE_KEY = 'standalone';
+const WITH_SHELL_KEY = 'with-shell';
 
 const SHELL_ROUTES: any[] = [
   {
@@ -23,7 +23,8 @@ const SHELL_ROUTES: any[] = [
     path: '/projects',
     element: <Projects />,
   },
-];
+].map((v) => ({ ...v, key: WITH_SHELL_KEY }));
+
 const STANDALONE_ROUTES = [
   {
     path: '/kino',
@@ -41,15 +42,16 @@ const STANDALONE_ROUTES = [
     path: '*',
     element: <Navigate to='/' replace />,
   },
-].map((v) => ({ ...v, key: STANDALONE_KEY }));
+];
 
 const ROUTES = [...SHELL_ROUTES, ...STANDALONE_ROUTES];
 
 export const Source = () => {
   const page = useRoutes(ROUTES);
+  const key = page?.props.match.route.key;
 
-  switch (page?.key) {
-    case STANDALONE_KEY:
+  switch (key) {
+    case WITH_SHELL_KEY:
       return (
         <MainShell>
           <Shell>{page}</Shell>
