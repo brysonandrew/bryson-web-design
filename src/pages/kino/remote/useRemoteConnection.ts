@@ -6,8 +6,8 @@ export const useRemoteConnection = () => {
   const {
     localConnection,
     remoteConnection,
-    onUpdateActiveStream,
     statusHandlers,
+    onUpdateActiveStream,
   } = useProjector();
   
   const handleReceiveChannel = useReceiveChannel();

@@ -5,9 +5,10 @@ import type { TContext, TStatusHandlers } from './types';
 const localConnection = new RTCPeerConnection();
 const remoteConnection = new RTCPeerConnection();
 
+const SEND_CHANNEL_KEY = 'sendChannel'
 // senders
 const sendChannel =
-  localConnection.createDataChannel('sendChannel');
+  localConnection.createDataChannel(SEND_CHANNEL_KEY);
 const receiveChannel = null; // set later
 
 export const STATUS_RECORD = {

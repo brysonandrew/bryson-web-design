@@ -2,9 +2,11 @@ import { useProjector } from '@pages/kino/context/projector';
 import { TError } from '@t/index';
 import { useState } from 'react';
 
+// const s = new SignalingChannel()
+
 export const useConnect = () => {
   const [isLoading, setLoading] = useState(false);
-  const { localConnection, remoteConnection, onLog } =
+  const { sendChannel, localConnection, remoteConnection, onLog } =
     useProjector();
 
   const handler = async () => {
@@ -22,6 +24,7 @@ export const useConnect = () => {
       onLog(
         'remote setting local description to remote description...',
       );
+      //sendChannel.send(localSessionDescription)
       await remoteConnection.setRemoteDescription(
         localSessionDescription,
       );

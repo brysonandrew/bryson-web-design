@@ -24,11 +24,11 @@ export const Video: FC<TProps> = ({ ...props }) => {
       <Subtitle>Screen</Subtitle>
       <P2 />
       <video
+        ref={ref}
         playsInline
         autoPlay
         muted
         className='border-black-2 border-1'
-        ref={ref}
         {...props}
       />
     </div>
