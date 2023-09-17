@@ -5,8 +5,8 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import { Cv } from '@pages/cv';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
-import { Kino } from '@pages/kino';
-import { Screen } from '@pages/screen';
+import { Screen } from '@pages/kino/screen';
+import { Projector } from '@pages/kino/projector';
 
 const WITH_SHELL_KEY = 'with-shell';
 
@@ -16,19 +16,19 @@ const SHELL_ROUTES: any[] = [
     element: <Index />,
   },
   {
-    path: '/contact',
-    element: <Contact />,
-  },
-  {
     path: '/projects',
     element: <Projects />,
+  },
+  {
+    path: '/contact',
+    element: <Contact />,
   },
 ].map((v) => ({ ...v, key: WITH_SHELL_KEY }));
 
 const STANDALONE_ROUTES = [
   {
-    path: '/kino',
-    element: <Kino />,
+    path: '/projector',
+    element: <Projector />,
   },
   {
     path: '/screen',

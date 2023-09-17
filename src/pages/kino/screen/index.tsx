@@ -1,10 +1,21 @@
+import { Variables } from '@css/Variables';
+import { Provider } from './context/Provider';
 import { Video } from './Video';
-import { Provider as ScreenProvider } from '../context/screen/Provider';
+import { useRemoteConnection } from './useRemoteConnection';
+
+import '@css/reset.css';
+import '@css/globals.css';
+import 'virtual:uno.css';
 
 export const Screen = () => {
+  useRemoteConnection();
+
   return (
-    <ScreenProvider>
-      <Video />
-    </ScreenProvider>
+    <>
+      <Variables />
+      <Provider>
+        <Video />
+      </Provider>
+    </>
   );
 };

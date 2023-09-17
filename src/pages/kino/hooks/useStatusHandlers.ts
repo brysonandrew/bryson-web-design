@@ -1,29 +1,23 @@
-import { useProjector } from "../context/projector";
-import { TStatusRecord } from "../context/projector/types";
+import { TStatusRecord } from '../config/types';
 
-export const useUpdateStatusRecord = (
-  onUpdateStatusRecord: (next: TStatusRecord) => void,
-) => {
-  const {
-    sendChannel,
-    receiveChannel,
-    localConnection,
-    remoteConnection,
-  } = useProjector();
+export type TPassedConfig = {
+  connection: RTCPeerConnection;
+  channel: RTCDataChannel | null;
+};
+type TConfig = TPassedConfig & {
+  onUpdateStatusRecord(next: TStatusRecord): void;
+};
+export const useUpdateStatusRecord = ({
+  channel,
+  connection,
+  onUpdateStatusRecord,
+}: TConfig) => {
   const handleUpdateStatusRecord = () => {
     onUpdateStatusRecord({
-      localChannelState: sendChannel.readyState,
-      remoteChannelState:
-        receiveChannel?.readyState ?? null,
-      localSignalingState: localConnection.signalingState,
-      remoteSignalingState: remoteConnection.signalingState,
-      localIceGatheringState:
-        localConnection.iceGatheringState,
-      remoteIceGatheringState:
-        remoteConnection.iceGatheringState,
-      localConnectionState: localConnection.connectionState,
-      remoteConnectionState:
-        remoteConnection.connectionState,
+      channelState: channel?.readyState ?? null,
+      signalingState: connection.signalingState,
+      iceGatheringState: connection.iceGatheringState,
+      connectionState: connection.connectionState,
     });
   };
 

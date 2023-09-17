@@ -1,19 +1,10 @@
-import { TStatusRecordKey } from "@pages/kino/context/projector/types";
+import { TStatusRecordKey } from '@pages/kino/config/types';
 
 export type TIncludes = TStatusRecordKey[];
 
-const BASE_INCLUDES = [
-  'ConnectionState',
-  'IceGatheringState',
-  'SignalingState',
-  'ChannelState',
+export const BASE_INCLUDES = [
+  'channelState',
+  'signalingState',
+  'iceGatheringState',
+  'connectionState',
 ] as const;
-
-export type TVariant = 'local' | 'remote';
-
-export const resolveIncludes = (
-  variant: TVariant,
-): TIncludes =>
-  BASE_INCLUDES.map(
-    (v) => `${variant}${v}` as TStatusRecordKey,
-  );

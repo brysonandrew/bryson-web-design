@@ -4,7 +4,7 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import { useScreen } from '../context/screen';
+import { useScreen } from './context';
 import { P2 } from '@components/space/P2';
 import { Subtitle } from '../components/Subtitle';
 
