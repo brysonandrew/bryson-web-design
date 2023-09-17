@@ -4,11 +4,13 @@ import { pascalToTitle } from '@utils/format';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { BASE_INCLUDES } from './types';
-import { useProjector } from '@pages/kino/projector/context';
-import { TStatusRecordKey } from '@pages/kino/config/types';
+import {
+  TStatusRecord,
+  TStatusRecordKey,
+} from '@pages/kino/config/types';
 
-export const Status: FC = () => {
-  const { statusRecord } = useProjector();
+type TProps = { statusRecord: TStatusRecord };
+export const Status: FC<TProps> = ({ statusRecord }) => {
   return (
     <AnimatePresence>
       <motion.ul key='LIST' className='column-start'>

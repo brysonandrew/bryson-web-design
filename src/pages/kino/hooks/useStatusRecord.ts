@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   STATUS_RECORD,
   resolveStatusHandlers,
@@ -7,26 +7,34 @@ import {
   TStatusRecordContext,
   TStatusRecord,
 } from '../config/types';
-import {
-  TPassedConfig,
-  useUpdateStatusRecord,
-} from './useStatusHandlers';
 
+type TConfig = {
+  connection: RTCPeerConnection;
+  channel: RTCDataChannel | null;
+};
 export const useStatusRecord = (
-  props: TPassedConfig,
+  config: TConfig,
 ): TStatusRecordContext => {
   const [statusRecord, setUpdateStatusRecord] =
     useState<TStatusRecord>(STATUS_RECORD);
-  const onUpdateStatusRecord = useUpdateStatusRecord({
-    ...props,
-    onUpdateStatusRecord: setUpdateStatusRecord,
-  });
+  const configRef = useRef(config);
+  configRef.current = config;
+  const onUpdateStatusRecord = () => {
+    const { channel, connection } = configRef.current;
+    setUpdateStatusRecord({
+      channelState: channel?.readyState ?? null,
+      ...connection,
+      iceGatheringState: connection.iceGatheringState,
+    });
+  };
+
+  const statusHandlers = resolveStatusHandlers(
+    onUpdateStatusRecord,
+  )
 
   return {
     statusRecord,
-    statusHandlers: resolveStatusHandlers(
-      onUpdateStatusRecord,
-    ),
+    statusHandlers,
     onUpdateStatusRecord,
   };
 };

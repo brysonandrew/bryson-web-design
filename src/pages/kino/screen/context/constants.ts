@@ -4,7 +4,7 @@ import {
   TContext,
   TReceiveChannelContext,
 } from './types';
-import { CONNECTION_CONTEXT } from '@pages/kino/config';
+import { CONNECTION_CONTEXT, LOGS_CONTEXT } from '@pages/kino/config';
 
 const ACTIVE_STREAM_CONTEXT: TActiveStreamContext = {
   activeStream: null,
@@ -20,5 +20,5 @@ export const CONTEXT: TContext = {
   ...CONNECTION_CONTEXT,
   ...ACTIVE_STREAM_CONTEXT,
   ...RECEIVE_CHANNEL_CONTEXT,
-  
+  ...LOGS_CONTEXT,
 };

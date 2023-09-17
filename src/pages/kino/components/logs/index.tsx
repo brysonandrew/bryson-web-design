@@ -1,7 +1,7 @@
 import { P1 } from '@components/space/P1';
-import { useProjector } from '../context';
+import { useProjector } from '../../projector/context';
 import { FadeDown } from '@components/vertical-fade/FadeDown';
-import { Subtitle } from '../../components/Subtitle';
+import { Subtitle } from '../Subtitle';
 
 export const Logs = () => {
   const { logs } = useProjector();

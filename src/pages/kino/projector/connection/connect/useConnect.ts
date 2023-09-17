@@ -16,7 +16,7 @@ export const useConnect = () => {
       onLog('setting offer to local description...');
       signaling.postMessage({
         type: OFFER_KEY,
-        sdp: offer.sdp,
+        offer: JSON.stringify(offer),
       });
       await connection.setLocalDescription(offer);
     } catch (error: TError) {

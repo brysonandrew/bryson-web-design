@@ -7,17 +7,18 @@ import {
 import { useScreen } from './context';
 import { P2 } from '@components/space/P2';
 import { Subtitle } from '../components/Subtitle';
+import { useActiveStream } from './useActiveStream';
 
 type TProps = VideoHTMLAttributes<HTMLVideoElement>;
 export const Video: FC<TProps> = ({ ...props }) => {
   const ref = useRef<HTMLVideoElement | null>(null);
-  const { activeStream } = useScreen();
-
-  useEffect(() => {
-    if (activeStream && ref.current) {
-      ref.current.srcObject = activeStream;
-    }
-  }, [activeStream]);
+  const { activeStream, onLog } = useScreen();
+  
+  useActiveStream({
+    video: ref.current,
+    onLog,
+    activeStream,
+  });
 
   return (
     <div>

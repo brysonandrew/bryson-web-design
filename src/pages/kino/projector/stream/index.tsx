@@ -2,8 +2,7 @@ import { useProjector } from '../context';
 import { Button } from '../../components/Button';
 
 export const Stream = () => {
-  const { statusRecord } =
-    useProjector();
+  const { connection, sendChannel } = useProjector();
 
   const initiateStream = async () => {
     const stream =
@@ -11,7 +10,9 @@ export const Stream = () => {
         audio: true,
         video: true,
       });
-      
+    stream
+      .getTracks()
+      .forEach((track) => connection.addTrack(track, stream));
   };
 
   return (

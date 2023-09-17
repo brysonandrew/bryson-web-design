@@ -4,7 +4,6 @@ import { DISCONNECT_KEY } from '@pages/kino/hooks/signaling/config';
 
 export const useDisconnect = () => {
   const [isLoading, setLoading] = useState(false);
-
   const {
     signaling,
     sendChannel,

@@ -1,9 +1,9 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Projector, useProjector } from '.';
-import { TContext, TLogEntries, TLogEntry } from './types';
-import { generateId } from '@utils/keys/generateRandomId';
+import { TContext } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
+import { useLogs } from '@pages/kino/hooks/useLogs';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -11,23 +11,18 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const projector = useProjector();
-  const [logs, setLogs] = useState<TLogEntries>([]);
+  const initProjectorContext = useProjector();
+  const logsContext = useLogs();
 
-  const statusRecordProps = useStatusRecord({
-    channel: projector.sendChannel,
-    connection: projector.connection,
+  const statusRecordContext = useStatusRecord({
+    channel: initProjectorContext.sendChannel,
+    connection: initProjectorContext.connection,
   });
 
-  const handleLog = (text: TLogEntry[1]) => {
-    setLogs((prev) => [...prev, [generateId(), text]]);
-  };
-
   const value: TContext = {
-    ...projector,
-    logs,
-    onLog: handleLog,
-    ...statusRecordProps,
+    ...initProjectorContext,
+    ...logsContext,
+    ...statusRecordContext,
   };
 
   return (

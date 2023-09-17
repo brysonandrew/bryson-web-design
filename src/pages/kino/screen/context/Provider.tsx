@@ -3,6 +3,7 @@ import type { TChildrenElement } from '@t/index';
 import { Screen, useScreen } from '.';
 import { TContext } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
+import { useLogs } from '@pages/kino/hooks/useLogs';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -10,7 +11,9 @@ type TProviderProps = {
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
-  const screen = useScreen();
+  const initScreenContext = useScreen();
+  const logsContext = useLogs();
+
   const [activeStream, setActiveStream] =
     useState<MediaStream | null>(null);
   const [receiveChannel, setReceiveChannel] =
@@ -18,15 +21,16 @@ export const Provider: FC<TProviderProps> = ({
 
   const statusRecordProps = useStatusRecord({
     channel: receiveChannel,
-    connection: screen.connection,
+    connection: initScreenContext.connection,
   });
 
   const value: TContext = {
-    ...screen,
+    ...initScreenContext,
     receiveChannel,
     activeStream,
     onUpdateActiveStream: setActiveStream,
     onUpdateReceiveChannel: setReceiveChannel,
+    ...logsContext,
     ...statusRecordProps,
   };
 

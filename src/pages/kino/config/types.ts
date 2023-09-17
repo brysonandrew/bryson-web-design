@@ -20,6 +20,14 @@ export type TStatusHandlers = {
   onSignalingStateChange(): void;
 };
 
+export type TLogEntry = [id: string, text: string];
+export type TLogEntries = TLogEntry[];
+
+export type TLogsContext = {
+  logs: TLogEntries;
+  onLog: TLogHandler;
+};
+
 export type TLogHandler = (text: string) => void;
 
 export type TStatusRecordContext = {

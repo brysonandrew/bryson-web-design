@@ -2,6 +2,7 @@ import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useReceiveChannel } from '../hooks/useReceiveChannel';
 import { useIceCandidate } from '../hooks/useIceCandidate';
 import { useScreen } from './context';
+import { useSignaling } from '../hooks/signaling/useSignalling';
 
 export const useRemoteConnection = () => {
   const {
@@ -12,29 +13,32 @@ export const useRemoteConnection = () => {
     onUpdateActiveStream,
     onUpdateReceiveChannel,
     onUpdateStatusRecord,
+    onLog,
   } = useScreen();
+  useSignaling({ signaling, connection, onLog });
 
   const handleReceiveChannel = useReceiveChannel({
     channel: receiveChannel,
     onUpdateReceiveChannel,
     onUpdateStatusRecord,
   });
+  console.log(connection)
 
   const handleIceCandidate = useIceCandidate(signaling);
 
   const handleTrack = (event: RTCTrackEvent) => {
     onUpdateActiveStream(event.streams[0]);
-    console.log('remote track received');
+    onLog('track received');
     console.log(event);
   };
 
   const handleNegotiationNeeded = (event: Event) => {
-    console.log('remote negotiation needed');
+    onLog('negotiation needed');
     console.log(event);
   };
 
   const handleIceCandidateError = (event: Event) => {
-    console.log('⚠ remote ice candidate error');
+    onLog('⚠ ice candidate error');
     console.log(event);
   };
 
