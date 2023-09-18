@@ -19,22 +19,44 @@ export const useStatusRecord = (
     useState<TStatusRecord>(STATUS_RECORD);
   const configRef = useRef(config);
   configRef.current = config;
+
+  const onUpdatePartialStatusRecord = (
+    partial: Partial<TStatusRecord>,
+  ) => {
+    setUpdateStatusRecord((prev) => {
+      console.log(prev);
+      return {
+        ...prev,
+        ...partial,
+      };
+    });
+  };
+
   const onUpdateStatusRecord = () => {
-    const { channel, connection } = configRef.current;
+    const {
+      channel,
+      connection: {
+        connectionState,
+        iceGatheringState,
+        signalingState,
+      },
+    } = configRef.current;
     setUpdateStatusRecord({
       channelState: channel?.readyState ?? null,
-      ...connection,
-      iceGatheringState: connection.iceGatheringState,
+      connectionState,
+      iceGatheringState,
+      signalingState,
     });
   };
 
   const statusHandlers = resolveStatusHandlers(
     onUpdateStatusRecord,
-  )
+  );
 
   return {
     statusRecord,
     statusHandlers,
+    onUpdatePartialStatusRecord,
     onUpdateStatusRecord,
   };
 };

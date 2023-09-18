@@ -1,5 +1,5 @@
 import { Connection } from './connection';
-import { Logs } from '../components/logs';
+import { Logs } from './logs';
 import { useLocalConnection } from './useLocalConnection';
 import { Status } from './status';
 import { Shell } from '../components/Shell';

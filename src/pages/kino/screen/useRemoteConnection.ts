@@ -3,6 +3,7 @@ import { useReceiveChannel } from '../hooks/useReceiveChannel';
 import { useIceCandidate } from '../hooks/useIceCandidate';
 import { useScreen } from './context';
 import { useSignaling } from '../hooks/signaling/useSignalling';
+import { useChannel } from '../hooks/useChannel';
 
 export const useRemoteConnection = () => {
   const {
@@ -13,16 +14,30 @@ export const useRemoteConnection = () => {
     onUpdateActiveStream,
     onUpdateReceiveChannel,
     onUpdateStatusRecord,
+    onUpdatePartialStatusRecord,
     onLog,
   } = useScreen();
   useSignaling({ signaling, connection, onLog });
 
   const handleReceiveChannel = useReceiveChannel({
-    channel: receiveChannel,
     onUpdateReceiveChannel,
-    onUpdateStatusRecord,
+    onUpdatePartialStatusRecord,
+    onLog,
   });
-  console.log(connection)
+
+  useChannel({
+    channel: receiveChannel,
+    onUpdateStatusRecord,
+    onLog,
+  });
+
+  const handleDataChannel = (
+    event: RTCDataChannelEvent,
+  ) => {
+    onLog('data channel');
+    console.log(event);
+    handleReceiveChannel(event);
+  };
 
   const handleIceCandidate = useIceCandidate(signaling);
 
@@ -44,7 +59,7 @@ export const useRemoteConnection = () => {
 
   useConnectionListeners({
     connection,
-    onDataChannel: handleReceiveChannel,
+    onDataChannel: handleDataChannel,
     onIceCandidate: handleIceCandidate,
     onTrack: handleTrack,
     onNegotiationNeeded: handleNegotiationNeeded,

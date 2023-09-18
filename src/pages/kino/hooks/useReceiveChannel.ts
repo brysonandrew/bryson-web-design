@@ -1,44 +1,29 @@
-import { VOIDOP } from '@constants/functions';
 import {
   TLogHandler,
+  TStatusRecordContext,
   TUpdateChannelHandler,
 } from '../config/types';
-import { useChannelListeners } from './useChannelListeners';
 
-type TConfig = {
-  channel: RTCDataChannel | null;
+type TConfig = Pick<
+  TStatusRecordContext,
+  'onUpdatePartialStatusRecord'
+> & {
   onUpdateReceiveChannel: TUpdateChannelHandler;
-  onUpdateStatusRecord: () => void;
-  onLog?: TLogHandler;
+  onLog: TLogHandler;
 };
 export const useReceiveChannel = ({
-  channel,
   onUpdateReceiveChannel,
-  onUpdateStatusRecord,
-  onLog = VOIDOP,
+  onUpdatePartialStatusRecord,
+  onLog,
 }: TConfig) => {
   const initiate = (event: RTCDataChannelEvent) => {
     onLog('🚀 receive channel initiating...');
     const receiveChannel: RTCDataChannel = event.channel;
     onUpdateReceiveChannel(receiveChannel);
+    onUpdatePartialStatusRecord({
+      channelState: receiveChannel.readyState,
+    });
   };
-
-  const handleMessage = (event: MessageEvent) => {
-    onLog('💬 receive channel message');
-    console.log(event);
-  };
-
-  const handleError = (event: Event) => {
-    onLog('⚠ receive channel error');
-    console.log(event);
-  };
-
-  useChannelListeners({
-    channel,
-    onMessage: handleMessage,
-    onSendChannelStatusChange: onUpdateStatusRecord,
-    onError: handleError,
-  });
 
   return initiate;
 };

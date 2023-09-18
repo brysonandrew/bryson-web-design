@@ -3,25 +3,25 @@ import { useEventListener } from '@hooks/events/useEventListener';
 
 type TConfig = {
   channel: RTCDataChannel | null;
-  onSendChannelStatusChange(event: Event): void;
+  onChannelStatusChange(event: Event): void;
   onMessage(event: MessageEvent): void;
   onError(event: Event): void;
 };
 export const useChannelListeners = ({
   channel,
-  onSendChannelStatusChange,
+  onChannelStatusChange,
   onMessage,
   onError,
 }: TConfig) => {
   const ref = useRef<RTCDataChannel | null>(channel);
   ref.current = channel;
 
-  useEventListener('open', onSendChannelStatusChange, ref);
+  useEventListener('open', onChannelStatusChange, ref);
   useEventListener('message', onMessage, ref);
-  useEventListener('close', onSendChannelStatusChange, ref);
+  useEventListener('close', onChannelStatusChange, ref);
   useEventListener(
     'closing',
-    onSendChannelStatusChange,
+    onChannelStatusChange,
     ref,
   );
   useEventListener('error', onError, ref);

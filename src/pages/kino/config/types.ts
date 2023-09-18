@@ -33,10 +33,13 @@ export type TLogHandler = (text: string) => void;
 export type TStatusRecordContext = {
   statusHandlers: TStatusHandlers;
   statusRecord: TStatusRecord;
+  onUpdatePartialStatusRecord(
+    partial?: Partial<TStatusRecord>,
+  ): void;
   onUpdateStatusRecord(): void;
 };
 
-export type TConnectionContext = TStatusRecordContext & {
+export type TConnectionContext = {
   signaling: BroadcastChannel;
   connection: RTCPeerConnection;
 };

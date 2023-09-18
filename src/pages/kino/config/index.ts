@@ -6,6 +6,7 @@ import {
   TStatusRecord,
   TStatusRecordContext,
 } from './types';
+import { TReceiveChannelContext } from '../screen/context/types';
 
 export const resolveStatusHandlers = (
   handler = VOIDOP,
@@ -23,6 +24,12 @@ export const STATUS_RECORD: TStatusRecord = {
   connectionState: null,
 };
 
+export const RECEIVE_CHANNEL_CONTEXT: TReceiveChannelContext =
+  {
+    receiveChannel: null,
+    onUpdateReceiveChannel: VOIDOP,
+  };
+
 export const LOGS_CONTEXT: TLogsContext = {
   logs: [],
   onLog: VOIDOP,
@@ -32,6 +39,7 @@ export const STATUS_CONTEXT: TStatusRecordContext = {
   statusRecord: STATUS_RECORD,
   statusHandlers: resolveStatusHandlers(),
   onUpdateStatusRecord: VOIDOP,
+  onUpdatePartialStatusRecord: VOIDOP,
 };
 
 const BROADCAST_CHANNEL_KEY = 'kinoBroadcast';

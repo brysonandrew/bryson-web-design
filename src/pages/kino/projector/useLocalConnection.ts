@@ -2,17 +2,30 @@ import { useProjector } from './context';
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useIceCandidate } from '@pages/kino/hooks/useIceCandidate';
 import { useSignaling } from '../hooks/signaling/useSignalling';
+import { useChannel } from '../hooks/useChannel';
 
 export const useLocalConnection = () => {
-  const { signaling, connection, statusHandlers, onLog } =
-    useProjector();
+  const {
+    sendChannel,
+    signaling,
+    connection,
+    statusHandlers,
+    onLog,
+    onUpdateStatusRecord,
+  } = useProjector();
+  useChannel({
+    channel: sendChannel,
+    onUpdateStatusRecord,
+    onLog,
+  });
   useSignaling({ signaling, connection, onLog });
-  
+
   const handleDataChannel = (
     event: RTCDataChannelEvent,
   ) => {
     onLog('data channel');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   const handleTrack = (event: RTCTrackEvent) => {
@@ -31,8 +44,6 @@ export const useLocalConnection = () => {
     console.log('ice candidate error');
     console.log(event);
   };
-
-  console.log(connection);
 
   useConnectionListeners({
     connection,

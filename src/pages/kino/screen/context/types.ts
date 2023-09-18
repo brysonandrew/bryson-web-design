@@ -1,6 +1,7 @@
 import {
   TConnectionContext,
   TLogsContext,
+  TStatusRecordContext,
   TUpdateChannelHandler,
 } from '@pages/kino/config/types';
 
@@ -16,7 +17,8 @@ export type TActiveStreamContext = {
   onUpdateActiveStream(activeStream: TActiveStream): void;
 };
 
-export type TContext = TLogsContext &
+export type TContext = TStatusRecordContext &
+  TLogsContext &
   TReceiveChannelContext &
   TConnectionContext &
   TActiveStreamContext;

@@ -19,8 +19,6 @@ export const useSignaling = ({
 }: TConfig) => {
   useEffect(() => {
     signaling.onmessage = (event) => {
-      console.log('MESSAGE ');
-      console.log(event);
       try {
         switch (event.data.type) {
           case OFFER_KEY:
@@ -29,9 +27,9 @@ export const useSignaling = ({
               const offer: RTCSessionDescriptionInit =
                 JSON.parse(event.data.offer);
               await connection.setRemoteDescription(offer);
+              onLog("answering offer...")
               const answer: RTCSessionDescriptionInit =
                 await connection.createAnswer();
-              console.log(answer);
               signaling.postMessage({
                 type: ANSWER_KEY,
                 answer: JSON.stringify(answer),
@@ -45,14 +43,13 @@ export const useSignaling = ({
             const answer: RTCSessionDescriptionInit =
               JSON.parse(event.data.answer);
 
-            console.log(answer);
             connection.setRemoteDescription(answer);
             break;
           case CANDIDATE_KEY:
             onLog("candidate received...")
             const candidate: RTCIceCandidateInit =
               JSON.parse(event.data.candidate);
-            console.log(candidate);
+
             connection.addIceCandidate(candidate);
             break;
           case DISCONNECT_KEY:

@@ -1,10 +1,11 @@
 import { P1 } from '@components/space/P1';
-import { useProjector } from '../../projector/context';
 import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { Subtitle } from '../Subtitle';
+import { TLogsContext } from '@pages/kino/config/types';
+import { FC } from 'react';
 
-export const Logs = () => {
-  const { logs } = useProjector();
+type TProps = Pick<TLogsContext, 'logs'>;
+export const Logs: FC<TProps> = ({ logs }) => {
   return (
     <div className='relative h-44 overflow-auto'>
       <div className='sticky top-0 p-1'>
