@@ -42,17 +42,9 @@ export const STATUS_CONTEXT: TStatusRecordContext = {
   onUpdatePartialStatusRecord: VOIDOP,
 };
 
-const BROADCAST_CHANNEL_KEY = 'kinoBroadcast';
-const signaling = new BroadcastChannel(
-  BROADCAST_CHANNEL_KEY,
-);
-signaling.onmessage = console.log;
-signaling.onmessageerror = console.error;
-
 const connection = new RTCPeerConnection();
 
 export const CONNECTION_CONTEXT: TConnectionContext = {
-  signaling,
   connection,
   ...STATUS_CONTEXT,
 };

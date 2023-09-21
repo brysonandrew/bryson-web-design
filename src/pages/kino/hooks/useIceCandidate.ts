@@ -1,5 +1,8 @@
+import { Types } from 'ably';
+import { CANDIDATE_KEY } from './signaling/config';
+
 export const useIceCandidate = (
-  signaling: BroadcastChannel,
+  channel: Types.RealtimeChannelPromise,
 ) => {
   const handler = async (
     event: RTCPeerConnectionIceEvent,
@@ -7,12 +10,12 @@ export const useIceCandidate = (
     const candidate = event.candidate;
     if (!candidate) return;
     const message = {
-      type: 'candidate',
+      type: CANDIDATE_KEY,
       candidate: JSON.stringify(candidate),
       // sdpMid: candidate.sdpMid,
       // sdpMLineIndex: candidate.sdpMLineIndex
     };
-    signaling.postMessage(message);
+    channel.publish(CANDIDATE_KEY, message);
   };
   return handler;
 };

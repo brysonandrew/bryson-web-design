@@ -1,3 +1,7 @@
+import { AblyMessageCallback } from 'ably/react';
+import { SIGNALING_KEYS } from '../hooks/signaling/config';
+import { Types } from 'ably';
+
 export type TError = any;
 
 export type TUpdateChannelHandler = (
@@ -40,6 +44,14 @@ export type TStatusRecordContext = {
 };
 
 export type TConnectionContext = {
-  signaling: BroadcastChannel;
   connection: RTCPeerConnection;
 };
+
+export type TSignalingTuple = typeof SIGNALING_KEYS;
+export type TSignalingType = TSignalingTuple[number];
+
+export type TMessage = Types.Message & {
+  data: { type: TSignalingType } & any;
+};
+
+export type TMessages = TMessage[];

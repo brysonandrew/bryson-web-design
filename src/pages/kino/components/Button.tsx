@@ -26,6 +26,7 @@ export const Button: FC<TProps> = ({
       <AnimatePresence>
         {isLoading && (
           <motion.div
+            key='LOADING'
             className='absolute inset-0 bg-teal-bright'
             {...PRESENCE_OPACITY}
           />

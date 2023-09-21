@@ -4,8 +4,9 @@ import {
   TStatusRecordContext,
   TUpdateChannelHandler,
 } from '@pages/kino/config/types';
+import { MutableRefObject } from 'react';
 
-export type TActiveStream = MediaStream | null;
+export type TActiveStream = Blob | null;
 
 export type TReceiveChannelContext = {
   receiveChannel: RTCDataChannel | null;
@@ -17,8 +18,17 @@ export type TActiveStreamContext = {
   onUpdateActiveStream(activeStream: TActiveStream): void;
 };
 
+export type TMediaSource = MediaSource | null;
+
+export type TMediaSourceContext = {
+  mediaSource: TMediaSource;
+  onUpdateMediaSource(mediaSource: TMediaSource): void;
+};
+
 export type TContext = TStatusRecordContext &
   TLogsContext &
   TReceiveChannelContext &
   TConnectionContext &
-  TActiveStreamContext;
+  TMediaSourceContext & {
+    videoRef: MutableRefObject<HTMLVideoElement | null>;
+  };

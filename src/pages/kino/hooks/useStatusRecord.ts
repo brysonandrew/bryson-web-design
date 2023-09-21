@@ -24,7 +24,6 @@ export const useStatusRecord = (
     partial: Partial<TStatusRecord>,
   ) => {
     setUpdateStatusRecord((prev) => {
-      console.log(prev);
       return {
         ...prev,
         ...partial,
@@ -41,6 +40,7 @@ export const useStatusRecord = (
         signalingState,
       },
     } = configRef.current;
+
     setUpdateStatusRecord({
       channelState: channel?.readyState ?? null,
       connectionState,

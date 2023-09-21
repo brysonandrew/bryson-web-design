@@ -1,20 +1,21 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { TLogsContext } from '../config/types';
-import { TActiveStream } from './context/types';
+import { TMediaSource } from './context/types';
 
 type TConfig = Pick<TLogsContext, 'onLog'> & {
-  activeStream: TActiveStream;
+  mediaSource: TMediaSource;
   video: HTMLVideoElement | null;
 };
 export const useActiveStream = ({
   video,
-  activeStream,
+  mediaSource,
   onLog,
 }: TConfig) => {
   useEffect(() => {
-    if (activeStream && video) {
-      video.srcObject = activeStream;
+    if (mediaSource && video) {
+      console.log(mediaSource);
+      video.src = URL.createObjectURL(mediaSource);
       onLog('set active media stream');
     }
-  }, [activeStream, video]);
+  }, [mediaSource, video]);
 };

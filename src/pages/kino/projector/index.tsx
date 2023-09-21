@@ -1,21 +1,22 @@
 import { Provider } from './context/Provider';
 import { Variables } from '@css/Variables';
-import { useLocalConnection } from './useLocalConnection';
 import { Main } from './Main';
+import { AblyProvider } from 'ably/react';
+import { useClient } from '../hooks/signaling/useClient';
 
 import '@css/reset.css';
 import '@css/globals.css';
 import 'virtual:uno.css';
 
 export const Projector = () => {
-  useLocalConnection();
+  const client = useClient();
 
   return (
-    <>
+    <AblyProvider client={client}>
       <Variables />
       <Provider>
         <Main />
       </Provider>
-    </>
+    </AblyProvider>
   );
 };

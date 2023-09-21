@@ -7,7 +7,7 @@ import { FC } from 'react';
 type TProps = Pick<TLogsContext, 'logs'>;
 export const Logs: FC<TProps> = ({ logs }) => {
   return (
-    <div className='relative h-44 overflow-auto'>
+    <div className='relative h-128 overflow-auto'>
       <div className='sticky top-0 p-1'>
         <FadeDown classValue='h-full' />
         <Subtitle classValue='relative z-20'>Logs</Subtitle>
