@@ -33,6 +33,24 @@ export function useEventListener<
   options?: boolean | AddEventListenerOptions
 ): void;
 
+// RTCPeerConnection Event based useEventListener interface
+export function useEventListener<
+  K extends keyof RTCPeerConnectionEventMap,
+>(
+  eventName: K | null,
+  handler: (event: RTCPeerConnectionEventMap[K]) => void,
+  element: RefObject<RTCPeerConnection>
+): void;
+
+// RTCDataChannel Event based useEventListener interface
+export function useEventListener<
+  K extends keyof RTCDataChannelEventMap,
+>(
+  eventName: K | null,
+  handler: (event: RTCDataChannelEventMap[K]) => void,
+  element: RefObject<RTCDataChannel>
+): void;
+
 export function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,

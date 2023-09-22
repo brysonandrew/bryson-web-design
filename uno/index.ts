@@ -1,7 +1,4 @@
-import {
-  SourceCodeTransformer,
-  defineConfig,
-} from 'unocss';
+import { defineConfig } from 'unocss';
 import { THEME } from './theme';
 import { RULES } from './rules';
 import { PRE_FLIGHT } from './preflights';

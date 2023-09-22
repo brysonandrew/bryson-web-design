@@ -5,22 +5,35 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import { Cv } from '@pages/cv';
 import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
+import { Screen } from '@pages/kino/screen';
+import { Projector } from '@pages/kino/projector';
 
-const SHELL_ROUTES = [
+const WITH_SHELL_KEY = 'with-shell';
+
+const SHELL_ROUTES: any[] = [
   {
     path: '/',
     element: <Index />,
   },
   {
-    path: '/contact',
-    element: <Contact />,
-  },
-  {
     path: '/projects',
     element: <Projects />,
   },
-];
+  {
+    path: '/contact',
+    element: <Contact />,
+  },
+].map((v) => ({ ...v, key: WITH_SHELL_KEY }));
+
 const STANDALONE_ROUTES = [
+  {
+    path: '/projector',
+    element: <Projector />,
+  },
+  {
+    path: '/screen',
+    element: <Screen />,
+  },
   {
     path: '/cv',
     element: <Cv />,
@@ -30,16 +43,21 @@ const STANDALONE_ROUTES = [
     element: <Navigate to='/' replace />,
   },
 ];
-export const Source = () => {
-  const shellPage = useRoutes(SHELL_ROUTES);
-  const standalonePage = useRoutes(STANDALONE_ROUTES);
 
-  if (shellPage) {
-    return (
-      <MainShell>
-        <Shell>{shellPage}</Shell>
-      </MainShell> 
-    );
+const ROUTES = [...SHELL_ROUTES, ...STANDALONE_ROUTES];
+
+export const Source = () => {
+  const page = useRoutes(ROUTES);
+  const key = page?.props.match.route.key;
+
+  switch (key) {
+    case WITH_SHELL_KEY:
+      return (
+        <MainShell>
+          <Shell>{page}</Shell>
+        </MainShell>
+      );
+    default:
+      return page;
   }
-  return standalonePage ?? null;
 };

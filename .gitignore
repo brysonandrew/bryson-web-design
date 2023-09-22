@@ -18,3 +18,4 @@ TODOs.md
 .yarnrc.yml
 tsconfig.tsbuildinfo
 .assets/**/*
+.env
