@@ -29,13 +29,13 @@ export const useSignaling = ({
       switch (message.name) {
         case OFFER_KEY: {
           if (!keys.includes(OFFER_KEY)) {
-            console.log('CANCELLED ' + OFFER_KEY);
+            const cancelled = 'CANCELLED ' + OFFER_KEY;
+            console.log(cancelled);
+            onLog(cancelled);
             break;
           }
-          onLog('offer received...');
-          console.log(OFFER_KEY);
-          console.log(message.data);
 
+          onLog('offer received...');
           const resolve = async () => {
             const offer: RTCSessionDescriptionInit =
               JSON.parse(message.data[OFFER_KEY]);
@@ -44,14 +44,13 @@ export const useSignaling = ({
 
             const answer: RTCSessionDescriptionInit =
               await connection.createAnswer();
-              onLog('setting answer to remote...');
+            onLog('setting answer to remote...');
             await channel.publish(ANSWER_KEY, {
               type: ANSWER_KEY,
               [ANSWER_KEY]: JSON.stringify(answer),
             });
             onLog('setting answer to local...');
             await connection.setLocalDescription(answer);
-
           };
           resolve();
           break;
@@ -59,25 +58,31 @@ export const useSignaling = ({
 
         case ANSWER_KEY: {
           if (!keys.includes(ANSWER_KEY)) {
-            console.log('CANCELLED ' + ANSWER_KEY);
+            const cancelled = 'CANCELLED ' + ANSWER_KEY;
+            console.log(cancelled);
+            onLog(cancelled);
             break;
           }
           onLog('👂 answer received...');
-          console.log(ANSWER_KEY);
-          console.log(message.data);
           const answer: RTCSessionDescriptionInit =
             JSON.parse(message.data[ANSWER_KEY]);
           connection.setRemoteDescription(answer);
+          break;
         }
 
         case CANDIDATE_KEY: {
-          console.log(CANDIDATE_KEY);
-          console.log(message.data);
-          onLog('🤝 candidate received...');
           const candidate: RTCIceCandidateInit = JSON.parse(
             message.data[CANDIDATE_KEY],
           );
-          connection.addIceCandidate(candidate);
+          if (connection.remoteDescription) {
+            onLog('🤝 candidate added...');
+            connection.addIceCandidate(candidate);
+          } else {
+            onLog(
+              '🤝 candidate failed as description is null...',
+            );
+          }
+
           break;
         }
 

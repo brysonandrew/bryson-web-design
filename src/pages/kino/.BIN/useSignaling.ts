@@ -42,14 +42,12 @@ export const useSignaling = ({
             onLog('answer received...');
             const answer: RTCSessionDescriptionInit =
               JSON.parse(event.data.answer);
-
             connection.setRemoteDescription(answer);
             break;
           case CANDIDATE_KEY:
             onLog('candidate received...');
             const candidate: RTCIceCandidateInit =
               JSON.parse(event.data.candidate);
-
             connection.addIceCandidate(candidate);
             break;
           case DISCONNECT_KEY:

@@ -20,12 +20,10 @@ export const useIceCandidate = ({
         type: CANDIDATE_KEY,
         [CANDIDATE_KEY]: JSON.stringify(candidate),
       };
-      channel.publish(CANDIDATE_KEY, message);
+      await channel.publish(CANDIDATE_KEY, message);
     } else {
       onLog('no candidate from event');
-
     }
-
   };
 
   return handler;

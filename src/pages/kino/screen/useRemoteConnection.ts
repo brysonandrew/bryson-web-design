@@ -9,14 +9,14 @@ export const useRemoteConnection = () => {
   const { connection, statusHandlers, onLog, videoRef } =
     useScreen();
   const channel = useChannel({ connection, onLog, keys: [OFFER_KEY] });
-  const handleReceiveChannel = useReceiveChannel();
+  // const handleReceiveChannel = useReceiveChannel();
 
   const handleDataChannel = (
     event: RTCDataChannelEvent,
   ) => {
-    onLog('╰┈➤ data channel...');
+    onLog('📺╰┈➤ data channel...');
     console.log(event);
-    handleReceiveChannel(event);
+    // handleReceiveChannel(event);
   };
 
   const handleIceCandidate = useIceCandidate({
