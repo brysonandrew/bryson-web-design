@@ -65,8 +65,20 @@ export const useRemoteConnection = () => {
 
   const handleTrack = (event: RTCTrackEvent) => {
     onLog('🎥 track received...');
-    if (!videoRef.current) return;
-    videoRef.current.srcObject = event.streams[0];
+    if (!videoRef.current) {
+      onLog('⚠ no video ref');
+      return;
+    }
+    if (!('srcObject' in videoRef.current)) {
+      onLog('⚠ no src object');
+      return;
+    }
+    if (event.streams.length < 1) {
+      onLog('⚠ no streams available');
+      return;
+    }
+    const stream: MediaStream = event.streams[0];
+    videoRef.current.srcObject = stream;
     console.log(event);
   };
 
