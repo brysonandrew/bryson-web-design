@@ -14,16 +14,19 @@ export const useIceCandidate = ({
     event: RTCPeerConnectionIceEvent,
   ) => {
     const candidate = event.candidate;
-    if (!candidate) {
+    if (candidate) {
+      onLog('adding ice candidate...');
+      const message = {
+        type: CANDIDATE_KEY,
+        [CANDIDATE_KEY]: JSON.stringify(candidate),
+      };
+      channel.publish(CANDIDATE_KEY, message);
+    } else {
       onLog('no candidate from event');
-      return;
+
     }
-    onLog('adding ice candidate...');
-    const message = {
-      type: CANDIDATE_KEY,
-      candidate: JSON.stringify(candidate),
-    };
-    channel.publish(CANDIDATE_KEY, message);
+
   };
+
   return handler;
 };

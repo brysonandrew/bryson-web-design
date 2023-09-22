@@ -1,13 +1,8 @@
 import { useProjector } from './context';
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
-import { useChannel } from 'ably/react';
-import {
-  ANSWER_KEY,
-  CHANNEL_KEY,
-} from '../hooks/signaling/config';
 import { useIceCandidate } from '../hooks/useIceCandidate';
-import { useSignaling } from '../hooks/signaling/useSignaling';
-import { TMessage } from '../config/types';
+import { useChannel } from '../hooks/useChannel';
+import { ANSWER_KEY, OFFER_KEY } from '../hooks/signaling/config';
 
 export const useLocalConnection = () => {
   const {
@@ -16,25 +11,7 @@ export const useLocalConnection = () => {
     onLog,
     onUpdateStatusRecord,
   } = useProjector();
-
-  const handleSignal = useSignaling({
-    connection,
-    onLog,
-  });
-
-  const { channel } = useChannel(
-    CHANNEL_KEY,
-    (message: TMessage) => {
-      if (message.name === ANSWER_KEY) {
-        onLog('👂 answer received...');
-        const answer: RTCSessionDescriptionInit =
-          JSON.parse(message.data.answer);
-        connection.setRemoteDescription(answer);
-      } else {
-        handleSignal(message);
-      }
-    },
-  );
+  const channel = useChannel({ connection, onLog, keys: [ANSWER_KEY] });
 
   const handleDataChannel = (
     event: RTCDataChannelEvent,
@@ -49,7 +26,10 @@ export const useLocalConnection = () => {
     console.log(event);
   };
 
-  const handleIceCandidate = useIceCandidate(channel);
+  const handleIceCandidate = useIceCandidate({
+    channel,
+    onLog,
+  });
 
   const handleNegotiationNeeded = (event: Event) => {
     console.log('🤝 ⚠️ negotiation needed');

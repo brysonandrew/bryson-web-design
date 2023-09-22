@@ -1,50 +1,14 @@
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useReceiveChannel } from './useReceiveChannel';
 import { useScreen } from './context';
-import { useChannel } from 'ably/react';
-import {
-  ANSWER_KEY,
-  CHANNEL_KEY,
-  OFFER_KEY,
-} from '../hooks/signaling/config';
 import { useIceCandidate } from '../hooks/useIceCandidate';
-import { TMessage } from '../config/types';
-import { useSignaling } from '../hooks/signaling/useSignaling';
+import { useChannel } from '../hooks/useChannel';
+import { OFFER_KEY } from '../hooks/signaling/config';
 
 export const useRemoteConnection = () => {
   const { connection, statusHandlers, onLog, videoRef } =
     useScreen();
-
-  const handleSignaling = useSignaling({
-    connection,
-    onLog,
-  });
-
-  const { channel } = useChannel(
-    CHANNEL_KEY,
-    (message: TMessage) => {
-      if (message.name === OFFER_KEY) {
-        onLog('offer received...');
-        const resolve = async () => {
-          const offer: RTCSessionDescriptionInit =
-            JSON.parse(message.data.offer);
-          await connection.setRemoteDescription(offer);
-          onLog('answering offer...');
-          const answer: RTCSessionDescriptionInit =
-            await connection.createAnswer();
-          channel.publish(ANSWER_KEY, {
-            type: ANSWER_KEY,
-            answer: JSON.stringify(answer),
-          });
-          connection.setLocalDescription(answer);
-        };
-        resolve();
-      } else {
-        handleSignaling(message);
-      }
-    },
-  );
-
+  const channel = useChannel({ connection, onLog, keys: [OFFER_KEY] });
   const handleReceiveChannel = useReceiveChannel();
 
   const handleDataChannel = (
