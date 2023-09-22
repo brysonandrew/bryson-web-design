@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { TLogsContext } from '../config/types';
-import { TMediaSource } from './context/types';
+import { TMediaSource } from '../screen/context/types';
 
 type TConfig = Pick<TLogsContext, 'onLog'> & {
   mediaSource: TMediaSource;

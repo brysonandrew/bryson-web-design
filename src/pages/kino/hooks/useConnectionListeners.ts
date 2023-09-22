@@ -26,6 +26,7 @@ export const useConnectionListeners = ({
   onIceCandidateError,
 }: TConfig) => {
   const ref = useRef<RTCPeerConnection>(connection);
+  ref.current = connection;
 
   useEventListener('datachannel', onDataChannel, ref);
   useEventListener('icecandidate', onIceCandidate, ref);

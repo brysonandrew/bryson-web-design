@@ -2,14 +2,13 @@ import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useReceiveChannel } from './useReceiveChannel';
 import { useScreen } from './context';
 import { useChannel } from 'ably/react';
-import { useState } from 'react';
 import {
   ANSWER_KEY,
   CHANNEL_KEY,
   OFFER_KEY,
 } from '../hooks/signaling/config';
 import { useIceCandidate } from '../hooks/useIceCandidate';
-import { TMessage, TMessages } from '../config/types';
+import { TMessage } from '../config/types';
 import { useSignaling } from '../hooks/signaling/useSignaling';
 
 export const useRemoteConnection = () => {
@@ -21,13 +20,9 @@ export const useRemoteConnection = () => {
     onLog,
   });
 
-  const [messages, updateMessages] = useState<TMessages>(
-    [],
-  );
   const { channel } = useChannel(
     CHANNEL_KEY,
     (message: TMessage) => {
-      console.log(message);
       if (message.name === OFFER_KEY) {
         onLog('offer received...');
         const resolve = async () => {
@@ -47,7 +42,6 @@ export const useRemoteConnection = () => {
       } else {
         handleSignaling(message);
       }
-      updateMessages((prev) => [...prev, message]);
     },
   );
 
@@ -61,7 +55,10 @@ export const useRemoteConnection = () => {
     handleReceiveChannel(event);
   };
 
-  const handleIceCandidate = useIceCandidate(channel);
+  const handleIceCandidate = useIceCandidate({
+    channel,
+    onLog,
+  });
 
   const handleTrack = (event: RTCTrackEvent) => {
     onLog('🎥 track received...');

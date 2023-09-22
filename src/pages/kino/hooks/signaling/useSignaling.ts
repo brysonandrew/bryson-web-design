@@ -16,7 +16,7 @@ export const useSignaling = ({
     try {
       switch (message.data.type) {
         case CANDIDATE_KEY:
-          onLog('candidate received...');
+          onLog('🤝 candidate received...');
           const candidate: RTCIceCandidateInit = JSON.parse(
             message.data.candidate,
           );
@@ -26,6 +26,7 @@ export const useSignaling = ({
           connection.close();
           break;
         default:
+          onLog("⚠️ unhandled message")
           console.log('unhandled', message);
           break;
       }

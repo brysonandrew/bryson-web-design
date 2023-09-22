@@ -16,7 +16,12 @@ export const Logs: FC<TProps> = ({ logs }) => {
       <ul>
         {logs.map(([id, text]) => (
           <li key={id}>
-            <samp>{text}</samp>
+            <samp>
+              <kbd className='text-gray-1'>
+                [{id.slice(0, 3)}…{id.slice(-3)}]
+              </kbd>{' '}
+              {text}
+            </samp>
           </li>
         ))}
       </ul>

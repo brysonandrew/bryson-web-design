@@ -1,14 +1,13 @@
 import { useProjector } from './context';
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useChannel } from 'ably/react';
-import { useState } from 'react';
 import {
   ANSWER_KEY,
   CHANNEL_KEY,
 } from '../hooks/signaling/config';
 import { useIceCandidate } from '../hooks/useIceCandidate';
 import { useSignaling } from '../hooks/signaling/useSignaling';
-import { TMessages, TMessage } from '../config/types';
+import { TMessage } from '../config/types';
 
 export const useLocalConnection = () => {
   const {
@@ -17,10 +16,6 @@ export const useLocalConnection = () => {
     onLog,
     onUpdateStatusRecord,
   } = useProjector();
-
-  const [messages, updateMessages] = useState<TMessages>(
-    [],
-  );
 
   const handleSignal = useSignaling({
     connection,
@@ -38,7 +33,6 @@ export const useLocalConnection = () => {
       } else {
         handleSignal(message);
       }
-      updateMessages((prev) => [...prev, message]);
     },
   );
 
