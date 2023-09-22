@@ -1,9 +1,9 @@
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
 import { Transition } from 'framer-motion';
-import { isMobile } from 'react-device-detect';
+// import { isMobile } from 'react-device-detect';
 
-const isDisabled = isMobile;
+const isDisabled = false;// isMobile;
 
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',
