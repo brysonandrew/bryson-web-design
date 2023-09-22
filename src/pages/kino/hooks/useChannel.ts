@@ -1,31 +1,47 @@
 import { VOIDOP } from '@constants/functions';
-import { TLogHandler } from '../config/types';
-import { useChannelListeners } from './useChannelListeners';
+import { TLogHandler, TMessage, TSignalingTuple, TSignalingType } from '../config/types';
+import { useRef, useState, useEffect } from 'react';
+import { CHANNEL_KEY } from './signaling/config';
+import { useSignaling } from './signaling/useSignaling';
+import { useChannel as _useChannel } from 'ably/react';
 
 type TConfig = {
-  channel: RTCDataChannel | null;
-  onUpdateStatusRecord: () => void;
+  connection: RTCPeerConnection
   onLog: TLogHandler;
+  keys: TSignalingType[]
 };
 export const useChannel = ({
-  channel,
-  onUpdateStatusRecord,
-  onLog = VOIDOP,
+  connection,
+  onLog,
+  keys
 }: TConfig) => {
-  const handleMessage = (event: MessageEvent) => {
-    onLog('💬 channel message');
-    console.log(event);
-  };
+  const messageRef = useRef<string>(null);
+  const [message, setMessage] = useState<TMessage | null>(
+    null,
+  );
 
-  const handleError = (event: Event) => {
-    console.log('⚠ channel error');
-    console.log(event);
-  };
+  const { channel } = _useChannel(
+    CHANNEL_KEY,
+    (message: TMessage) => {
+      setMessage(message);
+    },
+  );
 
-  useChannelListeners({
+  const handleSignal = useSignaling({
     channel,
-    onChannelStatusChange: onUpdateStatusRecord,
-    onMessage: handleMessage,
-    onError: handleError,
+    connection,
+    onLog,
   });
+
+  useEffect(() => {
+    if (
+      message !== null &&
+      messageRef.current !== message.id
+    ) {
+      handleSignal(message, keys);
+    }
+  }, [message]);
+
+  return channel
+
 };

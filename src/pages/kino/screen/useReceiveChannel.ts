@@ -1,16 +1,33 @@
 import { useScreen } from './context';
 
 export const useReceiveChannel = () => {
-  const { videoRef, onUpdatePartialStatusRecord, onLog } =
+  const { onUpdatePartialStatusRecord, onLog } =
     useScreen();
   const initiate = (event: RTCDataChannelEvent) => {
     onLog('🚀 channel initiating...');
+
     const receiveChannel: RTCDataChannel = event.channel;
-    receiveChannel.onbufferedamountlow = console.log;
-    receiveChannel.onclose = console.log;
-    receiveChannel.onclosing = console.log;
-    receiveChannel.onopen = console.log;
-    receiveChannel.onerror = console.log;
+
+    receiveChannel.onbufferedamountlow = (event) => {
+      onLog('channel buffered amount low...');
+      console.log(event);
+    };
+    receiveChannel.onclose = (event) => {
+      onLog('close channel...');
+      console.log(event);
+    };
+    receiveChannel.onclosing = (event) => {
+      onLog('closing channel...');
+      console.log(event);
+    };
+    receiveChannel.onopen = (event) => {
+      onLog('open channel...');
+      console.log(event);
+    };
+    receiveChannel.onerror = (event) => {
+      onLog('channel error...');
+      console.log(event);
+    };
     onUpdatePartialStatusRecord({
       channelState: receiveChannel.readyState,
     });

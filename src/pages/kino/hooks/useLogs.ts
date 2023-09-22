@@ -10,7 +10,8 @@ export const useLogs = (): TLogsContext => {
   const [logs, setLogs] = useState<TLogEntries>([]);
 
   const handleLog = (text: TLogEntry[1]) => {
-    setLogs((prev) => [...prev, [generateId(), text]]);
+    const id = generateId();
+    setLogs((prev) => [...prev, [id, text]]);
   };
 
   return {

@@ -7,7 +7,7 @@ import { FC } from 'react';
 type TProps = Pick<TLogsContext, 'logs'>;
 export const Logs: FC<TProps> = ({ logs }) => {
   return (
-    <div className='relative h-128 overflow-auto'>
+    <div className='relative overflow-auto'>
       <div className='sticky top-0 p-1'>
         <FadeDown classValue='h-full' />
         <Subtitle classValue='relative z-20'>Logs</Subtitle>
@@ -16,7 +16,12 @@ export const Logs: FC<TProps> = ({ logs }) => {
       <ul>
         {logs.map(([id, text]) => (
           <li key={id}>
-            <samp>{text}</samp>
+            <samp>
+              <kbd className='text-gray-1'>
+                [{id.slice(0, 3)}…{id.slice(-3)}]
+              </kbd>{' '}
+              {text}
+            </samp>
           </li>
         ))}
       </ul>

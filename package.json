@@ -46,7 +46,8 @@
     "react-intersection-observer": "^9.5.2",
     "react-router": "^6.14.1",
     "react-router-dom": "^6.14.1",
-    "react-synthwave": "^1.2.7"
+    "react-synthwave": "^1.2.7",
+    "webrtc-adapter": "^8.2.3"
   },
   "devDependencies": {
     "@digitak/esrun": "^3.2.24",

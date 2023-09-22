@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { resolveSupportedMimeTypes } from '../.BIN/recorder/resolveSupportedMimeTypes';
+import { resolveSupportedMimeTypes } from './recorder/resolveSupportedMimeTypes';
 
 const concatBuffer = (
   buffer1: ArrayBuffer,

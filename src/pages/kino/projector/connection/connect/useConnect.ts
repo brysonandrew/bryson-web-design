@@ -7,7 +7,7 @@ import { TError } from '@t/index';
 import { useChannel } from 'ably/react';
 import { useState } from 'react';
 
-export const useConnect1 = () => {
+export const useConnect = () => {
   const [isLoading, setLoading] = useState(false);
   const { connection, onLog } = useProjector();
   const { channel } = useChannel(CHANNEL_KEY);
@@ -18,12 +18,17 @@ export const useConnect1 = () => {
     try {
       onLog('creating offer...');
       const offer = await connection.createOffer();
-      onLog('setting offer to local description...');
-      channel.publish(OFFER_KEY, {
+      console.log(offer)
+
+      onLog('setting offer to remote...');
+      await channel.publish(OFFER_KEY, {
         type: OFFER_KEY,
-        offer: JSON.stringify(offer),
+        [OFFER_KEY]: JSON.stringify(offer),
       });
+
+      onLog('setting offer to local...');
       await connection.setLocalDescription(offer);
+
     } catch (error: TError) {
       onLog('⚠ connection failed');
       console.error(error);
