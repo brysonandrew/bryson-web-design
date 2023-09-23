@@ -1,11 +1,6 @@
-import { Subtitle } from '../../components/Subtitle';
+import { Row } from '@pages/kino/components/Row';
 import { Buttons } from './buttons';
 
 export const Stream = () => {
-  return (
-    <div className='row-space'>
-      <Subtitle>STREAM</Subtitle>
-      <Buttons />
-    </div>
-  );
+  return <Row title='STREAM' content={<Buttons />} />;
 };

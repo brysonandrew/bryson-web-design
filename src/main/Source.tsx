@@ -7,6 +7,7 @@ import { Shell } from '@components/shell';
 import { Shell as MainShell } from '@main/Shell';
 import { Screen } from '@pages/kino/screen';
 import { Projector } from '@pages/kino/projector';
+import { Reader } from '@pages/reader';
 
 const WITH_SHELL_KEY = 'with-shell';
 
@@ -33,6 +34,10 @@ const STANDALONE_ROUTES = [
   {
     path: '/screen',
     element: <Screen />,
+  },
+  {
+    path: '/reader',
+    element: <Reader />,
   },
   {
     path: '/cv',

@@ -63,10 +63,13 @@ export const useSignaling = ({
             onLog(cancelled);
             break;
           }
-          onLog('👂 answer received...');
-          const answer: RTCSessionDescriptionInit =
-            JSON.parse(message.data[ANSWER_KEY]);
-          connection.setRemoteDescription(answer);
+          const resolve = async () => {
+            onLog('👂 answer received...');
+            const answer: RTCSessionDescriptionInit =
+              JSON.parse(message.data[ANSWER_KEY]);
+            await connection.setRemoteDescription(answer);
+          };
+          resolve();
           break;
         }
 

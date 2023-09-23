@@ -53,6 +53,7 @@
     "@digitak/esrun": "^3.2.24",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@iconify/json": "^2.2.119",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.17",

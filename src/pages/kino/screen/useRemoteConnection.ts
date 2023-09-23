@@ -1,22 +1,30 @@
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
-import { useReceiveChannel } from './useReceiveChannel';
+import { useReceiveChannel } from '../.BIN/useReceiveChannel';
 import { useScreen } from './context';
 import { useIceCandidate } from '../hooks/useIceCandidate';
 import { useChannel } from '../hooks/useChannel';
 import { OFFER_KEY } from '../hooks/signaling/config';
 
 export const useRemoteConnection = () => {
-  const { connection, statusHandlers, onLog, videoRef } =
-    useScreen();
-  const channel = useChannel({ connection, onLog, keys: [OFFER_KEY] });
-  // const handleReceiveChannel = useReceiveChannel();
+  const {
+    connection,
+    statusHandlers,
+    onLog,
+    onUpdateStatusRecord,
+    videoRef,
+  } = useScreen();
+  const channel = useChannel({
+    connection,
+    onLog,
+    keys: [OFFER_KEY],
+  });
 
   const handleDataChannel = (
     event: RTCDataChannelEvent,
   ) => {
     onLog('📺╰┈➤ data channel...');
     console.log(event);
-    // handleReceiveChannel(event);
+    onUpdateStatusRecord();
   };
 
   const handleIceCandidate = useIceCandidate({
@@ -41,16 +49,19 @@ export const useRemoteConnection = () => {
     const stream: MediaStream = event.streams[0];
     videoRef.current.srcObject = stream;
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   const handleNegotiationNeeded = (event: Event) => {
-    onLog('🤝 negotiation needed...');
+    onLog('🤝 ⚠ negotiation needed...');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   const handleIceCandidateError = (event: Event) => {
     onLog('⚠ ice candidate error...');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   useConnectionListeners({

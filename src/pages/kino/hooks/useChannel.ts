@@ -1,19 +1,22 @@
-import { VOIDOP } from '@constants/functions';
-import { TLogHandler, TMessage, TSignalingTuple, TSignalingType } from '../config/types';
+import {
+  TLogHandler,
+  TMessage,
+  TSignalingType,
+} from '../config/types';
 import { useRef, useState, useEffect } from 'react';
 import { CHANNEL_KEY } from './signaling/config';
 import { useSignaling } from './signaling/useSignaling';
 import { useChannel as _useChannel } from 'ably/react';
 
 type TConfig = {
-  connection: RTCPeerConnection
+  connection: RTCPeerConnection;
   onLog: TLogHandler;
-  keys: TSignalingType[]
+  keys: TSignalingType[];
 };
 export const useChannel = ({
   connection,
   onLog,
-  keys
+  keys,
 }: TConfig) => {
   const messageRef = useRef<string>(null);
   const [message, setMessage] = useState<TMessage | null>(
@@ -38,10 +41,12 @@ export const useChannel = ({
       message !== null &&
       messageRef.current !== message.id
     ) {
+      console.log(channel);
+      console.log(message);
+
       handleSignal(message, keys);
     }
   }, [message]);
 
-  return channel
-
+  return channel;
 };

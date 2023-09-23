@@ -11,11 +11,11 @@ export const Main = () => {
   return (
     <Shell
       rows={[
-        <Stream />,
+        <Stream />, 
         <Connection />,
         <Status />,
         <Logs />,
       ]}
     />
-  );
+  ); 
 };

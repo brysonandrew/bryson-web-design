@@ -1,4 +1,4 @@
-import { useScreen } from './context';
+import { useScreen } from '../screen/context';
 
 export const useReceiveChannel = () => {
   const { onUpdatePartialStatusRecord, onLog } =

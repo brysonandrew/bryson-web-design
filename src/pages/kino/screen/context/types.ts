@@ -27,7 +27,6 @@ export type TMediaSourceContext = {
 
 export type TContext = TStatusRecordContext &
   TLogsContext &
-  TReceiveChannelContext &
   TConnectionContext &
   TMediaSourceContext & {
     videoRef: MutableRefObject<HTMLVideoElement | null>;
