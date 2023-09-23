@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Button } from '../components/Button';
+import { Button } from '../components/Buttons';
 import { useReader } from '../context';
 
 const Root = styled.div``;
@@ -25,7 +25,7 @@ export const Buttons = () => {
             }
           }}
         >
-          ❚❚
+          <i className='i-mdi-pause' />
         </Button>
       ) : (
         <Button
@@ -52,10 +52,10 @@ export const Buttons = () => {
             }
           }}
         >
-          ▶
+          <i className='i-mdi-play' />
         </Button>
       )}
-      {typeof playMode === 'boolean' ? (
+      {typeof playMode === 'boolean' && (
         <Button
           disabled={!phrase}
           onClick={() => {
@@ -65,20 +65,6 @@ export const Buttons = () => {
           }}
         >
           ■
-        </Button>
-      ) : (
-        <Button
-          onClick={() => {
-            if (speechSynthesis) {
-              if (phrase) {
-                setPhrase('');
-              } else {
-                setPhrase('PLACEHOLDER_TEXT');
-              }
-            }
-          }}
-        >
-          {phrase ? '－' : '＋'}
         </Button>
       )}
     </Root>

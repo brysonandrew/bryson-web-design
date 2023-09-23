@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { WheelEventHandler } from 'react';
-import { Button } from '../components/Button';
+import { Button1 as Button } from '../components/Buttons';
 import { useReader } from '../context';
 
 const Root = styled.div``;

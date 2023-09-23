@@ -23,9 +23,7 @@ export const Select = styled.select`
 export const Option = styled.option``;
 
 export const ArrowDown = () => (
-  <div className='absolute top-1/2 -translate-y-1/2 right-6 pointer-events-none z-10'>
-    <div className='i-mdi-menu-down w-5 h-4 shrink-0 text-white' />
-  </div>
+  <div className='absolute top-1/2 -translate-y-1/2 right-2 i-mdi-menu-down w-5 h-4 shrink-0 text-white pointer-events-none z-10' />
 );
 
 type TProps = SelectHTMLAttributes<HTMLSelectElement>;
@@ -34,12 +32,14 @@ export const Shell: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Select
-      className='relative rounded-sm px-4 py-2 bg-black-1'
-      {...props}
-    >
-      {children}
+    <div className='relative'>
+      <Select
+        className='relative rounded-sm pl-4 pr-8 py-2 bg-black-1'
+        {...props}
+      >
+        {children}
+      </Select>
       <ArrowDown />
-    </Select>
+    </div>
   );
 };
