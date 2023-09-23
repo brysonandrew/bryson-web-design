@@ -1,7 +1,9 @@
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { TDivProps } from '@t/dom';
 import { TClassValueProps } from '@t/index';
-import { ButtonHTMLAttributes, FC } from 'react';
+import clsx from 'clsx';
+import { FC } from 'react';
 
 const Root = styled.div`
   display: flex;
@@ -23,22 +25,20 @@ const Inner = styled.div`
   animation: spinner 1s infinite linear;
 `;
 
-type TProps = TClassValueProps &
-  ButtonHTMLAttributes<HTMLButtonElement>;
+type TProps = TClassValueProps & TDivProps;
 export const Loading: FC<TProps> = ({
   classValue,
   children,
   ...props
 }) => {
   return (
-    <Root>
+    <Root className={clsx(classValue)} {...props}>
       <Global
         styles={css`
           @keyframes spinner {
             0% {
               transform: rotate(0deg);
             }
-
             100% {
               transform: rotate(360deg);
             }

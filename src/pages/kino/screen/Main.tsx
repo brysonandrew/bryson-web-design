@@ -9,4 +9,4 @@ export const Main = () => {
 
   return <Shell rows={[<Video />, <Status />, <Logs />]} />;
 };
- 
+  

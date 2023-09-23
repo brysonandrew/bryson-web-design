@@ -4,8 +4,8 @@ import {
   presetWebFonts,
   type Preset,
 } from 'unocss';
-import { TAnyTheme, TTheme } from './theme';
-import { SANS, MONO } from './typography';
+import { TAnyTheme, TTheme } from '../theme';
+import { SANS, MONO } from '../typography';
 
 export type TPresets = (
   | Preset<TTheme>

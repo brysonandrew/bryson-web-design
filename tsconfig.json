@@ -19,6 +19,6 @@
     "jsx": "react-jsx",
     "noImplicitThis": false
   },
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/pages/kino/hooks/signaling/useClient.ts", "src/pages/kino/.BIN/signaling.ts", "src/pages/kino/.BIN/useConnect.ts", "src/pages/kino/.BIN/useSignaling.ts", "src/pages/kino/.BIN/useIceCandidate.ts", "src/pages/kino/config/ably-client-signaling.ts", "src/pages/kino/.BIN/useMediaSource.ts", "src/pages/kino/.BIN/useActiveStream.tsx", "src/pages/kino/.BIN/useDisconnect.ts"],
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/pages/kino/hooks/signaling/useClient.ts", "src/pages/kino/.BIN/signaling.ts", "src/pages/kino/.BIN/useConnect.ts", "src/pages/kino/.BIN/useSignaling.ts", "src/pages/kino/.BIN/useIceCandidate.ts", "src/pages/kino/config/ably-client-signaling.ts", "src/pages/kino/.BIN/useMediaSource.ts", "src/pages/kino/.BIN/useActiveStream.tsx", "src/pages/kino/.BIN/useDisconnect.ts", ".cemetary/reader/DeviceHandler.tsx"],
   "extends": "./tsconfig.paths.json"
 }

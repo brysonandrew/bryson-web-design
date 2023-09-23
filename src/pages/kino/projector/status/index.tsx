@@ -1,4 +1,4 @@
-import { Subtitle } from '../../components/Subtitle';
+import { Row } from '@pages/kino/components/Row';
 import { Status as _Status } from '../../components/status';
 import { useProjector } from '../context';
 
@@ -6,9 +6,9 @@ export const Status = () => {
   const { statusRecord } = useProjector();
 
   return (
-    <div className='row-space'>
-      <Subtitle>STATUS</Subtitle>
-      <_Status statusRecord={statusRecord} />
-    </div>
+    <Row
+      title='STATUS'
+      content={<_Status statusRecord={statusRecord} />}
+    />
   );
 };
