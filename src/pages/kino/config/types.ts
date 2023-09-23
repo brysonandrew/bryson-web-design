@@ -9,7 +9,7 @@ export type TUpdateChannelHandler = (
 ) => void;
 
 export type TStatusRecord = {
-  channelState: RTCDataChannelState | null;
+  channelState: string | null;
   signalingState: RTCSignalingState | null;
   iceGatheringState: RTCIceGatheringState | null;
   connectionState: RTCPeerConnectionState | null;

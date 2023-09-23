@@ -3,10 +3,7 @@ import { Button } from '@pages/kino/components/Button';
 import { useConnect } from './useConnect';
 
 export const Connect = () => {
-  const {
-    statusRecord: { channelState },
-  } = useProjector();
-  const isDisabled = false; //channelState === 'open'
+  const isDisabled = false;
   const { isLoading, handler } = useConnect();
 
   return (

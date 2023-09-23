@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Projector, useProjector } from '.';
 import { TContext } from './types';
@@ -14,11 +14,7 @@ export const Provider: FC<TProviderProps> = ({
   const initProjectorContext = useProjector();
   const logsContext = useLogs();
 
-  const [receiveChannel, setReceiveChannel] =
-    useState<RTCDataChannel | null>(null);
-
   const statusRecordContext = useStatusRecord({
-    channel: initProjectorContext.sendChannel,
     connection: initProjectorContext.connection,
   });
 
@@ -26,8 +22,6 @@ export const Provider: FC<TProviderProps> = ({
     ...initProjectorContext,
     ...logsContext,
     ...statusRecordContext,
-    receiveChannel,
-    onUpdateReceiveChannel: setReceiveChannel,
   };
 
   return (

@@ -1,8 +1,8 @@
 import { useProjector } from './context';
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useIceCandidate } from '../hooks/useIceCandidate';
+import { ANSWER_KEY } from '../hooks/signaling/config';
 import { useChannel } from '../hooks/useChannel';
-import { ANSWER_KEY, OFFER_KEY } from '../hooks/signaling/config';
 
 export const useLocalConnection = () => {
   const {
@@ -11,7 +11,11 @@ export const useLocalConnection = () => {
     onLog,
     onUpdateStatusRecord,
   } = useProjector();
-  const channel = useChannel({ connection, onLog, keys: [ANSWER_KEY] });
+  const channel = useChannel({
+    connection,
+    onLog,
+    keys: [ANSWER_KEY],
+  });
 
   const handleDataChannel = (
     event: RTCDataChannelEvent,
@@ -24,6 +28,7 @@ export const useLocalConnection = () => {
   const handleTrack = (event: RTCTrackEvent) => {
     onLog('🎥 track received');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   const handleIceCandidate = useIceCandidate({
@@ -34,11 +39,13 @@ export const useLocalConnection = () => {
   const handleNegotiationNeeded = (event: Event) => {
     console.log('🤝 ⚠️ negotiation needed');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   const handleIceCandidateError = (event: Event) => {
     console.log('⚠️ ice candidate error');
     console.log(event);
+    onUpdateStatusRecord();
   };
 
   useConnectionListeners({
