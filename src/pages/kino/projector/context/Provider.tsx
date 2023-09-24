@@ -16,6 +16,7 @@ export const Provider: FC<TProviderProps> = ({
 
   const statusRecordContext = useStatusRecord({
     connection: initProjectorContext.connection,
+    onLog: logsContext.onLog,
   });
 
   const value: TContext = {
