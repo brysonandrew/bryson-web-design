@@ -1,9 +1,5 @@
 import { useReader } from '../context';
-import {
-  Select,
-  Option,
-  Shell,
-} from '../components/Inputs';
+import { Option, Shell } from '../components/Inputs';
 
 export const Lang = () => {
   const {

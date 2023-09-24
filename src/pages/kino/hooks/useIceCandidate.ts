@@ -23,7 +23,6 @@ export const useIceCandidate = ({
       await channel.publish(CANDIDATE_KEY, message);
     } else {
       onLog('no candidate from event');
-      onLog(JSON.stringify(event));
       console.log(event);
     }
   };

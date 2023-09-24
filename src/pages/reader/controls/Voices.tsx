@@ -1,9 +1,5 @@
 import type { FC } from 'react';
-import {
-  Select,
-  Option,
-  Shell,
-} from '../components/Inputs';
+import { Option, Shell } from '../components/Inputs';
 import { useReader } from '../context';
 
 export const Voices: FC = () => {
