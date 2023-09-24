@@ -1,7 +1,7 @@
-import { useState, type FC, useRef } from 'react';
+import { type FC, useRef } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Screen, useScreen } from '.';
-import { TContext, TMediaSource } from './types';
+import { TContext } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
 import { useLogs } from '@pages/kino/hooks/useLogs';
 import { CHANNEL_KEY } from '@pages/kino/hooks/signaling/config';
@@ -18,9 +18,6 @@ export const Provider: FC<TProviderProps> = ({
   const logsContext = useLogs();
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const [mediaSource, setMediaSource] =
-    useState<TMediaSource>(null);
 
   const statusRecord = useStatusRecord({
     channel,
