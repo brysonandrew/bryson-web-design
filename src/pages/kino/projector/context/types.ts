@@ -1,4 +1,5 @@
 import {
+  TChannelContext,
   TConnectionContext,
   TLogsContext,
   TStatusRecordContext,
@@ -6,4 +7,5 @@ import {
 
 export type TContext = TConnectionContext &
   TStatusRecordContext &
-  TLogsContext 
+  TLogsContext &
+  TChannelContext;

@@ -1,12 +1,7 @@
-import { AblyMessageCallback } from 'ably/react';
 import { SIGNALING_KEYS } from '../hooks/signaling/config';
 import { Types } from 'ably';
 
 export type TError = any;
-
-export type TUpdateChannelHandler = (
-  channel: RTCDataChannel | null,
-) => void;
 
 export type TStatusRecord = {
   channelState: string | null;
@@ -34,6 +29,10 @@ export type TLogsContext = {
 
 export type TLogHandler = (text: string) => void;
 
+export type TChannelContext = {
+  channel: TChannel;
+}
+
 export type TStatusRecordContext = {
   statusHandlers: TStatusHandlers;
   statusRecord: TStatusRecord;
@@ -57,3 +56,5 @@ export type TMessage = Types.Message & {
 };
 
 export type TMessages = TMessage[];
+
+export type TChannel = Types.RealtimeChannelPromise;

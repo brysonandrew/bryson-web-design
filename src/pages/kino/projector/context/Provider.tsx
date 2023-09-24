@@ -4,6 +4,8 @@ import { Projector, useProjector } from '.';
 import { TContext } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
 import { useLogs } from '@pages/kino/hooks/useLogs';
+import { useChannel } from 'ably/react';
+import { CHANNEL_KEY } from '@pages/kino/hooks/signaling/config';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -12,9 +14,11 @@ export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
   const initProjectorContext = useProjector();
+  const { channel } = useChannel(CHANNEL_KEY);
   const logsContext = useLogs();
 
   const statusRecordContext = useStatusRecord({
+    channel,
     connection: initProjectorContext.connection,
     onLog: logsContext.onLog,
   });
@@ -23,6 +27,7 @@ export const Provider: FC<TProviderProps> = ({
     ...initProjectorContext,
     ...logsContext,
     ...statusRecordContext,
+    channel,
   };
 
   return (

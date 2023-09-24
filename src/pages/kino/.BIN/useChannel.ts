@@ -4,9 +4,9 @@ import {
   TSignalingType,
 } from '../config/types';
 import { useRef, useState, useEffect } from 'react';
-import { CHANNEL_KEY } from './signaling/config';
-import { useSignaling } from './signaling/useSignaling';
+
 import { useChannel as _useChannel } from 'ably/react';
+import { CHANNEL_KEY } from '../hooks/signaling/config';
 
 type TConfig = {
   connection: RTCPeerConnection;

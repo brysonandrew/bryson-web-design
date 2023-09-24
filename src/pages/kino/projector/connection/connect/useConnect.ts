@@ -1,17 +1,12 @@
-import {
-  CHANNEL_KEY,
-  OFFER_KEY,
-} from '@pages/kino/hooks/signaling/config';
+import { OFFER_KEY } from '@pages/kino/hooks/signaling/config';
 import { useProjector } from '@pages/kino/projector/context';
 import { resolveErrorMessage } from '@pages/kino/utils/resolveErrorMessage';
 import { TError } from '@t/index';
-import { useChannel } from 'ably/react';
 import { useState } from 'react';
 
 export const useConnect = () => {
   const [isLoading, setLoading] = useState(false);
-  const { connection, onLog } = useProjector();
-  const { channel } = useChannel(CHANNEL_KEY);
+  const { connection, onLog, channel } = useProjector();
 
   const handler = async () => {
     setLoading(true);
@@ -19,7 +14,7 @@ export const useConnect = () => {
     try {
       onLog('creating offer...');
       const offer = await connection.createOffer();
-      console.log(offer)
+      console.log(offer);
 
       onLog('setting offer to remote...');
       await channel.publish(OFFER_KEY, {
@@ -29,7 +24,6 @@ export const useConnect = () => {
 
       onLog('setting offer to local...');
       await connection.setLocalDescription(offer);
-
     } catch (error: TError) {
       onLog('⚠ connection failed');
       console.error(error);

@@ -5,8 +5,8 @@ import {
   STATUS_CONTEXT,
 } from '@pages/kino/config';
 
-export const CONTEXT: TContext = {
+export const CONTEXT = {
   ...CONNECTION_CONTEXT,
   ...STATUS_CONTEXT,
   ...LOGS_CONTEXT,
-};
+} as TContext;
