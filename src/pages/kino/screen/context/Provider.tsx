@@ -21,6 +21,7 @@ export const Provider: FC<TProviderProps> = ({
 
   const statusRecord = useStatusRecord({
     connection: initScreenContext.connection,
+    onLog: logsContext.onLog,
   });
 
   const value: TContext = {

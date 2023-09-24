@@ -6,15 +6,18 @@ import {
 import {
   TStatusRecordContext,
   TStatusRecord,
+  TLogHandler,
 } from '../config/types';
 import { CHANNEL_KEY } from './signaling/config';
 import { useChannel } from 'ably/react';
 
 type TConfig = {
   connection: RTCPeerConnection;
+  onLog: TLogHandler;
 };
 export const useStatusRecord = ({
   connection,
+  onLog,
 }: TConfig): TStatusRecordContext => {
   const [statusRecord, setUpdateStatusRecord] =
     useState<TStatusRecord>(STATUS_RECORD);
@@ -42,6 +45,11 @@ export const useStatusRecord = ({
         signalingState,
       },
     } = configRef.current;
+
+    if (connectionState === 'failed') {
+      onLog('↻ restarting...');
+      connection.restartIce();
+    }
 
     setUpdateStatusRecord({
       channelState: [

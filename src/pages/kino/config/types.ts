@@ -48,7 +48,9 @@ export type TConnectionContext = {
 };
 
 export type TSignalingTuple = typeof SIGNALING_KEYS;
-export type TSignalingType = TSignalingTuple[number];
+export type TSignalingType =
+  | TSignalingTuple[number]
+  | RTCSdpType;
 
 export type TMessage = Types.Message & {
   data: { type: TSignalingType } & any;
