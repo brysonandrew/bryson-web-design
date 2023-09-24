@@ -17,7 +17,7 @@ export const Screen = () => {
       <Variables />
       <Provider>
         <Main />
-      </Provider>
+      </Provider> 
     </AblyProvider>
   );
 };

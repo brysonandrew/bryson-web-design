@@ -10,6 +10,7 @@ import {
   TMessage,
   TSignalingType,
 } from '@pages/kino/config/types';
+import { resolveErrorMessage } from '@pages/kino/utils/resolveErrorMessage';
 
 type TConfig = {
   channel: Types.RealtimeChannelPromise;
@@ -102,6 +103,7 @@ export const useSignaling = ({
         }
       }
     } catch (error) {
+      resolveErrorMessage(error, onLog);
       console.error(error);
     }
   };

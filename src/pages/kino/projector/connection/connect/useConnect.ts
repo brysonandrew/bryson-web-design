@@ -3,6 +3,7 @@ import {
   OFFER_KEY,
 } from '@pages/kino/hooks/signaling/config';
 import { useProjector } from '@pages/kino/projector/context';
+import { resolveErrorMessage } from '@pages/kino/utils/resolveErrorMessage';
 import { TError } from '@t/index';
 import { useChannel } from 'ably/react';
 import { useState } from 'react';
@@ -32,6 +33,7 @@ export const useConnect = () => {
     } catch (error: TError) {
       onLog('⚠ connection failed');
       console.error(error);
+      resolveErrorMessage(error, onLog);
     } finally {
       onLog('connection phase complete');
       setLoading(false);

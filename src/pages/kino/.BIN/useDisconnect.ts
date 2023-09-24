@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useProjector } from '../projector/context';
 import { DISCONNECT_KEY } from '@pages/kino/hooks/signaling/config';
+import { resolveErrorMessage } from '../utils/resolveErrorMessage';
 
 export const useDisconnect = () => {
   const [isLoading, setLoading] = useState(false);
@@ -17,6 +18,7 @@ export const useDisconnect = () => {
     } catch (error) {
       onLog('⚠ error disconnecting');
       console.error(error);
+      resolveErrorMessage(error, onLog);
     } finally {
       onLog('disconnected');
       setLoading(false);
