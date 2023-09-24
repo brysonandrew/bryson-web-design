@@ -6,6 +6,7 @@ import {
   OFFER_KEY,
 } from '../hooks/signaling/config';
 import { TLogHandler } from '@pages/kino/config/types';
+import { resolveErrorMessage } from '../utils/resolveErrorMessage';
 
 type TConfig = {
   signaling: BroadcastChannel;
@@ -58,6 +59,8 @@ export const useSignaling = ({
             break;
         }
       } catch (error) {
+        resolveErrorMessage(error, onLog);
+
         console.error(error);
       }
     };

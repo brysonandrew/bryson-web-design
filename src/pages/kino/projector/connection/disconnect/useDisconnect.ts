@@ -5,6 +5,7 @@ import {
   DISCONNECT_KEY,
 } from '@pages/kino/hooks/signaling/config';
 import { useChannel } from 'ably/react';
+import { resolveErrorMessage } from '@pages/kino/utils/resolveErrorMessage';
 
 export const useDisconnect = () => {
   const [isLoading, setLoading] = useState(false);
@@ -22,6 +23,7 @@ export const useDisconnect = () => {
     } catch (error) {
       onLog('⚠ error disconnecting');
       console.error(error);
+      resolveErrorMessage(error, onLog);
     } finally {
       onLog('disconnected');
       setLoading(false);

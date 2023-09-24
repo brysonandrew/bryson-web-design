@@ -14,7 +14,7 @@ export const useRemoteConnection = () => {
     videoRef,
   } = useScreen();
   const channel = useChannel({
-    connection,
+    connection, 
     onLog,
     keys: [OFFER_KEY],
   });
