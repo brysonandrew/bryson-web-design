@@ -1,5 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useReader } from '../context';
+import { useEventListener } from '@hooks/events/useEventListener';
+const PREFERRED_VOICE_URI = 'Daniel'; //'Rocko (English (UK))';
 
 export const useSynthesis = () => {
   const {
@@ -7,35 +9,33 @@ export const useSynthesis = () => {
     selectedVoiceState: [selectedVoice, setSelectedVoice],
     voicesState: [voices, setVoices],
   } = useReader();
-  
+  const speechSynthesisRef = useRef(speechSynthesis);
+  speechSynthesisRef.current = speechSynthesis;
+
+  const handleVoicesChanged = (event: Event) => {
+    const synthesis =
+      event.currentTarget as SpeechSynthesis;
+    console.log(synthesis, event);
+    if (synthesis && !voices) {
+      setSynthesis(synthesis);
+      const voices = synthesis.getVoices();
+      setVoices(voices);
+      const nextVoice =
+        voices.find(
+          (voice: SpeechSynthesisVoice) =>
+            voice.voiceURI === PREFERRED_VOICE_URI, // voice.default,
+        )?.voiceURI ?? '';
+      setSelectedVoice(nextVoice);
+    }
+  };
+
   useEffect(() => {
-    const synthesis = window.speechSynthesis;
+    speechSynthesisRef.current = window.speechSynthesis;
+  }, []);
 
-    const handleVoicesChanged: (
-      this: SpeechSynthesis,
-      ev: Event,
-    ) => any = (e) => {
-      if (synthesis && !voices) {
-        setSynthesis(synthesis);
-        const voices = synthesis.getVoices();
-        setVoices(voices);
-        setSelectedVoice(
-          voices.find(
-            (voice: SpeechSynthesisVoice) => voice.default,
-          )?.voiceURI ?? '',
-        );
-      }
-    };
-
-    synthesis.addEventListener(
-      'voiceschanged',
-      handleVoicesChanged,
-    );
-    return () => {
-      synthesis.removeEventListener(
-        'voiceschanged',
-        handleVoicesChanged,
-      );
-    };
-  }, [speechSynthesis]);
+  useEventListener(
+    'voiceschanged',
+    handleVoicesChanged,
+    speechSynthesisRef,
+  );
 };

@@ -6,7 +6,6 @@ import {
   TStatusRecord,
   TStatusRecordContext,
 } from './types';
-import { TReceiveChannelContext } from '../screen/context/types';
 
 export const resolveStatusHandlers = (
   handler = VOIDOP,
@@ -23,12 +22,6 @@ export const STATUS_RECORD: TStatusRecord = {
   iceGatheringState: null,
   connectionState: null,
 };
-
-export const RECEIVE_CHANNEL_CONTEXT: TReceiveChannelContext =
-  {
-    receiveChannel: null,
-    onUpdateReceiveChannel: VOIDOP,
-  };
 
 export const LOGS_CONTEXT: TLogsContext = {
   logs: [],

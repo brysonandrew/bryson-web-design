@@ -1,9 +1,6 @@
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
-import { useReceiveChannel } from '../.BIN/useReceiveChannel';
 import { useScreen } from './context';
 import { useIceCandidate } from '../hooks/useIceCandidate';
-import { useChannel } from '../hooks/useChannel';
-import { OFFER_KEY } from '../hooks/signaling/config';
 
 export const useRemoteConnection = () => {
   const {
@@ -12,12 +9,8 @@ export const useRemoteConnection = () => {
     onLog,
     onUpdateStatusRecord,
     videoRef,
+    channel,
   } = useScreen();
-  const channel = useChannel({
-    connection, 
-    onLog,
-    keys: [OFFER_KEY],
-  });
 
   const handleDataChannel = (
     event: RTCDataChannelEvent,

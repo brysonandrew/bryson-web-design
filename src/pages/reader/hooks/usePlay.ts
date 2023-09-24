@@ -16,7 +16,7 @@ export const usePlay = () => {
       } else {
         const utterance = new SpeechSynthesisUtterance(
           phrase,
-        );
+        ); 
         if (selectedVoice) {
           const nextVoice = voices?.find(
             (voice: SpeechSynthesisVoice) =>

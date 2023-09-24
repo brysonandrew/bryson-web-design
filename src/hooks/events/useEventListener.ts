@@ -1,36 +1,36 @@
-import { useIsomorphicLayoutEffect } from "framer-motion";
-import type { RefObject } from "react";
-import { useEffect, useRef } from "react";
+import { useIsomorphicLayoutEffect } from 'framer-motion';
+import type { RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
 // Window Event based useEventListener interface
 export function useEventListener<
-  K extends keyof WindowEventMap
+  K extends keyof WindowEventMap,
 >(
   eventName: K | null,
   handler: (event: WindowEventMap[K]) => void,
   element?: undefined,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ): void;
 
 // Element Event based useEventListener interface
 export function useEventListener<
   K extends keyof HTMLElementEventMap,
-  T extends HTMLElement = HTMLDivElement
+  T extends HTMLElement = HTMLDivElement,
 >(
   eventName: K | null,
   handler: (event: HTMLElementEventMap[K]) => void,
   element: RefObject<T>,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ): void;
 
 // Document Event based useEventListener interface
 export function useEventListener<
-  K extends keyof DocumentEventMap
+  K extends keyof DocumentEventMap,
 >(
   eventName: K | null,
   handler: (event: DocumentEventMap[K]) => void,
   element: RefObject<Document>,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ): void;
 
 // RTCPeerConnection Event based useEventListener interface
@@ -39,7 +39,7 @@ export function useEventListener<
 >(
   eventName: K | null,
   handler: (event: RTCPeerConnectionEventMap[K]) => void,
-  element: RefObject<RTCPeerConnection>
+  element: RefObject<RTCPeerConnection>,
 ): void;
 
 // RTCDataChannel Event based useEventListener interface
@@ -48,23 +48,45 @@ export function useEventListener<
 >(
   eventName: K | null,
   handler: (event: RTCDataChannelEventMap[K]) => void,
-  element: RefObject<RTCDataChannel>
+  element: RefObject<RTCDataChannel>,
+): void;
+
+// SpeechSynthesis Event based useEventListener interface
+export function useEventListener<
+  K extends keyof SpeechSynthesisEventMap,
+>(
+  eventName: K | null,
+  handler: (
+    event: SpeechSynthesisEventMap[K],
+  ) => void,
+  element: RefObject<SpeechSynthesis>,
+): void;
+
+// SpeechSynthesisUtterance Event based useEventListener interface
+export function useEventListener<
+  K extends keyof SpeechSynthesisUtteranceEventMap,
+>(
+  eventName: K | null,
+  handler: (
+    event: SpeechSynthesisUtteranceEventMap[K],
+  ) => void,
+  element: RefObject<SpeechSynthesisUtterance>,
 ): void;
 
 export function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap,
-  T extends HTMLElement | void = void
+  T extends HTMLElement | void = void,
 >(
   eventName: KW | KH | null,
   handler: (
     event:
       | WindowEventMap[KW]
       | HTMLElementEventMap[KH]
-      | Event
+      | Event,
   ) => void,
   element?: RefObject<T>,
-  options?: boolean | AddEventListenerOptions
+  options?: boolean | AddEventListenerOptions,
 ) {
   // Create a ref that stores handler
   const savedHandler = useRef(handler);
@@ -90,14 +112,14 @@ export function useEventListener<
     targetElement.addEventListener(
       eventName,
       eventListener,
-      options
+      options,
     );
 
     // Remove event listener on cleanup
     return () => {
       targetElement.removeEventListener(
         eventName,
-        eventListener
+        eventListener,
       );
     };
   }, [eventName, element, options]);

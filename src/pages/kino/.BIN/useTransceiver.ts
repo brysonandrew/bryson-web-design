@@ -1,4 +1,4 @@
-import { useProjector } from './context';
+import { useProjector } from '../projector/context';
 
 const PREFERRED_VIDEO_CODEC_MIME_TYPE = 'video/VP8';
 

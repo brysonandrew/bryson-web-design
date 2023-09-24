@@ -10,18 +10,20 @@ import {
 } from '../config/types';
 import { CHANNEL_KEY } from './signaling/config';
 import { useChannel } from 'ably/react';
+import { Types } from 'ably';
 
 type TConfig = {
+  channel: Types.RealtimeChannelPromise;
   connection: RTCPeerConnection;
   onLog: TLogHandler;
 };
 export const useStatusRecord = ({
+  channel,
   connection,
   onLog,
 }: TConfig): TStatusRecordContext => {
   const [statusRecord, setUpdateStatusRecord] =
     useState<TStatusRecord>(STATUS_RECORD);
-  const { channel } = useChannel(CHANNEL_KEY);
   const config = { channel, connection };
   const configRef = useRef(config);
   configRef.current = config;
@@ -54,7 +56,7 @@ export const useStatusRecord = ({
     setUpdateStatusRecord({
       channelState: [
         channel.state,
-        channel.realtime?.connection?.state,
+        // channel.realtime?.connection?.state,
       ]
         .filter(Boolean)
         .join(', '),

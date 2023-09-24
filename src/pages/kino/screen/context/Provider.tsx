@@ -4,6 +4,8 @@ import { Screen, useScreen } from '.';
 import { TContext, TMediaSource } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
 import { useLogs } from '@pages/kino/hooks/useLogs';
+import { CHANNEL_KEY } from '@pages/kino/hooks/signaling/config';
+import { useChannel } from 'ably/react';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -12,6 +14,7 @@ export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
   const initScreenContext = useScreen();
+  const { channel } = useChannel(CHANNEL_KEY);
   const logsContext = useLogs();
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -20,17 +23,17 @@ export const Provider: FC<TProviderProps> = ({
     useState<TMediaSource>(null);
 
   const statusRecord = useStatusRecord({
+    channel,
     connection: initScreenContext.connection,
     onLog: logsContext.onLog,
   });
 
   const value: TContext = {
     ...initScreenContext,
-    videoRef,
-    mediaSource,
-    onUpdateMediaSource: setMediaSource,
     ...logsContext,
     ...statusRecord,
+    channel,
+    videoRef,
   };
 
   return (

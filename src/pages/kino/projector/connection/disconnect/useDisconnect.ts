@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import { useProjector } from '../../context';
-import {
-  CHANNEL_KEY,
-  DISCONNECT_KEY,
-} from '@pages/kino/hooks/signaling/config';
-import { useChannel } from 'ably/react';
+import { DISCONNECT_KEY } from '@pages/kino/hooks/signaling/config';
 import { resolveErrorMessage } from '@pages/kino/utils/resolveErrorMessage';
 
 export const useDisconnect = () => {
   const [isLoading, setLoading] = useState(false);
-  const { connection, onLog } = useProjector();
-  const { channel } = useChannel(CHANNEL_KEY);
+  const { connection, onLog, channel } = useProjector();
 
   const handler = async () => {
     onLog('disconnecting...');

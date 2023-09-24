@@ -20,7 +20,7 @@ export const useListeners = () => {
       resolveListeners(
         utterance,
         [
-          ['onstart', true],
+          ['onstart', true], 
           ['onpause', false],
           ['onresume', true],
           ['onerror', null],
