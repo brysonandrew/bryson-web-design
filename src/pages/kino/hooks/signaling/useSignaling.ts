@@ -38,7 +38,7 @@ export const useSignaling = ({
 
         default: {
           onLog(`⚠️ unhandled message ${message.name}`);
-          onLog(JSON.stringify(message));
+          // onLog(JSON.stringify(message));
           console.log('unhandled', message);
           break;
         }

@@ -5,18 +5,12 @@ import { FC } from 'react';
 import { useDarkMode } from '@context/dark-mode';
 import { TMotionDivProps } from '@t/dom';
 import {
-  GLOW_TEAL_BRIGHT_12,
-  GLOW_BLACK_4,
-} from '@uno/shadows';
-import { COLORS } from '@uno/colors';
-import {
   resolveColor,
   resolveGlowColor,
   resolveHoverColor,
 } from './config';
 const BORDER_SIZE = 2;
 const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
-const X = `calc(0.5rem + ${0}px)`;
 
 const Root = styled(motion.div)``;
 
@@ -28,9 +22,7 @@ export const Mark: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const {
-     isDarkMode, darkKey ,
-  } = useDarkMode();
+  const { isDarkMode, darkKey } = useDarkMode();
   return (
     <Root
       key={darkKey}
@@ -53,18 +45,6 @@ export const Mark: FC<TProps> = ({
         },
       }}
       {...props}
-    >
-      {!isDarkMode && (
-        <motion.div
-          style={{
-            height: '100%',
-            width: BORDER_SIZE,
-            y: 'calc(-50% - 1px)',
-            x: 0,
-          }}
-          className='absolute left-0 top-1/2 bg-baby-blue'
-        />
-      )}
-    </Root>
+    />
   );
 };
