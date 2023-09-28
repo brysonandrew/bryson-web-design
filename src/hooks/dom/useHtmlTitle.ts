@@ -6,8 +6,9 @@ import {
 import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
-import { useEffect } from 'react';
-import { analytics } from '@utils/analytics';
+import { useEffect, useRef } from 'react';
+import { useInsert } from 'react-supabase';
+import { SUPABASE_TRAFFIC_KEY } from '@constants/supabase';
 
 const PROJECTS_TITLE = 'Projects';
 
@@ -21,6 +22,9 @@ const TITLE_FROM_PATHNAME_LOOKUP: Record<
 };
 
 export const useHtmlTitle = () => {
+  const prevTimestampRef = useRef(0);
+  const [{ count, data, error, fetching }, execute] =
+    useInsert(SUPABASE_TRAFFIC_KEY);
   const { pathname } = useLocation();
   const currParams = useCurrParams();
   const { project, name } = currParams;
@@ -31,8 +35,33 @@ export const useHtmlTitle = () => {
         project,
       )}${TITLE_KEY_DELIMITER}${name}`
     : resolveCompositeTitle(...titles);
+
   useEffect(() => {
-    analytics.page({ title });
-  }, []);
+    // const fetchIp = async () => {
+    //   const ip = await fetch(
+    //     'https://api.ipify.org?format=json',
+    //   );
+    //   console.log(ip);
+
+    //   const json = await ip.json();
+    //   console.log(json);
+    // };
+    // fetchIp();
+    const insertEntry = async () => {
+      try {
+        const { count, data, error } = await execute({
+          title,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const timestamp = Date.now();
+    const prevTimestamp = prevTimestampRef.current;
+    const diff = timestamp - prevTimestamp;
+    if (diff > 1000 && !import.meta.env.DEV) {
+      insertEntry();
+    }
+  }, [title]);
   return title;
 };
