@@ -33,10 +33,9 @@
   "types": "src/index.d.ts",
   "private": true,
   "dependencies": {
-    "@analytics/google-tag-manager": "^0.5.5",
     "@emailjs/browser": "^3.10.0",
+    "@supabase/supabase-js": "^2.36.0",
     "ably": "^1.2.44",
-    "analytics": "^0.8.9",
     "clsx": "^1.2.1",
     "framer-motion": "^10.3.2",
     "react": "^18.2.0",
@@ -46,6 +45,7 @@
     "react-intersection-observer": "^9.5.2",
     "react-router": "^6.14.1",
     "react-router-dom": "^6.14.1",
+    "react-supabase": "^0.2.0",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },

@@ -19,6 +19,7 @@ export const TextInput = () => {
           const clipboard =
             await navigator.clipboard.readText();
           setPhrase(clipboard);
+          handlePlay();
         }
       }}
     >
