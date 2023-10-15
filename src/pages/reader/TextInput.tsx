@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { TextInput as Input } from './components/Inputs';
 import { useReader } from './context';
 import { usePlay } from './hooks/usePlay';
+import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 
 export const TextInput = () => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
@@ -9,6 +10,7 @@ export const TextInput = () => {
     phraseState: [phrase, setPhrase],
   } = useReader();
   const handlePlay = usePlay();
+  const { timeoutRef } = useTimeoutRef();
 
   return (
     <label
@@ -19,7 +21,9 @@ export const TextInput = () => {
           const clipboard =
             await navigator.clipboard.readText();
           setPhrase(clipboard);
-          handlePlay();
+          timeoutRef.current = setTimeout(() => {
+            handlePlay();
+          }, 0);
         }
       }}
     >
