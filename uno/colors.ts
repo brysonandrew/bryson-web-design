@@ -46,3 +46,4 @@ export const COLORS = {
 } as const;
 
 export type TColorKey = keyof typeof COLORS;
+
