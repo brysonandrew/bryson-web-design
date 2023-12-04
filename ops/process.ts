@@ -56,14 +56,14 @@ const resolveWebp = async (entry: any, path: string) => {
     );
     writeFileData(PRECACHE_PATH, [...smalls, ...originals]);
     for await (const entry of entries) {
-      const { dir, path, ext } = resolveFsInfo(entry);
+      const { dir, noExt, ext } = resolveFsInfo(entry);
 
       const originalMetaData = await resolveMetaDataFile(
         entry,
-        `${path}-meta.md`,
+        `${noExt}-meta.md`,
       );
 
-      const webpEntry = await resolveWebp(entry, path);
+      const webpEntry = await resolveWebp(entry, noExt);
 
       const record = resolveMediaRecord({
         entry,
@@ -78,20 +78,20 @@ const resolveWebp = async (entry: any, path: string) => {
         ];
       }
 
-      const smallEntry = resolveSmallEntry(path, ext);
+      const smallEntry = resolveSmallEntry(noExt, ext);
       const small: OutputInfo = await sharp(entry)
         .resize({ width: SMALL_W })
         .toFile(smallEntry);
 
       const smallMeta = await resolveMetaDataFile(
         smallEntry,
-        `${path}-meta-output-${SMALL_SUFFIX}.md`,
+        `${noExt}-meta-output-${SMALL_SUFFIX}.md`,
         small,
       );
 
       const webpSmallEntry = await resolveWebp(
         smallEntry,
-        `${path}${SMALL_SUFFIX}`,
+        `${noExt}${SMALL_SUFFIX}`,
       );
 
       const smallRecord = resolveMediaRecord({

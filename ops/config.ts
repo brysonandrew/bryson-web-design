@@ -8,6 +8,10 @@ export const CANVAS_ORIGINAL_SCREENS_PATH = [PUBLIC_DIR, CANVAS_ORIGINAL_SCREENS
   '/',
 );
 
+export const CANVAS_SCREENS_PATH = [PUBLIC_DIR, SCREENS, 'canvas'].join(
+  '/',
+);
+
 export const MAIN_SERVICE_WORKER =
   'src/main/service-worker';
 export const BUILD_CONTEXT = 'src/context/domains/build';

@@ -9,7 +9,7 @@ type TMediaEntry =
 export const resolveFsInfo = (
   entry: TMediaEntry | string,
 ) => {
-  const [path, ext] = entry.split('.');
+  const [noExt, ext] = entry.split('.');
   const [fileName, name, dir] = entry
     .split('/')
     .filter(Boolean)
@@ -19,7 +19,7 @@ export const resolveFsInfo = (
     dir,
     name,
     fileName,
-    path,
+    noExt,
     ext,
   };
 };

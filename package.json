@@ -13,8 +13,10 @@
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "delete-excess-fs": "esrun ./ops/delete/deleteExcessFs.ts",
-    "generate-ip-blur": "yarn delete-excess-fs && ops/images/ip-blur.sh && ops/images/ip-blur.sh webp"
+    "blur-images/backup": "esrun ./ops/blur-images/backup",
+    "blur-images/clean": "esrun ./ops/blur-images/clean",
+    "blur-images/reset": "esrun ./ops/blur-images/reset",
+    "blur-images": "yarn blur-images/backup && ops/blur-images/blur.sh && ops/blur-images/blur.sh webp && yarn blur-images/clean"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",

@@ -7,10 +7,10 @@ import { resolveFsInfo } from './utils/resolveFsInfo';
   try {
     const paths = await fg([IMAGES_GLOB]);
     paths.forEach((entry) => {
-      const { path, name } = resolveFsInfo(entry);
+      const { noExt, name } = resolveFsInfo(entry);
 
-      fs.mkdir(path, () => {
-        const nextPath = `${path}/${name}`;
+      fs.mkdir(noExt, () => {
+        const nextPath = `${noExt}/${name}`;
         fs.rename(entry, nextPath, console.log);
       });
     });

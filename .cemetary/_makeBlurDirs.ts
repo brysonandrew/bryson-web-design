@@ -1,7 +1,7 @@
 import { NOOP } from '@constants/functions';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { CANVAS_ORIGINAL_SCREENS_PATH } from './config';
+import { CANVAS_ORIGINAL_SCREENS_PATH } from '../ops/config';
 
 (async () => {
   try {
