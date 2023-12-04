@@ -6,7 +6,7 @@ import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
 } from '@components/filters/presets';
-import { TMediaRecord } from '@ops/screens/types/media';
+import { TMediaRecord } from 'ops/types/media';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';

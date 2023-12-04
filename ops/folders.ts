@@ -1,16 +1,16 @@
 import fg from 'fast-glob';
 import fs from 'fs';
-import { IMAGES_GLOB } from '../config';
+import { IMAGES_GLOB } from './config';
 import { resolveFsInfo } from './utils/resolveFsInfo';
 
 (async () => {
   try {
-    const entries = await fg([IMAGES_GLOB]);
-    entries.forEach((entry) => {
-      const { path, name } = resolveFsInfo(entry);
+    const paths = await fg([IMAGES_GLOB]);
+    paths.forEach((entry) => {
+      const { noExt, name } = resolveFsInfo(entry);
 
-      fs.mkdir(path, () => {
-        const nextPath = `${path}/${name}`;
+      fs.mkdir(noExt, () => {
+        const nextPath = `${noExt}/${name}`;
         fs.rename(entry, nextPath, console.log);
       });
     });

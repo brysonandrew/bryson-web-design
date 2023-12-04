@@ -6,7 +6,7 @@ import { TBaseProps } from '../types';
 import { Control } from './Control';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useViewport } from '@context/viewport';
-import { TMediaRecord } from '@ops/screens/types/media';
+import { TMediaRecord } from 'ops/types/media';
 
 export const Root = styled(motion.div)``;
 

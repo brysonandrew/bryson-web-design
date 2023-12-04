@@ -3,6 +3,14 @@ export const SCREENS = 'screens';
 export const ASSETS_SCREENS = [PUBLIC_DIR, SCREENS].join(
   '/',
 );
+export const CANVAS_ORIGINAL_SCREENS = 'canvas-original-screens';
+export const CANVAS_ORIGINAL_SCREENS_PATH = [PUBLIC_DIR, CANVAS_ORIGINAL_SCREENS].join(
+  '/',
+);
+
+export const CANVAS_SCREENS_PATH = [PUBLIC_DIR, SCREENS, 'canvas'].join(
+  '/',
+);
 
 export const MAIN_SERVICE_WORKER =
   'src/main/service-worker';

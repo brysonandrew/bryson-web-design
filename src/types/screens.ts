@@ -3,7 +3,7 @@ import {
   TExtKey,
   TFilePathKey,
   TMediaRecord,
-} from '../../ops/screens/types/media';
+} from 'ops/types/media';
 
 export type TModule = {
   default: string;

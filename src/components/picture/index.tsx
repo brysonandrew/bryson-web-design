@@ -4,7 +4,7 @@ import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@t/index';
 import { TMotionImgProps, TSource } from '@t/dom';
-import { TMediaRecord } from '@ops/screens/types/media';
+import { TMediaRecord } from 'ops/types/media';
 
 const Root = styled.picture``;
 const Source = styled.source``;

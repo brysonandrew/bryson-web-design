@@ -7,7 +7,7 @@ import { useLoadImage } from '@hooks/media/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
-} from '@ops/screens/types/media';
+} from 'ops/types/media';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import { TChildren } from '@t/index';
 import { MotionBlur } from '@components/filters/motion-blur';
