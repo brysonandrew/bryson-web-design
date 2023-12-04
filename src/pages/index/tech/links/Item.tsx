@@ -38,7 +38,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...props}
     >
       {isHover && <Aura layoutId={title} />}
-      {typeof glow !== 'undefined' && ( 
+      {typeof glow !== 'undefined' && (
         <MetalGlow
           drop={isDarkMode ? 16 : 8}
           color={isDarkMode ? 'baby-blue' : 'gray-3'}

@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { PathLike, promises as fs } from 'fs';
 import fg from 'fast-glob';
 import sharp, { Metadata, OutputInfo } from 'sharp';
 import {
@@ -8,7 +8,7 @@ import {
   LOOKUP_PATH,
   LOOKUP_SMALL_PATH,
   PRECACHE_PATH,
-} from '../config';
+} from './config';
 import { resolveFsInfo } from './utils/resolveFsInfo';
 import { TMediaRecords } from './types/media';
 import { resolveMediaRecord } from './utils/resolveMediaRecord';
@@ -23,8 +23,8 @@ const writeFileData = (path: string, data: object) => {
 };
 
 const resolveMetaDataFile = async (
-  entry,
-  path,
+  entry: any,
+  path: string,
   extra = {},
 ): Promise<Metadata> => {
   const result: Metadata = await sharp(entry).metadata();
@@ -32,7 +32,7 @@ const resolveMetaDataFile = async (
   return result;
 };
 
-const resolveWebp = async (entry, path) => {
+const resolveWebp = async (entry: any, path: string) => {
   const webpEntry = `${path}.webp`;
   const webp: OutputInfo = await sharp(entry)
     .webp({ lossless: true })

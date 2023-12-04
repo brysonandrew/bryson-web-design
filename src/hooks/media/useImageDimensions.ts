@@ -1,4 +1,4 @@
-import { TDimensions } from '@ops/screens/types/media';
+import { TDimensions } from 'ops/types/media';
 import { useMemo } from 'react';
 
 type TConfig = {

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { resolveRandomIndicies as _resolveRandomIndicies } from '@hooks/media/resolveRandomIndicies';
 import { Build } from '.';
-import { TMediaRecords } from '@ops/screens/types/media';
+import { TMediaRecords } from 'ops/types/media';
 import allRecords from './lookup-320w.json';
 
 type TProviderProps = {

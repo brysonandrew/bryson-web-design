@@ -1,4 +1,4 @@
-import { TScreensRecord } from '@ops/screens/types';
+import { TScreensRecord } from 'ops/types';
 
 export type TContext = {
   isTransitioningGallery: boolean;

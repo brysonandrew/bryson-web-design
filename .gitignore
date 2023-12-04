@@ -19,3 +19,4 @@ TODOs.md
 tsconfig.tsbuildinfo
 .assets/**/*
 .env
+assets/canvas*

@@ -14,7 +14,7 @@ import { useDarkMode } from '@context/dark-mode';
 import {
   TMediaDetails,
   TMediaRecord,
-} from '@ops/screens/types/media';
+} from 'ops/types/media';
 import {
   resolveShadow,
   resolveDropShadow,

@@ -5,8 +5,8 @@ import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
 import { useScroll } from '@context/scroll';
 import { isDesktop } from 'react-device-detect';
-import { TMediaRecord } from '@ops/screens/types/media';
 import { Image } from './Image';
+import { TMediaRecord } from 'ops/types/media';
 
 export const Root = styled(motion.div)``;
 

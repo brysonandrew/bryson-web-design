@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import screensRecordJson from './lookup.json';
-import { TScreensRecord } from '@ops/screens/types';
+import { TScreensRecord } from 'ops/types';
 const screensRecord = screensRecordJson as TScreensRecord;
 import { Gallery } from '.';
 

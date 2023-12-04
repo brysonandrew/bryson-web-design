@@ -1,4 +1,4 @@
-import { ASSETS_SCREENS } from '../../config';
+import { ASSETS_SCREENS } from '../config';
 
 type TDir = string;
 type TName = string;

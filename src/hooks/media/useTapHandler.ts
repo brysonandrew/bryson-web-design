@@ -1,7 +1,7 @@
 import { PROJECTS_ID } from '@constants/copy';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { TMediaRecord } from '@ops/screens/types/media';
+import { TMediaRecord } from 'ops/types/media';
 import { useNavigate } from 'react-router';
 
 type TConfig = {

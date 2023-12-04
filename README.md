@@ -5,6 +5,20 @@ work, experiments
 
 ## Image conversion
 
+# Blur IP
+
+for file in assets/canvas-original-screens/**/*.png; do \ 
+ffmpeg -y \
+-i "$file" \
+-filter_complex \
+"boxblur=12, \
+drawtext=text='BLURRED IN ACCORDANCE WITH IP PROTECTION': \
+x=(w-text_w)/2: y=(h-text_h)/2: \
+fontfile='assets/IBMPlexMono-Regular.ttf': \
+fontsize=(w/40)*2.25: fontcolor=white;" \
+-c:a copy -update "${file%.png}-blur.png";
+done;
+
 # 480 sizes
 for file in screens/**/*.png ; do ffmpeg -i "$file" -vf scale=480:-1 "${file%.png}-480w.png"; done
 

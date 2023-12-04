@@ -2,7 +2,7 @@ import { useCurrName } from '@hooks/params/useCurrName';
 import {
   TMediaRecord,
   TMediaRecords,
-} from '@ops/screens/types/media';
+} from 'ops/types/media';
 import { resolveX } from '@utils/gallery/resolveX';
 import { useMemo } from 'react';
 

@@ -1,8 +1,7 @@
-import { PUBLIC_DIR } from '../../config';
+import { PUBLIC_DIR } from '../config';
 
 export { resolveFsInfo } from './resolveFsInfo';
 export {
-  TResolveMediaConfig,
   resolveMediaRecord,
 } from './resolveMediaRecord';
 

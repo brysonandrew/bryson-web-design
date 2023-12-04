@@ -1,8 +1,8 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { ASSETS_SCREENS } from '../config';
+import { ASSETS_SCREENS } from './config';
 
-const copyDir = async (src, dest) => {
+const copyDir = async (src: string, dest: string) => {
   await fs.mkdir(dest, { recursive: true });
   const entries = await fs.readdir(src, {
     withFileTypes: true,
