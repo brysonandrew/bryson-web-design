@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
+import { TClipboardContext } from './clipboard/useClipboardContext';
 
-type TState<S> = [S, Dispatch<SetStateAction<S>>];
+export type TState<S> = [S, Dispatch<SetStateAction<S>>];
 
 export type TSpeechSynthesis = SpeechSynthesis | null
 export type TSelectedVoice = string | null
@@ -23,4 +24,5 @@ export type TContext = {
   pitchState: TState<number>;
   langState: TState<TLang>;
   voicesState: TState<TVoices>;
+  clipboardContext: TClipboardContext;
 };

@@ -1,18 +1,28 @@
-import { Variables } from '@css/Variables';
-import { Provider } from './context/Provider';
-import { Main } from './Main';
+import type { FC } from 'react';
+import styled from '@emotion/styled';
+import { Buttons } from './controls/buttons';
+import { Voices } from './controls/voices';
+import { Settings } from './controls/settings';
+import { P2 } from '@components/space/P2';
+import { TextInput } from './components/TextInput';
+import { Shell } from './components/Shell';
 
-import '@css/reset.css';
-import '@css/globals.css';
-import 'virtual:uno.css';
+const Root = styled.div``;
 
-export const Reader = () => {
+export const Reader: FC = () => {
   return (
-    <>
-      <Variables />
-      <Provider>
-        <Main />
-      </Provider>
-    </>
+    <Shell>
+      <Root className='column bg-grey p-4 w-full h-screen'>
+        <div className='column w-full gap-4 md:row-space'>
+          <Buttons />
+          <div className='row w-full gap-4'>
+            <Voices />
+            <Settings />
+          </div>
+        </div>
+        <P2 classValue='grow-0' />
+        <TextInput />
+      </Root>
+    </Shell>
   );
 };

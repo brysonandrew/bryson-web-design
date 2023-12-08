@@ -1,4 +1,8 @@
-import { useState, type FC } from 'react';
+import {
+  PropsWithChildren,
+  useState,
+  type FC,
+} from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Reader, useReader } from '.';
 import {
@@ -10,10 +14,11 @@ import {
   TSpeechSynthesis,
   TUtterance,
 } from './types';
+import { useClipboardContext } from './clipboard/useClipboardContext';
+import { useListeners } from '../hooks/useListeners';
+import { useSynthesis } from '../hooks/useSynthesis';
 
-type TProviderProps = {
-  children: TChildrenElement;
-};
+type TProviderProps = PropsWithChildren;
 export const Provider: FC<TProviderProps> = ({
   children,
 }) => {
@@ -33,6 +38,21 @@ export const Provider: FC<TProviderProps> = ({
     SpeechSynthesisVoice[] | null
   >(null);
 
+  const clipboardContext = useClipboardContext();
+
+  useSynthesis({
+    selectedVoiceState,
+    speechSynthesisState,
+    voicesState,
+  });
+  useListeners({
+    playModeState,
+    utteranceState,
+    volumeState,
+    rateState,
+    pitchState,
+  });
+
   const value: TContext = {
     ...context,
     speechSynthesisState,
@@ -45,6 +65,7 @@ export const Provider: FC<TProviderProps> = ({
     pitchState,
     langState,
     voicesState,
+    clipboardContext,
   };
 
   return (

@@ -1,21 +1,26 @@
 import { useEffect, useRef } from 'react';
-import { useReader } from '../context';
 import { useEventListener } from '@hooks/events/useEventListener';
-const PREFERRED_VOICE_URI = 'Daniel'; //'Rocko (English (UK))';
+import { TContext } from '../context/types';
+const PREFERRED_VOICE_URI =
+  'Daniel (English (United Kingdom))'; //'Rocko (English (UK))';
 
-export const useSynthesis = () => {
-  const {
-    speechSynthesisState: [speechSynthesis, setSynthesis],
-    selectedVoiceState: [selectedVoice, setSelectedVoice],
-    voicesState: [voices, setVoices],
-  } = useReader();
+type TConfig = Pick<
+  TContext,
+  | 'speechSynthesisState'
+  | 'selectedVoiceState'
+  | 'voicesState'
+>;
+export const useSynthesis = ({
+  speechSynthesisState: [speechSynthesis, setSynthesis],
+  selectedVoiceState: [selectedVoice, setSelectedVoice],
+  voicesState: [voices, setVoices],
+}: TConfig) => {
   const speechSynthesisRef = useRef(speechSynthesis);
   speechSynthesisRef.current = speechSynthesis;
 
   const handleVoicesChanged = (event: Event) => {
     const synthesis =
       event.currentTarget as SpeechSynthesis;
-    console.log(synthesis, event);
     if (synthesis && !voices) {
       setSynthesis(synthesis);
       const voices = synthesis.getVoices();
@@ -24,7 +29,7 @@ export const useSynthesis = () => {
         voices.find(
           (voice: SpeechSynthesisVoice) =>
             voice.voiceURI === PREFERRED_VOICE_URI, // voice.default,
-        )?.voiceURI ?? '';
+        )?.voiceURI ?? voices[0].voiceURI;
       setSelectedVoice(nextVoice);
     }
   };
