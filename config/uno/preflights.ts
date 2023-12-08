@@ -53,7 +53,7 @@ export const PRE_FLIGHT: Preflight<TAnyTheme> = {
       }
 
       html.dark ::-webkit-scrollbar-thumb:hover {
-        background-color: ${theme.colors['white-08']};
+        background-color: ${theme.colors['white-01']};
       }
 
       input:-webkit-autofill {

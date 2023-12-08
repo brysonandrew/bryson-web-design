@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { GLOW_BABY_BLUE_1 } from '@uno/shadows';
+import { GLOW_BABY_BLUE_1 } from 'config/uno/shadows';
 import { FC, SelectHTMLAttributes } from 'react';
 
 const inputCss = css``;
@@ -148,7 +148,7 @@ export const Shell: FC<TProps> = ({
   return (
     <div className='relative'>
       <Select
-        className='relative rounded-sm pl-4 pr-8 py-2 bg-black-2'
+        className='relative rounded-sm pl-4 pr-10 py-2 bg-black-2'
         style={{ boxShadow: GLOW_BABY_BLUE_1 }}
         {...props}
       >

@@ -1,7 +1,7 @@
 import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/reader/hooks/usePlay';
 import { useReader } from '@pages/reader/context';
-import { GLOW_BABY_BLUE_4 } from '@uno/shadows';
+import { GLOW_BABY_BLUE_4 } from 'config/uno/shadows';
 
 export const Play = () => {
   const {

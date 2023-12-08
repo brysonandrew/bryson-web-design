@@ -1,5 +1,5 @@
 import { TRgb } from '@t/colors';
-import { TColorKey } from '@uno/colors';
+import { TColorKey } from 'config/uno/colors';
 
 export const resolveColorOpacityVariations = (
   key: TColorKey,

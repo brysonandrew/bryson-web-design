@@ -12,19 +12,9 @@
       "@pages/*": ["src/pages/*"],
       "@context/*": ["src/context/*"],
       "@utils/*": ["src/utils/*"],
-      "@uno/*": ["uno/*"],
+      "@uno/*": ["config/uno/*"],
       "@css/*": ["src/css/*"],
       "@t/*": ["src/types/*"],
-      "@moth/*": ["moth/src/*"],
-      "@moth-state/*": ["moth/src/state/*"],
-      "@moth-css/*": ["moth/src/css/*"],
-      "@moth-utils/*": ["moth/src/utils/*"],
-      "@moth-components/*": ["moth/src/components/*"],
-      "@moth-constants/*": ["moth/src/constants/*"],
-      "@moth-pages/*": ["moth/src/pages/*"],
-      "@moth-hooks/*": ["moth/src/hooks/*"],
-      "@moth-icons/*": ["moth/src/components/icons/*"],
-      "@moth-logic/*": ["moth/src/logic/*"]
     }
   }
 }

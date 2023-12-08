@@ -6,7 +6,7 @@ import { TClassValueProps } from '@t/index';
 import {
   GLOW_TEAL_BRIGHT_4,
   GLOW_BLACK_1_BABY_BLUE_1,
-} from '@uno/shadows';
+} from 'config/uno/shadows';
 import { useCursor } from '@context/cursor';
 import { useDarkMode } from '@context/dark-mode';
 import { Metal } from '@components/metal';

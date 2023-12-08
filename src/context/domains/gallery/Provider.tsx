@@ -3,7 +3,8 @@ import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import screensRecordJson from './lookup.json';
 import { TScreensRecord } from 'ops/types';
-const screensRecord = screensRecordJson as TScreensRecord;
+const screensRecord =
+  screensRecordJson as unknown as TScreensRecord;
 import { Gallery } from '.';
 
 type TProviderProps = {
