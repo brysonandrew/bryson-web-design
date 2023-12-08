@@ -3,7 +3,7 @@ import {
   GLOW_BLACK_1_BABY_BLUE_1,
   GLOW_BLACK_2_BABY_BLUE_4,
   GLOW_TEAL_2,
-} from '@uno/shadows';
+} from 'config/uno/shadows';
 
 export const resolveGlow = (
   isHover: boolean,

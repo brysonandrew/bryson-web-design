@@ -1,2 +1,2 @@
-import uno from './uno';
+import uno from './config/uno';
 export default uno;

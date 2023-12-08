@@ -25,7 +25,9 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "ops/**/*.ts",
-    "ops/**/*.tsx"
+    "ops/**/*.tsx",
+    "config/**/*.ts",
+    "config/**/*.tsx"
   ],
   "exclude": [],
   "extends": "./tsconfig.paths.json"

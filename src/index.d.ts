@@ -94,3 +94,4 @@ declare function registerProcessor(
 ): void;
 
 declare module '@analytics/google-tag-manager';
+declare module 'rollup-plugin-typescript'

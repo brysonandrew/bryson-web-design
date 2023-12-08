@@ -5,7 +5,7 @@ import {
   resolveColorSeries,
 } from '@utils/colors/variables';
 
-export { COLORS } from '@uno/colors';
+export { COLORS } from 'config/uno/colors';
 
 export const WHITE_FILTER = {
   filter: 'grayscale(100%) brightness(400%)',

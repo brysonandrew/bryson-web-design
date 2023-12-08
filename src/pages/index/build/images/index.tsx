@@ -21,10 +21,9 @@ const List = styled(motion.ul)``;
 type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
-  const { records } = useBuild();
+  const { records } = useBuild(); 
   const { isScrolling } = useScrollContext();
   const spin = useSpin();
-
   const {
     width: viewportWidth = 0,
     halfWidth: halfViewportWidth,

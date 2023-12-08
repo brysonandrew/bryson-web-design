@@ -1,4 +1,4 @@
-import { PathLike, promises as fs } from 'fs';
+import { promises as fs } from 'fs';
 import fg from 'fast-glob';
 import sharp, { Metadata, OutputInfo } from 'sharp';
 import {
@@ -14,6 +14,8 @@ import { TMediaRecords } from './types/media';
 import { resolveMediaRecord } from './utils/resolveMediaRecord';
 import { TScreensRecord } from './types';
 import { removePublicDir } from './utils';
+
+const EXCLUDE_SMALLS = ['canvas', 'lambdax'];
 
 const resolveSmallEntry = (path: string, ext = 'png') =>
   `${path}${SMALL_SUFFIX}.${ext}`;
@@ -77,6 +79,13 @@ const resolveWebp = async (entry: any, path: string) => {
           record,
         ];
       }
+      writeFileData(LOOKUP_PATH, projectRecord);
+
+      if (
+        EXCLUDE_SMALLS.some((v) => entry.includes(`/${v}/`))
+      ) {
+        continue;
+      }
 
       const smallEntry = resolveSmallEntry(noExt, ext);
       const small: OutputInfo = await sharp(entry)
@@ -103,9 +112,9 @@ const resolveWebp = async (entry: any, path: string) => {
       if (smallRecord) {
         smallRecords.push(smallRecord);
       }
+
+      writeFileData(LOOKUP_SMALL_PATH, smallRecords);
     }
-    writeFileData(LOOKUP_SMALL_PATH, smallRecords);
-    writeFileData(LOOKUP_PATH, projectRecord);
   } catch (error) {
     console.error(error);
   }

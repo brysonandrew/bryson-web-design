@@ -4,6 +4,7 @@
   "description": "Building websites and apps",
   "main": "src/main/index.tsx",
   "config": {
+    "blur_images_dir_path": "ops/blur-images",
     "vite_config_path": "vite.config.ts"
   },
   "scripts": {
@@ -13,10 +14,12 @@
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "blur-images/backup": "esrun ./ops/blur-images/backup",
-    "blur-images/clean": "esrun ./ops/blur-images/clean",
-    "blur-images/reset": "esrun ./ops/blur-images/reset",
-    "blur-images": "yarn blur-images/backup && ops/blur-images/blur.sh && ops/blur-images/blur.sh webp && yarn blur-images/clean"
+    "images-process": "esrun ops/process",
+    "d": "esrun ops/delete/deleteDoubleProcessed",
+    "blur-images/backup": "esrun $blur_images_dir_path/backup",
+    "blur-images/clean": "esrun $blur_images_dir_path/clean",
+    "blur-images/reset": "esrun $blur_images_dir_path/reset",
+    "blur-images": "esrun $blur_images_dir_path/backup && $blur_images_dir_path/blur.sh && $blur_images_dir_path/blur.sh webp && esrun $blur_images_dir_path/clean"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
