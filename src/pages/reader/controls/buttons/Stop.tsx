@@ -9,7 +9,7 @@ export const Stop = () => {
 
   return (
     <Button
-      className='absolute top-full left-0 -translate-x-1/2 translate-y-0 w-4 h-4'
+      className='absolute top-full right-0 translate-x-1/2 translate-y-0 w-4 h-4'
       disabled={!phrase}
       onClick={() => {
         if (speechSynthesis && phrase) {

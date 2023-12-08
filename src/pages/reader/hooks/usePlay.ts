@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useReader } from '../context';
 
 export const usePlay = () => {
@@ -9,14 +10,19 @@ export const usePlay = () => {
     voicesState: [voices, setVoices],
   } = useReader();
 
+  const current = { phrase, speechSynthesis, selectedVoice, voices };
+  const currentRef = useRef(current);
+  currentRef.current = current;
+
   const handler = () => {
+    const { phrase , speechSynthesis, selectedVoice, voices } = currentRef.current;
     if (speechSynthesis && phrase) {
       if (speechSynthesis?.speaking) {
         speechSynthesis.resume();
       } else {
         const utterance = new SpeechSynthesisUtterance(
           phrase,
-        ); 
+        );
         if (selectedVoice) {
           const nextVoice = voices?.find(
             (voice: SpeechSynthesisVoice) =>
