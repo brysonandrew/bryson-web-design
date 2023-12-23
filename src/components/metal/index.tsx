@@ -4,7 +4,7 @@ import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 
 const DefaultRoot = styled(motion.div)`
   background-color: var(--white-1);
@@ -13,7 +13,7 @@ const DefaultRoot = styled(motion.div)`
   }
 `;
 
-export type TRootProps = TMotionDivProps & {
+export type TRootProps = TDivMotionProps & {
   classValue?: ClassValue;
 };
 type TProps = TRootProps & {

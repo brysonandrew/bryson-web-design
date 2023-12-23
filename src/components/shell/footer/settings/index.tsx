@@ -5,11 +5,11 @@ import { DarkMode } from './DarkMode';
 import { isMobile } from 'react-device-detect';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 
 const Root = styled(motion.div)``;
 
-type TProps = TMotionDivProps;
+type TProps = TDivMotionProps;
 export const Settings: FC<TProps> = (props) => {
   return (
     <Root

@@ -5,11 +5,11 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { P2 } from '@components/space/P2';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 
 const Root = styled(motion.div)``;
 
-type TProps = TMotionDivProps & {
+type TProps = TDivMotionProps & {
   isVisible: boolean;
 } & Pick<TItem, 'slug' | 'paragraphs' | 'tags'>;
 export const Details: FC<TProps> = ({

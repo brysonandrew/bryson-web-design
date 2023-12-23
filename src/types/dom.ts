@@ -11,13 +11,13 @@ import {
   SourceHTMLAttributes,
 } from 'react';
 
-export type TMotionDivProps = HTMLMotionProps<'div'>;
+export type TDivMotionProps = HTMLMotionProps<'div'>;
 
 export type TMotionUlProps = HTMLMotionProps<'ul'>;
 
-export type TMotionButtonProps = HTMLMotionProps<'button'> &
+export type TButtonMotionProps = HTMLMotionProps<'button'> &
   TTitleProps;
-export type TMotionAnchorProps = HTMLMotionProps<'a'> &
+export type TAnchorMotionProps = HTMLMotionProps<'a'> &
   TTitleProps;
 export type TMotionImgProps = HTMLMotionProps<'img'>;
 export type TMotionInputProps = HTMLMotionProps<'input'>;

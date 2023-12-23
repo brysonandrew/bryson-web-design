@@ -1,10 +1,10 @@
 import { React } from '@components/icons/tech/React';
 import { Typescript } from '@components/icons/tech/Typescript';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import type { TBaseIconProps } from '@t/icons';
 import type { FC } from 'react';
 
-export type TItem = TMotionDivProps & {
+export type TItem = TDivMotionProps & {
   title: string;
   href: string;
   Icon: FC<TBaseIconProps>;

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren, TClassValueProps } from '@t/index';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import { useCursor } from '@context/cursor';
 
 const resolveSize = (size: number) => {
@@ -15,7 +15,7 @@ const resolveSize = (size: number) => {
 
 const Root = styled(motion.div)``;
 
-type TProps = TMotionDivProps &
+type TProps = TDivMotionProps &
   TClassValueProps & {
     size?: number;
     children?: TChildren;

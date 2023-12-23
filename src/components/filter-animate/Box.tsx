@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import { TChildren, TClassValueProps } from '@t/index';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -7,7 +7,7 @@ import { FC } from 'react';
 
 const Root = styled(motion.div)``;
 
-type TProps = TMotionDivProps &
+type TProps = TDivMotionProps &
   TClassValueProps & {
     children?: TChildren;
   };

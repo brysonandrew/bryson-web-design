@@ -8,4 +8,4 @@ export const Experience = () => (
       <Item key={item.title} {...item} index={index} />
     ))}
   </ul>
-);
+); 

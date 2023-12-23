@@ -1,5 +1,5 @@
 import { TChildren, TClassValueProps } from '@t/index';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import {
   IntersectionOptions,
   useInView,
@@ -20,7 +20,7 @@ export type TBoxChildrenProps = {
 };
 
 export type TInViewProps = Omit<
-  TMotionDivProps,
+  TDivMotionProps,
   'children'
 > &
   TClassValueProps &
