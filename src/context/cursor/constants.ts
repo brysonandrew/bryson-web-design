@@ -5,6 +5,8 @@ import { motionValue } from 'framer-motion';
 export const STATE: TState = {
   isCursorReady: false,
   hoverKey: null,
+  hoverKeyParts: [],
+  cursorKey: null,
 };
 
 export const CONTEXT: TContext = {

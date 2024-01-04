@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
 html {
   scroll-behavior: smooth;
   font-size: 100%;
@@ -5,11 +7,23 @@ html {
 
 html,
 body {
+  font-family: Author, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 100%;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   -webkit-overflow-scrolling: touch;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: Cutive Mono, Courier, Menlo, and Consolas, monospace;
+}
+kbd {
+  font-weight: bold;
 }
 
 html.dark,

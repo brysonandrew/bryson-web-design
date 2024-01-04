@@ -1,9 +1,6 @@
 import { useScreen } from './context';
 import { useSignaling } from '../hooks/signaling/useSignaling';
-import {
-  useChannel,
-  useChannelStateListener,
-} from 'ably/react';
+import { useChannel } from 'ably/react';
 import {
   ANSWER_KEY,
   CHANNEL_KEY,

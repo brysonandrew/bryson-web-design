@@ -1,13 +1,6 @@
 import { useProjector } from './context';
 import { useConnectionListeners } from '../hooks/useConnectionListeners';
 import { useIceCandidate } from '../hooks/useIceCandidate';
-import { useSignaling } from '../hooks/signaling/useSignaling';
-import {
-  ANSWER_KEY,
-  CHANNEL_KEY,
-} from '../hooks/signaling/config';
-import { useChannelStateListener } from 'ably/react';
-import { TMessage } from '../config/types';
 
 export const useLocalConnection = () => {
   const {

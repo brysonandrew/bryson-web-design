@@ -11,7 +11,7 @@ const resolveTextStroke = (
       {
         'text-stroke': `1px var(--${color})`,
         '-webkit-text-stroke': `1px var(--${color})`,
-      },
+      }, 
     ];
   });
 };
