@@ -23,7 +23,8 @@ export type TExtraConfig = [
 
 export const TABLET_SIZE = 'tablet size' as const;
 export const MOBILE_SIZE = 'mobile size' as const;
-export const ADDITIONAL_SECTION = 'additional sections' as const;
+export const ADDITIONAL_SECTION =
+  'additional sections' as const;
 export const CONTACT_FORM = 'contact form' as const;
 export const DARK_LIGHT_MODE = 'dark/light mode' as const;
 
@@ -46,3 +47,8 @@ export const YEARLY = [
   ['Web hosting', 60],
   ['Domain registration', 20, { prefix: 'starting from ' }],
 ] as const;
+
+export const TOTAL_YEARLY = YEARLY.reduce(
+  (a, [, price]) => a + price,
+  0,
+);

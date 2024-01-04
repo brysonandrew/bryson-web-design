@@ -17,11 +17,13 @@ export const Money: FC<TProps> = ({
   return (
     <span
       className={clsx(
-        'relative font-display text-baby-blue whitespace-nowrap',
-        classValue,
+        'relative font-display whitespace-nowrap',
+        classValue ?? 'text-color-1',
       )}
     >
-      {[prefix, nToMoney(children), suffix].filter(Boolean)}
+      {prefix}
+      {nToMoney(children)}
+      {suffix}
     </span>
   );
 };

@@ -14,13 +14,13 @@ export const Item: FC<TProps> = ({ id, children }) => {
   );
   return (
     <motion.div
-      className='relative py-1 px-2'
+      className='relative py-1 px-2 text-color-3'
       {...handlers}
     >
       <motion.div
         className={clsx(
           'absolute -inset-1 center rounded-md pointer-events-none',
-          isHover ? 'bg-baby-blue-02 z-50' : '',
+          isHover ? 'bg-teal-02 z-50' : '',
         )}
       />
       <div className='relative row gap-2'>{children}</div>

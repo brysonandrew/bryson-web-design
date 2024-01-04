@@ -21,17 +21,18 @@ export const Extras = () => {
           key: item,
           children: (
             <Item id={item}>
-              <Circle>{ALL.indexOf(item) + 1}</Circle>
+           
               <div
                 className={clsx(
-                  'row-space gap-2 py-1 px-2 w-full',
-                  !isValue && 'text-gray',
+                  'row-space py-1 w-full',
+                  !isValue && 'text-gray-2',
                 )}
               >
                 <div className='row gap-2'>
                   {isN && value > 0 && (
                     <>
                       <button
+                        className='text-color-1'
                         onClick={() => {
                           setExtras((prev) => ({
                             ...prev,
@@ -44,12 +45,13 @@ export const Extras = () => {
                       >
                         <I icon={REMOVE_ICON} />
                       </button>
-                      <div className='font-mono'>
-                        {value}
+                      <div className='font-display'>
+                        x {value}
                       </div>
                     </>
                   )}
                   <button
+                    className='text-color-1'
                     onClick={() => {
                       setExtras((prev) => ({
                         ...prev,
@@ -61,16 +63,20 @@ export const Extras = () => {
                   >
                     <I
                       icon={
-                        isN
+                        isN || !isValue
                           ? ADD_ICON
-                          : isValue
-                          ? REMOVE_ICON
-                          : ADD_ICON
+                          : REMOVE_ICON
                       }
                     />
                   </button>
+                  {isValue ? (
+                <Circle isActive>
+                  {ALL.indexOf(item) + 1}
+                </Circle>
+              ) : null}
                   <span>{item}</span>
                 </div>
+                
                 <Money
                   classValue={isValue ? '' : 'text-inherit'}
                 >

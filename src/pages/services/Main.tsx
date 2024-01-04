@@ -3,9 +3,6 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { useInView } from 'react-intersection-observer';
-import { I } from '@components/Icon';
-import { P2 } from '@components/space/P2';
-import { P1 } from '@components/space/P1';
 import { SECTIONS } from './config';
 import { Section } from './Section';
 
