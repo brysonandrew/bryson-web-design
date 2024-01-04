@@ -32,6 +32,7 @@ const FLEX: StaticShortcutMap = {
   'row-wrap': 'flex flex-row items-center flex-wrap',
   'row-start': 'flex flex-row items-start',
   'row-end': 'flex flex-row items-end',
+  'row-start-end': 'row-start justify-end',
   'row-space': 'row justify-between',
   'row-start-space': 'row-start justify-between',
   column: 'flex flex-col items-center',
@@ -65,7 +66,7 @@ export const SHORTCUTS: StaticShortcutMap = {
   'bg-main-inverted':
     'dark:bg-white bg-black dark-mode-transition',
   'text-main-inverted':
-    'dark:text-gray text-teal-bright dark-mode-transition',
+    'text-teal-bright dark:text-black dark-mode-transition',
   'circle-interactive':
     'relative p-3 cursor-pointer text-color-1',
   'glow-interactive':

@@ -13,8 +13,8 @@ export const Footer = () => {
         <div className='w-1/6'>
           <TextLines
             classValue='text-white'
-            height='h-1'
-            gap='gap-1'
+            height='h-0.5'
+            gap='gap-0.5'
             count={4}
           />
         </div>

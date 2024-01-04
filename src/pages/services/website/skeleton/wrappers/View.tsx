@@ -4,7 +4,7 @@ export const View: FC<PropsWithChildren> = ({
   children,
 }) => {
   return (
-    <div className='py-2 bg-white rounded-lg'>
+    <div className='w-full h-full py-4 bg-white rounded-lg'>
       {children}
     </div>
   );

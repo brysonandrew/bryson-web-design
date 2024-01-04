@@ -4,6 +4,7 @@ import { Provider as SoundProvider } from '@context/sound/Provider';
 import { Provider as AppProvider } from '@context/app/Provider';
 import { Provider as CursorProvider } from '@context/cursor/Provider';
 import { Provider as GalleryProvider } from '@context/domains/gallery/Provider';
+import { Provider as ServicesProvider } from '@context/domains/services/Provider';
 import { Provider as ContactProvider } from '@context/domains/contact/Provider';
 import { Provider as ViewportProvider } from '@context/viewport/Provider';
 //BuildProvider is in src/pages/index/build/index.tsx
@@ -20,11 +21,13 @@ export const Providers: FC<TProps> = ({ children }) => {
           <AppProvider>
             <ViewportProvider>
               <CursorProvider>
-                  <GalleryProvider>
+                <GalleryProvider>
+                  <ServicesProvider>
                     <ContactProvider>
                       {children}
                     </ContactProvider>
-                  </GalleryProvider>
+                  </ServicesProvider>
+                </GalleryProvider>
               </CursorProvider>
             </ViewportProvider>
           </AppProvider>

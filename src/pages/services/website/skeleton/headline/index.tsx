@@ -1,8 +1,8 @@
 import { I } from '@components/Icon';
 import { IMAGE_ICON } from '@constants/icons';
-import { HEADLINE } from '../config';
-import { Focus } from '../Focus';
-import { TextLines } from './parts/TextLines';
+import { HEADLINE } from '../../config';
+import { Focus } from '../../Focus';
+import { TextLines } from '../parts/TextLines';
 
 export const Headline = () => {
   return (

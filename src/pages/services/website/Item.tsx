@@ -19,7 +19,7 @@ export const Item: FC<TProps> = ({ id, children }) => {
     >
       <motion.div
         className={clsx(
-          'absolute -inset-1 center rounded-md',
+          'absolute -inset-1 center rounded-md pointer-events-none',
           isHover ? 'bg-baby-blue-02 z-50' : '',
         )}
       />

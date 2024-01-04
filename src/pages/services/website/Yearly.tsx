@@ -1,24 +1,17 @@
 import { YEARLY } from './config';
 import { Money } from './Money';
-import { TickList } from './TickList';
 
 export const Yearly = () => {
   return (
-    <>
-      <div>Yearly costs</div>
-      <TickList
-        items={YEARLY.map(([item, price]) => {
-          return {
-            key: item,
-            children: (
-              <>
-                <span>{item}</span>
-                <Money>{price}</Money> p.a.
-              </>
-            ),
-          };
-        })}
-      />
-    </>
+    <ul className='column-end w-full'>
+      {YEARLY.map(([item, price, moneyProps]) => {
+        return (
+          <li key={item} className='w-full row-space'>
+            <span>{item}</span>{' '}
+            <Money {...moneyProps}>{price}</Money>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
