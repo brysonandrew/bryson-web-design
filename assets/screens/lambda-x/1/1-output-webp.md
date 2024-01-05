@@ -1,0 +1,1 @@
+{"format":"webp","width":3422,"height":1714,"channels":4,"premultiplied":false,"size":33748}

@@ -5,10 +5,12 @@ export const Section: FC<TProps> = ({
   title,
   children,
 }) => (
-  <div className='column gap-24 w-full'>
-    <h4 className='w-full text-left +++text'>
-      <span className='inline italics'>{title}</span>
+  <div className='column gap-6 w-full'>
+    <h4 className='w-full text-left +text uppercase tracking-wider'>
+      {title}
     </h4>
-    <>{children}</>
+    <div className='column items-stretch gap-12 w-full'>
+      {children}
+    </div>
   </div>
 );

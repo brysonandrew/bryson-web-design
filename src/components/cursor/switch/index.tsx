@@ -65,14 +65,21 @@ export const Switch = () => {
       return (
         <Sight
           style={{ opacity: 0.2 }}
-          animate={{ opacity: 0.1, scale: 12 }}
+          animate={{
+            opacity: 0.1,
+            scale: 12,
+            x: 0,
+            y: 0,
+          }}
         />
       );
     }
 
     case 'bigger': {
       return (
-        <Sight animate={{ opacity: 0.1, scale: 18 }} />
+        <Sight
+          animate={{ opacity: 0.1, scale: 18, x: 0, y: 0 }}
+        />
       );
     }
 

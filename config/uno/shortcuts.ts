@@ -5,6 +5,7 @@ const BACKGROUND: StaticShortcutMap = {
   'background-color-1': 'dark:bg-teal bg-gray',
   'background-color-2': 'dark:bg-black-2 bg-white',
   'background-color-3': 'dark:bg-teal-bright bg-baby-blue',
+  'background-color-4': 'dark:bg-black bg-white-2',
 };
 const TEXT: StaticShortcutMap = {
   '+++text':
@@ -38,6 +39,7 @@ const FLEX: StaticShortcutMap = {
   column: 'flex flex-col items-center',
   'column-start': 'flex flex-col items-start',
   'column-end': 'flex flex-col items-end',
+  'column-end-reverse': 'flex flex-col-reverse items-end',
   'column-start-end': 'column-start justify-end',
   'column-center-end': 'column justify-end',
   'column-start-center': 'column-start justify-center',
@@ -74,7 +76,7 @@ export const SHORTCUTS: StaticShortcutMap = {
   'glow-interactive-lg':
     'dark:glow-interactive-dark-lg glow-interactive-light-lg',
   'w-core':
-    'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
+    'w-full mx-4 sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
   'cover-fixed': 'fixed inset-0',
   cover: 'absolute inset-0',
   'dragger-screen': 'absolute h-screen row-end',

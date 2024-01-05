@@ -28,7 +28,7 @@
     "ops/**/*.tsx",
     "config/**/*.ts",
     "config/**/*.tsx"
-  ],
+, "config/uno/colors.ts"  ],
   "exclude": [],
   "extends": "./tsconfig.paths.json"
 }

@@ -8,9 +8,10 @@ export const View: FC<
   return (
     <div
       className={clsx(
-        'w-full h-full py-4 bg-white rounded-lg',
+        'w-full h-full py-4 bg-main-inverted glow-interactive-lg rounded-lg',
         classValue,
       )}
+      
     >
       {children}
     </div>

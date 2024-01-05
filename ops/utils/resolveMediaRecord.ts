@@ -3,7 +3,8 @@ import type {
   TMediaMetadata,
   TMediaRecord,
 } from '../types/media';
-import { removePublicDir } from '.';
+import { removePublicDir } from './write';
+
 
 export type TResolveMediaConfig = TMediaMetadata & {
   webpEntry: string;

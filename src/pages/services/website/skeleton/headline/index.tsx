@@ -1,17 +1,21 @@
 import { I } from '@components/Icon';
 import { IMAGE_ICON } from '@constants/icons';
-import { TextLines } from '../parts/TextLines';
+import { FC, PropsWithChildren } from 'react';
+import { TextLines } from '../../../../../components/skeleton/TextLines';
 import { Shell } from './Shell';
 
-export const Headline = () => {
+export const Headline: FC<PropsWithChildren> = ({
+  children,
+}) => {
   return (
     <Shell>
+      {children}
       <I
         icon={IMAGE_ICON}
-        className='absolute left-1/2 -translate-x-2/6 h-full w-full text-gray'
+        className='absolute left-1/2 object-contain -translate-x-1/2 h-11/12 w-11/12 text-gray'
       />
       <div className='relative w-2/3'>
-        <TextLines classValue='text-white' />
+        <TextLines classValue='bg-main-inverted' />
       </div>
     </Shell>
   );

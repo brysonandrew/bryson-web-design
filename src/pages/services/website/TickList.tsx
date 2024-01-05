@@ -1,4 +1,3 @@
-import { I } from '@components/Icon';
 import { TChildren } from '@t/index';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC } from 'react';

@@ -1,6 +1,6 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { ASSETS_SCREENS } from './config';
+import { SCREENS_DIR } from './config';
 
 const copyDir = async (src: string, dest: string) => {
   await fs.mkdir(dest, { recursive: true });
@@ -21,8 +21,8 @@ const copyDir = async (src: string, dest: string) => {
 (async () => {
   try {
     copyDir(
-      path.resolve(ASSETS_SCREENS),
-      path.resolve(`${ASSETS_SCREENS}-copy`),
+      path.resolve(SCREENS_DIR),
+      path.resolve(`${SCREENS_DIR}-copy`),
     );
   } catch (error) {
     console.error(error);

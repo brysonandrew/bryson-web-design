@@ -1,106 +1,103 @@
-import { promises as fs } from 'fs';
+import fs from 'fs';
 import fg from 'fast-glob';
-import sharp, { Metadata, OutputInfo } from 'sharp';
+import sharp, { OutputInfo } from 'sharp';
 import {
   IMAGES_GLOB,
   SMALL_W,
   SMALL_SUFFIX,
-  LOOKUP_PATH,
   LOOKUP_SMALL_PATH,
-  PRECACHE_PATH,
+  SCREENS_DIR,
+  EXCLUDE_SMALLS,
+  BASE_SCREENS_ENTRY,
 } from './config';
-import { resolveFsInfo } from './utils/resolveFsInfo';
 import { TMediaRecords } from './types/media';
 import { resolveMediaRecord } from './utils/resolveMediaRecord';
+import {
+  resolveSmallEntry,
+  resolveMetaDataFile,
+  resolveWebp,
+  writePrecachePath,
+  writeFileData,
+  writeProjectRecordInGallery,
+  resolveFsInfo,
+} from './utils/write';
 import { TScreensRecord } from './types';
-import { removePublicDir } from './utils';
-
-const EXCLUDE_SMALLS = ['canvas', 'lambdax'];
-
-const resolveSmallEntry = (path: string, ext = 'png') =>
-  `${path}${SMALL_SUFFIX}.${ext}`;
-
-const writeFileData = (path: string, data: object) => {
-  fs.writeFile(path, JSON.stringify(data));
-};
-
-const resolveMetaDataFile = async (
-  entry: any,
-  path: string,
-  extra = {},
-): Promise<Metadata> => {
-  const result: Metadata = await sharp(entry).metadata();
-  writeFileData(path, { ...result, ...extra });
-  return result;
-};
-
-const resolveWebp = async (entry: any, path: string) => {
-  const webpEntry = `${path}.webp`;
-  const webp: OutputInfo = await sharp(entry)
-    .webp({ lossless: true })
-    .toFile(webpEntry);
-  writeFileData(`${path}-output-webp.md`, webp);
-
-  return webpEntry;
-};
 
 (async () => {
   try {
-    const projectRecord: TScreensRecord = {};
+    let projectRecord: TScreensRecord = {};
     const smallRecords: TMediaRecords = [];
+    const entriesCountRecord: Record<string, number> = {};
 
     const entries = await fg([IMAGES_GLOB]);
-    const originals = entries.map((entry) =>
-      removePublicDir(entry),
-    );
-    const smalls = originals.map((entry) =>
-      resolveSmallEntry(entry, 'png'),
-    );
-    writeFileData(PRECACHE_PATH, [...smalls, ...originals]);
+
+    writePrecachePath(entries);
+
     for await (const entry of entries) {
-      const { dir, noExt, ext } = resolveFsInfo(entry);
+      const { ext } = resolveFsInfo(entry);
+      const [_, tail] = entry.split(BASE_SCREENS_ENTRY);
+      const [name] = tail.split('/');
+
+      const currCount = ~~entriesCountRecord[name];
+      const nextCount = currCount + 1;
+      entriesCountRecord[name] = nextCount;
+      const nextEntryDir = [
+        SCREENS_DIR,
+        name,
+        nextCount,
+      ].join('/');
+
+      const nextEntryBase = `${nextEntryDir}/${nextCount}`;
+      const nextEntry = `${nextEntryBase}.${ext}`;
+
+      if (!fs.existsSync(nextEntryDir)) {
+        fs.mkdirSync(nextEntryDir);
+        fs.rename(entry, nextEntry, console.log);
+      }
 
       const originalMetaData = await resolveMetaDataFile(
         entry,
-        `${noExt}-meta.md`,
+        `${nextEntryBase}-meta.md`,
       );
 
-      const webpEntry = await resolveWebp(entry, noExt);
+      const webpEntry = await resolveWebp(
+        entry,
+        `${nextEntryBase}`,
+      );
 
       const record = resolveMediaRecord({
-        entry,
+        entry: nextEntry,
         webpEntry,
         ...originalMetaData,
       });
 
-      if (record) {
-        projectRecord[dir] = [
-          ...(projectRecord[dir] ?? []),
-          record,
-        ];
-      }
-      writeFileData(LOOKUP_PATH, projectRecord);
+      projectRecord = writeProjectRecordInGallery(
+        record,
+        name,
+        projectRecord,
+      );
 
-      if (
-        EXCLUDE_SMALLS.some((v) => entry.includes(`/${v}/`))
-      ) {
+      if (EXCLUDE_SMALLS.includes(name)) {
         continue;
       }
 
-      const smallEntry = resolveSmallEntry(noExt, ext);
+      const smallEntry = resolveSmallEntry(
+        nextEntryBase,
+        ext,
+      );
       const small: OutputInfo = await sharp(entry)
         .resize({ width: SMALL_W })
         .toFile(smallEntry);
 
       const smallMeta = await resolveMetaDataFile(
         smallEntry,
-        `${noExt}-meta-output-${SMALL_SUFFIX}.md`,
+        `${nextEntryBase}-meta-output-${SMALL_SUFFIX}.md`,
         small,
       );
 
       const webpSmallEntry = await resolveWebp(
         smallEntry,
-        `${noExt}${SMALL_SUFFIX}`,
+        `${nextEntryBase}${SMALL_SUFFIX}`,
       );
 
       const smallRecord = resolveMediaRecord({

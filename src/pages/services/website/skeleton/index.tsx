@@ -22,12 +22,6 @@ export const Skeleton = () => {
 
   return (
     <div className='column gap-6'>
-      {(isTablet || isMobile) && (
-        <div className='row gap-6 h-60 w-full'>
-          {isTablet && <Tablet />}
-          {isMobile && <Mobile />}
-        </div>
-      )}
       <View>
         <Container>
           <Header />
@@ -37,6 +31,12 @@ export const Skeleton = () => {
           <Footer />
         </Container>
       </View>
+      {(isTablet || isMobile) && (
+        <div className='row gap-6 h-60 w-full'>
+          {isTablet && <Tablet />}
+          {isMobile && <Mobile />}
+        </div>
+      )}
     </div>
   );
 };

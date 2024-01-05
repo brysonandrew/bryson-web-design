@@ -1,18 +1,22 @@
-import { FOOTER } from '../config';
-import { Focus } from '../Focus';
-import { TextLines } from './parts/TextLines';
+import { TextLines } from '../../../../components/skeleton/TextLines';
+import { FC, PropsWithChildren } from 'react';
 
-export const Footer = () => {
+export const Footer: FC<PropsWithChildren> = ({
+  children,
+}) => {
   return (
-    <footer className='relative row gap-4 w-full h-16 px-8 bg-black rounded-md'>
-      <Focus>{FOOTER}</Focus>
+    <footer className='relative row gap-4 w-full h-16 px-8 bg-main rounded-md'>
+      {children}
       <div className='row-start-space w-full'>
         <div className='w-1/6'>
-          <TextLines classValue='text-white' count={1} />
+          <TextLines
+            classValue='bg-main-inverted'
+            count={1}
+          />
         </div>
         <div className='w-1/6'>
           <TextLines
-            classValue='text-white'
+            classValue='bg-main-inverted'
             height='h-0.5'
             gap='gap-0.5'
             count={4}

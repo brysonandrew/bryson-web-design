@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 export type TExtrasRecord = Record<
   string,
-  boolean | number
+    number
 >;
 export type TContext = {
   extras: TExtrasRecord;

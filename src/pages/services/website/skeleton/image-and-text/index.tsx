@@ -1,22 +1,32 @@
 import { useServices } from '@context/domains/services';
-import { ADDITIONAL_SECTION, SECTION } from '../../config';
-import { Focus } from '../../Focus';
-import { Normal } from './Normal';
-import { Reversed } from './Reversed';
+import { ADDITIONAL_CONTENT } from '../../config';
+import { Normal } from './variants/Normal';
+import { Reversed } from './variants/Reversed';
+import clsx from 'clsx';
+import { FC, PropsWithChildren } from 'react';
 
-export const ImageAndText = () => {
+type TProps = PropsWithChildren;
+export const ImageAndText: FC<TProps> = ({ children }) => {
   const { extras } = useServices();
-  const ARR = [...Array(1 + ~~extras[ADDITIONAL_SECTION])];
+  const contentCount = extras[ADDITIONAL_CONTENT];
+  const isContent =
+    typeof contentCount === 'number' && contentCount > 0;
+  const baseContent = isContent ? 0 : 1;
+  const ARR = [...Array(baseContent + ~~contentCount)];
   return (
     <>
       {ARR.map((_, index) => {
         const Item = index % 2 === 0 ? Normal : Reversed;
         return (
-          <div key={`${index}`} className='relative w-full'>
+          <div
+            key={`${index}`}
+            className={clsx(
+              'relative w-full',
+              !isContent && 'opacity-50',
+            )}
+          >
             <Item />
-            <Focus>
-              {index > 0 ? ADDITIONAL_SECTION : SECTION}
-            </Focus>
+            {children}
           </div>
         );
       })}

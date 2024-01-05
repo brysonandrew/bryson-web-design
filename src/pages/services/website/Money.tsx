@@ -3,7 +3,7 @@ import { nToMoney } from '@utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 
-type TProps = TClassValueProps & {
+export type TProps = TClassValueProps & {
   prefix?: TChildren;
   suffix?: TChildren;
   children: number;

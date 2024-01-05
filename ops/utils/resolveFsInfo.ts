@@ -1,11 +1,11 @@
-import { ASSETS_SCREENS } from '../config';
+import { SCREENS_DIR } from '../config';
 
 type TDir = string;
 type TName = string;
 type TExt = string;
 type TFileName = `${TName}.${TExt}`;
 type TMediaEntry =
-  `${typeof ASSETS_SCREENS}/${TDir}/${TName}/${TFileName}`;
+  `${typeof SCREENS_DIR}/${TDir}/${TName}/${TFileName}`;
 export const resolveFsInfo = (
   entry: TMediaEntry | string,
 ) => {
