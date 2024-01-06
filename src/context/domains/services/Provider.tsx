@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { TChildrenElement } from '@t/index';
-import { Services } from '.';
+import { ServicesC } from '.';
 import { TExtrasRecord } from './types';
 import { useLocalStorage } from '@hooks/dom/useLocalStorage';
 
@@ -14,13 +14,13 @@ export const Provider: FC<TProviderProps> = ({
     useLocalStorage<TExtrasRecord>('extras', {});
 
   return (
-    <Services.Provider
+    <ServicesC.Provider
       value={{
         extras,
         setExtras,
       }}
     >
       {children}
-    </Services.Provider>
+    </ServicesC.Provider>
   );
 };

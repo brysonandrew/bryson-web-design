@@ -21,11 +21,11 @@ export const PRESETS: TPresets = [
         provider: 'fontshare',
       },
       serif: {
-        name: SERIF, //Switzer Author Tanker Excon
+        name: SERIF,
         provider: 'google',
       },
       mono: {
-        name: MONO, //Switzer Author Tanker Excon
+        name: MONO,
         provider: 'google',
       },
       slab: {

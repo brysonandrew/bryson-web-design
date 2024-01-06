@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { TContext } from "./types";
-import { Services } from ".";
+import { ServicesC } from ".";
 
 type TConsumerProps = {
   children(
@@ -10,7 +10,7 @@ type TConsumerProps = {
 export const Consumer: FC<
   TConsumerProps
 > = ({ children }) => (
-  <Services.Consumer>
+  <ServicesC.Consumer>
     {children}
-  </Services.Consumer>
+  </ServicesC.Consumer>
 );

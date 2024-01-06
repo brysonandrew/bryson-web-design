@@ -23,4 +23,4 @@ export const titleToKebab = <I extends string>(
     .join('-') as TTCamelToKebab<I>;
 
 
-export const nToMoney = (n:number) => `${n.toLocaleString()}.00 NZD`
+export const nToMoney = (n:number) => `$${n.toLocaleString()}.00`

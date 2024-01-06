@@ -3,10 +3,11 @@ import { titleToKebab } from '@utils/format';
 export const TITLE_BASE = 'Bryson A.';
 export const SECTION_TITLES = {
   build: 'Building websites and apps',
-  services: 'What I can help you with',
+  services: 'Website Packages', //'What I can help you with',
   tech: 'Powered by',
   projects: 'Latest projects',
   contact: 'Get in touch',
+  process: 'Process',
 } as const;
 export type TSectionTitleKey = keyof typeof SECTION_TITLES;
 export type TSectionTitle =
@@ -24,6 +25,7 @@ export const PAGE_TITLES = [
 export type TPageTitle = (typeof PAGE_TITLES)[number];
 export const INTRO_ID = 'intro';
 export const TECH_ID = 'tech';
-export const SERVICES_ID = titleToKebab<typeof SERVICES_TITLE>(SERVICES_TITLE);
+export const SERVICES_ID =
+  titleToKebab<typeof SERVICES_TITLE>(SERVICES_TITLE);
 export const PROJECTS_ID = titleToKebab(PROJECTS_TITLE);
 export const CONTACT_ID = titleToKebab(CONTACT_TITLE);

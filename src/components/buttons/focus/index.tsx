@@ -1,12 +1,10 @@
-import { FOCUS_CURSOR_KEY, SERVICE_CURSOR_KEY } from '@components/cursor/switch/config';
-import { SERVICES_ID } from '@constants/copy';
+import { FOCUS_CURSOR_KEY } from '@components/cursor/switch/config';
 import { useCursor } from '@context/cursor';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { TPart } from '@pages/process/website/config';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Circle } from '../../decoration/Circle';
-import { ALL, TPart } from '../../../pages/services/website/config';
 
 type TProps = {
   children: TPart;
@@ -35,7 +33,6 @@ export const Focus: FC<TProps> = ({ children }) => {
         <>
           {/* {ALL.indexOf(children) + 1} */}
           <div className='absolute top-1/2 bg-gray left-full ml-px w-2 h-px' />
-        
         </>
       </Circle>
     </>

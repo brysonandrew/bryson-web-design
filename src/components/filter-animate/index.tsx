@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { TDivMotionProps } from '@t/dom';
 import {
   TChildrenPartialProps,
   TClassValueProps,
@@ -7,8 +8,6 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
-const Effect = styled(motion.div)``;
-
 export type TFilterAnimateProps = TClassValueProps &
   TChildrenPartialProps;
 export const FilterAnimate: FC<TFilterAnimateProps> = ({
@@ -16,17 +15,18 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
   children,
   ...props
 }) => {
+  console.log(props);
   return (
     <>
       {children && (
         <>
           {children}
-          <Effect
+          <motion.div
             className={clsx('absolute inset-0', classValue)}
             {...props}
           >
             {children}
-          </Effect>
+          </motion.div>
         </>
       )}
     </>
