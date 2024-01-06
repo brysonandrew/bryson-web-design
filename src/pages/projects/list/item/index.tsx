@@ -1,19 +1,12 @@
 import { TSlugProps } from '@pages/projects/config';
 import { motion } from 'framer-motion';
-import {
-  useRef,
-  type FC,
-  useEffect,
-  useState,
-} from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@constants/projects';
 import { Time } from './content/Time';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import { useScroll as useScrollContext } from '@context/scroll';
 import styled from '@emotion/styled';
-import { useTo } from '@hooks/media/nav/useTo';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
@@ -22,7 +15,6 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@components/cursor/switch/config';
 import { NOOP } from '@constants/functions';
-import { useTimeoutRef } from '@hooks/window/useTimeoutRef';
 import { useCursor } from '@context/cursor';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useToFirst } from '@hooks/media/nav/useToFirst';

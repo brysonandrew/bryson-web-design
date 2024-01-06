@@ -5,10 +5,10 @@ import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { Circle } from '@components/buttons/circle';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 
 type TProps = TClassValueProps &
-  TMotionDivProps & {
+  TDivMotionProps & {
     onClick(): void;
   };
 export const Close: FC<TProps> = ({

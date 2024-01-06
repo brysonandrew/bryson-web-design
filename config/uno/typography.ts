@@ -1,2 +1,2 @@
-export const SANS = 'Bodoni Moda';
+export const SERIF = 'Bodoni Moda';
 export const MONO = 'Cutive Mono';

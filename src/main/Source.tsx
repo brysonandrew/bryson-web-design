@@ -8,6 +8,7 @@ import { Shell as MainShell } from '@main/Shell';
 import { Screen } from '@pages/kino/screen';
 import { Projector } from '@pages/kino/projector';
 import { Reader } from '@pages/reader';
+import { Services } from '@pages/services';
 
 const WITH_SHELL_KEY = 'with-shell';
 
@@ -15,6 +16,10 @@ const SHELL_ROUTES: any[] = [
   {
     path: '/',
     element: <Index />,
+  },
+  {
+    path: '/services',
+    element: <Services />,
   },
   {
     path: '/projects',

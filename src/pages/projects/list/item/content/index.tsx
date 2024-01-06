@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
 import { Mark } from '@components/mark';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import { P2 } from '@components/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
@@ -24,7 +24,7 @@ const Root = styled(motion.div)``;
 
 type TProps = TSlugProps &
   TClassValueProps &
-  TMotionDivProps & {
+  TDivMotionProps & {
     isHover?: boolean;
     rightHeader: TChildren;
   };

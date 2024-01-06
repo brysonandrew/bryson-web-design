@@ -28,7 +28,7 @@ export const Main: FC<TProps> = ({
   const mediaRecords = screensRecord[currProject];
 
   const width = resolveGalleryWidth(viewportWidth);
-  const count = mediaRecords.length;
+  const count = mediaRecords?.length;
 
   const motionX = useMotionX({
     width: viewportWidth * 0.9,

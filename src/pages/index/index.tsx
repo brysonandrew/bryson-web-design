@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { P48Y } from '@components/space/P48Y';
 import { P24Y } from '@components/space/P24Y';
+import Services from './services';
 const Tech = lazy(() => import('./tech'));
 const Build = lazy(() => import('./build'));
 const Projects = lazy(() => import('./projects'));
@@ -11,6 +12,11 @@ export const Index = () => {
   return (
     <>
       <Build />
+      <P24Y />
+      <Suspense fallback={null}>
+        <Services />
+      </Suspense>
+      <P24Y />
       <P24Y />
       <Suspense fallback={null}>
         <Tech />

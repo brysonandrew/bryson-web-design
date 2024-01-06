@@ -3,7 +3,7 @@ import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useDarkMode } from '@context/dark-mode';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import {
   resolveColor,
   resolveGlowColor,
@@ -14,7 +14,7 @@ const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
 
 const Root = styled(motion.div)``;
 
-type TProps = TMotionDivProps & {
+type TProps = TDivMotionProps & {
   classValue?: ClassValue;
 };
 export const Mark: FC<TProps> = ({

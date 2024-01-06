@@ -5,6 +5,7 @@ const BACKGROUND: StaticShortcutMap = {
   'background-color-1': 'dark:bg-teal bg-gray',
   'background-color-2': 'dark:bg-black-2 bg-white',
   'background-color-3': 'dark:bg-teal-bright bg-baby-blue',
+  'background-color-4': 'dark:bg-black bg-white-2',
 };
 const TEXT: StaticShortcutMap = {
   '+++text':
@@ -32,11 +33,17 @@ const FLEX: StaticShortcutMap = {
   'row-wrap': 'flex flex-row items-center flex-wrap',
   'row-start': 'flex flex-row items-start',
   'row-end': 'flex flex-row items-end',
+  'row-start-end': 'row-start justify-end',
   'row-space': 'row justify-between',
   'row-start-space': 'row-start justify-between',
+  'row-base': 'flex flex-row items-baseline',
   column: 'flex flex-col items-center',
   'column-start': 'flex flex-col items-start',
   'column-end': 'flex flex-col items-end',
+  'column-end-reverse': 'flex flex-col-reverse items-end',
+  'column-start-end': 'column-start justify-end',
+  'column-center-end': 'column justify-end',
+  'column-start-center': 'column-start justify-center',
   'column-space': 'column justify-between',
   center: 'flex items-center justify-center',
 };
@@ -55,14 +62,23 @@ export const SHORTCUTS: StaticShortcutMap = {
   ...TEXT,
   ...FLEX,
   ...INPUT,
+  'dark-mode-transition': 'transition-colors duration-1000',
+  'bg-main': 'bg-white dark:bg-black dark-mode-transition',
+  'text-main':
+    'text-gray dark:text-teal-bright dark-mode-transition',
+  'bg-main-inverted':
+    'dark:bg-white bg-black dark-mode-transition',
+  'text-main-inverted':
+    'text-teal-bright dark:text-black dark-mode-transition',
   'circle-interactive':
     'relative p-3 cursor-pointer text-color-1',
+  'glow-bw': 'dark:glow-white glow-black',
   'glow-interactive':
     'dark:glow-interactive-dark glow-interactive-light',
   'glow-interactive-lg':
     'dark:glow-interactive-dark-lg glow-interactive-light-lg',
   'w-core':
-    'w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
+    'w-full mx-4 sm:(w-+core mx-0) md:w-++core lg:w-+++core xl:w-++++core',
   'cover-fixed': 'fixed inset-0',
   cover: 'absolute inset-0',
   'dragger-screen': 'absolute h-screen row-end',

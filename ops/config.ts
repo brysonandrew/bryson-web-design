@@ -1,16 +1,19 @@
 export const PUBLIC_DIR = 'assets';
 export const SCREENS = 'screens';
-export const ASSETS_SCREENS = [PUBLIC_DIR, SCREENS].join(
-  '/',
-);
-export const CANVAS_ORIGINAL_SCREENS = 'canvas-original-screens';
-export const CANVAS_ORIGINAL_SCREENS_PATH = [PUBLIC_DIR, CANVAS_ORIGINAL_SCREENS].join(
-  '/',
-);
+export const SCREENS_DIR = [PUBLIC_DIR, SCREENS].join('/');
+export const BASE_SCREENS_ENTRY = `${SCREENS_DIR}/`;
+export const CANVAS_ORIGINAL_SCREENS =
+  'canvas-original-screens';
+export const CANVAS_ORIGINAL_SCREENS_PATH = [
+  PUBLIC_DIR,
+  CANVAS_ORIGINAL_SCREENS,
+].join('/');
 
-export const CANVAS_SCREENS_PATH = [PUBLIC_DIR, SCREENS, 'canvas'].join(
-  '/',
-);
+export const CANVAS_SCREENS_PATH = [
+  PUBLIC_DIR,
+  SCREENS,
+  'canvas',
+].join('/');
 
 export const MAIN_SERVICE_WORKER =
   'src/main/service-worker';
@@ -20,7 +23,7 @@ export const GALLERY_CONTEXT =
 
 const EXTS = ['png', 'jpg', 'jpeg'] as const;
 const PROCESS_EXTS = ['webp', 'md'] as const;
-export const DIRS_GLOB = `${ASSETS_SCREENS}/**`;
+export const DIRS_GLOB = `${SCREENS_DIR}/**`;
 export const FILES_GLOB = `${DIRS_GLOB}/[0-9]`;
 export const SMALL_W = 320;
 export const SMALL_SUFFIX = `-${SMALL_W}w`;
@@ -48,3 +51,5 @@ export const ALL_EXCLUDE_ORIGINAL_GLOBS = [
 ];
 
 export const EMPTY_DIRS = [`${DIRS_GLOB}/[0-9]/[0-9]`];
+
+export const EXCLUDE_SMALLS = ['canvas'];

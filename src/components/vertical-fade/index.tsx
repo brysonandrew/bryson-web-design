@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 const Root = styled(motion.div)``;
 
-export type TBaseProps = TMotionDivProps & {
+export type TBaseProps = TDivMotionProps & {
   classValue?: ClassValue;
 };
 export const VerticalFade: FC<TBaseProps> = ({

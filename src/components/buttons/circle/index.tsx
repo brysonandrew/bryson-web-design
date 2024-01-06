@@ -1,7 +1,7 @@
 import { MetalGlow } from '@components/metal/MetalGlow';
 import styled from '@emotion/styled';
 import { useCurrName } from '@hooks/params/useCurrName';
-import { TMotionDivProps } from '@t/dom';
+import { TDivMotionProps } from '@t/dom';
 import { TChildrenProps, TClassValueProps } from '@t/index';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import clsx from 'clsx';
@@ -12,7 +12,7 @@ const Root = styled(motion.div)``;
 
 type TPosition = 'relative' | 'absolute';
 
-type TProps = TMotionDivProps &
+type TProps = TDivMotionProps &
   TClassValueProps &
   TChildrenProps & {
     isHover?: boolean;

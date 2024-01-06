@@ -11,6 +11,7 @@ import {
   GALLERY_CURSOR_KEY,
   OPEN_IN_NEW_CURSOR_KEY,
   PROJECT_CURSOR_KEY,
+  SERVICE_CURSOR_KEY,
   SOUND_CURSOR_KEY,
 } from './config';
 
@@ -59,19 +60,29 @@ export const Switch = () => {
         </Sight>
       );
     }
+    case SERVICE_CURSOR_KEY:
     case 'big': {
       return (
         <Sight
           style={{ opacity: 0.2 }}
-          animate={{ opacity: 0.1, scale: 12 }}
+          animate={{
+            opacity: 0.1,
+            scale: 12,
+            x: 0,
+            y: 0,
+          }}
         />
       );
     }
+
     case 'bigger': {
       return (
-        <Sight animate={{ opacity: 0.1, scale: 18 }} />
+        <Sight
+          animate={{ opacity: 0.1, scale: 18, x: 0, y: 0 }}
+        />
       );
     }
+
     case 'none': {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }

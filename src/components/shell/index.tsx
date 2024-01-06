@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import type { TChildren } from '../../types';
 import { Footer } from './footer';

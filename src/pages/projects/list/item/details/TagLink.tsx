@@ -3,14 +3,14 @@ import { TTag } from '@t/projects';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { GLOBAL_KEY } from '@hooks/cursor/config';
 import { motion } from 'framer-motion';
-import { TMotionAnchorProps } from '@t/dom';
+import { TAnchorMotionProps } from '@t/dom';
 import { TSlugProps } from '@pages/projects/config';
 import { resolveCompositeHoverKey } from '@utils/keys';
 import { useCursor } from '@context/cursor';
 import { PROJECT_CURSOR_KEY } from '@components/cursor/switch/config';
 
 type TProps = Required<TTag> &
-  TMotionAnchorProps &
+  TAnchorMotionProps &
   TSlugProps;
 export const TagLink: FC<TProps> = ({
   slug,

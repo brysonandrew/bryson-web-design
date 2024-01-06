@@ -5,6 +5,7 @@ import { STATE } from './constants';
 import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@hooks/cursor/useCursorOffset';
 import { Cursor } from '.';
+import { resolveHoverKeyVariations } from '@components/cursor/config';
 
 type TProviderProps = {
   children: TChildrenElement;
@@ -16,6 +17,8 @@ export const Provider: FC<TProviderProps> = ({
     STATE.isCursorReady,
   );
   const [hoverKey, setHoverKey] = useState(STATE.hoverKey);
+  const hoverKeyVariations =
+    resolveHoverKeyVariations(hoverKey);
 
   const offsetRef = useRef<TCursorOffset>({
     x: 1,
@@ -34,10 +37,10 @@ export const Provider: FC<TProviderProps> = ({
           x: cursorLabelX,
           y: cursorLabelY,
         },
-        hoverKey,
         isCursorReady,
         onHoverKey: setHoverKey,
         onCursorReady: setCursorReady,
+        ...hoverKeyVariations,
       }}
     >
       {children}

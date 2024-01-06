@@ -10,7 +10,7 @@ type TProps = { children: TChildren, style?: CSSProperties };
 export const Page: FC<TProps> = ({ children, style = {} }) => {
   return (
     <Root
-      className="columns pt-18 bg-black-1 overflow-hidden"
+      className="column pt-18 bg-black-1 overflow-hidden"
       style={{ ...SIZE, ...style }}
     >
       {children}

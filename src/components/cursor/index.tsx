@@ -22,7 +22,6 @@ export const Cursor: FC<TCursorProps> = memo(
       cursor,
       isCursorReady,
       onCursorReady,
-      onHoverKey,
     } = useCursor();
     const { scroll } = useScrollContext();
 
