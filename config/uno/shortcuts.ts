@@ -78,7 +78,7 @@ export const SHORTCUTS: StaticShortcutMap = {
   'glow-interactive-lg':
     'dark:glow-interactive-dark-lg glow-interactive-light-lg',
   'w-core':
-    'mx-auto w-[calc(100%-2rem)] sm:w-+core md:w-++core lg:w-+++core xl:w-++++core',
+    'px-4 w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core xxl:w-+++++core',
   'cover-fixed': 'fixed inset-0',
   cover: 'absolute inset-0',
   'dragger-screen': 'absolute h-screen row-end',
