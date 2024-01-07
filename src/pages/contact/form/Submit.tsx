@@ -54,7 +54,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       {...handlers}
     >
       <MetalGlow
-        color={isDarkMode ? 'baby-blue' : 'gray-3'}
+        color={isDarkMode ? 'baby-blue' : 'teal'}
         drop={1}
       />
       <Input
