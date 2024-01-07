@@ -6,7 +6,7 @@ export const Time: FC<TProps> = ({ time }) => {
   return (
     <h6
       className={clsx(
-        'relative text-right shrink-0 text-left text-color text-lg md:text-xl',
+        'relative text-right shrink-0 text-left text-g-tb text-lg md:text-xl',
       )}
     >
       {typeof time === 'undefined'

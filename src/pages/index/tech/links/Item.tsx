@@ -41,7 +41,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {typeof glow !== 'undefined' && (
         <MetalGlow
           drop={isDarkMode ? 16 : 8}
-          color={isDarkMode ? 'baby-blue' : 'gray-3'}
+          color={isDarkMode ? 'baby-blue' : 'teal'}
           value={glow}
         />
       )}

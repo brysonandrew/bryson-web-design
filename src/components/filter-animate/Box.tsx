@@ -19,7 +19,7 @@ export const Box: FC<TProps> = ({
   return (
     <Root
       className={clsx(
-        'relative glow-interactive',
+        'relative glow',
         classValue,
       )}
       {...props}

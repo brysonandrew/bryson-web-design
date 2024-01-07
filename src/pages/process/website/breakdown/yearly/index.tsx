@@ -7,16 +7,16 @@ import { List } from './List';
 
 export const Yearly = () => {
   return (
-    <div className='column-start items-stretch gap-4 relative text-color-1 p-4 rounded-md glow-interactive'>
-      <b className='uppercase font-display'>
+    <div className='column-start items-stretch gap-4 relative text-g-bb p-4 rounded-md glow'>
+      <b className='uppercase '>
         Yearly cost breakdown
       </b>
       <P2 />
       <List />
       <P2 />
       <div>
-        <div className='row-space w-full text-color-1'>
-          <b className='uppercase font-display'>
+        <div className='row-space w-full text-g-bb'>
+          <b className='uppercase '>
             Projected total per year
           </b>
           <Money prefix={<Underline isDouble />}>

@@ -2,7 +2,6 @@ import { Drag } from '@components/icons/gallery/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-
 import { PADDING_X } from './config';
 import { useDarkMode } from '@context/dark-mode';
 import { resolveDropShadow } from '@utils/effects/glow';
@@ -46,7 +45,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
           cursor: 'grab',
           filter: isDarkMode
             ? resolveDropShadow(2, 'white-9')
-            : resolveDropShadow(2, 'gray'),
+            : resolveDropShadow(2, 'teal'),
           color: isDarkMode
             ? COLORS['white-9']
             : COLORS['gray'],
@@ -54,7 +53,7 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
         tap: {
           filter: isDarkMode
             ? resolveDropShadow(4, 'teal-bright')
-            : resolveDropShadow(4, 'gray'),
+            : resolveDropShadow(4, 'teal'),
           color: isDarkMode
             ? COLORS['teal-bright']
             : COLORS['gray'],

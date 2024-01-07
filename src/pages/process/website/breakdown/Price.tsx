@@ -8,8 +8,8 @@ type TProps = Pick<TMoneyProps, 'children'> & {
 export const Price: FC<TProps> = ({ text, children }) => {
   return (
     <div>
-      <div className='row-space w-full text-color-2'>
-        <span className='uppercase font-display'>
+      <div className='row-space w-full text-g-tb'>
+        <span className='uppercase '>
           Price
         </span>
         <Money prefix={<Underline />}>{children}</Money>

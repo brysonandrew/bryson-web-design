@@ -32,7 +32,7 @@ export const Item: FC<TProps> = ({
       >
         <button
           className={
-            isValue ? 'text-color-1' : 'text-gray-2'
+            isValue ? 'text-g-bb' : 'text-gray-2'
           }
           onClick={() => {
             setExtras((prev) => ({
@@ -50,14 +50,14 @@ export const Item: FC<TProps> = ({
           <span>{id}</span>
           {isN && value > 0 && (
             <>
-              <div className='font-display whitespace-nowrap'>
+              <div className=' whitespace-nowrap'>
                 x {value}
               </div>
             </>
           )}
         </div>
         <button
-          className='text-color-1'
+          className='text-g-bb'
           onClick={() => {
             setExtras((prev) => ({
               ...prev,

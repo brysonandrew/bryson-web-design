@@ -17,7 +17,7 @@ export const IconWithText: FC<TProps> = ({
   return (
     <>
       <P_5 />
-      <motion.div className='relative text-color-5 row z-50'>
+      <motion.div className='relative text-g2-tb row z-50'>
         {Icon && (
           <>
             <Icon classValue='w-4 h-4' />

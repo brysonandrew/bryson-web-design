@@ -1,5 +1,5 @@
 import { COLORS } from '@uno/theme/colors';
-import { GLOW_TEAL_BRIGHT_12, GLOW_BLACK_4, GLOW_BABY_BLUE_1 } from 'config/uno/shadows';
+import { GLOW_TEAL_BRIGHT_12, GLOW_TEAL_4, GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
 import { resolveDropShadow } from '@utils/effects/glow';
 
 export const BASE_PROPS = {
@@ -19,12 +19,12 @@ export const BASE_PROPS = {
 export const resolveColor = (isDarkMode: boolean) => ({
   backgroundColor: isDarkMode
     ? COLORS['teal']
-    : COLORS['gray-3'],
+    : COLORS['white-7'],
 });
 export const resolveHoverColor = (isDarkMode: boolean) => ({
   backgroundColor: isDarkMode
     ? COLORS['baby-blue']
-    : COLORS['black'],
+    : COLORS['teal'],
 });
 export const resolveGlowColor = (isDarkMode: boolean) => ({
   boxShadow: isDarkMode

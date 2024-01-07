@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { TDivMotionProps } from '@t/dom';
 
 const DefaultRoot = styled(motion.div)`
-  background-color: var(--white-9-8);
+  background-color: var(--white-9);
   html.dark & {
     ${metalRadialDarkCss}
   }
@@ -24,8 +24,5 @@ export const Metal: FC<TProps> = ({
   classValue,
   ...props
 }) => (
-  <Root
-    className={clsx(`absolute inset-0`, classValue)}
-    {...props}
-  />
+  <Root className={clsx(`absolute inset-0`, classValue)} {...props} />
 );

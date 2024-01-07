@@ -54,7 +54,7 @@ export const Form = () => {
         placeholder=''
         required
         {...inputHandlers}
-      />
+      /> 
       <P3 />
       <Textarea
         name='message'

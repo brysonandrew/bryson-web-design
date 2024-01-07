@@ -19,9 +19,7 @@ export const MetalGlow: FC<TProps> = ({
   ...rest
 }) => {
   const Root = isDarkest ? MetalDarkest : MetalDark;
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   return (
     <Glow

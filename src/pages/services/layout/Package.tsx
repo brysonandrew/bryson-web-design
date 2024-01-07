@@ -44,13 +44,13 @@ export const Package: FC<TProps> = ({
           </h4>
         </End>
         <P1_5 />
-        <div className='relative items-stretch h-full background-color-2 rounded-tl-md rounded-tr-md'>
+        <div className='relative items-stretch h-full bg-main rounded-tl-md rounded-tr-md'>
           <P4 />
           <div className='px-4'>{children}</div>
           <P4 />
         </div>
         <P_25 />
-        <div className='relative background-color-2 rounded-bl-md rounded-br-md'>
+        <div className='relative bg-main rounded-bl-md rounded-br-md'>
           <End>
             <Price {...priceProps} />
           </End>

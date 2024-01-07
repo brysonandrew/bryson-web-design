@@ -27,11 +27,11 @@ dark mode.`,
             onTap={() => setDarkMode((prev) => !prev)}
           >
             <Skeleton
-              classValue='mask-diagonal-t-l relative'
+              classValue='mask-diagonal-tl relative'
               isDarkMode={isDarkMode}
             />
             <Skeleton
-              classValue='mask-diagonal-b-r absolute inset-0'
+              classValue='mask-diagonal-br absolute inset-0'
               isDarkMode={!isDarkMode}
             />
           </motion.button>

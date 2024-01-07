@@ -28,7 +28,7 @@ export const Buttons: FC<TProps> = ({
     <Root className='row-space'>
       <ul className='column-start w-full md:row'>
         <li className='row-space w-full md:w-auto md:row'>
-          <h3 className='text-color-1'>Screenshots</h3>
+          <h3 className='text-g-bb'>Screenshots</h3>
           <P1 />
           <Circle>
             <InternalLink
@@ -42,7 +42,7 @@ export const Buttons: FC<TProps> = ({
         </li>
         <P3 element='li' />
         <li className='row-space w-full md:w-auto md:row'>
-          <h3 className='text-color-1'>Link</h3>
+          <h3 className='text-g-bb'>Link</h3>
           <P1 />
           <Circle>
             <Anchor

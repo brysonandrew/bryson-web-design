@@ -1,26 +1,26 @@
 import { Rule } from 'unocss';
-import { RULES as SHADOW_RULES } from './shadows';
-import { RULES as TEXT_STROKE_BABY_BLUE } from './text-stroke';
+import { RULES as SHADOW_RULES } from './glow';
+import { RULES as TEXT_STROKE } from './text-stroke';
 
-import { TTheme } from './theme';
+import { TTheme } from '../theme';
 
 export const RULES: Rule<TTheme>[] = [
   ['placeholder', { transform: 'scale(8)' }],
   ['+placeholder', { transform: 'scale(16)' }],
   ['++placeholder', { transform: 'scale(28)' }],
   [
-    'mask-diagonal-t-l',
+    'mask-diagonal-tl',
     {
       'clip-path': 'polygon(0 0, 100% 0, 0 100%, 0 100%)',
     },
   ],
   [
-    'mask-diagonal-b-r',
+    'mask-diagonal-br',
     {
       'clip-path':
         'polygon(100% 100%, 100% 0, 0 100%, 0 100%)',
     },
   ],
   ...SHADOW_RULES,
-  ...TEXT_STROKE_BABY_BLUE,
+  ...TEXT_STROKE,
 ];

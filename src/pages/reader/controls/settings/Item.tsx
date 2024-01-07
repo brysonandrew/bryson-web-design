@@ -3,7 +3,7 @@ import { Range } from '../../components/Inputs';
 import { TState } from '../../context/types';
 import clsx, { ClassValue } from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
-import { GLOW_BABY_BLUE_1 } from 'config/uno/shadows';
+import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
 
 const Root = styled.label``;
 

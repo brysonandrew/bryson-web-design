@@ -7,9 +7,9 @@ export const Header: FC<TProps> = ({ slug }) => {
   const { title, description } = PROJECT_ITEMS_RECORD[slug];
   return (
     <header className='relative column-start h-full md:row'>
-      <h4 className='+text text-color-stroke-1'>{title}</h4>
+      <h4 className='+text text-stroke-bb02-bb02'>{title}</h4>
       <div className='p-1 md:p-2' />
-      <h5 className='+text text-color-1 text-color-stroke-1 italic'>
+      <h5 className='+text text-g-bb text-stroke-bb02-bb02 italic'>
         {description}
       </h5>
     </header>

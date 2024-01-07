@@ -31,8 +31,8 @@ export const Core: FC<TProps> = (props) => {
     <Root className='relative' style={{ width: itemWidth }}>
       <MetalDark />
       <Dragger
-        className={clsx('left-0 bottom-0', [
-          isDesktop ? 'dragger-foot' : 'dragger-screen',
+        className={clsx('left-0 bottom-0 rounded-t-lg overflow-hidden', [
+          isDesktop ? 'relative h-auto row dark:glow-baby-blue glow-light-lg' : 'absolute h-screen row-end',
         ])}
         style={{
           x: motionX,
@@ -58,5 +58,5 @@ export const Core: FC<TProps> = (props) => {
         <Items mediaRecords={mediaRecords} itemWidth={itemWidth} />
       </Dragger>
     </Root>
-  );
+  ); 
 };

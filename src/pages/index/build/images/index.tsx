@@ -69,7 +69,7 @@ export const Images: FC<TProps> = ({ style }) => {
       >
         {!isResizing && (
           <List
-            className='absolute inset-0 h-0 w-0 preserve-3d will-change-transform'
+            className='cover h-0 w-0 preserve-3d will-change-transform'
             style={{
               perspective: 10000,
               ...ORIGIN_50,
