@@ -35,6 +35,7 @@ export const Mark: FC<TProps> = ({
         height: '100%',
         ...(style ?? {}),
       }}
+      initial={false}
       variants={{
         animate: {
           ...resolveColor(isDarkMode),
