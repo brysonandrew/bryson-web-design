@@ -63,7 +63,7 @@ export const Package: FC<TProps> = ({
             variants={{ hover: { opacity: 1 } }}
           >
             <I
-              classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-white-9'
+              classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-main-inverted'
               icon='fluent-mdl2:feedback-request-solid'
             />
           </motion.div>
