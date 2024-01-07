@@ -15,7 +15,6 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
   children,
   ...props
 }) => {
-  console.log(props);
   return (
     <>
       {children && (

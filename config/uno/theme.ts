@@ -3,6 +3,7 @@ import { SPACING } from './spacing';
 
 export const THEME = {
   breakpoints: {
+    xs: '0px',
     sm: '480px',
     md: '700px',
     lg: '900px',
@@ -17,6 +18,7 @@ export const THEME = {
   colors: COLORS,
   spacing: SPACING,
   fontSize: {
+    xxs: ['0.625rem', '0.75rem'],
     xs: ['0.75rem', '1rem'],
     sm: ['0.875rem', '1.25rem'],
     base: ['1rem', '1.5rem'],

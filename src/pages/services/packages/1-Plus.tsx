@@ -14,9 +14,16 @@ Custom design and animations
 Contact form
 `);
 
-export const Plus = () => {
+export const Plus = () => { 
   return (
-    <Package title={title} price={price} discount={200}>
+    <Package
+      title={title}
+      price={price}
+      discount={{
+        value: 200,
+        expiry: new Date(2024, 0, 31),
+      }}
+    >
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
         <I
           icon={TICK_CIRCLE_ICON}
@@ -24,12 +31,11 @@ export const Plus = () => {
         />{' '}
         <p className='leading-7'>
           Everything included in the{' '}
-          <div className='inline-flex relative px-1.5 text-main-inverted'>
-            <div className='absolute inset-0.5 bg-blue' />
-            <div className='absolute top-1/2 right-full h-px w-19 bg-blue' />
-
+          <span className='inline-flex relative px-1.5 text-main-inverted'>
+            <span className='absolute inset-0.5 bg-blue' />
+            <span className='hidden lg:block absolute top-1/2 right-full h-px w-19 -mr-0.5 bg-blue' />
             <span className='relative'>Standard</span>
-          </div>{' '}
+          </span>{' '}
           package
         </p>
       </div>
