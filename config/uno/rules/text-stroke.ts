@@ -18,6 +18,7 @@ const resolveTextStroke = (
 
 export const RULES =
   resolveTextStroke([
+    'black-01',
     'gray',
     'teal',
     'teal-01',

@@ -1,6 +1,7 @@
 import type { StaticShortcutMap } from 'unocss';
 
 export const TEXT: StaticShortcutMap = {
+  'text-t-bb': 'text-teal dark:text-baby-blue',
   'text-g-bb': 'text-gray dark:text-baby-blue',
   'text-g-tb': 'text-gray dark:text-teal-bright',
   'text-t-tb': 'text-black dark:text-teal-bright',
@@ -10,6 +11,8 @@ export const TEXT: StaticShortcutMap = {
   'text-w9-b': 'text-white-9 dark:text-black',
   'text-stroke-bb02-bb':
     'text-stroke-baby-blue-01 dark:text-stroke-baby-blue',
+  'text-stroke-b01-bb02':
+    'text-stroke-black-01 dark:text-stroke-baby-blue-02',
   'text-stroke-bb02-bb02':
     'text-stroke-baby-blue-02 dark:text-stroke-baby-blue-02',
   'text-main':
@@ -21,7 +24,7 @@ export const TEXT: StaticShortcutMap = {
   '++text':
     'text-t-tb text-stroke-bb02-bb relative uppercase px-2 tracking-widest text-3xl text-shadow-inherit md:text-4xl xl:px-4',
   '+text':
-    'text-g-tb text-left text-xl text-shadow-inherit md:text-2xl',
+    'text-stroke-b01-bb02 text-left text-xl text-shadow-inherit md:text-2xl',
 };
 
 export const BACKGROUND: StaticShortcutMap = {
