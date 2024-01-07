@@ -5,7 +5,7 @@ import { MotionValue } from 'framer-motion';
 
 export const resolveDropShadow = (
   spread: number,
-  color: TColorRgbKey = 'white',
+  color: TColorRgbKey = 'white-9',
 ) =>
   `drop-shadow(0px 0px ${spread}px ${resolveColor(
     color,
@@ -13,10 +13,10 @@ export const resolveDropShadow = (
   )})`;
 export const resolveShadow = (
   spread: number,
-  color: TColorRgbKey = 'white',
+  color: TColorRgbKey = 'white-9',
 ) =>
   `0px 0px ${spread}px ${resolveColor(
-    'white',
+    'white-9',
     0.5,
   )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 

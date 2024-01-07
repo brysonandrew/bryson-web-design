@@ -19,7 +19,7 @@ import { TColorVariablesLookup, TRgb } from '@t/colors';
 //   Extract<
 //     TColorKey,
 //     | 'teal'
-//     | 'white'
+//     | 'white-9'
 //     | 'gray'
 //     | 'gray-1'
 //     | 'gray-2'
@@ -29,7 +29,7 @@ import { TColorVariablesLookup, TRgb } from '@t/colors';
 //   >,
 //   TRgb
 // > = {
-//   white: '230, 227, 225',
+//   white-9: '230, 227, 225',
 //   gray: '68, 68, 68',
 //   'gray-1': GRAY_1,
 //   'gray-2': GRAY_2,
@@ -52,10 +52,10 @@ import { TColorVariablesLookup, TRgb } from '@t/colors';
 
 // export const WHITE = {
 //   ...resolveColorOpacityVariations(
-//     'white',
-//     COLOR_RGB_RECORD['white'],
+//     'white-9',
+//     COLOR_RGB_RECORD['white-9'],
 //   ),
-//   ...resolveColorSeries('white', [
+//   ...resolveColorSeries('white-9', [
 //     null,
 //     '222, 219, 217',
 //     '215, 212, 210',

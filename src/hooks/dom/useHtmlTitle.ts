@@ -7,7 +7,6 @@ import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
 import { useEffect, useRef } from 'react';
-import { SUPABASE_TRAFFIC_KEY } from '@constants/supabase';
 
 const PROJECTS_TITLE = 'Projects';
 
@@ -15,13 +14,13 @@ const TITLE_FROM_PATHNAME_LOOKUP: Record<
   string,
   string | null
 > = {
-  '/': 'Web Developer',
+  '/': 'Web Design',
   '/projects': PROJECTS_TITLE,
   '/contact': 'Contact',
 };
 
 export const useHtmlTitle = () => {
-  const prevTimestampRef = useRef(0);
+  // const prevTimestampRef = useRef(0);
   const { pathname } = useLocation();
   const currParams = useCurrParams();
   const { project, name } = currParams;
@@ -39,7 +38,6 @@ export const useHtmlTitle = () => {
     //     'https://api.ipify.org?format=json',
     //   );
     //   console.log(ip);
-
     //   const json = await ip.json();
     //   console.log(json);
     // };

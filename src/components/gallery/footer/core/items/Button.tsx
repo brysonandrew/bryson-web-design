@@ -94,7 +94,7 @@ export const Button: FC<TProps> = ({
               zIndex: 0,
               cursor: 'default',
               color: isDarkMode
-                ? COLORS['white']
+                ? COLORS['white-9']
                 : COLORS['gray'],
               textShadow: resolveShadow(0),
             },
@@ -123,10 +123,10 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLORS['white']
+                ? COLORS['white-9']
                 : COLORS['gray'],
               textShadow: isDarkMode
-                ? resolveShadow(2, 'white')
+                ? resolveShadow(2, 'white-9')
                 : resolveShadow(0),
             },
             tap: {

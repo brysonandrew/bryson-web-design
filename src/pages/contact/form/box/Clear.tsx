@@ -37,7 +37,7 @@ export const Clear: FC<TProps> = ({
       <motion.button
         tabIndex={-1}
         type='button'
-        className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-02 rounded-full'
+        className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-9-02 rounded-full'
         whileHover={{ filter: HIGHLIGHT }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}
@@ -47,7 +47,7 @@ export const Clear: FC<TProps> = ({
       >
         <IconGlow
           Icon={Cross}
-          color={isDarkMode ? 'gray' : 'white'}
+          color={isDarkMode ? 'gray' : 'white-9'}
         />
       </motion.button>
     </Root>

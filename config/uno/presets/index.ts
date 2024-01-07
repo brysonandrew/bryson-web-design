@@ -16,10 +16,6 @@ export const PRESETS: TPresets = [
   definePreset<TAnyTheme>(presetUno({ dark: 'class' })),
   presetWebFonts({
     fonts: {
-      sans: {
-        name: 'Author', //Switzer Author Tanker Excon
-        provider: 'fontshare',
-      },
       serif: {
         name: SERIF,
         provider: 'google',
@@ -27,14 +23,6 @@ export const PRESETS: TPresets = [
       mono: {
         name: MONO,
         provider: 'google',
-      },
-      slab: {
-        name: 'Hoover',
-        provider: 'fontshare',
-      },
-      display: {
-        name: 'Nippo',
-        provider: 'fontshare',
       },
     },
   }),

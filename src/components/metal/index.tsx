@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { TDivMotionProps } from '@t/dom';
 
 const DefaultRoot = styled(motion.div)`
-  background-color: var(--white-1);
+  background-color: var(--white-9-8);
   html.dark & {
     ${metalRadialDarkCss}
   }

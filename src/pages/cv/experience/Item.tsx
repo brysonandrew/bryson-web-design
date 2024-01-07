@@ -16,7 +16,7 @@ export const Item: FC<TProps> = ({
         <div className='absolute inset-0 bg-black-2' />
       )}
       <Margin>
-        <div className='flex items-center justify-between text-white-2'>
+        <div className='flex items-center justify-between text-white-9-7'>
           <div className='relative'>
             <p className='absolute right-full top-0 mr-4 text-right'>
               {new Intl.DateTimeFormat('en-UK', {
@@ -24,7 +24,7 @@ export const Item: FC<TProps> = ({
                 year: 'numeric',
               }).format(item.time)}
             </p>
-            <h6 className='text-md text-white'>
+            <h6 className='text-md text-white-9'>
               {item.title}
             </h6>
           </div>
@@ -47,7 +47,7 @@ export const Item: FC<TProps> = ({
           {item.tags && (
             <>
               <div className='py-1' />
-              <i className='text-white-2'>
+              <i className='text-white-9-7'>
                 {item.tags
                   .map(({ title }) => title)
                   .join(', ')}
