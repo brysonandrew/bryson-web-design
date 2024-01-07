@@ -1,4 +1,4 @@
-import { COLOR_RGB_RECORD } from '@constants/colors';
+import { COLOR_RGB_RECORD } from '@app/colors';
 import { TColorRgbKey } from '@t/colors';
 
 export const resolveColor = (

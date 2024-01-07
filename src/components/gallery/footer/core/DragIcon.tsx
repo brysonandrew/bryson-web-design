@@ -1,5 +1,4 @@
 import { Drag } from '@components/icons/gallery/Drag';
-import { COLORS } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -8,6 +7,7 @@ import { PADDING_X } from './config';
 import { useDarkMode } from '@context/dark-mode';
 import { resolveDropShadow } from '@utils/effects/glow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { COLORS } from '@uno/theme/colors';
 
 type TProps = {
   classValue?: ClassValue;

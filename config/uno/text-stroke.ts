@@ -1,6 +1,6 @@
+import { TColorKey } from '@t/css';
 import type { Rule } from 'unocss';
 import type { TTheme } from './theme';
-import { TColorKey } from './colors';
 
 const resolveTextStroke = (
   colors: TColorKey[],

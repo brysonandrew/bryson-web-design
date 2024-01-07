@@ -1,7 +1,7 @@
-import { COLOR_VARIABLES_LOOKUP } from '@constants/colors';
 import { Laptop } from './Laptop';
 import { Shell } from '@main/Shell';
 import { P8 } from '@components/space/P8';
+import { COLOR_VARIABLES_LOOKUP } from '@app/colors';
 
 const SIZE = 200;
 const box = {

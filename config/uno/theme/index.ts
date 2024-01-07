@@ -1,9 +1,8 @@
 import { COLORS } from './colors';
-import { SPACING } from './spacing';
+import { SPACING } from '../spacing';
 
 export const THEME = {
   breakpoints: {
-    xs: '0px',
     sm: '480px',
     md: '700px',
     lg: '900px',

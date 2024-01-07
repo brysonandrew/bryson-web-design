@@ -1,7 +1,6 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { COLORS } from '@constants/colors';
 import { NAME_KEY } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import {
@@ -11,15 +10,13 @@ import {
 import { useTo } from '@hooks/media/nav/useTo';
 import { useGallery as useContext } from '@context/domains/gallery';
 import { useDarkMode } from '@context/dark-mode';
-import {
-  TMediaDetails,
-  TMediaRecord,
-} from 'ops/types/media';
+import { TMediaRecord } from 'ops/types/media';
 import {
   resolveShadow,
   resolveDropShadow,
 } from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { COLORS } from '@uno/theme/colors';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

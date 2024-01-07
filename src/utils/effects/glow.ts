@@ -1,8 +1,5 @@
 import { resolveColor } from '@utils/colors';
-import {
-  EFFECT_ANIMATE_TRANSITION,
-  EFFECT_HOVER_TRANSITION,
-} from '.';
+import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { TColorRgbKey } from '@t/colors';
 import { MotionValue } from 'framer-motion';
 

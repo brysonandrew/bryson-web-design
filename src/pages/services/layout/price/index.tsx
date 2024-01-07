@@ -24,7 +24,7 @@ export const Price: FC<TProps> = ({ price, discount }) => {
     return (
       <div className='column'>
         <Cost>{title}</Cost>
-        <Subtext>{subtitle}</Subtext>
+        <Subtext classValue='text-color-3'>{subtitle}</Subtext>
       </div>
     );
   }

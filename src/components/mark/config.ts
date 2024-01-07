@@ -1,4 +1,4 @@
-import { COLORS } from 'config/uno/colors';
+import { COLORS } from '@uno/theme/colors';
 import { GLOW_TEAL_BRIGHT_12, GLOW_BLACK_4, GLOW_BABY_BLUE_1 } from 'config/uno/shadows';
 import { resolveDropShadow } from '@utils/effects/glow';
 

@@ -13,16 +13,17 @@ Custom design and animations
 4 x content sections
 Contact form
 `);
+const discount = {
+  value: 200,
+  expiry: new Date(2024, 0, 31),
+};
 
-export const Plus = () => { 
+export const Plus = () => {
   return (
     <Package
       title={title}
       price={price}
-      discount={{
-        value: 200,
-        expiry: new Date(2024, 0, 31),
-      }}
+      discount={discount}
     >
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
         <I
