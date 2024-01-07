@@ -14,12 +14,12 @@
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "images-process": "esrun ops/process",
-    "d": "esrun ops/delete/deleteDoubleProcessed",
+    "screens-process": "esrun ops/process",
     "blur-images/backup": "esrun $blur_images_dir_path/backup",
     "blur-images/clean": "esrun $blur_images_dir_path/clean",
     "blur-images/reset": "esrun $blur_images_dir_path/reset",
-    "blur-images": "esrun $blur_images_dir_path/backup && $blur_images_dir_path/blur.sh && $blur_images_dir_path/blur.sh webp && esrun $blur_images_dir_path/clean"
+    "blur-images": "esrun $blur_images_dir_path/backup && $blur_images_dir_path/blur.sh && $blur_images_dir_path/blur.sh webp && esrun $blur_images_dir_path/clean",
+    "d": "esrun ops/delete/deleteDoubleProcessed"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",

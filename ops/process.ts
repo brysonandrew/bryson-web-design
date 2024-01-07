@@ -33,13 +33,14 @@ import { TScreensRecord } from './types';
 
     writePrecachePath(entries);
 
-    for await (const entry of entries) {
+    for await (let entry of entries) {
       const { ext } = resolveFsInfo(entry);
       const [_, tail] = entry.split(BASE_SCREENS_ENTRY);
       const [name] = tail.split('/');
 
       const currCount = ~~entriesCountRecord[name];
       const nextCount = currCount + 1;
+
       entriesCountRecord[name] = nextCount;
       const nextEntryDir = [
         SCREENS_DIR,
@@ -51,8 +52,9 @@ import { TScreensRecord } from './types';
       const nextEntry = `${nextEntryBase}.${ext}`;
 
       if (!fs.existsSync(nextEntryDir)) {
-        fs.mkdirSync(nextEntryDir);
-        fs.rename(entry, nextEntry, console.log);
+        await fs.promises.mkdir(nextEntryDir);
+        await fs.promises.rename(entry, nextEntry);
+        entry = nextEntry;
       }
 
       const originalMetaData = await resolveMetaDataFile(

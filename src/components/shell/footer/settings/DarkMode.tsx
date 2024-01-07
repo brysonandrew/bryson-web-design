@@ -52,7 +52,7 @@ export const DarkMode = () => {
           ...TRANSITION,
         }}
         {...SHARED_ANIMATION_PROPS}
-        {...handlers}
+        {...handlers} 
       >
         <Circle
           classValue={clsx('preserve-3d perspective-1000')}

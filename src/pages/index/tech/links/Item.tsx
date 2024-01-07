@@ -11,6 +11,7 @@ import { Aura } from '@components/filters/aura/Aura';
 import { P1_5 } from '@components/space/P1_5';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
+import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -30,6 +31,8 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
     href,
   );
 
+  const borderRadius = 'rounded-sm';
+
   return (
     <Root
       className='relative cursor-pointer'
@@ -37,33 +40,37 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...handlers}
       {...props}
     >
-      {isHover && <Aura layoutId={title} />}
-      {typeof glow !== 'undefined' && (
-        <MetalGlow
-          drop={isDarkMode ? 16 : 8}
-          color={isDarkMode ? 'baby-blue' : 'teal'}
-          value={glow}
-        />
+      {isHover && (
+        <Aura classValue={borderRadius} layoutId={title} />
       )}
       <MetalGlow
-        drop={isDarkMode ? 12 : 4}
-        color={isDarkMode ? 'teal-bright' : 'baby-blue'}
+        classValue={borderRadius}
+        drop={16}
+        color={isDarkMode ? 'baby-blue' : 'teal'}
+        value={glow}
       />
-      <Box>
+      <MetalGlow
+        classValue={borderRadius}
+        drop={12}
+        color={isDarkMode ? 'teal-bright' : 'teal'}
+      />
+      <Box classValue={borderRadius}>
         <Glow
           text={isDarkMode ? 1.4 : 0.5}
-          drop={isDarkMode ? 4 : 0.5}
+          drop={isDarkMode ? 4 : 0.2}
+          classValue={borderRadius}
         >
           <Anchor
-            className='inline-flex relative pl-4 pr-3 py-3'
+            className={clsx(
+              'inline-flex relative pl-4 pr-3 py-3',
+              borderRadius,
+            )}
             href={href}
             target='_blank'
           >
-            <div className='relative row z-10'>
-              <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-              <P1_5 />
-              <Title className='+++text'>{title}</Title>
-            </div>
+            <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
+            <P1_5 />
+            <Title className='+++text'>{title}</Title>
           </Anchor>
         </Glow>
       </Box>

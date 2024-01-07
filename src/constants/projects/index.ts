@@ -11,15 +11,27 @@ import {
 
 export const INIT_PROJECT_ITEMS = [
   {
+    title: 'Anaesco',
+    description: 'Patient Portal',
+    // href: 'https://anaesco.com.au/',
+    tags: [REACT, TYPESCRIPT, FRAMER_MOTION],
+    time: new Date(2023, 1, 24),
+    paragraphs: [
+      'Portal for authenticating anaesthetist patients.',
+      'Included a questionnaire wizard.',
+      'Data was sensitive therefore security was a high priority.',
+    ],
+  },
+  {
     title: 'Lambda X',
     description: 'AI PDF Reader',
     href: 'https://www.cognitusconsulting.com',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION],
-    // time: new Date(2023, 8, 1),
+    time: new Date(2023, 8, 1),
     paragraphs: [
       'Leading their frontend team to bring better cohesian with the goals of management.',
       'Implementing UI components from mockups.',
-      'Included a complicated Wizard UI.',
+      'Included tabling UI with virtualization, adjustable widths and column reordering.',
     ],
   },
   {

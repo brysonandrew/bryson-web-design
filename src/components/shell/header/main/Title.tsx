@@ -1,3 +1,5 @@
+import { ThickLine } from '@components/line/ThickLine';
+import { DURATION } from '@constants/animation';
 import styled from '@emotion/styled';
 import type { CSSProperties, FC } from 'react';
 
@@ -12,9 +14,16 @@ export const Title: FC<TProps> = () => {
           Bryson A.
         </h1>
         <div className='p-0 md:p-0.75' />
-        <h2 className='text-g-bb text-md italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.0625'>
-          Web design
-        </h2>
+        <div className='relative'>
+          <h2 className='text-g-bb text-md italic uppercase -ml-0.5 mt-0 md:ml-0 md:mt-0.0625'>
+            Web design
+          </h2>
+          <ThickLine
+            classValue='top-full w-full h-2 z-50'
+            layoutId='WEB_DESIGN_UNDERLINE'
+            transition={{ duration: DURATION * 2 }}
+          />
+        </div>
       </div>
     </Root>
   );

@@ -1,5 +1,5 @@
-import { ThinLine } from '@components/thin-line';
-import { ThinLineGrow } from '@components/thin-line/ThinLineGrow';
+import { ThinLine } from '@components/line';
+import { ThinLineGrow } from '@components/line/ThinLineGrow';
 import { MOTION_CONFIG } from '@constants/animation';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';

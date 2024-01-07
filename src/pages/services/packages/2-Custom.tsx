@@ -2,8 +2,7 @@ import { TickList } from '@components/text/TickList';
 import { Package } from '../layout/Package';
 import { resolveCopyArray } from './resolveCopyArray';
 
-const [title, price, ...items] = resolveCopyArray(`
-Bespoke
+const [price, ...items] = resolveCopyArray(`
 Custom Quote: Tailored to Your Needs
 For unique and specialized projects
 In-depth consultation and planning
@@ -12,12 +11,14 @@ Ongoing support and maintenance
 Integration of cutting-edge technologies (AI, 3D rendering, IoT)
 `);
 
-const COLOR = 'bg-purple';
-
 export const Custom = () => {
   return (
-    <Package title={title} price={price} color={COLOR}>
-      <TickList items={items} color='text-purple' />
+    <Package
+      title='Bespoke'
+      color='bg-bespoke'
+      price={price}
+    >
+      <TickList items={items} color='text-bespoke' />
     </Package>
   );
 };

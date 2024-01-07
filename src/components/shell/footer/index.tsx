@@ -1,22 +1,16 @@
 import { AnimatePresence } from 'framer-motion';
 import styled from '@emotion/styled';
-import {
-  PRESENCE_X_LEFT,
-  SCROLL_DECORATION_PRESENCE,
-} from '@constants/animation';
+import { SCROLL_DECORATION_PRESENCE } from '@constants/animation';
 import { useScroll as useScrollContext } from '@context/scroll';
 import { useDarkMode } from '@context/dark-mode';
 import { useViewport as useViewportContext } from '@context/viewport';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
-import { Links } from './links';
 import { Settings } from './settings';
 
 const Root = styled.footer``;
 
 export const Footer = () => {
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
   const { isScroll } = useScrollContext();
   const { width } = useViewportContext();
   return (
@@ -28,14 +22,12 @@ export const Footer = () => {
       }}
     >
       <AnimatePresence initial={false} mode='sync'>
-        {isScroll ? (
+        {isScroll && (
           <FadeUp
             key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
             style={{ height: '24vh' }}
             {...SCROLL_DECORATION_PRESENCE}
           />
-        ) : (
-          <Links key='LINKS' {...PRESENCE_X_LEFT} />
         )}
       </AnimatePresence>
       <Settings />
