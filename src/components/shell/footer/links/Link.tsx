@@ -21,7 +21,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
 
   return (
     <Root
-      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 cursor-pointer glow-interactive'
+      className='relative -left-1.5 row pt-0.75 pb-1 pl-1.5 pr-2 cursor-pointer glow'
       href={href}
       target='_blank'
       onClick={handleOn}
@@ -35,7 +35,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       </div>
       <div className='p-1' />
       <div className='relative row items-end'>
-        <span className='text-color-1 text-sm italic uppercase -ml-0.5 mt-0'>
+        <span className='text-g-bb text-sm italic uppercase -ml-0.5 mt-0'>
           {title}
         </span>
       </div>

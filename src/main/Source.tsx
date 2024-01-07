@@ -9,6 +9,7 @@ import { Screen } from '@pages/kino/screen';
 import { Projector } from '@pages/kino/projector';
 import { Reader } from '@pages/reader';
 import { Services } from '@pages/services';
+import { Process } from '@pages/process';
 
 const WITH_SHELL_KEY = 'with-shell';
 
@@ -24,6 +25,10 @@ const SHELL_ROUTES: any[] = [
   {
     path: '/projects',
     element: <Projects />,
+  },
+  {
+    path: '/process',
+    element: <Process />,
   },
   {
     path: '/contact',

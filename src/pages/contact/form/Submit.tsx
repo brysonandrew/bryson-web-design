@@ -44,7 +44,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         [
           isDisabled
             ? 'cursor-not-allowed'
-            : 'glow-interactive cursor-pointer',
+            : 'glow cursor-pointer',
         ],
       )}
       onTap={isDisabled ? () => null : handleMoveSound}
@@ -66,7 +66,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <Text
         className={clsx(
-          'center relative text-color text-color-stroke text-2xl italic py-2 pointer-events-none',
+          'center relative text-g-tb text-stroke-bb02-bb text-2xl italic py-2 pointer-events-none',
         )}
         variants={{
           animate: {

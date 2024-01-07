@@ -14,7 +14,7 @@ export const Item: FC<TProps> = ({ id, children }) => {
   );
   return (
     <motion.div
-      className='relative py-1 px-2 text-color-3'
+      className='relative py-1 px-2 text-b2-w9'
       {...handlers}
     >
       <motion.div

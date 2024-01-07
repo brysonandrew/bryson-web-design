@@ -44,7 +44,7 @@ export const Main: FC<TProps> = ({
 
   return (
     <Root
-      className='cover-fixed column text-color z-20'
+      className='cover-fixed column text-g-tb z-20'
       style={{ z: viewportWidth }}
     >
       <Header slug={currProject} />

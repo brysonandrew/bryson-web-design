@@ -38,7 +38,7 @@ export const Box: FC<TProps> = ({
   return (
     <Root
       className={clsx('relative input-label', [
-        isDisabled ? '' : 'glow-interactive',
+        isDisabled ? '' : 'glow',
       ])}
       {...(isDisabled ? {} : resolveParentAnimateConfig({isHover}))}
       {...handlers}

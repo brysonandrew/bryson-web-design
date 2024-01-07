@@ -18,7 +18,7 @@ export const Circle: FC<TProps> = ({
   return (
     <motion.div
       className={clsx(
-        'w-5 h-5 center rounded-full bg-main text-main font-slab text-xs border-gray border',
+        'w-5 h-5 center rounded-full bg-main text-main text-xs border-gray border',
         isActive && 'glow-teal',
         classValue,
       )}

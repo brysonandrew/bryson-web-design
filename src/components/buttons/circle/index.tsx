@@ -7,6 +7,7 @@ import { resolveParentAnimateConfig } from '@utils/effects';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
+import { Background } from './Background';
 
 const Root = styled(motion.div)``;
 
@@ -35,21 +36,15 @@ export const Circle: FC<TProps> = ({
         'center w-10 h-10 rounded-full',
         [
           isGallery
-            ? 'dark:glow-baby-blue glow-interactive-lg'
-            : 'glow-interactive-lg',
+            ? 'dark:glow-baby-blue glow-lg'
+            : 'glow-lg',
         ],
         classValue,
       )}
       {...resolveParentAnimateConfig({ isHover })}
-
       {...props}
     >
-      <MetalGlow
-        drop={1}
-        isDarkest
-        color={isGallery ? 'baby-blue' : 'teal'}
-        classValue='rounded-full glow-baby-blue'
-      />
+      <Background />
       {children}
     </Root>
   );

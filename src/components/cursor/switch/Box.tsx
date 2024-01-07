@@ -5,8 +5,8 @@ import clsx from 'clsx';
 import { TClassValueProps } from '@t/index';
 import {
   GLOW_TEAL_BRIGHT_4,
-  GLOW_BLACK_1_BABY_BLUE_1,
-} from 'config/uno/shadows';
+  GLOW_TEAL_1_BABY_BLUE_1,
+} from '@uno/rules/glow';
 import { useCursor } from '@context/cursor';
 import { useDarkMode } from '@context/dark-mode';
 import { Metal } from '@components/metal';
@@ -36,7 +36,7 @@ export const Box: FC<TProps> = ({
         ...cursorLabel,
         boxShadow: isDarkMode
           ? GLOW_TEAL_BRIGHT_4
-          : GLOW_BLACK_1_BABY_BLUE_1,
+          : GLOW_TEAL_1_BABY_BLUE_1,
       }}
       {...resolvePresence(
         {

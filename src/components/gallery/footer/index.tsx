@@ -11,7 +11,7 @@ const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
-  const { isHover, handlers } = useHoverKey(
+  const { handlers } = useHoverKey(
     'big',
     'footer',
   );

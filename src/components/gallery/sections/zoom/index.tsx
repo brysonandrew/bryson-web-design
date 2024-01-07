@@ -108,7 +108,7 @@ export const Zoom: FC<TProps> = ({
         <>
           <Border
             className={clsx(
-              'absolute glow-interactive pointer-events-none z-10',
+              'absolute glow pointer-events-none z-10',
             )}
             {...rootProps}
           >

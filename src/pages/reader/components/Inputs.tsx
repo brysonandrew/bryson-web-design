@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { GLOW_BABY_BLUE_1 } from 'config/uno/shadows';
+import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
 import { FC, SelectHTMLAttributes } from 'react';
 
 const inputCss = css``;

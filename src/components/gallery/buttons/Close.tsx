@@ -22,7 +22,7 @@ export const Close: FC<TProps> = ({
     <Circle isHover={isHover} {...props}>
       <IconLink
         to={to}
-        Icon={Cross}
+        Icon={Cross} 
         title='Close'
         onClick={onClick}
         {...handlers}

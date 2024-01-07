@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
-import { Item as Link } from './Item';
+import { Item as _Item } from './Item';
 import { PAGE_TITLES } from '@constants/copy';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 
@@ -37,13 +37,13 @@ export const Pages = () => {
                 ])}
                 whileHover={isActive ? 'active' : 'hover'}
               >
-                <Link
+                <_Item
                   to={to}
                   isActive={isActive}
                   onClick={handleClick}
                 >
                   {item}
-                </Link>
+                </_Item>
               </Item>
             </Fragment>
           );

@@ -6,6 +6,7 @@ import { FC } from 'react';
 type TProps = HTMLMotionProps<'hr'> & TClassValueProps;
 export const ThinLine: FC<TProps> = ({
   classValue,
+  children,
   ...props
 }) => {
   const { style, ...rest } = props;

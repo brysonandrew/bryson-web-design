@@ -7,6 +7,7 @@ import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TPageTitle } from '@constants/copy';
+import { DURATION } from '@constants/animation';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -34,30 +35,37 @@ export const Item: FC<TProp> = ({
     <Link
       to={to}
       onClick={onClick}
-      className={clsx('relative center pb-2 text-color-1', [
+      className={clsx('relative center pb-2 text-g-bb', [
         isActive &&
-          'text-color-3 text-stroke-baby-blue-02 cursor-default',
+          'text-b-w9 text-stroke-baby-blue-02 cursor-default',
       ])}
       {...resolveInteractiveLabels(children)}
       {...handlers}
     >
+      {isActive && (
+        <>
+          <ThinLine
+            layoutId='PAGE_NAV_LINE'
+            style={{
+              bottom: 6,
+            }}
+            {...resolveLineClassProps('via-baby-blue')}
+          />
+          <motion.div
+            layoutId='PAGE_NAV_LINE_2'
+            transition={{ duration: DURATION * 2 }}
+            className='absolute top-3/4 w-full h-2 bg-teal'
+          />
+        </>
+      )}
       {createElement(
         isActive ? 'h1' : 'h2',
         { className: 'relative uppercase italic' },
         children,
       )}
-      {isActive && (
-        <ThinLine
-          layoutId='PAGE_NAV_LINE'
-          style={{
-            bottom: 6,
-          }}
-          {...resolveLineClassProps('via-baby-blue')}
-        />
-      )}
       <ThinLine
         style={{ bottom: 4 }}
-        {...resolveLineClassProps('via-current')}
+        {...resolveLineClassProps('via-teal')}
       />
     </Link>
   );

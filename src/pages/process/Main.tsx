@@ -22,7 +22,7 @@ export const Main: FC<TProps> = ({ style, rect }) => {
         ...style,
       }}
     >
-      <div className='column gap-24 text-xl text-color-1 px-4 md:px-0'>
+      <div className='column gap-24 text-xl text-g-bb px-4 md:px-0'>
         {SECTIONS.map((Section) => (
           <Section key={Section.name} />
         ))}

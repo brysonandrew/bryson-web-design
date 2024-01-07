@@ -40,7 +40,7 @@ export const Shell: FC<TProps> = ({ children }) => {
           <Variables />
           <Filters />
           <ClipPaths />
-          <AnimatePresence mode='wait'>
+          {/* <AnimatePresence mode='wait'>
             <Background>
               <Processor
                 key={darkKey}
@@ -51,7 +51,7 @@ export const Shell: FC<TProps> = ({ children }) => {
                 {...resolveTransition(0.28)}
               />
             </Background>
-          </AnimatePresence>
+          </AnimatePresence> */}
           <motion.div
             {...PRESENCE_OPACITY}
             {...resolveTransition(isInit ? 0 : 0)}

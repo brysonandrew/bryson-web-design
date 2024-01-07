@@ -12,6 +12,7 @@ export const Items: FC<TProps> = ({
   itemWidth,
 }) => {
   const sortedItems = useSorted(mediaRecords);
+
   return (
     <>
       {sortedItems.map((mediaRecord, index) => (

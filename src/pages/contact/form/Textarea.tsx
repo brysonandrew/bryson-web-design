@@ -18,7 +18,7 @@ export const Textarea: FC<TProps> = ({
 }) => {
   const { ref, boxInputs, inputProps } =
     useInput<HTMLTextAreaElement>({ name });
-
+ 
   return (
     <Box name={name} isDisabled={disabled} {...boxInputs}>
       <div className='pt-0.75 w-full md:w-auto'>

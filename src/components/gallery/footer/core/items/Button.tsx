@@ -17,10 +17,11 @@ import {
 } from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLORS } from '@uno/theme/colors';
+import { DURATION } from '@constants/animation';
+import { Background } from '@components/buttons/circle/Background';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
-export const Background = styled(motion.div)``;
 
 export type TProps = {
   index: number;
@@ -67,23 +68,13 @@ export const Button: FC<TProps> = ({
         {...resolveInteractiveLabels(name)}
       >
         {isActive && (
-          <motion.div
-            className='absolute w-4 h-0.5 rounded-full background-color'
-            style={
-              isDarkMode
-                ? {
-                    boxShadow: resolveShadow(
-                      4,
-                      'teal-bright',
-                    ),
-                    filter: resolveDropShadow(6, 'teal'),
-                  }
-                : {}
-            }
+          <Background
+            style={{
+              boxShadow: resolveShadow(4, 'teal-bright'),
+              filter: resolveDropShadow(6, 'teal'),
+              width: 40, height: 40
+            }}
             layoutId='GALLERY_BUTTON_FILL'
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 0 }}
-            exit={{ opacity: 1 }}
           />
         )}
         <motion.div

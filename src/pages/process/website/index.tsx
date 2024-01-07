@@ -15,7 +15,7 @@ export const Website = () => {
     hoverKeyParts: [_, first],
   } = useCursor();
   return (
-    <div className='column-start gap-16 h-full w-full text-color-1'>
+    <div className='column-start gap-16 h-full w-full text-g-bb'>
       <p className='text-left'>
         A versitile single page website package. Use the
         breakdown below to sharpen your vision. When you
@@ -23,25 +23,25 @@ export const Website = () => {
       </p>
       <div className='column gap-1 lg:gap-8 md:row-start h-full w-full'>
         <div className='column-start items-stretch gap-1 lg:gap-4 w-full md:w-1/2 h-full'>
-          <div className='column-start items-stretch gap-4 relative p-4 rounded-md glow-interactive'>
-            <b className='uppercase font-display'>
+          <div className='column-start items-stretch gap-4 relative p-4 rounded-md glow'>
+            <b className='uppercase '>
               features breakdown
             </b>
             <P2 />
-            <span className='uppercase font-display'>
+            <span className='uppercase '>
               core
             </span>
             <P2 />
             <Foundation />
             <P2 />
-            <span className='uppercase font-display'>
+            <span className='uppercase '>
               optional
             </span>
             <P2 />
             <Extras />
             <div>
-              <div className='row-space w-full text-color-1'>
-                <span className='uppercase font-display'></span>
+              <div className='row-space w-full text-g-bb'>
+                <span className='uppercase '></span>
                 <Money prefix={<Underline />}>
                   {extrasCost}
                 </Money>
@@ -52,8 +52,8 @@ export const Website = () => {
             </div>
             <P2 />
             <div>
-              <div className='row-space w-full text-color-1'>
-                <b className='uppercase font-display'>
+              <div className='row-space w-full text-g-bb'>
+                <b className='uppercase '>
                   Total
                 </b>
                 <Money prefix={<Underline isDouble />}>
