@@ -1,3 +1,4 @@
+import { I } from '@components/Icon';
 import { Button } from '../../components/Buttons';
 import { useReader } from '../../context';
 
@@ -16,7 +17,7 @@ export const Pause = () => {
         }
       }}
     >
-      <i className='i-mdi-pause' />
+      <I icon='mdi-pause' />
     </Button>
   );
 };

@@ -4,12 +4,13 @@ import { TState } from '../../context/types';
 import clsx, { ClassValue } from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
 import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
+import { I } from '@components/Icon';
 
 const Root = styled.label``;
 
 type TProps = InputHTMLAttributes<HTMLInputElement> & {
   state: TState<number>;
-  iconClassValue: ClassValue;
+  iconClassValue: string;
 };
 export const Item: FC<TProps> = ({
   iconClassValue,
@@ -21,7 +22,8 @@ export const Item: FC<TProps> = ({
     <Root className='column-start'>
       <div className='row-space w-full'>
         <div className='row gap-1'>
-          <i className={clsx('', iconClassValue)} />
+          <i className={clsx('')} />
+          <I icon={iconClassValue} />
           <kbd>{title}</kbd>
         </div>
         <kbd>{value.toFixed(2)}</kbd>

@@ -12,7 +12,7 @@ export const Settings = () => {
     <Root className='column gap-4 w-36'>
       <Item
         title='Rate'
-        iconClassValue='i-ion-speedometer h-3.5'
+        iconClassValue='ion-speedometer h-3.5'
         state={rateState}
         min={0}
         max={10}
@@ -20,7 +20,7 @@ export const Settings = () => {
       />
       <Item
         title='Pitch'
-        iconClassValue='mdi i-ion-musical-note h-4'
+        iconClassValue='mdi ion-musical-note h-4'
         state={pitchState}
         min={0}
         max={2}
