@@ -1,4 +1,5 @@
-import { COLOR_VARIABLES_CSS } from '@constants/colors';
+import { COLOR_VARIABLES_CSS } from '@app/colors';
+
 import { Global, css } from '@emotion/react';
 
 const PLACEHOLDER_MD = 28;
@@ -9,7 +10,7 @@ const resolveWidth = (value: number) => `${value * 24}px`;
 
 export const Variables = () => {
   return (
-    <Global 
+    <Global
       styles={css`
         :root {
           ${COLOR_VARIABLES_CSS};

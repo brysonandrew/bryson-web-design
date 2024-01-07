@@ -12,9 +12,10 @@
       "@pages/*": ["src/pages/*"],
       "@context/*": ["src/context/*"],
       "@utils/*": ["src/utils/*"],
+      "@app/*": ["config/app/*"],
       "@uno/*": ["config/uno/*"],
       "@css/*": ["src/css/*"],
-      "@t/*": ["src/types/*"],
+      "@t/*": ["src/types/*"]
     }
   }
 }

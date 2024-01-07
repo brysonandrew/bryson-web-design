@@ -13,7 +13,7 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ style, children }) => (
   <Root
-    className='flex flex-col bg-black text-white'
+    className='flex flex-col bg-black text-white-9'
     style={style}
   >
     <FilterShell>

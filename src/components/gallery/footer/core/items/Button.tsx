@@ -1,7 +1,6 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { COLORS } from '@constants/colors';
 import { NAME_KEY } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import {
@@ -11,15 +10,13 @@ import {
 import { useTo } from '@hooks/media/nav/useTo';
 import { useGallery as useContext } from '@context/domains/gallery';
 import { useDarkMode } from '@context/dark-mode';
-import {
-  TMediaDetails,
-  TMediaRecord,
-} from 'ops/types/media';
+import { TMediaRecord } from 'ops/types/media';
 import {
   resolveShadow,
   resolveDropShadow,
 } from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { COLORS } from '@uno/theme/colors';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -97,7 +94,7 @@ export const Button: FC<TProps> = ({
               zIndex: 0,
               cursor: 'default',
               color: isDarkMode
-                ? COLORS['white']
+                ? COLORS['white-9']
                 : COLORS['gray'],
               textShadow: resolveShadow(0),
             },
@@ -126,10 +123,10 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLORS['white']
+                ? COLORS['white-9']
                 : COLORS['gray'],
               textShadow: isDarkMode
-                ? resolveShadow(2, 'white')
+                ? resolveShadow(2, 'white-9')
                 : resolveShadow(0),
             },
             tap: {

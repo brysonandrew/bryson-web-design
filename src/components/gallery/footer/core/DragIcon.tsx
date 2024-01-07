@@ -1,5 +1,4 @@
 import { Drag } from '@components/icons/gallery/Drag';
-import { COLORS } from '@constants/colors';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -8,6 +7,7 @@ import { PADDING_X } from './config';
 import { useDarkMode } from '@context/dark-mode';
 import { resolveDropShadow } from '@utils/effects/glow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { COLORS } from '@uno/theme/colors';
 
 type TProps = {
   classValue?: ClassValue;
@@ -38,17 +38,17 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
         animate: {
           cursor: 'grab',
           color: isDarkMode
-            ? COLORS['white']
+            ? COLORS['white-9']
             : COLORS['gray'],
           filter: resolveDropShadow(0),
         },
         hover: {
           cursor: 'grab',
           filter: isDarkMode
-            ? resolveDropShadow(2, 'white')
+            ? resolveDropShadow(2, 'white-9')
             : resolveDropShadow(2, 'gray'),
           color: isDarkMode
-            ? COLORS['white']
+            ? COLORS['white-9']
             : COLORS['gray'],
         },
         tap: {

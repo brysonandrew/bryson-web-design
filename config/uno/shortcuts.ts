@@ -3,9 +3,9 @@ import type { StaticShortcutMap } from 'unocss';
 const BACKGROUND: StaticShortcutMap = {
   'background-color': 'dark:bg-teal-bright bg-white-1',
   'background-color-1': 'dark:bg-teal bg-gray',
-  'background-color-2': 'dark:bg-black-2 bg-white',
+  'background-color-2': 'dark:bg-black-2 bg-white-9',
   'background-color-3': 'dark:bg-teal-bright bg-baby-blue',
-  'background-color-4': 'dark:bg-black bg-white-2',
+  'background-color-4': 'dark:bg-black bg-white-7',
 };
 const TEXT: StaticShortcutMap = {
   '+++text':
@@ -17,8 +17,8 @@ const TEXT: StaticShortcutMap = {
   'text-color': 'dark:text-teal-bright text-gray-1',
   'text-color-1': 'dark:text-baby-blue text-gray',
   'text-color-2': 'dark:text-teal-bright text-gray',
-  'text-color-3': 'dark:text-white text-black-2',
-  'text-color-4': 'dark:text-black text-white',
+  'text-color-3': 'dark:text-white-9 text-black-2',
+  'text-color-4': 'dark:text-black text-white-9',
   'text-color-5': 'dark:text-teal-bright text-gray-2',
   'text-color-stroke':
     'dark:text-stroke-baby-blue text-stroke-baby-blue-02',
@@ -63,22 +63,22 @@ export const SHORTCUTS: StaticShortcutMap = {
   ...FLEX,
   ...INPUT,
   'dark-mode-transition': 'transition-colors duration-1000',
-  'bg-main': 'bg-white dark:bg-black dark-mode-transition',
+  'bg-main': 'bg-white-9 dark:bg-black dark-mode-transition',
   'text-main':
-    'text-gray dark:text-teal-bright dark-mode-transition',
+    'text-gray dark:text-white-9 dark-mode-transition',
   'bg-main-inverted':
-    'dark:bg-white bg-black dark-mode-transition',
+    'dark:bg-white-9 bg-black dark-mode-transition',
   'text-main-inverted':
-    'text-teal-bright dark:text-black dark-mode-transition',
+    'text-white-9 dark:text-black dark-mode-transition',
   'circle-interactive':
     'relative p-3 cursor-pointer text-color-1',
-  'glow-bw': 'dark:glow-white glow-black',
+  'glow-bw': 'dark:glow-white-9 glow-black',
   'glow-interactive':
     'dark:glow-interactive-dark glow-interactive-light',
   'glow-interactive-lg':
     'dark:glow-interactive-dark-lg glow-interactive-light-lg',
   'w-core':
-    'w-full mx-4 sm:(w-+core mx-0) md:w-++core lg:w-+++core xl:w-++++core',
+    'px-4 w-full sm:w-+core md:w-++core lg:w-+++core xl:w-++++core xxl:w-+++++core',
   'cover-fixed': 'fixed inset-0',
   cover: 'absolute inset-0',
   'dragger-screen': 'absolute h-screen row-end',

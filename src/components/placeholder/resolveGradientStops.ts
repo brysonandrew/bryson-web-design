@@ -1,5 +1,5 @@
-import { COLORS } from '@constants/colors';
 import { TColorKey } from '@t/css';
+import { COLORS } from '@uno/theme/colors';
 
 export const resolveGradientStops = (count = 4, colors: TColorKey[]) => {
   return [...Array(count)].map((_, index) => {

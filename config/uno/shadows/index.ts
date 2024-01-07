@@ -1,6 +1,6 @@
 import { TTheme } from '@uno/theme';
 import { Rule } from 'unocss';
-import { COLORS } from '../colors';
+import { COLORS } from '../theme/colors';
 
 const resolveShadow = (
   colorKey: keyof typeof COLORS,
@@ -20,11 +20,11 @@ export const GLOW_BABY_BLUE_4 = resolveShadow(
   4,
 );
 
-export const GLOW_WHITE_1 = resolveShadow('white', 1);
+export const GLOW_WHITE_1 = resolveShadow('white-9', 1);
 
 export const GLOW_BLACK_1 = resolveShadow('black', 1);
 
-export const GLOW_WHITE_2 = resolveShadow('white', 2);
+export const GLOW_WHITE_2 = resolveShadow('white-9', 2);
 
 export const GLOW_BLACK_2 = resolveShadow('black', 2);
 

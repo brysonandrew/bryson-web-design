@@ -22,5 +22,13 @@ export const titleToKebab = <I extends string>(
     .map((v) => v.toLowerCase())
     .join('-') as TTCamelToKebab<I>;
 
+export const nToMoney = (n: number) =>
+  `$${n.toLocaleString()}`;
 
-export const nToMoney = (n:number) => `$${n.toLocaleString()}.00`
+export const formatNZLongDate = (date: Date) => {
+  const dateStr = new Intl.DateTimeFormat('en-NZ', {
+    dateStyle: 'short',
+    timeZone: 'Pacific/Auckland',
+  }).format(date);
+  return dateStr;
+};

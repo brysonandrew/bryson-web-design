@@ -13,7 +13,7 @@ export const Range = styled.input`
   & {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
-    background-color: transparent; /* Otherwise white in Chrome */
+    background-color: transparent; /* Otherwise white-9 in Chrome */
   }
 
   &::-webkit-slider-thumb {
@@ -137,7 +137,7 @@ export const Select = styled.select`
 export const Option = styled.option``;
 
 export const ArrowDown = () => (
-  <div className='absolute top-1/2 -translate-y-1/2 right-2 i-mdi-menu-down w-5 h-4 shrink-0 text-white pointer-events-none z-10' />
+  <div className='absolute top-1/2 -translate-y-1/2 right-2 i-mdi-menu-down w-5 h-4 shrink-0 text-white-9 pointer-events-none z-10' />
 );
 
 type TProps = SelectHTMLAttributes<HTMLSelectElement>;

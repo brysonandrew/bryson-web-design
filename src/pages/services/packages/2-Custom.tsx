@@ -9,7 +9,7 @@ For unique and specialized projects
 In-depth consultation and planning
 Unlimited features and customization
 Ongoing support and maintenance
-Integration of cutting-edge technologies eg/ AI, 3D renderers, IoT
+Integration of cutting-edge technologies (AI, 3D rendering, IoT)
 `);
 
 const COLOR = 'bg-purple';
