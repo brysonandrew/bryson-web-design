@@ -5,7 +5,7 @@ export const SECTION_TITLES = {
   build: 'Building websites and apps',
   services: 'Website Packages', //'What I can help you with',
   tech: 'Powered by',
-  projects: 'Latest projects',
+  projects: 'Previous projects',
   contact: 'Get in touch',
   process: 'Process',
 } as const;

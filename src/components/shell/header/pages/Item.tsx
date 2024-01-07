@@ -2,12 +2,13 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
-import { ThinLine } from '@components/thin-line';
+import { ThinLine } from '@components/line';
 import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TPageTitle } from '@constants/copy';
 import { DURATION } from '@constants/animation';
+import { ThickLine } from '@components/line/ThickLine';
 
 const resolveLineClassProps = (
   classValue?: ClassValue,
@@ -51,10 +52,10 @@ export const Item: FC<TProp> = ({
             }}
             {...resolveLineClassProps('via-baby-blue')}
           />
-          <motion.div
-            layoutId='PAGE_NAV_LINE_2'
+          <ThickLine
+            classValue='top-3/4 w-full h-2'
+            layoutId='PAGE_ACTIVE_UNDERLINE_KEY'
             transition={{ duration: DURATION * 2 }}
-            className='absolute top-3/4 w-full h-2 bg-teal'
           />
         </>
       )}

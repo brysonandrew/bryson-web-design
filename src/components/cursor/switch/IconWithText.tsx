@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { P_5 } from '@components/space/P_5';
-import { ThinLine } from '@components/thin-line';
+import { ThinLine } from '@components/line';
 import { TBaseIconProps } from '@t/icons';
 import { TRANSITION } from '@constants/animation';
 import { P1 } from '@components/space/P1';

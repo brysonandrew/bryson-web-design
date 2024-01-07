@@ -8,7 +8,7 @@ export const End: FC<
   return (
     <div
       className={clsx(
-        'center h-20 rounded-tl-sm rounded-tr-sm',
+        'relative center h-20 rounded-tl-sm rounded-tr-sm',
         classValue,
         classValue
           ? 'text-main-inverted'

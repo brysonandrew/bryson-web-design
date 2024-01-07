@@ -2,6 +2,7 @@ import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/reader/hooks/usePlay';
 import { useReader } from '@pages/reader/context';
 import { GLOW_BABY_BLUE_4 } from '@uno/rules/glow';
+import { I } from '@components/Icon';
 
 export const Play = () => {
   const {
@@ -21,7 +22,7 @@ export const Play = () => {
             : '',
       }}
     >
-      <i className='i-mdi-play' />
+      <I icon='mdi-play' />
     </Button>
   );
 };

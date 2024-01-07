@@ -36,8 +36,8 @@ export const Circle: FC<TProps> = ({
         'center w-10 h-10 rounded-full',
         [
           isGallery
-            ? 'dark:glow-baby-blue glow-lg'
-            : 'glow-lg',
+            ? 'dark:glow-baby-blue glow'
+            : 'glow',
         ],
         classValue,
       )}

@@ -1,3 +1,4 @@
+import { I } from '@components/Icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
@@ -137,7 +138,10 @@ export const Select = styled.select`
 export const Option = styled.option``;
 
 export const ArrowDown = () => (
-  <div className='absolute top-1/2 -translate-y-1/2 right-2 i-mdi-menu-down w-5 h-4 shrink-0 text-white-9 pointer-events-none z-10' />
+  <I
+    icon='mdi-menu-down'
+    className='absolute top-1/2 -translate-y-1/2 right-2 w-5 h-4 shrink-0 text-white-9 pointer-events-none z-10'
+  />
 );
 
 type TProps = SelectHTMLAttributes<HTMLSelectElement>;

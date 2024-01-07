@@ -32,10 +32,6 @@ export const BACKGROUND: StaticShortcutMap = {
     'bg-white-9 dark:bg-black dark-mode-transition',
   'bg-main-inverted':
     'bg-black dark:bg-white-9 dark-mode-transition',
-  // 'bg-main': 'dark:bg-black-2 bg-white-9',
-  // 'background-color': 'dark:bg-teal-bright bg-white-7',
-  // 'background-color-1': 'dark:bg-teal bg-gray',
-  // 'background-color-4': 'dark:bg-black bg-white-7',
 };
 
 export const COLORS = {

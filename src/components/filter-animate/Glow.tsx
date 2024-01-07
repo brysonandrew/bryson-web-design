@@ -14,11 +14,10 @@ type TProps = TPartialGlowConfigOptions &
   TChildrenPartialProps;
 export const Glow: FC<TProps> = ({
   children,
-  classValue,
   ...options
 }) => {
   return (
-    <FilterAnimate {...resolveGlowProps(options)} classValue={classValue}>
+    <FilterAnimate {...resolveGlowProps(options)}>
       {children}
     </FilterAnimate>
   );
