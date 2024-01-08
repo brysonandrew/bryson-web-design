@@ -15,6 +15,7 @@ import {
   SERVICE_CURSOR_KEY,
   SOUND_CURSOR_KEY,
 } from './config';
+import { EMAIL_ICON } from '@constants/icons/contact';
 
 export const Switch = () => {
   const { hoverKey } = useCursor();
@@ -63,11 +64,9 @@ export const Switch = () => {
     }
     case PACKAGE_CURSOR_KEY: {
       return (
-        <Sight
-        
-        >
+        <Sight>
           <Box>
-            <IconWithText>
+            <IconWithText iconStr={EMAIL_ICON}>
               <>
                 Inquire about the
                 {

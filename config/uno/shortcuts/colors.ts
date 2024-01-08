@@ -6,17 +6,13 @@ export const TEXT: StaticShortcutMap = {
   'text-g-bb':
     'text-gray dark:text-baby-blue dark-mode-transition',
   'text-g-tb':
-    'text-gray dark:text-teal-bright dark-mode-transition',
+    'text-gray-5 dark:text-teal-bright dark-mode-transition',
   'text-t-tb':
-    'text-gray dark:text-teal-bright dark-mode-transition',
-  'text-g2-tb':
     'text-gray dark:text-teal-bright dark-mode-transition',
   'text-b2-w9':
     'text-gray dark:text-white-9 dark-mode-transition',
   'text-b-w9':
     'text-gray dark:text-white-9 dark-mode-transition',
-  'text-w9-b':
-    'text-white-9 dark:text-black dark-mode-transition',
   'text-main':
     'text-black-7 dark:text-white-9 dark-mode-transition',
   'text-main-inverted':

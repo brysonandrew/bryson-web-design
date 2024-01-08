@@ -6,6 +6,7 @@ import clsx, { ClassValue } from 'clsx';
 import { P6 } from './space/P6';
 import { TDivProps } from '@t/dom';
 import { TContent } from './text/title/config';
+import { P16Y } from './space/P16Y';
 
 const Root = styled.div``;
 
@@ -26,7 +27,7 @@ export const Section: FC<TProps> = ({
       {...props}
     >
       <Title>{title}</Title>
-      <P6 />
+      <P16Y />
       {children}
     </Root>
   );

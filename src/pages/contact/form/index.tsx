@@ -29,8 +29,6 @@ export const Form = () => {
       className='column-start mt-1'
       initial={false}
       animate={{
-        filter: isDisabled ? DISABLED : ACTIVE,
-        opacity: isDisabled ? 0.6 : 1,
       }}
       ref={ref}
       onSubmit={(event) => {

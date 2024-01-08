@@ -2,7 +2,7 @@ import { resolveFilter } from "./resolveFilter";
 
 export const DISABLED = resolveFilter({
   blur: 0,
-  brightness: 80,
+  brightness: 90,
   grayscale: 0,
 });
 
