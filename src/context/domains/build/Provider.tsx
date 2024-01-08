@@ -17,7 +17,8 @@ export const Provider: FC<TProviderProps> = ({
 
   useEffect(() => {
     const initScreens = async () => {
-      if ('serviceWorker' in navigator) {
+      console.log('init')
+      if ('serviceWorker' in navigator && !import.meta.env.DEV) {
         const sw: ServiceWorkerContainer =
           navigator.serviceWorker;
         sw.ready.then((registration) => {
@@ -37,9 +38,12 @@ export const Provider: FC<TProviderProps> = ({
           console.error(event);
         };
       } else {
-        setRecords(
-          (allRecords as TMediaRecords).slice(0, 8),
+        const next = (allRecords as TMediaRecords).slice(
+          0,
+          8,
         );
+        console.log(next);
+        setRecords(next);
       }
     };
 

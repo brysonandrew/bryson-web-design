@@ -11,8 +11,9 @@ import { useViewport as useViewportContext } from '@context/viewport';
 import { TDepthConfig } from '@hooks/media/fake-3D/useCircle';
 import { ORIGIN_50 } from '@constants/animation';
 import { useSpin } from '@hooks/media/fake-3D/useSpin';
+import clsx from 'clsx';
 
-const BUFFER = 400;
+const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
 
 const Root = styled(motion.div)``;
@@ -43,23 +44,26 @@ export const Images: FC<TProps> = ({ style }) => {
     ? {
         rotateY: 0,
         rotateX: 0,
-        x: 0,
+        x: -viewportWidth * 0.5,
         z: 0,
-        y: '-16vh',
+        y: -400,
       }
     : {
         rotateY: 0,
         rotateX: -4,
-        x: radius * 0.75,
+        x: 0,
         z: 0,
-        y: 0,
+        y: -200,
       };
 
   return (
     <>
       <P8 />
       <Root
-        className='relative w-full z-0'
+        className={clsx(
+          'center relative w-full',
+          !isVertical && 'z-50',
+        )}
         style={{
           height: HEIGHT,
           opacity,
@@ -70,7 +74,7 @@ export const Images: FC<TProps> = ({ style }) => {
       >
         {!isResizing && (
           <List
-            className='cover h-0 w-0 preserve-3d will-change-transform'
+            className='h-0 w-0 bg-red preserve-3d will-change-transform'
             style={{
               perspective: 10000,
               ...ORIGIN_50,

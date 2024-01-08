@@ -19,7 +19,7 @@ const Build: FC = () => {
           title={
             <>
               <Fade />
-              <div className='relative column-start gap-4 text-5xl overflow-hidden sm:text-7xl lg:text-8xl xl:text-9xl'>
+              <motion.div className='relative w-core row-wrap justify-center gap-4 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'>
                 <AnimatePresence>
                   {SECTION_TITLES.build
                     .split(/\s/)
@@ -37,11 +37,10 @@ const Build: FC = () => {
                       return (
                         <motion.div
                           key={word}
-                          style={props.style}
-                          className='overflow-hidden'
+                
                         >
                           {wi % 2 === 0 ? (
-                            <motion.div className='row font-thin'>
+                            <motion.div className='row font-thin overflow-hidden'>
                               {word
                                 .split('')
                                 .map((char, ci) => (
@@ -60,7 +59,7 @@ const Build: FC = () => {
                             </motion.div>
                           ) : (
                             <motion.div
-                              className='row text-teal'
+                              className='row text-teal overflow-hidden'
                               {...animation}
                             >
                               {word
@@ -84,7 +83,7 @@ const Build: FC = () => {
                       );
                     })}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             </>
           }
         >
