@@ -15,6 +15,8 @@ import { CONTACT_ROUTE } from '@constants/routes';
 import { motion } from 'framer-motion';
 import { useContact } from '@context/domains/contact';
 import { TPackageTitle } from '../config';
+import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { PACKAGE_CURSOR_KEY } from '@components/cursor/switch/config';
 
 export type TProps = TPriceProps &
   PropsWithChildren<{
@@ -29,10 +31,15 @@ export const Package: FC<TProps> = ({
   ...priceProps
 }) => {
   const { onForm } = useContact();
+  const { isHover, handlers } = useHoverKey(
+    PACKAGE_CURSOR_KEY,
+    title,
+  );
   const handleClick = () => {
     onForm({
-      message: `Hi Andrew,\nI am writing in regard to the ${title} website package.\nPlease contact me via email as soon as possible to we can discuss further.\nKind regards`,
+      message: `I am writing in regard to the ${title} website package.\nPlease contact me via email as soon as possible to we can discuss further.\nKind regards`,
     });
+    handlers.onHoverEnd();
   };
   return (
     <Link
@@ -47,10 +54,10 @@ export const Package: FC<TProps> = ({
         )}
       />
       <motion.div
-        whileHover='hover'
         className={clsx(
           'relative column items-stretch grow w-full h-full text-base',
         )}
+        {...handlers}
       >
         <P1_5 />
         <End>
@@ -59,8 +66,7 @@ export const Package: FC<TProps> = ({
           </h4>
           <motion.div
             initial={false}
-            style={{ opacity: 0.5 }}
-            variants={{ hover: { opacity: 1 } }}
+            animate={{ opacity: isHover ? 1 : 0.5 }}
           >
             <I
               classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-main-inverted'

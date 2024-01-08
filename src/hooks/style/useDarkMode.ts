@@ -1,7 +1,22 @@
 import { useEffect } from 'react';
 import { useLocalStorage } from '../dom/useLocalStorage';
 import { NOOP } from '@constants/functions';
-const BRYSONA_DISPLAY_MODE_KEY = 'BRYSONA_DISPLAY_MODE_KEY';
+import { resolveCompositeKey } from '@utils/keys';
+import { APP_TITLE } from '@app/index';
+
+const DARK_MODE_KEY = resolveCompositeKey(
+  APP_TITLE,
+  'dark-mode',
+);
+export const TRANSITION_CLASS = 'duration-1000';
+export const EASE = [0.4, 0, 0.2, 1];
+export const EASE_CSS = `cubic-bezier(${EASE})`;
+const DURATION = parseInt(
+  TRANSITION_CLASS.split('-')[1],
+);
+const TRANSITION = ['color', 'background-color']
+  .map((v) => `${v} ${DURATION}ms ${EASE_CSS}`)
+  .join(', ');
 
 const MODES = ['dark', 'light'] as const;
 export type TDarkKey = (typeof MODES)[number];
@@ -27,7 +42,7 @@ export const useDarkMode = (
 ): TUseDarkMode => {
   const [isDarkMode, setDarkMode] =
     useLocalStorage<boolean>(
-      BRYSONA_DISPLAY_MODE_KEY,
+      DARK_MODE_KEY,
       defaultValue ?? true,
     );
 
@@ -54,8 +69,7 @@ export const useDarkMode = (
   }, [isDarkMode]);
 
   useEffect(() => {
-    document.body.style.transition =
-      'color 0.9s, background-color 0.9s';
+    document.body.style.transition = TRANSITION;
   }, []);
 
   return {

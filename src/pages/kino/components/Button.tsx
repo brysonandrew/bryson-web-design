@@ -18,7 +18,7 @@ export const Button: FC<TProps> = ({
   return (
     <button
       className={clsx(
-        'relative uppercase font-mono text-xl px-3 py-1 bg-black-1 text-teal-bright disabled:(text-gray cursor-not-allowed)',
+        'relative uppercase text-xl px-3 py-1 bg-black-1 text-teal-bright disabled:(text-gray cursor-not-allowed)',
         classValue,
       )}
       {...props}

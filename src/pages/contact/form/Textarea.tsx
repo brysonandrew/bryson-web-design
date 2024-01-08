@@ -23,13 +23,13 @@ export const Textarea: FC<TProps> = ({
     <Box name={name} isDisabled={disabled} {...boxInputs}>
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={name} />
-      </div>
+      </div> 
       <div className='flex grow'>
         <Input
           ref={ref}
           className='input-textarea'
           autoComplete='off'
-          name={name}
+          name={name} 
           disabled={disabled}
           {...resolveInteractiveLabels(name)}
           {...inputProps}

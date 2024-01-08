@@ -28,7 +28,7 @@ export const Plus = () => {
           icon={TICK_CIRCLE_ICON}
           className='relative w-5 h-5 mt-1 shrink-0 text-standard z-10'
         />{' '}
-        <p className='leading-7'>
+        <p className='leading-7 font-sans text-xl'>
           <span className='absolute -inset-x-1.75 -inset-y-2 rounded-md border-2 border-standard' />
           Everything included in the{' '}
           <span className='inline-flex relative px-1.5 text-main-inverted'>

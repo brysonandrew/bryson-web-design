@@ -31,7 +31,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
     href,
   );
 
-  const borderRadius = 'rounded-sm';
+  const borderRadiusClass = 'rounded';
 
   return (
     <Root
@@ -41,36 +41,39 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...props}
     >
       {isHover && (
-        <Aura classValue={borderRadius} layoutId={title} />
+        <Aura
+          classValue={borderRadiusClass}
+          layoutId={title}
+        />
       )}
       <MetalGlow
-        classValue={borderRadius}
+        classValue={borderRadiusClass}
         drop={16}
         color={isDarkMode ? 'baby-blue' : 'teal'}
         value={glow}
       />
       <MetalGlow
-        classValue={borderRadius}
+        classValue={borderRadiusClass}
         drop={12}
         color={isDarkMode ? 'teal-bright' : 'teal'}
       />
-      <Box classValue={borderRadius}>
+      <Box classValue={borderRadiusClass}>
         <Glow
           text={isDarkMode ? 1.4 : 0.5}
           drop={isDarkMode ? 4 : 0.2}
-          classValue={borderRadius}
+          classValue={borderRadiusClass}
         >
           <Anchor
             className={clsx(
               'inline-flex relative pl-4 pr-3 py-3',
-              borderRadius,
+              borderRadiusClass,
             )}
             href={href}
             target='_blank'
           >
             <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
             <P1_5 />
-            <Title className='+++text'>{title}</Title>
+            <Title className='+++text mt-0.75'>{title}</Title>
           </Anchor>
         </Glow>
       </Box>

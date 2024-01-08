@@ -4,20 +4,21 @@ import type { TTheme } from '../theme';
 
 const resolveTextStroke = (
   colors: TColorKey[],
+  weight = 1,
 ): Rule<TTheme>[] => {
   return colors.map((color: TColorKey) => {
     return [
       `text-stroke-${color}`,
       {
-        'text-stroke': `1px var(--${color})`,
-        '-webkit-text-stroke': `1px var(--${color})`,
-      }, 
+        'text-stroke': `${weight}px var(--${color})`,
+        '-webkit-text-stroke': `${weight}px var(--${color})`,
+      },
     ];
   });
 };
 
-export const RULES =
-  resolveTextStroke([
+export const RULES = resolveTextStroke(
+  [
     'black-01',
     'gray',
     'teal',
@@ -28,4 +29,6 @@ export const RULES =
     'baby-blue',
     'baby-blue-01',
     'baby-blue-02',
-  ]);
+  ],
+  3,
+);

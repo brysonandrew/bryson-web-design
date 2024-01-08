@@ -54,7 +54,7 @@ export const RULE_MAP = {
   'glow-baby-blue': GLOW_BABY_BLUE_4,
   'glow-light': GLOW_TEAL_1_BABY_BLUE_1,
   'glow-light-lg': GLOW_TEAL_2_BABY_BLUE_4,
-  'glow-cursor-light': GLOW_CURSOR_LIGHT_4,
+  'glow-cursor-light': GLOW_CURSOR_LIGHT_4, 
 } as const;
 type TShadowRule = [string, { 'box-shadow': string }];
 type TEntry = [string, string];

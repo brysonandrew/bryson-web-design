@@ -9,7 +9,7 @@ type TProps = {
 };
 export const Text: FC<TProps> = ({ children }) => {
   return (
-    <Root className='text-2xl text-g-tb text-stroke-bb02-bb02 whitespace-nowrap capitalize'>
+    <Root className='text-2xl text-g-tb whitespace-nowrap capitalize'>
       {children}
     </Root>
   );

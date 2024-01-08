@@ -34,16 +34,24 @@ export const Box: FC<TProps> = ({
 }) => {
   const handleFocus = useFocus(input, isFocused);
   const { isHover, handlers } = useHoverKey('big', name);
+  const borderRadiusClass = 'rounded';
 
   return (
     <Root
       className={clsx('relative input-label', [
         isDisabled ? '' : 'glow',
+        borderRadiusClass,
       ])}
-      {...(isDisabled ? {} : resolveParentAnimateConfig({isHover}))}
+      {...(isDisabled
+        ? {}
+        : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <MetalGlow color='baby-blue' drop={1} />
+      <MetalGlow
+        classValue={borderRadiusClass}
+        color='baby-blue'
+        drop={1}
+      />
       {isFocused && (
         <Mark
           layoutId='CONTACT_FORM_INPUT_LAYOUT_ID'

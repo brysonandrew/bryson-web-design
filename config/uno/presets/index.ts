@@ -5,7 +5,6 @@ import {
   type Preset,
 } from 'unocss';
 import { TAnyTheme, TTheme } from '../theme';
-import { MONO, SERIF } from '../typography';
 
 export type TPresets = (
   | Preset<TTheme>
@@ -15,13 +14,10 @@ export const PRESETS: TPresets = [
   definePreset<TAnyTheme>(presetUno({ dark: 'class' })),
   presetWebFonts({
     fonts: {
-      serif: {
-        name: SERIF,
-        provider: 'google',
-      },
-      mono: {
-        name: MONO,
-        provider: 'google',
+      sans: {
+        name: 'Supreme',
+        weights: ['300', '400', '800'],
+        provider: 'fontshare',
       },
     },
   }),
