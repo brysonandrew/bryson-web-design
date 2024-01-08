@@ -29,6 +29,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
+  const borderRadiusClass = 'rounded';
 
   useEffect(() => {
     if (status === 'sent' && ref.current !== null) {
@@ -41,6 +42,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       ref={ref}
       className={clsx(
         'relative p-0.5 w-full label-background',
+        borderRadiusClass,
         [
           isDisabled
             ? 'cursor-not-allowed'
@@ -54,6 +56,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       {...handlers}
     >
       <MetalGlow
+        classValue={borderRadiusClass}
         color={isDarkMode ? 'baby-blue' : 'teal'}
         drop={1}
       />
@@ -66,15 +69,15 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <Text
         className={clsx(
-          'center relative text-g-tb text-stroke-bb02-bb text-2xl italic py-2 pointer-events-none',
+          'center relative text-g-tb text-2xl italic uppercase py-2 pointer-events-none',
         )}
         variants={{
           animate: {
-            letterSpacing: '4px',
+            letterSpacing: '2px',
             transition: EFFECT_ANIMATE_TRANSITION,
           },
           hover: {
-            letterSpacing: '8px',
+            letterSpacing: '4px',
             transition: EFFECT_HOVER_TRANSITION,
           },
         }}

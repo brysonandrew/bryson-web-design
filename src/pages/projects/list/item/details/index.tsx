@@ -19,8 +19,11 @@ export const Details: FC<TProps> = ({
   slug,
   ...props
 }) => {
+  const borderRadiusClass = 'rounded-md';
+
   return (
     <Root
+      className={borderRadiusClass}
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}

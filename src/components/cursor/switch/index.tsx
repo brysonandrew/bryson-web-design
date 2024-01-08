@@ -10,6 +10,7 @@ import {
   DARK_MODE_CURSOR_KEY,
   GALLERY_CURSOR_KEY,
   OPEN_IN_NEW_CURSOR_KEY,
+  PACKAGE_CURSOR_KEY,
   PROJECT_CURSOR_KEY,
   SERVICE_CURSOR_KEY,
   SOUND_CURSOR_KEY,
@@ -60,6 +61,32 @@ export const Switch = () => {
         </Sight>
       );
     }
+    case PACKAGE_CURSOR_KEY: {
+      return (
+        <Sight
+        
+        >
+          <Box>
+            <IconWithText>
+              <>
+                Inquire about the
+                {
+                  <span
+                    className='px-1 mx-1 text-main-inverted'
+                    style={{
+                      backgroundColor: `var(--${lastKey?.toLowerCase()})`,
+                    }}
+                  >
+                    {lastKey}
+                  </span>
+                }
+                package
+              </>
+            </IconWithText>
+          </Box>
+        </Sight>
+      );
+    }
     case SERVICE_CURSOR_KEY:
     case 'big': {
       return (
@@ -87,6 +114,6 @@ export const Switch = () => {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }
     default:
-      return <Sight animate={{ opacity: 1, scale: 1 }} />;
+      return <Sight />;
   }
 };

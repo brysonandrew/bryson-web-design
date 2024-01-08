@@ -5,9 +5,10 @@ import { ThinLine } from '@components/line';
 import { TBaseIconProps } from '@t/icons';
 import { TRANSITION } from '@constants/animation';
 import { P1 } from '@components/space/P1';
+import { TChildren } from '@t/index';
 
 type TProps = {
-  children: string;
+  children: TChildren;
   Icon?: FC<TBaseIconProps>;
 };
 export const IconWithText: FC<TProps> = ({
@@ -17,14 +18,14 @@ export const IconWithText: FC<TProps> = ({
   return (
     <>
       <P_5 />
-      <motion.div className='relative text-g2-tb row z-50'>
+      <motion.div className='relative text-main row z-50'>
         {Icon && (
           <>
             <Icon classValue='w-4 h-4' />
             <P1 />
           </>
         )}
-        <motion.code
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -33,8 +34,8 @@ export const IconWithText: FC<TProps> = ({
           className='text-xl whitespace-nowrap'
         >
           {children}
-        </motion.code>
-        <ThinLine classValue='absolute left-0 bottom-0 w-full via-current' />
+        </motion.p>
+        {/* <ThinLine classValue='absolute left-0 bottom-0 w-full via-current' /> */}
       </motion.div>
       <P_5 />
     </>

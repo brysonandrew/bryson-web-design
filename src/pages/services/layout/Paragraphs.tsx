@@ -10,7 +10,7 @@ export const ParagraphLines: FC<TProps> = ({ lines }) => {
   return (
     <Root className='column items-stretch gap-4'>
       {lines.map((line) => (
-        <p key={line}>{line}</p>
+        <p key={line} className='font-sans text-xl'>{line}</p>
       ))}
     </Root>
   );

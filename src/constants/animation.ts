@@ -13,6 +13,8 @@ export const BASIC_VARIANT_KEYS = {
 
 export const DURATION = isDisabled ? 0 : 0.2;
 
+export const DURATION_DARK_MODE = isDisabled ? 0 : 1;
+
 export const TRANSITION = {
   ease: 'linear',
   duration: DURATION,

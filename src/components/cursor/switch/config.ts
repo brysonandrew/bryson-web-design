@@ -10,6 +10,7 @@ export const SERVICE_CURSOR_KEY = 'service';
 export const FOCUS_CURSOR_KEY = 'focus';
 export const DARK_MODE_CURSOR_KEY = 'dark-mode';
 export const SOUND_CURSOR_KEY = 'sound';
+export const PACKAGE_CURSOR_KEY = 'package';
 
 export const TIP_CURSOR_KEYS = [
   OPEN_IN_NEW_CURSOR_KEY,
@@ -19,6 +20,7 @@ export const TIP_CURSOR_KEYS = [
   SOUND_CURSOR_KEY,
   SERVICE_CURSOR_KEY,
   FOCUS_CURSOR_KEY,
+  PACKAGE_CURSOR_KEY,
 ] as const;
 export type TTipCursorKey =
   (typeof TIP_CURSOR_KEYS)[number];

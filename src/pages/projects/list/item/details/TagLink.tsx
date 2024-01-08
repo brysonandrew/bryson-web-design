@@ -47,7 +47,7 @@ export const TagLink: FC<TProps> = ({
       target='_blank'
       animate={isHover ? 'hover' : 'animate'}
       onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
+      onHoverEnd={handleHoverEnd} 
       {...resolveInteractiveLabels(title)}
       {...props}
     >

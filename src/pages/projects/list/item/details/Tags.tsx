@@ -17,12 +17,11 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           const { title, href } = item;
           const content = (
             <Brighten>
-              <code
-                style={{ fontWeight: 700 }}
+              <span
                 className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
               >
                 {title}
-              </code>
+              </span>
             </Brighten>
           );
           return (

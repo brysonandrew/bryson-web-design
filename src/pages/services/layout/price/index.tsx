@@ -42,7 +42,7 @@ export const Price: FC<TProps> = ({ price, discount }) => {
       <div className='column'>
         {!isExpired && (
           <Banner>
-            <span>- {nToMoney(value)}</span>
+            <span className='font-sans text-3xl'>-{nToMoney(value)}</span>
             <div className='column'>
               <SubSubText>only until</SubSubText>
               <Subtext>{dateStr}</Subtext>

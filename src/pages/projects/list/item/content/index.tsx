@@ -45,6 +45,7 @@ export const Content: FC<TProps> = ({
   const [isExpanding, setExpanding] = useState(false);
   const project = useCurrProject();
   const isInitRef = useRef(false);
+  const borderRadiusClass = 'rounded';
 
   const handleInit = () => {
     isInitRef.current = !project;
@@ -88,6 +89,7 @@ export const Content: FC<TProps> = ({
         'pl-6 pr-4 sm:pl-8 sm:pr-6',
         [isExpanding && 'overflow-hidden'],
         classValue,
+        borderRadiusClass,
       )}
       onLayoutAnimationStart={handleLayoutAnimationStart}
       onLayoutAnimationComplete={
@@ -97,10 +99,11 @@ export const Content: FC<TProps> = ({
         ...resolveGlow(Boolean(isHover), isDarkMode),
         ...style,
       }}
+      layout
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <Metal />
+      <Metal  classValue={borderRadiusClass} />
       <Mark classValue='z-20' />
       <P2 />
       <motion.div

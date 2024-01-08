@@ -38,7 +38,7 @@ export const Item: FC<TProp> = ({
       onClick={onClick}
       className={clsx('relative center pb-2 text-g-bb', [
         isActive &&
-          'text-b-w9 text-stroke-baby-blue-02 cursor-default',
+          'text-b-w9 cursor-default',
       ])}
       {...resolveInteractiveLabels(children)}
       {...handlers}

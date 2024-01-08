@@ -10,7 +10,9 @@ export const Paragraphs: FC<TProps> = ({ paragraphs }) => {
           <Fragment key={`index-${index}`}>
             {index !== 0 && <li className='py-1' />}
             <li>
-              <p className='text-xl'>{paragraph}</p>
+              <p className='text-2xl font-sans'>
+                {paragraph}
+              </p>
             </li>
           </Fragment>
         ))}

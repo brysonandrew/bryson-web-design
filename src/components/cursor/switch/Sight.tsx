@@ -37,6 +37,7 @@ export const Sight: FC<TProps> = ({
         originX: '50%',
         originY: '50%',
         opacity: 1,
+        scale: 1,
         ...resolveSize(size),
         ...cursorLabel,
         ...style,
@@ -45,6 +46,7 @@ export const Sight: FC<TProps> = ({
         'fixed center dark:bg-teal-bright bg-baby-blue text-w9-b glow pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
+      animate={{ opacity: 1, scale: 1 }}
       {...props}
     >
       {children}
