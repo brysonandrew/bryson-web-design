@@ -21,7 +21,7 @@ const List = styled(motion.ul)``;
 type TProps = TFake3DMotionChildrenProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
-  const { records } = useBuild(); 
+  const { records } = useBuild();
   const { isScrolling } = useScrollContext();
   const spin = useSpin();
   const {
@@ -50,7 +50,7 @@ export const Images: FC<TProps> = ({ style }) => {
     : {
         rotateY: 0,
         rotateX: -4,
-        x: radius,
+        x: radius * 0.75,
         z: 0,
         y: 0,
       };
@@ -64,6 +64,7 @@ export const Images: FC<TProps> = ({ style }) => {
           height: HEIGHT,
           opacity,
           y,
+          x: '0%',
           ...ORIGIN_50,
         }}
       >
