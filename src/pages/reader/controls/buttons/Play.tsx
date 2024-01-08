@@ -22,7 +22,7 @@ export const Play = () => {
             : '',
       }}
     >
-      <I icon='mdi-play' />
+      <I classValue='w-8 h-8' icon='mdi-play' />
     </Button>
   );
 };

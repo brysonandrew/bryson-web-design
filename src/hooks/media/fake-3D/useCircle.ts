@@ -1,5 +1,5 @@
 import { MotionValue, useTransform } from 'framer-motion';
-const MIN_OPACITY = 0.2;
+const MIN_OPACITY = 1;
 
 export type TDepthConfig = {
   index: number;
@@ -30,7 +30,8 @@ export const useCircle = ({
       -v * radius + (isVertical ? 0 : -imageSize - radius)
     );
   });
-  const opacity = useTransform(depth, (v) => {
+  const opacity = 
+  useTransform(depth, (v) => {
     return MIN_OPACITY + (1 - v * (1 - MIN_OPACITY));
   });
   const spread = useTransform(radians, (v) => {

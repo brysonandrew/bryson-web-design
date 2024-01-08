@@ -84,7 +84,7 @@ export const Image: FC<TProps> = (props) => {
         initial: { opacity: 0 },
         animate: resolveMotionConfig(depthConfig),
         exit: { opacity: 0 },
-      }}
+      }} 
       {...resolveParentAnimateConfig({ isHover })}
       {...(isDesktop ? handlers : {})}
     >

@@ -25,8 +25,7 @@ export const Main: FC<TProps> = ({ style }) => {
         <div className='row gap-2 absolute top-full left-0 text-sm text-left mt-4 mx-4'>
           <I icon={PLUS_ICON} className='shrink-0 h-3' />
           <p className='text-lg text-left w-full'>
-            all live sites incur {nToMoney(19.99)} per month
-            for hosting
+            there maybe v
           </p>
         </div>
       </div>
