@@ -14,11 +14,11 @@ Integration of cutting-edge technologies (AI, 3D rendering, IoT)
 export const Custom = () => {
   return (
     <Package
-      title='Bespoke'
-      color='bg-bespoke'
+      title='Select'
+      color='bg-select'
       price={price}
     >
-      <TickList items={items} color='text-bespoke' />
+      <TickList items={items} color='text-select' />
     </Package>
   );
 };

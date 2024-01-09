@@ -61,7 +61,7 @@ export const COLOR_VARIABLES_LOOKUP: any = {
   ...GRAY,
   standard: '#60a5fa',
   plus: '#4ade80',
-  bespoke: '#c084fc',
+  select: '#c084fc',
   current: 'currentColor',
   transparent: 'rgba(0, 0, 0, 0)',
   border: 'rgba(64, 70, 40, .2)',

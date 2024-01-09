@@ -3,6 +3,10 @@ html {
   font-size: 100%;
 }
 
+html.dark {
+  background-color: black;
+}
+
 html,
 body {
   /* font-family: Author, Rubik, Noto Kufi Arabic, Noto Sans JP, -apple-system, BlinkMacSystemFont,

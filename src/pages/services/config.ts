@@ -1,6 +1,6 @@
 export const PACKAGES = [
   'Standard',
   'Plus',
-  'Bespoke',
+  'Select',
 ] as const;
 export type TPackageTitle = (typeof PACKAGES)[number];
