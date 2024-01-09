@@ -37,37 +37,23 @@ export const Item: FC<TProp> = ({
       to={to}
       onClick={onClick}
       className={clsx('relative center pb-2 text-g-bb', [
-        isActive &&
-          'text-b-w9 cursor-default',
+        isActive && 'text-b-w9 cursor-default',
       ])}
       {...resolveInteractiveLabels(children)}
       {...handlers}
     >
       {isActive && (
-        <>
-          <ThinLine
-            layoutId='PAGE_NAV_LINE'
-            style={{
-              bottom: 6,
-            }}
-            {...resolveLineClassProps('via-baby-blue')}
-          />
-          <ThickLine
-            classValue='top-3/4 w-full h-2'
-            layoutId='PAGE_ACTIVE_UNDERLINE_KEY'
-            transition={{ duration: DURATION * 2 }}
-          />
-        </>
+        <ThickLine
+          classValue='top-3/4 w-full h-2'
+          layoutId='PAGE_ACTIVE_UNDERLINE_KEY'
+          transition={{ duration: DURATION * 2 }}
+        />
       )}
       {createElement(
         isActive ? 'h1' : 'h2',
         { className: 'relative uppercase italic' },
         children,
       )}
-      <ThinLine
-        style={{ bottom: 4 }}
-        {...resolveLineClassProps('via-teal')}
-      />
     </Link>
   );
 };

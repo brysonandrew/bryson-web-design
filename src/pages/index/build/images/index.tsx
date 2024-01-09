@@ -53,7 +53,7 @@ export const Images: FC<TProps> = ({ style }) => {
         rotateX: -4,
         x: 0,
         z: 0,
-        y: -200,
+        y: -180,
       };
 
   return (

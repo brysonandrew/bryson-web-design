@@ -17,7 +17,6 @@ export const Provider: FC<TProviderProps> = ({
 
   useEffect(() => {
     const initScreens = async () => {
-      console.log('init')
       if ('serviceWorker' in navigator && !import.meta.env.DEV) {
         const sw: ServiceWorkerContainer =
           navigator.serviceWorker;
@@ -42,7 +41,6 @@ export const Provider: FC<TProviderProps> = ({
           0,
           8,
         );
-        console.log(next);
         setRecords(next);
       }
     };

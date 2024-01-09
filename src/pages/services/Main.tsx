@@ -22,12 +22,7 @@ export const Main: FC<TProps> = ({ style }) => {
         <Standard />
         <Plus />
         <Custom />
-        <div className='row gap-2 absolute top-full left-0 text-sm text-left mt-4 mx-4'>
-          <I icon={PLUS_ICON} className='shrink-0 h-3' />
-          <p className='text-lg text-left w-full'>
-            there maybe v
-          </p>
-        </div>
+    
       </div>
     </Root>
   );

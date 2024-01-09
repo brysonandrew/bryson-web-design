@@ -26,7 +26,6 @@ export const Link: FC = () => {
       {...handlers}
     >
       <Title />
-      <ThinLine classValue='flex absolute bottom-1 left-0 via-current' />
     </_Link>
   );
 };
