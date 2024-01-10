@@ -3,7 +3,7 @@ import { Main } from '@pages/contact/Main';
 import {
   CONTACT_ID,
   SECTION_TITLES,
-} from '@main/config/constants';
+} from '@main/config/constants/app';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 

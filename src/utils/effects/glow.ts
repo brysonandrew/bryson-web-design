@@ -1,7 +1,7 @@
 import { resolveColor } from '@utils/colors';
 import { EFFECT_ANIMATE_TRANSITION } from '.';
-import { TColorRgbKey } from '@t/colors';
 import { MotionValue } from 'framer-motion';
+import { TColorRgbKey } from '@app/colors/types';
 
 export const resolveDropShadow = (
   spread: number,

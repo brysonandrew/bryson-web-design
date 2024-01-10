@@ -1,8 +1,6 @@
 import { TRgb } from '../types';
 
-export const resolveGrayscale = (
-  value: number,
-) => {
+const resolveGrayscaleRgb = (value: number) => {
   const result = [...Array(3)]
     .map(() => value)
     .join(', ') as TRgb;
@@ -15,11 +13,7 @@ export const resolveGrayscaleRange = (
   range = max - min,
 ) =>
   [...Array(10)].map((_, index) =>
-    resolveGrayscale(
-      ~~(
-        min +
-        (range * index) / 10 -
-        1 / 20
-      ),
+    resolveGrayscaleRgb(
+      ~~(min + (range * index) / 10 - 1 / 20),
     ),
   );

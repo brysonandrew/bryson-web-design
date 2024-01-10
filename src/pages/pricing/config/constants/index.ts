@@ -1,8 +1,8 @@
 import {
   TPackageKey,
   TPackageTitle,
-} from '@pages/services/config/types';
-import { TProps as TPriceProps } from '@pages/services/layout/price';
+} from '@pages/pricing/config/types';
+import { TProps as TPriceProps } from '@pages/pricing/layout/price';
 import { colorToStylesRecord } from '@utils/transformer/colorToStyles';
 import { newlineToArr } from '@utils/transformer/newlineToArr';
 import { FC } from 'react';

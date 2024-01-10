@@ -1,4 +1,4 @@
-import { INTRO_ID } from '@main/config/constants';
+import { INTRO_ID } from '@main/config/constants/app';
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@components/Section';

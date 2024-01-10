@@ -1,5 +1,5 @@
 import { PRESENCE_Y_SHIFT } from '@constants/animation';
-import { SECTION_TITLES } from '@main/config/constants';
+import { SECTION_TITLES } from '@main/config/constants/app';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShiftUp } from './ShiftUp';
 export const WORDS = SECTION_TITLES.build.split(/\s/);

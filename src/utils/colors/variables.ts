@@ -1,5 +1,6 @@
-import { TRgb } from '@t/colors';
-import { TColorKey } from '@t/css';
+import { TColorKey } from '@app/colors';
+import { TRgb } from '@app/colors/types';
+
 
 export const resolveColorOpacityVariations = (
   key: TColorKey,

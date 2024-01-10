@@ -1,22 +1,15 @@
-import { COLOR_VARIABLES_LOOKUP_PACKAGES } from './custom';
-import { BLACK, BLACK_RGB_RECORD } from './grayscale/black';
-import { GRAY, GRAY_RGB_RECORD } from './grayscale/gray';
-import { WHITE, WHITE_RGB_RECORD } from './grayscale/white';
+import { GRAYSCALE_RGB_RECORD, GRAYSCALE_COLOR_VARIABLES } from './grayscale';
+import { PACKAGES_COLOR_VARIABLES } from './custom';
+
 import { TRgb } from './types';
 import { resolveColorOpacityVariations } from './utils/resolveColorOpacityVariations';
-
-export const WHITE_FILTER = {
-  filter: 'grayscale(100%) brightness(400%)',
-};
 
 export const COLOR_RGB_RECORD: Record<string, TRgb> = {
   red: '221, 45, 68',
   'baby-blue': '153, 204, 255',
   teal: '45, 212, 191',
   'teal-bright': '207, 250, 254',
-  ...WHITE_RGB_RECORD,
-  ...GRAY_RGB_RECORD,
-  ...BLACK_RGB_RECORD,
+  ...GRAYSCALE_RGB_RECORD,
 } as const;
 
 export const PRIMARY = resolveColorOpacityVariations(
@@ -49,12 +42,6 @@ export const BABY_BLUE = resolveColorOpacityVariations(
   COLOR_RGB_RECORD['baby-blue'],
 );
 
-export const COLOR_VARIABLES_LOOKUP_GRAYSCALE = {
-  ...BLACK,
-  ...GRAY,
-  ...WHITE,
-} as const;
-
 export const COLOR_VARIABLES_LOOKUP: any = {
   ...PRIMARY,
   ...HIGHLIGHT,
@@ -63,8 +50,8 @@ export const COLOR_VARIABLES_LOOKUP: any = {
   ...TEAL,
   ...TEAL_BRIGHT,
   ...BABY_BLUE,
-  ...COLOR_VARIABLES_LOOKUP_GRAYSCALE,
-  ...COLOR_VARIABLES_LOOKUP_PACKAGES,
+  ...GRAYSCALE_COLOR_VARIABLES,
+  ...PACKAGES_COLOR_VARIABLES,
   current: 'currentColor',
   transparent: 'rgba(0, 0, 0, 0)',
   border: 'rgba(64, 70, 40, .2)',
@@ -84,13 +71,10 @@ export const COLOR_VARIABLES_CSS = Object.entries(
 --${key}: ${value};`;
 }, ``);
 
-export const cssVar = (
-  color: TColorKey,
-) => `var(--${color})`;
+export const cssVar = (color: TColorKey) =>
+  `var(--${color})`;
 
-const colors = Object.keys(
-  COLOR_VARIABLES_LOOKUP,
-).reduce(
+const colors = Object.keys(COLOR_VARIABLES_LOOKUP).reduce(
   (a, key) => ({
     [key]: cssVar(key),
     ...a,
@@ -98,8 +82,4 @@ const colors = Object.keys(
   {},
 );
 
-export const COLORS = colors as Record<
-  TColorKey,
-  string
->;
-
+export const COLORS = colors as Record<TColorKey, string>;

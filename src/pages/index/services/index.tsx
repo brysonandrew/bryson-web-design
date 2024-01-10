@@ -1,9 +1,9 @@
 import { Fake3D } from '@components/fake-3d';
-import { Main } from '@pages/services/Main';
+import { Main } from '@pages/pricing/Main';
 import {
   SECTION_TITLES,
   SERVICES_ID,
-} from '@main/config/constants';
+} from '@main/config/constants/app';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 

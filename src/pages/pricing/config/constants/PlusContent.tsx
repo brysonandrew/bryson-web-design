@@ -10,7 +10,7 @@ import { PLUS_ICON } from '@constants/icons/text';
 import {
   PLUS_CONFIG,
   STANDARD_CONFIG,
-} from '@pages/services/config/constants';
+} from '@pages/pricing/config/constants';
 
 const Root = styled.div``;
 

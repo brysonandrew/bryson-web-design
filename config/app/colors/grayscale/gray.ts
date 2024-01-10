@@ -4,7 +4,7 @@ import {
   resolveColorOpacityVariations,
   resolveColorSeries,
 } from '../utils';
-import { resolveGrayscaleRange } from './resolveGrayscale';
+import { resolveGrayscaleRange } from './resolveGrayscaleRange';
 
 export const GRAY_RGBS =
   resolveGrayscaleRange(85, 170);

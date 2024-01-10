@@ -1,7 +1,7 @@
 import type { Preflight, PreflightContext } from 'unocss';
-import type { TTheme, TAnyTheme } from './theme';
+import type { TTheme, TAnyTheme } from '../theme';
 
-export const PRE_FLIGHT: Preflight<TAnyTheme> = {
+export const CSS: Preflight<TAnyTheme> = {
   getCSS: ({ theme }: PreflightContext<TTheme>) => `
       ::-webkit-scrollbar {
         background-color: ${theme.colors['white-2']};

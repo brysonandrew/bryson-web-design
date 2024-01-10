@@ -1,7 +1,7 @@
 import fg from 'fast-glob';
 import fs from 'fs';
-import { IMAGES_GLOB } from './config';
-import { resolveFsInfo } from './utils/resolveFsInfo';
+import { IMAGES_GLOB } from '../config';
+import { resolveFsInfo } from '../utils/resolveFsInfo';
 
 (async () => {
   try {

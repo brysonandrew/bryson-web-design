@@ -1,6 +1,6 @@
 import { Main } from './Main';
 import { Section } from '@components/Section';
-import { SECTION_TITLES } from '@main/config/constants';
+import { SECTION_TITLES } from '@main/config/constants/app';
 import { P60Y } from '@components/space/P60Y';
 
 export const Contact = () => {

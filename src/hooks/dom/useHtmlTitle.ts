@@ -1,4 +1,3 @@
-import { TITLE_BASE } from '@main/config/constants';
 import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
@@ -6,17 +5,19 @@ import {
 import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
-import { useEffect, useRef } from 'react';
-
-const PROJECTS_TITLE = 'Projects';
+import { useEffect } from 'react';
+import { APP_DESCRIPTION, APP_TITLE } from '@app/index';
+import { PAGE_TUPLES } from '@main/config/constants/app';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<
   string,
   string | null
 > = {
-  '/': 'Web Design',
-  '/projects': PROJECTS_TITLE,
-  '/contact': 'Contact',
+  '/': APP_DESCRIPTION,
+  ...PAGE_TUPLES.reduce(
+    (a, [key, title]) => ({ [key]: title }),
+    {},
+  ),
 };
 
 export const useHtmlTitle = () => {
@@ -25,7 +26,7 @@ export const useHtmlTitle = () => {
   const currParams = useCurrParams();
   const { project, name } = currParams;
   const route = TITLE_FROM_PATHNAME_LOOKUP[pathname];
-  const titles = [TITLE_BASE, route].filter(Boolean);
+  const titles = [APP_TITLE, route].filter(Boolean);
   const title = project
     ? `Project${TITLE_KEY_DELIMITER}${capitalize(
         project,

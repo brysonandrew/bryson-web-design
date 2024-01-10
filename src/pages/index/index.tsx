@@ -1,39 +1,46 @@
 import { Suspense, lazy } from 'react';
 import { P48Y } from '@components/space/P48Y';
 import { P24Y } from '@components/space/P24Y';
-import Services from './services';
-const Tech = lazy(() => import('./tech'));
-const Build = lazy(() => import('./build'));
-const Projects = lazy(() => import('./projects'));
-const Contact = lazy(() => import('./contact'));
-const Gallery = lazy(() => import('@components/gallery'));
+
+const ServicesLazy = lazy(() => import('./services'));
+const TechLazy = lazy(() => import('./tech'));
+const BuildLazy = lazy(() => import('./build'));
+const ProjectsLazy = lazy(() => import('./projects'));
+const ContactLazy = lazy(() => import('./contact'));
+const GalleryLazy = lazy(
+  () => import('@components/gallery'),
+);
 
 export const Index = () => {
   return (
     <>
-      <Build />
+      <BuildLazy />
       <P24Y />
       <Suspense fallback={null}>
-        <Services />
+        <ServicesLazy />
       </Suspense>
       <P24Y />
       <P24Y />
       <Suspense fallback={null}>
-        <Tech />
+        <TechLazy />
       </Suspense>
       <P24Y />
       <P24Y />
       <Suspense fallback={null}>
-        <Projects />
-      </Suspense>
-      <P48Y />
-      <Suspense fallback={null}>
-        <Contact />
+        <ProjectsLazy />
       </Suspense>
       <P48Y />
       <Suspense fallback={null}>
-        <Gallery />
+        <ContactLazy />
+      </Suspense>
+      <P48Y />
+      <Suspense fallback={null}>
+        <GalleryLazy />
       </Suspense>
     </>
   );
 };
+
+export { Pricing } from '../pricing';
+export { Projects } from '../projects';
+export { Contact } from '../contact';

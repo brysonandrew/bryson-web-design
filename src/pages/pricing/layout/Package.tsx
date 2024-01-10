@@ -11,13 +11,13 @@ import { motion } from 'framer-motion';
 import { useContact } from '@context/domains/contact';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { PACKAGE_CURSOR_KEY } from '@components/cursor/switch/config';
-import { resolvePackageConfig } from '@pages/services/config/constants';
+import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import {
   TPackageKey,
   TPackageTitle,
-} from '@pages/services/config/types';
+} from '@pages/pricing/config/types';
 import { TickList } from '@components/text/TickList';
-import { CONTACT_ROUTE } from '@main/config/constants';
+import { CONTACT_ROUTE } from '@main/config/constants/app';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPackageTitle;

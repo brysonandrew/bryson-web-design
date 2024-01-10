@@ -1,9 +1,9 @@
 import { titleToKebab } from '@utils/format';
+import { TPageKey, TPageTitle } from '../types';
 
-export const TITLE_BASE = 'Bryson A.';
 export const SECTION_TITLES = {
   build: 'Building websites and apps',
-  services: 'Website Packages', //'What I can help you with',
+  services: "Choose a plan that's right for you", //; 'Website Packages', //'What I can help you with',
   tech: 'Powered by',
   projects: 'Previous projects',
   contact: 'Get in touch',
@@ -13,7 +13,7 @@ export type TSectionTitleKey = keyof typeof SECTION_TITLES;
 export type TSectionTitle =
   (typeof SECTION_TITLES)[TSectionTitleKey];
 
-const SERVICES_TITLE = 'Services';
+const SERVICES_TITLE = 'Pricing';
 const PROJECTS_TITLE = 'Projects';
 const CONTACT_TITLE = 'Contact';
 
@@ -22,7 +22,14 @@ export const PAGE_TITLES = [
   PROJECTS_TITLE,
   CONTACT_TITLE,
 ] as const;
-export type TPageTitle = (typeof PAGE_TITLES)[number];
+type TPageTuple = [TPageKey, TPageTitle];
+export const PAGE_TUPLES = PAGE_TITLES.map(
+  (v) => [titleToKebab(v), v] as TPageTuple,
+) as TPageTuple[];
+export const PAGE_KEYS = PAGE_TUPLES.map(
+  (v) => v[0],
+) as TPageKey[];
+
 export const INTRO_ID = 'intro';
 export const TECH_ID = 'tech';
 export const SERVICES_ID =

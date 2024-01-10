@@ -3,12 +3,9 @@ import { useDarkMode } from '@context/dark-mode';
 import { Helmet } from 'react-helmet-async';
 
 export const Head = () => {
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
   const title = useHtmlTitle();
-
 
   return (
     <Helmet>

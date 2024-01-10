@@ -1,4 +1,8 @@
-import { TTCamelToKebab } from '@t/transformers/format';
+import {
+  TTCamelToKebab,
+  TTTitleToKebab,
+} from '@t/transformers/format';
+import { TTKebabToPascal } from '@t/transformers/format/pascal';
 
 export const capitalize = (word: string | null) =>
   word
@@ -7,20 +11,30 @@ export const capitalize = (word: string | null) =>
         .slice(1)}`
     : '';
 
-export const kebabToTitle = (slug: string): string =>
-  slug.split('-').map(capitalize).join(' ');
-export const kebabToPascal = (slug: string): string =>
-  slug.split('-').map(capitalize).join('');
+export const kebabToTitle = <I extends string>(
+  slug: I,
+): TTKebabToPascal<I> =>
+  slug
+    .split('-')
+    .map(capitalize)
+    .join(' ') as TTKebabToPascal<I>;
+export const kebabToPascal = <I extends string>(
+  slug: I,
+): TTKebabToPascal<I> =>
+  slug
+    .split('-')
+    .map(capitalize)
+    .join('') as TTKebabToPascal<I>;
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
 export const titleToKebab = <I extends string>(
   title: I,
-): TTCamelToKebab<I> =>
+): TTTitleToKebab<I> =>
   title
     .split(' ')
     .map((v) => v.toLowerCase())
-    .join('-') as TTCamelToKebab<I>;
+    .join('-') as TTTitleToKebab<I>;
 
 export const nToMoney = (n: number) =>
   `$${n.toLocaleString()}`;

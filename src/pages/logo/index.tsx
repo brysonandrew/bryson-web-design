@@ -1,5 +1,5 @@
 import { Laptop } from './Laptop';
-import { Shell } from '@main/Shell';
+import { Shell } from '@components/shell/Shell';
 import { P8 } from '@components/space/P8';
 import { COLOR_VARIABLES_LOOKUP } from '@app/colors';
 

@@ -6,7 +6,7 @@ import { ThinLine } from '@components/line';
 import clsx, { ClassValue } from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { TPageTitle } from '@main/config/constants';
+import { TPageTitle } from '@main/config/constants/app';
 import { DURATION } from '@constants/animation';
 import { ThickLine } from '@components/line/ThickLine';
 

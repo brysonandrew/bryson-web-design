@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item as _Item } from './Item';
-import { HOME_ROUTE, PAGE_TITLES } from '@main/config/constants';
+import { HOME_ROUTE, PAGE_TITLES } from '@main/config/constants/app';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 import { ThickLine } from '@components/line/ThickLine';
 import { I } from '@components/Icon';
