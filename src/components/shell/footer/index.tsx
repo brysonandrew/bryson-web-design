@@ -1,6 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import styled from '@emotion/styled';
-import { SCROLL_DECORATION_PRESENCE } from '@constants/animation';
+import {
+  PRESENCE_OPACITY,
+  TRANSITION_DARK_MODE,
+} from '@constants/animation';
 import { useScroll as useScrollContext } from '@context/scroll';
 import { useDarkMode } from '@context/dark-mode';
 import { useViewport as useViewportContext } from '@context/viewport';
@@ -21,12 +24,13 @@ export const Footer = () => {
         transform: `translateZ(${width})`,
       }}
     >
-      <AnimatePresence initial={false} mode='sync'>
+      <AnimatePresence initial={false} mode='wait'>
         {isScroll && (
           <FadeUp
             key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
             style={{ height: '24vh' }}
-            {...SCROLL_DECORATION_PRESENCE}
+            transition={TRANSITION_DARK_MODE}
+            {...PRESENCE_OPACITY}
           />
         )}
       </AnimatePresence>

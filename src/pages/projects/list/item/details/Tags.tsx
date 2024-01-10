@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { TItem } from '@t/projects';
+import { TItem } from '@pages/projects/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
 import { Brighten } from '@components/filter-animate/Brighten';
@@ -18,7 +18,7 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           const content = (
             <Brighten>
               <span
-                className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
+                className='text-gray bg-accent px-2 py-1 rounded-sm whitespace-nowrap'
               >
                 {title}
               </span>

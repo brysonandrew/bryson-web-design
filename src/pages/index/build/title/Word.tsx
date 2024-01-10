@@ -24,7 +24,7 @@ export const Word: FC<TProps> = ({ index, children }) => {
         <Stagger classValue='font-thin' {...charsProps} />
       ) : (
         <Stagger
-          classValue='text-teal font-black'
+          classValue='text-secondary font-black'
           {...charsProps}
         />
       )}

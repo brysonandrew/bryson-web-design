@@ -1,4 +1,4 @@
-import type { TItem } from '@t/projects';
+import type { TItem } from '@pages/projects/config/types';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Margin } from '../layout/Margin';

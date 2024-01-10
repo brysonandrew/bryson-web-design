@@ -13,16 +13,13 @@ type TProps = TDivMotionProps;
 export const Settings: FC<TProps> = (props) => {
   return (
     <Root
-      className={clsx('absolute bottom-6 right-6 row z-10')}
-      {...props}
-    > 
-      <DarkMode />  
-      {!isMobile && (
-        <>
-          <motion.div className='px-1' />
-          <Sound />
-        </>
+      className={clsx(
+        'absolute bottom-6 right-6 row gap-1 z-10 backdrop-blur-sm rounded-full overflow-hidden p-1 border border-gray-02',
       )}
+      {...props}
+    >
+      <DarkMode />
+      {!isMobile && <Sound />}
     </Root>
   );
 };

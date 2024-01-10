@@ -1,4 +1,4 @@
-import { TextLines } from '../../../../components/skeleton/TextLines';
+import { TextLines } from '../../skeleton/TextLines';
 import { View } from './wrappers/View';
 import { Headline } from './headline';
 import { Header } from './header';

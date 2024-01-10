@@ -1,4 +1,4 @@
-import { TColorKey } from '@t/css';
+import { TColorKey } from '../theme/colors/types';
 import type { Rule } from 'unocss';
 import type { TTheme } from '../theme';
 
@@ -21,14 +21,14 @@ export const RULES = resolveTextStroke(
   [
     'black-01',
     'gray',
-    'teal',
-    'teal-01',
-    'teal-02',
-    'teal-04',
-    'teal-06',
-    'baby-blue',
-    'baby-blue-01',
-    'baby-blue-02',
+    'secondary',
+    'secondary-01',
+    'secondary-02',
+    'secondary-04',
+    'secondary-06',
+    'accent',
+    'accent-01',
+    'accent-02',
   ],
   3,
 );

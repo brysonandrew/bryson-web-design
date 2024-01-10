@@ -1,6 +1,6 @@
 import { DragIcon } from './DragIcon';
 import { MetalDark } from '@components/metal/MetalDark';
-import { useDrag } from '@hooks/gallery/useDrag';
+import { useDrag } from '@components/gallery/hooks/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -9,7 +9,7 @@ import { Items } from './items';
 import { PADDING_X } from './config';
 import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
-import { useKeys } from '@hooks/gallery/useKeys';
+import { useKeys } from '@components/gallery/hooks/useKeys';
 
 const Root = styled.div``;
 const Dragger = styled(motion.div)``;
@@ -32,7 +32,7 @@ export const Core: FC<TProps> = (props) => {
       <MetalDark />
       <Dragger
         className={clsx('left-0 bottom-0 rounded-t-lg overflow-hidden', [
-          isDesktop ? 'relative h-auto row dark:glow-baby-blue glow-light-lg' : 'absolute h-screen row-end',
+          isDesktop ? 'relative h-auto row dark:glow-accent glow-light-lg' : 'absolute h-screen row-end',
         ])}
         style={{
           x: motionX,

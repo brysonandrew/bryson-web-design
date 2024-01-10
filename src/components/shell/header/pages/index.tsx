@@ -1,16 +1,18 @@
 import { Fragment } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item as _Item } from './Item';
-import { PAGE_TITLES } from '@constants/copy';
+import {
+  PAGE_NAV_VALUES,
+  PAGE_RECORD,
+  PAGE_VALUES,
+} from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
-import { HOME_ROUTE } from '@constants/routes';
 import { ThickLine } from '@components/line/ThickLine';
 import { I } from '@components/Icon';
 import { Link } from 'react-router-dom';
-import { DURATION } from '@constants/animation';
 
 const toPathname = (v: string) => `/${v.toLowerCase()}`;
 
@@ -24,12 +26,12 @@ export const Pages = () => {
   const handleClick = () => {
     coinDropSound.play();
   };
-  const isHome = pathname === HOME_ROUTE;
+  const isHome = pathname === PAGE_RECORD.index.path;
   return (
     <Root className='relative'>
       <Link
         className='absolute -top-1.5 right-full h-8 w-8 mr-2'
-        to={HOME_ROUTE}
+        to={PAGE_RECORD.index.path}
       >
         <I
           classValue={clsx(
@@ -47,32 +49,33 @@ export const Pages = () => {
       </Link>
 
       <List className='relative column-end h-full pt-0 pr-1 md:row md:pr-0'>
-        {PAGE_TITLES.map((item, index) => {
-          const to = toPathname(item);
-          const isActive = pathname === to;
+        {PAGE_NAV_VALUES.map(
+          ({ key, title, path }, index) => {
+            const isActive = pathname === path;
 
-          return (
-            <Fragment key={item}>
-              {index !== 0 && (
-                <Item className='p-2 md:p-0.5' />
-              )}
-              <Item
-                className={clsx('relative px-1', [
-                  isActive ? 'z-10' : 'z-0',
-                ])}
-                whileHover={isActive ? 'active' : 'hover'}
-              >
-                <_Item
-                  to={to}
-                  isActive={isActive}
-                  onClick={handleClick}
+            return (
+              <Fragment key={key}>
+                {index !== 0 && (
+                  <Item className='p-2 md:p-0.5' />
+                )}
+                <Item
+                  className={clsx('relative px-1', [
+                    isActive ? 'z-10' : 'z-0',
+                  ])}
+                  whileHover={isActive ? 'active' : 'hover'}
                 >
-                  {item}
-                </_Item>
-              </Item>
-            </Fragment>
-          );
-        })}
+                  <_Item
+                    to={path}
+                    isActive={isActive}
+                    onClick={handleClick}
+                  >
+                    {title}
+                  </_Item>
+                </Item>
+              </Fragment>
+            );
+          },
+        )}
       </List>
     </Root>
   );

@@ -1,8 +1,7 @@
-import { TSlugProps } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
-import { PROJECT_ITEMS_RECORD } from '@constants/projects';
+import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 import { Time } from './content/Time';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
@@ -18,6 +17,7 @@ import { NOOP } from '@constants/functions';
 import { useCursor } from '@context/cursor';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useToFirst } from '@hooks/media/nav/useToFirst';
+import { TSlugProps } from '@pages/projects/config/types';
 
 const Root = styled(motion.li)``;
 

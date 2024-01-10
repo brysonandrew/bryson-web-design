@@ -17,9 +17,11 @@ export default defineConfig({
   },
   plugins: [
     compileTsServiceWorker(),
-    tsConfigPaths(),
-    react(),
     unoCss({ inspector: true }),
+    tsConfigPaths({
+      loose: true,
+    }),
+    react(),
   ],
   server: {
     port: 3000,

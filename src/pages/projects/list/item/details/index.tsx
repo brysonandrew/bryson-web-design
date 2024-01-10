@@ -1,5 +1,5 @@
 import { Paragraphs } from '@pages/projects/list/item/details/Paragraphs';
-import { TItem } from '@t/projects';
+import { TItem } from '@pages/projects/config/types';
 import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';

@@ -1,5 +1,3 @@
-import styled from '@emotion/styled';
-import { TDivMotionProps } from '@t/dom';
 import {
   TChildrenPartialProps,
   TClassValueProps,

@@ -49,7 +49,7 @@ export const Box: FC<TProps> = ({
     >
       <MetalGlow
         classValue={borderRadiusClass}
-        color='baby-blue'
+        color='accent'
         drop={1}
       />
       {isFocused && (

@@ -1,4 +1,4 @@
-import { Item } from '@components/buttons/focus/Item';
+import { Item } from '@components/interactive/focus/Item';
 import { Circle } from '@components/decoration/Circle';
 import { useCursor } from '@context/cursor';
 import { FOUNDATION } from '../config';

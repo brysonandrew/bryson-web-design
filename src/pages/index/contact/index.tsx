@@ -1,15 +1,15 @@
 import { Fake3D } from '@components/fake-3d';
 import { Main } from '@pages/contact/Main';
-import {
-  CONTACT_ID,
-  SECTION_TITLES,
-} from '@constants/copy';
+import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
+import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 
 const Contact = () => {
   return (
-    <Section id={CONTACT_ID} title={SECTION_TITLES.contact}>
+    <Section
+      title={SECTION_RECORD[PAGE_RECORD.contact.key]}
+    >
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>

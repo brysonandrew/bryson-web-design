@@ -1,6 +1,12 @@
+
+
 html {
   scroll-behavior: smooth;
   font-size: 100%;
+}
+
+html.dark {
+  background-color: black;
 }
 
 html,
@@ -28,11 +34,6 @@ a {
 strong {
   font-family: inherit;
   font-weight: 800;
-}
-
-a,
-button {
-  cursor: pointer;
 }
 
 a {

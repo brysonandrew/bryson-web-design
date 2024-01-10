@@ -42,32 +42,32 @@ export const Range = styled.input`
     height: 16px;
     width: 16px;
     border-radius: 3px;
-    background-color: var(--baby-blue);
+    background-color: var(--accent);
     cursor: pointer;
-    box-shadow: 1px 1px 1px var(--teal),
-      0px 0px 1px var(--baby-blue); /* Add cool effects to your sliders! */
+    box-shadow: 1px 1px 1px var(--secondary),
+      0px 0px 1px var(--accent); /* Add cool effects to your sliders! */
   }
 
   /* All the same stuff for Firefox */
   &::-moz-range-thumb {
-    box-shadow: 1px 1px 1px var(--teal),
-      0px 0px 1px var(--baby-blue);
+    box-shadow: 1px 1px 1px var(--secondary),
+      0px 0px 1px var(--accent);
     border: 1px solid var(--gray-1);
     height: 16px;
     width: 16px;
     border-radius: 3px;
-    background-color: var(--baby-blue);
+    background-color: var(--accent);
     cursor: pointer;
   }
 
   /* All the same stuff for IE */
   &::-ms-thumb {
-    box-shadow: 0px 0px 1px var(--baby-blue);
+    box-shadow: 0px 0px 1px var(--accent);
     border: 1px solid var(--gray-1);
     height: 16px;
     width: 16px;
     border-radius: 3px;
-    background-color: var(--baby-blue);
+    background-color: var(--accent);
     cursor: pointer;
   }
 
@@ -75,7 +75,7 @@ export const Range = styled.input`
     width: 100%;
     height: 16px;
     cursor: pointer;
-    box-shadow: 0px 0px 1px var(--baby-blue);
+    box-shadow: 0px 0px 1px var(--accent);
     background-color: var(--black-2);
     border-radius: 1.3px;
     border: 0.2px solid var(--black-1);
@@ -89,7 +89,7 @@ export const Range = styled.input`
     width: 100%;
     height: 16px;
     cursor: pointer;
-    box-shadow: 0px 0px 1px var(--baby-blue);
+    box-shadow: 0px 0px 1px var(--accent);
     background-color: var(--black-2);
     border-radius: 1.3px;
     border: 0.2px solid var(--black-1);
@@ -108,7 +108,7 @@ export const Range = styled.input`
     background-color: var(--black-2);
     border: 0.2px solid var(--black-1);
     border-radius: 2.6px;
-    box-shadow: 0px 0px 1px var(--baby-blue);
+    box-shadow: 0px 0px 1px var(--accent);
   }
   &:focus::-ms-fill-lower {
     background: var(--black-2);
@@ -117,7 +117,7 @@ export const Range = styled.input`
     background-color: var(--black-2);
     border: 0.2px solid var(--black-1);
     border-radius: 2.6px;
-    box-shadow: 0px 0px 1px var(--baby-blue);
+    box-shadow: 0px 0px 1px var(--accent);
   }
   &:focus::-ms-fill-upper {
     background: var(--black-2);

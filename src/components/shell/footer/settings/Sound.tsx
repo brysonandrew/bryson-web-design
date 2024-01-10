@@ -4,7 +4,7 @@ import { ICON_CLASS_VALUE_PROPS } from '../config';
 import { VolumeOn } from '@components/icons/sound/VolumeOn';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { AnimatePresence } from 'framer-motion';
-import { Button } from '@components/buttons/circle/Button';
+import { Button } from '@components/interactive/circle/Button';
 
 export const Sound = () => {
   const { isSound, toggleSound } = useSoundContext();

@@ -1,7 +1,7 @@
 import {
   NAME_KEY,
   PROJECT_KEY,
-} from '@pages/projects/config';
+} from '@pages/projects/config/constants';
 import { useSearchParams } from 'react-router-dom';
 
 export const useCurrParams = () => {

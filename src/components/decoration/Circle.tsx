@@ -19,7 +19,7 @@ export const Circle: FC<TProps> = ({
     <motion.div
       className={clsx(
         'w-5 h-5 center rounded-full bg-main text-main text-xs border-gray border',
-        isActive && 'glow-teal',
+        isActive && 'glow-secondary',
         classValue,
       )}
       {...props}
@@ -28,19 +28,3 @@ export const Circle: FC<TProps> = ({
     </motion.div>
   );
 };
-  {/* <motion.svg
-            className='relative'
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{
-              scale: [0, 10, 10],
-              opacity: [0, 1, 1],
-            }}
-            transition={{ duration: 2 }}
-            viewBox='0 0 100 100'
-            width='24'
-            height='24'
-            fill='red'
-            style={{ zIndex: 9999 }}
-          >
-            <circle r='50' cx='25' cy='25' />
-          </motion.svg> */}

@@ -1,18 +1,12 @@
 import { Fake3D } from '@components/fake-3d';
-import { Main } from '@pages/services/Main';
-import {
-  SECTION_TITLES,
-  SERVICES_ID,
-} from '@constants/copy';
+import { Main } from '@pages/pricing/Main';
+import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 
-const Services = () => {
+const Pricing = () => {
   return (
-    <Section
-      id={SERVICES_ID}
-      title={SECTION_TITLES.services}
-    >
+    <Section title={SECTION_RECORD.pricing}>
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>
@@ -20,4 +14,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Pricing;

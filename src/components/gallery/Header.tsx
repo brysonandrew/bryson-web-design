@@ -8,7 +8,7 @@ import { useOffSound } from '@hooks/sounds/useOffSound';
 import { NOOP } from '@constants/functions';
 import { isDesktop } from 'react-device-detect';
 import { Network } from '@components/network';
-import { TSlugProps } from '@pages/projects/config';
+import { TSlugProps } from '@pages/projects/config/types';
 
 const Root = styled.header``;
 

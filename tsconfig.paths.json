@@ -2,20 +2,21 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@pkg": ["package.json"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
+      "@context/*": ["src/context/*"],
+      "@css/*": ["src/css/*"],
       "@hooks/*": ["src/hooks/*"],
       "@icons/*": ["src/icons/*"],
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
-      "@ops/*": ["src/ops/*"],
       "@pages/*": ["src/pages/*"],
-      "@context/*": ["src/context/*"],
+      "@t/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@app/*": ["config/app/*"],
       "@uno/*": ["config/uno/*"],
-      "@css/*": ["src/css/*"],
-      "@t/*": ["src/types/*"]
+      "@ops/*": ["ops/*"]
     }
   }
 }

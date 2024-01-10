@@ -9,7 +9,7 @@ type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => {
   return (
     <Root className='row-start'>
-      <div className='relative flex flex-col pb-2 md:flex-row'>
+      <div className='relative column pb-2 md:row'>
         <h1 className='relative text-g-tb text-md uppercase'>
           Bryson A.
         </h1>
@@ -20,7 +20,6 @@ export const Title: FC<TProps> = () => {
           </h2>
           <ThickLine
             classValue='top-full w-full h-2 z-50'
-            layoutId='WEB_DESIGN_UNDERLINE'
             transition={{ duration: DURATION * 2 }}
           />
         </div>

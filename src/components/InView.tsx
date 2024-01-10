@@ -4,7 +4,6 @@ import {
   IntersectionOptions,
   useInView,
 } from 'react-intersection-observer';
-import { SLOW_MOTION_CONFIG } from '@constants/animation';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';

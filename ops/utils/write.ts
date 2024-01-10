@@ -7,12 +7,12 @@ import {
   PUBLIC_DIR,
   LOOKUP_PATH,
 } from '../config';
-import { TProjectKey } from '@constants/projects';
 import {
   TFilePathKey,
   TMediaRecord,
 } from 'ops/types/media';
 import { TScreensRecord } from 'ops/types';
+import { TProjectKey } from '@pages/projects/config/types';
 
 export { resolveFsInfo } from './resolveFsInfo';
 export { resolveMediaRecord } from './resolveMediaRecord';

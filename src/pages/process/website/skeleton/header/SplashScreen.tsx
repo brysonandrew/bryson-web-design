@@ -1,4 +1,4 @@
-import { Focus } from '@components/buttons/focus';
+import { Focus } from '@components/interactive/focus';
 import { I } from '@components/Icon';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { useServicesC } from '@context/domains/services/useServicesC';

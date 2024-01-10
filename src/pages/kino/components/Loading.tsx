@@ -18,7 +18,7 @@ const Inner = styled.div`
   position: relative;
   border-radius: 50%;
   border: 2px solid var(--black-3);
-  border-top: 2px solid var(--teal-bright);
+  border-top: 2px solid var(--highlight);
   z-index: 1000;
   width: 18px;
   height: 18px;

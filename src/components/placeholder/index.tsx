@@ -45,7 +45,7 @@ export const Placeholder: FC<TProps> = ({
             width: '300%',
             backgroundImage: `linear-gradient(to right, ${resolveGradientStops(
               4,
-              ['teal-bright-04', 'transparent'],
+              ['highlight-04', 'transparent'],
             )})`,
           }}
           {...{

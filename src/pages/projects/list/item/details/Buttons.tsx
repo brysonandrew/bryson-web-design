@@ -5,9 +5,9 @@ import { P1 } from '@components/space/P1';
 import { P3 } from '@components/space/P3';
 import { Gallery } from '@components/icons/gallery/Gallery';
 import { OpenInNew } from '@components/icons/links/OpenInNew';
-import { Circle } from '@components/buttons/circle';
-import { Anchor } from '@components/buttons/circle/Anchor';
-import { TItem } from '@t/projects';
+import { Circle } from '@components/interactive/circle';
+import { Anchor } from '@components/interactive/circle/Anchor';
+import { TItem } from '@pages/projects/config/types';
 import { motion } from 'framer-motion';
 import { useTo } from '@hooks/media/nav/useTo';
 

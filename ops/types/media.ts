@@ -1,7 +1,9 @@
 import { EXTS } from '@constants/media';
-import { TProjectKey } from '@constants/projects';
 import { TSource } from '../../src/types/dom';
 
+import type { Metadata, OutputInfo } from 'sharp';
+import { TProjectKey } from '@pages/projects/config/types';
+export type TDimensions = { width: number; height: number };
 // export type TDimensions = { width: number; height: number };
 
 // export type TFilePathKey = string;
@@ -49,8 +51,6 @@ export type TMediaDetails = {
 
 // ---- NEW
 
-import type { Metadata, OutputInfo } from 'sharp';
-export type TDimensions = { width: number; height: number };
 
 export type TFilePathKey = string;
 export type TFilePathBaseKey = string;

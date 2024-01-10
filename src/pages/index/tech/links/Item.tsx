@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
-import type { TItem } from '@constants/tech';
 import { Glow } from '@components/filter-animate/Glow';
 import { Box } from '@components/filter-animate/Box';
 import { useDarkMode } from '@context/dark-mode';
@@ -12,6 +11,7 @@ import { P1_5 } from '@components/space/P1_5';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
 import clsx from 'clsx';
+import { TItem } from '../config/types';
 
 const Root = styled(motion.div)``;
 const Anchor = styled.a``;
@@ -49,13 +49,13 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       <MetalGlow
         classValue={borderRadiusClass}
         drop={16}
-        color={isDarkMode ? 'baby-blue' : 'teal'}
+        color={isDarkMode ? 'accent' : 'secondary'}
         value={glow}
       />
       <MetalGlow
         classValue={borderRadiusClass}
         drop={12}
-        color={isDarkMode ? 'teal-bright' : 'teal'}
+        color={isDarkMode ? 'highlight' : 'secondary'}
       />
       <Box classValue={borderRadiusClass}>
         <Glow

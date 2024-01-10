@@ -7,7 +7,7 @@ import { Shell } from './layout/Shell';
 import { P3 } from '@components/space/P3';
 import { P1 } from '@components/space/P1';
 import { P6 } from '@components/space/P6';
-import { Invert } from '../../components/Invert';
+import { Invert } from './Invert';
 import { Variables } from '@css/Variables';
 
 export const Cv = () => {
@@ -26,7 +26,7 @@ export const Cv = () => {
                 <Description /> 
               </Margin>
               <P3 />
-              <hr className='bg-gray w-full h-px' />
+              <hr className='bg-gray-02 w-full h-px' />
               <P1 />
               <Experience />
             </Page>

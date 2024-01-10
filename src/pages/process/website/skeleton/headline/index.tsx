@@ -1,7 +1,7 @@
 import { I } from '@components/Icon';
 import { IMAGE_ICON } from '@constants/icons';
 import { FC, PropsWithChildren } from 'react';
-import { TextLines } from '../../../../../components/skeleton/TextLines';
+import { TextLines } from '../../../skeleton/TextLines';
 import { Shell } from './Shell';
 
 export const Headline: FC<PropsWithChildren> = ({

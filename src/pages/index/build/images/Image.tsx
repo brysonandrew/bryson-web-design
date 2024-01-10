@@ -16,7 +16,7 @@ import styled from '@emotion/styled';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { isDesktop } from 'react-device-detect';
 import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
-import { resolveMotionConfig } from '../../../../hooks/media/resolveMotionConfig';
+import { resolveMotionConfig } from '@hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,
   useCircle,
@@ -84,7 +84,7 @@ export const Image: FC<TProps> = (props) => {
         initial: { opacity: 0 },
         animate: resolveMotionConfig(depthConfig),
         exit: { opacity: 0 },
-      }} 
+      }}
       {...resolveParentAnimateConfig({ isHover })}
       {...(isDesktop ? handlers : {})}
     >

@@ -1,9 +1,12 @@
+import {
+  EASE,
+  DURATION as DURATION_DARK_MODE_MS,
+} from '@hooks/style/useDarkMode';
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
 import { Transition } from 'framer-motion';
-// import { isMobile } from 'react-device-detect';
 
-const isDisabled = false;// isMobile;
+const isDisabled = false; // isMobile;
 
 export const BASIC_VARIANT_KEYS = {
   initial: 'initial',
@@ -13,7 +16,14 @@ export const BASIC_VARIANT_KEYS = {
 
 export const DURATION = isDisabled ? 0 : 0.2;
 
-export const DURATION_DARK_MODE = isDisabled ? 0 : 1;
+export const DURATION_DARK_MODE = isDisabled
+  ? 0
+  : DURATION_DARK_MODE_MS / 1000;
+
+export const TRANSITION_DARK_MODE = {
+  ease: EASE,
+  duration: DURATION_DARK_MODE,
+};
 
 export const TRANSITION = {
   ease: 'linear',
@@ -27,7 +37,7 @@ export const MOTION_CONFIG = {
 export const DURATION_MID = isDisabled ? 0 : 0.5;
 
 export const MID_MOTION_TRANSITION: Transition = {
-  type: "inertia",
+  type: 'inertia',
   ease: 'linear',
   duration: DURATION_MID,
 };
@@ -39,7 +49,7 @@ export const MID_MOTION_CONFIG = {
 export const DURATION_SLOW = isDisabled ? 0 : 1;
 
 export const SLOW_MOTION_TRANSITION: Transition = {
-  type: "inertia",
+  type: 'inertia',
   ease: 'linear',
   duration: DURATION_SLOW,
 };
@@ -209,7 +219,7 @@ export const SCROLL_DECORATION_PRESENCE = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition: { ease: 'easeOut', duration: DURATION_MID },
+    transition: TRANSITION_DARK_MODE,
   },
   exit: { opacity: 0 },
 };

@@ -1,30 +1,46 @@
-import styled from '@emotion/styled';
+import { Filters } from '../filters';
 import { type FC } from 'react';
-import type { TChildren } from '../../types';
-import { Footer } from './footer';
-import { Header } from './header';
-import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
-import { useCurrProject } from '@hooks/params/useCurrProject';
-import { P32Y } from '@components/space/P32Y';
+import { Variables } from '@css/Variables';
+import { motion } from 'framer-motion';
+import { PRESENCE_OPACITY } from '@constants/animation';
+import { ClipPaths } from '@components/ClipPaths';
+import { Cursor } from '@components/cursor';
+import { isDesktop } from 'react-device-detect';
+import { Providers } from '@context/Providers';
+import { Head } from './Head';
 import { P24Y } from '@components/space/P24Y';
+import { useCurrProject } from '@hooks/params/useCurrProject';
+import { useRedirect } from '@hooks/router/useRedirect';
+import Footer from './footer';
+import { Header } from './header';
+import { Outlet } from 'react-router';
 
-const Root = styled.div``;
-const Content = styled.div``;
-
-type TProps = {
-  children: TChildren;
-};
-export const Shell: FC<TProps> = ({ children }) => {
-  useProjectsRedirect();
+export const Shell: FC = () => {
+  useRedirect();
   const currProject = useCurrProject();
   const isProject = Boolean(currProject);
 
   return (
-    <Root className='relative overflow-x-hidden z-10'>
-      {!isProject && <Header />}
-      <P24Y />
-      <Content className='relative z-0'>{children}</Content>
-      {!isProject && <Footer />}
-    </Root>
+    <Providers>
+      <>
+        <Head />
+        <div>
+          <Variables />
+          <Filters />
+          <ClipPaths />
+          <motion.div {...PRESENCE_OPACITY}>
+            <div className='relative overflow-x-hidden z-10'>
+              {!isProject && <Header />}
+              <P24Y />
+              <div className='relative z-0'>
+                <Outlet />
+              </div>
+              {!isProject && <Footer />}
+            </div>
+          </motion.div>
+        </div>
+        {isDesktop && <Cursor />}
+      </>
+    </Providers>
   );
 };

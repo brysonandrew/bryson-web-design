@@ -1,8 +1,7 @@
-import { PRESENCE_Y_SHIFT } from '@constants/animation';
-import { SECTION_TITLES } from '@constants/copy';
+import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShiftUp } from './ShiftUp';
-export const WORDS = SECTION_TITLES.build.split(/\s/);
+export const WORDS = SECTION_RECORD.build.split(/\s/);
 
 export const Title = () => {
   return (
@@ -21,7 +20,7 @@ export const Title = () => {
             </ShiftUp>
           ) : (
             <ShiftUp
-              classValue='text-teal font-black'
+              classValue='text-secondary font-black'
               staggerIndex={index}
             >
               {word}

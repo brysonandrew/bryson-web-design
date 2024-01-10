@@ -1,5 +1,5 @@
-import { PROJECT_ITEMS_RECORD } from '@constants/projects';
-import { TSlugProps } from '@pages/projects/config';
+import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
+import { TSlugProps } from '@pages/projects/config/types';
 import { FC } from 'react';
 
 type TProps = TSlugProps;

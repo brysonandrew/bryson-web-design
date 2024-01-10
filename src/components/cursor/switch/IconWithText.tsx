@@ -21,7 +21,7 @@ export const IconWithText: FC<TProps> = ({
     <>
       <P_5 />
       <motion.div className='relative text-main row gap-1.5 z-50'>
-        {iconStr && <I classValue="text-gray-6" icon={iconStr} />}
+        {iconStr && <I classValue="text-current" icon={iconStr} />}
         {Icon && <Icon classValue='w-4 h-4' />}
         <motion.p
           initial={{ opacity: 0 }}

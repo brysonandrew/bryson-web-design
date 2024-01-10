@@ -57,7 +57,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     >
       <MetalGlow
         classValue={borderRadiusClass}
-        color={isDarkMode ? 'baby-blue' : 'teal'}
+        color={isDarkMode ? 'accent' : 'secondary'}
         drop={1}
       />
       <Input

@@ -1,4 +1,4 @@
-import { TextLines } from '../../../../components/skeleton/TextLines';
+import { TextLines } from '../../skeleton/TextLines';
 import { FC, PropsWithChildren } from 'react';
 
 export const Footer: FC<PropsWithChildren> = ({

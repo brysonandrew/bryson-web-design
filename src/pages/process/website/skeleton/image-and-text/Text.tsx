@@ -1,4 +1,4 @@
-import { TextLines } from '@components/skeleton/TextLines';
+import { TextLines } from '@pages/process/skeleton/TextLines';
 
 export const Text = () => {
   return (

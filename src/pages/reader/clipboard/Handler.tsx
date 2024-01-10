@@ -40,7 +40,7 @@
 //                   }
 //                 />
 //               </header>
-//               <h4 className='text-teal text-4xl normal-case'>"{copying.value}"</h4>
+//               <h4 className='text-secondary text-4xl normal-case'>"{copying.value}"</h4>
 //             </div>
 //           )}
 //         </Root>

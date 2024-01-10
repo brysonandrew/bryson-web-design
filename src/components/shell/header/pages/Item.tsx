@@ -2,19 +2,12 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
-import { ThinLine } from '@components/line';
-import clsx, { ClassValue } from 'clsx';
+import clsx from 'clsx';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { TPageTitle } from '@constants/copy';
 import { DURATION } from '@constants/animation';
 import { ThickLine } from '@components/line/ThickLine';
-
-const resolveLineClassProps = (
-  classValue?: ClassValue,
-) => ({
-  classValue: clsx('absolute left-0', classValue),
-});
+import { TPageTitle } from '@app/routes/types';
 
 const Link = styled(motion(_Link))``;
 
