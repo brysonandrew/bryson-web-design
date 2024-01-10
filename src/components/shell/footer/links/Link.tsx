@@ -29,7 +29,7 @@ export const Link: FC<TProps> = ({ href, title, Icon }) => {
       {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
     >
-      <MetalGlow isDarkest classValue='glow-baby-blue' />
+      <MetalGlow isDarkest classValue='glow-accent' />
       <div className='relative column-start w-5'>
         <Icon classValue='text-color' />
       </div>

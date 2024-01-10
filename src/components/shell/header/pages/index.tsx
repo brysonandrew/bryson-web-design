@@ -8,7 +8,7 @@ import {
   PAGE_NAV_VALUES,
   PAGE_RECORD,
   PAGE_VALUES,
-} from '@app/routes/app';
+} from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
 import { ThickLine } from '@components/line/ThickLine';
 import { I } from '@components/Icon';

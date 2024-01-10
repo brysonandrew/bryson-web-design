@@ -18,7 +18,7 @@ export const TickList: FC<TProps> = ({ items }) => {
               'w-5 h-5 mt-1 shrink-0 text-current',
             )}
           />
-          <p className='font-sans text-xl text-inherit'>
+          <p className='font-sans text-xl text-main'>
             {content}
           </p>
         </li>

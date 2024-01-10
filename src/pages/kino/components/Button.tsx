@@ -18,7 +18,7 @@ export const Button: FC<TProps> = ({
   return (
     <button
       className={clsx(
-        'relative uppercase text-xl px-3 py-1 bg-black-1 text-teal-bright disabled:(text-gray cursor-not-allowed)',
+        'relative uppercase text-xl px-3 py-1 bg-black-1 text-highlight disabled:(text-gray cursor-not-allowed)',
         classValue,
       )}
       {...props}
@@ -27,7 +27,7 @@ export const Button: FC<TProps> = ({
         {isLoading && (
           <motion.div
             key='LOADING'
-            className='absolute inset-0 bg-teal-bright'
+            className='absolute inset-0 bg-highlight'
             {...PRESENCE_OPACITY}
           />
         )}

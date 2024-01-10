@@ -1,12 +1,11 @@
 import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import {
-  DURATION_DARK_MODE,
   PRESENCE_OPACITY,
+  TRANSITION_DARK_MODE,
 } from '@constants/animation';
 import { useDarkMode } from '@context/dark-mode';
 import { useViewport as useViewportContext } from '@context/viewport';
-import { EASE } from '@hooks/style/useDarkMode';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const Fade = () => {
@@ -19,10 +18,7 @@ export const Fade = () => {
         <motion.div
           key={darkKey}
           className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full opacity-80 z-0'
-          transition={{
-            duration: DURATION_DARK_MODE,
-            ease: EASE,
-          }}
+          transition={TRANSITION_DARK_MODE}
           {...PRESENCE_OPACITY}
         >
           <FadeUp

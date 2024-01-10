@@ -67,8 +67,8 @@ export const Button: FC<TProps> = ({
         {isActive && (
           <Background
             style={{
-              boxShadow: resolveShadow(4, 'teal-bright'),
-              filter: resolveDropShadow(6, 'teal'),
+              boxShadow: resolveShadow(4, 'highlight'),
+              filter: resolveDropShadow(6, 'secondary'),
               width: 40, height: 40
             }}
             layoutId='GALLERY_BUTTON_FILL'
@@ -100,10 +100,10 @@ export const Button: FC<TProps> = ({
               zIndex: 9999,
               cursor: 'default',
               color: isDarkMode
-                ? COLOR_LOOKUP['teal-bright']
+                ? COLOR_LOOKUP['highlight']
                 : COLOR_LOOKUP['gray'],
               textShadow: isDarkMode
-                ? resolveShadow(2, 'teal')
+                ? resolveShadow(2, 'secondary')
                 : resolveShadow(0),
             },
             hover: {
@@ -122,10 +122,10 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLOR_LOOKUP['teal-bright']
+                ? COLOR_LOOKUP['highlight']
                 : COLOR_LOOKUP['gray'],
               textShadow: isDarkMode
-                ? resolveShadow(4, 'teal-bright')
+                ? resolveShadow(4, 'highlight')
                 : resolveShadow(0),
             },
           }}

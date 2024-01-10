@@ -49,13 +49,13 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       <MetalGlow
         classValue={borderRadiusClass}
         drop={16}
-        color={isDarkMode ? 'baby-blue' : 'teal'}
+        color={isDarkMode ? 'accent' : 'secondary'}
         value={glow}
       />
       <MetalGlow
         classValue={borderRadiusClass}
         drop={12}
-        color={isDarkMode ? 'teal-bright' : 'teal'}
+        color={isDarkMode ? 'highlight' : 'secondary'}
       />
       <Box classValue={borderRadiusClass}>
         <Glow

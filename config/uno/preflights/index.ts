@@ -1,4 +1,19 @@
-import { TTheme } from '@uno/theme';
+import { RESET } from './reset';
+import { resolveScrollbar } from './resolveScrollbar';
+import { resolveInput } from './resolveInput';
+import { TTheme } from '../../uno/theme';
 import type { Preflight } from 'unocss';
-import { CSS } from './css';
-export const PRE_FLIGHTS: Preflight<TTheme>[] = [CSS];
+
+export const PRE_FLIGHTS: Preflight<TTheme>[] = [
+  {
+    layer: 'reset',
+    getCSS: () => RESET,
+  },
+  {
+    getCSS: resolveInput,
+  },
+  {
+    getCSS: resolveScrollbar,
+  },
+  
+];

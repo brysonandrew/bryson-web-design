@@ -17,7 +17,7 @@ import {
   TPackageTitle,
 } from '@pages/pricing/config/types';
 import { TickList } from '@components/text/TickList';
-import { PAGE_RECORD } from '@app/routes/app';
+import { PAGE_RECORD } from '@app/routes/constants/pages';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPackageTitle;
@@ -61,8 +61,8 @@ export const Package: FC<TProps> = ({
         {...handlers}
       >
         <P1_5 />
-        <End>
-          <h4 className='w-full text-main-inverted text-center capitalize text-2xl tracking-wider'>
+        <End classValue='text-black-9'>
+          <h4 className='w-full text-center capitalize text-2xl tracking-wider font-medium'>
             {title}
           </h4>
           <motion.div
@@ -70,7 +70,7 @@ export const Package: FC<TProps> = ({
             animate={{ opacity: isHover ? 1 : 0.5 }}
           >
             <I
-              classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-main-inverted'
+              classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-current'
               icon='fluent-mdl2:feedback-request-solid'
             />
           </motion.div>

@@ -7,7 +7,7 @@ import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
 import { useEffect } from 'react';
 import { APP_DESCRIPTION, APP_TITLE } from '@app/constants';
-import { PAGE_VALUES } from '@app/routes/app';
+import { PAGE_VALUES } from '@app/routes/constants/pages';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<
   string,

@@ -16,11 +16,11 @@ export const Background: FC<TProps> = (props) => {
       <MetalGlow
         drop={4}
         isDarkest
-        color={isGallery && isDarkMode ? 'baby-blue' : 'teal'}
+        color={isGallery && isDarkMode ? 'accent' : 'secondary'}
         classValue='rounded-full'
       />
       <motion.div
-        className='absolute inset-0 rounded-full bg-baby-blue-02'
+        className='absolute inset-0 rounded-full bg-accent-02'
         initial={{ opacity: 0.2 }}
         animate={{ opacity: 0.5 }}
         exit={{ opacity: 0.2 }}

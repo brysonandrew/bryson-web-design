@@ -18,7 +18,7 @@ export const Sub: FC<TProps> = ({
 }) => (
   <Root
     className={clsx(
-      "relative top-0 left-0 text-teal-bright leading-none",
+      "relative top-0 left-0 text-highlight leading-none",
       classValue,
     )}
     style={style}

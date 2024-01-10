@@ -24,7 +24,7 @@ export const MetalGlow: FC<TProps> = ({
   return (
     <Glow
       drop={drop ?? 2}
-      color={color ?? (isDarkMode ? 'teal' : 'gray-3')}
+      color={color ?? (isDarkMode ? 'secondary' : 'gray-3')}
       classValue={classValue}
       {...rest}
     >

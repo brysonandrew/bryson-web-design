@@ -13,6 +13,8 @@ import { ROUTES } from '@app/routes';
 
 initServiceWorker();
 
+import 'uno:reset.css';
+
 import 'virtual:uno.css';
 import '@css/globals.css';
 
@@ -30,10 +32,7 @@ if (root) {
         <MotionConfig {...MOTION_CONFIG}>
           <Boundary>
             <Suspense fallback={null}>
-              <RouterProvider
-                router={router}
-                fallbackElement={<div>fallback</div>}
-              />
+              <RouterProvider router={router} />
             </Suspense>
           </Boundary>
         </MotionConfig>

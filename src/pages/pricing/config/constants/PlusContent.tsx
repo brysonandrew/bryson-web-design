@@ -7,10 +7,6 @@ import { P3 } from '@components/space/P3';
 import { P_5 } from '@components/space/P_5';
 import { TICK_CIRCLE_ICON } from '@constants/icons';
 import { PLUS_ICON } from '@constants/icons/text';
-import {
-  PLUS_CONFIG,
-  STANDARD_CONFIG,
-} from '@pages/pricing/config/constants';
 
 const Root = styled.div``;
 
@@ -28,7 +24,7 @@ export const PlusContent: FC = () => {
             icon={TICK_CIRCLE_ICON}
             className='relative w-5 h-5 mt-1 shrink-0 text-standard z-10'
           />{' '}
-          <p className='leading-7 font-sans text-xl'>
+          <p className='leading-7 font-sans text-xl text-main'>
             <span className='absolute -inset-x-1.75 -inset-y-2 rounded-md border-2 border-standard' />
             Everything included in the{' '}
             <span className='inline-flex relative px-1.5 text-main-inverted'>

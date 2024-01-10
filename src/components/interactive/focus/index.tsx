@@ -21,7 +21,7 @@ export const Focus: FC<TProps> = ({ children }) => {
   return (
     <>
       {(isActive || isHover) && (
-        <div className='absolute -inset-1 bg-teal-02 rounded-md pointer-events-none' />
+        <div className='absolute -inset-1 bg-secondary-02 rounded-md pointer-events-none' />
       )}
       <Circle
         classValue={clsx(

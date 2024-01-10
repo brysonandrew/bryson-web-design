@@ -7,7 +7,7 @@ import { Index } from '@pages/index';
 import * as Pages from '@pages/index';
 import { Shell } from '@components/shell';
 import { TPage } from './types';
-import { PAGE_VALUES } from './app';
+import { PAGE_VALUES } from './constants/pages';
 
 const PAGES_ROUTES = PAGE_VALUES.map((page: TPage) => {
   const Component = Pages[page.title];

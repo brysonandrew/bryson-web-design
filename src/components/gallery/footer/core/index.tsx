@@ -32,7 +32,7 @@ export const Core: FC<TProps> = (props) => {
       <MetalDark />
       <Dragger
         className={clsx('left-0 bottom-0 rounded-t-lg overflow-hidden', [
-          isDesktop ? 'relative h-auto row dark:glow-baby-blue glow-light-lg' : 'absolute h-screen row-end',
+          isDesktop ? 'relative h-auto row dark:glow-accent glow-light-lg' : 'absolute h-screen row-end',
         ])}
         style={{
           x: motionX,

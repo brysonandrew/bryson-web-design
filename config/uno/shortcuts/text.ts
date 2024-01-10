@@ -2,13 +2,13 @@ import type { StaticShortcutMap } from 'unocss';
 
 const TEXT_COLOR: StaticShortcutMap = {
   'text-t-bb':
-    'text-teal dark:text-baby-blue dark-mode-transition',
+    'text-secondary dark:text-accent dark-mode-transition',
   'text-g-bb':
-    'text-gray dark:text-baby-blue dark-mode-transition',
+    'text-gray dark:text-accent dark-mode-transition',
   'text-g-tb':
-    'text-gray-5 dark:text-teal-bright dark-mode-transition',
+    'text-gray-5 dark:text-highlight dark-mode-transition',
   'text-t-tb':
-    'text-gray dark:text-teal-bright dark-mode-transition',
+    'text-gray dark:text-highlight dark-mode-transition',
   'text-b2-w9':
     'text-gray dark:text-white-9 dark-mode-transition',
   'text-b-w9':

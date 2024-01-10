@@ -1,4 +1,4 @@
-import { SECTION_RECORD } from '@app/routes/app';
+import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShiftUp } from './ShiftUp';
 export const WORDS = SECTION_RECORD.build.split(/\s/);
@@ -20,7 +20,7 @@ export const Title = () => {
             </ShiftUp>
           ) : (
             <ShiftUp
-              classValue='text-teal font-black'
+              classValue='text-secondary font-black'
               staggerIndex={index}
             >
               {word}

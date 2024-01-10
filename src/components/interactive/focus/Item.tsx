@@ -20,7 +20,7 @@ export const Item: FC<TProps> = ({ id, children }) => {
       <motion.div
         className={clsx(
           'absolute -inset-1 center rounded-md pointer-events-none',
-          isHover ? 'bg-teal-02 z-50' : '',
+          isHover ? 'bg-secondary-02 z-50' : '',
         )}
       />
       <div className='relative row gap-2'>{children}</div>

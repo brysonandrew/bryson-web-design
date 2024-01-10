@@ -1,7 +1,5 @@
-import {
-  PAGE_RECORD,
-  SECTION_RECORD,
-} from '@app/routes/app';
+import { PAGE_RECORD } from '@app/routes/constants/pages';
+import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { Section } from '@components/Section';
 import { FC } from 'react';
 import { Main } from './Main';

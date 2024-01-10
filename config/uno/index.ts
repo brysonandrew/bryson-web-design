@@ -14,6 +14,9 @@ const config = defineConfig<TTheme>({
   presets: PRESETS,
   preflights: PRE_FLIGHTS,
   transformers: TRANSFORMERS,
+  layers: {
+    reset: -1,
+  },
 });
 
 export default config;

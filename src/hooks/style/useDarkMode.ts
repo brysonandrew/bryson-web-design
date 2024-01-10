@@ -8,10 +8,10 @@ const DARK_MODE_KEY = resolveCompositeKey(
   APP_TITLE,
   'dark-mode',
 );
-export const TRANSITION_CLASS = 'duration-1000';
+export const TRANSITION_CLASS = 'duration-1000' as const;
 export const EASE = [0.4, 0, 0.2, 1];
 export const EASE_CSS = `cubic-bezier(${EASE})`;
-const DURATION = parseInt(
+export const DURATION = parseInt(
   TRANSITION_CLASS.split('-')[1],
 );
 const TRANSITION = ['color', 'background-color']

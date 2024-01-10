@@ -18,7 +18,7 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           const content = (
             <Brighten>
               <span
-                className='text-gray bg-baby-blue px-2 py-1 rounded-sm whitespace-nowrap'
+                className='text-gray bg-accent px-2 py-1 rounded-sm whitespace-nowrap'
               >
                 {title}
               </span>

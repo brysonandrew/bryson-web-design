@@ -22,7 +22,7 @@ export const Content: FC<TProps> = ({ children }) => {
         <h3 className='++text text-center text-4xl md:text-4xl lg:text-5xl'>{children}</h3>
       </motion.div>
       <div className='relative overflow-hidden w-5/6 top-4 h-4'>
-        <ThinLine classValue='absolute left-0 w-full top-0 via-baby-blue glow' />
+        <ThinLine classValue='absolute left-0 w-full top-0 via-accent glow' />
         <ThinLineGrow
           delay={0.2}
           classValue='absolute left-0 w-full top-1 via-current'

@@ -1,9 +1,6 @@
 import { TTTitleToKebab } from '@t/transformers/format';
-import {
-  INDEX_RECORD,
-  PAGE_TITLES,
-  SECTION_RECORD,
-} from './app';
+import { SECTION_RECORD } from './constants/index-sections';
+import { PAGE_TITLES } from './constants/pages';
 
 export type TSectionTitleKey = keyof typeof SECTION_RECORD;
 export type TSectionTitle =
@@ -12,11 +9,10 @@ export type TSectionTitle =
 export type TPageTitle = (typeof PAGE_TITLES)[number];
 export type TPageKey = TTTitleToKebab<TPageTitle>;
 export type TPagePath = `/${TPageKey}`;
-export type TPage = {
-  key: TPageKey;
-  title: TPageTitle;
-  path: TPagePath;
+export type TPage<T extends TPageTitle = TPageTitle> = {
+  key: TTTitleToKebab<T>;
+  title: T;
+  path: `/${TTTitleToKebab<T>}`;
 };
 
-export type TPageRecord = typeof INDEX_RECORD &
-  Record<TPageKey, TPage>;
+export type TPageRecord = Record<TPageKey, TPage>;

@@ -13,7 +13,7 @@ export const Logo = () => {
       <div className='row'>
         <div {...box}>
           <Laptop
-            screen={COLOR_VARIABLES_LOOKUP['teal-bright']}
+            screen={COLOR_VARIABLES_LOOKUP['highlight']}
             trackpad={COLOR_VARIABLES_LOOKUP['black-1']}
             bottom={COLOR_VARIABLES_LOOKUP['black']}
             keyboard={COLOR_VARIABLES_LOOKUP['black-2']}
@@ -23,7 +23,7 @@ export const Logo = () => {
         <P8 />
         <div {...box}>
           <Laptop
-            screen={COLOR_VARIABLES_LOOKUP['baby-blue']}
+            screen={COLOR_VARIABLES_LOOKUP['accent']}
             trackpad={COLOR_VARIABLES_LOOKUP['white-8']}
             bottom={COLOR_VARIABLES_LOOKUP['white-9']}
             keyboard={COLOR_VARIABLES_LOOKUP['white-7']}

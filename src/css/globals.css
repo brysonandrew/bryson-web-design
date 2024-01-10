@@ -1,3 +1,5 @@
+
+
 html {
   scroll-behavior: smooth;
   font-size: 100%;
@@ -32,11 +34,6 @@ a {
 strong {
   font-family: inherit;
   font-weight: 800;
-}
-
-a,
-button {
-  cursor: pointer;
 }
 
 a {

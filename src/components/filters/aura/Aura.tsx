@@ -23,7 +23,7 @@ export const Aura: FC<TProps> = ({
       }}
       className={clsx(
         'absolute mt-1.5 ml-1 pointer-events-none cursor-default',
-        'bg-baby-blue-04 -inset-1',
+        'bg-accent-04 -inset-1',
         classValue,
       )}
       {...props}

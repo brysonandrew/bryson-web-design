@@ -19,7 +19,10 @@ export const Button: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx('circle-interactive', classValue)}
+      className={clsx(
+        'circle-interactive shrink-0 w-12 h-12',
+        classValue,
+      )}
       {...resolveInteractiveLabels(title)}
       {...props}
     >

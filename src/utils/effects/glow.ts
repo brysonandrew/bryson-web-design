@@ -16,7 +16,7 @@ export type TPartialGlowConfigOptions =
 export const resolveGlowProps = ({
   text = 0,
   drop = 0,
-  color = 'teal', 
+  color = 'secondary', 
   value,
 }: TGlowConfigOptions) => ({
   style: {
