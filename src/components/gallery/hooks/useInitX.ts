@@ -3,7 +3,7 @@ import {
   TMediaRecord,
   TMediaRecords,
 } from 'ops/types/media';
-import { resolveX } from '@utils/gallery/resolveX';
+import { resolveX } from '@components/gallery/utils/resolveX';
 import { useMemo } from 'react';
 
 export type TInitXConfig = {

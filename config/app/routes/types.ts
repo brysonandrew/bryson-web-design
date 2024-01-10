@@ -1,10 +1,13 @@
 import { TTTitleToKebab } from '@t/transformers/format';
-import { INIT, PAGE_TITLES, SECTION_RECORD } from './app';
+import {
+  INDEX_RECORD,
+  PAGE_TITLES,
+  SECTION_RECORD,
+} from './app';
 
 export type TSectionTitleKey = keyof typeof SECTION_RECORD;
 export type TSectionTitle =
   (typeof SECTION_RECORD)[TSectionTitleKey];
-
 
 export type TPageTitle = (typeof PAGE_TITLES)[number];
 export type TPageKey = TTTitleToKebab<TPageTitle>;
@@ -15,7 +18,5 @@ export type TPage = {
   path: TPagePath;
 };
 
-export type TPageRecord = typeof INIT &
+export type TPageRecord = typeof INDEX_RECORD &
   Record<TPageKey, TPage>;
-
-

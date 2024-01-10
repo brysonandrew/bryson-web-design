@@ -16,7 +16,7 @@ import { Providers } from '@context/Providers';
 import { Head } from './Head';
 import { P24Y } from '@components/space/P24Y';
 import { useCurrProject } from '@hooks/params/useCurrProject';
-import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';
+import { useRedirect } from '@hooks/router/useRedirect';
 import Footer from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';
@@ -25,7 +25,7 @@ const Root = styled.div``;
 const Content = styled.div``;
 
 export const Shell: FC = () => {
-  useProjectsRedirect();
+  useRedirect();
   const currProject = useCurrProject();
   const isProject = Boolean(currProject);
   const { isInit, onInit } = useApp();

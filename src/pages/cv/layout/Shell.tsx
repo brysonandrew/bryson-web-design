@@ -1,5 +1,3 @@
-import { FilterShell } from '@components/filters/FilterShell';
-import { Displacement } from '@components/filters/displacement';
 import styled from '@emotion/styled';
 import type { TChildren } from '@t/index';
 import { motion } from 'framer-motion';
@@ -13,12 +11,9 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ style, children }) => (
   <Root
-    className='flex flex-col bg-black text-white-9'
+    className='column items-stretch bg-black text-white-9'
     style={style}
   >
-    <FilterShell>
-      <Displacement />
-    </FilterShell>
     {children}
   </Root>
 );

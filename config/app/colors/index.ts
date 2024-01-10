@@ -10,4 +10,6 @@ export const OPACITY_RANGE_RGB_RECORD = {
 export const VARIABLES_RECORD = {
   ...PLANS_COLOR_VARIABLES,
   red: '#f87171',
+  'dark-highlight': '#00aba9',
+  'light-highlight': '#5bbad5',
 } as const;

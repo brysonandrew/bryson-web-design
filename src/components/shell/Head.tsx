@@ -1,11 +1,18 @@
 import { useHtmlTitle } from '@hooks/dom/useHtmlTitle';
 import { useDarkMode } from '@context/dark-mode';
 import { Helmet } from 'react-helmet-async';
+import { COLOR_LOOKUP } from '@uno/theme/colors';
 
 export const Head = () => {
   const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
   const title = useHtmlTitle();
+  const base = isDarkMode
+    ? COLOR_LOOKUP['black']
+    : COLOR_LOOKUP['white'];
+  const highlight = isDarkMode
+    ? COLOR_LOOKUP['dark-highlight']
+    : COLOR_LOOKUP['light-highlight'];
 
   return (
     <Helmet>
@@ -34,13 +41,13 @@ export const Head = () => {
       <link
         rel='mask-icon'
         href={`${prefix}/safari-pinned-tab.svg`}
-        color={isDarkMode ? '#00aba9' : '#5bbad5'}
+        color={highlight}
       />
       <meta
         name='msapplication-TileColor'
-        content='#00aba9'
+        content={highlight}
       />
-      <meta name='theme-color' content='#ffffff' />
+      <meta name='theme-color' content={base} />
     </Helmet>
   );
 };

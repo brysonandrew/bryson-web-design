@@ -7,7 +7,7 @@ import { P6 } from '@components/space/P6';
 export const Process = () => {
   return (
     <>
-      <Section title={SECTION_RECORD.process}>
+      <Section title={SECTION_RECORD.build}>
         <P6 />
         <Main />
         <P60Y />

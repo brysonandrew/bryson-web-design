@@ -26,7 +26,7 @@ export const Cv = () => {
                 <Description /> 
               </Margin>
               <P3 />
-              <hr className='bg-gray w-full h-px' />
+              <hr className='bg-gray-02 w-full h-px' />
               <P1 />
               <Experience />
             </Page>
