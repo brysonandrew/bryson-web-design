@@ -1,4 +1,3 @@
-import { TSlugProps } from '@pages/projects/config';
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
@@ -18,6 +17,7 @@ import { NOOP } from '@constants/functions';
 import { useCursor } from '@context/cursor';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useToFirst } from '@hooks/media/nav/useToFirst';
+import { TSlugProps } from '@pages/projects/config/types';
 
 const Root = styled(motion.li)``;
 

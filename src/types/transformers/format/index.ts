@@ -18,6 +18,8 @@ export type TTTitleToKebab<
       R,
       `${A}${F extends Lowercase<F>
         ? ''
+        : A extends ''
+        ? ''
         : '-'}${Lowercase<F>}`
     >
   : A;

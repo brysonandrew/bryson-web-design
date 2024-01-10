@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { TItem } from '@t/projects';
+import { TItem } from '@pages/projects/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
 import { Brighten } from '@components/filter-animate/Brighten';

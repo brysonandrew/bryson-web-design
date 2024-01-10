@@ -1,6 +1,6 @@
 import { Fake3D } from '@components/fake-3d';
-import { SECTION_TITLES, TECH_ID } from '@constants/copy';
-import { FAKE_3D_PROPS } from './constants';
+import { SECTION_TITLES, TECH_ID } from '@main/config/constants';
+import { FAKE_3D_PROPS } from './config/constants';
 import { Links } from './links';
 import { Section } from '@components/Section';
 

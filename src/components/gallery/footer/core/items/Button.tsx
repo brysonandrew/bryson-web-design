@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { NAME_KEY } from '@pages/projects/config';
+import { NAME_KEY } from '@pages/projects/config/constants';
 import { motion } from 'framer-motion';
 import {
   Link as _Link,

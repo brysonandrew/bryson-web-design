@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { TItem } from '@t/projects';
+import type { TItem } from '@pages/projects/config/types';
 import { Fragment, type FC } from 'react';
 import { Item } from './item';
 import { TProjectKey } from '@constants/projects';

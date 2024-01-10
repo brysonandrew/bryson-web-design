@@ -2,9 +2,8 @@ import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
 import {
-  TSlugProps,
   resolveTitleLayoutId,
-} from '@pages/projects/config';
+} from '@pages/projects/config/constants';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
@@ -19,6 +18,7 @@ import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { Metal } from '@components/metal';
 import { resolveGlow } from './config';
+import { TSlugProps } from '@pages/projects/config/types';
 
 const Root = styled(motion.div)``;
 

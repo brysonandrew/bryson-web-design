@@ -1,4 +1,4 @@
-import { TITLE_BASE } from '@constants/copy';
+import { TITLE_BASE } from '@main/config/constants';
 import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,

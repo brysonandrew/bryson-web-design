@@ -7,7 +7,7 @@ import { Gallery } from '@components/icons/gallery/Gallery';
 import { OpenInNew } from '@components/icons/links/OpenInNew';
 import { Circle } from '@components/buttons/circle';
 import { Anchor } from '@components/buttons/circle/Anchor';
-import { TItem } from '@t/projects';
+import { TItem } from '@pages/projects/config/types';
 import { motion } from 'framer-motion';
 import { useTo } from '@hooks/media/nav/useTo';
 

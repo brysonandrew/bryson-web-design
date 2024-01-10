@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import styled from '@emotion/styled';
 import { I } from '@components/Icon';
 import { PLUS_ICON } from '@constants/icons/text';
 import { nToMoney } from '@utils/format';

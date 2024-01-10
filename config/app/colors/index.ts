@@ -1,3 +1,4 @@
+import { COLOR_VARIABLES_LOOKUP_PACKAGES } from './custom';
 import { BLACK, BLACK_RGB_RECORD } from './grayscale/black';
 import { GRAY, GRAY_RGB_RECORD } from './grayscale/gray';
 import { WHITE, WHITE_RGB_RECORD } from './grayscale/white';
@@ -48,6 +49,12 @@ export const BABY_BLUE = resolveColorOpacityVariations(
   COLOR_RGB_RECORD['baby-blue'],
 );
 
+export const COLOR_VARIABLES_LOOKUP_GRAYSCALE = {
+  ...BLACK,
+  ...GRAY,
+  ...WHITE,
+} as const;
+
 export const COLOR_VARIABLES_LOOKUP: any = {
   ...PRIMARY,
   ...HIGHLIGHT,
@@ -56,12 +63,8 @@ export const COLOR_VARIABLES_LOOKUP: any = {
   ...TEAL,
   ...TEAL_BRIGHT,
   ...BABY_BLUE,
-  ...BLACK,
-  ...WHITE,
-  ...GRAY,
-  standard: '#60a5fa',
-  plus: '#4ade80',
-  select: '#c084fc',
+  ...COLOR_VARIABLES_LOOKUP_GRAYSCALE,
+  ...COLOR_VARIABLES_LOOKUP_PACKAGES,
   current: 'currentColor',
   transparent: 'rgba(0, 0, 0, 0)',
   border: 'rgba(64, 70, 40, .2)',

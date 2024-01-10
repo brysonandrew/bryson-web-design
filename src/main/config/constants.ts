@@ -29,3 +29,6 @@ export const SERVICES_ID =
   titleToKebab<typeof SERVICES_TITLE>(SERVICES_TITLE);
 export const PROJECTS_ID = titleToKebab(PROJECTS_TITLE);
 export const CONTACT_ID = titleToKebab(CONTACT_TITLE);
+
+export const HOME_ROUTE = '/';
+export const CONTACT_ROUTE = '/contact';

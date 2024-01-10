@@ -2,34 +2,35 @@ import { P1_5 } from '@components/space/P1_5';
 import clsx from 'clsx';
 import { FC, PropsWithChildren } from 'react';
 import { End } from './End';
-import {
-  Price,
-  TDiscount,
-  TProps as TPriceProps,
-} from './price';
+import { Price, TProps as TPriceProps } from './price';
 import { P_25 } from '@components/space/P_25';
 import { P4 } from '@components/space/P4';
 import { Link } from 'react-router-dom';
 import { I } from '@components/Icon';
-import { CONTACT_ROUTE } from '@constants/routes';
 import { motion } from 'framer-motion';
 import { useContact } from '@context/domains/contact';
-import { TPackageTitle } from '../config';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { PACKAGE_CURSOR_KEY } from '@components/cursor/switch/config';
+import { resolvePackageConfig } from '@pages/services/config/constants';
+import {
+  TPackageKey,
+  TPackageTitle,
+} from '@pages/services/config/types';
+import { TickList } from '@components/text/TickList';
+import { CONTACT_ROUTE } from '@main/config/constants';
 
-export type TProps = TPriceProps &
-  PropsWithChildren<{
-    title: TPackageTitle;
-    discount?: TDiscount;
-    color?: `bg-${Lowercase<TPackageTitle>}`;
-  }>;
+export type TProps = Pick<TPriceProps, 'discount'> & {
+  title: TPackageTitle;
+  backgroundColorClass: `bg-${TPackageKey}`;
+  textColorClass: `text-${TPackageKey}`;
+};
 export const Package: FC<TProps> = ({
   title,
-  children,
-  color = `bg-${title.toLowerCase()}`,
-  ...priceProps
+  backgroundColorClass,
+  textColorClass,
 }) => {
+  const config = resolvePackageConfig(title);
+  const { listItems, price, discount, PreContent } = config;
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     PACKAGE_CURSOR_KEY,
@@ -50,7 +51,7 @@ export const Package: FC<TProps> = ({
       <div
         className={clsx(
           'absolute -inset-0.5 rounded-md',
-          color,
+          backgroundColorClass,
         )}
       />
       <motion.div
@@ -77,13 +78,16 @@ export const Package: FC<TProps> = ({
         <P1_5 />
         <div className='relative items-stretch h-full bg-main rounded-t-md'>
           <P4 />
-          <div className='px-4'>{children}</div>
+          <div className={clsx('px-4', textColorClass)}>
+            {PreContent && <PreContent />}
+            <TickList items={listItems} />
+          </div>
           <P4 />
         </div>
         <P_25 />
         <div className='relative bg-main rounded-b-md'>
           <End>
-            <Price {...priceProps} />
+            <Price price={price} discount={discount} />
           </End>
         </div>
       </motion.div>

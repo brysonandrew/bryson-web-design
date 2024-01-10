@@ -1,4 +1,4 @@
-import { PROJECT_KEY } from "@pages/projects/config";
+import { PROJECT_KEY } from "@pages/projects/config/constants";
 import { useApp } from '@context/app';
 import { useEffect } from "react";
 import { useNavigate } from "react-router";

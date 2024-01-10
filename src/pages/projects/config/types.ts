@@ -13,3 +13,5 @@ export type TItem = {
   category?: string;
   altTo?: string;
 };
+
+export type TSlugProps = Pick<TItem, 'slug'>;

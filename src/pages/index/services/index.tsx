@@ -3,7 +3,7 @@ import { Main } from '@pages/services/Main';
 import {
   SECTION_TITLES,
   SERVICES_ID,
-} from '@constants/copy';
+} from '@main/config/constants';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 

@@ -1,0 +1,10 @@
+
+const STANDARD_PACKAGE_COLOR = '#60a5fa';
+const PLUS_PACKAGE_COLOR = '#4ade80';
+const SELECT_PACKAGE_COLOR = '#c084fc';
+
+export const COLOR_VARIABLES_LOOKUP_PACKAGES = {
+  standard: STANDARD_PACKAGE_COLOR,
+  plus: PLUS_PACKAGE_COLOR,
+  select: SELECT_PACKAGE_COLOR,
+} as const;

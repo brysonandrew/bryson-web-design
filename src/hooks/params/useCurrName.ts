@@ -1,4 +1,4 @@
-import { NAME_KEY } from "@pages/projects/config";
+import { NAME_KEY } from "@pages/projects/config/constants";
 import { useSearchParams } from "react-router-dom";
 
 export const useCurrName = () => {

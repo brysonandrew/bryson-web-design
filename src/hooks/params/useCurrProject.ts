@@ -1,4 +1,4 @@
-import { PROJECT_KEY } from "@pages/projects/config";
+import { PROJECT_KEY } from "@pages/projects/config/constants";
 import { useSearchParams } from "react-router-dom";
 
 export const useCurrProject = () => {

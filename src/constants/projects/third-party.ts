@@ -1,4 +1,4 @@
-import type { TItem } from '@t/projects';
+import type { TItem } from '@pages/projects/config/types';
 import { titleToKebab } from '@utils/format';
 
 export const REACT = {

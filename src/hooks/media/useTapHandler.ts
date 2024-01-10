@@ -1,4 +1,4 @@
-import { PROJECTS_ID } from '@constants/copy';
+import { PROJECTS_ID } from '@main/config/constants';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { TMediaRecord } from 'ops/types/media';

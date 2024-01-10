@@ -4,13 +4,11 @@ import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import clsx from 'clsx';
 import { Item as _Item } from './Item';
-import { PAGE_TITLES } from '@constants/copy';
+import { HOME_ROUTE, PAGE_TITLES } from '@main/config/constants';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
-import { HOME_ROUTE } from '@constants/routes';
 import { ThickLine } from '@components/line/ThickLine';
 import { I } from '@components/Icon';
 import { Link } from 'react-router-dom';
-import { DURATION } from '@constants/animation';
 
 const toPathname = (v: string) => `/${v.toLowerCase()}`;
 

@@ -1,4 +1,4 @@
-import { PROJECT_KEY } from '@pages/projects/config';
+import { PROJECT_KEY } from '@pages/projects/config/constants';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { resolveTo } from './resolveTo';

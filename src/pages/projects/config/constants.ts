@@ -1,4 +1,4 @@
-import { TItem } from '@t/projects';
+import { TItem } from '@pages/projects/config/types';
 import { resolveCompositeKey } from '@utils/keys';
 
 export const PROJECT_KEY = 'project';
@@ -9,4 +9,3 @@ export const resolveTitleLayoutId = (key: string) =>
 
 export const EXCLUDED_KEYS = ['preview', 'logo'];
 
-export type TSlugProps = Pick<TItem, 'slug'>;
