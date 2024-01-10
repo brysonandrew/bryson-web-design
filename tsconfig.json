@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDirs": ["./ops", "./src", "./config"],
     "types": ["vite/client", "@types/node"],
     "experimentalDecorators": true,
     "target": "ESNext",

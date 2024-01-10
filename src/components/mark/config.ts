@@ -1,4 +1,4 @@
-import { COLORS } from '@uno/theme/colors';
+import { COLORS } from '@app/colors';
 import {
   GLOW_TEAL_BRIGHT_12,
   GLOW_BABY_BLUE_1,

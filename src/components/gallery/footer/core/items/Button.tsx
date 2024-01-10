@@ -16,8 +16,7 @@ import {
   resolveDropShadow,
 } from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { COLORS } from '@uno/theme/colors';
-import { DURATION } from '@constants/animation';
+import { COLORS } from '@app/colors';
 import { Background } from '@components/buttons/circle/Background';
 
 export const Root = styled(motion.div)``;

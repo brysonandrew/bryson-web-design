@@ -6,7 +6,7 @@ import { PADDING_X } from './config';
 import { useDarkMode } from '@context/dark-mode';
 import { resolveDropShadow } from '@utils/effects/glow';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { COLORS } from '@uno/theme/colors';
+import { COLORS } from '@app/colors';
 
 type TProps = {
   classValue?: ClassValue;

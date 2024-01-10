@@ -25,15 +25,3 @@ export const TEXT: StaticShortcutMap = {
     'text-left text-xl text-shadow-inherit md:text-2xl',
 };
 
-export const BACKGROUND: StaticShortcutMap = {
-  'bg-main':
-    'bg-white-9 dark:bg-black dark-mode-transition',
-  'bg-main-inverted':
-    'bg-black dark:bg-white-9 dark-mode-transition',
-};
-
-export const COLORS = {
-  'dark-mode-transition': 'transition-colors duration-1000',
-  ...TEXT,
-  ...BACKGROUND,
-};
