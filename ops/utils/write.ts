@@ -7,7 +7,7 @@ import {
   PUBLIC_DIR,
   LOOKUP_PATH,
 } from '../config';
-import { TProjectKey } from '@constants/projects';
+import { TProjectKey } from '@app/projects';
 import {
   TFilePathKey,
   TMediaRecord,

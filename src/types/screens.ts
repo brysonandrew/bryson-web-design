@@ -1,4 +1,4 @@
-import { TProjectKey } from '@constants/projects';
+import { TProjectKey } from '@app/projects';
 import {
   TExtKey,
   TFilePathKey,

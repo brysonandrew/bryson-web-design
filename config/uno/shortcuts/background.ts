@@ -1,6 +1,7 @@
 import { StaticShortcutMap } from 'unocss';
 
 export const BACKGROUND: StaticShortcutMap = {
+  'bg-input':'dark:bg-black-1 bg-white-7',
   'bg-main':
     'bg-white-9 dark:bg-black dark-mode-transition',
   'bg-main-inverted':

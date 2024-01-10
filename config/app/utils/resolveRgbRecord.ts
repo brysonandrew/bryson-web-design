@@ -1,4 +1,4 @@
-import { TRgb, TRgbs } from "../types";
+import { TRgb, TRgbs } from "../colors/types";
 
 export type TRgbRecordKey<
   T extends string,

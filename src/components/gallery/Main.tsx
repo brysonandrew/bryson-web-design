@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { TProjectKey } from '@constants/projects';
+import { TProjectKey } from '@app/projects';
 import { useGallery as useContext } from '@context/domains/gallery';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
@@ -44,7 +44,7 @@ export const Main: FC<TProps> = ({
 
   return (
     <Root
-      className='cover-fixed column text-g-tb z-20'
+      className='fixed inset-0 column text-g-tb z-20'
       style={{ z: viewportWidth }}
     >
       <Header slug={currProject} />

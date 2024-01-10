@@ -2,7 +2,7 @@
   "name": "bryson-web-design",
   "version": "1.0.0",
   "description": "Building websites and apps",
-  "main": "src/main/index.tsx",
+  "main": "src/main.tsx",
   "config": {
     "blur_images_dir_path": "ops/blur-images",
     "vite_config_path": "vite.config.ts"

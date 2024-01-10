@@ -3,8 +3,8 @@ import {
   resolveRgbRecord,
   resolveColorOpacityVariations,
   resolveColorSeries,
-} from '../utils';
-import { resolveGrayscaleRange } from './resolveGrayscaleRange';
+} from '../../utils';
+import { resolveGrayscaleRange } from '../../utils/resolveGrayscaleRange';
 
 export const GRAY_RGBS =
   resolveGrayscaleRange(85, 170);

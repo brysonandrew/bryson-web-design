@@ -7,7 +7,7 @@ import { Index } from '@pages/index';
 import * as P from '@pages/index';
 import { kebabToPascal } from '@utils/format';
 import { Shell } from '@components/shell';
-import { TPageKey } from '../types';
+import { TPageKey } from './types';
 import { PAGE_KEYS } from './app';
 
 const PAGES_ROUTES = PAGE_KEYS.map((key: TPageKey) => {

@@ -2,7 +2,7 @@ import { I } from '@components/Icon';
 import { ADD_ICON, REMOVE_ICON } from '@constants/icons';
 import { useServicesC } from '@context/domains/services/useServicesC';
 import clsx from 'clsx';
-import { Item as FocusItem } from '../../../../../components/buttons/focus/Item';
+import { Item as FocusItem } from '../../../../../components/interactive/focus/Item';
 import { FC } from 'react';
 
 type TProps = {

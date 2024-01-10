@@ -1,4 +1,4 @@
-import { TRgb } from '../types';
+import { TRgb } from '../colors/types';
 
 const resolveGrayscaleRgb = (value: number) => {
   const result = [...Array(3)]

@@ -1,5 +1,5 @@
-import { COLOR_VARIABLES_LOOKUP } from '..';
-import { TColorRgbKey } from '../types';
+import { COLOR_VARIABLES_LOOKUP } from '../colors';
+import { TColorRgbKey } from '../colors/types';
 
 export const resolveColor = (
   color: Extract<TColorRgbKey, string>,

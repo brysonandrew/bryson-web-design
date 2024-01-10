@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
-import { PROJECT_ITEMS_RECORD } from '@constants/projects';
+import { PROJECT_ITEMS_RECORD } from '@app/projects';
 import { Time } from './content/Time';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';

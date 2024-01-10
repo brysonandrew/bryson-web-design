@@ -17,7 +17,7 @@ import {
 } from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLORS } from '@app/colors';
-import { Background } from '@components/buttons/circle/Background';
+import { Background } from '@components/interactive/circle/Background';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

@@ -1,5 +1,5 @@
 import { COLORS } from '../../app/colors';
-import { TTheme } from '@uno/theme';
+import { TTheme } from '../../uno/theme';
 import { Rule } from 'unocss';
 
 const resolveShadow = (

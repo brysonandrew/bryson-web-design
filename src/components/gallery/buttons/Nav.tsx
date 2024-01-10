@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import {
   IconLink,
   TProps as TIconLinkProps,
-} from '../../buttons/IconLink';
+} from '../../interactive/IconLink';
 import { TClassValueProps, TTitleProps } from '@t/index';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { useGallery as useContext } from '@context/domains/gallery';

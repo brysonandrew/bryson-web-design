@@ -1,5 +1,5 @@
-import { resolveColorOpacityVariations, resolveColorSeries, TRgbRecord, resolveRgbRecord } from "../utils";
-import { resolveGrayscaleRange } from "./resolveGrayscaleRange";
+import { resolveColorOpacityVariations, resolveColorSeries, TRgbRecord, resolveRgbRecord } from "../../utils";
+import { resolveGrayscaleRange } from "../../utils/resolveGrayscaleRange";
 
 export const BLACK_RGBS =
   resolveGrayscaleRange(0, 85);

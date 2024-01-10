@@ -1,4 +1,4 @@
-import { SECTION_TITLES } from '@main/config/constants/app';
+import { SECTION_TITLES } from '@app/routes/app';
 import { Section } from '@components/Section';
 import { FC } from 'react';
 import { Main } from './Main';

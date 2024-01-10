@@ -1,4 +1,4 @@
-import { Focus } from '@components/buttons/focus';
+import { Focus } from '@components/interactive/focus';
 import { FOOTER, HEADER, HEADLINE } from '../config';
 import { Footer } from './Footer';
 import { Header } from './header';

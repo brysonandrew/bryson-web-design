@@ -1,6 +1,3 @@
-import type { TItem } from '@pages/projects/config/types';
-import { titleToKebab } from '@utils/format';
-
 export const REACT = {
   title: 'React',
   href: 'https://reactjs.org/',

@@ -3,7 +3,6 @@ import type { FC } from 'react';
 import { Title } from '@components/text/title';
 import { TChildren } from '@t/index';
 import clsx, { ClassValue } from 'clsx';
-import { P6 } from './space/P6';
 import { TDivProps } from '@t/dom';
 import { TContent } from './text/title/config';
 import { P16Y } from './space/P16Y';

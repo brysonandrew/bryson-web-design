@@ -1,10 +1,10 @@
 import { Cross } from '@components/icons/gallery/Cross';
 import type { FC } from 'react';
-import { IconLink } from '../../buttons/IconLink';
+import { IconLink } from '../../interactive/IconLink';
 import { TClassValueProps } from '@t/index';
 import { useTo } from '../../../hooks/media/nav/useTo';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { Circle } from '@components/buttons/circle';
+import { Circle } from '@components/interactive/circle';
 import { TDivMotionProps } from '@t/dom';
 
 type TProps = TClassValueProps &

@@ -3,7 +3,7 @@ import { Main } from '@pages/projects/Main';
 import {
   PROJECTS_ID,
   SECTION_TITLES,
-} from '@main/config/constants/app';
+} from '@app/routes/app';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 

@@ -1,4 +1,4 @@
-import { TProjectKey } from "@constants/projects";
+import { TProjectKey } from "@app/projects";
 import { PROJECT_KEY, NAME_KEY, } from "@pages/projects/config/constants";
 
 type TConfig = {

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useContact } from '@context/domains/contact';
 import { useDarkMode } from '@context/dark-mode';
 import { Cross } from '@components/icons/gallery/Cross';
-import { IconGlow } from '@components/buttons/IconGlow';
+import { IconGlow } from '@components/interactive/IconGlow';
 import { HIGHLIGHT } from '@components/filters/presets';
 import { PRESENCE_OPACITY_DELAY } from '@constants/animation';
 import { TFormKey } from '@pages/contact/config';

@@ -17,7 +17,7 @@ import {
   TPackageTitle,
 } from '@pages/pricing/config/types';
 import { TickList } from '@components/text/TickList';
-import { CONTACT_ROUTE } from '@main/config/constants/app';
+import { CONTACT_ROUTE } from '@app/routes/app';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPackageTitle;

@@ -1,4 +1,4 @@
-import { TRgb } from "../types";
+import { TRgb } from "../colors/types";
 
 export const varRgb = (
   rgb: TRgb,

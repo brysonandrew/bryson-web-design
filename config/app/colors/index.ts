@@ -1,8 +1,7 @@
 import { GRAYSCALE_RGB_RECORD, GRAYSCALE_COLOR_VARIABLES } from './grayscale';
 import { PACKAGES_COLOR_VARIABLES } from './custom';
-
 import { TRgb } from './types';
-import { resolveColorOpacityVariations } from './utils/resolveColorOpacityVariations';
+import { resolveColorOpacityVariations } from '../utils/resolveColorOpacityVariations';
 
 export const COLOR_RGB_RECORD: Record<string, TRgb> = {
   red: '221, 45, 68',
@@ -42,7 +41,7 @@ export const BABY_BLUE = resolveColorOpacityVariations(
   COLOR_RGB_RECORD['baby-blue'],
 );
 
-export const COLOR_VARIABLES_LOOKUP: any = {
+export const COLOR_VARIABLES_LOOKUP = {
   ...PRIMARY,
   ...HIGHLIGHT,
   ...HIGHLIGHT_1,

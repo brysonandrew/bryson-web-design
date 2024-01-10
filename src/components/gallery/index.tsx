@@ -4,6 +4,7 @@ import { Main } from './Main';
 import { useViewport } from '@context/viewport';
 
 export const Gallery: FC = () => {
+  console.log('gallery');
   const currProject = useCurrProject();
   const isSelectedProject = currProject !== null;
   const { isResizing, width } = useViewport();

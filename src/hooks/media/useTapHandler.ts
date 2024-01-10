@@ -1,4 +1,4 @@
-import { PROJECTS_ID } from '@main/config/constants/app';
+import { PROJECTS_ID } from '@app/routes/app';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { TMediaRecord } from 'ops/types/media';

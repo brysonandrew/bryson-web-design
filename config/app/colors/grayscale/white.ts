@@ -4,8 +4,8 @@ import {
   resolveColorSeries,
   TRgbRecord,
   resolveRgbRecord,
-} from '../utils';
-import { resolveGrayscaleRange } from './resolveGrayscaleRange';
+} from '../../utils';
+import { resolveGrayscaleRange } from '../../utils/resolveGrayscaleRange';
 
 const WHITE_RGBS: TRgb[] =
   resolveGrayscaleRange(170, 255);

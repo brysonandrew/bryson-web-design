@@ -25,7 +25,7 @@ export const Text: FC<TProps> = ({
       </div>
       <Input
         ref={ref}
-        className='input-text'
+        className='input'
         type='text'
         autoComplete='off'
         name={name}

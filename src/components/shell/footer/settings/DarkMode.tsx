@@ -4,7 +4,7 @@ import { resolveVerticalShiftPresence } from '@utils/animation';
 import { AnimatePresence } from 'framer-motion';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
 import { useHoverKey } from '@hooks/cursor/useHoverKey';
-import { Button } from '@components/buttons/circle/Button';
+import { Button } from '@components/interactive/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { createElement } from 'react';
 import { useDarkMode } from '@context/dark-mode';

@@ -1,4 +1,4 @@
-import { COLORS } from '../../app/colors';
+import { COLORS } from './../../app/colors';
 import { SPACING } from './spacing';
 
 export const THEME = {

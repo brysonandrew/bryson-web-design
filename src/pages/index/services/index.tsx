@@ -3,7 +3,7 @@ import { Main } from '@pages/pricing/Main';
 import {
   SECTION_TITLES,
   SERVICES_ID,
-} from '@main/config/constants/app';
+} from '@app/routes/app';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@components/Section';
 

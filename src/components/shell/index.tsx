@@ -13,7 +13,7 @@ import { Cursor } from '@components/cursor';
 import { isDesktop } from 'react-device-detect';
 import { useApp } from '@context/app';
 import { Providers } from '@context/Providers';
-import { Head } from '../../main/Head';
+import { Head } from './Head';
 import { P24Y } from '@components/space/P24Y';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useProjectsRedirect } from '@hooks/router/useProjectsRedirect';

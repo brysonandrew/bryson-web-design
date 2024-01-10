@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { List } from './list';
-import { PROJECT_ITEMS } from '@constants/projects';
+import { PROJECT_ITEMS } from '@app/projects';
 import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { Tips } from './Tips';

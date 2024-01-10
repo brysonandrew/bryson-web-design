@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Main } from './Main';
-import { SECTION_TITLES } from '@main/config/constants/app';
+import { SECTION_TITLES } from '@app/routes/app';
 import { Section } from '@components/Section';
 import { P60Y } from '@components/space/P60Y';
 import { PersistHeight } from '@components/space/PersistHeight';

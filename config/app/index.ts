@@ -3,11 +3,10 @@ import { kebabToTitle } from '../../src/utils/format';
 
 export const APP_TITLE = kebabToTitle(packageJson.name);
 export const APP_DESCRIPTION = packageJson.description;
+export const VERSION = packageJson.version;
 
 export const resolveRemFromPx = (px: number, base = 16) =>
   `${px / base}rem`;
-
-export const VERSION = packageJson.version;
 
 export const INDEX_HTML = 'index.html';
 export const ENTRY_FILE_NAME = 'main.tsx';

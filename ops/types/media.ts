@@ -1,5 +1,5 @@
 import { EXTS } from '@constants/media';
-import { TProjectKey } from '@constants/projects';
+import { TProjectKey } from '@app/projects';
 import { TSource } from '../../src/types/dom';
 
 // export type TDimensions = { width: number; height: number };

@@ -1,5 +1,5 @@
 import { titleToKebab } from '@utils/format';
-import { TPageKey, TPageTitle } from '../types';
+import { TPageKey, TPageTitle } from './types';
 
 export const SECTION_TITLES = {
   build: 'Building websites and apps',
