@@ -1,5 +1,5 @@
-import { TProjectKey } from "@app/projects";
 import { PROJECT_KEY, NAME_KEY, } from "@pages/projects/config/constants";
+import { TProjectKey } from "@pages/projects/config/types";
 
 type TConfig = {
   pathname: string;

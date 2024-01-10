@@ -1,8 +1,7 @@
-import { PRESENCE_Y_SHIFT } from '@constants/animation';
-import { SECTION_TITLES } from '@app/routes/app';
+import { SECTION_RECORD } from '@app/routes/app';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShiftUp } from './ShiftUp';
-export const WORDS = SECTION_TITLES.build.split(/\s/);
+export const WORDS = SECTION_RECORD.build.split(/\s/);
 
 export const Title = () => {
   return (

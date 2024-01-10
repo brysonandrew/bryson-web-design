@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
@@ -14,7 +14,6 @@ import { ROUTES } from '@app/routes';
 initServiceWorker();
 
 import 'virtual:uno.css';
-import '@css/reset.css';
 import '@css/globals.css';
 
 const router = createBrowserRouter(ROUTES);
@@ -30,10 +29,12 @@ if (root) {
       <HelmetProvider>
         <MotionConfig {...MOTION_CONFIG}>
           <Boundary>
-            <RouterProvider
-              router={router}
-              fallbackElement={<div>fallback</div>}
-            />
+            <Suspense fallback={null}>
+              <RouterProvider
+                router={router}
+                fallbackElement={<div>fallback</div>}
+              />
+            </Suspense>
           </Boundary>
         </MotionConfig>
       </HelmetProvider>

@@ -4,34 +4,18 @@ import { Projector } from '@pages/kino/projector';
 import { Reader } from '@pages/reader';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { Index } from '@pages/index';
-import * as P from '@pages/index';
-import { kebabToPascal } from '@utils/format';
+import * as Pages from '@pages/index';
 import { Shell } from '@components/shell';
-import { TPageKey } from './types';
-import { PAGE_KEYS } from './app';
+import { TPage } from './types';
+import { PAGE_VALUES } from './app';
 
-const PAGES_ROUTES = PAGE_KEYS.map((key: TPageKey) => {
-  const componentKey = kebabToPascal(key);
-  const Component = P[componentKey];
+const PAGES_ROUTES = PAGE_VALUES.map((page: TPage) => {
+  const Component = Pages[page.title];
   return {
-    path: `/${key}`,
+    path: `/${page.key}`,
     Component,
   };
 });
-
-export const ROUTES: RouteObject[] = [
-  {
-    path: '/',
-    Component: Shell,
-    children: [
-      {
-        path: '/',
-        Component: Index,
-      },
-      ...PAGES_ROUTES,
-    ],
-  },
-];
 
 export const STANDALONE_ROUTES = [
   {
@@ -54,4 +38,20 @@ export const STANDALONE_ROUTES = [
     path: '*',
     element: <Navigate to='/' replace />,
   },
+];
+
+export const ROUTES: RouteObject[] = [
+  {
+    path: '/',
+    Component: Shell,
+    children: [
+      {
+        index: true,
+        path: '/',
+        Component: Index,
+      },
+      ...PAGES_ROUTES,
+    ],
+  },
+  ...STANDALONE_ROUTES,
 ];

@@ -2,19 +2,20 @@ import {
   MAX_SCROLL,
   TFake3DOptions,
 } from '@components/fake-3d/config';
-
 import { React } from '@components/icons/tech/React';
 import { Typescript } from '@components/icons/tech/Typescript';
+import {
+  REACT,
+  TYPESCRIPT,
+} from '@pages/projects/config/constants/third-party';
 
 export const TECH = {
   REACT: {
-    title: 'React',
-    href: 'https://reactjs.org/',
+    ...REACT,
     Icon: React,
   },
   TYPESCRIPT: {
-    title: 'Typescript',
-    href: 'https://www.typescriptlang.org/',
+    ...TYPESCRIPT,
     Icon: Typescript,
   },
 } as const;

@@ -6,16 +6,16 @@ import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
 import { useEffect } from 'react';
-import { APP_DESCRIPTION, APP_TITLE } from '@app/index';
-import { PAGE_TUPLES } from '@app/routes/app';
+import { APP_DESCRIPTION, APP_TITLE } from '@app/constants';
+import { PAGE_VALUES } from '@app/routes/app';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<
   string,
   string | null
 > = {
   '/': APP_DESCRIPTION,
-  ...PAGE_TUPLES.reduce(
-    (a, [key, title]) => ({ [key]: title }),
+  ...PAGE_VALUES.reduce(
+    (a, { path, title }) => ({ ...a, [path]: title }),
     {},
   ),
 };

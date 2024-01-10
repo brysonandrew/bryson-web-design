@@ -1,4 +1,4 @@
-import { PROJECT_ITEMS } from '@app/projects';
+import { PROJECT_ITEMS } from '@pages/projects/config/constants/items';
 
 const width = 793;
 export const SIZE = {

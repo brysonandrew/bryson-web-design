@@ -1,7 +1,6 @@
 import { FadeDown } from '@components/vertical-fade/FadeDown';
 import { FadeUp } from '@components/vertical-fade/FadeUp';
 import {
-  DURATION,
   DURATION_DARK_MODE,
   PRESENCE_OPACITY,
 } from '@constants/animation';

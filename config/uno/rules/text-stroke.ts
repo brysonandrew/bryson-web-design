@@ -1,4 +1,4 @@
-import { TColorKey } from '@app/colors';
+import { TColorKey } from '../theme/colors/types';
 import type { Rule } from 'unocss';
 import type { TTheme } from '../theme';
 

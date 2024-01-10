@@ -1,6 +1,8 @@
 import { resolveBlur } from '@utils/effects/blur';
 import { resolveBrightness } from '@utils/effects/brighten';
-import { resolveGrayscale } from '@utils/effects/grayscale';
+
+export const resolveGrayscale = (value = 0) =>
+  `grayscale(${value}%)`;
 
 const resolveFilterPart = (
   resolver: (value: number) => string,

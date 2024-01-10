@@ -3,7 +3,7 @@ import type { TMediaRecords } from 'ops/types/media';
 export type {};
 declare const self: ServiceWorkerGlobalScope;
 
-const VERSION_NUMBER = '0.2.3';
+const VERSION_NUMBER = '0.2.4';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 
 const resolveCache = async (): Promise<Cache> =>

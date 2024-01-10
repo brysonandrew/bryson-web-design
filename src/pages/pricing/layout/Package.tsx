@@ -17,7 +17,7 @@ import {
   TPackageTitle,
 } from '@pages/pricing/config/types';
 import { TickList } from '@components/text/TickList';
-import { CONTACT_ROUTE } from '@app/routes/app';
+import { PAGE_RECORD } from '@app/routes/app';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPackageTitle;
@@ -44,7 +44,7 @@ export const Package: FC<TProps> = ({
   };
   return (
     <Link
-      to={CONTACT_ROUTE}
+      to={PAGE_RECORD.contact.path}
       className='relative grow w-full'
       onClick={handleClick}
     >

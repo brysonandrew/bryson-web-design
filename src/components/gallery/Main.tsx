@@ -1,7 +1,5 @@
-import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { TProjectKey } from '@app/projects';
 import { useGallery as useContext } from '@context/domains/gallery';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
@@ -10,19 +8,19 @@ import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps } from './types';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { useMotionX } from '@hooks/gallery/useMotionX';
-import { resolveGalleryWidth } from '@hooks/gallery/resolveGalleryWidth';
+import { useMotionX } from '@components/gallery/hooks/useMotionX';
+import { resolveGalleryWidth } from '@components/gallery/hooks/resolveGalleryWidth';
 
 const Root = styled(motion.div)``;
 
-type TProps = {
+type TProps<T> = {
   viewportWidth: number;
-  currProject: TProjectKey;
+  currProject: T;
 };
-export const Main: FC<TProps> = ({
+export const Main = <T extends string>({
   viewportWidth,
   currProject,
-}) => {
+}: TProps<T>) => {
   useFreezeScrollBar();
   const { screensRecord } = useContext();
   const mediaRecords = screensRecord[currProject];

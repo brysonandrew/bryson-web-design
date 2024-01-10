@@ -11,12 +11,12 @@
       "@icons/*": ["src/icons/*"],
       "@logic/*": ["src/logic/*"],
       "@main/*": ["src/main/*"],
-      "@ops/*": ["src/ops/*"],
       "@pages/*": ["src/pages/*"],
       "@t/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@app/*": ["config/app/*"],
       "@uno/*": ["config/uno/*"],
+      "@ops/*": ["ops/*"]
     }
   }
 }

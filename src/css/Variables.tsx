@@ -1,4 +1,4 @@
-import { COLOR_VARIABLES_CSS } from '@app/colors';
+import { COLOR_VARIABLES_CSS } from '@uno/theme/colors';
 
 import { Global, css } from '@emotion/react';
 

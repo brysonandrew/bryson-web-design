@@ -1,4 +1,3 @@
-import { PROJECTS_ID } from '@app/routes/app';
 import { useTo } from '@hooks/media/nav/useTo';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { TMediaRecord } from 'ops/types/media';
@@ -6,8 +5,12 @@ import { useNavigate } from 'react-router';
 
 type TConfig = {
   mediaRecord: TMediaRecord;
+  projectsId?: string;
 };
-export const useTapHandler = ({ mediaRecord }: TConfig) => {
+export const useTapHandler = ({
+  mediaRecord,
+  projectsId = 'projects',
+}: TConfig) => {
   const navigate = useNavigate();
 
   const to = useTo({
@@ -16,9 +19,9 @@ export const useTapHandler = ({ mediaRecord }: TConfig) => {
   });
 
   const handleGallery = () => {
-    navigate(`${to}#${PROJECTS_ID}`);
+    navigate(`${to}#${projectsId}`);
     const projectsMarker =
-      document.getElementById(PROJECTS_ID);
+      document.getElementById(projectsId);
     if (projectsMarker) {
       projectsMarker.scrollIntoView({
         block: 'start',

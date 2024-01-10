@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocalStorage } from '../dom/useLocalStorage';
 import { NOOP } from '@constants/functions';
 import { resolveCompositeKey } from '@utils/keys';
-import { APP_TITLE } from '@app/index';
+import { APP_TITLE } from '@app/constants';
 
 const DARK_MODE_KEY = resolveCompositeKey(
   APP_TITLE,

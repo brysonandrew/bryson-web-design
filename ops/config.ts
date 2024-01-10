@@ -16,7 +16,7 @@ export const CANVAS_SCREENS_PATH = [
 ].join('/');
 
 export const MAIN_SERVICE_WORKER =
-  'src/main/service-worker';
+  'config/app/service-worker';
 export const BUILD_CONTEXT = 'src/context/domains/build';
 export const GALLERY_CONTEXT =
   'src/context/domains/gallery';

@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Main } from './Main';
-import { SECTION_TITLES } from '@app/routes/app';
+import { SECTION_RECORD } from '@app/routes/app';
 import { Section } from '@components/Section';
 import { P60Y } from '@components/space/P60Y';
 import { PersistHeight } from '@components/space/PersistHeight';
@@ -9,7 +9,7 @@ const Gallery = lazy(() => import('@components/gallery'));
 export const Projects = () => {
   return (
     <>
-      <Section title={SECTION_TITLES.projects}>
+      <Section title={SECTION_RECORD.projects}>
         <PersistHeight>
           <Main />
         </PersistHeight>

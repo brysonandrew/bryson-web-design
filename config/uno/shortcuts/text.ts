@@ -16,9 +16,8 @@ const TEXT_COLOR: StaticShortcutMap = {
   'text-main':
     'text-black-7 dark:text-white-9 dark-mode-transition',
   'text-main-inverted':
-    'text-white-9 dark:text-black-7 dark-mode-transition'
+    'text-white-9 dark:text-black-7 dark-mode-transition',
 };
-
 
 export const TEXT: StaticShortcutMap = {
   ...TEXT_COLOR,
@@ -29,4 +28,3 @@ export const TEXT: StaticShortcutMap = {
   '+text':
     'text-left text-xl text-shadow-inherit md:text-2xl',
 };
-

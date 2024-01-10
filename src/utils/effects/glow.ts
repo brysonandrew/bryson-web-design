@@ -1,24 +1,9 @@
-import { resolveColor } from '@utils/colors';
 import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { MotionValue } from 'framer-motion';
-import { TColorRgbKey } from '@app/colors/types';
+import { TColorRgbKey } from '@uno/theme/colors/types';
+import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
+import { resolveShadow } from '@uno/rules/glow/resolveShadow';
 
-export const resolveDropShadow = (
-  spread: number,
-  color: TColorRgbKey = 'white-9',
-) =>
-  `drop-shadow(0px 0px ${spread}px ${resolveColor(
-    color,
-    0.8,
-  )})`;
-export const resolveShadow = (
-  spread: number,
-  color: TColorRgbKey = 'white-9',
-) =>
-  `0px 0px ${spread}px ${resolveColor(
-    'white-9',
-    0.5,
-  )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`;
 
 export type TGlowConfigOptions = {
   text?: number;
@@ -31,7 +16,7 @@ export type TPartialGlowConfigOptions =
 export const resolveGlowProps = ({
   text = 0,
   drop = 0,
-  color = 'teal',
+  color = 'teal', 
   value,
 }: TGlowConfigOptions) => ({
   style: {

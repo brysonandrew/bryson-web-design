@@ -1,7 +1,12 @@
-import { COLORS } from './../../app/colors';
+import { COLOR_VARIABLES_LOOKUP } from './colors';
 import { SPACING } from './spacing';
 
 export const THEME = {
+  sm: '480px',
+  md: '700px',
+  lg: '900px',
+  xl: '1100px',
+  xxl: '1200px',
   breakpoints: {
     sm: '480px',
     md: '700px',
@@ -16,7 +21,7 @@ export const THEME = {
     '++++core': '1100px',
     '+++++core': '1200px',
   },
-  colors: COLORS,
+  colors: COLOR_VARIABLES_LOOKUP,
   spacing: SPACING,
   fontSize: {
     xxs: ['0.625rem', '0.75rem'],
@@ -37,4 +42,4 @@ export const THEME = {
 } as const;
 
 export type TTheme = typeof THEME;
-export type TAnyTheme = TTheme & any;
+export type TPartialTheme = Partial<TTheme>;

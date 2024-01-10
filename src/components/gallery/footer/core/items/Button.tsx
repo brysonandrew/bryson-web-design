@@ -11,13 +11,11 @@ import { useTo } from '@hooks/media/nav/useTo';
 import { useGallery as useContext } from '@context/domains/gallery';
 import { useDarkMode } from '@context/dark-mode';
 import { TMediaRecord } from 'ops/types/media';
-import {
-  resolveShadow,
-  resolveDropShadow,
-} from '@utils/effects/glow';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { COLORS } from '@app/colors';
+import { COLOR_LOOKUP } from '@uno/theme/colors';
 import { Background } from '@components/interactive/circle/Background';
+import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
+import { resolveShadow } from '@uno/rules/glow/resolveShadow';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -84,8 +82,8 @@ export const Button: FC<TProps> = ({
               zIndex: 0,
               cursor: 'default',
               color: isDarkMode
-                ? COLORS['white-9']
-                : COLORS['gray'],
+                ? COLOR_LOOKUP['white-9']
+                : COLOR_LOOKUP['gray'],
               textShadow: resolveShadow(0),
             },
             loading: {
@@ -93,8 +91,8 @@ export const Button: FC<TProps> = ({
               cursor: 'wait',
               opacity: 0.8,
               color: isDarkMode
-                ? COLORS['gray']
-                : COLORS['gray'],
+                ? COLOR_LOOKUP['gray']
+                : COLOR_LOOKUP['gray'],
               textShadow: resolveShadow(0),
             },
             active: {
@@ -102,8 +100,8 @@ export const Button: FC<TProps> = ({
               zIndex: 9999,
               cursor: 'default',
               color: isDarkMode
-                ? COLORS['teal-bright']
-                : COLORS['gray'],
+                ? COLOR_LOOKUP['teal-bright']
+                : COLOR_LOOKUP['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(2, 'teal')
                 : resolveShadow(0),
@@ -113,8 +111,8 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLORS['white-9']
-                : COLORS['gray'],
+                ? COLOR_LOOKUP['white-9']
+                : COLOR_LOOKUP['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(2, 'white-9')
                 : resolveShadow(0),
@@ -124,8 +122,8 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLORS['teal-bright']
-                : COLORS['gray'],
+                ? COLOR_LOOKUP['teal-bright']
+                : COLOR_LOOKUP['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(4, 'teal-bright')
                 : resolveShadow(0),

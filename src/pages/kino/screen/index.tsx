@@ -5,7 +5,6 @@ import { AblyProvider } from 'ably/react';
 import { useClient } from '../hooks/signaling/useClient';
 
 import 'webrtc-adapter';
-import '@css/reset.css';
 import '@css/globals.css';
 import 'virtual:uno.css';
 

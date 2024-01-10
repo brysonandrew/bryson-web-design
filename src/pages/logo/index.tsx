@@ -1,7 +1,6 @@
 import { Laptop } from './Laptop';
 import { P8 } from '@components/space/P8';
-import { COLOR_VARIABLES_LOOKUP } from '@app/colors';
-import { Shell } from '@components/shell';
+import { COLOR_VARIABLES_LOOKUP } from '@uno/theme/colors';
 
 const SIZE = 200;
 const box = {
@@ -25,10 +24,10 @@ export const Logo = () => {
         <div {...box}>
           <Laptop
             screen={COLOR_VARIABLES_LOOKUP['baby-blue']}
-            trackpad={COLOR_VARIABLES_LOOKUP['white-9-8']}
+            trackpad={COLOR_VARIABLES_LOOKUP['white-8']}
             bottom={COLOR_VARIABLES_LOOKUP['white-9']}
-            keyboard={COLOR_VARIABLES_LOOKUP['white-9-7']}
-            body={COLOR_VARIABLES_LOOKUP['white-9-5']}
+            keyboard={COLOR_VARIABLES_LOOKUP['white-7']}
+            body={COLOR_VARIABLES_LOOKUP['white-5']}
           />
         </div>
       </div>

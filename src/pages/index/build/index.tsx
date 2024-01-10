@@ -1,4 +1,3 @@
-import { INTRO_ID } from '@app/routes/app';
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@components/Section';
@@ -14,7 +13,6 @@ const Build: FC = () => {
     <Fake3D {...FAKE_3D_PROPS}>
       {(props) => (
         <Section
-          id={INTRO_ID}
           title={
             <>
               <Fade />

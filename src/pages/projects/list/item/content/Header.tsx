@@ -1,4 +1,4 @@
-import { PROJECT_ITEMS_RECORD } from '@app/projects';
+import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 import { TSlugProps } from '@pages/projects/config/types';
 import { FC } from 'react';
 

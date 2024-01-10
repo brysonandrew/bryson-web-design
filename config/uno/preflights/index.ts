@@ -1,4 +1,4 @@
+import { TTheme } from '@uno/theme';
 import type { Preflight } from 'unocss';
-import type { TAnyTheme } from '../theme';
 import { CSS } from './css';
-export const PRE_FLIGHTS: Preflight<TAnyTheme>[] = [CSS];
+export const PRE_FLIGHTS: Preflight<TTheme>[] = [CSS];

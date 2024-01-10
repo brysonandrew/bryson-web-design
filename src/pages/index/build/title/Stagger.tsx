@@ -2,7 +2,6 @@ import { TDivMotionProps } from '@t/dom';
 import { TClassValueProps } from '@t/index';
 import { resolveCompositeKey } from '@utils/keys';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';
 

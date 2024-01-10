@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import type { TItem } from '@pages/projects/config/types';
+import type { TItem, TProjectKey } from '@pages/projects/config/types';
 import { Fragment, type FC } from 'react';
 import { Item } from './item';
-import { TProjectKey } from '@app/projects';
 import { motion } from 'framer-motion';
 import { P3 } from '@components/space/P3';
 

@@ -1,4 +1,3 @@
-import { TProjectKey } from '@app/projects';
 import {
   TExtKey,
   TFilePathKey,
@@ -31,24 +30,9 @@ export type TImageRecord = Record<
   TFilePathKey,
   TMediaRecord[]
 >;
-export type TProjectImageRecord = Partial<
-  Record<TProjectKey, TImageRecord>
->;
-export type TPartialProjectImageRecord = {
-  [key: TProjectKey]: TImageRecord;
-};
-
 export type TImageResolverRecord = Record<
   TFilePathKey,
   any
 >;
-export type TImageResolverEntry = [
-  TFilePathKey,
-  any,
-];
+export type TImageResolverEntry = [TFilePathKey, any];
 export type TImageResolverEntries = TImageResolverEntry[];
-
-export type TProjectImageResolverRecord = Record<
-  TProjectKey,
-  TImageResolverRecord
->;
