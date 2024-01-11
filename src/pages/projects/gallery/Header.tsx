@@ -1,14 +1,12 @@
 import { type FC } from 'react';
-import { Close } from './buttons/Close';
 import styled from '@emotion/styled';
-import { Content } from '../../pages/projects/list/item/content';
+import { Content } from '../list/item/content';
 import { TDivMotionProps } from '@t/dom';
 import { TChildrenProps } from '@t/index';
-import { useOffSound } from '@hooks/sounds/useOffSound';
-import { NOOP } from '@constants/functions';
-import { isDesktop } from 'react-device-detect';
 import { Network } from '@components/base/network';
 import { TSlugProps } from '@pages/projects/config/types';
+import { RightHeader } from './RightHeader';
+import { PROJECT_ITEMS_RECORD } from '../config/constants/items';
 
 const Root = styled.header``;
 
@@ -16,17 +14,15 @@ type TProps = TDivMotionProps &
   TSlugProps &
   Partial<TChildrenProps>;
 export const Header: FC<TProps> = ({ slug, ...props }) => {
-  const handleOffSound = useOffSound();
-  const handleClose = () => {
-    handleOffSound();
-  };
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
-      <Content 
+      <Content
         isHover
         slug={slug}
         rightHeader={
-          <Close onClick={isDesktop ? handleClose : NOOP} />
+          <RightHeader
+            pricing={PROJECT_ITEMS_RECORD[slug].pricing}
+          />
         }
         {...props}
       />

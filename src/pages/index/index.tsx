@@ -8,7 +8,7 @@ const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
 const GalleryLazy = lazy(
-  () => import('@components/gallery'),
+  () => import('@pages/projects/gallery'),
 );
 
 export const Index = () => {

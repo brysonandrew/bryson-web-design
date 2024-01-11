@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useGallery as useContext } from '@components/gallery/context';
+import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { resolveTo } from '../../../hooks/media/nav/resolveTo';
+import { resolveTo } from '../../../../hooks/media/nav/resolveTo';
 import { useCurrParams } from '@hooks/params/useCurrParams';
 import { TBaseProps } from '../types';
 import { DURATION_MID } from '@constants/animation';

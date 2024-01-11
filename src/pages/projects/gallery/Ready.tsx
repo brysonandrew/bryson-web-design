@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { useGallery as useContext } from '@components/gallery/context';
+import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -8,16 +8,16 @@ import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps } from './types';
 import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { useMotionX } from '@components/gallery/hooks/useMotionX';
-import { resolveGalleryWidth } from '@components/gallery/hooks/resolveGalleryWidth';
+import { useMotionX } from '@pages/projects/gallery/hooks/useMotionX';
+import { resolveGalleryWidth } from '@pages/projects/gallery/hooks/resolveGalleryWidth';
 
 const Root = styled(motion.div)``;
 
-type TProps<T> = {
+export type TProps<T> = {
   viewportWidth: number;
   currProject: T;
 };
-export const Main = <T extends string>({
+export const Ready = <T extends string>({
   viewportWidth,
   currProject,
 }: TProps<T>) => {

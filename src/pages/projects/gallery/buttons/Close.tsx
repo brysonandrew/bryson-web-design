@@ -1,8 +1,8 @@
 import { Cross } from '@components/decoration/icons/gallery/Cross';
 import type { FC } from 'react';
-import { IconLink } from '../../interactive/IconLink';
+import { IconLink } from '@components/interactive/IconLink';
 import { TClassValueProps } from '@t/index';
-import { useTo } from '../../../hooks/media/nav/useTo';
+import { useTo } from '../hooks/nav/useTo';
 import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { Circle } from '@components/interactive/circle';
 import { TDivMotionProps } from '@t/dom';

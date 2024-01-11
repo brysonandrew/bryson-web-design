@@ -22,7 +22,10 @@ export const Section: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx('relative column z-10', classValue)}
+      className={clsx(
+        'relative column',
+        classValue ?? 'z-10',
+      )}
       {...props}
     >
       <Title>{title}</Title>

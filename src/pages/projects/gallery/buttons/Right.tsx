@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useNext } from '../../../hooks/media/nav/useNext';
+import { useNext } from '../../../../hooks/media/nav/useNext';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
 import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';

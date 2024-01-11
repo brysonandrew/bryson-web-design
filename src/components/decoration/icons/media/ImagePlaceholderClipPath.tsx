@@ -1,4 +1,4 @@
-import { IMAGE_PLACEHOLDER_ID } from '@components/gallery/sections/constants';
+import { IMAGE_PLACEHOLDER_ID } from '@pages/projects/gallery/sections/constants';
 import type { FC, SVGAttributes } from 'react';
 
 type TProps = SVGAttributes<SVGElement> & {

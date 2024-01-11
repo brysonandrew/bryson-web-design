@@ -14,7 +14,7 @@ export const Settings: FC<TProps> = (props) => {
   return (
     <Root
       className={clsx(
-        'absolute bottom-6 right-6 row gap-1 z-10 backdrop-blur-sm rounded-full overflow-hidden p-1 border border-gray-02',
+        'absolute bottom-6 right-6 row gap-1 z-10 backdrop-blur-sm rounded-full overflow-hidden p-1 subtle-border',
       )}
       {...props}
     >

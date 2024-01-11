@@ -4,7 +4,7 @@ import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';
-import { Circle } from './decoration/Circle';
+import { Circle } from './Circle';
 
 type TProps = {
   children: TPart;

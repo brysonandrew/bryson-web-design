@@ -2,10 +2,8 @@ import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
-import { Time } from './content/Time';
 import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
-import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
@@ -18,8 +16,7 @@ import { useCursor } from '@components/base/cursor/context';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { useToFirst } from '@hooks/media/nav/useToFirst';
 import { TSlugProps } from '@pages/projects/config/types';
-
-const Root = styled(motion.li)``;
+import { RightHeader } from './RightHeader';
 
 type TProps = TSlugProps & {
   index: number;
@@ -73,7 +70,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   };
 
   return (
-    <Root
+    <motion.li
       id={slug}
       className='cursor-pointer'
       style={{ zIndex: index }}
@@ -82,7 +79,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       <Content
         slug={item.slug}
         isHover={isHover}
-        rightHeader={<Time time={item.time} />}
+        rightHeader={<RightHeader {...item} />}
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete
         }
@@ -91,6 +88,6 @@ export const Item: FC<TProps> = ({ slug, index }) => {
           <Details isVisible={isExpanded} {...item} />
         )}
       </Content>
-    </Root>
+    </motion.li>
   );
 };

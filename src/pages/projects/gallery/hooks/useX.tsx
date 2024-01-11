@@ -1,5 +1,5 @@
-import { TBaseProps } from '@components/gallery/types';
-import { resolveX } from '@components/gallery/utils/resolveX';
+import { TBaseProps } from '@pages/projects/gallery/types';
+import { resolveX } from '@pages/projects/gallery/utils/resolveX';
 
 type TConfig = Pick<
   TBaseProps,

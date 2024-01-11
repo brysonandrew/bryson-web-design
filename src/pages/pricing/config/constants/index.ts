@@ -1,6 +1,6 @@
 import {
-  TPackageKey,
-  TPackageTitle,
+  TPricingKey,
+  TPricingTitle,
 } from '@pages/pricing/config/types';
 import { TProps as TPriceProps } from '@pages/pricing/layout/price';
 import { colorToStylesRecord } from '@utils/transformer/colorToStyles';
@@ -19,7 +19,7 @@ type TConfig = any & {
   listLiteral: string;
   PreContent?: FC;
 } & TPriceProps;
-export const CONFIG_LOOKUP: Record<TPackageKey, TConfig> = {
+export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   standard: {
     price: 799,
     listLiteral: `
@@ -57,10 +57,10 @@ export const CONFIG_LOOKUP: Record<TPackageKey, TConfig> = {
 } as const;
 
 export const resolvePackageConfig = (
-  title: TPackageTitle,
+  title: TPricingTitle,
 ) => {
-  const key: TPackageKey =
-    title.toLowerCase() as TPackageKey;
+  const key: TPricingKey =
+    title.toLowerCase() as TPricingKey;
   const config = CONFIG_LOOKUP[key];
   const { listLiteral, ...rest } = config;
   const color = PACKAGES_COLOR_LOOKUP[key];

@@ -1,4 +1,3 @@
-import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import styled from '@emotion/styled';
 import { useCurrName } from '@hooks/params/useCurrName';
 import { TDivMotionProps } from '@t/dom';
@@ -34,11 +33,7 @@ export const Circle: FC<TProps> = ({
       className={clsx(
         position,
         'center w-10 h-10 rounded-full',
-        [
-          isGallery
-            ? 'dark:glow-accent glow'
-            : 'glow',
-        ],
+        [isGallery ? 'dark:glow-accent glow' : 'glow'],
         classValue,
       )}
       {...resolveParentAnimateConfig({ isHover })}

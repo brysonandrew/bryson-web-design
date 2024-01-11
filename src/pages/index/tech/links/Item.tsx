@@ -13,10 +13,6 @@ import { OPEN_IN_NEW_CURSOR_KEY } from '@components/base/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
 
-const Root = styled(motion.div)``;
-const Anchor = styled.a``;
-const Title = styled.h4``;
-
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,
   title,
@@ -34,7 +30,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   const borderRadiusClass = 'rounded';
 
   return (
-    <Root
+    <motion.div
       className='relative cursor-pointer'
       {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
@@ -63,7 +59,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
           drop={isDarkMode ? 4 : 0.2}
           classValue={borderRadiusClass}
         >
-          <Anchor
+          <a
             className={clsx(
               'inline-flex relative pl-4 pr-3 py-3',
               borderRadiusClass,
@@ -73,10 +69,10 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
           >
             <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
             <P1_5 />
-            <Title className='+++text mt-0.75'>{title}</Title>
-          </Anchor>
+            <h4 className='title mt-0.75'>{title}</h4>
+          </a>
         </Glow>
       </Box>
-    </Root>
+    </motion.div>
   );
 };

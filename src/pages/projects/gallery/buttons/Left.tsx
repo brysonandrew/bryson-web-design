@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { ArrowLeft } from '@components/decoration/icons/gallery/ArrowLeft';
-import { usePrev } from '../../../hooks/media/nav/usePrev';
+import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
 import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';

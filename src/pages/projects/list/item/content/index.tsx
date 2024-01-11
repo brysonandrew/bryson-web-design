@@ -1,9 +1,7 @@
 import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
-import {
-  resolveTitleLayoutId,
-} from '@pages/projects/config/constants';
+import { resolveTitleLayoutId } from '@pages/projects/config/constants';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
@@ -13,12 +11,12 @@ import { P2 } from '@components/layout/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { useDarkMode } from '@hooks/dark-mode/context';
-import { P1 } from '@components/layout/space/P1';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
+import { TPricingKey } from '@pages/pricing/config/types';
 
 const Root = styled(motion.div)``;
 
@@ -103,7 +101,7 @@ export const Content: FC<TProps> = ({
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <Metal  classValue={borderRadiusClass} />
+      <Metal classValue={borderRadiusClass} />
       <Mark classValue='z-20' />
       <P2 />
       <motion.div
@@ -114,15 +112,13 @@ export const Content: FC<TProps> = ({
         {
           <AnimatePresence>
             {!isTransitioning && (
-              <>
-                <P1 />
-                <motion.div
-                  key={Boolean(project) ? 'project' : slug}
-                  {...PRESENCE_OPACITY}
-                >
-                  {rightHeader}
-                </motion.div>
-              </>
+              <motion.div
+                key={Boolean(project) ? 'project' : slug}
+                className='row'
+                {...PRESENCE_OPACITY}
+              >
+                {rightHeader}
+              </motion.div>
             )}
           </AnimatePresence>
         }

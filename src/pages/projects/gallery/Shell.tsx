@@ -1,9 +1,16 @@
 import { type FC } from 'react';
 import { useCurrProject } from '@hooks/params/useCurrProject';
-import { Main } from './Main';
+import { TProps as TReadyGalleryProps } from './Ready';
 import { useViewport } from '@context/viewport';
+import { TChildren } from '@t/index';
+import { TProjectKey } from '@pages/projects/config/types';
 
-export const Gallery: FC = () => {
+type TProps<T> = {
+  children(props: TReadyGalleryProps<T>): TChildren;
+};
+export const Shell: FC<TProps<TProjectKey>> = ({
+  children,
+}) => {
   const currProject = useCurrProject();
   const isSelectedProject = currProject !== null;
   const { isResizing, width } = useViewport();
@@ -13,13 +20,8 @@ export const Gallery: FC = () => {
     typeof width === 'number'
   ) {
     return (
-      <Main
-        currProject={currProject}
-        viewportWidth={width}
-      />
+      <>{children({ currProject, viewportWidth: width })}</>
     );
   }
   return null;
 };
-
-export default Gallery;

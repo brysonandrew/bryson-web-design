@@ -6,7 +6,7 @@ import { useCurrParams } from '../params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@utils/format';
 import { useEffect } from 'react';
-import { APP_DESCRIPTION, APP_TITLE } from '@app/constants';
+import { APP_DESCRIPTION, APP_TITLE } from '@app/config/constants';
 import { PAGE_NAV_VALUES } from '@app/routes/constants/pages';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<

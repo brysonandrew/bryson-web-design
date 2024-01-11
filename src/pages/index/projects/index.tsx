@@ -6,7 +6,11 @@ import { Section } from '@components/layout/Section';
 
 const Projects = () => {
   return (
-    <Section id='projects' title={SECTION_RECORD.projects}>
+    <Section
+      id='projects'
+      title={SECTION_RECORD.projects}
+      classValue='z-20' // this is because projects can expand and overlap contact
+    >
       <Fake3D {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
       </Fake3D>

@@ -8,7 +8,7 @@ import {
 import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
-} from '../../gallery/sections/constants';
+} from '../../../pages/projects/gallery/sections/constants';
 import { FilterShell } from '@components/filters/FilterShell';
 
 const id = MOTION_BLUR_ID;

@@ -6,7 +6,7 @@ export const Section: FC<TProps> = ({
   children,
 }) => (
   <div className='column gap-6 w-full'>
-    <h4 className='w-full text-left +text uppercase tracking-wider'>
+    <h4 className='w-full text-left section-title uppercase tracking-wider'>
       {title}
     </h4>
     <div className='column items-stretch gap-12 w-full'>

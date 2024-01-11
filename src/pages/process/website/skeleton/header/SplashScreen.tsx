@@ -1,4 +1,4 @@
-import { Focus } from '@components/interactive/focus';
+import { Focus } from '@pages/process/focus';
 import { I } from '@components/decoration/Icon';
 import { PRESENCE_OPACITY } from '@constants/animation';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';

@@ -13,17 +13,17 @@ import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { PACKAGE_CURSOR_KEY } from '@components/base/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import {
-  TPackageKey,
-  TPackageTitle,
+  TPricingKey,
+  TPricingTitle,
 } from '@pages/pricing/config/types';
 import { TickList } from '@components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { Metal } from '@components/decoration/metal';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
-  title: TPackageTitle;
-  backgroundColorClass: `bg-${TPackageKey}`;
-  textColorClass: `text-${TPackageKey}`;
+  title: TPricingTitle;
+  backgroundColorClass: `bg-${TPricingKey}`;
+  textColorClass: `text-${TPricingKey}`;
 };
 export const Package: FC<TProps> = ({
   title,
@@ -81,9 +81,8 @@ export const Package: FC<TProps> = ({
         <P1_5 />
         <div className='relative items-stretch h-full bg-main rounded-t-md'>
           <Metal classValue={clsx('rounded-md')} />
-
           <P4 />
-          <div className={clsx('px-4', textColorClass)}>
+          <div className={clsx('relative px-4', textColorClass)}>
             {PreContent && <PreContent />}
             <TickList items={listItems} />
           </div>

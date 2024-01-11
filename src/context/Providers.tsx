@@ -3,7 +3,7 @@ import { Provider as DarkModeProvider } from '@hooks/dark-mode/context/Provider'
 import { Provider as SoundProvider } from '@hooks/sounds/context/Provider';
 import { Provider as AppProvider } from '@components/base/context/Provider';
 import { Provider as CursorProvider } from '@components/base/cursor/context/Provider';
-import { Provider as GalleryProvider } from '@components/gallery/context/Provider';
+import { Provider as GalleryProvider } from '@pages/projects/gallery/context/Provider';
 import { Provider as ServicesProvider } from '@pages/index/pricing/context/Provider';
 import { Provider as ContactProvider } from '@pages/index/contact/context/Provider';
 import { Provider as ViewportProvider } from '@context/viewport/Provider';

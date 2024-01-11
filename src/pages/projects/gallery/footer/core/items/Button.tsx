@@ -8,7 +8,7 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '@hooks/media/nav/useTo';
-import { useGallery as useContext } from '@components/gallery/context';
+import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { useDarkMode } from '@hooks/dark-mode/context';
 import { TMediaRecord } from 'ops/types/media';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';

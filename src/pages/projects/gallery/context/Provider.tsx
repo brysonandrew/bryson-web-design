@@ -1,6 +1,5 @@
 import { PropsWithChildren, useState } from 'react';
 import type { FC } from 'react';
-import type { TChildrenElement } from '@t/index';
 import screensRecordJson from './lookup.json';
 import { TScreensRecord } from 'ops/types';
 const screensRecord =

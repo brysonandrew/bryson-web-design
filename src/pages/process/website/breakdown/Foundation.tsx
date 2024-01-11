@@ -1,5 +1,5 @@
-import { Item } from '@components/interactive/focus/Item';
-import { Circle } from '@components/interactive/focus/decoration/Circle';
+import { Item } from '@pages/process/focus/Item';
+import { Circle } from '@pages/process/focus/Circle';
 import { useCursor } from '@components/base/cursor/context';
 import { FOUNDATION } from '../config';
 import { List } from '../../../../components/layout/lists/List';
