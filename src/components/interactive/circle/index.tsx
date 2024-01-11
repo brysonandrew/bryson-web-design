@@ -1,4 +1,4 @@
-import { MetalGlow } from '@components/metal/MetalGlow';
+import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import styled from '@emotion/styled';
 import { useCurrName } from '@hooks/params/useCurrName';
 import { TDivMotionProps } from '@t/dom';

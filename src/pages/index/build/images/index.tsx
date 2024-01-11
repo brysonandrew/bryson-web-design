@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { useBuild } from '@context/domains/build';
+import { useBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import styled from '@emotion/styled';
-import { P8 } from '@components/space/P8';
-import { TITLE_HEIGHT } from '@components/space/TitleRoot';
+import { P8 } from '@components/layout/space/P8';
+import { TITLE_HEIGHT } from '@components/layout/space/TitleRoot';
 import { useScroll as useScrollContext } from '@context/scroll';
 import { useViewport as useViewportContext } from '@context/viewport';
 import { TDepthConfig } from '@hooks/media/fake-3D/useCircle';

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { useViewport } from '@context/viewport';
 import { TMediaRecord } from 'ops/types/media';
 

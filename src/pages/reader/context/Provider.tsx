@@ -3,7 +3,6 @@ import {
   useState,
   type FC,
 } from 'react';
-import type { TChildrenElement } from '@t/index';
 import { Reader, useReader } from '.';
 import {
   TContext,
@@ -18,8 +17,7 @@ import { useClipboardContext } from './clipboard/useClipboardContext';
 import { useListeners } from '../hooks/useListeners';
 import { useSynthesis } from '../hooks/useSynthesis';
 
-type TProviderProps = PropsWithChildren;
-export const Provider: FC<TProviderProps> = ({
+export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const context = useReader();

@@ -1,6 +1,6 @@
-import { P1 } from '@components/space/P1';
-import { P2 } from '@components/space/P2';
-import { useCursor } from '@context/cursor';
+import { P1 } from '@components/layout/space/P1';
+import { P2 } from '@components/layout/space/P2';
+import { useCursor } from '@components/base/cursor/context';
 import { Extras } from './breakdown/extras';
 import { Money } from './Money';
 import { Skeleton } from './skeleton';

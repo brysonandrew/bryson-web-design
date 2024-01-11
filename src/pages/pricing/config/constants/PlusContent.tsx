@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { I } from '@components/Icon';
-import { P2 } from '@components/space/P2';
-import { P3 } from '@components/space/P3';
-import { P_5 } from '@components/space/P_5';
+import { I } from '@components/decoration/Icon';
+import { P2 } from '@components/layout/space/P2';
+import { P3 } from '@components/layout/space/P3';
+import { P_5 } from '@components/layout/space/P_5';
 import { TICK_CIRCLE_ICON } from '@constants/icons';
 import { PLUS_ICON } from '@constants/icons/text';
 

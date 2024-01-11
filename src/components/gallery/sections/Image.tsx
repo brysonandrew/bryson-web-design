@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useGallery as useContext } from '@context/domains/gallery';
-import { Picture } from '@components/picture';
+import { useGallery as useContext } from '@components/gallery/context';
+import { Picture } from '@components/media/picture';
 import { useLoadImage } from '@hooks/media/useLoadImage';
 import {
   TDimensions,

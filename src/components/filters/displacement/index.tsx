@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { TFilterChildrenProps } from "../types";
+import type { TFilterChildrenProps } from "../config/types";
 import { Filter } from "./Filter";
 import type { TDisplacementProps } from "./config";
 

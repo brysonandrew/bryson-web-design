@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { useGallery as useContext } from '@context/domains/gallery';
+import { useGallery as useContext } from '@components/gallery/context';
 import { Header } from './Header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';

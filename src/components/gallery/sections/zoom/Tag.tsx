@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Cross } from '@components/icons/gallery/Cross';
+import { Cross } from '@components/decoration/icons/gallery/Cross';
 import { TChildren } from '@t/index';
 
 export const Root = styled(motion.div)``;

@@ -8,8 +8,8 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useTo } from '@hooks/media/nav/useTo';
-import { useGallery as useContext } from '@context/domains/gallery';
-import { useDarkMode } from '@context/dark-mode';
+import { useGallery as useContext } from '@components/gallery/context';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import { TMediaRecord } from 'ops/types/media';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLOR_LOOKUP } from '@uno/theme/colors';

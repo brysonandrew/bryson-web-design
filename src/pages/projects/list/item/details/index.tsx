@@ -4,7 +4,7 @@ import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@components/space/P2';
+import { P2 } from '@components/layout/space/P2';
 import { TDivMotionProps } from '@t/dom';
 
 const Root = styled(motion.div)``;

@@ -1,6 +1,6 @@
-import { Codewars } from '@components/icons/links/Codewars';
-import { Email } from '@components/icons/links/Email';
-import { Github } from '@components/icons/links/Github';
+import { Codewars } from '@components/decoration/icons/links/Codewars';
+import { Email } from '@components/decoration/icons/links/Email';
+import { Github } from '@components/decoration/icons/links/Github';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC, Fragment } from 'react';

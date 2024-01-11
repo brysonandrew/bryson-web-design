@@ -1,7 +1,7 @@
 import { TChildren } from '@t/index';
 import { FC } from 'react';
 import { Subtitle } from './Subtitle';
-import { P2 } from '@components/space/P2';
+import { P2 } from '@components/layout/space/P2';
 
 type TProps = { title: TChildren; content: TChildren };
 export const Row: FC<TProps> = ({ title, content }) => {

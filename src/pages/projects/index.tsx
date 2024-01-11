@@ -1,9 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { Main } from './Main';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
-import { Section } from '@components/Section';
-import { P60Y } from '@components/space/P60Y';
-import { PersistHeight } from '@components/space/PersistHeight';
+import { Section } from '@components/layout/Section';
+import { P60Y } from '@components/layout/space/P60Y';
+import { PersistHeight } from '@components/layout/space/PersistHeight';
 const Gallery = lazy(() => import('@components/gallery'));
 
 export const Projects = () => {

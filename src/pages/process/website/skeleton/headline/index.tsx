@@ -1,4 +1,4 @@
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import { IMAGE_ICON } from '@constants/icons';
 import { FC, PropsWithChildren } from 'react';
 import { TextLines } from '../../../skeleton/TextLines';

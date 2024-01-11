@@ -1,4 +1,4 @@
-import { useServicesC } from '@context/domains/services/useServicesC';
+import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { ADDITIONAL_CONTENT } from '../../config';
 import { Normal } from './variants/Normal';
 import { Reversed } from './variants/Reversed';

@@ -1,10 +1,10 @@
-import { FOCUS_CURSOR_KEY } from '@components/cursor/switch/config';
-import { useCursor } from '@context/cursor';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { FOCUS_CURSOR_KEY } from '@components/base/cursor/switch/config';
+import { useCursor } from '@components/base/cursor/context';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';
-import { Circle } from '../../decoration/Circle';
+import { Circle } from './decoration/Circle';
 
 type TProps = {
   children: TPart;

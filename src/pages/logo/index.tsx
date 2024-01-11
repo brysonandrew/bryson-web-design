@@ -1,5 +1,5 @@
 import { Laptop } from './Laptop';
-import { P8 } from '@components/space/P8';
+import { P8 } from '@components/layout/space/P8';
 import { COLOR_VARIABLES_LOOKUP } from '@uno/theme/colors';
 
 const SIZE = 200;

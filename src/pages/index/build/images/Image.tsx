@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Picture } from '@components/picture';
+import { Picture } from '@components/media/picture';
 import { useImageDimensions } from '@hooks/media/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@components/filters/presets';
+} from '@components/filters/config/constants/presets';
 import { TMediaRecord } from 'ops/types/media';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@t/dom';
 import styled from '@emotion/styled';
 import { resolveParentAnimateConfig } from '@utils/effects';
 import { isDesktop } from 'react-device-detect';
-import { GALLERY_CURSOR_KEY } from '@components/cursor/switch/config';
+import { GALLERY_CURSOR_KEY } from '@components/base/cursor/switch/config';
 import { resolveMotionConfig } from '@hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { List } from './list';
 import { PROJECT_ITEMS } from '@pages/projects/config/constants/items';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { Tips } from './Tips';
 import { useInView } from 'react-intersection-observer';

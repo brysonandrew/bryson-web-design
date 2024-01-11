@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import { ArrowLeft } from '@components/icons/gallery/ArrowLeft';
+import { ArrowLeft } from '@components/decoration/icons/gallery/ArrowLeft';
 import { usePrev } from '../../../hooks/media/nav/usePrev';
 import { TClassValueProps } from '@t/index';
 import { Nav } from './Nav';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { resolveParentAnimateConfig } from '@utils/effects';
 
 type TProps = TClassValueProps & {

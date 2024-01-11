@@ -1,12 +1,12 @@
 import { type FC } from 'react';
 import { TSlugProps, TTag } from '@pages/projects/config/types';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { GLOBAL_KEY } from '@hooks/cursor/config';
+import { GLOBAL_KEY } from '@components/base/cursor/hooks/config';
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@t/dom';
 import { resolveCompositeHoverKey } from '@utils/keys';
-import { useCursor } from '@context/cursor';
-import { PROJECT_CURSOR_KEY } from '@components/cursor/switch/config';
+import { useCursor } from '@components/base/cursor/context';
+import { PROJECT_CURSOR_KEY } from '@components/base/cursor/switch/config';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &

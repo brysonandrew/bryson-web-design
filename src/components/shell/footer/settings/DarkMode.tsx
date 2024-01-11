@@ -1,13 +1,13 @@
-import { Moon } from '@components/icons/dark-mode/Moon';
-import { Sun } from '@components/icons/dark-mode/Sun';
+import { Moon } from '@components/decoration/icons/dark-mode/Moon';
+import { Sun } from '@components/decoration/icons/dark-mode/Sun';
 import { resolveVerticalShiftPresence } from '@utils/animation';
 import { AnimatePresence } from 'framer-motion';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { Button } from '@components/interactive/circle/Button';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
 import { createElement } from 'react';
-import { useDarkMode } from '@context/dark-mode';
+import { useDarkMode } from '@hooks/dark-mode/context';
 
 export const DarkMode = () => {
   const darkMode = useDarkMode();

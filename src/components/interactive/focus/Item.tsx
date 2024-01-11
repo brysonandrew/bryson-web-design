@@ -1,5 +1,5 @@
-import { FOCUS_CURSOR_KEY } from '@components/cursor/switch/config';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { FOCUS_CURSOR_KEY } from '@components/base/cursor/switch/config';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';

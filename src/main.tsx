@@ -5,15 +5,13 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
-import { Boundary } from '@components/boundary';
+import { Boundary } from '@components/base/boundary';
 import { MOTION_CONFIG } from '@constants/animation';
 import { HelmetProvider } from 'react-helmet-async';
 import { init as initServiceWorker } from '@app/service-worker/init';
 import { ROUTES } from '@app/routes';
 
 initServiceWorker();
-
-import 'uno:reset.css';
 
 import 'virtual:uno.css';
 import '@css/globals.css';

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import { Package } from './layout/Package';
 
 const Root = styled(motion.div)``;

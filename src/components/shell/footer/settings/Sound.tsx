@@ -1,8 +1,8 @@
-import { VolumeOff } from '@components/icons/sound/VolumeOff';
-import { useSound as useSoundContext } from '@context/sound';
+import { VolumeOff } from '@components/decoration/icons/sound/VolumeOff';
+import { useSound as useSoundContext } from '@hooks/sounds/context';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
-import { VolumeOn } from '@components/icons/sound/VolumeOn';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { VolumeOn } from '@components/decoration/icons/sound/VolumeOn';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { AnimatePresence } from 'framer-motion';
 import { Button } from '@components/interactive/circle/Button';
 

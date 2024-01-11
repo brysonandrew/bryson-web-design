@@ -1,4 +1,4 @@
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import { Button } from '../../components/Buttons';
 import { useReader } from '../../context';
 

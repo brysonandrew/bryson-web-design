@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { DURATION, PRESENCE_Y } from '@constants/animation';
-import { MetalDarkest } from '@components/metal/MetalDarkest';
+import { MetalDarkest } from '@components/decoration/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 
 const Root = styled(motion.footer)``;
 

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { Link as __Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 
 const _Link = styled(motion(__Link))``;
 

@@ -1,6 +1,6 @@
 import { PRESENCE_OPACITY } from '@constants/animation';
 import styled from '@emotion/styled';
-import { useDarkMode } from '@context/dark-mode';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';

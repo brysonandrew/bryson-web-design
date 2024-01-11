@@ -1,4 +1,4 @@
-import { useSound as useContext } from '@context/sound';
+import { useSound as useContext } from '@hooks/sounds/context';
 import type { TMultiOptions } from "react-synthwave";
 import { useSynthMulti } from "react-synthwave";
 

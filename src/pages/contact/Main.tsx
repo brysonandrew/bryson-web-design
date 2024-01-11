@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import { Form } from './form';
 
 const Root = styled(motion.div)``;

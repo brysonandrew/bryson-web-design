@@ -1,9 +1,9 @@
 import {
   MAX_SCROLL,
   TFake3DOptions,
-} from '@components/fake-3d/config';
-import { React } from '@components/icons/tech/React';
-import { Typescript } from '@components/icons/tech/Typescript';
+} from '@components/animation/fake-3d/config';
+import { React } from '@components/decoration/icons/tech/React';
+import { Typescript } from '@components/decoration/icons/tech/Typescript';
 import {
   REACT,
   TYPESCRIPT,

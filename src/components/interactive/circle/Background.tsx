@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import { TDivMotionProps } from '@t/dom';
 import { DURATION } from '@constants/animation';
 import { motion } from 'framer-motion';
-import { MetalGlow } from '@components/metal/MetalGlow';
+import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import { useCurrName } from '@hooks/params/useCurrName';
-import { useDarkMode } from '@context/dark-mode';
+import { useDarkMode } from '@hooks/dark-mode/context';
 
 type TProps = TDivMotionProps;
 export const Background: FC<TProps> = (props) => {

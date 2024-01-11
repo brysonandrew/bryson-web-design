@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { PropsWithChildren, type FC } from 'react';
 import type { TChildrenElement } from '@t/index';
 import { Projector, useProjector } from '.';
 import { TContext } from './types';
@@ -7,10 +7,7 @@ import { useLogs } from '@pages/kino/hooks/useLogs';
 import { useChannel } from 'ably/react';
 import { CHANNEL_KEY } from '@pages/kino/hooks/signaling/config';
 
-type TProviderProps = {
-  children: TChildrenElement;
-};
-export const Provider: FC<TProviderProps> = ({
+export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const initProjectorContext = useProjector();

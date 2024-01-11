@@ -1,5 +1,5 @@
 import { DragIcon } from './DragIcon';
-import { MetalDark } from '@components/metal/MetalDark';
+import { MetalDark } from '@components/decoration/metal/MetalDark';
 import { useDrag } from '@components/gallery/hooks/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';

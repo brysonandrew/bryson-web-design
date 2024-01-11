@@ -11,6 +11,7 @@ import { TColorKey, TCssVar } from './types';
 import { resolveCssVar } from './utils/resolveCssVar';
 import { rgbToOpacityRangeRecord } from './utils/rgbToOpacityRangeRecord';
 import { rgbToVarRecord } from './utils/rgbToVarRecord';
+import { resolveCssVarRecord } from './utils/resolveCssVarRecord';
 
 export const CUSTOM_RGB_RECORD = {
   ...RGB_RECORD,
@@ -37,17 +38,8 @@ export const COLOR_LOOKUP = {
   transparent: 'rgba(0, 0, 0, 0)',
 } as const;
 
-const entries = Object.entries(COLOR_LOOKUP) as [
-  TColorKey,
-  string,
-][];
-export const COLOR_VARIABLES_CSS = entries.reduce(
-  (a, [key, value]) => {
-    return `${a}
---${key}: ${value};`;
-  },
-  ``,
-);
+export const COLOR_VARIABLES_CSS =
+  resolveCssVarRecord<TColorKey>(COLOR_LOOKUP);
 
 const keys = Object.keys(COLOR_LOOKUP) as TColorKey[];
 export const COLOR_VARIABLES_LOOKUP = keys.reduce(

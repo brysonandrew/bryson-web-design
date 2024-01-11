@@ -4,10 +4,10 @@ import { Submit } from './Submit';
 import { useRef } from 'react';
 import { useForm } from './hooks/useForm';
 import { useAutoFocus } from './hooks/useAutoFocus';
-import { P3 } from '@components/space/P3';
+import { P3 } from '@components/layout/space/P3';
 import { Text } from './Text';
 import { Textarea } from './textarea';
-import { P6 } from '@components/space/P6';
+import { P6 } from '@components/layout/space/P6';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 
 const Root = styled(motion.form)``;

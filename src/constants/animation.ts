@@ -1,7 +1,7 @@
 import {
   EASE,
   DURATION as DURATION_DARK_MODE_MS,
-} from '@hooks/style/useDarkMode';
+} from '@hooks/dark-mode/useDarkMode';
 import { TTransition } from '@t/animation';
 import { resolvePresence } from '@utils/animation';
 import { Transition } from 'framer-motion';

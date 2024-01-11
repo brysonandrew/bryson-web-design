@@ -14,7 +14,7 @@ import {
   TMoveConfig,
   TSharedConfig,
 } from './config';
-import { Picture } from '@components/picture';
+import { Picture } from '@components/media/picture';
 import { useTapEvents } from './useTapEvents';
 import { TMediaRecord } from 'ops/types/media';
 import { Tag } from './Tag';

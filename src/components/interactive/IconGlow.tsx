@@ -1,4 +1,4 @@
-import { Glow } from '@components/filter-animate/Glow';
+import { Glow } from '@components/animation/filter-animate/Glow';
 import { TIconComponent } from '@t/icons';
 import { TPartialGlowConfigOptions } from '@utils/effects/glow';
 import { FC } from 'react';
