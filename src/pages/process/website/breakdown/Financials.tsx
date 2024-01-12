@@ -1,4 +1,4 @@
-import { ThinLine } from '@components/line';
+import { ThinLine } from '@components/decoration/line';
 import { Money } from '../Money';
 import { List } from './yearly/List';
 

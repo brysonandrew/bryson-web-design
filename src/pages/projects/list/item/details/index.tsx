@@ -4,8 +4,9 @@ import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@components/space/P2';
+import { P2 } from '@components/layout/space/P2';
 import { TDivMotionProps } from '@t/dom';
+import clsx from 'clsx';
 
 const Root = styled(motion.div)``;
 
@@ -19,11 +20,9 @@ export const Details: FC<TProps> = ({
   slug,
   ...props
 }) => {
-  const borderRadiusClass = 'rounded-md';
-
   return (
     <Root
-      className={borderRadiusClass}
+      className={clsx('column items-stretch rounded-md')}
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}
@@ -32,7 +31,7 @@ export const Details: FC<TProps> = ({
         <>
           <P2 />
           <hr
-            className='relative -left-6 h-px bg-black-3 dark:opacity-100 opacity-10'
+            className='relative -left-6 h-px dark:bg-accent bg-secondary opacity-40'
             style={{ width: `calc(100% + 3rem)` }}
           />
           <P2 />

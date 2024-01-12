@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { Images } from './images';
-import { Section } from '@components/Section';
-import { Fake3D } from '@components/fake-3d';
+import { Section } from '@components/layout/Section';
+import { Fake3D } from '@components/animation/fake-3d';
 import { FAKE_3D_PROPS } from './constants';
-import { Provider } from '@context/domains/build/Provider';
+import { Provider } from '@pages/index/build/context/Provider';
 import { Fade } from './Fade';
 import { motion } from 'framer-motion';
 import { Title } from './title';

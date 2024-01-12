@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { P1 } from '@components/space/P1';
-import { P3 } from '@components/space/P3';
-import { Gallery } from '@components/icons/gallery/Gallery';
-import { OpenInNew } from '@components/icons/links/OpenInNew';
+import { P1 } from '@components/layout/space/P1';
+import { P3 } from '@components/layout/space/P3';
+import { Gallery } from '@components/decoration/icons/gallery/Gallery';
+import { OpenInNew } from '@components/decoration/icons/links/OpenInNew';
 import { Circle } from '@components/interactive/circle';
 import { Anchor } from '@components/interactive/circle/Anchor';
 import { TItem } from '@pages/projects/config/types';

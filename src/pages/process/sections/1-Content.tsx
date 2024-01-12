@@ -6,9 +6,9 @@ import { Skeleton } from '../website/skeleton';
 import { ParagraphLines } from '../website/layouts/ParagraphLines';
 import { Annotations } from '../website/layouts/Annotations';
 import { ImageAndText } from '../website/skeleton/image-and-text';
-import { Focus } from '@components/interactive/focus';
+import { Focus } from '@pages/process/focus';
 import { Item } from '../website/breakdown/extras/Item';
-import { useServicesC } from '@context/domains/services/useServicesC';
+import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { Price } from '../website/breakdown/Price';
 import { Section } from '../Section';
 

@@ -6,7 +6,7 @@ import {
   TFormKey,
   TInputHandlers,
 } from '../../config';
-import { useContact } from '@context/domains/contact';
+import { useContact } from '@pages/index/contact/context';
 
 type TConfig = {
   element: HTMLFormElement | null;

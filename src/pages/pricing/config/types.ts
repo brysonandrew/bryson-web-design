@@ -1,5 +1,5 @@
 import { TTTitleToKebab } from '@t/transformers/format';
 import { PACKAGES } from './constants';
 
-export type TPackageTitle = (typeof PACKAGES)[number];
-export type TPackageKey = TTTitleToKebab<TPackageTitle>;
+export type TPricingTitle = (typeof PACKAGES)[number];
+export type TPricingKey = TTTitleToKebab<TPricingTitle>;

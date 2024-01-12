@@ -1,19 +1,19 @@
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@components/cursor/switch/config';
+} from '@components/base/cursor/switch/config';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { useCursor } from '@context/cursor';
-import { useDarkMode } from '@context/dark-mode';
+import { useCursor } from '@components/base/cursor/context';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { Touch } from '@components/icons/tips/Touch';
-import { P2 } from '@components/space/P2';
+import { Touch } from '@components/decoration/icons/tips/Touch';
+import { P2 } from '@components/layout/space/P2';
 import {
   resolveColor,
   resolveGlowColor,
   resolveHoverColor,
-} from '@components/mark/config';
+} from '@components/decoration/mark/config';
 import { createPortal } from 'react-dom';
 
 const Root = styled.ul``;

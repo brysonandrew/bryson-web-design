@@ -1,10 +1,10 @@
-import { FadeDown } from '@components/vertical-fade/FadeDown';
-import { FadeUp } from '@components/vertical-fade/FadeUp';
+import { FadeDown } from '@components/decoration/vertical-fade/FadeDown';
+import { FadeUp } from '@components/decoration/vertical-fade/FadeUp';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@constants/animation';
-import { useDarkMode } from '@context/dark-mode';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import { useViewport as useViewportContext } from '@context/viewport';
 import { AnimatePresence, motion } from 'framer-motion';
 

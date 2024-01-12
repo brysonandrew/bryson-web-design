@@ -10,8 +10,8 @@ import {
   PAGE_VALUES,
 } from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@hooks/sounds/useCoinDropSound';
-import { ThickLine } from '@components/line/ThickLine';
-import { I } from '@components/Icon';
+import { ThickLine } from '@components/decoration/line/ThickLine';
+import { I } from '@components/decoration/Icon';
 import { Link } from 'react-router-dom';
 
 const toPathname = (v: string) => `/${v.toLowerCase()}`;

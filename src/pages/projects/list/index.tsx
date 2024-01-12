@@ -3,7 +3,7 @@ import type { TItem, TProjectKey } from '@pages/projects/config/types';
 import { Fragment, type FC } from 'react';
 import { Item } from './item';
 import { motion } from 'framer-motion';
-import { P3 } from '@components/space/P3';
+import { P3 } from '@components/layout/space/P3';
 
 const Root = styled(motion.ul)``;
 

@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { TLink } from './config';
-import { MetalGlow } from '@components/metal/MetalGlow';
+import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import { motion } from 'framer-motion';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { useOnSound } from '@hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { resolveParentAnimateConfig } from '@utils/effects';
-import { OPEN_IN_NEW_CURSOR_KEY } from '@components/cursor/switch/config';
+import { OPEN_IN_NEW_CURSOR_KEY } from '@components/base/cursor/switch/config';
 
 const Root = styled(motion.a)``;
 

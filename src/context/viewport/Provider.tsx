@@ -1,15 +1,11 @@
-import type { FC } from 'react';
-import type { TChildrenElement } from '@t/index';
+import type { FC, PropsWithChildren } from 'react';
 import { Viewport } from '.';
 import {
   TViewport,
   useViewport,
 } from '@hooks/window/useViewport';
 
-type TProviderProps = {
-  children: TChildrenElement;
-};
-export const Provider: FC<TProviderProps> = ({
+export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const viewport = useViewport();

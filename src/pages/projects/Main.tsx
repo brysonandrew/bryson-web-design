@@ -1,15 +1,12 @@
-import { FC } from 'react';
-import styled from '@emotion/styled';
+import type { FC } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { List } from './list';
-import { PROJECT_ITEMS } from '@pages/projects/config/constants/items';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import { useCurrProject } from '@hooks/params/useCurrProject';
+import { PROJECT_ITEMS } from './config/constants/items';
+import { List } from './list';
 import { Tips } from './Tips';
 import { useInView } from 'react-intersection-observer';
 import { isDesktop } from 'react-device-detect';
-
-const Root = styled(motion.div)``;
 
 type TProps = Partial<TFake3DMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {
@@ -17,9 +14,8 @@ export const Main: FC<TProps> = ({ style, rect }) => {
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
-
   return (
-    <Root
+    <motion.ul
       ref={ref}
       className='relative w-core will-change-transform'
       style={{
@@ -36,6 +32,6 @@ export const Main: FC<TProps> = ({ style, rect }) => {
           {!currProject && inView && <Tips key='TIPS' />}
         </AnimatePresence>
       )}
-    </Root>
+    </motion.ul>
   );
 };

@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import {
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from 'react';
 import type { FC } from 'react';
-import type { TChildrenElement } from '@t/index';
 import { Scroll } from '.';
 import {
   useMotionValueEvent,
@@ -11,10 +14,7 @@ import { useLocation } from 'react-router';
 export const SCROLL = 200;
 export const SCROLL_COOLDOWN = 200;
 
-type TProviderProps = {
-  children: TChildrenElement;
-};
-export const Provider: FC<TProviderProps> = ({
+export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const { scrollX, scrollY } = useScroll();
@@ -22,7 +22,7 @@ export const Provider: FC<TProviderProps> = ({
   const [isScrolling, setScrolling] = useState(false);
   const { timeoutRef, endTimeout } = useTimeoutRef();
   const { pathname } = useLocation();
-  
+
   const handleUpdate = (value: number) => {
     if (!isScrolling) {
       setScrolling(true);

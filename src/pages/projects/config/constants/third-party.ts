@@ -22,3 +22,7 @@ export const INVISION = {
   title: 'Invision',
   href: 'https://www.invisionapp.com/',
 };
+export const STRIPE = {
+  title: 'Stripe',
+  href: 'https://stripe.com/',
+};

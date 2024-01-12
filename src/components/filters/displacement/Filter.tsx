@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { TFilterProps } from "../types";
+import type { TFilterProps } from "../config/types";
 import { INTENSITY, TURBULANCE_DEFAULTS } from "./config";
 import type { TDisplacementProps } from "./config";
 

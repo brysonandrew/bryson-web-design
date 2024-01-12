@@ -1,5 +1,5 @@
 import fg from 'fast-glob';
-import { CANVAS_SCREENS_PATH } from 'ops/config';
+import { CANVAS_SCREENS_PATH } from '@ops/screens/process/config/constants';
 import { deletePaths } from '../../../delete/deletePaths';
 import { BLUR_SUFFIX } from '../config';
 

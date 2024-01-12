@@ -1,8 +1,8 @@
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import { ADD_ICON, REMOVE_ICON } from '@constants/icons';
-import { useServicesC } from '@context/domains/services/useServicesC';
+import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import clsx from 'clsx';
-import { Item as FocusItem } from '../../../../../components/interactive/focus/Item';
+import { Item as FocusItem } from '../../../focus/Item';
 import { FC } from 'react';
 
 type TProps = {

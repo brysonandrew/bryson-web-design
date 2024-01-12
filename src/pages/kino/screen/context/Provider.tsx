@@ -1,5 +1,4 @@
-import { type FC, useRef } from 'react';
-import type { TChildrenElement } from '@t/index';
+import { type FC, useRef, PropsWithChildren } from 'react';
 import { Screen, useScreen } from '.';
 import { TContext } from './types';
 import { useStatusRecord } from '@pages/kino/hooks/useStatusRecord';
@@ -7,10 +6,7 @@ import { useLogs } from '@pages/kino/hooks/useLogs';
 import { CHANNEL_KEY } from '@pages/kino/hooks/signaling/config';
 import { useChannel } from 'ably/react';
 
-type TProviderProps = {
-  children: TChildrenElement;
-};
-export const Provider: FC<TProviderProps> = ({
+export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const initScreenContext = useScreen();

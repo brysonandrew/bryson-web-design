@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { DURATION } from '@constants/animation';
-import { ThickLine } from '@components/line/ThickLine';
+import { ThickLine } from '@components/decoration/line/ThickLine';
 import { TPageTitle } from '@app/routes/types';
 
 const Link = styled(motion(_Link))``;

@@ -1,12 +1,7 @@
 import { COLOR_VARIABLES_CSS } from '@uno/theme/colors';
 
 import { Global, css } from '@emotion/react';
-
-const PLACEHOLDER_MD = 28;
-const PLACEHOLDER_SM = 16;
-const PLACEHOLDER = 8;
-
-const resolveWidth = (value: number) => `${value * 24}px`;
+import { CUSTOM_VARIABLES_CSS } from '@app/css';
 
 export const Variables = () => {
   return (
@@ -14,17 +9,7 @@ export const Variables = () => {
       styles={css`
         :root {
           ${COLOR_VARIABLES_CSS};
-
-          --placeholder-md: scale(${PLACEHOLDER_MD});
-          --placeholder-sm: scale(${PLACEHOLDER_SM});
-          --placeholder: scale(${PLACEHOLDER});
-          --size-placeholder-md: ${resolveWidth(
-            PLACEHOLDER_MD,
-          )};
-          --size-placeholder-sm: ${resolveWidth(
-            PLACEHOLDER_SM,
-          )};
-          --size-placeholder: ${resolveWidth(PLACEHOLDER)};
+          ${CUSTOM_VARIABLES_CSS}
         }
       `}
     />

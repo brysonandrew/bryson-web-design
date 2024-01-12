@@ -5,9 +5,9 @@ import {
   TRANSITION_DARK_MODE,
 } from '@constants/animation';
 import { useScroll as useScrollContext } from '@context/scroll';
-import { useDarkMode } from '@context/dark-mode';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import { useViewport as useViewportContext } from '@context/viewport';
-import { FadeUp } from '@components/vertical-fade/FadeUp';
+import { FadeUp } from '@components/decoration/vertical-fade/FadeUp';
 import { Settings } from './settings';
 
 const Root = styled.footer``;

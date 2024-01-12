@@ -3,14 +3,14 @@ import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
 import { useScroll as useScrollContext } from '@context/scroll';
 import { Nav } from './Nav';
-import { FadeDown } from '@components/vertical-fade/FadeDown';
+import { FadeDown } from '@components/decoration/vertical-fade/FadeDown';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@constants/animation';
-import { Network } from '@components/network';
-import { P2 } from '@components/space/P2';
-import { useDarkMode } from '@context/dark-mode';
+import { Network } from '@components/base/network';
+import { P2 } from '@components/layout/space/P2';
+import { useDarkMode } from '@hooks/dark-mode/context';
 
 const Root = styled.header``;
 
@@ -34,9 +34,9 @@ export const Header: FC = () => {
             {...PRESENCE_OPACITY}
           />
         )}
-        <P2 key='P2' />
-        <Network key='Network' />
       </AnimatePresence>
+      <P2 />
+      <Network key='Network' />
     </Root>
   );
 };

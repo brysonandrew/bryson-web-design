@@ -1,7 +1,7 @@
 import fg from 'fast-glob';
 import fs from 'fs';
 import { resolveFsInfo } from 'ops/utils/resolveFsInfo';
-import { CANVAS_SCREENS_PATH } from '../../../config';
+import { CANVAS_SCREENS_PATH } from '../../process/config/constants';
 import { SOURCE_SUFFIX } from '../config';
 
 export const createSourceSuffix = async () => {

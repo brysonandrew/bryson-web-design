@@ -1,4 +1,4 @@
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import clsx from 'clsx';
 import { FC, PropsWithChildren, useContext } from 'react';
 import { Context } from '../context';

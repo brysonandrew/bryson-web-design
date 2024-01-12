@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useContact } from '@context/domains/contact';
-import { useDarkMode } from '@context/dark-mode';
-import { MetalGlow } from '@components/metal/MetalGlow';
-import { useHoverKey } from '@hooks/cursor/useHoverKey';
+import { useContact } from '@pages/index/contact/context';
+import { useDarkMode } from '@hooks/dark-mode/context';
+import { MetalGlow } from '@components/decoration/metal/MetalGlow';
+import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,

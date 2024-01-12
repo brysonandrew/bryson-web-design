@@ -1,4 +1,4 @@
-import { MOTION_BLUR_ID } from '@components/gallery/sections/constants';
+import { MOTION_BLUR_ID } from '@pages/projects/gallery/sections/constants';
 import { TChildren } from '@t/index';
 import { resolveUrlId } from '@utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';

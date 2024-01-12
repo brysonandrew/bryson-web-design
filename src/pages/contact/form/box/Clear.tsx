@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContact } from '@context/domains/contact';
-import { useDarkMode } from '@context/dark-mode';
-import { Cross } from '@components/icons/gallery/Cross';
+import { useContact } from '@pages/index/contact/context';
+import { useDarkMode } from '@hooks/dark-mode/context';
+import { Cross } from '@components/decoration/icons/gallery/Cross';
 import { IconGlow } from '@components/interactive/IconGlow';
-import { HIGHLIGHT } from '@components/filters/presets';
 import { PRESENCE_OPACITY_DELAY } from '@constants/animation';
 import { TFormKey } from '@pages/contact/config';
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
@@ -38,11 +37,11 @@ export const Clear: FC<TProps> = ({
         tabIndex={-1}
         type='button'
         className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-9-02 rounded-full'
-        whileHover={{ filter: HIGHLIGHT }}
+        whileHover={{ opacity: 1 }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}
         {...PRESENCE_OPACITY_DELAY}
-        animate={{ opacity: isReady ? 1 : 0.2 }}
+        animate={{ opacity: isReady ? 0.8 : 0.2 }}
         {...props}
       >
         <IconGlow

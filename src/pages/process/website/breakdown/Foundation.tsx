@@ -1,8 +1,8 @@
-import { Item } from '@components/interactive/focus/Item';
-import { Circle } from '@components/decoration/Circle';
-import { useCursor } from '@context/cursor';
+import { Item } from '@pages/process/focus/Item';
+import { Circle } from '@pages/process/focus/Circle';
+import { useCursor } from '@components/base/cursor/context';
 import { FOUNDATION } from '../config';
-import { List } from '../../../../components/text/List';
+import { List } from '../../../../components/layout/lists/List';
 
 export const Foundation = () => {
   const {

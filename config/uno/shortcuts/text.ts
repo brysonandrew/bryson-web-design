@@ -21,10 +21,10 @@ const TEXT_COLOR: StaticShortcutMap = {
 
 export const TEXT: StaticShortcutMap = {
   ...TEXT_COLOR,
-  '+++text':
+  'title':
     'text-g-tb text-left text-3xl tracking-wide px-1 text-shadow-inherit lg:text-4xl',
-  '++text':
+  'page-title':
     'text-t-tb relative uppercase px-2 tracking-widest text-3xl text-shadow-inherit md:text-4xl xl:px-4',
-  '+text':
+  'section-title':
     'text-left text-xl text-shadow-inherit md:text-2xl',
 };

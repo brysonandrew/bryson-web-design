@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { TFormKey } from '../config';
-import { useContact } from '@context/domains/contact';
+import { useContact } from '@pages/index/contact/context';
 
 type TConfig = {
   name: TFormKey;

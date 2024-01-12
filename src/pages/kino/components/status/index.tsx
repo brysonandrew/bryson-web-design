@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { P1 } from '@components/space/P1';
+import { P1 } from '@components/layout/space/P1';
 import { pascalToTitle } from '@utils/format';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PRESENCE_OPACITY } from '@constants/animation';

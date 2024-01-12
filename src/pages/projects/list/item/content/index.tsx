@@ -1,24 +1,22 @@
 import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
-import {
-  resolveTitleLayoutId,
-} from '@pages/projects/config/constants';
+import { resolveTitleLayoutId } from '@pages/projects/config/constants';
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TChildren, TClassValueProps } from '@t/index';
-import { Mark } from '@components/mark';
+import { Mark } from '@components/decoration/mark';
 import { TDivMotionProps } from '@t/dom';
-import { P2 } from '@components/space/P2';
+import { P2 } from '@components/layout/space/P2';
 import { useCurrProject } from '@hooks/params/useCurrProject';
 import { PRESENCE_OPACITY } from '@constants/animation';
-import { useDarkMode } from '@context/dark-mode';
-import { P1 } from '@components/space/P1';
+import { useDarkMode } from '@hooks/dark-mode/context';
 import { useDelayCallback } from '@hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@utils/effects';
-import { Metal } from '@components/metal';
+import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
+import { TPricingKey } from '@pages/pricing/config/types';
 
 const Root = styled(motion.div)``;
 
@@ -103,7 +101,7 @@ export const Content: FC<TProps> = ({
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <Metal  classValue={borderRadiusClass} />
+      <Metal classValue={borderRadiusClass} />
       <Mark classValue='z-20' />
       <P2 />
       <motion.div
@@ -111,21 +109,17 @@ export const Content: FC<TProps> = ({
         className='relative left-0 top-0 row-space'
       >
         <Header slug={slug} />
-        {
-          <AnimatePresence>
-            {!isTransitioning && (
-              <>
-                <P1 />
-                <motion.div
-                  key={Boolean(project) ? 'project' : slug}
-                  {...PRESENCE_OPACITY}
-                >
-                  {rightHeader}
-                </motion.div>
-              </>
-            )}
-          </AnimatePresence>
-        }
+        <AnimatePresence>
+          {!isTransitioning && (
+            <motion.div
+              key={Boolean(project) ? 'project' : slug}
+              className='column-end lg:row'
+              {...PRESENCE_OPACITY}
+            >
+              {rightHeader}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
       {children && <>{children}</>}
       <P2 />

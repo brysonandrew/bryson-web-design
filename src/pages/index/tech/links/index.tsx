@@ -1,9 +1,9 @@
-import { Plus } from '@components/icons/tech/Plus';
+import { Plus } from '@components/decoration/icons/tech/Plus';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TFake3DMotionChildrenProps } from '@components/fake-3d/config';
+import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
 import { Transform } from './Transform';
 import { TECH } from '../config/constants';
 

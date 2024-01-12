@@ -1,4 +1,4 @@
-import { Sub } from '@components/text/Sub';
+import { Sub } from '@components/typography/Sub';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 

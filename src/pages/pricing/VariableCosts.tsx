@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import { PLUS_ICON } from '@constants/icons/text';
 import { nToMoney } from '@utils/format';
 

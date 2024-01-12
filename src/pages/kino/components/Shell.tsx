@@ -1,7 +1,7 @@
-import { P24Y } from '@components/space/P24Y';
+import { P24Y } from '@components/layout/space/P24Y';
 import { Line } from './Line';
-import { P4 } from '@components/space/P4';
-import { P8 } from '@components/space/P8';
+import { P4 } from '@components/layout/space/P4';
+import { P8 } from '@components/layout/space/P8';
 import { FC, Fragment } from 'react';
 import { Space } from './Space';
 

@@ -1,7 +1,7 @@
-import { useServicesC } from '@context/domains/services/useServicesC';
+import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { EXTRAS } from '../../config';
 import { Item } from './Item';
-import { List } from '../../../../../components/text/List';
+import { List } from '../../../../../components/layout/lists/List';
 
 export const Extras = () => {
   const { extras } = useServicesC();

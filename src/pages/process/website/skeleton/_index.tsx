@@ -6,7 +6,7 @@ import { ImageAndText } from './image-and-text';
 import { View } from './wrappers/View';
 import { Tablet } from './Tablet';
 import { Mobile } from './Mobile';
-import { useServicesC } from '@context/domains/services/useServicesC';
+import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import {
   CONTACT_FORM,
   MOBILE_SIZE,

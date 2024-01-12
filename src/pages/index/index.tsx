@@ -1,14 +1,14 @@
 import { Suspense, lazy } from 'react';
-import { P48Y } from '@components/space/P48Y';
-import { P24Y } from '@components/space/P24Y';
+import { P48Y } from '@components/layout/space/P48Y';
+import { P24Y } from '@components/layout/space/P24Y';
 
-const ServicesLazy = lazy(() => import('./services'));
+const ServicesLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));
 const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
 const GalleryLazy = lazy(
-  () => import('@components/gallery'),
+  () => import('@pages/projects/gallery'),
 );
 
 export const Index = () => {

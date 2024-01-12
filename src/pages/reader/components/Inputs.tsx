@@ -1,4 +1,4 @@
-import { I } from '@components/Icon';
+import { I } from '@components/decoration/Icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';

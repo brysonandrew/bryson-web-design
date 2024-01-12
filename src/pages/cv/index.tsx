@@ -4,9 +4,9 @@ import { Header } from './header';
 import { Margin } from './layout/Margin';
 import { Page } from './layout/Page';
 import { Shell } from './layout/Shell';
-import { P3 } from '@components/space/P3';
-import { P1 } from '@components/space/P1';
-import { P6 } from '@components/space/P6';
+import { P3 } from '@components/layout/space/P3';
+import { P1 } from '@components/layout/space/P1';
+import { P6 } from '@components/layout/space/P6';
 import { Invert } from './Invert';
 import { Variables } from '@css/Variables';
 
