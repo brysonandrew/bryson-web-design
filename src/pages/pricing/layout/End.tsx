@@ -10,9 +10,6 @@ export const End: FC<
       className={clsx(
         'relative center h-20 rounded-tl-sm rounded-tr-sm',
         classValue,
-        classValue
-          ? 'text-main-inverted'
-          : 'text-main',
       )}
     >
       {children}

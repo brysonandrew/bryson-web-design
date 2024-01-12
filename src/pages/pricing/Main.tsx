@@ -16,17 +16,17 @@ export const Main: FC<TProps> = ({ style }) => {
       <div className='column relative items-stretch w-full h-full gap-8 lg:row'>
         <Package
           title='Standard'
-          backgroundColorClass='bg-standard'
+          backgroundColorClass='bg-standard gradient-standard'
           textColorClass='text-standard'
         />
         <Package
           title='Plus'
-          backgroundColorClass='bg-plus'
+          backgroundColorClass='bg-plus gradient-plus'
           textColorClass='text-plus'
         />
         <Package
           title='Select'
-          backgroundColorClass='bg-select'
+          backgroundColorClass='bg-select gradient-select'
           textColorClass='text-select'
         />
       </div>

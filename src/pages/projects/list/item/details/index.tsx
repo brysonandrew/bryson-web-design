@@ -31,7 +31,7 @@ export const Details: FC<TProps> = ({
         <>
           <P2 />
           <hr
-            className='relative -left-6 h-px bg-accent dark:opacity-40 opacity-10'
+            className='relative -left-6 h-px dark:bg-accent bg-secondary opacity-40'
             style={{ width: `calc(100% + 3rem)` }}
           />
           <P2 />

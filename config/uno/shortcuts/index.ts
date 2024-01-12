@@ -1,4 +1,5 @@
 import type { StaticShortcutMap } from 'unocss';
+import { CUSTOM_SHORTCUTS } from '../../app/shortcuts';
 import { BACKGROUND } from './background';
 import { FLEX } from './flex';
 import { INPUT } from './input';
@@ -14,4 +15,5 @@ export const SHORTCUTS: StaticShortcutMap = {
   ...INPUT,
   ...INTERACTIVE,
   ...LAYOUT,
+  ...CUSTOM_SHORTCUTS,
 } as const;

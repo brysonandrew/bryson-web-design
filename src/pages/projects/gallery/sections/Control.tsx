@@ -6,7 +6,7 @@ import { TBaseProps } from '../types';
 import { useScroll } from '@context/scroll';
 import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
-import { TMediaRecord } from 'ops/types/media';
+import { TMediaRecord } from '@ops/screens/process/config/types';
 
 export const Root = styled(motion.div)``;
 

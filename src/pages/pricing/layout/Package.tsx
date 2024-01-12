@@ -1,6 +1,6 @@
 import { P1_5 } from '@components/layout/space/P1_5';
 import clsx from 'clsx';
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
 import { End } from './End';
 import { Price, TProps as TPriceProps } from './price';
 import { P_25 } from '@components/layout/space/P_25';
@@ -22,7 +22,7 @@ import { Metal } from '@components/decoration/metal';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
-  backgroundColorClass: `bg-${TPricingKey}`;
+  backgroundColorClass: `bg-${TPricingKey} gradient-${TPricingKey}`;
   textColorClass: `text-${TPricingKey}`;
 };
 export const Package: FC<TProps> = ({
@@ -56,7 +56,6 @@ export const Package: FC<TProps> = ({
           backgroundColorClass,
         )}
       />
-
       <motion.div
         className={clsx(
           'relative column items-stretch grow w-full h-full text-base',
@@ -64,8 +63,8 @@ export const Package: FC<TProps> = ({
         {...handlers}
       >
         <P1_5 />
-        <End classValue='text-white-9'>
-          <h4 className='w-full text-center capitalize text-2xl tracking-wider font-medium'>
+        <End classValue='text-black-9'>
+          <h4 className='w-full text-center text-2xl tracking-wider font-semibold capitalize'>
             {title}
           </h4>
           <motion.div
@@ -82,7 +81,12 @@ export const Package: FC<TProps> = ({
         <div className='relative items-stretch h-full bg-main rounded-t-md'>
           <Metal classValue={clsx('rounded-md')} />
           <P4 />
-          <div className={clsx('relative px-4', textColorClass)}>
+          <div
+            className={clsx(
+              'relative px-4',
+              textColorClass,
+            )}
+          >
             {PreContent && <PreContent />}
             <TickList items={listItems} />
           </div>

@@ -7,6 +7,7 @@ import { isDesktop } from 'react-device-detect';
 import { Pricing } from '../list/item/content/Pricing';
 import { Close } from './buttons/Close';
 import { useOffSound } from '@hooks/sounds/useOffSound';
+import { P4 } from '@components/layout/space/P4';
 
 type TProps = Pick<TItem, 'pricing'>;
 export const RightHeader: FC<TProps> = ({ pricing }) => {
@@ -18,7 +19,7 @@ export const RightHeader: FC<TProps> = ({ pricing }) => {
     <>
       <P2 />
       <Pricing type={pricing} />
-      <P1 />
+      <P2 />
       <Close onClick={isDesktop ? handleClose : NOOP} />
     </>
   );

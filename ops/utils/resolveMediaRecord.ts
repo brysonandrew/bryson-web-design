@@ -1,8 +1,5 @@
+import { TMediaMetadata, TMediaRecord } from '@ops/screens/process/config/types';
 import { resolveFsInfo } from './resolveFsInfo';
-import type {
-  TMediaMetadata,
-  TMediaRecord,
-} from '../types/media';
 import { removePublicDir } from './write';
 
 
@@ -15,7 +12,6 @@ export const resolveMediaRecord = ({
   entry,
   width,
   height,
-  ...metadata
 }: TResolveMediaConfig): TMediaRecord | null => {
   const { dir, name, ext } = resolveFsInfo(entry);
   if (
@@ -25,7 +21,6 @@ export const resolveMediaRecord = ({
     entry = removePublicDir(entry);
     webpEntry = removePublicDir(webpEntry);
     const record: TMediaRecord = {
-      metadata,
       src: entry,
       alt: name,
       project: dir,

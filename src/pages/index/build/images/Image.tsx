@@ -6,7 +6,6 @@ import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
 } from '@components/filters/config/constants/presets';
-import { TMediaRecord } from 'ops/types/media';
 import { useCurrName } from '@hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
@@ -23,6 +22,7 @@ import {
 } from '@hooks/media/fake-3D/useCircle';
 import { ORIGIN_50 } from '@constants/animation';
 import { useTapHandler } from '@hooks/media/useTapHandler';
+import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const Button = styled(motion.button)``;
 

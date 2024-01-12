@@ -11,6 +11,7 @@ import {
   NEXT_JS,
   FIGMA,
   INVISION,
+  STRIPE,
 } from './third-party';
 
 const resolveProjectItem = (item: TItemInit): TItem => ({
@@ -19,6 +20,17 @@ const resolveProjectItem = (item: TItemInit): TItem => ({
 });
 
 export const INIT_PROJECT_ITEMS: TItemInit[] = [
+  {
+    title: 'Luridescence',
+    description: 'Prints E-commerce',
+    pricing: 'plus',
+    href: 'TBA',
+    tags: [REACT, TYPESCRIPT, FRAMER_MOTION, STRIPE],
+    paragraphs: [
+      'Virtualized product list.',
+      'AI Image generation with ComfyUI integration.',
+    ],
+  },
   {
     title: 'Anaesco',
     description: 'Patient Portal',
@@ -33,8 +45,8 @@ export const INIT_PROJECT_ITEMS: TItemInit[] = [
     ],
   },
   {
-    title: 'Superior Concrete Services',
-    description: 'Local concreting business',
+    title: 'Superior Concrete',
+    description: 'Concreting Business Website',
     pricing: 'plus',
     href: 'https://superiorconcrete.co.nz/',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION],

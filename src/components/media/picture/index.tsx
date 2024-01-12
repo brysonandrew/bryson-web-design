@@ -4,7 +4,7 @@ import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@t/index';
 import { TMotionImgProps, TSource } from '@t/dom';
-import { TMediaRecord } from 'ops/types/media';
+import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const Root = styled.picture``;
 const Source = styled.source``;
@@ -32,7 +32,6 @@ export const Picture: FC<TProps> = ({
             key={sourceProps.srcSet}
             {...sourceProps}
             srcSet={`/${sourceProps.srcSet}`}
-
           />
         ))}
         <Img

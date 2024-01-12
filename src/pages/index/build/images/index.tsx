@@ -12,6 +12,7 @@ import { TDepthConfig } from '@hooks/media/fake-3D/useCircle';
 import { ORIGIN_50 } from '@constants/animation';
 import { useSpin } from '@hooks/media/fake-3D/useSpin';
 import clsx from 'clsx';
+import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
@@ -82,7 +83,11 @@ export const Images: FC<TProps> = ({ style }) => {
             }}
           >
             {records?.map(
-              (record, index, { length: count }) => {
+              (
+                record: TMediaRecord,
+                index: number,
+                { length: count }: TMediaRecord[],
+              ) => {
                 const depthConfig: TDepthConfig = {
                   index,
                   count,

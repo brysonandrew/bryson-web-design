@@ -1,6 +1,6 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { SCREENS_DIR } from '../config';
+import { SCREENS_DIR } from '../screens/process/config/constants';
 
 const copyDir = async (src: string, dest: string) => {
   await fs.mkdir(dest, { recursive: true });

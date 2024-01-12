@@ -109,19 +109,17 @@ export const Content: FC<TProps> = ({
         className='relative left-0 top-0 row-space'
       >
         <Header slug={slug} />
-        {
-          <AnimatePresence>
-            {!isTransitioning && (
-              <motion.div
-                key={Boolean(project) ? 'project' : slug}
-                className='row'
-                {...PRESENCE_OPACITY}
-              >
-                {rightHeader}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        }
+        <AnimatePresence>
+          {!isTransitioning && (
+            <motion.div
+              key={Boolean(project) ? 'project' : slug}
+              className='column-end lg:row'
+              {...PRESENCE_OPACITY}
+            >
+              {rightHeader}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
       {children && <>{children}</>}
       <P2 />

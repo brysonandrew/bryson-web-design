@@ -1,4 +1,4 @@
-import type { TMediaRecords } from 'ops/types/media';
+import { TMediaRecords } from "@ops/screens/process/config/types";
 
 export type {};
 declare const self: ServiceWorkerGlobalScope;

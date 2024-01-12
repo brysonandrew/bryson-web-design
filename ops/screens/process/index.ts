@@ -9,19 +9,18 @@ import {
   SCREENS_DIR,
   EXCLUDE_SMALLS,
   BASE_SCREENS_ENTRY,
-} from '../../config';
-import { TMediaRecords } from '../../types/media';
-import { resolveMediaRecord } from '../../utils/resolveMediaRecord';
+} from './config/constants';
+import { resolveMediaRecord } from '@ops/utils/resolveMediaRecord';
 import {
   resolveSmallEntry,
   resolveMetaDataFile,
   resolveWebp,
   writePrecachePath,
   writeFileData,
-  writeProjectRecordInGallery,
   resolveFsInfo,
-} from '../../utils/write';
-import { TScreensRecord } from '../../types';
+} from '@ops/utils/write';
+import { TMediaRecords, TScreensRecord } from './config/types';
+import { writeProjectRecordInGallery } from './utils/writeProjectRecordInGallery';
 
 (async () => {
   try {

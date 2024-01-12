@@ -5,8 +5,8 @@ import {
 } from 'react';
 import type { FC } from 'react';
 import { Build } from '.';
-import { TMediaRecords } from 'ops/types/media';
 import allRecords from './lookup-320w.json';
+import { TMediaRecords } from '@ops/screens/process/config/types';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,

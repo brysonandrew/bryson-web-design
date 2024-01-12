@@ -10,7 +10,7 @@ import {
 import { useTo } from '@hooks/media/nav/useTo';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { useDarkMode } from '@hooks/dark-mode/context';
-import { TMediaRecord } from 'ops/types/media';
+import { TMediaRecord } from "@ops/screens/process/config/types";
 import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
 import { COLOR_LOOKUP } from '@uno/theme/colors';
 import { Background } from '@components/interactive/circle/Background';

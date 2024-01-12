@@ -1,7 +1,7 @@
 import { PropsWithChildren, useState } from 'react';
 import type { FC } from 'react';
 import screensRecordJson from './lookup.json';
-import { TScreensRecord } from 'ops/types';
+import { TScreensRecord } from '@ops/screens/process/config/types';
 const screensRecord =
   screensRecordJson as unknown as TScreensRecord;
 import { Gallery } from '.';

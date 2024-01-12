@@ -5,13 +5,7 @@ import {
   SCREENS_DIR,
   PRECACHE_PATH,
   PUBLIC_DIR,
-  LOOKUP_PATH,
-} from '../config';
-import {
-  TFilePathKey,
-  TMediaRecord,
-} from 'ops/types/media';
-import { TScreensRecord } from 'ops/types';
+} from '../screens/process/config/constants';
 import { TProjectKey } from '@pages/projects/config/types';
 
 export { resolveFsInfo } from './resolveFsInfo';
@@ -74,19 +68,4 @@ export const writePrecachePath = (entries: string[]) => {
     resolveSmallEntry(entry, 'png'),
   );
   writeFileData(PRECACHE_PATH, [...smalls, ...originals]);
-};
-
-export const writeProjectRecordInGallery = (
-  record: TMediaRecord | null,
-  name: TFilePathKey,
-  projectRecord: TScreensRecord,
-) => {
-  if (record) {
-    projectRecord[name] = [
-      ...(projectRecord[name] ?? []),
-      record,
-    ];
-  }
-  writeFileData(LOOKUP_PATH, projectRecord);
-  return projectRecord;
 };
