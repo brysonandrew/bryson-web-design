@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { PADDING_X } from './config';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
-import { COLOR_LOOKUP } from '@uno/theme/colors';
+import { THEME_COLORS } from '@lib/constants/color';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
 
 type TProps = {
@@ -37,8 +37,8 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
         animate: {
           cursor: 'grab',
           color: isDarkMode
-            ? COLOR_LOOKUP['white-9']
-            : COLOR_LOOKUP['gray'],
+            ? THEME_COLORS['white-9']
+            : THEME_COLORS['gray'],
           filter: resolveDropShadow(0),
         },
         hover: {
@@ -47,16 +47,16 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
             ? resolveDropShadow(2, 'white-9')
             : resolveDropShadow(2, 'secondary'),
           color: isDarkMode
-            ? COLOR_LOOKUP['white-9']
-            : COLOR_LOOKUP['gray'],
+            ? THEME_COLORS['white-9']
+            : THEME_COLORS['gray'],
         },
         tap: {
           filter: isDarkMode
             ? resolveDropShadow(4, 'highlight')
             : resolveDropShadow(4, 'secondary'),
           color: isDarkMode
-            ? COLOR_LOOKUP['highlight']
-            : COLOR_LOOKUP['gray'],
+            ? THEME_COLORS['highlight']
+            : THEME_COLORS['gray'],
           cursor: 'grabbing',
         },
       }}

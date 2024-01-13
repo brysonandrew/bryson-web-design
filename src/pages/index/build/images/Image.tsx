@@ -12,7 +12,7 @@ import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@lib/types/dom';
 import styled from '@emotion/styled';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { isDesktop } from 'react-device-detect';
 import { GALLERY_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 import { resolveMotionConfig } from '@lib/hooks/media/resolveMotionConfig';

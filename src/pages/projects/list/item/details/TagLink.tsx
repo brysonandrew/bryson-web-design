@@ -7,7 +7,7 @@ import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteracti
 import { GLOBAL_KEY } from '@lib/components/cursor/hooks/config';
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@lib/types/dom';
-import { resolveCompositeHoverKey } from '@lib/utils/keys';
+import { resolveCompositeHoverKey } from '@lib/utils/key';
 import { useCursor } from '@lib/components/cursor/context';
 import {
   OPEN_IN_NEW_CURSOR_KEY,

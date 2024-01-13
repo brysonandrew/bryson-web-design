@@ -6,7 +6,7 @@ import { TProps as TPriceProps } from '@pages/pricing/layout/price';
 import { colorToStylesRecord } from '@lib/utils/transformer/colorToStyles';
 import { newlineToArr } from '@lib/utils/transformer/newlineToArr';
 import { FC } from 'react';
-import { PACKAGES_COLOR_LOOKUP } from './colors';
+import { PACKAGES_THEME_COLORS } from './colors';
 import { PlusContent } from './PlusContent';
 
 export const PACKAGES = [
@@ -63,7 +63,7 @@ export const resolvePackageConfig = (
     title.toLowerCase() as TPricingKey;
   const config = CONFIG_LOOKUP[key];
   const { listLiteral, ...rest } = config;
-  const color = PACKAGES_COLOR_LOOKUP[key];
+  const color = PACKAGES_THEME_COLORS[key];
 
   return {
     key,

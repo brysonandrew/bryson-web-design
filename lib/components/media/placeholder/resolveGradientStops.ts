@@ -1,5 +1,5 @@
-import { COLOR_LOOKUP } from '@uno/theme/colors';
-import { TColorKey } from '@uno/theme/colors/types';
+import { THEME_COLORS } from '@lib/constants/color';
+import { TColorKey } from '@lib/types/color';
 
 export const resolveGradientStops = (
   count = 4,
@@ -9,7 +9,7 @@ export const resolveGradientStops = (
     .map((_, index) => {
       const color = colors[index % colors.length];
       const fraction = (100 * index) / (count - 1);
-      return `${COLOR_LOOKUP[color]} ${fraction}%`;
+      return `${THEME_COLORS[color]} ${fraction}%`;
     })
     .join(', ');
 };

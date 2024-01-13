@@ -9,7 +9,6 @@ import {
 } from '@uno/rules/glow';
 import { useCursor } from '@lib/components/cursor/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { Metal } from '@components/decoration/metal';
 import { DURATION_MID } from '@lib/constants/animation';
 
 type TProps = TClassValueProps & {
@@ -23,7 +22,7 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { cursorLabel } = useCursor();
+  const { cursorLabel, Background } = useCursor();
   const { isDarkMode } = useDarkMode();
 
   return (
@@ -55,7 +54,7 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
-      <Metal classValue='rounded-md' />
+      <Background />
       {children}
     </motion.div>
   );

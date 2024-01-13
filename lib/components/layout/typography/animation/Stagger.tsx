@@ -3,7 +3,7 @@ import {
   TChildrenStrings,
   TClassValueProps,
 } from '@lib/types/dom/main';
-import { resolveCompositeKey } from '@lib/utils/keys';
+import { resolveCompositeKey } from '@lib/utils/key';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';

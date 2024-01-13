@@ -1,6 +1,6 @@
 import { Glow } from '@lib/components/animation/filter-animate/Glow';
 import { TIconComponent } from '@lib/types/dom/icon';
-import { TPartialGlowConfigOptions } from '@lib/utils/effects/glow';
+import { TPartialGlowConfigOptions } from '@lib/utils/effect/glow';
 import { FC } from 'react';
 
 type TProps = TPartialGlowConfigOptions & {

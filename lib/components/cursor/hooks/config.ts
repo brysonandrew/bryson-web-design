@@ -1,6 +1,6 @@
 import { TCursorKey } from '@lib/components/cursor/switch/config';
 import { NOOP } from '@lib/constants/functions';
-import { HOVER_KEY_DELIMITER } from '@lib/utils/keys';
+import { HOVER_KEY_DELIMITER } from '@lib/utils/key';
 
 export const GLOBAL_KEY = 'GLOBAL_KEY';
 

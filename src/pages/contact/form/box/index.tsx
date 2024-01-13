@@ -12,7 +12,7 @@ import {
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { Mark } from '@components/decoration/mark';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 
 const Root = styled(motion.label)``;
 

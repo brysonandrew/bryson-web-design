@@ -12,7 +12,7 @@ import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@lib/utils/effects';
+} from '@lib/utils/effect';
 
 const Root = styled(motion.label)``;
 const Input = styled.input``;

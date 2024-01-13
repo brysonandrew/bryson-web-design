@@ -1,4 +1,4 @@
-import { COLOR_LOOKUP } from '@uno/theme/colors';
+import { THEME_COLORS } from '@lib/constants/color';
 import {
   GLOW_TEAL_BRIGHT_12,
   GLOW_BABY_BLUE_1,
@@ -21,13 +21,13 @@ export const BASE_PROPS = {
 
 export const resolveColor = (isDarkMode: boolean) => ({
   backgroundColor: isDarkMode
-    ? COLOR_LOOKUP['secondary']
-    : COLOR_LOOKUP['white-7'],
+    ? THEME_COLORS['secondary']
+    : THEME_COLORS['white-7'],
 });
 export const resolveHoverColor = (isDarkMode: boolean) => ({
   backgroundColor: isDarkMode
-    ? COLOR_LOOKUP['accent']
-    : COLOR_LOOKUP['secondary'],
+    ? THEME_COLORS['accent']
+    : THEME_COLORS['secondary'],
 });
 export const resolveGlowColor = (isDarkMode: boolean) => ({
   boxShadow: isDarkMode

@@ -1,20 +1,14 @@
-import { COLOR_VARIABLES_LOOKUP } from '../../theme/colors';
 import { TTheme } from '../../theme';
 import { Rule } from 'unocss';
-import { TColorKey } from '../../theme/colors/types';
+import { THEME_COLORS } from '@app/colors/constants';
+import { TColorKey } from '@app/colors/types';
 
 const resolveShadow = (colorKey: TColorKey, blur: number) =>
-  `0 0 ${blur}px ${COLOR_VARIABLES_LOOKUP[colorKey]}`;
+  `0 0 ${blur}px ${THEME_COLORS[colorKey]}`;
 
-export const GLOW_BABY_BLUE_1 = resolveShadow(
-  'accent',
-  1,
-);
+export const GLOW_BABY_BLUE_1 = resolveShadow('accent', 1);
 
-export const GLOW_BABY_BLUE_4 = resolveShadow(
-  'accent',
-  4,
-);
+export const GLOW_BABY_BLUE_4 = resolveShadow('accent', 4);
 
 export const GLOW_WHITE_1 = resolveShadow('white-9', 1);
 

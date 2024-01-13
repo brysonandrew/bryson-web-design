@@ -1,4 +1,4 @@
-import { resolveCompositeKey } from '@lib/utils/keys';
+import { resolveCompositeKey } from '@lib/utils/key';
 
 export const IMAGE_PLACEHOLDER_KEY =
   'IMAGE_PLACEHOLDER_KEY';

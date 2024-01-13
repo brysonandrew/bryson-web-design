@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { useOnSound } from '@lib/hooks/sounds/useOnSound';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { OPEN_IN_NEW_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const Root = styled(motion.a)``;

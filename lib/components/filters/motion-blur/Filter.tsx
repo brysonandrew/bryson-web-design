@@ -6,7 +6,7 @@ import {
 } from '../../../../src/pages/projects/gallery/sections/constants';
 import { FilterShell } from '@lib/components/filters/FilterShell';
 import { TFilterProps } from './config';
-import { resolveCompositeKey } from '@lib/utils/keys';
+import { resolveCompositeKey } from '@lib/utils/key';
 
 const intensity = MOTION_BLUR_INTENSITY;
 

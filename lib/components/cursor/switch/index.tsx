@@ -1,9 +1,8 @@
 import { useCursor } from '@lib/components/cursor/context';
-import { HOVER_KEY_DELIMITER } from '@lib/utils/keys';
+import { HOVER_KEY_DELIMITER } from '@lib/utils/key';
 import { GLOBAL_KEY } from '@lib/components/cursor/hooks/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
-import { OpenInNew as OpenInNewIcon } from '@components/decoration/icon/links/OpenInNew';
 import { Box } from './Box';
 import { Gallery } from '@pages/projects/gallery/icons/Gallery';
 import {
@@ -16,6 +15,7 @@ import {
   SOUND_CURSOR_KEY,
 } from './config';
 import { EMAIL_ICON } from '@lib/constants/icons/contact';
+import { OpenInNew } from '@lib/components/decoration/icons/OpenInNew';
 
 export const Switch = () => {
   const { hoverKey } = useCursor();
@@ -31,7 +31,7 @@ export const Switch = () => {
       return (
         <Sight>
           <Box>
-            <IconWithText Icon={OpenInNewIcon}>
+            <IconWithText Icon={OpenInNew}>
               {lastKey ?? 'Open'}
             </IconWithText>
           </Box>

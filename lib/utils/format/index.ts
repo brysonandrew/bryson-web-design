@@ -1,5 +1,5 @@
-import { TTTitleToKebab } from '@lib/types/transformer/format';
-import { TTKebabToPascal } from '@lib/types/transformer/format/pascal';
+import { TTTitleToKebab } from '@lib/types/transformers/format';
+import { TTKebabToPascal } from '@lib/types/transformers/format/pascal';
 
 export const capitalize = (word: string | null) =>
   word

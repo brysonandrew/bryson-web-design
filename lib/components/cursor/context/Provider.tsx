@@ -5,10 +5,12 @@ import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@lib/components/cursor/hooks/useCursorOffset';
 import { Cursor } from '.';
 import { resolveHoverKeyVariations } from '@lib/components/cursor/config';
+import { useApp } from '@lib/context/app/useApp';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
+  const { Background } = useApp();
   const [isCursorReady, setCursorReady] = useState(
     STATE.isCursorReady,
   );
@@ -36,6 +38,7 @@ export const Provider: FC<PropsWithChildren> = ({
         isCursorReady,
         onHoverKey: setHoverKey,
         onCursorReady: setCursorReady,
+        Background,
         ...hoverKeyVariations,
       }}
     >

@@ -1,5 +1,5 @@
-import { resolveBlur } from '@lib/utils/effects/blur';
-import { resolveBrightness } from '@lib/utils/effects/brighten';
+import { resolveBlur } from '@lib/utils/effect/blur';
+import { resolveBrightness } from '@lib/utils/effect/brighten';
 
 export const resolveGrayscale = (value = 0) =>
   `grayscale(${value}%)`;

@@ -1,4 +1,4 @@
-import { COLOR_VARIABLES_LOOKUP } from './colors';
+import { THEME_COLORS } from '@app/colors/constants';
 import { SPACING } from './spacing';
 
 export const THEME = {
@@ -21,7 +21,7 @@ export const THEME = {
     '++++core': '1100px',
     '+++++core': '1200px',
   },
-  colors: COLOR_VARIABLES_LOOKUP,
+  colors: THEME_COLORS,
   spacing: SPACING,
   fontSize: {
     xxs: ['0.625rem', '0.75rem'],

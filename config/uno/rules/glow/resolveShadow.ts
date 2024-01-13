@@ -1,5 +1,5 @@
-import { TColorRgbKey } from "@uno/theme/colors/types";
-import { resolveColor } from "@uno/theme/colors/utils/resolveColor";
+import { TColorRgbKey } from "@lib/types/color";
+import { resolveColor } from "@lib/utils/color/resolveColor";
 
 export const resolveShadow = (
   spread: number,

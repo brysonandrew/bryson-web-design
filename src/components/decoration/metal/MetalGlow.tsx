@@ -3,7 +3,7 @@ import { Metal } from '.';
 import { FC } from 'react';
 import { MetalDarkest } from './MetalDarkest';
 import { MetalDark } from './MetalDark';
-import { TPartialGlowConfigOptions } from '@lib/utils/effects/glow';
+import { TPartialGlowConfigOptions } from '@lib/utils/effect/glow';
 import { TClassValueProps } from '@lib/types/dom';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 

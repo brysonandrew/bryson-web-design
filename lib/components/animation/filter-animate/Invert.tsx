@@ -1,7 +1,7 @@
 import {
   TPartialInvertConfigOptions,
   resolveInvertProps,
-} from '@lib/utils/effects/invert';
+} from '@lib/utils/effect/invert';
 import { FilterAnimate, TFilterAnimateProps } from '.';
 import { FC } from 'react';
 import { TChildrenPartialProps } from '@lib/types/dom/main';

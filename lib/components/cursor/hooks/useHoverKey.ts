@@ -1,5 +1,5 @@
 import { useCursor } from '@lib/components/cursor/context';
-import { resolveCompositeHoverKey } from '@lib/utils/keys';
+import { resolveCompositeHoverKey } from '@lib/utils/key';
 import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
 import { TCursorKey } from '@lib/components/cursor/switch/config';

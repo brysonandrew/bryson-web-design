@@ -7,7 +7,7 @@ import {
 import {
   TPartialBrightenConfigOptions,
   resolveBrightenProps,
-} from '@lib/utils/effects/brighten';
+} from '@lib/utils/effect/brighten';
 
 type TProps = TPartialBrightenConfigOptions &
   TClassValueProps &

@@ -8,7 +8,7 @@ import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import { Aura } from '@lib/components/filters/aura/Aura';
 import { P1_5 } from '@lib/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { OPEN_IN_NEW_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';

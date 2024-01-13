@@ -246,13 +246,13 @@ export type {
 export type {
 	TTToCamelCase,
 	TTKebabKeys
-} from "./types/transformer/format/object";
+} from "./types/transformers/format/object";
 export type {
 	TTCamelToPascal,
 	TTKebabToPascal
-} from "./types/transformer/format/pascal";
-export type { TTKebabToTitle } from "./types/transformer/format/title";
-export type { TTReplace } from "./types/transformer/map";
-export type { TTEnumerate, TIntRange } from "./types/transformer/number";
-export type { TTFirstArg, TTTail } from "./types/transformer/parameter";
-export type { TTDeepPartial } from "./types/transformer/partial";
+} from "./types/transformers/format/pascal";
+export type { TTKebabToTitle } from "./types/transformers/format/title";
+export type { TTReplace } from "./types/transformers/map";
+export type { TTEnumerate, TIntRange } from "./types/transformers/number";
+export type { TTFirstArg, TTTail } from "./types/transformers/parameter";
+export type { TTDeepPartial } from "./types/transformers/partial";

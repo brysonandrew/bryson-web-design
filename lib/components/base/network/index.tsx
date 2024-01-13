@@ -1,10 +1,10 @@
 import { useEventListener } from '@lib/hooks/events/useEventListener';
 import type { FC } from 'react';
+import { useNetwork } from './context/useNetwork';
 import { Offline } from './Offline';
-import { useApp } from '@lib/components/base/context';
 
 export const Network: FC = () => {
-  const { isOffline, onOffline, onOnline } = useApp();
+  const { isOffline, onOffline, onOnline } = useNetwork();
   useEventListener('offline', onOffline);
   useEventListener('online', onOnline);
 

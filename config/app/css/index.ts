@@ -1,4 +1,4 @@
-import { resolveCssVarRecord } from '@uno/theme/colors/utils/resolveCssVarRecord';
+import { resolveCssVarRecord } from '@lib/utils/color/resolveCssVarRecord';
 
 const PLACEHOLDER_MD = 28;
 const PLACEHOLDER_SM = 16;
@@ -15,6 +15,6 @@ const PLACEHOLDER_LOOKUP = {
   'size-placeholder': `${resolveWidth(PLACEHOLDER)}`,
 };
 
-export const CUSTOM_VARIABLES_CSS = resolveCssVarRecord(
-  PLACEHOLDER_LOOKUP,
+export const CSS_VARS_OTHER = resolveCssVarRecord(
+  PLACEHOLDER_LOOKUP as any,
 );

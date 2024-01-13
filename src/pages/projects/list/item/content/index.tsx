@@ -14,7 +14,7 @@ import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProj
 import { PRESENCE_OPACITY } from '@lib/constants/animation';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';

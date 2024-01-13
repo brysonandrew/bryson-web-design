@@ -9,10 +9,6 @@ import {
   resolveGlowColor,
   resolveHoverColor,
 } from './config';
-import {
-  DURATION_DARK_MODE,
-  MOTION_CONFIG,
-} from '@lib/constants/animation';
 const BORDER_SIZE = 2;
 const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
 

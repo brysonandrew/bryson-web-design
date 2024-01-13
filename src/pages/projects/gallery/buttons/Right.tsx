@@ -3,7 +3,7 @@ import { TClassValueProps } from '@lib/types/dom';
 import { Nav } from './Nav';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { ArrowRight } from '@pages/projects/gallery/icons/ArrowRight';
-import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { useNext } from '../hooks/nav/useNext';
 
 type TProps = TClassValueProps & {

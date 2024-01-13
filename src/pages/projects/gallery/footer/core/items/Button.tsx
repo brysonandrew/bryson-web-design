@@ -9,13 +9,13 @@ import {
 } from 'react-router-dom';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { TMediaRecord } from "@ops/screens/process/config/types";
+import { TMediaRecord } from '@ops/screens/process/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { COLOR_LOOKUP } from '@uno/theme/colors';
 import { Background } from '@lib/components/interactive/circle/Background';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
 import { resolveShadow } from '@uno/rules/glow/resolveShadow';
 import { useTo } from '@pages/projects/gallery/hooks/nav/useTo';
+import { THEME_COLORS } from '@app/colors/constants';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -69,7 +69,8 @@ export const Button: FC<TProps> = ({
             style={{
               boxShadow: resolveShadow(4, 'highlight'),
               filter: resolveDropShadow(6, 'secondary'),
-              width: 40, height: 40
+              width: 40,
+              height: 40,
             }}
             layoutId='GALLERY_BUTTON_FILL'
           />
@@ -82,8 +83,8 @@ export const Button: FC<TProps> = ({
               zIndex: 0,
               cursor: 'default',
               color: isDarkMode
-                ? COLOR_LOOKUP['white-9']
-                : COLOR_LOOKUP['gray'],
+                ? THEME_COLORS['white-9']
+                : THEME_COLORS['gray'],
               textShadow: resolveShadow(0),
             },
             loading: {
@@ -91,8 +92,8 @@ export const Button: FC<TProps> = ({
               cursor: 'wait',
               opacity: 0.8,
               color: isDarkMode
-                ? COLOR_LOOKUP['gray']
-                : COLOR_LOOKUP['gray'],
+                ? THEME_COLORS['gray']
+                : THEME_COLORS['gray'],
               textShadow: resolveShadow(0),
             },
             active: {
@@ -100,8 +101,8 @@ export const Button: FC<TProps> = ({
               zIndex: 9999,
               cursor: 'default',
               color: isDarkMode
-                ? COLOR_LOOKUP['highlight']
-                : COLOR_LOOKUP['gray'],
+                ? THEME_COLORS['highlight']
+                : THEME_COLORS['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(2, 'secondary')
                 : resolveShadow(0),
@@ -111,8 +112,8 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLOR_LOOKUP['white-9']
-                : COLOR_LOOKUP['gray'],
+                ? THEME_COLORS['white-9']
+                : THEME_COLORS['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(2, 'white-9')
                 : resolveShadow(0),
@@ -122,8 +123,8 @@ export const Button: FC<TProps> = ({
               zIndex: 1,
               cursor: 'pointer',
               color: isDarkMode
-                ? COLOR_LOOKUP['highlight']
-                : COLOR_LOOKUP['gray'],
+                ? THEME_COLORS['highlight']
+                : THEME_COLORS['gray'],
               textShadow: isDarkMode
                 ? resolveShadow(4, 'highlight')
                 : resolveShadow(0),
