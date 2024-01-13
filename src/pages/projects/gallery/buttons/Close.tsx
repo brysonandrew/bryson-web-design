@@ -1,11 +1,10 @@
-import { Cross } from '@components/decoration/icons/gallery/Cross';
+import { Cross } from '@pages/projects/gallery/icons/Cross';
 import type { FC } from 'react';
-import { IconLink } from '@components/interactive/IconLink';
-import { TClassValueProps } from '@t/index';
+import { IconLink } from '@lib/components/interactive/IconLink';
+import { TClassValueProps, TDivMotionProps } from '@lib/types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { Circle } from '@components/interactive/circle';
-import { TDivMotionProps } from '@t/dom';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { Circle } from '../../components/buttons/Circle';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {
@@ -22,7 +21,7 @@ export const Close: FC<TProps> = ({
     <Circle isHover={isHover} {...props}>
       <IconLink
         to={to}
-        Icon={Cross} 
+        Icon={Cross}
         title='Close'
         onClick={onClick}
         {...handlers}

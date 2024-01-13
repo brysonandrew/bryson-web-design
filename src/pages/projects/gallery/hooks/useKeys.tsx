@@ -1,7 +1,7 @@
-import { useMoveSound } from "@hooks/sounds/useMoveSound";
-import { useOffSound } from "@hooks/sounds/useOffSound";
-import { useKey } from "@hooks/dom/useKey";
-import { NAME_KEY } from "@pages/projects/config/constants";
+import { useMoveSound } from "@lib/hooks/sounds/useMoveSound";
+import { useOffSound } from "@lib/hooks/sounds/useOffSound";
+import { useKey } from "@lib/hooks/dom/useKey";
+import { NAME_KEY } from "@pages/projects/config/constants/keys";
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";

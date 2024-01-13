@@ -4,7 +4,7 @@ import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { TDivMotionProps } from '@t/dom';
+import { TDivMotionProps } from '@lib/types/dom';
 
 const DefaultRoot = styled(motion.div)`
   background-color: var(--white-9);

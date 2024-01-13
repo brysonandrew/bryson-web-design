@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { I } from '@components/decoration/Icon';
-import { P2 } from '@components/layout/space/P2';
-import { P3 } from '@components/layout/space/P3';
-import { P_5 } from '@components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@constants/icons';
-import { PLUS_ICON } from '@constants/icons/text';
+import { I } from '@lib/components/decoration/Icon';
+import { P2 } from '@lib/components/layout/space/P2';
+import { P3 } from '@lib/components/layout/space/P3';
+import { P_5 } from '@lib/components/layout/space/P_5';
+import { TICK_CIRCLE_ICON } from '@lib/constants/icons';
+import { PLUS_ICON } from '@lib/constants/icons/text';
 
 const Root = styled.div``;
 

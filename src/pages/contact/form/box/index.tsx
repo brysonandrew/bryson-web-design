@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { TChildren } from '@t/index';
+import { TChildren } from '@lib/types/dom';
 import { Clear } from './Clear';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import {
@@ -10,9 +10,9 @@ import {
   TInputElement,
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { Mark } from '@components/decoration/mark';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effects';
 
 const Root = styled(motion.label)``;
 

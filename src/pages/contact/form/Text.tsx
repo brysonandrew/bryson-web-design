@@ -6,7 +6,7 @@ import { TBaseInputProps } from '../config';
 import { Name } from './name';
 import { Box } from './box';
 import { useInput } from './useInput';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 
 const Input = styled(motion.input)``;
 

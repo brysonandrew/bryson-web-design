@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
-import { Picture } from '@components/media/picture';
-import { useLoadImage } from '@hooks/media/useLoadImage';
+import { Picture } from '@lib/components/media/picture';
+import { useLoadImage } from '@lib/hooks/media/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
 } from '@ops/screens/process/config/types';
-import { useImageDimensions } from '@hooks/media/useImageDimensions';
-import { TChildren } from '@t/index';
-import { MotionBlur } from '@components/filters/motion-blur';
+import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
+import { TChildren } from '@lib/types/dom';
+import { MotionBlur } from '@lib/components/filters/motion-blur';
 
 export const Root = styled(motion.div)``;
 

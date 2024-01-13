@@ -1,8 +1,8 @@
-import { PROJECT_KEY } from '@pages/projects/config/constants';
+import { PROJECT_KEY } from '@pages/projects/config/constants/keys';
 import { TProjectKey } from '@pages/projects/config/types';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
-import { resolveTo } from './resolveTo';
+import { resolveTo } from '../../utils/resolveTo';
 
 type TToConfig = {
   project?: TProjectKey;

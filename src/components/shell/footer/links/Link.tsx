@@ -3,11 +3,11 @@ import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import { motion } from 'framer-motion';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { useOnSound } from '@hooks/sounds/useOnSound';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { resolveParentAnimateConfig } from '@utils/effects';
-import { OPEN_IN_NEW_CURSOR_KEY } from '@components/base/cursor/switch/config';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useOnSound } from '@lib/hooks/sounds/useOnSound';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { OPEN_IN_NEW_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const Root = styled(motion.a)``;
 

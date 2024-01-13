@@ -21,16 +21,17 @@
     "jsx": "react-jsx",
     "noImplicitThis": false
   },
-  "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "ops/**/*.ts",
-    "ops/**/*.tsx",
-    "config/**/*.ts",
-    "config/**/*.tsx"
-  ],
+  // "include": [
+  //   "src/**/*.js",
+  //   "src/**/*.jsx",
+  //   "src/**/*.ts",
+  //   "src/**/*.tsx",
+  //   "ops/**/*.ts",
+  //   "ops/**/*.tsx",
+  //   "config/**/*.ts",
+  //   "config/**/*.tsx"
+  // ],
+  "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.tsx"],
   "exclude": [],
   "extends": "./tsconfig.paths.json"
 }

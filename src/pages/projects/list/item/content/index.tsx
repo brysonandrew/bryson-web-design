@@ -1,24 +1,23 @@
 import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
-import { resolveTitleLayoutId } from '@pages/projects/config/constants';
-import styled from '@emotion/styled';
+import { resolveTitleLayoutId } from '@pages/projects/config/constants/keys';
 import { AnimatePresence, motion } from 'framer-motion';
-import { TChildren, TClassValueProps } from '@t/index';
+import {
+  TChildren,
+  TClassValueProps,
+  TDivMotionProps,
+} from '@lib/types/dom';
 import { Mark } from '@components/decoration/mark';
-import { TDivMotionProps } from '@t/dom';
-import { P2 } from '@components/layout/space/P2';
-import { useCurrProject } from '@hooks/params/useCurrProject';
-import { PRESENCE_OPACITY } from '@constants/animation';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { useDelayCallback } from '@hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { P2 } from '@lib/components/layout/space/P2';
+import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
+import { PRESENCE_OPACITY } from '@lib/constants/animation';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
+import { resolveParentAnimateConfig } from '@lib/utils/effects';
 import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
-import { TPricingKey } from '@pages/pricing/config/types';
-
-const Root = styled(motion.div)``;
 
 type TProps = TSlugProps &
   TClassValueProps &
@@ -80,7 +79,7 @@ export const Content: FC<TProps> = ({
   };
 
   return (
-    <Root
+    <motion.div
       layoutId={resolveTitleLayoutId(slug)}
       className={clsx(
         'relative w-full',
@@ -109,7 +108,7 @@ export const Content: FC<TProps> = ({
         className='relative left-0 top-0 row-space'
       >
         <Header slug={slug} />
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
           {!isTransitioning && (
             <motion.div
               key={Boolean(project) ? 'project' : slug}
@@ -123,6 +122,6 @@ export const Content: FC<TProps> = ({
       </motion.div>
       {children && <>{children}</>}
       <P2 />
-    </Root>
+    </motion.div>
   );
 };

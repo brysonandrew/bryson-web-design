@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import { useBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
+import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
 import styled from '@emotion/styled';
-import { P8 } from '@components/layout/space/P8';
-import { TITLE_HEIGHT } from '@components/layout/space/TitleRoot';
-import { useScroll as useScrollContext } from '@context/scroll';
-import { useViewport as useViewportContext } from '@context/viewport';
-import { TDepthConfig } from '@hooks/media/fake-3D/useCircle';
-import { ORIGIN_50 } from '@constants/animation';
-import { useSpin } from '@hooks/media/fake-3D/useSpin';
+import { P8 } from '@lib/components/layout/space/P8';
+import { TITLE_HEIGHT } from '@lib/components/layout/space/TitleRoot';
+import { useScroll as useScrollContext } from '@lib/context/scroll';
+import { useViewport as useViewportContext } from '@lib/context/viewport';
+import { TDepthConfig } from '@pages/index/build/images/hooks/useCircle';
+import { ORIGIN_50 } from '@lib/constants/animation';
+import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import clsx from 'clsx';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 
@@ -20,7 +20,7 @@ const HEIGHT = TITLE_HEIGHT + BUFFER;
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
-type TProps = TFake3DMotionChildrenProps;
+type TProps = TParallaxMotionChildrenProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
   const { records } = useBuild();

@@ -3,16 +3,16 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
-import { useMoveSound } from '@hooks/sounds/useMoveSound';
+import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useContact } from '@pages/index/contact/context';
-import { useDarkMode } from '@hooks/dark-mode/context';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@utils/effects';
+} from '@lib/utils/effects';
 
 const Root = styled(motion.label)``;
 const Input = styled.input``;

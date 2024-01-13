@@ -1,4 +1,4 @@
-import { NAME_KEY } from '@pages/projects/config/constants';
+import { NAME_KEY } from '@pages/projects/config/constants/keys';
 import { useSearchParams } from 'react-router-dom';
 import { useTo } from './useTo';
 

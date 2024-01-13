@@ -2,21 +2,21 @@ import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from './content';
 import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { useOnSound } from '@hooks/sounds/useOnSound';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useOnSound } from '@lib/hooks/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@components/base/cursor/switch/config';
-import { NOOP } from '@constants/functions';
-import { useCursor } from '@components/base/cursor/context';
-import { useCurrProject } from '@hooks/params/useCurrProject';
-import { useToFirst } from '@hooks/media/nav/useToFirst';
+} from '@lib/components/cursor/switch/config';
+import { NOOP } from '@lib/constants/functions';
+import { useCursor } from '@lib/components/cursor/context';
+import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { TSlugProps } from '@pages/projects/config/types';
-import { RightHeader } from './RightHeader';
+import { RightCollapsed } from './RightCollapsed';
+import { useToFirst } from '@pages/projects/gallery/hooks/nav/useToFirst';
 
 type TProps = TSlugProps & {
   index: number;
@@ -79,7 +79,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       <Content
         slug={item.slug}
         isHover={isHover}
-        rightHeader={<RightHeader {...item} />}
+        rightHeader={<RightCollapsed isHover={isParentHover} slug={slug} />}
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete
         }

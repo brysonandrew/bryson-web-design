@@ -1,14 +1,14 @@
-import { Fake3D } from '@components/animation/fake-3d';
+import { Parallax } from '@lib/components/animation/parallax';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './config/constants';
 import { Links } from './links';
-import { Section } from '@components/layout/Section';
+import { Section } from '@lib/components/layout/Section';
 
 const Tech = () => (
   <Section title={SECTION_RECORD.tech}>
-    <Fake3D {...FAKE_3D_PROPS}>
+    <Parallax {...FAKE_3D_PROPS}>
       {(props) => <Links {...props} />}
-    </Fake3D>
+    </Parallax>
   </Section>
 );
 

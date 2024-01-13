@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import {
   IconLink,
   TProps as TIconLinkProps,
-} from '../../../../components/interactive/IconLink';
-import { TClassValueProps, TTitleProps } from '@t/index';
-import { useMoveSound } from '@hooks/sounds/useMoveSound';
+} from '../../../../../lib/components/interactive/IconLink';
+import { TClassValueProps, TTitleProps } from '@lib/types/dom';
+import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
-import { NOOP } from '@constants/functions';
+import { NOOP } from '@lib/constants/functions';
 import { isDesktop } from 'react-device-detect';
 
 type TProps = TClassValueProps &

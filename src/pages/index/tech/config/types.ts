@@ -1,5 +1,5 @@
-import { TDivMotionProps } from '@t/dom';
-import type { TBaseIconProps } from '@t/icons';
+import { TDivMotionProps } from '@lib/types/dom';
+import type { TBaseIconProps } from '@lib/types/dom/icon';
 import type { FC } from 'react';
 
 

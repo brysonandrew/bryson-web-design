@@ -1,7 +1,7 @@
-import { Cv } from '@pages/cv';
-import { Screen } from '@pages/kino/screen';
-import { Projector } from '@pages/kino/projector';
-import { Reader } from '@pages/reader';
+import { Cv } from '@pages/_workshop/cv';
+import { Screen } from '@pages/_workshop/kino/screen';
+import { Projector } from '@pages/_workshop/kino/projector';
+import { Reader } from '@pages/_workshop/reader';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { Index } from '@pages/index';
 import * as Pages from '@pages/index';

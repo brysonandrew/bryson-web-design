@@ -1,10 +1,10 @@
 import type { FC } from 'react';
-import { ArrowLeft } from '@components/decoration/icons/gallery/ArrowLeft';
+import { ArrowLeft } from '@pages/projects/gallery/icons/ArrowLeft';
 import { usePrev } from '../hooks/nav/usePrev';
-import { TClassValueProps } from '@t/index';
+import { TClassValueProps } from '@lib/types/dom';
 import { Nav } from './Nav';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { resolveParentAnimateConfig } from '@lib/utils/effects';
 
 type TProps = TClassValueProps & {
   max: number;

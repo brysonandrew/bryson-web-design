@@ -3,16 +3,16 @@ import {
   TSlugProps,
   TTag,
 } from '@pages/projects/config/types';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { GLOBAL_KEY } from '@components/base/cursor/hooks/config';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { GLOBAL_KEY } from '@lib/components/cursor/hooks/config';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@t/dom';
-import { resolveCompositeHoverKey } from '@utils/keys';
-import { useCursor } from '@components/base/cursor/context';
+import { TAnchorMotionProps } from '@lib/types/dom';
+import { resolveCompositeHoverKey } from '@lib/utils/keys';
+import { useCursor } from '@lib/components/cursor/context';
 import {
   OPEN_IN_NEW_CURSOR_KEY,
   PROJECT_CURSOR_KEY,
-} from '@components/base/cursor/switch/config';
+} from '@lib/components/cursor/switch/config';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &

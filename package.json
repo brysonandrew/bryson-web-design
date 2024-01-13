@@ -14,7 +14,8 @@
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "screens": "esrun ops/screens/process"
+    "screens": "esrun ops/screens/process",
+    "publish": "npm publish --access public ./lib"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",

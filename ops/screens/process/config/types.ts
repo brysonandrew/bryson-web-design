@@ -1,10 +1,21 @@
+import { TProjectKey } from '@pages/projects/config/types';
+import type { Metadata, OutputInfo } from 'sharp';
+import { TSource } from '@lib/types/dom/element';
+import { TScreensLookup } from './screens';
+
 export type TScreensRecord = Record<string, TMediaRecords>;
 export type TExtKey = (typeof EXTS)[number];
-import { TProjectKey } from '@pages/projects/config/types';
-import { EXTS } from '@constants/media';
 
-import type { Metadata, OutputInfo } from 'sharp';
-import { TSource } from '@t/dom';
+export const PNG_EXT = 'png';
+export const WEBP_EXT = 'webp';
+export const DEFAULT_EXT = PNG_EXT;
+
+export const EXTS = [PNG_EXT, WEBP_EXT] as const;
+
+export const EMPTY_SCREENS_LOOKUP: TScreensLookup = {
+  [WEBP_EXT]: {},
+  [PNG_EXT]: {},
+};
 
 export type TDimensions = { width: number; height: number };
 

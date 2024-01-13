@@ -1,4 +1,4 @@
-import { resolvePage } from '@utils/routes';
+import { resolvePage } from '@lib/utils/routes';
 import { TPage, TPageRecord } from '../types';
 
 export const PAGE_NAV_TITLES = [

@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { ServicesC } from '.';
 import { TExtrasRecord } from './types';
-import { useLocalStorage } from '@hooks/dom/useLocalStorage';
+import { useLocalStorage } from '@lib/hooks/dom/useLocalStorage';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,

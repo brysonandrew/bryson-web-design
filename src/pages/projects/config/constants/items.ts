@@ -3,7 +3,7 @@ import type {
   TItemInit,
   TProjectItemRecord,
 } from '@pages/projects/config/types';
-import { titleToKebab } from '@utils/format';
+import { titleToKebab } from '@lib/utils/format';
 import {
   REACT,
   TYPESCRIPT,
@@ -189,4 +189,7 @@ export const PROJECT_ITEMS_RECORD = PROJECT_ITEMS.reduce(
     return a;
   },
   {},
+);
+export const PROJECT_SLUGS = Object.keys(
+  PROJECT_ITEMS_RECORD,
 );

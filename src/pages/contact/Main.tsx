@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
+import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
 import { Form } from './form';
 
 const Root = styled(motion.div)``;
 
-type TProps = Partial<TFake3DMotionChildrenProps>;
+type TProps = Partial<TParallaxMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
   return (
     <Root

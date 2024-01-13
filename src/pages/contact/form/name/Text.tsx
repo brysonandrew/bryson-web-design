@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { TChildren } from '@t/index';
+import type { TChildren } from '@lib/types/dom';
 import type { FC } from 'react';
 
 const Root = styled.h4``;

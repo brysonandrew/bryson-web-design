@@ -1,10 +1,10 @@
 import type { FC } from 'react';
-import { useNext } from '../../../../hooks/media/nav/useNext';
-import { TClassValueProps } from '@t/index';
+import { TClassValueProps } from '@lib/types/dom';
 import { Nav } from './Nav';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { ArrowRight } from '@components/decoration/icons/gallery/ArrowRight';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { ArrowRight } from '@pages/projects/gallery/icons/ArrowRight';
+import { resolveParentAnimateConfig } from '@lib/utils/effects';
+import { useNext } from '../hooks/nav/useNext';
 
 type TProps = TClassValueProps & {
   max: number;

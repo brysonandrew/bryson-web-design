@@ -1,0 +1,63 @@
+import {
+  TITLE_KEY_DELIMITER,
+  resolveCompositeTitle,
+} from '@lib/utils/keys';
+import { useCurrParams } from '../../../src/pages/projects/gallery/hooks/params/useCurrParams';
+import { useLocation } from 'react-router';
+import { capitalize } from '@lib/utils/format';
+import { useEffect } from 'react';
+import { APP_DESCRIPTION, APP_TITLE } from '@app/config/constants';
+import { PAGE_NAV_VALUES } from '@app/routes/constants/pages';
+
+const TITLE_FROM_PATHNAME_LOOKUP: Record<
+  string,
+  string | null
+> = {
+  '/': APP_DESCRIPTION,
+  ...PAGE_NAV_VALUES.reduce(
+    (a, { path, title }) => ({ ...a, [path]: title }),
+    {},
+  ),
+};
+
+export const useHtmlTitle = () => {
+  // const prevTimestampRef = useRef(0);
+  const { pathname } = useLocation();
+  const currParams = useCurrParams();
+  const { project, name } = currParams;
+  const route = TITLE_FROM_PATHNAME_LOOKUP[pathname];
+  const titles = [APP_TITLE, route].filter(Boolean);
+  const title = project
+    ? `Project${TITLE_KEY_DELIMITER}${capitalize(
+        project,
+      )}${TITLE_KEY_DELIMITER}${name}`
+    : resolveCompositeTitle(...titles);
+
+  useEffect(() => {
+    // const fetchIp = async () => {
+    //   const ip = await fetch(
+    //     'https://api.ipify.org?format=json',
+    //   );
+    //   console.log(ip);
+    //   const json = await ip.json();
+    //   console.log(json);
+    // };
+    // fetchIp();
+    // const insertEntry = async () => {
+    //   try {
+    //     const { count, data, error } = await execute({
+    //       title,
+    //     });
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
+    // const timestamp = Date.now();
+    // const prevTimestamp = prevTimestampRef.current;
+    // const diff = timestamp - prevTimestamp;
+    // if (diff > 1000 && !import.meta.env.DEV) {
+    //   insertEntry();
+    // }
+  }, [title]);
+  return title;
+};

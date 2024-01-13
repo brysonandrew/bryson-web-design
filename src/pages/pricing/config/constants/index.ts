@@ -3,8 +3,8 @@ import {
   TPricingTitle,
 } from '@pages/pricing/config/types';
 import { TProps as TPriceProps } from '@pages/pricing/layout/price';
-import { colorToStylesRecord } from '@utils/transformer/colorToStyles';
-import { newlineToArr } from '@utils/transformer/newlineToArr';
+import { colorToStylesRecord } from '@lib/utils/transformer/colorToStyles';
+import { newlineToArr } from '@lib/utils/transformer/newlineToArr';
 import { FC } from 'react';
 import { PACKAGES_COLOR_LOOKUP } from './colors';
 import { PlusContent } from './PlusContent';

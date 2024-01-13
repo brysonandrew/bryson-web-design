@@ -1,4 +1,4 @@
-import { useEventListener } from '@hooks/events/useEventListener';
+import { useEventListener } from '@lib/hooks/events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   CURSOR_SIZE,
@@ -6,7 +6,7 @@ import {
   TInteractiveEvent,
   resolveCursorCoords,
 } from './config';
-import { useOutsideClick } from '@hooks/dom/useOutsideClick';
+import { useOutsideClick } from '@lib/hooks/dom/useOutsideClick';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({

@@ -1,11 +1,11 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
+import { PRESENCE_OPACITY_Y_SHIFT } from '@lib/constants/animation';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { useViewport } from '@context/viewport';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useViewport } from '@lib/context/viewport';
 import { TMediaRecord } from "@ops/screens/process/config/types";
 
 export const Root = styled(motion.div)``;

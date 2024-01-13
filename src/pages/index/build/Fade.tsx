@@ -1,11 +1,11 @@
-import { FadeDown } from '@components/decoration/vertical-fade/FadeDown';
-import { FadeUp } from '@components/decoration/vertical-fade/FadeUp';
+import { FadeDown } from '@lib/components/decoration/vertical-fade/FadeDown';
+import { FadeUp } from '@lib/components/decoration/vertical-fade/FadeUp';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@constants/animation';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { useViewport as useViewportContext } from '@context/viewport';
+} from '@lib/constants/animation';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useViewport as useViewportContext } from '@lib/context/viewport';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const Fade = () => {

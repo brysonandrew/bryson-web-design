@@ -1,10 +1,10 @@
-import { Drag } from '@components/decoration/icons/gallery/Drag';
+import { Drag } from '@pages/projects/gallery/icons/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { PADDING_X } from './config';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { COLOR_LOOKUP } from '@uno/theme/colors';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
 

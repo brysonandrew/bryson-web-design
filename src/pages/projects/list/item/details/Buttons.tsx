@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { P1 } from '@components/layout/space/P1';
-import { P3 } from '@components/layout/space/P3';
-import { Gallery } from '@components/decoration/icons/gallery/Gallery';
-import { OpenInNew } from '@components/decoration/icons/links/OpenInNew';
-import { Circle } from '@components/interactive/circle';
-import { Anchor } from '@components/interactive/circle/Anchor';
+import { P1 } from '@lib/components/layout/space/P1';
+import { P3 } from '@lib/components/layout/space/P3';
+import { Gallery } from '@pages/projects/gallery/icons/Gallery';
+import { OpenInNew } from '@components/decoration/icon/links/OpenInNew';
+import { Circle } from '@lib/components/interactive/circle';
+import { Anchor } from '@lib/components/interactive/circle/Anchor';
 import { TItem } from '@pages/projects/config/types';
 import { motion } from 'framer-motion';
-import { useTo } from '@hooks/media/nav/useTo';
+import { useTo } from '@pages/projects/gallery/hooks/nav/useTo';
 
 const Root = styled.div``;
 const InternalLink = styled(motion(Link))``;

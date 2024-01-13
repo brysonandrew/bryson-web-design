@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { TItem } from '@pages/projects/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
-import { Brighten } from '@components/animation/filter-animate/Brighten';
+import { Brighten } from '@lib/components/animation/filter-animate/Brighten';
 
 const Root = styled.div``;
 
