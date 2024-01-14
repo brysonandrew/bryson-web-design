@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "Building websites and apps",
   "main": "src/main.tsx",
-  "config": {
-    "blur_images_dir_path": "ops/blur-images",
-    "vite_config_path": "vite.config.ts"
-  },
   "scripts": {
-    "dev": "vite --config $npm_package_config_vite_config_path",
-    "sw": "npx nodemon --exec 'yarn build && yarn dev' -w src -w $npm_package_config_vite_config_path -e 'ts,js,tsx,jsx'",
-    "build": "vite build --config $npm_package_config_vite_config_path",
+    "dev": "vite --config vite.config.ts",
+    "sw": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
+    "build": "vite build --config vite.config.ts",
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -74,6 +70,9 @@
     "unocss": "^0.53.4",
     "vite": "^4.1.4",
     "vite-tsconfig-paths": "^3.5.0"
+  },
+  "publishConfig": {
+    "@brysonandrew:registry": "https://npm.pkg.github.com"
   },
   "homepage": "brysona.dev"
 }
