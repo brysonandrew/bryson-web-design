@@ -1,5 +1,5 @@
 {
-  "name": "brysona.dev",
+  "name": "@brysonandrew/brysona.dev",
   "version": "2.0.0",
   "description": "Building websites and apps",
   "main": "src/main.tsx",
@@ -15,10 +15,7 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
   "bugs": {
     "url": "https://github.com/brysonandrew/brysona.dev/issues"
   },
@@ -26,6 +23,7 @@
   "types": "src/index.d.ts",
   "private": true,
   "dependencies": {
+    "@brysonandrew/brysona.dev": "2.0.0",
     "@emailjs/browser": "^3.10.0",
     "ably": "^1.2.44",
     "clsx": "^1.2.1",
