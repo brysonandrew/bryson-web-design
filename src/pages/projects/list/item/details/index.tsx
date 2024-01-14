@@ -36,16 +36,13 @@ export const Details: FC<TProps> = ({
             style={{ width: `calc(100% + 3rem)` }}
           />
           <P2 />
-          <Paragraphs
-            key='PARAGRAPHS'
-            paragraphs={paragraphs}
-          />
+          <Paragraphs paragraphs={paragraphs} />
         </>
       )}
       {tags && (
         <>
           <P2 />
-          <Tags key='TAGS' slug={slug} tags={tags} />
+          <Tags slug={slug} tags={tags} />
         </>
       )}
     </Root>

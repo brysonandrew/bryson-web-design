@@ -4,15 +4,17 @@ import {
   TTag,
 } from '@pages/projects/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { GLOBAL_KEY } from '@lib/components/cursor/hooks/config';
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@lib/types/dom';
-import { resolveCompositeHoverKey } from '@lib/utils/key';
-import { useCursor } from '@lib/components/cursor/context';
 import {
-  OPEN_IN_NEW_CURSOR_KEY,
-  PROJECT_CURSOR_KEY,
-} from '@lib/components/cursor/switch/config';
+  HOVER_KEY_DELIMITER,
+  resolveCompositeHoverKey,
+} from '@lib/utils/key';
+import { useCursor } from '@lib/components/cursor/context';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { GALLERY_ICON } from '@lib/constants/icons/gallery';
+import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/links';
+import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &
@@ -27,23 +29,27 @@ export const TagLink: FC<TProps> = ({
   const { hoverKey, onHoverKey } = useCursor();
 
   const hoverKeyIn = resolveCompositeHoverKey(
-    OPEN_IN_NEW_CURSOR_KEY,
-    slug,
-    href,
+    CUSTOM_CURSOR_KEY,
+    [slug, OPEN_IN_NEW_ICON, href].join(
+      HOVER_KEY_DELIMITER,
+    ),
   );
 
   const isHover = hoverKey === hoverKeyIn;
 
   const handleHoverStart = () => {
-    onHoverKey({ hoverKey: hoverKeyIn, children: null });
+    onHoverKey({
+      hoverKey: hoverKeyIn,
+      children: <span>{href}</span>,
+    });
   };
   const handleHoverEnd = () => {
-    const hoverKeyOut = resolveCompositeHoverKey(
-      PROJECT_CURSOR_KEY,
-      slug,
-      GLOBAL_KEY,
-    );
-    onHoverKey({ hoverKey: hoverKeyOut, children: null });
+    const [f, s, t, children] = resolveHoverKeyArgs(slug);
+    const hoverKeyOut = resolveCompositeHoverKey(f, s, t);
+    onHoverKey({
+      hoverKey: hoverKeyOut,
+      children,
+    });
   };
   return (
     <motion.a
