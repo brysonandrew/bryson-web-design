@@ -26,7 +26,7 @@ export const Image: FC<TProps> = ({
   motionX,
   children,
 }) => {
-  const { isLoaded, image, imageRef } = useLoadImage(
+  const { image, imageRef } = useLoadImage(
     mediaRecord.src,
   );
   const { isTransitioningGallery } = useContext();

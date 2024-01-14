@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
-import { type FC } from 'react';
+import { PointerEventHandler, type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
 import { useScroll } from '@lib/context/scroll';
 import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
 import { TMediaRecord } from '@ops/screens/process/config/types';
+import { useCurrName } from '../hooks/params/useCurrName';
 
 export const Root = styled(motion.div)``;
 
@@ -29,19 +30,27 @@ export const Control: FC<TProps> = ({
   isHover,
   viewportWidth,
 }) => {
-  const { scroll } = useScroll();
+  const name = useCurrName();
 
+  const isActive = index + 1 === Number(name);
+
+  const { scroll } = useScroll();
   const containerDimensions = {
     height: container.clientHeight,
     width,
   };
+
+  const handlePointerDown: PointerEventHandler<
+    HTMLDivElement
+  > = (e) => e.preventDefault();
+
   return (
     <motion.div
       className='relative'
       style={{ width }}
       {...(isDesktop
         ? {
-            onPointerDown: (e: any) => e.preventDefault(),
+            onPointerDown: handlePointerDown,
           }
         : {})}
     >
@@ -52,7 +61,7 @@ export const Control: FC<TProps> = ({
       >
         {(image) => (
           <>
-            {isHover && image && isDesktop && (
+            {isHover && image && isDesktop && isActive && (
               <Zoom
                 key={mediaRecord.src}
                 index={index}

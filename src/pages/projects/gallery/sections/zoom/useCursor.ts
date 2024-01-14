@@ -7,6 +7,7 @@ import {
   resolveCursorCoords,
 } from './config';
 import { useOutsideClick } from '@lib/hooks/dom/useOutsideClick';
+import { resolveGalleryWidth } from '../../utils/resolveGalleryWidth';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({
@@ -40,12 +41,18 @@ export const useCursor = ({
 
   useOutsideClick({ ref: imageRef, handler: onClose });
 
+  const galleryHalfPaddingX =
+    (viewportWidth - resolveGalleryWidth(viewportWidth)) *
+    0.5;
+
   return {
     style: {
       top: imageRect.top - rect.top - CURSOR_SIZE_HALF,
       left:
         index * viewportWidth +
-        rect.left -
+        rect.left +
+        imageRect.left -
+        galleryHalfPaddingX -
         CURSOR_SIZE_HALF,
       x: cursorX,
       y: cursorY,
