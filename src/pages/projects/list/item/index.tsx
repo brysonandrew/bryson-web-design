@@ -7,19 +7,14 @@ import { useOnSound } from '@lib/hooks/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
-import {
-  CUSTOM_CURSOR_KEY,
-  resolveCursorKeyFromHoverKey,
-} from '@lib/components/cursor/switch/config';
+import { resolveCursorKeyFromHoverKey } from '@lib/components/cursor/switch/config';
 import { NOOP } from '@lib/constants/functions';
 import { useCursor } from '@lib/components/cursor/context';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { TSlugProps } from '@pages/projects/config/types';
 import { RightCollapsed } from './RightCollapsed';
 import { useToFirst } from '@pages/projects/gallery/hooks/nav/useToFirst';
-import { kebabToTitle } from '@lib/utils/format';
-import { PLUS_ICON } from '@lib/index';
-import { GALLERY_ICON } from '@lib/constants/icons/gallery';
+import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 
 type TProps = TSlugProps & {
   index: number;
@@ -29,19 +24,18 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();
   const isGallery = Boolean(currProject);
-  const title = `View ${kebabToTitle(slug)} in gallery`;
+
+  const hoverKeyArgs = resolveHoverKeyArgs(slug);
 
   const { isHover: isParentHover, handlers } = useHoverKey(
-    CUSTOM_CURSOR_KEY,
-    title,
-    GALLERY_ICON,
+    ...hoverKeyArgs,
   );
   const secondaryKey = resolveCursorKeyFromHoverKey(
     hoverKey,
     1,
   );
 
-  const isHover = secondaryKey === title;
+  const isHover = secondaryKey === slug;
   const isChildHover = isHover && !isParentHover;
 
   const item = PROJECT_ITEMS_RECORD[slug];
