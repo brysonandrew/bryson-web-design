@@ -1,6 +1,6 @@
 {
   "name": "bryson-web-design",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Building websites and apps",
   "main": "src/main.tsx",
   "scripts": {
