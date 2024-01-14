@@ -15,6 +15,6 @@ export const HOVER_KEY_DELIMITER = '=[hover]>';
 export const resolveCompositeHoverKey = (
   cursorKey: TCursorKey,
   key1: string,
-  iconKey: string,
+  iconKey = '',
 ): THoverKey =>
   `${cursorKey}${HOVER_KEY_DELIMITER}${key1}${HOVER_KEY_DELIMITER}${iconKey}`;
