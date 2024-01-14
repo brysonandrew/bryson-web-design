@@ -65,9 +65,10 @@ export const Zoom: FC<TProps> = ({
     ) {
       cx = clamp(0, imageWidth, cx);
       cy = clamp(0, imageHeight, cy);
-
+ 
       cursorX.set(cx);
       cursorY.set(cy);
+
       setCursorReady(true);
     } else {
       setCursorReady(false);
