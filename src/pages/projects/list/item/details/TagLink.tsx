@@ -35,7 +35,7 @@ export const TagLink: FC<TProps> = ({
   const isHover = hoverKey === hoverKeyIn;
 
   const handleHoverStart = () => {
-    onHoverKey(hoverKeyIn);
+    onHoverKey({ hoverKey: hoverKeyIn, children: null });
   };
   const handleHoverEnd = () => {
     const hoverKeyOut = resolveCompositeHoverKey(
@@ -43,7 +43,7 @@ export const TagLink: FC<TProps> = ({
       slug,
       GLOBAL_KEY,
     );
-    onHoverKey(hoverKeyOut);
+    onHoverKey({ hoverKey: hoverKeyOut, children: null });
   };
   return (
     <motion.a

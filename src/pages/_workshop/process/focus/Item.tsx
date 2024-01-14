@@ -1,4 +1,4 @@
-import { FOCUS_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -9,7 +9,7 @@ type TProps = PropsWithChildren<{
 }>;
 export const Item: FC<TProps> = ({ id, children }) => {
   const { handlers, isHover } = useHoverKey(
-    FOCUS_CURSOR_KEY,
+    CUSTOM_CURSOR_KEY,
     id,
   );
   return (

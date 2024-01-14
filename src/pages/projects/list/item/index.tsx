@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
-import { Content } from './content';
+import { Content } from '../../components/content';
 import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { useOnSound } from '@lib/hooks/sounds/useOnSound';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
 import {
-  PROJECT_CURSOR_KEY,
+  CUSTOM_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@lib/components/cursor/switch/config';
 import { NOOP } from '@lib/constants/functions';
@@ -17,6 +17,9 @@ import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProj
 import { TSlugProps } from '@pages/projects/config/types';
 import { RightCollapsed } from './RightCollapsed';
 import { useToFirst } from '@pages/projects/gallery/hooks/nav/useToFirst';
+import { kebabToTitle } from '@lib/utils/format';
+import { PLUS_ICON } from '@lib/index';
+import { GALLERY_ICON } from '@lib/constants/icons/gallery';
 
 type TProps = TSlugProps & {
   index: number;
@@ -26,16 +29,19 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();
   const isGallery = Boolean(currProject);
+  const title = `View ${kebabToTitle(slug)} in gallery`;
 
   const { isHover: isParentHover, handlers } = useHoverKey(
-    PROJECT_CURSOR_KEY,
-    slug,
+    CUSTOM_CURSOR_KEY,
+    title,
+    GALLERY_ICON,
   );
   const secondaryKey = resolveCursorKeyFromHoverKey(
     hoverKey,
     1,
   );
-  const isHover = secondaryKey === slug;
+
+  const isHover = secondaryKey === title;
   const isChildHover = isHover && !isParentHover;
 
   const item = PROJECT_ITEMS_RECORD[slug];
@@ -79,7 +85,12 @@ export const Item: FC<TProps> = ({ slug, index }) => {
       <Content
         slug={item.slug}
         isHover={isHover}
-        rightHeader={<RightCollapsed isHover={isParentHover} slug={slug} />}
+        rightHeader={
+          <RightCollapsed
+            isHover={isParentHover}
+            slug={slug}
+          />
+        }
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete
         }

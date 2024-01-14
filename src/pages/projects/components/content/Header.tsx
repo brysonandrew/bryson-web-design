@@ -6,12 +6,12 @@ type TProps = TSlugProps;
 export const Header: FC<TProps> = ({ slug }) => {
   const { title, description } = PROJECT_ITEMS_RECORD[slug];
   return (
-    <header className='relative column-start h-full md:row'>
+    <div className='relative column-start h-full md:row'>
       <h4 className='section-title text-g-tb'>{title}</h4>
       <div className='p-1 md:p-2' />
       <h5 className='section-title text-t-bb italic'>
         {description}
       </h5>
-    </header>
+    </div>
   );
 };

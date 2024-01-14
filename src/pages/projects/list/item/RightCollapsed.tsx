@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { P1 } from '@lib/components/layout/space/P1';
 import { P2 } from '@lib/components/layout/space/P2';
 import { Badge } from '../../../pricing/badge';
-import { Time } from './content/Time';
+import { Time } from '../../components/content/Time';
 import { TItem } from '@pages/projects/config/types';
 import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 
@@ -15,12 +15,5 @@ export const RightCollapsed: FC<TProps> = ({
 }) => {
   const { time, pricing } = PROJECT_ITEMS_RECORD[slug];
 
-  return (
-    <>
-      <P1 />
-      <Time time={time} />
-      <P2 />
-      <Badge type={pricing} isHover={isHover} />
-    </>
-  );
+  return <Time time={time} />;
 };

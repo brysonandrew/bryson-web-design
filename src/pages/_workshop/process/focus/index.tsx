@@ -1,4 +1,7 @@
-import { FOCUS_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import {
+  CUSTOM_CURSOR_KEY,
+  FOCUS_CURSOR_KEY,
+} from '@lib/components/cursor/switch/config';
 import { useCursor } from '@lib/components/cursor/context';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/_workshop/process/website/config';
@@ -14,7 +17,7 @@ export const Focus: FC<TProps> = ({ children }) => {
     hoverKeyParts: [_, first],
   } = useCursor();
   const { handlers, isHover } = useHoverKey(
-    FOCUS_CURSOR_KEY,
+    CUSTOM_CURSOR_KEY,
     children,
   );
   const isActive = children === first;

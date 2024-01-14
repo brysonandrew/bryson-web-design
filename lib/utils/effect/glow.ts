@@ -2,12 +2,13 @@ import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { MotionValue } from 'framer-motion';
 import { TColorRgbKey } from '@lib/types/color';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
-import { resolveShadow } from '@uno/rules/glow/resolveShadow';
+import { resolveShadowLg } from '@uno/rules/glow/resolveShadowLg';
+import { TColorKey } from '@app/colors/types';
 
 export type TGlowConfigOptions = {
   text?: number;
   drop?: number;
-  color?: TColorRgbKey;
+  color?: TColorRgbKey<TColorKey>;
   value?: MotionValue;
 };
 export type TPartialGlowConfigOptions =
@@ -15,12 +16,12 @@ export type TPartialGlowConfigOptions =
 export const resolveGlowProps = ({
   text = 0,
   drop = 0,
-  color = 'secondary', 
+  color = 'secondary',
   value,
 }: TGlowConfigOptions) => ({
   style: {
     opacity: value ?? 0,
-    textShadow: resolveShadow(text, color),
+    textShadow: resolveShadowLg(text, color),
     filter: resolveDropShadow(drop, color),
   },
   transition: EFFECT_ANIMATE_TRANSITION,

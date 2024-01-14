@@ -14,7 +14,7 @@ import { TMotionImgProps } from '@lib/types/dom';
 import styled from '@emotion/styled';
 import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { isDesktop } from 'react-device-detect';
-import { GALLERY_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 import { resolveMotionConfig } from '@lib/hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,
@@ -23,6 +23,8 @@ import {
 import { ORIGIN_50 } from '@lib/constants/animation';
 import { useTapHandler } from '@lib/hooks/media/useTapHandler';
 import { TMediaRecord } from '@ops/screens/process/config/types';
+import { VIEW_ICON } from '@lib/constants/icons';
+import { GALLERY_ICON } from '@lib/constants/icons/gallery';
 
 const Button = styled(motion.button)``;
 
@@ -42,6 +44,7 @@ export const Image: FC<TProps> = (props) => {
     depthConfig,
     ...pictureProps
   } = props;
+  const title = `View in image gallery`;
   const name = useCurrName();
   const isGallery = Boolean(name);
   const isInteractionDisabled = isGallery || isScrolling;
@@ -54,9 +57,10 @@ export const Image: FC<TProps> = (props) => {
   });
 
   const { isHover, handlers } = useHoverKey(
-    GALLERY_CURSOR_KEY,
-    'view',
+    CUSTOM_CURSOR_KEY,
     mediaRecord.src,
+    GALLERY_ICON,
+    <div>{title}</div>,
   );
 
   const handler = useTapHandler({ mediaRecord });
@@ -90,9 +94,7 @@ export const Image: FC<TProps> = (props) => {
     >
       <Button
         className='relative cursor-zoom-in'
-        {...resolveInteractiveLabels(
-          `View in image gallery`,
-        )}
+        {...resolveInteractiveLabels(title)}
         onTap={handleTap}
       >
         <Picture

@@ -4,89 +4,28 @@ import { GLOBAL_KEY } from '@lib/components/cursor/hooks/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
 import { Box } from './Box';
-import { Gallery } from '@pages/projects/gallery/icons/Gallery';
-import {
-  DARK_MODE_CURSOR_KEY,
-  GALLERY_CURSOR_KEY,
-  OPEN_IN_NEW_CURSOR_KEY,
-  PACKAGE_CURSOR_KEY,
-  PROJECT_CURSOR_KEY,
-  SERVICE_CURSOR_KEY,
-  SOUND_CURSOR_KEY,
-} from './config';
-import { EMAIL_ICON } from '@lib/constants/icons/contact';
-import { OpenInNew } from '@lib/components/decoration/icons/OpenInNew';
+import { CUSTOM_CURSOR_KEY } from './config';
 
 export const Switch = () => {
-  const { hoverKey } = useCursor();
+  const { hoverKey, children } = useCursor();
 
-  const [cursorKey, key1, key2] = hoverKey
+  const [cursorKey, textKey, iconKey] = hoverKey
     ?.split(HOVER_KEY_DELIMITER)
     .map((v) => (v === GLOBAL_KEY ? null : v)) ?? [null];
 
-  const lastKey = key2 ?? key1;
-
   switch (cursorKey) {
-    case OPEN_IN_NEW_CURSOR_KEY: {
+    case CUSTOM_CURSOR_KEY: {
       return (
         <Sight>
           <Box>
-            <IconWithText Icon={OpenInNew}>
-              {lastKey ?? 'Open'}
+            <IconWithText iconStr={iconKey}>
+              {children ?? textKey}
             </IconWithText>
           </Box>
         </Sight>
       );
     }
-    case GALLERY_CURSOR_KEY:
-    case PROJECT_CURSOR_KEY: {
-      return (
-        <Sight>
-          <Box>
-            <IconWithText Icon={Gallery}>
-              View in image gallery
-            </IconWithText>
-          </Box>
-        </Sight>
-      );
-    }
-    case SOUND_CURSOR_KEY:
-    case DARK_MODE_CURSOR_KEY: {
-      return (
-        <Sight>
-          <Box>
-            <IconWithText>
-              {lastKey ?? 'Toggle'}
-            </IconWithText>
-          </Box>
-        </Sight>
-      );
-    }
-    case PACKAGE_CURSOR_KEY: {
-      return (
-        <Sight>
-          <Box>
-            <IconWithText iconStr={EMAIL_ICON}>
-              <>
-                Inquire about the
-                {
-                  <span
-                    className='px-1 mx-1 text-main-inverted'
-                    style={{
-                      backgroundColor: `var(--${lastKey?.toLowerCase()})`,
-                    }}
-                  >
-                    {lastKey}
-                  </span>
-                }
-                package
-              </>
-            </IconWithText>
-          </Box>
-        </Sight>
-      );
-    }
-    case SERVICE_CURSOR_KEY:
+
     case 'big': {
       return (
         <Sight
@@ -112,6 +51,7 @@ export const Switch = () => {
     case 'none': {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }
+
     default:
       return <Sight />;
   }

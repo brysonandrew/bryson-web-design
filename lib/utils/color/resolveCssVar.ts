@@ -1,5 +1,5 @@
-import { TBaseColorKey, TCssVar } from '../../types/color';
+import { TCssVar } from '../../types/color';
 
-export const resolveCssVar = <K extends TBaseColorKey>(
+export const resolveCssVar = <K extends string>(
   color: K,
 ): TCssVar => `var(--${color})` as const;

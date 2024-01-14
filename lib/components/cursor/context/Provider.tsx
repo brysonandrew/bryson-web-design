@@ -6,6 +6,7 @@ import { TCursorOffset } from '@lib/components/cursor/hooks/useCursorOffset';
 import { Cursor } from '.';
 import { resolveHoverKeyVariations } from '@lib/components/cursor/config';
 import { useApp } from '@lib/context/app/useApp';
+import { THover } from './types';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,
@@ -14,9 +15,10 @@ export const Provider: FC<PropsWithChildren> = ({
   const [isCursorReady, setCursorReady] = useState(
     STATE.isCursorReady,
   );
-  const [hoverKey, setHoverKey] = useState(STATE.hoverKey);
+  const [hover, setHoverKey] = useState<THover>(STATE);
+
   const hoverKeyVariations =
-    resolveHoverKeyVariations(hoverKey);
+    resolveHoverKeyVariations(hover);
 
   const offsetRef = useRef<TCursorOffset>({
     x: 1,

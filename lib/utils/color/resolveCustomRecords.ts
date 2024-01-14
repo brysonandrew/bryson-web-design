@@ -1,8 +1,8 @@
 import {
   BASE_COLOR_RECORD,
+  BASE_OPACITY_RGB_RECORD,
   BASE_RGB_RECORD,
-} from '@lib/constants/color';
-import { TBaseColorKey } from '@lib/types/color';
+} from '../../constants/color';
 import { resolveColorRecord } from './resolveColorRecord';
 import { resolveCssVarRecord } from './resolveCssVarRecord';
 import { rgbToOpacityRangeRecord } from './rgbToOpacityRangeRecord';
@@ -14,39 +14,43 @@ export const resolveCustomRecords = <
   C extends object,
 >(
   customRgbRecord: A,
-  customOpacityRangeRgbRecord: B,
-  customLookup: C,
+  customOpacityRgbRecord: B,
+  customColorRecord: C,
 ) => {
-  const customRgb = {
+  const rgbRecord = {
     ...customRgbRecord,
-    ...customOpacityRangeRgbRecord,
+    ...customOpacityRgbRecord,
     ...BASE_RGB_RECORD,
   } as const;
-  type TCustomRgb = typeof customRgb;
+  type TRgbRecord = typeof rgbRecord;
 
-  const colorRecord = rgbToVarRecord<TCustomRgb>(customRgb);
+  const rgbColorRecord =
+    rgbToVarRecord<TRgbRecord>(rgbRecord);
 
-  const opacityRangeRecord = rgbToOpacityRangeRecord<B>(
-    customOpacityRangeRgbRecord,
-  );
+  const opacityRgbRecord = {
+    ...customOpacityRgbRecord,
+    ...BASE_OPACITY_RGB_RECORD,
+  } as const;
 
-  const allColors = {
-    ...colorRecord,
-    ...opacityRangeRecord,
+  const opacityRangeColorRecord = rgbToOpacityRangeRecord<
+    typeof opacityRgbRecord
+  >(opacityRgbRecord);
+ 
+  const colorRecord = {
+    ...rgbColorRecord,
+    ...opacityRangeColorRecord,
+    ...customColorRecord,
     ...BASE_COLOR_RECORD,
   } as const;
 
-  const colorVariablesCss = resolveCssVarRecord(allColors);
+  const colorVariablesLookup =
+    resolveColorRecord<typeof colorRecord>(colorRecord);
 
-  const lookup = {
-    ...customLookup,
-    ...allColors,
-  } as const;
-
-  const colorVariablesLookup = resolveColorRecord(lookup);
+  const colorVariablesCss =
+    resolveCssVarRecord(colorRecord);
 
   return {
-    lookup,
+    opacityRangeColorRecord,
     colorRecord,
     colorVariablesCss,
     colorVariablesLookup,

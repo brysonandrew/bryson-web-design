@@ -2,6 +2,7 @@ import type { StaticShortcutMap } from 'unocss';
 
 export const FLEX: StaticShortcutMap = {
   row: 'flex flex-row items-center',
+  'row-reverse': 'flex flex-row-reverse items-center',
   'row-stretch': 'row items-stretch',
   'row-wrap': 'flex flex-row items-center flex-wrap',
   'row-start': 'flex flex-row items-start',
@@ -11,9 +12,10 @@ export const FLEX: StaticShortcutMap = {
   'row-start-space': 'row-start justify-between',
   'row-base': 'flex flex-row items-baseline',
   column: 'flex flex-col items-center',
+  'column-reverse': 'flex flex-col-reverse items-center',
   'column-stretch': 'column items-stretch',
-  'column-start': 'flex flex-col items-start', 
-  'column-start-stretch': 'column-start items-stretch', 
+  'column-start': 'flex flex-col items-start',
+  'column-start-stretch': 'column-start items-stretch',
   'column-end': 'flex flex-col items-end',
   'column-end-reverse': 'flex flex-col-reverse items-end',
   'column-start-end': 'column-start justify-end',

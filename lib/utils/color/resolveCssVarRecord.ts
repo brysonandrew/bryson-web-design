@@ -1,9 +1,6 @@
-import { TBaseColorRecord } from '@lib/types/color';
 import { TKeyStr } from '@lib/types/keys';
 
-export const resolveCssVarRecord = <
-  T extends TBaseColorRecord,
->(
+export const resolveCssVarRecord = <T extends object>(
   config: T,
 ): string => {
   type TKey = TKeyStr<T>;

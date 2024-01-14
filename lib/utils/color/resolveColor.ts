@@ -1,13 +1,13 @@
-import {
-  TBaseColorRgbKey,
-  TRgbRecord,
-} from '@lib/types/color';
+import { TColorRecord, TRgbRecord } from '@lib/types/color';
 
-export const resolveColor = <
-  K extends TBaseColorRgbKey,
-  T extends TRgbRecord<K>,
->(
-  color: K,
-  opacity: number,
-  rgbRecord: T,
-) => `rgba(${rgbRecord[color]}, ${opacity})`;
+export type TConfig<K extends string> = {
+  colorRecord: TColorRecord<K>;
+  colorKey: K;
+  opacity: number;
+};
+export const resolveColor = <K extends string>({
+  colorRecord,
+  colorKey,
+  opacity,
+}: TConfig<K>) =>
+  `rgba(${colorRecord[colorKey]}, ${opacity})`;

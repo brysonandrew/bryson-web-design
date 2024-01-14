@@ -8,6 +8,7 @@ import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteracti
 import { DURATION } from '@lib/constants/animation';
 import { ThickLine } from '@lib/components/decoration/line/ThickLine';
 import { TPageTitle } from '@app/routes/types';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const Link = styled(motion(_Link))``;
 
@@ -23,7 +24,7 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
-  const { handlers } = useHoverKey('big', children);
+  const { handlers } = useHoverKey(BIG_CURSOR_KEY, children);
 
   return (
     <Link

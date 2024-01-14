@@ -1,10 +1,6 @@
 import { TTheme } from '../../theme';
 import { Rule } from 'unocss';
-import { THEME_COLORS } from '@app/colors/constants';
-import { TColorKey } from '@app/colors/types';
-
-const resolveShadow = (colorKey: TColorKey, blur: number) =>
-  `0 0 ${blur}px ${THEME_COLORS[colorKey]}`;
+import { resolveShadow } from './resolveShadow';
 
 export const GLOW_BABY_BLUE_1 = resolveShadow('accent', 1);
 

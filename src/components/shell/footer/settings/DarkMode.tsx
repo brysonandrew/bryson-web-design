@@ -8,6 +8,7 @@ import { Button } from '@lib/components/interactive/circle/Button';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { createElement } from 'react';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 export const DarkMode = () => {
   const darkMode = useDarkMode();
@@ -16,7 +17,7 @@ export const DarkMode = () => {
   const key = isDarkMode ? 'light' : 'dark';
   const title = `Switch to ${key} mode`;
 
-  const { handlers } = useHoverKey('dark-mode', title);
+  const { handlers } = useHoverKey(CUSTOM_CURSOR_KEY, title);
   const handleMove = useMoveSound();
   const handleTap = () => {
     handleMove();

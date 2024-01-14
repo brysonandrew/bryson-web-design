@@ -13,6 +13,8 @@ import {
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
 } from '@lib/utils/effect';
+import { BIGGER_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;
 const Input = styled.input``;
@@ -20,12 +22,12 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
+  const { BackgroundGlow } = useApp();
   const { isHover, handlers } = useHoverKey(
-    'bigger',
+    BIGGER_CURSOR_KEY,
     'form-submit',
   );
   const { status } = useContact();
-  const { isDarkMode } = useDarkMode();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
@@ -55,11 +57,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <MetalGlow
-        classValue={borderRadiusClass}
-        color={isDarkMode ? 'accent' : 'secondary'}
-        drop={1}
-      />
+      <BackgroundGlow />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',

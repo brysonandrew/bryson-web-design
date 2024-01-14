@@ -11,13 +11,14 @@ import {
 import { Mark } from '@components/decoration/mark';
 import { P2 } from '@lib/components/layout/space/P2';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
+import { Badge } from '@pages/pricing/badge';
+import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 
 type TProps = TSlugProps &
   TClassValueProps &
@@ -36,13 +37,15 @@ export const Content: FC<TProps> = ({
   style,
   ...props
 }) => {
+  const { pricing } = PROJECT_ITEMS_RECORD[slug];
   const { isDarkMode } = useDarkMode();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
   const project = useCurrProject();
+  const isProject = Boolean(project);
   const isInitRef = useRef(false);
-  const borderRadiusClass = 'rounded';
+  const borderRadiusClass = 'rounded-md';
 
   const handleInit = () => {
     isInitRef.current = !project;
@@ -78,9 +81,14 @@ export const Content: FC<TProps> = ({
     }
   };
 
+  if (slug === 'luridescence') {
+    console.log(isExpanding);
+  }
+
   return (
     <motion.div
       layoutId={resolveTitleLayoutId(slug)}
+      layout
       className={clsx(
         'relative w-full',
         'pl-6 pr-4 sm:pl-8 sm:pr-6',
@@ -96,7 +104,6 @@ export const Content: FC<TProps> = ({
         ...resolveGlow(Boolean(isHover), isDarkMode),
         ...style,
       }}
-      layout
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
@@ -108,13 +115,18 @@ export const Content: FC<TProps> = ({
         className='relative left-0 top-0 row-space'
       >
         <Header slug={slug} />
-        <AnimatePresence mode='wait'>
+        <AnimatePresence>
           {!isTransitioning && (
             <motion.div
-              key={Boolean(project) ? 'project' : slug}
-              className='column-end lg:row'
-              {...PRESENCE_OPACITY}
+              key={isProject ? 'project' : slug}
+              className={clsx(
+                'gap-4',
+                isProject
+                  ? 'column-end lg:row'
+                  : 'column-end-reverse lg:row-reverse',
+              )}
             >
+              <Badge type={pricing} isHover />
               {rightHeader}
             </motion.div>
           )}

@@ -38,5 +38,3 @@ export const Footer = () => {
     </Root>
   );
 };
-
-export default Footer;

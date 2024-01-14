@@ -8,6 +8,7 @@ import { TSign } from './useCursorOffset';
 import { THoverKey } from './config';
 import { useEffect, useRef } from 'react';
 import {
+  CUSTOM_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
   TIP_CURSOR_KEYS,
   TTipCursorKey,
@@ -54,9 +55,7 @@ export const useCursorAnimate = () => {
     let labelXValue: ValueTarget = zeroX;
     let labelYValue: ValueTarget = zeroY;
 
-    if (
-      TIP_CURSOR_KEYS.includes(cursorKey as TTipCursorKey)
-    ) {
+    if (cursorKey === CUSTOM_CURSOR_KEY) {
       const percentX = nextSignX < 0 ? -100 : 0;
       const percentY = nextSignY < 0 ? -100 : 0;
 

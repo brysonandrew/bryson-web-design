@@ -1,8 +1,7 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
-import { Content } from '../../list/item/content';
+import { Content } from '../../components/content';
 import { TChildrenProps, TDivMotionProps } from '@lib/types/dom';
-import { Network } from '@lib/components/base/network';
 import { TSlugProps } from '@pages/projects/config/types';
 import { RightHeader } from './RightHeader';
 import { PROJECT_ITEMS_RECORD } from '../../config/constants/items';
@@ -22,12 +21,12 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
           <RightHeader
             pricing={PROJECT_ITEMS_RECORD[slug].pricing}
           />
-        }
+        } 
         {...props}
       />
-      <div className='absolute top-full left-0 translate-y-4'>
+      {/* <div className='absolute top-full left-0 translate-y-4'>
         <Network />
-      </div>
+      </div> */}
     </Root>
   );
 };

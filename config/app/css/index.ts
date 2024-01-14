@@ -15,6 +15,6 @@ const PLACEHOLDER_LOOKUP = {
   'size-placeholder': `${resolveWidth(PLACEHOLDER)}`,
 };
 
-export const CSS_VARS_OTHER = resolveCssVarRecord(
-  PLACEHOLDER_LOOKUP as any,
+export const PLACEHOLDER_VARS_CSS = resolveCssVarRecord(
+  PLACEHOLDER_LOOKUP,
 );

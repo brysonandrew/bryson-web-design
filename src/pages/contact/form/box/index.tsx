@@ -13,6 +13,8 @@ import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { Mark } from '@components/decoration/mark';
 import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;
 
@@ -32,8 +34,12 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
+  const { BackgroundGlow1 } = useApp();
   const handleFocus = useFocus(input, isFocused);
-  const { isHover, handlers } = useHoverKey('big', name);
+  const { isHover, handlers } = useHoverKey(
+    BIG_CURSOR_KEY,
+    name,
+  );
   const borderRadiusClass = 'rounded';
 
   return (
@@ -47,11 +53,7 @@ export const Box: FC<TProps> = ({
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <MetalGlow
-        classValue={borderRadiusClass}
-        color='accent'
-        drop={1}
-      />
+      <BackgroundGlow1 />
       {isFocused && (
         <Mark
           layoutId='CONTACT_FORM_INPUT_LAYOUT_ID'

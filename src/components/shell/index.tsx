@@ -11,15 +11,19 @@ import { Head } from '../../../lib/components/head';
 import { P24Y } from '@lib/components/layout/space/P24Y';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { useRedirect } from '@lib/hooks/router/useRedirect';
-import Footer from './footer';
+import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';
+import {
+  COLOR_RECORD,
+  COLOR_VARS_CSS,
+} from '@app/colors/constants';
 
 export const Shell: FC = () => {
   useRedirect();
   const currProject = useCurrProject();
   const isProject = Boolean(currProject);
-
+  //console.log(COLOR_RECORD, COLOR_VARS_CSS, COLOR_RECORD);
   return (
     <Providers>
       <>

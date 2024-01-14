@@ -1,18 +1,22 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { DURATION, PRESENCE_Y } from '@lib/constants/animation';
+import {
+  DURATION,
+  PRESENCE_Y,
+} from '@lib/constants/animation';
 import { MetalDarkest } from '@components/decoration/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
 import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
   const { handlers } = useHoverKey(
-    'big',
+    BIG_CURSOR_KEY,
     'footer',
   );
   return (

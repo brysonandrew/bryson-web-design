@@ -1,17 +1,20 @@
 import {
-  TBaseColorKey,
-  TColorRecord,
+  TBaseColorRecord,
   TCssVar,
 } from '@lib/types/color';
+import { TKeyStr } from '@lib/types/keys';
 import { resolveCssVar } from './resolveCssVar';
 
-export const resolveColorRecord = <K extends TBaseColorKey>(
-  record: TColorRecord<K>,
+export const resolveColorRecord = <
+  T extends TBaseColorRecord,
+>(
+  record: T,
 ) => {
-  type TResult = Record<K, TCssVar>;
-  const keys = Object.keys(record) as K[];
+  type TKey = TKeyStr<T>;
+  type TResult = Record<TKey, TCssVar>;
+  const keys = Object.keys(record) as TKey[];
   const result = keys.reduce((a, key) => {
-    const value = resolveCssVar<K>(key);
+    const value = resolveCssVar<TKey>(key);
     return {
       [key]: value,
       ...a,

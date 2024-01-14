@@ -1,6 +1,12 @@
 import { TKeyStr } from '@lib/types/keys';
-import { TRgb } from '../../types/color';
-import { resolveColorOpacityRange } from './resolveColorOpacityRange';
+import {
+  TBaseOpacityRgbRecord,
+  TRgb,
+} from '../../types/color';
+import {
+  resolveColorOpacityRange,
+  TOpacityRangeRecord,
+} from './resolveColorOpacityRange';
 
 export const rgbToOpacityRangeRecord = <T extends object>(
   rgbRecord: T,
@@ -10,16 +16,15 @@ export const rgbToOpacityRangeRecord = <T extends object>(
   const entries = Object.entries(rgbRecord) as TEntry[];
   const result = entries.reduce(
     (a, [key, value]: TEntry) => {
-      const OpacityRange = resolveColorOpacityRange(
-        key,
-        value,
-      );
+      const opacityRange = resolveColorOpacityRange<
+        typeof key
+      >(key, value);
       return {
         ...a,
-        ...OpacityRange,
+        ...opacityRange,
       };
     },
-    {} as ReturnType<typeof resolveColorOpacityRange<TKey>>,
+    {} as TOpacityRangeRecord<TKey>,
   );
 
   return result;

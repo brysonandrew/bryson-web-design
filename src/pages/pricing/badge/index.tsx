@@ -20,8 +20,7 @@ export const Badge: FC<TProps> = ({
   return (
     <motion.div
       className={clsx('center p-4', BG[type])}
-      style={{borderRadius: 40}}
-      layout
+      style={{ borderRadius: 40 }}
       {...props}
     >
       {(isHover || isText) && <Text>{type}</Text>}
