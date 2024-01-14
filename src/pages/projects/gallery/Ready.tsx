@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
-import { Header } from './Header';
+import { Header } from './header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { TBaseProps } from './types';
-import { useFreezeScrollBar } from '@hooks/scroll/useFreezeScroll';
-import { useMotionX } from '@pages/projects/gallery/hooks/useMotionX';
-import { resolveGalleryWidth } from '@pages/projects/gallery/hooks/resolveGalleryWidth';
+import { useFreezeScrollBar } from '@lib/hooks/scroll/useFreezeScroll';
+import { useMotionX } from '@pages/projects/gallery/hooks/motion/useMotionX';
+import { resolveGalleryWidth } from '@pages/projects/gallery/utils/resolveGalleryWidth';
 
 const Root = styled(motion.div)``;
 

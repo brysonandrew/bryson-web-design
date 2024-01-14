@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@constants/animation';
-import { useScroll as useScrollContext } from '@context/scroll';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { useViewport as useViewportContext } from '@context/viewport';
-import { FadeUp } from '@components/decoration/vertical-fade/FadeUp';
+} from '@lib/constants/animation';
+import { useScroll as useScrollContext } from '@lib/context/scroll';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useViewport as useViewportContext } from '@lib/context/viewport';
+import { FadeUp } from '@lib/components/decoration/vertical-fade/FadeUp';
 import { Settings } from './settings';
 
 const Root = styled.footer``;
@@ -38,5 +38,3 @@ export const Footer = () => {
     </Root>
   );
 };
-
-export default Footer;

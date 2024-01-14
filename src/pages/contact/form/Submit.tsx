@@ -3,16 +3,18 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
-import { useMoveSound } from '@hooks/sounds/useMoveSound';
+import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useContact } from '@pages/index/contact/context';
-import { useDarkMode } from '@hooks/dark-mode/context';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@utils/effects';
+} from '@lib/utils/effect';
+import { BIGGER_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;
 const Input = styled.input``;
@@ -20,12 +22,12 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
+  const { BackgroundGlow } = useApp();
   const { isHover, handlers } = useHoverKey(
-    'bigger',
+    BIGGER_CURSOR_KEY,
     'form-submit',
   );
   const { status } = useContact();
-  const { isDarkMode } = useDarkMode();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
@@ -55,11 +57,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <MetalGlow
-        classValue={borderRadiusClass}
-        color={isDarkMode ? 'accent' : 'secondary'}
-        drop={1}
-      />
+      <BackgroundGlow />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',

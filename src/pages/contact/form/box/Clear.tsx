@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@pages/index/contact/context';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { Cross } from '@components/decoration/icons/gallery/Cross';
-import { IconGlow } from '@components/interactive/IconGlow';
-import { PRESENCE_OPACITY_DELAY } from '@constants/animation';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { Cross } from '@pages/projects/gallery/icons/Cross';
+import { IconGlow } from '@lib/components/interactive/IconGlow';
+import { PRESENCE_OPACITY_DELAY } from '@lib/constants/animation';
 import { TFormKey } from '@pages/contact/config';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 
 const Root = styled.div``;
 

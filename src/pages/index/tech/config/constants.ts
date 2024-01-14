@@ -1,9 +1,9 @@
 import {
   MAX_SCROLL,
-  TFake3DOptions,
-} from '@components/animation/fake-3d/config';
-import { React } from '@components/decoration/icons/tech/React';
-import { Typescript } from '@components/decoration/icons/tech/Typescript';
+  TParallaxOptions,
+} from '@lib/components/animation/parallax/config';
+import { React } from '@components/decoration/icon/tech/React';
+import { Typescript } from '@components/decoration/icon/tech/Typescript';
 import {
   REACT,
   TYPESCRIPT,
@@ -20,7 +20,7 @@ export const TECH = {
   },
 } as const;
 
-export const FAKE_3D_PROPS: TFake3DOptions = {
+export const FAKE_3D_PROPS: TParallaxOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
       startScroll + windowHeight * 0.25,

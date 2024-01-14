@@ -1,11 +1,7 @@
-import { TColorRgbKey } from "@uno/theme/colors/types";
-import { resolveColor } from "@uno/theme/colors/utils/resolveColor";
+import { COLOR_VARS_RECORD } from '../../../app/colors/constants';
+import { TColorKey } from '@app/colors/types';
 
 export const resolveShadow = (
-  spread: number,
-  color: TColorRgbKey = 'white-9',
-) =>
-  `0px 0px ${spread}px ${resolveColor(
-    'white-9',
-    0.5,
-  )}, 0px 0px ${spread}px ${resolveColor(color, 0.8)}`; 
+  colorKey: TColorKey,
+  blur: number,
+) => `0 0 ${blur}px ${COLOR_VARS_RECORD[colorKey]}`;

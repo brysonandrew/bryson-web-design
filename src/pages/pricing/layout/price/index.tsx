@@ -1,4 +1,4 @@
-import { formatNZLongDate, nToMoney } from '@utils/format';
+import { formatNZLongDate, nToMoney } from '@lib/utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Banner } from './Banner';

@@ -1,5 +1,5 @@
-import { PROJECT_KEY } from "@pages/projects/config/constants";
-import { useApp } from '@components/base/context';
+import { useApp } from "@lib/context/app/useApp";
+import { PROJECT_KEY } from "@pages/projects/config/constants/keys";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";

@@ -1,24 +1,25 @@
-import { P1_5 } from '@components/layout/space/P1_5';
+import { P1_5 } from '@lib/components/layout/space/P1_5';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { End } from './End';
 import { Price, TProps as TPriceProps } from './price';
-import { P_25 } from '@components/layout/space/P_25';
-import { P4 } from '@components/layout/space/P4';
+import { P_25 } from '@lib/components/layout/space/P_25';
+import { P4 } from '@lib/components/layout/space/P4';
 import { Link } from 'react-router-dom';
-import { I } from '@components/decoration/Icon';
+import { I } from '@lib/components/decoration/Icon';
 import { motion } from 'framer-motion';
 import { useContact } from '@pages/index/contact/context';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { PACKAGE_CURSOR_KEY } from '@components/base/cursor/switch/config';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import {
   TPricingKey,
   TPricingTitle,
 } from '@pages/pricing/config/types';
-import { TickList } from '@components/layout/lists/TickList';
+import { TickList } from '@lib/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { Metal } from '@components/decoration/metal';
+import { EMAIL_ICON } from '@lib/index';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
@@ -34,8 +35,26 @@ export const Package: FC<TProps> = ({
   const { listItems, price, discount, PreContent } = config;
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
-    PACKAGE_CURSOR_KEY,
+    CUSTOM_CURSOR_KEY,
     title,
+    EMAIL_ICON,
+    <>
+      Inquire about the
+      {
+        <span
+          className={clsx(
+            'px-1 mx-1 text-main-inverted',
+            backgroundColorClass,
+          )}
+          // style={{
+          //   backgroundColor: `var(--${title?.toLowerCase()})`,
+          // }}
+        >
+          {title}
+        </span>
+      }
+      package
+    </>,
   );
   const handleClick = () => {
     onForm({
@@ -58,7 +77,7 @@ export const Package: FC<TProps> = ({
       />
       <motion.div
         className={clsx(
-          'relative column items-stretch grow w-full h-full text-base',
+          'relative column-stretch grow w-full h-full text-base',
         )}
         {...handlers}
       >
@@ -78,7 +97,7 @@ export const Package: FC<TProps> = ({
           </motion.div>
         </End>
         <P1_5 />
-        <div className='relative items-stretch h-full bg-main rounded-t-md'>
+        <div className='column-stretch relative h-full bg-main rounded-t-md'>
           <Metal classValue={clsx('rounded-md')} />
           <P4 />
           <div

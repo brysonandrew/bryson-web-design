@@ -1,23 +1,22 @@
-import { Drag } from '@components/decoration/icons/gallery/Drag';
+import { Drag } from '@pages/projects/gallery/icons/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { PADDING_X } from './config';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { COLOR_LOOKUP } from '@uno/theme/colors';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
+import { COLOR_VARS_RECORD } from '@app/colors/constants';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 type TProps = {
   classValue?: ClassValue;
 };
 export const DragIcon: FC<TProps> = ({ classValue }) => {
-  const {
-     isDarkMode ,
-  } = useDarkMode();
+  const { isDarkMode } = useDarkMode();
 
   const { isHover, ...handlers } = useHoverKey(
-    'big',
+    BIG_CURSOR_KEY,
     'drag',
   );
   const variant = isHover ? 'hover' : 'animate';
@@ -37,8 +36,8 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
         animate: {
           cursor: 'grab',
           color: isDarkMode
-            ? COLOR_LOOKUP['white-9']
-            : COLOR_LOOKUP['gray'],
+            ? COLOR_VARS_RECORD['white-9']
+            : COLOR_VARS_RECORD['gray'],
           filter: resolveDropShadow(0),
         },
         hover: {
@@ -47,16 +46,16 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
             ? resolveDropShadow(2, 'white-9')
             : resolveDropShadow(2, 'secondary'),
           color: isDarkMode
-            ? COLOR_LOOKUP['white-9']
-            : COLOR_LOOKUP['gray'],
+            ? COLOR_VARS_RECORD['white-9']
+            : COLOR_VARS_RECORD['gray'],
         },
         tap: {
           filter: isDarkMode
             ? resolveDropShadow(4, 'highlight')
             : resolveDropShadow(4, 'secondary'),
           color: isDarkMode
-            ? COLOR_LOOKUP['highlight']
-            : COLOR_LOOKUP['gray'],
+            ? COLOR_VARS_RECORD['highlight']
+            : COLOR_VARS_RECORD['gray'],
           cursor: 'grabbing',
         },
       }}

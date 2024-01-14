@@ -1,4 +1,4 @@
-import { NOOP } from '@constants/functions';
+import { NOOP } from '@lib/constants/functions';
 import fg from 'fast-glob';
 import fs from 'fs';
 import { CANVAS_SCREENS_PATH } from '../../process/config/constants';

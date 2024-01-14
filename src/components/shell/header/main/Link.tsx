@@ -3,13 +3,14 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Link as __Link } from 'react-router-dom';
 import { Title } from './Title';
-import { useMoveSound } from '@hooks/sounds/useMoveSound';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
+import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const _Link = styled(motion(__Link))``;
 
 export const Link: FC = () => {
-  const { handlers } = useHoverKey('big', 'home');
+  const { handlers } = useHoverKey(BIG_CURSOR_KEY, 'home');
 
   const moveSound = useMoveSound();
   const handleClick = () => {

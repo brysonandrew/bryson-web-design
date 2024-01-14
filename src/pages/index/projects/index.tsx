@@ -1,8 +1,8 @@
-import { Fake3D } from '@components/animation/fake-3d';
-import { Main } from '@pages/projects/Main';
+import { Parallax } from '@lib/components/animation/parallax';
+import { List as Main } from '@pages/projects/list';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './constants';
-import { Section } from '@components/layout/Section';
+import { Section } from '@lib/components/layout/Section';
 
 const Projects = () => {
   return (
@@ -11,9 +11,9 @@ const Projects = () => {
       title={SECTION_RECORD.projects}
       classValue='z-20' // this is because projects can expand and overlap contact
     >
-      <Fake3D {...FAKE_3D_PROPS}>
+      <Parallax {...FAKE_3D_PROPS}>
         {(props) => <Main {...props} />}
-      </Fake3D>
+      </Parallax>
     </Section>
   );
 };

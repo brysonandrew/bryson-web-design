@@ -1,28 +1,30 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Picture } from '@components/media/picture';
-import { useImageDimensions } from '@hooks/media/useImageDimensions';
+import { Picture } from '@lib/components/media/picture';
+import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@components/filters/config/constants/presets';
-import { useCurrName } from '@hooks/params/useCurrName';
+} from '@lib/components/filters/config/constants/presets';
+import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
 import clsx from 'clsx';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { TMotionImgProps } from '@t/dom';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { TMotionImgProps } from '@lib/types/dom';
 import styled from '@emotion/styled';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
 import { isDesktop } from 'react-device-detect';
-import { GALLERY_CURSOR_KEY } from '@components/base/cursor/switch/config';
-import { resolveMotionConfig } from '@hooks/media/resolveMotionConfig';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { resolveMotionConfig } from '@lib/hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,
   useCircle,
-} from '@hooks/media/fake-3D/useCircle';
-import { ORIGIN_50 } from '@constants/animation';
-import { useTapHandler } from '@hooks/media/useTapHandler';
+} from '@pages/index/build/images/hooks/useCircle';
+import { ORIGIN_50 } from '@lib/constants/animation';
+import { useTapHandler } from '@lib/hooks/media/useTapHandler';
 import { TMediaRecord } from '@ops/screens/process/config/types';
+import { VIEW_ICON } from '@lib/constants/icons';
+import { GALLERY_ICON } from '@lib/constants/icons/gallery';
 
 const Button = styled(motion.button)``;
 
@@ -42,6 +44,7 @@ export const Image: FC<TProps> = (props) => {
     depthConfig,
     ...pictureProps
   } = props;
+  const title = `View in image gallery`;
   const name = useCurrName();
   const isGallery = Boolean(name);
   const isInteractionDisabled = isGallery || isScrolling;
@@ -54,9 +57,10 @@ export const Image: FC<TProps> = (props) => {
   });
 
   const { isHover, handlers } = useHoverKey(
-    GALLERY_CURSOR_KEY,
-    'view',
+    CUSTOM_CURSOR_KEY,
     mediaRecord.src,
+    GALLERY_ICON,
+    <div>{title}</div>,
   );
 
   const handler = useTapHandler({ mediaRecord });
@@ -90,9 +94,7 @@ export const Image: FC<TProps> = (props) => {
     >
       <Button
         className='relative cursor-zoom-in'
-        {...resolveInteractiveLabels(
-          `View in image gallery`,
-        )}
+        {...resolveInteractiveLabels(title)}
         onTap={handleTap}
       >
         <Picture

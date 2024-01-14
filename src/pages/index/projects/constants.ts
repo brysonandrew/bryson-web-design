@@ -1,6 +1,6 @@
-import { MAX_SCROLL, TFake3DOptions } from "@components/animation/fake-3d/config";
+import { MAX_SCROLL, TParallaxOptions } from "@lib/components/animation/parallax/config";
 
-export const FAKE_3D_PROPS: TFake3DOptions = {
+export const FAKE_3D_PROPS: TParallaxOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
       startScroll + windowHeight * 0.75,

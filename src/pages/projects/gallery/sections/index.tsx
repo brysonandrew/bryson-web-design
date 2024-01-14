@@ -1,12 +1,13 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY_Y_SHIFT } from '@constants/animation';
+import { PRESENCE_OPACITY_Y_SHIFT } from '@lib/constants/animation';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { useViewport } from '@context/viewport';
-import { TMediaRecord } from "@ops/screens/process/config/types";
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useViewport } from '@lib/context/viewport';
+import { TMediaRecord } from '@ops/screens/process/config/types';
+import { NONE_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 export const Root = styled(motion.div)``;
 
@@ -16,7 +17,8 @@ export const Sections: FC<TProps> = (props) => {
   const { count, width, mediaRecords } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
-  const { isHover, handlers } = useHoverKey('none');
+  const { isHover, handlers } =
+    useHoverKey(NONE_CURSOR_KEY);
   const left = useTransform(
     props.motionX,
     (v) =>

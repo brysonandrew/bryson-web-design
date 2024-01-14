@@ -1,19 +1,19 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
+import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
 import { Package } from './layout/Package';
 
 const Root = styled(motion.div)``;
 
-type TProps = Partial<TFake3DMotionChildrenProps>;
+type TProps = Partial<TParallaxMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style }) => {
   return (
     <Root
       className='column gap-16 relative w-core will-change-transform'
       style={style}
     >
-      <div className='column relative items-stretch w-full h-full gap-8 lg:row'>
+      <div className='column-stretch relative w-full h-full gap-8 lg:row-stretch'>
         <Package
           title='Standard'
           backgroundColorClass='bg-standard gradient-standard'

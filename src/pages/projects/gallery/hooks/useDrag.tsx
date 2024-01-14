@@ -3,11 +3,11 @@ import { animate } from 'framer-motion';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { resolveTo } from '../../../../hooks/media/nav/resolveTo';
-import { useCurrParams } from '@hooks/params/useCurrParams';
+import { useCurrParams } from '@pages/projects/gallery/hooks/params/useCurrParams';
 import { TBaseProps } from '../types';
-import { DURATION_MID } from '@constants/animation';
-import { useX } from './useX';
+import { DURATION_MID } from '@lib/constants/animation';
+import { useX } from './motion/useX';
+import { resolveTo } from '../utils/resolveTo';
 
 type TConfig = Pick<
   TBaseProps,

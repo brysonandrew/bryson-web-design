@@ -1,9 +1,9 @@
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
-import { Section } from '@components/layout/Section';
+import { Section } from '@lib/components/layout/Section';
 import { FC } from 'react';
 import { Main } from './Main';
-import { P60Y } from '@components/layout/space/P60Y';
+import { P60Y } from '@lib/components/layout/space/P60Y';
 
 export const Pricing: FC = () => {
   return (

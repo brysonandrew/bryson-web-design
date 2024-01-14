@@ -1,16 +1,16 @@
-import { Plus } from '@components/decoration/icons/tech/Plus';
+import { Plus } from '@components/decoration/icon/tech/Plus';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TFake3DMotionChildrenProps } from '@components/animation/fake-3d/config';
+import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
 import { Transform } from './Transform';
 import { TECH } from '../config/constants';
 
 const Root = styled.div``;
 const Inner = styled(motion.div)``;
 
-type TProps = TFake3DMotionChildrenProps;
+type TProps = TParallaxMotionChildrenProps;
 export const Links: FC<TProps> = ({ style }) => {
   return (
     <Transform motionValue={style.rotateX}>

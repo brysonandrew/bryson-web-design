@@ -1,10 +1,11 @@
 import type { FC } from 'react';
-import { useNext } from '../../../../hooks/media/nav/useNext';
-import { TClassValueProps } from '@t/index';
+import { TClassValueProps } from '@lib/types/dom';
 import { Nav } from './Nav';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { ArrowRight } from '@components/decoration/icons/gallery/ArrowRight';
-import { resolveParentAnimateConfig } from '@utils/effects';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { ArrowRight } from '@pages/projects/gallery/icons/ArrowRight';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { useNext } from '../hooks/nav/useNext';
+import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 type TProps = TClassValueProps & {
   max: number;
@@ -12,7 +13,7 @@ type TProps = TClassValueProps & {
 export const Right: FC<TProps> = ({ max, ...props }) => {
   const to = useNext(max);
   const { isHover, handlers } = useHoverKey(
-    'big',
+    BIG_CURSOR_KEY,
     'right',
   );
   if (!to) return null;
@@ -25,7 +26,6 @@ export const Right: FC<TProps> = ({ max, ...props }) => {
       {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
       {...props}
-
     />
   );
 };

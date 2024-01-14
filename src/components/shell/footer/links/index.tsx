@@ -1,12 +1,12 @@
-import { Codewars } from '@components/decoration/icons/links/Codewars';
-import { Email } from '@components/decoration/icons/links/Email';
-import { Github } from '@components/decoration/icons/links/Github';
+import { Codewars } from '@components/decoration/icon/links/Codewars';
+import { Email } from '@components/decoration/icon/links/Email';
+import { Github } from '@components/decoration/icon/links/Github';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC, Fragment } from 'react';
 import { TLinks } from './config';
 import { Link } from './Link';
-import { TMotionUlProps } from '@t/dom';
+import { TMotionUlProps } from '@lib/types/dom';
 
 const Root = styled(motion.ul)``;
 const Item = styled.li``;

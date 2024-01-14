@@ -2,17 +2,13 @@ import styled from '@emotion/styled';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useDarkMode } from '@hooks/dark-mode/context';
-import { TDivMotionProps } from '@t/dom';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { TDivMotionProps } from '@lib/types/dom';
 import {
   resolveColor,
   resolveGlowColor,
   resolveHoverColor,
 } from './config';
-import {
-  DURATION_DARK_MODE,
-  MOTION_CONFIG,
-} from '@constants/animation';
 const BORDER_SIZE = 2;
 const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
 

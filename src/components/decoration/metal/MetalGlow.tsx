@@ -1,11 +1,11 @@
-import { Glow } from '@components/animation/filter-animate/Glow';
+import { Glow } from '@lib/components/animation/filter-animate/Glow';
 import { Metal } from '.';
 import { FC } from 'react';
 import { MetalDarkest } from './MetalDarkest';
 import { MetalDark } from './MetalDark';
-import { TPartialGlowConfigOptions } from '@utils/effects/glow';
-import { TClassValueProps } from '@t/index';
-import { useDarkMode } from '@hooks/dark-mode/context';
+import { TPartialGlowConfigOptions } from '@lib/utils/effect/glow';
+import { TClassValueProps } from '@lib/types/dom';
+import { useDarkMode } from '@lib/hooks/dark-mode/context';
 
 type TProps = {
   isDarkest?: boolean;

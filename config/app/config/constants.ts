@@ -1,5 +1,5 @@
 import packageJson from '@pkg';
-import { kebabToTitle } from '@utils/format';
+import { kebabToTitle } from '@lib/utils/format';
 
 export const APP_TITLE = kebabToTitle(packageJson.name);
 export const APP_DESCRIPTION = packageJson.description;

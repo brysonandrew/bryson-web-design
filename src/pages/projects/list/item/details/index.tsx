@@ -4,25 +4,26 @@ import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@components/layout/space/P2';
-import { TDivMotionProps } from '@t/dom';
+import { P2 } from '@lib/components/layout/space/P2';
+import { TDivMotionProps } from '@lib/types/dom';
 import clsx from 'clsx';
+import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
 
 const Root = styled(motion.div)``;
 
 type TProps = TDivMotionProps & {
   isVisible: boolean;
-} & Pick<TItem, 'slug' | 'paragraphs' | 'tags'>;
+} & Pick<TItem, 'slug'>;
 export const Details: FC<TProps> = ({
   isVisible,
-  paragraphs,
-  tags,
   slug,
   ...props
 }) => {
+  const { paragraphs, tags } = PROJECT_ITEMS_RECORD[slug];
+
   return (
     <Root
-      className={clsx('column items-stretch rounded-md')}
+      className={clsx('column-stretch rounded-md')}
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}

@@ -1,8 +1,8 @@
 import { type FC } from 'react';
-import { useCurrProject } from '@hooks/params/useCurrProject';
+import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { TProps as TReadyGalleryProps } from './Ready';
-import { useViewport } from '@context/viewport';
-import { TChildren } from '@t/index';
+import { useViewport } from '@lib/context/viewport';
+import { TChildren } from '@lib/types/dom';
 import { TProjectKey } from '@pages/projects/config/types';
 
 type TProps<T> = {

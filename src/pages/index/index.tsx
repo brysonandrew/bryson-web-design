@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
-import { P48Y } from '@components/layout/space/P48Y';
-import { P24Y } from '@components/layout/space/P24Y';
+import { P48Y } from '@lib/components/layout/space/P48Y';
+import { P24Y } from '@lib/components/layout/space/P24Y';
 
 const ServicesLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));
@@ -19,13 +19,11 @@ export const Index = () => {
       <Suspense fallback={null}>
         <ServicesLazy />
       </Suspense>
-      <P24Y />
-      <P24Y />
+      <P48Y />
       <Suspense fallback={null}>
         <TechLazy />
       </Suspense>
-      <P24Y />
-      <P24Y />
+      <P48Y />
       <Suspense fallback={null}>
         <ProjectsLazy />
       </Suspense>

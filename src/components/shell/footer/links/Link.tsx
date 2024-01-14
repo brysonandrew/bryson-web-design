@@ -3,18 +3,18 @@ import type { FC } from 'react';
 import { TLink } from './config';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import { motion } from 'framer-motion';
-import { useHoverKey } from '@components/base/cursor/hooks/useHoverKey';
-import { useOnSound } from '@hooks/sounds/useOnSound';
-import { resolveInteractiveLabels } from '@utils/attributes/resolveInteractiveLabels';
-import { resolveParentAnimateConfig } from '@utils/effects';
-import { OPEN_IN_NEW_CURSOR_KEY } from '@components/base/cursor/switch/config';
+import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useOnSound } from '@lib/hooks/sounds/useOnSound';
+import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
 
 const Root = styled(motion.a)``;
 
 type TProps = TLink;
 export const Link: FC<TProps> = ({ href, title, Icon }) => {
   const { isHover, handlers } = useHoverKey(
-    OPEN_IN_NEW_CURSOR_KEY,
+    CUSTOM_CURSOR_KEY,
     href,
   );
   const handleOn = useOnSound();

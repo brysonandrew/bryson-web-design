@@ -5,11 +5,11 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
-import { Boundary } from '@components/base/boundary';
-import { MOTION_CONFIG } from '@constants/animation';
+import { MOTION_CONFIG } from '@lib/constants/animation';
 import { HelmetProvider } from 'react-helmet-async';
-import { init as initServiceWorker } from '@app/service-worker/init';
+import { Boundary } from '@lib/components/base/boundary';
 import { ROUTES } from '@app/routes';
+import { init as initServiceWorker } from '@app/service-worker/init';
 
 initServiceWorker();
 

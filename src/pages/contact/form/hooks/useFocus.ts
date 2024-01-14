@@ -1,5 +1,5 @@
 import { TInputElement } from '@pages/contact/config';
-import { useScroll } from '@context/scroll';
+import { useScroll } from '@lib/context/scroll';
 import { useEffect } from 'react';
 
 export const useFocus = (
