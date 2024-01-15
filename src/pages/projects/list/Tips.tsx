@@ -1,9 +1,9 @@
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@lib/components/cursor/switch/config';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
-import { useCursor } from '@lib/components/cursor/context';
+} from '@lib/cursor/switch/config';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
+import { useCursor } from '@lib/cursor/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@pages/projects/gallery/tips/Touch';

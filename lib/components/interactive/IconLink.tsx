@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TIconComponent } from '@lib/types/dom/icon';
+import { TIconComponent } from '@lib/icons/icon';
 import { TClassValueProps, TTitleProps } from '@lib/types/dom';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 

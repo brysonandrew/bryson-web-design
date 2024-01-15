@@ -1,5 +1,5 @@
-import { I } from '@lib/components/decoration/Icon';
-import { IMAGE_ICON } from '@lib/constants/icons';
+import { I } from '@lib/icons/Icon';
+import { IMAGE_ICON } from '@lib/constants/icons/constants';
 
 export const Image = () => {
   return (

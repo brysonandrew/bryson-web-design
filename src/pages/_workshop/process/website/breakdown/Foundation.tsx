@@ -1,6 +1,6 @@
 import { Item } from '@pages/_workshop/process/focus/Item';
 import { Circle } from '@pages/_workshop/process/focus/Circle';
-import { useCursor } from '@lib/components/cursor/context';
+import { useCursor } from '@lib/cursor/context';
 import { FOUNDATION } from '../config';
 import { List } from '../../../../../../lib/components/layout/lists/List';
 

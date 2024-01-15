@@ -1,9 +1,9 @@
-import { Glow } from '@lib/components/animation/filter-animate/Glow';
+import { Glow } from '@lib/animation/components/filter-animate/Glow';
 import { Metal } from '.';
 import { FC } from 'react';
 import { MetalDarkest } from './MetalDarkest';
 import { MetalDark } from './MetalDark';
-import { TPartialGlowConfigOptions } from '@lib/utils/effect/glow';
+import { TPartialGlowConfigOptions } from '@lib/animation/components/filter-animate/utils/glow';
 import { TClassValueProps } from '@lib/types/dom';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 

@@ -1,17 +1,11 @@
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
+import { DESCRIPTION } from "./copy";
 
-const Root = styled(motion.div)``;
-
-const TEXT_CLASS = "text-md";
-const Text = styled(motion.p)``;
 
 export const Description = () => (
-  <Root className="flex flex-col items-center justify-center">
-    <Text className={TEXT_CLASS}>
-      Working on the web for over 7 years. Completed over 20 projects
-      with React and Typescript.
-    </Text>
-  </Root>
+  <div className='relative'>
+    <div className='absolute -inset-4 bg-black-1 rounded-md' />
+    <p className='relative'>
+      {DESCRIPTION}
+    </p>
+  </div>
 );
- 

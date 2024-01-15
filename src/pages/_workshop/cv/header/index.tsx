@@ -6,7 +6,7 @@ import { Title } from "./Title";
 const Root = styled(motion.header)``;
 
 export const Header = () => (
-  <Root className="flex items-center justify-between w-full">
+  <Root className="row-space w-full">
     <Title />
     <Contact />
   </Root>

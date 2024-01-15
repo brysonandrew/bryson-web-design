@@ -7,13 +7,13 @@ import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useContact } from '@pages/index/contact/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@lib/utils/effect';
-import { BIGGER_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+} from '@lib/animation/components/filter-animate/utils';
+import { BIGGER_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;

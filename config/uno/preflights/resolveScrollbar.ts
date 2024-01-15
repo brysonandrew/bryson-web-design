@@ -6,6 +6,7 @@ export const resolveScrollbar = ({
 }: PreflightContext<TTheme>) => `
 ::-webkit-scrollbar {
   background-color: ${theme.colors['white-7']};
+  width: 6px;
 }
 
 html.dark ::-webkit-scrollbar {
@@ -29,7 +30,4 @@ html.dark ::-webkit-scrollbar-thumb {
 html.dark ::-webkit-scrollbar-thumb:hover {
   background-color: ${theme.colors['white-01']};
 }
-
-
-
 `;

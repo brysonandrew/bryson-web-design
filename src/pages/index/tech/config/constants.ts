@@ -1,7 +1,7 @@
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from '@lib/components/animation/parallax/config';
+} from '@lib/animation/components/parallax/config';
 import { React } from '@components/decoration/icon/tech/React';
 import { Typescript } from '@components/decoration/icon/tech/Typescript';
 import {

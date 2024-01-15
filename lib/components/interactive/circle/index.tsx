@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
 import { TChildrenProps, TClassValueProps, TDivMotionProps } from '@lib/types/dom';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

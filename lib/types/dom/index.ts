@@ -26,7 +26,7 @@ export type {
 	TIconComponent,
 	TIconConfig,
 	TIconConfigProps
-} from "./icon";
+} from "../../icons/icon";
 export type {
 	TError,
 	TEmptyRecord,

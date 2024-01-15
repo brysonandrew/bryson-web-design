@@ -13,7 +13,7 @@ import { P2 } from '@lib/components/layout/space/P2';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { Metal } from '@components/decoration/metal';
 import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
@@ -80,10 +80,6 @@ export const Content: FC<TProps> = ({
       onLayoutAnimationComplete();
     }
   };
-
-  if (slug === 'luridescence') {
-    console.log(isExpanding);
-  }
 
   return (
     <motion.div

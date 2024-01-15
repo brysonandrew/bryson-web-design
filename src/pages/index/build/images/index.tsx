@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { useBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
+import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
 import styled from '@emotion/styled';
 import { P8 } from '@lib/components/layout/space/P8';
 import { TITLE_HEIGHT } from '@lib/components/layout/space/TitleRoot';
 import { useScroll as useScrollContext } from '@lib/context/scroll';
 import { useViewport as useViewportContext } from '@lib/context/viewport';
 import { TDepthConfig } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@lib/constants/animation';
+import { ORIGIN_50 } from '@lib/animation/constants';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import clsx from 'clsx';
 import { TMediaRecord } from '@ops/screens/process/config/types';
@@ -32,6 +32,7 @@ export const Images: FC<TProps> = ({ style }) => {
     isResizing,
     isVertical,
   } = useViewportContext();
+  
   const radius = isVertical
     ? viewportWidth
     : halfViewportWidth;

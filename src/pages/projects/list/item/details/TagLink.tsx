@@ -10,10 +10,10 @@ import {
   HOVER_KEY_DELIMITER,
   resolveCompositeHoverKey,
 } from '@lib/utils/key';
-import { useCursor } from '@lib/components/cursor/context';
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
-import { GALLERY_ICON } from '@lib/constants/icons/gallery';
-import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/links';
+import { useCursor } from '@lib/cursor/context';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
+import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
 
 type TProps = Required<TTag> &

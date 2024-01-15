@@ -3,7 +3,7 @@ import { Item } from './item';
 import { motion } from 'framer-motion';
 import { PROJECT_SLUGS } from '../config/constants/items';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
-import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
+import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
 
 type TProps = Partial<TParallaxMotionChildrenProps>;
 export const List: FC<TProps> = ({ style, rect }) => {

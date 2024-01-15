@@ -52,8 +52,6 @@ export const Form = () => {
       <Textarea
         name='message'
         disabled={isDisabled}
-        rows={4}
-        cols={50}
         required
         {...inputHandlers}
       />

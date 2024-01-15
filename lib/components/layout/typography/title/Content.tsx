@@ -1,6 +1,6 @@
 import { ThinLine } from '@lib/components/decoration/line';
 import { ThinLineGrow } from '@lib/components/decoration/line/ThinLineGrow';
-import { MOTION_CONFIG } from '@lib/constants/animation';
+import { MOTION_CONFIG } from '@lib/animation/constants';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TContent } from './config';

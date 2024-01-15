@@ -2,7 +2,7 @@ import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
 import { useReader } from '@pages/_workshop/reader/context';
 import { GLOW_BABY_BLUE_4 } from '@uno/rules/glow';
-import { I } from '@lib/components/decoration/Icon';
+import { I } from '@lib/icons/Icon';
 
 export const Play = () => {
   const {

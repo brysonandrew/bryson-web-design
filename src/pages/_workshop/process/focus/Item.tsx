@@ -1,5 +1,5 @@
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';

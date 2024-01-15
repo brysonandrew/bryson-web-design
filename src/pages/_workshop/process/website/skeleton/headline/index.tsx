@@ -1,5 +1,5 @@
-import { I } from '@lib/components/decoration/Icon';
-import { IMAGE_ICON } from '@lib/constants/icons';
+import { I } from '@lib/icons/Icon';
+import { IMAGE_ICON } from '@lib/constants/icons/constants';
 import { FC, PropsWithChildren } from 'react';
 import { TextLines } from '../../../skeleton/TextLines';
 import { Shell } from './Shell';

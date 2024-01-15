@@ -1,14 +1,14 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Glow } from '@lib/components/animation/filter-animate/Glow';
-import { Box } from '@lib/components/animation/filter-animate/Box';
+import { Glow } from '@lib/animation/components/filter-animate/Glow';
+import { Box } from '@lib/animation/components/filter-animate/Box';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { MetalGlow } from '@components/decoration/metal/MetalGlow';
-import { Aura } from '@lib/components/filters/aura/Aura';
+import { Aura } from '@lib/filters/aura/Aura';
 import { P1_5 } from '@lib/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
 

@@ -11,7 +11,6 @@ type TProps = {
 };
 export const Shell: FC<TProps> = ({ style, children }) => (
   <Root
-    className='column-stretch bg-black text-white-9'
     style={style}
   >
     {children}

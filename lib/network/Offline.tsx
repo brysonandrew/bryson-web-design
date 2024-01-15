@@ -1,0 +1,23 @@
+import type { FC } from 'react';
+import { Offline as Icon } from '@lib/icons/components/network/Offline';
+import { P1 } from '@lib/components/layout/space/P1';
+import { motion } from 'framer-motion';
+
+export const Offline: FC = () => {
+  return (
+    <motion.div
+      layoutId='OFFLINE_LAYOUT_ID'
+      className='relative text-b2-w9 px-6 uppercase z-10'
+    >
+      <motion.div className='row' layout='position'>
+        <Icon />
+        <P1 />
+        <p className='row'>
+          <span>You are</span>
+          <P1 element='span' />
+          <strong>offline</strong>
+        </p>
+      </motion.div>
+    </motion.div>
+  );
+};

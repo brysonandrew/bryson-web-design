@@ -1,5 +1,5 @@
 import { MotionValue, useTransform } from 'framer-motion';
-const MIN_OPACITY = 1;
+const MIN_OPACITY = 0.6;
 
 export type TDepthConfig = {
   index: number;

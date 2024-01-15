@@ -1,13 +1,13 @@
-import { Filters } from '@lib/components/filters';
+import { Filters } from '@lib/filters';
 import { type FC } from 'react';
 import { Variables } from '@css/Variables';
 import { motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
-import { ClipPaths } from '@lib/components/media/ClipPaths';
-import { Cursor } from '@lib/components/cursor';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
+import { ClipPaths } from '@lib/media/ClipPaths';
+import { Cursor } from '@lib/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';
-import { Head } from '../../../lib/components/head';
+import { Head } from '../../../lib/head';
 import { P24Y } from '@lib/components/layout/space/P24Y';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
 import { useRedirect } from '@lib/hooks/router/useRedirect';
