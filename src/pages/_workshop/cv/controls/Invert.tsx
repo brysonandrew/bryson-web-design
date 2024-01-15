@@ -2,6 +2,11 @@ import type { ChangeEvent, FC } from 'react';
 import { useState } from 'react';
 import printSrc from './print.png';
 
+const BUTTONS = [
+  ['black', 0],
+  ['white', 100],
+] as const;
+
 type TProps = {
   children(invert: string): void;
 };
@@ -28,8 +33,16 @@ export const Invert: FC<TProps> = ({ children }) => {
                 Invert color
               </div>
               <ul>
-                <li>black - 0%</li>
-                <li>white - 100%</li>
+                {BUTTONS.map(([title, value]) => (
+                  <li>
+                    <button
+                      className='text-gray hover:text-white py-0.5 uppercase'
+                      onClick={() => setInvert(value)}
+                    >
+                      {title} - {value}%
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className='row gap-2'>

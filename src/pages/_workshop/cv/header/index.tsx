@@ -6,7 +6,7 @@ import { Title } from "./Title";
 const Root = styled(motion.header)``;
 
 export const Header = () => (
-  <Root className="row-space w-full">
+  <Root className="row-start-space w-full">
     <Title />
     <Contact />
   </Root>
