@@ -4,12 +4,12 @@ import type { FC } from 'react';
 import {
   DURATION,
   PRESENCE_Y,
-} from '@lib/constants/animation';
+} from '@lib/animation/constants';
 import { MetalDarkest } from '@components/decoration/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 
 const Root = styled(motion.footer)``;
 

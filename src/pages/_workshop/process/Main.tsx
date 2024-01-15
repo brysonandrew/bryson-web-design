@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
+import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
 import { useInView } from 'react-intersection-observer';
 import { SECTIONS } from './config';
 

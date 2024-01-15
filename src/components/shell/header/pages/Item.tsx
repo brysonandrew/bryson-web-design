@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { createElement, type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import clsx from 'clsx';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { DURATION } from '@lib/constants/animation';
+import { DURATION } from '@lib/animation/constants';
 import { ThickLine } from '@lib/components/decoration/line/ThickLine';
 import { TPageTitle } from '@app/routes/types';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 
 const Link = styled(motion(_Link))``;
 
@@ -24,7 +24,10 @@ export const Item: FC<TProp> = ({
   children,
   onClick,
 }) => {
-  const { handlers } = useHoverKey(BIG_CURSOR_KEY, children);
+  const { handlers } = useHoverKey(
+    BIG_CURSOR_KEY,
+    children,
+  );
 
   return (
     <Link
@@ -44,7 +47,7 @@ export const Item: FC<TProp> = ({
         />
       )}
       {createElement(
-        isActive ? 'h1' : 'h2',
+        'h2',
         { className: 'relative uppercase italic' },
         children,
       )}

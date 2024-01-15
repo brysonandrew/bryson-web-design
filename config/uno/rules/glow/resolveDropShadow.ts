@@ -1,7 +1,7 @@
 import { COLOR_RECORD } from '../../../app/colors/constants';
 import { TColorKey } from '@app/colors/types';
-import { TColorRgbKey } from '@lib/types/color';
-import { resolveColor } from '@lib/utils/color/resolveColor';
+import { TColorRgbKey } from '@lib/color/types';
+import { resolveColor } from '@lib/color/utils/resolveColor';
 
 export const resolveDropShadow = (
   spread: number,

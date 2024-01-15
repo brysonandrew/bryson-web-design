@@ -1,30 +1,30 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Picture } from '@lib/components/media/picture';
+import { Picture } from '@lib/media/picture';
 import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@lib/components/filters/config/constants/presets';
+} from '@lib/filters/config/constants/presets';
 import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
 import clsx from 'clsx';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@lib/types/dom';
 import styled from '@emotion/styled';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { resolveMotionConfig } from '@lib/hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@lib/constants/animation';
+import { ORIGIN_50 } from '@lib/animation/constants';
 import { useTapHandler } from '@lib/hooks/media/useTapHandler';
 import { TMediaRecord } from '@ops/screens/process/config/types';
-import { VIEW_ICON } from '@lib/constants/icons';
-import { GALLERY_ICON } from '@lib/constants/icons/gallery';
+import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
+import { resolvePresence } from '@lib/animation/utils';
 
 const Button = styled(motion.button)``;
 
@@ -44,7 +44,7 @@ export const Image: FC<TProps> = (props) => {
     depthConfig,
     ...pictureProps
   } = props;
-  const title = `View in image gallery`;
+  const title = 'View in image gallery';
   const name = useCurrName();
   const isGallery = Boolean(name);
   const isInteractionDisabled = isGallery || isScrolling;
@@ -84,12 +84,11 @@ export const Image: FC<TProps> = (props) => {
         ...circleStyle,
         ...ORIGIN_50,
       }}
-      variants={{
-        initial: { opacity: 0 },
-        animate: resolveMotionConfig(depthConfig),
-        exit: { opacity: 0 },
-      }}
-      {...resolveParentAnimateConfig({ isHover })}
+      // variants={resolvePresence(
+      //   { opacity: 0 },
+      //   resolveMotionConfig(depthConfig),
+      // )}
+      // {...resolveParentAnimateConfig({ isHover })}
       {...(isDesktop ? handlers : {})}
     >
       <Button

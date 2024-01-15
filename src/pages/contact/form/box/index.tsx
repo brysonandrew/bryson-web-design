@@ -10,10 +10,10 @@ import {
   TInputElement,
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { Mark } from '@components/decoration/mark';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;

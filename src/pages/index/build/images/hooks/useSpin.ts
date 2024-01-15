@@ -17,8 +17,6 @@ export const useSpin = () => {
     scroll.y,
     'velocityChange',
     (velocity) => {
-      // const scrollValue = spin.get();
-      // const previousScrollValue = spin.getPrevious();
       if (spin.isAnimating()) {
         animateRef.current?.stop();
       }
@@ -36,8 +34,8 @@ export const useSpin = () => {
         });
       } else {
         const prev = spin.get();
-        const next = prev + velocity * 0.00006;
-        spin.set(next, false)
+        const next = prev + velocity * 0.00002;
+        spin.set(next, false);
       }
     },
   );

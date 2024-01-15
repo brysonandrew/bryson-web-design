@@ -1,4 +1,4 @@
-import { resolveCustomRecords } from '../../../../lib/utils/color/resolveCustomRecords';
+import { resolveCustomRecords } from '../../../../lib/color/utils/resolveCustomRecords';
 import { PLANS_COLOR_VARIABLES } from './pricing';
 
 export const RGB_RECORD = {} as const;

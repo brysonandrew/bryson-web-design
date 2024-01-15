@@ -1,6 +1,6 @@
 import { Focus } from '@pages/_workshop/process/focus';
-import { I } from '@lib/components/decoration/Icon';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
+import { I } from '@lib/icons/Icon';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DARK_MODE } from '../../config';

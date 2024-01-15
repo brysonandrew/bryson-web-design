@@ -1,9 +1,9 @@
 import {
   CUSTOM_CURSOR_KEY,
   FOCUS_CURSOR_KEY,
-} from '@lib/components/cursor/switch/config';
-import { useCursor } from '@lib/components/cursor/context';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+} from '@lib/cursor/switch/config';
+import { useCursor } from '@lib/cursor/context';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/_workshop/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';

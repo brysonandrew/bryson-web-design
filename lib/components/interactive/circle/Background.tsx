@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TDivMotionProps } from '@lib/types/dom';
-import { DURATION } from '@lib/constants/animation';
+import { DURATION } from '@lib/animation/constants';
 import { motion } from 'framer-motion';
 import { useApp } from '@lib/context/app/useApp';
 

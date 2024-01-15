@@ -4,7 +4,7 @@ import { Main } from './main';
 import { Pages } from './pages';
 import { FC } from 'react';
 import { isMobile } from 'react-device-detect';
-import { resolvePresence } from '@lib/utils/animation';
+import { resolvePresence } from '@lib/animation/utils';
 
 const Root = styled(motion.nav)``;
 

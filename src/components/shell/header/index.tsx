@@ -7,8 +7,8 @@ import { FadeDown } from '@lib/components/decoration/vertical-fade/FadeDown';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@lib/constants/animation';
-import { Network } from '@lib/components/base/network';
+} from '@lib/animation/constants';
+import { Network } from '@lib/network';
 import { P2 } from '@lib/components/layout/space/P2';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 

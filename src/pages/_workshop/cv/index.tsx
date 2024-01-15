@@ -4,10 +4,8 @@ import { Header } from './header';
 import { Margin } from './layout/Margin';
 import { Page } from './layout/Page';
 import { Shell } from './layout/Shell';
-import { P3 } from '@lib/components/layout/space/P3';
 import { P1 } from '@lib/components/layout/space/P1';
-import { P6 } from '@lib/components/layout/space/P6';
-import { Invert } from './Invert';
+import { Invert } from './controls/Invert';
 import { Variables } from '@css/Variables';
 
 export const Cv = () => {
@@ -18,19 +16,18 @@ export const Cv = () => {
         {(filter) => (
           <Shell>
             <Page style={{ filter }}>
-              <Margin>
-                <Header />
-              </Margin>
-              <P6 />
-              <Margin>
-                <Description /> 
-              </Margin>
-              <P3 />
-              <hr className='bg-gray-02 w-full h-px' />
+              <div className='column gap-12 pt-16 pb-8'>
+                <Margin>
+                  <Header />
+                </Margin>
+                <Margin>
+                  <Description />
+                </Margin>
+              </div>
               <P1 />
               <Experience />
             </Page>
-            <div className='py-2' />
+            <div className='py-2'/>
           </Shell>
         )}
       </Invert>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { P1 } from '@lib/components/layout/space/P1';
 import { P3 } from '@lib/components/layout/space/P3';
 import { Gallery } from '@pages/projects/gallery/icons/Gallery';
-import { OpenInNew } from '@lib/components/decoration/icons/OpenInNew';
+import { OpenInNew } from '@lib/icons/components/OpenInNew';
 import { Circle } from '@lib/components/interactive/circle';
 import { Anchor } from '@lib/components/interactive/circle/Anchor';
 import { TItem } from '@pages/projects/config/types';

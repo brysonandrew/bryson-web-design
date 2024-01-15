@@ -50,7 +50,7 @@ export const INIT_PROJECT_ITEMS: TItemInit[] = [
     pricing: 'plus',
     href: 'https://superiorconcrete.co.nz/',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION],
-    time: new Date(2023, 8, 1),
+    time: new Date(2023, 10, 1),
     paragraphs: [
       'Includes a logo splash screen and some nice custom page transition animations.',
       'Chat GPT generated copy.',

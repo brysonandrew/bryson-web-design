@@ -6,11 +6,10 @@ import { Price, TProps as TPriceProps } from './price';
 import { P_25 } from '@lib/components/layout/space/P_25';
 import { P4 } from '@lib/components/layout/space/P4';
 import { Link } from 'react-router-dom';
-import { I } from '@lib/components/decoration/Icon';
 import { motion } from 'framer-motion';
 import { useContact } from '@pages/index/contact/context';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import {
   TPricingKey,
@@ -19,7 +18,8 @@ import {
 import { TickList } from '@lib/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { Metal } from '@components/decoration/metal';
-import { EMAIL_ICON } from '@lib/index';
+import { EMAIL_ICON } from '@lib/constants/icons/constants/contact';
+import { I } from '@lib/icons/icon';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;

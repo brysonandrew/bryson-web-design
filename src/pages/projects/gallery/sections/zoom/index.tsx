@@ -14,10 +14,10 @@ import {
   TMoveConfig,
   TSharedConfig,
 } from './config';
-import { Picture } from '@lib/components/media/picture';
+import { Picture } from '@lib/media/picture';
 import { useTapEvents } from './useTapEvents';
 import { Tag } from './Tag';
-import { TMotionPoint } from '@lib/types/animation';
+import { TMotionPoint } from '@lib/animation/types';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;

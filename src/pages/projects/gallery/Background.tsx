@@ -1,4 +1,4 @@
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
 import styled from '@emotion/styled';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import clsx from 'clsx';

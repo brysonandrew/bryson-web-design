@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { PADDING_X } from './config';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
 import { COLOR_VARS_RECORD } from '@app/colors/constants';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 
 type TProps = {
   classValue?: ClassValue;

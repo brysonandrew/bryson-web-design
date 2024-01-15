@@ -1,5 +1,5 @@
-import { I } from '@lib/components/decoration/Icon';
-import { ADD_ICON, REMOVE_ICON } from '@lib/constants/icons';
+import { I } from '@lib/icons/Icon';
+import { ADD_ICON, REMOVE_ICON } from '@lib/constants/icons/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import clsx from 'clsx';
 import { Item as FocusItem } from '../../../focus/Item';

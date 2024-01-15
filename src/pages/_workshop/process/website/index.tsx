@@ -1,6 +1,6 @@
 import { P1 } from '@lib/components/layout/space/P1';
 import { P2 } from '@lib/components/layout/space/P2';
-import { useCursor } from '@lib/components/cursor/context';
+import { useCursor } from '@lib/cursor/context';
 import { Extras } from './breakdown/extras';
 import { Money } from './Money';
 import { Skeleton } from './skeleton';

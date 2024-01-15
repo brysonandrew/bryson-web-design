@@ -4,7 +4,7 @@ import { TState } from '../../context/types';
 import clsx, { ClassValue } from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
 import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
-import { I } from '@lib/components/decoration/Icon';
+import { I } from '@lib/icons/Icon';
 
 const Root = styled.label``;
 

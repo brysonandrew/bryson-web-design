@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@lib/components/layout/Section';
-import { Parallax } from '@lib/components/animation/parallax';
+import { Parallax } from '@lib/animation/components/parallax';
 import { FAKE_3D_PROPS } from './constants';
 import { Provider } from '@pages/index/build/context/Provider';
 import { Fade } from './Fade';

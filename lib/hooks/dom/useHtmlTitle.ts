@@ -6,7 +6,7 @@ import { useCurrParams } from '../../../src/pages/projects/gallery/hooks/params/
 import { useLocation } from 'react-router';
 import { capitalize } from '@lib/utils/format';
 import { useEffect } from 'react';
-import { APP_DESCRIPTION } from '@app/config/constants';
+import { APP_DESCRIPTION } from '@app/base/constants';
 import { PAGE_NAV_VALUES } from '@app/routes/constants/pages';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<
