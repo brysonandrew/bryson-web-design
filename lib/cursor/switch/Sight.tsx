@@ -2,9 +2,17 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { TChildren, TClassValueProps } from '@lib/types/dom/main';
+import {
+  TChildren,
+  TClassValueProps,
+} from '@lib/types/dom/main';
 import { TDivMotionProps } from '@lib/types/dom';
 import { useCursor } from '@lib/cursor/context';
+
+const DEFAULT_ANIMATE = {
+  opacity: 1,
+  scale: 1,
+};
 
 const resolveSize = (size: number) => {
   return {
@@ -24,12 +32,13 @@ export const Sight: FC<TProps> = ({
   classValue,
   style,
   size = 8,
+  animate,
   children,
   ...props
 }) => {
   const { cursor, cursorLabel } = useCursor();
 
-  return (
+  return (  
     <Root
       style={{
         left: cursor.x,
@@ -46,7 +55,10 @@ export const Sight: FC<TProps> = ({
         'fixed center dark:bg-highlight bg-accent glow pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
-      animate={{ opacity: 1, scale: 1 }}
+      animate={{
+        ...DEFAULT_ANIMATE,
+        ...(typeof animate === 'object' ? animate : {}),
+      }}
       {...props}
     >
       {children}

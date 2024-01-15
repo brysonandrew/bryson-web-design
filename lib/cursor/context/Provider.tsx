@@ -26,8 +26,9 @@ export const Provider: FC<PropsWithChildren> = ({
   });
   const cursorLabelX = useMotionValue(0);
   const cursorLabelY = useMotionValue(0);
-  const cursorX = useMotionValue(0);
-  const cursorY = useMotionValue(0);
+  const cursorX = useMotionValue(-999);
+  const cursorY = useMotionValue(-999);
+  
   return (
     <Cursor.Provider
       value={{

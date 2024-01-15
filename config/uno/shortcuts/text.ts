@@ -1,6 +1,6 @@
 import type { StaticShortcutMap } from 'unocss';
 
-const TEXT_COLOR: StaticShortcutMap = {
+const TEXT_COLOR_DARK_MODE: StaticShortcutMap = {
   'text-t-bb':
     'text-secondary dark:text-accent dark-mode-transition',
   'text-g-bb':
@@ -20,7 +20,7 @@ const TEXT_COLOR: StaticShortcutMap = {
 };
 
 export const TEXT: StaticShortcutMap = {
-  ...TEXT_COLOR,
+  ...TEXT_COLOR_DARK_MODE,
   'title':
     'text-g-tb text-left text-3xl tracking-wide px-1 text-shadow-inherit lg:text-4xl',
   'page-title':

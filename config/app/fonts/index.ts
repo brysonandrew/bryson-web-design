@@ -5,3 +5,8 @@ export const FONTS = {
     provider: 'fontshare' as const,
   },
 };
+
+/* 
+  https://tailwindcss.com/docs/font-weight
+  https://learn.microsoft.com/en-us/typography/opentype/spec/os2#usweightclass 
+*/

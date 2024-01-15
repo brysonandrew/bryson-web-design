@@ -18,7 +18,7 @@ export const Item: FC<TProps> = ({
       <div
         className={clsx(
           'absolute inset-0',
-          index % 2 === 0 ? 'bg-black-08' : 'bg-black-04',
+          index % 2 === 0 ? 'bg-black-1' : 'bg-black-2',
         )}
       />
       <Margin>

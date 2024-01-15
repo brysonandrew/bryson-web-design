@@ -10,8 +10,6 @@ import { useEffect, useRef } from 'react';
 import {
   CUSTOM_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-  TIP_CURSOR_KEYS,
-  TTipCursorKey,
 } from '@lib/cursor/switch/config';
 import { TAnimationControlsPoint } from '@lib/animation/types';
 

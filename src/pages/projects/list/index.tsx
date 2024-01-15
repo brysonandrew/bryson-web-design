@@ -10,10 +10,11 @@ export const List: FC<TProps> = ({ style, rect }) => {
   const currProject = useCurrProject();
   return (
     <motion.ul
-      className='relative column-stretch w-core will-change-transform gap-3 mt-1 z-0'
+      className='relative column-stretch w-core will-change-transform gap-3 mt-1'
       style={{
         height: rect?.height,
         ...style,
+
       }}
     >
       {PROJECT_SLUGS.map((slug: string, index: number) => {
