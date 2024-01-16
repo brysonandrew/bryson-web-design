@@ -5,7 +5,8 @@ import { Provider as DarkModeProvider } from '@lib/hooks/dark-mode/context/Provi
 import { Provider as SoundProvider } from '@lib/hooks/sounds/context/Provider';
 import { Provider as NetworkProvider } from '@lib/network/context/Provider';
 import { Provider as CursorProvider } from '@lib/cursor/context/Provider';
-import { Provider as GalleryProvider } from '@pages/projects/gallery/context/Provider';
+import { Provider as ViewerProvider } from '@lib/gallery/viewer/context/Provider';
+import { Provider as GalleryProvider } from '@lib/gallery/context/Provider';
 import { Provider as ServicesProvider } from '@pages/index/pricing/context/Provider';
 import { Provider as ContactProvider } from '@pages/index/contact/context/Provider';
 import { Provider as ViewportProvider } from '@lib/context/viewport/Provider';
@@ -15,6 +16,8 @@ import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@lib/components/utils/arrToNest';
 import { STYLE } from '@app/style';
 import { Metal } from './decoration/metal';
+import { TInitProjectItems } from '@app/gallery/types';
+import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 
 type TProps = { children: TChildren };
 export const Providers: FC<TProps> = ({
@@ -22,7 +25,7 @@ export const Providers: FC<TProps> = ({
 }) => {
   const children = arrToNest<PropsWithChildren>(
     [
-      GalleryProvider,
+      ViewerProvider,
       ServicesProvider,
       ContactProvider,
       CursorProvider,
@@ -32,9 +35,13 @@ export const Providers: FC<TProps> = ({
       DarkModeProvider,
       ScrollProvider,
     ],
-    <AppProvider Texture={Metal} {...STYLE}>
-      {_children}
-    </AppProvider>,
+    <GalleryProvider<TInitProjectItems>
+      initItems={INIT_PROJECT_ITEMS}
+    >
+      <AppProvider Texture={Metal} {...STYLE}>
+        {_children}
+      </AppProvider>
+    </GalleryProvider>,
     {},
   );
   return <>{children}</>;

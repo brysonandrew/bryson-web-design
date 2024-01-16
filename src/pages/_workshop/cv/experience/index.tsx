@@ -1,6 +1,6 @@
 import { Item } from './Item';
 import type { TItem } from '@pages/projects/config/types';
-import { CV_ITEMS } from '../constants';
+import { CV_ITEMS } from '../config/constants';
 
 export const Experience = () => (
   <ul className='column-stretch w-full'>

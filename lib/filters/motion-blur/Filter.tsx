@@ -1,12 +1,12 @@
-import type { MotionValue } from 'framer-motion';
 import { motion } from 'framer-motion';
-import {
-  MOTION_BLUR_ID,
-  MOTION_BLUR_INTENSITY,
-} from '../../../src/pages/projects/gallery/sections/constants';
+
 import { FilterShell } from '@lib/filters/FilterShell';
 import { TFilterProps } from './config';
 import { resolveCompositeKey } from '@lib/utils/key';
+import {
+  MOTION_BLUR_INTENSITY,
+  MOTION_BLUR_ID,
+} from '../blur/constants';
 
 const intensity = MOTION_BLUR_INTENSITY;
 
