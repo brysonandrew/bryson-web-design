@@ -3,11 +3,11 @@ import {
   TPricingTitle,
 } from '@pages/pricing/config/types';
 import { TProps as TPriceProps } from '@pages/pricing/layout/price';
-import { colorToStylesRecord } from '@lib/utils/transformer/colorToStyles';
 import { newlineToArr } from '@lib/utils/transformer/newlineToArr';
 import { FC } from 'react';
-import { PACKAGES_THEME_COLORS } from './colors';
 import { PlusContent } from './PlusContent';
+import { titleToKebab } from '@lib/utils/format';
+import { TTTitleToKebab } from '@lib/types/transformers/format/title';
 
 export const PACKAGES = [
   'Standard',
@@ -57,8 +57,9 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
 export const resolvePackageConfig = (
   title: TPricingTitle,
 ) => {
-  const key: TPricingKey =
-    title.toLowerCase() as TPricingKey;
+  const key = titleToKebab(title) as TTTitleToKebab<
+    typeof title
+  >;
   const config = CONFIG_LOOKUP[key];
   const { listLiteral, ...rest } = config;
 

@@ -1,5 +1,5 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format/camel';
 import { TTKebabToPascal } from '@lib/types/transformers/format/pascal';
+import { TTTitleToKebab } from '@lib/types/transformers/format/title';
 
 export const capitalize = (word: string | null) =>
   word
@@ -25,13 +25,11 @@ export const kebabToPascal = <I extends string>(
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
-export const titleToKebab = <I extends string>(
-  title: I,
-): TTTitleToKebab<I> =>
+export const titleToKebab = <I extends string>(title: I) =>
   title
     .split(' ')
     .map((v) => v.toLowerCase())
-    .join('-') as TTTitleToKebab<I>;
+    .join('-');
 
 export const nToMoney = (n: number) =>
   `$${n.toLocaleString()}`;

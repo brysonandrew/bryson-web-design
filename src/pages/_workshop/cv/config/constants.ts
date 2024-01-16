@@ -1,4 +1,4 @@
-import { PROJECT_ITEMS } from '@app/gallery/items';
+import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 
 const width = 793;
 export const SIZE = {
@@ -7,4 +7,4 @@ export const SIZE = {
 };
 // A4	210 x 297 mm	8.3 x 11.7 inches
 
-export const CV_ITEMS = PROJECT_ITEMS.slice(0, 4);
+export const CV_ITEMS = INIT_PROJECT_ITEMS.slice(0, 4);

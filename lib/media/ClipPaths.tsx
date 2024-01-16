@@ -1,5 +1,5 @@
-import { IMAGE_PLACEHOLDER_ID } from '@pages/projects/gallery/sections/constants';
 import { ImagePlaceholderClipPath } from '@lib/icons/components/media/ImagePlaceholderClipPath';
+import { IMAGE_PLACEHOLDER_ID } from './placeholder/constants';
 
 export const ClipPaths = () => {
   return (

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useGallery as useContext } from '@lib/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@lib/gallery/viewer/context/useViewer';
 import { Picture } from '@lib/media/picture';
 import { useLoadImage } from '@lib/hooks/media/useLoadImage';
 import {

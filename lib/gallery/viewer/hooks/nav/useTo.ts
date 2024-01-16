@@ -1,17 +1,16 @@
 import { PROJECT_KEY } from '@lib/gallery/config/constants';
-import { TProjectKey } from '@lib/gallery/config/types';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { resolveTo } from '../../utils/resolveTo';
 
-type TToConfig = {
-  project?: TProjectKey;
+type TToConfig<T extends string> = {
+  project?: T;
   next?: string | number;
 };
-export const useTo = ({
+export const useTo = <T extends string>({
   project: nextProject,
   next,
-}: TToConfig) => {
+}: TToConfig<T>) => {
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const project =

@@ -2,26 +2,21 @@ import { PropsWithChildren } from 'react';
 import { TInitItems } from '@lib/gallery/config/types';
 import { useItemsConfig } from './hooks/useItemsConfig';
 import { GALLERY } from './config/constants';
-import { TContext } from './config/types';
 
-type TProps<T extends TInitItems> = {
-  initItems: T;
+type TProps<T extends string> = {
+  initItems: TInitItems<T>;
 };
-
-export const Provider = <T extends TInitItems>({
+export const Provider = <
+  T extends string,
+  K extends string,
+>({
   initItems,
   children,
 }: PropsWithChildren<TProps<T>>) => {
-  const itemsConfig = useItemsConfig<T>(initItems);
+  const itemsConfig = useItemsConfig<T, K>(initItems);
 
   return (
-    <GALLERY.Provider
-      value={
-        {
-          ...itemsConfig,
-        } as TContext<T>
-      }
-    >
+    <GALLERY.Provider value={itemsConfig}>
       {children}
     </GALLERY.Provider>
   );

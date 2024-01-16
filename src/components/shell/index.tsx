@@ -9,13 +9,11 @@ import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';
 import { Head } from '@lib/head';
 import { P24Y } from '@lib/components/layout/space/P24Y';
-import { useRedirect } from '@lib/hooks/router/useRedirect';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';
 
 export const Shell: FC = () => {
-  useRedirect();
   return (
     <Providers>
       <>

@@ -15,4 +15,8 @@ export const TEXT: StaticShortcutMap = {
     'relative uppercase text-3xl tracking-widest text-shadow-inherit px-2 md:text-4xl xl:px-4',
   'section-title':
     'relative text-xl text-shadow-inherit md:text-2xl',
+  'pricing-title':
+    'text-white-7 tracking-wider font-semibold capitalize',
+  'main-title':
+    'text-gray dark:text-accent dark-mode-transition',
 };

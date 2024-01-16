@@ -3,12 +3,16 @@ import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
 import { kebabToTitle } from '@lib/utils/format';
 
 export const resolveHoverKeyArgs = (slug: string) => {
-  const title = `View ${kebabToTitle(slug)} in gallery`;
-
   return [
     CUSTOM_CURSOR_KEY,
     slug,
     GALLERY_ICON,
-    <span>{title}</span>,
+    <span>
+      View{' '}
+      <span className='main-title'>
+        {kebabToTitle(slug)}
+      </span>{' '}
+      in gallery
+    </span>,
   ] as const;
 };

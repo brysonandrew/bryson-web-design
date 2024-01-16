@@ -1,5 +1,15 @@
-import { TInitItems } from '../../config/types';
-import { TItemsConfig } from '../hooks/useItemsConfig';
+import { TItem, TItems } from '@lib/gallery/config/types';
 
-export type TContext<T extends TInitItems = TInitItems> =
-  TItemsConfig<T>;
+export type TItemsConfig<
+  T extends string,
+  K extends string,
+> = {
+  ITEMS: TItems<T, K>;
+  ITEMS_RECORD: Record<K, TItem<T, K>>;
+  SLUGS: K[];
+};
+
+export type TContext<
+  T extends string = string,
+  K extends string = string,
+> = TItemsConfig<T, K>;

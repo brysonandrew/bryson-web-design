@@ -9,7 +9,7 @@ export const List = () => {
   const { SLUGS } = useGallery();
   return (
     <>
-      <motion.ul>
+      <motion.ul className='column-stretch gap-4'>
         {SLUGS.map((slug, index) => {
           const isSelected = currProject === slug;
           if (isSelected) return null;

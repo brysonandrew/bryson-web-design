@@ -1,11 +1,11 @@
-import type { TItem } from '@pages/projects/config/types';
+import type { TInitItem } from '@app/gallery/types';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Margin } from '../layout/Margin';
 import { resolveTime } from './resolveTime';
 
-type TProps = TItem & {
+type TProps = TInitItem & {
   index: number;
 };
 export const Item: FC<TProps> = ({

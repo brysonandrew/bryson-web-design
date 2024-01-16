@@ -1,11 +1,17 @@
-import { PROJECT_KEY, NAME_KEY, } from "@lib/gallery/config/constants";
-import { TProjectKey } from "@lib/gallery/config/types";
+import {
+  PROJECT_KEY,
+  NAME_KEY,
+} from '@lib/gallery/config/constants';
 
-type TConfig = {
+type TConfig<T extends string> = {
   pathname: string;
-  project: TProjectKey;
+  project: T;
   next: number | string;
 };
-export const resolveTo = ({ pathname, project, next }: TConfig) => {
-  return `${pathname}?${PROJECT_KEY}=${project}&${NAME_KEY}=${next}`;
+export const resolveTo = <T extends string>({
+  pathname,
+  project,
+  next,
+}: TConfig<T>) => {
+  return `${pathname}?${PROJECT_KEY}=${project}&${NAME_KEY}=${next}` as const;
 };

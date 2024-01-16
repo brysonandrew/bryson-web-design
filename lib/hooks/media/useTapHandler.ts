@@ -1,6 +1,6 @@
+import { useTo } from '@lib/gallery/viewer/hooks/nav/useTo';
 import { useOnSound } from '@lib/hooks/sounds/useOnSound';
 import { TMediaRecord } from "@ops/screens/process/config/types";
-import { useTo } from '@pages/projects/gallery/hooks/nav/useTo';
 import { useNavigate } from 'react-router';
 
 type TConfig = {

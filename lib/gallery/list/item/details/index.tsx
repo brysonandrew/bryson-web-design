@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { P2 } from '@lib/components/layout/space/P2';
 import { TDivMotionProps } from '@lib/types/dom';
 import clsx from 'clsx';
-import { PROJECT_ITEMS_RECORD } from '@app/gallery/items';
+import { useGallery } from '@lib/gallery/context/useGallery';
 
 const Root = styled(motion.div)``;
 
@@ -19,7 +19,8 @@ export const Details: FC<TProps> = ({
   slug,
   ...props
 }) => {
-  const { paragraphs, tags } = PROJECT_ITEMS_RECORD[slug];
+  const { ITEMS_RECORD } = useGallery();
+  const { paragraphs, tags } = ITEMS_RECORD[slug];
 
   return (
     <Root

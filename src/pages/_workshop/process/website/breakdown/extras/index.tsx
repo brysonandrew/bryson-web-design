@@ -1,7 +1,7 @@
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { EXTRAS } from '../../config';
 import { Item } from './Item';
-import { List } from '../../../../../../../lib/components/layout/lists/List';
+import { List } from '@lib/components/layout/lists/List';
 
 export const Extras = () => {
   const { extras } = useServicesC();
