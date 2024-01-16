@@ -2,7 +2,7 @@ import { TChildrenProps, TClassValueProps } from '@lib/types/dom';
 import clsx from 'clsx';
 import { ButtonHTMLAttributes, FC } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
 
 type TProps = TClassValueProps &
   TChildrenProps &

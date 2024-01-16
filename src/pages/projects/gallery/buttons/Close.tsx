@@ -6,9 +6,9 @@ import {
   TDivMotionProps,
 } from '@lib/types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { Circle } from '../../components/buttons/Circle';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {
@@ -32,7 +32,7 @@ export const Close: FC<TProps> = ({
         title='Close'
         onClick={onClick}
         {...handlers}
-      />
+      /> 
     </Circle>
   );
 };

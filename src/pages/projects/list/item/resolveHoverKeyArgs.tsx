@@ -1,5 +1,5 @@
-import { CUSTOM_CURSOR_KEY } from '@lib/components/cursor/switch/config';
-import { GALLERY_ICON } from '@lib/constants/icons/gallery';
+import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
 import { kebabToTitle } from '@lib/utils/format';
 
 export const resolveHoverKeyArgs = (slug: string) => {

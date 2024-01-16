@@ -1,7 +1,24 @@
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_WITH_NATIONAL_TRUNK,
+  CONTACT_URL,
+} from '../copy';
+
 export const Contact = () => (
-  <div className="flex flex-col items-end w-full text-sm text-white-9-7 mt-2">
-    <p>020 4069 8339</p>
-    <p className="-mt-1">andrewbryson12@gmail.com</p>
-    <p className="-mt-1">brysona.dev</p>
+  <div className='column-end w-full'>
+    <p>
+      <a target="_top" href={`https://${CONTACT_URL}`}>{CONTACT_URL}</a>
+    </p>
+    <p>
+      <a target="_top" href={`mailto:${CONTACT_EMAIL}`}>
+        {CONTACT_EMAIL}
+      </a>
+    </p>
+    <p>
+      <a target="_top" href={`tel:${CONTACT_PHONE_WITH_NATIONAL_TRUNK}`}>
+        {CONTACT_PHONE}
+      </a>
+    </p>
   </div>
 );

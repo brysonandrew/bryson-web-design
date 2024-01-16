@@ -2,12 +2,14 @@ import { type FC } from 'react';
 import { TItem } from '@pages/projects/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
-import { Brighten } from '@lib/components/animation/filter-animate/Brighten';
+import { Brighten } from '@lib/animation/components/filter-animate/Brighten';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled.div``;
 
 type TProps = Required<Pick<TItem, 'slug' | 'tags'>>;
 export const Tags: FC<TProps> = ({ slug, tags }) => {
+  const { BORDER_RADIUS } = useApp();
   return (
     <Root className='relative'>
       <ul className='row-wrap gap-2'>
@@ -16,9 +18,10 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           const content = (
             <Brighten>
               <span
-                className='text-gray bg-accent px-2 py-1 rounded-sm whitespace-nowrap'
+                className='text-black-9 bg-accent px-2 py-1 whitespace-nowrap'
+                style={{ borderRadius: BORDER_RADIUS.SM }}
               >
-                {title}
+                {title} 
               </span>
             </Brighten>
           );

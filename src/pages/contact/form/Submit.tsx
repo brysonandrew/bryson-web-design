@@ -5,15 +5,13 @@ import { useEffect, type FC, useRef } from 'react';
 import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useContact } from '@pages/index/contact/context';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { MetalGlow } from '@components/decoration/metal/MetalGlow';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@lib/utils/effect';
-import { BIGGER_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+} from '@lib/animation/components/filter-animate/utils';
+import { BIGGER_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;
@@ -22,7 +20,8 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BackgroundGlow } = useApp();
+  const { Texture, Glow, BORDER_RADIUS, GLOW, COLOR } =
+    useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -31,7 +30,6 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
   const handleMoveSound = useMoveSound();
-  const borderRadiusClass = 'rounded';
 
   useEffect(() => {
     if (status === 'sent' && ref.current !== null) {
@@ -42,22 +40,22 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   return (
     <Root
       ref={ref}
-      className={clsx(
-        'relative p-0.5 w-full label-background',
-        borderRadiusClass,
-        [
-          isDisabled
-            ? 'cursor-not-allowed'
-            : 'glow cursor-pointer',
-        ],
-      )}
+      className={clsx('relative p-0.5 w-full', [
+        isDisabled
+          ? 'cursor-not-allowed'
+          : 'cursor-pointer',
+      ])}
       onTap={isDisabled ? () => null : handleMoveSound}
       {...(isDisabled
         ? {}
         : resolveParentAnimateConfig({ isHover }))}
+      style={{
+        borderRadius: BORDER_RADIUS.MD,
+        boxShadow: isDisabled ? 'none' : GLOW.secondary,
+      }}
       {...handlers}
     >
-      <BackgroundGlow />
+      <Texture />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',
@@ -67,7 +65,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <Text
         className={clsx(
-          'center relative text-g-tb text-2xl italic uppercase py-2 pointer-events-none',
+          'center relative  text-2xl italic uppercase py-2 pointer-events-none',
         )}
         variants={{
           animate: {

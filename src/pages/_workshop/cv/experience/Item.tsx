@@ -1,37 +1,38 @@
 import type { TItem } from '@pages/projects/config/types';
+import clsx from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Margin } from '../layout/Margin';
+import { resolveTime } from './resolveTime';
 
 type TProps = TItem & {
   index: number;
 };
 export const Item: FC<TProps> = ({
   index,
+  time,
   ...item
 }: TProps) => (
   <Fragment>
-    <li className='relative flex items-center justify-center py-6'>
-      {index % 2 === 0 ? null : (
-        <div className='absolute inset-0 bg-black-2' />
-      )}
+    <li className='relative center py-8'>
+      <div
+        className={clsx(
+          'absolute inset-0',
+          index % 2 === 0 ? 'bg-black-1' : 'bg-black-2',
+        )}
+      />
       <Margin>
-        <div className='flex items-center justify-between text-white-9-7'>
+        <div className='row-space'>
           <div className='relative'>
             <p className='absolute right-full top-0 mr-4 text-right'>
-              {new Intl.DateTimeFormat('en-UK', {
-                month: 'short',
-                year: 'numeric',
-              }).format(item.time)}
+              {resolveTime({ time })}
             </p>
-            <h6 className='text-md text-white-9'>
-              {item.title}
-            </h6>
+            <h6>{item.title}</h6>
           </div>
-          <p className='text-md'>{item.description}</p>
+          <p>{item.description}</p>
         </div>
         <div className='py-1' />
-        <div className='text-sm'>
+        <div>
           {item.paragraphs && (
             <ul>
               {item.paragraphs.map((v, index) => (
@@ -47,7 +48,7 @@ export const Item: FC<TProps> = ({
           {item.tags && (
             <>
               <div className='py-1' />
-              <i className='text-white-9-7'>
+              <i>
                 {item.tags
                   .map(({ title }) => title)
                   .join(', ')}

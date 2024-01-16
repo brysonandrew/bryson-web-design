@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@lib/constants/animation';
+} from '@lib/animation/constants';
 import { useScroll as useScrollContext } from '@lib/context/scroll';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useViewport as useViewportContext } from '@lib/context/viewport';

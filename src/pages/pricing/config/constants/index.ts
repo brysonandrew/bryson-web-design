@@ -15,7 +15,7 @@ export const PACKAGES = [
   'Select',
 ] as const;
 
-type TConfig = any & {
+type TConfig = {
   listLiteral: string;
   PreContent?: FC;
 } & TPriceProps;
@@ -51,8 +51,6 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
     Ongoing support and maintenance
     Integration of cutting-edge technologies (AI, 3D rendering, IoT)
     `,
-    backgroundColorClass: 'bg-select',
-    textColorClass: 'text-select',
   },
 } as const;
 
@@ -63,14 +61,12 @@ export const resolvePackageConfig = (
     title.toLowerCase() as TPricingKey;
   const config = CONFIG_LOOKUP[key];
   const { listLiteral, ...rest } = config;
-  const color = PACKAGES_THEME_COLORS[key];
 
   return {
     key,
     listItems: newlineToArr(listLiteral),
-    ...colorToStylesRecord(color),
     ...rest,
-  };
+  } as const;
 };
 
 export const STANDARD_CONFIG =

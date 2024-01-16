@@ -4,16 +4,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren } from '@lib/types/dom';
 import { Clear } from './Clear';
-import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import {
   TFormKey,
   TInputElement,
 } from '@pages/contact/config';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { Mark } from '@components/decoration/mark';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.label)``;
@@ -34,28 +33,35 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
-  const { BackgroundGlow1 } = useApp();
+  const {
+    Active,
+    Glow,
+    BORDER_RADIUS,
+    TextureGlow,
+    COLOR,
+  } = useApp();
   const handleFocus = useFocus(input, isFocused);
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
   );
-  const borderRadiusClass = 'rounded';
 
   return (
     <Root
-      className={clsx('relative input-label', [
-        isDisabled ? '' : 'glow',
-        borderRadiusClass,
-      ])}
+      className={clsx(
+        'relative column-start w-full p-2 md:flex-row',
+      )}
+      style={{
+        borderRadius: BORDER_RADIUS.MD,
+      }}
       {...(isDisabled
         ? {}
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <BackgroundGlow1 />
+      <TextureGlow />
       {isFocused && (
-        <Mark
+        <Active
           layoutId='CONTACT_FORM_INPUT_LAYOUT_ID'
           classValue='z-50'
         />

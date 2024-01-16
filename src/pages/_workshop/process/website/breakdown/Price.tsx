@@ -8,7 +8,7 @@ type TProps = Pick<TMoneyProps, 'children'> & {
 export const Price: FC<TProps> = ({ text, children }) => {
   return (
     <div>
-      <div className='row-space w-full text-g-tb'>
+      <div className='row-space w-full '>
         <span className='uppercase '>
           Price
         </span>

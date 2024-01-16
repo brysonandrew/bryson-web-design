@@ -1,4 +1,4 @@
-import { resolveCssVarRecord } from '@lib/utils/color/resolveCssVarRecord';
+import { resolveVarCssRecord } from "@lib/color/utils/resolveCssVarRecord";
 
 const PLACEHOLDER_MD = 28;
 const PLACEHOLDER_SM = 16;
@@ -15,6 +15,6 @@ const PLACEHOLDER_LOOKUP = {
   'size-placeholder': `${resolveWidth(PLACEHOLDER)}`,
 };
 
-export const PLACEHOLDER_VARS_CSS = resolveCssVarRecord(
+export const PLACEHOLDER_VARS_CSS = resolveVarCssRecord(
   PLACEHOLDER_LOOKUP,
 );

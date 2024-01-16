@@ -24,7 +24,6 @@ export const Form = () => {
     <Root
       className='column-start mt-1'
       initial={false}
-      animate={{}}
       ref={ref}
       onSubmit={(event) => {
         if (!isDisabled) {
@@ -52,8 +51,6 @@ export const Form = () => {
       <Textarea
         name='message'
         disabled={isDisabled}
-        rows={4}
-        cols={50}
         required
         {...inputHandlers}
       />

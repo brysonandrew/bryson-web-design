@@ -1,16 +1,17 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
-import { I } from '@lib/components/decoration/Icon';
+import { I } from '@lib/icons/icon';
 import { P2 } from '@lib/components/layout/space/P2';
 import { P3 } from '@lib/components/layout/space/P3';
 import { P_5 } from '@lib/components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@lib/constants/icons';
-import { PLUS_ICON } from '@lib/constants/icons/text';
-
-const Root = styled.div``;
+import { TICK_CIRCLE_ICON } from '@lib/constants/icons/constants';
+import { PLUS_ICON } from '@lib/constants/icons/constants/text';
+import { useApp } from '@lib/context/app/useApp';
 
 export const PlusContent: FC = () => {
+  const { BORDER_RADIUS } = useApp();
+
   return (
     <>
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
@@ -24,7 +25,10 @@ export const PlusContent: FC = () => {
           className='relative w-5 h-5 mt-1 shrink-0 text-standard z-10'
         />{' '}
         <p className='leading-7 font-sans text-xl text-main'>
-          <span className='absolute -inset-x-1.75 -inset-y-2 rounded-md border-2 border-standard' />
+          <span
+            className='absolute -inset-x-1.75 -inset-y-2 border-2 border-standard'
+            style={{ borderRadius: BORDER_RADIUS.MD }}
+          />
           Everything included in the{' '}
           <span className='inline-flex relative px-1.5 text-main-inverted'>
             <span

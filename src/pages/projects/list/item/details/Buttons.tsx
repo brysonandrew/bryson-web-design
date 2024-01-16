@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { P1 } from '@lib/components/layout/space/P1';
 import { P3 } from '@lib/components/layout/space/P3';
 import { Gallery } from '@pages/projects/gallery/icons/Gallery';
-import { OpenInNew } from '@lib/components/decoration/icons/OpenInNew';
+import { OpenInNew } from '@lib/icons/components/OpenInNew';
 import { Circle } from '@lib/components/interactive/circle';
 import { Anchor } from '@lib/components/interactive/circle/Anchor';
 import { TItem } from '@pages/projects/config/types';
@@ -23,12 +23,12 @@ export const Buttons: FC<TProps> = ({
   onClose,
 }) => {
   const to = useTo({ project: slug, next: 1 });
- 
+
   return (
     <Root className='row-space'>
       <ul className='column-start w-full md:row'>
         <li className='row-space w-full md:w-auto md:row'>
-          <h3 className='text-g-bb'>Screenshots</h3>
+          <h3>Screenshots</h3>
           <P1 />
           <Circle>
             <InternalLink
@@ -42,7 +42,7 @@ export const Buttons: FC<TProps> = ({
         </li>
         <P3 element='li' />
         <li className='row-space w-full md:w-auto md:row'>
-          <h3 className='text-g-bb'>Link</h3>
+          <h3>Link</h3>
           <P1 />
           <Circle>
             <Anchor

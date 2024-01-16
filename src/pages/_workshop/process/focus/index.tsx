@@ -1,18 +1,20 @@
 import {
   CUSTOM_CURSOR_KEY,
   FOCUS_CURSOR_KEY,
-} from '@lib/components/cursor/switch/config';
-import { useCursor } from '@lib/components/cursor/context';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+} from '@lib/cursor/switch/config';
+import { useCursor } from '@lib/cursor/context';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/_workshop/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Circle } from './Circle';
+import { useApp } from '@lib/context/app/useApp';
 
 type TProps = {
   children: TPart;
 };
 export const Focus: FC<TProps> = ({ children }) => {
+  const { BORDER_RADIUS } = useApp();
   const {
     hoverKeyParts: [_, first],
   } = useCursor();
@@ -24,7 +26,10 @@ export const Focus: FC<TProps> = ({ children }) => {
   return (
     <>
       {(isActive || isHover) && (
-        <div className='absolute -inset-1 bg-secondary-02 rounded-md pointer-events-none' />
+        <div
+          className='absolute -inset-1 bg-secondary-02 pointer-events-none'
+          style={{ borderRadius: BORDER_RADIUS.MD }}
+        />
       )}
       <Circle
         classValue={clsx(

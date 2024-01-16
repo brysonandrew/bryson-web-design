@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { TClassValueProps } from '@lib/types/dom';
 import { Nav } from './Nav';
-import { useHoverKey } from '@lib/components/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { ArrowRight } from '@pages/projects/gallery/icons/ArrowRight';
-import { resolveParentAnimateConfig } from '@lib/utils/effect';
+import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { useNext } from '../hooks/nav/useNext';
-import { BIG_CURSOR_KEY } from '@lib/components/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 
 type TProps = TClassValueProps & {
   max: number;

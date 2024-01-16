@@ -3,7 +3,7 @@ import {
   DURATION,
   MOTION_CONFIG,
   PRESENCE_Y_SHIFT,
-} from '@lib/constants/animation';
+} from '@lib/animation/constants';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@lib/types/dom/main';
 import clsx from 'clsx';

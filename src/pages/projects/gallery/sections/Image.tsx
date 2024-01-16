@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
-import { Picture } from '@lib/components/media/picture';
+import { Picture } from '@lib/media/picture';
 import { useLoadImage } from '@lib/hooks/media/useLoadImage';
 import {
   TDimensions,
@@ -10,7 +10,7 @@ import {
 } from '@ops/screens/process/config/types';
 import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
 import { TChildren } from '@lib/types/dom';
-import { MotionBlur } from '@lib/components/filters/motion-blur';
+import { MotionBlur } from '@lib/filters/motion-blur';
 
 export const Root = styled(motion.div)``;
 
@@ -26,7 +26,7 @@ export const Image: FC<TProps> = ({
   motionX,
   children,
 }) => {
-  const { isLoaded, image, imageRef } = useLoadImage(
+  const { image, imageRef } = useLoadImage(
     mediaRecord.src,
   );
   const { isTransitioningGallery } = useContext();

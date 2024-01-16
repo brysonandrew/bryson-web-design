@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import styled from '@emotion/styled';
 import {
   clamp,
   motion,
@@ -14,16 +13,13 @@ import {
   TMoveConfig,
   TSharedConfig,
 } from './config';
-import { Picture } from '@lib/components/media/picture';
+import { Picture } from '@lib/media/picture';
 import { useTapEvents } from './useTapEvents';
 import { Tag } from './Tag';
-import { TMotionPoint } from '@lib/types/animation';
+import { TMotionPoint } from '@lib/animation/types';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
-
-export const Root = styled(motion.div)``;
-export const Border = styled(motion.div)``;
 
 type TProps = TImageProps & {
   index: number;
@@ -68,6 +64,7 @@ export const Zoom: FC<TProps> = ({
 
       cursorX.set(cx);
       cursorY.set(cy);
+
       setCursorReady(true);
     } else {
       setCursorReady(false);
@@ -106,15 +103,15 @@ export const Zoom: FC<TProps> = ({
     <>
       {isCursorReady && (
         <>
-          <Border
+          <motion.div
             className={clsx(
-              'absolute glow pointer-events-none z-10',
+              'absolute pointer-events-none z-10',
             )}
             {...rootProps}
           >
             <Tag>{`${~~scale}`}</Tag>
-          </Border>
-          <Root
+          </motion.div>
+          <motion.div
             className='absolute pointer-events-none overflow-hidden'
             {...rootProps}
           >
@@ -125,7 +122,7 @@ export const Zoom: FC<TProps> = ({
               className='absolute'
               {...copyProps}
             />
-          </Root>
+          </motion.div>
         </>
       )}
     </>

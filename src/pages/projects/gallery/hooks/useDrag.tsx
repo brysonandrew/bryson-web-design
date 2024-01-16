@@ -5,7 +5,7 @@ import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@pages/projects/gallery/hooks/params/useCurrParams';
 import { TBaseProps } from '../types';
-import { DURATION_MID } from '@lib/constants/animation';
+import { DURATION_MID } from '@lib/animation/constants';
 import { useX } from './motion/useX';
 import { resolveTo } from '../utils/resolveTo';
 

@@ -3,19 +3,16 @@ import styled from '@emotion/styled';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { NAME_KEY } from '@pages/projects/config/constants/keys';
 import { motion } from 'framer-motion';
-import {
-  Link as _Link,
-  useSearchParams,
-} from 'react-router-dom';
+import { Link as _Link } from 'react-router-dom';
 import { useGallery as useContext } from '@pages/projects/gallery/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { Background } from '@lib/components/interactive/circle/Background';
-import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
-import { resolveShadowLg } from '@uno/rules/glow/resolveShadowLg';
 import { useTo } from '@pages/projects/gallery/hooks/nav/useTo';
 import { COLOR_VARS_RECORD } from '@app/colors/constants';
+import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
+import { useApp } from '@lib/context/app/useApp';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;
@@ -30,13 +27,13 @@ export const Button: FC<TProps> = ({
   width,
   mediaRecord,
 }) => {
+  const { COLOR, GLOW, Active, TextureGlow } = useApp();
   const { onMotionBlurStart } = useContext();
   const { isDarkMode } = useDarkMode();
-  const { src, name } = mediaRecord;
+  const { name } = mediaRecord;
   const to = useTo({ next: name });
   const isLoading = false;
-  const [searchParams] = useSearchParams();
-  const imgParam = searchParams.get(NAME_KEY);
+  const imgParam = useCurrName();
   const isActive = imgParam === to.split(`${NAME_KEY}=`)[1];
   const animation = isLoading
     ? 'loading'
@@ -67,10 +64,8 @@ export const Button: FC<TProps> = ({
         {isActive && (
           <Background
             style={{
-              boxShadow: resolveShadowLg(4, 'highlight'),
-              filter: resolveDropShadow(6, 'secondary'),
-              width: 40,
-              height: 40,
+              boxShadow: GLOW.highlight,
+              filter: GLOW.DROP.accent,
             }}
             layoutId='GALLERY_BUTTON_FILL'
           />
@@ -85,7 +80,7 @@ export const Button: FC<TProps> = ({
               color: isDarkMode
                 ? COLOR_VARS_RECORD['white-9']
                 : COLOR_VARS_RECORD['gray'],
-              textShadow: resolveShadowLg(0),
+              textShadow: GLOW.accent,
             },
             loading: {
               zIndex: 0,
@@ -94,7 +89,7 @@ export const Button: FC<TProps> = ({
               color: isDarkMode
                 ? COLOR_VARS_RECORD['gray']
                 : COLOR_VARS_RECORD['gray'],
-              textShadow: resolveShadowLg(0),
+              textShadow: GLOW.accent,
             },
             active: {
               opacity: 1,
@@ -103,31 +98,21 @@ export const Button: FC<TProps> = ({
               color: isDarkMode
                 ? COLOR_VARS_RECORD['highlight']
                 : COLOR_VARS_RECORD['gray'],
-              textShadow: isDarkMode
-                ? resolveShadowLg(2, 'secondary')
-                : resolveShadowLg(0),
+              textShadow: GLOW.secondary,
             },
             hover: {
               opacity: 1,
               zIndex: 1,
               cursor: 'pointer',
-              color: isDarkMode
-                ? COLOR_VARS_RECORD['white-9']
-                : COLOR_VARS_RECORD['gray'],
-              textShadow: isDarkMode
-                ? resolveShadowLg(2, 'white-9')
-                : resolveShadowLg(0),
+              color: COLOR['white'],
+              textShadow: GLOW['white-9'],
             },
             tap: {
               opacity: 1,
               zIndex: 1,
               cursor: 'pointer',
-              color: isDarkMode
-                ? COLOR_VARS_RECORD['highlight']
-                : COLOR_VARS_RECORD['gray'],
-              textShadow: isDarkMode
-                ? resolveShadowLg(4, 'highlight')
-                : resolveShadowLg(0),
+              color: COLOR['highlight'],
+              textShadow: GLOW['highlight'],
             },
           }}
         >

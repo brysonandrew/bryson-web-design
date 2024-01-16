@@ -5,9 +5,10 @@ import { useContact } from '@pages/index/contact/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { Cross } from '@pages/projects/gallery/icons/Cross';
 import { IconGlow } from '@lib/components/interactive/IconGlow';
-import { PRESENCE_OPACITY_DELAY } from '@lib/constants/animation';
+import { PRESENCE_OPACITY_DELAY } from '@lib/animation/constants';
 import { TFormKey } from '@pages/contact/config';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled.div``;
 
@@ -23,6 +24,7 @@ export const Clear: FC<TProps> = ({
   title,
   ...props
 }) => {
+  const { COLOR, BORDER_RADIUS } = useApp();
   const { onForm } = useContact();
   const { isDarkMode } = useDarkMode();
 
@@ -36,18 +38,19 @@ export const Clear: FC<TProps> = ({
       <motion.button
         tabIndex={-1}
         type='button'
-        className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-9-02 rounded-full'
+        className='relative dark:text-gray-3 text-gray-1 dark:bg-black-02 bg-white-9-02'
         whileHover={{ opacity: 1 }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}
         {...PRESENCE_OPACITY_DELAY}
         animate={{ opacity: isReady ? 0.8 : 0.2 }}
+        style={{ borderRadius: BORDER_RADIUS.XL }}
         {...props}
       >
         <IconGlow
           Icon={Cross}
-          color={isDarkMode ? 'gray' : 'white-9'}
-        />
+          color={COLOR[isDarkMode ? 'gray' : 'white-9']}
+        /> 
       </motion.button>
     </Root>
   );

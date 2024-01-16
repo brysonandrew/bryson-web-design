@@ -1,4 +1,4 @@
-import { resolveDynamicMidMotionConfig } from '@lib/constants/animation';
+import { resolveDynamicMidMotionConfig } from '@lib/animation/constants';
 
 type TConfig = {
   index: number;

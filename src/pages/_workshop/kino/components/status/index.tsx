@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { P1 } from '@lib/components/layout/space/P1';
 import { pascalToTitle } from '@lib/utils/format';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@lib/constants/animation';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
 import { BASE_INCLUDES } from './types';
 import {
   TStatusRecord,

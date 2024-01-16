@@ -11,10 +11,8 @@ import {
 } from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@lib/hooks/sounds/useCoinDropSound';
 import { ThickLine } from '@lib/components/decoration/line/ThickLine';
-import { I } from '@lib/components/decoration/Icon';
 import { Link } from 'react-router-dom';
-
-const toPathname = (v: string) => `/${v.toLowerCase()}`;
+import { I } from '@lib/icons/icon';
 
 const Root = styled.nav``;
 const List = styled.ul``;
@@ -35,8 +33,8 @@ export const Pages = () => {
       >
         <I
           classValue={clsx(
-            'absolute left-1 top-1 h-6 w-6 mr-2 text-g-bb',
-            isHome && 'text-b-w9',
+            'absolute left-1 top-1 h-6 w-6 mr-2 ',
+            isHome && '9',
           )}
           icon='material-symbols:home'
         />
@@ -47,17 +45,13 @@ export const Pages = () => {
           />
         )}
       </Link>
-
-      <List className='relative column-end h-full pt-0 pr-1 md:row md:pr-0'>
+      <List className='relative column-end h-full pt-0 pr-1 gap-2 md:(row pr-0 gap-0.5)'>
         {PAGE_NAV_VALUES.map(
           ({ key, title, path }, index) => {
             const isActive = pathname === path;
 
             return (
               <Fragment key={key}>
-                {index !== 0 && (
-                  <Item className='p-2 md:p-0.5' />
-                )}
                 <Item
                   className={clsx('relative px-1', [
                     isActive ? 'z-10' : 'z-0',

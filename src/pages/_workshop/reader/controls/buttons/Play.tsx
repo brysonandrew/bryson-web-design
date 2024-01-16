@@ -1,8 +1,8 @@
 import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
 import { useReader } from '@pages/_workshop/reader/context';
-import { GLOW_BABY_BLUE_4 } from '@uno/rules/glow';
-import { I } from '@lib/components/decoration/Icon';
+import { I } from '@lib/icons/icon';
+import { STYLE } from '@app/style';
 
 export const Play = () => {
   const {
@@ -18,7 +18,7 @@ export const Play = () => {
       style={{
         boxShadow:
           clipboardContext.copying === 'pending'
-            ? GLOW_BABY_BLUE_4
+            ? STYLE.GLOW.accent
             : '',
       }}
     >

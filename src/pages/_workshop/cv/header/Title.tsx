@@ -5,20 +5,19 @@ import { motion } from 'framer-motion';
 const Root = styled(motion.div)``;
 
 export const Title = () => (
-  <Root className='column'>
-    <div className='column-start whitespace-nowrap'>
-      <h2 style={{ fontSize: 33, lineHeight: 1 }}>
-        Andrew Bryson
-      </h2>
-      <Sub
-        className='whitespace-nowrap'
-        style={{
-          fontSize: 17,
-          textTransform: 'uppercase',
-        }}
-      >
-        Front-end web developer
-      </Sub>
-    </div>
-  </Root>
+  <div className='column-start whitespace-nowrap text-white-5'>
+    <h2 style={{ fontSize: 42, lineHeight: 1 }}>
+      Andrew Bryson
+    </h2>
+    <Sub
+      className='whitespace-nowrap'
+      style={{
+        fontSize: 21,
+        textTransform: 'uppercase',
+        letterSpacing: 0.25,
+      }}
+    >
+      Front-end web developer
+    </Sub>
+  </div>
 );

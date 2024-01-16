@@ -4,13 +4,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { TDivMotionProps } from '@lib/types/dom';
-import {
-  resolveColor,
-  resolveGlowColor,
-  resolveHoverColor,
-} from './config';
-const BORDER_SIZE = 2;
-const WIDTH = `calc(0.5rem + ${BORDER_SIZE * 2}px)`;
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.div)``;
 
@@ -22,7 +16,8 @@ export const Mark: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { isDarkMode, darkKey } = useDarkMode();
+  const { BORDER_RADIUS, COLOR } = useApp();
+  const { darkKey } = useDarkMode();
   return (
     <Root
       key={darkKey}
@@ -31,18 +26,18 @@ export const Mark: FC<TProps> = ({
         classValue,
       )}
       style={{
-        width: WIDTH,
+        width: `calc(0.5rem + 4px)`,
         height: '100%',
+        borderRadius: BORDER_RADIUS.SM,
         ...(style ?? {}),
       }}
       initial={false}
       variants={{
         animate: {
-          ...resolveColor(isDarkMode),
-          ...resolveGlowColor(isDarkMode),
+          backgroundColor: COLOR['secondary'],
         },
         hover: {
-          ...resolveHoverColor(isDarkMode),
+          backgroundColor: COLOR['accent'],
         },
       }}
       {...props}

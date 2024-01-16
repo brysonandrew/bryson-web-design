@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@lib/components/layout/Section';
-import { Parallax } from '@lib/components/animation/parallax';
+import { Parallax } from '@lib/animation/components/parallax';
 import { FAKE_3D_PROPS } from './constants';
 import { Provider } from '@pages/index/build/context/Provider';
 import { Fade } from './Fade';
@@ -15,7 +15,7 @@ const Build: FC = () => {
       {(props) => (
         <Section
           title={
-            <motion.div className='relative w-core row-wrap justify-center gap-4 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'>
+            <motion.div className='relative w-core row-wrap justify-center gap-4 text-5xl z-20 sm:text-6xl lg:text-7xl xl:text-8xl'>
               <Title>{SECTION_RECORD.build}</Title>
             </motion.div>
           }

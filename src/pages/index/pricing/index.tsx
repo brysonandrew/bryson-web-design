@@ -1,4 +1,4 @@
-import { Parallax } from '@lib/components/animation/parallax';
+import { Parallax } from '@lib/animation/components/parallax';
 import { Main } from '@pages/pricing/Main';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './constants';

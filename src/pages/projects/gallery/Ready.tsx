@@ -42,8 +42,8 @@ export const Ready = <T extends string>({
 
   return (
     <Root
-      className='fixed inset-0 column text-g-tb z-20'
-      style={{ z: viewportWidth }}
+      className='fixed inset-0 column z-50'
+      style={{ z: viewportWidth, zIndex: 9999 }}
     >
       <Header slug={currProject} />
       <Background />

@@ -19,7 +19,7 @@ export const TextLines: FC<TProps> = ({
         <li
           key={`${index}`}
           className={clsx(
-            'w-full rounded-md',
+            'w-full',
             height,
             classValue ?? 'bg-main',
           )}

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TParallaxMotionChildrenProps } from '@lib/components/animation/parallax/config';
+import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
 import { useInView } from 'react-intersection-observer';
 import { SECTIONS } from './config';
 
@@ -22,7 +22,7 @@ export const Main: FC<TProps> = ({ style, rect }) => {
         ...style,
       }}
     >
-      <div className='column gap-24 text-xl text-g-bb px-4 md:px-0'>
+      <div className='column gap-24 text-xl  px-4 md:px-0'>
         {SECTIONS.map((Section) => (
           <Section key={Section.name} />
         ))}

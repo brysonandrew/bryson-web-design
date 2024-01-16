@@ -3,7 +3,7 @@ import { FadeUp } from '@lib/components/decoration/vertical-fade/FadeUp';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@lib/constants/animation';
+} from '@lib/animation/constants';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useViewport as useViewportContext } from '@lib/context/viewport';
 import { AnimatePresence, motion } from 'framer-motion';
