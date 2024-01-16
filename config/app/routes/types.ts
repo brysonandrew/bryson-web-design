@@ -8,11 +8,13 @@ export type TSectionTitle =
 
 export type TPageTitle = (typeof PAGE_TITLES)[number];
 export type TPageKey = TTTitleToKebab<TPageTitle>;
-export type TPagePath = `/${TPageKey}`;
+type TPath<T extends string> = T extends 'Index'
+  ? '/'
+  : `/${TTTitleToKebab<T>}`;
 export type TPage<T extends TPageTitle = TPageTitle> = {
   key: TTTitleToKebab<T>;
   title: T;
-  path: `/${TTTitleToKebab<T>}`;
+  path: TPath<T>;
 };
 
 export type TPageRecord = Record<TPageKey, TPage>;

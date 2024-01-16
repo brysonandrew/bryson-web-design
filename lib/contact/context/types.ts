@@ -3,7 +3,7 @@ import {
   TFormKey,
   TFormState,
   TStatus,
-} from '@pages/contact/config';
+} from '@lib/contact/config/types';
 
 export type TContext = TContactState & {
   onFocus(value: TFormKey | null): void;

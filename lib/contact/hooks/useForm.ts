@@ -5,8 +5,8 @@ import {
   TFocusEvent,
   TFormKey,
   TInputHandlers,
-} from '../../config';
-import { useContact } from '@pages/index/contact/context';
+} from '../config/types';
+import { useContact } from '@lib/contact/context';
 
 type TConfig = {
   element: HTMLFormElement | null;

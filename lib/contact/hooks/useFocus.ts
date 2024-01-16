@@ -1,4 +1,4 @@
-import { TInputElement } from '@pages/contact/config';
+import { TInputElement } from '@lib/contact/config/types';
 import { useScroll } from '@lib/context/scroll';
 import { useEffect } from 'react';
 

@@ -7,10 +7,9 @@ import { Clear } from './Clear';
 import {
   TFormKey,
   TInputElement,
-} from '@pages/contact/config';
+} from '@lib/contact/config/types';
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { Mark } from '@components/decoration/mark';
 import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
@@ -33,13 +32,7 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
-  const {
-    Active,
-    Glow,
-    BORDER_RADIUS,
-    TextureGlow,
-    COLOR,
-  } = useApp();
+  const { Active, BORDER_RADIUS, TextureGlow } = useApp();
   const handleFocus = useFocus(input, isFocused);
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,

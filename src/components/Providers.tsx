@@ -8,7 +8,7 @@ import { Provider as CursorProvider } from '@lib/cursor/context/Provider';
 import { Provider as ViewerProvider } from '@lib/gallery/viewer/context/Provider';
 import { Provider as GalleryProvider } from '@lib/gallery/context/Provider';
 import { Provider as ServicesProvider } from '@pages/index/pricing/context/Provider';
-import { Provider as ContactProvider } from '@pages/index/contact/context/Provider';
+import { Provider as ContactProvider } from '@lib/contact/context/Provider';
 import { Provider as ViewportProvider } from '@lib/context/viewport/Provider';
 
 import { TChildren } from '@lib/types/dom';
