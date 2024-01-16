@@ -1,7 +1,3 @@
-import {
-  TTKebabToTitle,
-  TTTitleToKebab,
-} from '@lib/types/transformers/format/title';
 import { TPricingKey } from '@pages/pricing/config/types';
 
 export type TTag = {

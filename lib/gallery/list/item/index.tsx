@@ -11,16 +11,18 @@ import { NOOP } from '@lib/constants/functions';
 import { useCursor } from '@lib/cursor/context';
 import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@lib/gallery/config/types';
-import { RightCollapsed } from './RightCollapsed';
 import { useToFirst } from '@lib/gallery/viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '@lib/gallery/context/useGallery';
 
 type TProps = TSlugProps & {
   index: number;
-}; 
+};
 export const Item: FC<TProps> = ({ slug, index }) => {
-  const { ITEMS_RECORD } = useGallery();
+  const {
+    ITEMS_RECORD,
+    List: { RightHeader },
+  } = useGallery();
   const { hoverKey } = useCursor();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();
@@ -81,10 +83,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
         slug={item.slug}
         isHover={isHover}
         rightHeader={
-          <RightCollapsed
-            isHover={isParentHover}
-            slug={slug}
-          />
+          <RightHeader slug={slug} isHover={isHover} />
         }
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete
