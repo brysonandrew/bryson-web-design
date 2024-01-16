@@ -1,6 +1,6 @@
 export const BORDER_RADIUS = {
-  SM: '0.125rem',
-  MD: '0.375rem',
-  LG: '0.5rem',
-  XL: '4rem',
+  SM: 2,
+  MD: 4,
+  LG: 8,
+  XL: 40,
 } as const;

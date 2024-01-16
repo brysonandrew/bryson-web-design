@@ -1,4 +1,9 @@
-import { TItem, TItems } from '@lib/gallery/config/types';
+import {
+  TItem,
+  TItems,
+  TSlugProps,
+} from '@lib/gallery/config/types';
+import { FC } from 'react';
 
 export type TItemsConfig<
   T extends string,
@@ -9,7 +14,14 @@ export type TItemsConfig<
   SLUGS: K[];
 };
 
+export type TGalleryConfig = {
+  Viewer: { RightHeader: FC<TSlugProps> };
+  List: {
+    RightHeader: FC<TSlugProps & { isHover?: boolean }>;
+  };
+};
+
 export type TContext<
   T extends string = string,
   K extends string = string,
-> = TItemsConfig<T, K>;
+> = TItemsConfig<T, K> & TGalleryConfig;

@@ -13,9 +13,7 @@ import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject'
 import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { TSlugProps } from '@lib/gallery/config/types';
-import { Badge } from '@pages/pricing/badge';
 import { useApp } from '@lib/context/app/useApp';
-import { useGallery } from '@lib/gallery/context/useGallery';
 
 type TProps = TSlugProps &
   TClassValueProps &
@@ -34,10 +32,8 @@ export const Content: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { ITEMS_RECORD } = useGallery();
   const { TextureGlow, Texture, BORDER_RADIUS, Active } =
     useApp();
-  const { pricing } = ITEMS_RECORD[slug];
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -110,14 +106,8 @@ export const Content: FC<TProps> = ({
           {!isTransitioning && (
             <motion.div
               key={isProject ? 'project' : slug}
-              className={clsx(
-                'gap-4',
-                isProject
-                  ? 'column-end lg:row'
-                  : 'column-end-reverse lg:row-reverse',
-              )}
+              className={clsx('gap-4 column-end lg:row')}
             >
-              <Badge type={pricing} isHover />
               {rightHeader}
             </motion.div>
           )}
