@@ -6,7 +6,7 @@ export const Shell: FC<PropsWithChildren> = ({
   children,
 }) => {
   return (
-    <div className='relative h-36 column-start-center gap-2 px-8 w-full bg-main rounded-md'>
+    <div className='relative h-36 column-start-center gap-2 px-8 w-full bg-main'>
       <Focus>{CONTACT_FORM}</Focus>
       {children}
     </div>

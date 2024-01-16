@@ -21,13 +21,6 @@ export type {
 } from "./element";
 export type { TTapEvent } from "./event";
 export type {
-	TBaseIconProps,
-	TBaseIconMotionProps,
-	TIconComponent,
-	TIconConfig,
-	TIconConfigProps
-} from "../../icons/icon";
-export type {
 	TError,
 	TEmptyRecord,
 	TAnyRecord,

@@ -1,8 +1,9 @@
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
 import { FC, SelectHTMLAttributes } from 'react';
+import { STYLE } from '@app/style';
+import { useApp } from '@lib/context/app/useApp';
 
 const inputCss = css``;
 
@@ -149,11 +150,16 @@ export const Shell: FC<TProps> = ({
   children,
   ...props
 }) => {
+  const { BORDER_RADIUS, GLOW } = useApp();
+
   return (
     <div className='relative'>
       <Select
-        className='relative rounded-sm pl-4 pr-10 py-2 bg-black-2'
-        style={{ boxShadow: GLOW_BABY_BLUE_1 }}
+        className='relative pl-4 pr-10 py-2 bg-black-2'
+        style={{
+          boxShadow: GLOW.accent,
+          borderRadius: BORDER_RADIUS.MD,
+        }}
         {...props}
       >
         {children}

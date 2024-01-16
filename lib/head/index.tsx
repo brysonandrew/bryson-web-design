@@ -11,8 +11,8 @@ export const Head = () => {
     ? COLOR_VARS_RECORD['black']
     : COLOR_VARS_RECORD['white'];
   const highlight = isDarkMode
-    ? COLOR_VARS_RECORD['dark-highlight']
-    : COLOR_VARS_RECORD['light-highlight'];
+    ? COLOR_VARS_RECORD['secondary']
+    : COLOR_VARS_RECORD['accent'];
 
   return (
     <Helmet>

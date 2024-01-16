@@ -1,4 +1,9 @@
-import { TDivMotionProps, TClassValueProps, TChildren } from '@lib/types/dom';
+import { useApp } from '@lib/context/app/useApp';
+import {
+  TDivMotionProps,
+  TClassValueProps,
+  TChildren,
+} from '@lib/types/dom';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -14,13 +19,16 @@ export const Circle: FC<TProps> = ({
   children,
   ...props
 }) => {
+  const { BORDER_RADIUS } = useApp();
+
   return (
     <motion.div
       className={clsx(
-        'w-5 h-5 center rounded-full bg-main text-main text-xs border-gray border',
+        'w-5 h-5 center bg-main text-main text-xs border-gray border',
         isActive && 'glow-secondary',
         classValue,
       )}
+      style={{ borderRadius: BORDER_RADIUS.XL }}
       {...props}
     >
       {children}

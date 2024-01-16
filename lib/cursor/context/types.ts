@@ -3,7 +3,6 @@ import { THoverKey } from '@lib/cursor/hooks/config';
 import { TOffsetRef } from '@lib/cursor/hooks/useCursorOffset';
 import { TMotionPoint } from '@lib/animation/types';
 import { TChildren } from '@lib/types/dom';
-import { FC } from 'react';
 export type THover = {
   hoverKey: THoverKey;
   children: TChildren;
@@ -12,11 +11,9 @@ export type TState = ReturnType<
   typeof resolveHoverKeyVariations
 > & {
   isCursorReady: boolean;
-
 };
 
 export type TContext = TState & {
-  Background: FC;
   offsetRef: TOffsetRef;
   cursor: TMotionPoint;
   cursorLabel: TMotionPoint;

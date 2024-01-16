@@ -1,15 +1,14 @@
 import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
-import { resolvePresence } from '@lib/animation/utils';
 import clsx from 'clsx';
+import { resolvePresence } from '@lib/animation/utils';
 import { TClassValueProps } from '@lib/types/dom/main';
-import {
-  GLOW_TEAL_BRIGHT_4,
-  GLOW_TEAL_1_BABY_BLUE_1,
-} from '@uno/rules/glow';
 import { useCursor } from '@lib/cursor/context';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { DURATION_MID } from '@lib/animation/constants';
+import {
+  DURATION_MID,
+  PRESENCE_OPACITY,
+} from '@lib/animation/constants';
+import { useApp } from '@lib/context/app/useApp';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
@@ -22,20 +21,18 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { cursorLabel, Background } = useCursor();
-  const { isDarkMode } = useDarkMode();
+  const { Texture, Glow, BORDER_RADIUS, COLOR } = useApp();
+  const { cursorLabel } = useCursor();
 
   return (
     <motion.div
       className={clsx(
-        'absolute top-1/2 left-1/2 text-xl px-2 rounded-md',
+        'absolute top-1/2 left-1/2 text-xl px-2',
         classValue,
       )}
       style={{
         ...cursorLabel,
-        boxShadow: isDarkMode
-          ? GLOW_TEAL_BRIGHT_4
-          : GLOW_TEAL_1_BABY_BLUE_1,
+        borderRadius: BORDER_RADIUS.MD,
       }}
       {...resolvePresence(
         {
@@ -54,7 +51,13 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
-      <Background />
+      <Glow
+        box={4}
+        color={COLOR.accent}
+        {...PRESENCE_OPACITY}
+      >
+        <Texture />
+      </Glow>
       {children}
     </motion.div>
   );

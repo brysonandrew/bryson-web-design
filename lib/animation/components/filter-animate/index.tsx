@@ -1,3 +1,4 @@
+import { TDivMotionProps } from '@lib/types/dom';
 import {
   TChildrenPartialProps,
   TClassValueProps,
@@ -6,7 +7,8 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
-export type TFilterAnimateProps = TClassValueProps &
+export type TFilterAnimateProps = TDivMotionProps &
+  TClassValueProps &
   TChildrenPartialProps;
 export const FilterAnimate: FC<TFilterAnimateProps> = ({
   classValue,

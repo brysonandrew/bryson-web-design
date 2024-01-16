@@ -9,10 +9,10 @@ import {
   resolveBrightenProps,
 } from '@lib/animation/components/filter-animate/utils/brighten';
 
-type TProps = TPartialBrightenConfigOptions &
+export type TBrightenProps = TPartialBrightenConfigOptions &
   TClassValueProps &
   TChildrenPartialProps;
-export const Brighten: FC<TProps> = ({
+export const Brighten: FC<TBrightenProps> = ({
   children,
   ...options
 }) => {

@@ -5,8 +5,11 @@ import { ParagraphLines } from '../website/layouts/ParagraphLines';
 import { RESPONSIVE_COST } from '../website/config';
 import { Annotations } from '../website/layouts/Annotations';
 import { Section } from '../Section';
+import { useApp } from '@lib/context/app/useApp';
 
 export const Responsive = () => {
+  const { BORDER_RADIUS, Blank } = useApp();
+
   return (
     <Section title='Upgrade: Mobile Friendly'>
       <div className='column-stretch gap-6'>
@@ -26,20 +29,20 @@ export const Responsive = () => {
           <div className='relative column w-full'>
             <div className='relative w-11/12'>
               <View classValue='px-4'>
-                <div className='h-60 w-full bg-main rounded-md' />
+                <div className='h-60 w-full bg-main' />
               </View>
             </div>
             <div className='absolute left-1/2 -bottom-6 -translate-x-1/2 row-end w-full gap-16'>
-              <div className='w-1/6 glow-bw'>
+              <div className='w-1/6'>
                 <View>
                   <Container>
-                    <div className='h-28 bg-main rounded-md' />
+                    <Blank className='h-28 bg-main' />
                   </Container>
                 </View>
               </div>
-              <div className='w-5/6 glow-bw'>
+              <div className='w-5/6'>
                 <View classValue='px-4'>
-                  <div className='h-40 w-full bg-main rounded-md' />
+                  <Blank className='h-40 w-full bg-main' />
                 </View>
               </div>
             </div>

@@ -88,14 +88,14 @@ export const metalRadialCss = css`
 
 export const metalRadialLightCss = css`
   ${baseRadialMetalCss}
-  filter: brightness(100%);
-  opacity: 0.4;
+  filter: brightness(80%);
+  opacity: 0.11;
 `;
 
 export const metalRadialLightestCss = css`
   ${baseRadialMetalCss}
-  filter: brightness(110%);
-  opacity: 0.4;
+  filter: brightness(100%);
+  opacity: 0.2;
 `;
 
 export const metalRadialDarkCss = css`

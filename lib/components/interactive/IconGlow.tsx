@@ -1,6 +1,6 @@
 import { Glow } from '@lib/animation/components/filter-animate/Glow';
-import { TIconComponent } from '@lib/icons/icon';
 import { TPartialGlowConfigOptions } from '@lib/animation/components/filter-animate/utils/glow';
+import { TIconComponent } from '@lib/icons/type';
 import { FC } from 'react';
 
 type TProps = TPartialGlowConfigOptions & {
@@ -11,7 +11,7 @@ export const IconGlow: FC<TProps> = ({
   ...glowProps
 }) => {
   return (
-    <Glow drop={4} color='white-9' {...glowProps}>
+    <Glow drop={4} {...glowProps}>
       <Icon classValue='relative' />
     </Glow>
   );

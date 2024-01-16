@@ -8,20 +8,16 @@ import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@pages/projects/gallery/tips/Touch';
 import { P2 } from '@lib/components/layout/space/P2';
-import {
-  resolveColor,
-  resolveGlowColor,
-  resolveHoverColor,
-} from '@components/decoration/mark/config';
 import { createPortal } from 'react-dom';
 import { isDesktop } from 'react-device-detect';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
+import { useApp } from '@lib/context/app/useApp';
 
 export const Tips = () => {
+  const { secondary, accent, BORDER_RADIUS } = useApp();
   const currProject = useCurrProject();
   const { hoverKey } = useCursor();
   const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
-  const { isDarkMode } = useDarkMode();
   return (
     <>
       {!isDesktop && (
@@ -35,10 +31,10 @@ export const Tips = () => {
                 >
                   <motion.li
                     key='FIRST'
-                    className='relative row top-0 p-1 rounded-full'
+                    className='relative row top-0 p-1'
                     style={{
-                      ...resolveColor(isDarkMode),
-                      ...resolveGlowColor(isDarkMode),
+                      ...secondary,
+                      borderRadius: BORDER_RADIUS.XL,
                     }}
                     {...PRESENCE_OPACITY}
                   >
@@ -48,10 +44,10 @@ export const Tips = () => {
                   {cursorKey === PROJECT_CURSOR_KEY && (
                     <motion.li
                       key='SECOND'
-                      className='p-1 row rounded-full'
+                      className='p-1 row'
                       style={{
-                        ...resolveHoverColor(isDarkMode),
-                        ...resolveGlowColor(isDarkMode),
+                        ...accent,
+                        borderRadius: BORDER_RADIUS.XL,
                       }}
                       {...PRESENCE_OPACITY}
                     >

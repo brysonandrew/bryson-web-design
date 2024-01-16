@@ -32,7 +32,7 @@ export const Close: FC<TProps> = ({
         title='Close'
         onClick={onClick}
         {...handlers}
-      />
+      /> 
     </Circle>
   );
 };

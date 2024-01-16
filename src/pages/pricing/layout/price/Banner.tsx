@@ -1,11 +1,16 @@
+import { useApp } from '@lib/context/app/useApp';
 import { TClassValueProps } from '@lib/types/dom';
 import { FC, PropsWithChildren } from 'react';
 
 export const Banner: FC<
   PropsWithChildren<TClassValueProps>
 > = ({ children }) => {
+  const { BORDER_RADIUS } = useApp();
   return (
-    <div className='row gap-2 absolute left-1/2 bottom-full -translate-x-1/2 translate-y-2/5 bg-red px-2 py-1 text-main-inverted text-xl rounded-md whitespace-nowrap uppercase'>
+    <div
+      className='row gap-2 absolute left-1/2 bottom-full -translate-x-1/2 translate-y-2/5 bg-red px-2 py-1 text-main-inverted text-xl whitespace-nowrap uppercase'
+      style={{ borderRadius: BORDER_RADIUS.SM }}
+    >
       {children}
     </div>
   );

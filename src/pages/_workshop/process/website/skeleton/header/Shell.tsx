@@ -7,7 +7,7 @@ export const Shell: FC<PropsWithChildren> = ({
   return (
     <header
       className={clsx(
-        'relative row-space w-full px-8 h-12 bg-main rounded-md',
+        'relative row-space w-full px-8 h-12 bg-main',
       )}
     >
       {children}

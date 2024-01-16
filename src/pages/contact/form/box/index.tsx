@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren } from '@lib/types/dom';
 import { Clear } from './Clear';
-import { MetalGlow } from '@components/decoration/metal/MetalGlow';
 import {
   TFormKey,
   TInputElement,
@@ -34,28 +33,35 @@ export const Box: FC<TProps> = ({
   input,
   children,
 }) => {
-  const { BackgroundGlow1 } = useApp();
+  const {
+    Active,
+    Glow,
+    BORDER_RADIUS,
+    TextureGlow,
+    COLOR,
+  } = useApp();
   const handleFocus = useFocus(input, isFocused);
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
   );
-  const borderRadiusClass = 'rounded';
 
   return (
     <Root
-      className={clsx('relative input-label', [
-        isDisabled ? '' : 'glow',
-        borderRadiusClass,
-      ])}
+      className={clsx(
+        'relative column-start w-full p-2 md:flex-row',
+      )}
+      style={{
+        borderRadius: BORDER_RADIUS.MD,
+      }}
       {...(isDisabled
         ? {}
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <BackgroundGlow1 />
+      <TextureGlow />
       {isFocused && (
-        <Mark
+        <Active
           layoutId='CONTACT_FORM_INPUT_LAYOUT_ID'
           classValue='z-50'
         />

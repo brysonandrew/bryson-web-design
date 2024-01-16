@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { P_5 } from '@lib/components/layout/space/P_5';
-import { TBaseIconProps } from '@lib/icons/icon';
 import { TRANSITION } from '@lib/animation/constants';
 import { TChildren } from '@lib/types/dom/main';
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
+import { TBaseIconProps } from '@lib/icons/type';
 
 type TProps = {
   children: TChildren;

@@ -1,4 +1,5 @@
 import {
+  TDigit,
   TOpacityRangeRecordKey,
   TRgb,
   TRgbaValue,
@@ -21,7 +22,7 @@ export const resolveColorOpacityRange = <T extends string>(
           [key]: varRgb(value),
         };
       }
-      const next = varRgb(value, index);
+      const next = varRgb(value, index as TDigit);
       return {
         ...a,
         [`${key}-0${index}`]: next,

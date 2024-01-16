@@ -15,7 +15,7 @@ export const Animation: FC<TChildrenString> = ({
         >
           {index % 2 === 0 ? (
             <ShiftUp
-              classValue='font-thin'
+              classValue='font-extralight'
               staggerIndex={index}
             >
               {word}

@@ -5,14 +5,17 @@ import { FC } from 'react';
 import { PADDING_X } from './config';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
-import { COLOR_VARS_RECORD } from '@app/colors/constants';
 import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
 
 type TProps = {
   classValue?: ClassValue;
 };
 export const DragIcon: FC<TProps> = ({ classValue }) => {
+  const {
+    COLOR,
+    GLOW: { DROP },
+  } = useApp();
   const { isDarkMode } = useDarkMode();
 
   const { isHover, ...handlers } = useHoverKey(
@@ -30,32 +33,24 @@ export const DragIcon: FC<TProps> = ({ classValue }) => {
       animate={variant}
       whileTap='tap'
       style={{
+        filter: DROP['accent'],
         width: PADDING_X,
       }}
       variants={{
         animate: {
           cursor: 'grab',
-          color: isDarkMode
-            ? COLOR_VARS_RECORD['white-9']
-            : COLOR_VARS_RECORD['gray'],
-          filter: resolveDropShadow(0),
+          color: COLOR['white'],
         },
         hover: {
           cursor: 'grab',
-          filter: isDarkMode
-            ? resolveDropShadow(2, 'white-9')
-            : resolveDropShadow(2, 'secondary'),
           color: isDarkMode
-            ? COLOR_VARS_RECORD['white-9']
-            : COLOR_VARS_RECORD['gray'],
+            ? COLOR['white-9']
+            : COLOR['gray'],
         },
         tap: {
-          filter: isDarkMode
-            ? resolveDropShadow(4, 'highlight')
-            : resolveDropShadow(4, 'secondary'),
           color: isDarkMode
-            ? COLOR_VARS_RECORD['highlight']
-            : COLOR_VARS_RECORD['gray'],
+            ? COLOR['highlight']
+            : COLOR['gray'],
           cursor: 'grabbing',
         },
       }}

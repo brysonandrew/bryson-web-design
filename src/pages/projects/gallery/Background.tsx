@@ -21,7 +21,7 @@ export const Background: FC = () => {
       className={clsx('absolute inset-0')}
       style={{
         backgroundColor: `rgba(${
-          isDarkMode ? '12,12,12' : '234,234,234'
+          isDarkMode ? '12, 12,12' : '234,234,234'
         }, ${isMobile ? 0.95 : isDarkMode ? 0.6 : 0.4})`,
       }}
       {...PRESENCE_OPACITY}

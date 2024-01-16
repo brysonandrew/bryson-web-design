@@ -8,7 +8,7 @@ export const View: FC<
   return (
     <div
       className={clsx(
-        'relative w-full h-full py-4 bg-main-inverted rounded-lg',
+        'relative w-full h-full py-4 bg-main-inverted',
         classValue,
       )}
     >

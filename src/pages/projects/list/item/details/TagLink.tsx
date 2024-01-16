@@ -12,9 +12,10 @@ import {
 } from '@lib/utils/key';
 import { useCursor } from '@lib/cursor/context';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
-import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
 import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
+import { formatUrl } from '@lib/utils/format/url';
+import { Visit } from '@lib/cursor/switch/format/Visit';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &
@@ -38,14 +39,20 @@ export const TagLink: FC<TProps> = ({
   const isHover = hoverKey === hoverKeyIn;
 
   const handleHoverStart = () => {
+    const address = formatUrl(href);
     onHoverKey({
       hoverKey: hoverKeyIn,
-      children: <span>{href}</span>,
+      children: <Visit>{address}</Visit>,
     });
   };
   const handleHoverEnd = () => {
-    const [f, s, t, children] = resolveHoverKeyArgs(slug);
-    const hoverKeyOut = resolveCompositeHoverKey(f, s, t);
+    const [cursorKey, textKey, iconKey, children] =
+      resolveHoverKeyArgs(slug);
+    const hoverKeyOut = resolveCompositeHoverKey(
+      cursorKey,
+      textKey,
+      iconKey,
+    );
     onHoverKey({
       hoverKey: hoverKeyOut,
       children,

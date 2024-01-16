@@ -18,7 +18,7 @@ export const Money: FC<TProps> = ({
     <span
       className={clsx(
         'relative  whitespace-nowrap',
-        // classValue ?? 'text-g-bb',
+        // classValue ?? '',
       )}
     >
       {prefix}

@@ -1,5 +1,5 @@
 import { Focus } from '@pages/_workshop/process/focus';
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
 import { PRESENCE_OPACITY } from '@lib/animation/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { AnimatePresence, motion } from 'framer-motion';

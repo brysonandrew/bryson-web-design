@@ -7,7 +7,7 @@ export const Offline: FC = () => {
   return (
     <motion.div
       layoutId='OFFLINE_LAYOUT_ID'
-      className='relative text-b2-w9 px-6 uppercase z-10'
+      className='relative px-6 uppercase z-10'
     >
       <motion.div className='row' layout='position'>
         <Icon />

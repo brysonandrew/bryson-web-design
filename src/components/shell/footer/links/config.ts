@@ -1,4 +1,4 @@
-import { TBaseIconProps } from '@lib/icons/icon';
+import { TBaseIconProps } from '@lib/icons/type';
 import { FC } from 'react';
 
 export type TLink = {

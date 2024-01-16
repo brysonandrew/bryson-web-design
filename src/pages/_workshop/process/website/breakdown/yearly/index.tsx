@@ -7,7 +7,7 @@ import { List } from './List';
 
 export const Yearly = () => {
   return (
-    <div className='column-start-stretch gap-4 relative text-g-bb p-4 rounded-md glow'>
+    <div className='column-start-stretch gap-4 relative  p-4'>
       <b className='uppercase '>
         Yearly cost breakdown
       </b>
@@ -15,7 +15,7 @@ export const Yearly = () => {
       <List />
       <P2 />
       <div>
-        <div className='row-space w-full text-g-bb'>
+        <div className='row-space w-full '>
           <b className='uppercase '>
             Projected total per year
           </b>

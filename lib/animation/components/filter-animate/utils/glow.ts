@@ -1,31 +1,44 @@
 import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { MotionValue } from 'framer-motion';
-import { TColorRgbKey } from '@lib/color/types';
-import { resolveDropShadow } from '@uno/rules/glow/resolveDropShadow';
-import { resolveShadowLg } from '@uno/rules/glow/resolveShadowLg';
-import { TColorKey } from '@app/colors/types';
+import { resolveDropShadow } from '@lib/color/utils/glow/resolveDropShadow';
+import { TColorValue } from '@app/colors/types';
+import { resolveBoxShadow } from '@lib/color/utils/glow/resolveBoxShadow';
+import { TFilterAnimateProps } from '..';
+import { resolveVarCss } from '@lib/color/utils/resolveVarCss';
 
 export type TGlowConfigOptions = {
   text?: number;
+  box?: number;
   drop?: number;
-  color?: TColorRgbKey<TColorKey>;
+  color?: TColorValue;
   value?: MotionValue;
 };
 export type TPartialGlowConfigOptions =
-  Partial<TGlowConfigOptions>;
+  Partial<TGlowConfigOptions> & TFilterAnimateProps;
 export const resolveGlowProps = ({
   text = 0,
+  box = 0,
   drop = 0,
-  color = 'secondary',
+  color = resolveVarCss('white'),
   value,
-}: TGlowConfigOptions) => ({
+  style,
+  ...rest
+}: TPartialGlowConfigOptions) => ({
   style: {
     opacity: value ?? 0,
-    textShadow: resolveShadowLg(text, color),
-    filter: resolveDropShadow(drop, color),
+    ...(text > 0
+      ? { textShadow: resolveBoxShadow(color, text) }
+      : {}),
+    ...(box > 0
+      ? { boxShadow: resolveBoxShadow(color, box) }
+      : {}),
+    ...(drop > 0
+      ? { filter: resolveDropShadow(color, drop) }
+      : {}),
+    ...style,
   },
   transition: EFFECT_ANIMATE_TRANSITION,
-  variants: value
+  ...(value
     ? {}
     : {
         animate: {
@@ -34,5 +47,6 @@ export const resolveGlowProps = ({
         hover: {
           opacity: 1,
         },
-      },
+      }),
+  ...rest,
 });

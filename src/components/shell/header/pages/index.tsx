@@ -33,8 +33,8 @@ export const Pages = () => {
       >
         <I
           classValue={clsx(
-            'absolute left-1 top-1 h-6 w-6 mr-2 text-g-bb',
-            isHome && 'text-b-w9',
+            'absolute left-1 top-1 h-6 w-6 mr-2 ',
+            isHome && '9',
           )}
           icon='material-symbols:home'
         />

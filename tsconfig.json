@@ -32,6 +32,6 @@
   //   "config/**/*.tsx"
   // ],
   "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.tsx"],
-  "exclude": [],
+  "exclude": ["/.cemetary/**/*"],
   "extends": "./tsconfig.paths.json"
 }

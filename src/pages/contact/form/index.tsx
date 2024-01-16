@@ -24,7 +24,6 @@ export const Form = () => {
     <Root
       className='column-start mt-1'
       initial={false}
-      animate={{}}
       ref={ref}
       onSubmit={(event) => {
         if (!isDisabled) {
