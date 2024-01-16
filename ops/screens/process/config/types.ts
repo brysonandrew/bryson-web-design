@@ -1,4 +1,3 @@
-import { TProjectKey } from '@pages/projects/config/types';
 import type { Metadata, OutputInfo } from 'sharp';
 import { TSource } from '@lib/types/dom/element';
 import { TScreensLookup } from './screens';
@@ -49,9 +48,9 @@ export type TMediaRecord = TAppMeta &
   };
 export type TMediaRecords = TMediaRecord[];
 
-export type TMediaDetails = {
+export type TMediaDetails<T extends string> = {
   key: string;
-  project: TProjectKey;
+  project: T;
   file: string;
   name: string;
   ext: TExtKey;

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from '../../components/content';
-import { PROJECT_ITEMS_RECORD } from '@app/gallery/items';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { useOnSound } from '@lib/hooks/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
@@ -15,11 +14,13 @@ import { TSlugProps } from '@lib/gallery/config/types';
 import { RightCollapsed } from './RightCollapsed';
 import { useToFirst } from '@lib/gallery/viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
+import { useGallery } from '@lib/gallery/context/useGallery';
 
 type TProps = TSlugProps & {
   index: number;
-};
+}; 
 export const Item: FC<TProps> = ({ slug, index }) => {
+  const { ITEMS_RECORD } = useGallery();
   const { hoverKey } = useCursor();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();
@@ -38,7 +39,7 @@ export const Item: FC<TProps> = ({ slug, index }) => {
   const isHover = secondaryKey === slug;
   const isChildHover = isHover && !isParentHover;
 
-  const item = PROJECT_ITEMS_RECORD[slug];
+  const item = ITEMS_RECORD[slug];
   const navigate = useNavigate();
   const handleOnSound = useOnSound();
   const to = useToFirst(slug);

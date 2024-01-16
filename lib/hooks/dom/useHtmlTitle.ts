@@ -2,12 +2,11 @@ import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
 } from '@lib/utils/key';
-import { useCurrParams } from '@pages/projects/gallery/hooks/params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@lib/utils/format';
-import { useEffect } from 'react';
 import { APP_DESCRIPTION } from '@app/base/constants';
 import { PAGE_NAV_VALUES } from '@app/routes/constants/pages';
+import { useCurrParams } from '@lib/gallery/viewer/hooks/params/useCurrParams';
 
 const TITLE_FROM_PATHNAME_LOOKUP: Record<
   string,

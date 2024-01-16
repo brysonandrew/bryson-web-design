@@ -1,12 +1,15 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format/camel';
+import {
+  TTKebabToTitle,
+  TTTitleToKebab,
+} from '@lib/types/transformers/format/title';
 import { TPricingKey } from '@pages/pricing/config/types';
 
 export type TTag = {
   title: string;
   href?: string;
 };
-export type TItemInit<K extends string = string> = {
-  title: K;
+export type TInitItem<T extends string = string> = {
+  title: T;
   description: string;
   pricing: TPricingKey;
   paragraphs?: readonly string[];
@@ -17,15 +20,18 @@ export type TItemInit<K extends string = string> = {
   altTo?: string;
 };
 
-export type TInitItems<K extends string = string> =
-  TItemInit<K>[];
+export type TInitItems<T extends string = string> =
+  readonly TInitItem<T>[];
 
-export type TItem<K extends string = string> =
-  TItemInit<K> & {
-    slug: TTTitleToKebab<K>;
-  };
+export type TSlugProps<K extends string = string> = {
+  slug: K;
+};
 
-export type TSlugProps<K extends string = string> = Pick<
-  TItem<K>,
-  'slug'
->;
+export type TItem<
+  T extends string = string,
+  K extends string = string,
+> = TInitItem<T> & TSlugProps<K>;
+export type TItems<
+  T extends string = string,
+  K extends string = string,
+> = readonly TItem<T, K>[];

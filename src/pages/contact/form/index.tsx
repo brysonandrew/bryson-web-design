@@ -8,7 +8,7 @@ import { P3 } from '@lib/components/layout/space/P3';
 import { Text } from './Text';
 import { Textarea } from './textarea';
 import { P6 } from '@lib/components/layout/space/P6';
-import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
+import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
 
 const Root = styled(motion.form)``;
 

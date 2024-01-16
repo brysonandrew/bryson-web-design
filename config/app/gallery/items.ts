@@ -1,11 +1,4 @@
 import {
-  TItemInit,
-  TItem,
-  TProjectItemRecord,
-  TInitItems,
-} from '@lib/gallery/config/types';
-import { titleToKebab } from '@lib/utils/format';
-import {
   REACT,
   TYPESCRIPT,
   FRAMER_MOTION,

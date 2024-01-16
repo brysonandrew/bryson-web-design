@@ -1,4 +1,4 @@
-import { TItem } from '@pages/projects/config/types';
+import { TItem } from '@app/gallery/types';
 
 type TConfig = Pick<TItem, 'time'>;
 export const resolveTime = ({ time }: TConfig) => {

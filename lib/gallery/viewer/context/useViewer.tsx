@@ -2,5 +2,5 @@ import { useContext as useReactContext } from 'react';
 import { VIEWER } from './constants';
 import { TContext } from './types';
 
-export const useGallery = (): TContext =>
+export const useViewer = (): TContext =>
   useReactContext<TContext>(VIEWER);

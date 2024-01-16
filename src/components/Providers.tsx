@@ -16,7 +16,11 @@ import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@lib/components/utils/arrToNest';
 import { STYLE } from '@app/style';
 import { Metal } from './decoration/metal';
-import { TInitProjectItems } from '@app/gallery/types';
+import {
+  TInitItems,
+  TSlug,
+  TTitle,
+} from '@app/gallery/types';
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 
 type TProps = { children: TChildren };
@@ -35,7 +39,7 @@ export const Providers: FC<TProps> = ({
       DarkModeProvider,
       ScrollProvider,
     ],
-    <GalleryProvider<TInitProjectItems>
+    <GalleryProvider<TTitle, TSlug>
       initItems={INIT_PROJECT_ITEMS}
     >
       <AppProvider Texture={Metal} {...STYLE}>

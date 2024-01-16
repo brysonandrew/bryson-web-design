@@ -33,14 +33,8 @@ export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const { key, listItems, price, discount, PreContent } =
     config;
-  const {
-    COLOR,
-    GLOW,
-    Glow,
-    BORDER_RADIUS,
-    GRADIENT,
-    Texture,
-  } = useApp();
+  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Texture } =
+    useApp();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
@@ -51,7 +45,7 @@ export const Package: FC<TProps> = ({ title }) => {
       {
         <span
           className={clsx(
-            'px-1 mx-1 text-main-inverted',
+            'px-1 mx-1 pricing-title',
             GRADIENT[key],
           )}
           style={{
@@ -103,8 +97,8 @@ export const Package: FC<TProps> = ({ title }) => {
         {...handlers}
       >
         <P1_5 />
-        <End classValue='text-white-7'>
-          <h4 className='w-full text-center text-2xl tracking-wider font-semibold capitalize'>
+        <End classValue='pricing-title'>
+          <h4 className='w-full text-center text-2xl'>
             {title}
           </h4>
           <motion.div

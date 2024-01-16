@@ -6,16 +6,13 @@ import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
 } from '@lib/filters/config/constants/presets';
-import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
 import clsx from 'clsx';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { TMotionImgProps } from '@lib/types/dom';
 import styled from '@emotion/styled';
-import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { isDesktop } from 'react-device-detect';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
-import { resolveMotionConfig } from '@lib/hooks/media/resolveMotionConfig';
 import {
   TDepthConfig,
   useCircle,
@@ -24,7 +21,7 @@ import { ORIGIN_50 } from '@lib/animation/constants';
 import { useTapHandler } from '@lib/hooks/media/useTapHandler';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
-import { resolvePresence } from '@lib/animation/utils';
+import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 

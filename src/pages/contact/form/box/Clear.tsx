@@ -3,12 +3,12 @@ import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@pages/index/contact/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { Cross } from '@pages/projects/gallery/icons/Cross';
 import { IconGlow } from '@lib/components/interactive/IconGlow';
 import { PRESENCE_OPACITY_DELAY } from '@lib/animation/constants';
 import { TFormKey } from '@pages/contact/config';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@lib/context/app/useApp';
+import { Cross } from '@lib/gallery/components/icons';
 
 const Root = styled.div``;
 

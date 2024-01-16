@@ -14,8 +14,8 @@ import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import { TSlugProps } from '@lib/gallery/config/types';
 import { Badge } from '@pages/pricing/badge';
-import { PROJECT_ITEMS_RECORD } from '@app/gallery/items';
 import { useApp } from '@lib/context/app/useApp';
+import { useGallery } from '@lib/gallery/context/useGallery';
 
 type TProps = TSlugProps &
   TClassValueProps &
@@ -34,9 +34,10 @@ export const Content: FC<TProps> = ({
   style,
   ...props
 }) => {
+  const { ITEMS_RECORD } = useGallery();
   const { TextureGlow, Texture, BORDER_RADIUS, Active } =
     useApp();
-  const { pricing } = PROJECT_ITEMS_RECORD[slug];
+  const { pricing } = ITEMS_RECORD[slug];
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);

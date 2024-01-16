@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { useGallery as useContext } from '@lib/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@lib/gallery/viewer/context/useViewer';
 import { Header } from './header';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -10,10 +10,11 @@ import { TBaseProps } from './types';
 import { useFreezeScrollBar } from '@lib/hooks/scroll/useFreezeScroll';
 import { useMotionX } from '@lib/gallery/viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@lib/gallery/viewer/utils/resolveGalleryWidth';
+import { useGallery } from '../context/useGallery';
 
 const Root = styled(motion.div)``;
 
-export type TProps<T> = {
+export type TProps<T extends string> = {
   viewportWidth: number;
   currProject: T;
 };
@@ -22,6 +23,7 @@ export const Ready = <T extends string>({
   currProject,
 }: TProps<T>) => {
   useFreezeScrollBar();
+  const { ITEMS_RECORD } = useGallery();
   const { screensRecord } = useContext();
   const mediaRecords = screensRecord[currProject];
 

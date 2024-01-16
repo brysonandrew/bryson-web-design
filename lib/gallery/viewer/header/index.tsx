@@ -7,7 +7,7 @@ import {
 } from '@lib/types/dom';
 import { TSlugProps } from '@lib/gallery/config/types';
 import { RightHeader } from './RightHeader';
-import { PROJECT_ITEMS_RECORD } from '../../../../app/gallery/items';
+import { useGallery } from '@lib/gallery/context/useGallery';
 
 const Root = styled.header``;
 
@@ -15,6 +15,7 @@ type TProps = TDivMotionProps &
   TSlugProps &
   Partial<TChildrenProps>;
 export const Header: FC<TProps> = ({ slug, ...props }) => {
+  const { ITEMS_RECORD } = useGallery();
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
       <Content
@@ -22,7 +23,7 @@ export const Header: FC<TProps> = ({ slug, ...props }) => {
         slug={slug}
         rightHeader={
           <RightHeader
-            pricing={PROJECT_ITEMS_RECORD[slug].pricing}
+            pricing={ITEMS_RECORD[slug].pricing}
           />
         }
         {...props}

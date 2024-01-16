@@ -6,7 +6,6 @@ import {
   PRECACHE_PATH,
   PUBLIC_DIR,
 } from '../screens/process/config/constants';
-import { TProjectKey } from '@pages/projects/config/types';
 
 export { resolveFsInfo } from './resolveFsInfo';
 export { resolveMediaRecord } from './resolveMediaRecord';
@@ -27,8 +26,8 @@ export const resolveSmallEntry = (
   ext = 'png',
 ) => `${path}${SMALL_SUFFIX}.${ext}`;
 
-export const resolveEntry = (
-  name: TProjectKey,
+export const resolveEntry = <T extends string>(
+  name: T,
   index: number,
   ext = 'png',
   suffix = '',
