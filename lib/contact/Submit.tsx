@@ -2,9 +2,8 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { resolveButtonValue } from '../config';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
-import { useContact } from '@pages/index/contact/context';
+import { useContact } from '@lib/contact/context';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
@@ -13,6 +12,7 @@ import {
 } from '@lib/animation/components/filter-animate/utils';
 import { BIGGER_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
+import { resolveButtonValue } from './utils/resolveButtonValue';
 
 const Root = styled(motion.label)``;
 const Input = styled.input``;

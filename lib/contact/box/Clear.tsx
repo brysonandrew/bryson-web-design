@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContact } from '@pages/index/contact/context';
+import { useContact } from '@lib/contact/context';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { IconGlow } from '@lib/components/interactive/IconGlow';
 import { PRESENCE_OPACITY_DELAY } from '@lib/animation/constants';
-import { TFormKey } from '@pages/contact/config';
+import { TFormKey } from '@lib/contact/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@lib/context/app/useApp';
 import { Cross } from '@lib/gallery/components/icons';

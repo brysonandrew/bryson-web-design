@@ -1,18 +1,17 @@
 import { useHtmlTitle } from '@lib/hooks/dom/useHtmlTitle';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { Helmet } from 'react-helmet-async';
-import { COLOR_VARS_RECORD } from '@app/colors/constants';
+import { useApp } from '@lib/context/app/useApp';
 
 export const Head = () => {
+  const { COLOR } = useApp();
   const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
   const title = useHtmlTitle();
-  const base = isDarkMode
-    ? COLOR_VARS_RECORD['black']
-    : COLOR_VARS_RECORD['white'];
+  const base = isDarkMode ? COLOR['black'] : COLOR['white'];
   const highlight = isDarkMode
-    ? COLOR_VARS_RECORD['secondary']
-    : COLOR_VARS_RECORD['accent'];
+    ? COLOR['secondary']
+    : COLOR['accent'];
 
   return (
     <Helmet>

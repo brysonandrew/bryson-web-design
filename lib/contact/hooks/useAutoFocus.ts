@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useContact } from '@pages/index/contact/context';
+import { useContact } from '@lib/contact/context';
 
 export const useAutoFocus = (isDisabled: boolean) => {
   const { focusKey, onFocus } = useContact();
