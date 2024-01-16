@@ -2,7 +2,7 @@ import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
 } from '@lib/utils/key';
-import { useCurrParams } from '../../../src/pages/projects/gallery/hooks/params/useCurrParams';
+import { useCurrParams } from '@pages/projects/gallery/hooks/params/useCurrParams';
 import { useLocation } from 'react-router';
 import { capitalize } from '@lib/utils/format';
 import { useEffect } from 'react';

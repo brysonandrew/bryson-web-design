@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format';
+import { TTTitleToKebab } from '@lib/types/transformers/format/camel';
 import { TTKebabToPascal } from '@lib/types/transformers/format/pascal';
 
 export const capitalize = (word: string | null) =>

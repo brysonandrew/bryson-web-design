@@ -1,4 +1,4 @@
-import { TTCamelToKebab } from '.';
+import { TTCamelToKebab } from './camel';
 import { TTCamelToPascal } from './pascal';
 
 export type TTToCamelCase<T> = {

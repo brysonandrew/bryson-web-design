@@ -1,0 +1,24 @@
+import { Item } from './item';
+import { motion } from 'framer-motion';
+import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
+import { Tips } from './Tips';
+import { useGallery } from '../context/useGallery';
+
+export const List = () => {
+  const currProject = useCurrProject();
+  const { SLUGS } = useGallery();
+  return (
+    <>
+      <motion.ul>
+        {SLUGS.map((slug, index) => {
+          const isSelected = currProject === slug;
+          if (isSelected) return null;
+          return (
+            <Item key={slug} slug={slug} index={index} />
+          );
+        })}
+      </motion.ul>
+      <Tips />
+    </>
+  );
+};

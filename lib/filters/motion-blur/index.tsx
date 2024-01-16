@@ -1,4 +1,3 @@
-import { MOTION_BLUR_ID } from '@pages/projects/gallery/sections/constants';
 import { TChildren } from '@lib/types/dom';
 import { resolveUrlId } from '@lib/utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';
@@ -13,6 +12,7 @@ import { Speed } from './Speed';
 import { TransformerX } from './TransformerX';
 import { TransformerY } from './TransformerY';
 import { TDirectionProps } from './config';
+import { MOTION_BLUR_ID } from '../blur/constants';
 
 const isMotionBlur = !(isSafari && isBrowser);
 
@@ -38,7 +38,7 @@ export const MotionBlur: FC<TProps> = ({
         {(transformerProps) => {
           const Transformer = {
             x: TransformerX,
-            y: TransformerY, 
+            y: TransformerY,
           }[direction];
 
           const props = {
