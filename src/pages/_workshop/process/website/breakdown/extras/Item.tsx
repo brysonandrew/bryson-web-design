@@ -1,4 +1,4 @@
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
 import { ADD_ICON, REMOVE_ICON } from '@lib/constants/icons/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import clsx from 'clsx';
@@ -32,7 +32,7 @@ export const Item: FC<TProps> = ({
       >
         <button
           className={
-            isValue ? 'text-g-bb' : 'text-gray-2'
+            isValue ? '' : 'text-gray-2'
           }
           onClick={() => {
             setExtras((prev) => ({
@@ -57,7 +57,7 @@ export const Item: FC<TProps> = ({
           )}
         </div>
         <button
-          className='text-g-bb'
+          className=''
           onClick={() => {
             setExtras((prev) => ({
               ...prev,

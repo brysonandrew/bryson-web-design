@@ -13,7 +13,6 @@ export const Title: FC<TProps> = ({ children }) => {
   }
   return (
     <InView
-      classValue='z-20'
       options={{ rootMargin: '-20px', triggerOnce: true }}
     >
       {({ inView }) => {

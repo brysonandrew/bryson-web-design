@@ -9,15 +9,20 @@ import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { createElement } from 'react';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
 
 export const DarkMode = () => {
+  const { BORDER_RADIUS } = useApp();
   const darkMode = useDarkMode();
 
   const isDarkMode = darkMode.isDarkMode;
   const key = isDarkMode ? 'light' : 'dark';
   const title = `Switch to ${key} mode`;
 
-  const { handlers } = useHoverKey(CUSTOM_CURSOR_KEY, title);
+  const { handlers } = useHoverKey(
+    CUSTOM_CURSOR_KEY,
+    title,
+  );
   const handleMove = useMoveSound();
   const handleTap = () => {
     handleMove();
@@ -37,7 +42,10 @@ export const DarkMode = () => {
         onTap={handleTap}
         {...handlers}
       >
-        <div className='absolute preserve-3d perspective-1000 -inset-2 center overflow-hidden rounded-full'>
+        <div
+          className='absolute preserve-3d perspective-1000 -inset-2 center overflow-hidden'
+          style={{ borderRadius: BORDER_RADIUS.LG }}
+        >
           {createElement(isDarkMode ? Moon : Sun, {
             ...iconProps(isDarkMode ? '-100%' : '100%'),
           })}

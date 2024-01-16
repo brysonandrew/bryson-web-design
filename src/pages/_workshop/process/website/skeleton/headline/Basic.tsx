@@ -1,4 +1,4 @@
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
 import { IMAGE_ICON } from '@lib/constants/icons/constants';
 import { Shell } from './Shell';
 

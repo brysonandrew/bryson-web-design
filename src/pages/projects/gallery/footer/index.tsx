@@ -5,16 +5,18 @@ import {
   DURATION,
   PRESENCE_Y,
 } from '@lib/animation/constants';
-import { MetalDarkest } from '@components/decoration/metal/MetalDarkest';
 import { Core } from './core';
 import { TBaseProps } from '../types';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { useApp } from '@lib/context/app/useApp';
+import { resolveBrightness } from '@lib/animation/components/filter-animate/utils/brighten';
 
 const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
+  const { Texture } = useApp();
   const { handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     'footer',
@@ -30,7 +32,7 @@ export const Footer: FC<TProps> = (props) => {
       {...PRESENCE_Y}
       {...handlers}
     >
-      <MetalDarkest />
+      <Texture />
       <Core {...props} />
     </Root>
   );

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { BG } from './config';
 import { TDivMotionProps } from '@lib/types/dom';
 import { Text } from './Text';
+import { useApp } from '@lib/context/app/useApp';
 
 export type TProps = {
   type: TPricingKey;
@@ -17,10 +18,11 @@ export const Badge: FC<TProps> = ({
   isHover,
   ...props
 }) => {
+  const { BORDER_RADIUS } = useApp();
   return (
     <motion.div
       className={clsx('center p-4', BG[type])}
-      style={{ borderRadius: 40 }}
+      style={{ borderRadius: BORDER_RADIUS.XL }}
       {...props}
     >
       {(isHover || isText) && <Text>{type}</Text>}

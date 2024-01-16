@@ -13,10 +13,8 @@ import { Provider as ViewportProvider } from '@lib/context/viewport/Provider';
 import { TChildren } from '@lib/types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@lib/components/utils/arrToNest';
-import { MetalGlowCircle } from './decoration/metal/MetalGlowCircle';
-import { MetalGlow1 } from './decoration/metal/MetalGlow1';
-import { MetalGlow2 } from './decoration/metal/MetalGlow2';
-import { Metal1 } from './decoration/metal/Metal1';
+import { STYLE } from '@app/style';
+import { Metal } from './decoration/metal';
 
 type TProps = { children: TChildren };
 export const Providers: FC<TProps> = ({
@@ -34,17 +32,10 @@ export const Providers: FC<TProps> = ({
       DarkModeProvider,
       ScrollProvider,
     ],
-    _children,
+    <AppProvider Texture={Metal} {...STYLE}>
+      {_children}
+    </AppProvider>,
     {},
   );
-  return (
-    <AppProvider
-      Background={Metal1}
-      BackgroundGlowCircle={MetalGlowCircle}
-      BackgroundGlow={MetalGlow1}
-      BackgroundGlow1={MetalGlow1}
-    >
-      {children}
-    </AppProvider>
-  );
+  return <>{children}</>;
 };

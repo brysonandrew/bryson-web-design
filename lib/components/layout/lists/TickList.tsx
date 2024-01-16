@@ -1,4 +1,4 @@
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
 import { TICK_CIRCLE_ICON } from '@lib/constants/icons/constants';
 import clsx from 'clsx';
 import { FC } from 'react';

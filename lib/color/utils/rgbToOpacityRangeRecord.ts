@@ -1,8 +1,5 @@
 import { TKeyStr } from '@lib/types/keys';
-import {
-  TBaseOpacityRgbRecord,
-  TRgb,
-} from '../types';
+import { TRgb } from '../types';
 import {
   resolveColorOpacityRange,
   TOpacityRangeRecord,

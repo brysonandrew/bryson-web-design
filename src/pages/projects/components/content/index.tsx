@@ -8,17 +8,14 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@lib/types/dom';
-import { Mark } from '@components/decoration/mark';
 import { P2 } from '@lib/components/layout/space/P2';
 import { useCurrProject } from '@pages/projects/gallery/hooks/params/useCurrProject';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
-import { Metal } from '@components/decoration/metal';
-import { resolveGlow } from './config';
 import { TSlugProps } from '@pages/projects/config/types';
 import { Badge } from '@pages/pricing/badge';
 import { PROJECT_ITEMS_RECORD } from '@pages/projects/config/constants/items';
+import { useApp } from '@lib/context/app/useApp';
 
 type TProps = TSlugProps &
   TClassValueProps &
@@ -37,15 +34,15 @@ export const Content: FC<TProps> = ({
   style,
   ...props
 }) => {
+  const { TextureGlow, Texture, BORDER_RADIUS, Active } =
+    useApp();
   const { pricing } = PROJECT_ITEMS_RECORD[slug];
-  const { isDarkMode } = useDarkMode();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
   const project = useCurrProject();
   const isProject = Boolean(project);
   const isInitRef = useRef(false);
-  const borderRadiusClass = 'rounded-md';
 
   const handleInit = () => {
     isInitRef.current = !project;
@@ -83,28 +80,25 @@ export const Content: FC<TProps> = ({
 
   return (
     <motion.div
+      key={slug}
       layoutId={resolveTitleLayoutId(slug)}
       layout
       className={clsx(
-        'relative w-full',
-        'pl-6 pr-4 sm:pl-8 sm:pr-6',
-        [isExpanding && 'overflow-hidden'],
+        'relative w-full pl-6 pr-4 sm:pl-8 sm:pr-6',
         classValue,
-        borderRadiusClass,
       )}
       onLayoutAnimationStart={handleLayoutAnimationStart}
       onLayoutAnimationComplete={
         handleLayoutAnimationComplete
       }
       style={{
-        ...resolveGlow(Boolean(isHover), isDarkMode),
-        ...style,
+        borderRadius: BORDER_RADIUS.MD,
       }}
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <Metal classValue={borderRadiusClass} />
-      <Mark classValue='z-20' />
+      {isProject ? <Texture /> : <TextureGlow />}
+      <Active classValue='z-20' />
       <P2 />
       <motion.div
         layout={!isTransitioning}

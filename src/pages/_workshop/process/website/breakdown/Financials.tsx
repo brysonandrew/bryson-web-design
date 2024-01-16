@@ -9,7 +9,7 @@ export const Financials = () => {
         <p>Total Fixed</p>
         <Money>{800}</Money>
       </div>
-      <div className='column-start gap-4 w-full p-4 rounded-md'>
+      <div className='column-start gap-4 w-full p-4'>
         <div className='row-space w-full'>
           <p>Base</p>
           <Money>{800}</Money>
@@ -20,7 +20,7 @@ export const Financials = () => {
         <p>\ Yearly</p>
         <Money prefix='starting from '>{80}</Money>
       </div>
-      <div className='column-start gap-4 w-full p-4 rounded-md'>
+      <div className='column-start gap-4 w-full p-4'>
         <List />
       </div>
     </div>

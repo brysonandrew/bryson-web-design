@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { Range } from '../../components/Inputs';
 import { TState } from '../../context/types';
-import clsx, { ClassValue } from 'clsx';
+import clsx from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
-import { GLOW_BABY_BLUE_1 } from '@uno/rules/glow';
-import { I } from '@lib/icons/Icon';
+import { I } from '@lib/icons/icon';
+import { resolveBoxShadow } from '@lib/color/utils/glow/resolveBoxShadow';
 
 const Root = styled.label``;
 
@@ -30,7 +30,7 @@ export const Item: FC<TProps> = ({
       </div>
       <div className='relative row gap-2'>
         <Range
-          style={{ boxShadow: GLOW_BABY_BLUE_1 }}
+          style={{ boxShadow: resolveBoxShadow('white') }}
           type='range'
           value={value}
           onChange={({ currentTarget: { value } }) =>

@@ -23,7 +23,7 @@ export const Details: FC<TProps> = ({
 
   return (
     <Root
-      className={clsx('column-stretch rounded-md')}
+      className={clsx('column-stretch')}
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}

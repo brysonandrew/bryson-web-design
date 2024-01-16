@@ -15,7 +15,7 @@ export const Website = () => {
     hoverKeyParts: [_, first],
   } = useCursor();
   return (
-    <div className='column-start gap-16 h-full w-full text-g-bb'>
+    <div className='column-start gap-16 h-full w-full '>
       <p className='text-left'>
         A versitile single page website package. Use the
         breakdown below to sharpen your vision. When you
@@ -23,7 +23,7 @@ export const Website = () => {
       </p>
       <div className='column gap-1 lg:gap-8 md:row-start h-full w-full'>
         <div className='column-start-stretch gap-1 lg:gap-4 w-full md:w-1/2 h-full'>
-          <div className='column-start-stretch gap-4 relative p-4 rounded-md glow'>
+          <div className='column-start-stretch gap-4 relative p-4'>
             <b className='uppercase '>
               features breakdown
             </b>
@@ -40,7 +40,7 @@ export const Website = () => {
             <P2 />
             <Extras />
             <div>
-              <div className='row-space w-full text-g-bb'>
+              <div className='row-space w-full '>
                 <span className='uppercase '></span>
                 <Money prefix={<Underline />}>
                   {extrasCost}
@@ -52,7 +52,7 @@ export const Website = () => {
             </div>
             <P2 />
             <div>
-              <div className='row-space w-full text-g-bb'>
+              <div className='row-space w-full '>
                 <b className='uppercase '>
                   Total
                 </b>

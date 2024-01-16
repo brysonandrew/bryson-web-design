@@ -1,8 +1,4 @@
-import {
-  BASE_RGB_RECORD,
-  BASE_COLOR_RECORD,
-  BASE_OPACITY_RGB_RECORD,
-} from '@lib/color/constants';
+import { BASE_COLOR_RECORD } from '@lib/color/constants';
 
 export type TDigit = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -20,30 +16,15 @@ export type TOpacityRangeRecordKey<T extends string> =
   | `${T}-0${TDigit}`
   | T;
 
-export type TBaseColorRgbKey = Extract<
-  keyof TBaseColorRgbRecord,
-  string
->;
-export type TBaseColorRgbRecord = typeof BASE_RGB_RECORD;
-
-export type TBaseOpacityRgbKey =
-  keyof TBaseOpacityRgbRecord;
-export type TBaseOpacityRgbRecord =
-  typeof BASE_OPACITY_RGB_RECORD;
-
 export type TBaseColorKey = keyof TBaseColorRecord;
 export type TBaseColorRecord = typeof BASE_COLOR_RECORD;
 
-export type TCssVar = `var(--${string})`;
+export type TCssVar<V extends string = string> =
+  `var(--${V})`;
 
-export type TBaseVarColorRecord = Record<
-  TBaseColorRgbKey,
-  TCssVar
->;
+export type TBaseVarColorRecord = Record<string, TCssVar>;
 
-export type TColorRgbKey<K extends string> =
-  | K
-  | TBaseColorRgbKey;
+export type TColorRgbKey<K extends string> = K | string;
 
 export type TColorVariablesLookup<K extends string> =
   Record<TColorRgbKey<K>, string>;

@@ -1,36 +1,38 @@
 import { resolveCustomRecords } from '../../../../lib/color/utils/resolveCustomRecords';
 import { PLANS_COLOR_VARIABLES } from './pricing';
 
-export const RGB_RECORD = {} as const;
-type TRgbRecord = typeof RGB_RECORD;
+const SECONDARY = '45, 212, 191';
+const ACCENT = '153, 204, 255';
 
 export const OPACITY_RANGE_RGB_RECORD = {
-  accent: '153, 204, 255',
-  secondary: '45, 212, 191',
+  secondary: SECONDARY,
   highlight: '207, 250, 254',
+  accent: ACCENT,
+  ...PLANS_COLOR_VARIABLES,
 } as const;
 
 type TOpacityRangeRgbRecord =
   typeof OPACITY_RANGE_RGB_RECORD;
 
 export const VARIABLES_RECORD = {
-  ...PLANS_COLOR_VARIABLES,
   red: '#f87171',
-  'dark-highlight': '#00aba9',
-  'light-highlight': '#5bbad5',
 } as const;
 type TVariablesRecord = typeof VARIABLES_RECORD;
 
 const {
   colorRecord,
-  colorVariablesLookup,
-  colorVariablesCss,
+  colorCssVariablesRecord,
+  colorCssVariables,
+  opacityRangeColorRecord,
+  glowRecord,
 } = resolveCustomRecords<
-  TRgbRecord,
   TOpacityRangeRgbRecord,
   TVariablesRecord
->(RGB_RECORD, OPACITY_RANGE_RGB_RECORD, VARIABLES_RECORD);
+>(OPACITY_RANGE_RGB_RECORD, VARIABLES_RECORD);
 
 export const COLOR_RECORD = colorRecord;
-export const COLOR_VARS_RECORD = colorVariablesLookup;
-export const COLOR_VARS_CSS = colorVariablesCss;
+export const COLOR_VARS_RECORD = colorCssVariablesRecord;
+export const COLOR_VARS_CSS = colorCssVariables;
+export const COLOR_SHADE_RECORD = opacityRangeColorRecord;
+export const GLOW_DROP = glowRecord.drop;
+export const GLOW_BOX = glowRecord.box;

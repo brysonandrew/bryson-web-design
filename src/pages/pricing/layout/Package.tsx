@@ -17,22 +17,30 @@ import {
 } from '@pages/pricing/config/types';
 import { TickList } from '@lib/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
-import { Metal } from '@components/decoration/metal';
-import { EMAIL_ICON } from '@lib/constants/icons/constants/contact';
+import {
+  EMAIL_ICON,
+  FEEDBACK_ICON,
+} from '@lib/constants/icons/constants/contact';
 import { I } from '@lib/icons/icon';
+import { useApp } from '@lib/context/app/useApp';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
   backgroundColorClass: `bg-${TPricingKey} gradient-${TPricingKey}`;
   textColorClass: `text-${TPricingKey}`;
 };
-export const Package: FC<TProps> = ({
-  title,
-  backgroundColorClass,
-  textColorClass,
-}) => {
+export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
-  const { listItems, price, discount, PreContent } = config;
+  const { key, listItems, price, discount, PreContent } =
+    config;
+  const {
+    COLOR,
+    GLOW,
+    Glow,
+    BORDER_RADIUS,
+    GRADIENT,
+    Texture,
+  } = useApp();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
@@ -44,11 +52,12 @@ export const Package: FC<TProps> = ({
         <span
           className={clsx(
             'px-1 mx-1 text-main-inverted',
-            backgroundColorClass,
+            GRADIENT[key],
           )}
-          // style={{
-          //   backgroundColor: `var(--${title?.toLowerCase()})`,
-          // }}
+          style={{
+            backgroundColor: COLOR[key],
+            backgroundImage: GRADIENT[key],
+          }}
         >
           {title}
         </span>
@@ -69,12 +78,24 @@ export const Package: FC<TProps> = ({
       className='relative grow w-full'
       onClick={handleClick}
     >
-      <div
-        className={clsx(
-          'absolute -inset-0.5 rounded-md',
-          backgroundColorClass,
-        )}
-      />
+      <Glow
+        color={COLOR[key]}
+        box={4}
+        drop={4}
+        animate={{ opacity: isHover ? 1 : 0.5 }}
+      >
+        <div
+          className={clsx(
+            'absolute -inset-0.5',
+            GRADIENT[key],
+          )}
+          style={{
+            backgroundColor: COLOR[key],
+            backgroundImage: GRADIENT[key],
+            borderRadius: BORDER_RADIUS.MD,
+          }}
+        />
+      </Glow>
       <motion.div
         className={clsx(
           'relative column-stretch grow w-full h-full text-base',
@@ -82,7 +103,7 @@ export const Package: FC<TProps> = ({
         {...handlers}
       >
         <P1_5 />
-        <End classValue='text-black-9'>
+        <End classValue='text-white-7'>
           <h4 className='w-full text-center text-2xl tracking-wider font-semibold capitalize'>
             {title}
           </h4>
@@ -92,19 +113,25 @@ export const Package: FC<TProps> = ({
           >
             <I
               classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-current'
-              icon='fluent-mdl2:feedback-request-solid'
+              icon={FEEDBACK_ICON}
             />
           </motion.div>
         </End>
         <P1_5 />
-        <div className='column-stretch relative h-full bg-main rounded-t-md'>
-          <Metal classValue={clsx('rounded-md')} />
+        <div
+          className='column-stretch relative h-full bg-main'
+          style={{
+            borderTopLeftRadius: BORDER_RADIUS.MD,
+            borderTopRightRadius: BORDER_RADIUS.MD,
+          }}
+        >
+          <Texture />
           <P4 />
           <div
-            className={clsx(
-              'relative px-4',
-              textColorClass,
-            )}
+            className='relative px-4'
+            style={{
+              color: COLOR[key],
+            }}
           >
             {PreContent && <PreContent />}
             <TickList items={listItems} />
@@ -112,8 +139,14 @@ export const Package: FC<TProps> = ({
           <P4 />
         </div>
         <P_25 />
-        <div className='relative bg-main rounded-b-md'>
-          <Metal classValue={clsx('rounded-md')} />
+        <div
+          className='relative bg-main'
+          style={{
+            borderBottomLeftRadius: BORDER_RADIUS.MD,
+            borderBottomRightRadius: BORDER_RADIUS.MD,
+          }}
+        >
+          <Texture />
           <End>
             <Price price={price} discount={discount} />
           </End>

@@ -3,7 +3,7 @@ import {
   TCssVar,
 } from '@lib/color/types';
 import { TKeyStr } from '@lib/types/keys';
-import { resolveCssVar } from './resolveCssVar';
+import { resolveVarCss } from './resolveVarCss';
 
 export const resolveColorRecord = <
   T extends TBaseColorRecord,
@@ -14,7 +14,7 @@ export const resolveColorRecord = <
   type TResult = Record<TKey, TCssVar>;
   const keys = Object.keys(record) as TKey[];
   const result = keys.reduce((a, key) => {
-    const value = resolveCssVar<TKey>(key);
+    const value = resolveVarCss<TKey>(key);
     return {
       [key]: value,
       ...a,

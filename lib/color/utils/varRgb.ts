@@ -1,8 +1,8 @@
-import { TRgb, TRgbaValue } from '../types';
+import { TDigit, TRgb, TRgbaValue } from '../types';
 
 export const varRgb = (
   rgb: TRgb,
-  opacityIndex?: number,
+  opacityIndex?: TDigit,
 ): TRgbaValue => {
   if (typeof opacityIndex === 'number') {
     return `rgba(${rgb}, 0.${opacityIndex})`;

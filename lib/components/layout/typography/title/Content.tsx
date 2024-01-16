@@ -16,13 +16,14 @@ export const Content: FC<TProps> = ({ children }) => {
         exit={{ y: 20, opacity: 0 }}
         transition={{
           ...MOTION_CONFIG.transition,
-          delay: 0,
+          delay: 0.2,
         }}
       >
-        <h3 className='page-title text-center text-3xl md:text-4xl lg:text-5xl'>{children}</h3>
+        <h3 className='page-title text-center text-3xl md:text-4xl lg:text-5xl'>
+          {children}
+        </h3>
       </motion.div>
       <div className='relative overflow-hidden w-5/6 top-4 h-4'>
-        <ThinLine classValue='absolute left-0 w-full top-0 via-accent glow' />
         <ThinLineGrow
           delay={0.2}
           classValue='absolute left-0 w-full top-1 via-current'

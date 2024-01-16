@@ -1,11 +1,16 @@
 import styled from '@emotion/styled';
 import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
-import { TChildrenProps, TClassValueProps, TDivMotionProps } from '@lib/types/dom';
+import {
+  TChildrenProps,
+  TClassValueProps,
+  TDivMotionProps,
+} from '@lib/types/dom';
 import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Background } from './Background';
+import { useApp } from '@lib/context/app/useApp';
 
 const Root = styled(motion.div)``;
 
@@ -24,22 +29,26 @@ export const Circle: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const name = useCurrName();
-  const isGallery = Boolean(name);
+  const { BORDER_RADIUS, GLOW, Glow, COLOR } = useApp();
 
   return (
     <Root
       className={clsx(
         position,
-        'center w-10 h-10 rounded-full',
-        [isGallery ? 'dark:glow-accent glow' : 'glow'],
+        'center w-10 h-10',
         classValue,
       )}
+      style={{
+        borderRadius: BORDER_RADIUS.XL,
+        filter: GLOW.DROP.accent,
+      }}
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      <Background />
-      {children}
+      <>
+        <Background />
+        {children}
+      </>
     </Root>
   );
 };

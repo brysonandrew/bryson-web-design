@@ -9,12 +9,12 @@ type TProps = { style?: CSSProperties };
 export const Title: FC<TProps> = () => {
   return (
     <Root className='column-start md:row-start'>
-      <div className='relative text-g-tb text-md uppercase font-light'>
+      <div className='relative  text-md uppercase font-light'>
         Bryson
       </div>
       <div className='p-0 md:p-0.75' />
       <div className='relative column-start'>
-        <div className='text-g-bb text-md italic uppercase font-light'>
+        <div className=' text-md italic uppercase font-light'>
           Web design
         </div>
         <ThickLine

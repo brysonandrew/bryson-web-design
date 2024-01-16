@@ -5,13 +5,11 @@ import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@lib/cursor/hooks/useCursorOffset';
 import { Cursor } from '.';
 import { resolveHoverKeyVariations } from '@lib/cursor/config';
-import { useApp } from '@lib/context/app/useApp';
 import { THover } from './types';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const { Background } = useApp();
   const [isCursorReady, setCursorReady] = useState(
     STATE.isCursorReady,
   );
@@ -28,7 +26,7 @@ export const Provider: FC<PropsWithChildren> = ({
   const cursorLabelY = useMotionValue(0);
   const cursorX = useMotionValue(-999);
   const cursorY = useMotionValue(-999);
-  
+
   return (
     <Cursor.Provider
       value={{
@@ -41,7 +39,6 @@ export const Provider: FC<PropsWithChildren> = ({
         isCursorReady,
         onHoverKey: setHoverKey,
         onCursorReady: setCursorReady,
-        Background,
         ...hoverKeyVariations,
       }}
     >
