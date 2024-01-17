@@ -3,6 +3,7 @@ import { THoverKey } from '@lib/cursor/hooks/config';
 import { TOffsetRef } from '@lib/cursor/hooks/useCursorOffset';
 import { TMotionPoint } from '@lib/animation/types';
 import { TChildren } from '@lib/types/dom';
+
 export type THover = {
   hoverKey: THoverKey;
   children: TChildren;

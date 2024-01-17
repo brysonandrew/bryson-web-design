@@ -12,7 +12,7 @@ import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject'
 
 const Root = styled(motion.form)``;
 
-export const Form = () => {
+export const Contact = () => {
   const ref = useRef<HTMLFormElement | null>(null);
   const currProject = useCurrProject();
   const { isDisabled, onSend, inputHandlers } = useForm({

@@ -33,19 +33,17 @@ export const Textarea: FC<TProps> = ({
       <div className='pt-0.75 w-full md:w-auto'>
         <Name title={name} />
       </div>
-      <div className='flex grow'>
-        <Input
-          layout={isInit}
-          ref={ref}
-          className='input'
-          autoComplete='off'
-          name={name}
-          disabled={disabled}
-          {...resolveInteractiveLabels(name)}
-          {...inputProps}
-          {...props}
-        />
-      </div>
+      <Input
+        layout={isInit}
+        ref={ref}
+        className='input'
+        autoComplete='off'
+        name={name}
+        disabled={disabled}
+        {...resolveInteractiveLabels(name)}
+        {...inputProps}
+        {...props}
+      />
     </Box>
   );
 };

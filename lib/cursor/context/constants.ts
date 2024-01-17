@@ -1,7 +1,6 @@
-import { THoverKey } from '@lib/cursor/hooks/config';
 import type { TState, TContext, THover } from './types';
 import { motionValue } from 'framer-motion';
-import { Fragment } from 'react';
+import { createContext } from 'react';
 
 export const STATE: TState = {
   isCursorReady: false,
@@ -19,3 +18,5 @@ export const CONTEXT: TContext = {
   cursorLabel: { x: motionValue(0), y: motionValue(0) },
   cursor: { x: motionValue(0), y: motionValue(0) },
 };
+
+export const CURSOR = createContext<TContext>(CONTEXT);

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { TFormKey } from './config/types';
-import { useContact } from '@lib/contact/context';
+import { useContact } from '@lib/contact/context/useContact';
 
 type TConfig = {
   name: TFormKey;
@@ -15,14 +15,6 @@ export const useInput = <T extends HTMLElement>({
   const value = form[name];
   const isEmpty = Boolean(value);
 
-  const handleTap = () => {
-    if (input) {
-      input.scrollIntoView({
-        block: 'center',
-      });
-    }
-  };
-
   return {
     ref,
     boxInputs: {
@@ -32,7 +24,6 @@ export const useInput = <T extends HTMLElement>({
     },
     inputProps: {
       value,
-      onTap: handleTap,
     },
   };
 };

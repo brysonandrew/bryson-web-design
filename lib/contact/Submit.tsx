@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
-import { useContact } from '@lib/contact/context';
+import { useContact } from '@lib/contact/context/useContact';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
@@ -51,7 +51,9 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         : resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
-        boxShadow: isDisabled ? 'none' : GLOW.secondary,
+        ...(isDisabled
+          ? {}
+          : { borderRadius: GLOW.secondary }),
       }}
       {...handlers}
     >

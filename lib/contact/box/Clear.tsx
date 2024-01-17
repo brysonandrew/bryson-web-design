@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContact } from '@lib/contact/context';
+import { useContact } from '@lib/contact/context/useContact';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { IconGlow } from '@lib/components/interactive/IconGlow';
 import { PRESENCE_OPACITY_DELAY } from '@lib/animation/constants';
