@@ -27,3 +27,7 @@ export const useInput = <T extends HTMLElement>({
     },
   };
 };
+
+export type TUseInput<T extends HTMLElement> = ReturnType<
+  typeof useInput<T>
+>;

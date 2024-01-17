@@ -5,7 +5,7 @@ import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { P2 } from '@lib/components/layout/space/P2';
-import { TDivMotionProps } from '@lib/types/dom';
+import { TDivMotionProps } from '@lib/types/dom/motion';
 import clsx from 'clsx';
 import { useGallery } from '@lib/gallery/context/useGallery';
 

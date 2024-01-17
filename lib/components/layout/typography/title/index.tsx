@@ -1,26 +1,14 @@
 import { type FC } from 'react';
-import { isMobile } from 'react-device-detect';
-import { InView } from '@lib/components/layout/InView';
+import { TitleSpace } from '@lib/components/layout/space/TitleSpace';
+import { Replacer } from '@lib/in-view/Replacer';
 import { Content } from './Content';
-import { TContent } from './config';
-import { TitleRoot } from '@lib/components/layout/space/TitleRoot';
+import { TChildrenString } from '@lib/types/dom';
 
-type TProps = { children: TContent };
+type TProps = TChildrenString;
 export const Title: FC<TProps> = ({ children }) => {
-  const content = <Content>{children}</Content>;
-  if (isMobile) {
-    return content;
-  }
   return (
-    <InView
-      options={{ rootMargin: '-20px', triggerOnce: true }}
-    >
-      {({ inView }) => {
-        if (inView) {
-          return content;
-        }
-        return <TitleRoot />;
-      }}
-    </InView>
+    <Replacer Space={TitleSpace}>
+      <Content>{children}</Content>
+    </Replacer>
   );
 };

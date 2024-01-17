@@ -1,3 +1,4 @@
+import { BackdropBlur } from '@lib/components/layout/backdrop-blur';
 import { useEventListener } from '@lib/hooks/events/useEventListener';
 import type { FC } from 'react';
 import { useNetwork } from './context/useNetwork';
@@ -8,8 +9,12 @@ export const Network: FC = () => {
   useEventListener('offline', onOffline);
   useEventListener('online', onOnline);
 
-  if (isOffline) {
-    return <Offline />;
+  if (true) {
+    return (
+      <BackdropBlur>
+        <Offline key='Offline' />
+      </BackdropBlur>
+    );
   } else {
     return null;
   }

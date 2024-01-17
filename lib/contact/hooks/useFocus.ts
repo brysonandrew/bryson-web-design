@@ -1,9 +1,8 @@
-import { TInputElement } from '@lib/contact/config/types';
 import { useScroll } from '@lib/context/scroll';
 import { useEffect } from 'react';
 
-export const useFocus = (
-  input: TInputElement | null,
+export const useFocus = <T extends HTMLElement>(
+  input: T | null,
   isFocused: boolean,
 ) => {
   const { scroll } = useScroll();

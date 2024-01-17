@@ -43,7 +43,7 @@ export const DarkMode = () => {
         {...handlers}
       >
         <div
-          className='absolute preserve-3d perspective-1000 -inset-2 center overflow-hidden'
+          className='absolute preserve-3d perspective-1000 -inset-2 -mt-0.5 center overflow-hidden'
           style={{ borderRadius: BORDER_RADIUS.LG }}
         >
           {createElement(isDarkMode ? Moon : Sun, {

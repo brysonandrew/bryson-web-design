@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import {
   useMotionValueEvent,
   animate,
@@ -5,7 +6,6 @@ import {
   AnimationPlaybackControls,
 } from 'framer-motion';
 import { useScroll } from '@lib/context/scroll';
-import { useRef } from 'react';
 
 export const useSpin = () => {
   const animateRef =

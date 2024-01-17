@@ -1,5 +1,5 @@
 import { Main } from './Main';
-import { Section } from '@lib/components/layout/Section';
+import { Section } from '@lib/components/layout/section';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { P60Y } from '@lib/components/layout/space/P60Y';
 

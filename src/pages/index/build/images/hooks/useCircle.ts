@@ -1,7 +1,7 @@
 import { MotionValue, useTransform } from 'framer-motion';
 const MIN_OPACITY = 0.6;
 
-export type TDepthConfig = {
+export type TPositionConfig = {
   index: number;
   count: number;
   imageSize: number;
@@ -16,7 +16,7 @@ export const useCircle = ({
   isVertical,
   radius,
   spin,
-}: TDepthConfig) => {
+}: TPositionConfig) => {
   const progress = index / count;
 
   const radians = useTransform(spin, (v) => {
@@ -30,9 +30,10 @@ export const useCircle = ({
       -v * radius + (isVertical ? 0 : -imageSize - radius)
     );
   });
-  const opacity = 
-  useTransform(depth, (v) => {
-    return MIN_OPACITY + (1 - v * (1 - MIN_OPACITY));
+  const opacity = useTransform(depth, (v) => {
+    const offset = 1 + MIN_OPACITY;
+    const next = offset - (v + offset) * 0.5;
+    return next;
   });
   const spread = useTransform(radians, (v) => {
     return (

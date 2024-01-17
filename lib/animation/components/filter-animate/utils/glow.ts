@@ -25,7 +25,7 @@ export const resolveGlowProps = ({
   ...rest
 }: TPartialGlowConfigOptions) => ({
   style: {
-    opacity: value ?? 0,
+    ...(value ? { opacity: value } : {}),
     ...(text > 0
       ? { textShadow: resolveBoxShadow(color, text) }
       : {}),
@@ -41,11 +41,13 @@ export const resolveGlowProps = ({
   ...(value
     ? {}
     : {
-        animate: {
-          opacity: 0,
-        },
-        hover: {
-          opacity: 1,
+        variants: {
+          animate: {
+            opacity: 0,
+          },
+          hover: {
+            opacity: 1,
+          },
         },
       }),
   ...rest,

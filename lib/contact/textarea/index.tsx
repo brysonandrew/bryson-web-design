@@ -1,49 +1,47 @@
-import styled from '@emotion/styled';
-import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TBaseInputProps } from '../config/types';
-import { Name } from '../name';
 import { Box } from '../box';
-import { useInput } from '../useInput';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { useAutosize } from './useAutosize';
-import { useViewport } from '@lib/context/viewport';
+import { TTextareaMotionProps } from '@lib/types/dom';
+import { Autosize } from './autosize';
 
-const Input = styled(motion.textarea)``;
-
-type TProps = HTMLMotionProps<'textarea'> & TBaseInputProps;
+type TProps = TTextareaMotionProps & TBaseInputProps;
 export const Textarea: FC<TProps> = ({
   name,
   disabled,
   ...props
 }) => {
-  const { ref, boxInputs, inputProps } =
-    useInput<HTMLTextAreaElement>({ name });
-  const { isResizing } = useViewport();
-
-  const isInit = useAutosize({
-    textarea: ref.current,
-    value: inputProps.value,
-    isResizing,
-  });
-
   return (
-    <Box name={name} isDisabled={disabled} {...boxInputs}>
-      <div className='pt-0.75 w-full md:w-auto'>
-        <Name title={name} />
-      </div>
-      <Input
-        layout={isInit}
-        ref={ref}
-        className='input'
-        autoComplete='off'
-        name={name}
-        disabled={disabled}
-        {...resolveInteractiveLabels(name)}
-        {...inputProps}
-        {...props}
-      />
+    <Box<HTMLTextAreaElement>
+      name={name}
+      isDisabled={disabled}
+    >
+      {({ ref, inputProps }) => (
+        <>
+          <Autosize
+            textarea={ref.current}
+            value={inputProps.value}
+          >
+            {(isInit) => (
+              <motion.textarea
+                key={`${isInit}`}
+                layout
+                transition={{ duration: 0 }}
+                ref={ref}
+                className='relative left-0 top-0 block m-0 input'
+                autoComplete='off'
+                rows={1}
+                name={name}
+                disabled={disabled}
+                {...resolveInteractiveLabels(name)}
+                {...inputProps}
+                {...props}
+              />
+            )}
+          </Autosize>
+        </>
+      )}
     </Box>
   );
 };

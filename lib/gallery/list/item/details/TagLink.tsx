@@ -5,7 +5,7 @@ import {
 } from '@lib/gallery/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@lib/types/dom';
+import { TAnchorMotionProps } from '@lib/types/dom/motion';
 import {
   HOVER_KEY_DELIMITER,
   resolveCompositeHoverKey,

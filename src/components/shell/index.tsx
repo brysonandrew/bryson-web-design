@@ -1,13 +1,10 @@
-import { Filters } from '@lib/filters';
 import { type FC } from 'react';
-import { Variables } from '@css/Variables';
 import { motion } from 'framer-motion';
+import { Global } from './global';
 import { PRESENCE_OPACITY } from '@lib/animation/constants';
-import { ClipPaths } from '@lib/media/ClipPaths';
 import { Cursor } from '@lib/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';
-import { Head } from '@lib/head';
 import { P24Y } from '@lib/components/layout/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
@@ -17,10 +14,7 @@ export const Shell: FC = () => {
   return (
     <Providers>
       <>
-        <Head />
-        <Variables />
-        <Filters />
-        <ClipPaths />
+        <Global />
         <motion.div
           className='relative overflow-x-hidden z-0'
           {...PRESENCE_OPACITY}
@@ -30,9 +24,8 @@ export const Shell: FC = () => {
           <Outlet />
           <Footer />
         </motion.div>
-
         {isDesktop && <Cursor />}
       </>
-    </Providers>
+    </Providers> 
   );
 };

@@ -24,3 +24,5 @@ export type TClassValueProps = {
 export type TTitleProps = {
   title: string;
 };
+
+export type TRect = DOMRect | null;

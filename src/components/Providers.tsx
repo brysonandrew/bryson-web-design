@@ -15,11 +15,13 @@ import { TChildren } from '@lib/types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@lib/components/utils/arrToNest';
 import { STYLE } from '@app/style';
-import { Metal } from './decoration/metal';
+import { Metal } from './layout/metal';
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { RightHeader as ListRightHeader } from './galllery/list/RightHeader';
 import { RightHeader as ViewerRightHeader } from './galllery/viewer/RightHeader';
 import { TTitle, TSlug } from '@app/gallery/types';
+import { motion } from 'framer-motion';
+import { Blank } from './layout/Blank';
 
 type TProps = { children: TChildren };
 export const Providers: FC<TProps> = ({
@@ -42,7 +44,11 @@ export const Providers: FC<TProps> = ({
       Viewer={{ RightHeader: ViewerRightHeader }}
       List={{ RightHeader: ListRightHeader }}
     >
-      <AppProvider Texture={Metal} {...STYLE}>
+      <AppProvider
+        Texture={Metal}
+        Blank={Blank}
+        {...STYLE}
+      >
         {_children}
       </AppProvider>
     </GalleryProvider>,

@@ -1,4 +1,4 @@
-import { TDivMotionProps } from '@lib/types/dom';
+import { TDivMotionProps } from '@lib/types/dom/motion';
 import {
   TChildrenPartialProps,
   TClassValueProps,
