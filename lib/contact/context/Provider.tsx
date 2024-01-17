@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from 'react';
 import type { FC } from 'react';
-import { Contact } from '.';
+import { CONTACT } from './constants';
 import {
   TFormKey,
   TStatus,
@@ -26,10 +26,10 @@ export const Provider: FC<PropsWithChildren> = ({
   };
 
   return (
-    <Contact.Provider
+    <CONTACT.Provider
       value={{ ...contact, onFocus, onStatus, onForm }}
     >
       {children}
-    </Contact.Provider>
+    </CONTACT.Provider>
   );
 };

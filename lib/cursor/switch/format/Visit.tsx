@@ -5,7 +5,7 @@ type TProps = TDivProps;
 export const Visit: FC<TProps> = ({ children }) => {
   return (
     <div>
-      Visit <span className='text-gray'>{children}</span>
+      Visit <span className='main-title'>{children}</span>
     </div>
   );
 };

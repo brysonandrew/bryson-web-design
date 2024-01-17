@@ -4,7 +4,6 @@ import { TGlowProps } from '@lib/animation/components/filter-animate/Glow';
 import {
   TClassValueProps,
   TDivMotionProps,
-  TDivProps,
 } from '@lib/types/dom';
 import { FC, Context } from 'react';
 import { TColorSetRecord } from '../hooks/useColorSetRecord';

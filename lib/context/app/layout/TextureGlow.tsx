@@ -25,8 +25,8 @@ export const TextureGlow =
         }}
         style={{
           ...style,
-          opacity: 0.6,
           color: COLOR.white,
+          opacity: 0.6,
         }}
         {...props}
       >

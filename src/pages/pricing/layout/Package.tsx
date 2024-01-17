@@ -7,7 +7,7 @@ import { P_25 } from '@lib/components/layout/space/P_25';
 import { P4 } from '@lib/components/layout/space/P4';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useContact } from '@lib/contact/context';
+import { useContact } from '@lib/contact/context/useContact';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
