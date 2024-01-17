@@ -7,8 +7,8 @@ const TechLazy = lazy(() => import('./tech'));
 const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
-const GalleryLazy = lazy(
-  () => import('@pages/projects/gallery'),
+const ViewerLazy = lazy(
+  () => import('@lib/gallery/viewer'),
 );
 
 export const Index = () => {
@@ -33,7 +33,7 @@ export const Index = () => {
       </Suspense>
       <P48Y />
       <Suspense fallback={null}>
-        <GalleryLazy />
+        <ViewerLazy />
       </Suspense>
     </>
   );

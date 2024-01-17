@@ -5,11 +5,11 @@ import {
   useMotionTemplate,
   motion,
 } from 'framer-motion';
+import { FilterShell } from '@lib/filters/FilterShell';
 import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
-} from '../../../src/pages/projects/gallery/sections/constants';
-import { FilterShell } from '@lib/filters/FilterShell';
+} from './constants';
 
 const id = MOTION_BLUR_ID;
 const intensity = MOTION_BLUR_INTENSITY;

@@ -7,22 +7,22 @@ import { TDivMotionProps } from '@lib/types/dom';
 import { Text } from './Text';
 import { useApp } from '@lib/context/app/useApp';
 
-export type TProps = {
+export type TPricingProps = {
   type: TPricingKey;
   isText?: boolean;
   isHover?: boolean;
 } & TDivMotionProps;
-export const Badge: FC<TProps> = ({
+export const Badge: FC<TPricingProps> = ({
   type,
   isText,
   isHover,
   ...props
 }) => {
-  const { BORDER_RADIUS } = useApp();
   return (
     <motion.div
       className={clsx('center p-4', BG[type])}
-      style={{ borderRadius: BORDER_RADIUS.XL }}
+      style={{ borderRadius: 40 }}
+      layout
       {...props}
     >
       {(isHover || isText) && <Text>{type}</Text>}

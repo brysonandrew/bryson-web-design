@@ -7,7 +7,7 @@ import { P_25 } from '@lib/components/layout/space/P_25';
 import { P4 } from '@lib/components/layout/space/P4';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useContact } from '@pages/index/contact/context';
+import { useContact } from '@lib/contact/context/useContact';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
@@ -33,14 +33,8 @@ export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const { key, listItems, price, discount, PreContent } =
     config;
-  const {
-    COLOR,
-    GLOW,
-    Glow,
-    BORDER_RADIUS,
-    GRADIENT,
-    Texture,
-  } = useApp();
+  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Texture } =
+    useApp();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
@@ -51,7 +45,7 @@ export const Package: FC<TProps> = ({ title }) => {
       {
         <span
           className={clsx(
-            'px-1 mx-1 text-main-inverted',
+            'px-1 mx-1 pricing-title',
             GRADIENT[key],
           )}
           style={{
@@ -103,8 +97,8 @@ export const Package: FC<TProps> = ({ title }) => {
         {...handlers}
       >
         <P1_5 />
-        <End classValue='text-white-7'>
-          <h4 className='w-full text-center text-2xl tracking-wider font-semibold capitalize'>
+        <End classValue='pricing-title'>
+          <h4 className='w-full text-center text-2xl'>
             {title}
           </h4>
           <motion.div

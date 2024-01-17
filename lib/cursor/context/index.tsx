@@ -1,11 +1,6 @@
-import {
-  useContext as useReactContext,
-  createContext,
-} from 'react';
-import { CONTEXT } from './constants';
+import { useContext as useReactContext } from 'react';
+import { CURSOR } from './constants';
 import { TContext } from './types';
 
-export const Cursor = createContext<TContext>(CONTEXT);
-
 export const useCursor = (): TContext =>
-  useReactContext<TContext>(Cursor);
+  useReactContext<TContext>(CURSOR);

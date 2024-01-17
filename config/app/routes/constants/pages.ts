@@ -12,7 +12,9 @@ export const PAGE_TITLES = [
   'Index',
 ] as const;
 
-export const INDEX_RECORD = resolvePage('Index', '/');
+export const INDEX_RECORD = {
+  ...resolvePage('Index'),
+} as const;
 
 export const PAGE_NAV_RECORD = PAGE_NAV_TITLES.reduce(
   (a, title) => {

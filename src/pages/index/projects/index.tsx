@@ -1,5 +1,5 @@
 import { Parallax } from '@lib/animation/components/parallax';
-import { List as Main } from '@pages/projects/list';
+import { Main } from '@pages/projects/Main';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@lib/components/layout/Section';

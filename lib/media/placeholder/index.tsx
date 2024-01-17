@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { IMAGE_PLACEHOLDER_ID } from '../../../src/pages/projects/gallery/sections/constants';
+import { IMAGE_PLACEHOLDER_ID } from '@lib/media/placeholder/constants';
 import { resolveUrlId } from '@lib/utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './resolveGradientStops';
 import clsx from 'clsx';

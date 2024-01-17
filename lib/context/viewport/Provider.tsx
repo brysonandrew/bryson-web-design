@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { Viewport } from '.';
+import { VIEWPORT } from './constants';
 import {
   TViewport,
   useViewport,
@@ -18,7 +18,7 @@ export const Provider: FC<PropsWithChildren> = ({
   };
 
   return (
-    <Viewport.Provider
+    <VIEWPORT.Provider
       value={{
         ...viewport,
         halfWidth: (viewport.width ?? 0) * 0.5,
@@ -27,6 +27,6 @@ export const Provider: FC<PropsWithChildren> = ({
       }}
     >
       {children}
-    </Viewport.Provider>
+    </VIEWPORT.Provider>
   );
 };

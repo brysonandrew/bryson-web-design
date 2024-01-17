@@ -1,9 +1,8 @@
 import { PropsWithChildren, useRef, useState } from 'react';
 import type { FC } from 'react';
-import { STATE } from './constants';
 import { useMotionValue } from 'framer-motion';
 import { TCursorOffset } from '@lib/cursor/hooks/useCursorOffset';
-import { Cursor } from '.';
+import { STATE, CURSOR } from './constants';
 import { resolveHoverKeyVariations } from '@lib/cursor/config';
 import { THover } from './types';
 
@@ -28,7 +27,7 @@ export const Provider: FC<PropsWithChildren> = ({
   const cursorY = useMotionValue(-999);
 
   return (
-    <Cursor.Provider
+    <CURSOR.Provider
       value={{
         offsetRef,
         cursor: { x: cursorX, y: cursorY },
@@ -43,6 +42,6 @@ export const Provider: FC<PropsWithChildren> = ({
       }}
     >
       {children}
-    </Cursor.Provider>
+    </CURSOR.Provider>
   );
 };

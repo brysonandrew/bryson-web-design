@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { useCurrName } from '@pages/projects/gallery/hooks/params/useCurrName';
 import {
   TChildrenProps,
   TClassValueProps,

@@ -4,14 +4,15 @@ import {
   useState,
 } from 'react';
 import type { FC } from 'react';
-import { Scroll } from '.';
+import { SCROLL } from './constants';
 import {
   useMotionValueEvent,
   useScroll,
 } from 'framer-motion';
 import { useTimeoutRef } from '@lib/hooks/window/useTimeoutRef';
 import { useLocation } from 'react-router';
-export const SCROLL = 200;
+
+export const INIT_SCROLL = 200;
 export const SCROLL_COOLDOWN = 200;
 
 export const Provider: FC<PropsWithChildren> = ({
@@ -32,10 +33,10 @@ export const Provider: FC<PropsWithChildren> = ({
       setScrolling(false);
     }, SCROLL_COOLDOWN);
 
-    if (!isScroll && value > SCROLL) {
+    if (!isScroll && value > INIT_SCROLL) {
       setScroll(true);
     }
-    if (isScroll && value < SCROLL) {
+    if (isScroll && value < INIT_SCROLL) {
       setScroll(false);
     }
   };
@@ -53,7 +54,7 @@ export const Provider: FC<PropsWithChildren> = ({
   }, [pathname]);
 
   return (
-    <Scroll.Provider
+    <SCROLL.Provider
       value={{
         scroll: { x: scrollX, y: scrollY },
         isScroll,
@@ -61,6 +62,6 @@ export const Provider: FC<PropsWithChildren> = ({
       }}
     >
       {children}
-    </Scroll.Provider>
+    </SCROLL.Provider>
   );
 };

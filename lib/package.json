@@ -3,14 +3,14 @@
   "version": "1.2.7",
   "description": "",
   "types": "/index.d.ts",
-  "main": "/index.ts",
-  "module": "/index.ts",
+  "main": "/main.ts",
+  "module": "/main.ts",
   "exports": {
     ".": {
       "types": "./index.d.ts",
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
+      "require": "./main.ts",
+      "import": "./main.ts",
+      "default": "./main.ts"
     },
     "./package.json": "./package.json"
   },

@@ -3,14 +3,17 @@ import { titleToKebab } from '@lib/utils/format';
 
 export const resolvePage = <T extends TPageTitle>(
   title: T,
-  path: string | null = null,
 ) => {
-  const key = titleToKebab<typeof title>(title);
-  return {
-    [key]: {
-      key,
-      title,
-      path: path ?? `/${key}`,
-    },
-  };
+  const key = titleToKebab<T>(title);
+  const page = {
+    key,
+    title,
+    path: 'Index' === title ? '/' : (`/${key}` as const),
+  } as const;
+
+  const result = {
+    [key]: page,
+  } as const;
+
+  return result;
 };
