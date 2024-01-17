@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TBaseInputProps } from '../config/types';
+import { TBaseInputProps } from '../context/types';
 import { Box } from '../box';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { TTextareaMotionProps } from '@lib/types/dom';
@@ -29,7 +29,7 @@ export const Textarea: FC<TProps> = ({
                 layout
                 transition={{ duration: 0 }}
                 ref={ref}
-                className='relative left-0 top-0 block m-0 input'
+                className='block relative left-0 top-0 m-0 input'
                 autoComplete='off'
                 rows={1}
                 name={name}

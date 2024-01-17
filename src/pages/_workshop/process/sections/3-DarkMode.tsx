@@ -10,11 +10,11 @@ import { Section } from '../Section';
 export const DarkMode = () => {
   const [isDarkMode, setDarkMode] = useState(false);
   return (
-    <Section title="Upgrade: Dark Mode">
+    <Section title='Upgrade: Dark Mode'>
       <div className='column-stretch gap-6'>
         <ParagraphLines
           lines={[
-            `Save on eyestrain and electricity by introducing
+            `Allow your users to save on eyestrain and their power bill by introducing
 dark mode.`,
           ]}
         />

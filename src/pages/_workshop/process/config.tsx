@@ -3,7 +3,7 @@ import { Content } from './sections/1-Content';
 import { Responsive } from './sections/2-Responsive';
 import { DarkMode } from './sections/3-DarkMode';
 import { FC } from 'react';
-import { SplashScreen } from './sections/z-SplashScreen';
+import { SplashScreen } from './sections/4-SplashScreen';
 
 export const SECTIONS: FC[] = [
   Foundation,

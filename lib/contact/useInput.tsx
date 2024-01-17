@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { TFormKey } from './config/types';
+import { TFormKey } from './context/types';
 import { useContact } from '@lib/contact/context/useContact';
 
 type TConfig = {

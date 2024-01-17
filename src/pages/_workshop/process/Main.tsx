@@ -27,6 +27,6 @@ export const Main: FC<TProps> = ({ style, rect }) => {
           <Section key={Section.name} />
         ))}
       </div>
-    </Root>
+    </Root> 
   );
 };

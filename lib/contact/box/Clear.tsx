@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useContact } from '@lib/contact/context/useContact';
 import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { PRESENCE_OPACITY_DELAY } from '@lib/animation/constants';
-import { TFormKey } from '@lib/contact/config/types';
+import { TFormKey } from '@lib/contact/context/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@lib/context/app/useApp';
 import { Cross } from '@lib/gallery/components/icons';

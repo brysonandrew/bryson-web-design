@@ -12,3 +12,4 @@ export const CAMERA_ICON = 'ion:camera';
 export const ARTIST_ICON = 'ion:paintbrush';
 export const PERSON_ICON_1 = 'ion:people';
 export const MAGNIFY_ICON = 'mdi:magnify';
+export const STAR_ICON = 'pepicons-pop:star-circle-filled';

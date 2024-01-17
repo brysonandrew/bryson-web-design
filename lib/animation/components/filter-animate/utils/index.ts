@@ -2,12 +2,12 @@ import { DURATION } from '@lib/animation/constants';
 
 export const INITIAL_KEY = 'initial';
 export const HOVER_KEY = 'hover';
-export const ANIMATE_KEY = 'animate';
+export const IDLE_KEY = 'idle';
 export const EXIT_KEY = 'exit';
 
 export const PARENT_ANIMATE_CONFIG = {
   initial: INITIAL_KEY,
-  animate: ANIMATE_KEY,
+  animate: IDLE_KEY,
   whileHover: HOVER_KEY,
   exit: EXIT_KEY,
 };
@@ -24,8 +24,8 @@ export const resolveParentAnimateConfig = (
   return {
     initial: INITIAL_KEY,
     animate: isHover
-      ? [ANIMATE_KEY, HOVER_KEY]
-      : ANIMATE_KEY,
+      ? [IDLE_KEY, HOVER_KEY]
+      : IDLE_KEY,
     exit: EXIT_KEY,
   };
 };

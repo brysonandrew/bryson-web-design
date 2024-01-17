@@ -8,7 +8,7 @@ type TProps = Pick<TLayoutRecord, 'Glow' | 'Texture'> &
   Pick<TAppConfig, 'COLOR'>;
 export const TextureGlow =
   ({ Glow, Texture, COLOR }: TProps) =>
-  ({ classValue, style, ...props }: TBlankProps) =>
+  ({ classValue, style, children, ...props }: TBlankProps) =>
     (
       <Glow
         box={6}
@@ -30,6 +30,9 @@ export const TextureGlow =
         }}
         {...props}
       >
-        <Texture style={{ ...style }} />
+       <>
+       <Texture style={{ ...style }} />
+        {children}
+       </>
       </Glow>
     );
