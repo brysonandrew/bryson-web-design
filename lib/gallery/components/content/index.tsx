@@ -34,6 +34,7 @@ export const Content: FC<TProps> = ({
 }) => {
   const { TextureGlow, Texture, BORDER_RADIUS, Active } =
     useApp();
+  console.log(Active);
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -95,7 +96,7 @@ export const Content: FC<TProps> = ({
       {...props}
     >
       {isProject ? <Texture /> : <TextureGlow />}
-      <Active classValue='z-20' />
+      <Active classValue='z-50' />
       <P2 />
       <motion.div
         layout={!isTransitioning}

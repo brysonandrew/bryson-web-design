@@ -1,5 +1,4 @@
-import { HTMLMotionProps } from 'framer-motion';
-import { ClassValue } from 'clsx';
+import { HTMLMotionProps, SVGMotionProps } from 'framer-motion';
 import {
   HTMLAttributes,
   ButtonHTMLAttributes,
@@ -8,23 +7,8 @@ import {
   ThHTMLAttributes,
   TdHTMLAttributes,
   SourceHTMLAttributes,
+  SVGAttributes,
 } from 'react';
-import { TTitleProps } from './main';
-
-export type TDivMotionProps = HTMLMotionProps<'div'>;
-
-export type TMotionUlProps = HTMLMotionProps<'ul'>;
-
-export type TButtonMotionProps = HTMLMotionProps<'button'> &
-  TTitleProps;
-export type TAnchorMotionProps = HTMLMotionProps<'a'> &
-  TTitleProps;
-export type TMotionImgProps = HTMLMotionProps<'img'>;
-export type TMotionInputProps = HTMLMotionProps<'input'>;
-
-export type TTextareaProps = HTMLMotionProps<'textarea'>;
-
-export type TRect = DOMRect | null;
 
 export type TElementProps = HTMLAttributes<HTMLElement>;
 
@@ -54,3 +38,5 @@ export type TTdProps =
 
 export type TSource =
   SourceHTMLAttributes<HTMLSourceElement>;
+
+export type TSvgProps = SVGAttributes<SVGElement>;

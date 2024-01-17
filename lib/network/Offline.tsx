@@ -1,23 +1,25 @@
 import type { FC } from 'react';
-import { Offline as Icon } from '@lib/icons/components/network/Offline';
-import { P1 } from '@lib/components/layout/space/P1';
 import { motion } from 'framer-motion';
+import { PRESENCE_OPACITY } from '@lib/animation/constants';
+import { I } from '@lib/icons/icon';
+import { OFFLINE_ICON } from '@lib/constants/icons/constants/network';
 
 export const Offline: FC = () => {
   return (
     <motion.div
-      layoutId='OFFLINE_LAYOUT_ID'
-      className='relative px-6 uppercase z-10'
+      className='row gap-1 uppercase pl-1 pr-2.5 py-0.5'
+      layout='position'
+      {...PRESENCE_OPACITY}
     >
-      <motion.div className='row' layout='position'>
-        <Icon />
-        <P1 />
-        <p className='row'>
-          <span>You are</span>
-          <P1 element='span' />
-          <strong>offline</strong>
-        </p>
-      </motion.div>
+      <I
+        width={20}
+        height={20}
+        icon={OFFLINE_ICON}
+        inline
+      />
+      <div>
+        <span>You are</span> <strong>offline</strong>
+      </div>
     </motion.div>
   );
 };

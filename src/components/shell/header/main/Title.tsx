@@ -1,4 +1,4 @@
-import { ThickLine } from '@lib/components/decoration/line/ThickLine';
+import { ThickLine } from '@lib/components/layout/line/ThickLine';
 import { DURATION } from '@lib/animation/constants';
 import styled from '@emotion/styled';
 import type { CSSProperties, FC } from 'react';

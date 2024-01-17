@@ -9,7 +9,7 @@ import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
 import { useScrollYBounds } from './useScrollYBounds';
 import { useScroll } from '@lib/context/scroll';
-import { TRect } from '@lib/types/dom';
+import { TRect } from '@lib/types/dom/main';
 
 type TProps = TParallaxOptions & {
   rect: TRect;

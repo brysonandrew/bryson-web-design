@@ -10,7 +10,7 @@ import {
   PAGE_VALUES,
 } from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@lib/hooks/sounds/useCoinDropSound';
-import { ThickLine } from '@lib/components/decoration/line/ThickLine';
+import { ThickLine } from '@lib/components/layout/line/ThickLine';
 import { Link } from 'react-router-dom';
 import { I } from '@lib/icons/icon';
 

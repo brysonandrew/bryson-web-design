@@ -1,5 +1,5 @@
-import { FadeDown } from '@lib/components/decoration/vertical-fade/FadeDown';
-import { FadeUp } from '@lib/components/decoration/vertical-fade/FadeUp';
+import { FadeDown } from '@lib/components/layout/vertical-fade/FadeDown';
+import { FadeUp } from '@lib/components/layout/vertical-fade/FadeUp';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,

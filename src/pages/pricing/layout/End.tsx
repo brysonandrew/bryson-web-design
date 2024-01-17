@@ -1,5 +1,5 @@
 import { useApp } from '@lib/context/app/useApp';
-import { TClassValueProps } from '@lib/types/dom';
+import { TClassValueProps } from '@lib/types/dom/main';
 import clsx from 'clsx';
 import type { FC, PropsWithChildren } from 'react';
 

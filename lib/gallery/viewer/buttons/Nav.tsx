@@ -1,21 +1,19 @@
 import type { FC } from 'react';
+import { isDesktop } from 'react-device-detect';
 import {
-  IconLink,
+  LinkFillCenter,
   TProps as TIconLinkProps,
-} from '@lib/components/interactive/IconLink';
-import {
-  TClassValueProps,
-  TTitleProps,
-} from '@lib/types/dom';
+} from '@lib/components/interactive/LinkFillCenter';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { useViewer as useContext } from '@lib/gallery/viewer/context/useViewer';
 import { NOOP } from '@lib/constants/functions';
-import { isDesktop } from 'react-device-detect';
 
-type TProps = TClassValueProps &
-  Pick<TIconLinkProps, 'Icon' | 'to'> &
-  TTitleProps;
-export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
+type TProps = TIconLinkProps;
+export const Nav: FC<TProps> = ({
+  to,
+  children,
+  ...props
+}) => {
   const { onMotionBlurStart } = useContext();
   const handleMoveSound = useMoveSound();
 
@@ -25,11 +23,12 @@ export const Nav: FC<TProps> = ({ to, Icon, ...props }) => {
   };
 
   return (
-    <IconLink
+    <LinkFillCenter
       to={to}
       onClick={isDesktop ? handleClick : NOOP}
-      Icon={Icon}
       {...props}
-    />
+    >
+      {children}
+    </LinkFillCenter>
   );
 };

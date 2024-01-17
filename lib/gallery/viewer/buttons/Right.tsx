@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TClassValueProps } from '@lib/types/dom';
+import { TClassValueProps } from '@lib/types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { ArrowRight } from '@lib/gallery/viewer/icons/ArrowRight';
@@ -12,20 +12,22 @@ type TProps = TClassValueProps & {
 };
 export const Right: FC<TProps> = ({ max, ...props }) => {
   const to = useNext(max);
+  const title = 'Right';
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
-    'right',
+    title,
   );
   if (!to) return null;
 
   return (
     <Nav
       to={to}
-      Icon={ArrowRight}
-      title='Right'
+      title={title}
       {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
       {...props}
-    />
+    >
+      <ArrowRight />
+    </Nav>
   );
 };

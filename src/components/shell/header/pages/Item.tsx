@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { DURATION } from '@lib/animation/constants';
-import { ThickLine } from '@lib/components/decoration/line/ThickLine';
+import { ThickLine } from '@lib/components/layout/line/ThickLine';
 import { TPageTitle } from '@app/routes/types';
 import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
 

@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
-import { TClassValueProps, TMotionImgProps, TSource } from '@lib/types/dom';
+import { TClassValueProps, TImgMotionProps, TSource } from '@lib/types/dom';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const Root = styled.picture``;
 const Source = styled.source``;
 const Img = styled(motion.img)``;
 
-type TProps = TMotionImgProps &
+type TProps = TImgMotionProps &
   TClassValueProps & {
     mediaRecord: TMediaRecord;
     imageRef?: MutableRefObject<HTMLImageElement | null>;

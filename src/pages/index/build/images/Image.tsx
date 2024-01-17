@@ -9,12 +9,12 @@ import {
 import clsx from 'clsx';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { TMotionImgProps } from '@lib/types/dom';
+import { TImgMotionProps } from '@lib/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import {
-  TDepthConfig,
+  TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
 import { ORIGIN_50 } from '@lib/animation/constants';
@@ -25,12 +25,12 @@ import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 
-type TProps = TMotionImgProps & {
+type TProps = TImgMotionProps & {
   isScrolling: boolean;
   index: number;
   count: number;
   mediaRecord: TMediaRecord;
-  depthConfig: TDepthConfig;
+  positionConfig: TPositionConfig;
 };
 export const Image: FC<TProps> = (props) => {
   const {
@@ -38,16 +38,16 @@ export const Image: FC<TProps> = (props) => {
     index,
     count,
     mediaRecord,
-    depthConfig,
+    positionConfig,
     ...pictureProps
   } = props;
   const title = 'View in image gallery';
   const name = useCurrName();
   const isGallery = Boolean(name);
   const isInteractionDisabled = isGallery || isScrolling;
-  const size = depthConfig.imageSize;
+  const size = positionConfig.imageSize;
 
-  const circleStyle = useCircle(depthConfig);
+  const circleStyle = useCircle(positionConfig);
   const dimensions = useImageDimensions({
     container: { width: size, height: size },
     image: mediaRecord,
@@ -69,6 +69,7 @@ export const Image: FC<TProps> = (props) => {
       handlers.onHoverStart();
     }
   };
+
   return (
     <motion.li
       className={clsx(
@@ -81,11 +82,6 @@ export const Image: FC<TProps> = (props) => {
         ...circleStyle,
         ...ORIGIN_50,
       }}
-      // variants={resolvePresence(
-      //   { opacity: 0 },
-      //   resolveMotionConfig(depthConfig),
-      // )}
-      // {...resolveParentAnimateConfig({ isHover })}
       {...(isDesktop ? handlers : {})}
     >
       <Button
@@ -102,3 +98,8 @@ export const Image: FC<TProps> = (props) => {
     </motion.li>
   );
 };
+      // variants={resolvePresence(
+      //   { opacity: 0 },
+      //   resolveMotionConfig(positionConfig),
+      // )}
+      // {...resolveParentAnimateConfig({ isHover })}
