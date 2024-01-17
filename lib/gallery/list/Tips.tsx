@@ -4,7 +4,6 @@ import {
 } from '@lib/cursor/switch/config';
 import { PRESENCE_OPACITY } from '@lib/animation/constants';
 import { useCursor } from '@lib/cursor/context';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@lib/gallery/viewer/tips/Touch';
 import { P2 } from '@lib/components/layout/space/P2';
