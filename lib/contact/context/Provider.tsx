@@ -1,12 +1,11 @@
 import { PropsWithChildren, useState } from 'react';
 import type { FC } from 'react';
-import { CONTACT } from './constants';
 import {
   TFormKey,
   TStatus,
   TFormState,
-} from '@lib/contact/config/types';
-import { INIT_CONTACT_STATE } from '../config/constants';
+} from '@lib/contact/context/types';
+import { INIT_CONTACT_STATE , CONTACT} from './constants';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,

@@ -9,7 +9,7 @@ export const Network: FC = () => {
   useEventListener('offline', onOffline);
   useEventListener('online', onOnline);
 
-  if (true) {
+  if (isOffline) {
     return (
       <BackdropBlur>
         <Offline key='Offline' />

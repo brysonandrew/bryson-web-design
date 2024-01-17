@@ -95,8 +95,14 @@ export const Content: FC<TProps> = ({
       {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
-      {isProject ? <Texture /> : <TextureGlow />}
-      <Active classValue='z-50' />
+      {isProject ? (
+        <Texture />
+      ) : (
+        <TextureGlow>
+          <Active classValue='z-50' />
+        </TextureGlow>
+      )}
+
       <P2 />
       <motion.div
         layout={!isTransitioning}

@@ -27,7 +27,7 @@ export const CONTACT_FORM = 'contact form' as const;
 export const DARK_MODE = 'dark/light mode' as const;
 export const SPLASH_SCREEN = 'splash screen' as const;
 
-export const FOUNDATION_COST = 800;
+export const FOUNDATION_COST = 600;
 export const CONTENT_COST = 100;
 export const RESPONSIVE_COST = 200;
 export const CONTACT_FORM_COST = 200;

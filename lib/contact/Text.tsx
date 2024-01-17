@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TBaseInputProps } from './config/types';
+import { TBaseInputProps } from './context/types';
 import { Box } from './box';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { TInputMotionProps } from '@lib/types/dom';

@@ -20,8 +20,13 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { Texture, Glow, BORDER_RADIUS, GLOW, COLOR } =
-    useApp();
+  const {
+    Texture,
+    BORDER_RADIUS,
+    TextureGlow,
+    Glow,
+    COLOR,
+  } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -51,13 +56,10 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         : resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
-        ...(isDisabled
-          ? {}
-          : { borderRadius: GLOW.secondary }),
       }}
       {...handlers}
     >
-      <Texture />
+      <TextureGlow />
       <Input
         className={clsx(
           'absolute inset-0 pointer-events-none opacity-0',
@@ -67,7 +69,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <Text
         className={clsx(
-          'center relative  text-2xl italic uppercase py-2 pointer-events-none',
+          'center relative text-2xl italic uppercase py-2 pointer-events-none',
         )}
         variants={{
           animate: {

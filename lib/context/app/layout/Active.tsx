@@ -13,19 +13,20 @@ export const Active =
   ({ classValue, style, ...props }: TBlankProps) =>
     (
       <Blank
-        className={clsx(
+        classValue={clsx(
           'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 pointer-events-none',
           classValue,
         )}
         style={{
           width: `calc(0.5rem + 4px)`,
           height: '100%',
+          backgroundColor: COLOR.secondary,
           borderRadius: BORDER_RADIUS.SM,
           ...(style ?? {}),
         }}
-        initial={false}
         variants={{
           animate: {
+            opacity:1,
             backgroundColor: COLOR.secondary,
           },
           hover: {

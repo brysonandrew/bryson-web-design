@@ -4,6 +4,8 @@ import { Section } from '@lib/components/layout/section';
 import { FC } from 'react';
 import { Main } from './Main';
 import { P60Y } from '@lib/components/layout/space/P60Y';
+import { Process } from '@pages/_workshop/process';
+import { P24Y } from '@lib/components/layout/space/P24Y';
 
 export const Pricing: FC = () => {
   return (
@@ -11,6 +13,8 @@ export const Pricing: FC = () => {
       title={SECTION_RECORD[PAGE_RECORD.pricing.key]}
     >
       <Main />
+      <P24Y />
+      <Process/>
       <P60Y />
     </Section>
   );

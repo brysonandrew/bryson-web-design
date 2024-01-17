@@ -10,7 +10,9 @@ export const DarkMode: FC<TProps> = ({
   isDarkMode,
   classValue,
 }) => (
-  <Provider isDarkMode={isDarkMode}>
+  <Provider
+    isDarkMode={isDarkMode}
+  >
     <ViewWithDarkMode classValue={classValue}>
       <Viewless />
     </ViewWithDarkMode>

@@ -50,6 +50,7 @@ export const Contact = () => {
       <P3 />
       <Textarea
         name='message'
+        placeholder=''
         disabled={isDisabled}
         required
         {...inputHandlers}
