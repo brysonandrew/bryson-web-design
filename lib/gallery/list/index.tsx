@@ -1,9 +1,9 @@
 import { Item } from './item';
 import { motion } from 'framer-motion';
-import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from 'lib/gallery/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
 import { useGallery } from '../context/useGallery';
-import { InView } from '@lib/in-view';
+import { InView } from 'lib/in-view';
 
 export const List = () => {
   const currProject = useCurrProject();

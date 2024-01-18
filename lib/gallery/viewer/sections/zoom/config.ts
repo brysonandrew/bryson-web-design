@@ -1,4 +1,4 @@
-import { TMotionPoint } from '@lib/animation/types';
+import { TMotionPoint } from 'lib/animation/types';
 import { MotionValue } from 'framer-motion';
 
 export const SCALE = {

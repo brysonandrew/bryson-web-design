@@ -1,4 +1,4 @@
-import type { TChildren } from "@lib/types/dom";
+import type { TChildren } from "lib/types/dom";
 import type { FC, SVGProps } from "react";
 
 type TProps = {

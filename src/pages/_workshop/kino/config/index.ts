@@ -1,4 +1,4 @@
-import { VOIDOP } from '@lib/constants/functions';
+import { VOIDOP } from 'lib/constants/functions';
 import {
   TConnectionContext,
   TLogsContext,

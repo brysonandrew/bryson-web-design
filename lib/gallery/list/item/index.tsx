@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from '../../components/content';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { useOnSound } from '@lib/hooks/sounds/useOnSound';
+import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
+import { useOnSound } from 'lib/hooks/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
-import { resolveCursorKeyFromHoverKey } from '@lib/cursor/switch/config';
-import { NOOP } from '@lib/constants/functions';
-import { useCursor } from '@lib/cursor/context';
-import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
-import { TSlugProps } from '@lib/gallery/config/types';
-import { useToFirst } from '@lib/gallery/viewer/hooks/nav/useToFirst';
+import { resolveCursorKeyFromHoverKey } from 'lib/cursor/switch/config';
+import { NOOP } from 'lib/constants/functions';
+import { useCursor } from 'lib/cursor/context';
+import { useCurrProject } from 'lib/gallery/viewer/hooks/params/useCurrProject';
+import { TSlugProps } from 'lib/gallery/config/types';
+import { useToFirst } from 'lib/gallery/viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { useGallery } from 'lib/gallery/context/useGallery';
 
 type TProps = TSlugProps & {
   index: number;

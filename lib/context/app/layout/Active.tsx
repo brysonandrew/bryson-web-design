@@ -1,4 +1,4 @@
-import { BORDER_RADIUS } from '@app/style/border-radius';
+import { BORDER_RADIUS } from '@components/style/border-radius';
 import clsx from 'clsx';
 import {
   TAppConfig,

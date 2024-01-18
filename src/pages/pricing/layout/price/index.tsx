@@ -1,7 +1,7 @@
 import {
   formatNZLongDate,
   nToMoney,
-} from '@lib/utils/format';
+} from 'lib/utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Banner } from './Banner';

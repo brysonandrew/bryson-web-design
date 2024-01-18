@@ -9,10 +9,10 @@ import {
   PAGE_RECORD,
   PAGE_VALUES,
 } from '@app/routes/constants/pages';
-import { useCoinDropSound } from '@lib/hooks/sounds/useCoinDropSound';
-import { ThickLine } from '@lib/components/layout/line/ThickLine';
+import { useCoinDropSound } from 'lib/hooks/sounds/useCoinDropSound';
+import { ThickLine } from 'lib/components/layout/line/ThickLine';
 import { Link } from 'react-router-dom';
-import { I } from '@lib/icons/icon';
+import { I } from 'lib/icons/icon';
 
 const Root = styled.nav``;
 const List = styled.ul``;

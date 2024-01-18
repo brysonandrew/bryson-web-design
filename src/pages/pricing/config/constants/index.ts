@@ -3,11 +3,11 @@ import {
   TPricingTitle,
 } from '@pages/pricing/config/types';
 import { TProps as TPriceProps } from '@pages/pricing/layout/price';
-import { newlineToArr } from '@lib/utils/transformer/newlineToArr';
+import { newlineToArr } from 'lib/utils/transformer/newlineToArr';
 import { FC } from 'react';
 import { PlusContent } from './PlusContent';
-import { titleToKebab } from '@lib/utils/format';
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
+import { titleToKebab } from 'lib/utils/format';
+import { TTTitleToKebab } from 'lib/types/transformers/format/title';
 
 export const PACKAGES = [
   'Standard',

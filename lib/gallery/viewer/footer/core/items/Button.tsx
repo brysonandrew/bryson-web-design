@@ -1,17 +1,17 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
-import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
-import { NAME_KEY } from '@lib/gallery/config/constants';
+import { useMoveSound } from 'lib/hooks/sounds/useMoveSound';
+import { NAME_KEY } from 'lib/gallery/config/constants';
 import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
-import { useViewer as useContext } from '@lib/gallery/viewer/context/useViewer';
-import { TMediaRecord } from '@ops/screens/process/config/types';
-import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { Background } from '@lib/components/interactive/circle/Background';
-import { useTo } from '@lib/gallery/viewer/hooks/nav/useTo';
-import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
-import { useApp } from '@lib/context/app/useApp';
-import { useDarkMode } from '@lib/context';
+import { useViewer as useContext } from 'lib/gallery/viewer/context/useViewer';
+import { TMediaRecord } from 'lib/media/picture/config/types';
+import { resolveInteractiveLabels } from 'lib/utils/attributes/resolveInteractiveLabels';
+import { Background } from 'lib/components/interactive/circle/Background';
+import { useTo } from 'lib/gallery/viewer/hooks/nav/useTo';
+import { useCurrName } from 'lib/gallery/viewer/hooks/params/useCurrName';
+import { useApp } from 'lib/context/app/useApp';
+import { useDarkMode } from 'lib/context';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

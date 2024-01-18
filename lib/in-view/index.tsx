@@ -2,7 +2,7 @@ import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@lib/types/dom';
+} from 'lib/types/dom';
 import {
   IntersectionOptions,
   useInView,

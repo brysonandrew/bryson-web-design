@@ -1,5 +1,5 @@
+import { TSource } from 'lib/types';
 import type { Metadata, OutputInfo } from 'sharp';
-import { TSource } from '@lib/types/dom';
 import { TScreensLookup } from './screens';
 
 export type TScreensRecord = Record<string, TMediaRecords>;

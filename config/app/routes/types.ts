@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
+import { TTTitleToKebab } from 'lib/types/transformers/format/title';
 import { SECTION_RECORD } from './constants/index-sections';
 import { PAGE_TITLES } from './constants/pages';
 

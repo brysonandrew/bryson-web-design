@@ -1,18 +1,18 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Box } from '@lib/animation/components/filter-animate/Box';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { Aura } from '@lib/filters/aura/Aura';
-import { P1_5 } from '@lib/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
-import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { Box } from 'lib/animation/components/filter-animate/Box';
+import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
+import { Aura } from 'lib/filters/aura/Aura';
+import { P1_5 } from 'lib/components/layout/space/P1_5';
+import { resolveParentAnimateConfig } from 'lib/animation/components/filter-animate/utils';
+import { CUSTOM_CURSOR_KEY } from 'lib/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
-import { useApp } from '@lib/context/app/useApp';
-import { OPEN_IN_NEW_ICON } from '@lib/icons/constants';
-import { formatUrl } from '@lib/utils/format/url';
-import { Visit } from '@lib/cursor/switch/format/Visit';
-import { useDarkMode } from '@lib/context';
+import { useApp } from 'lib/context/app/useApp';
+import { OPEN_IN_NEW_ICON } from 'lib/icons/constants';
+import { formatUrl } from 'lib/utils/format/url';
+import { Visit } from 'lib/cursor/switch/format/Visit';
+import { useDarkMode } from 'lib/context';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,

@@ -2,7 +2,7 @@ import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
 import { useDispersion } from '../../hooks/useDispersion';
 import { TBaseConfig, TTransformRange } from '../../config';
-import { TChildren } from '@lib/types/dom/main';
+import { TChildren } from 'lib/types/dom/main';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue): TChildren;

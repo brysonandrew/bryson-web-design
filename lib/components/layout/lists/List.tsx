@@ -1,4 +1,4 @@
-import { TChildren } from '@lib/types/dom';
+import { TChildren } from 'lib/types/dom';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC } from 'react';
 

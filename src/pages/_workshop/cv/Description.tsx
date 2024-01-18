@@ -1,4 +1,4 @@
-import { useApp } from '@lib/context/app/useApp';
+import { useApp } from 'lib/context/app/useApp';
 import { DESCRIPTION_PARAGRAPHS } from './copy';
 
 export const Description = () => {

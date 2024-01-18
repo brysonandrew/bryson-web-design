@@ -1,5 +1,5 @@
-import { TSlugProps } from '@lib/gallery/config/types';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { TSlugProps } from 'lib/gallery/config/types';
+import { useGallery } from 'lib/gallery/context/useGallery';
 import { FC } from 'react';
 
 type TProps = TSlugProps;

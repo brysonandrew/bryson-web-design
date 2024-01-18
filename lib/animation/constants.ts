@@ -1,9 +1,9 @@
 import {
   EASE,
   DURATION_DARK_MODE_MS,
-} from '@lib/context/dark-mode/useDarkMode';
-import { TTransition } from '@lib/animation/types';
-import { resolvePresence } from '@lib/animation/utils';
+} from 'lib/context/dark-mode/useDarkMode';
+import { TTransition } from 'lib/animation/types';
+import { resolvePresence } from 'lib/animation/utils';
 import { Transition } from 'framer-motion';
 
 const isDisabled = false; // isMobile;

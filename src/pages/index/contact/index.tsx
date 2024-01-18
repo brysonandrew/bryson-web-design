@@ -1,8 +1,8 @@
-import { Parallax } from '@lib/animation/components/parallax';
+import { Parallax } from 'lib/animation/components/parallax';
 import { Main } from '@pages/contact/Main';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { FAKE_3D_PROPS } from './constants';
-import { Section } from '@lib/components/layout/section';
+import { Section } from 'lib/components/layout/section';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 
 const Contact = () => {

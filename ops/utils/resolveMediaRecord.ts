@@ -1,4 +1,4 @@
-import { TMediaMetadata, TMediaRecord } from '@ops/screens/process/config/types';
+import { TMediaMetadata, TMediaRecord } from 'lib/media/picture/config/types';
 import { resolveFsInfo } from './resolveFsInfo';
 import { removePublicDir } from './write';
 

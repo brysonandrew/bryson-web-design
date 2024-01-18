@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import {
   TChildren,
   TClassValueProps,
-} from '@lib/types/dom/main';
-import { TDivMotionProps } from '@lib/types/dom/motion';
-import { useCursor } from '@lib/cursor/context';
+} from 'lib/types/dom/main';
+import { TDivMotionProps } from 'lib/types/dom/motion';
+import { useCursor } from 'lib/cursor/context';
 
 const DEFAULT_ANIMATE = {
   opacity: 1,

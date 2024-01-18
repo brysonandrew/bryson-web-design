@@ -1,4 +1,4 @@
-import { TKeyStr } from '@lib/types/keys';
+import { TKeyStr } from 'lib/types/keys';
 import { TRgb, TRgbaValue } from '../types';
 import { varRgb } from './varRgb';
 

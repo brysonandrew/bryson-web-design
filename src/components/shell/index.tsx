@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import { Global } from './global';
-import { PRESENCE_OPACITY } from '@lib/animation/constants';
-import { Cursor } from '@lib/cursor';
+import { PRESENCE_OPACITY } from 'lib/animation/constants';
+import { Cursor } from 'lib/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';
-import { P24Y } from '@lib/components/layout/space/P24Y';
+import { P24Y } from 'lib/components/layout/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';

@@ -1,5 +1,5 @@
-import { I } from '@lib/icons/icon';
-import { IMAGE_ICON } from '@lib/icons/constants';
+import { I } from 'lib/icons/icon';
+import { IMAGE_ICON } from 'lib/icons/constants';
 import { Shell } from './Shell';
 
 export const Basic = () => {

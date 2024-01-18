@@ -2,7 +2,7 @@ import {
   TItem,
   TItems,
   TSlugProps,
-} from '@lib/gallery/config/types';
+} from 'lib/gallery/config/types';
 import { FC } from 'react';
 
 export type TItemsConfig<

@@ -1,4 +1,4 @@
-import { MID_MOTION_CONFIG } from '@lib/animation/constants';
+import { MID_MOTION_CONFIG } from 'lib/animation/constants';
 import { Placeholder } from '..';
 
 export const Responsive = () => (

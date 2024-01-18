@@ -1,13 +1,13 @@
-import { Paragraphs } from '@lib/gallery/list/item/details/Paragraphs';
-import { TItem } from '@lib/gallery/config/types';
+import { Paragraphs } from 'lib/gallery/list/item/details/Paragraphs';
+import { TItem } from 'lib/gallery/config/types';
 import { Tags } from './Tags';
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@lib/components/layout/space/P2';
-import { TDivMotionProps } from '@lib/types/dom/motion';
+import { P2 } from 'lib/components/layout/space/P2';
+import { TDivMotionProps } from 'lib/types/dom/motion';
 import clsx from 'clsx';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { useGallery } from 'lib/gallery/context/useGallery';
 
 const Root = styled(motion.div)``;
 

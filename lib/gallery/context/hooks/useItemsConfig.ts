@@ -2,8 +2,8 @@ import {
   TInitItems,
   TItem,
   TItems,
-} from '@lib/gallery/config/types';
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
+} from 'lib/gallery/config/types';
+import { TTTitleToKebab } from 'lib/types/transformers/format/title';
 import { useMemo } from 'react';
 import { TItemsConfig } from '../config/types';
 import { resolveItem } from '../utils/resolveItem';

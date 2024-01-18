@@ -1,11 +1,7 @@
+import { PUBLIC_DIR, SMALL_SUFFIX, SCREENS_DIR, PRECACHE_PATH } from '@ops/screens/process/constants';
 import { promises as fs } from 'fs';
 import sharp, { Metadata, OutputInfo } from 'sharp';
-import {
-  SMALL_SUFFIX,
-  SCREENS_DIR,
-  PRECACHE_PATH,
-  PUBLIC_DIR,
-} from '../screens/process/config/constants';
+
 
 export { resolveFsInfo } from './resolveFsInfo';
 export { resolveMediaRecord } from './resolveMediaRecord';

@@ -1,8 +1,8 @@
 import {
   TBaseColorRecord,
   TCssVar,
-} from '@lib/color/types';
-import { TKeyStr } from '@lib/types/keys';
+} from 'lib/color/types';
+import { TKeyStr } from 'lib/types/keys';
 import { resolveVarCss } from './resolveVarCss';
 
 export const resolveColorRecord = <

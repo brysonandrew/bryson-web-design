@@ -9,7 +9,7 @@ import {
   SCREENS_DIR,
   EXCLUDE_SMALLS,
   BASE_SCREENS_ENTRY,
-} from './config/constants';
+} from './constants';
 import { resolveMediaRecord } from '@ops/utils/resolveMediaRecord';
 import {
   resolveSmallEntry,
@@ -19,7 +19,7 @@ import {
   writeFileData,
   resolveFsInfo,
 } from '@ops/utils/write';
-import { TMediaRecords, TScreensRecord } from './config/types';
+import { TMediaRecords, TScreensRecord } from '../../media/picture/config/types';
 import { writeProjectRecordInGallery } from './utils/writeProjectRecordInGallery';
 
 (async () => {

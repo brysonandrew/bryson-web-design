@@ -1,4 +1,4 @@
-import { NAME_KEY } from "@lib/gallery/config/constants";
+import { NAME_KEY } from "lib/gallery/config/constants";
 import { useSearchParams } from "react-router-dom";
 
 export const useCurrName = () => {

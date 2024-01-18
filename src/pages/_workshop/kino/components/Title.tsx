@@ -1,4 +1,4 @@
-import { TChildrenProps } from '@lib/types/dom';
+import { TChildrenProps } from 'lib/types/dom';
 import { FC } from 'react';
 
 export const Title: FC<TChildrenProps> = ({ children }) => {

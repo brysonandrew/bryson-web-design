@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { TInitItems } from '@lib/gallery/config/types';
+import { TInitItems } from 'lib/gallery/config/types';
 import { useItemsConfig } from './hooks/useItemsConfig';
 import { GALLERY } from './config/constants';
 import { TGalleryConfig } from './config/types';
