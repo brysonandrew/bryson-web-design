@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { MOTION_CONFIG } from 'lib/animation/constants';
+import { MOTION_CONFIG } from '@brysonandrew/lib/animation/constants';
 import { FC } from 'react';
 import { ThinLine } from '.';
 import clsx from 'clsx';
-import { TClassValueProps } from 'lib/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/lib/types/dom/main';
 
 type TProps = { delay?: number } & TClassValueProps;
 export const ThinLineGrow: FC<TProps> = ({

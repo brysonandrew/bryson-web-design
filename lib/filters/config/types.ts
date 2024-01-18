@@ -1,4 +1,4 @@
-import type { TChildren } from "lib/types/dom";
+import type { TChildren } from '@brysonandrew/lib/types/dom';
 
 export type TFilterChildrenProps = {
   children?(id: string): TChildren;
@@ -7,6 +7,6 @@ export type TFilterChildrenProps = {
 
 export type TFilterProps = TFilterChildrenProps & {
   id: string;
-  source?: "SourceGraphic";
+  source?: 'SourceGraphic';
   result?: string;
 };

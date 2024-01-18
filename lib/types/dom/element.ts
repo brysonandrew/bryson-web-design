@@ -1,4 +1,3 @@
-import { HTMLMotionProps, SVGMotionProps } from 'framer-motion';
 import {
   HTMLAttributes,
   ButtonHTMLAttributes,
@@ -9,34 +8,43 @@ import {
   SourceHTMLAttributes,
   SVGAttributes,
 } from 'react';
+import { TClassValueProps } from './main';
 
-export type TElementProps = HTMLAttributes<HTMLElement>;
+export type TElementProps = HTMLAttributes<HTMLElement> &
+  TClassValueProps;
 
-export type TDivProps = HTMLAttributes<HTMLDivElement>;
+export type TDivProps = HTMLAttributes<HTMLDivElement> &
+  TClassValueProps;
 
 export type THeadingProps =
-  HTMLAttributes<HTMLHeadingElement>;
+  HTMLAttributes<HTMLHeadingElement> & TClassValueProps;
 
-export type TUlProps = HTMLAttributes<HTMLUListElement>;
+export type TUlProps = HTMLAttributes<HTMLUListElement> &
+  TClassValueProps;
 
 export type TButtonProps =
-  ButtonHTMLAttributes<HTMLButtonElement>;
+  ButtonHTMLAttributes<HTMLButtonElement> &
+    TClassValueProps;
 
 export type TAnchorProps =
-  AnchorHTMLAttributes<HTMLAnchorElement>;
+  AnchorHTMLAttributes<HTMLAnchorElement> &
+    TClassValueProps;
 
 export type TParagraphProps =
-  HTMLAttributes<HTMLParagraphElement>;
+  HTMLAttributes<HTMLParagraphElement> & TClassValueProps;
 
-export type TImgProps = ImgHTMLAttributes<HTMLImageElement>;
+export type TImgProps =
+  ImgHTMLAttributes<HTMLImageElement> & TClassValueProps;
 
 export type TThProps =
-  ThHTMLAttributes<HTMLTableCellElement>;
+  ThHTMLAttributes<HTMLTableCellElement> & TClassValueProps;
 
 export type TTdProps =
-  TdHTMLAttributes<HTMLTableCellElement>;
+  TdHTMLAttributes<HTMLTableCellElement> & TClassValueProps;
 
 export type TSource =
-  SourceHTMLAttributes<HTMLSourceElement>;
+  SourceHTMLAttributes<HTMLSourceElement> &
+    TClassValueProps;
 
-export type TSvgProps = SVGAttributes<SVGElement>;
+export type TSvgProps = SVGAttributes<SVGElement> &
+  TClassValueProps;

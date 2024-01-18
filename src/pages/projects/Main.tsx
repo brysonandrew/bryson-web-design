@@ -1,7 +1,8 @@
 import type { FC } from 'react';
-import { TParallaxMotionChildrenProps } from 'lib/animation/components/parallax/config';
+import { TParallaxMotionChildrenProps } from '@brysonandrew/lib/animation/components/parallax/config';
 import { motion } from 'framer-motion';
-import { List } from 'lib/gallery/list';
+import { List } from '@brysonandrew/lib/gallery/list';
+import { TTitle, TSlug, TRest } from '@app/gallery/types';
 
 type TProps = Partial<TParallaxMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {
@@ -13,7 +14,7 @@ export const Main: FC<TProps> = ({ style, rect }) => {
         ...style,
       }}
     >
-      <List />
+      <List<TTitle, TSlug, TRest> />
     </motion.div>
   );
 };

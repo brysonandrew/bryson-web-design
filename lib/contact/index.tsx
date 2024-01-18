@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Submit } from './Submit';
-import React, { useRef } from 'react';
+import { FC, useRef } from 'react';
 import { useForm } from './hooks/useForm';
 import { useAutoFocus } from './hooks/useAutoFocus';
 import { Text } from './Text';
@@ -9,12 +9,15 @@ import { Textarea } from './textarea';
 
 const Root = styled(motion.form)``;
 
-export const Contact = () => {
+type TProps = { isDisabled?: boolean };
+export const Contact: FC<TProps> = ({
+  isDisabled: _isDisabled,
+}) => {
   const ref = useRef<HTMLFormElement | null>(null);
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  useAutoFocus(isDisabled);
+  useAutoFocus(_isDisabled ?? isDisabled);
 
   return (
     <Root

@@ -1,4 +1,4 @@
-import { TColorRecord, TRgbRecord } from 'lib/color/types';
+import { TColorRecord, TRgbRecord } from '@brysonandrew/lib/color/types';
 
 export type TConfig<K extends string> = {
   colorRecord: TColorRecord<K>;

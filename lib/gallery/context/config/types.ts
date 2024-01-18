@@ -2,26 +2,28 @@ import {
   TItem,
   TItems,
   TSlugProps,
-} from 'lib/gallery/config/types';
+} from '@brysonandrew/lib/gallery/config/types';
 import { FC } from 'react';
 
 export type TItemsConfig<
   T extends string,
   K extends string,
+  R extends object,
 > = {
-  ITEMS: TItems<T, K>;
-  ITEMS_RECORD: Record<K, TItem<T, K>>;
+  ITEMS: TItems<T, K, R>;
+  ITEMS_RECORD: Record<K, TItem<T, K, R>>;
   SLUGS: K[];
 };
 
-export type TGalleryConfig = {
-  Viewer: { RightHeader: FC<TSlugProps> };
+export type TGalleryConfig<K extends string> = {
+  Viewer: { RightHeader: FC<TSlugProps<K>> };
   List: {
-    RightHeader: FC<TSlugProps & { isHover?: boolean }>;
+    RightHeader: FC<TSlugProps<K> & { isHover?: boolean }>;
   };
 };
 
-export type TContext<
+export type TValue<
   T extends string = string,
   K extends string = string,
-> = TItemsConfig<T, K> & TGalleryConfig;
+  R extends object = object,
+> = TItemsConfig<T, K, R> & TGalleryConfig<K>;

@@ -1,10 +1,18 @@
-import type { FC } from 'react';
-import type { TContext } from './config/types';
-import { GALLERY } from './config/constants';
+import type { TValue } from './config/types';
 
-type TConsumerProps = {
-  children(values: TContext): JSX.Element;
-};
-export const Consumer: FC<TConsumerProps> = ({
-  children,
-}) => <GALLERY.Consumer>{children}</GALLERY.Consumer>;
+// type TConsumerProps<
+//   T extends string,
+//   K extends string,
+//   R extends object,
+// > = {
+//   children(value: TValue<T, K, R>): JSX.Element;
+// };
+// export const Consumer = <
+//   T extends string,
+//   K extends string,
+//   R extends object,
+// >({
+//   children,
+// }: TConsumerProps<T, K, R>) => {
+//   return <Root.Consumer>{children}</Root.Consumer>;
+// };

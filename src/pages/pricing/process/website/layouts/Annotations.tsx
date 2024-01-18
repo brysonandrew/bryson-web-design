@@ -1,4 +1,4 @@
-import { TChildren } from 'lib/types/dom';
+import { TChildren } from '@brysonandrew/lib/types/dom';
 import { FC } from 'react';
 
 type TProps = {

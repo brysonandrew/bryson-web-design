@@ -1,4 +1,4 @@
-import { useEventListener } from 'lib/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/lib/hooks/events/useEventListener';
 import { useRef } from 'react';
 import {
   TSharedConfig,

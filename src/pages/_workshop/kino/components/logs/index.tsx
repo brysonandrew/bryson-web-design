@@ -1,5 +1,5 @@
-import { P1 } from 'lib/components/layout/space/P1';
-import { FadeDown } from 'lib/components/layout/vertical-fade/FadeDown';
+import { P1 } from '@brysonandrew/lib/components/layout/space/P1';
+import { FadeDown } from '@brysonandrew/lib/components/layout/vertical-fade/FadeDown';
 import { Subtitle } from '../Subtitle';
 import { TLogsContext } from '@pages/_workshop/kino/config/types';
 import { FC } from 'react';

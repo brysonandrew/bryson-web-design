@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Buttons } from './controls/buttons';
 import { Voices } from './controls/voices';
 import { Settings } from './controls/settings';
-import { P2 } from 'lib/components/layout/space/P2';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
 import { TextInput } from './components/TextInput';
 import { Shell } from './components/Shell';
 

@@ -1,14 +1,14 @@
-import { Cross } from 'lib/gallery/viewer/icons/Cross';
+import { Cross } from '@brysonandrew/lib/gallery/viewer/icons/Cross';
 import type { FC } from 'react';
-import { LinkFillCenter } from 'lib/components/interactive/LinkFillCenter';
+import { LinkFillCenter } from '@brysonandrew/lib/components/interactive/LinkFillCenter';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from 'lib/types/dom';
+} from '@brysonandrew/lib/types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
 import { Circle } from '../../components/buttons/Circle';
-import { BIG_CURSOR_KEY } from 'lib/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {

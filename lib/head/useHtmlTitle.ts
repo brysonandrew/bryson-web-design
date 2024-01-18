@@ -1,10 +1,10 @@
 import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
-} from 'lib/utils/key';
+} from '@brysonandrew/lib/utils/key';
 import { useLocation } from 'react-router';
-import { capitalize } from 'lib/utils/format';
-import { useCurrParams } from 'lib/gallery/viewer/hooks/params/useCurrParams';
+import { capitalize } from '@brysonandrew/lib/utils/format';
+import { useCurrParams } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrParams';
 
 export const useHtmlTitle = <
   T extends Record<string, string>,

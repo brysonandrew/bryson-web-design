@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {
   TClassValueProps,
   TElementProps,
-} from 'lib/types';
+} from '@brysonandrew/lib/types';
 
 const Root = styled.div``;
 

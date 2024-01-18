@@ -1,4 +1,4 @@
-import { I } from 'lib/icons/icon';
+import { I } from '@brysonandrew/lib/icons/icon';
 import clsx from 'clsx';
 import { FC, PropsWithChildren, useContext } from 'react';
 import { Context } from '../context';

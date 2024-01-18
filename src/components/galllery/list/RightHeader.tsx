@@ -1,17 +1,22 @@
 import type { FC } from 'react';
-import { Time } from 'lib/gallery/components/content/Time';
-import { TSlugProps } from 'lib/gallery/config/types';
-import { useGallery } from 'lib/gallery/context/useGallery';
+import { Time } from '@brysonandrew/lib/gallery/components/content/Time';
+import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
 import { Badge } from '@pages/pricing/badge';
+import { TTitle, TSlug, TRest } from '@app/gallery/types';
+import { useGallery } from '@brysonandrew/lib/gallery/context/Provider';
 
-type TProps = TSlugProps & {
+type TProps = TSlugProps<TSlug> & {
   isHover?: boolean;
 };
 export const RightHeader: FC<TProps> = ({
   slug,
   isHover,
 }) => {
-  const { ITEMS_RECORD } = useGallery();
+  const { ITEMS_RECORD } = useGallery<
+    TTitle,
+    TSlug,
+    TRest
+  >();
   const { time, pricing } = ITEMS_RECORD[slug];
 
   return (

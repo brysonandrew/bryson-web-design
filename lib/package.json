@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/lib",
-  "version": "7.0.0",
+  "version": "7.0.6",
   "description": "Lib for making websites",
   "main": "/index.ts",
   "types": "/index.d.ts",
@@ -21,10 +21,7 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/react-synthwave.git"
-  },
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
   "sideEffects": false,
   "keywords": [
     "react",
@@ -32,6 +29,7 @@
   ],
   "peerDependencies": {
     "@emailjs/browser": "^3.10.0",
+    "@iconify/react": "^4.1.1",
     "ably": "^1.2.44",
     "clsx": "^1.2.1",
     "framer-motion": "^10.3.2",

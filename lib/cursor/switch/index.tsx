@@ -1,6 +1,6 @@
-import { useCursor } from 'lib/cursor/context';
-import { HOVER_KEY_DELIMITER } from 'lib/utils/key';
-import { GLOBAL_KEY } from 'lib/cursor/hooks/config';
+import { useCursor } from '@brysonandrew/lib/cursor/context';
+import { HOVER_KEY_DELIMITER } from '@brysonandrew/lib/utils/key';
+import { GLOBAL_KEY } from '@brysonandrew/lib/cursor/hooks/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
 import { Box } from './Box';

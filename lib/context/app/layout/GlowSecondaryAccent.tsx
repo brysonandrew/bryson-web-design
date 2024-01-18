@@ -1,4 +1,4 @@
-import { TGlowProps } from 'lib/animation/components/filter-animate/Glow';
+import { TGlowProps } from '@brysonandrew/lib/animation/components/filter-animate/Glow';
 import { TLayoutRecord, TAppConfig } from '../config/types';
 
 type TProps = Pick<TLayoutRecord, 'Glow'> &

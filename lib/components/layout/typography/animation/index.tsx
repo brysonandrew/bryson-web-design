@@ -1,4 +1,4 @@
-import { TChildrenString } from 'lib/types/dom/main';
+import { TChildrenString } from '@brysonandrew/lib/types/dom/main';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';

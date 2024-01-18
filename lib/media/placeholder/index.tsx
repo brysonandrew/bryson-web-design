@@ -1,18 +1,20 @@
+
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import {
   IMAGE_PLACEHOLDER_ID,
   PLACEHOLDER_LAYOUT_ID,
-} from 'lib/media/placeholder/config/constants';
-import { resolveUrlId } from 'lib/utils/attributes/resolveUrlId';
+} from '@brysonandrew/lib/media/placeholder/config/constants';
+import { resolveUrlId } from '@brysonandrew/lib/utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './utils/resolveGradientStops';
 import clsx from 'clsx';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from 'lib/types/dom';
-import { DURATION_VERY_SLOW } from 'lib/animation/constants';
+} from '@brysonandrew/lib/types/dom';
+import { DURATION_VERY_SLOW } from '@brysonandrew/lib/animation/constants';
+import { TChildren } from '@brysonandrew/lib/types/dom/main';
 
 export const Root = styled(motion.div)``;
 

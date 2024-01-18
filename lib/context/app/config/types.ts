@@ -1,12 +1,12 @@
-import { STYLE } from '@components/style';
-import { TBrightenProps } from 'lib/animation/components/filter-animate/Brighten';
-import { TGlowProps } from 'lib/animation/components/filter-animate/Glow';
+import { TBrightenProps } from '@brysonandrew/lib/animation/components/filter-animate/Brighten';
+import { TGlowProps } from '@brysonandrew/lib/animation/components/filter-animate/Glow';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from 'lib/types/dom';
+} from '@brysonandrew/lib/types/dom';
 import { FC, Context } from 'react';
 import { TColorSetRecord } from '../hooks/useColorSetRecord';
+import { STYLE } from '../style';
 
 export type TStyle = typeof STYLE;
 

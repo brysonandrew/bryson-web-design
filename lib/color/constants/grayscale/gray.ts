@@ -1,4 +1,4 @@
-import { TRgbRecord } from 'lib/color/types';
+import { TRgbRecord } from '@brysonandrew/lib/color/types';
 import { resolveColorOpacityRange } from '../../utils/resolveColorOpacityRange';
 import { resolveColorSeries } from '../../utils/resolveColorSeries';
 import { resolveGrayscaleRange } from '../../utils/resolveGrayscaleRange';

@@ -1,4 +1,4 @@
-import { P2 } from 'lib/components/layout/space/P2';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
 import { Start } from './Start';
 import { Stop } from './Stop';
 

@@ -1,25 +1,55 @@
-import { PropsWithChildren } from 'react';
-import { TInitItems } from 'lib/gallery/config/types';
+import {
+  PropsWithChildren,
+  createContext,
+  useContext as useReactContext,
+} from 'react';
+import { TInitItems } from '@brysonandrew/lib/gallery/config/types';
 import { useItemsConfig } from './hooks/useItemsConfig';
-import { GALLERY } from './config/constants';
-import { TGalleryConfig } from './config/types';
+import { TGalleryConfig, TValue } from './config/types';
+import { once } from 'lodash';
 
-type TProps<T extends string> = TGalleryConfig & {
-  initItems: TInitItems<T>;
+const initContext = once(<
+  T extends string,
+  K extends string,
+  R extends object,
+>() =>
+  createContext<TValue<T, K, R>>({} as TValue<T, K, R>),
+);
+
+export const useGallery = <
+  T extends string,
+  K extends string,
+  R extends object,
+>() =>
+  useReactContext<TValue<T, K, R>>(initContext<T, K, R>());
+
+type TProps<
+  T extends string,
+  K extends string,
+  R extends object,
+> = TGalleryConfig<K> & {
+  initItems: TInitItems<T, R>;
 };
 export const Provider = <
   T extends string,
   K extends string,
+  R extends object,
 >({
   initItems,
   children,
   ...props
-}: PropsWithChildren<TProps<T>>) => {
-  const itemsConfig = useItemsConfig<T, K>(initItems);
+}: PropsWithChildren<TProps<T, K, R>>) => {
+  const CONTEXT = initContext<T, K, R>();
+  const itemsConfig = useItemsConfig<T, K, R>(initItems);
+  const value = { ...itemsConfig, ...props } as TValue<
+    T,
+    K,
+    R
+  >;
 
   return (
-    <GALLERY.Provider value={{ ...itemsConfig, ...props }}>
+    <CONTEXT.Provider value={value}>
       {children}
-    </GALLERY.Provider>
+    </CONTEXT.Provider>
   );
 };

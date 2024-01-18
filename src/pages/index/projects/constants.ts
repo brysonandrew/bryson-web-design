@@ -1,4 +1,7 @@
-import { MAX_SCROLL, TParallaxOptions } from "lib/animation/components/parallax/config";
+import {
+  MAX_SCROLL,
+  TParallaxOptions,
+} from '@brysonandrew/lib/animation/components/parallax/config';
 
 export const FAKE_3D_PROPS: TParallaxOptions = {
   dispersion: {
@@ -14,5 +17,5 @@ export const FAKE_3D_PROPS: TParallaxOptions = {
       startScroll + MAX_SCROLL,
     ],
     output: [-20, 60],
-  }
+  },
 };
