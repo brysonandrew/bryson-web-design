@@ -20,13 +20,7 @@ const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const {
-    Texture,
-    BORDER_RADIUS,
-    TextureGlow,
-    Glow,
-    COLOR,
-  } = useApp();
+  const { BORDER_RADIUS, TextureGlow } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',

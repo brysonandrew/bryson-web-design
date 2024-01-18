@@ -2,14 +2,13 @@ import { ThinLineGrow } from '@lib/components/layout/line/ThinLineGrow';
 import { MOTION_CONFIG } from '@lib/animation/constants';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TContent } from './config';
 import { TitleSpace } from '@lib/components/layout/space/TitleSpace';
 import clsx from 'clsx';
 import { TChildrenString } from '@lib/types/dom';
 
 type TProps = TChildrenString;
 export const Content: FC<TProps> = ({ children }) => {
-  return (
+  return ( 
     <TitleSpace>
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -28,7 +27,7 @@ export const Content: FC<TProps> = ({ children }) => {
           {children}
         </h3>
       </motion.div>
-      <div className='relative overflow-hidden w-5/6 top-4 h-4'>
+      <div className='relative w-5/6'>
         <ThinLineGrow
           delay={0.2}
           classValue='absolute left-0 w-full top-1 via-current'

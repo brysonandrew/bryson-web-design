@@ -1,8 +1,18 @@
 {
-  "name": "@brysonandrew/brysona.dev",
-  "version": "2.0.0",
+  "name": "@brysonandrew/lib",
+  "version": "4.0.0",
   "description": "Building websites and apps",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/main.ts",
+      "import": "./lib/main.ts",
+      "default": "./lib/main.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "main": "src/main.tsx",
+  "module": "src/main.tsx",
   "scripts": {
     "dev": "vite --config vite.config.ts",
     "sw": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",

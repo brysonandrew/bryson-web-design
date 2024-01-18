@@ -5,6 +5,10 @@ const TEXT_COLOR_DARK_MODE: StaticShortcutMap = {
     'text-black-7 dark:text-white-9 dark-mode-transition',
   'text-main-inverted':
     'text-white-9 dark:text-black-7 dark-mode-transition',
+  'text-bg-main':
+    'text-white-9 dark:text-black dark-mode-transition',
+  'text-bg-main-inverted':
+    'text-black dark:text-white-9 dark-mode-transition',
 };
 
 export const TEXT: StaticShortcutMap = {

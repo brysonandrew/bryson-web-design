@@ -7,7 +7,10 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
-export type TFilterAnimateProps = TDivMotionProps &
+export type TFilterAnimateProps = Omit<
+  TDivMotionProps,
+  'color'
+> &
   TClassValueProps &
   TChildrenPartialProps;
 export const FilterAnimate: FC<TFilterAnimateProps> = ({

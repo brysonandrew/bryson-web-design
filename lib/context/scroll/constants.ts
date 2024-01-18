@@ -1,4 +1,4 @@
-import type { TState, TContext } from './types';
+import type { TState, TScrollContext } from './types';
 import { motionValue } from 'framer-motion';
 import { createContext } from 'react';
 
@@ -7,9 +7,9 @@ export const STATE: TState = {
   isScroll: false,
 };
 
-export const CONTEXT: TContext = {
+export const CONTEXT: TScrollContext = {
   ...STATE,
   scroll: { x: motionValue(0), y: motionValue(0) },
 };
 
-export const SCROLL = createContext<TContext>(CONTEXT);
+export const SCROLL = createContext<TScrollContext>(CONTEXT);

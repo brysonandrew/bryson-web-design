@@ -7,8 +7,8 @@ import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax
 import styled from '@emotion/styled';
 import { P8 } from '@lib/components/layout/space/P8';
 import { TITLE_HEIGHT } from '@lib/components/layout/space/TitleSpace';
-import { useScroll as useScrollContext } from '@lib/context/scroll';
-import { useViewport as useViewportContext } from '@lib/context/viewport';
+import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
+import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { ORIGIN_50 } from '@lib/animation/constants';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';

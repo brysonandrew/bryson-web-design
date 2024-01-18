@@ -1,14 +1,11 @@
 import type { FC, PropsWithChildren } from 'react';
 import { VIEWPORT } from './constants';
-import {
-  TViewport,
-  useViewport,
-} from '@lib/hooks/window/useViewport';
+import { useMeasure, TViewport } from './useMeasure';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const viewport = useViewport();
+  const viewport = useMeasure();
 
   const isVertical = ({
     width = 0,
