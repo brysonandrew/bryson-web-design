@@ -4,14 +4,14 @@ import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@lib/animation/constants';
-import { useScroll as useScrollContext } from '@lib/context/scroll';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { useViewport as useViewportContext } from '@lib/context/viewport';
+import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
+import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
 import { FadeUp } from '@lib/components/layout/vertical-fade/FadeUp';
 import { Settings } from './settings';
 import { Network } from '@lib/network';
 import { BackdropBlur } from '@lib/components/layout/backdrop-blur';
 import { Position } from './Position';
+import { useDarkMode } from '@lib/context';
 
 const Root = styled.footer``;
 

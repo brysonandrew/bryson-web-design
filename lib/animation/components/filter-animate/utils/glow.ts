@@ -20,7 +20,7 @@ export const resolveGlowProps = ({
   text = 0,
   box = 0,
   drop = 0,
-  color = resolveVarCss('white'),
+  color = 'currentColor',
   idle,
   value,
   style,

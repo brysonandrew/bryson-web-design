@@ -1,7 +1,6 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Box } from '@lib/animation/components/filter-animate/Box';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { Aura } from '@lib/filters/aura/Aura';
 import { P1_5 } from '@lib/components/layout/space/P1_5';
@@ -10,9 +9,10 @@ import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
 import { useApp } from '@lib/context/app/useApp';
-import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/constants';
+import { OPEN_IN_NEW_ICON } from '@lib/icons/constants';
 import { formatUrl } from '@lib/utils/format/url';
 import { Visit } from '@lib/cursor/switch/format/Visit';
+import { useDarkMode } from '@lib/context';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,
@@ -48,7 +48,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
         />
       )}
       <Glow
-        drop={16}
+        drop={8}
         color={COLOR.accent}
         initial={false}
         value={glow}
@@ -56,34 +56,33 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
         <Texture />
       </Glow>
       <Glow
-        drop={8}
+        drop={6}
         color={COLOR.secondary}
         initial={false}
         animate={{ opacity: isHover ? 1 : 0.05 }}
       >
         <Texture />
       </Glow>
-      <Box style={{ borderRadius: BORDER_RADIUS.MD }}>
-        <Glow
-          text={isDarkMode ? 1.4 : 0.5}
-          drop={isDarkMode ? 4 : 0.2}
-          initial={false}
-          animate={{ opacity: isHover ? 1 : 0.05 }}
+      <Glow
+        text={1}
+        drop={2}
+        initial={false}
+        color={COLOR.white}
+        animate={{ opacity: isHover ? 1 : 0.05 }}
+      >
+        <a
+          className={clsx(
+            'inline-flex relative pl-4 pr-3 py-3',
+          )}
+          href={href}
+          target='_blank'
+          style={{ borderRadius: BORDER_RADIUS.MD }}
         >
-          <a
-            className={clsx(
-              'inline-flex relative pl-4 pr-3 py-3',
-            )}
-            href={href}
-            target='_blank'
-            style={{ borderRadius: BORDER_RADIUS.MD }}
-          >
-            <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-            <P1_5 />
-            <h4 className='title mt-0.75'>{title}</h4>
-          </a>
-        </Glow>
-      </Box>
+          <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
+          <P1_5 />
+          <h4 className='title mt-0.75'>{title}</h4>
+        </a>
+      </Glow>
     </motion.div>
   );
 };

@@ -4,9 +4,9 @@ import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@lib/animation/constants';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { useViewport as useViewportContext } from '@lib/context/viewport';
+import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useDarkMode } from '@lib/context';
 
 export const Fade = () => {
   const { darkKey } = useDarkMode();

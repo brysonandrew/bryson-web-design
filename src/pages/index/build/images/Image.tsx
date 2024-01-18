@@ -20,7 +20,7 @@ import {
 import { ORIGIN_50 } from '@lib/animation/constants';
 import { useTapHandler } from '@lib/hooks/media/useTapHandler';
 import { TMediaRecord } from '@ops/screens/process/config/types';
-import { GALLERY_ICON } from '@lib/constants/icons/constants/gallery';
+import { GALLERY_ICON } from '@lib/icons/constants/gallery';
 import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;

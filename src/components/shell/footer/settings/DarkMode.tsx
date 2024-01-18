@@ -7,9 +7,9 @@ import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { Button } from '@lib/components/interactive/circle/Button';
 import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
 import { createElement } from 'react';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { useApp } from '@lib/context/app/useApp';
+import { useDarkMode } from '@lib/context';
 
 export const DarkMode = () => {
   const { BORDER_RADIUS } = useApp();

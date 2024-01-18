@@ -4,7 +4,7 @@ import { Section } from '@lib/components/layout/section';
 import { FC } from 'react';
 import { Main } from './Main';
 import { P60Y } from '@lib/components/layout/space/P60Y';
-import { Process } from '@pages/_workshop/process';
+import { Process } from '@pages/pricing/process';
 import { P24Y } from '@lib/components/layout/space/P24Y';
 
 export const Pricing: FC = () => {

@@ -1,16 +1,14 @@
 import styled from '@emotion/styled';
 import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
-import { useScroll as useScrollContext } from '@lib/context/scroll';
+import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
 import { Nav } from './Nav';
 import { FadeDown } from '@lib/components/layout/vertical-fade/FadeDown';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@lib/animation/constants';
-import { Network } from '@lib/network';
-import { P2 } from '@lib/components/layout/space/P2';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
+import { useDarkMode } from '@lib/context';
 
 const Root = styled.header``;
 

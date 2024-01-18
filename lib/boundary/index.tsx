@@ -8,13 +8,13 @@ import type { TFallbackProps } from './Fallback';
 import { Fallback } from './Fallback';
 import { TChildren } from '@lib/types/dom/main';
 
-export type TBoundaryProps = {
+type TBoundaryProps = {
   children: TChildren;
   onError?: (error: Error, info: ErrorInfo) => void;
   Fallback: FC<TFallbackProps>;
 };
 
-export type TState =
+type TState =
   | {
       error: Error;
       hasError: true;

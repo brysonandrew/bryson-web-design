@@ -35,7 +35,7 @@ export type TInputHandlers = Pick<
   'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'
 >;
 
-export type TContext = TContactState & {
+export type TContactContext = TContactState & {
   onFocus(value: TFormKey | null): void;
   onStatus(value: TStatus): void;
   onForm(value: Partial<TFormState>): void;

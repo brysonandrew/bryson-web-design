@@ -6,10 +6,13 @@ import {
   TLayoutRecord,
 } from '../config/types';
 
-type TProps = Pick<TLayoutRecord, 'Blank'> &
+type TProps = Pick<
+  TLayoutRecord,
+  'Blank' | 'GlowSecondaryAccent'
+> &
   Pick<TAppConfig, 'COLOR'>;
 export const Active =
-  ({ Blank, COLOR }: TProps) =>
+  ({ Blank, COLOR, GlowSecondaryAccent }: TProps) =>
   ({ classValue, style, ...props }: TBlankProps) =>
     (
       <Blank
@@ -20,19 +23,27 @@ export const Active =
         style={{
           width: `calc(0.5rem + 4px)`,
           height: '100%',
-          backgroundColor: COLOR.secondary,
-          borderRadius: BORDER_RADIUS.SM,
           ...(style ?? {}),
         }}
-        variants={{
-          animate: {
-            opacity:1,
-            backgroundColor: COLOR.secondary,
-          },
-          hover: {
-            backgroundColor: COLOR.accent,
-          },
-        }}
         {...props}
-      />
+      >
+        <GlowSecondaryAccent>
+          <Blank
+            classValue='fill'
+            style={{
+              backgroundColor: COLOR.secondary,
+              borderRadius: BORDER_RADIUS.SM,
+            }}
+            variants={{
+              animate: {
+                opacity: 1,
+                backgroundColor: COLOR.secondary,
+              },
+              hover: {
+                backgroundColor: COLOR.accent,
+              },
+            }}
+          />
+        </GlowSecondaryAccent>
+      </Blank>
     );

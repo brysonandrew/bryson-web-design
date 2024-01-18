@@ -1,6 +1,6 @@
 import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
 import { TProps as TReadyGalleryProps } from './Ready';
-import { useViewport } from '@lib/context/viewport';
+import { useViewport } from '@lib/context/viewport/useViewport';
 import { TChildren } from '@lib/types/dom';
 
 type TProps<T extends string> = {

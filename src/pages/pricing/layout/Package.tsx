@@ -1,4 +1,3 @@
-import { P1_5 } from '@lib/components/layout/space/P1_5';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { End } from './End';
@@ -11,53 +10,42 @@ import { useContact } from '@lib/contact/context/useContact';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
-import {
-  TPricingKey,
-  TPricingTitle,
-} from '@pages/pricing/config/types';
+import { TPricingTitle } from '@pages/pricing/config/types';
 import { TickList } from '@lib/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
-import {
-  EMAIL_ICON,
-  FEEDBACK_ICON,
-} from '@lib/constants/icons/constants/contact';
-import { I } from '@lib/icons/icon';
+import { EMAIL_ICON } from '@lib/icons/constants/contact';
 import { useApp } from '@lib/context/app/useApp';
+import { FeedbackIcon } from './FeedbackIcon';
+import { Cursor } from './Cursor';
+import { FadeDown } from '@lib/components';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
-  backgroundColorClass: `bg-${TPricingKey} gradient-${TPricingKey}`;
-  textColorClass: `text-${TPricingKey}`;
 };
 export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const { key, listItems, price, discount, PreContent } =
     config;
-  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Texture } =
-    useApp();
+  const {
+    COLOR,
+    Glow,
+    BORDER_RADIUS,
+    GRADIENT,
+    Texture,
+  } = useApp();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
     title,
     EMAIL_ICON,
-    <>
-      Inquire about the
-      {
-        <span
-          className={clsx(
-            'px-1 mx-1 pricing-title',
-            GRADIENT[key],
-          )}
-          style={{
-            backgroundColor: COLOR[key],
-            backgroundImage: GRADIENT[key],
-          }}
-        >
-          {title}
-        </span>
-      }
-      package
-    </>,
+    <Cursor
+      title={title}
+      classValue={GRADIENT[key]}
+      style={{
+        backgroundColor: COLOR[key],
+        backgroundImage: GRADIENT[key],
+      }}
+    />,
   );
   const handleClick = () => {
     onForm({
@@ -96,27 +84,24 @@ export const Package: FC<TProps> = ({ title }) => {
         )}
         {...handlers}
       >
-        <P1_5 />
         <End classValue='pricing-title'>
-          <h4 className='w-full text-center text-2xl'>
+          <FadeDown
+            classValue='h-full'
+            style={{
+              opacity: 0.4,
+              borderRadius: BORDER_RADIUS.MD,
+            }}
+          />
+          <h4 className='relative w-full text-center text-2xl z-10'>
             {title}
           </h4>
-          <motion.div
-            initial={false}
-            animate={{ opacity: isHover ? 1 : 0.5 }}
-          >
-            <I
-              classValue='absolute top-1/2 -translate-y-1/2 right-4 h-7 w-7 text-current'
-              icon={FEEDBACK_ICON}
-            />
-          </motion.div>
+          {/* <FeedbackIcon isHover={isHover} /> */}
         </End>
-        <P1_5 />
+        <P_25 />
         <div
           className='column-stretch relative h-full bg-main'
           style={{
-            borderTopLeftRadius: BORDER_RADIUS.MD,
-            borderTopRightRadius: BORDER_RADIUS.MD,
+            borderRadius: BORDER_RADIUS.MD,
           }}
         >
           <Texture />
@@ -133,18 +118,10 @@ export const Package: FC<TProps> = ({ title }) => {
           <P4 />
         </div>
         <P_25 />
-        <div
-          className='relative bg-main'
-          style={{
-            borderBottomLeftRadius: BORDER_RADIUS.MD,
-            borderBottomRightRadius: BORDER_RADIUS.MD,
-          }}
-        >
+        <End>
           <Texture />
-          <End>
-            <Price price={price} discount={discount} />
-          </End>
-        </div>
+          <Price price={price} discount={discount} />
+        </End>
       </motion.div>
     </Link>
   );

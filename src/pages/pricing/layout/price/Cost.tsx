@@ -6,7 +6,12 @@ export const Cost: FC<
   PropsWithChildren<TClassValueProps>
 > = ({ classValue, children }) => {
   return (
-    <h5 className={clsx('text-2xl font-sans', classValue)}>
+    <h5
+      className={clsx(
+        'relative text-2xl font-sans',
+        classValue,
+      )}
+    >
       {children}
     </h5>
   );

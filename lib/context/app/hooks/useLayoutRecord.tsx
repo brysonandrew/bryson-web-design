@@ -10,6 +10,7 @@ import {
 import { resolveComponent } from '../utils/resolveComponent';
 import { Active } from '../layout/Active';
 import { TextureGlow } from '../layout/TextureGlow';
+import { GlowSecondaryAccent } from '../layout/GlowSecondaryAccent';
 
 type TConfig = TAppConfig;
 export const useLayoutRecord = (value: TConfig) => {
@@ -27,13 +28,23 @@ export const useLayoutRecord = (value: TConfig) => {
     ),
   };
 
+  const _GlowSecondaryAccent = GlowSecondaryAccent({
+    Glow: BASE.Glow,
+    COLOR,
+  });
+
   return {
     ...BASE,
+    GlowSecondaryAccent: _GlowSecondaryAccent,
     TextureGlow: TextureGlow({
-      Glow: BASE.Glow,
       Texture: BASE.Texture,
+      GlowSecondaryAccent: _GlowSecondaryAccent,
       COLOR,
     }),
-    Active: Active({ Blank: BASE.Blank, COLOR }),
+    Active: Active({
+      Blank: BASE.Blank,
+      GlowSecondaryAccent: _GlowSecondaryAccent,
+      COLOR,
+    }),
   };
 };

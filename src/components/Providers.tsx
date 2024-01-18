@@ -1,7 +1,7 @@
 import { Provider as AppProvider } from '@lib/context/app/Provider';
 
 import { Provider as ScrollProvider } from '@lib/context/scroll/Provider';
-import { Provider as DarkModeProvider } from '@lib/hooks/dark-mode/context/Provider';
+import { Provider as DarkModeProvider } from '@lib/context/dark-mode/context/Provider';
 import { Provider as SoundProvider } from '@lib/hooks/sounds/context/Provider';
 import { Provider as NetworkProvider } from '@lib/network/context/Provider';
 import { Provider as CursorProvider } from '@lib/cursor/context/Provider';

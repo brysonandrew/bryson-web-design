@@ -34,7 +34,6 @@ export const Content: FC<TProps> = ({
 }) => {
   const { TextureGlow, Texture, BORDER_RADIUS, Active } =
     useApp();
-  console.log(Active);
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);

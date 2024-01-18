@@ -13,22 +13,10 @@ export const Main: FC<TProps> = ({ style }) => {
       className='column gap-16 relative w-core will-change-transform'
       style={style}
     >
-      <div className='column-stretch relative w-full h-full gap-8 lg:row-stretch'>
-        <Package
-          title='Standard'
-          backgroundColorClass='bg-standard gradient-standard'
-          textColorClass='text-standard'
-        />
-        <Package
-          title='Plus'
-          backgroundColorClass='bg-plus gradient-plus'
-          textColorClass='text-plus'
-        />
-        <Package
-          title='Select'
-          backgroundColorClass='bg-select gradient-select'
-          textColorClass='text-select'
-        />
+      <div className='column-stretch relative w-full h-full gap-box lg:row-stretch'>
+        <Package title='Standard' />
+        <Package title='Plus' />
+        <Package title='Select' />
       </div>
     </Root>
   );
