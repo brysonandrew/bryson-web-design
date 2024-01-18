@@ -4,7 +4,12 @@ import { GLOBAL_KEY } from '@lib/cursor/hooks/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
 import { Box } from './Box';
-import { CUSTOM_CURSOR_KEY } from './config';
+import {
+  BIGGER_CURSOR_KEY,
+  BIG_CURSOR_KEY,
+  CUSTOM_CURSOR_KEY,
+  NONE_CURSOR_KEY,
+} from './config';
 
 export const Switch = () => {
   const { hoverKey, children } = useCursor();
@@ -26,7 +31,7 @@ export const Switch = () => {
       );
     }
 
-    case 'big': {
+    case BIG_CURSOR_KEY: {
       return (
         <Sight
           animate={{
@@ -37,13 +42,13 @@ export const Switch = () => {
       );
     }
 
-    case 'bigger': {
+    case BIGGER_CURSOR_KEY: {
       return (
         <Sight animate={{ opacity: 0.1, scale: 18 }} />
       );
     }
 
-    case 'none': {
+    case NONE_CURSOR_KEY: {
       return <Sight animate={{ opacity: 0, scale: 0 }} />;
     }
 

@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 import { useBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
 import { Image } from './Image';
 import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
 import styled from '@emotion/styled';
 import { P8 } from '@lib/components/layout/space/P8';
-import { TITLE_HEIGHT } from '@lib/components/layout/space/TitleRoot';
-import { useScroll as useScrollContext } from '@lib/context/scroll';
-import { useViewport as useViewportContext } from '@lib/context/viewport';
-import { TDepthConfig } from '@pages/index/build/images/hooks/useCircle';
+import { TITLE_HEIGHT } from '@lib/components/layout/space/TitleSpace';
+import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
+import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
+import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { ORIGIN_50 } from '@lib/animation/constants';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
-import clsx from 'clsx';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 
 const BUFFER = 440;
@@ -32,10 +32,11 @@ export const Images: FC<TProps> = ({ style }) => {
     isResizing,
     isVertical,
   } = useViewportContext();
-  
+
   const radius = isVertical
     ? viewportWidth
     : halfViewportWidth;
+
   const imageSize = isVertical
     ? halfViewportWidth
     : ((radius * Math.PI) /
@@ -46,7 +47,7 @@ export const Images: FC<TProps> = ({ style }) => {
     ? {
         rotateY: 0,
         rotateX: 0,
-        x: -viewportWidth * 0.5,
+        x: -halfViewportWidth,
         z: 0,
         y: -400,
       }
@@ -76,7 +77,7 @@ export const Images: FC<TProps> = ({ style }) => {
       >
         {!isResizing && (
           <List
-            className='h-0 w-0 bg-red preserve-3d will-change-transform'
+            className='h-0 w-0 preserve-3d will-change-transform'
             style={{
               perspective: 10000,
               ...ORIGIN_50,
@@ -89,7 +90,7 @@ export const Images: FC<TProps> = ({ style }) => {
                 index: number,
                 { length: count }: TMediaRecord[],
               ) => {
-                const depthConfig: TDepthConfig = {
+                const positionConfig: TPositionConfig = {
                   index,
                   count,
                   imageSize,
@@ -100,12 +101,12 @@ export const Images: FC<TProps> = ({ style }) => {
 
                 return (
                   <Image
-                    isScrolling={isScrolling}
                     key={record.src}
+                    isScrolling={isScrolling}
                     index={index}
                     count={count}
                     mediaRecord={record}
-                    depthConfig={depthConfig}
+                    positionConfig={positionConfig}
                   />
                 );
               },

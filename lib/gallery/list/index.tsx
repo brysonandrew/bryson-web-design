@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
 import { useGallery } from '../context/useGallery';
-import { InView } from '@lib/components/layout/InView';
+import { InView } from '@lib/in-view';
 
 export const List = () => {
   const currProject = useCurrProject();
   const { SLUGS } = useGallery();
   return (
     <>
-      <motion.ul className='column-stretch gap-4'>
+      <motion.ul className='column-stretch gap-box'>
         {SLUGS.map((slug, index) => {
           const isSelected = currProject === slug;
           if (isSelected) return null;

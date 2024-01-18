@@ -7,7 +7,7 @@ import {
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@lib/types/dom/main';
 import clsx from 'clsx';
-import { TDivMotionProps } from '@lib/types/dom';
+import { TDivMotionProps } from '@lib/types/dom/motion';
 
 type TProps = TClassValueProps &
   TDivMotionProps & { staggerIndex?: number };

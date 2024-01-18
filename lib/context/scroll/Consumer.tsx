@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import type { TContext } from './types';
+import type { TScrollContext } from './types';
 import { SCROLL } from './constants';
 
 type TConsumerProps = {
-  children(values: TContext): JSX.Element;
+  children(values: TScrollContext): JSX.Element;
 };
 export const Consumer: FC<TConsumerProps> = ({
   children,

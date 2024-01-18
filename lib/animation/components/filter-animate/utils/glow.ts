@@ -12,6 +12,7 @@ export type TGlowConfigOptions = {
   drop?: number;
   color?: TColorValue;
   value?: MotionValue;
+  idle?: number;
 };
 export type TPartialGlowConfigOptions =
   Partial<TGlowConfigOptions> & TFilterAnimateProps;
@@ -19,13 +20,14 @@ export const resolveGlowProps = ({
   text = 0,
   box = 0,
   drop = 0,
-  color = resolveVarCss('white'),
+  color = 'currentColor',
+  idle,
   value,
   style,
   ...rest
 }: TPartialGlowConfigOptions) => ({
   style: {
-    opacity: value ?? 0,
+    ...(value ? { opacity: value } : {}),
     ...(text > 0
       ? { textShadow: resolveBoxShadow(color, text) }
       : {}),
@@ -41,11 +43,13 @@ export const resolveGlowProps = ({
   ...(value
     ? {}
     : {
-        animate: {
-          opacity: 0,
-        },
-        hover: {
-          opacity: 1,
+        variants: {
+          idle: {
+            opacity: idle ?? 0,
+          },
+          hover: {
+            opacity: 1,
+          },
         },
       }),
   ...rest,

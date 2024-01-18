@@ -1,4 +1,4 @@
-import { InView } from '@lib/components/layout/InView';
+import { InView } from '@lib/in-view';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -17,7 +17,9 @@ import { Rect } from '@lib/components/layout/space/Rect';
 type TProps = TParallaxOptions & {
   classValue?: ClassValue;
   intersectionOptions?: IntersectionOptions;
-  children(props: TParallaxMotionChildrenProps): JSX.Element;
+  children(
+    props: TParallaxMotionChildrenProps,
+  ): JSX.Element;
 };
 export const Parallax: FC<TProps> = ({
   classValue,
@@ -29,10 +31,7 @@ export const Parallax: FC<TProps> = ({
 
   return (
     <InView
-      classValue={clsx(
-        'column w-full',
-        classValue,
-      )}
+      classValue={clsx('column w-full', classValue)}
       options={{
         triggerOnce: false,
         threshold: 0,

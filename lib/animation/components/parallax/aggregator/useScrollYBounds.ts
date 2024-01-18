@@ -1,4 +1,4 @@
-import { useViewport } from '@lib/context/viewport';
+import { useViewport } from '@lib/context/viewport/useViewport';
 import { TRect } from '@lib/types/dom';
 import { useMemo } from 'react';
 

@@ -1,4 +1,7 @@
-import { formatNZLongDate, nToMoney } from '@lib/utils/format';
+import {
+  formatNZLongDate,
+  nToMoney,
+} from '@lib/utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Banner } from './Banner';
@@ -22,9 +25,11 @@ export const Price: FC<TProps> = ({ price, discount }) => {
   if (isText) {
     const [title, subtitle] = price.split(':');
     return (
-      <div className='column'>
+      <div className='relative column'>
         <Cost>{title}</Cost>
-        <Subtext classValue='text-b2-w9'>{subtitle}</Subtext>
+        <Subtext classValue='text-b2-w9'>
+          {subtitle}
+        </Subtext>
       </div>
     );
   }
@@ -42,14 +47,16 @@ export const Price: FC<TProps> = ({ price, discount }) => {
       <div className='column'>
         {!isExpired && (
           <Banner>
-            <span className='font-sans text-3xl'>-{nToMoney(value)}</span>
+            <span className='font-sans text-3xl'>
+              -{nToMoney(value)}
+            </span>
             <div className='column'>
               <SubSubText>only until</SubSubText>
               <Subtext>{dateStr}</Subtext>
             </div>
           </Banner>
         )}
-        <div className='row gap-2'>
+        <div className='relative row gap-2'>
           <Cost
             classValue={clsx(!isExpired && 'line-through')}
           >

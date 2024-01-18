@@ -1,7 +1,7 @@
 import { Provider as AppProvider } from '@lib/context/app/Provider';
 
 import { Provider as ScrollProvider } from '@lib/context/scroll/Provider';
-import { Provider as DarkModeProvider } from '@lib/hooks/dark-mode/context/Provider';
+import { Provider as DarkModeProvider } from '@lib/context/dark-mode/context/Provider';
 import { Provider as SoundProvider } from '@lib/hooks/sounds/context/Provider';
 import { Provider as NetworkProvider } from '@lib/network/context/Provider';
 import { Provider as CursorProvider } from '@lib/cursor/context/Provider';
@@ -15,11 +15,13 @@ import { TChildren } from '@lib/types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@lib/components/utils/arrToNest';
 import { STYLE } from '@app/style';
-import { Metal } from './decoration/metal';
+import { Metal } from './layout/metal';
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { RightHeader as ListRightHeader } from './galllery/list/RightHeader';
 import { RightHeader as ViewerRightHeader } from './galllery/viewer/RightHeader';
 import { TTitle, TSlug } from '@app/gallery/types';
+import { motion } from 'framer-motion';
+import { Blank } from './layout/Blank';
 
 type TProps = { children: TChildren };
 export const Providers: FC<TProps> = ({
@@ -42,7 +44,11 @@ export const Providers: FC<TProps> = ({
       Viewer={{ RightHeader: ViewerRightHeader }}
       List={{ RightHeader: ListRightHeader }}
     >
-      <AppProvider Texture={Metal} {...STYLE}>
+      <AppProvider
+        Texture={Metal}
+        Blank={Blank}
+        {...STYLE}
+      >
         {_children}
       </AppProvider>
     </GalleryProvider>,

@@ -1,6 +1,6 @@
 import { Cross } from '@lib/gallery/viewer/icons/Cross';
 import type { FC } from 'react';
-import { IconLink } from '@lib/components/interactive/IconLink';
+import { LinkFillCenter } from '@lib/components/interactive/LinkFillCenter';
 import {
   TClassValueProps,
   TDivMotionProps,
@@ -26,13 +26,14 @@ export const Close: FC<TProps> = ({
 
   return (
     <Circle isHover={isHover} {...props}>
-      <IconLink
+      <LinkFillCenter
         to={to}
-        Icon={Cross}
         title='Close'
         onClick={onClick}
         {...handlers}
-      /> 
+      >
+        <Cross />
+      </LinkFillCenter>
     </Circle>
   );
 };

@@ -23,4 +23,7 @@ export const FLEX: StaticShortcutMap = {
   'column-start-center': 'column-start justify-center',
   'column-space': 'column justify-between',
   center: 'flex items-center justify-center',
+  'gap-box': 'gap-6',
+  'gap-box-1_5': 'gap-8',
+  'gap-box-2': 'gap-12',
 };

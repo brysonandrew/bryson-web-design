@@ -6,6 +6,6 @@ export type TState = {
 
 };
 
-export type TContext = TState & {
+export type TScrollContext = TState & {
   scroll: TMotionPoint;
 };

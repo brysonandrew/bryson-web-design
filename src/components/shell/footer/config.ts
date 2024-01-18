@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@lib/types/dom';
+import { TClassValueProps } from '@lib/types/dom/main';
 
 export const ICON_CLASS_VALUE_PROPS: TClassValueProps = {
   classValue:

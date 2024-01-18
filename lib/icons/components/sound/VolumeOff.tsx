@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TClassValueProps } from '@lib/types/dom';
+import { TClassValueProps } from '@lib/types/dom/main';
 import clsx from 'clsx';
 import type { FC, SVGAttributes } from 'react';
 

@@ -5,14 +5,14 @@ import {
 } from '@lib/gallery/config/types';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@lib/types/dom';
+import { TAnchorMotionProps } from '@lib/types/dom/motion';
 import {
   HOVER_KEY_DELIMITER,
   resolveCompositeHoverKey,
 } from '@lib/utils/key';
 import { useCursor } from '@lib/cursor/context';
 import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
-import { OPEN_IN_NEW_ICON } from '@lib/constants/icons/constants/links';
+import { OPEN_IN_NEW_ICON } from '@lib/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
 import { formatUrl } from '@lib/utils/format/url';
 import { Visit } from '@lib/cursor/switch/format/Visit';

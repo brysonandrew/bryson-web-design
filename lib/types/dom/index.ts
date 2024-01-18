@@ -1,12 +1,4 @@
 export type {
-	TDivMotionProps,
-	TMotionUlProps,
-	TButtonMotionProps,
-	TAnchorMotionProps,
-	TMotionImgProps,
-	TMotionInputProps,
-	TTextareaProps,
-	TRect,
 	TElementProps,
 	TDivProps,
 	THeadingProps,
@@ -17,7 +9,8 @@ export type {
 	TImgProps,
 	TThProps,
 	TTdProps,
-	TSource
+	TSource,
+	TSvgProps
 } from "./element";
 export type { TTapEvent } from "./event";
 export type {
@@ -30,6 +23,19 @@ export type {
 	TChildrenProps,
 	TChildrenHandlerProps,
 	TChildrenPartialProps,
+	TChildrenString,
+	TChildrenStrings,
 	TClassValueProps,
-	TTitleProps
+	TTitleProps,
+	TRect
 } from "./main";
+export type {
+	TDivMotionProps,
+	TUlMotionProps,
+	TButtonMotionProps,
+	TAnchorMotionProps,
+	TImgMotionProps,
+	TInputMotionProps,
+	TTextareaMotionProps,
+	TSvgMotionProps
+} from "./motion";

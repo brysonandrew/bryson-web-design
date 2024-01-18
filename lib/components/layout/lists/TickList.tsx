@@ -1,5 +1,5 @@
 import { I } from '@lib/icons/icon';
-import { TICK_CIRCLE_ICON } from '@lib/constants/icons/constants';
+import { TICK_CIRCLE_ICON } from '@lib/icons/constants';
 import clsx from 'clsx';
 import { FC } from 'react';
 

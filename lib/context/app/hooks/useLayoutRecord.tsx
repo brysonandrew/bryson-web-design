@@ -1,4 +1,4 @@
-import { TAppConfig } from '../config/types';
+import { TAppConfig, TBlankProps } from '../config/types';
 import {
   Glow,
   TGlowProps,
@@ -7,25 +7,20 @@ import {
   Brighten,
   TBrightenProps,
 } from '@lib/animation/components/filter-animate/Brighten';
-import { motion } from 'framer-motion';
 import { resolveComponent } from '../utils/resolveComponent';
 import { Active } from '../layout/Active';
 import { TextureGlow } from '../layout/TextureGlow';
+import { GlowSecondaryAccent } from '../layout/GlowSecondaryAccent';
 
 type TConfig = TAppConfig;
 export const useLayoutRecord = (value: TConfig) => {
-  const {
-    Texture,
-    Blank = motion.div,
-    BORDER_RADIUS,
-    COLOR,
-  } = value;
+  const { Texture, Blank, BORDER_RADIUS, COLOR } = value;
   const style = {
     borderRadius: BORDER_RADIUS.MD,
   };
   const BASE = {
-    Texture: resolveComponent(style, Texture),
-    Blank: resolveComponent(style, Blank),
+    Texture: resolveComponent<TBlankProps>(style, Texture),
+    Blank: resolveComponent<TBlankProps>(style, Blank),
     Glow: resolveComponent<TGlowProps>(style, Glow),
     Brighten: resolveComponent<TBrightenProps>(
       style,
@@ -33,13 +28,23 @@ export const useLayoutRecord = (value: TConfig) => {
     ),
   };
 
+  const _GlowSecondaryAccent = GlowSecondaryAccent({
+    Glow: BASE.Glow,
+    COLOR,
+  });
+
   return {
     ...BASE,
+    GlowSecondaryAccent: _GlowSecondaryAccent,
     TextureGlow: TextureGlow({
-      Glow: BASE.Glow,
       Texture: BASE.Texture,
+      GlowSecondaryAccent: _GlowSecondaryAccent,
       COLOR,
     }),
-    Active: Active({ Blank: BASE.Blank, COLOR }),
+    Active: Active({
+      Blank: BASE.Blank,
+      GlowSecondaryAccent: _GlowSecondaryAccent,
+      COLOR,
+    }),
   };
 };

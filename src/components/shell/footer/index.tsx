@@ -4,11 +4,14 @@ import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@lib/animation/constants';
-import { useScroll as useScrollContext } from '@lib/context/scroll';
-import { useDarkMode } from '@lib/hooks/dark-mode/context';
-import { useViewport as useViewportContext } from '@lib/context/viewport';
-import { FadeUp } from '@lib/components/decoration/vertical-fade/FadeUp';
+import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
+import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
+import { FadeUp } from '@lib/components/layout/vertical-fade/FadeUp';
 import { Settings } from './settings';
+import { Network } from '@lib/network';
+import { BackdropBlur } from '@lib/components/layout/backdrop-blur';
+import { Position } from './Position';
+import { useDarkMode } from '@lib/context';
 
 const Root = styled.footer``;
 
@@ -24,7 +27,7 @@ export const Footer = () => {
         transform: `translateZ(${width})`,
       }}
     >
-      <AnimatePresence initial={false} mode='wait'>
+      <AnimatePresence>
         {isScroll && (
           <FadeUp
             key={`FADE_UP_${isDarkMode ? 'DARK' : 'LIGHT'}`}
@@ -34,7 +37,14 @@ export const Footer = () => {
           />
         )}
       </AnimatePresence>
-      <Settings />
+      <Position position='left-6'>
+        <Network key='Network' />
+      </Position>
+      <Position position='right-6'>
+        <BackdropBlur>
+          <Settings />
+        </BackdropBlur>
+      </Position>
     </Root>
   );
 };

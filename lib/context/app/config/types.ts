@@ -20,6 +20,7 @@ export type TLayoutRecord = {
   Active: TBlank;
   TextureGlow: FC<TGlowProps>;
   Glow: FC<TGlowProps>;
+  GlowSecondaryAccent: FC<TGlowProps>;
   Brighten: FC<TBrightenProps>;
 };
 
@@ -34,6 +35,5 @@ export type TValue<S extends TStyle = TStyle> =
       onInit(): void;
     };
 
-export type TContext<S extends TStyle = TStyle> = Context<
-  TValue<S>
->;
+export type TAppContext<S extends TStyle = TStyle> =
+  Context<TValue<S>>;

@@ -1,4 +1,4 @@
 import { createContext } from 'react';
-import { TContext, TValue } from './types';
+import { TAppContext, TValue } from './types';
 
-export const APP = createContext({} as TValue) as TContext;
+export const APP = createContext({} as TValue) as TAppContext;

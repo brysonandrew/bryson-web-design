@@ -5,7 +5,7 @@ import { PRESENCE_OPACITY_Y_SHIFT } from '@lib/animation/constants';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
 import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { useViewport } from '@lib/context/viewport';
+import { useViewport } from '@lib/context/viewport/useViewport';
 import { TMediaRecord } from '@ops/screens/process/config/types';
 import { NONE_CURSOR_KEY } from '@lib/cursor/switch/config';
 
@@ -25,6 +25,7 @@ export const Sections: FC<TProps> = (props) => {
       v * count * (viewportWidth / width) +
       viewportWidth * 0.5 * (count - 1),
   );
+  
   return (
     <Root className='h-full grow' {...handlers}>
       <motion.ul

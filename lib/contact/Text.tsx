@@ -1,39 +1,37 @@
 import styled from '@emotion/styled';
-import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TBaseInputProps } from './config/types';
-import { Name } from './name';
+import { TBaseInputProps } from './context/types';
 import { Box } from './box';
-import { useInput } from './useInput';
 import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { TInputMotionProps } from '@lib/types/dom';
 
 const Input = styled(motion.input)``;
 
-type TProps = HTMLMotionProps<'input'> & TBaseInputProps;
+type TProps = TInputMotionProps & TBaseInputProps;
 export const Text: FC<TProps> = ({
   name,
   disabled,
   ...props
 }) => {
-  const { ref, inputProps, boxInputs } =
-    useInput<HTMLInputElement>({ name });
   return (
-    <Box name={name} isDisabled={disabled} {...boxInputs}>
-      <div className='pt-1 w-full md:w-auto'>
-        <Name title={name} />
-      </div>
-      <Input
-        ref={ref}
-        className='input'
-        type='text'
-        autoComplete='off'
-        name={name}
-        disabled={disabled}
-        {...resolveInteractiveLabels(name)}
-        {...inputProps}
-        {...props}
-      />
+    <Box<HTMLInputElement>
+      name={name}
+      isDisabled={disabled}
+    >
+      {({ ref, inputProps }) => (
+        <Input
+          ref={ref}
+          className='input'
+          type='text'
+          autoComplete='off'
+          name={name}
+          disabled={disabled}
+          {...resolveInteractiveLabels(name)}
+          {...inputProps}
+          {...props}
+        />
+      )}
     </Box>
   );
 };

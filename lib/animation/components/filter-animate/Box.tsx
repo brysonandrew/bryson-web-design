@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
-import { TDivMotionProps } from '@lib/types/dom';
-import { TChildren, TClassValueProps } from '@lib/types/dom/main';
+import { TDivMotionProps } from '@lib/types/dom/motion';
+import {
+  TChildren,
+  TClassValueProps,
+} from '@lib/types/dom/main';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -18,10 +21,7 @@ export const Box: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx(
-        'relative glow',
-        classValue,
-      )}
+      className={clsx('relative', classValue)}
       {...props}
     >
       {children}

@@ -1,12 +1,11 @@
 import type { FC } from 'react';
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { I } from '@lib/icons/icon';
 import { P2 } from '@lib/components/layout/space/P2';
 import { P3 } from '@lib/components/layout/space/P3';
 import { P_5 } from '@lib/components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@lib/constants/icons/constants';
-import { PLUS_ICON } from '@lib/constants/icons/constants/text';
+import { TICK_CIRCLE_ICON } from '@lib/icons/constants';
+import { PLUS_ICON } from '@lib/icons/constants/text';
 import { useApp } from '@lib/context/app/useApp';
 
 export const PlusContent: FC = () => {
@@ -17,7 +16,7 @@ export const PlusContent: FC = () => {
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
         <span
           className={clsx(
-            'hidden lg:block absolute top-3.875 right-full h-2px w-12 -mr-0.5 bg-standard',
+            'hidden lg:block absolute top-3.875 right-full h-2px w-10 -mr-0.5 bg-standard',
           )}
         />
         <I

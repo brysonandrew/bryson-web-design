@@ -1,4 +1,4 @@
-import { TStatus } from '../config/types';
+import { TStatus } from '../context/types';
 
 export const resolveButtonValue = (status: TStatus) => {
   switch (status) {
