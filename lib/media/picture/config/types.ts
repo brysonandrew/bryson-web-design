@@ -1,4 +1,4 @@
-import { TSource } from 'lib/types';
+import { TSource } from '@brysonandrew/lib/types';
 import type { Metadata, OutputInfo } from 'sharp';
 import { TScreensLookup } from './screens';
 

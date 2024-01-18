@@ -1,28 +1,37 @@
 import { motion } from 'framer-motion';
 import { type FC, useEffect, useState } from 'react';
 import { Content } from '../../components/content';
-import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
-import { useOnSound } from 'lib/hooks/sounds/useOnSound';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+import { useOnSound } from '@brysonandrew/lib/hooks/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
-import { resolveCursorKeyFromHoverKey } from 'lib/cursor/switch/config';
-import { NOOP } from 'lib/constants/functions';
-import { useCursor } from 'lib/cursor/context';
-import { useCurrProject } from 'lib/gallery/viewer/hooks/params/useCurrProject';
-import { TSlugProps } from 'lib/gallery/config/types';
-import { useToFirst } from 'lib/gallery/viewer/hooks/nav/useToFirst';
+import { resolveCursorKeyFromHoverKey } from '@brysonandrew/lib/cursor/switch/config';
+import { NOOP } from '@brysonandrew/lib/constants/functions';
+import { useCursor } from '@brysonandrew/lib/cursor/context';
+import { useCurrProject } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrProject';
+import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { useToFirst } from '@brysonandrew/lib/gallery/viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
-import { useGallery } from 'lib/gallery/context/useGallery';
+import { useGallery } from '../../context/Provider';
 
-type TProps = TSlugProps & {
+type TProps<
+  K extends string,
+> = TSlugProps<K> & {
   index: number;
 };
-export const Item: FC<TProps> = ({ slug, index }) => {
+export const Item = <
+  T extends string,
+  K extends string,
+  R extends object,
+>({
+  slug,
+  index,
+}: TProps<K>) => {
   const {
     ITEMS_RECORD,
     List: { RightHeader },
-  } = useGallery();
+  } = useGallery<T, K, R>();
   const { hoverKey } = useCursor();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();

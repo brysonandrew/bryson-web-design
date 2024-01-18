@@ -1,5 +1,5 @@
-import { P1 } from 'lib/components/layout/space/P1';
-import { P2 } from 'lib/components/layout/space/P2';
+import { P1 } from '@brysonandrew/lib/components/layout/space/P1';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
 import { Extras } from './breakdown/extras';
 import { Money } from './Money';
 import { Skeleton } from './skeleton';

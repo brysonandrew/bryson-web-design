@@ -1,4 +1,4 @@
-import { generateId } from 'lib/utils/key/generateRandomId';
+import { generateId } from '@brysonandrew/lib/utils/key/generateRandomId';
 import { useState } from 'react';
 import {
   TLogEntries,

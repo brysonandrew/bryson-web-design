@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useViewer as useContext } from 'lib/gallery/viewer/context/useViewer';
-import { Picture } from 'lib/media/picture';
-import { useLoadImage } from 'lib/hooks/media/useLoadImage';
+import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
+import { Picture } from '@brysonandrew/lib/media/picture';
+import { useLoadImage } from '@brysonandrew/lib/hooks/media/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
-} from 'lib/media/picture/config/types';
-import { useImageDimensions } from 'lib/hooks/media/useImageDimensions';
-import { TChildren } from 'lib/types/dom';
-import { MotionBlur } from 'lib/filters/motion-blur';
+} from '@brysonandrew/lib/media/picture/config/types';
+import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimensions';
+import { TChildren } from '@brysonandrew/lib/types/dom';
+import { MotionBlur } from '@brysonandrew/lib/filters/motion-blur';
 
 export const Root = styled(motion.div)``;
 

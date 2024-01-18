@@ -1,7 +1,7 @@
-import { useHtmlTitle } from 'lib/head/useHtmlTitle';
-import { useDarkMode } from 'lib/context/dark-mode/context/useDarkMode';
+import { useHtmlTitle } from '@brysonandrew/lib/head/useHtmlTitle';
+import { useDarkMode } from '@brysonandrew/lib/context/dark-mode/context/useDarkMode';
 import { Helmet } from 'react-helmet-async';
-import { useApp } from 'lib/context/app/useApp';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 type TProps<T extends Record<string, string>> = {
   titleLookup: T;

@@ -1,4 +1,4 @@
-import { TMediaRecords } from "lib/media/picture/config/types";
+import { TMediaRecords } from '@brysonandrew/lib/media/picture/config/types';
 
 export type {};
 declare const self: ServiceWorkerGlobalScope;

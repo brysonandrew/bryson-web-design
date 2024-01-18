@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useViewer as useContext } from 'lib/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
 import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useCurrParams } from 'lib/gallery/viewer/hooks/params/useCurrParams';
+import { useCurrParams } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../types';
-import { DURATION_MID } from 'lib/animation/constants';
+import { DURATION_MID } from '@brysonandrew/lib/animation/constants';
 import { useX } from './motion/useX';
 import { resolveTo } from '../utils/resolveTo';
 

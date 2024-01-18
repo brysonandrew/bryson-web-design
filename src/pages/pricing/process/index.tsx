@@ -1,6 +1,6 @@
 import { Main } from './Main';
-import { Section } from 'lib/components/layout/section';
-import { P12 } from 'lib/components';
+import { Section } from '@brysonandrew/lib/components/layout/section';
+import { P12 } from '@brysonandrew/lib/components';
 
 export const Process = () => {
   return (

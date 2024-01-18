@@ -1,5 +1,5 @@
 import { DragIcon } from './DragIcon';
-import { useDrag } from 'lib/gallery/viewer/hooks/useDrag';
+import { useDrag } from '@brysonandrew/lib/gallery/viewer/hooks/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -8,8 +8,8 @@ import { Items } from './items';
 import { PADDING_X } from './config';
 import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
-import { useKeys } from 'lib/gallery/viewer/hooks/useKeys';
-import { useApp } from 'lib/context/app/useApp';
+import { useKeys } from '@brysonandrew/lib/gallery/viewer/hooks/useKeys';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 const Root = styled.div``;
 const Dragger = styled(motion.div)``;

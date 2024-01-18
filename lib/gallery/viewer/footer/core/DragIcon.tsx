@@ -1,12 +1,12 @@
-import { Drag } from 'lib/gallery/viewer/icons/Drag';
+import { Drag } from '@brysonandrew/lib/gallery/viewer/icons/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { PADDING_X } from './config';
-import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from 'lib/cursor/switch/config';
-import { useApp } from 'lib/context/app/useApp';
-import { useDarkMode } from 'lib/context';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useDarkMode } from '@brysonandrew/lib/context';
 
 type TProps = {
   classValue?: ClassValue;

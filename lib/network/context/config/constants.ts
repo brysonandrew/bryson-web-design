@@ -1,5 +1,5 @@
 import type { TContext } from './types';
-import { NOOP } from 'lib/constants/functions';
+import { NOOP } from '@brysonandrew/lib/constants/functions';
 import { createContext } from 'react';
 
 const INIT: TContext = {

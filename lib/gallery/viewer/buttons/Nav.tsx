@@ -3,10 +3,10 @@ import { isDesktop } from 'react-device-detect';
 import {
   LinkFillCenter,
   TProps as TIconLinkProps,
-} from 'lib/components/interactive/LinkFillCenter';
-import { useMoveSound } from 'lib/hooks/sounds/useMoveSound';
-import { useViewer as useContext } from 'lib/gallery/viewer/context/useViewer';
-import { NOOP } from 'lib/constants/functions';
+} from '@brysonandrew/lib/components/interactive/LinkFillCenter';
+import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
+import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
+import { NOOP } from '@brysonandrew/lib/constants/functions';
 
 type TProps = TIconLinkProps;
 export const Nav: FC<TProps> = ({

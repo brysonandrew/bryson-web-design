@@ -1,4 +1,4 @@
-import { TChildren } from 'lib/types/dom';
+import { TChildren } from '@brysonandrew/lib/types/dom';
 import { MotionStyle } from 'framer-motion';
 import { FC } from 'react';
 

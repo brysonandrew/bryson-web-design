@@ -1,5 +1,5 @@
-import type { TChildren } from "lib/types/dom";
-import type { FC, SVGProps } from "react";
+import type { TChildren } from '@brysonandrew/lib/types/dom';
+import type { FC, SVGProps } from 'react';
 
 type TProps = {
   children: TChildren;
@@ -9,9 +9,9 @@ export const FilterShell: FC<TProps> = ({
   ...props
 }) => (
   <svg
-    width="0%"
-    height="0%"
-    viewBox="0 0 100 100"
+    width='0%'
+    height='0%'
+    viewBox='0 0 100 100'
     {...props}
   >
     {children}

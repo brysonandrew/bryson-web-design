@@ -1,4 +1,4 @@
-import { TDimensions } from 'lib/media/picture/config/types';
+import { TDimensions } from '@brysonandrew/lib/media/picture/config/types';
 import { useMemo } from 'react';
 
 type TConfig = {

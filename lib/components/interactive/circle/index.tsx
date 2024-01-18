@@ -3,13 +3,13 @@ import {
   TChildrenProps,
   TClassValueProps,
   TDivMotionProps,
-} from 'lib/types/dom';
-import { resolveParentAnimateConfig } from 'lib/animation/components/filter-animate/utils';
+} from '@brysonandrew/lib/types/dom';
+import { resolveParentAnimateConfig } from '@brysonandrew/lib/animation/components/filter-animate/utils';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Background } from './Background';
-import { useApp } from 'lib/context/app/useApp';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 const Root = styled(motion.div)``;
 

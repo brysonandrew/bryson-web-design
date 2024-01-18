@@ -1,4 +1,4 @@
-import { resolveCompositeKey } from 'lib/utils/key';
+import { resolveCompositeKey } from '@brysonandrew/lib/utils/key';
 import { IMAGE_PLACEHOLDER_ID } from '../config/constants';
 
 export const resolveKey = (key: number | string) =>

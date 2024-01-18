@@ -1,8 +1,8 @@
 import type { FC } from 'react';
-import { STAR_ICON } from 'lib/icons/constants/general';
-import { I } from 'lib/icons/icon';
+import { STAR_ICON } from '@brysonandrew/lib/icons/constants/general';
+import { I } from '@brysonandrew/lib/icons/icon';
 import { motion } from 'framer-motion';
-import { TDivMotionProps } from 'lib/types';
+import { TDivMotionProps } from '@brysonandrew/lib/types';
 
 type TProps = { isLarge?: boolean } & TDivMotionProps;
 export const Logo: FC<TProps> = ({ isLarge, ...props }) => {

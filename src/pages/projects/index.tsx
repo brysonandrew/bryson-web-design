@@ -1,10 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
-import { Section } from 'lib/components/layout/section';
-import { P60Y } from 'lib/components/layout/space/P60Y';
+import { Section } from '@brysonandrew/lib/components/layout/section';
+import { P60Y } from '@brysonandrew/lib/components/layout/space/P60Y';
 import { Main } from './Main';
 
-const Viewer = lazy(() => import('lib/gallery/viewer'));
+const Viewer = lazy(() => import('@brysonandrew/lib/gallery/viewer'));
 
 export const Projects = () => {
   return (

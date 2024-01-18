@@ -1,9 +1,9 @@
-import { useApp } from 'lib/context/app/useApp';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 import {
   TDivMotionProps,
   TClassValueProps,
   TChildren,
-} from 'lib/types/dom';
+} from '@brysonandrew/lib/types/dom';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

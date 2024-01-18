@@ -1,5 +1,4 @@
 import { Rule } from 'unocss';
-// import { RULES as SHADOW_RULES } from './glow';
 import { RULES as TEXT_STROKE } from './text-stroke';
 import { RULES as MASK_RULES } from './mask';
 import { RULES as PLACEHOLDER_RULES } from './placeholder';

@@ -1,8 +1,8 @@
 import { Item } from '@pages/pricing/process/focus/Item';
 import { Circle } from '@pages/pricing/process/focus/Circle';
-import { useCursor } from 'lib/cursor/context';
+import { useCursor } from '@brysonandrew/lib/cursor/context';
 import { FOUNDATION } from '../config';
-import { List } from 'lib/components/layout/lists/List';
+import { List } from '@brysonandrew/lib/components/layout/lists/List';
 
 export const Foundation = () => {
   const {

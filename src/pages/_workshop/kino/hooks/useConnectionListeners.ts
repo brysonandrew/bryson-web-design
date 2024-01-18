@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useEventListener } from 'lib/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/lib/hooks/events/useEventListener';
 
 type TConfig = {
   connection: RTCPeerConnection;
