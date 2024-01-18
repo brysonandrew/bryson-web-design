@@ -3,8 +3,8 @@ import { Range } from '../../components/Inputs';
 import { TState } from '../../context/types';
 import clsx from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
-import { I } from '@lib/icons/icon';
-import { resolveBoxShadow } from '@lib/color/utils/glow/resolveBoxShadow';
+import { I } from 'lib/icons/icon';
+import { resolveBoxShadow } from 'lib/color/utils/glow/resolveBoxShadow';
 
 const Root = styled.label``;
 

@@ -1,9 +1,9 @@
-import { I } from '@lib/icons/icon';
+import { I } from 'lib/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';
-import { STYLE } from '@app/style';
-import { useApp } from '@lib/context/app/useApp';
+import { STYLE } from '@components/style';
+import { useApp } from 'lib/context/app/useApp';
 
 const inputCss = css``;
 

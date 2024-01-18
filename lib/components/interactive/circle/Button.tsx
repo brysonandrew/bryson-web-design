@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import styled from '@emotion/styled';
-import { TButtonMotionProps, TClassValueProps, TTitleProps } from '@lib/types/dom';
+import { TButtonMotionProps, TClassValueProps, TTitleProps } from 'lib/types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from 'lib/utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.button)``;
 

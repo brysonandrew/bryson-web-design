@@ -3,11 +3,11 @@ import {
   DURATION,
   MOTION_CONFIG,
   PRESENCE_Y_SHIFT,
-} from '@lib/animation/constants';
+} from 'lib/animation/constants';
 import { motion } from 'framer-motion';
-import { TClassValueProps } from '@lib/types/dom/main';
+import { TClassValueProps } from 'lib/types/dom/main';
 import clsx from 'clsx';
-import { TDivMotionProps } from '@lib/types/dom/motion';
+import { TDivMotionProps } from 'lib/types/dom/motion';
 
 type TProps = TClassValueProps &
   TDivMotionProps & { staggerIndex?: number };

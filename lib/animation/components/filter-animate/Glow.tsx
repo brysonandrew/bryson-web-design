@@ -1,7 +1,7 @@
 import {
   TPartialGlowConfigOptions,
   resolveGlowProps,
-} from '@lib/animation/components/filter-animate/utils/glow';
+} from 'lib/animation/components/filter-animate/utils/glow';
 import { FilterAnimate } from '.';
 import { FC } from 'react';
 

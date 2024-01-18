@@ -1,29 +1,21 @@
 import {
   TITLE_KEY_DELIMITER,
   resolveCompositeTitle,
-} from '@lib/utils/key';
+} from 'lib/utils/key';
 import { useLocation } from 'react-router';
-import { capitalize } from '@lib/utils/format';
-import { APP_DESCRIPTION } from '@app/base/constants';
-import { PAGE_NAV_VALUES } from '@app/routes/constants/pages';
-import { useCurrParams } from '@lib/gallery/viewer/hooks/params/useCurrParams';
+import { capitalize } from 'lib/utils/format';
+import { useCurrParams } from 'lib/gallery/viewer/hooks/params/useCurrParams';
 
-const TITLE_FROM_PATHNAME_LOOKUP: Record<
-  string,
-  string | null
-> = {
-  '/': APP_DESCRIPTION,
-  ...PAGE_NAV_VALUES.reduce(
-    (a, { path, title }) => ({ ...a, [path]: title }),
-    {},
-  ),
-};
-
-export const useHtmlTitle = () => {
+export const useHtmlTitle = <
+  T extends Record<string, string>,
+>(
+  lookup: T,
+) => {
   const { pathname } = useLocation();
   const currParams = useCurrParams();
   const { project, name } = currParams;
-  const route = TITLE_FROM_PATHNAME_LOOKUP[pathname];
+
+  const route = lookup[pathname];
   const titles = ['Bryson Web Design', route].filter(
     Boolean,
   );
@@ -32,7 +24,6 @@ export const useHtmlTitle = () => {
         project,
       )}${TITLE_KEY_DELIMITER}${name}`
     : resolveCompositeTitle(...titles);
-
 
   return title;
 };

@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
+import { TTTitleToKebab } from 'lib/types/transformers/format/title';
 import { INIT_PROJECT_ITEMS } from './items';
 
 export type TInitItems = typeof INIT_PROJECT_ITEMS;

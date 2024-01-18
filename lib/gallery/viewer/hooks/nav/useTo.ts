@@ -1,4 +1,4 @@
-import { PROJECT_KEY } from '@lib/gallery/config/constants';
+import { PROJECT_KEY } from 'lib/gallery/config/constants';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import { resolveTo } from '../../utils/resolveTo';

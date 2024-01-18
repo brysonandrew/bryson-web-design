@@ -1,4 +1,4 @@
-import { useEventListener } from '@lib/hooks/events/useEventListener';
+import { useEventListener } from 'lib/hooks/events/useEventListener';
 import { useEffect, useRef } from 'react';
 
 export type TConfig = {

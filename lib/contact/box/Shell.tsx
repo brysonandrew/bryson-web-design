@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
-import { TBaseChildren } from '@lib/types/dom';
+import { TBaseChildren } from 'lib/types/dom';
 import { Clear } from './Clear';
-import { TFormKey } from '@lib/contact/context/types';
+import { TFormKey } from 'lib/contact/context/types';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
-import { BIG_CURSOR_KEY } from '@lib/cursor/switch/config';
-import { useApp } from '@lib/context/app/useApp';
-import { MOTION_CONFIG } from '@lib/animation/constants';
+import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
+import { resolveParentAnimateConfig } from 'lib/animation/components/filter-animate/utils';
+import { BIG_CURSOR_KEY } from 'lib/cursor/switch/config';
+import { useApp } from 'lib/context/app/useApp';
+import { MOTION_CONFIG } from 'lib/animation/constants';
 import { CONTACT_FORM_INPUT_LAYOUT_ID } from '../context/constants';
 
 const Root = styled(motion.label)``;

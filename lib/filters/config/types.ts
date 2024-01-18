@@ -1,4 +1,4 @@
-import type { TChildren } from "@lib/types/dom";
+import type { TChildren } from "lib/types/dom";
 
 export type TFilterChildrenProps = {
   children?(id: string): TChildren;

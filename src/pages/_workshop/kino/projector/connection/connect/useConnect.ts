@@ -1,7 +1,7 @@
 import { OFFER_KEY } from '@pages/_workshop/kino/hooks/signaling/config';
 import { useProjector } from '@pages/_workshop/kino/projector/context';
 import { resolveErrorMessage } from '@pages/_workshop/kino/utils/resolveErrorMessage';
-import { TError } from '@lib/types/dom';
+import { TError } from 'lib/types/dom';
 import { useState } from 'react';
 
 export const useConnect = () => {

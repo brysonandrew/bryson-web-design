@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { Time } from '@lib/gallery/components/content/Time';
-import { TSlugProps } from '@lib/gallery/config/types';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { Time } from 'lib/gallery/components/content/Time';
+import { TSlugProps } from 'lib/gallery/config/types';
+import { useGallery } from 'lib/gallery/context/useGallery';
 import { Badge } from '@pages/pricing/badge';
 
 type TProps = TSlugProps & {

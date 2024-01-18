@@ -1,4 +1,4 @@
-import { InView } from '@lib/in-view';
+import { InView } from 'lib/in-view';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -8,11 +8,11 @@ import {
   TParallaxMotionChildrenProps,
   TParallaxOptions,
 } from './config';
-import { PRESENCE_OPACITY } from '@lib/animation/constants';
+import { PRESENCE_OPACITY } from 'lib/animation/constants';
 import { IntersectionOptions } from 'react-intersection-observer';
-import { NOOP } from '@lib/constants/functions';
+import { NOOP } from 'lib/constants/functions';
 import { isDesktop } from 'react-device-detect';
-import { Rect } from '@lib/components/layout/space/Rect';
+import { Rect } from 'lib/components/layout/space/Rect';
 
 type TProps = TParallaxOptions & {
   classValue?: ClassValue;

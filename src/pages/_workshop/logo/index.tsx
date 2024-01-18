@@ -1,5 +1,5 @@
 import { Laptop } from './Laptop';
-import { P8 } from '@lib/components/layout/space/P8';
+import { P8 } from 'lib/components/layout/space/P8';
 import { COLOR_VARS_RECORD } from '@app/colors/constants';
 
 const SIZE = 200;

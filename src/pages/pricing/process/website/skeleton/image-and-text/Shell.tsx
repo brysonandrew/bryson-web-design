@@ -1,4 +1,4 @@
-import { useApp } from '@lib/context/app/useApp';
+import { useApp } from 'lib/context/app/useApp';
 import { FC, PropsWithChildren } from 'react';
 
 export const Shell: FC<PropsWithChildren> = ({

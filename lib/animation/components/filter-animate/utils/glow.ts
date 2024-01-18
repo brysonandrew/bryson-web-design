@@ -1,16 +1,14 @@
 import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { MotionValue } from 'framer-motion';
-import { resolveDropShadow } from '@lib/color/utils/glow/resolveDropShadow';
-import { TColorValue } from '@app/colors/types';
-import { resolveBoxShadow } from '@lib/color/utils/glow/resolveBoxShadow';
+import { resolveDropShadow } from 'lib/color/utils/glow/resolveDropShadow';
+import { resolveBoxShadow } from 'lib/color/utils/glow/resolveBoxShadow';
 import { TFilterAnimateProps } from '..';
-import { resolveVarCss } from '@lib/color/utils/resolveVarCss';
 
 export type TGlowConfigOptions = {
   text?: number;
   box?: number;
   drop?: number;
-  color?: TColorValue;
+  color?: string;
   value?: MotionValue;
   idle?: number;
 };

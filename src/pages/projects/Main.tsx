@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { TParallaxMotionChildrenProps } from '@lib/animation/components/parallax/config';
+import { TParallaxMotionChildrenProps } from 'lib/animation/components/parallax/config';
 import { motion } from 'framer-motion';
-import { List } from '@lib/gallery/list';
+import { List } from 'lib/gallery/list';
 
 type TProps = Partial<TParallaxMotionChildrenProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {

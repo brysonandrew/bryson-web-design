@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import { Title as DefaultTitle } from '@lib/components/layout/typography/title';
+import { Title as DefaultTitle } from 'lib/components/layout/typography/title';
 import {
   TChildren,
   TChildrenString,
   TDivProps,
-} from '@lib/types/dom';
+} from 'lib/types/dom';
 import clsx, { ClassValue } from 'clsx';
-import { P16Y } from '@lib/components/layout/space/P16Y';
+import { P16Y } from 'lib/components/layout/space/P16Y';
 
 const Root = styled.div``;
 

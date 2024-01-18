@@ -4,15 +4,15 @@ import { type FC } from 'react';
 import {
   IMAGE_PLACEHOLDER_ID,
   PLACEHOLDER_LAYOUT_ID,
-} from '@lib/media/placeholder/config/constants';
-import { resolveUrlId } from '@lib/utils/attributes/resolveUrlId';
+} from 'lib/media/placeholder/config/constants';
+import { resolveUrlId } from 'lib/utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './utils/resolveGradientStops';
 import clsx from 'clsx';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@lib/types/dom';
-import { DURATION_VERY_SLOW } from '@lib/animation/constants';
+} from 'lib/types/dom';
+import { DURATION_VERY_SLOW } from 'lib/animation/constants';
 
 export const Root = styled(motion.div)``;
 

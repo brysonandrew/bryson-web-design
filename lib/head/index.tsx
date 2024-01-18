@@ -1,13 +1,18 @@
-import { useHtmlTitle } from '@lib/head/useHtmlTitle';
-import { useDarkMode } from '@lib/context/dark-mode/context/useDarkMode';
+import { useHtmlTitle } from 'lib/head/useHtmlTitle';
+import { useDarkMode } from 'lib/context/dark-mode/context/useDarkMode';
 import { Helmet } from 'react-helmet-async';
-import { useApp } from '@lib/context/app/useApp';
+import { useApp } from 'lib/context/app/useApp';
 
-export const Head = () => {
+type TProps<T extends Record<string, string>> = {
+  titleLookup: T;
+};
+export const Head = <T extends Record<string, string>>({
+  titleLookup,
+}: TProps<T>) => {
   const { COLOR } = useApp();
   const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
-  const title = useHtmlTitle();
+  const title = useHtmlTitle<T>(titleLookup);
   const base = isDarkMode ? COLOR['black'] : COLOR['white'];
   const highlight = isDarkMode
     ? COLOR['secondary']

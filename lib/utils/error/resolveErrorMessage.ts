@@ -1,4 +1,4 @@
-import { TError } from '@lib/types/dom';
+import { TError } from 'lib/types/dom';
 
 const toMessage = (
   content: string,

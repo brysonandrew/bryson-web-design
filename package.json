@@ -1,18 +1,9 @@
 {
-  "name": "@brysonandrew/lib",
-  "version": "5.0.0",
+  "name": "@brysonandrew/bryson-web-design",
+  "version": "7.0.0",
   "description": "Building websites and apps",
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "require": "./lib/main.ts",
-      "import": "./lib/main.ts",
-      "default": "./lib/main.ts"
-    },
-    "./package.json": "./package.json"
-  },
-  "main": "src/main.tsx",
-  "module": "src/main.tsx",
+  "main": "src/index.tsx",
+  "types": "src/index.d.ts",
   "scripts": {
     "dev": "vite --config vite.config.ts",
     "sw": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
@@ -21,7 +12,7 @@
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "screens": "esrun ops/screens/process",
-    "publish": "npm publish --access public ./lib"
+    "publish": "npm publish ./lib"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
@@ -30,7 +21,6 @@
     "url": "https://github.com/brysonandrew/brysona.dev/issues"
   },
   "packageManager": "yarn@1.22.19",
-  "types": "src/index.d.ts",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "ably": "^1.2.44",

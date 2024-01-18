@@ -1,6 +1,6 @@
+import { IMAGES_GLOB } from '@ops/screens/process/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { IMAGES_GLOB } from '../screens/process/config/constants';
 import { resolveFsInfo } from '../utils/resolveFsInfo';
 
 (async () => {

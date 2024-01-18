@@ -1,5 +1,5 @@
-import { TSlugProps } from '@lib/gallery/config/types';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { TSlugProps } from 'lib/gallery/config/types';
+import { useGallery } from 'lib/gallery/context/useGallery';
 import { Badge } from '@pages/pricing/badge';
 import { FC } from 'react';
 

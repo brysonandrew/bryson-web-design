@@ -1,5 +1,5 @@
-import { TChildren } from '@lib/types/dom';
-import { resolveUrlId } from '@lib/utils/attributes/resolveUrlId';
+import { TChildren } from 'lib/types/dom';
+import { resolveUrlId } from 'lib/utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';
 import {
   isSafari,

@@ -1,5 +1,5 @@
-import { useApp } from "@lib/context/app/useApp";
-import { PROJECT_KEY } from "@lib/gallery/config/constants";
+import { useApp } from "lib/context/app/useApp";
+import { PROJECT_KEY } from "lib/gallery/config/constants";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";

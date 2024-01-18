@@ -1,5 +1,5 @@
-import { TRgb, TRgbaValue } from '@lib/color/types';
-import { TKeyStr } from '@lib/types/keys';
+import { TRgb, TRgbaValue } from 'lib/color/types';
+import { TKeyStr } from 'lib/types/keys';
 import { varRgb } from '../varRgb';
 import {
   resolveBoxShadow,

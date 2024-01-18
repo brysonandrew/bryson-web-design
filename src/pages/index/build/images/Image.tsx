@@ -1,27 +1,27 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Picture } from '@lib/media/picture';
-import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
+import { Picture } from 'lib/media/picture';
+import { useImageDimensions } from 'lib/hooks/media/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@lib/filters/config/constants/presets';
+} from 'lib/filters/config/constants/presets';
 import clsx from 'clsx';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { TImgMotionProps } from '@lib/types/dom/motion';
+import { useHoverKey } from 'lib/cursor/hooks/useHoverKey';
+import { resolveInteractiveLabels } from 'lib/utils/attributes/resolveInteractiveLabels';
+import { TImgMotionProps } from 'lib/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from 'lib/cursor/switch/config';
 import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@lib/animation/constants';
-import { useTapHandler } from '@lib/hooks/media/useTapHandler';
-import { TMediaRecord } from '@ops/screens/process/config/types';
-import { GALLERY_ICON } from '@lib/icons/constants/gallery';
-import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
+import { ORIGIN_50 } from 'lib/animation/constants';
+import { useTapHandler } from 'lib/hooks/media/useTapHandler';
+import { TMediaRecord } from 'lib/media/picture/config/types';
+import { GALLERY_ICON } from 'lib/icons/constants/gallery';
+import { useCurrName } from 'lib/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 

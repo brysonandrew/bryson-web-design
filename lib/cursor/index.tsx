@@ -1,13 +1,13 @@
 import { type FC, useRef, memo } from 'react';
-import { NOOP } from '@lib/constants/functions';
-import { useEventListener } from '@lib/hooks/events/useEventListener';
-import { useCursor } from '@lib/cursor/context';
-import { useScroll as useScrollContext } from '@lib/context/scroll/useScroll';
-import type { TChildren } from '@lib/types/dom/main';
+import { NOOP } from 'lib/constants/functions';
+import { useEventListener } from 'lib/hooks/events/useEventListener';
+import { useCursor } from 'lib/cursor/context';
+import { useScroll as useScrollContext } from 'lib/context/scroll/useScroll';
+import type { TChildren } from 'lib/types/dom/main';
 import { useViewportPresence } from './hooks/useViewportPresence';
-import { Switch } from '@lib/cursor/switch';
-import { useTimeoutRef } from '@lib/hooks/window/useTimeoutRef';
-import { useCursorOffset } from '@lib/cursor/hooks/useCursorOffset';
+import { Switch } from 'lib/cursor/switch';
+import { useTimeoutRef } from 'lib/hooks/window/useTimeoutRef';
+import { useCursorOffset } from 'lib/cursor/hooks/useCursorOffset';
 import { resolveCursorKeyFromHoverKey } from './switch/config';
 
 export type TCursorProps = {

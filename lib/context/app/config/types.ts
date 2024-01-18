@@ -1,10 +1,10 @@
-import { STYLE } from '@app/style';
-import { TBrightenProps } from '@lib/animation/components/filter-animate/Brighten';
-import { TGlowProps } from '@lib/animation/components/filter-animate/Glow';
+import { STYLE } from '@components/style';
+import { TBrightenProps } from 'lib/animation/components/filter-animate/Brighten';
+import { TGlowProps } from 'lib/animation/components/filter-animate/Glow';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@lib/types/dom';
+} from 'lib/types/dom';
 import { FC, Context } from 'react';
 import { TColorSetRecord } from '../hooks/useColorSetRecord';
 

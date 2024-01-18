@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@lib/types/dom/main';
+import { TClassValueProps } from 'lib/types/dom/main';
 import { FC } from 'react';
 import { TContext } from '../context';
 import { Provider } from '../context/Provider';

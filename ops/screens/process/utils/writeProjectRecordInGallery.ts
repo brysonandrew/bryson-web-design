@@ -1,6 +1,6 @@
 import { writeFileData } from "@ops/utils/write";
-import { LOOKUP_PATH } from "../config/constants";
-import { TMediaRecord, TFilePathKey, TScreensRecord } from "../config/types";
+import { TMediaRecord, TFilePathKey, TScreensRecord } from "../../../media/picture/config/types";
+import { LOOKUP_PATH } from "../constants";
 
 export const writeProjectRecordInGallery = (
   next: TMediaRecord | null,

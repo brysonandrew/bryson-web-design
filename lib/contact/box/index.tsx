@@ -2,7 +2,7 @@ import { TUseInput, useInput } from '../useInput';
 import { TBaseInputProps } from '../context/types';
 import { Name } from './Name';
 import { Shell, TShellProps } from './Shell';
-import { TBaseChildren } from '@lib/types/dom';
+import { TBaseChildren } from 'lib/types/dom';
 import { motion } from 'framer-motion';
 
 type TProps<T extends HTMLElement> = TBaseInputProps &

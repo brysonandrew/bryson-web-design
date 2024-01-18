@@ -1,4 +1,4 @@
-import { TRgbaValue } from '@lib/color/types';
+import { TRgbaValue } from 'lib/color/types';
 
 export const resolveDropShadow = <
   V extends string | TRgbaValue,
