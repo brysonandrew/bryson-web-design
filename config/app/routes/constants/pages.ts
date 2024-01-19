@@ -1,10 +1,10 @@
-import { resolvePage } from '@brysonandrew/lib/utils/route';
+import { resolvePage } from '../../../../lib/base';
 import { TPageRecord } from '../types';
 
 export const PAGE_TITLES = [
   'Index',
   'Pricing',
-  'Projects', 
+  'Projects',
   'Contact',
 ] as const;
 

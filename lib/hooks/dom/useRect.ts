@@ -1,4 +1,4 @@
-import { TRect } from '@brysonandrew/lib/types/dom';
+import { TRect } from '@brysonandrew/base/types/dom';
 import { useState } from 'react';
 
 export const useRect = () => {

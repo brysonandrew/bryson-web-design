@@ -1,15 +1,14 @@
-import { Moon } from '@brysonandrew/lib/icons/components/dark-mode/Moon';
-import { Sun } from '@brysonandrew/lib/icons/components/dark-mode/Sun';
-import { resolveVerticalShiftPresence } from '@brysonandrew/lib/animation/utils';
+import { resolveVerticalShiftPresence } from '@brysonandrew/animation/utils';
 import { AnimatePresence } from 'framer-motion';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
-import { Button } from '@brysonandrew/lib/components/interactive/circle/Button';
-import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { Button } from '@brysonandrew/base/components/interactive/circle/Button';
+import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { createElement } from 'react';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { useDarkMode } from '@brysonandrew/lib/context';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { useDarkMode } from '@brysonandrew/context';
+import { Moon, Sun } from './icon';
 
 export const DarkMode = () => {
   const { BORDER_RADIUS } = useApp();

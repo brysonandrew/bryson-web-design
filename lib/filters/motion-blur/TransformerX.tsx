@@ -1,5 +1,5 @@
 import { useMotionTemplate } from 'framer-motion';
-import { TChildren } from '@brysonandrew/lib/types/dom';
+import { TChildren } from '@brysonandrew/base/types/dom';
 import { TTransformerProps } from './TransformerY';
 import { TFilterProps } from './config';
 

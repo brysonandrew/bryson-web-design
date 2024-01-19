@@ -1,10 +1,10 @@
 import {
   TPartialInvertConfigOptions,
   resolveInvertProps,
-} from '@brysonandrew/lib/animation/components/filter-animate/utils/invert';
+} from '@brysonandrew/animation/components/filter-animate/utils/invert';
 import { FilterAnimate, TFilterAnimateProps } from '.';
 import { FC } from 'react';
-import { TChildrenPartialProps } from '@brysonandrew/lib/types/dom/main';
+import { TChildrenPartialProps } from '@brysonandrew/base/types/dom/main';
 
 type TProps = TPartialInvertConfigOptions &
   TFilterAnimateProps &

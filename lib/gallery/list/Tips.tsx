@@ -1,16 +1,16 @@
 import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@brysonandrew/lib/cursor/switch/config';
-import { PRESENCE_OPACITY } from '@brysonandrew/lib/animation/constants';
-import { useCursor } from '@brysonandrew/lib/cursor/context';
+} from '@brysonandrew/cursor/switch/config';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
+import { useCursor } from '@brysonandrew/cursor/context';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Touch } from '@brysonandrew/lib/gallery/viewer/tips/Touch';
-import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
+import { Touch } from '@brysonandrew/gallery/viewer/tips/Touch';
+import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { createPortal } from 'react-dom';
 import { isDesktop } from 'react-device-detect';
-import { useCurrProject } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrProject';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 export const Tips = () => {
   const { secondary, accent, BORDER_RADIUS } = useApp();

@@ -1,12 +1,12 @@
-import { Paragraphs } from '@brysonandrew/lib/gallery/list/item/details/Paragraphs';
-import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { Paragraphs } from '@brysonandrew/gallery/list/item/details/Paragraphs';
+import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Tags } from './Tags';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
-import { TDivMotionProps } from '@brysonandrew/lib/types/dom/motion';
+import { P2 } from '@brysonandrew/base/components/layout/space/P2';
+import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
 import clsx from 'clsx';
-import { useGallery } from '@brysonandrew/lib/gallery/context/Provider';
+import { useGallery } from '@brysonandrew/gallery/context/Provider';
 
 const Root = styled(motion.div)``;
 

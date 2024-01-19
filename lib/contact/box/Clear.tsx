@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContact } from '@brysonandrew/lib/contact/context/useContact';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/lib/animation/constants';
-import { TFormKey } from '@brysonandrew/lib/contact/context/types';
-import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { Cross } from '@brysonandrew/lib/gallery/components/icons';
-import { TButtonMotionProps } from '@brysonandrew/lib/types/dom';
-import { useDarkMode } from '@brysonandrew/lib/context/dark-mode/useDarkMode';
+import { useContact } from '@brysonandrew/contact/context/useContact';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation/constants';
+import { TFormKey } from '@brysonandrew/contact/context/types';
+import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { Cross } from '@brysonandrew/gallery/components/icons';
+import { TButtonMotionProps } from '@brysonandrew/base/types/dom';
+import { useDarkMode } from '@brysonandrew/dark-mode/useDarkMode';
 
 const Root = styled.div``;
 

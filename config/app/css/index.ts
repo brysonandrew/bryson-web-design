@@ -1,4 +1,4 @@
-import { resolveVarCssRecord } from '@brysonandrew/lib/color/utils/resolveCssVarRecord';
+import { resolveVarCssRecord } from '../../config';
 
 const PLACEHOLDER_MD = 28;
 const PLACEHOLDER_SM = 16;

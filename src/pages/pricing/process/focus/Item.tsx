@@ -1,9 +1,9 @@
-import { NONE_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+import { NONE_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 type TProps = PropsWithChildren<{
   id: string;

@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "paths": {
       "@pkg": ["package.json"],
-      "@brysonandrew/lib/*": ["lib/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@context/*": ["src/context/*"],

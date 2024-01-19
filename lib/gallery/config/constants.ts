@@ -1,4 +1,4 @@
-import { resolveCompositeKey } from '@brysonandrew/lib/utils/key';
+import { resolveCompositeKey } from '@brysonandrew/base/utils/key';
 
 export const PROJECT_KEY = 'project';
 export const NAME_KEY = 'name';

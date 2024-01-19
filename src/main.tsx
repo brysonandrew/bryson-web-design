@@ -5,9 +5,9 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
-import { MOTION_CONFIG } from '@brysonandrew/lib/animation/constants';
+import { MOTION_CONFIG } from '@brysonandrew/animation/constants';
 import { HelmetProvider } from 'react-helmet-async';
-import { Boundary } from '@brysonandrew/lib/boundary';
+import { Boundary } from '@brysonandrew/base/boundary';
 import { ROUTES } from '@app/routes';
 import { init as initServiceWorker } from '@app/service-worker/init';
 

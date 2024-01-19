@@ -1,19 +1,19 @@
 import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
-import { resolveTitleLayoutId } from '@brysonandrew/lib/gallery/config/constants';
+import { resolveTitleLayoutId } from '@brysonandrew/gallery/config/constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/lib/types/dom';
-import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
-import { useCurrProject } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrProject';
-import { useDelayCallback } from '@brysonandrew/lib/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@brysonandrew/lib/animation/components/filter-animate/utils';
-import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+} from '@brysonandrew/base/types/dom';
+import { P2 } from '@brysonandrew/base/components/layout/space/P2';
+import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { TSlugProps } from '@brysonandrew/gallery/config/types';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 type TProps<K extends string> = TSlugProps<K> &
   TClassValueProps &

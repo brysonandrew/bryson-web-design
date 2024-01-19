@@ -1,7 +1,7 @@
 import { EFFECT_ANIMATE_TRANSITION } from '.';
 import { MotionValue } from 'framer-motion';
-import { resolveDropShadow } from '@brysonandrew/lib/color/utils/glow/resolveDropShadow';
-import { resolveBoxShadow } from '@brysonandrew/lib/color/utils/glow/resolveBoxShadow';
+import { resolveDropShadow } from '@brysonandrew/config/color/utils/glow/resolveDropShadow';
+import { resolveBoxShadow } from '@brysonandrew/config/color/utils/glow/resolveBoxShadow';
 import { TFilterAnimateProps } from '..';
 
 export type TGlowConfigOptions = {

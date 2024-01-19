@@ -1,0 +1,1 @@
+export { deleteEntryPaths } from "./entries";

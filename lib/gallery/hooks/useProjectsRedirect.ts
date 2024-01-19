@@ -1,5 +1,5 @@
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { PROJECT_KEY } from '@brysonandrew/lib/gallery/config/constants';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { PROJECT_KEY } from '@brysonandrew/gallery/config/constants';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';

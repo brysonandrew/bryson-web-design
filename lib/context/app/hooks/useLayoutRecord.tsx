@@ -2,11 +2,11 @@ import { TAppConfig, TBlankProps } from '../config/types';
 import {
   Glow,
   TGlowProps,
-} from '@brysonandrew/lib/animation/components/filter-animate/Glow';
+} from '@brysonandrew/animation/components/filter-animate/Glow';
 import {
   Brighten,
   TBrightenProps,
-} from '@brysonandrew/lib/animation/components/filter-animate/Brighten';
+} from '@brysonandrew/animation/components/filter-animate/Brighten';
 import { resolveComponent } from '../utils/resolveComponent';
 import { Active } from '../layout/Active';
 import { TextureGlow } from '../layout/TextureGlow';

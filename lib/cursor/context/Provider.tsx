@@ -1,10 +1,10 @@
 import { PropsWithChildren, useRef, useState } from 'react';
 import type { FC } from 'react';
 import { useMotionValue } from 'framer-motion';
-import { TCursorOffset } from '@brysonandrew/lib/cursor/hooks/useCursorOffset';
 import { STATE, CURSOR } from './constants';
-import { resolveHoverKeyVariations } from '@brysonandrew/lib/cursor/config';
 import { THover } from './types';
+import { resolveHoverKeyVariations } from '../config';
+import { TCursorOffset } from '../hooks/useCursorOffset';
 
 export const Provider: FC<PropsWithChildren> = ({
   children,

@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { TChildrenString } from '@brysonandrew/lib/types/dom';
+import { TChildrenString } from '@brysonandrew/base/types/dom';
 import { motion } from 'framer-motion';
-import { Animation } from '@brysonandrew/lib/components/layout/typography/animation';
+import { Animation } from '@brysonandrew/base/components/layout/typography/animation';
 
 const Root = styled(motion.div)``;
 

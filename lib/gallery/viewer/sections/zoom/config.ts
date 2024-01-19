@@ -1,4 +1,4 @@
-import { TMotionPoint } from '@brysonandrew/lib/animation/types';
+import { TMotionPoint } from '@brysonandrew/animation/types';
 import { MotionValue } from 'framer-motion';
 
 export const SCALE = {

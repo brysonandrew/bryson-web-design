@@ -1,10 +1,10 @@
 import { Focus } from '@pages/pricing/process/focus';
-import { I } from '@brysonandrew/lib/icons/icon';
-import { PRESENCE_OPACITY } from '@brysonandrew/lib/animation/constants';
+import { I } from '@brysonandrew/base/icons/icon';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DARK_MODE } from '../../config';
-import { DARK_MODE_ICON } from '@brysonandrew/lib/icons/constants/general';
+import { DARK_MODE_ICON } from '@brysonandrew/base/icons/constants/general';
 
 export const DarkMode = () => {
   const { extras } = useServicesC();

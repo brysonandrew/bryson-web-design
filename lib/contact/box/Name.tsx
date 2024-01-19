@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import { TTitleProps } from '@brysonandrew/lib/types/dom';
+import { TTitleProps } from '@brysonandrew/base/types/dom';
 
 const Root = styled.div``;
 

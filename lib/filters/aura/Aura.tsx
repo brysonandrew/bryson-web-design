@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { resolveUrlId } from '@brysonandrew/lib/utils/attributes/resolveUrlId';
-import { TDivMotionProps } from '@brysonandrew/lib/types/dom/motion';
+import { resolveUrlId } from '@brysonandrew/base/utils/attributes/resolveUrlId';
+import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
 import { AURA_ID } from './Filter';
-import { TClassValueProps } from '@brysonandrew/lib/types/dom';
+import { TClassValueProps } from '@brysonandrew/base/types/dom';
 
 const Root = styled(motion.div)``;
 

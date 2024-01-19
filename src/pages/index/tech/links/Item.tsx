@@ -1,16 +1,16 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
-import { Aura } from '@brysonandrew/lib/filters/aura/Aura';
-import { P1_5 } from '@brysonandrew/lib/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@brysonandrew/lib/animation/components/filter-animate/utils';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { Aura } from '@brysonandrew/filters/aura/Aura';
+import { P1_5 } from '@brysonandrew/base/components/layout/space/P1_5';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/lib/icons/constants';
-import { formatUrl } from '@brysonandrew/lib/utils/format/url';
-import { Visit } from '@brysonandrew/lib/cursor/switch/format/Visit';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants';
+import { formatUrl } from '@brysonandrew/base/utils/format/url';
+import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,

@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/lib/animation/components/parallax/config';
-import { Contact } from '@brysonandrew/lib/contact';
+import { TParallaxMotionChildrenProps } from '@brysonandrew/animation/components/parallax/config';
+import { Contact } from '@brysonandrew/contact';
 
 const Root = styled(motion.div)``;
 

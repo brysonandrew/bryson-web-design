@@ -3,10 +3,10 @@ import { MotionValue, motion } from 'framer-motion';
 import { PointerEventHandler, type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '../types';
-import { useScroll } from '@brysonandrew/lib/context/scroll/useScroll';
+import { useScroll } from '@brysonandrew/context/scroll/useScroll';
 import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
-import { TMediaRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 import { useCurrName } from '../hooks/params/useCurrName';
 
 export const Root = styled(motion.div)``;

@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
-import { useContact } from '@brysonandrew/lib/contact/context/useContact';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
+import { useContact } from '@brysonandrew/contact/context/useContact';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   resolveParentAnimateConfig,
-} from '@brysonandrew/lib/animation/components/filter-animate/utils';
-import { BIGGER_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+} from '@brysonandrew/animation/components/filter-animate/utils';
+import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { useApp } from '@brysonandrew/context/app/useApp';
 import { resolveButtonValue } from './utils/resolveButtonValue';
 
 const Root = styled(motion.label)``;

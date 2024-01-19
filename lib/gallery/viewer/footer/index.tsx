@@ -4,12 +4,12 @@ import type { FC } from 'react';
 import {
   DURATION,
   PRESENCE_Y,
-} from '@brysonandrew/lib/animation/constants';
+} from '@brysonandrew/animation/constants';
 import { Core } from './core';
 import { TBaseProps } from '../types';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 const Root = styled(motion.footer)``;
 

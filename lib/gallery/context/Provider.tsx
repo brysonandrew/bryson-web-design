@@ -3,7 +3,7 @@ import {
   createContext,
   useContext as useReactContext,
 } from 'react';
-import { TInitItems } from '@brysonandrew/lib/gallery/config/types';
+import { TInitItems } from '@brysonandrew/gallery/config/types';
 import { useItemsConfig } from './hooks/useItemsConfig';
 import { TGalleryConfig, TValue } from './config/types';
 import { once } from 'lodash';

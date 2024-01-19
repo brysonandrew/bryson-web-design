@@ -1,9 +1,11 @@
 import {
   EASE,
   DURATION_DARK_MODE_MS,
-} from '@brysonandrew/lib/context/dark-mode/useDarkMode';
-import { TTransition } from '@brysonandrew/lib/animation/types';
-import { resolvePresence } from '@brysonandrew/lib/animation/utils';
+} from '@brysonandrew/dark-mode/useDarkMode';
+import {
+  resolvePresence,
+  TTransition,
+} from '@brysonandrew/animation';
 import { Transition } from 'framer-motion';
 
 const isDisabled = false; // isMobile;

@@ -1,7 +1,7 @@
-import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
-import { useOffSound } from '@brysonandrew/lib/hooks/sounds/useOffSound';
-import { useKey } from '@brysonandrew/lib/hooks/dom/useKey';
-import { NAME_KEY } from '@brysonandrew/lib/gallery/config/constants';
+import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
+import { useOffSound } from '@brysonandrew/sounds/useOffSound';
+import { useKey } from '@brysonandrew/hooks/dom/useKey';
+import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 import { useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
