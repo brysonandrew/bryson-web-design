@@ -9,7 +9,6 @@ import type {
   TPath,
   TPathRecord,
 } from '../common/types/entries';
-import { PACKAGE_JSON_NAME } from '../common/types/exporter';
 
 export const clean = (targets: TPathRecord) => {
   if (!targets) return null;
@@ -17,8 +16,7 @@ export const clean = (targets: TPathRecord) => {
     targets,
   ) as TPath[]) {
     [
-      path.join(full, PACKAGE_JSON_NAME),
-      path.join(full, 'types'),
+      path.join(full, 'obj'),
     ].forEach((pathToRm) => {
       if (resolveDir(pathToRm) || resolveFile(pathToRm)) {
         rmSync(pathToRm, { recursive: true });

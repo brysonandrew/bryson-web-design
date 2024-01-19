@@ -15,9 +15,9 @@ import { INDEX_BASENAME } from '../common/utils/constants';
 
 export const foundation = (
   targets: TPathRecord,
-  cwd: string,
+  workspacePath: string,
 ): TInput[] | void => {
-  let inputs: TInput[] = [];
+  // let inputs: TInput[] = [];
   const packageJsonsMap = new Map<
     string,
     Record<string, any>
@@ -25,7 +25,7 @@ export const foundation = (
 
   try {
     for (const targetName of Object.keys(targets)) {
-      const fullTargetPath = path.resolve(cwd, targetName);
+      const fullTargetPath = path.resolve(workspacePath, targetName);
       const [targetInputs, pattern] = resolveInputs({
         cwd: fullTargetPath,
         dir: targetName,
@@ -33,7 +33,7 @@ export const foundation = (
 
       const options = {
         transpiler: 'typescript',
-        cwd,
+        workspacePath,
         include: pattern,
       };
       const nextInputs: TInputConfig[] = [
@@ -104,26 +104,26 @@ export const foundation = (
         };
         packageJsonsMap.set(nameDir, packageJson);
       }
-      const targetDir = path.join(cwd, targetName);
+      const targetDir = path.join(workspacePath, targetName);
 
       packageJsonsMap.set(
         targetDir,
         partialTargetPackageJson,
       );
-      if (ISOMORPHIC_TARGETS.includes(targetName)) {
-        inputs = [
-          ...inputs,
-          ...nextInputs.map(({ options, output }) => ({
-            options,
-            ...output,
-          })),
-        ];
-      }
+      // if (ISOMORPHIC_TARGETS.includes(targetName)) {
+      //   inputs = [
+      //     ...inputs,
+      //     ...nextInputs.map(({ options, output }) => ({
+      //       options,
+      //       ...output,
+      //     })),
+      //   ];
+      // }
     }
     initWorkspaces(packageJsonsMap);
-    return inputs.filter(
-      ({ input }) => path.extname(input) !== '.json',
-    );
+    // return inputs.filter(
+    //   ({ input }) => path.extname(input) !== '.json',
+    // );
   } catch (error: any) {
     throw Error(error);
   }
