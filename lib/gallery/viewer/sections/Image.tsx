@@ -11,6 +11,8 @@ import {
 import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimensions';
 import { TChildren } from '@brysonandrew/lib/types/dom';
 import { MotionBlur } from '@brysonandrew/lib/filters/motion-blur';
+import { resolveKey } from '@brysonandrew/lib/media/placeholder/utils/resolveKey';
+import { Responsive } from '@pages/pricing/process/sections/2-Responsive';
 
 export const Root = styled(motion.div)``;
 
@@ -26,7 +28,7 @@ export const Image: FC<TProps> = ({
   motionX,
   children,
 }) => {
-  const { image, imageRef } = useLoadImage(
+  const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.src,
   );
   const { isTransitioningGallery } = useContext();
@@ -38,9 +40,9 @@ export const Image: FC<TProps> = ({
   const isDimensions = dimensions !== null;
   return (
     <>
-      {/* {!isLoaded && (
+      {!isLoaded && (
         <Responsive key={resolveKey(mediaRecord.src)} />
-      )} */}
+      )}
       {mediaRecord && (
         <MotionBlur
           isOn={isTransitioningGallery}

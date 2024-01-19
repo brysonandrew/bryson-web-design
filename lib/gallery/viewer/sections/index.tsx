@@ -25,7 +25,7 @@ export const Sections: FC<TProps> = (props) => {
       v * count * (viewportWidth / width) +
       viewportWidth * 0.5 * (count - 1),
   );
-  
+
   return (
     <Root className='h-full grow' {...handlers}>
       <motion.ul
