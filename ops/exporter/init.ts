@@ -8,9 +8,7 @@ export const init = () => {
     const cwd = process.env.PROJECT_CWD || '';
     const args = process.argv;
     const passedArg = args[args.length - 1];
-    console.log(workspaces);
-    console.log(passedArg);
-
+    
     if (!isValidWorkspace(passedArg)) {
       throw Error(
         'Please enter a valid workplace argument',
