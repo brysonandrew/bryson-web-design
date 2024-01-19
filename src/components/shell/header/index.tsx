@@ -17,7 +17,7 @@ export const Header: FC = () => {
   const { isScroll } = useScrollContext();
 
   return (
-    <Root className='column-start gap-2 fixed top-0 left-0 w-full h-0 z-10'>
+    <Root className='fixed top-0 left-0 w-full h-0 z-10'>
       <AnimatePresence initial={false}>
         {!isScroll ? (
           <Nav key='NAV' />

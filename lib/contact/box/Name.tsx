@@ -7,12 +7,10 @@ const Root = styled.div``;
 type TProps = TTitleProps;
 export const Name: FC<TProps> = ({ title }) => {
   return (
-    <Root className='relative flex shrink-0 w-full pt-1 pb-4 pl-0 justify-center md:(w-37 pb-2 pl-6 justify-start)'>
-      <div className='inline-flex'>
-        <h4 className='text-2xl  whitespace-nowrap capitalize'>
-          {title}
-        </h4>
-      </div>
+    <Root className='relative flex justify-center shrink-0 w-full pt-1 pb-4 pl-0 md:(w-40 pb-2 pl-6 justify-start)'>
+      <h4 className='inline-flex title-main whitespace-nowrap'>
+        {title}
+      </h4>
     </Root>
   );
 };

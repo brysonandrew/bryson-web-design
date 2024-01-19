@@ -21,7 +21,7 @@ export const Content: FC<TProps> = ({ children }) => {
       >
         <h3
           className={clsx(
-            'page-title text-center text-3xl md:text-4xl lg:text-5xl',
+            'title-page text-center text-3xl md:text-4xl lg:text-5xl',
           )}
         >
           {children}

@@ -2,8 +2,8 @@
   "name": "@brysonandrew/lib",
   "version": "7.0.6",
   "description": "Lib for making websites",
-  "main": "/index.ts",
   "types": "/index.d.ts",
+  "main": "/index.ts",
   "module": "/index.ts",
   "exports": {
     ".": {
@@ -43,9 +43,5 @@
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },
-  "bugs": {
-    "url": "https://github.com/brysonandrew/react-synthwave/issues"
-  },
-  "homepage": "https://github.com/brysonandrew/react-synthwave#readme",
   "packageManager": "yarn@3.4.1"
 }

@@ -105,7 +105,6 @@ export const Content = <
           <Active classValue='z-50' />
         </TextureGlow>
       )}
-
       <P2 />
       <motion.div
         layout={!isTransitioning}
@@ -116,7 +115,7 @@ export const Content = <
           {!isTransitioning && (
             <motion.div
               key={isProject ? 'project' : slug}
-              className={clsx('gap-4 column-end lg:row')}
+              className='column-end gap-4 lg:row'
             >
               {rightHeader}
             </motion.div>

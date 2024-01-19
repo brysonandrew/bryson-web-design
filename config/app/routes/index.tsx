@@ -1,21 +1,23 @@
+import { Index } from '@pages/index';
+import { Shell } from '@components/shell';
+import * as Pages from '@pages/index';
 import { Cv } from '@pages/_workshop/cv';
 import { Screen } from '@pages/_workshop/kino/screen';
 import { Projector } from '@pages/_workshop/kino/projector';
 import { Reader } from '@pages/_workshop/reader';
 import { Navigate, RouteObject } from 'react-router-dom';
-import { Index } from '@pages/index';
-import * as Pages from '@pages/index';
-import { Shell } from '@components/shell';
 import { TPage } from './types';
-import { PAGE_VALUES } from './constants/pages';
+import { PAGE_RECORD } from './constants/pages';
 
-const PAGES_ROUTES = PAGE_VALUES.map((page: TPage) => {
-  const Component = Pages[page.title];
-  return {
-    path: `/${page.key}`,
-    Component,
-  };
-});
+const PAGES_ROUTES = Object.values(PAGE_RECORD).map(
+  ({ title, path }: TPage) => {
+    const Component = Pages[title];
+    return {
+      path,
+      Component,
+    };
+  },
+);
 
 export const STANDALONE_ROUTES = [
   {
@@ -36,18 +38,20 @@ export const STANDALONE_ROUTES = [
   },
   {
     path: '*',
-    element: <Navigate to='/' replace />,
+    element: (
+      <Navigate to={PAGE_RECORD.index.path} replace />
+    ),
   },
 ];
 
 export const ROUTES: RouteObject[] = [
   {
-    path: '/',
+    path: PAGE_RECORD.index.path,
     Component: Shell,
     children: [
       {
         index: true,
-        path: '/',
+        path: PAGE_RECORD.index.path,
         Component: Index,
       },
       ...PAGES_ROUTES,

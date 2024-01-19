@@ -3,16 +3,16 @@ import { useDarkMode } from '@brysonandrew/lib/context/dark-mode/context/useDark
 import { Helmet } from 'react-helmet-async';
 import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
-type TProps<T extends Record<string, string>> = {
-  titleLookup: T;
+type TProps<K extends string, V extends string> = {
+  titleLookup: Record<K, V>;
 };
-export const Head = <T extends Record<string, string>>({
+export const Head = <K extends string, V extends string>({
   titleLookup,
-}: TProps<T>) => {
+}: TProps<K, V>) => {
   const { COLOR } = useApp();
   const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
-  const title = useHtmlTitle<T>(titleLookup);
+  const title = useHtmlTitle<K, V>(titleLookup);
   const base = isDarkMode ? COLOR['black'] : COLOR['white'];
   const highlight = isDarkMode
     ? COLOR['secondary']
