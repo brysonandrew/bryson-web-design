@@ -27,7 +27,7 @@ export const Box: FC<TProps> = ({
   return (
     <motion.div
       className={clsx(
-        'absolute top-1/2 left-1/2 text-xl px-2',
+        'absolute top-1/2 left-1/2 px-2',
         classValue,
       )}
       style={{

@@ -39,9 +39,7 @@ export const Shell = <T extends HTMLElement>({
 
   return (
     <Root
-      className={clsx(
-        'relative column-start w-full p-2 md:flex-row',
-      )}
+      className='relative column-start w-full p-2 md:flex-row'
       layout
       style={{
         borderRadius: BORDER_RADIUS.MD,
@@ -65,7 +63,10 @@ export const Shell = <T extends HTMLElement>({
         )}
       </AnimatePresence>
       {isFocused && (
-        <Active classValue='z-10' layoutId={CONTACT_FORM_INPUT_LAYOUT_ID} />
+        <Active
+          classValue='z-10'
+          layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
+        />
       )}
     </Root>
   );
