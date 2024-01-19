@@ -6,13 +6,13 @@
   "types": "src/index.d.ts",
   "scripts": {
     "dev": "vite --config vite.config.ts",
-    "sw": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
     "build": "vite build --config vite.config.ts",
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "screens": "esrun ops/screens/process",
-    "publish": "npm publish ./lib"
+    "publish": "npm publish ./lib",
+    "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'"
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,6 @@
   "packageManager": "yarn@1.22.19",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
-    "ably": "^1.2.44",
     "clsx": "^1.2.1",
     "framer-motion": "^10.3.2",
     "lodash": "^4.17.21",
