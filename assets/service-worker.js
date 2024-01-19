@@ -1,4 +1,4 @@
-const VERSION_NUMBER = '0.2.3';
+const VERSION_NUMBER = '0.2.4';
 const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
 const resolveCache = async () => caches.open(CACHE_NAME);
 const matchRequest = async (cache, request) => cache.match(request);
