@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TBaseInputProps } from '../context/types';
 import { Box } from '../box';
-import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
-import { TTextareaMotionProps } from '@lib/types/dom';
+import { TTextareaMotionProps } from '@brysonandrew/lib/types/dom';
 import { Autosize } from './autosize';
+import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
 
 type TProps = TTextareaMotionProps & TBaseInputProps;
 export const Textarea: FC<TProps> = ({

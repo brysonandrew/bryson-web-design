@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { isMobile } from 'react-device-detect';
-import { InView, TInViewProps } from '@lib/in-view';
-import { TChildren } from '@lib/types/dom';
+import { InView, TInViewProps } from '@brysonandrew/lib/in-view';
+import { TChildren } from '@brysonandrew/lib/types/dom';
 
 type TProps = {
   Space: FC;

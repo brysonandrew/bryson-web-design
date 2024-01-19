@@ -2,16 +2,15 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { useMoveSound } from '@lib/hooks/sounds/useMoveSound';
-import { useContact } from '@lib/contact/context/useContact';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
+import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
+import { useContact } from '@brysonandrew/lib/contact/context/useContact';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
-  EFFECT_HOVER_TRANSITION,
   resolveParentAnimateConfig,
-} from '@lib/animation/components/filter-animate/utils';
-import { BIGGER_CURSOR_KEY } from '@lib/cursor/switch/config';
-import { useApp } from '@lib/context/app/useApp';
+} from '@brysonandrew/lib/animation/components/filter-animate/utils';
+import { BIGGER_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 import { resolveButtonValue } from './utils/resolveButtonValue';
 
 const Root = styled(motion.label)``;
@@ -44,6 +43,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
           ? 'cursor-not-allowed'
           : 'cursor-pointer',
       ])}
+      layout
       onTap={isDisabled ? () => null : handleMoveSound}
       {...(isDisabled
         ? {}
@@ -55,24 +55,22 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     >
       <TextureGlow />
       <Input
-        className={clsx(
-          'absolute inset-0 pointer-events-none opacity-0',
-        )}
+        className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'
         disabled={isDisabled}
       />
       <Text
-        className={clsx(
-          'center relative text-2xl italic uppercase py-2 pointer-events-none',
-        )}
+        className='center relative py-2 title-main pointer-events-none'
+        transition={EFFECT_ANIMATE_TRANSITION}
+        style={{
+          letterSpacing: '0.00675em',
+        }}
         variants={{
           animate: {
-            letterSpacing: '2px',
-            transition: EFFECT_ANIMATE_TRANSITION,
+            letterSpacing: '0.00675em',
           },
           hover: {
-            letterSpacing: '4px',
-            transition: EFFECT_HOVER_TRANSITION,
+            letterSpacing: '0.25em',
           },
         }}
       >

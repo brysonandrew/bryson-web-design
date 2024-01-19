@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
-import { useViewport } from '@lib/context/viewport/useViewport';
-import { TChildrenElement } from '@lib/types/dom';
+import { useViewport } from '@brysonandrew/lib/context/viewport/useViewport';
+import { TChildrenElement } from '@brysonandrew/lib/types/dom';
 import { motion } from 'framer-motion';
 
 type TProps = {

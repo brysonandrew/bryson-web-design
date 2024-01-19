@@ -1,10 +1,10 @@
-import { ThinLineGrow } from '@lib/components/layout/line/ThinLineGrow';
-import { MOTION_CONFIG } from '@lib/animation/constants';
+import { ThinLineGrow } from '@brysonandrew/lib/components/layout/line/ThinLineGrow';
+import { MOTION_CONFIG } from '@brysonandrew/lib/animation/constants';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TitleSpace } from '@lib/components/layout/space/TitleSpace';
+import { TitleSpace } from '@brysonandrew/lib/components/layout/space/TitleSpace';
 import clsx from 'clsx';
-import { TChildrenString } from '@lib/types/dom';
+import { TChildrenString } from '@brysonandrew/lib/types/dom';
 
 type TProps = TChildrenString;
 export const Content: FC<TProps> = ({ children }) => {
@@ -21,7 +21,7 @@ export const Content: FC<TProps> = ({ children }) => {
       >
         <h3
           className={clsx(
-            'page-title text-center text-3xl md:text-4xl lg:text-5xl',
+            'title-page text-center text-3xl md:text-4xl lg:text-5xl',
           )}
         >
           {children}

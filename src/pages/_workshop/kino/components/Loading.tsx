@@ -1,6 +1,6 @@
 import { Global, css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { TClassValueProps, TDivProps } from '@lib/types/dom';
+import { TClassValueProps, TDivProps } from '@brysonandrew/lib/types/dom';
 import clsx from 'clsx';
 import { FC } from 'react';
 

@@ -1,4 +1,4 @@
-import { useEventListener } from '@lib/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/lib/hooks/events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   CURSOR_SIZE,
@@ -6,7 +6,7 @@ import {
   TInteractiveEvent,
   resolveCursorCoords,
 } from './config';
-import { useOutsideClick } from '@lib/hooks/dom/useOutsideClick';
+import { useOutsideClick } from '@brysonandrew/lib/hooks/dom/useOutsideClick';
 import { resolveGalleryWidth } from '../../utils/resolveGalleryWidth';
 
 type TConfig = TSharedConfig;

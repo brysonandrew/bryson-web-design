@@ -1,4 +1,4 @@
-import { TChildrenProps, TClassValueProps } from '@lib/types/dom';
+import { TChildrenProps, TClassValueProps } from '@brysonandrew/lib/types/dom';
 import clsx from 'clsx';
 import { FC } from 'react';
 

@@ -8,7 +8,9 @@ export const FONTS = {
       '400',
       '500',
       '600',
+      '700',
       '800',
+      '900'
     ],
     provider: 'fontshare' as const,
   },

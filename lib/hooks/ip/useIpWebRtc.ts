@@ -1,4 +1,4 @@
-import { NOOP } from '@lib/constants/functions';
+import { NOOP } from '@brysonandrew/lib/constants/functions';
 import { useEffect } from 'react';
 
 type TConfig = any;

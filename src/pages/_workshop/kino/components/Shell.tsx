@@ -1,7 +1,7 @@
-import { P24Y } from '@lib/components/layout/space/P24Y';
+import { P24Y } from '@brysonandrew/lib/components/layout/space/P24Y';
 import { Line } from './Line';
-import { P4 } from '@lib/components/layout/space/P4';
-import { P8 } from '@lib/components/layout/space/P8';
+import { P4 } from '@brysonandrew/lib/components/layout/space/P4';
+import { P8 } from '@brysonandrew/lib/components/layout/space/P8';
 import { FC, Fragment } from 'react';
 import { Space } from './Space';
 

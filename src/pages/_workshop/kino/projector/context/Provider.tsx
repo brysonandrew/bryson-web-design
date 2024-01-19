@@ -1,5 +1,5 @@
 import { PropsWithChildren, type FC } from 'react';
-import type { TChildrenElement } from '@lib/types/dom';
+import type { TChildrenElement } from '@brysonandrew/lib/types/dom';
 import { Projector, useProjector } from '.';
 import { TContext } from './types';
 import { useStatusRecord } from '@pages/_workshop/kino/hooks/useStatusRecord';

@@ -1,5 +1,5 @@
-import { TCursorKey } from '@lib/cursor/switch/config';
-import { THoverKey } from '@lib/cursor/hooks/config';
+import { TCursorKey } from '@brysonandrew/lib/cursor/switch/config';
+import { THoverKey } from '@brysonandrew/lib/cursor/hooks/config';
 
 export const COMPOSITE_KEY_DELIMITER = '-';
 export const resolveCompositeKey = (

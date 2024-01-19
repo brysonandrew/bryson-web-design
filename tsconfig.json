@@ -21,6 +21,5 @@
     "noImplicitThis": false
   },
   "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.tsx"],
-  "exclude": [],
   "extends": "./tsconfig.paths.json"
 }

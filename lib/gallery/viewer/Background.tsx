@@ -1,10 +1,10 @@
-import { PRESENCE_OPACITY } from '@lib/animation/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/lib/animation/constants';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { isMobile } from 'react-device-detect';
-import { useDarkMode } from '@lib/context';
+import { useDarkMode } from '@brysonandrew/lib/context';
 
 const Root = styled(motion.div)`
   backdrop-filter: blur(10px);

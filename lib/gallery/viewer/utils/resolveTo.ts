@@ -1,7 +1,7 @@
 import {
   PROJECT_KEY,
   NAME_KEY,
-} from '@lib/gallery/config/constants';
+} from '@brysonandrew/lib/gallery/config/constants';
 
 type TConfig<T extends string> = {
   pathname: string;

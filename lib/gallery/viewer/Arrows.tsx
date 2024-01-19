@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { Left } from './buttons/Left';
 import { Right } from './buttons/Right';
 import clsx from 'clsx';
-import { Circle } from '@lib/components/interactive/circle';
+import { Circle } from '@brysonandrew/lib/components/interactive/circle';
 
 const BASE_NAV_BUTTON_CLASS =
   'bottom-4 translate-y-0 z-20 md:bottom-1/2 md:translate-y-1/2';

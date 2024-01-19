@@ -1,4 +1,4 @@
-import { P4 } from '@lib/components/layout/space/P4';
+import { P4 } from '@brysonandrew/lib/components/layout/space/P4';
 import { FC } from 'react';
 import { Line } from './Line';
 

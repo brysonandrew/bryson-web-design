@@ -1,30 +1,33 @@
-import { Paragraphs } from '@lib/gallery/list/item/details/Paragraphs';
-import { TItem } from '@lib/gallery/config/types';
+import { Paragraphs } from '@brysonandrew/lib/gallery/list/item/details/Paragraphs';
+import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
 import { Tags } from './Tags';
-import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { P2 } from '@lib/components/layout/space/P2';
-import { TDivMotionProps } from '@lib/types/dom/motion';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
+import { TDivMotionProps } from '@brysonandrew/lib/types/dom/motion';
 import clsx from 'clsx';
-import { useGallery } from '@lib/gallery/context/useGallery';
+import { useGallery } from '@brysonandrew/lib/gallery/context/Provider';
 
 const Root = styled(motion.div)``;
 
-type TProps = TDivMotionProps & {
+type TProps<K extends string> = TDivMotionProps & {
   isVisible: boolean;
-} & Pick<TItem, 'slug'>;
-export const Details: FC<TProps> = ({
+} & TSlugProps<K>;
+export const Details = <
+  T extends string,
+  K extends string,
+  R extends object,
+>({
   isVisible,
   slug,
   ...props
-}) => {
-  const { ITEMS_RECORD } = useGallery();
+}: TProps<K>) => {
+  const { ITEMS_RECORD } = useGallery<T, K, R>();
   const { paragraphs, tags } = ITEMS_RECORD[slug];
 
   return (
     <Root
-      className={clsx('column-stretch')}
+      className='column-stretch'
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}

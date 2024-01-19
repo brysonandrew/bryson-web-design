@@ -1,4 +1,4 @@
-import { useKey } from '@lib/hooks/dom/useKey';
+import { useKey } from '@brysonandrew/lib/hooks/dom/useKey';
 
 export const useEnterKeyCallback = (
   callback: () => void,

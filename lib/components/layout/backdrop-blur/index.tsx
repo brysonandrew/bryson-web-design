@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { TDivMotionProps } from '@lib/types/dom';
+import { TDivMotionProps } from '@brysonandrew/lib/types/dom';
 import { motion } from 'framer-motion';
-import { useApp } from '@lib/context/app/useApp';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 const Root = styled(motion.div)``;
 

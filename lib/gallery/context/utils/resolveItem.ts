@@ -1,8 +1,8 @@
 import {
   TInitItem,
   TItem,
-} from '@lib/gallery/config/types';
-import { titleToKebab } from '@lib/utils/format';
+} from '@brysonandrew/lib/gallery/config/types';
+import { titleToKebab } from '@brysonandrew/lib/utils/format';
 
 export const resolveItem = <
   T extends string,

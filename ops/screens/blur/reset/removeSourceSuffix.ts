@@ -1,7 +1,7 @@
-import { NOOP } from '@lib/constants/functions';
+import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { CANVAS_SCREENS_PATH } from '../../process/config/constants';
+import { NOOP } from 'lib';
 import { SOURCE_SUFFIX } from '../config';
 
 export const removeSourceSuffix = async () => {

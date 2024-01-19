@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { I } from '@lib/icons';
+import { I } from '@brysonandrew/lib/icons';
 import { motion } from 'framer-motion';
-import { FEEDBACK_ICON } from '@lib/icons/constants/contact';
+import { FEEDBACK_ICON } from '@brysonandrew/lib/icons/constants/contact';
 
 type TProps = { isHover: boolean };
 export const FeedbackIcon: FC<TProps> = ({ isHover }) => {

@@ -1,8 +1,8 @@
-import { resolveHoverKeyVariations } from '@lib/cursor/config';
-import { THoverKey } from '@lib/cursor/hooks/config';
-import { TOffsetRef } from '@lib/cursor/hooks/useCursorOffset';
-import { TMotionPoint } from '@lib/animation/types';
-import { TChildren } from '@lib/types/dom';
+import { resolveHoverKeyVariations } from '@brysonandrew/lib/cursor/config';
+import { THoverKey } from '@brysonandrew/lib/cursor/hooks/config';
+import { TOffsetRef } from '@brysonandrew/lib/cursor/hooks/useCursorOffset';
+import { TMotionPoint } from '@brysonandrew/lib/animation/types';
+import { TChildren } from '@brysonandrew/lib/types/dom';
 
 export type THover = {
   hoverKey: THoverKey;

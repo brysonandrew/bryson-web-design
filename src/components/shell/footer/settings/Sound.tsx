@@ -1,11 +1,11 @@
-import { VolumeOff } from '@lib/icons/components/sound/VolumeOff';
-import { useSound as useSoundContext } from '@lib/hooks/sounds/context';
+import { VolumeOff } from '@brysonandrew/lib/icons/components/sound/VolumeOff';
+import { useSound as useSoundContext } from '@brysonandrew/lib/hooks/sounds/context';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
-import { VolumeOn } from '@lib/icons/components/sound/VolumeOn';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
+import { VolumeOn } from '@brysonandrew/lib/icons/components/sound/VolumeOn';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
 import { AnimatePresence } from 'framer-motion';
-import { Button } from '@lib/components/interactive/circle/Button';
-import { CUSTOM_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { Button } from '@brysonandrew/lib/components/interactive/circle/Button';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
 
 export const Sound = () => {
   const { isSound, toggleSound } = useSoundContext();

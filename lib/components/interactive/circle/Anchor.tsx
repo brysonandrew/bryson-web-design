@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { TAnchorMotionProps, TClassValueProps, TTitleProps } from '@lib/types/dom';
+import { TAnchorMotionProps, TClassValueProps, TTitleProps } from '@brysonandrew/lib/types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { resolveInteractiveLabels } from '@lib/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
 
 const Root = styled(motion.a)``;
 

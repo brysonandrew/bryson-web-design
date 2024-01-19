@@ -1,9 +1,9 @@
 import { type FC } from 'react';
-import { TItem } from '@lib/gallery/config/types';
+import { TItem } from '@brysonandrew/lib/gallery/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
-import { Brighten } from '@lib/animation/components/filter-animate/Brighten';
-import { useApp } from '@lib/context/app/useApp';
+import { Brighten } from '@brysonandrew/lib/animation/components/filter-animate/Brighten';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 const Root = styled.div``;
 

@@ -1,10 +1,10 @@
-import { useMoveSound } from "@lib/hooks/sounds/useMoveSound";
-import { useOffSound } from "@lib/hooks/sounds/useOffSound";
-import { useKey } from "@lib/hooks/dom/useKey";
-import { NAME_KEY } from "@lib/gallery/config/constants";
-import { useRef } from "react";
-import { useLocation, useNavigate } from "react-router";
-import { useSearchParams } from "react-router-dom";
+import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
+import { useOffSound } from '@brysonandrew/lib/hooks/sounds/useOffSound';
+import { useKey } from '@brysonandrew/lib/hooks/dom/useKey';
+import { NAME_KEY } from '@brysonandrew/lib/gallery/config/constants';
+import { useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 type TConfig = {
   readyCount: number;
@@ -26,7 +26,7 @@ export const useKeys = ({ readyCount }: TConfig) => {
         const { currName, readyCount } = ref.current;
 
         if (currName === null) return;
-        if (event.key === "ArrowLeft") {
+        if (event.key === 'ArrowLeft') {
           handleMoveSound();
           let next = +currName - 1;
           next = next === 0 ? readyCount : next;
@@ -34,14 +34,14 @@ export const useKeys = ({ readyCount }: TConfig) => {
           navigate(`${pathname}?${searchParams}`);
           return;
         }
-        if (event.key === "ArrowRight") {
+        if (event.key === 'ArrowRight') {
           handleMoveSound();
           const n = +currName % readyCount;
           searchParams.set(NAME_KEY, `${n + 1}`);
           navigate(`${pathname}?${searchParams}`);
           return;
         }
-        if (event.key === "Escape") {
+        if (event.key === 'Escape') {
           handleOffSound();
           navigate(pathname);
           return;

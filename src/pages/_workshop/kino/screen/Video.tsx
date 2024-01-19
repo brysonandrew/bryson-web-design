@@ -1,6 +1,6 @@
 import { FC, VideoHTMLAttributes } from 'react';
 import { useScreen } from './context';
-import { P2 } from '@lib/components/layout/space/P2';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
 import { Subtitle } from '../components/Subtitle';
 
 type TProps = VideoHTMLAttributes<HTMLVideoElement>;

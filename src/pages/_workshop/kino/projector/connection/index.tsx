@@ -1,7 +1,7 @@
 import { Row } from '@pages/_workshop/kino/components/Row';
 import { Connect } from './connect';
 import { Disconnect } from './disconnect';
-import { P4 } from '@lib/components/layout/space/P4';
+import { P4 } from '@brysonandrew/lib/components/layout/space/P4';
 
 export const Connection = () => (
   <Row

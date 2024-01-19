@@ -1,4 +1,4 @@
-import { TElementProps } from '@lib/types/dom';
+import { TElementProps } from '@brysonandrew/lib/types/dom';
 
 export type TInteractiveLabelProps = Pick<
   TElementProps,

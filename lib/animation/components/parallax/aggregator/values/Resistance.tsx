@@ -2,7 +2,7 @@ import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
 import { useResistance } from '../../hooks/useResistance';
 import { TBaseConfig, TTransformRange } from '../../config';
-import { TChildren } from '@lib/types/dom/main';
+import { TChildren } from '@brysonandrew/lib/types/dom/main';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue): TChildren;

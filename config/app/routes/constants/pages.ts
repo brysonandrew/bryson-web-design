@@ -1,38 +1,17 @@
-import { resolvePage } from '@lib/utils/route';
-import { TPage, TPageRecord } from '../types';
+import { resolvePage } from '@brysonandrew/lib/utils/route';
+import { TPageRecord } from '../types';
 
-export const PAGE_NAV_TITLES = [
+export const PAGE_TITLES = [
+  'Index',
   'Pricing',
-  'Projects',
+  'Projects', 
   'Contact',
 ] as const;
 
-export const PAGE_TITLES = [
-  ...PAGE_NAV_TITLES,
-  'Index',
-] as const;
-
-export const INDEX_RECORD = {
-  ...resolvePage('Index'),
-} as const;
-
-export const PAGE_NAV_RECORD = PAGE_NAV_TITLES.reduce(
+export const PAGE_RECORD = PAGE_TITLES.reduce(
   (a, title) => {
     const page = resolvePage<typeof title>(title);
     return { ...a, ...page };
   },
   {} as TPageRecord,
 );
-
-export const PAGE_NAV_VALUES = Object.values(
-  PAGE_NAV_RECORD,
-) as TPage[];
-
-export const PAGE_RECORD = {
-  ...INDEX_RECORD,
-  ...PAGE_NAV_RECORD,
-} as const;
-
-export const PAGE_VALUES = Object.values(
-  PAGE_RECORD,
-) as TPage[];

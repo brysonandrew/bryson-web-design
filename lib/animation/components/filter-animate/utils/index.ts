@@ -1,4 +1,4 @@
-import { DURATION } from '@lib/animation/constants';
+import { DURATION } from '@brysonandrew/lib/animation/constants';
 
 export const INITIAL_KEY = 'initial';
 export const HOVER_KEY = 'hover';

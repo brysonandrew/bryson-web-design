@@ -1,12 +1,12 @@
-import { FadeDown } from '@lib/components/layout/vertical-fade/FadeDown';
-import { FadeUp } from '@lib/components/layout/vertical-fade/FadeUp';
+import { FadeDown } from '@brysonandrew/lib/components/layout/vertical-fade/FadeDown';
+import { FadeUp } from '@brysonandrew/lib/components/layout/vertical-fade/FadeUp';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@lib/animation/constants';
-import { useViewport as useViewportContext } from '@lib/context/viewport/useViewport';
+} from '@brysonandrew/lib/animation/constants';
+import { useViewport as useViewportContext } from '@brysonandrew/lib/context/viewport/useViewport';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useDarkMode } from '@lib/context';
+import { useDarkMode } from '@brysonandrew/lib/context';
 
 export const Fade = () => {
   const { darkKey } = useDarkMode();

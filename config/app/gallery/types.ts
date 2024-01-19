@@ -1,11 +1,13 @@
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
+import { TTTitleToKebab } from '@brysonandrew/lib/types/transformers/format/title';
+import { TPricingKey } from '@pages/pricing/config/types';
 import { INIT_PROJECT_ITEMS } from './items';
 
 export type TInitItems = typeof INIT_PROJECT_ITEMS;
-
-export type TInitItem = TInitItems[number] & {
+export type TRest = {
   time?: Date;
+  pricing: TPricingKey;
 };
+export type TInitItem = TInitItems[number] & TRest;
 export type TTitle = TInitItems[number]['title'];
 export type TSlug = TTTitleToKebab<TTitle>;
 export type TItem = TInitItem & {

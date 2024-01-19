@@ -3,10 +3,10 @@ import { TPricingKey } from '@pages/pricing/config/types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { BG } from './config';
-import { TDivMotionProps } from '@lib/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/lib/types/dom/motion';
 import { Text } from './Text';
-import { useApp } from '@lib/context';
-import { FadeDown } from '@lib/components';
+import { useApp } from '@brysonandrew/lib/context';
+import { FadeDown } from '@brysonandrew/lib/components';
 
 export type TPricingProps = {
   type: TPricingKey;

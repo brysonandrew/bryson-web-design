@@ -3,7 +3,7 @@ import { TAppConfig, TStyle, TValue } from './config/types';
 import { APP } from './config/constants';
 import { useColorSetRecord } from './hooks/useColorSetRecord';
 import { useLayoutRecord } from './hooks/useLayoutRecord';
-import { STYLE as DEFAULT_STYLE } from '@app/style';
+import { STYLE as DEFAULT_STYLE } from './style';
 
 type TProps<S extends TStyle> = Partial<
   PropsWithChildren<TAppConfig<S>>

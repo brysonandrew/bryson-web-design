@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import clsx from 'clsx';
-import { I } from '@lib/icons/icon';
-import { P2 } from '@lib/components/layout/space/P2';
-import { P3 } from '@lib/components/layout/space/P3';
-import { P_5 } from '@lib/components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@lib/icons/constants';
-import { PLUS_ICON } from '@lib/icons/constants/text';
-import { useApp } from '@lib/context/app/useApp';
+import { I } from '@brysonandrew/lib/icons/icon';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
+import { P3 } from '@brysonandrew/lib/components/layout/space/P3';
+import { P_5 } from '@brysonandrew/lib/components/layout/space/P_5';
+import { TICK_CIRCLE_ICON } from '@brysonandrew/lib/icons/constants';
+import { PLUS_ICON } from '@brysonandrew/lib/icons/constants/text';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
 export const PlusContent: FC = () => {
   const { BORDER_RADIUS } = useApp();
@@ -35,7 +35,7 @@ export const PlusContent: FC = () => {
                 'absolute inset-0.5 bg-standard',
               )}
             />
-            <span className='relative pricing-title'>
+            <span className='relative title-pricing'>
               Standard
             </span>
           </span>{' '}

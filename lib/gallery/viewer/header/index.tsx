@@ -4,14 +4,13 @@ import { Content } from '../../components/content';
 import {
   TChildrenProps,
   TDivMotionProps,
-} from '@lib/types/dom';
-import { TSlugProps } from '@lib/gallery/config/types';
-import { RightHeader } from '../../../../src/components/galllery/viewer/RightHeader';
-import { useGallery } from '@lib/gallery/context/useGallery';
-import { NOOP } from '@lib/constants/functions';
+} from '@brysonandrew/lib/types/dom';
+import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { NOOP } from '@brysonandrew/lib/constants/functions';
 import { isDesktop } from 'react-device-detect';
 import { Close } from '../buttons/Close';
-import { useOffSound } from '@lib/hooks/sounds/useOffSound';
+import { useOffSound } from '@brysonandrew/lib/hooks/sounds/useOffSound';
+import { useGallery } from '../../context/Provider';
 
 const Root = styled.header``;
 

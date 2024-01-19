@@ -1,27 +1,31 @@
 import { useState, type FC, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
-import { resolveTitleLayoutId } from '@lib/gallery/config/constants';
+import { resolveTitleLayoutId } from '@brysonandrew/lib/gallery/config/constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@lib/types/dom';
-import { P2 } from '@lib/components/layout/space/P2';
-import { useCurrProject } from '@lib/gallery/viewer/hooks/params/useCurrProject';
-import { useDelayCallback } from '@lib/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@lib/animation/components/filter-animate/utils';
-import { TSlugProps } from '@lib/gallery/config/types';
-import { useApp } from '@lib/context/app/useApp';
+} from '@brysonandrew/lib/types/dom';
+import { P2 } from '@brysonandrew/lib/components/layout/space/P2';
+import { useCurrProject } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrProject';
+import { useDelayCallback } from '@brysonandrew/lib/hooks/window/useDelayCallback';
+import { resolveParentAnimateConfig } from '@brysonandrew/lib/animation/components/filter-animate/utils';
+import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { useApp } from '@brysonandrew/lib/context/app/useApp';
 
-type TProps = TSlugProps &
+type TProps<K extends string> = TSlugProps<K> &
   TClassValueProps &
   TDivMotionProps & {
     isHover?: boolean;
     rightHeader: TChildren;
   };
-export const Content: FC<TProps> = ({
+export const Content = <
+  T extends string,
+  K extends string,
+  R extends object,
+>({
   isHover,
   slug,
   classValue,
@@ -31,7 +35,7 @@ export const Content: FC<TProps> = ({
   onLayoutAnimationComplete,
   style,
   ...props
-}) => {
+}: TProps<K>) => {
   const { TextureGlow, Texture, BORDER_RADIUS, Active } =
     useApp();
   const [isTransitioning, setTransitioning] =
@@ -101,18 +105,17 @@ export const Content: FC<TProps> = ({
           <Active classValue='z-50' />
         </TextureGlow>
       )}
-
       <P2 />
       <motion.div
         layout={!isTransitioning}
         className='relative left-0 top-0 row-space'
       >
-        <Header slug={slug} />
+        <Header<T, K, R> slug={slug} />
         <AnimatePresence>
           {!isTransitioning && (
             <motion.div
               key={isProject ? 'project' : slug}
-              className={clsx('gap-4 column-end lg:row')}
+              className='column-end gap-4 lg:row'
             >
               {rightHeader}
             </motion.div>

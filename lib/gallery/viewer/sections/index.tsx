@@ -1,13 +1,13 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY_Y_SHIFT } from '@lib/animation/constants';
+import { PRESENCE_OPACITY_Y_SHIFT } from '@brysonandrew/lib/animation/constants';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@lib/cursor/hooks/useHoverKey';
-import { useViewport } from '@lib/context/viewport/useViewport';
-import { TMediaRecord } from '@ops/screens/process/config/types';
-import { NONE_CURSOR_KEY } from '@lib/cursor/switch/config';
+import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+import { useViewport } from '@brysonandrew/lib/context/viewport/useViewport';
+import { TMediaRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { NONE_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
 
 export const Root = styled(motion.div)``;
 
@@ -25,7 +25,7 @@ export const Sections: FC<TProps> = (props) => {
       v * count * (viewportWidth / width) +
       viewportWidth * 0.5 * (count - 1),
   );
-  
+
   return (
     <Root className='h-full grow' {...handlers}>
       <motion.ul

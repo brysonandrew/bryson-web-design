@@ -44,5 +44,4 @@ export * from "./layout/typography/animation/Stagger";
 export * from "./layout/typography/animation/Word";
 export * from "./layout/typography/animation";
 export * from "./layout/typography/title/Content";
-export * from "./layout/typography/title/config";
 export * from "./layout/typography/title";

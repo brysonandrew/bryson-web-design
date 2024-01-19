@@ -1,16 +1,18 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useViewer as useContext } from '@lib/gallery/viewer/context/useViewer';
-import { Picture } from '@lib/media/picture';
-import { useLoadImage } from '@lib/hooks/media/useLoadImage';
+import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
+import { Picture } from '@brysonandrew/lib/media/picture';
+import { useLoadImage } from '@brysonandrew/lib/hooks/media/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
-} from '@ops/screens/process/config/types';
-import { useImageDimensions } from '@lib/hooks/media/useImageDimensions';
-import { TChildren } from '@lib/types/dom';
-import { MotionBlur } from '@lib/filters/motion-blur';
+} from '@brysonandrew/lib/media/picture/config/types';
+import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimensions';
+import { TChildren } from '@brysonandrew/lib/types/dom';
+import { MotionBlur } from '@brysonandrew/lib/filters/motion-blur';
+import { resolveKey } from '@brysonandrew/lib/media/placeholder/utils/resolveKey';
+import { Responsive } from '@pages/pricing/process/sections/2-Responsive';
 
 export const Root = styled(motion.div)``;
 
@@ -26,7 +28,7 @@ export const Image: FC<TProps> = ({
   motionX,
   children,
 }) => {
-  const { image, imageRef } = useLoadImage(
+  const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.src,
   );
   const { isTransitioningGallery } = useContext();
@@ -38,9 +40,9 @@ export const Image: FC<TProps> = ({
   const isDimensions = dimensions !== null;
   return (
     <>
-      {/* {!isLoaded && (
+      {!isLoaded && (
         <Responsive key={resolveKey(mediaRecord.src)} />
-      )} */}
+      )}
       {mediaRecord && (
         <MotionBlur
           isOn={isTransitioningGallery}

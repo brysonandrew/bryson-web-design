@@ -1,4 +1,4 @@
-import { PRESENCE_OPACITY_SHIFT } from '@lib/animation/constants';
+import { PRESENCE_OPACITY_SHIFT } from '@brysonandrew/lib/animation/constants';
 import { motion } from 'framer-motion';
 import { FC, useMemo } from 'react';
 import { Stagger } from './Stagger';

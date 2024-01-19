@@ -1,6 +1,3 @@
-import { TTKebabToPascal } from '@lib/types/transformers/format/pascal';
-import { TTTitleToKebab } from '@lib/types/transformers/format/title';
-
 export const capitalize = (word: string | null) =>
   word
     ? `${word[0].toUpperCase()}${word
@@ -8,20 +5,10 @@ export const capitalize = (word: string | null) =>
         .slice(1)}`
     : '';
 
-export const kebabToTitle = <I extends string>(
-  slug: I,
-): TTKebabToPascal<I> =>
-  slug
-    .split('-')
-    .map(capitalize)
-    .join(' ') as TTKebabToPascal<I>;
-export const kebabToPascal = <I extends string>(
-  slug: I,
-): TTKebabToPascal<I> =>
-  slug
-    .split('-')
-    .map(capitalize)
-    .join('') as TTKebabToPascal<I>;
+export const kebabToTitle = <I extends string>(slug: I) =>
+  slug.split('-').map(capitalize).join(' ');
+export const kebabToPascal = <I extends string>(slug: I) =>
+  slug.split('-').map(capitalize).join('');
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 

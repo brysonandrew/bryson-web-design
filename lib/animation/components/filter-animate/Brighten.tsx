@@ -3,11 +3,11 @@ import { FC } from 'react';
 import {
   TChildrenPartialProps,
   TClassValueProps,
-} from '@lib/types/dom/main';
+} from '@brysonandrew/lib/types/dom/main';
 import {
   TPartialBrightenConfigOptions,
   resolveBrightenProps,
-} from '@lib/animation/components/filter-animate/utils/brighten';
+} from '@brysonandrew/lib/animation/components/filter-animate/utils/brighten';
 
 export type TBrightenProps = TPartialBrightenConfigOptions &
   TClassValueProps &

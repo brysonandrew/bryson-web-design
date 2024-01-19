@@ -1,9 +1,6 @@
-import { TPageTitle } from '@app/routes/types';
-import { titleToKebab } from '@lib/utils/format';
+import { titleToKebab } from '@brysonandrew/lib/utils/format';
 
-export const resolvePage = <T extends TPageTitle>(
-  title: T,
-) => {
+export const resolvePage = <T extends string>(title: T) => {
   const key = titleToKebab<T>(title);
   const page = {
     key,

@@ -1,4 +1,4 @@
-import { TChildren } from '@lib/types/dom';
+import { TChildren } from '@brysonandrew/lib/types/dom';
 import { MotionValue, useTransform } from 'framer-motion';
 import { FC } from 'react';
 import { isDesktop } from 'react-device-detect';

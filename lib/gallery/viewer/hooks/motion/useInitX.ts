@@ -1,9 +1,9 @@
-import { useCurrName } from '@lib/gallery/viewer/hooks/params/useCurrName';
+import { useCurrName } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrName';
 import {
   TMediaRecord,
   TMediaRecords,
-} from '@ops/screens/process/config/types';
-import { resolveX } from '@lib/gallery/viewer/utils/resolveX';
+} from '@brysonandrew/lib/media/picture/config/types';
+import { resolveX } from '@brysonandrew/lib/gallery/viewer/utils/resolveX';
 import { useMemo } from 'react';
 
 export type TInitXConfig = {

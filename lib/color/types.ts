@@ -1,4 +1,4 @@
-import { BASE_COLOR_RECORD } from '@lib/color/constants';
+import { BASE_COLOR_RECORD } from '@brysonandrew/lib/color/constants';
 
 export type TDigit = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
