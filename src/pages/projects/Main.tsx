@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/lib/animation/components/parallax/config';
+import { TParallaxMotionChildrenProps } from '@brysonandrew/animation/components/parallax/config';
 import { motion } from 'framer-motion';
-import { List } from '@brysonandrew/lib/gallery/list';
+import { List } from '@brysonandrew/gallery/list';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 
 type TProps = Partial<TParallaxMotionChildrenProps>;

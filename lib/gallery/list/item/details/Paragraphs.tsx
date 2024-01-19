@@ -1,5 +1,5 @@
 import { Fragment, type FC } from 'react';
-import { TItem } from '@brysonandrew/lib/gallery/config/types';
+import { TItem } from '@brysonandrew/gallery/config/types';
 
 type TProps = Required<Pick<TItem, 'paragraphs'>>;
 export const Paragraphs: FC<TProps> = ({ paragraphs }) => {

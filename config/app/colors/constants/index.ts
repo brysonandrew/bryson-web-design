@@ -1,4 +1,4 @@
-import { resolveCustomRecords } from '../../../../lib/color/utils/resolveCustomRecords';
+import { resolveCustomRecords } from '../../../../lib/config/color/utils/resolveCustomRecords';
 import { PLANS_COLOR_VARIABLES } from './pricing';
 
 const SECONDARY = '45, 212, 191';

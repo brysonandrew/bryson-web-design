@@ -1,5 +1,5 @@
-import { useViewport } from '@brysonandrew/lib/context/viewport/useViewport';
-import { TRect } from '@brysonandrew/lib/types/dom';
+import { useViewport } from '@brysonandrew/context/viewport/useViewport';
+import { TRect } from '@brysonandrew/base/types/dom';
 import { useMemo } from 'react';
 
 type TConfig = {

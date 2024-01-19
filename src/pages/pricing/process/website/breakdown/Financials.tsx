@@ -1,4 +1,4 @@
-import { ThinLine } from '@brysonandrew/lib/components/layout/line';
+import { ThinLine } from '@brysonandrew/base/components/layout/line';
 import { Money } from '../Money';
 import { List } from './yearly/List';
 

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { Head } from '@brysonandrew/lib/head';
-import { Filters } from '@brysonandrew/lib/filters';
-import { ClipPath } from '@brysonandrew/lib/media/placeholder/ClipPath';
+import { Head } from '@brysonandrew/base/head';
+import { Filters } from '@brysonandrew/filters';
+import { ClipPath } from '@brysonandrew/media/placeholder/ClipPath';
 import { Variables } from '@css/Variables';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { APP_TITLE } from '@app/base/constants';

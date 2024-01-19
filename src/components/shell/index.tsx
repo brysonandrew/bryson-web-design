@@ -1,11 +1,11 @@
 import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import { Global } from './global';
-import { PRESENCE_OPACITY } from '@brysonandrew/lib/animation/constants';
-import { Cursor } from '@brysonandrew/lib/cursor';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
+import { Cursor } from '@brysonandrew/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';
-import { P24Y } from '@brysonandrew/lib/components/layout/space/P24Y';
+import { P24Y } from '@brysonandrew/base/components/layout/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';

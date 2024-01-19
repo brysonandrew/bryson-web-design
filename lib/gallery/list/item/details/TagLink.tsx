@@ -2,20 +2,20 @@ import { type FC } from 'react';
 import {
   TSlugProps,
   TTag,
-} from '@brysonandrew/lib/gallery/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
+} from '@brysonandrew/gallery/config/types';
+import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@brysonandrew/lib/types/dom/motion';
+import { TAnchorMotionProps } from '@brysonandrew/base/types/dom/motion';
 import {
   HOVER_KEY_DELIMITER,
   resolveCompositeHoverKey,
-} from '@brysonandrew/lib/utils/key';
-import { useCursor } from '@brysonandrew/lib/cursor/context';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/lib/icons/constants/links';
+} from '@brysonandrew/base/utils/key';
+import { useCursor } from '@brysonandrew/cursor/context';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
-import { formatUrl } from '@brysonandrew/lib/utils/format/url';
-import { Visit } from '@brysonandrew/lib/cursor/switch/format/Visit';
+import { formatUrl } from '@brysonandrew/base/utils/format/url';
+import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &

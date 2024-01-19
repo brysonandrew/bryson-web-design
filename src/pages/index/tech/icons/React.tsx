@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TBaseIconProps } from '@brysonandrew/lib/icons/type';
+import { TBaseIconProps } from '@brysonandrew/base/icons/type';
 import clsx from 'clsx';
 import type { FC } from 'react';
 

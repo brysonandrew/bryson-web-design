@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/bryson-web-design",
-  "version": "7.0.7",
+  "version": "7.0.1",
   "description": "Building websites and apps",
   "main": "src/index.tsx",
   "types": "src/index.d.ts",
@@ -11,16 +11,23 @@
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "screens": "esrun ops/screens/process",
-    "publish": "npm publish ./lib",
-    "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'"
+    "bump": "npm version major --workspaces",
+    "publish": "npm run bump && npm publish --workspaces",
+    "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
+    "clean": "esrun ops/delete/clean.ts",
+    "exporter": "esrun ops/exporter/main.ts test"
   },
+  "workspaces": [
+    "test",
+    "test/sounds"
+  ],
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/brysonandrew/brysona.dev.git",
   "bugs": {
     "url": "https://github.com/brysonandrew/brysona.dev/issues"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@3.4.1",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "clsx": "^1.2.1",
@@ -65,7 +72,11 @@
     "typescript": "^4.9.4",
     "unocss": "^0.53.4",
     "vite": "^4.1.4",
-    "vite-tsconfig-paths": "^3.5.0"
+    "vite-tsconfig-paths": "^3.5.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "fs-extra": "^11.2.0",
+    "rollup-plugin-ts": "^3.4.5"
   },
   "publishConfig": {
     "@brysonandrew:registry": "https://npm.pkg.github.com"

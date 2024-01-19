@@ -1,7 +1,7 @@
 import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
 import { useReader } from '@pages/_workshop/reader/context';
-import { I } from '@brysonandrew/lib/icons/icon';
+import { I } from '@brysonandrew/base/icons/icon';
 import { STYLE } from '@components/style';
 
 export const Play = () => {

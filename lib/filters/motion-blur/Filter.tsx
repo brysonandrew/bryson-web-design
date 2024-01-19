@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-import { FilterShell } from '@brysonandrew/lib/filters/FilterShell';
+import { FilterShell } from '@brysonandrew/filters/FilterShell';
 import { TFilterProps } from './config';
-import { resolveCompositeKey } from '@brysonandrew/lib/utils/key';
+import { resolveCompositeKey } from '@brysonandrew/base/utils/key';
 import {
   MOTION_BLUR_INTENSITY,
   MOTION_BLUR_ID,

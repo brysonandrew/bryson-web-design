@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
-import { Picture } from '@brysonandrew/lib/media/picture';
-import { useLoadImage } from '@brysonandrew/lib/hooks/media/useLoadImage';
+import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { Picture } from '@brysonandrew/media/picture';
+import { useLoadImage } from '@brysonandrew/hooks/media/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
-} from '@brysonandrew/lib/media/picture/config/types';
-import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimensions';
-import { TChildren } from '@brysonandrew/lib/types/dom';
-import { MotionBlur } from '@brysonandrew/lib/filters/motion-blur';
-import { resolveKey } from '@brysonandrew/lib/media/placeholder/utils/resolveKey';
-import { Responsive } from '@brysonandrew/lib/media/placeholder/variants/Responsive';
+} from '@brysonandrew/media/picture/config/types';
+import { useImageDimensions } from '@brysonandrew/hooks/media/useImageDimensions';
+import { TChildren } from '@brysonandrew/base/types/dom';
+import { MotionBlur } from '@brysonandrew/filters/motion-blur';
+import { resolveKey } from '@brysonandrew/media/placeholder/utils/resolveKey';
+import { Responsive } from '@brysonandrew/media/placeholder/variants/Responsive';
 
 export const Root = styled(motion.div)``;
 

@@ -3,15 +3,15 @@ import styled from '@emotion/styled';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/lib/animation/constants';
-import { useScroll as useScrollContext } from '@brysonandrew/lib/context/scroll/useScroll';
-import { useViewport as useViewportContext } from '@brysonandrew/lib/context/viewport/useViewport';
-import { FadeUp } from '@brysonandrew/lib/components/layout/vertical-fade/FadeUp';
+} from '@brysonandrew/animation/constants';
+import { useScroll as useScrollContext } from '@brysonandrew/context/scroll/useScroll';
+import { useViewport as useViewportContext } from '@brysonandrew/context/viewport/useViewport';
+import { FadeUp } from '@brysonandrew/base/components/layout/vertical-fade/FadeUp';
 import { Settings } from './settings';
-import { Network } from '@brysonandrew/lib/network';
-import { BackdropBlur } from '@brysonandrew/lib/components/layout/backdrop-blur';
+import { Network } from '@brysonandrew/base/network';
+import { BackdropBlur } from '@brysonandrew/base/components/layout/backdrop-blur';
 import { Position } from './Position';
-import { useDarkMode } from '@brysonandrew/lib/context';
+import { useDarkMode } from '@brysonandrew/context';
 
 const Root = styled.footer``;
 

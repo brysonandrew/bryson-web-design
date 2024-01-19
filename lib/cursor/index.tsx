@@ -1,14 +1,13 @@
 import { type FC, useRef, memo } from 'react';
-import { NOOP } from '@brysonandrew/lib/constants/functions';
-import { useEventListener } from '@brysonandrew/lib/hooks/events/useEventListener';
-import { useCursor } from '@brysonandrew/lib/cursor/context';
-import { useScroll as useScrollContext } from '@brysonandrew/lib/context/scroll/useScroll';
-import type { TChildren } from '@brysonandrew/lib/types/dom/main';
+import { NOOP } from '@brysonandrew/base/constants/functions';
+import type { TChildren } from '@brysonandrew/base/types/dom/main';
 import { useViewportPresence } from './hooks/useViewportPresence';
-import { Switch } from '@brysonandrew/lib/cursor/switch';
-import { useTimeoutRef } from '@brysonandrew/lib/hooks/window/useTimeoutRef';
-import { useCursorOffset } from '@brysonandrew/lib/cursor/hooks/useCursorOffset';
 import { resolveCursorKeyFromHoverKey } from './switch/config';
+import { useTimeoutRef, useEventListener } from 'lib/hooks';
+import { useCursor } from './context';
+import { useCursorOffset } from './hooks/useCursorOffset';
+import { Switch } from './switch';
+import { useScroll } from 'lib/context/scroll/useScroll';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -23,7 +22,7 @@ export const Cursor: FC<TCursorProps> = memo(
       isCursorReady,
       onCursorReady,
     } = useCursor();
-    const { scroll } = useScrollContext();
+    const { scroll } = useScroll();
 
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);

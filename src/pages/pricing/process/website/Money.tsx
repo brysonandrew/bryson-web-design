@@ -1,5 +1,5 @@
-import { TChildren, TClassValueProps } from '@brysonandrew/lib/types/dom';
-import { nToMoney } from '@brysonandrew/lib/utils/format';
+import { TChildren, TClassValueProps } from '@brysonandrew/base/types/dom';
+import { nToMoney } from '@brysonandrew/base/utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 

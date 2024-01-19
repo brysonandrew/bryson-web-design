@@ -1,9 +1,9 @@
-import { I } from '@brysonandrew/lib/icons/icon';
+import { I } from '@brysonandrew/base/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';
 import { STYLE } from '@components/style';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 const inputCss = css``;
 

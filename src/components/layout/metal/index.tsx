@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/lib/types/dom';
+} from '@brysonandrew/base/types/dom';
 import {
   metalRadialDarkCss,
   metalRadialLightCss,

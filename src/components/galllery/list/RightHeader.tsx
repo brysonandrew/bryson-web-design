@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import { Time } from '@brysonandrew/lib/gallery/components/content/Time';
-import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { Time } from '@brysonandrew/gallery/components/content/Time';
+import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Badge } from '@pages/pricing/badge';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
-import { useGallery } from '@brysonandrew/lib/gallery/context/Provider';
+import { useGallery } from '@brysonandrew/gallery/context/Provider';
 
 type TProps = TSlugProps<TSlug> & {
   isHover?: boolean;

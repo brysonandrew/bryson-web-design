@@ -1,4 +1,4 @@
-import { TSlugProps } from '@brysonandrew/lib/gallery/config/types';
+import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useGallery } from '../../context/Provider';
 
 type TProps<K extends string> = TSlugProps<K>;

@@ -1,5 +1,5 @@
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { TClassValueProps } from '@brysonandrew/lib/types/dom/main';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
 import { FC, PropsWithChildren } from 'react';
 
 export const Banner: FC<

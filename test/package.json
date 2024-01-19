@@ -1,0 +1,8 @@
+{
+  "name": "@brysonandrew/test",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "main": "./index.ts",
+  "dependencies": {},
+  "devDependencies": {}
+}

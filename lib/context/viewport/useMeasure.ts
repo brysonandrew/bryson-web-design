@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useIsomorphicLayoutEffect } from 'framer-motion';
-import { useEventListener } from '../../hooks/events/useEventListener';
-import { useTimeoutRef } from '../../hooks/window/useTimeoutRef';
+import { useEventListener } from '@brysonandrew/hooks/events/useEventListener';
+import { useTimeoutRef } from '@brysonandrew/hooks/window/useTimeoutRef';
 
 const RESIZE_COOLDOWN = 400;
 

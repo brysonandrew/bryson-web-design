@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from 'framer-motion';
-import { useTimeoutRef } from '@brysonandrew/lib/hooks/window/useTimeoutRef';
+import { useTimeoutRef } from '@brysonandrew/hooks/window/useTimeoutRef';
 import { useLocation } from 'react-router';
 
 export const INIT_SCROLL = 200;

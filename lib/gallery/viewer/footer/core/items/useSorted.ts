@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import {
   TMediaRecord,
   TMediaRecords,
-} from '@brysonandrew/lib/media/picture/config/types';
+} from '@brysonandrew/media/picture/config/types';
 
 export const useSorted = (mediaRecords: TMediaRecords) => {
   const results = useMemo(() => {

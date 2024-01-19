@@ -1,9 +1,9 @@
-import { TBrightenProps } from '@brysonandrew/lib/animation/components/filter-animate/Brighten';
-import { TGlowProps } from '@brysonandrew/lib/animation/components/filter-animate/Glow';
+import { TBrightenProps } from '@brysonandrew/animation/components/filter-animate/Brighten';
+import { TGlowProps } from '@brysonandrew/animation/components/filter-animate/Glow';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/lib/types/dom';
+} from '@brysonandrew/base/types/dom';
 import { FC, Context } from 'react';
 import { TColorSetRecord } from '../hooks/useColorSetRecord';
 import { STYLE } from '../style';

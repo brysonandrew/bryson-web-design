@@ -1,7 +1,7 @@
 import { PropsWithChildren, useState } from 'react';
 import type { FC } from 'react';
 import screensRecordJson from './lookup.json';
-import { TScreensRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { TScreensRecord } from '@brysonandrew/media/picture/config/types';
 const screensRecord =
   screensRecordJson as unknown as TScreensRecord;
 import { VIEWER } from './constants';

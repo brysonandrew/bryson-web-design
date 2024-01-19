@@ -1,17 +1,17 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
-import { useMoveSound } from '@brysonandrew/lib/hooks/sounds/useMoveSound';
-import { NAME_KEY } from '@brysonandrew/lib/gallery/config/constants';
+import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
+import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
-import { useViewer as useContext } from '@brysonandrew/lib/gallery/viewer/context/useViewer';
-import { TMediaRecord } from '@brysonandrew/lib/media/picture/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
-import { Background } from '@brysonandrew/lib/components/interactive/circle/Background';
-import { useTo } from '@brysonandrew/lib/gallery/viewer/hooks/nav/useTo';
-import { useCurrName } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrName';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { useDarkMode } from '@brysonandrew/lib/context';
+import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
+import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { Background } from '@brysonandrew/base/components/interactive/circle/Background';
+import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
+import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
+import { useApp } from '@brysonandrew/context/app/useApp';
+import { useDarkMode } from '@brysonandrew/context';
 
 export const Root = styled(motion.div)``;
 export const Link = styled(motion(_Link))``;

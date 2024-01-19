@@ -5,7 +5,7 @@ import { ParagraphLines } from '../website/layouts/ParagraphLines';
 import { RESPONSIVE_COST } from '../website/config';
 import { Annotations } from '../website/layouts/Annotations';
 import { Section } from '../Section';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useApp } from '@brysonandrew/context/app/useApp';
 
 export const Responsive = () => {
   const { Blank } = useApp();

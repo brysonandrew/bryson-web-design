@@ -1,4 +1,4 @@
-import { TScreensRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { TScreensRecord } from '@brysonandrew/media/picture/config/types';
 
 export type TContext = {
   isTransitioningGallery: boolean;
