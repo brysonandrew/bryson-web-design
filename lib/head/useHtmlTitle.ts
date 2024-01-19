@@ -7,15 +7,16 @@ import { capitalize } from '@brysonandrew/lib/utils/format';
 import { useCurrParams } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrParams';
 
 export const useHtmlTitle = <
-  T extends Record<string, string>,
+  K extends string,
+  V extends string,
 >(
-  lookup: T,
+  lookup: Record<K, V>,
 ) => {
   const { pathname } = useLocation();
   const currParams = useCurrParams();
   const { project, name } = currParams;
 
-  const route = lookup[pathname];
+  const route = lookup[pathname as K];
   const titles = ['Bryson Web Design', route].filter(
     Boolean,
   );

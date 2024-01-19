@@ -84,7 +84,7 @@ export const Package: FC<TProps> = ({ title }) => {
         )}
         {...handlers}
       >
-        <End classValue='pricing-title'>
+        <End classValue='title-pricing'>
           <FadeDown
             classValue='h-full'
             style={{

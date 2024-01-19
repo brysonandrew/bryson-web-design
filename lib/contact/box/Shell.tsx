@@ -52,12 +52,6 @@ export const Shell = <T extends HTMLElement>({
       {...handlers}
     >
       <TextureGlow layout {...MOTION_CONFIG} />
-      {isFocused && (
-        <Active
-          layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
-          classValue='z-50'
-        />
-      )}
       {children}
       <AnimatePresence>
         {isEmpty && (
@@ -70,6 +64,9 @@ export const Shell = <T extends HTMLElement>({
           />
         )}
       </AnimatePresence>
+      {isFocused && (
+        <Active classValue='z-10' layoutId={CONTACT_FORM_INPUT_LAYOUT_ID} />
+      )}
     </Root>
   );
 };

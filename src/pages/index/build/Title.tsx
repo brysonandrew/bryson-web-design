@@ -10,7 +10,7 @@ type TProps = TChildrenString;
 export const Title: FC<TProps> = ({ children }) => {
   return (
     <Root className='relative w-core z-20'>
-      <h2 className='row-wrap justify-center gap-4 page-title uppercase text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'>
+      <h2 className='row-wrap justify-center gap-4 title-page uppercase text-5xl sm:text-6xl lg:text-7xl xl:text-8xl'>
         <Animation>{children}</Animation>
       </h2>
     </Root>

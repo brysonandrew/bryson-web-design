@@ -9,7 +9,7 @@ export const resolveHoverKeyArgs = (slug: string) => {
     GALLERY_ICON,
     <span>
       View{' '}
-      <span className='main-title'>
+      <span className='title-main'>
         {kebabToTitle(slug)}
       </span>{' '}
       in gallery

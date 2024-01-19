@@ -8,12 +8,12 @@ export const Main: FC = () => {
   const { pathname } = useLocation();
 
   return (
-    <>
+    <h1 className='text-left'>
       {pathname === PAGE_RECORD.index.path ? (
-        <Title /> 
+        <Title />
       ) : (
         <Link />
       )}
-    </>
+    </h1>
   );
 };

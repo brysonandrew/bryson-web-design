@@ -20,7 +20,7 @@ export const Cursor: FC<TProps> = ({
       {
         <span
           className={clsx(
-            'px-1 mx-1 pricing-title',
+            'px-1 mx-1 title-pricing',
             classValue,
           )}
           {...props}

@@ -35,7 +35,7 @@ export const PlusContent: FC = () => {
                 'absolute inset-0.5 bg-standard',
               )}
             />
-            <span className='relative pricing-title'>
+            <span className='relative title-pricing'>
               Standard
             </span>
           </span>{' '}

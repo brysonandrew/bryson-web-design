@@ -1,27 +1,18 @@
-import { ThickLine } from '@brysonandrew/lib/components/layout/line/ThickLine';
-import { DURATION } from '@brysonandrew/lib/animation/constants';
-import styled from '@emotion/styled';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
+import { List } from '../List';
+import { Item } from '../Item';
 
-const Root = styled.h1``;
+const ITEMS = [
+  { title: 'Bryson' },
+  { title: 'Web Design', isActive: true },
+] as const;
 
-type TProps = { style?: CSSProperties };
-export const Title: FC<TProps> = () => {
+export const Title: FC = () => {
   return (
-    <Root className='column-start md:row-start'>
-      <div className='relative  text-md uppercase font-light'>
-        Bryson
-      </div>
-      <div className='p-0 md:p-0.75' />
-      <div className='relative column-start'>
-        <div className=' text-md italic uppercase font-light'>
-          Web design
-        </div>
-        <ThickLine
-          classValue='top-full w-full h-2 z-50'
-          transition={{ duration: DURATION * 2 }}
-        />
-      </div>
-    </Root>
+    <List>
+      {ITEMS.map((item) => (
+        <Item key={item.title} {...item} />
+      ))}
+    </List>
   );
 };

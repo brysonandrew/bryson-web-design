@@ -5,7 +5,7 @@ import { FLEX } from './flex';
 import { INPUT } from './input';
 import { INTERACTIVE } from './interactive';
 import { LAYOUT } from './layout';
-import { TEXT } from './text';
+import { SHORTCUTS as TEXT } from './text';
 
 export const SHORTCUTS: StaticShortcutMap = {
   'dark-mode-transition': 'transition-colors duration-1000',

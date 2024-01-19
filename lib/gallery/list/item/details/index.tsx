@@ -27,7 +27,7 @@ export const Details = <
 
   return (
     <Root
-      className={clsx('column-stretch')}
+      className='column-stretch'
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       {...props}

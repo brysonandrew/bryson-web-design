@@ -51,9 +51,3 @@ hr {
   outline: none;
   border: none;
 }
-
-
-input:-webkit-autofill {
-  filter: none;
-  box-shadow: 0 0 0 100px #111 inset;
-}
