@@ -9,11 +9,11 @@ export const init = () => {
     const args = process.argv;
     const passedArg = args[args.length - 1];
     
-    if (!isValidWorkspace(passedArg)) {
-      throw Error(
-        'Please enter a valid workplace argument',
-      );
-    }
+    // if (!isValidWorkspace(passedArg)) {
+    //   throw Error(
+    //     'Please enter a valid workplace argument',
+    //   );
+    // }
     return path.join(cwd, passedArg);
   } catch (error: any) {
     console.log(`init - something went wrong `, error);

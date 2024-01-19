@@ -15,7 +15,7 @@
     "publish": "npm run bump && npm publish --workspaces",
     "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
     "clean": "esrun ops/delete/clean.ts",
-    "exporter": "esrun ops/exporter/main.ts test"
+    "exporter": "esrun ops/exporter/main.ts lib"
   },
   "workspaces": [
     "test",
