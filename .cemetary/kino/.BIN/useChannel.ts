@@ -5,7 +5,6 @@ import {
 } from '../config/types';
 import { useRef, useState, useEffect } from 'react';
 
-import { useChannel as _useChannel } from 'ably/react';
 import { CHANNEL_KEY } from '../hooks/signaling/config';
 
 type TConfig = {

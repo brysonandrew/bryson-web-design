@@ -12,7 +12,7 @@ import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimens
 import { TChildren } from '@brysonandrew/lib/types/dom';
 import { MotionBlur } from '@brysonandrew/lib/filters/motion-blur';
 import { resolveKey } from '@brysonandrew/lib/media/placeholder/utils/resolveKey';
-import { Responsive } from '@pages/pricing/process/sections/2-Responsive';
+import { Responsive } from '@brysonandrew/lib/media/placeholder/variants/Responsive';
 
 export const Root = styled(motion.div)``;
 
