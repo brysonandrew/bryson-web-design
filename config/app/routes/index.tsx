@@ -2,8 +2,6 @@ import { Index } from '@pages/index';
 import { Shell } from '@components/shell';
 import * as Pages from '@pages/index';
 import { Cv } from '@pages/_workshop/cv';
-import { Screen } from '@pages/_workshop/kino/screen';
-import { Projector } from '@pages/_workshop/kino/projector';
 import { Reader } from '@pages/_workshop/reader';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { TPage } from './types';
@@ -20,14 +18,6 @@ const PAGES_ROUTES = Object.values(PAGE_RECORD).map(
 );
 
 export const STANDALONE_ROUTES = [
-  {
-    path: '/projector',
-    element: <Projector />,
-  },
-  {
-    path: '/screen',
-    element: <Screen />,
-  },
   {
     path: '/reader',
     element: <Reader />,

@@ -28,11 +28,11 @@ export const Section: FC<TProps> = ({
     <Root
       className={clsx('relative column', classValue)}
       id={title}
-      {...props} 
+      {...props}
     >
       <Title>{title}</Title>
       <P16Y />
-      <div>{children}</div>
+      {children}
     </Root>
   );
 };

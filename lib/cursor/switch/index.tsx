@@ -10,9 +10,13 @@ import {
   CUSTOM_CURSOR_KEY,
   NONE_CURSOR_KEY,
 } from './config';
+import { useScroll } from '../..';
 
 export const Switch = () => {
   const { hoverKey, children } = useCursor();
+  const { isScrolling } = useScroll();
+
+  if (isScrolling) return <Sight/>;
 
   const [cursorKey, textKey, iconKey] = hoverKey
     ?.split(HOVER_KEY_DELIMITER)

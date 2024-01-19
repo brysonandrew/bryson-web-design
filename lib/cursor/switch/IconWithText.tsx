@@ -19,7 +19,7 @@ export const IconWithText: FC<TProps> = ({
   return (
     <>
       <P_5 />
-      <motion.div className='relative text-main row gap-1.5 z-50'>
+      <motion.div className='relative text-2xl row gap-1.5 z-50'>
         {iconStr && (
           <I classValue='text-current' icon={iconStr} />
         )}
@@ -30,7 +30,7 @@ export const IconWithText: FC<TProps> = ({
             opacity: 1,
             transition: { ...TRANSITION, delay: 0.4 },
           }}
-          className='text-xl whitespace-nowrap'
+          className='whitespace-nowrap'
         >
           {children}
         </motion.div>
