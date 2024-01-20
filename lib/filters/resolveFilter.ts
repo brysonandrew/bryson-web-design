@@ -1,5 +1,5 @@
-import { resolveBlur } from '@brysonandrew/animation/components/filter-animate/utils/blur';
-import { resolveBrightness } from '@brysonandrew/animation/components/filter-animate/utils/brighten';
+import { resolveBlur } from '@brysonandrew/filter-animate/utils/blur';
+import { resolveBrightness } from '@brysonandrew/filter-animate/utils/brighten';
 
 export const resolveGrayscale = (value = 0) =>
   `grayscale(${value}%)`;

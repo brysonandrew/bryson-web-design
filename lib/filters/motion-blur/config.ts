@@ -12,8 +12,11 @@ export type TDirectionProps = {
   direction?: TDirectionKey;
 };
 
-export type TFilterProps = TDirectionProps & {
-  id?: string;
+export type TMotionBlurProps = TDirectionProps & {
   turbulence: MotionValue;
   blur: MotionValue;
+};
+
+export type TIdProps = {
+  id?: string;
 };

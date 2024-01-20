@@ -1,4 +1,7 @@
-import { BASE_COLOR_RECORD } from '@brysonandrew/config/color/constants';
+import {
+  BASE_COLOR_RECORD,
+  BASE_GLOW_RECORD,
+} from '@brysonandrew/config/color/constants';
 
 export type TDigit = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
@@ -18,6 +21,9 @@ export type TOpacityRangeRecordKey<T extends string> =
 
 export type TBaseColorKey = keyof TBaseColorRecord;
 export type TBaseColorRecord = typeof BASE_COLOR_RECORD;
+
+export type TBaseGlowKey = keyof TBaseGlowRecord;
+export type TBaseGlowRecord = typeof BASE_GLOW_RECORD;
 
 export type TCssVar<V extends string = string> =
   `var(--${V})`;

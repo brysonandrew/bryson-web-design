@@ -6,16 +6,13 @@ import {
 import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@brysonandrew/base/types/dom/motion';
-import {
-  HOVER_KEY_DELIMITER,
-  resolveCompositeHoverKey,
-} from '@brysonandrew/base/utils/key';
-import { useCursor } from '@brysonandrew/cursor/context';
+import { useCursor } from '@brysonandrew/cursor/context/useCursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
 import { formatUrl } from '@brysonandrew/base/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
+import { resolveCompositeHoverKey, HOVER_KEY_DELIMITER } from '@brysonandrew/cursor';
 
 type TProps = Required<TTag> &
   TAnchorMotionProps &

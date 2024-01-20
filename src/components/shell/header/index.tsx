@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
-import { useScroll as useScrollContext } from '@brysonandrew/context/scroll/useScroll';
+import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
 import { Nav } from './Nav';
 import { FadeDown } from '@brysonandrew/base/components/layout/vertical-fade/FadeDown';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation/constants';
-import { useDarkMode } from '@brysonandrew/context';
+} from '@brysonandrew/animation/config/constants';
+import { useDarkMode } from '@brysonandrew/dark-mode';
 
 const Root = styled.header``;
 

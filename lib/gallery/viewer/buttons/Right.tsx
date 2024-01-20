@@ -3,7 +3,7 @@ import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { ArrowRight } from '@brysonandrew/gallery/viewer/icons/ArrowRight';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import { useNext } from '../hooks/nav/useNext';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Picture } from '@brysonandrew/media/picture';
-import { useImageDimensions } from '@brysonandrew/hooks/media/useImageDimensions';
+import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
@@ -17,8 +17,8 @@ import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/animation/constants';
-import { useTapHandler } from '@brysonandrew/hooks/media/useTapHandler';
+import { ORIGIN_50 } from '@brysonandrew/animation/config/constants';
+import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 import { GALLERY_ICON } from '@brysonandrew/base/icons/constants/gallery';
 import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';

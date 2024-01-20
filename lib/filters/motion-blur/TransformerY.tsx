@@ -1,14 +1,12 @@
-import type { MotionValue } from 'framer-motion';
 import { useMotionTemplate } from 'framer-motion';
 import { TChildren } from '@brysonandrew/base/types/dom';
-import { TFilterProps } from './config';
+import {
+  TMotionBlurProps,
+  TTransformerProps,
+} from './config';
 
-export type TTransformerProps = {
-  velocity: MotionValue;
-  acceleration: MotionValue;
-};
 type TProps = TTransformerProps & {
-  children(props: TFilterProps): TChildren;
+  children(props: TMotionBlurProps): TChildren;
 };
 export const TransformerY = ({
   velocity,

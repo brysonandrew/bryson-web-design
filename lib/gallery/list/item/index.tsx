@@ -8,7 +8,7 @@ import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
 import { resolveCursorKeyFromHoverKey } from '@brysonandrew/cursor/switch/config';
 import { NOOP } from '@brysonandrew/base/constants/functions';
-import { useCursor } from '@brysonandrew/cursor/context';
+import { useCursor } from '@brysonandrew/cursor/context/useCursor';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery/viewer/hooks/nav/useToFirst';

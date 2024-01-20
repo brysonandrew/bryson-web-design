@@ -1,4 +1,4 @@
-import { Parallax } from '@brysonandrew/animation/components/parallax';
+import { Parallax } from '@brysonandrew/parallax';
 import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { FAKE_3D_PROPS } from './config/constants';
 import { Links } from './links';

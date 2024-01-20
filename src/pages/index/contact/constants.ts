@@ -1,7 +1,7 @@
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from '@brysonandrew/animation/components/parallax/config';
+} from '@brysonandrew/parallax/config';
 
 export const FAKE_3D_PROPS: TParallaxOptions = {
   resistance: {

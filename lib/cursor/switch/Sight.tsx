@@ -7,7 +7,7 @@ import {
   TClassValueProps,
 } from '@brysonandrew/base/types/dom/main';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
-import { useCursor } from '@brysonandrew/cursor/context';
+import { useCursor } from '@brysonandrew/cursor/context/useCursor';
 
 const DEFAULT_ANIMATE = {
   opacity: 1,

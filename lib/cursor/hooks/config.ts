@@ -1,6 +1,6 @@
 import { TCursorKey } from '@brysonandrew/cursor/switch/config';
 import { NOOP } from '@brysonandrew/base/constants/functions';
-import { HOVER_KEY_DELIMITER } from '@brysonandrew/base/utils/key';
+import { HOVER_KEY_DELIMITER } from '../context/constants';
 
 export const GLOBAL_KEY = 'GLOBAL_KEY';
 

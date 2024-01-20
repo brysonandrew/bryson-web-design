@@ -1,15 +1,32 @@
 {
   "name": "@brysonandrew/filters",
-  "version": "3.0.0",
+  "version": "6.16.0",
   "description": "Filters lib",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./FilterShell": "./FilterShell.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    }
+    },
+    "./resolveFilter": "./resolveFilter.ts",
+    "./aura/Target": "./aura/Target.tsx",
+    "./aura": "./aura/index.tsx",
+    "./blur/Blur1": "./blur/Blur1.tsx",
+    "./blur/constants": "./blur/constants.ts",
+    "./blur": "./blur/index.tsx",
+    "./config/types": "./config/types.ts",
+    "./displacement/config": "./displacement/config.ts",
+    "./displacement": "./displacement/index.tsx",
+    "./motion-blur/Speed": "./motion-blur/Speed.tsx",
+    "./motion-blur/TransformerX": "./motion-blur/TransformerX.tsx",
+    "./motion-blur/TransformerY": "./motion-blur/TransformerY.tsx",
+    "./motion-blur/config": "./motion-blur/config.ts",
+    "./motion-blur": "./motion-blur/index.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/presets": "./config/constants/presets.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -25,19 +42,24 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "@brysonandrew/base": "*",
+    "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/filters": "*"
+  }
 }

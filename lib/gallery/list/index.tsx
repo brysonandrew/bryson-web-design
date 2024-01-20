@@ -2,7 +2,7 @@ import { Item } from './item';
 import { motion } from 'framer-motion';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
-import { InView } from '@brysonandrew/base/in-view';
+import { InView } from '@brysonandrew/in-view';
 import { useGallery } from '../context/Provider';
 
 export const List = <

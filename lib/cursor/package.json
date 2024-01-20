@@ -1,15 +1,34 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "3.0.0",
+  "version": "6.16.0",
   "description": "Animated cursor",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
+    "./config": "./config.ts",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
-    }
+    },
+    "./context/Consumer": "./context/Consumer.tsx",
+    "./context/Provider": "./context/Provider.tsx",
+    "./context/constants": "./context/constants.ts",
+    "./context/types": "./context/types.ts",
+    "./context/useCursor": "./context/useCursor.tsx",
+    "./hooks/config": "./hooks/config.ts",
+    "./hooks": "./hooks/index.ts",
+    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
+    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
+    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
+    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
+    "./switch/Box": "./switch/Box.tsx",
+    "./switch/IconWithText": "./switch/IconWithText.tsx",
+    "./switch/Sight": "./switch/Sight.tsx",
+    "./switch/config": "./switch/config.ts",
+    "./switch": "./switch/index.tsx",
+    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
+    "./switch/format/Visit": "./switch/format/Visit.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -25,19 +44,27 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "@brysonandrew/cursor": "*",
+    "@brysonandrew/base": "*",
+    "@brysonandrew/hooks": "*",
+    "@brysonandrew/scroll": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/app": "*"
+  }
 }

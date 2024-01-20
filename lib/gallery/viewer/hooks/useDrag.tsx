@@ -4,8 +4,8 @@ import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/us
 import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery/viewer/hooks/params/useCurrParams';
-import { TBaseProps } from '../types';
-import { DURATION_MID } from '@brysonandrew/animation/constants';
+import { TBaseProps } from '../ready/types';
+import { DURATION_MID } from '@brysonandrew/animation/config/constants';
 import { useX } from './motion/useX';
 import { resolveTo } from '../utils/resolveTo';
 

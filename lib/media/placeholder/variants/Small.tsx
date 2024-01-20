@@ -1,4 +1,4 @@
-import { MID_MOTION_CONFIG } from '@brysonandrew/animation/constants';
+import { MID_MOTION_CONFIG } from '@brysonandrew/animation/config/constants';
 import { Placeholder } from '..';
 
 export const Small = () => (

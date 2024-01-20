@@ -1,6 +1,6 @@
 import { Focus } from '@pages/pricing/process/focus';
 import { I } from '@brysonandrew/base/icons/icon';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DARK_MODE } from '../../config';

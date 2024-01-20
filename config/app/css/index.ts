@@ -1,4 +1,4 @@
-import { resolveVarCssRecord } from '../../config';
+import { resolveVarCssRecord } from '@brysonandrew/config';
 
 const PLACEHOLDER_MD = 28;
 const PLACEHOLDER_SM = 16;

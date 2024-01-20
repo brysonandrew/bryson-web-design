@@ -3,7 +3,7 @@ import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 
 type TProps = PropsWithChildren<{
   id: string;

@@ -1,4 +1,4 @@
-import { useScroll } from '@brysonandrew/context/scroll/useScroll';
+import { useScroll } from '@brysonandrew/scroll/useScroll';
 import { useEffect } from 'react';
 
 export const useFocus = <T extends HTMLElement>(

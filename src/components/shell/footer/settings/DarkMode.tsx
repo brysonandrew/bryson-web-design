@@ -6,8 +6,8 @@ import { Button } from '@brysonandrew/base/components/interactive/circle/Button'
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { createElement } from 'react';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { useApp } from '@brysonandrew/context/app/useApp';
-import { useDarkMode } from '@brysonandrew/context';
+import { useApp } from '@brysonandrew/app/useApp';
+import { useDarkMode } from '@brysonandrew/dark-mode';
 import { Moon, Sun } from './icon';
 
 export const DarkMode = () => {

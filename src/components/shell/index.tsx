@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { motion } from 'framer-motion';
 import { Global } from './global';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
 import { Cursor } from '@brysonandrew/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from '@components/Providers';

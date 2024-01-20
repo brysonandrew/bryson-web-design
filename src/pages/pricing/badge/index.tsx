@@ -2,11 +2,11 @@ import type { FC } from 'react';
 import { TPricingKey } from '@pages/pricing/config/types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { BG } from './config';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
 import { Text } from './Text';
-import { useApp } from '@brysonandrew/context';
+import { useApp } from '@brysonandrew/app';
 import { FadeDown } from '@brysonandrew/base/components';
+import { TStyle } from '@app/style';
 
 export type TPricingProps = {
   type: TPricingKey;
@@ -19,7 +19,7 @@ export const Badge: FC<TPricingProps> = ({
   isHover,
   ...props
 }) => {
-  const { GRADIENT, COLOR } = useApp();
+  const { GRADIENT, COLOR } = useApp<TStyle>();
   return (
     <motion.div
       className={clsx(

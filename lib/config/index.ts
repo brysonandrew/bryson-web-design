@@ -18,6 +18,7 @@ export * from "./color/constants/grayscale/black";
 export * from "./color/constants/grayscale/gray";
 export * from "./color/constants/grayscale";
 export * from "./color/constants/grayscale/white";
+export * from "./color/constants/main";
 export * from "./color/utils/glow/resolveBoxShadow";
 export * from "./color/utils/glow/resolveDropShadow";
 export * from "./color/utils/glow/resolveGlowRecord";
