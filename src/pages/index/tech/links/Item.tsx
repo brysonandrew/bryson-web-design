@@ -1,13 +1,13 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { Aura } from '@brysonandrew/filters/aura/Aura';
+import { Target } from '@brysonandrew/filters/aura/Target';
 import { P1_5 } from '@brysonandrew/base/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants';
 import { formatUrl } from '@brysonandrew/base/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
@@ -37,7 +37,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...props}
     >
       {isHover && (
-        <Aura
+        <Target
           style={{ borderRadius: BORDER_RADIUS.MD }}
           layoutId={title}
         />

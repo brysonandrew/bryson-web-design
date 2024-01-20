@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/animation/components/parallax/config';
+import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
 import { Transform } from './Transform';
 import { TECH } from '../config/constants';
 

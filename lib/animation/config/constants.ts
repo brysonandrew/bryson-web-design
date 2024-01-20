@@ -1,12 +1,19 @@
 import {
-  EASE,
-  DURATION_DARK_MODE_MS,
-} from '@brysonandrew/dark-mode/context/constants';
-import {
   resolvePresence,
   TTransition,
 } from '@brysonandrew/animation';
 import { Transition } from 'framer-motion';
+
+
+export const TRANSITION_CLASS = 'duration-1000' as const;
+export const EASE = [0.4, 0, 0.2, 1];
+export const EASE_CSS = `cubic-bezier(${EASE})`;
+export const DURATION_DARK_MODE_MS = parseInt(
+  TRANSITION_CLASS.split('-')[1],
+);
+export const TRANSITION_DARK_MODE_CSS_VALUE = ['color', 'background-color']
+  .map((v) => `${v} ${DURATION_DARK_MODE_MS}ms ${EASE_CSS}`)
+  .join(', ');
 
 const isDisabled = false; // isMobile;
 
@@ -132,4 +139,44 @@ export const ORIGIN_50 = {
   originX: '50%',
   originY: '50%',
   originZ: '50%',
+};
+
+export const INITIAL_KEY = 'initial';
+export const HOVER_KEY = 'hover';
+export const IDLE_KEY = 'idle';
+export const EXIT_KEY = 'exit';
+
+export const PARENT_ANIMATE_CONFIG = {
+  initial: INITIAL_KEY,
+  animate: IDLE_KEY,
+  whileHover: HOVER_KEY,
+  exit: EXIT_KEY,
+};
+
+type TResolveParentAnimateConfig = {
+  isHover?: boolean | null;
+};
+export const resolveParentAnimateConfig = (
+  config: TResolveParentAnimateConfig = {},
+) => {
+  const { isHover } = config;
+  if (typeof isHover === 'undefined')
+    return PARENT_ANIMATE_CONFIG;
+  return {
+    initial: INITIAL_KEY,
+    animate: isHover ? [IDLE_KEY, HOVER_KEY] : IDLE_KEY,
+    exit: EXIT_KEY,
+  };
+};
+
+export const EFFECT_ANIMATE_TRANSITION = {
+  ease: 'easeIn',
+  duration: DURATION ? DURATION + 0.08 : DURATION,
+  delay: 0.08,
+};
+
+export const EFFECT_HOVER_TRANSITION = {
+  ease: 'linear',
+  duration: DURATION,
+  delay: 0,
 };

@@ -3,17 +3,14 @@ import { resolveCompositeKey } from '@brysonandrew/base/utils/key';
 import { name } from '../package.json';
 import { useLocalStorage } from 'lib/hooks';
 import { TUseDarkMode } from './types';
-import { TRANSITION } from './constants';
+import { TRANSITION_DARK_MODE_CSS_VALUE } from '@brysonandrew/animation';
 
 export const useDarkModeState = (
   defaultValue?: boolean,
 ): TUseDarkMode => {
   const [isDarkMode, setDarkMode] =
     useLocalStorage<boolean>(
-      resolveCompositeKey(
-        name,
-        'dark-mode',
-      ),
+      resolveCompositeKey(name, 'dark-mode'),
       defaultValue ?? true,
     );
 
@@ -40,7 +37,8 @@ export const useDarkModeState = (
   }, [isDarkMode]);
 
   useEffect(() => {
-    document.body.style.transition = TRANSITION;
+    document.body.style.transition =
+      TRANSITION_DARK_MODE_CSS_VALUE;
   }, []);
 
   return {

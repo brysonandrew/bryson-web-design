@@ -22,4 +22,4 @@ export const OUTPUT: TOutput[] = [
   },
 ];
 
-export const ISOMORPHIC_TARGETS = [];
+export const ISOMORPHIC_TARGETS: string[] = [];

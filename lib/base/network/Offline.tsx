@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
 import { I } from '@brysonandrew/base/icons/icon';
 import { OFFLINE_ICON } from '@brysonandrew/base/icons/constants/base';
 

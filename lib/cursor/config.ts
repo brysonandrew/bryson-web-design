@@ -1,5 +1,5 @@
 import { resolveCursorKeyFromHoverKey } from '@brysonandrew/cursor/switch/config';
-import { HOVER_KEY_DELIMITER } from '@brysonandrew/base/utils/key';
+import { HOVER_KEY_DELIMITER } from './context/constants';
 import { THover } from './context/types';
 
 export const resolveHoverKeyParts = (hover: THover) => {

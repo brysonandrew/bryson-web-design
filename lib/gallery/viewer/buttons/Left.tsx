@@ -4,7 +4,7 @@ import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 
 type TProps = TClassValueProps & {

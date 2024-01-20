@@ -1,4 +1,4 @@
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 import { TextLines } from '@pages/pricing/process/skeleton/TextLines';
 
 export const Text = () => {

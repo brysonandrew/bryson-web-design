@@ -2,13 +2,12 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@brysonandrew/contact/context/useContact';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation/constants';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation/config/constants';
 import { TFormKey } from '@brysonandrew/contact/context/types';
 import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
-import { useApp } from '@brysonandrew/context/app/useApp';
-import { Cross } from '@brysonandrew/gallery/components/icons';
+import { useApp } from '@brysonandrew/app/useApp';
 import { TButtonMotionProps } from '@brysonandrew/base/types/dom';
-import { useDarkMode } from '@brysonandrew/dark-mode/useDarkMode';
+import { CROSS_ICON, I } from '@brysonandrew/base';
 
 const Root = styled.div``;
 
@@ -24,9 +23,8 @@ export const Clear: FC<TProps> = ({
   title,
   ...props
 }) => {
-  const { COLOR, BORDER_RADIUS, Glow } = useApp();
+  const { BORDER_RADIUS } = useApp();
   const { onForm } = useContact();
-  const { isDarkMode } = useDarkMode();
 
   const handleClear = (_: MouseEvent) => {
     onForm({ [name]: '' });
@@ -48,11 +46,7 @@ export const Clear: FC<TProps> = ({
         style={{ borderRadius: BORDER_RADIUS.XL }}
         {...props}
       >
-        <Glow
-          color={COLOR[isDarkMode ? 'gray' : 'white-9']}
-        >
-          <Cross />
-        </Glow>
+        <I icon={CROSS_ICON} />
       </motion.button>
     </Root>
   );

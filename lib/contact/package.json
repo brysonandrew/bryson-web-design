@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "3.0.0",
+  "version": "6.16.0",
   "description": "Contact form",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -9,7 +9,26 @@
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
-    }
+    },
+    "./box/Clear": "./box/Clear.tsx",
+    "./box/Name": "./box/Name.tsx",
+    "./box/Shell": "./box/Shell.tsx",
+    "./box/Submit": "./box/Submit.tsx",
+    "./box/Text": "./box/Text.tsx",
+    "./box": "./box/index.tsx",
+    "./context/Consumer": "./context/Consumer.tsx",
+    "./context/Provider": "./context/Provider.tsx",
+    "./context/constants": "./context/constants.ts",
+    "./context/types": "./context/types.ts",
+    "./context/useContact": "./context/useContact.tsx",
+    "./utils/resolveButtonValue": "./utils/resolveButtonValue.ts",
+    "./hooks/useAutoFocus": "./hooks/useAutoFocus.ts",
+    "./hooks/useFocus": "./hooks/useFocus.ts",
+    "./hooks/useForm": "./hooks/useForm.ts",
+    "./hooks/useInput": "./hooks/useInput.tsx",
+    "./box/textarea": "./box/textarea/index.tsx",
+    "./box/textarea/autosize": "./box/textarea/autosize/index.tsx",
+    "./box/textarea/autosize/useAutosize": "./box/textarea/autosize/useAutosize.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -24,18 +43,27 @@
     "react",
     "typescript"
   ],
+  "dependencies": {
+    "@brysonandrew/contact": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/base": "*",
+    "@brysonandrew/app": "*",
+    "@brysonandrew/cursor": "*",
+    "@brysonandrew/scroll": "*",
+    "@brysonandrew/viewport": "*"
+  },
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },

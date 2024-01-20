@@ -1,4 +1,4 @@
-import { Invert } from '@brysonandrew/animation/components/filter-animate/Invert';
+import { Invert } from '@brysonandrew/filter-animate/Invert';
 import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
 import clsx, { ClassValue } from 'clsx';
 import { FC, PropsWithChildren } from 'react';

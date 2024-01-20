@@ -19,12 +19,15 @@ import {
   writeFileData,
   resolveFsInfo,
 } from '@ops/utils/write';
-import { TMediaRecords, TScreensRecord } from '../../media/picture/config/types';
-import { writeProjectRecordInGallery } from './utils/writeProjectRecordInGallery';
+import {
+  TMediaRecords,
+  TScreensRecord,
+} from '@brysonandrew/media';
+import { writeScreensRecordInGallery } from './utils/writeScreensRecordInGallery';
 
 (async () => {
   try {
-    let projectRecord: TScreensRecord = {};
+    let screensRecord: TScreensRecord = {};
     const smallRecords: TMediaRecords = [];
     const entriesCountRecord: Record<string, number> = {};
 
@@ -72,10 +75,10 @@ import { writeProjectRecordInGallery } from './utils/writeProjectRecordInGallery
         ...originalMetaData,
       });
 
-      projectRecord = writeProjectRecordInGallery(
+      screensRecord = writeScreensRecordInGallery(
         record,
         name,
-        projectRecord,
+        screensRecord,
       );
 
       if (EXCLUDE_SMALLS.includes(name)) {

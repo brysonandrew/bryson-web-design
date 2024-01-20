@@ -1,1 +1,0 @@
-export type TTapEvent  =PointerEvent | MouseEvent | TouchEvent

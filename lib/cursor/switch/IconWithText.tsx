@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { P_5 } from '@brysonandrew/base/components/layout/space/P_5';
-import { TRANSITION } from '@brysonandrew/animation/constants';
+import { TRANSITION } from '@brysonandrew/animation/config/constants';
 import { TChildren } from '@brysonandrew/base/types/dom/main';
 import { I } from '@brysonandrew/base/icons/icon';
 import { TBaseIconProps } from '@brysonandrew/base/icons/type';

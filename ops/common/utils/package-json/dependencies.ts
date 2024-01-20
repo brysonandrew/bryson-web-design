@@ -1,6 +1,6 @@
 import path from 'path';
 import { resolveFiles, readFile } from '../files/resolve';
-import test from '../../../../test/package.json';
+import test from '../../../../package.json';
 import type {
   TDepSectionPackageJson,
   TDepRecord,

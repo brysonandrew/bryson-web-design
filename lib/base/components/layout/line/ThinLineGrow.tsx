@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MOTION_CONFIG } from '@brysonandrew/animation/constants';
+import { MOTION_CONFIG } from '@brysonandrew/animation/config/constants';
 import { FC } from 'react';
 import { ThinLine } from '.';
 import clsx from 'clsx';

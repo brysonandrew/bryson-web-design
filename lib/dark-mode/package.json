@@ -1,17 +1,22 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "3.0.0",
+  "version": "6.16.0",
   "description": "Dark mode switch",
-  "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    }
+    },
+    "./context/Consumer": "./context/Consumer.tsx",
+    "./context/Provider": "./context/Provider.tsx",
+    "./context/constants": "./context/constants.tsx",
+    "./context/types": "./context/types.ts",
+    "./context/useDarkMode": "./context/useDarkMode.tsx",
+    "./context/useDarkModeState": "./context/useDarkModeState.ts",
+    "./head": "./head/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -26,18 +31,25 @@
     "react",
     "typescript"
   ],
+  "dependencies": {
+    "@brysonandrew/base": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/dark-mode": "*",
+    "@brysonandrew/head": "*",
+    "@brysonandrew/app": "*"
+  },
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },

@@ -4,12 +4,12 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/base/types/dom';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/components/filter-animate/utils';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Background } from './Background';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 
 const Root = styled(motion.div)``;
 
@@ -28,7 +28,7 @@ export const Circle: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { BORDER_RADIUS, GLOW, Glow, COLOR } = useApp();
+  const { BORDER_RADIUS, GLOW_DROP } = useApp();
 
   return (
     <Root
@@ -39,7 +39,7 @@ export const Circle: FC<TProps> = ({
       )}
       style={{
         borderRadius: BORDER_RADIUS.XL,
-        filter: GLOW.DROP.accent,
+        filter: GLOW_DROP.accent,
       }}
       {...resolveParentAnimateConfig({ isHover })}
       {...props}

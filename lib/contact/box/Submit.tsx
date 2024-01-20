@@ -1,25 +1,19 @@
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useContact } from '@brysonandrew/contact/context/useContact';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import {
   EFFECT_ANIMATE_TRANSITION,
   resolveParentAnimateConfig,
-} from '@brysonandrew/animation/components/filter-animate/utils';
+} from '@brysonandrew/animation/config/constants';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 import { resolveButtonValue } from '../utils/resolveButtonValue';
-
-const Root = styled(motion.label)``;
-const Input = styled.input``;
-const Text = styled(motion.h4)``;
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BORDER_RADIUS, TextureGlow } = useApp();
+  const { BORDER_RADIUS, TextureGlow, onSound } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -27,7 +21,6 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   const { status } = useContact();
   const ref = useRef<HTMLLabelElement>(null);
   const title = resolveButtonValue(status);
-  const handleMoveSound = useMoveSound();
 
   useEffect(() => {
     if (status === 'sent' && ref.current !== null) {
@@ -36,7 +29,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   }, [status]);
 
   return (
-    <Root
+    <motion.label
       ref={ref}
       className={clsx('relative p-0.5 w-full', [
         isDisabled
@@ -44,7 +37,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
           : 'cursor-pointer',
       ])}
       layout
-      onTap={isDisabled ? () => null : handleMoveSound}
+      onTap={isDisabled ? () => null : onSound}
       {...(isDisabled
         ? {}
         : resolveParentAnimateConfig({ isHover }))}
@@ -54,12 +47,12 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       {...handlers}
     >
       <TextureGlow />
-      <Input
+      <input
         className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'
         disabled={isDisabled}
       />
-      <Text
+      <motion.h4
         className='center relative py-2 title-main pointer-events-none'
         transition={EFFECT_ANIMATE_TRANSITION}
         style={{
@@ -75,7 +68,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         }}
       >
         {title}
-      </Text>
-    </Root>
+      </motion.h4>
+    </motion.label>
   );
 };

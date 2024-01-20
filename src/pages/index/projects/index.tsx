@@ -1,4 +1,4 @@
-import { Parallax } from '@brysonandrew/animation/components/parallax';
+import { Parallax } from '@brysonandrew/parallax';
 import { Main } from '@pages/projects/Main';
 import { FAKE_3D_PROPS } from './constants';
 import { Section } from '@brysonandrew/base/components/layout/section';

@@ -1,17 +1,40 @@
 {
   "name": "@brysonandrew/config",
-  "version": "3.0.0",
+  "version": "6.16.0",
   "description": "Config",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    }
+    },
+    "./color": "./color/index.ts",
+    "./color/types": "./color/types.ts",
+    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
+    "./color/constants": "./color/constants/index.ts",
+    "./color/utils/resolveColor": "./color/utils/resolveColor.ts",
+    "./color/utils/resolveColorOpacityRange": "./color/utils/resolveColorOpacityRange.ts",
+    "./color/utils/resolveColorRecord": "./color/utils/resolveColorRecord.ts",
+    "./color/utils/resolveColorSeries": "./color/utils/resolveColorSeries.ts",
+    "./color/utils/resolveCssVarRecord": "./color/utils/resolveCssVarRecord.ts",
+    "./color/utils/resolveCustomRecords": "./color/utils/resolveCustomRecords.ts",
+    "./color/utils/resolveGrayscaleRange": "./color/utils/resolveGrayscaleRange.ts",
+    "./color/utils/resolveRgbRecord": "./color/utils/resolveRgbRecord.ts",
+    "./color/utils/resolveVarCss": "./color/utils/resolveVarCss.ts",
+    "./color/utils/rgbToOpacityRangeRecord": "./color/utils/rgbToOpacityRangeRecord.ts",
+    "./color/utils/rgbToVarRecord": "./color/utils/rgbToVarRecord.ts",
+    "./color/utils/varRgb": "./color/utils/varRgb.ts",
+    "./color/constants/grayscale/black": "./color/constants/grayscale/black.ts",
+    "./color/constants/grayscale/gray": "./color/constants/grayscale/gray.ts",
+    "./color/constants/grayscale": "./color/constants/grayscale/index.ts",
+    "./color/constants/grayscale/white": "./color/constants/grayscale/white.ts",
+    "./color/constants/main": "./color/constants/main/index.ts",
+    "./color/utils/glow/resolveBoxShadow": "./color/utils/glow/resolveBoxShadow.ts",
+    "./color/utils/glow/resolveDropShadow": "./color/utils/glow/resolveDropShadow.ts",
+    "./color/utils/glow/resolveGlowRecord": "./color/utils/glow/resolveGlowRecord.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -27,19 +50,23 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^3.12.1",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.2",
+    "react-intersection-observer": "^9.5.3",
     "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "@brysonandrew/config": "*",
+    "@brysonandrew/base": "*"
+  }
 }

@@ -14,10 +14,10 @@ import { TPricingTitle } from '@pages/pricing/config/types';
 import { TickList } from '@brysonandrew/base/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { EMAIL_ICON } from '@brysonandrew/base/icons/constants/contact';
-import { useApp } from '@brysonandrew/context/app/useApp';
-import { FeedbackIcon } from './FeedbackIcon';
+import { useApp } from '@brysonandrew/app/useApp';
 import { Cursor } from './Cursor';
 import { FadeDown } from '@brysonandrew/base/components';
+import { TStyle } from '@app/style';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
@@ -26,13 +26,8 @@ export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const { key, listItems, price, discount, PreContent } =
     config;
-  const {
-    COLOR,
-    Glow,
-    BORDER_RADIUS,
-    GRADIENT,
-    Texture,
-  } = useApp();
+  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Texture } =
+    useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,

@@ -1,5 +1,5 @@
 import { THoverKey } from '@brysonandrew/cursor/hooks/config';
-import { HOVER_KEY_DELIMITER } from '@brysonandrew/base/utils/key';
+import { HOVER_KEY_DELIMITER } from '../context/constants';
 
 export const CURSOR_LAYOUT_ID = 'CURSOR_LAYOUT_ID';
 

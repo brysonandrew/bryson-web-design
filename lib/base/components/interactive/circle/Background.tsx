@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
-import { DURATION } from '@brysonandrew/animation/constants';
+import { DURATION } from '@brysonandrew/animation/config/constants';
 import { motion } from 'framer-motion';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 import { resolvePresence } from '@brysonandrew/animation/utils';
 import clsx from 'clsx';
 
@@ -11,7 +11,7 @@ export const Background: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { Texture, BORDER_RADIUS, GLOW } = useApp();
+  const { Texture, BORDER_RADIUS, GLOW_BOX } = useApp();
   return (
     <motion.div
       className='absolute w-10 h-10 pointer-events-none'
@@ -30,7 +30,7 @@ export const Background: FC<TProps> = ({
         )}
         style={{
           borderRadius: BORDER_RADIUS.XL,
-          boxShadow: GLOW.highlight,
+          boxShadow: GLOW_BOX.highlight,
           ...style,
         }}
       />

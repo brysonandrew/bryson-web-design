@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
-import { useViewport } from '@brysonandrew/context/viewport/useViewport';
+import { useViewport } from '@brysonandrew/viewport/useViewport';
 import { TChildrenElement } from '@brysonandrew/base/types/dom';
 import { motion } from 'framer-motion';
 

@@ -2,13 +2,15 @@ import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
 import { useReader } from '@pages/_workshop/reader/context';
 import { I } from '@brysonandrew/base/icons/icon';
-import { STYLE } from '@components/style';
+import { useApp } from '@brysonandrew/app';
+import { TStyle } from '@app/style';
 
 export const Play = () => {
   const {
     clipboardContext,
     phraseState: [phrase],
   } = useReader();
+  const { GLOW_BOX } = useApp<TStyle>();
   const handlePlay = usePlay();
 
   return (
@@ -18,7 +20,7 @@ export const Play = () => {
       style={{
         boxShadow:
           clipboardContext.copying === 'pending'
-            ? STYLE.GLOW.accent
+            ? GLOW_BOX.accent
             : '',
       }}
     >

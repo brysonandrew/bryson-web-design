@@ -6,7 +6,7 @@ import { P3 } from '@brysonandrew/base/components/layout/space/P3';
 import { P_5 } from '@brysonandrew/base/components/layout/space/P_5';
 import { TICK_CIRCLE_ICON } from '@brysonandrew/base/icons/constants';
 import { PLUS_ICON } from '@brysonandrew/base/icons/constants/text';
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 
 export const PlusContent: FC = () => {
   const { BORDER_RADIUS } = useApp();

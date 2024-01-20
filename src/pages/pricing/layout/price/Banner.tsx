@@ -1,4 +1,4 @@
-import { useApp } from '@brysonandrew/context/app/useApp';
+import { useApp } from '@brysonandrew/app/useApp';
 import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
 import { FC, PropsWithChildren } from 'react';
 

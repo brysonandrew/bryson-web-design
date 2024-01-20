@@ -1,13 +1,15 @@
+import { TChildren, NOOP } from '@brysonandrew/base';
+import {
+  useTimeoutRef,
+  useEventListener,
+} from '@brysonandrew/hooks';
 import { type FC, useRef, memo } from 'react';
-import { NOOP } from '@brysonandrew/base/constants/functions';
-import type { TChildren } from '@brysonandrew/base/types/dom/main';
-import { useViewportPresence } from './hooks/useViewportPresence';
-import { resolveCursorKeyFromHoverKey } from './switch/config';
-import { useTimeoutRef, useEventListener } from 'lib/hooks';
 import { useCursor } from './context/useCursor';
-import { useCursorOffset } from './hooks/useCursorOffset';
+import { useCursorOffset } from './hooks';
+import { useViewportPresence } from './hooks/useViewportPresence';
 import { Switch } from './switch';
-import { useScroll } from 'lib/context/scroll/useScroll';
+import { resolveCursorKeyFromHoverKey } from './switch/config';
+import { useScroll as useScrollContext } from '@brysonandrew/scroll';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -22,7 +24,7 @@ export const Cursor: FC<TCursorProps> = memo(
       isCursorReady,
       onCursorReady,
     } = useCursor();
-    const { scroll } = useScroll();
+    const { scroll } = useScrollContext();
 
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
@@ -72,3 +74,23 @@ export const Cursor: FC<TCursorProps> = memo(
     return <>{isCursorReady && <Switch />}</>;
   },
 );
+
+export * from "./config";
+export * from "./context/Consumer";
+export * from "./context/Provider";
+export * from "./context/constants";
+export * from "./context/types";
+export * from "./context/useCursor";
+export * from "./hooks/config";
+export * from "./hooks";
+export * from "./hooks/useCursorAnimate";
+export * from "./hooks/useCursorOffset";
+export * from "./hooks/useHoverKey";
+export * from "./hooks/useViewportPresence";
+export * from "./switch/Box";
+export * from "./switch/IconWithText";
+export * from "./switch/Sight";
+export * from "./switch/config";
+export * from "./switch";
+export * from "./utils/resolveCompositeHoverKey";
+export * from "./switch/format/Visit";

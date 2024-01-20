@@ -13,8 +13,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/base/types/dom';
-import { DURATION_VERY_SLOW } from '@brysonandrew/animation/constants';
-import { TChildren } from '@brysonandrew/base/types/dom/main';
+import { DURATION_VERY_SLOW } from '@brysonandrew/animation/config/constants';
 
 export const Root = styled(motion.div)``;
 

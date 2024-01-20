@@ -15,9 +15,7 @@ export const clean = (targets: TPathRecord) => {
   for (const { full, parent, name } of Object.values(
     targets,
   ) as TPath[]) {
-    [
-      path.join(full, 'obj'),
-    ].forEach((pathToRm) => {
+    [].forEach((pathToRm) => {
       if (resolveDir(pathToRm) || resolveFile(pathToRm)) {
         rmSync(pathToRm, { recursive: true });
       }

@@ -3,12 +3,12 @@ import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
 import { resolvePresence } from '@brysonandrew/animation/utils';
 import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
-import { useCursor } from '@brysonandrew/cursor/context';
+import { useCursor } from '@brysonandrew/cursor/context/useCursor';
 import {
   DURATION_MID,
   PRESENCE_OPACITY,
-} from '@brysonandrew/animation/constants';
-import { useApp } from '@brysonandrew/context/app/useApp';
+} from '@brysonandrew/animation/config/constants';
+import { useApp } from '@brysonandrew/app/useApp';
 
 type TProps = TClassValueProps & {
   children: ReactNode;
