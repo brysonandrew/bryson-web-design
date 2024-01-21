@@ -10,7 +10,7 @@ import { NOOP } from '@brysonandrew/base/constants/functions';
 import { isDesktop } from 'react-device-detect';
 import { Close } from '../../buttons/Close';
 import { useOffSound } from '@brysonandrew/sounds/useOffSound';
-import { useGallery } from '../../../context/Provider';
+import { useGallery } from '../../../context/GalleryProvider';
 
 const Root = styled.header``;
 

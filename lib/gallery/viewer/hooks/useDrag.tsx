@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/gallery';
 import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery/viewer/hooks/params/useCurrParams';

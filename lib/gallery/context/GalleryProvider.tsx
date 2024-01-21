@@ -30,7 +30,7 @@ type TProps<
 > = TGalleryConfig<K> & {
   initItems: TInitItems<T, R>;
 };
-export const Provider = <
+export const GalleryProvider = <
   T extends string,
   K extends string,
   R extends object,

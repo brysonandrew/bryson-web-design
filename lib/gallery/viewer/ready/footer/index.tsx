@@ -9,7 +9,7 @@ import { Core } from './core';
 import { TBaseProps } from '../types';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled(motion.footer)``;
 

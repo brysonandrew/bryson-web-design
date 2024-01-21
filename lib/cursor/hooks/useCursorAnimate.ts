@@ -1,4 +1,4 @@
-import { useCursor } from '@brysonandrew/cursor/context/useCursor';
+import { useCursor } from '@brysonandrew/cursor';
 import {
   ValueTarget,
   ValueAnimationTransition,

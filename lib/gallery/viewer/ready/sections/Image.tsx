@@ -1,6 +1,6 @@
 import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
-import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/gallery';
 import { Picture } from '@brysonandrew/media/picture';
 import { useLoadImage } from '@brysonandrew/media/hooks/useLoadImage';
 import {

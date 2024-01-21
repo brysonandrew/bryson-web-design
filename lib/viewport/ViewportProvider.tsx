@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { VIEWPORT } from './constants';
 import { useMeasure, TViewport } from './useMeasure';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const ViewportProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const viewport = useMeasure();

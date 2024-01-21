@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { PRESENCE_OPACITY_Y_SHIFT } from '@brysonandrew/animation/config/constants';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/cursor';
 import { useViewport } from '@brysonandrew/viewport/useViewport';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 import { NONE_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';

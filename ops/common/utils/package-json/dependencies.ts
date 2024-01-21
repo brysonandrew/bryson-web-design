@@ -6,13 +6,13 @@ import type {
   TDepRecord,
   TDepsReducer,
   TKeyType,
-} from '../../types/exporter';
+} from '../../types/z-exporter';
 import {
   DEFAULT_DEPS,
   DEPS_KEY,
   DEV_DEPS_KEY,
   PEER_DEPS_KEY,
-} from '../../types/exporter';
+} from '../../types/z-exporter';
 import {
   IMPORT_LINE_TYPE_RX,
   IMPORT_LINE_VALUE_RX,

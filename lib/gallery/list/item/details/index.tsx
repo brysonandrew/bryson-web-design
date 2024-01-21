@@ -5,8 +5,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
-import clsx from 'clsx';
-import { useGallery } from '@brysonandrew/gallery/context/Provider';
+import { useGallery } from '@brysonandrew/gallery';
 
 const Root = styled(motion.div)``;
 

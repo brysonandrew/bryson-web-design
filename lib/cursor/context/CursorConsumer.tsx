@@ -5,6 +5,6 @@ import { CURSOR } from './constants';
 type TConsumerProps = {
   children(values: TContext): JSX.Element;
 };
-export const Consumer: FC<TConsumerProps> = ({
+export const CursorConsumer: FC<TConsumerProps> = ({
   children,
 }) => <CURSOR.Consumer>{children}</CURSOR.Consumer>;

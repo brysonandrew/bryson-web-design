@@ -4,13 +4,13 @@ import { TBaseChildren } from '@brysonandrew/base/types/dom';
 import { Clear } from './Clear';
 import { TFormKey } from '@brysonandrew/contact/context/types';
 import { useFocus } from '../hooks/useFocus';
-import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/cursor';
 import {
   MOTION_CONFIG,
   resolveParentAnimateConfig,
 } from '@brysonandrew/animation/config/constants';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { CONTACT_FORM_INPUT_LAYOUT_ID } from '../context/constants';
 
 const Root = styled(motion.label)``;
@@ -40,7 +40,7 @@ export const Shell = <T extends HTMLElement>({
 
   return (
     <Root
-      className='relative column-start w-full p-2 md:flex-row'
+      className='shell'
       layout
       style={{
         borderRadius: BORDER_RADIUS.MD,
@@ -50,7 +50,7 @@ export const Shell = <T extends HTMLElement>({
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <TextureGlow layout {...MOTION_CONFIG} />
+      <TextureGlow classValue='shell-texture-glow' layout {...MOTION_CONFIG} />
       {children}
       <AnimatePresence>
         {isEmpty && (

@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { useDarkModeState } from './useDarkModeState';
 import { DARK_MODE } from './constants';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const DarkModeProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const darkMode = useDarkModeState();

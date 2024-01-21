@@ -3,7 +3,7 @@ import { ServicesC } from '.';
 import { TExtrasRecord } from './types';
 import { useLocalStorage } from '@brysonandrew/hooks/dom/useLocalStorage';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const PricingProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const [extras, setExtras] =

@@ -6,7 +6,7 @@ import {
 import { Sound } from '.';
 import { CONTEXT } from './constants';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const SoundProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isSound, setSound] = useState(CONTEXT.isSound);

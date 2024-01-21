@@ -15,7 +15,7 @@ import { useLocation } from 'react-router';
 export const INIT_SCROLL = 200;
 export const SCROLL_COOLDOWN = 200;
 
-export const Provider: FC<PropsWithChildren> = ({
+export const ScrollProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const { scrollX, scrollY } = useScroll();

@@ -78,12 +78,13 @@ export const Parallax: FC<TProps> = ({
   );
 };
 
-export * from "./config";
-export * from "./aggregator";
-export * from "./aggregator/useScrollYBounds";
-export * from "./hooks/useDispersion";
-export * from "./hooks/useResistance";
-export * from "./hooks/useVisibility";
-export * from "./aggregator/values/Dispersion";
-export * from "./aggregator/values/Resistance";
-export * from "./aggregator/values/Visibility";
+export * from './config';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
+export * from './hooks/useDispersion';
+export * from './hooks/useResistance';
+export * from './hooks/useVisibility';
+export * from './aggregator/values/Dispersion';
+export * from './aggregator/values/Resistance';
+export * from './aggregator/values/Visibility';
+

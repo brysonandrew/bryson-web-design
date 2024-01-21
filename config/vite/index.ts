@@ -17,7 +17,8 @@ export default defineConfig({
   },
   plugins: [
     compileTsServiceWorker(),
-    unoCss({ inspector: true }),
+    unoCss({ inspector: true
+  }),
     tsConfigPaths({
       loose: true,
     }),

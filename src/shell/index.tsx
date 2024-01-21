@@ -4,7 +4,7 @@ import { Global } from './global';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
 import { Cursor } from '@brysonandrew/cursor';
 import { isDesktop } from 'react-device-detect';
-import { Providers } from '@components/Providers';
+import { Providers } from 'src/shell/Providers';
 import { P24Y } from '@brysonandrew/base/components/layout/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';

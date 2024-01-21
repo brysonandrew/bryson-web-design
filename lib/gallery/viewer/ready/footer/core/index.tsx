@@ -9,7 +9,7 @@ import { PADDING_X } from './config';
 import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
 import { useKeys } from '@brysonandrew/gallery/viewer/hooks/useKeys';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled.div``;
 const Dragger = styled(motion.div)``;

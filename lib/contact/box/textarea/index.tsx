@@ -29,7 +29,7 @@ export const Textarea: FC<TProps> = ({
                 layout
                 transition={{ duration: 0 }}
                 ref={ref}
-                className='block relative left-0 top-0 m-0 input'
+                className='input-textarea'
                 autoComplete='off'
                 rows={1}
                 name={name}

@@ -1,4 +1,4 @@
-import { useDarkMode } from '@brysonandrew/dark-mode/context/useDarkMode';
+import { useDarkMode } from '@brysonandrew/dark-mode';
 import * as MonoHead from '@brysonandrew/head';
 import { useApp } from '@brysonandrew/app';
 
@@ -27,4 +27,4 @@ export const Head = <K extends string, V extends string>({
   );
 };
 
-export * from '@brysonandrew/head';
+export { MonoHead };

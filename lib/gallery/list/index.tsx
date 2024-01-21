@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
 import { InView } from '@brysonandrew/in-view';
-import { useGallery } from '../context/Provider';
+import { useGallery } from '../context/GalleryProvider';
 
 export const List = <
   T extends string,

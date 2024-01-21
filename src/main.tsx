@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
 import { MOTION_CONFIG } from '@brysonandrew/animation/config/constants';
-import { HelmetProvider } from 'react-helmet-async';
 import { Boundary } from '@brysonandrew/base/boundary';
 import { ROUTES } from '@app/routes';
 // import { init as initServiceWorker } from '@app/service-worker/init';
@@ -24,15 +23,13 @@ const root = document.getElementById('root');
 if (root) {
   ReactDOM.createRoot(root).render(
     <StrictMode>
-      <HelmetProvider>
-        <MotionConfig {...MOTION_CONFIG}>
-          <Boundary>
-            <Suspense fallback={null}>
-              <RouterProvider router={router} />
-            </Suspense>
-          </Boundary>
-        </MotionConfig>
-      </HelmetProvider>
+      <MotionConfig {...MOTION_CONFIG}>
+        <Boundary>
+          <Suspense fallback={null}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </Boundary>
+      </MotionConfig>
     </StrictMode>,
   );
 }

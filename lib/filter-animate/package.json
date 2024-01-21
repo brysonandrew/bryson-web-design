@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filter-animate",
-  "version": "6.16.0",
+  "version": "6.21.17",
   "description": "Filter animate lib",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -32,26 +32,13 @@
     "react",
     "typescript"
   ],
-  "dependencies": {
+  "peerDependencies": {
+    "@emotion/styled": "*",
     "@brysonandrew/base": "*",
-    "@brysonandrew/filter-animate": "*",
+    "clsx": "*",
+    "framer-motion": "*",
+    "react": "*",
     "@brysonandrew/config": "*",
     "@brysonandrew/animation": "*"
-  },
-  "peerDependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@iconify/react": "^4.1.1",
-    "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0",
-    "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
-    "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.3",
-    "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.3",
-    "react-synthwave": "^1.2.7",
-    "webrtc-adapter": "^8.2.3"
-  },
-  "packageManager": "yarn@3.4.1"
+  }
 }

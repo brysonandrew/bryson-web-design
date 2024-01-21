@@ -8,7 +8,7 @@ import { Dispersion } from './values/Dispersion';
 import { Resistance } from './values/Resistance';
 import { Visibility } from './values/Visibility';
 import { useScrollYBounds } from './useScrollYBounds';
-import { useScroll } from '@brysonandrew/scroll/useScroll';
+import { useScroll } from '@brysonandrew/scroll';
 import { TRect } from '@brysonandrew/base/types/dom/main';
 
 type TProps = TParallaxOptions & {

@@ -8,7 +8,7 @@ import {
   CUSTOM_CURSOR_KEY,
   NONE_CURSOR_KEY,
 } from './config';
-import { useScroll } from '@brysonandrew/scroll/useScroll';
+import { useScroll } from '@brysonandrew/scroll';
 import { useCursor } from '../context/useCursor';
 import { HOVER_KEY_DELIMITER } from '../context/constants';
 

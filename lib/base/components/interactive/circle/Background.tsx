@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
 import { DURATION } from '@brysonandrew/animation/config/constants';
 import { motion } from 'framer-motion';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { resolvePresence } from '@brysonandrew/animation/utils';
 import clsx from 'clsx';
 

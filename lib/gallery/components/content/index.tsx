@@ -13,7 +13,7 @@ import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCur
 import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 type TProps<K extends string> = TSlugProps<K> &
   TClassValueProps &

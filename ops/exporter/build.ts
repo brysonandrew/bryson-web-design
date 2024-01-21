@@ -1,7 +1,7 @@
 import { rollup } from "rollup";
 import type { RollupBuild, OutputOptions } from "rollup";
 import { rollupConfig } from "../common/utils";
-import type { TInput } from "../common/types/exporter";
+import type { TInput } from "../common/types/z-exporter";
 
 export const build = async (inputs: TInput[]) => {
   console.log("build initiated");

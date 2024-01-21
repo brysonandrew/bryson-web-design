@@ -7,7 +7,7 @@ import {
 import type {
   TInput,
   TInputConfig,
-} from '../common/types/exporter';
+} from '../common/types/z-exporter';
 import { initWorkspaces } from '../common/utils/package-json/files';
 import type { TPathRecord } from '../common/types/entries';
 import { ISOMORPHIC_TARGETS } from '../common/utils/exporter/constants';

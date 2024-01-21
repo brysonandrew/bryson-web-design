@@ -2,20 +2,22 @@
   "name": "@brysonandrew/bryson-web-design",
   "version": "7.0.1",
   "description": "Building websites and apps",
-  "main": "src/index.tsx",
+  "main": "src/main.tsx",
   "types": "src/index.d.ts",
   "scripts": {
-    "dev": "vite --config vite.config.ts",
-    "build": "vite build --config vite.config.ts",
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "d": "vite --config vite.config.ts",
+    "b": "vite build --config vite.config.ts",
+    "f": "prettier .",
+    "l": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "screens": "esrun ops/screens/process",
-    "bump": "npm version minor --workspaces",
-    "publish": "npm run bump && npm publish --workspaces",
+    "vw": "npm version minor --ws",
+    "uw": "npm upgrade --ws",
+    "iw": "npm install --ws",
+    "pw": "npm publish --ws",
+    "ew": "esrun ops/exporter/main.ts lib && npm run l",
     "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
-    "clean": "esrun ops/delete/clean.ts",
-    "exporter": "esrun ops/exporter/main.ts lib && npm run lint"
+    "clean": "esrun ops/delete/clean.ts"
   },
   "workspaces": [
     "lib/animation",
@@ -43,7 +45,6 @@
   "bugs": {
     "url": "https://github.com/brysonandrew/brysona.dev/issues"
   },
-  "packageManager": "yarn@3.4.1",
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
     "clsx": "^1.2.1",

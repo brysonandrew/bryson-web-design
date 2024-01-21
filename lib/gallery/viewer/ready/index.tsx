@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/gallery';
 import { ViewerHeader } from './header/ViewerHeader';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -10,7 +10,7 @@ import { TBaseProps } from './types';
 import { useFreezeScrollBar } from '@brysonandrew/hooks/scroll/useFreezeScroll';
 import { useMotionX } from '@brysonandrew/gallery/viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@brysonandrew/gallery/viewer/utils/resolveGalleryWidth';
-import { useGallery } from '../../context/Provider';
+import { useGallery } from '../../context/GalleryProvider';
 
 const Root = styled(motion.div)``;
 
