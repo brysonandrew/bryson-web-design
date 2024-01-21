@@ -3,7 +3,7 @@ import { TItem } from '@brysonandrew/gallery/config/types';
 import { TagLink } from './TagLink';
 import styled from '@emotion/styled';
 import { Brighten } from '@brysonandrew/filter-animate/Brighten';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled.div``;
 

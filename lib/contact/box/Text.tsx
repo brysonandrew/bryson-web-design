@@ -22,7 +22,7 @@ export const Text: FC<TProps> = ({
       {({ ref, inputProps }) => (
         <Input
           ref={ref}
-          className='input'
+          className='input-text'
           type='text'
           autoComplete='off'
           name={name}

@@ -6,7 +6,7 @@ import {
   TDivMotionProps,
 } from '@brysonandrew/base/types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/cursor';
 import { Circle } from '../../components/buttons/Circle';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 

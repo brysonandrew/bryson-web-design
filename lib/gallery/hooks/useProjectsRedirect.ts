@@ -1,4 +1,4 @@
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { PROJECT_KEY } from '@brysonandrew/gallery/config/constants';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';

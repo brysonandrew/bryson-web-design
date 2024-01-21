@@ -41,6 +41,11 @@
     "react-synthwave": "^1.2.7",
     "webrtc-adapter": "^8.2.3"
   },
-  "packageManager": "yarn@3.4.1",
-  "devDependencies": {}
+  "devDependencies": {
+    "rollup": "^3.29.4",
+    "rollup-plugin-ts": "^3.4.5",
+    "rollup-plugin-typescript": "^1.0.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0"
+  }
 }

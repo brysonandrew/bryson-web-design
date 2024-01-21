@@ -5,7 +5,7 @@ import {
   TProps as TIconLinkProps,
 } from '@brysonandrew/base/components/interactive/LinkFillCenter';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
-import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/gallery';
 import { NOOP } from '@brysonandrew/base/constants/functions';
 
 type TProps = TIconLinkProps;

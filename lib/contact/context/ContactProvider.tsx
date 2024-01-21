@@ -7,7 +7,7 @@ import {
 } from '@brysonandrew/contact/context/types';
 import { INIT_CONTACT_STATE , CONTACT} from './constants';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const ContactProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const [contact, setState] = useState(INIT_CONTACT_STATE);

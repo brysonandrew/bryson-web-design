@@ -10,16 +10,12 @@ import { motion, MotionValue } from 'framer-motion';
 import { Speed } from './Speed';
 import { TransformerX } from './TransformerX';
 import { TransformerY } from './TransformerY';
-import {
-  TDirectionProps,
-  TIdProps,
-  TMotionBlurProps,
-} from './config';
+import { TDirectionProps, TIdProps } from './config';
 import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
 } from '../blur/constants';
-import { resolveCompositeKey } from 'lib/base';
+import { resolveCompositeKey } from '@brysonandrew/base';
 import { FilterShell } from '../FilterShell';
 const intensity = MOTION_BLUR_INTENSITY;
 

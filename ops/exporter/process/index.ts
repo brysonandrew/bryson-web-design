@@ -1,18 +1,34 @@
 import glob from 'fast-glob';
 import { readFile } from '@ops/common/utils';
-import { writeFile } from 'fs/promises';
 import { join, parse } from 'path';
-import { PACKAGE_JSON_NAME } from '@ops/common/types';
 import { TPath } from '@ops/common/types/entries';
-const DEP_PREFIX = '@brysonandrew/';
+import { TError } from '@brysonandrew/base';
+import { resolveDeps } from './resolveDeps';
+import {
+  PACKAGE_JSON_NAME,
+  DEP_PREFIX,
+  QUOTE,
+  QUOTE_JSON,
+} from './constants';
+import { writeFile } from 'fs/promises';
+import { writeIndex } from './writeIndex';
 
-export const process = async (values: TPath[]) => {
+export const process = async (targets: TPath[]) => {
   try {
-    for (const target of values) {
+    for (const target of targets) {
       const { name, full } = target;
       const pkgPath = `${full}/${PACKAGE_JSON_NAME}`;
       const pkgStr = readFile(pkgPath);
-      const pkg = JSON.parse(pkgStr);
+      const { dependencies: _, ...pkg } =
+        JSON.parse(pkgStr);
+
+      const version = pkg.version
+        .split('.')
+        .map((v: string, i: number) =>
+          i === 2 ? Number(v) + 1 : v,
+        )
+        .join('.');
+
       if (!pkg) {
         console.log('no pgk', full);
         continue;
@@ -24,30 +40,33 @@ export const process = async (values: TPath[]) => {
 
       let types = {};
       let main = {};
-      const dependencies: Record<string, string> = {};
+      let peerDependencies: Record<string, unknown> = {};
       const indexRows = [];
       const exportRows = [];
 
       for await (const path of paths) {
-        const file = readFile(join(full, path));
-        const parts = file
-          .split(/@brysonandrew\//)
-          .slice(1);
-        parts.forEach((v) => {
-          const endIndex = v.search(/['"/]/);
-          if (endIndex > 0) {
-            const lib = v.slice(0, endIndex);
-            dependencies[`${DEP_PREFIX}${lib}`] = '*';
-          }
+        const filePath = join(full, path);
+        const file = readFile(filePath);
+
+        const deps = resolveDeps({
+          file,
+          name,
+          prefix: DEP_PREFIX,
+          version: '*',
         });
 
-        const { root, dir, name } = parse(path);
+        peerDependencies = {
+          ...peerDependencies,
+          ...deps,
+        };
 
-        if (path.includes('.d.ts')) {
+        const { root, dir, name: pathName } = parse(path);
+
+        if (path.endsWith('.d.ts')) {
           types = { types: path };
           continue;
         }
-        if (join(root, dir, name) === 'index') {
+        if (join(root, dir, pathName) === 'index') {
           const indexPath = `./${path}`;
           main = {
             main: indexPath,
@@ -62,17 +81,23 @@ export const process = async (values: TPath[]) => {
             null,
             2,
           );
-          exportRows.push(`".": ${value}`);
+          exportRows.push(
+            `${QUOTE_JSON}.${QUOTE_JSON}: ${value}`,
+          );
           continue;
         }
         const args = [
           root,
           dir,
-          ...(name === 'index' ? [] : [name]),
+          ...(pathName === 'index' ? [] : [pathName]),
         ];
-        const key = `"./${join(...args)}"`;
+        const key = `${QUOTE_JSON}./${join(
+          ...args,
+        )}${QUOTE_JSON}`;
         indexRows.push(`export * from ${key};`);
-        exportRows.push(`${key}: "./${path}"`);
+        exportRows.push(
+          `${key}: ${QUOTE_JSON}./${path}${QUOTE_JSON}`,
+        );
       }
       const pkgExportsStr = `{${exportRows.join(',')}}`;
       const exports = JSON.parse(pkgExportsStr);
@@ -81,7 +106,8 @@ export const process = async (values: TPath[]) => {
         ...pkg,
         ...main,
         ...types,
-        dependencies,
+        version,
+        peerDependencies,
         exports,
       };
 
@@ -93,41 +119,9 @@ export const process = async (values: TPath[]) => {
 
       writeFile(pkgPath, pkgWithExportsStr);
 
-      const indices = await glob(
-        ['./index.ts', './index.tsx'],
-        {
-          cwd: full,
-        },
-      );
-      let indexStr = '';
-      let indexPath = join(full, 'index.ts');
-
-      const nextIndexStr = indexRows.join('\n');
-      if (indices.length > 0) {
-        indexPath = join(full, indices[0]);
-        indexStr = readFile(indexPath);
-        const exportStartIndex = indexStr.indexOf(
-          'export * from ',
-        );
-        const exportEndIndex = indexStr.lastIndexOf(';');
-
-        if (exportEndIndex > -1 && exportStartIndex > -1) {
-          const indexExportStr = indexStr.slice(
-            exportStartIndex,
-            exportEndIndex,
-          );
-
-          indexStr = indexStr.replace(
-            indexExportStr,
-            nextIndexStr,
-          );
-        } else {
-          indexStr = [indexStr, nextIndexStr].join('\n');
-        }
-      }
-      writeFile(indexPath, indexStr);
+      writeIndex({ indexRows, full });
     }
-  } catch (error: any) {
+  } catch (error: TError) {
     throw Error(error);
   }
 };

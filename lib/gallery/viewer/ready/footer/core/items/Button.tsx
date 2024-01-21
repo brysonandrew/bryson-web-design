@@ -4,13 +4,13 @@ import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
-import { useViewer as useContext } from '@brysonandrew/gallery/viewer/context/useViewer';
+import { useViewer as useContext } from '@brysonandrew/gallery';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
 import { Background } from '@brysonandrew/base/components/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 
 const Root = styled(motion.div)``;

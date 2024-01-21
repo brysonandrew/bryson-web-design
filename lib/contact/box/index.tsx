@@ -28,7 +28,7 @@ export const Box = <T extends HTMLElement>({
       <>
         <motion.div
           layout
-          className='pt-1 w-full md:w-auto'
+          className='box-name'
         >
           <Name title={name} />
         </motion.div>

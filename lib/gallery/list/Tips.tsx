@@ -3,14 +3,14 @@ import {
   resolveCursorKeyFromHoverKey,
 } from '@brysonandrew/cursor/switch/config';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
-import { useCursor } from '@brysonandrew/cursor/context/useCursor';
+import { useCursor } from '@brysonandrew/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@brysonandrew/gallery/viewer/tips/Touch';
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { createPortal } from 'react-dom';
 import { isDesktop } from 'react-device-detect';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 export const Tips = () => {
   const { COLOR, GLOW_BOX, BORDER_RADIUS } = useApp();

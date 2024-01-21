@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
-import { useViewport } from '@brysonandrew/viewport/useViewport';
+import { useViewport } from '@brysonandrew/viewport';
 import { TChildrenElement } from '@brysonandrew/base/types/dom';
 import { motion } from 'framer-motion';
 
@@ -25,7 +25,7 @@ export const Autosize: FC<TProps> = ({
   return (
     <motion.div
       layout
-      className='input-shell overflow-hidden'
+      className='autosize'
     >
       {children(isInit)}
     </motion.div>

@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Background } from './Background';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled(motion.div)``;
 

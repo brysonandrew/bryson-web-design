@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   TAppProps,
   TDefaultStyle,
@@ -11,13 +11,17 @@ import { DEFAULT_STYLE } from './style';
 import { NOOP } from '@brysonandrew/base';
 
 type TProps<S extends TPartialDefaultStyle> = TAppProps<S>;
-export const Provider = <S extends TPartialDefaultStyle>({
+export const AppProvider = <S extends TPartialDefaultStyle>({
   children,
   style,
   ...rest
 }: TProps<S>) => {
   const [isInit, setInit] = useState(false);
   const onInit = () => setInit(true);
+
+  useEffect(() => {
+    onInit();
+  }, []);
 
   type TDefaultKey = keyof TDefaultStyle;
   type TMergedStyle = TDefaultStyle & S;

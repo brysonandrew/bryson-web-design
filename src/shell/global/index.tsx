@@ -10,12 +10,10 @@ import {
 import { TPage, TPageTitle } from '@app/routes/types';
 import { capitalize } from 'lodash';
 import { useCurrParams } from '@brysonandrew/gallery';
-import {
-  Head,
-  TITLE_KEY_DELIMITER,
-  resolveCompositeTitle,
-  TTitlesResolver,
-} from '@brysonandrew/dark-mode';
+import { Head, MonoHead } from '@brysonandrew/dark-mode';
+import { TTitlesResolver } from '@brysonandrew/head';
+const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
+  MonoHead;
 
 type TPath = TPage['path'];
 type TPageValue = TPageTitle | string;

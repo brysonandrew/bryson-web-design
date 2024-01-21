@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import styled from '@emotion/styled';
 import { TDivMotionProps } from '@brysonandrew/base/types/dom';
 import { motion } from 'framer-motion';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled(motion.div)``;
 

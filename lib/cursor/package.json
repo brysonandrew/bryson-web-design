@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.16.0",
+  "version": "6.21.17",
   "description": "Animated cursor",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -11,8 +11,8 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./context/Consumer": "./context/Consumer.tsx",
-    "./context/Provider": "./context/Provider.tsx",
+    "./context/CursorConsumer": "./context/CursorConsumer.tsx",
+    "./context/CursorProvider": "./context/CursorProvider.tsx",
     "./context/constants": "./context/constants.ts",
     "./context/types": "./context/types.ts",
     "./context/useCursor": "./context/useCursor.tsx",
@@ -44,27 +44,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@iconify/react": "^4.1.1",
-    "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0",
-    "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
-    "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.3",
-    "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.3",
-    "react-synthwave": "^1.2.7",
-    "webrtc-adapter": "^8.2.3"
-  },
-  "packageManager": "yarn@3.4.1",
-  "dependencies": {
-    "@brysonandrew/cursor": "*",
-    "@brysonandrew/base": "*",
-    "@brysonandrew/hooks": "*",
     "@brysonandrew/scroll": "*",
+    "react": "*",
+    "framer-motion": "*",
+    "@brysonandrew/base": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/app": "*"
+    "@brysonandrew/hooks": "*",
+    "clsx": "*",
+    "@brysonandrew/app": "*",
+    "@emotion/styled": "*"
   }
 }

@@ -1,4 +1,4 @@
-import { useCursor } from '@brysonandrew/cursor/context/useCursor';
+import { useCursor } from '@brysonandrew/cursor';
 import { GLOBAL_KEY } from './config';
 import { useCursorAnimate } from './useCursorAnimate';
 import { TCursorKey } from '@brysonandrew/cursor/switch/config';

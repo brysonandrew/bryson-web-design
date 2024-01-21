@@ -9,7 +9,7 @@ export type {
   TOutputConfig,
   TInputConfig,
   TInput,
-} from "./exporter";
+} from "./z-exporter";
 
 export {
   PACKAGE_JSON_NAME,
@@ -19,7 +19,7 @@ export {
   KEYS,
   DEFAULT_DEPS,
   DEFAULT_SCRIPTS,
-} from "./exporter";
+} from "./z-exporter";
 
 export type {
   TFileComposerSetValue,

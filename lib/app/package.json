@@ -1,11 +1,11 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.16.0",
+  "version": "6.21.17",
   "description": "App lib",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
-    "./Provider": "./Provider.tsx",
+    "./AppProvider": "./AppProvider.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
@@ -15,12 +15,12 @@
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
     "./hooks/useColorSetRecord": "./hooks/useColorSetRecord.ts",
-    "./style/border-radius": "./style/border-radius.ts",
-    "./style/color": "./style/color.ts",
-    "./style": "./style/index.ts",
     "./layout/Active": "./layout/Active.tsx",
     "./layout/GlowSecondaryAccent": "./layout/GlowSecondaryAccent.tsx",
     "./layout/TextureGlow": "./layout/TextureGlow.tsx",
+    "./style/border-radius": "./style/border-radius.ts",
+    "./style/color": "./style/color.ts",
+    "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/resolveComponent": "./utils/resolveComponent.tsx",
     "./hooks/layout/types": "./hooks/layout/types.ts",
@@ -39,26 +39,11 @@
     "react",
     "typescript"
   ],
-  "dependencies": {
-    "@brysonandrew/base": "*",
-    "@brysonandrew/config": "*",
-    "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/app": "*"
-  },
   "peerDependencies": {
-    "@emailjs/browser": "^3.12.1",
-    "@iconify/react": "^4.1.1",
-    "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0",
-    "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
-    "react-helmet-async": "^1.3.0",
-    "react-intersection-observer": "^9.5.3",
-    "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.3",
-    "react-synthwave": "^1.2.7",
-    "webrtc-adapter": "^8.2.3"
-  },
-  "packageManager": "yarn@3.4.1"
+    "@brysonandrew/base": "*",
+    "react": "*",
+    "clsx": "*",
+    "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/config": "*"
+  }
 }

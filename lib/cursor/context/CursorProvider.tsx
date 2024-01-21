@@ -6,7 +6,7 @@ import { THover } from './types';
 import { resolveHoverKeyVariations } from '../config';
 import { TCursorOffset } from '../hooks/useCursorOffset';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const CursorProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isCursorReady, setCursorReady] = useState(

@@ -21,7 +21,7 @@ export const Contact: FC<TProps> = ({
 
   return (
     <Root
-      className='column-stretch gap-box-2 mt-1'
+      className='root'
       initial={false}
       ref={ref}
       onSubmit={(event) => {
@@ -30,7 +30,7 @@ export const Contact: FC<TProps> = ({
         }
       }}
     >
-      <div className='column-stretch gap-box'>
+      <div className='inputs'>
         <Text
           name='name'
           disabled={isDisabled}
@@ -59,22 +59,25 @@ export const Contact: FC<TProps> = ({
   );
 };
 
-export * from "./box/Clear";
-export * from "./box/Name";
-export * from "./box/Shell";
-export * from "./box/Submit";
-export * from "./box/Text";
-export * from "./box";
-export * from "./context/Consumer";
-export * from "./context/Provider";
-export * from "./context/constants";
-export * from "./context/types";
-export * from "./context/useContact";
-export * from "./utils/resolveButtonValue";
-export * from "./hooks/useAutoFocus";
-export * from "./hooks/useFocus";
-export * from "./hooks/useForm";
-export * from "./hooks/useInput";
-export * from "./box/textarea";
-export * from "./box/textarea/autosize";
-export * from "./box/textarea/autosize/useAutosize";
+export * from './box/Clear';
+export * from './box/Name';
+export * from './box/Shell';
+export * from './box/Submit';
+export * from './box/Text';
+export * from './box';
+export * from './context/ContactConsumer';
+export * from './context/ContactProvider';
+export * from './context/constants';
+export * from './context/types';
+export * from './context/useContact';
+export * from './hooks/useAutoFocus';
+export * from './hooks/useFocus';
+export * from './hooks/useForm';
+export * from './hooks/useInput';
+export * from './variants/minimalist';
+export * from './variants/texture';
+export * from './utils/resolveButtonValue';
+export * from './box/textarea';
+export * from './box/textarea/autosize';
+export * from './box/textarea/autosize/useAutosize';
+

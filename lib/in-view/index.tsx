@@ -52,4 +52,5 @@ export const InView = ({
   );
 };
 
-export * from "./Replacer";
+export * from './Replacer';
+
