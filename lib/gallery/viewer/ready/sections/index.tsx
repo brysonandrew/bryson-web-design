@@ -1,13 +1,15 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY_Y_SHIFT } from '@brysonandrew/animation/config/constants';
+import { PRESENCE_OPACITY_Y_SHIFT } from '@brysonandrew/animation';
 import { TBaseProps } from '../types';
 import { Control } from './Control';
-import { useHoverKey } from '@brysonandrew/cursor';
-import { useViewport } from '@brysonandrew/viewport/useViewport';
+import {
+  useHoverKey,
+  NONE_CURSOR_KEY,
+} from '@brysonandrew/cursor';
+import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
-import { NONE_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 
 const Root = styled(motion.div)``;
 

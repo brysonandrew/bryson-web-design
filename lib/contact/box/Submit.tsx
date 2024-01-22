@@ -6,14 +6,14 @@ import { useHoverKey } from '@brysonandrew/cursor';
 import {
   EFFECT_ANIMATE_TRANSITION,
   resolveParentAnimateConfig,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import { useApp } from '@brysonandrew/app';
 import { resolveButtonValue } from '../utils/resolveButtonValue';
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BORDER_RADIUS, Glow, onSound } = useApp();
+  const { BORDER_RADIUS, Glow, Back, onSound } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -46,7 +46,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       }}
       {...handlers}
     >
-      {Glow && <Glow.Back />}
+      {Glow ? <Glow.Back /> : <Back/>}
       <input
         className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'

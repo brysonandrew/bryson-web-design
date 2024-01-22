@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
-import { MOTION_CONFIG } from '@brysonandrew/animation/config/constants';
+import { MOTION_CONFIG } from '@brysonandrew/animation';
 import { Boundary } from '@brysonandrew/base/boundary';
 import { ROUTES } from '@app/routes';
 // import { init as initServiceWorker } from '@app/service-worker/init';

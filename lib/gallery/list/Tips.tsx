@@ -2,7 +2,7 @@ import {
   PROJECT_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
 } from '@brysonandrew/cursor/switch/config';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { useCursor } from '@brysonandrew/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@brysonandrew/gallery/viewer/tips/Touch';

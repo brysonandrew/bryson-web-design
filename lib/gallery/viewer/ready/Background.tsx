@@ -1,4 +1,4 @@
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';

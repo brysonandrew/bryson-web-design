@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.21.23",
+  "version": "6.21.29",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -19,6 +19,7 @@
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/resolveComponent": "./utils/resolveComponent.tsx",
     "./layout/glow/Back": "./layout/glow/Back.tsx",
+    "./layout/glow/Glow": "./layout/glow/Glow.tsx",
     "./layout/glow/Marker": "./layout/glow/Marker.tsx",
     "./layout/glow": "./layout/glow/index.tsx"
   },

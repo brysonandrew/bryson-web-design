@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.21.23",
+  "version": "6.21.29",
   "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,9 +10,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
-    "./utils": "./utils/index.ts"
+    "./types": "./types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -27,7 +25,5 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {
-    "framer-motion": "*"
-  }
+  "peerDependencies": {}
 }

@@ -10,7 +10,7 @@ import { TITLE_HEIGHT } from '@brysonandrew/base/components/layout/space/TitleSp
 import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
 import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/animation/config/constants';
+import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 

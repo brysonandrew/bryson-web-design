@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@brysonandrew/contact';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation/config/constants';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { TFormKey } from '@brysonandrew/contact/context/types';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@brysonandrew/app';

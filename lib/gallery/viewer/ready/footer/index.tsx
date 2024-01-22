@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import {
   DURATION,
   PRESENCE_Y,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { Core } from './core';
 import { TBaseProps } from '../types';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';

@@ -4,7 +4,7 @@ import { type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
-import { DURATION } from '@brysonandrew/animation/config/constants';
+import { DURATION } from '@brysonandrew/animation';
 import { ThickLine } from '@brysonandrew/base/components/layout/line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import { TLinkMotionProps } from '@brysonandrew/types';

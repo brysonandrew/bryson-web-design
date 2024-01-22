@@ -1,4 +1,6 @@
 export * from './type';
+export * from './icon';
+export * from './types';
 export * from './constants/base';
 export * from './constants/clipboard';
 export * from './constants/contact';
@@ -12,8 +14,6 @@ export * from './constants/inputs';
 export * from './constants/links';
 export * from './constants/shop';
 export * from './constants/text';
-export * from './icon';
-export * from './types';
 
 
 

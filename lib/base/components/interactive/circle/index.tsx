@@ -4,7 +4,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
