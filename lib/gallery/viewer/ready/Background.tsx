@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { useApp } from '@brysonandrew/app';
 
 const Root = styled(motion.div)`
   backdrop-filter: blur(10px);
@@ -11,14 +10,9 @@ const Root = styled(motion.div)`
 `;
 
 export const Background: FC = () => {
-  const { COLOR } = useApp();
-
   return (
     <Root
-      className={clsx('absolute inset-0')}
-      style={{
-        backgroundColor: COLOR['gray'],
-      }}
+      className={clsx('absolute inset-0 dark:bg-black-04 bg-white-04')}
       {...PRESENCE_OPACITY}
     />
   );
