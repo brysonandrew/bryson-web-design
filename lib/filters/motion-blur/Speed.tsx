@@ -1,6 +1,6 @@
 import type { MotionValue } from 'framer-motion';
 import { useVelocity, useTransform } from 'framer-motion';
-import { TChildren } from '@brysonandrew/base/types/dom';
+import { TChildren } from '@brysonandrew/types/dom';
 import { TTransformerProps } from './config';
 
 type TProps = {

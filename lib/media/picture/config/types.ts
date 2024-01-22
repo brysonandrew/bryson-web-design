@@ -1,4 +1,4 @@
-import { TSource } from '@brysonandrew/base';
+import { TSource } from '@brysonandrew/types';
 import { OutputInfo, Metadata } from 'sharp';
 import { EXTS } from './constants';
 

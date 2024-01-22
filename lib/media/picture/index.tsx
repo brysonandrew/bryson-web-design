@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
-import { TClassValueProps, TImgMotionProps, TSource } from '@brysonandrew/base/types/dom';
+import { TClassValueProps, TImgMotionProps, TSource } from '@brysonandrew/types/dom';
 import { TMediaRecord } from './config/types';
 
 const Root = styled.picture``;

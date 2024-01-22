@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": "..",
-    "target": "esnext",
+    "target": "ESNext",
     "types": ["node"],
     "jsx": "react",
     "esModuleInterop": true

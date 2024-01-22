@@ -7,10 +7,11 @@ import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/const
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';
-import { useApp } from '@brysonandrew/app/useApp';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants';
-import { formatUrl } from '@brysonandrew/base/utils/format/url';
+import { useApp } from '@brysonandrew/app';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/constants';
+import { formatUrl } from '@brysonandrew/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
+import { Shell } from './Shell';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,
@@ -19,7 +20,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   glow,
   ...props
 }) => {
-  const { Texture, Glow, BORDER_RADIUS, COLOR } = useApp();
+  const { Glow, BORDER_RADIUS, COLOR } = useApp();
   const address = formatUrl(href);
 
   const { isHover, handlers } = useHoverKey(
@@ -42,29 +43,23 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
           layoutId={title}
         />
       )}
-      <Glow
-        drop={8}
-        color={COLOR.accent}
-        initial={false}
-        value={glow}
-      >
-        <Texture />
-      </Glow>
-      <Glow
-        drop={6}
-        color={COLOR.secondary}
-        initial={false}
-        animate={{ opacity: isHover ? 1 : 0.05 }}
-      >
-        <Texture />
-      </Glow>
-      <Glow
-        text={1}
-        drop={2}
-        initial={false}
-        color={COLOR.white}
-        animate={{ opacity: isHover ? 1 : 0.05 }}
-      >
+      {Glow && (
+        <>
+          <Glow.Back
+            drop={8}
+            color={COLOR.accent}
+            initial={false}
+            value={glow}
+          />
+          <Glow.Back
+            drop={6}
+            color={COLOR.secondary}
+            initial={false}
+            animate={{ opacity: isHover ? 1 : 0.05 }}
+          />
+        </>
+      )}
+      <Shell isHover={isHover}>
         <a
           className={clsx(
             'inline-flex relative pl-4 pr-3 py-3',
@@ -77,7 +72,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
           <P1_5 />
           <h4 className='title mt-0.75'>{title}</h4>
         </a>
-      </Glow>
+      </Shell>
     </motion.div>
   );
 };

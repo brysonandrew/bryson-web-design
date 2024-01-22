@@ -6,7 +6,7 @@ import { Title } from './Title';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils';
+import { resolveInteractiveLabels } from '@brysonandrew/utils';
 import { APP_DESCRIPTION } from '@app/base/constants';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
 

@@ -1,8 +1,8 @@
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import {
   TChildrenPartialProps,
   TClassValueProps,
-} from '@brysonandrew/base/types/dom/main';
+} from '@brysonandrew/types/dom/main';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -43,3 +43,7 @@ export * from './utils/blur';
 export * from './utils/brighten';
 export * from './utils/glow';
 export * from './utils/invert';
+
+
+
+

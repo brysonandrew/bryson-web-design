@@ -3,7 +3,7 @@ import { MOTION_CONFIG } from '@brysonandrew/animation/config/constants';
 import { FC } from 'react';
 import { ThinLine } from '.';
 import clsx from 'clsx';
-import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/types/dom/main';
 
 type TProps = { delay?: number } & TClassValueProps;
 export const ThinLineGrow: FC<TProps> = ({

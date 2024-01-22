@@ -13,7 +13,7 @@ import { resolveButtonValue } from '../utils/resolveButtonValue';
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BORDER_RADIUS, TextureGlow, onSound } = useApp();
+  const { BORDER_RADIUS, Glow, onSound } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -46,7 +46,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       }}
       {...handlers}
     >
-      <TextureGlow />
+      {Glow && <Glow.Back />}
       <input
         className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'

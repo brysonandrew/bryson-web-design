@@ -1,0 +1,49 @@
+{
+  "name": "@brysonandrew/icons",
+  "version": "6.21.23",
+  "description": "Icons library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./type": "./type.ts",
+    "./constants/base": "./constants/base.ts",
+    "./constants/clipboard": "./constants/clipboard.ts",
+    "./constants/contact": "./constants/contact.ts",
+    "./constants/crud": "./constants/crud.ts",
+    "./constants/directions": "./constants/directions.ts",
+    "./constants/gallery": "./constants/gallery.ts",
+    "./constants/general": "./constants/general.ts",
+    "./constants/image": "./constants/image.ts",
+    "./constants": "./constants/index.ts",
+    "./constants/inputs": "./constants/inputs.ts",
+    "./constants/links": "./constants/links.ts",
+    "./constants/shop": "./constants/shop.ts",
+    "./constants/text": "./constants/text.ts",
+    "./icon": "./icon/index.tsx",
+    "./types": "./types/index.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@iconify/react": "*",
+    "@brysonandrew/types": "*",
+    "react": "*",
+    "clsx": "*"
+  }
+}

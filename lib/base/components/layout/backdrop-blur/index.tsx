@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom';
+import { TDivMotionProps } from '@brysonandrew/types/dom';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 
@@ -11,7 +11,16 @@ export const BackdropBlur: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { BORDER_RADIUS, Texture, Glow, COLOR } = useApp();
+  const { BORDER_RADIUS, Back, Glow, COLOR } = useApp();
+
+  const back = (
+    <Back
+      classValue='opacity-50'
+      style={{
+        borderRadius: BORDER_RADIUS.XL,
+      }}
+    />
+  );
 
   return (
     <Root
@@ -20,20 +29,19 @@ export const BackdropBlur: FC<TProps> = ({
       {...props}
     >
       <>
-        <Glow
-          color={COLOR.accent}
-          box={2}
-          style={{
-            borderRadius: BORDER_RADIUS.XL,
-          }}
-        >
-          <Texture
-            classValue='opacity-50'
+        {Glow ? (
+          <Glow.Shell
+            color={COLOR.accent}
+            box={2}
             style={{
               borderRadius: BORDER_RADIUS.XL,
             }}
-          />
-        </Glow>
+          >
+            {back}
+          </Glow.Shell>
+        ) : (
+          <>{back}</>
+        )}
         <div className='relative'>{children}</div>
       </>
     </Root>

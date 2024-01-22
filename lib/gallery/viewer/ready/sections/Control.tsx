@@ -32,7 +32,7 @@ export const Control: FC<TProps> = ({
 }) => {
   const name = useCurrName();
 
-  const isActive = index + 1 === Number(name);
+  const isMarker = index + 1 === Number(name);
 
   const { scroll } = useScroll();
   const containerDimensions = {
@@ -49,7 +49,7 @@ export const Control: FC<TProps> = ({
       >
         {(image) => (
           <>
-            {isHover && image && isDesktop && isActive && (
+            {isHover && image && isDesktop && isMarker && (
               <Zoom
                 key={mediaRecord.src}
                 index={index}

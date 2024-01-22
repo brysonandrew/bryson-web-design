@@ -2,16 +2,16 @@ import glob from 'fast-glob';
 import { readFile } from '@ops/common/utils';
 import { join, parse } from 'path';
 import { TPath } from '@ops/common/types/entries';
-import { TError } from '@brysonandrew/base';
 import { resolveDeps } from './resolveDeps';
 import {
   PACKAGE_JSON_NAME,
   DEP_PREFIX,
-  QUOTE,
   QUOTE_JSON,
 } from './constants';
 import { writeFile } from 'fs/promises';
 import { writeIndex } from './writeIndex';
+import { TError } from '@brysonandrew/types';
+import { kebabToTitle } from '@brysonandrew/utils';
 
 export const process = async (targets: TPath[]) => {
   try {
@@ -106,6 +106,7 @@ export const process = async (targets: TPath[]) => {
         ...pkg,
         ...main,
         ...types,
+        description: `${kebabToTitle(name)} library`,
         version,
         peerDependencies,
         exports,

@@ -1,30 +1,26 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.21.17",
-  "description": "App lib",
+  "version": "6.21.23",
+  "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
-    "./AppProvider": "./AppProvider.tsx",
+    "./Context": "./Context.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./useApp": "./useApp.tsx",
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./hooks/useColorSetRecord": "./hooks/useColorSetRecord.ts",
-    "./layout/Active": "./layout/Active.tsx",
-    "./layout/GlowSecondaryAccent": "./layout/GlowSecondaryAccent.tsx",
-    "./layout/TextureGlow": "./layout/TextureGlow.tsx",
-    "./style/border-radius": "./style/border-radius.ts",
-    "./style/color": "./style/color.ts",
+    "./layout/types": "./layout/types.ts",
+    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
     "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/resolveComponent": "./utils/resolveComponent.tsx",
-    "./hooks/layout/types": "./hooks/layout/types.ts",
-    "./hooks/layout/useLayoutRecord": "./hooks/layout/useLayoutRecord.tsx"
+    "./layout/glow/Back": "./layout/glow/Back.tsx",
+    "./layout/glow/Marker": "./layout/glow/Marker.tsx",
+    "./layout/glow": "./layout/glow/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -41,9 +37,11 @@
   ],
   "peerDependencies": {
     "@brysonandrew/base": "*",
+    "lodash": "*",
     "react": "*",
-    "clsx": "*",
     "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/config": "*"
+    "@brysonandrew/config": "*",
+    "framer-motion": "*",
+    "clsx": "*"
   }
 }

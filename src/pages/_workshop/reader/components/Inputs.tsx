@@ -1,8 +1,8 @@
-import { I } from '@brysonandrew/base/icons/icon';
+import { I } from '@brysonandrew/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
 
 const inputCss = css``;

@@ -8,7 +8,7 @@ import { TPart } from '@pages/pricing/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Circle } from './Circle';
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = {
   children: TPart;

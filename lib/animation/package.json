@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.21.17",
-  "description": "Animation",
+  "version": "6.21.23",
+  "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

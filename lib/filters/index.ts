@@ -2,10 +2,10 @@ export * from './FilterShell';
 export * from './resolveFilter';
 export * from './aura/Target';
 export * from './aura';
-export * from './config/types';
 export * from './blur/Blur1';
 export * from './blur/constants';
 export * from './blur';
+export * from './config/types';
 export * from './displacement/config';
 export * from './displacement';
 export * from './motion-blur/Speed';
@@ -15,4 +15,8 @@ export * from './motion-blur/config';
 export * from './motion-blur';
 export * from './config/constants';
 export * from './config/constants/presets';
+
+
+
+
 

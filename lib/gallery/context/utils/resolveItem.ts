@@ -2,7 +2,7 @@ import {
   TInitItem,
   TItem,
 } from '@brysonandrew/gallery/config/types';
-import { titleToKebab } from '@brysonandrew/base/utils/format';
+import { titleToKebab } from '@brysonandrew/utils/format';
 
 export const resolveItem = <
   T extends string,

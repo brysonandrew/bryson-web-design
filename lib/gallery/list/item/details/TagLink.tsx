@@ -3,14 +3,14 @@ import {
   TSlugProps,
   TTag,
 } from '@brysonandrew/gallery/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TAnchorMotionProps } from '@brysonandrew/types/dom/motion';
 import { useCursor, resolveCompositeHoverKey, HOVER_KEY_DELIMITER } from '@brysonandrew/cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/base/icons/constants/links';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
-import { formatUrl } from '@brysonandrew/base/utils/format/url';
+import { formatUrl } from '@brysonandrew/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
 
 type TProps = Required<TTag> &

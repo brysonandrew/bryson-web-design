@@ -13,11 +13,11 @@ export const SHORTCUTS: StaticShortcutMap = {
   'title-base': 'font-normal c-gap-0_006725',
   'title-header': 'title-base uppercase',
   'title-header-active': 'text-title title-header',
-  'title-main': 'text-title title-base text-2xl capitalize',
+  'title-main': 'text-title title-base text-2xl',
   'title-page':
     'relative uppercase text-3xl text-shadow-inherit px-2 md:text-4xl xl:px-4',
   'title-home':
-    'title-page uppercase c-gap-0_0675 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl',
+    'title-page uppercase c-gap-0_0675 text-5xl sm:text-6xl lg:text-6.5xl xl:text-8xl',
   'title-section':
     'relative text-xl text-shadow-inherit c-gap-0_025 md:text-2xl',
 };

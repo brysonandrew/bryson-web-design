@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '../../../lib/base';
+import { TTTitleToKebab } from '@brysonandrew/types';
 import { SECTION_RECORD } from './constants/index-sections';
 import { PAGE_TITLES } from './constants/pages';
 

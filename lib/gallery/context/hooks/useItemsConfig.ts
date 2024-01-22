@@ -3,7 +3,7 @@ import {
   TItem,
   TItems,
 } from '@brysonandrew/gallery/config/types';
-import { TTTitleToKebab } from '@brysonandrew/base/types/transformers/format/title';
+import { TTTitleToKebab } from '@brysonandrew/types/transformers/format/title';
 import { useMemo } from 'react';
 import { TItemsConfig } from '../config/types';
 import { resolveItem } from '../utils/resolveItem';

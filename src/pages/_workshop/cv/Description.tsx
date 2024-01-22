@@ -1,4 +1,4 @@
-import { useApp } from '@brysonandrew/app/useApp';
+import { useApp } from '@brysonandrew/app';
 import { DESCRIPTION_PARAGRAPHS } from './copy';
 
 export const Description = () => {

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { TChildrenString } from '@brysonandrew/base/types/dom';
+import { TChildrenString } from '@brysonandrew/types/dom';
 import { motion } from 'framer-motion';
 import { Animation } from '@brysonandrew/base/components/layout/typography/animation';
 

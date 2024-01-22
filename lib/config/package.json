@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/config",
-  "version": "6.21.17",
-  "description": "Config",
+  "version": "6.21.23",
+  "description": "Config library",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,10 +15,6 @@
     "./color/types": "./color/types.ts",
     "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
     "./color/constants": "./color/constants/index.ts",
-    "./color/constants/grayscale/black": "./color/constants/grayscale/black.ts",
-    "./color/constants/grayscale/gray": "./color/constants/grayscale/gray.ts",
-    "./color/constants/grayscale": "./color/constants/grayscale/index.ts",
-    "./color/constants/grayscale/white": "./color/constants/grayscale/white.ts",
     "./color/utils/resolveColor": "./color/utils/resolveColor.ts",
     "./color/utils/resolveColorOpacityRange": "./color/utils/resolveColorOpacityRange.ts",
     "./color/utils/resolveColorRecord": "./color/utils/resolveColorRecord.ts",
@@ -31,6 +27,10 @@
     "./color/utils/rgbToOpacityRangeRecord": "./color/utils/rgbToOpacityRangeRecord.ts",
     "./color/utils/rgbToVarRecord": "./color/utils/rgbToVarRecord.ts",
     "./color/utils/varRgb": "./color/utils/varRgb.ts",
+    "./color/constants/grayscale/black": "./color/constants/grayscale/black.ts",
+    "./color/constants/grayscale/gray": "./color/constants/grayscale/gray.ts",
+    "./color/constants/grayscale": "./color/constants/grayscale/index.ts",
+    "./color/constants/grayscale/white": "./color/constants/grayscale/white.ts",
     "./color/constants/main": "./color/constants/main/index.ts",
     "./color/utils/glow/resolveBoxShadow": "./color/utils/glow/resolveBoxShadow.ts",
     "./color/utils/glow/resolveDropShadow": "./color/utils/glow/resolveDropShadow.ts",
@@ -50,6 +50,6 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/base": "*"
+    "@brysonandrew/types": "*"
   }
 }

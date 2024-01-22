@@ -4,7 +4,7 @@ import { Tags } from './Tags';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery';
 
 const Root = styled(motion.div)``;

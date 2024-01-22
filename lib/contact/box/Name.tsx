@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import { TTitleProps } from '@brysonandrew/base/types/dom';
+import { TTitleProps } from '@brysonandrew/types/dom';
+import { motion } from 'framer-motion';
 
-const Root = styled.div``;
+const Root = styled(motion.div)``;
 
 type TProps = TTitleProps;
 export const Name: FC<TProps> = ({ title }) => {
   return (
-    <Root className='name'>
+    <Root layout className='name'>
       <h4 className='name-text'>{title}</h4>
     </Root>
   );

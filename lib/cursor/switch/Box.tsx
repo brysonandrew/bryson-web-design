@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
 import { resolvePresence } from '@brysonandrew/animation/utils';
-import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { useCursor } from '@brysonandrew/cursor';
 import {
   DURATION_MID,
@@ -21,8 +21,9 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { Texture, Glow, BORDER_RADIUS, COLOR } = useApp();
+  const { Back, Glow, BORDER_RADIUS, COLOR } = useApp();
   const { cursorLabel } = useCursor();
+  const C = Glow?.Back;
 
   return (
     <motion.div
@@ -51,13 +52,7 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
-      <Glow
-        box={4}
-        color={COLOR.accent}
-        {...PRESENCE_OPACITY}
-      >
-        <Texture />
-      </Glow>
+      {Glow ? <Glow.Back /> : <Back />}
       {children}
     </motion.div>
   );

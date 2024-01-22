@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
-import { I } from '@brysonandrew/base/icons/icon';
-import { OFFLINE_ICON } from '@brysonandrew/base/icons/constants/base';
+import { I } from '@brysonandrew/icons/icon';
+import { OFFLINE_ICON } from '@brysonandrew/icons/constants/base';
 
 export const Offline: FC = () => {
   return (

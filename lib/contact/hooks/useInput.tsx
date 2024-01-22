@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { TFormKey } from '../context/types';
-import { useContact } from '@brysonandrew/contact/context/useContact';
+import { useContact } from '@brysonandrew/contact';
+import { useApp } from '@brysonandrew/app';
 
 type TConfig = {
   name: TFormKey;
@@ -9,6 +10,7 @@ export const useInput = <T extends HTMLElement>({
   name,
 }: TConfig) => {
   const ref = useRef<T | null>(null);
+  const { BORDER_RADIUS } = useApp();
   const input = ref.current;
   const { focusKey, form } = useContact();
   const isFocused = focusKey === name;
@@ -24,6 +26,7 @@ export const useInput = <T extends HTMLElement>({
     },
     inputProps: {
       value,
+      style: { borderRadius: BORDER_RADIUS.MD },
     },
   };
 };

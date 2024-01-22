@@ -8,7 +8,7 @@ import { workspaces } from './workspaces';
     const workspacePath = init();
     const targets = find(workspacePath);
     const values = Object.values(targets);
-    workspaces(values);
+    await workspaces(values);
     process(values);
   } catch (error) {
     console.log('Exporter - something went wrong: ', error);

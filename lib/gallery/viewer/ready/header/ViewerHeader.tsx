@@ -4,7 +4,7 @@ import { Content } from '../../../components/content';
 import {
   TChildrenProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { NOOP } from '@brysonandrew/base/constants/functions';
 import { isDesktop } from 'react-device-detect';

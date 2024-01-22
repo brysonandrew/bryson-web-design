@@ -53,3 +53,22 @@ export const GalleryProvider = <
     </CONTEXT.Provider>
   );
 };
+
+type TConsumerProps<
+  T extends string,
+  K extends string,
+  R extends object,
+> = {
+  children(value: TValue<T, K, R>): JSX.Element;
+};
+export const Consumer = <
+  T extends string,
+  K extends string,
+  R extends object,
+>({
+  children,
+}: TConsumerProps<T, K, R>) => {
+  const CONTEXT = initContext<T, K, R>();
+
+  return <CONTEXT.Consumer>{children}</CONTEXT.Consumer>;
+};

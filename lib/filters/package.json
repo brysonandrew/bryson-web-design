@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/filters",
-  "version": "6.21.17",
-  "description": "Filters lib",
+  "version": "6.21.23",
+  "description": "Filters library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
@@ -14,10 +14,10 @@
     "./resolveFilter": "./resolveFilter.ts",
     "./aura/Target": "./aura/Target.tsx",
     "./aura": "./aura/index.tsx",
-    "./config/types": "./config/types.ts",
     "./blur/Blur1": "./blur/Blur1.tsx",
     "./blur/constants": "./blur/constants.ts",
     "./blur": "./blur/index.tsx",
+    "./config/types": "./config/types.ts",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
     "./motion-blur/Speed": "./motion-blur/Speed.tsx",
@@ -42,11 +42,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/base": "*",
+    "@brysonandrew/types": "*",
     "@brysonandrew/filter-animate": "*",
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*",
-    "react": "*"
+    "react": "*",
+    "@brysonandrew/utils": "*"
   }
 }

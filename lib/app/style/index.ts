@@ -1,11 +1,17 @@
-import { BASE_GLOW_RECORD } from '@brysonandrew/config';
-import { BORDER_RADIUS } from './border-radius';
-import { COLOR } from './color';
+import {
+  BASE_COLOR_RECORD,
+  BASE_GLOW_RECORD,
+} from '@brysonandrew/config';
 
 export const DEFAULT_STYLE = {
-  BORDER_RADIUS,
-  COLOR,
+  BORDER_RADIUS: {
+    SM: 0,
+    MD: 0,
+    LG: 0,
+    XL: 0,
+  },
+  COLOR: BASE_COLOR_RECORD,
   GRADIENT: {},
   GLOW_DROP: BASE_GLOW_RECORD.drop,
   GLOW_BOX: BASE_GLOW_RECORD.box,
-} as const;
+};

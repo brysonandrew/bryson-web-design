@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import { useContact } from '@brysonandrew/contact';
 import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation/config/constants';
 import { TFormKey } from '@brysonandrew/contact/context/types';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@brysonandrew/app';
-import { TButtonMotionProps } from '@brysonandrew/base/types/dom';
-import { CROSS_ICON, I } from '@brysonandrew/base';
+import { TButtonMotionProps } from '@brysonandrew/types/dom';
+import { CROSS_ICON, I } from '@brysonandrew/icons';
 
 const Root = styled.div``;
 
@@ -46,7 +46,7 @@ export const Clear: FC<TProps> = ({
         style={{ borderRadius: BORDER_RADIUS.XL }}
         {...props}
       >
-        <I icon={CROSS_ICON} />
+        <I classValue='clear-icon' icon={CROSS_ICON} />
       </motion.button>
     </Root>
   );

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/scroll",
-  "version": "6.21.17",
-  "description": "Scroll lib",
+  "version": "6.21.23",
+  "description": "Scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {

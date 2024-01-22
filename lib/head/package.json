@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/head",
-  "version": "6.21.17",
-  "description": "Head lib",
+  "version": "6.21.23",
+  "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {

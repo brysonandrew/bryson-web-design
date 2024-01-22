@@ -1,4 +1,4 @@
-import { TDivProps } from '@brysonandrew/base/types/dom';
+import { TDivProps } from '@brysonandrew/types/dom';
 import { FC } from 'react';
 import { Rect } from './Rect';
 

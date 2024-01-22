@@ -8,3 +8,9 @@ export * from './context/SoundProvider';
 export * from './context/constants';
 export * from './context';
 export * from './context/types';
+export * from './sound/VolumeOff';
+export * from './sound/VolumeOn';
+
+
+
+

@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
 import { useViewer as useContext } from '@brysonandrew/gallery';
-import { resolveActiveIndex } from '../utils/resolveActiveIndex';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery/viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../ready/types';
 import { DURATION_MID } from '@brysonandrew/animation/config/constants';
 import { useX } from './motion/useX';
 import { resolveTo } from '../utils/resolveTo';
+import { resolveMarkerIndex } from '../utils/resolveActiveIndex';
 
 type TConfig = Pick<
   TBaseProps,
@@ -30,7 +30,7 @@ export const useDrag = ({
   const handleComplete = onMotionBlurEnd;
   const handleDragTransitionEnd = () => {
     const x = motionX.get();
-    const activeIndex = resolveActiveIndex({
+    const activeIndex = resolveMarkerIndex({
       count: mediaRecords.length,
       x,
       width,

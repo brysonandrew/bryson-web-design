@@ -2,7 +2,7 @@ import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import {
   IntersectionOptions,
   useInView,
@@ -53,4 +53,8 @@ export const InView = ({
 };
 
 export * from './Replacer';
+
+
+
+
 

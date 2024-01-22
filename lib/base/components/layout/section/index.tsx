@@ -5,7 +5,7 @@ import {
   TChildren,
   TChildrenString,
   TDivProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import clsx, { ClassValue } from 'clsx';
 import { P16Y } from '@brysonandrew/base/components/layout/space/P16Y';
 

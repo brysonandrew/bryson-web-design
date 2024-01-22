@@ -5,7 +5,7 @@ import {
   TBaseConfig,
   TVisibilityRange,
 } from '../../config';
-import { TChildren } from '@brysonandrew/base/types/dom/main';
+import { TChildren } from '@brysonandrew/types/dom/main';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue<number>): TChildren;

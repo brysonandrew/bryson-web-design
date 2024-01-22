@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TChildren } from '@brysonandrew/base/types';
+import { TChildren } from '@brysonandrew/types';
 
 type TProps = { children: TChildren };
 export const List: FC<TProps> = ({ children }) => {

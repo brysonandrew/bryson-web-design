@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { HTMLProps } from 'react';
 
 export type TSpaceProps = Omit<

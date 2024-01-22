@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.21.17",
-  "description": "In view lib",
+  "version": "6.21.23",
+  "description": "In View library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
@@ -28,7 +28,7 @@
   "peerDependencies": {
     "react": "*",
     "react-device-detect": "*",
-    "@brysonandrew/base": "*",
+    "@brysonandrew/types": "*",
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*"

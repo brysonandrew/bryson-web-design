@@ -1,5 +1,5 @@
-import { I } from '@brysonandrew/base/icons/icon';
-import { IMAGE_ICON } from '@brysonandrew/base/icons/constants';
+import { I } from '@brysonandrew/icons/icon';
+import { IMAGE_ICON } from '@brysonandrew/icons/constants';
 import { FC, PropsWithChildren } from 'react';
 import { TextLines } from '../../../skeleton/TextLines';
 import { Shell } from './Shell';

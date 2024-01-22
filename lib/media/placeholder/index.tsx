@@ -6,13 +6,13 @@ import {
   IMAGE_PLACEHOLDER_ID,
   PLACEHOLDER_LAYOUT_ID,
 } from '@brysonandrew/media/placeholder/config/constants';
-import { resolveUrlId } from '@brysonandrew/base/utils/attributes/resolveUrlId';
+import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './utils/resolveGradientStops';
 import clsx from 'clsx';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import { DURATION_VERY_SLOW } from '@brysonandrew/animation/config/constants';
 
 export const Root = styled(motion.div)``;

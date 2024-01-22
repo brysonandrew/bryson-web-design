@@ -1,4 +1,4 @@
-import { I } from '@brysonandrew/base/icons/icon';
+import { I } from '@brysonandrew/icons/icon';
 import { Button } from '../../components/Buttons';
 import { useReader } from '../../context';
 
