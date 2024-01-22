@@ -1,0 +1,36 @@
+{
+  "name": "@brysonandrew/in-view",
+  "version": "6.21.29",
+  "description": "In View library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./Replacer": "./Replacer.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-device-detect": "*",
+    "@brysonandrew/types": "*",
+    "@emotion/styled": "*",
+    "clsx": "*",
+    "framer-motion": "*"
+  }
+}

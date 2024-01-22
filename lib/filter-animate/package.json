@@ -1,0 +1,44 @@
+{
+  "name": "@brysonandrew/filter-animate",
+  "version": "6.21.29",
+  "description": "Filter Animate library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./Box": "./Box.tsx",
+    "./Brighten": "./Brighten.tsx",
+    "./Glow": "./Glow.tsx",
+    "./Invert": "./Invert.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./utils/blur": "./utils/blur.ts",
+    "./utils/brighten": "./utils/brighten.ts",
+    "./utils/glow": "./utils/glow.ts",
+    "./utils/invert": "./utils/invert.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@emotion/styled": "*",
+    "@brysonandrew/types": "*",
+    "clsx": "*",
+    "framer-motion": "*",
+    "react": "*",
+    "@brysonandrew/config": "*",
+    "@brysonandrew/animation": "*"
+  }
+}

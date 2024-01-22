@@ -1,0 +1,39 @@
+{
+  "name": "@brysonandrew/scroll",
+  "version": "6.21.29",
+  "description": "Scroll library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./Consumer": "./Consumer.tsx",
+    "./ScrollProvider": "./ScrollProvider.tsx",
+    "./constants": "./constants.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./types": "./types.ts",
+    "./useScroll": "./useScroll.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/hooks": "*",
+    "react-router": "*",
+    "framer-motion": "*",
+    "@brysonandrew/animation": "*"
+  }
+}

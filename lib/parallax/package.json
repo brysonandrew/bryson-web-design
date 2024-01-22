@@ -1,0 +1,48 @@
+{
+  "name": "@brysonandrew/parallax",
+  "version": "6.21.29",
+  "description": "Parallax library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./config": "./config.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./aggregator": "./aggregator/index.tsx",
+    "./aggregator/useScrollYBounds": "./aggregator/useScrollYBounds.ts",
+    "./hooks/useDispersion": "./hooks/useDispersion.tsx",
+    "./hooks/useResistance": "./hooks/useResistance.tsx",
+    "./hooks/useVisibility": "./hooks/useVisibility.tsx",
+    "./aggregator/values/Dispersion": "./aggregator/values/Dispersion.tsx",
+    "./aggregator/values/Resistance": "./aggregator/values/Resistance.tsx",
+    "./aggregator/values/Visibility": "./aggregator/values/Visibility.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "framer-motion": "*",
+    "@brysonandrew/in-view": "*",
+    "react": "*",
+    "@brysonandrew/animation": "*",
+    "react-intersection-observer": "*",
+    "@brysonandrew/base": "*",
+    "react-device-detect": "*",
+    "@brysonandrew/scroll": "*",
+    "@brysonandrew/types": "*",
+    "@brysonandrew/viewport": "*"
+  }
+}

@@ -1,7 +1,7 @@
 import {
   NAME_KEY,
   PROJECT_KEY,
-} from '@brysonandrew/lib/gallery/config/constants';
+} from '@brysonandrew/gallery/config/constants';
 import { useSearchParams } from 'react-router-dom';
 
 export const useCurrParams = () => {

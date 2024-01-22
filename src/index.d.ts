@@ -93,4 +93,4 @@ declare function registerProcessor(
   },
 ): void;
 
-declare module 'rollup-plugin-typescript'
+declare module 'fs-extra';

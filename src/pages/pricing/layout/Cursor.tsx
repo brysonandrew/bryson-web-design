@@ -1,12 +1,9 @@
 import type { FC } from 'react';
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import {
   TClassValueProps,
   TElementProps,
-} from '@brysonandrew/lib/types';
-
-const Root = styled.div``;
+} from '@brysonandrew/types';
 
 type TProps = TElementProps & TClassValueProps;
 export const Cursor: FC<TProps> = ({

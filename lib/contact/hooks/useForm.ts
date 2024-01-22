@@ -6,7 +6,7 @@ import {
   TFormKey,
   TInputHandlers,
 } from '../context/types';
-import { useContact } from '@brysonandrew/lib/contact/context/useContact';
+import { useContact } from '@brysonandrew/contact';
 
 type TConfig = {
   element: HTMLFormElement | null;
@@ -31,7 +31,7 @@ export const useForm = ({ element }: TConfig) => {
       handleStatus('sent');
     } catch (error) {
       console.error(error);
-      handleStatus('error');
+      handleStatus('error'); 
     }
   };
 

@@ -1,5 +1,5 @@
 import { Index } from '@pages/index';
-import { Shell } from '@components/shell';
+import { Shell } from 'src/shell';
 import * as Pages from '@pages/index';
 import { Cv } from '@pages/_workshop/cv';
 import { Reader } from '@pages/_workshop/reader';

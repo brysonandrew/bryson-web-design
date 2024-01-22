@@ -1,9 +1,9 @@
 import { Item } from './item';
 import { motion } from 'framer-motion';
-import { useCurrProject } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
-import { InView } from '@brysonandrew/lib/in-view';
-import { useGallery } from '../context/Provider';
+import { InView } from '@brysonandrew/in-view';
+import { useGallery } from '../context/GalleryProvider';
 
 export const List = <
   T extends string,
@@ -15,6 +15,7 @@ export const List = <
 
   return (
     <>
+      <Tips />
       <motion.ul className='column-stretch gap-box'>
         {SLUGS.map((slug, index) => {
           const isSelected = currProject === slug;
@@ -28,9 +29,6 @@ export const List = <
           );
         })}
       </motion.ul>
-      <InView>
-        {({ inView }) => (inView ? <Tips /> : null)}
-      </InView>
     </>
   );
 };

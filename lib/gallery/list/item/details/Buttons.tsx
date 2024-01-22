@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
-import { P1 } from '@brysonandrew/lib/components/layout/space/P1';
-import { P3 } from '@brysonandrew/lib/components/layout/space/P3';
-import { Gallery } from '@brysonandrew/lib/gallery/viewer/icons/Gallery';
-import { OpenInNew } from '@brysonandrew/lib/icons/components/OpenInNew';
-import { Circle } from '@brysonandrew/lib/components/interactive/circle';
-import { Anchor } from '@brysonandrew/lib/components/interactive/circle/Anchor';
-import { TItem } from '@brysonandrew/lib/gallery/config/types';
+import { P1 } from '@brysonandrew/base/components/layout/space/P1';
+import { P3 } from '@brysonandrew/base/components/layout/space/P3';
+import { Gallery } from '@brysonandrew/gallery/viewer/icons/Gallery';
+import { Circle } from '@brysonandrew/base/components/interactive/circle';
+import { Anchor } from '@brysonandrew/base/components/interactive/circle/Anchor';
+import { TItem } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
-import { useTo } from '@brysonandrew/lib/gallery/viewer/hooks/nav/useTo';
+import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
+import { OpenInNew } from '@components/icons/OpenInNew';
 
 const Root = styled.div``;
 const InternalLink = styled(motion(Link))``;

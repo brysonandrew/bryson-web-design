@@ -5,7 +5,7 @@ import {
   RollupOptions,
   OutputBundle,
 } from 'rollup';
-import rollupPluginTypescript from 'rollup-plugin-typescript';
+import rollupPluginTypescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export const compileTsServiceWorker = () => ({

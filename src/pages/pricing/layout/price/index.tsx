@@ -1,7 +1,7 @@
 import {
   formatNZLongDate,
   nToMoney,
-} from '@brysonandrew/lib/utils/format';
+} from '@brysonandrew/utils/format';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Banner } from './Banner';

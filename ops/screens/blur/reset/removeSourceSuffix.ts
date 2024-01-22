@@ -1,7 +1,7 @@
+import { NOOP } from '@brysonandrew/base';
 import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { NOOP } from 'lib';
 import { SOURCE_SUFFIX } from '../config';
 
 export const removeSourceSuffix = async () => {
@@ -14,6 +14,5 @@ export const removeSourceSuffix = async () => {
       fs.rename(path, nextPath, NOOP);
     });
   } catch (error) {
-    console.error(error);
   }
 };

@@ -1,0 +1,48 @@
+{
+  "name": "@brysonandrew/app",
+  "version": "6.21.29",
+  "description": "App library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./Context": "./Context.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts",
+    "./layout/types": "./layout/types.ts",
+    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
+    "./style": "./style/index.ts",
+    "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
+    "./utils/resolveComponent": "./utils/resolveComponent.tsx",
+    "./layout/glow/Back": "./layout/glow/Back.tsx",
+    "./layout/glow/Glow": "./layout/glow/Glow.tsx",
+    "./layout/glow/Marker": "./layout/glow/Marker.tsx",
+    "./layout/glow": "./layout/glow/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/base": "*",
+    "lodash": "*",
+    "react": "*",
+    "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/config": "*",
+    "framer-motion": "*",
+    "clsx": "*"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@brysonandrew/dark-mode",
+  "version": "6.21.29",
+  "description": "Dark Mode library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./context/Consumer": "./context/Consumer.tsx",
+    "./context/DarkModeProvider": "./context/DarkModeProvider.tsx",
+    "./context/constants": "./context/constants.tsx",
+    "./context/types": "./context/types.ts",
+    "./context/useDarkMode": "./context/useDarkMode.tsx",
+    "./context/useDarkModeState": "./context/useDarkModeState.ts",
+    "./head": "./head/index.tsx",
+    "./button": "./button/index.tsx",
+    "./button/icon/Moon": "./button/icon/Moon.tsx",
+    "./button/icon/Sun": "./button/icon/Sun.tsx",
+    "./button/icon": "./button/icon/index.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/base": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/hooks": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/app": "*",
+    "framer-motion": "*",
+    "@brysonandrew/cursor": "*",
+    "@brysonandrew/types": "*"
+  }
+}

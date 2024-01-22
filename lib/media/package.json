@@ -1,0 +1,52 @@
+{
+  "name": "@brysonandrew/media",
+  "version": "6.21.29",
+  "description": "Media library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./hooks": "./hooks/index.ts",
+    "./hooks/resolveDimensions": "./hooks/resolveDimensions.ts",
+    "./hooks/resolveMotionConfig": "./hooks/resolveMotionConfig.ts",
+    "./hooks/resolveRandomIndicies": "./hooks/resolveRandomIndicies.ts",
+    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
+    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
+    "./picture": "./picture/index.tsx",
+    "./placeholder/ClipPath": "./placeholder/ClipPath.tsx",
+    "./placeholder": "./placeholder/index.tsx",
+    "./picture/config/constants": "./picture/config/constants.ts",
+    "./picture/config/types": "./picture/config/types.ts",
+    "./placeholder/config/constants": "./placeholder/config/constants.ts",
+    "./placeholder/utils/resolveGradientStops": "./placeholder/utils/resolveGradientStops.ts",
+    "./placeholder/utils/resolveKey": "./placeholder/utils/resolveKey.ts",
+    "./placeholder/variants/Responsive": "./placeholder/variants/Responsive.tsx",
+    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/animation": "*",
+    "react": "*",
+    "@emotion/styled": "*",
+    "clsx": "*",
+    "framer-motion": "*",
+    "@brysonandrew/types": "*",
+    "@brysonandrew/utils": "*"
+  }
+}

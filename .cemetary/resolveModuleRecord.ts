@@ -1,13 +1,13 @@
 import { PNG_EXT, WEBP_EXT } from '@constants/media';
 import {
   TScreensLookup,
-  TScreensRecordEntry,
+  TResolverRecordEntry,
 } from '@t/screens';
 import { resolveWebpFilePath } from './resolveFilePathByExt';
 import { resolveMediaDetails } from '@pages/projects/config';
 
 export const resolveModuleRecord = (
-  entry: TScreensRecordEntry,
+  entry: TResolverRecordEntry,
   lookup: TScreensLookup,
 ) => {
   const [filePath, resolver] = entry;

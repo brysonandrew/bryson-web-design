@@ -3,16 +3,16 @@ import clsx from 'clsx';
 import { useBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/lib/animation/components/parallax/config';
+import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
 import styled from '@emotion/styled';
-import { P8 } from '@brysonandrew/lib/components/layout/space/P8';
-import { TITLE_HEIGHT } from '@brysonandrew/lib/components/layout/space/TitleSpace';
-import { useScroll as useScrollContext } from '@brysonandrew/lib/context/scroll/useScroll';
-import { useViewport as useViewportContext } from '@brysonandrew/lib/context/viewport/useViewport';
+import { P8 } from '@brysonandrew/base/components/layout/space/P8';
+import { TITLE_HEIGHT } from '@brysonandrew/base/components/layout/space/TitleSpace';
+import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
+import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/lib/animation/constants';
+import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
-import { TMediaRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
@@ -56,7 +56,7 @@ export const Images: FC<TProps> = ({ style }) => {
         rotateX: -4,
         x: 0,
         z: 0,
-        y: -180,
+        y: -280,
       };
 
   return (

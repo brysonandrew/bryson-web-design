@@ -1,0 +1,59 @@
+{
+  "name": "@brysonandrew/cursor",
+  "version": "6.21.29",
+  "description": "Cursor library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./config": "./config.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./context/CursorConsumer": "./context/CursorConsumer.tsx",
+    "./context/CursorProvider": "./context/CursorProvider.tsx",
+    "./context/constants": "./context/constants.ts",
+    "./context/types": "./context/types.ts",
+    "./context/useCursor": "./context/useCursor.tsx",
+    "./hooks/config": "./hooks/config.ts",
+    "./hooks": "./hooks/index.ts",
+    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
+    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
+    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
+    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
+    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
+    "./switch/Box": "./switch/Box.tsx",
+    "./switch/IconWithText": "./switch/IconWithText.tsx",
+    "./switch/Sight": "./switch/Sight.tsx",
+    "./switch/config": "./switch/config.ts",
+    "./switch": "./switch/index.tsx",
+    "./switch/format/Visit": "./switch/format/Visit.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/types": "*",
+    "@brysonandrew/base": "*",
+    "@brysonandrew/scroll": "*",
+    "react": "*",
+    "framer-motion": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/hooks": "*",
+    "clsx": "*",
+    "@brysonandrew/app": "*",
+    "@brysonandrew/icons": "*",
+    "@emotion/styled": "*"
+  }
+}

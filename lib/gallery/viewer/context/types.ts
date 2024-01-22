@@ -1,4 +1,4 @@
-import { TScreensRecord } from '@brysonandrew/lib/media/picture/config/types';
+import { TScreensRecord } from '@brysonandrew/media';
 
 export type TContext = {
   isTransitioningGallery: boolean;
@@ -6,4 +6,4 @@ export type TContext = {
   onDrag(value: boolean): void;
   onMotionBlurStart(): void;
   onMotionBlurEnd(): void;
-}; 
+};

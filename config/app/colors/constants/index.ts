@@ -1,13 +1,7 @@
-import { resolveCustomRecords } from '../../../../lib/color/utils/resolveCustomRecords';
+import { resolveCustomRecords } from '../../../../lib/config/color/utils/resolveCustomRecords';
 import { PLANS_COLOR_VARIABLES } from './pricing';
 
-const SECONDARY = '45, 212, 191';
-const ACCENT = '153, 204, 255';
-
 export const OPACITY_RANGE_RGB_RECORD = {
-  secondary: SECONDARY,
-  highlight: '207, 250, 254',
-  accent: ACCENT,
   ...PLANS_COLOR_VARIABLES,
 } as const;
 

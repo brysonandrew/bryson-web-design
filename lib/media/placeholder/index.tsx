@@ -5,16 +5,15 @@ import { type FC } from 'react';
 import {
   IMAGE_PLACEHOLDER_ID,
   PLACEHOLDER_LAYOUT_ID,
-} from '@brysonandrew/lib/media/placeholder/config/constants';
-import { resolveUrlId } from '@brysonandrew/lib/utils/attributes/resolveUrlId';
+} from '@brysonandrew/media/placeholder/config/constants';
+import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import { resolveGradientStops } from './utils/resolveGradientStops';
 import clsx from 'clsx';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/lib/types/dom';
-import { DURATION_VERY_SLOW } from '@brysonandrew/lib/animation/constants';
-import { TChildren } from '@brysonandrew/lib/types/dom/main';
+} from '@brysonandrew/types/dom';
+import { DURATION_VERY_SLOW } from '@brysonandrew/animation';
 
 export const Root = styled(motion.div)``;
 

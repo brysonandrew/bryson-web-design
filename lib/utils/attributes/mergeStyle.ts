@@ -1,5 +1,5 @@
 import { CSSProperties } from '@emotion/serialize';
-import { TElementProps } from '@brysonandrew/lib/types/dom';
+import { TElementProps } from '@brysonandrew/types/dom';
 
 export const mergeStyle = <
   P extends TElementProps = TElementProps,

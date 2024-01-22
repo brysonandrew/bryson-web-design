@@ -1,6 +1,6 @@
-import { I } from '@brysonandrew/lib/icons/icon';
-import { IMAGE_ICON } from '@brysonandrew/lib/icons/constants';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { I } from '@brysonandrew/icons/icon';
+import { IMAGE_ICON } from '@brysonandrew/icons/constants';
+import { useApp } from '@brysonandrew/app';
 
 export const Image = () => {
   const { BORDER_RADIUS } = useApp();

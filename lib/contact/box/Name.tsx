@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import { TTitleProps } from '@brysonandrew/lib/types/dom';
+import { TTitleProps } from '@brysonandrew/types/dom';
+import { motion } from 'framer-motion';
 
-const Root = styled.div``;
+const Root = styled(motion.div)``;
 
 type TProps = TTitleProps;
 export const Name: FC<TProps> = ({ title }) => {
   return (
-    <Root className='relative flex justify-center shrink-0 w-full pt-1 pb-4 pl-0 md:(w-40 pb-2 pl-6 justify-start)'>
-      <h4 className='inline-flex title-main whitespace-nowrap'>
+    <Root layout='size' className='name'>
+      <motion.h4 layout className='name-text'>
         {title}
-      </h4>
+      </motion.h4>
     </Root>
   );
 };

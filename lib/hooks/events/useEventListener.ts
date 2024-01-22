@@ -2,6 +2,14 @@ import { useIsomorphicLayoutEffect } from 'framer-motion';
 import type { RefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
+// See: https://usehooks-ts.com/react-hook/use-isomorphic-layout-effect
+type TSvgEventMapKey =
+  | keyof SVGElementEventMap
+  | 'endEvent';
+type TSvgEventMap = SVGElementEventMap & {
+  endEvent: Event;
+};
+
 // Window Event based useEventListener interface
 export function useEventListener<
   K extends keyof WindowEventMap,
@@ -22,7 +30,16 @@ export function useEventListener<
   element: RefObject<T>,
   options?: boolean | AddEventListenerOptions,
 ): void;
-
+// Document Event based useEventListener interface
+export function useEventListener<
+  K extends TSvgEventMapKey,
+  T extends SVGElement = SVGSVGElement,
+>(
+  eventName: K | null,
+  handler: (event: TSvgEventMap[K]) => void,
+  element: RefObject<T>,
+  options?: boolean | AddEventListenerOptions,
+): void;
 // Document Event based useEventListener interface
 export function useEventListener<
   K extends keyof DocumentEventMap,
@@ -56,9 +73,7 @@ export function useEventListener<
   K extends keyof SpeechSynthesisEventMap,
 >(
   eventName: K | null,
-  handler: (
-    event: SpeechSynthesisEventMap[K],
-  ) => void,
+  handler: (event: SpeechSynthesisEventMap[K]) => void,
   element: RefObject<SpeechSynthesis>,
 ): void;
 

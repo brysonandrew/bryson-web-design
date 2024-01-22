@@ -1,5 +1,5 @@
-import { TTTitleToKebab } from '@brysonandrew/lib/types/transformers/format/title';
 import { TPricingKey } from '@pages/pricing/config/types';
+import { TTTitleToKebab } from '@brysonandrew/types';
 import { INIT_PROJECT_ITEMS } from './items';
 
 export type TInitItems = typeof INIT_PROJECT_ITEMS;

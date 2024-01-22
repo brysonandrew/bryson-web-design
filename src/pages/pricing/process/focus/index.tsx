@@ -1,14 +1,14 @@
 import {
   CUSTOM_CURSOR_KEY,
   FOCUS_CURSOR_KEY,
-} from '@brysonandrew/lib/cursor/switch/config';
-import { useCursor } from '@brysonandrew/lib/cursor/context';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
+} from '@brysonandrew/cursor/switch/config';
+import { useCursor } from '@brysonandrew/cursor/context/useCursor';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/pricing/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Circle } from './Circle';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = {
   children: TPart;

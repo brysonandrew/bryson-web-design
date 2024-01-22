@@ -1,20 +1,44 @@
-import { TSource } from '@brysonandrew/lib/types';
-import type { Metadata, OutputInfo } from 'sharp';
-import { TScreensLookup } from './screens';
+import { TSource } from '@brysonandrew/types';
+import { OutputInfo, Metadata } from 'sharp';
+import { EXTS } from './constants';
 
-export type TScreensRecord = Record<string, TMediaRecords>;
-export type TExtKey = (typeof EXTS)[number];
-
-export const PNG_EXT = 'png';
-export const WEBP_EXT = 'webp';
-export const DEFAULT_EXT = PNG_EXT;
-
-export const EXTS = [PNG_EXT, WEBP_EXT] as const;
-
-export const EMPTY_SCREENS_LOOKUP: TScreensLookup = {
-  [WEBP_EXT]: {},
-  [PNG_EXT]: {},
+export type TModule = {
+  default: string;
 };
+export type TResolver = () => Promise<unknown | TModule>; // unknown is gene
+
+export type TResolverRecord = Record<
+  TFilePathKey,
+  TResolver
+>;
+export type TResolverRecordEntry = [
+  TFilePathKey,
+  TResolver,
+];
+
+export type TScreensLookup = Record<
+  TExtKey,
+  TResolverRecord
+>;
+
+export type TScreensRecordEntry = [
+  TFilePathKey,
+  TMediaRecord,
+];
+export type TScreensRecordEntries = TScreensRecordEntry[];
+
+export type TScreensRecord = Record<
+  TFilePathKey,
+  TMediaRecord[]
+>;
+export type TImageResolverRecord = Record<
+  TFilePathKey,
+  any
+>;
+export type TImageResolverEntry = [TFilePathKey, any];
+export type TImageResolverEntries = TImageResolverEntry[];
+
+export type TExtKey = (typeof EXTS)[number];
 
 export type TDimensions = { width: number; height: number };
 

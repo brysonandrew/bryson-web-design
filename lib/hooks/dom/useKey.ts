@@ -7,11 +7,11 @@ type THandlers = {
 };
 type TConfig = {
   handlers: THandlers;
-  isActive: boolean;
+  isMarker: boolean;
 };
 export const useKey = ({
   handlers,
-  isActive,
+  isMarker,
 }: TConfig): MutableRefObject<THandlers> => {
   const handlersRef = useRef(handlers);
   const removeListeners = () => {
@@ -27,7 +27,7 @@ export const useKey = ({
     }
   };
   useEffect(() => {
-    if (isActive) {
+    if (isMarker) {
       window.addEventListener(
         "keydown",
         handlersRef.current.onKeyDown,
@@ -42,6 +42,6 @@ export const useKey = ({
       removeListeners();
     }
     return removeListeners;
-  }, [isActive]);
+  }, [isMarker]);
   return handlersRef;
 };

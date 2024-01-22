@@ -1,0 +1,60 @@
+{
+  "name": "@brysonandrew/hooks",
+  "version": "6.21.29",
+  "description": "Hooks library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./dom": "./dom/index.ts",
+    "./dom/useDomCondition": "./dom/useDomCondition.ts",
+    "./dom/useHoverKey": "./dom/useHoverKey.ts",
+    "./dom/useKey": "./dom/useKey.ts",
+    "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
+    "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
+    "./dom/useRect": "./dom/useRect.ts",
+    "./events": "./events/index.ts",
+    "./events/useEventCallback": "./events/useEventCallback.ts",
+    "./events/useEventListener": "./events/useEventListener.ts",
+    "./events/useHover": "./events/useHover.ts",
+    "./events/useLongPress": "./events/useLongPress.ts",
+    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
+    "./life-cycle": "./life-cycle/index.ts",
+    "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
+    "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
+    "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
+    "./scroll": "./scroll/index.ts",
+    "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
+    "./window": "./window/index.ts",
+    "./window/useDelay": "./window/useDelay.ts",
+    "./window/useDelayCallback": "./window/useDelayCallback.ts",
+    "./window/useDelayCallback1": "./window/useDelayCallback1.ts",
+    "./window/useInterval": "./window/useInterval.tsx",
+    "./window/useMediaQuery": "./window/useMediaQuery.ts",
+    "./window/useNoPointer": "./window/useNoPointer.ts",
+    "./window/useTimeoutRef": "./window/useTimeoutRef.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/types": "*",
+    "framer-motion": "*",
+    "@brysonandrew/base": "*"
+  }
+}

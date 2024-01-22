@@ -1,5 +1,5 @@
-import { TBaseProps } from '@brysonandrew/lib/gallery/viewer/types';
-import { resolveX } from '@brysonandrew/lib/gallery/viewer/utils/resolveX';
+import { TBaseProps } from '@brysonandrew/gallery/viewer/ready/types';
+import { resolveX } from '@brysonandrew/gallery/viewer/utils/resolveX';
 
 type TConfig = Pick<
   TBaseProps,

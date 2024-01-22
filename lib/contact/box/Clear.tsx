@@ -1,14 +1,13 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { useContact } from '@brysonandrew/lib/contact/context/useContact';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/lib/animation/constants';
-import { TFormKey } from '@brysonandrew/lib/contact/context/types';
-import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
-import { Cross } from '@brysonandrew/lib/gallery/components/icons';
-import { TButtonMotionProps } from '@brysonandrew/lib/types/dom';
-import { useDarkMode } from '@brysonandrew/lib/context/dark-mode/useDarkMode';
+import { useContact } from '@brysonandrew/contact';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
+import { TFormKey } from '@brysonandrew/contact/context/types';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { useApp } from '@brysonandrew/app';
+import { TButtonMotionProps } from '@brysonandrew/types/dom';
+import { CROSS_ICON, I } from '@brysonandrew/icons';
 
 const Root = styled.div``;
 
@@ -24,9 +23,8 @@ export const Clear: FC<TProps> = ({
   title,
   ...props
 }) => {
-  const { COLOR, BORDER_RADIUS, Glow } = useApp();
+  const { BORDER_RADIUS } = useApp();
   const { onForm } = useContact();
-  const { isDarkMode } = useDarkMode();
 
   const handleClear = (_: MouseEvent) => {
     onForm({ [name]: '' });
@@ -34,12 +32,12 @@ export const Clear: FC<TProps> = ({
   };
 
   return (
-    <Root className='absolute top-4 md:top-3.75 right-3.75 z-10'>
+    <Root className='clear'>
       <motion.button
         layout
         tabIndex={-1}
         type='button'
-        className='relative dark:text-gray-3 text-gray-1'
+        className='clear-button'
         whileHover={{ opacity: 1 }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}
@@ -48,11 +46,7 @@ export const Clear: FC<TProps> = ({
         style={{ borderRadius: BORDER_RADIUS.XL }}
         {...props}
       >
-        <Glow
-          color={COLOR[isDarkMode ? 'gray' : 'white-9']}
-        >
-          <Cross />
-        </Glow>
+        <I classValue='clear-icon' icon={CROSS_ICON} />
       </motion.button>
     </Root>
   );

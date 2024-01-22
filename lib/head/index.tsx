@@ -1,26 +1,40 @@
-import { useHtmlTitle } from '@brysonandrew/lib/head/useHtmlTitle';
-import { useDarkMode } from '@brysonandrew/lib/context/dark-mode/context/useDarkMode';
+import { useHtmlTitle } from '@brysonandrew/head';
+import { useApp } from '@brysonandrew/app';
 import { Helmet } from 'react-helmet-async';
-import { useApp } from '@brysonandrew/lib/context/app/useApp';
+import {
+  defaultTitlesResolver,
+  TTitlesResolver,
+} from './config';
 
-type TProps<K extends string, V extends string> = {
+export type THeadProps<
+  K extends string,
+  V extends string,
+> = {
   titleLookup: Record<K, V>;
+  titlesResolver?: TTitlesResolver;
+  prefix?: string;
+  description?: string;
+  base?: string;
+  highlight?: string;
 };
 export const Head = <K extends string, V extends string>({
+  description = '',
   titleLookup,
-}: TProps<K, V>) => {
+  titlesResolver = defaultTitlesResolver,
+  prefix = '',
+  ...props
+}: THeadProps<K, V>) => {
   const { COLOR } = useApp();
-  const { isDarkMode } = useDarkMode();
-  const prefix = isDarkMode ? '' : '/light';
-  const title = useHtmlTitle<K, V>(titleLookup);
-  const base = isDarkMode ? COLOR['black'] : COLOR['white'];
-  const highlight = isDarkMode
-    ? COLOR['secondary']
-    : COLOR['accent'];
+  const titles = useHtmlTitle<K, V>(
+    description,
+    titleLookup,
+  );
+  const base = props.base ?? COLOR['accent'];
+  const highlight = props.highlight ?? COLOR['highlight'];
 
   return (
     <Helmet>
-      <title>{title}</title>
+      <title>{titlesResolver(titles)}</title>
       <link
         rel='apple-touch-icon'
         sizes='180x180'
@@ -55,3 +69,12 @@ export const Head = <K extends string, V extends string>({
     </Helmet>
   );
 };
+
+export * from './HeadProvider';
+export * from './config';
+export * from './useHtmlTitle';
+
+
+
+
+

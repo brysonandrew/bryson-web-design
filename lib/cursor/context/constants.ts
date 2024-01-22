@@ -2,6 +2,8 @@ import type { TState, TContext, THover } from './types';
 import { motionValue } from 'framer-motion';
 import { createContext } from 'react';
 
+export const HOVER_KEY_DELIMITER = '=[hover]>';
+
 export const STATE: TState = {
   isCursorReady: false,
   hoverKey: null,

@@ -1,27 +1,27 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { Picture } from '@brysonandrew/lib/media/picture';
-import { useImageDimensions } from '@brysonandrew/lib/hooks/media/useImageDimensions';
+import { Picture } from '@brysonandrew/media/picture';
+import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@brysonandrew/lib/filters/config/constants/presets';
+} from '@brysonandrew/filters/config/constants/presets';
 import clsx from 'clsx';
-import { useHoverKey } from '@brysonandrew/lib/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/lib/utils/attributes/resolveInteractiveLabels';
-import { TImgMotionProps } from '@brysonandrew/lib/types/dom/motion';
+import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { TImgMotionProps } from '@brysonandrew/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/lib/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/lib/animation/constants';
-import { useTapHandler } from '@brysonandrew/lib/hooks/media/useTapHandler';
-import { TMediaRecord } from '@brysonandrew/lib/media/picture/config/types';
-import { GALLERY_ICON } from '@brysonandrew/lib/icons/constants/gallery';
-import { useCurrName } from '@brysonandrew/lib/gallery/viewer/hooks/params/useCurrName';
+import { ORIGIN_50 } from '@brysonandrew/animation';
+import { useTapHandler } from '@hooks/useTapHandler';
+import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
+import { GALLERY_ICON } from '@brysonandrew/icons/constants/gallery';
+import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 

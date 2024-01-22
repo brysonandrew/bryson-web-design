@@ -1,9 +1,8 @@
-import { TUseInput, useInput } from '../useInput';
+import { TUseInput, useInput } from '../hooks/useInput';
 import { TBaseInputProps } from '../context/types';
 import { Name } from './Name';
 import { Shell, TShellProps } from './Shell';
-import { TBaseChildren } from '@brysonandrew/lib/types/dom';
-import { motion } from 'framer-motion';
+import { TBaseChildren } from '@brysonandrew/types/dom';
 
 type TProps<T extends HTMLElement> = TBaseInputProps &
   Pick<TShellProps<T>, 'isDisabled'> & {
@@ -26,12 +25,7 @@ export const Box = <T extends HTMLElement>({
       {...boxInputs}
     >
       <>
-        <motion.div
-          layout
-          className='pt-1 w-full md:w-auto'
-        >
-          <Name title={name} />
-        </motion.div>
+        <Name title={name} />
         {children(props)}
       </>
     </Shell>
