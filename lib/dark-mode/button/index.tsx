@@ -16,12 +16,11 @@ import {
 } from '@brysonandrew/types';
 import { Moon, Sun } from './icon';
 
-type TProps = TClassValueProps &
-  Partial<{
-    buttonProps: Partial<TButtonProps>;
-    backgroundProps: TDivProps;
-    iconProps: TSvgMotionProps;
-  }>;
+type TProps = Partial<{
+  buttonProps: Partial<TButtonProps>;
+  backgroundProps: TDivProps;
+  iconProps: TSvgMotionProps & TClassValueProps;
+}>;
 export const Button: FC<TProps> = ({
   buttonProps,
   backgroundProps,

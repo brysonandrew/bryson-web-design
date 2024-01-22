@@ -25,7 +25,7 @@ export const Price: FC<TProps> = ({ price, discount }) => {
   if (isText) {
     const [title, subtitle] = price.split(':');
     return (
-      <div className='relative column'>
+      <div className='relative column gap-0.5'>
         <Cost>{title}</Cost>
         <Subtext classValue='text-b2-w9'>
           {subtitle}
