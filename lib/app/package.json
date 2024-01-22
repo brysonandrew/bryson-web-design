@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.21.31",
+  "version": "6.21.33",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,9 +13,9 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./style": "./style/index.ts",
     "./layout/types": "./layout/types.ts",
     "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
+    "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/resolveComponent": "./utils/resolveComponent.tsx",
     "./layout/glow/Back": "./layout/glow/Back.tsx",
