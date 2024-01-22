@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.21.29",
+  "version": "6.21.31",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -16,13 +16,13 @@
     "./useMoveSound": "./useMoveSound.ts",
     "./useOffSound": "./useOffSound.ts",
     "./useOnSound": "./useOnSound.ts",
-    "./sound/VolumeOff": "./sound/VolumeOff.tsx",
-    "./sound/VolumeOn": "./sound/VolumeOn.tsx",
     "./context/Consumer": "./context/Consumer.tsx",
     "./context/SoundProvider": "./context/SoundProvider.tsx",
     "./context/constants": "./context/constants.ts",
     "./context": "./context/index.tsx",
-    "./context/types": "./context/types.ts"
+    "./context/types": "./context/types.ts",
+    "./sound/VolumeOff": "./sound/VolumeOff.tsx",
+    "./sound/VolumeOn": "./sound/VolumeOn.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -39,10 +39,10 @@
   ],
   "peerDependencies": {
     "react-synthwave": "*",
+    "react": "*",
+    "@brysonandrew/base": "*",
     "@emotion/styled": "*",
     "@brysonandrew/types": "*",
-    "clsx": "*",
-    "react": "*",
-    "@brysonandrew/base": "*"
+    "clsx": "*"
   }
 }

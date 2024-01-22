@@ -9,9 +9,9 @@ export * from './placeholder/ClipPath';
 export * from './placeholder';
 export * from './picture/config/constants';
 export * from './picture/config/types';
-export * from './placeholder/config/constants';
 export * from './placeholder/utils/resolveGradientStops';
 export * from './placeholder/utils/resolveKey';
+export * from './placeholder/config/constants';
 export * from './placeholder/variants/Responsive';
 export * from './placeholder/variants/Small';
 
