@@ -9,7 +9,7 @@ import { Anchor } from '@brysonandrew/base/components/interactive/circle/Anchor'
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
 import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
-import { OpenInNew } from '@components/icons/OpenInNew';
+import { I, OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
 
 const Root = styled.div``;
 const InternalLink = styled(motion(Link))``;
@@ -50,7 +50,7 @@ export const Buttons: FC<TProps> = ({
               title='Open in new'
               target='_blank'
             >
-              <OpenInNew />
+              <I icon={OPEN_IN_NEW_ICON} />
             </Anchor>
           </Circle>
         </li>
