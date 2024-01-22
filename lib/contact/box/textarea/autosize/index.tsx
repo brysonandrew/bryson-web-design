@@ -1,18 +1,20 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
 import { useViewport } from '@brysonandrew/viewport';
-import { TChildrenElement } from '@brysonandrew/base/types/dom';
+import { TChildrenElement } from '@brysonandrew/types/dom';
 import { motion } from 'framer-motion';
+import { TUseInput } from '@brysonandrew/contact/hooks/useInput';
 
-type TProps = {
-  textarea: HTMLTextAreaElement | null;
-  value: string;
-  children(isInit: boolean): TChildrenElement;
-};
+type TProps =
+  TUseInput<HTMLTextAreaElement>['inputProps'] & {
+    textarea: HTMLTextAreaElement | null;
+    children(isInit: boolean): TChildrenElement;
+  };
 export const Autosize: FC<TProps> = ({
   value,
   textarea,
   children,
+  style,
 }) => {
   const { isResizing } = useViewport();
 
@@ -23,10 +25,7 @@ export const Autosize: FC<TProps> = ({
   });
 
   return (
-    <motion.div
-      layout
-      className='autosize'
-    >
+    <motion.div style={style} layout className='autosize'>
       {children(isInit)}
     </motion.div>
   );

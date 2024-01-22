@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import clsx from 'clsx';
-import { I } from '@brysonandrew/base/icons/icon';
+import { I } from '@brysonandrew/icons/icon';
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { P3 } from '@brysonandrew/base/components/layout/space/P3';
 import { P_5 } from '@brysonandrew/base/components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@brysonandrew/base/icons/constants';
-import { PLUS_ICON } from '@brysonandrew/base/icons/constants/text';
-import { useApp } from '@brysonandrew/app/useApp';
+import { TICK_CIRCLE_ICON } from '@brysonandrew/icons/constants';
+import { PLUS_ICON } from '@brysonandrew/icons/constants/text';
+import { useApp } from '@brysonandrew/app';
 
 export const PlusContent: FC = () => {
   const { BORDER_RADIUS } = useApp();

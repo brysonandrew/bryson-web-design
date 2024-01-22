@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.21.17",
-  "description": "Animated cursor",
+  "version": "6.21.23",
+  "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
@@ -44,14 +44,16 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/types": "*",
+    "@brysonandrew/base": "*",
     "@brysonandrew/scroll": "*",
     "react": "*",
     "framer-motion": "*",
-    "@brysonandrew/base": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/hooks": "*",
     "clsx": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/icons": "*",
     "@emotion/styled": "*"
   }
 }

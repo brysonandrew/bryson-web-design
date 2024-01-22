@@ -1,8 +1,8 @@
-import { TAnyRecord } from '@brysonandrew/base';
 import {
   TMediaRecord,
   TFilePathKey,
 } from '@brysonandrew/media';
+import { TAnyRecord } from '@brysonandrew/types';
 import { writeFileData } from '@ops/utils/write';
 import { LOOKUP_PATH } from '../constants';
 

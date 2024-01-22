@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { resolveCompositeKey } from '@brysonandrew/base/utils/key';
+import { resolveCompositeKey } from '@brysonandrew/utils/key';
 import { name } from '../package.json';
 import { useLocalStorage } from '@brysonandrew/hooks/dom/useLocalStorage';
 import { TUseDarkMode } from './types';

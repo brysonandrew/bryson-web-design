@@ -15,7 +15,7 @@ const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
-  const { Texture } = useApp();
+  const { Back } = useApp();
   const { handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     'footer',
@@ -31,7 +31,7 @@ export const Footer: FC<TProps> = (props) => {
       {...PRESENCE_Y}
       {...handlers}
     >
-      <Texture />
+      <Back />
       <Core {...props} />
     </Root>
   );

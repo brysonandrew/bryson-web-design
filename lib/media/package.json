@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.21.17",
-  "description": "Media lib",
+  "version": "6.21.23",
+  "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
@@ -21,11 +21,11 @@
     "./placeholder": "./placeholder/index.tsx",
     "./picture/config/constants": "./picture/config/constants.ts",
     "./picture/config/types": "./picture/config/types.ts",
+    "./placeholder/utils/resolveGradientStops": "./placeholder/utils/resolveGradientStops.ts",
+    "./placeholder/utils/resolveKey": "./placeholder/utils/resolveKey.ts",
     "./placeholder/config/constants": "./placeholder/config/constants.ts",
     "./placeholder/variants/Responsive": "./placeholder/variants/Responsive.tsx",
-    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx",
-    "./placeholder/utils/resolveGradientStops": "./placeholder/utils/resolveGradientStops.ts",
-    "./placeholder/utils/resolveKey": "./placeholder/utils/resolveKey.ts"
+    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -46,6 +46,7 @@
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*",
-    "@brysonandrew/base": "*"
+    "@brysonandrew/types": "*",
+    "@brysonandrew/utils": "*"
   }
 }

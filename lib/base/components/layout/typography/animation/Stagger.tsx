@@ -1,9 +1,9 @@
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import {
   TChildrenStrings,
   TClassValueProps,
-} from '@brysonandrew/base/types/dom/main';
-import { resolveCompositeKey } from '@brysonandrew/base/utils/key';
+} from '@brysonandrew/types/dom/main';
+import { resolveCompositeKey } from '@brysonandrew/utils/key';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';

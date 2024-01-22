@@ -8,8 +8,8 @@ import {
 } from '@brysonandrew/filters/config/constants/presets';
 import clsx from 'clsx';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
-import { TImgMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { TImgMotionProps } from '@brysonandrew/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
@@ -20,7 +20,7 @@ import {
 import { ORIGIN_50 } from '@brysonandrew/animation/config/constants';
 import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
-import { GALLERY_ICON } from '@brysonandrew/base/icons/constants/gallery';
+import { GALLERY_ICON } from '@brysonandrew/icons/constants/gallery';
 import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;

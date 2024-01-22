@@ -8,7 +8,7 @@ import {
   TMediaRecord,
 } from '@brysonandrew/media/picture/config/types';
 import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
-import { TChildren } from '@brysonandrew/base/types/dom';
+import { TChildren } from '@brysonandrew/types/dom';
 import { MotionBlur } from '@brysonandrew/filters/motion-blur';
 import { resolveKey } from '@brysonandrew/media/placeholder/utils/resolveKey';
 import { Responsive } from '@brysonandrew/media/placeholder/variants/Responsive';

@@ -1,4 +1,4 @@
-import { useState, type FC, useRef } from 'react';
+import { useState, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
 import { resolveTitleLayoutId } from '@brysonandrew/gallery/config/constants';
@@ -7,7 +7,7 @@ import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
@@ -36,8 +36,7 @@ export const Content = <
   style,
   ...props
 }: TProps<K>) => {
-  const { TextureGlow, Texture, BORDER_RADIUS, Active } =
-    useApp();
+  const { Glow, Back, BORDER_RADIUS } = useApp();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -99,11 +98,16 @@ export const Content = <
       {...props}
     >
       {isProject ? (
-        <Texture />
+        <Back />
       ) : (
-        <TextureGlow>
-          <Active classValue='z-50' />
-        </TextureGlow>
+        <>
+          {Glow ? (
+            <>
+              <Glow.Marker classValue='z-50' />
+              <Glow.Back />
+            </>
+          ) : null}
+        </>
       )}
       <P2 />
       <motion.div

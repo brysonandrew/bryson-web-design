@@ -1,5 +1,8 @@
 import { Context, PropsWithChildren } from 'react';
-import { TLayoutRecord } from '../hooks/layout/types';
+import {
+  TLayoutRecordProps,
+  TLayoutRecordValue,
+} from '../layout/types';
 import { DEFAULT_STYLE } from '../style';
 
 export type TDefaultStyle = typeof DEFAULT_STYLE;
@@ -12,14 +15,15 @@ export type TSoundRecord = {
 export type TAppProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = PropsWithChildren<
-  Partial<TLayoutRecord & TSoundRecord> & {
-    style: S;
-  }
+  TLayoutRecordProps &
+    Partial<TSoundRecord> & {
+      style: S;
+    }
 >;
 
 export type TValue<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = TLayoutRecord &
+> = TLayoutRecordValue &
   TSoundRecord &
   TDefaultStyle &
   S & {

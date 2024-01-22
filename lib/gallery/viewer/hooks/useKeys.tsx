@@ -48,6 +48,6 @@ export const useKeys = ({ readyCount }: TConfig) => {
         }
       },
     },
-    isActive: true,
+    isMarker: true,
   });
 };

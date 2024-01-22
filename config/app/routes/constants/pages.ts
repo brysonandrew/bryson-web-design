@@ -1,4 +1,4 @@
-import { resolvePage } from '../../../../lib/base';
+import { resolvePage } from '../../../../lib/utils';
 import { TPageRecord } from '../types';
 
 export const PAGE_TITLES = [

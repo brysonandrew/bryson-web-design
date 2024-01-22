@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import { DURATION } from '@brysonandrew/animation/config/constants';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
@@ -11,7 +11,7 @@ export const Background: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { Texture, BORDER_RADIUS, GLOW_BOX } = useApp();
+  const { Back, BORDER_RADIUS, GLOW_BOX } = useApp();
   return (
     <motion.div
       className='absolute w-10 h-10 pointer-events-none'
@@ -21,7 +21,7 @@ export const Background: FC<TProps> = ({
       transition={{ duration: DURATION * 3 }}
       {...props}
     >
-      <Texture style={{ borderRadius: BORDER_RADIUS.XL }} />
+      <Back style={{ borderRadius: BORDER_RADIUS.XL }} />
       <motion.div
         className={clsx('absolute inset-0')}
         {...resolvePresence(

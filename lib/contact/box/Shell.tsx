@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
-import { TBaseChildren } from '@brysonandrew/base/types/dom';
+import { TBaseChildren } from '@brysonandrew/types/dom';
 import { Clear } from './Clear';
 import { TFormKey } from '@brysonandrew/contact/context/types';
 import { useFocus } from '../hooks/useFocus';
@@ -31,12 +31,14 @@ export const Shell = <T extends HTMLElement>({
   input,
   children,
 }: TShellProps<T>) => {
-  const { Active, BORDER_RADIUS, TextureGlow } = useApp();
+  const { Glow, Back, BORDER_RADIUS } = useApp();
   const handleFocus = useFocus<T>(input, isFocused);
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
   );
+
+  const ShellTextureGlow = Glow?.Back ?? Back;
 
   return (
     <Root
@@ -50,7 +52,11 @@ export const Shell = <T extends HTMLElement>({
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <TextureGlow classValue='shell-texture-glow' layout {...MOTION_CONFIG} />
+      <ShellTextureGlow
+        classValue='shell-texture-glow'
+        layout
+        {...MOTION_CONFIG}
+      />
       {children}
       <AnimatePresence>
         {isEmpty && (
@@ -63,8 +69,8 @@ export const Shell = <T extends HTMLElement>({
           />
         )}
       </AnimatePresence>
-      {isFocused && (
-        <Active
+      {Glow && isFocused && (
+        <Glow.Marker
           classValue='z-10'
           layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
         />

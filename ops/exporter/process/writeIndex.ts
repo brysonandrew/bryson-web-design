@@ -46,7 +46,7 @@ export const writeIndex = async ({
   }
 
   indexStr = indexStr.replace(QUOTE_UPDATE_RX, QUOTE);
-  indexStr = `${indexStr}\n`;
+  // indexStr = `${indexStr}\n`;
 
   writeFile(indexPath, indexStr);
 };

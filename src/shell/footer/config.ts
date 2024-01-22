@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/types/dom/main';
 
 export const ICON_CLASS_VALUE_PROPS: TClassValueProps = {
   classValue:

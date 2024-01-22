@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.21.17",
-  "description": "Dark mode switch",
+  "version": "6.21.23",
+  "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
@@ -39,9 +39,11 @@
     "@brysonandrew/animation": "*",
     "framer-motion": "*",
     "@brysonandrew/cursor": "*",
-    "@brysonandrew/base": "*",
     "@brysonandrew/app": "*",
     "react": "*",
-    "@brysonandrew/hooks": "*"
+    "@brysonandrew/base": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/hooks": "*",
+    "@brysonandrew/types": "*"
   }
 }

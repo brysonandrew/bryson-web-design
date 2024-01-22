@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import {
   TChildren,
   TClassValueProps,
-} from '@brysonandrew/base/types/dom/main';
+} from '@brysonandrew/types/dom/main';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

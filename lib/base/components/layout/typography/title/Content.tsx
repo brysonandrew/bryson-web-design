@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TitleSpace } from '@brysonandrew/base/components/layout/space/TitleSpace';
 import clsx from 'clsx';
-import { TChildrenString } from '@brysonandrew/base/types/dom';
+import { TChildrenString } from '@brysonandrew/types/dom';
 
 type TProps = TChildrenString;
 export const Content: FC<TProps> = ({ children }) => {

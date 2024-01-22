@@ -3,7 +3,7 @@ import {
   TChildrenProps,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';

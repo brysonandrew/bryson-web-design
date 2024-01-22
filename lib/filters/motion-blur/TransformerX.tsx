@@ -1,5 +1,5 @@
 import { useMotionTemplate } from 'framer-motion';
-import { TChildren } from '@brysonandrew/base/types/dom';
+import { TChildren } from '@brysonandrew/types/dom';
 import { TMotionBlurProps, TTransformerProps } from './config';
 
 type TProps = TTransformerProps & {

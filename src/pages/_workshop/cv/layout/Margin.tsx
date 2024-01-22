@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { TChildren } from '@brysonandrew/base/types/dom';
+import type { TChildren } from '@brysonandrew/types/dom';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 

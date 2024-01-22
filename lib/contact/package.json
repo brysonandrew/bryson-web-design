@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.21.17",
-  "description": "Contact form",
+  "version": "6.21.23",
+  "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
@@ -21,13 +21,13 @@
     "./context/constants": "./context/constants.ts",
     "./context/types": "./context/types.ts",
     "./context/useContact": "./context/useContact.tsx",
+    "./variants/glow": "./variants/glow.ts",
+    "./variants/minimalist": "./variants/minimalist.ts",
+    "./utils/resolveButtonValue": "./utils/resolveButtonValue.ts",
     "./hooks/useAutoFocus": "./hooks/useAutoFocus.ts",
     "./hooks/useFocus": "./hooks/useFocus.ts",
     "./hooks/useForm": "./hooks/useForm.ts",
     "./hooks/useInput": "./hooks/useInput.tsx",
-    "./variants/minimalist": "./variants/minimalist.ts",
-    "./variants/texture": "./variants/texture.ts",
-    "./utils/resolveButtonValue": "./utils/resolveButtonValue.ts",
     "./box/textarea": "./box/textarea/index.tsx",
     "./box/textarea/autosize": "./box/textarea/autosize/index.tsx",
     "./box/textarea/autosize/useAutosize": "./box/textarea/autosize/useAutosize.ts"
@@ -50,13 +50,14 @@
     "framer-motion": "*",
     "react": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/base": "*",
+    "@brysonandrew/utils": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/types": "*",
     "@brysonandrew/cursor": "*",
     "clsx": "*",
+    "unocss": "*",
     "@brysonandrew/scroll": "*",
     "@emailjs/browser": "*",
-    "unocss": "*",
     "@brysonandrew/viewport": "*"
   }
 }

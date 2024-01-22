@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.21.17",
-  "description": "Hooks lib",
+  "version": "6.21.23",
+  "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
@@ -53,7 +53,8 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "@brysonandrew/base": "*",
-    "framer-motion": "*"
+    "@brysonandrew/types": "*",
+    "framer-motion": "*",
+    "@brysonandrew/base": "*"
   }
 }

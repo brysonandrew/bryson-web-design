@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/base/types/dom';
+import { TChildren } from '@brysonandrew/types/dom';
 import { TMotionPoint } from '@brysonandrew/animation';
 import { resolveHoverKeyVariations } from '../config';
 import { THoverKey } from '../hooks/config';

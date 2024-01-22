@@ -13,8 +13,8 @@ import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import { TPricingTitle } from '@pages/pricing/config/types';
 import { TickList } from '@brysonandrew/base/components/layout/lists/TickList';
 import { PAGE_RECORD } from '@app/routes/constants/pages';
-import { EMAIL_ICON } from '@brysonandrew/base/icons/constants/contact';
-import { useApp } from '@brysonandrew/app/useApp';
+import { EMAIL_ICON } from '@brysonandrew/icons/constants/contact';
+import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
 import { FadeDown } from '@brysonandrew/base/components';
 import { TStyle } from '@app/style';
@@ -26,7 +26,7 @@ export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const { key, listItems, price, discount, PreContent } =
     config;
-  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Texture } =
+  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Back } =
     useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
@@ -55,24 +55,26 @@ export const Package: FC<TProps> = ({ title }) => {
       className='relative grow w-full'
       onClick={handleClick}
     >
-      <Glow
-        color={COLOR[key]}
-        box={4}
-        drop={4}
-        animate={{ opacity: isHover ? 1 : 0.5 }}
-      >
-        <div
-          className={clsx(
-            'absolute -inset-0.5',
-            GRADIENT[key],
-          )}
-          style={{
-            backgroundColor: COLOR[key],
-            backgroundImage: GRADIENT[key],
-            borderRadius: BORDER_RADIUS.MD,
-          }}
-        />
-      </Glow>
+      {Glow && (
+        <Glow.Shell
+          color={COLOR[key]}
+          box={4}
+          drop={4}
+          animate={{ opacity: isHover ? 1 : 0.5 }}
+        >
+          <div
+            className={clsx(
+              'absolute -inset-0.5',
+              GRADIENT[key],
+            )}
+            style={{
+              backgroundColor: COLOR[key],
+              backgroundImage: GRADIENT[key],
+              borderRadius: BORDER_RADIUS.MD,
+            }}
+          />
+        </Glow.Shell>
+      )}
       <motion.div
         className={clsx(
           'relative column-stretch grow w-full h-full text-base',
@@ -99,7 +101,7 @@ export const Package: FC<TProps> = ({ title }) => {
             borderRadius: BORDER_RADIUS.MD,
           }}
         >
-          <Texture />
+          <Back />
           <P4 />
           <div
             className='relative px-4'
@@ -114,7 +116,7 @@ export const Package: FC<TProps> = ({ title }) => {
         </div>
         <P_25 />
         <End>
-          <Texture />
+          <Back />
           <Price price={price} discount={discount} />
         </End>
       </motion.div>

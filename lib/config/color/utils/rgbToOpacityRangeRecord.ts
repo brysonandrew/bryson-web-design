@@ -1,4 +1,4 @@
-import { TKeyStr } from '@brysonandrew/base/types/keys';
+import { TKeyStr } from '@brysonandrew/types/keys';
 import { TRgb } from '../types';
 import {
   resolveColorOpacityRange,

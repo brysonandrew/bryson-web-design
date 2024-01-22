@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { DURATION } from '@brysonandrew/animation/config/constants';
 import { ThickLine } from '@brysonandrew/base/components/layout/line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { TLinkMotionProps } from '@brysonandrew/base/types';
+import { TLinkMotionProps } from '@brysonandrew/types';
 import clsx from 'clsx';
 
 const Link = styled(motion(_Link))``;

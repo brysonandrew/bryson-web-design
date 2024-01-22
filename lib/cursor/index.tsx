@@ -1,4 +1,5 @@
-import { TChildren, NOOP } from '@brysonandrew/base';
+import { TChildren } from '@brysonandrew/types';
+import { NOOP } from '@brysonandrew/base';
 import {
   useTimeoutRef,
   useEventListener,
@@ -94,4 +95,3 @@ export * from './switch/config';
 export * from './switch';
 export * from './utils/resolveCompositeHoverKey';
 export * from './switch/format/Visit';
-

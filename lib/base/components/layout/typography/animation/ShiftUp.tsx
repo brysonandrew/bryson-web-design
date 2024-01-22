@@ -5,9 +5,9 @@ import {
   PRESENCE_Y_SHIFT,
 } from '@brysonandrew/animation/config/constants';
 import { motion } from 'framer-motion';
-import { TClassValueProps } from '@brysonandrew/base/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import clsx from 'clsx';
-import { TDivMotionProps } from '@brysonandrew/base/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 
 type TProps = TClassValueProps &
   TDivMotionProps & { staggerIndex?: number };

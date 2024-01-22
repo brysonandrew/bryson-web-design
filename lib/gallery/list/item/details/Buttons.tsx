@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { P1 } from '@brysonandrew/base/components/layout/space/P1';
 import { P3 } from '@brysonandrew/base/components/layout/space/P3';
 import { Gallery } from '@brysonandrew/gallery/viewer/icons/Gallery';
-import { OpenInNew } from '@brysonandrew/base/icons/components/OpenInNew';
 import { Circle } from '@brysonandrew/base/components/interactive/circle';
 import { Anchor } from '@brysonandrew/base/components/interactive/circle/Anchor';
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
 import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
+import { OpenInNew } from '@components/icons/OpenInNew';
 
 const Root = styled.div``;
 const InternalLink = styled(motion(Link))``;

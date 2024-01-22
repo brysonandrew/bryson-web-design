@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
 import { useViewer as useContext } from '@brysonandrew/gallery';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { Background } from '@brysonandrew/base/components/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
@@ -33,10 +33,10 @@ export const Button: FC<TButtonProps> = ({
   const to = useTo({ next: name });
   const isLoading = false;
   const imgParam = useCurrName();
-  const isActive = imgParam === to.split(`${NAME_KEY}=`)[1];
+  const isMarker = imgParam === to.split(`${NAME_KEY}=`)[1];
   const animation = isLoading
     ? 'loading'
-    : isActive
+    : isMarker
     ? 'active'
     : 'idle';
   const handleMoveSound = useMoveSound();
@@ -56,11 +56,11 @@ export const Button: FC<TButtonProps> = ({
         className='center relative w-full h-full'
         initial='idle'
         animate={animation}
-        whileHover={isActive ? 'active' : 'hover'}
+        whileHover={isMarker ? 'active' : 'hover'}
         whileTap='tap'
         {...resolveInteractiveLabels(name)}
       >
-        {isActive && (
+        {isMarker && (
           <Background
             style={{
               boxShadow: GLOW_BOX.highlight,

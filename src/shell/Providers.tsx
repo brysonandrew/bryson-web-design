@@ -1,4 +1,4 @@
-import { AppProvider } from '@brysonandrew/app/AppProvider';
+import { AppProvider } from '@brysonandrew/app/Context';
 
 import { ScrollProvider } from '@brysonandrew/scroll/ScrollProvider';
 import { DarkModeProvider } from '@brysonandrew/dark-mode/context/DarkModeProvider';
@@ -11,7 +11,7 @@ import { PricingProvider } from '@pages/index/pricing/context/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/context/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 
-import { TChildrenProps } from '@brysonandrew/base/types/dom';
+import { TChildrenProps } from '@brysonandrew/types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@brysonandrew/base/components/utils/arrToNest';
 import { Metal } from '../components/layout/metal';
@@ -23,6 +23,7 @@ import { useMoveSound } from '@brysonandrew/sounds';
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { HeadProvider } from 'lib/head';
+import { Glow } from '@brysonandrew/filter-animate';
 
 type TProps = TChildrenProps;
 export const Providers: FC<TProps> = ({
@@ -48,8 +49,9 @@ export const Providers: FC<TProps> = ({
     >
       <ViewerProvider>
         <AppProvider<TCustomStyle>
-          Texture={Metal}
+          Back={Metal}
           Blank={Blank}
+          Glow={Glow}
           onSound={handleMove}
           style={CUSTOM_STYLE}
         >

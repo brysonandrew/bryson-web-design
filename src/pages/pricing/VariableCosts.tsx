@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { I } from '@brysonandrew/base/icons/icon';
-import { PLUS_ICON } from '@brysonandrew/base/icons/constants/text';
-import { nToMoney } from '@brysonandrew/base/utils/format';
+import { I } from '@brysonandrew/icons/icon';
+import { PLUS_ICON } from '@brysonandrew/icons/constants/text';
+import { nToMoney } from '@brysonandrew/utils/format';
 
 export const VariableCosts: FC = () => {
   return (

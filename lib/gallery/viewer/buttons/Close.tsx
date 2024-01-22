@@ -4,7 +4,7 @@ import { LinkFillCenter } from '@brysonandrew/base/components/interactive/LinkFi
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/base/types/dom';
+} from '@brysonandrew/types/dom';
 import { useTo } from '../hooks/nav/useTo';
 import { useHoverKey } from '@brysonandrew/cursor';
 import { Circle } from '../../components/buttons/Circle';

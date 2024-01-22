@@ -2,7 +2,7 @@ import {
   TBaseColorRecord,
   TCssVar,
 } from '@brysonandrew/config/color/types';
-import { TKeyStr } from '@brysonandrew/base/types/keys';
+import { TKeyStr } from '@brysonandrew/types/keys';
 import { resolveVarCss } from './resolveVarCss';
 
 export const resolveColorRecord = <

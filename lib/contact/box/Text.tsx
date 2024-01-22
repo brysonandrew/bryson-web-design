@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TBaseInputProps } from '../context/types';
 import { Box } from '.';
-import { resolveInteractiveLabels } from '@brysonandrew/base/utils/attributes/resolveInteractiveLabels';
-import { TInputMotionProps } from '@brysonandrew/base/types/dom';
+import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { TInputMotionProps } from '@brysonandrew/types/dom';
 
 const Input = styled(motion.input)``;
 

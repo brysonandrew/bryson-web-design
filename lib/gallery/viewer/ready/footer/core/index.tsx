@@ -16,7 +16,7 @@ const Dragger = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { Texture, GLOW_BOX, BORDER_RADIUS } =
+  const { Back, GLOW_BOX, BORDER_RADIUS } =
     useApp();
   const { count, motionX, width, mediaRecords } = props;
   useKeys({ readyCount: count });
@@ -31,7 +31,7 @@ export const Core: FC<TProps> = (props) => {
 
   return (
     <Root className='relative' style={{ width: itemWidth }}>
-      <Texture />
+      <Back />
       <Dragger
         className={clsx(
           'left-0 bottom-0 overflow-hidden',
@@ -59,7 +59,7 @@ export const Core: FC<TProps> = (props) => {
       >
         {isDesktop && (
           <>
-            <Texture classValue='opacity-50' />
+            <Back classValue='opacity-50' />
             <DragIcon classValue='left-0' />
             <DragIcon classValue='right-0' />
           </>

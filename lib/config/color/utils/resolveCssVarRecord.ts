@@ -1,4 +1,4 @@
-import { TKeyStr } from '@brysonandrew/base/types/keys';
+import { TKeyStr } from '@brysonandrew/types/keys';
 
 export const resolveVarCssRecord = <T extends object>(
   config: T,

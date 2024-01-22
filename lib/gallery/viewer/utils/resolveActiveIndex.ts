@@ -3,7 +3,7 @@ type TConfig = {
   width: number;
   count: number;
 };
-export const resolveActiveIndex = ({
+export const resolveMarkerIndex = ({
   x,
   width,
   count,

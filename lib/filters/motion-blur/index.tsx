@@ -1,5 +1,5 @@
-import { TChildren } from '@brysonandrew/base/types/dom';
-import { resolveUrlId } from '@brysonandrew/base/utils/attributes/resolveUrlId';
+import { TChildren } from '@brysonandrew/types/dom';
+import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';
 import {
   isSafari,
@@ -15,7 +15,7 @@ import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
 } from '../blur/constants';
-import { resolveCompositeKey } from '@brysonandrew/base';
+import { resolveCompositeKey } from '@brysonandrew/utils';
 import { FilterShell } from '../FilterShell';
 const intensity = MOTION_BLUR_INTENSITY;
 
