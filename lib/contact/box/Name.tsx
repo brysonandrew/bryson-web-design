@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Root = styled(motion.div)``;
 
-type TProps = TTitleProps;
+type TProps = TTitleProps; 
 export const Name: FC<TProps> = ({ title }) => {
   return (
     <Root layout='size' className='name'>

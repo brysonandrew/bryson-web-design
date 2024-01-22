@@ -12,7 +12,7 @@ export const Header = <
   const { ITEMS_RECORD } = useGallery<T, K, R>();
   const { title, description } = ITEMS_RECORD[slug];
   return (
-    <div className='relative column-start h-full md:row'>
+    <div className='relative column-start h-full lg:row'>
       <h4 className='title-section title-main'>{title}</h4>
       <div className='p-1 md:p-2' />
       <h5 className='title-section italic'>

@@ -15,7 +15,7 @@ export const MINIMALIST: StaticShortcutMap = {
   'clear-button':
     'relative text-gray-2 lg:text-gray backdrop-blur-sm bg-white-01',
   'clear-icon': 'w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10',
-  shell: 'relative column-start w-full md:row-start-space',
+  shell: 'relative column-start w-full  gap-2 md:(row-start-space gap-0)',
   'shell-texture-glow': 'hidden',
   'input-base':
     'title-input relative pl-4 w-full tracking-widest rounded-md leading-none shrink-0 disabled:cursor-not-allowed',
