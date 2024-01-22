@@ -4,7 +4,6 @@ export const GLOW = {
   'gap-box-2': 'gap-12',
   'title-input':
     'text-2xl sm:text-2.5xl md:text-3xl md:text-3.5xl lg:text-4xl xl:text-4.5xl',
-
   root: 'column-stretch gap-box-2 mt-1',
   inputs: 'column-stretch gap-box',
   clear: 'absolute top-4 md:top-3.75 right-3.75 z-10',

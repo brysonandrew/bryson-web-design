@@ -1,4 +1,4 @@
-import { TMotionPoint } from '@brysonandrew/animation/config/types';
+import { TMotionPoint } from '@brysonandrew/animation/types';
 
 export type TState = {
   isScrolling: boolean;

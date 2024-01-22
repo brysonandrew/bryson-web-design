@@ -16,7 +16,7 @@ import {
 import { Picture } from '@brysonandrew/media/picture';
 import { useTapEvents } from './hooks/useTapEvents';
 import { Tag } from './Tag';
-import { TMotionPoint } from '@brysonandrew/animation/config/types';
+import { TMotionPoint } from '@brysonandrew/animation/types';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;

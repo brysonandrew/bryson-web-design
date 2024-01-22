@@ -11,7 +11,7 @@ import {
 import { P2 } from '@brysonandrew/base/components/layout/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useApp } from '@brysonandrew/app';
 

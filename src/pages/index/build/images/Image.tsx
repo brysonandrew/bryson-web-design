@@ -17,7 +17,7 @@ import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/animation/config/constants';
+import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
 import { GALLERY_ICON } from '@brysonandrew/icons/constants/gallery';

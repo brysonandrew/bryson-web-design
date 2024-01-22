@@ -3,7 +3,7 @@ import { FadeUp } from '@brysonandrew/base/components/layout/vertical-fade/FadeU
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useDarkMode } from '@brysonandrew/dark-mode';

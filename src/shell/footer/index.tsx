@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
 import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
 import { FadeUp } from '@brysonandrew/base/components/layout/vertical-fade/FadeUp';

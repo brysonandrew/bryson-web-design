@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "6.21.23",
+  "version": "6.21.29",
   "description": "Icons library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,6 +11,8 @@
       "default": "./index.ts"
     },
     "./type": "./type.ts",
+    "./icon": "./icon/index.tsx",
+    "./types": "./types/index.ts",
     "./constants/base": "./constants/base.ts",
     "./constants/clipboard": "./constants/clipboard.ts",
     "./constants/contact": "./constants/contact.ts",
@@ -23,9 +25,7 @@
     "./constants/inputs": "./constants/inputs.ts",
     "./constants/links": "./constants/links.ts",
     "./constants/shop": "./constants/shop.ts",
-    "./constants/text": "./constants/text.ts",
-    "./icon": "./icon/index.tsx",
-    "./types": "./types/index.ts"
+    "./constants/text": "./constants/text.ts"
   },
   "scripts": {
     "format": "prettier .",

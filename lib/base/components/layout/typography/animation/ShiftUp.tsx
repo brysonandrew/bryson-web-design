@@ -3,7 +3,7 @@ import {
   DURATION,
   MOTION_CONFIG,
   PRESENCE_Y_SHIFT,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import clsx from 'clsx';

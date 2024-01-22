@@ -1,9 +1,8 @@
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
-import { DURATION } from '@brysonandrew/animation/config/constants';
+import { resolvePresence, DURATION } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
-import { resolvePresence } from '@brysonandrew/animation/utils';
 import clsx from 'clsx';
 
 type TProps = TDivMotionProps;

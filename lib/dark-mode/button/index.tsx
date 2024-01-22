@@ -1,4 +1,4 @@
-import { resolveVerticalShiftPresence } from '@brysonandrew/animation/utils';
+import { resolveVerticalShiftPresence } from '@brysonandrew/animation';
 import { AnimatePresence } from 'framer-motion';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {

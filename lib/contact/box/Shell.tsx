@@ -8,7 +8,7 @@ import { useHoverKey } from '@brysonandrew/cursor';
 import {
   MOTION_CONFIG,
   resolveParentAnimateConfig,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import { useApp } from '@brysonandrew/app';
 import { CONTACT_FORM_INPUT_LAYOUT_ID } from '../context/constants';

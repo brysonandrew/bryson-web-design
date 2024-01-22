@@ -1,4 +1,4 @@
 export const INTERACTIVE = {
   'circle-interactive':
-    'relative p-3 cursor-pointer ',
+    'relative p-3 cursor-pointer',
 };

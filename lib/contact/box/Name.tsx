@@ -8,8 +8,10 @@ const Root = styled(motion.div)``;
 type TProps = TTitleProps;
 export const Name: FC<TProps> = ({ title }) => {
   return (
-    <Root layout className='name'>
-      <h4 className='name-text'>{title}</h4>
+    <Root layout='size' className='name'>
+      <motion.h4 layout className='name-text'>
+        {title}
+      </motion.h4>
     </Root>
   );
 };

@@ -8,7 +8,7 @@ import {
   TParallaxMotionChildrenProps,
   TParallaxOptions,
 } from './config';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation/config/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { NOOP } from '@brysonandrew/base/constants/functions';
 import { isDesktop } from 'react-device-detect';
@@ -79,11 +79,11 @@ export const Parallax: FC<TProps> = ({
 };
 
 export * from './config';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';

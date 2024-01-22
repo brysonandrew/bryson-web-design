@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { Target } from '@brysonandrew/filters/aura/Target';
 import { P1_5 } from '@brysonandrew/base/components/layout/space/P1_5';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation/config/constants';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
 import clsx from 'clsx';
 import { TItem } from '../config/types';

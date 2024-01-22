@@ -7,7 +7,7 @@ import { FadeDown } from '@brysonandrew/base/components/layout/vertical-fade/Fad
 import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation/config/constants';
+} from '@brysonandrew/animation';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 
 const Root = styled.header``;
