@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { ArrowRight } from '@brysonandrew/viewer/icons/ArrowRight';
+import { ArrowRight } from '@brysonandrew/gallery-viewer/icons/ArrowRight';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { useNext } from '../hooks/nav/useNext';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';

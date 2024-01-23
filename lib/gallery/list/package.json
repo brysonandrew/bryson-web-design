@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.69",
-  "description": "List library",
+  "version": "6.21.70",
+  "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
@@ -34,7 +34,7 @@
   ],
   "peerDependencies": {
     "@brysonandrew/animation": "*",
-    "@brysonandrew/viewer": "*",
+    "@brysonandrew/gallery-viewer": "*",
     "@brysonandrew/space": "*",
     "react-dom": "*",
     "react-device-detect": "*",

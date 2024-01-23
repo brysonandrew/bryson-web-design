@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/hooks-window",
-  "version": "6.21.69",
-  "description": "Window library",
+  "version": "6.21.70",
+  "description": "Hooks Window library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {

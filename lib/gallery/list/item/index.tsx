@@ -12,9 +12,9 @@ import {
   useCursor,
   resolveCursorKeyFromHoverKey,
 } from '@brysonandrew/cursor';
-import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { useToFirst } from '@brysonandrew/viewer/hooks/nav/useToFirst';
+import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '../../GalleryProvider';
 

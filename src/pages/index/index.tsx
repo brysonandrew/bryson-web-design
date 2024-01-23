@@ -8,7 +8,7 @@ const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
 const ViewerLazy = lazy(
-  () => import('@brysonandrew/viewer'),
+  () => import('@brysonandrew/gallery-viewer'),
 );
 
 export const Index = () => {

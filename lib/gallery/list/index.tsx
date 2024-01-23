@@ -1,6 +1,6 @@
 import { Item } from './item';
 import { motion } from 'framer-motion';
-import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
 import { useGallery } from '../GalleryProvider';
 

@@ -7,8 +7,8 @@ import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
 import { useFreezeScrollBar } from '@brysonandrew/hooks/scroll/useFreezeScroll';
-import { useMotionX } from '@brysonandrew/viewer/hooks/motion/useMotionX';
-import { resolveGalleryWidth } from '@brysonandrew/viewer/utils/resolveGalleryWidth';
+import { useMotionX } from '@brysonandrew/gallery-viewer/hooks/motion/useMotionX';
+import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
 
 const Root = styled(motion.div)``;
 
