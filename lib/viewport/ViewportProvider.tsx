@@ -1,6 +1,27 @@
-import type { FC, PropsWithChildren } from 'react';
-import { VIEWPORT } from './constants';
-import { useMeasure, TViewport } from './useMeasure';
+import {
+  createContext,
+  FC,
+  PropsWithChildren,
+  useContext,
+} from 'react';
+import {
+  useMeasure,
+  TViewport,
+  INIT_VIEWPORT,
+} from './useMeasure';
+import { TContext } from '@brysonandrew/viewport/config/types';
+
+const INIT: TContext = {
+  ...INIT_VIEWPORT,
+  isVertical: false,
+  halfHeight: 0,
+  halfWidth: 0,
+};
+
+export const VIEWPORT = createContext<TContext>(INIT);
+
+export const useViewport = (): TContext =>
+  useContext<TContext>(VIEWPORT);
 
 export const ViewportProvider: FC<PropsWithChildren> = ({
   children,

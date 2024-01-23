@@ -4,12 +4,13 @@ import {
   TParallaxOptions,
   TPartialStyle,
 } from '../config';
-import { Dispersion } from './values/Dispersion';
-import { Resistance } from './values/Resistance';
-import { Visibility } from './values/Visibility';
-import { useScrollYBounds } from './useScrollYBounds';
+
 import { useScroll } from '@brysonandrew/scroll';
 import { TRect } from '@brysonandrew/types/dom/main';
+import { useScrollYBounds } from '@brysonandrew/parallax/aggregator/useScrollYBounds';
+import { Dispersion } from '@brysonandrew/parallax/aggregator/values/Dispersion';
+import { Resistance } from '@brysonandrew/parallax/aggregator/values/Resistance';
+import { Visibility } from '@brysonandrew/parallax/aggregator/values/Visibility';
 
 type TProps = TParallaxOptions & {
   rect: TRect;
@@ -28,7 +29,7 @@ export const Aggregator: FC<TProps> = ({
   const { scroll } = useScroll();
   const styleRef = useRef<TPartialStyle>({});
   const scrollBounds = useScrollYBounds({ rect });
-  const config = { 
+  const config = {
     scrollY: scroll.y,
     ...scrollBounds,
   };

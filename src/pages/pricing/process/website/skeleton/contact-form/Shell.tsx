@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
-import { CONTACT_FORM } from '../../config';
 import { Focus } from '../../../focus';
+import { CONTACT_FORM } from '../../config';
 
 export const Shell: FC<PropsWithChildren> = ({
   children,

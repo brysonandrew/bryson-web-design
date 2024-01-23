@@ -2,12 +2,12 @@ import { useRef, useState } from 'react';
 import {
   STATUS_RECORD,
   resolveStatusHandlers,
-} from '../config';
+} from '@brysonandrew/color/config';
 import {
   TStatusRecordContext,
   TStatusRecord,
   TLogHandler,
-} from '../config/types';
+} from '@brysonandrew/color/config/types';
 import { CHANNEL_KEY } from './signaling/config';
 import { useChannel } from 'ably/react';
 import { Types } from 'ably';

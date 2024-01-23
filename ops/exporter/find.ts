@@ -1,17 +1,11 @@
-import { findDirPaths } from '../common/utils';
-import { CACHE_BASE_NAME } from '../common/utils/constants';
+import glob from 'fast-glob';
+import { join } from 'path';
 
-export const find = (main: string) => {
+export const find = async (main: string) => {
   try {
-    const targets = {} as any;
-    const dirPaths = findDirPaths(main, [
-      CACHE_BASE_NAME,
-      'node_modules',
-    ]);
-    for (const [name, dirPath] of Object.entries(dirPaths)) {
-      targets[name] = dirPath;
-    }
-    return dirPaths;
+    const pattern = join(main, `./**/package.json`);
+    const paths = await glob([pattern]);
+    return paths;
   } catch (error: any) {
     console.log('find - something went wrong: ', error);
     throw Error(error);

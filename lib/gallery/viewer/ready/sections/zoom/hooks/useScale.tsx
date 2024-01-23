@@ -7,7 +7,7 @@ import {
   WHEEL_DELTA_THRESHOLD,
   TSharedConfig,
   SCALE,
-} from '../config';
+} from '@brysonandrew/gallery';
 
 type TConfig = TSharedConfig;
 export const useScale = ({

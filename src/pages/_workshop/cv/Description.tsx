@@ -1,16 +1,11 @@
-import { useApp } from '@brysonandrew/app';
-import { DESCRIPTION_PARAGRAPHS } from './copy';
+import { DESCRIPTION_PARAGRAPHS } from '@app/copy';
 
 export const Description = () => {
-  const { BORDER_RADIUS } = useApp();
   return (
     <ul className='column'>
       {DESCRIPTION_PARAGRAPHS.map((paragraph) => (
         <li className='relative' key={paragraph}>
-          <div
-            className='absolute -inset-4 bg-black-1'
-            style={{ borderRadius: BORDER_RADIUS.SM }}
-          />
+          <div className='absolute -inset-4 bg-black-1 rounded-md' />
           <p className='relative'>{paragraph}</p>
         </li>
       ))}

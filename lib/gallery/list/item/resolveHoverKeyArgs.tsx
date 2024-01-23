@@ -1,5 +1,5 @@
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { GALLERY_ICON } from '@brysonandrew/icons/constants/gallery';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { GALLERY_ICON } from '@brysonandrew/icons/config/constants/gallery';
 import { kebabToTitle } from '@brysonandrew/utils/format';
 
 export const resolveHoverKeyArgs = (slug: string) => {

@@ -5,7 +5,7 @@ import {
   useMotionValue,
   AnimationPlaybackControls,
 } from 'framer-motion';
-import { useScroll } from '@brysonandrew/scroll/useScroll';
+import { useScroll } from '@brysonandrew/scroll';
 
 export const useSpin = () => {
   const animateRef =

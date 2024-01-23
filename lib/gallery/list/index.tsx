@@ -1,9 +1,8 @@
 import { Item } from './item';
 import { motion } from 'framer-motion';
-import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
 import { Tips } from './Tips';
-import { InView } from '@brysonandrew/in-view';
-import { useGallery } from '../context/GalleryProvider';
+import { useGallery } from '../GalleryProvider';
 
 export const List = <
   T extends string,
@@ -32,3 +31,12 @@ export const List = <
     </>
   );
 };
+
+export * from './Tips';
+export * from './item';
+export * from './item/resolveHoverKeyArgs';
+export * from './item/details/Buttons';
+export * from './item/details/Paragraphs';
+export * from './item/details/TagLink';
+export * from './item/details/Tags';
+export * from './item/details';

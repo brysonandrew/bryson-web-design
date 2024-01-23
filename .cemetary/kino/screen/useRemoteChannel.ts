@@ -6,7 +6,7 @@ import {
   CHANNEL_KEY,
   OFFER_KEY,
 } from '../hooks/signaling/config';
-import { TMessage } from '../config/types';
+import { TMessage } from '@brysonandrew/color/config/types';
 
 export const useRemoteChannel = () => {
   const { connection, onLog, channel } = useScreen();

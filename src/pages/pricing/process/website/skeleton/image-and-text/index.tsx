@@ -1,9 +1,9 @@
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
-import { ADDITIONAL_CONTENT } from '../../config';
 import { Normal } from './variants/Normal';
 import { Reversed } from './variants/Reversed';
 import clsx from 'clsx';
 import { FC, PropsWithChildren } from 'react';
+import { ADDITIONAL_CONTENT } from '@pages/pricing/process/website/config';
 
 type TProps = PropsWithChildren;
 export const ImageAndText: FC<TProps> = ({ children }) => {

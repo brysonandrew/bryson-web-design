@@ -16,9 +16,9 @@ export const CANVAS_SCREENS_PATH = [
 ].join('/');
 
 export const MAIN_SERVICE_WORKER =
-  'config/app/service-worker';
-export const BUILD_CONTEXT = 'src/pages/index/build/context';
-export const GALLERY_CONTEXT = 'src/pages/projects/gallery/context';
+  './config/app/service-worker';
+export const BUILD_CONTEXT = 'src/pages/index/build';
+export const GALLERY_CONTEXT = 'src/shell';
 
 const EXTS = ['png', 'jpg', 'jpeg'] as const;
 const PROCESS_EXTS = ['webp', 'md'] as const;

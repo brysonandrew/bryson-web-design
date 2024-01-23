@@ -3,7 +3,7 @@ import { P1 } from '@brysonandrew/lib/components/layout/space/P1';
 import { pascalToTitle } from '@brysonandrew/lib/utils/format';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PRESENCE_OPACITY } from '@brysonandrew/lib/animation/constants';
-import { BASE_INCLUDES } from './types';
+import { BASE_INCLUDES } from '@brysonandrew/color/types';
 import {
   TStatusRecord,
   TStatusRecordKey,

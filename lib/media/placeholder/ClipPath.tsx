@@ -1,4 +1,4 @@
-import { IMAGE_PLACEHOLDER_ID } from '@brysonandrew/media/placeholder/config/constants';
+import { IMAGE_PLACEHOLDER_ID } from '@brysonandrew/media/config/constants';
 import { TSvgProps } from '@brysonandrew/types/dom';
 import type { FC } from 'react';
 

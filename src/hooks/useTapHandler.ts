@@ -1,6 +1,6 @@
-import { useTo } from '@brysonandrew/gallery/viewer/hooks/nav/useTo';
+import { useTo } from '@brysonandrew/viewer/hooks/nav/useTo';
 import { useOnSound } from '@brysonandrew/sounds/useOnSound';
-import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
+import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { useNavigate } from 'react-router';
 
 type TConfig = {

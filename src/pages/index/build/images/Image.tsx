@@ -5,23 +5,23 @@ import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@brysonandrew/filters/config/constants/presets';
+} from '@brysonandrew/filters';
 import clsx from 'clsx';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { TImgMotionProps } from '@brysonandrew/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
 import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useTapHandler } from '@hooks/useTapHandler';
-import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
-import { GALLERY_ICON } from '@brysonandrew/icons/constants/gallery';
-import { useCurrName } from '@brysonandrew/gallery/viewer/hooks/params/useCurrName';
+import { TMediaRecord } from '@brysonandrew/media/config/types';
+import { GALLERY_ICON } from '@brysonandrew/icons/config/constants/gallery';
+import { useCurrName } from '@brysonandrew/viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 

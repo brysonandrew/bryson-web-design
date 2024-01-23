@@ -1,15 +1,14 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { useContact } from '@brysonandrew/contact';
+import { resolveButtonValue, useContact } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
   EFFECT_ANIMATE_TRANSITION,
   resolveParentAnimateConfig,
 } from '@brysonandrew/animation';
-import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
-import { resolveButtonValue } from '../utils/resolveButtonValue';
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {

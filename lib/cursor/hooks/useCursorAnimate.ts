@@ -5,13 +5,13 @@ import {
   animate,
 } from 'framer-motion';
 import { TSign } from './useCursorOffset';
-import { THoverKey } from './config';
 import { useEffect, useRef } from 'react';
 import {
   CUSTOM_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
-} from '@brysonandrew/cursor/switch/config';
-import { TAnimationControlsPoint } from '@brysonandrew/animation/types';
+  THoverKey,
+} from '@brysonandrew/cursor/config/constants';
+import { TAnimationControlsPoint } from '@brysonandrew/animation/config/types';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;

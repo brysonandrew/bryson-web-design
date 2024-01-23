@@ -1,14 +1,14 @@
-import { TDefaultStyle } from '../config/types';
+import { TDefaultStyle } from '@brysonandrew/app/config/types';
 import { TBrightenProps } from '@brysonandrew/filter-animate/Brighten';
-import { resolveComponent } from '../utils/resolveComponent';
+import { withStyle } from '@brysonandrew/app/utils/withStyle';
 import {
   TBlankProps,
   TCoreLayoutRecord,
   TLayoutComponentProps,
   TLayoutRecordProps,
   TLayoutRecordValue,
-} from './types';
-import { resolveGlow } from '@brysonandrew/app/layout/glow';
+} from '@brysonandrew/app';
+import { resolveGlowCollection } from './withGlow';
 
 type TConfig<S extends TDefaultStyle> = TLayoutRecordProps &
   S;
@@ -20,12 +20,9 @@ export const useLayoutRecord = <S extends TDefaultStyle>(
     borderRadius: STYLE.BORDER_RADIUS.MD,
   };
   const CORE: TCoreLayoutRecord = {
-    Back: resolveComponent<TBlankProps>(style, Back),
-    Blank: resolveComponent<TBlankProps>(style, Blank),
-    Brighten: resolveComponent<TBrightenProps>(
-      style,
-      Brighten,
-    ),
+    Back: withStyle<TBlankProps>(style, Back),
+    Blank: withStyle<TBlankProps>(style, Blank),
+    Brighten: withStyle<TBrightenProps>(style, Brighten),
   };
 
   const BASE: TLayoutRecordValue = { ...CORE };
@@ -35,7 +32,7 @@ export const useLayoutRecord = <S extends TDefaultStyle>(
       ...CORE,
       ...STYLE,
     };
-    BASE.Glow = resolveGlow(componentProps);
+    BASE.Glow = resolveGlowCollection(componentProps);
   }
 
   return BASE;

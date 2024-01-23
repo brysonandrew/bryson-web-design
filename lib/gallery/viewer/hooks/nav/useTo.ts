@@ -1,7 +1,7 @@
 import { PROJECT_KEY } from '@brysonandrew/gallery/config/constants';
+import { resolveTo } from '@brysonandrew/gallery/viewer/utils/resolveTo';
 import { useLocation } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
-import { resolveTo } from '../../utils/resolveTo';
 
 type TToConfig<T extends string> = {
   project?: T;

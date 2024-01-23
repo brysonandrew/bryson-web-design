@@ -3,10 +3,10 @@ import { isDesktop } from 'react-device-detect';
 import {
   LinkFillCenter,
   TProps as TIconLinkProps,
-} from '@brysonandrew/base/components/interactive/LinkFillCenter';
+} from '@brysonandrew/interactive/LinkFillCenter';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
-import { useViewer as useContext } from '@brysonandrew/gallery';
-import { NOOP } from '@brysonandrew/base/constants/functions';
+import { NOOP } from '@brysonandrew/utils/functions';
+import { useViewer } from '@brysonandrew/viewer';
 
 type TProps = TIconLinkProps;
 export const Nav: FC<TProps> = ({
@@ -14,7 +14,7 @@ export const Nav: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { onMotionBlurStart } = useContext();
+  const { onMotionBlurStart } = useViewer();
   const handleMoveSound = useMoveSound();
 
   const handleClick = () => {

@@ -1,8 +1,8 @@
 import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
-import { useResistance } from '../../hooks/useResistance';
-import { TBaseConfig, TTransformRange } from '../../config';
 import { TChildren } from '@brysonandrew/types/dom/main';
+import { TBaseConfig, TTransformRange } from '@brysonandrew/parallax/config';
+import { useResistance } from '@brysonandrew/parallax/hooks/useResistance';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue): TChildren;

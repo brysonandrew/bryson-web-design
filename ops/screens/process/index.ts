@@ -23,7 +23,7 @@ import {
   TMediaRecords,
   TScreensRecord,
 } from '@brysonandrew/media';
-import { writeScreensRecordInGallery } from './utils/writeScreensRecordInGallery';
+import { writeScreensRecordInGallery } from '@brysonandrew/screens/process/utils/writeScreensRecordInGallery';
 
 (async () => {
   try {

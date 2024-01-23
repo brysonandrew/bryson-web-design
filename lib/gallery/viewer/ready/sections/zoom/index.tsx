@@ -7,17 +7,17 @@ import {
 import { useState, type FC } from 'react';
 import { useCursor } from './hooks/useCursor';
 import { useScale } from './hooks/useScale';
+import { Picture } from '@brysonandrew/media/picture';
+import { useTapEvents } from './hooks/useTapEvents';
+import { Tag } from './Tag';
+import { TMotionPoint } from '@brysonandrew/animation/config/types';
+import { TMediaRecord } from '@brysonandrew/media/config/types';
 import {
   CURSOR_SIZE_QUARTER,
   TImageProps,
   TMoveConfig,
   TSharedConfig,
-} from './config';
-import { Picture } from '@brysonandrew/media/picture';
-import { useTapEvents } from './hooks/useTapEvents';
-import { Tag } from './Tag';
-import { TMotionPoint } from '@brysonandrew/animation/types';
-import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
+} from '@brysonandrew/gallery/viewer/ready/sections/zoom/config';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 

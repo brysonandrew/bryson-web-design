@@ -1,10 +1,10 @@
-import { resolveBoxShadow } from '@brysonandrew/config/color/utils/glow/resolveBoxShadow';
+import { resolveBoxShadow } from '@brysonandrew/color/utils/glow/resolveBoxShadow';
 
-export const resolveColorSet = (color: string) => {
+export const resolveRgbaSet = (color: string) => {
   return {
     boxShadow: resolveBoxShadow(color),
     backgroundColor: color,
   };
 };
 
-export type TColorSet = ReturnType<typeof resolveColorSet>;
+export type TColorSet = ReturnType<typeof resolveRgbaSet>;

@@ -5,10 +5,10 @@ import { Link as __Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolveInteractiveLabels } from '@brysonandrew/utils';
 import { APP_DESCRIPTION } from '@app/base/constants';
-import { PAGE_RECORD } from '@app/routes/constants/pages';
+import { PAGE_RECORD } from '@app/routes';
 
 const _Link = styled(motion(__Link))``;
 

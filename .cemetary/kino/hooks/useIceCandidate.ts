@@ -1,6 +1,6 @@
 import { Types } from 'ably';
 import { CANDIDATE_KEY } from './signaling/config';
-import { TLogHandler } from '../config/types';
+import { TLogHandler } from '@brysonandrew/color/config/types';
 
 type TConfig = {
   channel: Types.RealtimeChannelPromise;

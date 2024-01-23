@@ -2,7 +2,7 @@ import {
   TLogHandler,
   TMessage,
   TSignalingType,
-} from '../config/types';
+} from '@brysonandrew/color/config/types';
 import { useRef, useState, useEffect } from 'react';
 
 import { CHANNEL_KEY } from '../hooks/signaling/config';

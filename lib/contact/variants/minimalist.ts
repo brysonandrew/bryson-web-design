@@ -1,6 +1,8 @@
 import { StaticShortcutMap } from 'unocss';
+import { BASE } from './base';
 
 export const MINIMALIST: StaticShortcutMap = {
+  ...BASE,
   'gap-box': 'gap-6',
   'gap-box-1_5': 'gap-8',
   'gap-box-2': 'gap-12',
@@ -28,4 +30,5 @@ export const MINIMALIST: StaticShortcutMap = {
     'title-input text-accent inline-flex capitalize whitespace-nowrap',
   submit: 'bg-input center input-base py-3 pr-3',
   'submit-text': 'italic',
+  footer: 'column-end',
 };

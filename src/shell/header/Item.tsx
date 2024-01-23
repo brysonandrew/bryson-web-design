@@ -5,8 +5,8 @@ import { Link as _Link } from 'react-router-dom';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { DURATION } from '@brysonandrew/animation';
-import { ThickLine } from '@brysonandrew/base/components/layout/line/ThickLine';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { ThickLine } from '@brysonandrew/layout/line/ThickLine';
+import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { TLinkMotionProps } from '@brysonandrew/types';
 import clsx from 'clsx';
 

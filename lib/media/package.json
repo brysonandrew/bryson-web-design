@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.21.33",
+  "version": "6.21.69",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,22 +10,19 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./hooks": "./hooks/index.ts",
-    "./hooks/resolveDimensions": "./hooks/resolveDimensions.ts",
-    "./hooks/resolveMotionConfig": "./hooks/resolveMotionConfig.ts",
-    "./hooks/resolveRandomIndicies": "./hooks/resolveRandomIndicies.ts",
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts",
     "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
     "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
     "./placeholder/ClipPath": "./placeholder/ClipPath.tsx",
     "./placeholder": "./placeholder/index.tsx",
-    "./picture/config/constants": "./picture/config/constants.ts",
-    "./picture/config/types": "./picture/config/types.ts",
-    "./placeholder/utils/resolveGradientStops": "./placeholder/utils/resolveGradientStops.ts",
-    "./placeholder/utils/resolveKey": "./placeholder/utils/resolveKey.ts",
+    "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
+    "./utils/resolveKey": "./utils/resolveKey.ts",
+    "./utils/resolveMotionConfig": "./utils/resolveMotionConfig.ts",
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts",
     "./placeholder/variants/Responsive": "./placeholder/variants/Responsive.tsx",
-    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx",
-    "./placeholder/config/constants": "./placeholder/config/constants.ts"
+    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -41,12 +38,13 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/animation": "*",
+    "@brysonandrew/types": "*",
     "react": "*",
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*",
-    "@brysonandrew/types": "*",
-    "@brysonandrew/utils": "*"
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/color": "*"
   }
 }

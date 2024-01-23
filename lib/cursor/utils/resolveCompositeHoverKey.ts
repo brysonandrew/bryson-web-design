@@ -1,6 +1,4 @@
-import { HOVER_KEY_DELIMITER } from '../context/constants';
-import { THoverKey } from '../hooks';
-import { TCursorKey } from '../switch/config';
+import { HOVER_KEY_DELIMITER, TCursorKey, THoverKey } from '../config/constants';
 
 export const resolveCompositeHoverKey = (
   cursorKey: TCursorKey,

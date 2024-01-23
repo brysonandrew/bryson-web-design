@@ -10,9 +10,9 @@ import {
 } from './config';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
-import { NOOP } from '@brysonandrew/base/constants/functions';
+import { NOOP } from '@brysonandrew/utils/functions';
 import { isDesktop } from 'react-device-detect';
-import { Rect } from '@brysonandrew/base/components/layout/space/Rect';
+import { Rect } from '@brysonandrew/space/Rect';
 
 type TProps = TParallaxOptions & {
   classValue?: ClassValue;
@@ -79,11 +79,11 @@ export const Parallax: FC<TProps> = ({
 };
 
 export * from './config';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';

@@ -1,23 +1,21 @@
 import glob from 'fast-glob';
 import { readFile } from '@ops/common/utils';
 import { join, parse } from 'path';
-import { TPath } from '@ops/common/types/entries';
 import { resolveDeps } from './resolveDeps';
-import {
-  PACKAGE_JSON_NAME,
-  DEP_PREFIX,
-  QUOTE_JSON,
-} from './constants';
-import { writeFile } from 'fs/promises';
-import { writeIndex } from './writeIndex';
 import { TError } from '@brysonandrew/types';
 import { kebabToTitle } from '@brysonandrew/utils';
+import {
+  DEP_PREFIX,
+  QUOTE_JSON,
+} from '../config/constants';
+import { writeFile } from 'fs/promises';
+import { writeIndex } from './writeIndex';
+import { TTargets } from '@brysonandrew/exporter/config/types';
 
-export const process = async (targets: TPath[]) => {
+export const process = async (targets: TTargets) => {
   try {
-    for (const target of targets) {
-      const { name, full } = target;
-      const pkgPath = `${full}/${PACKAGE_JSON_NAME}`;
+    for (const { name, dir, base } of targets) {
+      const pkgPath = join(dir, base);
       const pkgStr = readFile(pkgPath);
       const { dependencies: _, ...pkg } =
         JSON.parse(pkgStr);
@@ -30,23 +28,29 @@ export const process = async (targets: TPath[]) => {
         .join('.');
 
       if (!pkg) {
-        console.log('no pgk', full);
+        console.log('no pgk', dir);
         continue;
       }
 
       const paths = await glob([`./**/*.(ts|tsx)`], {
-        cwd: full,
+        cwd: dir,
       });
 
       let types = {};
       let main = {};
       let peerDependencies: Record<string, unknown> = {};
-      const indexRows = [];
-      const exportRows = [];
+      const indexRows: string[] = [];
+      const exportRows: string[] = [];
 
       for await (const path of paths) {
-        const filePath = join(full, path);
+        const filePath = join(dir, path);
         const file = readFile(filePath);
+
+        const {
+          root,
+          dir: pathDir,
+          name: pathName,
+        } = parse(path);
 
         const deps = resolveDeps({
           file,
@@ -60,13 +64,11 @@ export const process = async (targets: TPath[]) => {
           ...deps,
         };
 
-        const { root, dir, name: pathName } = parse(path);
-
         if (path.endsWith('.d.ts')) {
           types = { types: path };
           continue;
         }
-        if (join(root, dir, pathName) === 'index') {
+        if (join(root, pathDir, pathName) === 'index') {
           const indexPath = `./${path}`;
           main = {
             main: indexPath,
@@ -88,15 +90,15 @@ export const process = async (targets: TPath[]) => {
         }
         const args = [
           root,
-          dir,
+          pathDir,
           ...(pathName === 'index' ? [] : [pathName]),
         ];
-        const key = `${QUOTE_JSON}./${join(
-          ...args,
-        )}${QUOTE_JSON}`;
-        indexRows.push(`export * from ${key};`);
+        const importPath = join(...args);
+        const importKey = `${QUOTE_JSON}./${importPath}${QUOTE_JSON}`;
+
+        indexRows.push(`export * from ${importKey};`);
         exportRows.push(
-          `${key}: ${QUOTE_JSON}./${path}${QUOTE_JSON}`,
+          `${importKey}: ${QUOTE_JSON}./${path}${QUOTE_JSON}`,
         );
       }
       const pkgExportsStr = `{${exportRows.join(',')}}`;
@@ -119,8 +121,7 @@ export const process = async (targets: TPath[]) => {
       );
 
       writeFile(pkgPath, pkgWithExportsStr);
-
-      writeIndex({ indexRows, full });
+      writeIndex({ indexRows, dir });
     }
   } catch (error: TError) {
     throw Error(error);

@@ -1,4 +1,4 @@
-import { NONE_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { NONE_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';

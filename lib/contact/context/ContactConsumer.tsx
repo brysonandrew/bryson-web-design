@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import type { TContactContext } from './types';
-import { CONTACT } from './constants';
+import type { TContactContext } from '@brysonandrew/contact/config/types';
+import { CONTACT } from '@brysonandrew/contact/config/constants';
 
 type TConsumerProps = {
   children(values: TContactContext): JSX.Element;

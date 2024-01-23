@@ -1,0 +1,57 @@
+{
+  "name": "@brysonandrew/gallery-list",
+  "version": "6.21.69",
+  "description": "List library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./Tips": "./Tips.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./item": "./item/index.tsx",
+    "./item/resolveHoverKeyArgs": "./item/resolveHoverKeyArgs.tsx",
+    "./item/details/Buttons": "./item/details/Buttons.tsx",
+    "./item/details/Paragraphs": "./item/details/Paragraphs.tsx",
+    "./item/details/TagLink": "./item/details/TagLink.tsx",
+    "./item/details/Tags": "./item/details/Tags.tsx",
+    "./item/details": "./item/details/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/viewer": "*",
+    "@brysonandrew/space": "*",
+    "react-dom": "*",
+    "react-device-detect": "*",
+    "@brysonandrew/app": "*",
+    "react": "*",
+    "@brysonandrew/in-view": "*",
+    "framer-motion": "*",
+    "@brysonandrew/cursor": "*",
+    "@brysonandrew/sounds": "*",
+    "react-router-dom": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/gallery": "*",
+    "@brysonandrew/icons": "*",
+    "@emotion/styled": "*",
+    "@brysonandrew/interactive": "*",
+    "@brysonandrew/types": "*",
+    "@brysonandrew/filter-animate": "*"
+  },
+  "types": "index.d.ts"
+}

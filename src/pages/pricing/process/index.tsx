@@ -1,6 +1,6 @@
 import { Main } from './Main';
-import { Section } from '@brysonandrew/base/components/layout/section';
-import { P12 } from '@brysonandrew/base/components';
+import { Section } from '@brysonandrew/layout/section';
+import { P12 } from '@brysonandrew/space';
 
 export const Process = () => {
   return (

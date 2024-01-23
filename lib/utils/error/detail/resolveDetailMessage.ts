@@ -1,4 +1,4 @@
-import { TErrorDetail } from './config';
+import { TErrorDetail } from '@brysonandrew/utils';
 
 export const resolveDetailMessage = (
   rows: TErrorDetail[],

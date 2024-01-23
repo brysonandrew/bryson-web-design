@@ -1,4 +1,4 @@
-import { useViewport } from '@brysonandrew/viewport/useViewport';
+import { useViewport } from '@brysonandrew/viewport';
 import { TRect } from '@brysonandrew/types/dom';
 import { useMemo } from 'react';
 
