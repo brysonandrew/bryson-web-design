@@ -4,7 +4,7 @@ import { P60Y } from '@brysonandrew/space/P60Y';
 import { Main } from './Main';
 import { SECTION_RECORD } from '@app/routes';
 
-const Viewer = lazy(() => import('@brysonandrew/viewer'));
+const Viewer = lazy(() => import('@brysonandrew/gallery-viewer'));
 
 export const Projects = () => {
   return (

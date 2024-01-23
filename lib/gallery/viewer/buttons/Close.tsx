@@ -1,4 +1,4 @@
-import { Cross } from '@brysonandrew/viewer/icons/Cross';
+import { Cross } from '@brysonandrew/gallery-viewer/icons/Cross';
 import type { FC } from 'react';
 import {
   TClassValueProps,

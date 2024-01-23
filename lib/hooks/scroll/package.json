@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/hooks-scroll",
-  "version": "6.21.69",
-  "description": "Scroll library",
+  "version": "6.21.70",
+  "description": "Hooks Scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {

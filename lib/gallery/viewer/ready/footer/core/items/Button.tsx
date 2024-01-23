@@ -8,8 +8,8 @@ import { useViewer as useContext } from '@brysonandrew/gallery';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { Background } from '@brysonandrew/interactive/circle/Background';
-import { useTo } from '@brysonandrew/viewer/hooks/nav/useTo';
-import { useCurrName } from '@brysonandrew/viewer/hooks/params/useCurrName';
+import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
+import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { useApp } from '@brysonandrew/app';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 

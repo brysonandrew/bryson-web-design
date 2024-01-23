@@ -21,7 +21,7 @@ import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { GALLERY_ICON } from '@brysonandrew/icons/config/constants/gallery';
-import { useCurrName } from '@brysonandrew/viewer/hooks/params/useCurrName';
+import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 
 const Button = styled(motion.button)``;
 

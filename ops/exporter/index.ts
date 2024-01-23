@@ -13,14 +13,18 @@ import { parse } from 'path';
       const record = parse(pkgPath);
       const { dir, base } = record;
       const parts = dir.split('/');
-      const name = parts[parts.length - 1];
+      const name = parts.slice(1).join('-');
+      const workspace = `${parts[0]}/${name}`;
       return {
         base,
         dir,
         name,
+        workspace,
       };
     });
-    await workspaces(targets.map(({ dir }) => dir));
+    await workspaces(
+      targets.map(({ workspace }) => workspace),
+    );
     process(targets);
   } catch (error) {
     console.log('Exporter - something went wrong: ', error);

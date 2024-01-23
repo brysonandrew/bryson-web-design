@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/boundary",
-  "version": "6.21.69",
+  "version": "6.21.70",
   "description": "Boundary library",
   "types": "/index.d.ts",
   "main": "./index.tsx",

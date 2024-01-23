@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.21.69",
+  "version": "6.21.70",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",

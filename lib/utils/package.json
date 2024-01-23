@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.21.69",
+  "version": "6.21.70",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,12 +11,12 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./format": "./format/index.ts",
-    "./format/url": "./format/url.ts",
-    "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./attributes/mergeStyle": "./attributes/mergeStyle.ts",
     "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
     "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
+    "./format": "./format/index.ts",
+    "./format/url": "./format/url.ts",
+    "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./key/generateRandomId": "./key/generateRandomId.ts",
     "./key": "./key/index.ts",
     "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
@@ -39,7 +39,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
-    "@emotion/serialize": "*"
+    "@emotion/serialize": "*",
+    "@brysonandrew/types": "*"
   }
 }

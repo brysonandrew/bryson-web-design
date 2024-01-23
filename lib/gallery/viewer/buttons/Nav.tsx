@@ -6,7 +6,7 @@ import {
 } from '@brysonandrew/interactive/LinkFillCenter';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { NOOP } from '@brysonandrew/utils/functions';
-import { useViewer } from '@brysonandrew/viewer';
+import { useViewer } from '@brysonandrew/gallery-viewer';
 
 type TProps = TIconLinkProps;
 export const Nav: FC<TProps> = ({

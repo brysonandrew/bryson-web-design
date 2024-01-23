@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.21.69",
+  "version": "6.21.70",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,11 +13,11 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./layout/types": "./layout/types.ts",
-    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
-    "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
+    "./style": "./style/index.ts",
+    "./layout/types": "./layout/types.ts",
+    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
     "./layout/withGlow/Back": "./layout/withGlow/Back.tsx",
     "./layout/withGlow/Glow": "./layout/withGlow/Glow.tsx",
     "./layout/withGlow/Marker": "./layout/withGlow/Marker.tsx",
@@ -40,9 +40,9 @@
     "@brysonandrew/utils": "*",
     "lodash": "*",
     "react": "*",
-    "@brysonandrew/filter-animate": "*",
     "@brysonandrew/color": "*",
     "framer-motion": "*",
+    "@brysonandrew/filter-animate": "*",
     "clsx": "*"
   }
 }

@@ -3,12 +3,12 @@ import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 import { P1 } from '@brysonandrew/space/P1';
 import { P3 } from '@brysonandrew/space/P3';
-import { Gallery } from '@brysonandrew/viewer/icons/Gallery';
+import { Gallery } from '@brysonandrew/gallery-viewer/icons/Gallery';
 import { Circle } from '@brysonandrew/interactive/circle';
 import { Anchor } from '@brysonandrew/interactive/circle/Anchor';
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
-import { useTo } from '@brysonandrew/viewer/hooks/nav/useTo';
+import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { I, OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
 
 const Root = styled.div``;
