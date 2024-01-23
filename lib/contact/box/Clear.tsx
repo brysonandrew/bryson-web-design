@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@brysonandrew/contact';
 import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
-import { TFormKey } from '@brysonandrew/contact/context/types';
+import { TFormKey } from '@brysonandrew/contact/config/types';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@brysonandrew/app';
 import { TButtonMotionProps } from '@brysonandrew/types/dom';

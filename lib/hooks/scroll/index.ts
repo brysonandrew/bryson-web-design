@@ -1,1 +1,2 @@
-export * from "./useFreezeScroll";
+
+export * from './useFreezeScroll';

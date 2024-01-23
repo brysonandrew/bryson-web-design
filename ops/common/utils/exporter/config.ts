@@ -1,21 +1,23 @@
 import glob from 'fast-glob';
-import { ISOMORPHIC_TARGETS, OUTPUT } from './constants';
-import type {
-  TDepsReducer,
-  TOutput,
-  TOutputConfig,
-  TOutputForRollup,
-  TOutputResult,
-  TPackageJson,
-  TResolveExportValueConfig,
-  TResolveTargetPackageJson,
-} from '../../types/z-exporter';
 import path from 'path';
 import { removeTail } from '../entries';
-// import { mergeDeps, resolveDeps } from "../package-json/dependencies";
 import { INDEX_BASENAME } from '../constants';
+import {
+  TOutputConfig,
+  TOutput,
+  TDepsReducer,
+} from '@ops/common/types';
+import {
+  TResolveExportValueConfig,
+  TPackageJson,
+  TResolveTargetPackageJson,
+  TOutputResult,
+  TOutputForRollup,
+} from '@ops/common/types/z-exporter';
+import { ISOMORPHIC_TARGETS, OUTPUT } from './constants';
+// import { mergeDeps, resolveDeps } from "../package-json/dependencies";
 
-const DEFAULT_TYPES = './types/index.ts';
+const DEFAULT_TYPES = '@brysonandrew/color/types/index.ts';
 export const DEFAULT_IGNORE = [
   'node_modules',
   'node_modules/**',

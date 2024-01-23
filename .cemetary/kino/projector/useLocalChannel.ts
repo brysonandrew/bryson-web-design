@@ -5,7 +5,7 @@ import {
   CHANNEL_KEY,
 } from '../hooks/signaling/config';
 import { useChannel } from 'ably/react';
-import { TMessage } from '../config/types';
+import { TMessage } from '@brysonandrew/color/config/types';
 
 export const useLocalChannel = () => {
   const { connection, onLog } = useProjector();

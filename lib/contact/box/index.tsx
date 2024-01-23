@@ -1,5 +1,5 @@
 import { TUseInput, useInput } from '../hooks/useInput';
-import { TBaseInputProps } from '../context/types';
+import { TBaseInputProps } from '../config/types';
 import { Name } from './Name';
 import { Shell, TShellProps } from './Shell';
 import { TBaseChildren } from '@brysonandrew/types/dom';

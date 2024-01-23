@@ -10,10 +10,10 @@ import {
   TDefaultStyle,
   TPartialDefaultStyle,
   TValue,
-} from './config/types';
+} from '@brysonandrew/app/config/types';
 import { useLayoutRecord } from './layout/useLayoutRecord';
 import { DEFAULT_STYLE } from './style';
-import { NOOP } from '@brysonandrew/base';
+import { NOOP } from '@brysonandrew/utils';
 import { TLayoutRecordValue } from './layout/types';
 import { once } from 'lodash';
 

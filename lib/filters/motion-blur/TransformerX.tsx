@@ -1,6 +1,6 @@
 import { useMotionTemplate } from 'framer-motion';
 import { TChildren } from '@brysonandrew/types/dom';
-import { TMotionBlurProps, TTransformerProps } from './config';
+import { TMotionBlurProps, TTransformerProps } from '@brysonandrew/filters';
 
 type TProps = TTransformerProps & {
   children(props: TMotionBlurProps): TChildren;

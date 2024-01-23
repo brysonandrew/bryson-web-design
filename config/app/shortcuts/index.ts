@@ -8,4 +8,6 @@ export const CUSTOM_SHORTCUTS: StaticShortcutMap = {
   ...GRADIENT,
   ...GLOW,
   'title-input': 'title-main',
-};
+} as const;
+
+export type TCustomShortcuts = typeof CUSTOM_SHORTCUTS;

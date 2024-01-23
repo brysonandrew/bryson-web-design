@@ -1,4 +1,6 @@
-export const GRADIENT = {
+import { StaticShortcutMap } from "unocss";
+
+export const GRADIENT: StaticShortcutMap = {
   'gradient-standard':
     'bg-gradient-to-r from-standard to-indigo',
   'gradient-plus':

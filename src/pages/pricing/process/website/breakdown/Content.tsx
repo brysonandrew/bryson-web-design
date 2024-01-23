@@ -1,8 +1,5 @@
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
-import {
-  ADDITIONAL_CONTENT,
-  CONTENT_COST,
-} from '../config';
+import { ADDITIONAL_CONTENT, CONTENT_COST } from '@pages/pricing/process/website/config';
 import { Item } from './extras/Item';
 
 export const Content = () => {

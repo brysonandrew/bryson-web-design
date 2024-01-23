@@ -1,23 +1,12 @@
 import path from 'path';
 import { resolveFiles, readFile } from '../files/resolve';
 import test from '../../../../package.json';
-import type {
-  TDepSectionPackageJson,
-  TDepRecord,
-  TDepsReducer,
-  TKeyType,
-} from '../../types/z-exporter';
-import {
-  DEFAULT_DEPS,
-  DEPS_KEY,
-  DEV_DEPS_KEY,
-  PEER_DEPS_KEY,
-} from '../../types/z-exporter';
 import {
   IMPORT_LINE_TYPE_RX,
   IMPORT_LINE_VALUE_RX,
   EXTRACT_DEP_RX,
 } from '../import-export';
+import { TDepsReducer, DEV_DEPS_KEY, DEPS_KEY, PEER_DEPS_KEY, DEFAULT_DEPS, TKeyType, TDepRecord, TDepSectionPackageJson } from '@ops/common/types';
 
 const MISSING_PEER_DEPS_LOOKUP = {
   '@apollo/client': 'graphql',

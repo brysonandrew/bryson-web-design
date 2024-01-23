@@ -1,6 +1,6 @@
-import { PAGE_RECORD } from '@app/routes/constants/pages';
 import type { FC } from 'react';
 import { useLocation } from 'react-router-dom';
+import { PAGE_RECORD } from '@app/routes';
 import { Link } from './Link';
 import { Title } from './Title';
 

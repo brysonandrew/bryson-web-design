@@ -1,5 +1,5 @@
 import { isRelative } from '@ops/common/utils/exporter/config';
-import { QUOTE_RX } from './constants';
+import { QUOTE_RX } from '../config/constants';
 
 type TConfig = {
   file: string;

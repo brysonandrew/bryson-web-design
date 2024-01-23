@@ -10,7 +10,7 @@ import { motion, MotionValue } from 'framer-motion';
 import { Speed } from './Speed';
 import { TransformerX } from './TransformerX';
 import { TransformerY } from './TransformerY';
-import { TDirectionProps, TIdProps } from './config';
+import { TDirectionProps, TIdProps } from '@brysonandrew/filters';
 import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.21.33",
+  "version": "6.21.69",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -17,11 +17,11 @@
     "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
     "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
-    "./utils/resolveComponent": "./utils/resolveComponent.tsx",
-    "./layout/glow/Back": "./layout/glow/Back.tsx",
-    "./layout/glow/Glow": "./layout/glow/Glow.tsx",
-    "./layout/glow/Marker": "./layout/glow/Marker.tsx",
-    "./layout/glow": "./layout/glow/index.tsx"
+    "./utils/withStyle": "./utils/withStyle.tsx",
+    "./layout/withGlow/Back": "./layout/withGlow/Back.tsx",
+    "./layout/withGlow/Glow": "./layout/withGlow/Glow.tsx",
+    "./layout/withGlow/Marker": "./layout/withGlow/Marker.tsx",
+    "./layout/withGlow": "./layout/withGlow/index.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -37,11 +37,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/base": "*",
+    "@brysonandrew/utils": "*",
     "lodash": "*",
     "react": "*",
     "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/config": "*",
+    "@brysonandrew/color": "*",
     "framer-motion": "*",
     "clsx": "*"
   }

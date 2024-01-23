@@ -1,5 +1,5 @@
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { useGallery } from '../../context/GalleryProvider';
+import { useGallery } from '../../GalleryProvider';
 
 type TProps<K extends string> = TSlugProps<K>;
 export const Header = <

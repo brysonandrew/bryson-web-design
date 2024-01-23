@@ -3,7 +3,7 @@ import { TChildren } from '@brysonandrew/types/dom';
 import {
   TMotionBlurProps,
   TTransformerProps,
-} from './config';
+} from '@brysonandrew/filters';
 
 type TProps = TTransformerProps & {
   children(props: TMotionBlurProps): TChildren;

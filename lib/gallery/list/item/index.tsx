@@ -6,17 +6,17 @@ import { useOnSound } from '@brysonandrew/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
-import { resolveCursorKeyFromHoverKey } from '@brysonandrew/cursor/switch/config';
-import { NOOP } from '@brysonandrew/base/constants/functions';
+import { NOOP } from '@brysonandrew/utils/functions';
 import {
   useHoverKey,
   useCursor,
+  resolveCursorKeyFromHoverKey,
 } from '@brysonandrew/cursor';
-import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { useToFirst } from '@brysonandrew/gallery/viewer/hooks/nav/useToFirst';
+import { useToFirst } from '@brysonandrew/viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
-import { useGallery } from '../../context/GalleryProvider';
+import { useGallery } from '../../GalleryProvider';
 
 type TProps<K extends string> = TSlugProps<K> & {
   index: number;

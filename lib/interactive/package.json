@@ -1,0 +1,44 @@
+{
+  "name": "@brysonandrew/interactive",
+  "version": "6.21.69",
+  "description": "Interactive library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./LinkFillCenter": "./LinkFillCenter.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./circle/Anchor": "./circle/Anchor.tsx",
+    "./circle/Background": "./circle/Background.tsx",
+    "./circle/Button": "./circle/Button.tsx",
+    "./circle": "./circle/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@emotion/styled": "*",
+    "clsx": "*",
+    "react": "*",
+    "react-router-dom": "*",
+    "framer-motion": "*",
+    "@brysonandrew/types": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/app": "*",
+    "@brysonandrew/animation": "*"
+  },
+  "types": "index.d.ts"
+}

@@ -4,12 +4,12 @@ import {
   PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
 } from '@brysonandrew/animation';
-import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
-import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
-import { FadeUp } from '@brysonandrew/base/components/layout/vertical-fade/FadeUp';
+import { useScroll } from '@brysonandrew/scroll';
+import { useViewport } from '@brysonandrew/viewport';
+import { FadeUp } from '@brysonandrew/layout/vertical-fade/FadeUp';
 import { Settings } from './settings';
-import { Network } from '@brysonandrew/base/network';
-import { BackdropBlur } from '@brysonandrew/base/components/layout/backdrop-blur';
+import { Network } from '@brysonandrew/network';
+import { BackdropBlur } from '@brysonandrew/layout/backdrop-blur';
 import { Position } from './Position';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 
@@ -17,8 +17,8 @@ const Root = styled.footer``;
 
 export const Footer = () => {
   const { isDarkMode } = useDarkMode();
-  const { isScroll } = useScrollContext();
-  const { width } = useViewportContext();
+  const { isScroll } = useScroll();
+  const { width } = useViewport();
   return (
     <Root
       className='fixed bottom-0 left-0 w-full h-0'

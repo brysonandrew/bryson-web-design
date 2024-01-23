@@ -4,9 +4,9 @@ import { useHoverKey } from '@brysonandrew/cursor';
 import {
   Button as _Button,
   TButtonProps,
-} from '@brysonandrew/base/components/interactive/circle/Button';
+} from '@brysonandrew/interactive/circle/Button';
 import { createElement, FC } from 'react';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 import {

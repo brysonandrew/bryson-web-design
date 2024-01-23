@@ -2,7 +2,7 @@ import { OFFER_KEY } from '@pages/kino/hooks/signaling/config';
 import { useProjector } from '@pages/kino/projector/context';
 import { TError } from '@t/index';
 import { useState } from 'react';
-import { resolveErrorMessage } from '../utils/resolveErrorMessage';
+import { resolveErrorMessage } from '@brysonandrew/color/utils/resolveErrorMessage';
 
 export const useConnect = () => {
   const [isLoading, setLoading] = useState(false);

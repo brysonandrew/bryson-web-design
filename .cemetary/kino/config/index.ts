@@ -5,7 +5,7 @@ import {
   TStatusHandlers,
   TStatusRecord,
   TStatusRecordContext,
-} from './types';
+} from '@brysonandrew/color/types';
 
 export const resolveStatusHandlers = (
   handler = VOIDOP,

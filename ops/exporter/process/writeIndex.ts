@@ -2,28 +2,28 @@ import glob from 'fast-glob';
 import { readFile } from '@ops/common/utils';
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
-import { QUOTE_UPDATE_RX, QUOTE } from './constants';
+import { QUOTE_UPDATE_RX, QUOTE } from '@brysonandrew/exporter/config/constants';
 
 type TConfig = {
-  full: string;
+  dir: string;
   indexRows: string[];
 };
 export const writeIndex = async ({
-  full,
+  dir,
   indexRows,
 }: TConfig) => {
   const indices = await glob(
     ['./index.ts', './index.tsx'],
     {
-      cwd: full,
+      cwd: dir,
     },
   );
   let indexStr = '';
-  let indexPath = join(full, 'index.ts');
+  let indexPath = join(dir, 'index.ts');
 
   const nextIndexStr = indexRows.join('\n');
   if (indices.length > 0) {
-    indexPath = join(full, indices[0]);
+    indexPath = join(dir, indices[0]);
     indexStr = readFile(indexPath);
     const exportStartIndex = indexStr.indexOf(
       'export * from ',
@@ -46,7 +46,6 @@ export const writeIndex = async ({
   }
 
   indexStr = indexStr.replace(QUOTE_UPDATE_RX, QUOTE);
-  // indexStr = `${indexStr}\n`;
 
   writeFile(indexPath, indexStr);
 };

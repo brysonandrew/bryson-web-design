@@ -1,10 +1,3 @@
-export * from './Consumer';
 export * from './ScrollProvider';
-export * from './constants';
-export * from './types';
-export * from './useScroll';
-
-
-
-
-
+export * from './config/constants';
+export * from './config/types';

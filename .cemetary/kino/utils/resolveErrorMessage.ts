@@ -1,4 +1,4 @@
-import { TError, TLogHandler } from '../config/types';
+import { TError, TLogHandler } from '@brysonandrew/color/config/types';
 
 export const resolveErrorMessage = (
   error: TError,

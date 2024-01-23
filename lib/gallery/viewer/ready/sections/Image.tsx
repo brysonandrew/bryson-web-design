@@ -6,11 +6,11 @@ import { useLoadImage } from '@brysonandrew/media/hooks/useLoadImage';
 import {
   TDimensions,
   TMediaRecord,
-} from '@brysonandrew/media/picture/config/types';
+} from '@brysonandrew/media/config/types';
 import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
 import { TChildren } from '@brysonandrew/types/dom';
 import { MotionBlur } from '@brysonandrew/filters/motion-blur';
-import { resolveKey } from '@brysonandrew/media/placeholder/utils/resolveKey';
+import { resolveKey } from '@brysonandrew/media/utils/resolveKey';
 import { Responsive } from '@brysonandrew/media/placeholder/variants/Responsive';
 
 type TProps = {

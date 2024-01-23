@@ -1,5 +1,6 @@
-import type { TOutput } from '../../types/z-exporter';
-import { CACHE_BASE_NAME } from '../constants';
+import { TOutput } from "@ops/common/types";
+import { CACHE_BASE_NAME } from "../constants";
+
 export const CACHE_EXPORTER_NAME = `${CACHE_BASE_NAME}/exporter`;
 export const OUT_DIR = '';
 

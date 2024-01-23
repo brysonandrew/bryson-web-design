@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { useViewer as useContext } from '@brysonandrew/gallery';
+import { resolveMarkerIndex, resolveTo, useViewer as useContext } from '@brysonandrew/gallery';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useCurrParams } from '@brysonandrew/gallery/viewer/hooks/params/useCurrParams';
+import { useCurrParams } from '@brysonandrew/viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../ready/types';
 import { DURATION_MID } from '@brysonandrew/animation';
 import { useX } from './motion/useX';
-import { resolveTo } from '../utils/resolveTo';
-import { resolveMarkerIndex } from '../utils/resolveActiveIndex';
 
 type TConfig = Pick<
   TBaseProps,

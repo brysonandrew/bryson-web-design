@@ -2,16 +2,16 @@ import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { Target } from '@brysonandrew/filters/aura/Target';
-import { P1_5 } from '@brysonandrew/base/components/layout/space/P1_5';
+import { P1_5 } from '@brysonandrew/space/P1_5';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import clsx from 'clsx';
-import { TItem } from '../config/types';
 import { useApp } from '@brysonandrew/app';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/constants';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/config/constants';
 import { formatUrl } from '@brysonandrew/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
 import { Shell } from './Shell';
+import { TItem } from '@pages/index/tech/config/types';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,

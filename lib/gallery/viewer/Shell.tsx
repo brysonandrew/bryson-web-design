@@ -1,6 +1,6 @@
-import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
 import { TProps as TReadyGalleryProps } from './ready';
-import { useViewport } from '@brysonandrew/viewport/useViewport';
+import { useViewport } from '@brysonandrew/viewport';
 import { TChildren } from '@brysonandrew/types/dom';
 
 type TProps<T extends string> = {

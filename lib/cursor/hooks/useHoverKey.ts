@@ -1,9 +1,13 @@
-import { useCursor } from '@brysonandrew/cursor';
-import { GLOBAL_KEY } from './config';
+import {
+  resolveCompositeHoverKey,
+  useCursor,
+} from '@brysonandrew/cursor';
 import { useCursorAnimate } from './useCursorAnimate';
-import { TCursorKey } from '@brysonandrew/cursor/switch/config';
+import {
+  GLOBAL_KEY,
+  TCursorKey,
+} from '@brysonandrew/cursor/config/constants';
 import { TChildren } from '@brysonandrew/types';
-import { resolveCompositeHoverKey } from '../utils/resolveCompositeHoverKey';
 
 export const useHoverKey = (
   cursorKey: TCursorKey,

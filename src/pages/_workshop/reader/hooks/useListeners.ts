@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { resolveListeners } from '../utils/resolveListeners';
 import { TContext } from '../context/types';
+import { resolveListeners } from '../utils/resolveListeners';
 
 type TConfig = Pick<
   TContext,

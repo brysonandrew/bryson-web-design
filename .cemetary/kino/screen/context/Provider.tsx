@@ -1,6 +1,6 @@
 import { type FC, useRef, PropsWithChildren } from 'react';
 import { Screen, useScreen } from '.';
-import { TContext } from './types';
+import { TContext } from '@brysonandrew/color/types';
 import { useStatusRecord } from '@pages/_workshop/kino/hooks/useStatusRecord';
 import { useLogs } from '@pages/_workshop/kino/hooks/useLogs';
 import { CHANNEL_KEY } from '@pages/_workshop/kino/hooks/signaling/config';

@@ -1,0 +1,54 @@
+{
+  "name": "@brysonandrew/space",
+  "version": "6.21.69",
+  "description": "Space library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./P1": "./P1.tsx",
+    "./P12": "./P12.tsx",
+    "./P16Y": "./P16Y.tsx",
+    "./P1_5": "./P1_5.tsx",
+    "./P2": "./P2.tsx",
+    "./P24Y": "./P24Y.tsx",
+    "./P3": "./P3.tsx",
+    "./P32Y": "./P32Y.tsx",
+    "./P4": "./P4.tsx",
+    "./P48Y": "./P48Y.tsx",
+    "./P6": "./P6.tsx",
+    "./P60Y": "./P60Y.tsx",
+    "./P72Y": "./P72Y.tsx",
+    "./P8": "./P8.tsx",
+    "./P86Y": "./P86Y.tsx",
+    "./P_25": "./P_25.tsx",
+    "./P_5": "./P_5.tsx",
+    "./PersistHeight": "./PersistHeight.tsx",
+    "./Rect": "./Rect.tsx",
+    "./TitleSpace": "./TitleSpace.tsx",
+    "./config": "./config.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/types": "*",
+    "@brysonandrew/hooks": "*",
+    "clsx": "*"
+  }
+}

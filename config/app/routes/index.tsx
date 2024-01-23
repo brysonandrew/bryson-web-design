@@ -1,23 +1,31 @@
-import { Index } from '@pages/index';
-import { Shell } from 'src/shell';
+import { resolvePageRecords } from '@brysonandrew/routes';
 import * as Pages from '@pages/index';
 import { Cv } from '@pages/_workshop/cv';
 import { Reader } from '@pages/_workshop/reader';
 import { Navigate, RouteObject } from 'react-router-dom';
-import { TPage } from './types';
-import { PAGE_RECORD } from './constants/pages';
+import { Shell } from 'src/shell';
 
-const PAGES_ROUTES = Object.values(PAGE_RECORD).map(
-  ({ title, path }: TPage) => {
-    const Component = Pages[title];
-    return {
-      path,
-      Component,
-    };
-  },
-);
+export const PAGE_TITLES = [
+  'Index',
+  'Pricing',
+  'Projects',
+  'Contact',
+] as const;
 
-export const STANDALONE_ROUTES = [
+export type TPageTitle = (typeof PAGE_TITLES)[number];
+
+const { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES } =
+  resolvePageRecords<TPageTitle, any>(PAGE_TITLES, Pages);
+export const SECTION_RECORD = {
+  build: 'Building websites and apps',
+  [PAGE_RECORD.pricing.key]:
+    "Choose a plan that's right for you", //; 'Website Packages', //'What I can help you with',
+  tech: 'Powered by',
+  [PAGE_RECORD.projects.key]: 'Selected works',
+  [PAGE_RECORD.contact.key]: 'Get in touch',
+} as const;
+
+const STANDALONE_ROUTES = [
   {
     path: '/reader',
     element: <Reader />,
@@ -42,10 +50,12 @@ export const ROUTES: RouteObject[] = [
       {
         index: true,
         path: PAGE_RECORD.index.path,
-        Component: Index,
+        Component: Pages.Index,
       },
       ...PAGES_ROUTES,
     ],
   },
   ...STANDALONE_ROUTES,
 ];
+
+export { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES };

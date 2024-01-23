@@ -1,0 +1,33 @@
+{
+  "name": "@brysonandrew/hooks-life-cycle",
+  "version": "6.21.69",
+  "description": "Life Cycle library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useIsFirstRender": "./useIsFirstRender.ts",
+    "./useIsomorphicLayoutEffect": "./useIsomorphicLayoutEffect.ts",
+    "./useUpdateEffect": "./useUpdateEffect.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*"
+  }
+}

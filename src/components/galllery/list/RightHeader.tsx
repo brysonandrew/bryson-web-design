@@ -3,7 +3,7 @@ import { Time } from '@brysonandrew/gallery/components/content/Time';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Badge } from '@pages/pricing/badge';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
-import { useGallery } from '@brysonandrew/gallery/context/GalleryProvider';
+import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
 type TProps = TSlugProps<TSlug> & {
   isHover?: boolean;

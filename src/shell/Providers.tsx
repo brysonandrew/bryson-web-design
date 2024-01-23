@@ -1,19 +1,19 @@
 import { AppProvider } from '@brysonandrew/app/Context';
 
-import { ScrollProvider } from '@brysonandrew/scroll/ScrollProvider';
-import { DarkModeProvider } from '@brysonandrew/dark-mode/context/DarkModeProvider';
-import { SoundProvider } from '@brysonandrew/sounds/context/SoundProvider';
-import { NetworkProvider } from '@brysonandrew/base/network/context/NetworkProvider';
-import { CursorProvider } from '@brysonandrew/cursor/context/CursorProvider';
-import { ViewerProvider } from '@brysonandrew/gallery/viewer/context/ViewerProvider';
-import { GalleryProvider } from '@brysonandrew/gallery/context/GalleryProvider';
+import { ScrollProvider } from '@brysonandrew/scroll';
+import { DarkModeProvider } from '@brysonandrew/dark-mode';
+import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
+import { NetworkProvider } from '@brysonandrew/network/NetworkProvider';
+import { CursorProvider } from '@brysonandrew/cursor';
+import { ViewerProvider } from '@brysonandrew/gallery/viewer/ViewerProvider';
+import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
 import { PricingProvider } from '@pages/index/pricing/context/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/context/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 
 import { TChildrenProps } from '@brysonandrew/types/dom';
 import { FC, PropsWithChildren } from 'react';
-import { arrToNest } from '@brysonandrew/base/components/utils/arrToNest';
+import { arrToNest } from '@brysonandrew/layout/utils/arrToNest';
 import { Metal } from '../components/layout/metal';
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { RightHeader as ListRightHeader } from '../components/galllery/list/RightHeader';
@@ -24,6 +24,7 @@ import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { HeadProvider } from 'lib/head';
 import { Glow } from '@brysonandrew/filter-animate';
+import screensRecordJson from './lookup.json';
 
 type TProps = TChildrenProps;
 export const Providers: FC<TProps> = ({
@@ -47,7 +48,7 @@ export const Providers: FC<TProps> = ({
       Viewer={{ RightHeader: ViewerRightHeader }}
       List={{ RightHeader: ListRightHeader }}
     >
-      <ViewerProvider>
+      <ViewerProvider screensRecordJson={screensRecordJson}>
         <AppProvider<TCustomStyle>
           Back={Metal}
           Blank={Blank}

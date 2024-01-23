@@ -39,7 +39,7 @@ const DEFAULT_IGNORE = [
 
 const ALIAS_LOOKUP: Record<string, string> = {
   fileComposerGraphql: 'graphql',
-  fileComposerTypescript: 'typescript',
+  fileComposerTypescript: '@brysonandrew/color/typescript',
 };
 
 if (!cwd) throw Error('cwd not defined');

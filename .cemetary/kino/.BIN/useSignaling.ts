@@ -6,7 +6,7 @@ import {
   OFFER_KEY,
 } from '../hooks/signaling/config';
 import { TLogHandler } from '@pages/kino/config/types';
-import { resolveErrorMessage } from '../utils/resolveErrorMessage';
+import { resolveErrorMessage } from '@brysonandrew/color/utils/resolveErrorMessage';
 
 type TConfig = {
   signaling: BroadcastChannel;

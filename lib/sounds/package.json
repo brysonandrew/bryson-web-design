@@ -1,11 +1,12 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.21.33",
+  "version": "6.21.69",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./SoundProvider": "./SoundProvider.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
@@ -16,13 +17,9 @@
     "./useMoveSound": "./useMoveSound.ts",
     "./useOffSound": "./useOffSound.ts",
     "./useOnSound": "./useOnSound.ts",
-    "./context/Consumer": "./context/Consumer.tsx",
-    "./context/SoundProvider": "./context/SoundProvider.tsx",
-    "./context/constants": "./context/constants.ts",
-    "./context": "./context/index.tsx",
-    "./context/types": "./context/types.ts",
-    "./sound/VolumeOff": "./sound/VolumeOff.tsx",
-    "./sound/VolumeOn": "./sound/VolumeOn.tsx"
+    "./config/types": "./config/types.ts",
+    "./icons/VolumeOff": "./icons/VolumeOff.tsx",
+    "./icons/VolumeOn": "./icons/VolumeOn.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -38,9 +35,8 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/utils": "*",
     "react-synthwave": "*",
-    "react": "*",
-    "@brysonandrew/base": "*",
     "@emotion/styled": "*",
     "@brysonandrew/types": "*",
     "clsx": "*"

@@ -1,4 +1,4 @@
-import { YEARLY } from '../../config';
+import { YEARLY } from '@pages/pricing/process/website/config';
 import { Money } from '../../Money';
 
 export const List = () => {

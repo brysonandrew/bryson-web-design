@@ -1,7 +1,7 @@
 import {
   BASE_COLOR_RECORD,
   BASE_GLOW_RECORD,
-} from '@brysonandrew/config';
+} from '@brysonandrew/color';
 
 export const DEFAULT_STYLE = {
   BORDER_RADIUS: {

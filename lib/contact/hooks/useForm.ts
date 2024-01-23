@@ -5,7 +5,7 @@ import {
   TFocusEvent,
   TFormKey,
   TInputHandlers,
-} from '../context/types';
+} from '../config/types';
 import { useContact } from '@brysonandrew/contact';
 
 type TConfig = {

@@ -1,4 +1,4 @@
-import { resolveCustomRecords } from '../../../../lib/config/color/utils/resolveCustomRecords';
+import { resolveColorRecords } from '@brysonandrew/color';
 import { PLANS_COLOR_VARIABLES } from './pricing';
 
 export const OPACITY_RANGE_RGB_RECORD = {
@@ -19,13 +19,14 @@ const {
   colorCssVariables,
   opacityRangeColorRecord,
   glowRecord,
-} = resolveCustomRecords<
+} = resolveColorRecords<
   TOpacityRangeRgbRecord,
   TVariablesRecord
 >(OPACITY_RANGE_RGB_RECORD, VARIABLES_RECORD);
 
 export const COLOR_RECORD = colorRecord;
-export const COLOR_VARS_RECORD = colorCssVariablesRecord;
+export const COLOR_CSS_VARS_RECORD =
+  colorCssVariablesRecord;
 export const COLOR_VARS_CSS = colorCssVariables;
 export const COLOR_SHADE_RECORD = opacityRangeColorRecord;
 export const GLOW_DROP = glowRecord.drop;

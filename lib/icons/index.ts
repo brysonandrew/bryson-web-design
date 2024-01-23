@@ -1,19 +1,19 @@
 export * from './type';
 export * from './icon';
-export * from './constants/base';
-export * from './constants/clipboard';
-export * from './constants/contact';
-export * from './constants/crud';
-export * from './constants/directions';
-export * from './constants/gallery';
-export * from './constants/general';
-export * from './constants/image';
-export * from './constants';
-export * from './constants/inputs';
-export * from './constants/links';
-export * from './constants/shop';
-export * from './constants/text';
-export * from './types';
+export * from './config/types';
+export * from './config/constants/base';
+export * from './config/constants/clipboard';
+export * from './config/constants/contact';
+export * from './config/constants/crud';
+export * from './config/constants/directions';
+export * from './config/constants/gallery';
+export * from './config/constants/general';
+export * from './config/constants/image';
+export * from './config/constants';
+export * from './config/constants/inputs';
+export * from './config/constants/links';
+export * from './config/constants/shop';
+export * from './config/constants/text';
 
 
 

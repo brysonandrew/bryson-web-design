@@ -5,7 +5,7 @@ import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { Cursor } from '@brysonandrew/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Providers } from 'src/shell/Providers';
-import { P24Y } from '@brysonandrew/base/components/layout/space/P24Y';
+import { P24Y } from '@brysonandrew/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TBaseInputProps } from '../../context/types';
+import { TBaseInputProps } from '../../config/types';
 import { Box } from '..';
 import { TTextareaMotionProps } from '@brysonandrew/types/dom';
 import { Autosize } from './autosize';

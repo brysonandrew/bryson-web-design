@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.21.33",
+  "version": "6.21.69",
   "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,7 +10,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./types": "./types.ts"
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",

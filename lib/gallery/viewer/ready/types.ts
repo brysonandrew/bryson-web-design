@@ -1,5 +1,5 @@
 import { MotionValue } from 'framer-motion';
-import { TMediaRecords } from '@brysonandrew/media/picture/config/types';
+import { TMediaRecords } from '@brysonandrew/media/config/types';
 
 export type TBaseProps = {
   count: number;

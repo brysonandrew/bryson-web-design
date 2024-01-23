@@ -1,6 +1,6 @@
-import { P1 } from '@brysonandrew/base/components/layout/space/P1';
-import { P2 } from '@brysonandrew/base/components/layout/space/P2';
-import { TOTAL_YEARLY } from '../../config';
+import { P1 } from '@brysonandrew/space/P1';
+import { P2 } from '@brysonandrew/space/P2';
+import { TOTAL_YEARLY } from '@pages/pricing/process/website/config';
 import { Money } from '../../Money';
 import { Underline } from '../../Underline';
 import { List } from './List';
@@ -8,9 +8,7 @@ import { List } from './List';
 export const Yearly = () => {
   return (
     <div className='column-start-stretch gap-4 relative  p-4'>
-      <b className='uppercase '>
-        Yearly cost breakdown
-      </b>
+      <b className='uppercase '>Yearly cost breakdown</b>
       <P2 />
       <List />
       <P2 />

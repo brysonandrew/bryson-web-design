@@ -1,4 +1,3 @@
-import { GLOBAL_KEY } from '@brysonandrew/cursor/hooks/config';
 import { IconWithText } from './IconWithText';
 import { Sight } from './Sight';
 import { Box } from './Box';
@@ -6,11 +5,12 @@ import {
   BIGGER_CURSOR_KEY,
   BIG_CURSOR_KEY,
   CUSTOM_CURSOR_KEY,
+  GLOBAL_KEY,
   NONE_CURSOR_KEY,
-} from './config';
+} from '@brysonandrew/cursor/config/constants';
 import { useScroll } from '@brysonandrew/scroll';
-import { useCursor } from '../context/useCursor';
-import { HOVER_KEY_DELIMITER } from '../context/constants';
+import { useCursor } from '@brysonandrew/cursor';
+import { HOVER_KEY_DELIMITER } from '../config/constants';
 
 export const Switch = () => {
   const { hoverKey, children } = useCursor();
@@ -20,7 +20,9 @@ export const Switch = () => {
 
   const [cursorKey, textKey, iconKey] = hoverKey
     ?.split(HOVER_KEY_DELIMITER)
-    .map((v) => (v === GLOBAL_KEY ? null : v)) ?? [null];
+    .map((v: string) => (v === GLOBAL_KEY ? null : v)) ?? [
+    null,
+  ];
 
   switch (cursorKey) {
     case CUSTOM_CURSOR_KEY: {

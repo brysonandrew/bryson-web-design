@@ -10,7 +10,6 @@ import type {
 } from '../common/types/z-exporter';
 import { initWorkspaces } from '../common/utils/package-json/files';
 import type { TPathRecord } from '../common/types/entries';
-import { ISOMORPHIC_TARGETS } from '../common/utils/exporter/constants';
 import { INDEX_BASENAME } from '../common/utils/constants';
 
 export const foundation = (
@@ -25,14 +24,17 @@ export const foundation = (
 
   try {
     for (const targetName of Object.keys(targets)) {
-      const fullTargetPath = path.resolve(workspacePath, targetName);
+      const fullTargetPath = path.resolve(
+        workspacePath,
+        targetName,
+      );
       const [targetInputs, pattern] = resolveInputs({
         cwd: fullTargetPath,
         dir: targetName,
       });
 
       const options = {
-        transpiler: 'typescript',
+        transpiler: '@brysonandrew/color/typescript',
         workspacePath,
         include: pattern,
       };
@@ -104,7 +106,10 @@ export const foundation = (
         };
         packageJsonsMap.set(nameDir, packageJson);
       }
-      const targetDir = path.join(workspacePath, targetName);
+      const targetDir = path.join(
+        workspacePath,
+        targetName,
+      );
 
       packageJsonsMap.set(
         targetDir,

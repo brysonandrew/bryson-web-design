@@ -3,8 +3,8 @@ import { I } from '@brysonandrew/icons/icon';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
 import { AnimatePresence, motion } from 'framer-motion';
+import { DARK_MODE_ICON } from '@brysonandrew/icons/config/constants/general';
 import { DARK_MODE } from '../../config';
-import { DARK_MODE_ICON } from '@brysonandrew/icons/constants/general';
 
 export const DarkMode = () => {
   const { extras } = useServicesC();

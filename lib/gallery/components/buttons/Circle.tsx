@@ -1,3 +1,3 @@
-import { Circle as _Circle } from '@brysonandrew/base/components/interactive/circle';
+import { Circle as _Circle } from '@brysonandrew/interactive/circle';
 
 export const Circle = _Circle;

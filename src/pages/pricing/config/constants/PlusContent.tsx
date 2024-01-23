@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import clsx from 'clsx';
 import { I } from '@brysonandrew/icons/icon';
-import { P2 } from '@brysonandrew/base/components/layout/space/P2';
-import { P3 } from '@brysonandrew/base/components/layout/space/P3';
-import { P_5 } from '@brysonandrew/base/components/layout/space/P_5';
-import { TICK_CIRCLE_ICON } from '@brysonandrew/icons/constants';
-import { PLUS_ICON } from '@brysonandrew/icons/constants/text';
+import { P2 } from '@brysonandrew/space/P2';
+import { P3 } from '@brysonandrew/space/P3';
+import { P_5 } from '@brysonandrew/space/P_5';
+import { TICK_CIRCLE_ICON } from '@brysonandrew/icons/config/constants';
+import { PLUS_ICON } from '@brysonandrew/icons/config/constants/text';
 import { useApp } from '@brysonandrew/app';
 
 export const PlusContent: FC = () => {

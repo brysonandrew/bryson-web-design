@@ -1,4 +1,7 @@
+import { BASE } from "./base";
+
 export const GLOW = {
+  ...BASE,
   'gap-box': 'gap-6',
   'gap-box-1_5': 'gap-8',
   'gap-box-2': 'gap-12',
@@ -17,8 +20,10 @@ export const GLOW = {
     'input-base py-3 block left-0 top-0 m-0',
   'input-text': 'input-base py-2 bg-input',
   name: 'relative flex justify-center shrink-0 w-full py-3 pl-0 md:(w-40 pl-6 justify-start)',
-  'name-text': 'inline-flex title-input capitalize whitespace-nowrap',
+  'name-text':
+    'inline-flex title-input capitalize whitespace-nowrap',
   submit: 'relative p-2 w-full',
   'submit-text':
     'center relative py-2 title-input pointer-events-none',
+  footer: 'column-end gap-1',
 };

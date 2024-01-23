@@ -1,4 +1,4 @@
-import { CANDIDATE_KEY, DISCONNECT_KEY } from './config';
+import { CANDIDATE_KEY, DISCONNECT_KEY } from '@brysonandrew/color/config';
 import {
   TLogHandler,
   TMessage,

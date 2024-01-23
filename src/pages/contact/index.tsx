@@ -1,7 +1,7 @@
 import { Main } from './Main';
-import { Section } from '@brysonandrew/base/components/layout/section';
-import { SECTION_RECORD } from '@app/routes/constants/index-sections';
-import { P60Y } from '@brysonandrew/base/components/layout/space/P60Y';
+import { Section } from '@brysonandrew/layout/section';
+import { P60Y } from '@brysonandrew/space/P60Y';
+import { SECTION_RECORD } from '@app/routes';
 
 export const Contact = () => {
   return (

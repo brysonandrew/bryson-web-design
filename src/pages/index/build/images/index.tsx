@@ -5,14 +5,14 @@ import { type FC } from 'react';
 import { Image } from './Image';
 import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
 import styled from '@emotion/styled';
-import { P8 } from '@brysonandrew/base/components/layout/space/P8';
-import { TITLE_HEIGHT } from '@brysonandrew/base/components/layout/space/TitleSpace';
-import { useScroll as useScrollContext } from '@brysonandrew/scroll/useScroll';
-import { useViewport as useViewportContext } from '@brysonandrew/viewport/useViewport';
+import { P8 } from '@brysonandrew/space/P8';
+import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
+import { useScroll } from '@brysonandrew/scroll';
+import { useViewport } from '@brysonandrew/viewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
-import { TMediaRecord } from '@brysonandrew/media/picture/config/types';
+import { TMediaRecord } from '@brysonandrew/media/config/types';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
@@ -24,14 +24,14 @@ type TProps = TParallaxMotionChildrenProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
   const { records } = useBuild();
-  const { isScrolling } = useScrollContext();
+  const { isScrolling } = useScroll();
   const spin = useSpin();
   const {
     width: viewportWidth = 0,
     halfWidth: halfViewportWidth,
     isResizing,
     isVertical,
-  } = useViewportContext();
+  } = useViewport();
 
   const radius = isVertical
     ? viewportWidth

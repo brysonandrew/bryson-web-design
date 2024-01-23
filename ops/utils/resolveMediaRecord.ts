@@ -1,4 +1,4 @@
-import { TMediaMetadata, TMediaRecord } from '@brysonandrew/media/picture/config/types';
+import { TMediaMetadata, TMediaRecord } from '@brysonandrew/media/config/types';
 import { resolveFsInfo } from './resolveFsInfo';
 import { removePublicDir } from './write';
 

@@ -1,10 +1,10 @@
+import { PACKAGE_JSON_NAME } from '@brysonandrew/exporter/config/constants';
 import { readFile } from '@ops/common/utils';
-import { PACKAGE_JSON_NAME } from '@ops/common/types';
-import { TPath } from '@ops/common/types/entries';
-import { resolve } from 'path';
 import { writeFile } from 'fs/promises';
+import { resolve } from 'path';
+const EXTERNAL = 'ops';
 
-export const workspaces = async (values: TPath[]) => {
+export const workspaces = async (dirPaths: string[]) => {
   try {
     const pkgPath = resolve('.', PACKAGE_JSON_NAME);
     const pkgStr = readFile(pkgPath);
@@ -16,7 +16,7 @@ export const workspaces = async (values: TPath[]) => {
 
     const pkgWithExports = {
       ...pkg,
-      workspaces: values.map(({ full }) => full),
+      workspaces: [EXTERNAL, ...dirPaths],
     };
 
     const pkgWithWorkspaces = JSON.stringify(
@@ -24,8 +24,9 @@ export const workspaces = async (values: TPath[]) => {
       null,
       2,
     );
+    console.log(pkgPath);
 
-    writeFile(pkgPath, pkgWithWorkspaces);
+    await writeFile(pkgPath, pkgWithWorkspaces);
   } catch (error: any) {
     throw Error(error);
   }

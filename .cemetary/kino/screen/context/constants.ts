@@ -1,4 +1,4 @@
-import { TContext } from './types';
+import { TContext } from '@brysonandrew/color/types';
 import {
   CONNECTION_CONTEXT,
   LOGS_CONTEXT,

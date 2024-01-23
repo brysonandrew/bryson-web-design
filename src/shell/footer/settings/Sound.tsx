@@ -3,11 +3,11 @@ import {
   VolumeOff,
   VolumeOn,
 } from '@brysonandrew/sounds';
-import { ICON_CLASS_VALUE_PROPS } from '../config';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { AnimatePresence } from 'framer-motion';
-import { Button } from '@brysonandrew/base/components/interactive/circle/Button';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { Button } from '@brysonandrew/interactive/circle/Button';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { ICON_CLASS_VALUE_PROPS } from '../config';
 
 export const Sound = () => {
   const { isSound, toggleSound } = useSoundContext();
