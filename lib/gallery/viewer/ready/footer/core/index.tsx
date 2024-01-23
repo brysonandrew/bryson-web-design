@@ -1,15 +1,15 @@
 import { DragIcon } from './DragIcon';
-import { useDrag } from '@brysonandrew/gallery/viewer/hooks/useDrag';
+import { useDrag } from '@brysonandrew/viewer/hooks/useDrag';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { TBaseProps } from '../../types';
 import { Items } from './items';
-import { PADDING_X } from './config';
 import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
-import { useKeys } from '@brysonandrew/gallery/viewer/hooks/useKeys';
+import { useKeys } from '@brysonandrew/viewer/hooks/useKeys';
 import { useApp } from '@brysonandrew/app';
+import { TBaseProps } from '@brysonandrew/gallery';
+import { PADDING_X } from '@brysonandrew/viewer/ready/footer/core/config';
 
 const Root = styled.div``;
 const Dragger = styled(motion.div)``;

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Button } from './Button';
 import { useSorted } from './useSorted';
-import { TMediaRecords } from '@brysonandrew/media/picture/config/types';
+import { TMediaRecords } from '@brysonandrew/media/config/types';
 
 type TProps = {
   itemWidth: number;

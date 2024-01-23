@@ -1,5 +1,5 @@
 import { I } from '@brysonandrew/icons/icon';
-import { IMAGE_ICON } from '@brysonandrew/icons/constants';
+import { IMAGE_ICON } from '@brysonandrew/icons/config/constants';
 import { Shell } from './Shell';
 
 export const Basic = () => {

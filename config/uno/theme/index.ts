@@ -1,5 +1,5 @@
 export const resolveRemFromPx = (px: number, base = 16) => `${px / base}rem`;
-import { COLOR_VARS_RECORD } from '../../app/colors/constants';
+import { COLOR_CSS_VARS_RECORD } from '../../app/colors/constants';
 import { SPACING } from './spacing';
 
 export const THEME = {
@@ -22,7 +22,7 @@ export const THEME = {
     '++++core': '1100px',
     '+++++core': '1200px',
   },
-  colors: COLOR_VARS_RECORD,
+  colors: COLOR_CSS_VARS_RECORD,
   spacing: SPACING,
   // fontSize: {
   //   xxs: ['0.625rem', '0.75rem'],

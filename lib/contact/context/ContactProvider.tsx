@@ -4,8 +4,8 @@ import {
   TFormKey,
   TStatus,
   TFormState,
-} from '@brysonandrew/contact/context/types';
-import { INIT_CONTACT_STATE , CONTACT} from './constants';
+} from '@brysonandrew/contact/config/types';
+import { INIT_CONTACT_STATE , CONTACT} from '@brysonandrew/contact/config/constants';
 
 export const ContactProvider: FC<PropsWithChildren> = ({
   children,

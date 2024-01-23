@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import { motion } from "framer-motion";
-import { Contact } from "./Contact";
-import { Title } from "./Title";
-
-const Root = styled(motion.header)``;
+import { ContactList as Contact } from '@brysonandrew/contact-list';
+import { Title } from './Title';
+import { CONTACT_CV_HEADER } from '@app/copy';
 
 export const Header = () => (
-  <Root className="row-start-space w-full">
+  <header className='row-start-space w-full'>
     <Title />
-    <Contact />
-  </Root>
+    <Contact
+      classValue='column-end w-full'
+      {...CONTACT_CV_HEADER}
+    />
+  </header>
 );

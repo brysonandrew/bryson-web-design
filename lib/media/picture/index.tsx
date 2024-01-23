@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import { TClassValueProps, TImgMotionProps, TSource } from '@brysonandrew/types/dom';
-import { TMediaRecord } from './config/types';
+import { TMediaRecord } from '@brysonandrew/media';
 
 const Root = styled.picture``;
 const Source = styled.source``;

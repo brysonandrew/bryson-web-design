@@ -1,6 +1,6 @@
+import { PACKAGE_JSON_NAME } from '@ops/common/types';
 import { ensureDirSync } from 'fs-extra';
 import path from 'path';
-import { PACKAGE_JSON_NAME } from '../../types/z-exporter';
 import { resolveFile } from '../dirs/main';
 import { readFile } from '../files';
 import { makeFile } from '../files/add';

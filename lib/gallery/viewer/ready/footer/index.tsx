@@ -6,9 +6,9 @@ import {
   PRESENCE_Y,
 } from '@brysonandrew/animation';
 import { Core } from './core';
-import { TBaseProps } from '../types';
+import { TBaseProps } from '@brysonandrew/gallery';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 
 const Root = styled(motion.footer)``;

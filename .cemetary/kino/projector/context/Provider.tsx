@@ -1,7 +1,7 @@
 import { PropsWithChildren, type FC } from 'react';
 import type { TChildrenElement } from '@brysonandrew/lib/types/dom';
 import { Projector, useProjector } from '.';
-import { TContext } from './types';
+import { TContext } from '@brysonandrew/color/types';
 import { useStatusRecord } from '@pages/_workshop/kino/hooks/useStatusRecord';
 import { useLogs } from '@pages/_workshop/kino/hooks/useLogs';
 import { useChannel } from 'ably/react';

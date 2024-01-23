@@ -1,4 +1,4 @@
-import { TReceiveChannelContext } from './types';
+import { TReceiveChannelContext } from '@brysonandrew/color/types';
 
 export const RECEIVE_CHANNEL_CONTEXT: TReceiveChannelContext =
   {

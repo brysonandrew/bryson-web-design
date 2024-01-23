@@ -1,24 +1,45 @@
 import {
+  createContext,
   PropsWithChildren,
+  useContext,
   useEffect,
   useState,
 } from 'react';
 import type { FC } from 'react';
-import { SCROLL } from './constants';
-import {
-  useMotionValueEvent,
-  useScroll,
-} from 'framer-motion';
 import { useTimeoutRef } from '@brysonandrew/hooks/window/useTimeoutRef';
 import { useLocation } from 'react-router';
+import type {
+  TState,
+  TScrollContext,
+} from '@brysonandrew/scroll/config/types';
+import {
+  motionValue,
+  useMotionValueEvent,
+  useScroll as useMotionScroll,
+} from 'framer-motion';
+import {
+  SCROLL_COOLDOWN,
+  INIT_SCROLL,
+} from '@brysonandrew/scroll/config/constants';
 
-export const INIT_SCROLL = 200;
-export const SCROLL_COOLDOWN = 200;
+const STATE: TState = {
+  isScrolling: false,
+  isScroll: false,
+};
+
+const CONTEXT: TScrollContext = {
+  ...STATE,
+  scroll: { x: motionValue(0), y: motionValue(0) },
+};
+
+const SCROLL = createContext<TScrollContext>(CONTEXT);
+export const useScroll = (): TScrollContext =>
+  useContext<TScrollContext>(SCROLL);
 
 export const ScrollProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const { scrollX, scrollY } = useScroll();
+  const { scrollX, scrollY } = useMotionScroll();
   const [isScroll, setScroll] = useState(false);
   const [isScrolling, setScrolling] = useState(false);
   const { timeoutRef, endTimeout } = useTimeoutRef();

@@ -4,7 +4,7 @@ import {
   TSharedConfig,
   CURSOR_SIZE_HALF,
   resolveCursorCoords,
-} from '../config';
+} from '@brysonandrew/gallery';
 
 type TConfig = TSharedConfig & {
   onJumpScale(): void;

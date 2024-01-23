@@ -1,6 +1,6 @@
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { useGallery } from '@brysonandrew/gallery/context/GalleryProvider';
+import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { Badge } from '@pages/pricing/badge';
 import { FC } from 'react';
 

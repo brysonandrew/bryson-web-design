@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { TLogsContext } from '../config/types';
+import { TLogsContext } from '@brysonandrew/color/config/types';
 import { TMediaSource } from '../screen/context/types';
 
 type TConfig = Pick<TLogsContext, 'onLog'> & {

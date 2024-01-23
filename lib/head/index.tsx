@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import {
   defaultTitlesResolver,
   TTitlesResolver,
-} from './config';
+} from '@brysonandrew/head/config';
 
 export type THeadProps<
   K extends string,

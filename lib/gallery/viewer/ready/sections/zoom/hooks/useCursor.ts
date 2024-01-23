@@ -5,9 +5,9 @@ import {
   TSharedConfig,
   TInteractiveEvent,
   resolveCursorCoords,
-} from '../config';
+} from '@brysonandrew/gallery';
 import { useOutsideClick } from '@brysonandrew/hooks/dom/useOutsideClick';
-import { resolveGalleryWidth } from '../../../../utils/resolveGalleryWidth';
+import { resolveGalleryWidth } from '@brysonandrew/gallery/viewer/utils/resolveGalleryWidth';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({

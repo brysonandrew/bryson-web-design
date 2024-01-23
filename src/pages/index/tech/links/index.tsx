@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { Item } from './Item';
 import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
 import { Transform } from './Transform';
-import { TECH } from '../config/constants';
+import { TECH } from '@pages/index/tech/config/constants';
 
 const Root = styled.div``;
 const Inner = styled(motion.div)``;

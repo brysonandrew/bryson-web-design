@@ -4,7 +4,7 @@ import { Header } from './header';
 import { Margin } from './layout/Margin';
 import { Page } from './layout/Page';
 import { Shell } from './layout/Shell';
-import { P1 } from '@brysonandrew/base/components/layout/space/P1';
+import { P1 } from '@brysonandrew/space/P1';
 import { Invert } from './controls/Invert';
 import { Variables } from '@css/Variables';
 
@@ -19,7 +19,7 @@ export const Cv = () => {
               <div className='column gap-12 pt-16 pb-8'>
                 <Margin>
                   <Header />
-                </Margin>
+                </Margin> 
                 <Margin>
                   <Description />
                 </Margin>

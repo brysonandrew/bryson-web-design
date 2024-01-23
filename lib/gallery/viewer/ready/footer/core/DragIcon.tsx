@@ -1,12 +1,12 @@
-import { Drag } from '@brysonandrew/gallery/viewer/icons/Drag';
+import { Drag } from '@brysonandrew/viewer/icons/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { PADDING_X } from './config';
 import { useHoverKey } from '@brysonandrew/cursor';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
+import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { useDarkMode } from '@brysonandrew/dark-mode';
+import { PADDING_X } from '@brysonandrew/gallery/viewer/ready/footer/core/config';
 
 type TProps = {
   classValue?: ClassValue;

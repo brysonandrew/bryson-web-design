@@ -1,11 +1,11 @@
 import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
-import { useVisibility } from '../../hooks/useVisibility';
 import {
   TBaseConfig,
   TVisibilityRange,
-} from '../../config';
+} from '@brysonandrew/parallax/config';
 import { TChildren } from '@brysonandrew/types/dom/main';
+import { useVisibility } from '@brysonandrew/parallax/hooks/useVisibility';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue<number>): TChildren;

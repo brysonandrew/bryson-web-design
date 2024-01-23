@@ -6,12 +6,18 @@ import { useForm } from './hooks/useForm';
 import { useAutoFocus } from './hooks/useAutoFocus';
 import { Text } from './box/Text';
 import { Textarea } from './box/textarea';
+import { Footer } from './footer';
+import { TContactListProps } from '@brysonandrew/contact-list';
 
 const Root = styled(motion.form)``;
 
-type TProps = { isDisabled?: boolean };
+type TProps = {
+  isDisabled?: boolean;
+  footerInfo?: TContactListProps;
+};
 export const Contact: FC<TProps> = ({
   isDisabled: _isDisabled,
+  footerInfo,
 }) => {
   const ref = useRef<HTMLFormElement | null>(null);
   const { isDisabled, onSend, inputHandlers } = useForm({
@@ -55,6 +61,7 @@ export const Contact: FC<TProps> = ({
         />
       </div>
       <Submit isDisabled={isDisabled} />
+      {footerInfo && <Footer {...footerInfo} />}
     </Root>
   );
 };
@@ -65,18 +72,20 @@ export * from './box/Shell';
 export * from './box/Submit';
 export * from './box/Text';
 export * from './box';
+export * from './config/constants';
+export * from './config/types';
 export * from './context/ContactConsumer';
 export * from './context/ContactProvider';
-export * from './context/constants';
-export * from './context/types';
 export * from './context/useContact';
+export * from './utils/resolveButtonValue';
 export * from './hooks/useAutoFocus';
 export * from './hooks/useFocus';
 export * from './hooks/useForm';
 export * from './hooks/useInput';
-export * from './utils/resolveButtonValue';
+export * from './variants/base';
 export * from './variants/glow';
 export * from './variants/minimalist';
+export * from './footer';
 export * from './box/textarea';
 export * from './box/textarea/autosize';
 export * from './box/textarea/autosize/useAutosize';

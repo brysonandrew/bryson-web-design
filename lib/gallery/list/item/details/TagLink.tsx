@@ -7,8 +7,8 @@ import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolve
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@brysonandrew/types/dom/motion';
 import { useCursor, resolveCompositeHoverKey, HOVER_KEY_DELIMITER } from '@brysonandrew/cursor';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/switch/config';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/constants/links';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/config/constants/links';
 import { resolveHoverKeyArgs } from '../resolveHoverKeyArgs';
 import { formatUrl } from '@brysonandrew/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';

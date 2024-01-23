@@ -1,8 +1,8 @@
 import { Parallax } from '@brysonandrew/parallax';
 import { Main } from '@pages/projects/Main';
 import { FAKE_3D_PROPS } from './constants';
-import { Section } from '@brysonandrew/base/components/layout/section';
-import { SECTION_RECORD } from '@app/routes/constants/index-sections';
+import { Section } from '@brysonandrew/layout/section';
+import { SECTION_RECORD } from '@app/routes';
 
 const Projects = () => {
   return (

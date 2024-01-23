@@ -4,7 +4,7 @@ import {
   TLogEntries,
   TLogEntry,
   TLogsContext,
-} from '../config/types';
+} from '@brysonandrew/color/config/types';
 
 export const useLogs = (): TLogsContext => {
   const [logs, setLogs] = useState<TLogEntries>([]);

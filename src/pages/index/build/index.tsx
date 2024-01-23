@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { Images } from './images';
-import { Section } from '@brysonandrew/base/components/layout/section';
+import { Section } from '@brysonandrew/layout/section';
 import { Parallax } from '@brysonandrew/parallax';
 import { FAKE_3D_PROPS } from './constants';
 import { Provider } from '@pages/index/build/context/Provider';
-import { SECTION_RECORD } from '@app/routes/constants/index-sections';
 import { Title } from './Title';
+import { SECTION_RECORD } from '@app/routes';
 
 const Build: FC = () => {
   return (

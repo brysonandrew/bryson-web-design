@@ -2,7 +2,6 @@ import { I } from '@brysonandrew/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';
-import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
 
 const inputCss = css``;
@@ -150,16 +149,10 @@ export const Shell: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { BORDER_RADIUS, GLOW_BOX } = useApp<TStyle>();
-
   return (
     <div className='relative'>
       <Select
-        className='relative pl-4 pr-10 py-2 bg-black-2'
-        style={{
-          boxShadow: GLOW_BOX.accent,
-          borderRadius: BORDER_RADIUS.MD,
-        }}
+        className='relative pl-4 pr-10 py-2 bg-black-2 rounded-sm'
         {...props}
       >
         {children}

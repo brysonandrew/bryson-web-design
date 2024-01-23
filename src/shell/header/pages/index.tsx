@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import { useLocation } from 'react-router';
 import { Item } from '../Item';
-import { PAGE_RECORD } from '@app/routes/constants/pages';
 import { useCoinDropSound } from '@brysonandrew/sounds/useCoinDropSound';
 import { useMemo } from 'react';
 import { Home } from './Home';
 import { TPageLinks, TPageLinkRecord } from './config';
 import { List } from '../List';
+import { PAGE_RECORD } from '@app/routes';
 
 const Root = styled.nav``;
 

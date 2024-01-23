@@ -8,8 +8,8 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
-import { P2 } from '@brysonandrew/base/components/layout/space/P2';
-import { useCurrProject } from '@brysonandrew/gallery/viewer/hooks/params/useCurrProject';
+import { P2 } from '@brysonandrew/space/P2';
+import { useCurrProject } from '@brysonandrew/viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';

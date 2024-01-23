@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
-import { P48Y } from '@brysonandrew/base/components/layout/space/P48Y';
-import { P24Y } from '@brysonandrew/base/components/layout/space/P24Y';
+import { P48Y } from '@brysonandrew/space/P48Y';
+import { P24Y } from '@brysonandrew/space/P24Y';
 
 const ServicesLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));
@@ -8,7 +8,7 @@ const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
 const ViewerLazy = lazy(
-  () => import('@brysonandrew/gallery/viewer'),
+  () => import('@brysonandrew/viewer'),
 );
 
 export const Index = () => {

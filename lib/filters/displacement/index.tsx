@@ -2,9 +2,12 @@ import type { FC } from 'react';
 import type {
   TFilterChildrenProps,
   TFilterProps,
-} from '../config/types';
-import { INTENSITY, TURBULANCE_DEFAULTS } from './config';
-import type { TDisplacementProps } from './config';
+} from '@brysonandrew/filters';
+import {
+  INTENSITY,
+  TURBULANCE_DEFAULTS,
+  TDisplacementProps,
+} from '@brysonandrew/filters';
 
 const BASE_ANIMATION = {
   repeatCount: 'indefinite',

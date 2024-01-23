@@ -1,4 +1,4 @@
-import { Sub } from '@brysonandrew/base/components/layout/typography/Sub';
+import { Sub } from '@brysonandrew/layout/typography/Sub';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 

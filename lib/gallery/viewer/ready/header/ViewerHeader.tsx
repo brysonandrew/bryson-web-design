@@ -1,23 +1,26 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
-import { Content } from '../../../components/content';
 import {
   TChildrenProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { NOOP } from '@brysonandrew/base/constants/functions';
+import { NOOP } from '@brysonandrew/utils/functions';
 import { isDesktop } from 'react-device-detect';
 import { Close } from '../../buttons/Close';
 import { useOffSound } from '@brysonandrew/sounds/useOffSound';
-import { useGallery } from '../../../context/GalleryProvider';
+import { Content } from '@brysonandrew/gallery';
+import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
 const Root = styled.header``;
 
 type TProps = TDivMotionProps &
   TSlugProps &
   Partial<TChildrenProps>;
-export const ViewerHeader: FC<TProps> = ({ slug, ...props }) => {
+export const ViewerHeader: FC<TProps> = ({
+  slug,
+  ...props
+}) => {
   const {
     Viewer: { RightHeader },
   } = useGallery();

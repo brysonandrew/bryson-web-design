@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import type { TContext } from './types';
+import type { TContext } from '@brysonandrew/color/types';
 import { Screen } from '.';
 
 type TConsumerProps = {

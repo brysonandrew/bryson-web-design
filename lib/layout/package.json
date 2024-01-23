@@ -1,0 +1,61 @@
+{
+  "name": "@brysonandrew/layout",
+  "version": "6.21.69",
+  "description": "Layout library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./backdrop-blur": "./backdrop-blur/index.tsx",
+    "./lists/List": "./lists/List.tsx",
+    "./lists/TickList": "./lists/TickList.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
+    "./typography/Letter": "./typography/Letter.tsx",
+    "./typography/Sub": "./typography/Sub.tsx",
+    "./line/Line": "./line/Line.tsx",
+    "./line/ThickLine": "./line/ThickLine.tsx",
+    "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
+    "./line": "./line/index.tsx",
+    "./section": "./section/index.tsx",
+    "./vertical-fade/FadeDown": "./vertical-fade/FadeDown.tsx",
+    "./vertical-fade/FadeUp": "./vertical-fade/FadeUp.tsx",
+    "./vertical-fade": "./vertical-fade/index.tsx",
+    "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
+    "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
+    "./typography/animation/Word": "./typography/animation/Word.tsx",
+    "./typography/animation": "./typography/animation/index.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@emotion/styled": "*",
+    "@brysonandrew/types": "*",
+    "framer-motion": "*",
+    "@brysonandrew/app": "*",
+    "@brysonandrew/icons": "*",
+    "clsx": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/space": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/in-view": "*"
+  }
+}

@@ -2,20 +2,20 @@ import type { FC } from 'react';
 import { Aura } from '@brysonandrew/filters';
 import { ClipPath } from '@brysonandrew/media/placeholder/ClipPath';
 import { Variables } from '@css/Variables';
-import { PAGE_RECORD } from '@app/routes/constants/pages';
 import {
   APP_DESCRIPTION,
   APP_TITLE,
 } from '@app/base/constants';
-import { TPage, TPageTitle } from '@app/routes/types';
 import { capitalize } from 'lodash';
 import { useCurrParams } from '@brysonandrew/gallery';
 import { Head, MonoHead } from '@brysonandrew/dark-mode';
 import { TTitlesResolver } from '@brysonandrew/head';
+import { TPageTitle, PAGE_RECORD } from '@app/routes';
+import { TPage } from '@brysonandrew/routes/types';
 const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
   MonoHead;
 
-type TPath = TPage['path'];
+type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
 type TTitleLookup = Record<TPath, TPageValue>;
 

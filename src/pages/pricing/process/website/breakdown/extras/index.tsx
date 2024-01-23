@@ -1,7 +1,7 @@
 import { useServicesC } from '@pages/index/pricing/context/useServicesC';
-import { EXTRAS } from '../../config';
 import { Item } from './Item';
-import { List } from '@brysonandrew/base/components/layout/lists/List';
+import { List } from '@brysonandrew/layout/lists/List';
+import { EXTRAS } from '../../config';
 
 export const Extras = () => {
   const { extras } = useServicesC();

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filter-animate",
-  "version": "6.21.33",
+  "version": "6.21.69",
   "description": "Filter Animate library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -38,7 +38,7 @@
     "clsx": "*",
     "framer-motion": "*",
     "react": "*",
-    "@brysonandrew/config": "*",
+    "@brysonandrew/color": "*",
     "@brysonandrew/animation": "*"
   }
 }

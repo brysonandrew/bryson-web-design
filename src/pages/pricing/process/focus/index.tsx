@@ -1,8 +1,5 @@
-import {
-  CUSTOM_CURSOR_KEY,
-  FOCUS_CURSOR_KEY,
-} from '@brysonandrew/cursor/switch/config';
-import { useCursor } from '@brysonandrew/cursor/context/useCursor';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { useCursor } from '@brysonandrew/cursor';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { TPart } from '@pages/pricing/process/website/config';
 import clsx from 'clsx';

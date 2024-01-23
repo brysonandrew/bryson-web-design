@@ -15,7 +15,7 @@ export const compileTsServiceWorker = () => ({
     _outputBundle: OutputBundle,
   ) {
     const inputOptions: InputOptions = {
-      input: 'config/app/service-worker/index.ts',
+      input: '@brysonandrew/color/config/app/service-worker/index.ts',
       plugins: [rollupPluginTypescript(), nodeResolve()],
     };
     const outputOptions: OutputOptions = {
