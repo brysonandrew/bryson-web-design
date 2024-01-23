@@ -2,7 +2,7 @@ import { PACKAGE_JSON_NAME } from '@brysonandrew/exporter/config/constants';
 import { readFile } from '@ops/common/utils';
 import { writeFile } from 'fs/promises';
 import { resolve } from 'path';
-const EXTERNAL = 'ops';
+const EXTERNAL = '';
 
 export const workspaces = async (dirPaths: string[]) => {
   try {
@@ -16,7 +16,7 @@ export const workspaces = async (dirPaths: string[]) => {
 
     const pkgWithExports = {
       ...pkg,
-      workspaces: [EXTERNAL, ...dirPaths],
+      workspaces: [EXTERNAL, ...dirPaths].filter(Boolean),
     };
 
     const pkgWithWorkspaces = JSON.stringify(

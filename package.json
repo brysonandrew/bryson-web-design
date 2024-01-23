@@ -16,13 +16,12 @@
     "vw": "npm version minor --ws",
     "uw": "npm upgrade --ws",
     "iw": "npm install --ws",
-    "pw": "npm publish --ws",
+    "pw": "npm publish lib --ws",
     "ew": "esrun ops/exporter lib && npm run l",
     "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
     "clean": "esrun ops/delete/clean.ts"
   },
   "workspaces": [
-    "ops",
     "lib/animation",
     "lib/app",
     "lib/boundary",
