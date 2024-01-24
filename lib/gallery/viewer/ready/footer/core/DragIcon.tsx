@@ -1,4 +1,4 @@
-import { Drag } from '@brysonandrew/viewer/icons/Drag';
+import { Drag } from '@brysonandrew/gallery-viewer/icons/Drag';
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

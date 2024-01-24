@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { ArrowLeft } from '@brysonandrew/viewer/icons/ArrowLeft';
+import { ArrowLeft } from '@brysonandrew/gallery-viewer/icons/ArrowLeft';
 import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { Nav } from './Nav';

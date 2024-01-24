@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.21.69",
+  "version": "6.21.70",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,11 +10,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
     "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
     "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts",
     "./placeholder/ClipPath": "./placeholder/ClipPath.tsx",
     "./placeholder": "./placeholder/index.tsx",
     "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
@@ -38,11 +38,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
     "react": "*",
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*",
+    "@brysonandrew/types": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/color": "*"
