@@ -14,12 +14,12 @@ import { parse } from 'path';
       const { dir, base } = record;
       const parts = dir.split('/');
       const name = parts.slice(1).join('-');
-      const workspace = `${parts[0]}/${name}`;
+      // const workspace = `${dir}/${name}`;
       return {
         base,
         dir,
         name,
-        workspace,
+        workspace: dir,
       };
     });
     await workspaces(

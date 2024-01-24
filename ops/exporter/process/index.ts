@@ -14,7 +14,7 @@ import { TTargets } from '@brysonandrew/exporter/config/types';
 
 export const process = async (targets: TTargets) => {
   try {
-    for (const { workspace, name, dir, base } of targets) {
+    for (const { name, dir, base } of targets) {
       const pkgPath = join(dir, base);
       const pkgStr = readFile(pkgPath);
       const { dependencies: _, ...pkg } =
