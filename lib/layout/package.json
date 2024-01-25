@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.2",
+  "version": "6.22.6",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -18,19 +18,19 @@
     "./lists/List": "./lists/List.tsx",
     "./lists/TickList": "./lists/TickList.tsx",
     "./section": "./section/index.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
+    "./typography/Letter": "./typography/Letter.tsx",
+    "./typography/Sub": "./typography/Sub.tsx",
     "./vertical-fade/FadeDown": "./vertical-fade/FadeDown.tsx",
     "./vertical-fade/FadeUp": "./vertical-fade/FadeUp.tsx",
     "./vertical-fade": "./vertical-fade/index.tsx",
-    "./typography/Letter": "./typography/Letter.tsx",
-    "./typography/Sub": "./typography/Sub.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx"
+    "./typography/animation": "./typography/animation/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -55,7 +55,7 @@
     "@brysonandrew/animation": "*",
     "@brysonandrew/icons": "*",
     "@brysonandrew/space": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/in-view": "*"
+    "@brysonandrew/in-view": "*",
+    "@brysonandrew/utils": "*"
   }
 }

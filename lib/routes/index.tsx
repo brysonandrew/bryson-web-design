@@ -1,4 +1,4 @@
-import { TPageRecord, TPage, TPageKey } from './types';
+import { TPageRecord, TPage } from './types';
 import { resolvePage } from './resolvePage';
 
 export const resolvePageRecords = <

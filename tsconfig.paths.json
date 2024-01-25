@@ -5,6 +5,7 @@
       "@pkg": ["package.json"],
       "@brysonandrew/*": ["lib/*", "ops/*"],
       "@brysonandrew/gallery-*": ["lib/gallery/*"],
+      "@brysonandrew/uno-*": ["lib/uno/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@context/*": ["src/context/*"],

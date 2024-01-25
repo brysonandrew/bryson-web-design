@@ -19,9 +19,13 @@ export const Text: FC<TProps> = ({
       name={name}
       isDisabled={disabled}
     >
-      {({ ref, inputProps }) => (
+      {({ input, setInput, inputProps }) => (
         <Input
-          ref={ref}
+          ref={(instance) => {
+            if (instance && !input) {
+              setInput(instance);
+            }
+          }}
           className='input-text'
           type='text'
           autoComplete='off'
