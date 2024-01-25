@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import { TFormKey } from '../config/types';
 import { useContact } from '@brysonandrew/contact';
 import { useApp } from '@brysonandrew/app';
@@ -9,16 +9,16 @@ type TConfig = {
 export const useInput = <T extends HTMLElement>({
   name,
 }: TConfig) => {
-  const ref = useRef<T | null>(null);
+  const [input, setInput] = useState<T | null>(null);
   const { BORDER_RADIUS } = useApp();
-  const input = ref.current;
   const { focusKey, form } = useContact();
   const isFocused = focusKey === name;
   const value = form[name];
   const isEmpty = Boolean(value);
 
   return {
-    ref,
+    input,
+    setInput,
     boxInputs: {
       input,
       isFocused,

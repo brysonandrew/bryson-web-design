@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useBuild } from '@pages/index/build/context';
+import { useBuild } from '@pages/index/build/BuildProvider';
 import { type FC } from 'react';
 import { Image } from './Image';
 import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';

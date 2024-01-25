@@ -1,19 +1,23 @@
-import { RESET } from './reset';
-import { resolveScrollbar } from '../preflights/resolveScrollbar';
-import { resolveInput } from './resolveInput';
-import { TTheme } from '@uno/theme';
-import type { Preflight } from 'unocss';
-
-export const PRE_FLIGHTS: Preflight<TTheme>[] = [
-  {
-    layer: 'reset',
-    getCSS: () => RESET,
-  },
-  {
-    getCSS: resolveInput,
-  },
-  {
-    getCSS: resolveScrollbar,
-  },
-  
-];
+import { resolvePreflights as _resolvePreflights } from '@brysonandrew/uno-preflights';
+import { TColor } from '../index';
+export const resolvePreflights = <T extends object>(
+  colors: TColor,
+) =>
+  _resolvePreflights<T>({
+    inputConfig: {
+      textColor: colors['black-1'],
+      inputBackgroundColor: colors['white-7'],
+      textColorDark: colors.accent,
+      inputBackgroundColorDark: colors.accent,
+    },
+    scrollbarConfig: {
+      thumb: colors['gray'],
+      thumbBorder: colors['gray-1'],
+      thumbHover: colors['white-01'],
+      backgroundColor: colors['white-7'],
+      thumbDark: colors['highlight'],
+      thumbBorderDark: colors['accent'],
+      thumbHoverDark: colors['gray-3'],
+      backgroundColorDark: colors['black-2'],
+    },
+  });

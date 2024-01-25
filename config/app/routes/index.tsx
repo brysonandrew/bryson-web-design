@@ -16,6 +16,7 @@ export type TPageTitle = (typeof PAGE_TITLES)[number];
 
 const { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES } =
   resolvePageRecords<TPageTitle, any>(PAGE_TITLES, Pages);
+  
 export const SECTION_RECORD = {
   build: 'Building websites and apps',
   [PAGE_RECORD.pricing.key]:

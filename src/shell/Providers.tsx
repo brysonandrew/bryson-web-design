@@ -7,7 +7,7 @@ import { NetworkProvider } from '@brysonandrew/network/NetworkProvider';
 import { CursorProvider } from '@brysonandrew/cursor';
 import { ViewerProvider } from '@brysonandrew/gallery/viewer/ViewerProvider';
 import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
-import { PricingProvider } from '@pages/index/pricing/context/PricingProvider';
+import { PricingProvider } from '@pages/index/pricing/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/context/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 

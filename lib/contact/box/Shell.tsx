@@ -37,7 +37,6 @@ export const Shell = <T extends HTMLElement>({
     BIG_CURSOR_KEY,
     name,
   );
-
   const ShellTextureGlow = Glow?.Back ?? Back;
 
   return (
