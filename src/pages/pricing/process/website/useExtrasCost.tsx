@@ -1,8 +1,8 @@
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { EXTRAS, TExtraConfig } from './config';
 
 export const useExtrasCost = () => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
   const extrasCost = EXTRAS.reduce(
     (a, [key, price, max]: TExtraConfig) => {
       const value = extras[key];

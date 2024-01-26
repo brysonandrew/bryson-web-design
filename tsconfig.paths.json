@@ -19,7 +19,8 @@
       "@utils/*": ["src/utils/*"],
       "@app/*": ["config/app/*"],
       "@uno/*": ["config/uno/*"],
-      "@ops/*": ["ops/*"]
+      "@ops/*": ["ops/*"],
+      "@shell/*": ["shell/*"]
     }
   }
 }

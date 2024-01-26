@@ -1,4 +1,4 @@
-import { useCv } from '@pages/_workshop/cv/CvProvider';
+import { useCv } from '@brysonandrew/cv/CvProvider';
 
 export const Description = () => {
   const { descriptionParagraphs } = useCv();

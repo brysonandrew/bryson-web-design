@@ -1,6 +1,7 @@
 export * from './DarkModeProvider';
 export * from './useDarkModeState';
 export * from './button';
+export * from './config/animation';
 export * from './config/constants';
 export * from './config/types';
 export * from './head';

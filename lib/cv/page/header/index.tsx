@@ -1,6 +1,6 @@
 import { ContactList as Contact } from '@brysonandrew/contact-list';
 import { Title } from './Title';
-import { useCv } from '@pages/_workshop/cv/CvProvider';
+import { useCv } from '@brysonandrew/cv/CvProvider';
 
 export const Header = () => {
   const { url, email, phone } = useCv();

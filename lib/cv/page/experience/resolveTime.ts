@@ -1,7 +1,4 @@
-import { TItem } from '@app/gallery/types';
-
-type TConfig = Pick<TItem, 'time'>;
-export const resolveTime = ({ time }: TConfig) => {
+export const resolveTime = (time?: Date) => {
   if (typeof time === 'undefined') return 'Present';
   return new Intl.DateTimeFormat('en-UK', {
     month: 'short',

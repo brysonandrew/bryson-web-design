@@ -4,7 +4,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { R } from '@brysonandrew/animation';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -41,7 +41,7 @@ export const Circle: FC<TProps> = ({
         borderRadius: BORDER_RADIUS.XL,
         filter: GLOW_DROP.accent,
       }}
-      {...resolveParentAnimateConfig({ isHover })}
+      {...R.resolveParentAnimateConfig({ isHover })}
       {...props}
     >
       <>

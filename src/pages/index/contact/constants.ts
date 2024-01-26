@@ -3,7 +3,7 @@ import {
   TParallaxOptions,
 } from '@brysonandrew/parallax/config';
 
-export const FAKE_3D_PROPS: TParallaxOptions = {
+export const PARALLAX_PROPS: TParallaxOptions = {
   resistance: {
     input: ({ startScroll }) => [
       startScroll,

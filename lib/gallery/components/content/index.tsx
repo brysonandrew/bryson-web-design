@@ -11,7 +11,7 @@ import {
 import { P2 } from '@brysonandrew/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { R } from '@brysonandrew/animation';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useApp } from '@brysonandrew/app';
 
@@ -94,7 +94,7 @@ export const Content = <
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
-      {...resolveParentAnimateConfig({ isHover })}
+      {...R.resolveParentAnimateConfig({ isHover })}
       {...props}
     >
       {isProject ? (

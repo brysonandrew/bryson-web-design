@@ -1,5 +1,5 @@
 import { Sub } from '@brysonandrew/layout/typography/Sub';
-import { useCv } from '@pages/_workshop/cv/CvProvider';
+import { useCv } from '@brysonandrew/cv/CvProvider';
 
 export const Title = () => {
   const { name, jobTitle } = useCv();

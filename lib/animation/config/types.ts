@@ -16,7 +16,93 @@ import {
   HoverHandlers,
   Easing,
   BezierDefinition,
+  EasingDefinition,
+  Target,
 } from 'framer-motion';
+
+type PermissiveTransitionDefinition = {
+  [key: string]: any;
+};
+export type TWhen =
+  | false
+  | 'beforeChildren'
+  | 'afterChildren'
+  | string;
+export type TEasingDefinition = EasingDefinition;
+
+export type TMainTransition = {
+  duration: number;
+  ease: TEasing;
+  delay: number;
+};
+
+export type TBaseTransition = {
+  duration: number;
+  ease: TEasingDefinition;
+  delay: number;
+};
+
+export type TTransition =
+  | Tween
+  | Spring
+  | Keyframes
+  | Inertia
+  | Just
+  | None
+  | PermissiveTransitionDefinition;
+
+export type TAllTransitionProps = Orchestration &
+  TTransition & {
+    [key: string]: TTransition;
+  } & {
+    when: TWhen;
+  };
+
+export type TDirection = 'left' | 'right' | 'up' | 'down';
+export type TXyKey = 'x' | 'y';
+
+export type TPresenceConfig = {
+  direction: TDirection;
+  value: TNumberValue;
+  fade: number;
+};
+// & (
+//   | {
+//       fade: number;
+//     }
+//   | {
+//       direction: TDirection;
+//     }
+// );
+export type TPresenceConfigs = readonly TPresenceConfig[];
+
+export type TPresenceConfigKey<U extends TPresenceConfig> =
+  `${U['direction']}${U['value']}/${U['fade']}`;
+
+export type TPresenceConfigRecord<
+  T extends TPresenceConfigs,
+> = {
+  [U in T[number] as TPresenceConfigKey<U>]: U;
+};
+
+export type TBaseTransitionConfig = TBaseTransition;
+export type TBaseTransitionConfigs =
+  readonly TBaseTransitionConfig[];
+
+export type TTransitionConfig = TTransition;
+export type TTransitionConfigs =
+  readonly TTransitionConfig[];
+
+export type TResolveAnimationConfig<
+  P extends TPresenceConfigs,
+  B extends TBaseTransitionConfigs,
+  T extends TTransitionConfigs,
+> = TMainTransition & {
+  isDisabled?: boolean;
+  presenceConfigs: P;
+  baseTransitionConfigs: B;
+  transitionConfigs?: T;
+};
 
 export type TBezierDefinition = BezierDefinition;
 export type TEasing = Easing;
@@ -34,36 +120,6 @@ export type TMotionProps = TAnimationProps & HoverHandlers;
 type Just = {
   type: 'just';
 };
-type PermissiveTransitionDefinition = {
-  [key: string]: any;
-};
-export type TWhen =
-  | false
-  | 'beforeChildren'
-  | 'afterChildren'
-  | string;
-export type TTransition =
-  | Tween
-  | Spring
-  | Keyframes
-  | Inertia
-  | Just
-  | None
-  | PermissiveTransitionDefinition;
-
-export type TAllTransitionProps = Orchestration &
-  TTransition & {
-    [key: string]: TTransition;
-  } & {
-    when: TWhen;
-  };
-
-export type TTransitionProps = Partial<TAllTransitionProps>;
-
-export type TVariantLabels = VariantLabels;
-
-export type TVariant = Variant;
-export type TVariants = Variants;
 
 export type TMotionPoint = {
   x: MotionValue;
@@ -100,3 +156,15 @@ export type TAllMotionProps = Omit<
 export type TMotionAttributes = Partial<TAllMotionProps>;
 
 export type TStyleKeyCamelCase = keyof CSSStyleDeclaration;
+
+export type TTransitionProps = Partial<TAllTransitionProps>;
+
+export type TVariantLabels = VariantLabels;
+
+export type TTarget = Target;
+export type TInitial =
+  | TTarget
+  | VariantLabels
+  | TMotionAttributes;
+export type TVariant = Variant;
+export type TVariants = Variants;

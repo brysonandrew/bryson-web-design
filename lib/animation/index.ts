@@ -1,236 +1,210 @@
 import {
+  INITIAL_KEY,
+  IDLE_KEY,
+  HOVER_KEY,
+  EXIT_KEY,
+  HOVER_VARIANT,
+} from '@brysonandrew/animation/config/constants';
+import {
   TAnimationProps,
   TMotionProps,
-  TNumberValue,
   TResolveParentAnimateConfig,
   TTransition,
   TTransitionProps,
   TVariant,
   TVariants,
-  TBezierDefinition,
-  TVariantLabels,
+  TResolveAnimationConfig,
+  TPresenceConfigRecord,
+  TBaseTransitionConfigs,
+  TTransitionConfigs,
+  TTarget,
+  TEasing,
 } from '@brysonandrew/animation/config/types';
+import { resolveBaseTransitionRecord } from '@brysonandrew/animation/resolveBaseTransitionRecord';
+import { resolvePresenceRecord } from '@brysonandrew/animation/resolvePresenceRecord';
+import { resolveTransitionRecord } from '@brysonandrew/animation/resolveTransitionRecord';
 
-export const INITIAL_KEY: TVariantLabels = 'initial';
-export const HOVER_KEY: TVariantLabels = 'hover';
-export const IDLE_KEY: TVariantLabels = 'idle';
-export const EXIT_KEY: TVariantLabels = 'exit';
+export const resolveAnimation = <
+  P extends TPresenceConfigs,
+  B extends TBaseTransitionConfigs,
+  T extends TTransitionConfigs,
+>({
+  ease = 'linear' as TEasing,
+  duration = 0.2,
+  presenceConfigs,
+  baseTransitionConfigs,
+}: TResolveAnimationConfig<P, B, T>) => {
+  const duration2 = duration * 2;
 
-export const PARENT_ANIMATE_CONFIG: TMotionProps = {
-  initial: INITIAL_KEY,
-  animate: IDLE_KEY,
-  whileHover: HOVER_KEY,
-  exit: EXIT_KEY,
-};
-
-export const TRANSITION_CLASS = 'duration-1000' as const;
-export const EASE: TBezierDefinition = [0.4, 0, 0.2, 1];
-export const EASE_CSS = `cubic-bezier(${EASE})`;
-export const DURATION_DARK_MODE_MS = parseInt(
-  TRANSITION_CLASS.split('-')[1],
-);
-export const TRANSITION_DARK_MODE_CSS_VALUE = [
-  'color',
-  'background-color',
-]
-  .map((v) => `${v} ${DURATION_DARK_MODE_MS}ms ${EASE_CSS}`)
-  .join(', ');
-export const DURATION = 0.2;
-export const DURATION_MID = DURATION * 2;
-export const DURATION_SLOW = DURATION_MID * 2;
-export const DURATION_VERY_SLOW = DURATION_SLOW * 2;
-
-export const DURATION_DARK_MODE =
-  DURATION_DARK_MODE_MS / 1000;
-
-export const ORIGIN_50: TTransition = {
-  originX: '50%',
-  originY: '50%',
-  originZ: '50%',
-};
-
-export const EFFECT_ANIMATE_TRANSITION: TTransition = {
-  ease: 'easeIn',
-  duration: DURATION ? DURATION + 0.08 : DURATION,
-  delay: 0.08,
-};
-
-export const EFFECT_HOVER_TRANSITION: TTransition = {
-  ease: 'linear',
-  duration: DURATION,
-  delay: 0,
-};
-
-export const resolveParentAnimateConfig = (
-  config: TResolveParentAnimateConfig = {},
-): TMotionProps => {
-  const { isHover } = config;
-  if (typeof isHover === 'undefined')
-    return PARENT_ANIMATE_CONFIG;
-
-  return {
-    initial: INITIAL_KEY,
-    animate: isHover ? [IDLE_KEY, HOVER_KEY] : IDLE_KEY,
-    exit: EXIT_KEY,
-  };
-};
-
-export const resolveFadeRight = (
-  isAnimate: boolean,
-): TVariant => {
-  const initial = { opacity: 0, x: -20 };
-  const animate = { opacity: 1, x: 0 };
-
-  return isAnimate ? animate : initial;
-};
-
-export const resolveFadeRightProps = (
-  isAnimate: boolean,
-): TVariants => ({
-  initial: resolveFadeRight(false),
-  animate: resolveFadeRight(isAnimate),
-});
-
-export const resolveFadeUp = (
-  isAnimate: boolean,
-): TVariant => {
-  const animate = { opacity: 0, y: -20 };
-  const initial = { opacity: 1, y: 0 };
-
-  return isAnimate ? animate : initial;
-};
-
-export const resolveFadeUpProps = (
-  isAnimate: boolean,
-): TVariants => ({
-  initial: resolveFadeUp(false),
-  animate: resolveFadeUp(isAnimate),
-});
-
-export const resolvePresence = (
-  initial: TVariant,
-  animate: TVariant,
-  exit?: TVariant,
-): TVariants => ({
-  initial,
-  animate,
-  exit: exit ?? initial,
-});
-
-export const resolveDynamicMotionConfig = (
-  partial: Partial<TTransition>,
-): TTransition => ({
-  ...MOTION_CONFIG,
-  ...partial,
-});
-
-export const resolveDynamicMidMotionConfig = (
-  partial: Partial<TTransition>,
-): TTransition => ({
-  transition: resolveDynamicMotionConfig(partial),
-});
-
-export const TRANSITION_DARK_MODE: TTransition = {
-  ease: EASE,
-  duration: DURATION_DARK_MODE,
-};
-
-export const TRANSITION: TTransition = {
-  ease: 'linear',
-  duration: DURATION,
-};
-
-export const MOTION_CONFIG: TTransitionProps = {
-  transition: TRANSITION,
-} as const;
-
-export const MID_MOTION_TRANSITION: TTransition = {
-  type: 'inertia',
-};
-
-export const MID_MOTION_CONFIG: TTransition = {
-  transition: MID_MOTION_TRANSITION,
-};
-
-export const VERY_SLOW_MOTION_CONFIG: TTransitionProps = {
-  transition: {
-    ease: 'linear',
-    duration: DURATION_VERY_SLOW,
-  },
-};
-
-export const DURATION_DELAY: TTransitionProps = {
-  ...MOTION_CONFIG,
-  delay: MOTION_CONFIG.transition.duration,
-};
-
-export const PRESENCE_OPACITY_SHIFT: TAnimationProps =
-  resolvePresence(
-    { opacity: 0, x: -20 },
-    { opacity: 1, x: 0 },
-    { opacity: 0, x: 20 },
-  );
-
-export const PRESENCE_OPACITY_Y_SHIFT: TAnimationProps =
-  resolvePresence(
-    { opacity: 0, y: '50%' },
-    { opacity: 1, y: '0%' },
-  );
-
-export const PRESENCE_Y_SHIFT: TAnimationProps =
-  resolvePresence({ y: '100%' }, { y: '0%' });
-
-export const PRESENCE_SCALE_HALF: TAnimationProps =
-  resolvePresence({ scale: 1 }, { scale: 0.5 });
-
-export const PRESENCE_X_LEFT: TAnimationProps =
-  resolvePresence({ x: '-140%' }, { x: '0%' });
-
-export const PRESENCE_OPACITY: TAnimationProps =
-  resolvePresence({ opacity: 0 }, { opacity: 1 });
-
-export const PRESENCE_Y: TAnimationProps = resolvePresence(
-  { y: '100%' },
-  { y: '0%' },
-);
-
-export const PRESENCE_OPACITY_DELAY: TAnimationProps =
-  resolvePresence(
-    { opacity: 0 },
-    {
-      opacity: 1,
-      transition: {
-        ...MOTION_CONFIG,
-        ...DURATION_DELAY,
-      },
-    },
-  );
-
-export const resolveVerticalShiftPresence = (
-  initialExitY: TNumberValue,
-): TAnimationProps => {
-  const initial: TVariant = {
-    opacity: 1,
-    y: initialExitY,
-    rotateX: 45,
-  };
-  const animate: TVariant = {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
+  const transition: TTransition = {
+    type: 'custom',
+    ease,
+    duration,
   };
 
-  return {
-    ...resolvePresence(initial, animate),
+  const durationDelay: TTransition = {
+    delay: duration,
+    ...transition,
+  };
+
+  const config: TTransitionProps = {
+    transition,
+  } as const;
+
+  const config2: TTransition = {
     transition: {
-      ease: 'easeInOut',
+      duration: duration2,
+      ...transition,
     },
+  };
+
+  const resolvePresenceOpacity = (
+    opacity: number,
+  ): TAnimationProps =>
+    resolvePresence({ opacity: 0 }, { opacity });
+
+  const resolveParentAnimateConfig = (
+    config: TResolveParentAnimateConfig = {},
+  ): TMotionProps => {
+    const { isHover } = config;
+
+    if (typeof isHover === 'undefined')
+      return {
+        initial: INITIAL_KEY,
+        animate: IDLE_KEY,
+        whileHover: HOVER_KEY,
+        exit: EXIT_KEY,
+      };
+
+    return {
+      initial: INITIAL_KEY,
+      animate: isHover ? HOVER_VARIANT : IDLE_KEY,
+      exit: EXIT_KEY,
+    };
+  };
+
+  const resolvePresence = (
+    initial: TVariant,
+    animate: TVariant,
+    exit?: TVariant,
+  ): TVariants => ({
+    initial,
+    animate,
+    exit: exit ?? initial,
+  });
+
+  const presenceRecord = resolvePresenceRecord<P>(
+    presenceConfigs,
+  ) as TPresenceConfigRecord<P>;
+
+  const baseTransitionRecord =
+    resolveBaseTransitionRecord<B>(baseTransitionConfigs);
+
+  const transitionRecord = resolveTransitionRecord(
+    transitionConfigs,
+  );
+
+  const resolveRotateXPresence = (
+    origin: '100%' | '-100%',
+  ): TAnimationProps => {
+    const initial: TTarget = {
+      opacity: 1,
+      y: origin,
+      rotateX: 45,
+    };
+    const animate: TVariant = {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+    };
+
+    return {
+      initial,
+      animate,
+      exit: initial,
+      transition: {
+        ease: 'easeInOut',
+        ...config,
+      },
+    };
+  };
+
+  return {
+    duration,
+    transition,
+    config,
+    config2,
+    durationDelay,
+    resolvePresence,
+    resolvePresenceOpacity,
+    resolveParentAnimateConfig,
+    presenceRecord,
+    baseTransitionRecord,
+    transitionRecord,
+    resolveRotateXPresence,
   };
 };
 
-export const resolvePresenceOpacity = (
-  opacity: number,
-): TAnimationProps =>
-  resolvePresence({ opacity: 0 }, { opacity });
+const presenceConfigs = [
+  { direction: 'up', value: '100%', fade: 0 },
+  { direction: 'right', value: 20, fade: 1 },
+  { direction: 'up', value: '50%', fade: 1 },
+  { direction: 'up', value: 0, fade: 1 },
+] as const;
+type TPresenceConfigs = typeof presenceConfigs;
 
+const baseTransitionConfigs = [
+  {
+    duration: 0.4,
+    ease: 'easeIn',
+    delay: 0.08,
+  },
+  {
+    duration: 0.2,
+    ease: 'easeIn',
+    delay: 0.08,
+  },
+] as const;
+
+const transitionConfigs = [] as const;
+
+const {
+  presenceRecord,
+  baseTransitionRecord,
+  transitionRecord,
+  duration,
+  transition,
+  config,
+  ...resolvers
+} = resolveAnimation<
+  TPresenceConfigs,
+  typeof baseTransitionConfigs,
+  typeof transitionConfigs
+>({
+  duration: 0.2,
+  ease: 'linear',
+  delay: 0,
+  presenceConfigs,
+  baseTransitionConfigs,
+});
+export const P = presenceRecord;
+export const T = baseTransitionRecord;
+export const R = resolvers;
+export const DURATION = duration;
+export const DURATION_2 = duration * 2;
+export const TRANSITION = transition;
+export const MOTION_CONFIG = config;
+export const PRESENCE_OPACITY = P['up0/1'];
+export const DELAY008_EASEIN_TRANSITION =
+  T['0.2/0.08/easeIn'];
+export const PRESENCE_OPACITY_Y = P['up50%/1'];
+export const PRESENCE_OPACITY_DELAY = {
+  ...PRESENCE_OPACITY,
+  transition: DELAY008_EASEIN_TRANSITION,
+};
+export * from './custom';
+export * from './resolveBaseTransitionRecord';
+export * from './resolvePresenceRecord';
+export * from './resolveTransitionRecord';
+export * from './config/constants';
 export * from './config/types';

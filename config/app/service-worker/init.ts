@@ -1,3 +1,4 @@
+import { TError } from '@brysonandrew/types';
 import precacheEntries from './precache.json';
 
 export const init = async () => {
@@ -20,7 +21,7 @@ export const init = async () => {
           from: 'ACTIVE SW MAIN',
         });
       });
-    } catch (error) {
+    } catch (error: TError) {
       console.log(
         'ServiceWorker registration failed:',
         error,

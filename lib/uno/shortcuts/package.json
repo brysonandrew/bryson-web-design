@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-shortcuts",
-  "version": "6.22.6",
+  "version": "6.22.15",
   "description": "Uno Shortcuts library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -32,6 +32,7 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/dark-mode": "*",
     "unocss": "*"
   }
 }
