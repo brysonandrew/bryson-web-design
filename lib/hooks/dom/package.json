@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "6.21.85",
+  "version": "6.21.86",
   "description": "Hooks Dom library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -15,7 +15,7 @@ export const DarkMode = () => {
         <motion.div
           key={DARK_MODE}
           className='relative'
-          {...P['up0/1']}
+          {...P['-/1']}
         >
           <Focus>{DARK_MODE}</Focus>
           <I icon={DARK_MODE_ICON} />

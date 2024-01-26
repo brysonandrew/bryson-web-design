@@ -62,22 +62,33 @@ export type TDirection = 'left' | 'right' | 'up' | 'down';
 export type TXyKey = 'x' | 'y';
 
 export type TPresenceConfig = {
-  direction: TDirection;
-  value: TNumberValue;
-  fade: number;
-};
-// & (
-//   | {
-//       fade: number;
-//     }
-//   | {
-//       direction: TDirection;
-//     }
-// );
+  direction?: TDirection;
+  value?: TNumberValue;
+  fade?: number;
+} & (
+  | {
+      fade: number;
+    }
+  | {
+      direction: TDirection;
+      value: TNumberValue;
+    }
+);
 export type TPresenceConfigs = readonly TPresenceConfig[];
 
-export type TPresenceConfigKey<U extends TPresenceConfig> =
-  `${U['direction']}${U['value']}/${U['fade']}`;
+type TPlaceholder = '-';
+type TFadeKey<T extends TPresenceConfig> =
+  T['fade'] extends number ? T['fade'] : TPlaceholder;
+
+type TDirectionValueKey<T extends TPresenceConfig> =
+  T['direction'] extends TDirection
+    ? T['value'] extends TNumberValue
+      ? `${T['direction']}${T['value']}`
+      : TPlaceholder
+    : TPlaceholder;
+
+export type TPresenceConfigKey<T extends TPresenceConfig> =
+  `${TDirectionValueKey<T>}/${TFadeKey<T>}`;
 
 export type TPresenceConfigRecord<
   T extends TPresenceConfigs,
@@ -88,6 +99,23 @@ export type TPresenceConfigRecord<
 export type TBaseTransitionConfig = TBaseTransition;
 export type TBaseTransitionConfigs =
   readonly TBaseTransitionConfig[];
+
+type TStringifyEase<E extends TEasing> =
+  E extends BezierDefinition
+    ? `${E[0]},${E[1]},${E[2]},${E[3]}`
+    : E;
+
+export type TBaseTransitionConfigKey<
+  U extends TBaseTransitionConfig,
+> = `${U['duration']}/${TStringifyEase<
+  U['ease']
+>}/${U['delay']}`;
+
+export type TBaseTransitionRecord<
+  T extends TBaseTransitionConfigs,
+> = {
+  [U in T[number] as TBaseTransitionConfigKey<U>]: U;
+};
 
 export type TTransitionConfig = TTransition;
 export type TTransitionConfigs =
@@ -101,7 +129,7 @@ export type TResolveAnimationConfig<
   isDisabled?: boolean;
   presenceConfigs: P;
   baseTransitionConfigs: B;
-  transitionConfigs?: T;
+  transitionConfigs: T;
 };
 
 export type TBezierDefinition = BezierDefinition;

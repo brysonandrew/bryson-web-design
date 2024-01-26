@@ -1,14 +1,8 @@
 import type { StaticShortcutMap } from 'unocss';
 import { SHORTCUTS as COLOR } from './color';
 
-const TEXT_CUSTOM: StaticShortcutMap = {
-  'title-pricing':
-    'font-semibold capitalize char-gap-0_006725',
-};
-
 export const SHORTCUTS: StaticShortcutMap = {
   ...COLOR,
-  ...TEXT_CUSTOM,
   title:
     'relative text-title text-3xl px-1 text-shadow-inherit lg:text-4xl',
   'title-base': 'font-normal char-gap-0_006725',

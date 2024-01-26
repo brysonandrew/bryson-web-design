@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.15",
+  "version": "6.22.16",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -20,8 +20,8 @@
     "./shortcuts": "./shortcuts/index.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
     "./shortcuts/layout": "./shortcuts/layout.ts",
-    "./spacing": "./spacing/index.ts",
     "./theme": "./theme/index.ts",
+    "./spacing": "./spacing/index.ts",
     "./shortcuts/text/color": "./shortcuts/text/color.ts",
     "./shortcuts/text": "./shortcuts/text/index.ts"
   },

@@ -14,7 +14,7 @@ export const resolveInvertProps = ({
   style: {
     filter: 'invert(100%)',
   },
-  transition: T['0.2/0.08/easeIn'],
+  transition: T['0.2/easeIn/0.08'],
   initial: false,
   animate: { opacity },
   ...props,
