@@ -15,9 +15,9 @@ import { TickList } from '@brysonandrew/layout/lists/TickList';
 import { EMAIL_ICON } from '@brysonandrew/icons/config/constants/contact';
 import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
-import { FadeDown } from '@brysonandrew/layout';
 import { TStyle } from '@app/style';
 import { PAGE_RECORD } from '@app/routes';
+import { FadeDown } from '@brysonandrew/fade';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;

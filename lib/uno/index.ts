@@ -9,7 +9,7 @@ export * from './shortcuts/flex';
 export * from './shortcuts';
 export * from './shortcuts/interactive';
 export * from './shortcuts/layout';
-export * from './theme';
 export * from './spacing';
+export * from './theme';
 export * from './shortcuts/text/color';
 export * from './shortcuts/text';

@@ -8,18 +8,30 @@ const Root = styled(motion.div)``;
 
 export type TBaseProps = TDivMotionProps & {
   classValue?: ClassValue;
+  gradientFrom?: ClassValue;
+  gradientTo?: ClassValue;
 };
-export const VerticalFade: FC<TBaseProps> = ({
+export const Fade: FC<TBaseProps> = ({
   classValue,
   style,
+  gradientFrom = 'dark:from-black from-white-9 ',
+  gradientTo = 'to-transparent',
   ...props
 }) => (
   <Root
     className={clsx(
-      'absolute left-0 right-0 w-full dark:from-black from-white-9 pointer-events-none',
+      'absolute left-0 right-0 w-full pointer-events-none',
+      gradientFrom,
+      gradientTo,
       classValue,
     )}
     style={style}
     {...props}
   />
 );
+
+export * from './FadeDown';
+export * from './FadeLeft';
+export * from './FadeRight';
+export * from './FadeUp';
+export * from './shortcuts';

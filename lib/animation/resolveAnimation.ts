@@ -29,10 +29,11 @@ import { resolveTransitionRecord } from '@brysonandrew/animation/resolveTransiti
 export const resolveAnimation = <
   P extends TPresenceConfigs,
   B extends TBaseTransitionConfigs,
-  T extends TTransitionConfigs,
+  T extends TTransitionConfigs = TTransitionConfigs,
 >({
   ease = 'linear' as TEasing,
   duration = 0.2,
+  delay = 0,
   presenceConfigs,
   baseTransitionConfigs,
   transitionConfigs,
@@ -43,6 +44,7 @@ export const resolveAnimation = <
     type: 'custom',
     ease,
     duration,
+    delay,
   };
 
   const durationDelay: TTransition = {
@@ -106,7 +108,7 @@ export const resolveAnimation = <
     ) as TBaseTransitionRecord<B>;
 
   const transitionRecord = resolveTransitionRecord(
-    transitionConfigs,
+    transitionConfigs ?? [],
   );
 
   const resolveRotateXPresence = (

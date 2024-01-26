@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.16",
+  "version": "6.22.22",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -20,11 +20,11 @@
     "./page/Margin": "./page/Margin.tsx",
     "./page/Shell": "./page/Shell.tsx",
     "./page": "./page/index.tsx",
-    "./page/header/Title": "./page/header/Title.tsx",
-    "./page/header": "./page/header/index.tsx",
     "./page/experience/Item": "./page/experience/Item.tsx",
     "./page/experience": "./page/experience/index.tsx",
-    "./page/experience/resolveTime": "./page/experience/resolveTime.ts"
+    "./page/experience/resolveTime": "./page/experience/resolveTime.ts",
+    "./page/header/Title": "./page/header/Title.tsx",
+    "./page/header": "./page/header/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -46,8 +46,8 @@
     "@brysonandrew/types": "*",
     "framer-motion": "*",
     "@brysonandrew/space": "*",
+    "clsx": "*",
     "@brysonandrew/layout": "*",
-    "@brysonandrew/contact-list": "*",
-    "clsx": "*"
+    "@brysonandrew/contact-list": "*"
   }
 }

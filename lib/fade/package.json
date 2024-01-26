@@ -1,16 +1,20 @@
 {
-  "name": "@brysonandrew/in-view",
+  "name": "@brysonandrew/fade",
   "version": "6.22.22",
-  "description": "In View library",
+  "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
-    "./Replacer": "./Replacer.tsx",
+    "./FadeDown": "./FadeDown.tsx",
+    "./FadeLeft": "./FadeLeft.tsx",
+    "./FadeRight": "./FadeRight.tsx",
+    "./FadeUp": "./FadeUp.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
-    }
+    },
+    "./shortcuts": "./shortcuts.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -26,11 +30,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "react-device-detect": "*",
-    "@brysonandrew/types": "*",
-    "@emotion/styled": "*",
     "clsx": "*",
-    "framer-motion": "*"
+    "react": "*",
+    "@emotion/styled": "*",
+    "@brysonandrew/types": "*",
+    "framer-motion": "*",
+    "unocss": "*"
   }
 }

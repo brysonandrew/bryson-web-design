@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.16",
+  "version": "6.22.22",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,10 +13,10 @@
     },
     "./useDarkModeState": "./useDarkModeState.ts",
     "./button": "./button/index.tsx",
+    "./head": "./head/index.tsx",
     "./config/animation": "./config/animation.ts",
     "./config/constants": "./config/constants.tsx",
     "./config/types": "./config/types.ts",
-    "./head": "./head/index.tsx",
     "./button/icon/Moon": "./button/icon/Moon.tsx",
     "./button/icon/Sun": "./button/icon/Sun.tsx",
     "./button/icon": "./button/icon/index.ts"

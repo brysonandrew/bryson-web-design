@@ -125,11 +125,11 @@ export type TResolveAnimationConfig<
   P extends TPresenceConfigs,
   B extends TBaseTransitionConfigs,
   T extends TTransitionConfigs,
-> = TMainTransition & {
+> = Partial<TMainTransition> & {
   isDisabled?: boolean;
   presenceConfigs: P;
   baseTransitionConfigs: B;
-  transitionConfigs: T;
+  transitionConfigs?: T;
 };
 
 export type TBezierDefinition = BezierDefinition;
