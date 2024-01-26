@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/types",
-  "version": "6.22.2",
+  "version": "6.22.22",
   "description": "Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,6 +13,7 @@
     },
     "./keys": "./keys.ts",
     "./object": "./object.ts",
+    "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",

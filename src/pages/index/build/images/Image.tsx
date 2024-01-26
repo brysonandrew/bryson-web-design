@@ -17,11 +17,11 @@ import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { GALLERY_ICON } from '@brysonandrew/icons/config/constants/gallery';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
+import { ORIGIN_50 } from '@pages/index/build/config/constants';
 
 const Button = styled(motion.button)``;
 
@@ -98,8 +98,3 @@ export const Image: FC<TProps> = (props) => {
     </motion.li>
   );
 };
-      // variants={resolvePresence(
-      //   { opacity: 0 },
-      //   resolveMotionConfig(positionConfig),
-      // )}
-      // {...resolveParentAnimateConfig({ isHover })}

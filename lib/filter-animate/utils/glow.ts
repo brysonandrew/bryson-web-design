@@ -2,7 +2,7 @@ import { MotionValue } from 'framer-motion';
 import { resolveDropShadow } from '@brysonandrew/color/utils/glow/resolveDropShadow';
 import { resolveBoxShadow } from '@brysonandrew/color/utils/glow/resolveBoxShadow';
 import { TFilterAnimateProps } from '..';
-import { EFFECT_ANIMATE_TRANSITION } from '@brysonandrew/animation';
+import { T } from '@brysonandrew/animation';
 
 export type TGlowConfigOptions = {
   text?: number;
@@ -37,7 +37,7 @@ export const resolveGlowProps = ({
       : {}),
     ...style,
   },
-  transition: EFFECT_ANIMATE_TRANSITION,
+  transition: T['0.2/easeIn/0.08'],
   ...(value
     ? {}
     : {

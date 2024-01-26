@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
 import { Nav } from './Nav';
-import { FadeDown } from '@brysonandrew/layout/vertical-fade/FadeDown';
+import { FadeDown } from '@brysonandrew/fade/FadeDown';
+import { PRESENCE_OPACITY } from '@app/animation';
 import {
-  PRESENCE_OPACITY,
   TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation';
-import { useDarkMode } from '@brysonandrew/dark-mode';
-import { useScroll } from '@brysonandrew/scroll/ScrollProvider';
+  useDarkMode,
+} from '@brysonandrew/dark-mode';
+import { useScroll } from '@brysonandrew/scroll';
 
 const Root = styled.header``;
 
@@ -17,7 +17,7 @@ export const Header: FC = () => {
   const { isScroll } = useScroll();
 
   return (
-    <Root className='fixed top-0 left-0 w-full h-0 z-10'>
+    <Root className='fixed top-0 left-0 w-full h-0 z-40'>
       <AnimatePresence initial={false}>
         {!isScroll ? (
           <Nav key='NAV' />

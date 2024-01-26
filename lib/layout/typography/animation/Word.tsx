@@ -1,4 +1,4 @@
-import { PRESENCE_OPACITY_SHIFT } from '@brysonandrew/animation';
+import { P } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { FC, useMemo } from 'react';
 import { Stagger } from './Stagger';
@@ -20,7 +20,7 @@ export const Word: FC<TProps> = ({
     return {
       prevCount,
       children: children.split(''),
-      ...PRESENCE_OPACITY_SHIFT,
+      ...P['up100%/-'],
     };
   }, [prevWords]);
 

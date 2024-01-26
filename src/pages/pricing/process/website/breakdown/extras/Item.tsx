@@ -1,6 +1,6 @@
 import { I } from '@brysonandrew/icons/icon';
 import { ADD_ICON, REMOVE_ICON } from '@brysonandrew/icons/config/constants';
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import clsx from 'clsx';
 import { Item as FocusItem } from '../../../focus/Item';
 import { FC } from 'react';
@@ -21,7 +21,7 @@ export const Item: FC<TProps> = ({
   price,
   max = 0,
 }) => {
-  const { setExtras } = useServicesC();
+  const { setExtras } = usePricing();
   return (
     <FocusItem id={id}>
       <div

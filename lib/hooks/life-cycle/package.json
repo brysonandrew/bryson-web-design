@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-life-cycle",
-  "version": "6.21.72",
+  "version": "6.21.92",
   "description": "Hooks Life Cycle library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -7,7 +7,10 @@ import { TBaseChildren } from '@brysonandrew/types/dom';
 type TProps<T extends HTMLElement> = TBaseInputProps &
   Pick<TShellProps<T>, 'isDisabled'> & {
     children(
-      props: Pick<TUseInput<T>, 'ref' | 'inputProps'>,
+      props: Pick<
+        TUseInput<T>,
+        'setInput' | 'input' | 'inputProps'
+      >,
     ): TBaseChildren;
   };
 export const Box = <T extends HTMLElement>({
@@ -18,6 +21,7 @@ export const Box = <T extends HTMLElement>({
   const { boxInputs, ...props } = useInput<T>({
     name,
   });
+
   return (
     <Shell<T>
       name={name}

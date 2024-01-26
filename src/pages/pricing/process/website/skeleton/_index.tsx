@@ -6,7 +6,7 @@ import { ImageAndText } from './image-and-text';
 import { View } from './wrappers/View';
 import { Tablet } from './Tablet';
 import { Mobile } from './Mobile';
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import {
   CONTACT_FORM,
   MOBILE_SIZE,
@@ -15,7 +15,7 @@ import {
 import { ContactForm } from './contact-form';
 
 export const Skeleton = () => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
   const isMobile = Boolean(extras[MOBILE_SIZE]);
   const isTablet = Boolean(extras[TABLET_SIZE]);
   const isContactForm = Boolean(extras[CONTACT_FORM]);

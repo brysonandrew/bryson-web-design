@@ -1,0 +1,53 @@
+{
+  "name": "@brysonandrew/cv",
+  "version": "6.22.22",
+  "description": "Cv library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./CvProvider": "./CvProvider.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config/constants": "./config/constants.ts",
+    "./config/tech-icon-lookup": "./config/tech-icon-lookup.tsx",
+    "./config/types": "./config/types.ts",
+    "./controls/Invert": "./controls/Invert.tsx",
+    "./page/Description": "./page/Description.tsx",
+    "./page/Line": "./page/Line.tsx",
+    "./page/Margin": "./page/Margin.tsx",
+    "./page/Shell": "./page/Shell.tsx",
+    "./page": "./page/index.tsx",
+    "./page/experience/Item": "./page/experience/Item.tsx",
+    "./page/experience": "./page/experience/index.tsx",
+    "./page/experience/resolveTime": "./page/experience/resolveTime.ts",
+    "./page/header/Title": "./page/header/Title.tsx",
+    "./page/header": "./page/header/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/gallery": "*",
+    "@emotion/styled": "*",
+    "@brysonandrew/types": "*",
+    "framer-motion": "*",
+    "@brysonandrew/space": "*",
+    "clsx": "*",
+    "@brysonandrew/layout": "*",
+    "@brysonandrew/contact-list": "*"
+  }
+}

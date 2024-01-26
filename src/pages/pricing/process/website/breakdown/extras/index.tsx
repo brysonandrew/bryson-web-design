@@ -1,10 +1,10 @@
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { Item } from './Item';
 import { List } from '@brysonandrew/layout/lists/List';
 import { EXTRAS } from '../../config';
 
 export const Extras = () => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
   return (
     <List
       items={EXTRAS.map(([id, price, max], index) => {

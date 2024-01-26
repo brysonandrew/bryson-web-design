@@ -4,7 +4,6 @@ import {
   TParallaxOptions,
   TPartialStyle,
 } from '../config';
-
 import { useScroll } from '@brysonandrew/scroll';
 import { TRect } from '@brysonandrew/types/dom/main';
 import { useScrollYBounds } from '@brysonandrew/parallax/aggregator/useScrollYBounds';

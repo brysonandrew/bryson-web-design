@@ -1,8 +1,8 @@
-import { resolvePageRecords } from '@brysonandrew/routes';
+import { Navigate, RouteObject } from 'react-router-dom';
 import * as Pages from '@pages/index';
+import { resolvePageRecords } from '@brysonandrew/routes';
 import { Cv } from '@pages/_workshop/cv';
 import { Reader } from '@pages/_workshop/reader';
-import { Navigate, RouteObject } from 'react-router-dom';
 import { Shell } from 'src/shell';
 
 export const PAGE_TITLES = [
@@ -16,6 +16,7 @@ export type TPageTitle = (typeof PAGE_TITLES)[number];
 
 const { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES } =
   resolvePageRecords<TPageTitle, any>(PAGE_TITLES, Pages);
+
 export const SECTION_RECORD = {
   build: 'Building websites and apps',
   [PAGE_RECORD.pricing.key]:

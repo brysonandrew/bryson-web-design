@@ -17,27 +17,28 @@ export const Textarea: FC<TProps> = ({
       name={name}
       isDisabled={disabled}
     >
-      {({ ref, inputProps }) => (
-        <>
-          <Autosize textarea={ref.current} {...inputProps}>
-            {(isInit) => (
-              <motion.textarea
-                key={`${isInit}`}
-                layout
-                transition={{ duration: 0 }}
-                ref={ref}
-                className='input-textarea'
-                autoComplete='off'
-                rows={1}
-                name={name}
-                disabled={disabled}
-                {...resolveInteractiveLabels(name)}
-                {...inputProps}
-                {...props}
-              />
-            )}
-          </Autosize>
-        </>
+      {({ setInput, inputProps, input }) => (
+        <Autosize textarea={input} {...inputProps}>
+          {(isInit) => (
+            <motion.textarea
+              layout={isInit}
+              transition={{ duration: 0 }}
+              ref={(instance) => {
+                if (instance && !input) {
+                  setInput(instance);
+                }
+              }}
+              className='input-textarea'
+              autoComplete='off'
+              rows={1}
+              name={name}
+              disabled={disabled}
+              {...resolveInteractiveLabels(name)}
+              {...inputProps}
+              {...props}
+            />
+          )}
+        </Autosize>
       )}
     </Box>
   );

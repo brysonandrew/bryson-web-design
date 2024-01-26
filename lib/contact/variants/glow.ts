@@ -1,4 +1,4 @@
-import { BASE } from "./base";
+import { BASE } from './base';
 
 export const GLOW = {
   ...BASE,
@@ -15,15 +15,15 @@ export const GLOW = {
   shell: 'relative column-start w-full p-2 md:row-start',
   'shell-texture-glow': '',
   'input-base': 'relative text-2xl px-4 w-full',
-  autosize: 'relative w-full bg-input',
+  autosize: 'relative w-full overflow-hidden bg-input',
   'input-textarea':
-    'input-base py-3 block left-0 top-0 m-0',
+    'input-base py-2 block left-0 top-0 m-0',
   'input-text': 'input-base py-2 bg-input',
-  name: 'relative flex justify-center shrink-0 w-full py-3 pl-0 md:(w-40 pl-6 justify-start)',
+  name: 'relative flex justify-center shrink-0 w-full py-2 pl-0 md:(w-40 pl-6 justify-start)',
   'name-text':
     'inline-flex title-input capitalize whitespace-nowrap',
   submit: 'relative p-2 w-full',
   'submit-text':
-    'center relative py-2 title-input pointer-events-none',
+    'center relative title-input pointer-events-none',
   footer: 'column-end gap-1',
 };

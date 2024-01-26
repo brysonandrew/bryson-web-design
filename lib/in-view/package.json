@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.22.2",
+  "version": "6.22.22",
   "description": "In View library",
   "main": "./index.tsx",
   "module": "./index.tsx",

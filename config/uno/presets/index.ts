@@ -5,14 +5,15 @@ import {
   presetWebFonts,
   type Preset,
 } from 'unocss';
-import { TTheme } from '../theme';
 
-export type TPresets = (
-  | Preset<TTheme>
-  | Preset<TTheme>[]
+export type TPresets<T extends object> = (
+  | Preset<T>
+  | Preset<T>[]
 )[];
-export const PRESETS: TPresets = [
-  definePreset<any>(presetUno({ dark: 'class' })),
+export const resolvePresets = <
+  T extends object,
+>(): TPresets<T> => [
+  definePreset<T>(presetUno({ dark: 'class' }) as any),
   presetWebFonts({
     fonts: FONTS,
   }),

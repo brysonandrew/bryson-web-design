@@ -1,4 +1,3 @@
-import { resolveVerticalShiftPresence } from '@brysonandrew/animation';
 import { AnimatePresence } from 'framer-motion';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
@@ -15,16 +14,21 @@ import {
   TSvgMotionProps,
 } from '@brysonandrew/types';
 import { Moon, Sun } from './icon';
+import { TAnimationProps } from '@brysonandrew/animation';
+
+type TOrigin = '100%' | '-100%';
 
 type TProps = Partial<{
   buttonProps: Partial<TButtonProps>;
   backgroundProps: TDivProps;
   iconProps: TSvgMotionProps & TClassValueProps;
+  resolveOrigin: (origin: TOrigin) => TAnimationProps;
 }>;
 export const Button: FC<TProps> = ({
   buttonProps,
   backgroundProps,
   iconProps,
+  resolveOrigin,
 }) => {
   const { BORDER_RADIUS, onSound } = useApp();
   const darkMode = useDarkMode();
@@ -42,9 +46,11 @@ export const Button: FC<TProps> = ({
     onSound();
     darkMode.toggle();
   };
-  const resolveIconProps = (origin: `${number}%`) => ({
+  const resolveIconProps = (origin: TOrigin) => ({
     key: origin,
-    ...resolveVerticalShiftPresence(origin),
+    ...(resolveOrigin
+      ? resolveOrigin(origin)
+      : { style: { y: origin } }),
     ...iconProps,
   });
 

@@ -14,6 +14,9 @@ export const useAutosize = ({
 
   useEffect(() => {
     if (textarea !== null && !isResizing) {
+      if (!isInit) {
+        setInit(true);
+      }
       const clone = textarea.cloneNode(
         true,
       ) as HTMLTextAreaElement;
@@ -22,9 +25,6 @@ export const useAutosize = ({
       const next = `${clone.scrollHeight}px`;
       textarea.style.height = next;
       clone.remove();
-      if (!isInit) {
-        setInit(true);
-      }
     }
   }, [textarea, value, isResizing]);
 

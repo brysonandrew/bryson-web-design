@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.2",
+  "version": "6.22.22",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -20,9 +20,6 @@
     "./section": "./section/index.tsx",
     "./utils/arrToNest": "./utils/arrToNest.tsx",
     "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
-    "./vertical-fade/FadeDown": "./vertical-fade/FadeDown.tsx",
-    "./vertical-fade/FadeUp": "./vertical-fade/FadeUp.tsx",
-    "./vertical-fade": "./vertical-fade/index.tsx",
     "./typography/Letter": "./typography/Letter.tsx",
     "./typography/Sub": "./typography/Sub.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",

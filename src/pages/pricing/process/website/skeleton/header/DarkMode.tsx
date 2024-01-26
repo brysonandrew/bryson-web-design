@@ -1,13 +1,13 @@
 import { Focus } from '@pages/pricing/process/focus';
 import { I } from '@brysonandrew/icons/icon';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { P } from '@app/animation';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DARK_MODE_ICON } from '@brysonandrew/icons/config/constants/general';
 import { DARK_MODE } from '../../config';
 
 export const DarkMode = () => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
 
   return (
     <AnimatePresence initial={false}>
@@ -15,7 +15,7 @@ export const DarkMode = () => {
         <motion.div
           key={DARK_MODE}
           className='relative'
-          {...PRESENCE_OPACITY}
+          {...P['-/1']}
         >
           <Focus>{DARK_MODE}</Focus>
           <I icon={DARK_MODE_ICON} />

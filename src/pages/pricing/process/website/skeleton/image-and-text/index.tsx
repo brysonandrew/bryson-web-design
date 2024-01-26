@@ -1,4 +1,4 @@
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { Normal } from './variants/Normal';
 import { Reversed } from './variants/Reversed';
 import clsx from 'clsx';
@@ -7,7 +7,7 @@ import { ADDITIONAL_CONTENT } from '@pages/pricing/process/website/config';
 
 type TProps = PropsWithChildren;
 export const ImageAndText: FC<TProps> = ({ children }) => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
   const contentCount = extras[ADDITIONAL_CONTENT];
   const isContent =
     typeof contentCount === 'number' && contentCount > 0;
