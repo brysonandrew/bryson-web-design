@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { animate } from 'framer-motion';
-import { resolveMarkerIndex, resolveTo, useViewer as useContext } from '@brysonandrew/gallery';
+import {
+  resolveMarkerIndex,
+  resolveTo,
+  useViewer as useContext,
+} from '@brysonandrew/gallery';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery-viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../ready/types';
-import { DURATION_MID } from '@brysonandrew/animation';
 import { useX } from './motion/useX';
+import { DURATION_2 } from '@brysonandrew/animation';
 
 type TConfig = Pick<
   TBaseProps,
@@ -23,7 +27,12 @@ export const useDrag = ({
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { onMotionBlurEnd } = useContext();
-  const nextX = useX({ width, mediaRecords, currName, motionX });
+  const nextX = useX({
+    width,
+    mediaRecords,
+    currName,
+    motionX,
+  });
 
   const handleComplete = onMotionBlurEnd;
   const handleDragTransitionEnd = () => {
@@ -46,7 +55,7 @@ export const useDrag = ({
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
       ease: 'easeIn',
-      duration: DURATION_MID,
+      duration: DURATION_2,
       onComplete: handleComplete,
     });
     return subscribe.stop;

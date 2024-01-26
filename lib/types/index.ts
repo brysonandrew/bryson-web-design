@@ -1,6 +1,7 @@
 export * from './css';
 export * from './keys';
 export * from './object';
+export * from './assertions/isValidKey';
 export * from './dom/element';
 export * from './dom/event';
 export * from './dom';

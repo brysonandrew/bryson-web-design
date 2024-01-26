@@ -1,4 +1,4 @@
-import { EFFECT_ANIMATE_TRANSITION } from "@brysonandrew/animation";
+import { T } from '@brysonandrew/animation';
 
 export type TInvertConfigOptions = {
   value: number;
@@ -14,7 +14,7 @@ export const resolveInvertProps = ({
   style: {
     filter: 'invert(100%)',
   },
-  transition: EFFECT_ANIMATE_TRANSITION,
+  transition: T['0.2/0.08/easeIn'],
   initial: false,
   animate: { opacity },
   ...props,

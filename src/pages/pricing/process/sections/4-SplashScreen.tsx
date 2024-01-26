@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { Logo } from '../website/skeleton/header/logo';
 import { Provider } from '../website/skeleton/context/Provider';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@app/animation';
 import { SKELETON_LOGO_LAYOUT_ID } from '../website/skeleton/header/logo/constants';
 
 export const SplashScreen = () => {

@@ -1,7 +1,6 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
 import styled from '@emotion/styled';
-import { PRESENCE_OPACITY_Y_SHIFT } from '@brysonandrew/animation';
 import { TBaseProps } from '@brysonandrew/gallery';
 import { Control } from './Control';
 import {
@@ -10,6 +9,7 @@ import {
 } from '@brysonandrew/cursor';
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
+import { PRESENCE_OPACITY_Y } from '@brysonandrew/animation';
 
 const Root = styled(motion.div)``;
 
@@ -38,7 +38,7 @@ export const Sections: FC<TProps> = (props) => {
             setContainer(instance);
           }
         }}
-        {...PRESENCE_OPACITY_Y_SHIFT}
+        {...PRESENCE_OPACITY_Y}
       >
         {mediaRecords.map(
           (mediaRecord: TMediaRecord, index: number) => (

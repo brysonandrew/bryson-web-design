@@ -1,5 +1,5 @@
 import { InView } from '@brysonandrew/in-view';
-import clsx, { ClassValue } from 'clsx';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Aggregator } from './aggregator';
@@ -10,17 +10,17 @@ import {
 } from './config';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
-import { NOOP } from '@brysonandrew/utils/functions';
 import { isDesktop } from 'react-device-detect';
 import { Rect } from '@brysonandrew/space/Rect';
+import { TClassValueProps } from '@brysonandrew/types';
 
-type TProps = TParallaxOptions & {
-  classValue?: ClassValue;
-  intersectionOptions?: IntersectionOptions;
-  children(
-    props: TParallaxMotionChildrenProps,
-  ): JSX.Element;
-};
+type TProps = TClassValueProps &
+  TParallaxOptions & {
+    intersectionOptions?: IntersectionOptions;
+    children(
+      props: TParallaxMotionChildrenProps,
+    ): JSX.Element;
+  };
 export const Parallax: FC<TProps> = ({
   classValue,
   children,
@@ -31,7 +31,7 @@ export const Parallax: FC<TProps> = ({
 
   return (
     <InView
-      classValue={clsx('column w-full', classValue)}
+      classValue={clsx(classValue)}
       options={{
         triggerOnce: false,
         threshold: 0,
@@ -39,56 +39,49 @@ export const Parallax: FC<TProps> = ({
         ...intersectionOptions,
       }}
     >
-      {({ inView, entry }) => {
-        return (
-          <Rect>
-            {({ rect, onUpdate }) => {
-              if (inView) {
-                return (
-                  <Aggregator
-                    rect={rect}
-                    onUpdateRect={
-                      entry
-                        ? () => onUpdate(entry.target)
-                        : NOOP
+      {({ inView, entry }) => (
+        <Rect>
+          {({ rect, onUpdate }) => {
+            if (inView) {
+              return (
+                <Aggregator
+                  rect={rect}
+                  onUpdateRect={() => {
+                    if (entry) {
+                      onUpdate(entry.target);
                     }
-                    {...optionsConfig}
-                  >
-                    {children}
-                  </Aggregator>
-                );
-              }
-              if (typeof rect !== 'undefined') {
-                return (
-                  <motion.div
-                    style={{
-                      height: rect?.height,
-                    }}
-                    {...PRESENCE_OPACITY}
-                  />
-                );
-              }
+                  }}
+                  {...optionsConfig}
+                >
+                  {children}
+                </Aggregator>
+              );
+            }
+            if (typeof rect !== 'undefined') {
+              return (
+                <motion.div
+                  style={{
+                    height: rect?.height,
+                  }}
+                  {...PRESENCE_OPACITY}
+                />
+              );
+            }
 
-              return null;
-            }}
-          </Rect>
-        );
-      }}
+            return null;
+          }}
+        </Rect>
+      )}
     </InView>
   );
 };
 
 export * from './config';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';
-
-
-
-
-

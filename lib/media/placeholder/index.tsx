@@ -11,7 +11,6 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
-import { DURATION_VERY_SLOW } from '@brysonandrew/animation';
 import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientStops';
 
 export const Root = styled(motion.div)``;
@@ -31,10 +30,6 @@ export const Placeholder: FC<TProps> = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       exit={{ opacity: 0 }}
-      transition={{
-        ease: 'linear',
-        duration: DURATION_VERY_SLOW,
-      }}
       {...props}
     >
       <div
@@ -60,8 +55,8 @@ export const Placeholder: FC<TProps> = ({
             },
             transition: {
               repeat: Infinity,
-              duration: DURATION_VERY_SLOW,
-              ease: 'linear',
+              duration: 2,
+              ease: 'keyframes',
             },
           }}
         />

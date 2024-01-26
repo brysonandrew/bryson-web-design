@@ -1,11 +1,14 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
-import { resolveButtonValue, useContact } from '@brysonandrew/contact';
+import {
+  resolveButtonValue,
+  useContact,
+} from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
-  EFFECT_ANIMATE_TRANSITION,
-  resolveParentAnimateConfig,
+  DELAY008_EASEIN_TRANSITION,
+  R,
 } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
@@ -39,13 +42,13 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       onTap={isDisabled ? () => null : onSound}
       {...(isDisabled
         ? {}
-        : resolveParentAnimateConfig({ isHover }))}
+        : R.resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
       {...handlers}
     >
-      {Glow ? <Glow.Back /> : <Back/>}
+      {Glow ? <Glow.Back /> : <Back />}
       <input
         className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'
@@ -53,7 +56,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <motion.h4
         className='submit-text'
-        transition={EFFECT_ANIMATE_TRANSITION}
+        transition={DELAY008_EASEIN_TRANSITION}
         style={{
           letterSpacing: '0.00675em',
         }}

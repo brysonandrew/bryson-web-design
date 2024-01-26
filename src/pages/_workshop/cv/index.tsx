@@ -1,7 +1,4 @@
-import { Page } from './page';
-import { Invert } from './controls/Invert';
 import { Variables } from '@css/Variables';
-import { CvProvider } from '@pages/_workshop/cv/CvProvider';
 import {
   CONTACT_URL,
   CONTACT_EMAIL,
@@ -10,6 +7,9 @@ import {
   CV_ITEMS,
   DESCRIPTION_PARAGRAPHS,
 } from '@app/copy';
+import { CvProvider } from '@brysonandrew/cv/CvProvider';
+import { Page } from '@brysonandrew/cv/page';
+import { Invert } from '@brysonandrew/cv/controls/Invert';
 
 export const Cv = () => {
   return (

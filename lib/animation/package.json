@@ -1,15 +1,20 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.22.6",
+  "version": "6.22.15",
   "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./custom": "./custom.ts",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./resolveBaseTransitionRecord": "./resolveBaseTransitionRecord.ts",
+    "./resolvePresenceRecord": "./resolvePresenceRecord.ts",
+    "./resolveTransitionRecord": "./resolveTransitionRecord.ts",
+    "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts"
   },
   "scripts": {
@@ -25,5 +30,8 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {
+    "framer-motion": "*",
+    "@brysonandrew/types": "*"
+  }
 }

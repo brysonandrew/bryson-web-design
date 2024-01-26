@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.6",
+  "version": "6.22.15",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,6 +13,7 @@
     },
     "./useDarkModeState": "./useDarkModeState.ts",
     "./button": "./button/index.tsx",
+    "./config/animation": "./config/animation.ts",
     "./config/constants": "./config/constants.tsx",
     "./config/types": "./config/types.ts",
     "./head": "./head/index.tsx",
@@ -37,10 +38,10 @@
     "react": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/hooks": "*",
-    "@brysonandrew/animation": "*",
     "framer-motion": "*",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/animation": "*",
     "@brysonandrew/types": "*"
   }
 }

@@ -1,9 +1,9 @@
-import { useServicesC } from '@pages/index/pricing/context/useServicesC';
+import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { ADDITIONAL_CONTENT, CONTENT_COST } from '@pages/pricing/process/website/config';
 import { Item } from './extras/Item';
 
 export const Content = () => {
-  const { extras } = useServicesC();
+  const { extras } = usePricing();
   const value = extras[ADDITIONAL_CONTENT];
 
   return (

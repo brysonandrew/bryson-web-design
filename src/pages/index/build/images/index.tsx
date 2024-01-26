@@ -10,9 +10,9 @@ import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
 import { useScroll } from '@brysonandrew/scroll';
 import { useViewport } from '@brysonandrew/viewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
-import { ORIGIN_50 } from '@brysonandrew/animation';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
+import { ORIGIN_50 } from '@pages/index/build/config/constants';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;

@@ -8,7 +8,7 @@ export const PRICING = createContext<TPricingContext>({
   setExtras: NOOP,
 });
 
-export const useServicesC = (): TPricingContext =>
+export const usePricing = (): TPricingContext =>
   useContext<TPricingContext>(PRICING);
 
 

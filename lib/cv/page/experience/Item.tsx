@@ -1,11 +1,11 @@
-import type { TInitItem } from '@app/gallery/types';
+import { TCvSection } from '@brysonandrew/cv/config/types';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Margin } from '../Margin';
 import { resolveTime } from './resolveTime';
 
-type TProps = TInitItem & {
+type TProps = TCvSection & {
   index: number;
 };
 export const Item: FC<TProps> = ({
@@ -25,7 +25,7 @@ export const Item: FC<TProps> = ({
         <div className='row-space'>
           <div className='relative'>
             <p className='absolute right-full top-0 mr-4 text-right'>
-              {resolveTime({ time })}
+              {resolveTime(time)}
             </p>
             <h6>{item.title}</h6>
           </div>

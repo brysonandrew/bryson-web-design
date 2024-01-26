@@ -1,9 +1,16 @@
+import { TTransition } from '@brysonandrew/animation/config/types';
 import {
   MAX_SCROLL,
   TParallaxOptions,
 } from '@brysonandrew/parallax/config';
 
-export const FAKE_3D_PROPS: TParallaxOptions = {
+export const ORIGIN_50: TTransition = {
+  originX: '50%',
+  originY: '50%',
+  originZ: '50%',
+};
+
+export const PARALLAX_PROPS: TParallaxOptions = {
   resistance: {
     input: ({ startScroll }) => [
       startScroll,

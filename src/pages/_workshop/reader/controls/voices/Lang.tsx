@@ -1,4 +1,3 @@
-import { useReader } from '../../context';
 import { Option, Shell } from '../../components/Inputs';
 import { FC } from 'react';
 import { TContext } from '@pages/_workshop/reader/context/types';

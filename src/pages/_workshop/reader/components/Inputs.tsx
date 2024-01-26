@@ -2,7 +2,6 @@ import { I } from '@brysonandrew/icons/icon';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';
-import { TStyle } from '@app/style';
 
 const inputCss = css``;
 

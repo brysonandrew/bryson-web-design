@@ -3,10 +3,7 @@ import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { useCursor } from '@brysonandrew/cursor';
-import {
-  resolvePresence,
-  DURATION_MID,
-} from '@brysonandrew/animation';
+import { DURATION_2, R } from '@brysonandrew/animation';
 import { useApp } from '@brysonandrew/app';
 
 type TProps = TClassValueProps & {
@@ -34,18 +31,18 @@ export const Box: FC<TProps> = ({
         ...cursorLabel,
         borderRadius: BORDER_RADIUS.MD,
       }}
-      {...resolvePresence(
+      {...R.resolvePresence(
         {
           opacity: 0,
           transition: {
-            duration: DURATION_MID,
+            duration: DURATION_2,
             delay: 0 + exitDelay,
           },
         },
         {
           opacity: 1,
           transition: {
-            duration: DURATION_MID,
+            duration: DURATION_2,
             delay: 0 + delay,
           },
         },

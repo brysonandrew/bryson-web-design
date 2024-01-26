@@ -1,5 +1,6 @@
+import { UNO_SHORTCUT_DARK_MODE } from '@brysonandrew/dark-mode/config/animation';
 import { StaticShortcutMap } from 'unocss';
 
 export const ANIMATION: StaticShortcutMap = {
-  'dark-mode-transition': 'transition-colors duration-1000',
+  ...UNO_SHORTCUT_DARK_MODE,
 };

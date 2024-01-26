@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
-import { resolvePresence, DURATION } from '@brysonandrew/animation';
+import { R, DURATION } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
@@ -23,7 +23,7 @@ export const Background: FC<TProps> = ({
       <Back style={{ borderRadius: BORDER_RADIUS.XL }} />
       <motion.div
         className={clsx('absolute inset-0')}
-        {...resolvePresence(
+        {...R.resolvePresence(
           { opacity: 0.5 },
           { opacity: 1 },
         )}

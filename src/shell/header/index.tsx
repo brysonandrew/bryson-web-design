@@ -5,9 +5,8 @@ import { Nav } from './Nav';
 import { FadeDown } from '@brysonandrew/layout/vertical-fade/FadeDown';
 import {
   PRESENCE_OPACITY,
-  TRANSITION_DARK_MODE,
-} from '@brysonandrew/animation';
-import { useDarkMode } from '@brysonandrew/dark-mode';
+} from '@app/animation';
+import { TRANSITION_DARK_MODE, useDarkMode } from '@brysonandrew/dark-mode';
 import { useScroll } from '@brysonandrew/scroll/ScrollProvider';
 
 const Root = styled.header``;
