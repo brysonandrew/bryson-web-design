@@ -26,7 +26,7 @@ export const Footer: FC<TProps> = (props) => {
         duration: DURATION,
         delay: 0.2,
       }}
-      {...P['up100%/0']}
+      {...P['up100%/-']}
       {...handlers}
     >
       <Back />

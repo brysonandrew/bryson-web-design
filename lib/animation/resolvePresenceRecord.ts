@@ -44,10 +44,10 @@ const resolveFade = <T extends TPresenceConfig['fade']>(
   fade: T,
 ) => {
   const key = 'opacity';
-  const value = fade;
-  const animateValue = 0;
+  const originValue = 0;
+  const animateValue = fade;
 
-  return [key, value, animateValue] as const;
+  return [key, originValue, animateValue] as const;
 };
 
 const resolveRecordValue = <T extends TPresenceConfig>({
@@ -57,7 +57,10 @@ const resolveRecordValue = <T extends TPresenceConfig>({
 }: T) => {
   const initial = {} as TTarget;
   const animate = {} as TTarget;
-  if (direction) {
+  if (
+    typeof direction !== 'undefined' &&
+    typeof value !== 'undefined'
+  ) {
     const [dk, dv, da] = resolveDirection<
       typeof direction,
       typeof value
@@ -78,6 +81,21 @@ const resolveRecordValue = <T extends TPresenceConfig>({
   } as const;
 };
 
+const resolveRecordKey = <T extends TPresenceConfig>({
+  direction,
+  value,
+  fade,
+}: T) => {
+  const dKey =
+    typeof direction === 'undefined' ||
+    typeof value === 'undefined'
+      ? '-'
+      : (`${direction}${value}` as const);
+  const recordKey = `${dKey}/${fade ?? '-'}` as const;
+
+  return recordKey;
+};
+
 export const resolvePresenceRecord = <
   T extends TPresenceConfigs,
 >(
@@ -85,8 +103,10 @@ export const resolvePresenceRecord = <
 ) => {
   const presenceRecord = presenceConfigs.reduce(
     (a, presenceConfig) => {
-      const { direction, value, fade } = presenceConfig;
-      const recordKey = `${direction}${value}/${fade}`;
+      const recordKey =
+        resolveRecordKey<typeof presenceConfig>(
+          presenceConfig,
+        );
       const recordValue =
         resolveRecordValue(presenceConfig);
       a[recordKey] = recordValue;

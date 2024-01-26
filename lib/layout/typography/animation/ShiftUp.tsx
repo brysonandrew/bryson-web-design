@@ -23,7 +23,7 @@ export const ShiftUp: FC<TProps> = ({
         delay: (staggerIndex * DURATION) / 4,
         ...MOTION_CONFIG,
       }}
-      {...P['up100%/0']}
+      {...P['up100%/-']}
       {...props}
     />
   );

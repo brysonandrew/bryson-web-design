@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.15",
+  "version": "6.22.16",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,22 +15,22 @@
     "./line/ThickLine": "./line/ThickLine.tsx",
     "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
     "./line": "./line/index.tsx",
-    "./section": "./section/index.tsx",
-    "./typography/Letter": "./typography/Letter.tsx",
-    "./typography/Sub": "./typography/Sub.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
     "./lists/List": "./lists/List.tsx",
     "./lists/TickList": "./lists/TickList.tsx",
+    "./section": "./section/index.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
+    "./typography/Letter": "./typography/Letter.tsx",
+    "./typography/Sub": "./typography/Sub.tsx",
     "./vertical-fade/FadeDown": "./vertical-fade/FadeDown.tsx",
     "./vertical-fade/FadeUp": "./vertical-fade/FadeUp.tsx",
     "./vertical-fade": "./vertical-fade/index.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx"
+    "./typography/animation": "./typography/animation/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -53,9 +53,9 @@
     "@brysonandrew/app": "*",
     "clsx": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/space": "*",
     "@brysonandrew/icons": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/in-view": "*"
+    "@brysonandrew/space": "*",
+    "@brysonandrew/in-view": "*",
+    "@brysonandrew/utils": "*"
   }
 }

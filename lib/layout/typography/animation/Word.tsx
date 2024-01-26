@@ -20,7 +20,7 @@ export const Word: FC<TProps> = ({
     return {
       prevCount,
       children: children.split(''),
-      ...P['up100%/0'],
+      ...P['up100%/-'],
     };
   }, [prevWords]);
 

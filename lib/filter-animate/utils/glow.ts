@@ -37,7 +37,7 @@ export const resolveGlowProps = ({
       : {}),
     ...style,
   },
-  transition: T['0.2/0.08/easeIn'],
+  transition: T['0.2/easeIn/0.08'],
   ...(value
     ? {}
     : {
