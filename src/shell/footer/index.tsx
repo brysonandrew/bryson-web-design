@@ -5,7 +5,7 @@ import {
 } from '@app/animation';
 import { useScroll } from '@brysonandrew/scroll';
 import { useViewport } from '@brysonandrew/viewport';
-import { FadeUp } from '@brysonandrew/layout/vertical-fade/FadeUp';
+import { FadeUp } from '@brysonandrew/fade/FadeUp';
 import { Settings } from './settings';
 import { Network } from '@brysonandrew/network';
 import { BackdropBlur } from '@brysonandrew/layout/backdrop-blur';
