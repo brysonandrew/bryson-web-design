@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import {
-  DURATION,
+  DURATION_2,
   MOTION_CONFIG,
   P,
 } from '@brysonandrew/animation';
@@ -20,7 +20,7 @@ export const ShiftUp: FC<TProps> = ({
     <motion.div
       className={clsx(classValue)}
       transition={{
-        delay: (staggerIndex * DURATION) / 4,
+        delay: (staggerIndex * DURATION_2) / 4,
         ...MOTION_CONFIG,
       }}
       {...P['up100%/-']}

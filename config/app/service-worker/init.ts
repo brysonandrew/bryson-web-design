@@ -3,8 +3,7 @@ import precacheEntries from './precache.json';
 
 export const init = async () => {
   const isEnabled =
-    !import.meta.env.DEV &&
-    navigator.serviceWorker;
+    !import.meta.env.DEV && navigator.serviceWorker;
   if (isEnabled) {
     try {
       const path = '/service-worker.js';
@@ -23,7 +22,7 @@ export const init = async () => {
       });
     } catch (error: TError) {
       console.log(
-        'ServiceWorker registration failed:',
+        `ServiceWorker registration failed: `,
         error,
       );
     }
