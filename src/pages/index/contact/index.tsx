@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <Section
       title={SECTION_RECORD[PAGE_RECORD.contact.key]}
-    > 
+    >
       <Parallax {...PARALLAX_PROPS}>
         {(props) => <Main {...props} />}
       </Parallax>
