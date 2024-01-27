@@ -23,7 +23,7 @@ export const Contact: FC<TProps> = ({
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
-  useAutoFocus(_isDisabled ?? isDisabled);
+ useAutoFocus(_isDisabled ?? isDisabled);
 
   return (
     <Root
@@ -46,7 +46,7 @@ export const Contact: FC<TProps> = ({
         />
         <Text
           disabled={isDisabled}
-          type='email'
+          type='email' 
           name='email'
           placeholder=''
           required
@@ -75,7 +75,6 @@ export * from './box/Submit';
 export * from './box/Text';
 export * from './box';
 export * from './ContactProvider';
-export * from './useContact';
 export * from './footer';
 export * from './utils/resolveButtonValue';
 export * from './variants/base';

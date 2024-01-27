@@ -5,9 +5,9 @@ export const useFocus = <T extends HTMLElement>(
   input: T | null,
   isFocused: boolean,
 ) => {
-  const { scroll } = useScroll();
+  const { scroll, isScrolling } = useScroll();
   const handler = () => {
-    if (input) {
+    if (!isScrolling && input) {
       input.focus();
       const currScrollX = scroll.x.get();
       const currScrollY = scroll.y.get();
@@ -15,7 +15,7 @@ export const useFocus = <T extends HTMLElement>(
     }
   };
   useEffect(() => {
-    if (isFocused) {
+    if (!isScrolling && !input && isFocused) {
       handler();
     }
     return () => {
@@ -23,7 +23,7 @@ export const useFocus = <T extends HTMLElement>(
         input.blur();
       }
     };
-  }, [input, isFocused]);
+  }, [input, isFocused, isScrolling]);
 
   return handler;
 };

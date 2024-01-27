@@ -19,9 +19,9 @@ export const Textarea: FC<TProps> = ({
     >
       {({ setInput, inputProps, input }) => (
         <Autosize textarea={input} {...inputProps}>
-          {(isInit) => (
+          {() => (
             <motion.textarea
-              layout={isInit}
+              layout
               transition={{ duration: 0 }}
               ref={(instance) => {
                 if (instance && !input) {

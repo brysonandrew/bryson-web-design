@@ -1,6 +1,7 @@
 import {
   TDirection,
   TNumberValue,
+  TPosPercentValue,
   TPresenceConfig,
   TPresenceConfigs,
   TTarget,
@@ -16,20 +17,25 @@ const resolveKey = (key: TDirection): TXyKey => {
   return 'y';
 };
 
+const resolveNegative = (
+  value: TPosPercentValue,
+): TNumberValue =>
+  typeof value === 'string' ? `-${value}` : -value;
+
 const resolveValue = (
   key: TDirection,
-  value: TNumberValue,
+  value: TPosPercentValue,
 ): TNumberValue => {
   if (key === 'left') return value;
-  if (key === 'right') return -value;
-  if (key === 'up') return -value;
-  if (key === 'down') return value;
+  if (key === 'right') return resolveNegative(value);
+  if (key === 'up') return value;
+  if (key === 'down') return resolveNegative(value);
   return value;
 };
 
 const resolveDirection = <
   T extends TDirection,
-  V extends TNumberValue,
+  V extends TPosPercentValue,
 >(
   key: T,
   value: V,

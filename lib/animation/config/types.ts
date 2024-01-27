@@ -63,7 +63,7 @@ export type TXyKey = 'x' | 'y';
 
 export type TPresenceConfig = {
   direction?: TDirection;
-  value?: TNumberValue;
+  value?: TPosPercentValue;
   fade?: number;
 } & (
   | {
@@ -71,7 +71,7 @@ export type TPresenceConfig = {
     }
   | {
       direction: TDirection;
-      value: TNumberValue;
+      value: TPosPercentValue;
     }
 );
 export type TPresenceConfigs = readonly TPresenceConfig[];
@@ -135,7 +135,8 @@ export type TResolveAnimationConfig<
 export type TBezierDefinition = BezierDefinition;
 export type TEasing = Easing;
 
-export type TNumberValue = `${number}%` | number;
+export type TPosPercentValue = `${number}%` | number;
+export type TNumberValue = `-${number}%` | TPosPercentValue;
 
 export type TAnimate =
   | AnimationControls
