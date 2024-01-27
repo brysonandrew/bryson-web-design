@@ -34,6 +34,7 @@ export const DURATION_DARK_MODE =
   DURATION_DARK_MODE_MS / 1000;
 
 export const TRANSITION_DARK_MODE: TTransition = {
+  type: 'tween',
   ease: EASE_DARK_MODE,
   duration: DURATION_DARK_MODE,
 };
