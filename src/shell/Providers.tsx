@@ -8,7 +8,7 @@ import { CursorProvider } from '@brysonandrew/cursor';
 import { ViewerProvider } from '@brysonandrew/gallery/viewer/ViewerProvider';
 import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
 import { PricingProvider } from '@pages/index/pricing/PricingProvider';
-import { ContactProvider } from '@brysonandrew/contact/context/ContactProvider';
+import { ContactProvider } from '@brysonandrew/contact/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 
 import { TChildrenProps } from '@brysonandrew/types/dom';

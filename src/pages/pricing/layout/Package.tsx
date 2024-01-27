@@ -6,7 +6,7 @@ import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useContact } from '@brysonandrew/contact/context/useContact';
+import { useContact } from '@brysonandrew/contact/useContact';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
