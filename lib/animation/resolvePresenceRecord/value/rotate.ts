@@ -1,4 +1,4 @@
-import { TRotateMotionPropsKey } from '@app/animation';
+import { TRotateMotionPropsKey } from '@brysonandrew/animation';
 import {
   TRotate,
   TRotateType,

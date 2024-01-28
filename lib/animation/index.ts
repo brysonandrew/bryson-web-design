@@ -1,16 +1,6 @@
 import { resolveAnimation } from '@brysonandrew/animation/resolveAnimation';
 
-// const ROTATE_FROM_BOTTOM: TPresenceConfig = {
-//   shift: ['100%', 'up'],
-//   rotate: [45, 'pitch'],
-// } as const;
-// const ROTATE_FROM_TOP: TPresenceConfig = {
-//   shift: ['-100%', 'down'],
-//   rotate: [45, 'pitch'],
-// } as const;
 const presenceConfigs = [
-  // ROTATE_FROM_BOTTOM,
-  // ROTATE_FROM_TOP,
   { fade: [] },
   { fade: [], shift: ['100%', 'up'] },
   { fade: [], shift: [20, 'right'] },
@@ -102,6 +92,7 @@ export * from './resolvePresenceRecord/value/zoom';
 export * from './config/types/presence/config';
 export * from './config/types/presence';
 export * from './config/types/presence/key';
+export * from './config/types/presence/value';
 export * from './config/types/transition/transition';
 export * from './config/types/transition/base';
 export * from './config/types/transition/base/key';

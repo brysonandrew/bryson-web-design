@@ -7,16 +7,23 @@ import {
 } from 'rollup';
 import rollupPluginTypescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import rollupPluginJson from '@rollup/plugin-json';
 
-export const compileTsServiceWorker = () => ({
+export const compileTsServiceWorker = (
+  input = 'node_modules/@brysonandrew/service-worker/main.ts',
+) => ({
   name: 'compile-typescript-service-worker',
   async writeBundle(
     _options: RollupOptions,
     _outputBundle: OutputBundle,
   ) {
     const inputOptions: InputOptions = {
-      input: 'config/app/service-worker/index.ts',
-      plugins: [rollupPluginTypescript(), nodeResolve()],
+      input,
+      plugins: [
+        rollupPluginTypescript(),
+        rollupPluginJson(),
+        nodeResolve(),
+      ],
     };
     const outputOptions: OutputOptions = {
       file: 'assets/service-worker.js',

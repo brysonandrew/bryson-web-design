@@ -1,17 +1,16 @@
 {
-  "name": "@brysonandrew/boundary",
+  "name": "@brysonandrew/placeholder",
   "version": "6.22.40",
-  "description": "Boundary library",
-  "types": "/index.d.ts",
+  "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
-    "./Fallback": "./Fallback.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
-    }
+    },
+    "./withPlaceholder": "./withPlaceholder.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -28,7 +27,11 @@
   ],
   "peerDependencies": {
     "@emotion/styled": "*",
+    "framer-motion": "*",
     "react": "*",
+    "@brysonandrew/utils": "*",
+    "clsx": "*",
+    "@brysonandrew/color": "*",
     "@brysonandrew/types": "*"
   }
 }

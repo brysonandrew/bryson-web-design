@@ -33,7 +33,7 @@ export const BuildProvider: FC<PropsWithChildren> = ({
           if (!registration.active) return null;
           registration.active.postMessage({
             type: 'init-screens',
-            records: allRecords as TMediaRecords,
+            records: allRecords,
             from: 'PROVIDER',
           });
         });
@@ -46,9 +46,12 @@ export const BuildProvider: FC<PropsWithChildren> = ({
           console.error(event);
         };
       } else {
+        const count = allRecords.length;
+        const SIZE = 8;
+        const start = ~~(Math.random() * (count - SIZE));
         const next = (allRecords as TMediaRecords).slice(
-          0,
-          8,
+          start,
+          start + SIZE,
         );
         setRecords(next);
       }

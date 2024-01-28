@@ -1,5 +1,5 @@
 import { APP_PREFIX } from '../config/constants';
-import { KEYS } from './replaceImports';
+import { KEYS } from './_replaceImports';
 
 export const x = (file: string) => {
   KEYS.forEach(async (key) => {

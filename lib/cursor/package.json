@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.24",
+  "version": "6.22.40",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -18,12 +18,12 @@
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
     "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
     "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
+    "./utils": "./utils/index.ts",
+    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./switch/Box": "./switch/Box.tsx",
     "./switch/IconWithText": "./switch/IconWithText.tsx",
     "./switch/Sight": "./switch/Sight.tsx",
     "./switch": "./switch/index.tsx",
-    "./utils": "./utils/index.ts",
-    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   },
   "scripts": {

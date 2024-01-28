@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.22.24",
+  "version": "6.22.40",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -16,12 +16,7 @@
     "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
     "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
-    "./utils/resolveKey": "./utils/resolveKey.ts",
-    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts",
-    "./placeholder/ClipPath": "./placeholder/ClipPath.tsx",
-    "./placeholder": "./placeholder/index.tsx",
-    "./placeholder/variants/Responsive": "./placeholder/variants/Responsive.tsx",
-    "./placeholder/variants/Small": "./placeholder/variants/Small.tsx"
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -41,8 +36,6 @@
     "react": "*",
     "@emotion/styled": "*",
     "clsx": "*",
-    "framer-motion": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/color": "*"
+    "framer-motion": "*"
   }
 }

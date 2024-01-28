@@ -3,7 +3,7 @@ import {
   PLACEHOLDER,
   _SVD,
   _VD,
-} from '@app/animation';
+} from '@brysonandrew/animation';
 import {
   TFade,
   TPresenceConfig,

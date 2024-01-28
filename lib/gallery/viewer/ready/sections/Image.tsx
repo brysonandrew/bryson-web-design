@@ -10,8 +10,6 @@ import {
 import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
 import { TChildren } from '@brysonandrew/types/dom';
 import { MotionBlur } from '@brysonandrew/filters/motion-blur';
-import { resolveKey } from '@brysonandrew/media/utils/resolveKey';
-import { Responsive } from '@brysonandrew/media/placeholder/variants/Responsive';
 
 type TProps = {
   mediaRecord: TMediaRecord;
@@ -28,7 +26,8 @@ export const Image: FC<TProps> = ({
   const { isLoaded, image, imageRef } = useLoadImage(
     mediaRecord.src,
   );
-  const { isTransitioningGallery } = useContext();
+  const { isTransitioningGallery, Placeholder } =
+    useContext();
 
   const dimensions = useImageDimensions({
     container,
@@ -37,9 +36,7 @@ export const Image: FC<TProps> = ({
   const isDimensions = dimensions !== null;
   return (
     <>
-      {!isLoaded && (
-        <Responsive key={resolveKey(mediaRecord.src)} />
-      )}
+      {!isLoaded && <Placeholder key={mediaRecord.src} />}
       {mediaRecord && (
         <MotionBlur
           isOn={isTransitioningGallery}
