@@ -1,8 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import styled from '@emotion/styled';
-import {
-  PRESENCE_OPACITY,
-} from '@app/animation';
+import { PRESENCE_OPACITY } from '@app/animation';
 import { useScroll } from '@brysonandrew/scroll';
 import { useViewport } from '@brysonandrew/viewport';
 import { FadeUp } from '@brysonandrew/fade/FadeUp';
@@ -10,7 +8,11 @@ import { Settings } from './settings';
 import { Network } from '@brysonandrew/network';
 import { BackdropBlur } from '@brysonandrew/layout/backdrop-blur';
 import { Position } from './Position';
-import { TRANSITION_DARK_MODE, useDarkMode } from '@brysonandrew/dark-mode';
+import {
+  TRANSITION_DARK_MODE,
+  useDarkMode,
+} from '@brysonandrew/dark-mode';
+import { OfflineFC } from './OfflineFC';
 
 const Root = styled.footer``;
 
@@ -37,7 +39,7 @@ export const Footer = () => {
         )}
       </AnimatePresence>
       <Position position='left-6'>
-        <Network key='Network' />
+        <Network OfflineFC={OfflineFC} />
       </Position>
       <Position position='right-6'>
         <BackdropBlur>

@@ -1,7 +1,7 @@
 import {
   TBezierDefinition,
   TTransition,
-} from '@brysonandrew/animation/config/types';
+} from '@brysonandrew/animation';
 
 export const TRANSITION_CLASS_DARK_MODE =
   'duration-1000' as const;

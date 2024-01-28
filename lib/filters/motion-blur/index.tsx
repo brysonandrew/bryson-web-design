@@ -10,18 +10,21 @@ import { motion, MotionValue } from 'framer-motion';
 import { Speed } from './Speed';
 import { TransformerX } from './TransformerX';
 import { TransformerY } from './TransformerY';
-import { TDirectionProps, TIdProps } from '@brysonandrew/filters';
+import {
+  TShiftProps,
+  TIdProps,
+} from '@brysonandrew/filters';
 import {
   MOTION_BLUR_ID,
   MOTION_BLUR_INTENSITY,
 } from '../blur/constants';
 import { resolveCompositeKey } from '@brysonandrew/utils';
 import { FilterShell } from '../FilterShell';
-const intensity = MOTION_BLUR_INTENSITY;
 
+const intensity = MOTION_BLUR_INTENSITY;
 const isMotionBlur = !(isSafari && isBrowser);
 
-type TProps = TDirectionProps &
+type TProps = TShiftProps &
   TIdProps & {
     isOn: boolean;
     motionValue: MotionValue;
@@ -31,7 +34,7 @@ type TProps = TDirectionProps &
   };
 export const MotionBlur: FC<TProps> = ({
   isOn,
-  direction = 'x',
+  axis = 'x',
   motionValue,
   children,
   id = MOTION_BLUR_ID,
@@ -58,11 +61,11 @@ export const MotionBlur: FC<TProps> = ({
           const Transformer = {
             x: TransformerX,
             y: TransformerY,
-          }[direction];
+          }[axis];
 
           const props = {
             ...transformerProps,
-            direction,
+            axis,
           };
           return (
             <Transformer {...props}>

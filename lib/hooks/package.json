@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.22",
+  "version": "6.22.24",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -17,12 +17,12 @@
     "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
     "./dom/useRect": "./dom/useRect.ts",
+    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
     "./events": "./events/index.ts",
     "./events/useEventCallback": "./events/useEventCallback.ts",
     "./events/useEventListener": "./events/useEventListener.ts",
     "./events/useHover": "./events/useHover.ts",
     "./events/useLongPress": "./events/useLongPress.ts",
-    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
     "./life-cycle": "./life-cycle/index.ts",
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
@@ -54,7 +54,7 @@
   "peerDependencies": {
     "react": "*",
     "@brysonandrew/types": "*",
-    "framer-motion": "*",
-    "@brysonandrew/utils": "*"
+    "@brysonandrew/utils": "*",
+    "framer-motion": "*"
   }
 }

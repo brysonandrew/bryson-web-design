@@ -4,6 +4,7 @@ import { resolvePageRecords } from '@brysonandrew/routes';
 import { Cv } from '@pages/_workshop/cv';
 import { Reader } from '@pages/_workshop/reader';
 import { Shell } from 'src/shell';
+import { Marketing } from '@pages/_workshop/marketing';
 
 export const PAGE_TITLES = [
   'Index',
@@ -26,7 +27,15 @@ export const SECTION_RECORD = {
   [PAGE_RECORD.contact.key]: 'Get in touch',
 } as const;
 
+const DEV_ROUTES = [
+  {
+    path: '/marketing',
+    element: <Marketing />,
+  },
+];
+
 const STANDALONE_ROUTES = [
+  ...DEV_ROUTES,
   {
     path: '/reader',
     element: <Reader />,

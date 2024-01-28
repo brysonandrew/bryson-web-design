@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import {
-  DURATION_2,
   MOTION_CONFIG,
-  P,
+  DURATION,
+  PRESENCE_OPACITY_Y,
 } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
@@ -20,10 +20,10 @@ export const ShiftUp: FC<TProps> = ({
     <motion.div
       className={clsx(classValue)}
       transition={{
-        delay: (staggerIndex * DURATION_2) / 4,
+        delay: (staggerIndex * DURATION * 2) / 4,
         ...MOTION_CONFIG,
       }}
-      {...P['up100%/-']}
+      {...PRESENCE_OPACITY_Y}
       {...props}
     />
   );

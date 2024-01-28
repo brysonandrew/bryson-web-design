@@ -23,7 +23,7 @@ export const Contact: FC<TProps> = ({
   const { isDisabled, onSend, inputHandlers } = useForm({
     element: ref.current,
   });
- useAutoFocus(_isDisabled ?? isDisabled);
+  useAutoFocus(_isDisabled ?? isDisabled);
 
   return (
     <Root
@@ -46,7 +46,7 @@ export const Contact: FC<TProps> = ({
         />
         <Text
           disabled={isDisabled}
-          type='email' 
+          type='email'
           name='email'
           placeholder=''
           required
@@ -66,24 +66,24 @@ export const Contact: FC<TProps> = ({
   );
 };
 
-export * from './config/constants';
-export * from './config/types';
+export * from './ContactProvider';
 export * from './box/Clear';
 export * from './box/Name';
 export * from './box/Shell';
 export * from './box/Submit';
 export * from './box/Text';
 export * from './box';
-export * from './ContactProvider';
+export * from './config/constants';
+export * from './config/types';
 export * from './footer';
-export * from './utils/resolveButtonValue';
-export * from './variants/base';
-export * from './variants/glow';
-export * from './variants/minimalist';
 export * from './hooks/useAutoFocus';
 export * from './hooks/useFocus';
 export * from './hooks/useForm';
 export * from './hooks/useInput';
+export * from './utils/resolveButtonValue';
+export * from './variants/base';
+export * from './variants/glow';
+export * from './variants/minimalist';
 export * from './box/textarea';
 export * from './box/textarea/autosize';
 export * from './box/textarea/autosize/useAutosize';

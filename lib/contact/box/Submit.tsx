@@ -7,8 +7,8 @@ import {
 } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
-  DELAY008_EASEIN_TRANSITION,
-  R,
+  TRANSITION_02_EASEIN_008,
+  resolveParentAnimateConfig,
 } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
@@ -42,7 +42,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       onTap={isDisabled ? () => null : onSound}
       {...(isDisabled
         ? {}
-        : R.resolveParentAnimateConfig({ isHover }))}
+        :resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
@@ -56,7 +56,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <motion.h4
         className='submit-text'
-        transition={DELAY008_EASEIN_TRANSITION}
+        transition={TRANSITION_02_EASEIN_008}
         style={{
           letterSpacing: '0.00675em',
         }}

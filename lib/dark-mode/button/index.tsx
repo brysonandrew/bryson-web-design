@@ -14,26 +14,24 @@ import {
   TSvgMotionProps,
 } from '@brysonandrew/types';
 import { Moon, Sun } from './icon';
-import { TAnimationProps } from '@brysonandrew/animation';
-
-type TOrigin = '100%' | '-100%';
+import {
+  PRESENCE_ROTATE_FROM_TOP,
+  PRESENCE_ROTATE_FROM_BOTTOM,
+} from '@brysonandrew/animation';
 
 type TProps = Partial<{
   buttonProps: Partial<TButtonProps>;
   backgroundProps: TDivProps;
   iconProps: TSvgMotionProps & TClassValueProps;
-  resolveOrigin: (origin: TOrigin) => TAnimationProps;
 }>;
 export const Button: FC<TProps> = ({
   buttonProps,
   backgroundProps,
   iconProps,
-  resolveOrigin,
 }) => {
   const { BORDER_RADIUS, onSound } = useApp();
-  const darkMode = useDarkMode();
+  const { isDarkMode, toggle } = useDarkMode();
 
-  const isDarkMode = darkMode.isDarkMode;
   const key = isDarkMode ? 'light' : 'dark';
   const title =
     buttonProps?.title ?? `Switch to ${key} mode`;
@@ -44,15 +42,8 @@ export const Button: FC<TProps> = ({
   );
   const handleTap = () => {
     onSound();
-    darkMode.toggle();
+    toggle();
   };
-  const resolveIconProps = (origin: TOrigin) => ({
-    key: origin,
-    ...(resolveOrigin
-      ? resolveOrigin(origin)
-      : { style: { y: origin } }),
-    ...iconProps,
-  });
 
   return (
     <AnimatePresence initial={false} mode='wait'>
@@ -69,9 +60,13 @@ export const Button: FC<TProps> = ({
           {...backgroundProps}
         >
           {createElement(isDarkMode ? Moon : Sun, {
-            ...resolveIconProps(
-              isDarkMode ? '-100%' : '100%',
-            ),
+            ...{
+              key: title,
+              ...(isDarkMode
+                ? PRESENCE_ROTATE_FROM_TOP
+                : PRESENCE_ROTATE_FROM_BOTTOM),
+              ...iconProps,
+            },
           })}
         </div>
       </_Button>

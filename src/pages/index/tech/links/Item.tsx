@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { Target } from '@brysonandrew/filters/aura/Target';
 import { P1_5 } from '@brysonandrew/space/P1_5';
-import { R } from '@app/animation';
+import { resolveParentAnimateConfig } from '@app/animation';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import clsx from 'clsx';
 import { useApp } from '@brysonandrew/app';
@@ -33,7 +33,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   return (
     <motion.div
       className='relative cursor-pointer'
-      {...R.resolveParentAnimateConfig({ isHover })}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
       {...props}
     >

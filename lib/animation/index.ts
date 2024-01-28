@@ -1,12 +1,29 @@
 import { resolveAnimation } from '@brysonandrew/animation/resolveAnimation';
 
+// const ROTATE_FROM_BOTTOM: TPresenceConfig = {
+//   shift: ['100%', 'up'],
+//   rotate: [45, 'pitch'],
+// } as const;
+// const ROTATE_FROM_TOP: TPresenceConfig = {
+//   shift: ['-100%', 'down'],
+//   rotate: [45, 'pitch'],
+// } as const;
 const presenceConfigs = [
-  { direction: 'up', value: '100%' },
-  { direction: 'right', value: 20, fade: 1 },
-  { direction: 'up', value: '50%', fade: 1 },
-  { fade: 1 },
+  // ROTATE_FROM_BOTTOM,
+  // ROTATE_FROM_TOP,
+  { fade: [] },
+  { fade: [], shift: ['100%', 'up'] },
+  { fade: [], shift: [20, 'right'] },
+  { fade: [], shift: ['50%', 'up'] },
+  {
+    shift: ['-100%', 'down'],
+    rotate: [45, 'pitch'],
+  },
+  {
+    shift: ['100%', 'up'],
+    rotate: [45, 'pitch'],
+  },
 ] as const;
-type TPresenceConfigs = typeof presenceConfigs;
 
 const baseTransitionConfigs = [
   {
@@ -20,24 +37,19 @@ const baseTransitionConfigs = [
     delay: 0.08,
   },
 ] as const;
-type TBaseTransitionConfigs = typeof baseTransitionConfigs;
 
 const transitionConfigs = [] as const;
-export type TTransitionConfigs = typeof transitionConfigs;
 
 const {
   presenceRecord,
   baseTransitionRecord,
   transitionRecord,
-  duration,
-  duration2,
-  transition,
-  config,
+  motionConfig,
   ...resolvers
 } = resolveAnimation<
-  TPresenceConfigs,
-  TBaseTransitionConfigs,
-  TTransitionConfigs
+  typeof presenceConfigs,
+  typeof baseTransitionConfigs,
+  typeof transitionConfigs
 >({
   duration: 0.2,
   ease: 'linear',
@@ -46,25 +58,50 @@ const {
   baseTransitionConfigs,
   transitionConfigs,
 });
-export const P = presenceRecord;
-export const T = baseTransitionRecord;
-export const R = resolvers;
-export const DURATION = duration;
-export const DURATION_2 = duration2;
-export const TRANSITION = transition;
-export const MOTION_CONFIG = config;
-export const PRESENCE_OPACITY = P['-/1'];
-export const DELAY008_EASEIN_TRANSITION =
-  T['0.2/easeIn/0.08'];
-export const PRESENCE_OPACITY_Y = P['up100%/-'];
+export const MOTION_CONFIG = motionConfig;
+export const TRANSITION = MOTION_CONFIG.transition;
+export const DURATION = MOTION_CONFIG.transition.duration;
+
+export const PRESENCE_OPACITY = presenceRecord['fade|||'];
+export const PRESENCE_ROTATE_FROM_BOTTOM =
+  presenceRecord['|100%_up||45_pitch'];
+export const PRESENCE_ROTATE_FROM_TOP =
+  presenceRecord['|-100%_down||45_pitch'];
+export const PRESENCE_Y = presenceRecord['fade|100%_up||'];
+export const PRESENCE_OPACITY_Y =
+  presenceRecord['fade|100%_up||'];
+
+export const TRANSITION_02_EASEIN_008 =
+  baseTransitionRecord['0.2|easeIn|0.08'];
+export const TRANSITION_04_EASEIN_008 =
+  baseTransitionRecord['0.4|easeIn|0.08'];
+
 export const PRESENCE_OPACITY_DELAY = {
   ...PRESENCE_OPACITY,
-  transition: DELAY008_EASEIN_TRANSITION,
+  transition: TRANSITION_02_EASEIN_008,
 };
-export * from './custom';
+export const resolvePresence = resolvers.resolvePresence;
+export const resolveParentAnimateConfig =
+  resolvers.resolveParentAnimateConfig;
+
 export * from './resolveAnimation';
-export * from './resolveBaseTransitionRecord';
-export * from './resolvePresenceRecord';
 export * from './resolveTransitionRecord';
 export * from './config/constants';
+export * from './resolveBaseTransitionRecord';
+export * from './resolveBaseTransitionRecord/resolveEaseStringify';
+export * from './resolvePresenceRecord';
+export * from './resolvePresenceRecord/key';
 export * from './config/types';
+export * from './config/types/values';
+export * from './resolvePresenceRecord/value/fade';
+export * from './resolvePresenceRecord/value';
+export * from './resolvePresenceRecord/value/resolveNegative';
+export * from './resolvePresenceRecord/value/rotate';
+export * from './resolvePresenceRecord/value/shift';
+export * from './resolvePresenceRecord/value/zoom';
+export * from './config/types/presence/config';
+export * from './config/types/presence';
+export * from './config/types/presence/key';
+export * from './config/types/transition/transition';
+export * from './config/types/transition/base';
+export * from './config/types/transition/base/key';
