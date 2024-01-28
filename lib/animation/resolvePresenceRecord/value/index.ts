@@ -1,5 +1,9 @@
-import { TTarget } from '@brysonandrew/animation';
+import {
+  isValidFade,
+  TTarget,
+} from '@brysonandrew/animation';
 import { TPresenceConfig } from '@brysonandrew/animation/config/types/presence/config';
+import { TPresenceConfigValue } from '@brysonandrew/animation/config/types/presence/value';
 import {
   isValidRotate,
   resolveRotateKey,
@@ -21,12 +25,12 @@ export const resolveRecordValue = <
   shift,
   zoom,
   rotate,
-}: T) => {
+}: T): TPresenceConfigValue<T> => {
   const initial = {} as TTarget;
   const animate = {} as TTarget;
   const exit = {} as TTarget;
 
-  if (fade) {
+  if (isValidFade(fade)) {
     const [initialValue, exitValue] = fade;
     initial.opacity = initialValue;
     animate.opacity = 1;
@@ -43,7 +47,7 @@ export const resolveRecordValue = <
 
     initial[shiftKey] = initialValue;
     animate[shiftKey] = shiftValue;
-    exit.opacity = exitValue ?? initialValue;
+    exit[shiftKey] = exitValue ?? initialValue;
   }
 
   if (isValidZoom(zoom)) {

@@ -1,10 +1,10 @@
 import { TPresenceConfigKey } from '@brysonandrew/animation/config/types/presence/key';
 import { TPresenceConfig } from '@brysonandrew/animation/config/types/presence/config';
+import { TPresenceConfigValue } from '@brysonandrew/animation/config/types/presence/value';
 
 export type TPresenceConfigs = readonly TPresenceConfig[];
-
 export type TPresenceConfigRecord<
-  T extends TPresenceConfigs,
+  A extends TPresenceConfigs,
 > = {
-  [U in T[number] as TPresenceConfigKey<U>]: U;
+  [T in A[number] as TPresenceConfigKey<T>]: TPresenceConfigValue<T>;
 };

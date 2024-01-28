@@ -20,8 +20,8 @@ import {
 } from '../blur/constants';
 import { resolveCompositeKey } from '@brysonandrew/utils';
 import { FilterShell } from '../FilterShell';
-const intensity = MOTION_BLUR_INTENSITY;
 
+const intensity = MOTION_BLUR_INTENSITY;
 const isMotionBlur = !(isSafari && isBrowser);
 
 type TProps = TShiftProps &

@@ -2,6 +2,7 @@ import {
   FADE_PREFIX,
   PLACEHOLDER,
   _SVD,
+  _VD,
 } from '@app/animation';
 import {
   TFade,
@@ -65,7 +66,7 @@ export const resolveRecordKey = <
   shift,
   zoom,
   rotate,
-}: T) => {
+}: T): TPresenceConfigKey<T> => {
   const fadeKey: TFadeKey<typeof fade> = isValidFade(fade)
     ? resolveFadeKey(fade)
     : PLACEHOLDER;
@@ -83,6 +84,6 @@ export const resolveRecordKey = <
       ? resolveRotateKey(rotate)
       : PLACEHOLDER;
   const recordKey =
-    `${fadeKey}/${shiftKey}/${zoomKey}/${rotateKey}` as TPresenceConfigKey<T>;
+    `${fadeKey}${_VD}${shiftKey}${_VD}${zoomKey}${_VD}${rotateKey}` as TPresenceConfigKey<T>;
   return recordKey;
 };

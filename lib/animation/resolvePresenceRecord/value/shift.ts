@@ -11,7 +11,10 @@ import { resolveNegative } from '@brysonandrew/animation/resolvePresenceRecord/v
 export const isValidShift = (
   shift?: TShift,
 ): shift is TShift => {
-  const errorMessage = "Invalid 'shift' animation value.";
+  if (typeof shift === 'undefined') return false;
+
+  const errorMessage = (v: string) =>
+    `Invalid 'shift' animation value, ${v} invalid.`;
 
   if (Array.isArray(shift)) {
     const [value, direction] = shift;
@@ -20,21 +23,24 @@ export const isValidShift = (
       SHIFT_DIRECTIONS.includes(direction);
 
     if (!isValidDirection) {
-      console.error(`${errorMessage} Direction invalid`);
+      console.error(
+        errorMessage('direction'),
+        direction,
+        shift,
+      );
     }
     const isValidValue =
       typeof value !== 'undefined' &&
       (typeof value === 'number' ||
-        (typeof value === 'string' &&
-          value.endsWith('%') &&
-          !value.startsWith('-')));
+        (typeof value === 'string' && value.endsWith('%')));
 
     if (!isValidValue) {
-      console.error(`${errorMessage} Value invalid`);
+      console.error(errorMessage('value'), value, shift);
     }
     return isValidDirection && isValidValue;
   }
-  console.error(`${errorMessage} Not an array`);
+  console.error(errorMessage('init'), shift);
+
   return false;
 };
 

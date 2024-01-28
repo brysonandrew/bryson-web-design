@@ -2,6 +2,7 @@ export * from './css';
 export * from './keys';
 export * from './object';
 export * from './assertions/isValidKey';
+export * from './assertions/numbers';
 export * from './dom/element';
 export * from './dom/event';
 export * from './dom';

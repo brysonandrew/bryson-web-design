@@ -8,6 +8,8 @@ import { ROTATE_TYPES } from '@brysonandrew/animation/config/constants';
 export const isValidRotate = (
   rotate?: TRotate,
 ): rotate is TRotate => {
+  if (typeof rotate === 'undefined') return false;
+
   const errorMessage = (v: string) =>
     `Invalid 'rotate' animation value, ${v} invalid.`;
 
@@ -24,9 +26,9 @@ export const isValidRotate = (
 
     const isValidValue =
       typeof valueIn !== 'undefined' &&
-      (typeof valueIn === 'number' ||
-        (typeof valueIn === 'string' &&
-          valueIn.endsWith('deg')));
+      typeof valueIn === 'number';
+    // (typeof valueIn === 'string' &&
+    //   valueIn.endsWith('deg')));
 
     if (!isValidValue) {
       console.error(

@@ -4,7 +4,7 @@ import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/cursor';
-import { R } from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 
 type TProps = TClassValueProps & {
@@ -23,7 +23,7 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
     <Nav
       to={to}
       title={title}
-      {...R.resolveParentAnimateConfig({ isHover })}
+      {...resolveParentAnimateConfig({ isHover })}
       {...handlers}
       {...props}
     >

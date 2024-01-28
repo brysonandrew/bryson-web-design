@@ -23,10 +23,6 @@ import {
   TPresenceConfigs,
   TPresenceConfigRecord,
 } from '@brysonandrew/animation/config/types/presence';
-import {
-  TTransition,
-  TTransitionProps,
-} from '@brysonandrew/animation/config/types/transition/transition';
 import { TEasing } from '@brysonandrew/animation/config/types/values';
 
 import { resolveBaseTransitionRecord } from '@brysonandrew/animation/resolveBaseTransitionRecord';

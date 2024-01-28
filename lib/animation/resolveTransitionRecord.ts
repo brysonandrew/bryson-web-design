@@ -1,4 +1,4 @@
-import { TTransitionConfig } from '@brysonandrew/animation/config/types';
+import { TTransitionConfig } from '@brysonandrew/animation';
 
 export const resolveTransitionRecord = <
   T extends TTransitionConfig,
