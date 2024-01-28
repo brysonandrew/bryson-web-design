@@ -68,17 +68,3 @@ const resolveValue = (
 
 export const resolveShiftKey = resolveAxis;
 export const resolveShiftValue = resolveValue;
-
-// export const resolveShiftOrigin = <
-//   V extends TShiftValue,
-//   T extends TShiftDirection,
-// >(
-//   inValue: V,
-//   direction: T,
-//   outValue?: V,
-// ) => {
-//   const k = resolveAxis(direction);
-//   const vi = resolveValue(inValue, direction);
-//   const vo = resolveValue(inValue, direction);
-//   return { [k]: typeof v === 'number' ? 0 : '0%' };
-// };
