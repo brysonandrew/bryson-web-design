@@ -25,6 +25,7 @@ import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { HeadProvider } from 'lib/head';
 import { Glow } from '@brysonandrew/filter-animate';
 import screensRecordJson from './lookup.json';
+import { Responsive } from '@app/placeholder';
 
 type TProps = TChildrenProps;
 export const Providers: FC<TProps> = ({
@@ -48,7 +49,10 @@ export const Providers: FC<TProps> = ({
       Viewer={{ RightHeader: ViewerRightHeader }}
       List={{ RightHeader: ListRightHeader }}
     >
-      <ViewerProvider screensRecordJson={screensRecordJson}>
+      <ViewerProvider
+        screensRecordJson={screensRecordJson}
+        Placeholder={Responsive}
+      >
         <AppProvider<TCustomStyle>
           Back={Metal}
           Blank={Blank}

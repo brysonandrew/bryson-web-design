@@ -22,7 +22,7 @@ export const RightHeader: FC<TProps> = ({
   return (
     <>
       <Time time={time} />
-      <Badge type={pricing} isHover={isHover}>
+      <Badge type={pricing} isHover={isHover} >
         {pricing}
       </Badge>
     </>

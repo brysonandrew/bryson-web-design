@@ -1,4 +1,4 @@
-import { _VD } from '@app/animation';
+import { _VD } from '@brysonandrew/animation';
 import { TBaseTransitionConfigs } from '@brysonandrew/animation/config/types/transition/base';
 import { TBaseTransitionConfigKey } from '@brysonandrew/animation/config/types/transition/base/key';
 import { resolveEaseStringify } from '@brysonandrew/animation/resolveBaseTransitionRecord/resolveEaseStringify';

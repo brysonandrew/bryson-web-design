@@ -1,4 +1,4 @@
-import { TPresenceConfig, TTarget } from '@app/animation';
+import { TPresenceConfig, TTarget } from "@brysonandrew/animation";
 
 export type TPresenceConfigValue<
   T extends TPresenceConfig,

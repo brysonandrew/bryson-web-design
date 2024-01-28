@@ -1,10 +1,10 @@
 import { TMediaRecords } from '@brysonandrew/media/config/types';
-
+import pkg from './package.json';
 export type {};
 declare const self: ServiceWorkerGlobalScope;
 
-const VERSION_NUMBER = '0.2.4';
-const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
+const VERSION_NUMBER = pkg.version;
+const CACHE_NAME = `v${VERSION_NUMBER}::${pkg.name}`;
 
 const resolveCache = async (): Promise<Cache> =>
   caches.open(CACHE_NAME);
@@ -49,9 +49,7 @@ const sendMessage = async (message: TMessage) => {
 
 const precache = async (paths: string[]) => {
   const cache = await resolveCache();
-  console.time('precache');
   await cache.addAll(paths);
-  console.timeEnd('precache');
 };
 
 self.addEventListener('message', async (event) => {

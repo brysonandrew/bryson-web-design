@@ -24,9 +24,15 @@ export type TProps = Pick<TPriceProps, 'discount'> & {
 };
 export const Package: FC<TProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
-  const { key, listItems, price, discount, PreContent } =
-    config;
-  const { COLOR, Glow, BORDER_RADIUS, GRADIENT, Back } =
+  const {
+    key,
+    listItems,
+    price,
+    discount,
+    PreContent,
+    classValue,
+  } = config;
+  const { COLOR, Glow, BORDER_RADIUS, Back } =
     useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
@@ -35,10 +41,9 @@ export const Package: FC<TProps> = ({ title }) => {
     EMAIL_ICON,
     <Cursor
       title={title}
-      classValue={GRADIENT[key]}
+      classValue={classValue}
       style={{
         backgroundColor: COLOR[key],
-        backgroundImage: GRADIENT[key],
       }}
     />,
   );
@@ -65,11 +70,10 @@ export const Package: FC<TProps> = ({ title }) => {
           <div
             className={clsx(
               'absolute -inset-0.5',
-              GRADIENT[key],
+              classValue,
             )}
             style={{
               backgroundColor: COLOR[key],
-              backgroundImage: GRADIENT[key],
               borderRadius: BORDER_RADIUS.MD,
             }}
           />

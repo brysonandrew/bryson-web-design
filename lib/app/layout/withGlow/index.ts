@@ -4,7 +4,7 @@ import { Back as _Back } from './Back';
 import { Glow } from './Glow';
 
 type TConfig = TLayoutComponentProps;
-export const resolveGlowCollection = (props: TConfig) => {
+export const withGlow = (props: TConfig) => {
   const Shell = Glow(props);
 
   props = { ...props, Glow: Shell };

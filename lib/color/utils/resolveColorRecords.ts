@@ -2,7 +2,7 @@
 import { TRgb, TRgbaValue } from '@brysonandrew/color/config/types';
 import { resolveGlowRecord } from './glow/resolveGlowRecord';
 import { resolveVarCssColorRecord } from './resolveVarCssColorRecord';
-import { resolveVarCssRecord } from './resolveCssVarRecord';
+import { resolveVarCssRecord } from '../../utils/css/resolveVarCssRecord';
 import { rgbToOpacityRangeRecord } from './rgbToOpacityRangeRecord';
 import { BASE_COLOR_RECORD, BASE_GLOW_RECORD } from '@brysonandrew/color/config/constants';
 

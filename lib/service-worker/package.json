@@ -1,17 +1,19 @@
 {
-  "name": "@brysonandrew/boundary",
+  "name": "@brysonandrew/service-worker",
   "version": "6.22.40",
-  "description": "Boundary library",
+  "description": "Service Worker library",
   "types": "/index.d.ts",
-  "main": "./index.tsx",
-  "module": "./index.tsx",
+  "main": "./index.ts",
+  "type": "module",
+  "module": "./index.ts",
   "exports": {
-    "./Fallback": "./Fallback.tsx",
     ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./init": "./init.ts",
+    "./main": "./main.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -27,8 +29,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/styled": "*",
-    "react": "*",
-    "@brysonandrew/types": "*"
+    "@brysonandrew/types": "*",
+    "@brysonandrew/media": "*"
   }
 }

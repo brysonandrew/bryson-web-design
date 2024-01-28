@@ -1,11 +1,10 @@
-import { TZoomMotionPropsKey } from '@app/animation';
+import { TZoomMotionPropsKey } from '@brysonandrew/animation';
 import {
   TZoom,
   TZoomDirection,
   TZoomValue,
 } from '@brysonandrew/animation/config/types/presence/config';
 import { ZOOM_DIRECTIONS } from '@brysonandrew/animation/config/constants';
-import console from 'console';
 
 export const isValidZoom = (
   zoom?: TZoom,

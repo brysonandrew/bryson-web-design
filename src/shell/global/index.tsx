@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import { Aura } from '@brysonandrew/filters';
-import { ClipPath } from '@brysonandrew/media/placeholder/ClipPath';
 import { Variables } from '@css/Variables';
 import {
   APP_DESCRIPTION,
@@ -14,6 +13,7 @@ import { TPageTitle, PAGE_RECORD } from '@app/routes';
 import { TPage } from '@brysonandrew/routes/types';
 const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
   MonoHead;
+import { Global as GlobalPlaceholder } from '@app/placeholder';
 
 type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
@@ -46,7 +46,7 @@ export const Global: FC = () => {
         titlesResolver={titlesResolver}
         titleLookup={titleLookup}
       />
-      <ClipPath />
+      <GlobalPlaceholder/>
       <Aura />
       <Variables />
     </>

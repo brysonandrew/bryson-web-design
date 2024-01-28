@@ -17,14 +17,15 @@ export const Badge: FC<TPricingProps> = ({
   type,
   isText,
   isHover,
+  classValue,
   ...props
 }) => {
-  const { GRADIENT, COLOR } = useApp<TStyle>();
+  const { COLOR } = useApp<TStyle>();
   return (
     <motion.div
       className={clsx(
         'relative center p-4 overflow-hidden',
-        GRADIENT[type],
+        `gradient-${type}`
       )}
       style={{
         borderRadius: 40,
