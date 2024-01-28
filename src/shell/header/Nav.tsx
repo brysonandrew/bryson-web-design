@@ -4,12 +4,12 @@ import { Main } from './main';
 import { Pages } from './pages';
 import { FC } from 'react';
 import { isMobile } from 'react-device-detect';
-import { R } from '@app/animation';
+import { RR } from '@app/animation';
 
 const Root = styled(motion.nav)``;
 
 export const Nav: FC = () => {
-  const animation = R.resolvePresence(
+  const animation = RR.resolvePresence(
     { y: '-100%' },
     { y: '0%' },
   );

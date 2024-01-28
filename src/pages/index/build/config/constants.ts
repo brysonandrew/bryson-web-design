@@ -1,4 +1,4 @@
-import { TTransition } from '@brysonandrew/animation/config/types';
+import { TTransition } from '@brysonandrew/animation';
 import {
   MAX_SCROLL,
   TParallaxOptions,

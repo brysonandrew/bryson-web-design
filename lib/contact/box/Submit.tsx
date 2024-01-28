@@ -7,7 +7,7 @@ import {
 } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
-  DELAY008_EASEIN_TRANSITION,
+  TRANSITION_02_EASEIN_008,
   R,
 } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
@@ -56,7 +56,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       />
       <motion.h4
         className='submit-text'
-        transition={DELAY008_EASEIN_TRANSITION}
+        transition={TRANSITION_02_EASEIN_008}
         style={{
           letterSpacing: '0.00675em',
         }}

@@ -1,20 +1,18 @@
-import { BackdropBlur } from '@brysonandrew/layout/backdrop-blur';
 import { useEventListener } from '@brysonandrew/hooks/events/useEventListener';
 import type { FC } from 'react';
-import { Offline } from './Offline';
 import { useNetwork } from '@brysonandrew/network';
+import { Offline } from '@brysonandrew/network/Offline';
 
-export const Network: FC = () => {
+type TProps = {
+  OfflineFC: FC;
+};
+export const Network: FC<TProps> = ({ OfflineFC = Offline }) => {
   const { isOffline, onOffline, onOnline } = useNetwork();
   useEventListener('offline', onOffline);
   useEventListener('online', onOnline);
 
   if (isOffline) {
-    return (
-      <BackdropBlur>
-        <Offline key='Offline' />
-      </BackdropBlur>
-    );
+    return <OfflineFC />;
   } else {
     return null;
   }

@@ -1,4 +1,14 @@
 import {
+  TTransitionConfigs,
+  TResolveAnimationConfig,
+  TAnimationProps,
+  TResolveParentAnimateConfig,
+  TMotionProps,
+  TVariant,
+  TVariants,
+  TTarget,
+} from '@brysonandrew/animation';
+import {
   INITIAL_KEY,
   IDLE_KEY,
   HOVER_KEY,
@@ -6,22 +16,19 @@ import {
   HOVER_VARIANT,
 } from '@brysonandrew/animation/config/constants';
 import {
-  TAnimationProps,
-  TMotionProps,
-  TResolveParentAnimateConfig,
+  TBaseTransitionConfigs,
+  TBaseTransitionRecord,
+} from '@brysonandrew/animation/config/types/transition/base';
+import {
+  TPresenceConfigs,
+  TPresenceConfigRecord,
+} from '@brysonandrew/animation/config/types/presence';
+import {
   TTransition,
   TTransitionProps,
-  TVariant,
-  TVariants,
-  TResolveAnimationConfig,
-  TPresenceConfigRecord,
-  TTransitionConfigs,
-  TTarget,
-  TEasing,
-  TBaseTransitionRecord,
-  TBaseTransitionConfigs,
-  TPresenceConfigs,
-} from '@brysonandrew/animation/config/types';
+} from '@brysonandrew/animation/config/types/transition/transition';
+import { TEasing } from '@brysonandrew/animation/config/types/values';
+
 import { resolveBaseTransitionRecord } from '@brysonandrew/animation/resolveBaseTransitionRecord';
 import { resolvePresenceRecord } from '@brysonandrew/animation/resolvePresenceRecord';
 import { resolveTransitionRecord } from '@brysonandrew/animation/resolveTransitionRecord';
@@ -38,35 +45,16 @@ export const resolveAnimation = <
   baseTransitionConfigs,
   transitionConfigs,
 }: TResolveAnimationConfig<P, B, T>) => {
-  const duration2 = duration * 2;
-
-  const transition: TTransition = {
+  const transition = {
     type: 'custom',
     ease,
     duration,
     delay,
-  };
-
-  const durationDelay: TTransition = {
-    delay: duration,
-    ...transition,
-  };
-
-  const config: TTransitionProps = {
-    transition,
   } as const;
 
-  const config2: TTransition = {
-    transition: {
-      duration: duration2,
-      ...transition,
-    },
-  };
-
-  const resolvePresenceOpacity = (
-    opacity: number,
-  ): TAnimationProps =>
-    resolvePresence({ opacity: 0 }, { opacity });
+  const motionConfig = {
+    transition,
+  } as const;
 
   const resolveParentAnimateConfig = (
     config: TResolveParentAnimateConfig = {},
@@ -131,20 +119,14 @@ export const resolveAnimation = <
       exit: initial,
       transition: {
         ease: 'easeInOut',
-        ...config,
+        ...motionConfig,
       },
     };
   };
 
   return {
-    duration,
-    duration2,
-    transition,
-    config,
-    config2,
-    durationDelay,
+    motionConfig,
     resolvePresence,
-    resolvePresenceOpacity,
     resolveParentAnimateConfig,
     presenceRecord,
     baseTransitionRecord,

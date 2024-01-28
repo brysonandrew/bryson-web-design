@@ -26,6 +26,9 @@ export const BackdropBlur: FC<TProps> = ({
     <Root
       whileHover='hover'
       className='backdrop-blur-sm py-1 px-2'
+      style={{
+        borderRadius: BORDER_RADIUS.XL,
+      }}
       {...props}
     >
       <>
