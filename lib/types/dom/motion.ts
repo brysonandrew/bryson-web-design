@@ -5,29 +5,38 @@ import {
 } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 import type { LinkProps } from 'react-router-dom';
-import { TTitleProps } from './main';
+import { TClassValueProps, TTitleProps } from './main';
 
 export type TDivMotionProps = PropsWithChildren<
   HTMLMotionProps<'div'>
->;
+> &
+TClassValueProps;
 
 export type TDivMotionNormalChildrenProps =
-  PropsWithChildren<HTMLMotionProps<'div'>>;
+  PropsWithChildren<TDivMotionProps>
 
-export type TUlMotionProps = HTMLMotionProps<'ul'>;
+export type TUlMotionProps = HTMLMotionProps<'ul'> &
+TClassValueProps;
 
 export type TButtonMotionProps = HTMLMotionProps<'button'> &
-  TTitleProps;
+  TTitleProps &
+  TClassValueProps;
 export type TAnchorMotionProps = HTMLMotionProps<'a'> &
-  TTitleProps;
-export type TImgMotionProps = HTMLMotionProps<'img'>;
-export type TInputMotionProps = HTMLMotionProps<'input'>;
+  TTitleProps &
+  TClassValueProps;
+export type TImgMotionProps = HTMLMotionProps<'img'> &
+TClassValueProps;
+export type TInputMotionProps = HTMLMotionProps<'input'> &
+TClassValueProps;
 
 export type TTextareaMotionProps =
-  HTMLMotionProps<'textarea'>;
+  HTMLMotionProps<'textarea'> &
+  TClassValueProps;
 
-export type TSvgMotionProps = SVGMotionProps<SVGSVGElement>;
+export type TSvgMotionProps = SVGMotionProps<SVGSVGElement> &
+TClassValueProps;
 
 export type TLinkMotionProps = LinkProps &
   MotionProps &
-  TTitleProps;
+  TTitleProps &
+  TClassValueProps;

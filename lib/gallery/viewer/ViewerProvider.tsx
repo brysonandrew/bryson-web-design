@@ -3,6 +3,7 @@ import {
   useState,
   createContext,
   useContext,
+  Fragment,
 } from 'react';
 import type { FC } from 'react';
 import { TScreensRecord } from '@brysonandrew/media';
@@ -16,8 +17,15 @@ export const useViewer = (): TViewerContext =>
   useContext<TViewerContext>(VIEWER);
 
 export const ViewerProvider: FC<
-  PropsWithChildren<{ screensRecordJson: TScreensRecord }>
-> = ({ screensRecordJson, children }) => {
+  PropsWithChildren<{
+    screensRecordJson: TScreensRecord;
+    Placeholder: FC;
+  }>
+> = ({
+  screensRecordJson,
+  Placeholder = Fragment,
+  children,
+}) => {
   const screensRecord =
     screensRecordJson as unknown as TScreensRecord;
   const [isTransitioningGallery, setTransitioningGallery] =
@@ -31,6 +39,7 @@ export const ViewerProvider: FC<
   return (
     <VIEWER.Provider
       value={{
+        Placeholder,
         screensRecord,
         isTransitioningGallery,
         onDrag,

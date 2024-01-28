@@ -24,13 +24,23 @@ export const resolveDeps = ({
 
     if (endIndex > -1) {
       let lib = v.slice(0, endIndex);
-      if (lib.startsWith('lib/')) {
-        console.error(
-          `Invalid absolute import found: ${lib}`,
-          `File: - ${file}`,
-        );
-        return;
-      }
+
+      for (const excludePrefix of [
+        'src/',
+        'ops/',
+        'lib/',
+        `@app/`,
+        `@uno/`,
+        `@vite/`,
+      ])
+        if (lib.startsWith(excludePrefix)) {
+          console.error(
+            `Invalid absolute import found: ${lib}`,
+            `File: - ${file}`,
+          );
+          return;
+        }
+
       if (lib.startsWith('@brysonandrew/')) {
         const [appName, libName] = lib.split('/');
         if (name === libName) return;

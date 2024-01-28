@@ -17,11 +17,13 @@ export const PACKAGES = [
 
 type TConfig = {
   listLiteral: string;
+  classValue: string;
   PreContent?: FC;
 } & TPriceProps;
 export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   standard: {
     price: 799,
+    classValue: 'gradient-standard',
     listLiteral: `
     Perfect for small businesses and startups
     Responsive and user-friendly website
@@ -31,6 +33,7 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   },
   plus: {
     price: 1399,
+    classValue: 'gradient-plus',
     discount: {
       value: 200,
       expiry: new Date(2024, 0, 31),
@@ -44,6 +47,7 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   },
   select: {
     price: 'Custom Quote: Tailored to Your Needs',
+    classValue: 'gradient-select',
     listLiteral: `
     For unique and specialized projects
     In-depth consultation and planning

@@ -1,5 +1,56 @@
-const VERSION_NUMBER = '0.2.4';
-const CACHE_NAME = `v${VERSION_NUMBER}::brysona-service-worker`;
+var name = "@brysonandrew/service-worker";
+var version = "6.22.38";
+var description = "Service Worker library";
+var types = "/index.d.ts";
+var main = "./index.ts";
+var type = "module";
+var module = "./index.ts";
+var exports = {
+	".": {
+		require: "./index.ts",
+		"import": "./index.ts",
+		"default": "./index.ts"
+	},
+	"./init": "./init.ts",
+	"./main": "./main.ts"
+};
+var scripts = {
+	format: "prettier .",
+	lint: "tsc --build . & eslint . --fix --ext ts,tsx",
+	test: "echo \"Error: no test specified\" && exit 1"
+};
+var author = "Andrew Bryson <andrewbryson12@gmail.com>";
+var license = "MIT";
+var repository = "https://github.com/brysonandrew/brysona.dev.git";
+var sideEffects = false;
+var keywords = [
+	"react",
+	"typescript"
+];
+var peerDependencies = {
+	"@brysonandrew/types": "*",
+	"@brysonandrew/media": "*"
+};
+var pkg = {
+	name: name,
+	version: version,
+	description: description,
+	types: types,
+	main: main,
+	type: type,
+	module: module,
+	exports: exports,
+	scripts: scripts,
+	author: author,
+	license: license,
+	repository: repository,
+	sideEffects: sideEffects,
+	keywords: keywords,
+	peerDependencies: peerDependencies
+};
+
+const VERSION_NUMBER = pkg.version;
+const CACHE_NAME = `v${VERSION_NUMBER}::${pkg.name}`;
 const resolveCache = async () => caches.open(CACHE_NAME);
 const matchRequest = async (cache, request) => cache.match(request);
 const putRequest = async (cache, request, response) => request.method === 'GET'
@@ -26,9 +77,7 @@ const sendMessage = async (message) => {
 };
 const precache = async (paths) => {
     const cache = await resolveCache();
-    console.time('precache');
     await cache.addAll(paths);
-    console.timeEnd('precache');
 };
 self.addEventListener('message', async (event) => {
     const data = event.data;

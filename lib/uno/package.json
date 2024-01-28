@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.24",
+  "version": "6.22.40",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,6 +10,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./preflights": "./preflights/index.ts",
+    "./preflights/reset": "./preflights/reset.ts",
+    "./preflights/resolveInput": "./preflights/resolveInput.ts",
+    "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
+    "./theme": "./theme/index.ts",
     "./spacing": "./spacing/index.ts",
     "./shortcuts/animation": "./shortcuts/animation.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
@@ -17,11 +22,6 @@
     "./shortcuts": "./shortcuts/index.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
     "./shortcuts/layout": "./shortcuts/layout.ts",
-    "./preflights": "./preflights/index.ts",
-    "./preflights/reset": "./preflights/reset.ts",
-    "./preflights/resolveInput": "./preflights/resolveInput.ts",
-    "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
-    "./theme": "./theme/index.ts",
     "./shortcuts/text/color": "./shortcuts/text/color.ts",
     "./shortcuts/text": "./shortcuts/text/index.ts"
   },
@@ -39,8 +39,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/dark-mode": "*",
     "unocss": "*",
-    "@emotion/react": "*"
+    "@emotion/react": "*",
+    "@brysonandrew/dark-mode": "*"
   }
 }

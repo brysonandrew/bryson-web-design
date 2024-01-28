@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import {
-  IMAGE_PLACEHOLDER_ID,
-  PLACEHOLDER_LAYOUT_ID,
-} from '@brysonandrew/media/config/constants';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import clsx from 'clsx';
 import {
@@ -15,18 +11,24 @@ import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientS
 
 export const Root = styled(motion.div)``;
 
-type TProps = TClassValueProps &
-  TDivMotionProps & { colors?: string[] };
-export const Placeholder: FC<TProps> = ({
+export type TPlaceholderProps = TClassValueProps &
+  TDivMotionProps & {
+    colors?: string[];
+    clipPathId: string;
+  };
+export type TPartialPlaceholderProps =
+  Partial<TPlaceholderProps>;
+export const Placeholder: FC<TPlaceholderProps> = ({
   classValue,
   style,
   colors = ['teal', 'transparent'],
+  clipPathId,
   ...props
 }) => {
   return (
     <Root
       className='absolute center w-full h-full'
-      layoutId={PLACEHOLDER_LAYOUT_ID}
+      // layoutId={PLACEHOLDER_LAYOUT_ID}
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       exit={{ opacity: 0 }}
@@ -37,7 +39,7 @@ export const Placeholder: FC<TProps> = ({
         style={{
           width: 24,
           height: 24,
-          clipPath: resolveUrlId(IMAGE_PLACEHOLDER_ID),
+          clipPath: resolveUrlId(clipPathId),
         }}
       >
         <motion.figure
@@ -56,7 +58,7 @@ export const Placeholder: FC<TProps> = ({
             transition: {
               repeat: Infinity,
               duration: 2,
-              ease: 'keyframes',
+              type: 'keyframes',
             },
           }}
         />
@@ -64,3 +66,5 @@ export const Placeholder: FC<TProps> = ({
     </Root>
   );
 };
+
+export * from './withPlaceholder';

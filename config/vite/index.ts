@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
-import { compileTsServiceWorker } from './vite.compile-ts-service-worker';
+import { compileTsServiceWorker } from './compile-ts-service-worker';
 
 export default defineConfig({
   build: {
@@ -16,12 +16,12 @@ export default defineConfig({
     },
   },
   plugins: [
-    compileTsServiceWorker(),
     unoCss({ inspector: true }),
     tsConfigPaths({
       loose: true,
     }),
     react(),
+    compileTsServiceWorker(),
   ],
   server: {
     port: 3000,
