@@ -32,21 +32,21 @@ export const resolveRecordValue = <
 
   if (isValidFade(fade)) {
     const [initialValue, exitValue] = fade;
-    initial.opacity = initialValue;
+    initial.opacity = initialValue ?? 0;
     animate.opacity = 1;
-    exit.opacity = exitValue ?? initialValue;
+    exit.opacity = exitValue ?? initial.opacity;
   }
 
   if (isValidShift(shift)) {
     const [initialValue, direction, exitValue] = shift;
     const shiftKey = resolveShiftKey(direction);
-    const shiftValue = resolveShiftValue(
-      exitValue,
+    const originShiftValue = resolveShiftValue(
+      initialValue,
       direction,
     );
 
-    initial[shiftKey] = initialValue;
-    animate[shiftKey] = shiftValue;
+    initial[shiftKey] = originShiftValue;
+    animate[shiftKey] = 0;
     exit[shiftKey] = exitValue ?? initialValue;
   }
 
