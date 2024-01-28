@@ -44,7 +44,7 @@ export const Image: FC<TProps> = ({
         <MotionBlur
           isOn={isTransitioningGallery}
           motionValue={motionX}
-          direction='x'
+          axis='x'
         >
           {(filterProps) => (
             <Picture

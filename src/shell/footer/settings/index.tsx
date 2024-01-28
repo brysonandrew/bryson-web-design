@@ -6,7 +6,6 @@ import { isMobile } from 'react-device-detect';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
-import { RR } from '@app/animation';
 
 const Root = styled(motion.div)``;
 
@@ -17,7 +16,7 @@ export const Settings: FC<TProps> = (props) => {
       className={clsx('row z-10', !isMobile && 'gap-2')}
       {...props}
     >
-      <DarkMode resolveOrigin={RR.resolveRotateXPresence} />
+      <DarkMode  />
       {!isMobile && <Sound />}
     </Root>
   );

@@ -5,7 +5,10 @@ import { Clear } from './Clear';
 import { TFormKey } from '@brysonandrew/contact/config/types';
 import { useFocus } from '../hooks/useFocus';
 import { useHoverKey } from '@brysonandrew/cursor';
-import { MOTION_CONFIG, R } from '@brysonandrew/animation';
+import {
+  MOTION_CONFIG,
+  resolveParentAnimateConfig,
+} from '@brysonandrew/animation';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { CONTACT_FORM_INPUT_LAYOUT_ID } from '../config/constants';
@@ -45,7 +48,7 @@ export const Shell = <T extends HTMLElement>({
       }}
       {...(isDisabled
         ? {}
-        : R.resolveParentAnimateConfig({ isHover }))}
+        : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
       <ShellTextureGlow

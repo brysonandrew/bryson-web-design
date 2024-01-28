@@ -1,17 +1,14 @@
-import styled from '@emotion/styled';
 import {
   TChildrenProps,
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
-import { R } from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Background } from './Background';
 import { useApp } from '@brysonandrew/app';
-
-const Root = styled(motion.div)``;
+import { motion } from 'framer-motion';
 
 type TPosition = 'relative' | 'absolute';
 
@@ -31,7 +28,7 @@ export const Circle: FC<TProps> = ({
   const { BORDER_RADIUS, GLOW_DROP } = useApp();
 
   return (
-    <Root
+    <motion.div
       className={clsx(
         position,
         'center w-10 h-10',
@@ -41,13 +38,13 @@ export const Circle: FC<TProps> = ({
         borderRadius: BORDER_RADIUS.XL,
         filter: GLOW_DROP.accent,
       }}
-      {...R.resolveParentAnimateConfig({ isHover })}
+      {...resolveParentAnimateConfig({ isHover })}
       {...props}
     >
       <>
         <Background />
         {children}
       </>
-    </Root>
+    </motion.div>
   );
 };

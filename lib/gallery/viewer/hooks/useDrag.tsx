@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery-viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../ready/types';
 import { useX } from './motion/useX';
-import { DURATION_2 } from '@brysonandrew/animation';
+import { DURATION } from '@brysonandrew/animation';
 
 type TConfig = Pick<
   TBaseProps,
@@ -55,7 +55,7 @@ export const useDrag = ({
   useEffect(() => {
     const subscribe = animate(motionX, nextX, {
       ease: 'easeIn',
-      duration: DURATION_2,
+      duration: DURATION,
       onComplete: handleComplete,
     });
     return subscribe.stop;

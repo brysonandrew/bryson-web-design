@@ -8,7 +8,7 @@ import {
 import { useHoverKey } from '@brysonandrew/cursor';
 import {
   TRANSITION_02_EASEIN_008,
-  R,
+  resolveParentAnimateConfig,
 } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
@@ -42,7 +42,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       onTap={isDisabled ? () => null : onSound}
       {...(isDisabled
         ? {}
-        : R.resolveParentAnimateConfig({ isHover }))}
+        :resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}

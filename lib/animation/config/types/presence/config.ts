@@ -44,15 +44,14 @@ export type TRotateDirection =
   (typeof ROTATE_DIRECTIONS)[number];
 // | 'clockwise'
 // | 'anti-clockwise';
-export type TRotateValue = number | `${number}deg`; // degrees only
+export type TRotateValue = number; // | `${number}deg`; // degrees only
 export type TRotatePosStringValue = `${number}deg`; // degrees only
 export type TRotateNegStringValue = `-${number}deg`; // degrees only
 export type TRotateStringValue =
   | TRotatePosStringValue
   | TRotateNegStringValue; // degrees only
-export type TDegreeValue =
-  | TRotateValue
-  | TRotateStringValue; // degrees only
+export type TDegreeValue = TRotateValue;
+//| TRotateStringValue; // degrees only
 
 export type TRotate = readonly [
   initial: TRotateValue,

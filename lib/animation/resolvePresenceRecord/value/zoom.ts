@@ -10,6 +10,8 @@ import console from 'console';
 export const isValidZoom = (
   zoom?: TZoom,
 ): zoom is TZoom => {
+  if (typeof zoom === 'undefined') return false;
+
   const errorMessage = "Invalid 'zoom' animation value.";
 
   if (Array.isArray(zoom)) {
@@ -30,7 +32,7 @@ export const isValidZoom = (
     }
     return isValidDirection && isValidValue;
   }
-  console.error(`${errorMessage} Not an array`);
+  console.error(`${errorMessage} Not an array`, zoom);
   return false;
 };
 
