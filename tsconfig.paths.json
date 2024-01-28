@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@ops/*": ["ops/*"],
       "@pkg": ["package.json"],
       "@brysonandrew/*": ["lib/*", "ops/*"],
       "@brysonandrew/gallery-*": ["lib/gallery/*"],
@@ -19,8 +20,7 @@
       "@utils/*": ["src/utils/*"],
       "@app/*": ["config/app/*"],
       "@uno/*": ["config/uno/*"],
-      "@ops/*": ["ops/*"],
-      "@shell/*": ["shell/*"]
+      "@shell/*": ["src/shell/*"]
     }
   }
 }

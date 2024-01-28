@@ -5,14 +5,14 @@ export type TTransformerProps = {
   acceleration: MotionValue;
 };
 
-export const DIRECTIONS = ['x', 'y'] as const;
-export type TDirectionKey = (typeof DIRECTIONS)[number];
+export const AXES = ['x', 'y'] as const;
+export type TShiftAxis = (typeof AXES)[number];
 
-export type TDirectionProps = {
-  direction?: TDirectionKey;
+export type TShiftProps = {
+  axis?: TShiftAxis;
 };
 
-export type TMotionBlurProps = TDirectionProps & {
+export type TMotionBlurProps = TShiftProps & {
   turbulence: MotionValue;
   blur: MotionValue;
 };
