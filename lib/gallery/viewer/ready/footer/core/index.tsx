@@ -38,7 +38,7 @@ export const Core: FC<TProps> = (props) => {
           [
             isDesktop
               ? 'relative h-auto row'
-              : 'absolute h-screen row-end',
+              : 'relative h-auto row',
           ],
         )}
         style={{
