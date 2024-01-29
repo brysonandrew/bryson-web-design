@@ -18,11 +18,6 @@ export const useFocus = <T extends HTMLElement>(
     if (!isScrolling && input && isFocused) {
       handler();
     }
-    return () => {
-      if (input && isFocused) {
-        input.blur();
-      }
-    };
   }, [input, isFocused, isScrolling]);
 
   return handler;
