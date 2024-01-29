@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.40",
+  "version": "6.22.46",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,6 +11,7 @@
       "default": "./index.ts"
     },
     "./backdrop-blur": "./backdrop-blur/index.tsx",
+    "./section": "./section/index.tsx",
     "./lists/List": "./lists/List.tsx",
     "./lists/TickList": "./lists/TickList.tsx",
     "./typography/Letter": "./typography/Letter.tsx",
@@ -19,15 +20,14 @@
     "./line/ThickLine": "./line/ThickLine.tsx",
     "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
     "./line": "./line/index.tsx",
-    "./section": "./section/index.tsx",
     "./utils/arrToNest": "./utils/arrToNest.tsx",
     "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx"
+    "./typography/animation": "./typography/animation/index.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -48,11 +48,11 @@
     "@brysonandrew/types": "*",
     "framer-motion": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/space": "*",
     "@brysonandrew/icons": "*",
     "clsx": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/space": "*",
-    "@brysonandrew/in-view": "*",
-    "@brysonandrew/utils": "*"
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/in-view": "*"
   }
 }

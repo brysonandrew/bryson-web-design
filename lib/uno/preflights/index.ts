@@ -2,7 +2,7 @@ import { RESET } from './reset';
 import {
   resolveScrollbar,
   TResolveScrollbarConfig,
-} from '../preflights/resolveScrollbar';
+} from './resolveScrollbar';
 import {
   resolveInput,
   TResolveInputConfig,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/scroll",
-  "version": "6.22.40",
+  "version": "6.22.46",
   "description": "Scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,6 +11,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./useScrollToTop": "./useScrollToTop.ts",
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts"
   },
@@ -31,6 +32,7 @@
     "react": "*",
     "@brysonandrew/hooks": "*",
     "react-router": "*",
+    "react-router-dom": "*",
     "@brysonandrew/animation": "*"
   }
 }

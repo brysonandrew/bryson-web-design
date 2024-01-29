@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.22.40",
+  "version": "6.22.46",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,6 +15,7 @@
     "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
     "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
+    "./utils/resolveAspectRatio": "./utils/resolveAspectRatio.ts",
     "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
     "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
   },

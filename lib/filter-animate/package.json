@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filter-animate",
-  "version": "6.22.40",
+  "version": "6.22.46",
   "description": "Filter Animate library",
   "main": "./index.tsx",
   "module": "./index.tsx",

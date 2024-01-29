@@ -10,7 +10,9 @@ export * from './transformer/colorToStyles';
 export * from './transformer/newlineToArr';
 export * from './key/generateRandomId';
 export * from './key';
+export * from './unit/resolveIntRecord';
 export * from './unit/resolveRemFromPx';
+export * from './unit/stripPx';
 export * from './error/detail/config';
 export * from './error/detail/resolveDetailMessage';
 
