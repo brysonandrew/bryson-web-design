@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.22.46",
+  "version": "6.22.51",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,12 +12,12 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
-    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
     "./utils/resolveAspectRatio": "./utils/resolveAspectRatio.ts",
     "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
-    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts",
+    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
+    "./hooks/useLoadImage": "./hooks/useLoadImage.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -34,9 +34,9 @@
   ],
   "peerDependencies": {
     "@brysonandrew/types": "*",
-    "react": "*",
     "@emotion/styled": "*",
     "clsx": "*",
-    "framer-motion": "*"
+    "framer-motion": "*",
+    "react": "*"
   }
 }

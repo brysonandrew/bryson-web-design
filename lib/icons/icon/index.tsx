@@ -4,10 +4,7 @@ import { Icon } from '@iconify/react';
 import { TIconConfig } from '../type';
 
 type TProps = TIconConfig;
-export const I: FC<TProps> = ({
-  classValue,
-  ...props
-}) => {
+export const I: FC<TProps> = ({ classValue, ...props }) => {
   return (
     <Icon
       className={clsx(
