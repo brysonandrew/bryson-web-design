@@ -29,9 +29,12 @@ export const Sections: FC<TProps> = (props) => {
   );
 
   return (
-    <Root className='h-full grow' {...handlers}>
+    <Root
+      className='h-full grow'
+      {...handlers}
+    >
       <motion.ul
-        className='flex relative h-full'
+        className='flex relative h-full w-0'
         style={{ left, width: viewportWidth * count }}
         ref={(instance) => {
           if (instance && !container) {
