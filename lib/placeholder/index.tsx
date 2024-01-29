@@ -67,4 +67,5 @@ export const Placeholder: FC<TPlaceholderProps> = ({
   );
 };
 
+export * from './resolvePlaceholderRules';
 export * from './withPlaceholder';

@@ -1,7 +1,7 @@
 import { Rule } from 'unocss';
 import { resolveTextStrokeRules } from './resolveTextStrokeRules';
 import { resolveMaskRules } from './resolveMaskRules';
-import { resolvePlaceholderRules } from './resolvePlaceholderRules';
+import { resolvePlaceholderRules } from '@app/placeholder';
 import { resolveCharGapRules } from './resolveCharGapRules';
 
 export const resolveRules = <

@@ -8,6 +8,7 @@ import { css, Global } from '@emotion/react';
 import { TSvgProps } from '@brysonandrew/types';
 import { useMemo } from 'react';
 import { resolveVarCssRecord } from '@brysonandrew/utils/css/resolveVarCssRecord';
+import { resolvePlaceholderRules } from './resolvePlaceholderRules';
 
 type TConfig = {
   id?: string;
@@ -21,6 +22,7 @@ export const withPlaceholder = (config: TConfig = {}) => {
     clipPathProps,
   } = config;
   return {
+    resolvePlaceholderRules,
     Placeholder: (props: TPartialPlaceholderProps) => (
       <Placeholder {...placeholderProps} {...props} />
     ),

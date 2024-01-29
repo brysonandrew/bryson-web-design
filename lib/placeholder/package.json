@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.42",
+  "version": "6.22.46",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,6 +10,7 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
+    "./resolvePlaceholderRules": "./resolvePlaceholderRules.ts",
     "./withPlaceholder": "./withPlaceholder.tsx"
   },
   "scripts": {
@@ -32,6 +33,7 @@
     "@brysonandrew/utils": "*",
     "clsx": "*",
     "@brysonandrew/color": "*",
+    "unocss": "*",
     "@brysonandrew/types": "*"
   }
 }
