@@ -15,7 +15,7 @@ export const useFocus = <T extends HTMLElement>(
     }
   };
   useEffect(() => {
-    if (!isScrolling && !input && isFocused) {
+    if (!isScrolling && input && isFocused) {
       handler();
     }
     return () => {

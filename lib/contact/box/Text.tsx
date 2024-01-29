@@ -32,8 +32,8 @@ export const Text: FC<TProps> = ({
           name={name}
           disabled={disabled}
           {...resolveInteractiveLabels(name)}
-          {...inputProps}
           {...props}
+          {...inputProps}
         />
       )}
     </Box>
