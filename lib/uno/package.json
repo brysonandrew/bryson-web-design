@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.46",
+  "version": "6.22.51",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,11 +10,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./spacing": "./spacing/index.ts",
     "./preflights": "./preflights/index.ts",
     "./preflights/reset": "./preflights/reset.ts",
     "./preflights/resolveInput": "./preflights/resolveInput.ts",
     "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
+    "./spacing": "./spacing/index.ts",
     "./shortcuts/animation": "./shortcuts/animation.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
     "./shortcuts/flex": "./shortcuts/flex.ts",

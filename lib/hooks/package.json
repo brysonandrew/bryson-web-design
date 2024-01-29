@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.46",
+  "version": "6.22.51",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,6 +23,10 @@
     "./events/useHover": "./events/useHover.ts",
     "./events/useLongPress": "./events/useLongPress.ts",
     "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
+    "./life-cycle": "./life-cycle/index.ts",
+    "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
+    "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
+    "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
     "./scroll": "./scroll/index.ts",
     "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./window": "./window/index.ts",
@@ -32,11 +36,7 @@
     "./window/useInterval": "./window/useInterval.tsx",
     "./window/useMediaQuery": "./window/useMediaQuery.ts",
     "./window/useNoPointer": "./window/useNoPointer.ts",
-    "./window/useTimeoutRef": "./window/useTimeoutRef.ts",
-    "./life-cycle": "./life-cycle/index.ts",
-    "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
-    "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
-    "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts"
+    "./window/useTimeoutRef": "./window/useTimeoutRef.ts"
   },
   "scripts": {
     "format": "prettier .",

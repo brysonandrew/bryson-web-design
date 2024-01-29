@@ -11,6 +11,10 @@ export * from './events/useEventListener';
 export * from './events/useHover';
 export * from './events/useLongPress';
 export * from './ip/useIpWebRtc';
+export * from './life-cycle';
+export * from './life-cycle/useIsFirstRender';
+export * from './life-cycle/useIsomorphicLayoutEffect';
+export * from './life-cycle/useUpdateEffect';
 export * from './scroll';
 export * from './scroll/useFreezeScroll';
 export * from './window';
@@ -21,10 +25,6 @@ export * from './window/useInterval';
 export * from './window/useMediaQuery';
 export * from './window/useNoPointer';
 export * from './window/useTimeoutRef';
-export * from './life-cycle';
-export * from './life-cycle/useIsFirstRender';
-export * from './life-cycle/useIsomorphicLayoutEffect';
-export * from './life-cycle/useUpdateEffect';
 
 
 

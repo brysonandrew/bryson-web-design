@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.46",
+  "version": "6.22.51",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
