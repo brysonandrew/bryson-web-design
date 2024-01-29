@@ -1,5 +1,5 @@
 var name = "@brysonandrew/service-worker";
-var version = "6.22.38";
+var version = "6.22.46";
 var description = "Service Worker library";
 var types = "/index.d.ts";
 var main = "./index.ts";
