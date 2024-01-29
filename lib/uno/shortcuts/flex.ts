@@ -10,6 +10,9 @@ export const FLEX: StaticShortcutMap = {
   'row-start-end': 'row-start justify-end',
   'row-space': 'row justify-between',
   'row-start-space': 'row-start justify-between',
+  'row-stretch-space': 'row items-stretch justify-between',
+  'row-start-space-reverse':
+    'flex flex-row-reverse items-start justify-between',
   'row-base': 'flex flex-row items-baseline',
   column: 'flex flex-col items-center',
   'column-reverse': 'flex flex-col-reverse items-center',

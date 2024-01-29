@@ -13,7 +13,9 @@ export type TPresets<T extends object> = (
 export const resolvePresets = <
   T extends object,
 >(): TPresets<T> => [
-  definePreset<T>(presetUno({ dark: 'class' }) as any),
+  definePreset<T>(
+    presetUno({ dark: 'class' }) as unknown as Preset<T>,
+  ),
   presetWebFonts({
     fonts: FONTS,
   }),
