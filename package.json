@@ -114,7 +114,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "prettier": "^2.8.8",
-    "rollup": "^4.9.6",
+    "rollup": "^3.29.4",
     "rollup-plugin-ts": "^3.4.5",
     "sharp": "^0.32.6",
     "tslib": "^2.6.2",
