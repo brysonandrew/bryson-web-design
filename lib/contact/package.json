@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.60",
+  "version": "6.22.64",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -24,10 +24,10 @@
     "./hooks/useFocus": "./hooks/useFocus.ts",
     "./hooks/useForm": "./hooks/useForm.ts",
     "./hooks/useInput": "./hooks/useInput.tsx",
+    "./utils/resolveButtonValue": "./utils/resolveButtonValue.ts",
     "./variants/base": "./variants/base.ts",
     "./variants/glow": "./variants/glow.ts",
     "./variants/minimalist": "./variants/minimalist.ts",
-    "./utils/resolveButtonValue": "./utils/resolveButtonValue.ts",
     "./box/textarea": "./box/textarea/index.tsx",
     "./box/textarea/autosize": "./box/textarea/autosize/index.tsx",
     "./box/textarea/autosize/useAutosize": "./box/textarea/autosize/useAutosize.ts"
