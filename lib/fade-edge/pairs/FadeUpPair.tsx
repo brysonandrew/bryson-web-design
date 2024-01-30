@@ -1,22 +1,8 @@
-import { TFadeProps } from '@brysonandrew/fade';
-import { FadeUp } from '@brysonandrew/fade/FadeUp';
+import { FadeUp, TFadeProps } from '@brysonandrew/fade';
+import { FadePair } from '@brysonandrew/fade-edge/pairs/FadeFair';
 import { FC } from 'react';
 
 type TProps = TFadeProps;
-export const FadeUpPair: FC<TProps> = ({
-  classValue,
-  ...props
-}) => (
-  <>
-    <FadeUp
-      classValue='h-full opacity-dark'
-      from='from-black-05'
-      {...props}
-    />
-    <FadeUp
-      classValue='h-full opacity-light'
-      from='from-white-05'
-      {...props}
-    />
-  </>
+export const FadeUpPair: FC<TProps> = ({ ...props }) => (
+  <FadePair Fader={FadeUp} {...props} />
 );

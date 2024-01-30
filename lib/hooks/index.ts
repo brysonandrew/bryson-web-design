@@ -1,3 +1,4 @@
+export * from './ip/useIpWebRtc';
 export * from './events';
 export * from './events/useEventCallback';
 export * from './events/useEventListener';
@@ -10,7 +11,6 @@ export * from './dom/useKey';
 export * from './dom/useLocalStorage';
 export * from './dom/useOutsideClick';
 export * from './dom/useRect';
-export * from './ip/useIpWebRtc';
 export * from './scroll';
 export * from './scroll/useFreezeScroll';
 export * from './life-cycle';

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.64",
+  "version": "6.22.66",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,6 +10,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
     "./events": "./events/index.ts",
     "./events/useEventCallback": "./events/useEventCallback.ts",
     "./events/useEventListener": "./events/useEventListener.ts",
@@ -22,7 +23,6 @@
     "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
     "./dom/useRect": "./dom/useRect.ts",
-    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
     "./scroll": "./scroll/index.ts",
     "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./life-cycle": "./life-cycle/index.ts",
@@ -52,9 +52,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "framer-motion": "*",
+    "@brysonandrew/utils": "*",
     "react": "*",
-    "@brysonandrew/types": "*",
-    "@brysonandrew/utils": "*"
+    "framer-motion": "*",
+    "@brysonandrew/types": "*"
   }
 }
