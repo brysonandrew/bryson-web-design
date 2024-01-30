@@ -15,12 +15,11 @@ export const Items: FC<TProps> = ({
 
   return (
     <>
-      {sortedItems.map((mediaRecord, index) => (
+      {sortedItems.map((mediaRecord) => (
         <Button
           key={mediaRecord.src}
           width={itemWidth}
           mediaRecord={mediaRecord}
-          index={index}
         />
       ))}
     </>

@@ -25,7 +25,6 @@ export const Link: FC = () => {
       className='relative left-0 cursor-pointer'
       to={PAGE_RECORD.index.path}
       onClick={handleClick}
-      whileHover='hover'
       {...resolveInteractiveLabels(APP_DESCRIPTION)}
       {...handlers}
     >

@@ -1,0 +1,38 @@
+{
+  "name": "@brysonandrew/fade-edge",
+  "version": "6.22.60",
+  "description": "Fade Edge library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./pairs/FadeDownPair": "./pairs/FadeDownPair.tsx",
+    "./pairs/FadeUpPair": "./pairs/FadeUpPair.tsx",
+    "./vertical-edges/Bottom": "./vertical-edges/Bottom.tsx",
+    "./vertical-edges/Top": "./vertical-edges/Top.tsx",
+    "./vertical-edges": "./vertical-edges/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/fade": "*",
+    "clsx": "*",
+    "react": "*",
+    "@brysonandrew/types": "*"
+  }
+}

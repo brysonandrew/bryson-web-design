@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { P_5 } from '@brysonandrew/space/P_5';
-import { TRANSITION } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@app/animation';
 import { TChildren } from '@brysonandrew/types/dom/main';
 import { I } from '@brysonandrew/icons/icon';
 import { TBaseIconProps } from '@brysonandrew/icons/type';
@@ -25,12 +25,8 @@ export const IconWithText: FC<TProps> = ({
         )}
         {Icon && <Icon classValue='w-4 h-4' />}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { ...TRANSITION, delay: 0.4 },
-          }}
           className='whitespace-nowrap'
+          {...PRESENCE_OPACITY_ANIMATE_DELAY_04}
         >
           {children}
         </motion.div>

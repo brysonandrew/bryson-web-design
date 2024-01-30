@@ -1,6 +1,6 @@
 import { Laptop } from './Laptop';
 import { P8 } from '@brysonandrew/space/P8';
-import { COLOR_CSS_VARS_RECORD } from '@app/colors/constants';
+import { COLOR_CSS_VARS_RECORD }from '@app/color';
 
 export const Logo = () => {
   const SIZE = 200;

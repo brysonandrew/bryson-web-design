@@ -7,7 +7,8 @@ import {
   TDivProps,
 } from '@brysonandrew/types/dom';
 import clsx, { ClassValue } from 'clsx';
-import { P16Y } from '@brysonandrew/space/P16Y';
+import { P12 } from '@brysonandrew/space/P12';
+import { P16Y } from '@brysonandrew/space';
 
 const Root = styled.div``;
 
@@ -26,12 +27,14 @@ export const Section: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx('relative column', classValue)}
+      className={clsx('column', classValue)}
       id={title}
       {...props}
     >
+      <P12 classValue='flex lg:hidden' />
       <Title>{title}</Title>
-      <P16Y />
+      <P12 classValue='flex lg:hidden' />
+      <P16Y classValue='hidden lg:flex' />
       {children}
     </Root>
   );

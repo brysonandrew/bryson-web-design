@@ -1,9 +1,10 @@
-import type { FC } from 'react';
-import { Time } from '@brysonandrew/gallery/components/content/Time';
+import { FC } from 'react';
+import { Time } from '@components/galllery/list/Time';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { Badge } from '@pages/pricing/badge';
+import { Badge } from '@components/galllery/badge';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
+import { resolveCompositeKey } from '@brysonandrew/utils';
 
 type TProps = TSlugProps<TSlug> & {
   isHover?: boolean;
@@ -18,11 +19,17 @@ export const RightHeader: FC<TProps> = ({
     TRest
   >();
   const { time, pricing } = ITEMS_RECORD[slug];
+  const id = resolveCompositeKey('badge', slug);
 
   return (
     <>
       <Time time={time} />
-      <Badge type={pricing} isHover={isHover} >
+      <Badge
+        key={resolveCompositeKey('list', id)}
+        layoutId={id}
+        type={pricing}
+        isHover={isHover}
+      >
         {pricing}
       </Badge>
     </>

@@ -2,8 +2,8 @@ import {
   rollup,
   InputOptions,
   OutputOptions,
-  RollupOptions,
   OutputBundle,
+  NormalizedOutputOptions,
 } from 'rollup';
 import rollupPluginTypescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -14,7 +14,7 @@ export const compileTsServiceWorker = (
 ) => ({
   name: 'compile-typescript-service-worker',
   async writeBundle(
-    _options: RollupOptions,
+    _options: NormalizedOutputOptions,
     _outputBundle: OutputBundle,
   ) {
     const inputOptions: InputOptions = {

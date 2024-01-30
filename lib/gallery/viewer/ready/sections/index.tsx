@@ -9,7 +9,7 @@ import {
 } from '@brysonandrew/cursor';
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { PRESENCE_OPACITY_Y } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/animation';
 
 const Root = styled(motion.div)``;
 
@@ -29,16 +29,19 @@ export const Sections: FC<TProps> = (props) => {
   );
 
   return (
-    <Root className='h-full grow' {...handlers}>
+    <Root
+      className='h-full grow'
+      {...handlers}
+    >
       <motion.ul
-        className='flex relative h-full'
+        className='flex relative h-full w-0'
         style={{ left, width: viewportWidth * count }}
         ref={(instance) => {
           if (instance && !container) {
             setContainer(instance);
           }
         }}
-        {...PRESENCE_OPACITY_Y}
+        {...PRESENCE_OPACITY_UP_Y}
       >
         {mediaRecords.map(
           (mediaRecord: TMediaRecord, index: number) => (

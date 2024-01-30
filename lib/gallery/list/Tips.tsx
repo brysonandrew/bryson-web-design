@@ -1,7 +1,6 @@
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import {
-  PROJECT_CURSOR_KEY,
-  resolveCursorKeyFromHoverKey,
+  CUSTOM_CURSOR_KEY,
   useCursor,
 } from '@brysonandrew/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -13,12 +12,12 @@ import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCur
 import { useApp } from '@brysonandrew/app';
 import { Fragment } from 'react';
 import { InView } from '@brysonandrew/in-view';
+import { GALLERY_ICON } from '@brysonandrew/icons';
 
 export const Tips = () => {
   const { COLOR, GLOW_BOX, BORDER_RADIUS } = useApp();
   const currProject = useCurrProject();
-  const { hoverKey } = useCursor();
-  const cursorKey = resolveCursorKeyFromHoverKey(hoverKey);
+  const { hoverKeyParts } = useCursor();
   return (
     <>
       {!isDesktop && (
@@ -49,20 +48,24 @@ export const Tips = () => {
                         <Touch />
                       </motion.li>
                       <P2 element='li' />
-                      {cursorKey === PROJECT_CURSOR_KEY && (
-                        <motion.li
-                          key='SECOND'
-                          className='p-1 row'
-                          style={{
-                            backgroundColor: COLOR.accent,
-                            boxShadow: GLOW_BOX.accent,
-                            borderRadius: BORDER_RADIUS.XL,
-                          }}
-                          {...PRESENCE_OPACITY}
-                        >
-                          <Touch />
-                        </motion.li>
-                      )}
+                      {hoverKeyParts[0] ===
+                        CUSTOM_CURSOR_KEY &&
+                        hoverKeyParts[2] ===
+                          GALLERY_ICON && (
+                          <motion.li
+                            key='SECOND'
+                            className='p-1 row'
+                            style={{
+                              backgroundColor: COLOR.accent,
+                              boxShadow: GLOW_BOX.accent,
+                              borderRadius:
+                                BORDER_RADIUS.XL,
+                            }}
+                            {...PRESENCE_OPACITY}
+                          >
+                            <Touch />
+                          </motion.li>
+                        )}
                     </motion.ul>,
                     document.body,
                   )}

@@ -31,13 +31,13 @@ export const Shell = <T extends HTMLElement>({
   input,
   children,
 }: TShellProps<T>) => {
-  const { Glow, Back, BORDER_RADIUS } = useApp();
+  const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const handleFocus = useFocus<T>(input, isFocused);
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
   );
-  const ShellTextureGlow = Glow?.Back ?? Back;
+  const ShellTextureLIGHT = LIGHT?.Back ?? Back;
 
   return (
     <Root
@@ -51,7 +51,7 @@ export const Shell = <T extends HTMLElement>({
         : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
-      <ShellTextureGlow
+      <ShellTextureLIGHT
         classValue='shell-texture-glow'
         layout
         {...MOTION_CONFIG}
@@ -68,8 +68,8 @@ export const Shell = <T extends HTMLElement>({
           />
         )}
       </AnimatePresence>
-      {Glow && isFocused && (
-        <Glow.Marker
+      {LIGHT && isFocused && (
+        <LIGHT.Marker
           classValue='z-10'
           layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
         />

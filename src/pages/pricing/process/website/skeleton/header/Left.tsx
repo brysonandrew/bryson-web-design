@@ -8,7 +8,7 @@ export const Left = () => {
     <div className='relative row gap-4 z-10'>
       {!isSplashScreen && (
         <Logo
-          className={isDarkMode ? 'text-bg-main' : 'text-bg-main-inverted'}
+          className={isDarkMode ? 'text-main' : 'text-main-inverted'}
           {...(isSplashScreen === false
             ? { layoutId: SKELETON_LOGO_LAYOUT_ID }
             : {})}

@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, PluginOption } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
@@ -21,8 +21,13 @@ export default defineConfig({
       loose: true,
     }),
     react(),
-    compileTsServiceWorker(),
+    compileTsServiceWorker() as PluginOption,
   ],
+  resolve: {
+    alias: {
+      '@brysonandrew/color': 'lib/color',
+    },
+  },
   server: {
     port: 3000,
   },

@@ -12,7 +12,6 @@ export * from './viewer/ViewerProvider';
 export * from './viewer';
 export * from './components/buttons/Circle';
 export * from './components/content/Header';
-export * from './components/content/Time';
 export * from './components/content';
 export * from './list/item';
 export * from './list/item/resolveHoverKeyArgs';

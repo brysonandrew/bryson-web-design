@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.22.51",
+  "version": "6.22.60",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,7 +23,6 @@
     "./viewer": "./viewer/index.tsx",
     "./components/buttons/Circle": "./components/buttons/Circle.tsx",
     "./components/content/Header": "./components/content/Header.tsx",
-    "./components/content/Time": "./components/content/Time.tsx",
     "./components/content": "./components/content/index.tsx",
     "./list/item": "./list/item/index.tsx",
     "./list/item/resolveHoverKeyArgs": "./list/item/resolveHoverKeyArgs.tsx",
@@ -107,6 +106,7 @@
     "react-dom": "*",
     "react-device-detect": "*",
     "@brysonandrew/in-view": "*",
+    "@brysonandrew/icons": "*",
     "framer-motion": "*",
     "@brysonandrew/viewport": "*",
     "@brysonandrew/types": "*",
@@ -116,12 +116,12 @@
     "@brysonandrew/hooks": "*",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/sounds": "*",
-    "@brysonandrew/icons": "*",
+    "@components/galllery/list/Time": "*",
+    "console": "*",
     "@emotion/styled": "*",
     "@brysonandrew/filter-animate": "*",
     "@brysonandrew/scroll": "*",
-    "@brysonandrew/filters": "*",
-    "@brysonandrew/dark-mode": "*"
+    "@brysonandrew/filters": "*"
   },
   "types": "index.d.ts"
 }

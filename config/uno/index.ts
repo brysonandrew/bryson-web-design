@@ -6,24 +6,20 @@ import { TRANSFORMERS } from './transformers';
 import { resolvePresets } from './presets';
 import { resolveTheme } from '@brysonandrew/uno-theme';
 import { SPACING } from '@brysonandrew/uno-spacing';
-import { CUSTOM_SHORTCUTS } from '../app/shortcuts';
-import { COLOR_CSS_VARS_RECORD } from '../app/colors/constants';
+import { COLOR_CSS_VARS_RECORD } from '../app/color/index';
 
 export const theme = resolveTheme({
   colors: COLOR_CSS_VARS_RECORD,
   spacing: SPACING,
 });
-
+ 
 type TTheme = typeof theme;
 
 const rules = resolveRules<TTheme>();
 
 export type TColor = typeof COLOR_CSS_VARS_RECORD;
 
-const shortcuts = {
-  ...SHORTCUTS,
-  ...CUSTOM_SHORTCUTS,
-} as const;
+const shortcuts = SHORTCUTS;
 
 const presets = resolvePresets<TTheme>();
 

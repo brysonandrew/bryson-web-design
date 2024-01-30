@@ -11,7 +11,7 @@ export const ThickLine: FC<TProps> = ({
   return (
     <motion.hr
       className={clsx(
-        'absolute bg-secondary',
+        'absolute border-secondary border-4',
         classValue,
       )}
       {...props}

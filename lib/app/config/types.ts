@@ -9,14 +9,19 @@ export type TDefaultStyle = typeof DEFAULT_STYLE;
 export type TPartialDefaultStyle = Partial<TDefaultStyle>;
 
 export type TSoundRecord = {
-  onSound(): void;
+  move?(): void;
+  on?(): void;
+  off?(): void;
+};
+export type TSoundProps = {
+  sounds?: Partial<TSoundRecord>;
 };
 
 export type TAppProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = PropsWithChildren<
   TLayoutRecordProps &
-    Partial<TSoundRecord> & {
+    TSoundProps & {
       style: S;
     }
 >;
@@ -24,7 +29,7 @@ export type TAppProps<
 export type TValue<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = TLayoutRecordValue &
-  TSoundRecord &
+  TSoundProps &
   TDefaultStyle &
   S & {
     isInit: boolean;

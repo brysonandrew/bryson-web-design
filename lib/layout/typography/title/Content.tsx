@@ -8,7 +8,7 @@ import { TChildrenString } from '@brysonandrew/types/dom';
 
 type TProps = TChildrenString;
 export const Content: FC<TProps> = ({ children }) => {
-  return ( 
+  return (
     <TitleSpace>
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -19,18 +19,14 @@ export const Content: FC<TProps> = ({ children }) => {
           delay: 0.2,
         }}
       >
-        <h3
-          className={clsx(
-            'title-page text-center text-3xl md:text-4xl lg:text-5xl',
-          )}
-        >
+        <h3 className='title-page text-center'>
           {children}
         </h3>
       </motion.div>
-      <div className='relative w-5/6'>
+      <div className='relative w-1/6'>
         <ThinLineGrow
           delay={0.2}
-          classValue='absolute left-0 w-full top-1 via-current'
+          classValue='absolute left-0 w-full top-1 opacity-50'
         />
       </div>
     </TitleSpace>

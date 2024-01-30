@@ -1,4 +1,3 @@
-
 export * from './CvProvider';
 export * from './config/constants';
 export * from './config/tech-icon-lookup';
@@ -11,6 +10,5 @@ export * from './page/Shell';
 export * from './page';
 export * from './page/experience/Item';
 export * from './page/experience';
-export * from './page/experience/resolveTime';
 export * from './page/header/Title';
 export * from './page/header';

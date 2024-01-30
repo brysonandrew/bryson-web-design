@@ -29,7 +29,7 @@ export const Button: FC<TProps> = ({
   backgroundProps,
   iconProps,
 }) => {
-  const { BORDER_RADIUS, onSound } = useApp();
+  const { BORDER_RADIUS, sounds } = useApp();
   const { isDarkMode, toggle } = useDarkMode();
 
   const key = isDarkMode ? 'light' : 'dark';
@@ -41,7 +41,9 @@ export const Button: FC<TProps> = ({
     title,
   );
   const handleTap = () => {
-    onSound();
+    if (sounds?.move) {
+      sounds.move();
+    }
     toggle();
   };
 

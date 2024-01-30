@@ -78,14 +78,13 @@ export const Image: FC<TProps> = (props) => {
       )}
       style={{
         filter: isHover ? INIT_FILTER : GRAYED_OUT,
-        zIndex: circleStyle.z,
         ...circleStyle,
         ...ORIGIN_50,
       }}
       {...(isDesktop ? handlers : {})}
     >
       <Button
-        className='relative cursor-zoom-in'
+        className='cursor-zoom-in'
         {...resolveInteractiveLabels(title)}
         onTap={handleTap}
       >

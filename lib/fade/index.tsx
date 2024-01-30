@@ -6,23 +6,22 @@ import { FC } from 'react';
 
 const Root = styled(motion.div)``;
 
-export type TBaseProps = TDivMotionProps & {
-  classValue?: ClassValue;
-  gradientFrom?: ClassValue;
-  gradientTo?: ClassValue;
+export type TFadeProps = TDivMotionProps & {
+  from?: `from-${string}`;
+  to?: `to-${string}`;
 };
-export const Fade: FC<TBaseProps> = ({
+export const Fade: FC<TFadeProps> = ({
   classValue,
   style,
-  gradientFrom = 'dark:from-black from-white-9 ',
-  gradientTo = 'to-transparent',
+  from = 'from-black',
+  to = 'to-transparent',
   ...props
 }) => (
   <Root
     className={clsx(
-      'absolute left-0 right-0 w-full pointer-events-none',
-      gradientFrom,
-      gradientTo,
+      'absolute pointer-events-none',
+      from,
+      to,
       classValue,
     )}
     style={style}
@@ -34,4 +33,3 @@ export * from './FadeDown';
 export * from './FadeLeft';
 export * from './FadeRight';
 export * from './FadeUp';
-export * from './shortcuts';

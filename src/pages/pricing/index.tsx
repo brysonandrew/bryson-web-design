@@ -12,8 +12,8 @@ export const Pricing: FC = () => {
       title={SECTION_RECORD[PAGE_RECORD.pricing.key]}
     >
       <Main />
-      <P24Y />
-      <Process/>
+      {/* <P24Y />
+      <Process/> */}
       <P60Y />
     </Section>
   );
