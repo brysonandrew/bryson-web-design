@@ -8,7 +8,7 @@ import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import {
   DURATION,
-  PRESENCE_Y,
+  PRESENCE_UP_Y,
   TRANSITION_04_EASEIN_008,
 } from '@brysonandrew/animation';
 
@@ -26,7 +26,7 @@ export const Footer: FC<TProps> = (props) => {
     <Root
       className='relative flex justify-center w-full z-10'
       transition={TRANSITION_04_EASEIN_008}
-      {...PRESENCE_Y}
+      {...PRESENCE_UP_Y}
       {...handlers}
     >
       <Background />

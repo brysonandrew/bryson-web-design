@@ -55,7 +55,7 @@ export const resolveAnimation = <
   const resolveParentAnimateConfig = (
     config: TResolveParentAnimateConfig = {},
   ): TMotionProps => {
-    const { isHover } = config;
+    const isHover = config.isHover;
 
     if (typeof isHover === 'undefined')
       return {

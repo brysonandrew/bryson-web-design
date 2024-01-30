@@ -47,7 +47,7 @@ export const resolveRecordValue = <
 
     initial[shiftKey] = originShiftValue;
     animate[shiftKey] = 0;
-    exit[shiftKey] = exitValue ?? initialValue;
+    exit[shiftKey] = exitValue ?? originShiftValue;
   }
 
   if (isValidZoom(zoom)) {

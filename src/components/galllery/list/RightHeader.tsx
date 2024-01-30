@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Time } from '@brysonandrew/gallery/components/content/Time';
+import { Time } from '@components/galllery/list/Time';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { Badge } from '@pages/pricing/badge';
+import { Badge } from '@components/galllery/badge';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { resolveCompositeKey } from '@brysonandrew/utils';
@@ -23,10 +23,7 @@ export const RightHeader: FC<TProps> = ({
 
   return (
     <>
-      <Time
-        key={resolveCompositeKey('time', slug)}
-        time={time}
-      />
+      <Time time={time} />
       <Badge
         key={resolveCompositeKey('list', id)}
         layoutId={id}

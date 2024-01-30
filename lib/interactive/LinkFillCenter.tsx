@@ -21,7 +21,7 @@ export const LinkFillCenter: FC<TProps> = ({
     <Link
       to={to}
       className={clsx(
-        'absolute inset-0 center cursor-pointer',
+        'fill center cursor-pointer',
       )}
       {...resolveInteractiveLabels(title)}
       {...props}

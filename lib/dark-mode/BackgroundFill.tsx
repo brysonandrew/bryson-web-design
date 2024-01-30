@@ -14,7 +14,7 @@ const resolveDark = (contrast?: TContrast) => {
 const resolveLight = (contrast?: TContrast) => {
   if (contrast === 'high') return 'bg-light';
   if (contrast === 'higher') return 'bg-lighter';
-  return 'bg-lighest';
+  return 'bg-lightest';
 };
 
 type TProps = TDivMotionProps & {

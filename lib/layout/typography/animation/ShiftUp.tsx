@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import {
   MOTION_CONFIG,
   DURATION,
-  PRESENCE_OPACITY_Y,
+  PRESENCE_OPACITY_UP_Y,
 } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/types/dom/main';
@@ -23,7 +23,7 @@ export const ShiftUp: FC<TProps> = ({
         delay: (staggerIndex * DURATION * 2) / 4,
         ...MOTION_CONFIG,
       }}
-      {...PRESENCE_OPACITY_Y}
+      {...PRESENCE_OPACITY_UP_Y}
       {...props}
     />
   );

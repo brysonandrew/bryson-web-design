@@ -2,8 +2,8 @@ import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { resolveCompositeKey } from '@brysonandrew/utils';
-import { Badge } from '@pages/pricing/badge';
-import { FC, Fragment } from 'react';
+import { Badge } from '@components/galllery/badge';
+import { FC } from 'react';
 
 type TProps = TSlugProps<TSlug>;
 export const RightHeader: FC<TProps> = ({ slug }) => {

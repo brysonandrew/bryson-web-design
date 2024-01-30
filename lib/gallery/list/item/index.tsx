@@ -17,7 +17,7 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '../../GalleryProvider';
-import { Time } from '@brysonandrew/gallery/components/content/Time';
+import { Time } from '@components/galllery/list/Time';
 import { resolveCompositeKey } from '@brysonandrew/utils';
 import { time } from 'console';
 
@@ -32,10 +32,7 @@ export const Item = <
   slug,
   index,
 }: TProps<K>) => {
-  const {
-    ITEMS_RECORD,
-    List: { RightHeader },
-  } = useGallery<T, K, R>();
+  const { ITEMS_RECORD, List } = useGallery<T, K, R>();
   const { hoverKey } = useCursor();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();
@@ -88,7 +85,7 @@ export const Item = <
   return (
     <motion.li
       id={slug}
-      className='cursor-pointer'
+      className='cursor-pointer border border-transparent'
       style={{ zIndex: index }}
       {...eventHandlers}
     >
@@ -96,10 +93,12 @@ export const Item = <
         slug={slug}
         isHover={isHover}
         rightHeader={
-          <RightHeader
-            slug={slug}
-            isHover={isHover}
-          />
+          <>
+            <List.RightHeader
+              slug={slug}
+              isHover={isHover}
+            />
+          </>
         }
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete

@@ -11,7 +11,6 @@ export const Animation: FC<TChildrenString> = ({
       {children.split(/\s/).map((word, index) => (
         <motion.div
           key={word}
-          className='row overflow-hidden'
         >
           {index % 2 === 0 ? (
             <ShiftUp

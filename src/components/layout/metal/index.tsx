@@ -32,13 +32,13 @@ export const Metal: FC<TProps> = ({
       <Dark
         className={clsx(
           sharedClassValue,
-          'fill opacity-dark',
+          'opacity-dark',
         )}
         {...rest}
       />
       <Light
         className={clsx(
-          'fill opacity-light',
+          'opacity-light',
           sharedClassValue,
         )}
         {...rest}
