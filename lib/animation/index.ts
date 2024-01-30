@@ -1,5 +1,7 @@
-import { TPresenceConfig } from '@app/animation';
 import { resolveAnimation } from '@brysonandrew/animation/resolveAnimation';
+
+const duration = 0.2;
+const duration2 = duration * 2;
 
 const presenceConfigs = [
   { fade: [] },
@@ -21,14 +23,24 @@ const presenceConfigs = [
 
 const baseTransitionConfigs = [
   {
-    duration: 0.4,
+    duration: duration2,
     ease: 'easeIn',
     delay: 0.08,
   },
   {
-    duration: 0.2,
+    duration,
     ease: 'easeIn',
     delay: 0.08,
+  },
+  {
+    duration,
+    ease: 'easeIn',
+    delay: duration2,
+  },
+  {
+    duration,
+    ease: 'easeIn',
+    delay: duration,
   },
 ] as const;
 
@@ -45,7 +57,7 @@ const {
   typeof baseTransitionConfigs,
   typeof transitionConfigs
 >({
-  duration: 0.2,
+  duration,
   ease: 'linear',
   delay: 0,
   presenceConfigs,
@@ -61,7 +73,8 @@ export const PRESENCE_ROTATE_FROM_BOTTOM =
   presenceRecord['|100%_up||45_pitch'];
 export const PRESENCE_ROTATE_FROM_TOP =
   presenceRecord['|-100%_down||45_pitch'];
-export const PRESENCE_UP_Y = presenceRecord['fade|100%_up||'];
+export const PRESENCE_UP_Y =
+  presenceRecord['fade|100%_up||'];
 export const PRESENCE_OPACITY_UP_Y =
   presenceRecord['fade|100%_up||'];
 export const PRESENCE_SCALE_X = {
@@ -72,10 +85,27 @@ export const TRANSITION_02_EASEIN_008 =
   baseTransitionRecord['0.2|easeIn|0.08'];
 export const TRANSITION_04_EASEIN_008 =
   baseTransitionRecord['0.4|easeIn|0.08'];
+export const TRANSITION_02_EASE_IN_04 =
+  baseTransitionRecord['0.2|easeIn|0.4'];
+export const TRANSITION_02_EASE_IN_02 =
+  baseTransitionRecord['0.2|easeIn|0.2'];
 
 export const PRESENCE_OPACITY_DELAY = {
   ...PRESENCE_OPACITY,
   transition: TRANSITION_02_EASEIN_008,
+};
+
+export const PRESENCE_OPACITY_DURATION_DELAY = {
+  ...PRESENCE_OPACITY,
+  transition: TRANSITION_02_EASE_IN_02,
+};
+
+export const PRESENCE_OPACITY_ANIMATE_DELAY_04 = {
+  ...PRESENCE_OPACITY,
+  animate: {
+    ...PRESENCE_OPACITY.animate,
+    transition: TRANSITION_02_EASE_IN_04,
+  },
 };
 
 export const resolvePresence = resolvers.resolvePresence;
@@ -97,10 +127,10 @@ export * from './resolvePresenceRecord/value/resolveNegative';
 export * from './resolvePresenceRecord/value/rotate';
 export * from './resolvePresenceRecord/value/shift';
 export * from './resolvePresenceRecord/value/zoom';
+export * from './config/types/transition/transition';
 export * from './config/types/presence/config';
 export * from './config/types/presence';
 export * from './config/types/presence/key';
 export * from './config/types/presence/value';
-export * from './config/types/transition/transition';
 export * from './config/types/transition/base';
 export * from './config/types/transition/base/key';

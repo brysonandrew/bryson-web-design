@@ -17,9 +17,6 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '../../GalleryProvider';
-import { Time } from '@components/galllery/list/Time';
-import { resolveCompositeKey } from '@brysonandrew/utils';
-import { time } from 'console';
 
 type TProps<K extends string> = TSlugProps<K> & {
   index: number;
