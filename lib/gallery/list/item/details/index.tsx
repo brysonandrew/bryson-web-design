@@ -35,7 +35,7 @@ export const Details = <
         <>
           <P2 />
           <hr
-            className='relative -left-6 h-px dark:bg-accent bg-secondary opacity-40'
+            className='relative -left-6 border dark:border-accent border-accent opacity-40'
             style={{ width: `calc(100% + 3rem)` }}
           />
           <P2 />

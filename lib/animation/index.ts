@@ -1,3 +1,4 @@
+import { TPresenceConfig } from '@app/animation';
 import { resolveAnimation } from '@brysonandrew/animation/resolveAnimation';
 
 const presenceConfigs = [
@@ -12,6 +13,9 @@ const presenceConfigs = [
   {
     shift: ['100%', 'up'],
     rotate: [45, 'pitch'],
+  },
+  {
+    zoom: [0, 'width'],
   },
 ] as const;
 
@@ -57,9 +61,12 @@ export const PRESENCE_ROTATE_FROM_BOTTOM =
   presenceRecord['|100%_up||45_pitch'];
 export const PRESENCE_ROTATE_FROM_TOP =
   presenceRecord['|-100%_down||45_pitch'];
-export const PRESENCE_Y = presenceRecord['fade|100%_up||'];
-export const PRESENCE_OPACITY_Y =
+export const PRESENCE_UP_Y = presenceRecord['fade|100%_up||'];
+export const PRESENCE_OPACITY_UP_Y =
   presenceRecord['fade|100%_up||'];
+export const PRESENCE_SCALE_X = {
+  ...presenceRecord['||0_width|'],
+};
 
 export const TRANSITION_02_EASEIN_008 =
   baseTransitionRecord['0.2|easeIn|0.08'];
@@ -70,6 +77,7 @@ export const PRESENCE_OPACITY_DELAY = {
   ...PRESENCE_OPACITY,
   transition: TRANSITION_02_EASEIN_008,
 };
+
 export const resolvePresence = resolvers.resolvePresence;
 export const resolveParentAnimateConfig =
   resolvers.resolveParentAnimateConfig;
@@ -83,16 +91,16 @@ export * from './resolvePresenceRecord';
 export * from './resolvePresenceRecord/key';
 export * from './config/types';
 export * from './config/types/values';
-export * from './config/types/presence/config';
-export * from './config/types/presence';
-export * from './config/types/presence/key';
-export * from './config/types/presence/value';
 export * from './resolvePresenceRecord/value/fade';
 export * from './resolvePresenceRecord/value';
 export * from './resolvePresenceRecord/value/resolveNegative';
 export * from './resolvePresenceRecord/value/rotate';
 export * from './resolvePresenceRecord/value/shift';
 export * from './resolvePresenceRecord/value/zoom';
+export * from './config/types/presence/config';
+export * from './config/types/presence';
+export * from './config/types/presence/key';
+export * from './config/types/presence/value';
 export * from './config/types/transition/transition';
 export * from './config/types/transition/base';
 export * from './config/types/transition/base/key';

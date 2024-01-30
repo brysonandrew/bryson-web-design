@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.129",
+  "version": "6.21.130",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -48,6 +48,7 @@
     "react-router-dom": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/gallery": "*",
+    "@components/galllery/list/Time": "*",
     "console": "*",
     "@emotion/styled": "*",
     "@brysonandrew/interactive": "*",

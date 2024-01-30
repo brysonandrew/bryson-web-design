@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { MOTION_CONFIG } from '@brysonandrew/animation';
+import {
+  MOTION_CONFIG,
+  PRESENCE_SCALE_X,
+} from '@brysonandrew/animation';
 import { FC } from 'react';
 import { ThinLine } from '.';
 import clsx from 'clsx';
@@ -12,19 +15,14 @@ export const ThinLineGrow: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={clsx(
-        'column overflow-hidden',
-        classValue,
-      )}
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      exit={{ scaleX: 0 }}
-      transition={{
+      className={clsx( classValue)}
+      {...PRESENCE_SCALE_X}
+      {...{
         ...MOTION_CONFIG.transition,
         delay,
       }}
     >
-      <ThinLine classValue='via-current' />
+      <ThinLine />
     </motion.div>
   );
 };

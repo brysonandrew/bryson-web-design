@@ -1,4 +1,4 @@
-import { PRESENCE_Y } from '@brysonandrew/animation';
+import { PRESENCE_UP_Y } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { FC, useMemo } from 'react';
 import { Stagger } from './Stagger';
@@ -20,7 +20,7 @@ export const Word: FC<TProps> = ({
     return {
       prevCount,
       children: children.split(''),
-      ...PRESENCE_Y,
+      ...PRESENCE_UP_Y,
     };
   }, [prevWords]);
 

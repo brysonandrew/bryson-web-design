@@ -27,7 +27,7 @@ export const useCircle = ({
   });
   const z = useTransform(depth, (v) => {
     return (
-      -v * radius + (isVertical ? 0 : -imageSize - radius)
+      -v * radius + (isVertical ? -1000 : -imageSize - radius)
     );
   });
   const opacity = useTransform(depth, (v) => {

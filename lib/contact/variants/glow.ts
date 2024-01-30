@@ -5,7 +5,7 @@ export const CONTACT_FORM_GLOW_SHORTCUTS: StaticShortcutMap =
   {
     ...BASE,
     'bg-input': 'bg-gray-01',
-    'title-input': 'text-2.5xl',
+    'title-input': 'title-section title-main',
     root: 'column-stretch gap-box-2 mt-1',
     inputs: 'column-stretch gap-box',
     clear: 'absolute top-4 md:top-3.75 right-3.75 z-10',
@@ -15,13 +15,15 @@ export const CONTACT_FORM_GLOW_SHORTCUTS: StaticShortcutMap =
     'shell-texture-glow': '',
     'input-base':
       'title-input relative text-2xl px-4 w-full',
-    autosize: 'bg-input relative w-full overflow-hidden',
+    autosize:
+      'bg-input border border-transparent relative w-full overflow-hidden',
     'input-textarea':
       'bg-transparent input-base py-2 block left-0 top-0 m-0',
-    'input-text': 'bg-input input-base py-2',
+    'input-text':
+      'bg-input border border-transparent input-base py-2',
     name: 'relative flex justify-center shrink-0 w-full py-2 pl-0 md:(w-40 pl-6 justify-start)',
     'name-text':
-      'inline-flex title-input capitalize whitespace-nowrap',
+      'flex title-input capitalize whitespace-nowrap',
     submit: 'relative p-2 w-full',
     'submit-text':
       'center relative title-input pointer-events-none',

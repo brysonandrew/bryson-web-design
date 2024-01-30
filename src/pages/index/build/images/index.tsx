@@ -49,7 +49,7 @@ export const Images: FC<TProps> = ({ style }) => {
         rotateX: 0,
         x: -halfViewportWidth,
         z: 0,
-        y: -400,
+        y: -550,
       }
     : {
         rotateY: 0,
@@ -63,7 +63,7 @@ export const Images: FC<TProps> = ({ style }) => {
     <>
       <P8 />
       <Root
-        className={clsx('center relative w-full')}
+        className={clsx('center relative w-full z-0')}
         style={{
           height: HEIGHT,
           opacity,

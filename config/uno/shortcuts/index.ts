@@ -5,7 +5,7 @@ import { DARK_MODE_UNO_SHORTCUTS } from '@brysonandrew/dark-mode/config/animatio
 
 const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
   'title-pricing':
-    'font-semibold text-main capitalize char-gap-0_006725',
+    'font-semibold text-main capitalize char-gap-1',
   'text-pricing': 'text-white-7',
 };
 

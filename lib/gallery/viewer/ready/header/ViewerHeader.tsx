@@ -8,10 +8,10 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { NOOP } from '@brysonandrew/utils/functions';
 import { isDesktop } from 'react-device-detect';
 import { Close } from '../../buttons/Close';
-import { useOffSound } from '@brysonandrew/sounds/useOffSound';
 import { Content } from '@brysonandrew/gallery';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { useApp } from '@brysonandrew/app';
+import { PRESENCE_OPACITY_DURATION_DELAY } from '@app/animation';
 
 const Root = styled.header``;
 
@@ -22,9 +22,7 @@ export const ViewerHeader: FC<TProps> = ({
   slug,
   ...props
 }) => {
-  const {
-    Viewer: { RightHeader },
-  } = useGallery();
+  const { Viewer } = useGallery();
   const { sounds } = useApp();
 
   const handleClose = () => {
@@ -39,9 +37,10 @@ export const ViewerHeader: FC<TProps> = ({
         slug={slug}
         rightHeader={
           <>
-            <RightHeader slug={slug} />
+            <Viewer.RightHeader slug={slug} />
             <Close
               onClick={isDesktop ? handleClose : NOOP}
+              {...PRESENCE_OPACITY_DURATION_DELAY}
             />
           </>
         }

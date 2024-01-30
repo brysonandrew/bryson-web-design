@@ -1,9 +1,6 @@
 import { Cross } from '@brysonandrew/gallery-viewer/icons/Cross';
 import type { FC } from 'react';
-import {
-  TClassValueProps,
-  TDivMotionProps,
-} from '@brysonandrew/types/dom';
+import { TDivMotionProps } from '@brysonandrew/types/dom';
 import { useTo } from '../hooks/nav/useTo';
 import { useHoverKey } from '@brysonandrew/cursor';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
@@ -12,10 +9,9 @@ import {
   LinkFillCenter,
 } from '@brysonandrew/interactive';
 
-type TProps = TClassValueProps &
-  TDivMotionProps & {
-    onClick(): void;
-  };
+type TProps = TDivMotionProps & {
+  onClick(): void;
+};
 export const Close: FC<TProps> = ({
   onClick,
   ...props

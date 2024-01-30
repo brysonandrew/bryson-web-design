@@ -112,7 +112,6 @@ export const Content = <
       <P2 />
       <motion.div
         className='row-space relative left-0 top-0'
-        
       >
         <Header<T, K, R> slug={slug} />
         <div className='column-end gap-4 lg:row'>
