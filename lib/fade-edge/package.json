@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-edge",
-  "version": "6.22.64",
+  "version": "6.22.66",
   "description": "Fade Edge library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,6 +11,9 @@
       "default": "./index.ts"
     },
     "./pairs/FadeDownPair": "./pairs/FadeDownPair.tsx",
+    "./pairs/FadeFair": "./pairs/FadeFair.tsx",
+    "./pairs/FadeLeftPair": "./pairs/FadeLeftPair.tsx",
+    "./pairs/FadeRightPair": "./pairs/FadeRightPair.tsx",
     "./pairs/FadeUpPair": "./pairs/FadeUpPair.tsx",
     "./vertical-edges/Bottom": "./vertical-edges/Bottom.tsx",
     "./vertical-edges/Top": "./vertical-edges/Top.tsx",
@@ -30,9 +33,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/fade": "*",
-    "clsx": "*",
     "react": "*",
+    "clsx": "*",
     "@brysonandrew/types": "*"
   }
 }

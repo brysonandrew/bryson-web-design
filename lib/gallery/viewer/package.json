@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-viewer",
-  "version": "6.21.134",
+  "version": "6.21.136",
   "description": "Gallery Viewer library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -43,8 +43,8 @@
     "./hooks/nav/usePrev": "./hooks/nav/usePrev.ts",
     "./hooks/nav/useTo": "./hooks/nav/useTo.ts",
     "./hooks/nav/useToFirst": "./hooks/nav/useToFirst.ts",
-    "./ready/header/ViewerHeader": "./ready/header/ViewerHeader.tsx",
     "./ready/footer": "./ready/footer/index.tsx",
+    "./ready/header/ViewerHeader": "./ready/header/ViewerHeader.tsx",
     "./ready/sections/Control": "./ready/sections/Control.tsx",
     "./ready/sections/Image": "./ready/sections/Image.tsx",
     "./ready/sections": "./ready/sections/index.tsx",
