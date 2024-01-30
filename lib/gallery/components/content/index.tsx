@@ -36,7 +36,7 @@ export const Content = <
   style,
   ...props
 }: TProps<K>) => {
-  const { Glow, Back, BORDER_RADIUS } = useApp();
+  const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const [isTransitioning, setTransitioning] =
     useState(false);
   const [isExpanding, setExpanding] = useState(false);
@@ -101,30 +101,23 @@ export const Content = <
         <Back />
       ) : (
         <>
-          {Glow ? (
+          {LIGHT ? (
             <>
-              <Glow.Marker classValue='z-50' />
-              <Glow.Back />
+              <LIGHT.Marker classValue='z-50' />
+              <LIGHT.Back />
             </>
           ) : null}
         </>
       )}
       <P2 />
       <motion.div
-        layout={!isTransitioning}
-        className='relative left-0 top-0 row-space'
+        className='row-space relative left-0 top-0'
+        
       >
         <Header<T, K, R> slug={slug} />
-        <AnimatePresence>
-          {!isTransitioning && (
-            <motion.div
-              key={isProject ? 'project' : slug}
-              className='column-end gap-4 lg:row'
-            >
-              {rightHeader}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className='column-end gap-4 lg:row'>
+          {rightHeader}
+        </div>
       </motion.div>
       {children && <>{children}</>}
       <P2 />

@@ -6,7 +6,7 @@ import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import { Text } from './Text';
 import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
-import { FadeDown } from '@brysonandrew/fade';
+import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 
 export type TPricingProps = {
   type: TPricingKey;
@@ -25,16 +25,15 @@ export const Badge: FC<TPricingProps> = ({
     <motion.div
       className={clsx(
         'relative center p-4 overflow-hidden',
-        `gradient-${type}`
+        `gradient-${type}`,
       )}
       style={{
         borderRadius: 40,
         backgroundColor: COLOR[type],
       }}
-      layout
       {...props}
     >
-      <FadeDown classValue='inset-2 opacity-40' />
+      <FadeDownPair />
       {(isHover || isText) && <Text>{type}</Text>}
     </motion.div>
   );

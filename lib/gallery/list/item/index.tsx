@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { type FC, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Content } from '../../components/content';
 import {} from '@brysonandrew/cursor/hooks/useHoverKey';
 import { useOnSound } from '@brysonandrew/sounds/useOnSound';
@@ -17,6 +17,9 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '../../GalleryProvider';
+import { Time } from '@brysonandrew/gallery/components/content/Time';
+import { resolveCompositeKey } from '@brysonandrew/utils';
+import { time } from 'console';
 
 type TProps<K extends string> = TSlugProps<K> & {
   index: number;
@@ -90,10 +93,13 @@ export const Item = <
       {...eventHandlers}
     >
       <Content
-        slug={item.slug}
+        slug={slug}
         isHover={isHover}
         rightHeader={
-          <RightHeader slug={slug} isHover={isHover} />
+          <RightHeader
+            slug={slug}
+            isHover={isHover}
+          />
         }
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete

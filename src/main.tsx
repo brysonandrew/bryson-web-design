@@ -13,7 +13,6 @@ import { init as initServiceWorker } from '@app/service-worker/init';
 initServiceWorker();
 
 import 'virtual:uno.css';
-import '@css/globals.css';
 
 const router = createBrowserRouter(ROUTES);
 

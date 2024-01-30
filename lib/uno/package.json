@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.51",
+  "version": "6.22.59",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,13 +14,12 @@
     "./preflights/reset": "./preflights/reset.ts",
     "./preflights/resolveInput": "./preflights/resolveInput.ts",
     "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
-    "./spacing": "./spacing/index.ts",
-    "./shortcuts/animation": "./shortcuts/animation.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
     "./shortcuts/flex": "./shortcuts/flex.ts",
     "./shortcuts": "./shortcuts/index.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
     "./shortcuts/layout": "./shortcuts/layout.ts",
+    "./spacing": "./spacing/index.ts",
     "./theme": "./theme/index.ts",
     "./shortcuts/text/color": "./shortcuts/text/color.ts",
     "./shortcuts/text": "./shortcuts/text/index.ts"
@@ -40,7 +39,6 @@
   ],
   "peerDependencies": {
     "unocss": "*",
-    "@brysonandrew/dark-mode": "*",
     "@emotion/react": "*"
   }
 }

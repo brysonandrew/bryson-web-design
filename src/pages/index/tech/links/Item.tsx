@@ -20,7 +20,7 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
   glow,
   ...props
 }) => {
-  const { Glow, BORDER_RADIUS, COLOR } = useApp();
+  const { LIGHT, Back, BORDER_RADIUS, COLOR } = useApp();
   const address = formatUrl(href);
 
   const { isHover, handlers } = useHoverKey(
@@ -43,21 +43,23 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
           layoutId={title}
         />
       )}
-      {Glow && (
+      {LIGHT ? (
         <>
-          <Glow.Back
-            drop={8}
-            color={COLOR.accent}
-            initial={false}
+          <LIGHT.Back
+            // drop={8}
+            // color={COLOR.accent}
+            // initial={false}
             value={glow}
           />
-          <Glow.Back
+          {/* <LIGHT.Glow
             drop={6}
             color={COLOR.secondary}
             initial={false}
             animate={{ opacity: isHover ? 1 : 0.05 }}
-          />
+          /> */}
         </>
+      ) : (
+        <Back />
       )}
       <Shell isHover={isHover}>
         <a

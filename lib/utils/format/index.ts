@@ -28,3 +28,11 @@ export const formatNZLongDate = (date: Date) => {
   }).format(date);
   return dateStr;
 };
+
+export const formateShortDate = (time?: Date) => {
+  if (typeof time === 'undefined') return 'Present';
+  return new Intl.DateTimeFormat('en-UK', {
+    month: 'short',
+    year: 'numeric',
+  }).format(time);
+};

@@ -4,11 +4,11 @@ import { useApp } from '@brysonandrew/app';
 export const Shell: FC<
   PropsWithChildren<{ isHover?: boolean }>
 > = ({ isHover, children }) => {
-  const { Glow, COLOR } = useApp();
+  const { LIGHT, COLOR } = useApp();
 
-  if (Glow) {
+  if (LIGHT) {
     return (
-      <Glow.Shell
+      <LIGHT.Glow
         text={1}
         drop={2}
         initial={false}
@@ -16,7 +16,7 @@ export const Shell: FC<
         animate={{ opacity: isHover ? 1 : 0.05 }}
       >
         <>{children}</>
-      </Glow.Shell>
+      </LIGHT.Glow>
     );
   } else {
     return <>{children}</>;

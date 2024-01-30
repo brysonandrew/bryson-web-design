@@ -8,7 +8,7 @@ import {
   TLayoutRecordProps,
   TLayoutRecordValue,
 } from '@brysonandrew/app';
-import { withGlow } from './withGlow';
+import { withLight } from './withLight';
 
 type TConfig<S extends TDefaultStyle> = TLayoutRecordProps &
   S;
@@ -32,7 +32,7 @@ export const useLayoutRecord = <S extends TDefaultStyle>(
       ...CORE,
       ...STYLE,
     };
-    BASE.Glow = withGlow(componentProps);
+    BASE.LIGHT = withLight(componentProps);
   }
 
   return BASE;

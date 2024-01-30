@@ -12,10 +12,11 @@ import {
 } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
+import { NOOP } from '@brysonandrew/utils';
 
 type TProps = { isDisabled: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BORDER_RADIUS, Glow, Back, onSound } = useApp();
+  const { BORDER_RADIUS, LIGHT, Back, sounds } = useApp();
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -39,16 +40,16 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
           : 'cursor-pointer',
       ])}
       layout
-      onTap={isDisabled ? () => null : onSound}
+      onTap={isDisabled ? () => null : sounds?.move ?? NOOP}
       {...(isDisabled
         ? {}
-        :resolveParentAnimateConfig({ isHover }))}
+        : resolveParentAnimateConfig({ isHover }))}
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
       {...handlers}
     >
-      {Glow ? <Glow.Back /> : <Back />}
+      {LIGHT ? <LIGHT.Back /> : <Back />}
       <input
         className='absolute inset-0 pointer-events-none opacity-0'
         type='submit'

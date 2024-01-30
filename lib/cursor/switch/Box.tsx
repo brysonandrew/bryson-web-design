@@ -5,7 +5,8 @@ import { TClassValueProps } from '@brysonandrew/types/dom/main';
 import { useCursor } from '@brysonandrew/cursor';
 import {
   DURATION,
-  resolvePresence} from '@brysonandrew/animation';
+  resolvePresence,
+} from '@brysonandrew/animation';
 import { useApp } from '@brysonandrew/app';
 
 type TProps = TClassValueProps & {
@@ -19,10 +20,9 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { Back, Glow, BORDER_RADIUS, COLOR } = useApp();
+  const { Back, LIGHT, BORDER_RADIUS, COLOR } = useApp();
   const { cursorLabel } = useCursor();
-  const C = Glow?.Back;
-
+  const Background = LIGHT ? LIGHT.Back : Back;
   return (
     <motion.div
       className={clsx(
@@ -50,7 +50,11 @@ export const Box: FC<TProps> = ({
         },
       )}
     >
-      {Glow ? <Glow.Back /> : <Back />}
+      <Background
+        style={{
+          borderRadius: BORDER_RADIUS.MD,
+        }}
+      />
       {children}
     </motion.div>
   );

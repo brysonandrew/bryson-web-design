@@ -13,11 +13,11 @@ type TProps = TDivMotionProps;
 export const Settings: FC<TProps> = (props) => {
   return (
     <Root
-      className={clsx('row z-10', !isMobile && 'gap-2')}
+      className={clsx('row z-10', !isMobile && 'gap-1')}
       {...props}
     >
       <DarkMode  />
       {!isMobile && <Sound />}
     </Root>
-  );
+  ); 
 };

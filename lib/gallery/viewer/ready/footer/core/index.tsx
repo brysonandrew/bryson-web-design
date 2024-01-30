@@ -1,6 +1,5 @@
 import { DragIcon } from './DragIcon';
 import { useDrag } from '@brysonandrew/gallery-viewer/hooks/useDrag';
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Items } from './items';
@@ -11,13 +10,9 @@ import { useApp } from '@brysonandrew/app';
 import { TBaseProps } from '@brysonandrew/gallery';
 import { PADDING_X } from '@brysonandrew/gallery-viewer/ready/footer/core/config';
 
-const Root = styled.div``;
-const Dragger = styled(motion.div)``;
-
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { Back, GLOW_BOX, BORDER_RADIUS } =
-    useApp();
+  const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const { count, motionX, width, mediaRecords } = props;
   useKeys({ readyCount: count });
   const itemWidth = width / count;
@@ -29,24 +24,17 @@ export const Core: FC<TProps> = (props) => {
 
   const left = -width + itemWidth;
 
+  const Background = LIGHT?.Back ?? Back;
+
   return (
-    <Root className='relative' style={{ width: itemWidth }}>
-      <Back />
-      <Dragger
-        className={clsx(
-          'left-0 bottom-0 overflow-hidden',
-          [
-            isDesktop
-              ? 'relative h-auto row'
-              : 'relative h-auto row',
-          ],
-        )}
+    <div className='relative' style={{ width: itemWidth }}>
+      <motion.div
+        className='relative row'
         style={{
           x: motionX,
           left: -PADDING_X,
           width: width + PADDING_X * 2,
           padding: `0.25rem ${PADDING_X}px`,
-          boxShadow: GLOW_BOX.accent,
           borderRadius: BORDER_RADIUS.MD,
         }}
         dragConstraints={{
@@ -57,18 +45,26 @@ export const Core: FC<TProps> = (props) => {
         }}
         {...dragHandlers}
       >
-        {isDesktop && (
-          <>
-            <Back classValue='opacity-50' />
-            <DragIcon classValue='left-0' />
-            <DragIcon classValue='right-0' />
-          </>
-        )}
-        <Items
-          mediaRecords={mediaRecords}
-          itemWidth={itemWidth}
-        />
-      </Dragger>
-    </Root>
+        <>
+          <Background />
+          <Items
+            mediaRecords={mediaRecords}
+            itemWidth={itemWidth}
+          />
+          {isDesktop && (
+            <>
+              <DragIcon
+                classValue='left-0'
+                style={{ width: PADDING_X }}
+              />
+              <DragIcon
+                classValue='right-0'
+                style={{ width: PADDING_X }}
+              />
+            </>
+          )}
+        </>
+      </motion.div>
+    </div>
   );
 };

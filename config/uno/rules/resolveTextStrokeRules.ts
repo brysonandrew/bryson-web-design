@@ -1,4 +1,4 @@
-import { TColorKey } from '@app/colors/types';
+import { TColorKey } from '@app/color/types';
 import type { Rule } from 'unocss';
 
 const resolveTextStroke = <T extends object>(

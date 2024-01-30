@@ -1,9 +1,9 @@
-import { TDefaultStyle } from '@brysonandrew/app';
 import {
-  COLOR_RECORD,
-  GLOW_BOX,
   GLOW_DROP,
-} from '../colors/constants';
+  GLOW_BOX,
+  COLOR_RECORD,
+} from '@app/color';
+import { TDefaultStyle } from '@brysonandrew/app';
 import { BORDER_RADIUS } from './border-radius';
 
 export const CUSTOM_STYLE = {

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.51",
+  "version": "6.22.59",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -44,9 +44,9 @@
     "@brysonandrew/types": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/scroll": "*",
-    "framer-motion": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/hooks": "*",
+    "framer-motion": "*",
     "clsx": "*",
     "@brysonandrew/app": "*",
     "@brysonandrew/space": "*",

@@ -23,6 +23,11 @@ export default defineConfig({
     react(),
     compileTsServiceWorker() as PluginOption,
   ],
+  resolve: {
+    alias: {
+      '@brysonandrew/color': 'lib/color',
+    },
+  },
   server: {
     port: 3000,
   },

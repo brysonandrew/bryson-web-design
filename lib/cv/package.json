@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.51",
+  "version": "6.22.59",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,7 +22,6 @@
     "./page": "./page/index.tsx",
     "./page/experience/Item": "./page/experience/Item.tsx",
     "./page/experience": "./page/experience/index.tsx",
-    "./page/experience/resolveTime": "./page/experience/resolveTime.ts",
     "./page/header/Title": "./page/header/Title.tsx",
     "./page/header": "./page/header/index.tsx"
   },
@@ -46,6 +45,7 @@
     "@brysonandrew/types": "*",
     "framer-motion": "*",
     "@brysonandrew/space": "*",
+    "@brysonandrew/utils": "*",
     "clsx": "*",
     "@brysonandrew/layout": "*",
     "@brysonandrew/contact-list": "*"

@@ -24,7 +24,7 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
         <>
           {children}
           <motion.div
-            className={clsx('absolute inset-0', classValue)}
+            className={clsx('fill', classValue)}
             {...props}
           >
             {children}

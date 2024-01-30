@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "6.22.51",
+  "version": "6.22.59",
   "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
