@@ -9,7 +9,7 @@ const Projects = () => {
     <Section
       id='projects'
       title={SECTION_RECORD.projects}
-      classValue='z-20' // this is because projects can expand and overlap contact
+      classValue='z-0' // this is because projects can expand and overlap contact
     >
       <Parallax {...PARALLAX_PROPS}>
         {(props) => <Main {...props} />}

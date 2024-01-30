@@ -1,10 +1,17 @@
-
-import { TRgb, TRgbaValue } from '@brysonandrew/color/config/types';
+import {
+  TRgb,
+  TRgbaValue,
+} from '@brysonandrew/color/config/types';
 import { resolveGlowRecord } from './glow/resolveGlowRecord';
 import { resolveVarCssColorRecord } from './resolveVarCssColorRecord';
 import { resolveVarCssRecord } from '../../utils/css/resolveVarCssRecord';
 import { rgbToOpacityRangeRecord } from './rgbToOpacityRangeRecord';
-import { BASE_COLOR_RECORD, BASE_GLOW_RECORD } from '@brysonandrew/color/config/constants';
+import {
+  BASE_COLOR_RECORD,
+  BASE_GLOW_RECORD,
+} from '@brysonandrew/color/config/constants';
+import { Global, css } from '@emotion/react';
+import { createElement, FC } from 'react';
 
 export const resolveColorRecords = <
   A extends Record<string, TRgb>,
@@ -37,10 +44,21 @@ export const resolveColorRecords = <
   } as const;
 
   const colorCssVariablesRecord =
-    resolveVarCssColorRecord<typeof colorRecord>(colorRecord);
+    resolveVarCssColorRecord<typeof colorRecord>(
+      colorRecord,
+    );
 
   const colorCssVariables =
     resolveVarCssRecord(colorRecord);
+
+  const GlobalColor: FC = () =>
+    createElement(Global, {
+      styles: css`
+        :root {
+          ${colorCssVariables};
+        }
+      `,
+    });
 
   return {
     colorRecord,
@@ -48,5 +66,6 @@ export const resolveColorRecords = <
     colorCssVariables,
     opacityRangeColorRecord,
     glowRecord,
+    GlobalColor,
   } as const;
 };

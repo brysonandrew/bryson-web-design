@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Animation } from '@brysonandrew/layout/typography/animation';
 import { FadeDown, FadeUp } from '@brysonandrew/fade';
 import { Line } from '@brysonandrew/layout';
-import { P2 } from '@brysonandrew/space';
 
 const Root = styled(motion.div)``;
 
@@ -14,16 +13,24 @@ export const Title: FC<TProps> = ({ children }) => {
   return (
     <Root className='relative column gap-8 w-core mx-20 z-20'>
       <FadeDown
-        classValue='flex lg:hidden absolute top-0 h-full w-full'
+        classValue='flex lg:hidden absolute h-full w-full opacity-light'
         style={{ height: '20vh' }}
-        gradientTo='to-transparent'
-        gradientFrom='gradient-bw'
+        from='from-white'
       />
       <FadeUp
-        classValue='flex lg:hidden absolute bottom-full h-full w-full'
+        classValue='flex lg:hidden absolute h-full w-full opacity-light'
         style={{ height: '10vh' }}
-        gradientTo='to-transparent'
-        gradientFrom='gradient-bw'
+        from='from-white'
+      />
+      <FadeDown
+        classValue='flex lg:hidden absolute h-full w-full opacity-dark'
+        style={{ height: '20vh' }}
+        from='from-black'
+      />
+      <FadeUp
+        classValue='flex lg:hidden absolute h-full w-full opacity-dark'
+        style={{ height: '10vh' }}
+        from='from-black'
       />
       <h2
         className='relative title-home row-wrap justify-center gap-4'

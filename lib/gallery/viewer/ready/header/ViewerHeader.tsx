@@ -11,6 +11,7 @@ import { Close } from '../../buttons/Close';
 import { useOffSound } from '@brysonandrew/sounds/useOffSound';
 import { Content } from '@brysonandrew/gallery';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
+import { useApp } from '@brysonandrew/app';
 
 const Root = styled.header``;
 
@@ -24,9 +25,12 @@ export const ViewerHeader: FC<TProps> = ({
   const {
     Viewer: { RightHeader },
   } = useGallery();
-  const handleOffSound = useOffSound();
+  const { sounds } = useApp();
+
   const handleClose = () => {
-    handleOffSound();
+    if (sounds?.off) {
+      sounds.off();
+    }
   };
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>

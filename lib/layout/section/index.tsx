@@ -26,7 +26,7 @@ export const Section: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx('relative column', classValue)}
+      className={clsx('relative column z-0', classValue)}
       id={title}
       {...props}
     >

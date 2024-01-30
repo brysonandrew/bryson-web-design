@@ -19,7 +19,11 @@ import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { RightHeader as ListRightHeader } from '../components/galllery/list/RightHeader';
 import { RightHeader as ViewerRightHeader } from '../components/galllery/viewer/RightHeader';
 import { Blank } from '../components/layout/Blank';
-import { useMoveSound } from '@brysonandrew/sounds';
+import {
+  useMoveSound,
+  useOffSound,
+  useOnSound,
+} from '@brysonandrew/sounds';
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { HeadProvider } from 'lib/head';
@@ -32,6 +36,9 @@ export const Providers: FC<TProps> = ({
   children: _children,
 }) => {
   const handleMove = useMoveSound();
+  const handleOffSound = useOffSound();
+  const handleOnSound = useOnSound();
+
   const children = arrToNest<PropsWithChildren>(
     [
       HeadProvider,
@@ -57,7 +64,11 @@ export const Providers: FC<TProps> = ({
           Back={Metal}
           Blank={Blank}
           Glow={Glow}
-          onSound={handleMove}
+          sounds={{
+            move: handleMove,
+            on: handleOnSound,
+            off: handleOffSound,
+          }}
           style={CUSTOM_STYLE}
         >
           {_children}

@@ -73,7 +73,7 @@ export const AppProvider = <
     ...layoutRecord,
     isInit,
     onInit,
-    onSound: NOOP,
+    sounds: {},
   };
   const CONTEXT = initContext<S>();
 

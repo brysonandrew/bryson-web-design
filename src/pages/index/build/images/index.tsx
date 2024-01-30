@@ -63,10 +63,7 @@ export const Images: FC<TProps> = ({ style }) => {
     <>
       <P8 />
       <Root
-        className={clsx(
-          'center relative w-full',
-          !isVertical && 'z-50',
-        )}
+        className={clsx('center relative w-full')}
         style={{
           height: HEIGHT,
           opacity,

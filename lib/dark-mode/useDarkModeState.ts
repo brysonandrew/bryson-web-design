@@ -3,7 +3,6 @@ import { resolveCompositeKey } from '@brysonandrew/utils/key';
 import { name } from './package.json';
 import { useLocalStorage } from '@brysonandrew/hooks/dom/useLocalStorage';
 import { TUseDarkMode } from '@brysonandrew/dark-mode/config/types';
-import { TRANSITION_DARK_MODE_CSS_VALUE } from '@brysonandrew/dark-mode/config/animation';
 
 export const useDarkModeState = (
   defaultValue?: boolean,
@@ -35,11 +34,6 @@ export const useDarkModeState = (
       document.documentElement.classList[operation]('dark');
     darkClass(isDarkMode ? 'add' : 'remove');
   }, [isDarkMode]);
-
-  useEffect(() => {
-    document.body.style.transition =
-      TRANSITION_DARK_MODE_CSS_VALUE;
-  }, []);
 
   return {
     darkKey: isDarkMode ? 'dark' : 'light',

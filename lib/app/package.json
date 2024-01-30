@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.51",
+  "version": "6.22.59",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -13,15 +13,15 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./layout/types": "./layout/types.ts",
-    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
+    "./style": "./style/index.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
-    "./style": "./style/index.ts",
-    "./layout/withGlow/Back": "./layout/withGlow/Back.tsx",
-    "./layout/withGlow/Glow": "./layout/withGlow/Glow.tsx",
-    "./layout/withGlow/Marker": "./layout/withGlow/Marker.tsx",
-    "./layout/withGlow": "./layout/withGlow/index.ts"
+    "./layout/types": "./layout/types.ts",
+    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
+    "./layout/withLight/Back": "./layout/withLight/Back.tsx",
+    "./layout/withLight/Glow": "./layout/withLight/Glow.tsx",
+    "./layout/withLight/Marker": "./layout/withLight/Marker.tsx",
+    "./layout/withLight": "./layout/withLight/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -40,9 +40,9 @@
     "@brysonandrew/utils": "*",
     "lodash": "*",
     "react": "*",
-    "@brysonandrew/filter-animate": "*",
     "@brysonandrew/color": "*",
     "framer-motion": "*",
+    "@brysonandrew/filter-animate": "*",
     "clsx": "*"
   }
 }

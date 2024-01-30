@@ -17,7 +17,7 @@ import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
 import { TStyle } from '@app/style';
 import { PAGE_RECORD } from '@app/routes';
-import { FadeDown } from '@brysonandrew/fade';
+import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 
 export type TProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
@@ -32,7 +32,7 @@ export const Package: FC<TProps> = ({ title }) => {
     PreContent,
     classValue,
   } = config;
-  const { COLOR, Glow, BORDER_RADIUS, Back } =
+  const { COLOR, LIGHT, BORDER_RADIUS, Back } =
     useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
@@ -60,8 +60,8 @@ export const Package: FC<TProps> = ({ title }) => {
       className='relative grow w-full'
       onClick={handleClick}
     >
-      {Glow && (
-        <Glow.Shell
+      {LIGHT && (
+        <LIGHT.Glow
           color={COLOR[key]}
           box={4}
           drop={4}
@@ -77,7 +77,7 @@ export const Package: FC<TProps> = ({ title }) => {
               borderRadius: BORDER_RADIUS.MD,
             }}
           />
-        </Glow.Shell>
+        </LIGHT.Glow>
       )}
       <motion.div
         className={clsx(
@@ -86,8 +86,7 @@ export const Package: FC<TProps> = ({ title }) => {
         {...handlers}
       >
         <End classValue='title-pricing'>
-          <FadeDown
-            classValue='h-full'
+          <FadeDownPair
             style={{
               opacity: 0.4,
               borderRadius: BORDER_RADIUS.MD,
@@ -96,7 +95,6 @@ export const Package: FC<TProps> = ({ title }) => {
           <h4 className='relative w-full text-center text-2xl z-10'>
             {title}
           </h4>
-          {/* <FeedbackIcon isHover={isHover} /> */}
         </End>
         <P_25 />
         <div

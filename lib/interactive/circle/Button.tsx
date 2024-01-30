@@ -21,7 +21,7 @@ export const Button: FC<TButtonProps> = ({
   return (
     <Root
       className={clsx(
-        'circle-interactive shrink-0 w-12 h-12',
+        'circle-interactive shrink-0 w-14 h-14',
         classValue,
       )}
       {...resolveInteractiveLabels(title)}

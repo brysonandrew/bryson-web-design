@@ -352,4 +352,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 [hidden] {
   display: none;
 }
+
+textarea,
+input {
+  background-color: var(--transparent);
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
 `;

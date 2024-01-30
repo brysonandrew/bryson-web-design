@@ -10,19 +10,14 @@ import {
 } from '@components/layout/metal/css';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { BackgroundFill } from '@brysonandrew/dark-mode';
 
-const Root = styled(motion.div)`
-  background-color: var(--white-9);
-  html.dark & {
-    background-color: var(--black);
-  }
+const Dark = styled(motion.div)`
+  ${metalRadialDarkCss}
 `;
 
-const Effect = styled(motion.div)`
+const Light = styled(motion.div)`
   ${metalRadialLightCss}
-  html.dark & {
-    ${metalRadialDarkCss}
-  }
 `;
 
 type TProps = TDivMotionProps & TClassValueProps;
@@ -30,13 +25,24 @@ export const Metal: FC<TProps> = ({
   classValue,
   ...rest
 }) => {
-  const props = {
-    className: clsx('absolute inset-0', classValue),
-    ...rest,
-  };
+  const sharedClassValue = clsx('fill', classValue);
   return (
-    <Root {...props}>
-      <Effect {...props} />
-    </Root>
+    <motion.div className={sharedClassValue} {...rest}>
+      <BackgroundFill {...rest} />
+      <Dark
+        className={clsx(
+          sharedClassValue,
+          'fill opacity-dark',
+        )}
+        {...rest}
+      />
+      <Light
+        className={clsx(
+          'fill opacity-light',
+          sharedClassValue,
+        )}
+        {...rest}
+      />
+    </motion.div>
   );
 };

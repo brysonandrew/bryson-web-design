@@ -25,10 +25,10 @@ export type TCoreLayoutRecord = {
 };
 
 export type TLayoutRecord = {
-  Glow?: {
+  LIGHT?: {
     Marker: TBlank;
     Back: FC<TGlowProps>;
-    Shell: FC<TGlowProps>;
+    Glow: FC<TGlowProps>;
   };
 };
 
