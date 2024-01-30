@@ -34,11 +34,6 @@ const baseTransitionConfigs = [
   {
     duration,
     ease: 'easeIn',
-    delay: duration,
-  },
-  {
-    duration,
-    ease: 'easeIn',
     delay: duration2,
   },
 ] as const;
