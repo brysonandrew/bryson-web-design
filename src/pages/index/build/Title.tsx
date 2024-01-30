@@ -43,7 +43,7 @@ export const Title: FC<TProps> = ({ children }) => {
         style={{ letterSpacing: '0.5em' }}
       >
         Based In Christchurch
-        <Line color='bg-secondary' />
+        <Line color='border-secondary' />
         New Zealand
       </h3>
     </Root>

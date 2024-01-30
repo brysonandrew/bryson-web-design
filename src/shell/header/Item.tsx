@@ -38,7 +38,7 @@ export const Item: FC<TItemProps> = ({
           {title}
           {isActive && (
             <ThickLine
-              classValue='top-3/4 w-full h-2'
+              classValue='top-3/4 w-full'
               layoutId={layoutId}
               transition={{ duration: DURATION * 2 }}
             />
