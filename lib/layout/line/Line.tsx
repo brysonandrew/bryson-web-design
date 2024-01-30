@@ -6,10 +6,10 @@ export const Line: FC<
   PropsWithChildren<
     TClassValueProps & { color: ClassValue }
   >
-> = ({ color = 'bg-gray-3', classValue }) => {
+> = ({ color = 'border-gray-3', classValue }) => {
   return (
-    <div
-      className={clsx('w-full h-px', color, classValue)}
+    <hr
+      className={clsx('w-full border', color, classValue)}
     />
   );
 };
