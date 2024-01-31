@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.140",
+  "version": "6.21.142",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -34,6 +34,8 @@
   ],
   "peerDependencies": {
     "@brysonandrew/animation": "*",
+    "@brysonandrew/cursor": "*",
+    "framer-motion": "*",
     "@brysonandrew/gallery-viewer": "*",
     "@brysonandrew/space": "*",
     "react-dom": "*",
@@ -42,8 +44,6 @@
     "react": "*",
     "@brysonandrew/in-view": "*",
     "@brysonandrew/icons": "*",
-    "framer-motion": "*",
-    "@brysonandrew/cursor": "*",
     "@brysonandrew/sounds": "*",
     "react-router-dom": "*",
     "@brysonandrew/utils": "*",

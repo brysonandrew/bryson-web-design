@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-edge",
-  "version": "6.22.70",
+  "version": "6.22.72",
   "description": "Fade Edge library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -33,6 +33,7 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/fade": "*",
     "react": "*",
     "clsx": "*",
     "@brysonandrew/types": "*"

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "6.22.70",
+  "version": "6.22.72",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -52,6 +52,8 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@emotion/react": "*",
+    "react": "*",
     "@brysonandrew/types": "*"
   }
 }

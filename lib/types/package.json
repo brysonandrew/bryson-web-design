@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/types",
-  "version": "6.22.70",
+  "version": "6.22.72",
   "description": "Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -45,6 +45,7 @@
   "peerDependencies": {
     "react": "*",
     "clsx": "*",
+    "framer-motion": "*",
     "react-router-dom": "*"
   }
 }

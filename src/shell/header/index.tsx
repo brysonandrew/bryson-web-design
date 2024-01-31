@@ -12,7 +12,6 @@ const Root = styled.header``;
 
 export const Header: FC = () => {
   const { isScroll } = useScroll();
-
   return (
     <Root className='fixed top-0 left-0 w-full h-0 z-10'>
       <AnimatePresence initial={false}>
