@@ -1,7 +1,7 @@
 import { TIndex, TRgbGrayscale } from '@brysonandrew/color/config/types';
 import { resolveGrayscaleRgb } from './resolveGrayscaleRgb';
 
-const COUNT = 10;
+const COUNT = 9;
 export const resolveGrayscaleRange = <M extends number>(
   min: M,
   max: number,

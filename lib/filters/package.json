@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filters",
-  "version": "6.22.66",
+  "version": "6.22.70",
   "description": "Filters library",
   "main": "./index.ts",
   "module": "./index.ts",

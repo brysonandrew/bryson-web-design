@@ -1,11 +1,10 @@
-import { TColorKey } from '@app/color/types';
 import type { Rule } from 'unocss';
 
 const resolveTextStroke = <T extends object>(
-  colors: TColorKey[],
+  colors: string[],
   weight = 1,
 ): Rule<T>[] => {
-  return colors.map((color: TColorKey) => {
+  return colors.map((color: string) => {
     return [
       `text-stroke-${color}`,
       {

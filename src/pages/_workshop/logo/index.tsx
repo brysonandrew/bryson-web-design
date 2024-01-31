@@ -25,7 +25,7 @@ export const Logo = () => {
           <Laptop
             screen={COLOR_CSS_VARS_RECORD['accent']}
             trackpad={COLOR_CSS_VARS_RECORD['white-8']}
-            bottom={COLOR_CSS_VARS_RECORD['white-9']}
+            bottom={COLOR_CSS_VARS_RECORD['white']}
             keyboard={COLOR_CSS_VARS_RECORD['white-7']}
             body={COLOR_CSS_VARS_RECORD['white-5']}
           />

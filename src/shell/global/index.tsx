@@ -4,7 +4,6 @@ import {
   APP_DESCRIPTION,
   APP_TITLE,
 } from '@app/base/constants';
-import { capitalize } from 'lodash';
 import { useCurrParams } from '@brysonandrew/gallery';
 import { Head, MonoHead } from '@brysonandrew/dark-mode';
 import { TTitlesResolver } from '@brysonandrew/head';
@@ -14,6 +13,7 @@ const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
   MonoHead;
 import { Global as GlobalPlaceholder } from '@app/placeholder';
 import { GlobalColor } from '@app/color';
+import { capitalize } from '@brysonandrew/utils';
 
 type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
