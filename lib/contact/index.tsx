@@ -67,20 +67,20 @@ export const Contact: FC<TProps> = ({
 };
 
 export * from './ContactProvider';
+export * from './config/constants';
+export * from './config/types';
+export * from './hooks/useAutoFocus';
+export * from './hooks/useFocus';
+export * from './hooks/useForm';
+export * from './hooks/useInput';
 export * from './box/Clear';
 export * from './box/Name';
 export * from './box/Shell';
 export * from './box/Submit';
 export * from './box/Text';
 export * from './box';
-export * from './config/constants';
-export * from './config/types';
-export * from './footer';
 export * from './utils/resolveButtonValue';
-export * from './hooks/useAutoFocus';
-export * from './hooks/useFocus';
-export * from './hooks/useForm';
-export * from './hooks/useInput';
+export * from './footer';
 export * from './variants/base';
 export * from './variants/glow';
 export * from './variants/minimalist';

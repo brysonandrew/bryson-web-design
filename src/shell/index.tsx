@@ -17,8 +17,8 @@ export const Shell: FC = () => {
         <>
           {/* {import.meta.env.DEV && <Hud />} */}
           <div className='fill-screen'>
-            <BackgroundFill  />
-          </div> 
+            <BackgroundFill />
+          </div>
           <Global />
           <P24Y />
           <Outlet />

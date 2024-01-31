@@ -36,7 +36,7 @@ export const resolveDeps = ({
         if (lib.startsWith(excludePrefix)) {
           console.error(
             `Invalid absolute import found: ${lib}`,
-            `File: - ${file}`,
+            // `File: - ${file}`,
           );
           return;
         }

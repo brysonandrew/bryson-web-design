@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filters",
-  "version": "6.22.70",
+  "version": "6.22.72",
   "description": "Filters library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -44,11 +44,12 @@
   ],
   "peerDependencies": {
     "@brysonandrew/types": "*",
+    "react": "*",
     "@brysonandrew/filter-animate": "*",
     "@emotion/styled": "*",
     "clsx": "*",
     "framer-motion": "*",
-    "react": "*",
-    "@brysonandrew/utils": "*"
+    "@brysonandrew/utils": "*",
+    "react-device-detect": "*"
   }
 }
