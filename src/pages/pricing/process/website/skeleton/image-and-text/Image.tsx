@@ -15,7 +15,7 @@ export const Image = () => {
     >
       <I
         icon={IMAGE_ICON}
-        className='relative -top-3 object-contain dark:text-white-9 text-black-5 w-2/3 h-2/3'
+        className='relative -top-3 object-contain dark:text-white text-black-5 w-2/3 h-2/3'
       />
     </div>
   );

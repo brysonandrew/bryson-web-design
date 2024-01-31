@@ -23,7 +23,7 @@ export const ViewerHeader: FC<TProps> = ({
   ...props
 }) => {
   const { Viewer } = useGallery();
-  const { sounds } = useApp();
+  const { sounds, Back, GLOW_BOX } = useApp();
 
   const handleClose = () => {
     if (sounds?.off) {
@@ -32,6 +32,7 @@ export const ViewerHeader: FC<TProps> = ({
   };
   return (
     <Root className='relative left-0 top-0 row w-full z-30'>
+      <Back style={{ boxShadow: GLOW_BOX['white'] }} />
       <Content
         isHover
         slug={slug}

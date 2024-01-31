@@ -22,7 +22,7 @@ export const BASE_COLOR_RECORD = {
 const BASE_RGB = {
   ...MAIN_RGBS,
   black: BLACK_RGBS[0],
-  'white-9': WHITE_RGBS[9],
+  white: WHITE_RGBS[9],
 } as const;
 
 export const BASE_GLOW_RECORD =

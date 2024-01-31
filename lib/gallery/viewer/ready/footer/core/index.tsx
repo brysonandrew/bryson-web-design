@@ -47,7 +47,7 @@ export const Core: FC<TProps> = (props) => {
       >
         <>
           <Background />
-          <Items
+          <Items 
             mediaRecords={mediaRecords}
             itemWidth={itemWidth}
           />

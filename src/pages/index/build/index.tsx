@@ -23,7 +23,7 @@ const Build: FC = () => {
         )}
       </Parallax>
       <div className='fill bg-gradient-to-b from-transparent via-black to-transparent opacity-dark z-0 pointer-events-none' />
-      <div className='fill bg-gradient-to-b from-transparent via-white-9 to-transparent opacity-light z-0 pointer-events-none' />
+      <div className='fill bg-gradient-to-b from-transparent via-white to-transparent opacity-light z-0 pointer-events-none' />
     </>
   );
 };

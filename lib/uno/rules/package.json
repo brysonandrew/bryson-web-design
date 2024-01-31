@@ -1,18 +1,16 @@
 {
-  "name": "@brysonandrew/head",
+  "name": "@brysonandrew/uno-rules",
   "version": "6.22.70",
-  "description": "Head library",
-  "main": "./index.tsx",
-  "module": "./index.tsx",
+  "description": "Uno Rules library",
+  "main": "./index.ts",
+  "module": "./index.ts",
   "exports": {
-    "./HeadProvider": "./HeadProvider.tsx",
-    "./config": "./config.ts",
     ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
     },
-    "./useHtmlTitle": "./useHtmlTitle.ts"
+    "./resolveCharGapRules": "./resolveCharGapRules.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -28,8 +26,6 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react-helmet-async": "*",
-    "@brysonandrew/app": "*",
-    "react-router": "*"
+    "unocss": "*"
   }
 }

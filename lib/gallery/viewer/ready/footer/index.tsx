@@ -16,12 +16,11 @@ const Root = styled(motion.footer)``;
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
-  const { LIGHT, Back } = useApp();
+  const { Back, GLOW_BOX } = useApp();
   const { handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     'footer',
   );
-  const Background = LIGHT?.Back ?? Back;
   return (
     <Root
       className='relative flex justify-center w-full z-10'
@@ -29,7 +28,7 @@ export const Footer: FC<TProps> = (props) => {
       {...PRESENCE_UP_Y}
       {...handlers}
     >
-      <Background />
+      <Back style={{ boxShadow: GLOW_BOX['white'] }} />
       <Core {...props} />
     </Root>
   );

@@ -6,7 +6,7 @@ export const CONTACT_FORM_MINIMALIST_SHORTCUTS: StaticShortcutMap =
     ...BASE,
     'title-input':
       'text-2xl sm:text-2.5xl md:text-3xl md:text-3.5xl lg:text-4xl xl:text-4.5xl',
-    'bg-input': 'bg-white-9 border-1 border-black-04',
+    'bg-input': 'bg-white border-1 border-black-04',
     root: 'column gap-box-2 text-black text-4xl w-full',
     inputs: 'relative column gap-box w-full',
     clear:
@@ -19,8 +19,9 @@ export const CONTACT_FORM_MINIMALIST_SHORTCUTS: StaticShortcutMap =
     'shell-texture-glow': 'hidden',
     'input-base':
       'title-input relative pl-4 w-full tracking-widest rounded-md leading-none shrink-0 disabled:cursor-not-allowed',
-    'input-textarea': 'input-base py-4 pr-10 lg:pr-12',
     autosize: 'bg-input relative w-full md:w-9/12',
+    'input-textarea':
+      'bg-transparent input-base py-4 pr-10 lg:pr-12',
     'input-text':
       'bg-input input-base py-2 pr-12 md:w-9/12 lg:pr-14',
     name: 'title-input relative shrink-0 w-full py-2 pl-0 leading-none md:(w-3/12 justify-start)',

@@ -5,6 +5,6 @@ import { resolveGrayscaleRange } from '@brysonandrew/color/utils/resolveGrayscal
 export const GRAY_RGBS = resolveGrayscaleRange(85, 170);
 
 export const GRAY = {
-  ...resolveRgbValueSeriesRecord('gray', GRAY_RGBS),
   ...resolveRgbaOpacityRange('gray', GRAY_RGBS[5]),
+  ...resolveRgbValueSeriesRecord('gray', GRAY_RGBS),
 } as const;

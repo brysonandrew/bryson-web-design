@@ -7,12 +7,12 @@ const Root = styled.div``;
 type TProps = {
   isDouble?: boolean;
   height?: 'h-0.5' | 'h-0.25' | 'h-px';
-  color?: 'bg-white-9' | 'bg-gray';
+  color?: 'bg-white' | 'bg-gray';
 };
 export const Underline: FC<TProps> = ({
   isDouble,
   height = 'h-0.5',
-  color = 'bg-white-9',
+  color = 'bg-white',
 }) => {
   return (
     <Root

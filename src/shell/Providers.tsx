@@ -1,4 +1,4 @@
-import { AppProvider } from '@brysonandrew/app/Context';
+import { AppProvider } from '@brysonandrew/app/AppProvider';
 
 import { ScrollProvider } from '@brysonandrew/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';

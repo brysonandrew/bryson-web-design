@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { P48Y } from '@brysonandrew/space/P48Y';
 import { P24Y } from '@brysonandrew/space/P24Y';
+import { useApp } from '@brysonandrew/app';
 
 const ServicesLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));

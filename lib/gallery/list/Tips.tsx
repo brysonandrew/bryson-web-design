@@ -32,7 +32,7 @@ export const Tips = () => {
                   {createPortal(
                     <motion.ul
                       key='Tips'
-                      className='fixed top-1/4 -translate-y-1/2 right-2  text-white-9 pointer-events-none z-10'
+                      className='fixed top-1/4 -translate-y-1/2 right-2  text-white pointer-events-none z-10'
                       {...PRESENCE_OPACITY}
                     >
                       <motion.li

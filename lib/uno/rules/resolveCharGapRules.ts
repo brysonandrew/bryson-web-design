@@ -11,4 +11,5 @@ export const resolveCharGapRules = <
   ['char-gap-6', { 'letter-spacing': '0.1em' }],
   ['char-gap-7', { 'letter-spacing': '0.2em' }],
   ['char-gap-8', { 'letter-spacing': '0.4em' }],
+  ['char-gap-9', { 'letter-spacing': '0.8em' }],
 ];

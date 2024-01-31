@@ -13,9 +13,8 @@ import {
 } from '@brysonandrew/app/config/types';
 import { useLayoutRecord } from './layout/useLayoutRecord';
 import { DEFAULT_STYLE } from './style';
-import { NOOP } from '@brysonandrew/utils';
 import { TLayoutRecordValue } from './layout/types';
-import { once } from 'lodash';
+import { once } from '@brysonandrew/utils';
 
 const initContext = once(<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
@@ -25,7 +24,7 @@ export const useApp = <
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 >() =>
   useReactContext<TValue<S>>(
-    initContext<S>() as TAppContext<S>,
+    initContext() as TAppContext<S>,
   );
 
 type TProps<S extends TPartialDefaultStyle> = TAppProps<S>;
@@ -75,7 +74,7 @@ export const AppProvider = <
     onInit,
     sounds: {},
   };
-  const CONTEXT = initContext<S>();
+  const CONTEXT = initContext();
 
   return (
     <CONTEXT.Provider value={value}>
@@ -92,6 +91,6 @@ export const AppConsumer = <
 >({
   children,
 }: TConsumerProps<S>) => {
-  const CONTEXT = initContext<S>();
+  const CONTEXT = initContext();
   return <CONTEXT.Consumer>{children}</CONTEXT.Consumer>;
 };

@@ -1,18 +1,18 @@
 import { defineConfig } from 'unocss';
-import { resolveRules } from './rules';
 import { resolvePreflights } from './preflights';
 import { SHORTCUTS } from './shortcuts';
 import { TRANSFORMERS } from './transformers';
 import { resolvePresets } from './presets';
 import { resolveTheme } from '@brysonandrew/uno-theme';
 import { SPACING } from '@brysonandrew/uno-spacing';
+import { resolveRules } from './rules';
 import { COLOR_CSS_VARS_RECORD } from '../app/color/index';
 
 export const theme = resolveTheme({
   colors: COLOR_CSS_VARS_RECORD,
   spacing: SPACING,
 });
- 
+
 type TTheme = typeof theme;
 
 const rules = resolveRules<TTheme>();
