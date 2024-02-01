@@ -48,4 +48,4 @@
 //     </AnimatePresence>
 //   );
 // };
-export const x = 'x'
+export const x = 'x';

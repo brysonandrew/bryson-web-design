@@ -1,8 +1,8 @@
 import { stripPx } from "./stripPx";
 
-export type TPxRecord = Record<string, `${string}px`>
-export type TPxEntry = [string, `${string}px`]
-export type TPxEntries = TPxEntry[]
+export type TPxRecord = Record<string, `${string}px`>;
+export type TPxEntry = [string, `${string}px`];
+export type TPxEntries = TPxEntry[];
 export type TIntRecord = Record<string, number>;
 
 export const resolveIntRecord = (pxRecord: TPxRecord) => {
@@ -15,5 +15,5 @@ export const resolveIntRecord = (pxRecord: TPxRecord) => {
   {} as TIntRecord,
 );
 
-return intRecord
-}
+return intRecord;
+};

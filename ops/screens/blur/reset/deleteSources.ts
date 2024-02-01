@@ -10,7 +10,7 @@ export const deleteSources = async () => {
     const paths = await fg(pattern, {
       onlyFiles: false,
     });
-    console.log(paths)
+    console.log(paths);
   //  deletePaths(paths);
   } catch (error) {
     console.log(error);

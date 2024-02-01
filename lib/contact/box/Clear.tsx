@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useContact } from '@brysonandrew/contact';
@@ -9,7 +8,6 @@ import { useApp } from '@brysonandrew/app';
 import { TButtonMotionProps } from '@brysonandrew/types/dom';
 import { CROSS_ICON, I } from '@brysonandrew/icons';
 
-const Root = styled.div``;
 
 type TProps = TButtonMotionProps & {
   onFocus(): void;
@@ -32,7 +30,7 @@ export const Clear: FC<TProps> = ({
   };
 
   return (
-    <Root className='clear'>
+    <div className='clear'>
       <motion.button
         layout
         tabIndex={-1}
@@ -48,6 +46,6 @@ export const Clear: FC<TProps> = ({
       >
         <I classValue='clear-icon' icon={CROSS_ICON} />
       </motion.button>
-    </Root>
+    </div>
   );
 };

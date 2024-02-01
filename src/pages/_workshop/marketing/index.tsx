@@ -1,3 +1,3 @@
 export const Marketing = () => {
-  return <div>markerting</div>
-}
+  return <div>markerting</div>;
+};

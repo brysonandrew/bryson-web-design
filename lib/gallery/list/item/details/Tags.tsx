@@ -1,17 +1,15 @@
 import { type FC } from 'react';
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { TagLink } from './TagLink';
-import styled from '@emotion/styled';
 import { Brighten } from '@brysonandrew/filter-animate/Brighten';
 import { useApp } from '@brysonandrew/app';
-
-const Root = styled.div``;
+import { motion } from 'framer-motion';
 
 type TProps = Required<Pick<TItem, 'slug' | 'tags'>>;
 export const Tags: FC<TProps> = ({ slug, tags }) => {
   const { BORDER_RADIUS } = useApp();
   return (
-    <Root className='relative'>
+    <motion.div className='relative'>
       <ul className='row-wrap gap-2'>
         {tags.map((item) => {
           const { title, href } = item;
@@ -21,7 +19,7 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
                 className='text-black-9 bg-accent px-2 py-1 whitespace-nowrap'
                 style={{ borderRadius: BORDER_RADIUS.SM }}
               >
-                {title} 
+                {title}
               </span>
             </Brighten>
           );
@@ -38,6 +36,6 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           );
         })}
       </ul>
-    </Root>
+    </motion.div>
   );
 };

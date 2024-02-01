@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.72",
+  "version": "6.22.78",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -18,16 +18,16 @@
     "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
     "./line": "./line/index.tsx",
     "./section": "./section/index.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
     "./typography/Letter": "./typography/Letter.tsx",
     "./typography/Sub": "./typography/Sub.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx"
+    "./typography/animation": "./typography/animation/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -52,7 +52,7 @@
     "clsx": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/space": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/in-view": "*"
+    "@brysonandrew/in-view": "*",
+    "@brysonandrew/utils": "*"
   }
 }

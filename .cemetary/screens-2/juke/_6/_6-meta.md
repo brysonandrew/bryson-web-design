@@ -1,1 +1,0 @@
-{"format":"png","width":1701,"height":3327,"space":"srgb","channels":3,"depth":"uchar","density":72,"isProgressive":false,"paletteBitDepth":8,"hasProfile":false,"hasAlpha":false}

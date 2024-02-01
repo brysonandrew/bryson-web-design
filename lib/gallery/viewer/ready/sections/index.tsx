@@ -1,6 +1,5 @@
 import { useState, type FC } from 'react';
 import { motion, useTransform } from 'framer-motion';
-import styled from '@emotion/styled';
 import { TBaseProps } from '@brysonandrew/gallery';
 import { Control } from './Control';
 import {
@@ -10,8 +9,6 @@ import {
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/animation';
-
-const Root = styled(motion.div)``;
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
@@ -29,10 +26,7 @@ export const Sections: FC<TProps> = (props) => {
   );
 
   return (
-    <Root
-      className='h-full grow'
-      {...handlers}
-    >
+    <motion.div className='h-full grow' {...handlers}>
       <motion.ul
         className='flex relative h-full w-0'
         style={{ left, width: viewportWidth * count }}
@@ -65,6 +59,6 @@ export const Sections: FC<TProps> = (props) => {
           ),
         )}
       </motion.ul>
-    </Root>
+    </motion.div>
   );
 };

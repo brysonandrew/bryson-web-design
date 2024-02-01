@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/boundary",
-  "version": "6.22.72",
+  "version": "6.22.78",
   "description": "Boundary library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
@@ -27,7 +27,6 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/styled": "*",
     "react": "*",
     "@brysonandrew/types": "*"
   }

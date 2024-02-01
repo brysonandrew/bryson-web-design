@@ -14,7 +14,6 @@ const {
   colorCssVariables,
   opacityRangeColorRecord,
   glowRecord,
-  GlobalColor: _GlobalColor,
 } = resolveColorRecords<
   TOpacityRangeRgbRecord,
   TVariablesRecord
@@ -27,4 +26,3 @@ export const COLOR_VARS_CSS = colorCssVariables;
 export const COLOR_SHADE_RECORD = opacityRangeColorRecord;
 export const GLOW_DROP = glowRecord.drop;
 export const GLOW_BOX = glowRecord.box;
-export const GlobalColor = _GlobalColor;

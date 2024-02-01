@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { type FC } from 'react';
 import { Link } from 'react-router-dom';
 import { P1 } from '@brysonandrew/space/P1';
@@ -11,8 +10,7 @@ import { motion } from 'framer-motion';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { I, OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
 
-const Root = styled.div``;
-const InternalLink = styled(motion(Link))``;
+const InternalLink = motion(Link);
 
 type TProps = TItem & {
   onClose?(): void;
@@ -25,7 +23,7 @@ export const Buttons: FC<TProps> = ({
   const to = useTo({ project: slug, next: 1 });
 
   return (
-    <Root className='row-space'>
+    <div className='row-space'>
       <ul className='column-start w-full md:row'>
         <li className='row-space w-full md:w-auto md:row'>
           <h3>Screenshots</h3>
@@ -55,6 +53,6 @@ export const Buttons: FC<TProps> = ({
           </Circle>
         </li>
       </ul>
-    </Root>
+    </div>
   );
 };

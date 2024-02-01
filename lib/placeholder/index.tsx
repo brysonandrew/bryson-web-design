@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
@@ -8,8 +7,6 @@ import {
   TDivMotionProps,
 } from '@brysonandrew/types/dom';
 import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientStops';
-
-export const Root = styled(motion.div)``;
 
 export type TPlaceholderProps = TClassValueProps &
   TDivMotionProps & {
@@ -26,7 +23,7 @@ export const Placeholder: FC<TPlaceholderProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <motion.div
       className='absolute center w-full h-full'
       // layoutId={PLACEHOLDER_LAYOUT_ID}
       initial={{ opacity: 0 }}
@@ -63,7 +60,7 @@ export const Placeholder: FC<TPlaceholderProps> = ({
           }}
         />
       </div>
-    </Root>
+    </motion.div>
   );
 };
 
