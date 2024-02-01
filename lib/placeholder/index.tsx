@@ -3,10 +3,11 @@ import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/types/dom';
-import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientStops';
+import { resolveGradient } from '@brysonandrew/color/gradient/resolveGradient';
+import { TColorStops } from '@brysonandrew/color';
 
 export type TPlaceholderProps = TDivMotionProps & {
-  colors?: string[];
+  colors?: TColorStops;
   clipPathId: string;
 };
 export type TPartialPlaceholderProps =
@@ -14,14 +15,21 @@ export type TPartialPlaceholderProps =
 export const Placeholder: FC<TPlaceholderProps> = ({
   classValue,
   style,
-  colors = ['teal', 'transparent'],
+  colors = [
+    'var(--secondary)',
+    'transparent',
+  ] as TColorStops,
   clipPathId,
   ...props
 }) => {
+  const colorStops: TColorStops = [...colors, ...colors];
+  const backgroundImage = resolveGradient({
+    name: 'linear-gradient',
+    parts: ['to right', ...colorStops],
+  });
   return (
     <motion.div
-      className='absolute center w-full h-full'
-      // layoutId={PLACEHOLDER_LAYOUT_ID}
+      className='fill center w-full h-full overflow-hidden'
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       exit={{ opacity: 0 }}
@@ -32,17 +40,14 @@ export const Placeholder: FC<TPlaceholderProps> = ({
         style={{
           width: 24,
           height: 24,
-          clipPath: resolveUrlId(clipPathId),
+          clipPath: resolveUrlId(clipPathId), // `url(#${clipPathId})`,
         }}
       >
         <motion.figure
           className='relative background-color-01 h-full'
           style={{
             width: '300%',
-            backgroundImage: `linear-gradient(to right, ${resolveGradientStops(
-              4,
-              colors,
-            )})`,
+            backgroundImage,
           }}
           animate={{
             x: ['0%', '-66.67%'],

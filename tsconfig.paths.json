@@ -4,9 +4,10 @@
     "paths": {
       "@ops/*": ["ops/*"],
       "@pkg": ["package.json"],
-      "@brysonandrew/*": ["lib/*", "ops/*"],
+      "@brysonandrew/color-*": ["lib/color/*"],
       "@brysonandrew/gallery-*": ["lib/gallery/*"],
       "@brysonandrew/uno-*": ["lib/uno/*"],
+      "@brysonandrew/*": ["lib/*", "ops/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@context/*": ["src/context/*"],

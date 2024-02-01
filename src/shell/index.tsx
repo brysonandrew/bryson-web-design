@@ -9,6 +9,7 @@ import { Header } from './header';
 import { Outlet } from 'react-router';
 import { VerticalEdges } from '@brysonandrew/fade-edge';
 import { BackgroundFill } from '@brysonandrew/dark-mode';
+import { FadeEdgePair } from '@brysonandrew/fade-edge/pairs/FadeEdgePair';
 
 export const Shell: FC = () => {
   return (
@@ -22,7 +23,11 @@ export const Shell: FC = () => {
           <Global />
           <P24Y />
           <Outlet />
-          <VerticalEdges />
+          <FadeEdgePair
+            direction='to bottom'
+            isFixed
+            midColor='var(--transparent)'
+          />
           <Header />
           <Footer />
           {isDesktop && <Cursor />}

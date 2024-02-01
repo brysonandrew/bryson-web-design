@@ -11,7 +11,7 @@ type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style }) => {
   return (
     <Root
-      className='w-core will-change-transform'
+      className='w-core title-main will-change-transform'
       style={style}
     >
       <Contact footerInfo={CONTACT_FORM_FOOTER} />

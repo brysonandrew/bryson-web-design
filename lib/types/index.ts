@@ -1,5 +1,6 @@
 export * from './css';
 export * from './keys';
+export * from './numbers';
 export * from './object';
 export * from './assertions/isValidKey';
 export * from './assertions/numbers';
