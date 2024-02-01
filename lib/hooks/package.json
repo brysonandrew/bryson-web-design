@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.83",
+  "version": "6.22.85",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,7 +10,6 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
     "./events": "./events/index.ts",
     "./events/useEventCallback": "./events/useEventCallback.ts",
     "./events/useEventListener": "./events/useEventListener.ts",
@@ -23,12 +22,13 @@
     "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
     "./dom/useRect": "./dom/useRect.ts",
+    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts",
+    "./scroll": "./scroll/index.ts",
+    "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./life-cycle": "./life-cycle/index.ts",
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
     "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
-    "./scroll": "./scroll/index.ts",
-    "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./window": "./window/index.ts",
     "./window/useDelay": "./window/useDelay.ts",
     "./window/useDelayCallback": "./window/useDelayCallback.ts",
@@ -52,9 +52,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils": "*",
     "react": "*",
     "framer-motion": "*",
-    "@brysonandrew/types": "*"
+    "@brysonandrew/types": "*",
+    "@brysonandrew/utils": "*"
   }
 }

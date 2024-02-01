@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/types",
-  "version": "6.22.83",
+  "version": "6.22.85",
   "description": "Types library",
   "main": "./index.ts",
   "module": "./index.ts",

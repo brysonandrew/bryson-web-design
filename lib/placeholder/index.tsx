@@ -58,6 +58,6 @@ export const Placeholder: FC<TPlaceholderProps> = ({
   );
 };
 
-export * from './resolvePlaceholderVarsCss';
 export * from './resolvePlaceholderRules';
+export * from './resolvePlaceholderVarsCss';
 export * from './withPlaceholder';

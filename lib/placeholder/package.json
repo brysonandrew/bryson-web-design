@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.83",
+  "version": "6.22.85",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,8 +10,8 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./resolvePlaceholderCssVars": "./resolvePlaceholderCssVars.ts",
     "./resolvePlaceholderRules": "./resolvePlaceholderRules.ts",
+    "./resolvePlaceholderVarsCss": "./resolvePlaceholderVarsCss.ts",
     "./withPlaceholder": "./withPlaceholder.tsx"
   },
   "scripts": {
