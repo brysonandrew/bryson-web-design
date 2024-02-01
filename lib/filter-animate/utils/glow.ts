@@ -1,6 +1,6 @@
 import { MotionValue } from 'framer-motion';
-import { resolveDropShadow } from '@brysonandrew/color/utils/glow/resolveDropShadow';
-import { resolveBoxShadow } from '@brysonandrew/color/utils/glow/resolveBoxShadow';
+import { resolveDropShadow } from '@brysonandrew/color/glow/resolveDropShadow';
+import { resolveBoxShadow } from '@brysonandrew/color/glow/resolveBoxShadow';
 import { TFilterAnimateProps } from '..';
 import { TRANSITION_02_EASEIN_008 } from '@brysonandrew/animation';
 

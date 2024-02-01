@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/types",
-  "version": "6.22.85",
+  "version": "6.22.90",
   "description": "Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,6 +12,7 @@
       "default": "./index.ts"
     },
     "./keys": "./keys.ts",
+    "./numbers": "./numbers.ts",
     "./object": "./object.ts",
     "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./assertions/numbers": "./assertions/numbers.ts",

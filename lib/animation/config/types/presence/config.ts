@@ -4,7 +4,7 @@ import {
   SHIFT_DIRECTIONS,
   ZOOM_DIRECTIONS,
 } from '@brysonandrew/animation/config/constants';
-import { TNumberPosPercentValue } from '@brysonandrew/animation/config/types/values';
+import { TNumberPosPercentValue } from '@brysonandrew/types';
 import { TPositive } from '@brysonandrew/types/assertions/numbers';
 
 export type TXyAxis = 'x' | 'y';

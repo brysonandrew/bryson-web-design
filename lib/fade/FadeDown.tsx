@@ -8,7 +8,7 @@ export const FadeDown: FC<TProps> = ({
   ...props
 }) => (
   <Fade
-    classValue={clsx('bg-gradient-to-b top-0 inset-x-0', classValue)}
+    classValue={clsx('top-0 inset-x-0', classValue)}
     {...props}
   />
 );

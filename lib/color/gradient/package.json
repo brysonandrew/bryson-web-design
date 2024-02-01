@@ -1,0 +1,36 @@
+{
+  "name": "@brysonandrew/color-gradient",
+  "version": "6.22.90",
+  "description": "Color Gradient library",
+  "types": "/index.d.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveGradient": "./resolveGradient.ts",
+    "./resolveGradientStops": "./resolveGradientStops.ts",
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/color": "*",
+    "@brysonandrew/types": "*"
+  }
+}

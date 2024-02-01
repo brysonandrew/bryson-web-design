@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.85",
+  "version": "6.22.90",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",

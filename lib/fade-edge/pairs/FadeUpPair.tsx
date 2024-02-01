@@ -1,5 +1,5 @@
 import { FadeUp, TFadeProps } from '@brysonandrew/fade';
-import { FadePair } from '@brysonandrew/fade-edge/pairs/FadeFair';
+import { FadePair } from '@brysonandrew/fade-edge/pairs/FadePair';
 import { FC } from 'react';
 
 type TProps = TFadeProps;
