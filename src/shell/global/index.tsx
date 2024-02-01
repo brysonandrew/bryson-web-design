@@ -1,18 +1,20 @@
 import type { FC } from 'react';
-import { Aura } from '@brysonandrew/filters';
+import { AURA } from '@brysonandrew/filters/aura';
+import { useCurrParams } from '@brysonandrew/gallery';
+import { Head, MonoHead } from '@brysonandrew/dark-mode';
+import { TTitlesResolver } from '@brysonandrew/head';
 import {
   APP_DESCRIPTION,
   APP_TITLE,
 } from '@app/base/constants';
-import { useCurrParams } from '@brysonandrew/gallery';
-import { Head, MonoHead } from '@brysonandrew/dark-mode';
-import { TTitlesResolver } from '@brysonandrew/head';
 import { TPageTitle, PAGE_RECORD } from '@app/routes';
 import { TPage } from '@brysonandrew/routes/types';
 const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
   MonoHead;
-import { Global as GlobalPlaceholder } from '@app/placeholder';
+import { Global as GlobalCss, css } from '@emotion/react';
 import { capitalize } from '@brysonandrew/utils';
+import { COLOR_VARS_CSS } from '@app/color';
+import { PLACEHOLDER } from '@app/placeholder';
 
 type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
@@ -38,6 +40,13 @@ export const Global: FC = () => {
           project,
         )}${TITLE_KEY_DELIMITER}${name}`
       : resolveCompositeTitle(...titles);
+
+  const globalCss = css`
+    :root {
+      ${COLOR_VARS_CSS}
+      ${PLACEHOLDER.GLOBAL.VARS_CSS}
+    }
+  `;
   return (
     <>
       <Head<TPath, TPageValue>
@@ -45,8 +54,9 @@ export const Global: FC = () => {
         titlesResolver={titlesResolver}
         titleLookup={titleLookup}
       />
-      <GlobalPlaceholder />
-      <Aura />
+      <AURA.GLOBAL.Filter />
+      <PLACEHOLDER.GLOBAL.ClipPath />
+      <GlobalCss styles={globalCss} />
     </>
   );
 };

@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
-import { AURA_ID } from '.';
 import { TClassValueProps } from '@brysonandrew/types/dom';
 
 type TProps = TDivMotionProps & TClassValueProps;
-export const Target: FC<TProps> = ({
+export const AuraTargetFilter: FC<TProps> = ({
   classValue,
   style,
   ...props

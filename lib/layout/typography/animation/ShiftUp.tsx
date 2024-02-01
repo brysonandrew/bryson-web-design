@@ -10,8 +10,12 @@ import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 
 type TProps = TClassValueProps &
-  TDivMotionProps & { staggerIndex?: number };
+  TDivMotionProps & {
+    staggerIndex?: number;
+    baseDelay?: number;
+  };
 export const ShiftUp: FC<TProps> = ({
+  baseDelay = 0,
   classValue,
   staggerIndex = 0,
   ...props
@@ -20,7 +24,8 @@ export const ShiftUp: FC<TProps> = ({
     <motion.div
       className={clsx(classValue)}
       transition={{
-        delay: (staggerIndex * DURATION * 2) / 4,
+        delay:
+          baseDelay + (staggerIndex * DURATION * 2) / 4,
         ...MOTION_CONFIG,
       }}
       {...PRESENCE_OPACITY_UP_Y}

@@ -1,6 +1,6 @@
 import { type FC, useRef, useEffect } from 'react';
 import {
-  TParallaxMotionChildrenProps,
+  TPartialParallaxMotionProps,
   TParallaxOptions,
   TPartialStyle,
 } from '../config';
@@ -14,7 +14,7 @@ import { Visibility } from '@brysonandrew/parallax/aggregator/values/Visibility'
 type TProps = TParallaxOptions & {
   rect: TRect;
   onUpdateRect(): void;
-  children(props: TParallaxMotionChildrenProps): void;
+  children(props: TPartialParallaxMotionProps): void;
 };
 
 export const Aggregator: FC<TProps> = ({

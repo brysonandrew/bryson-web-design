@@ -1,8 +1,6 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { Target } from '@brysonandrew/filters/aura/Target';
-import { P1_5 } from '@brysonandrew/space/P1_5';
 import { resolveParentAnimateConfig } from '@app/animation';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import clsx from 'clsx';
@@ -10,8 +8,8 @@ import { useApp } from '@brysonandrew/app';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/config/constants';
 import { formatUrl } from '@brysonandrew/utils/format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
-import { Shell } from './Shell';
 import { TItem } from '@pages/index/tech/config/types';
+import { AURA } from '@brysonandrew/filters';
 
 export const Item: FC<TItem & { glow?: MotionValue }> = ({
   Icon,
@@ -38,43 +36,43 @@ export const Item: FC<TItem & { glow?: MotionValue }> = ({
       {...props}
     >
       {isHover && (
-        <Target
-          style={{ borderRadius: BORDER_RADIUS.MD }}
-          layoutId={title}
+        <motion.div
+          style={{
+            filter: AURA.GLOBAL.value,
+            borderRadius: BORDER_RADIUS.MD,
+          }}
+          className={clsx(
+            'fill-1 bg-accent-04 mt-1.5 ml-1 pointer-events-none',
+          )}
         />
       )}
       {LIGHT ? (
         <>
           <LIGHT.Back
-            // drop={8}
-            // color={COLOR.accent}
-            // initial={false}
+            drop={8}
+            color={COLOR.accent}
+            initial={false}
+            style={{ borderRadius: BORDER_RADIUS.MD }}
             value={glow}
           />
-          {/* <LIGHT.Glow
+          <LIGHT.Glow
             drop={6}
-            color={COLOR.secondary}
+            color={COLOR.highlight}
             initial={false}
             animate={{ opacity: isHover ? 1 : 0.05 }}
-          /> */}
+          />
         </>
       ) : (
-        <Back />
+        <Back style={{ borderRadius: BORDER_RADIUS.MD }} />
       )}
-      <Shell isHover={isHover}>
-        <a
-          className={clsx(
-            'inline-flex relative pl-4 pr-3 py-3',
-          )}
-          href={href}
-          target='_blank'
-          style={{ borderRadius: BORDER_RADIUS.MD }}
-        >
-          <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-          <P1_5 />
-          <h4 className='title mt-0.75'>{title}</h4>
-        </a>
-      </Shell>
+      <a
+        className='row gap-2 relative pl-4 pr-3 py-3'
+        href={href}
+        target='_blank'
+      >
+        <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
+        <h4 className='title mt-0.75'>{title}</h4>
+      </a>
     </motion.div>
   );
 };
