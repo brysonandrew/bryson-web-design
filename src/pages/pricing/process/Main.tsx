@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import { SECTIONS } from './config';
 
 const Root = styled(motion.div)``;
 
-type TProps = Partial<TParallaxMotionChildrenProps>;
+type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {
   return (
     <Root

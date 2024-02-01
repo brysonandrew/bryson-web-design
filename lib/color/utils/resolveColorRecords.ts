@@ -4,12 +4,12 @@ import {
 } from '@brysonandrew/color/config/types';
 import { resolveGlowRecord } from './glow/resolveGlowRecord';
 import { resolveVarCssColorRecord } from './resolveVarCssColorRecord';
-import { resolveVarCssRecord } from '../../utils/css/resolveVarCssRecord';
 import { rgbToOpacityRangeRecord } from './rgbToOpacityRangeRecord';
 import {
   BASE_COLOR_RECORD,
   BASE_GLOW_RECORD,
 } from '@brysonandrew/color/config/constants';
+import { resolveVarsCssRecord } from '@brysonandrew/utils/css/resolveVarsCssRecord';
 
 export const resolveColorRecords = <
   A extends Record<string, TRgb>,
@@ -46,24 +46,14 @@ export const resolveColorRecords = <
       colorRecord,
     );
 
-  const colorCssVariables =
-    resolveVarCssRecord(colorRecord);
-
-  // const GlobalColor: FC = () =>
-  //   createElement(Global, {
-  //     styles: css`
-  //       :root {
-  //         ${colorCssVariables};
-  //       }
-  //     `,
-  //   });
+  const colorVarsCss =
+    resolveVarsCssRecord(colorRecord);
 
   return {
     colorRecord,
     colorCssVariablesRecord,
-    colorCssVariables,
+    colorVarsCss,
     opacityRangeColorRecord,
     glowRecord,
-    // GlobalColor,
   } as const;
 };

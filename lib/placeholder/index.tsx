@@ -2,17 +2,13 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import clsx from 'clsx';
-import {
-  TClassValueProps,
-  TDivMotionProps,
-} from '@brysonandrew/types/dom';
+import { TDivMotionProps } from '@brysonandrew/types/dom';
 import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientStops';
 
-export type TPlaceholderProps = TClassValueProps &
-  TDivMotionProps & {
-    colors?: string[];
-    clipPathId: string;
-  };
+export type TPlaceholderProps = TDivMotionProps & {
+  colors?: string[];
+  clipPathId: string;
+};
 export type TPartialPlaceholderProps =
   Partial<TPlaceholderProps>;
 export const Placeholder: FC<TPlaceholderProps> = ({
@@ -48,15 +44,13 @@ export const Placeholder: FC<TPlaceholderProps> = ({
               colors,
             )})`,
           }}
-          {...{
-            animate: {
-              x: ['0%', '-66.67%'],
-            },
-            transition: {
-              repeat: Infinity,
-              duration: 2,
-              type: 'keyframes',
-            },
+          animate={{
+            x: ['0%', '-66.67%'],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            type: 'keyframes',
           }}
         />
       </div>
@@ -64,5 +58,6 @@ export const Placeholder: FC<TPlaceholderProps> = ({
   );
 };
 
+export * from './resolvePlaceholderVarsCss';
 export * from './resolvePlaceholderRules';
 export * from './withPlaceholder';

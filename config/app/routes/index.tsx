@@ -1,10 +1,10 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import * as Pages from '@pages/index';
-import { resolvePageRecords } from '@brysonandrew/routes';
 import { Cv } from '@pages/_workshop/cv';
-import { Reader } from '@pages/_workshop/reader';
-import { Shell } from 'src/shell';
+import { Shell } from '@shell/index';
 import { Marketing } from '@pages/_workshop/marketing';
+import { Reader } from '@pages/_workshop/reader';
+import { resolvePageRecords } from '@brysonandrew/routes';
 
 export const PAGE_TITLES = [
   'Index',

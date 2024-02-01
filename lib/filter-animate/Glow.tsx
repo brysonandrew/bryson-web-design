@@ -10,6 +10,8 @@ export const Glow: FC<TGlowProps> = ({
   children,
   ...options
 }) => {
+  console.log(options.value);
+
   return (
     <FilterAnimate {...resolveGlowProps(options)}>
       {children}

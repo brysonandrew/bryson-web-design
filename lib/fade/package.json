@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "6.22.78",
+  "version": "6.22.83",
   "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -31,7 +31,6 @@
   "peerDependencies": {
     "clsx": "*",
     "react": "*",
-    "@emotion/styled": "*",
     "@brysonandrew/types": "*",
     "framer-motion": "*"
   }

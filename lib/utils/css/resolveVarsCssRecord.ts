@@ -1,6 +1,6 @@
 import { TKeyStr } from '@brysonandrew/types/keys';
 
-export const resolveVarCssRecord = <T extends object>(
+export const resolveVarsCssRecord = <T extends object>(
   config: T,
 ): string => {
   type TKey = TKeyStr<T>;

@@ -3,43 +3,33 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import { Transform } from './Transform';
 import { TECH } from '@pages/index/tech/config/constants';
 
-const Root = styled.div``;
 const Inner = styled(motion.div)``;
 
-type TProps = TParallaxMotionChildrenProps;
+type TProps = TPartialParallaxMotionProps;
 export const Links: FC<TProps> = ({ style }) => {
+  const glowKey: keyof TPartialParallaxMotionProps['style'] =
+    'rotateX';
+  if (typeof style[glowKey] === 'undefined') return null;
+
   return (
-    <Transform motionValue={style.rotateX}>
+    <Transform motionValue={style[glowKey]}>
       {(glow) => (
-        <Root className='center'>
-          <Inner
-            className='inline-flex flex-col items-center justify-center  ml-2 lg:flex-row preserve-3d'
+        <motion.div className='center' style={style}>
+          <motion.div
+            className='column gap-2 ml-2 lg:row preserve-3d'
             style={style}
           >
-            <Item
-              style={{ z: 0 }}
-              glow={glow}
-              {...TECH.REACT}
-            />
-            <div className='p-2' />
-            <motion.div
-              className='center w-full xl:pt-1'
-              style={{ z: 60 }}
-            >
+            <Item glow={glow} {...TECH.REACT} />
+            <div className='center w-full xl:pt-1'>
               <Plus classValue='h-7 w-7' />
-            </motion.div>
-            <div className='p-2' />
-            <Item
-              style={{ z: 120 }}
-              glow={glow}
-              {...TECH.TYPESCRIPT}
-            />
-          </Inner>
-        </Root>
+            </div>
+            <Item glow={glow} {...TECH.TYPESCRIPT} />
+          </motion.div>
+        </motion.div>
       )}
     </Transform>
   );

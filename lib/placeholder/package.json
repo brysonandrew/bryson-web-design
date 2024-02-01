@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.78",
+  "version": "6.22.83",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,6 +10,7 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
+    "./resolvePlaceholderCssVars": "./resolvePlaceholderCssVars.ts",
     "./resolvePlaceholderRules": "./resolvePlaceholderRules.ts",
     "./withPlaceholder": "./withPlaceholder.tsx"
   },
@@ -27,14 +28,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/styled": "*",
     "framer-motion": "*",
     "react": "*",
     "@brysonandrew/utils": "*",
     "clsx": "*",
     "@brysonandrew/types": "*",
     "@brysonandrew/color": "*",
-    "unocss": "*",
-    "@emotion/react": "*"
+    "unocss": "*"
   }
 }
