@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { MotionValue, motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
@@ -8,8 +7,6 @@ import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { useCurrName } from '../../hooks/params/useCurrName';
-
-export const Root = styled(motion.div)``;
 
 type TProps = Pick<TBaseProps, 'width'> & {
   index: number;

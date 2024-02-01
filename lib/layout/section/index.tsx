@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { Title as DefaultTitle } from '@brysonandrew/layout/typography/title';
 import {
@@ -9,8 +8,7 @@ import {
 import clsx, { ClassValue } from 'clsx';
 import { P12 } from '@brysonandrew/space/P12';
 import { P16Y } from '@brysonandrew/space';
-
-const Root = styled.div``;
+import { motion } from 'framer-motion';
 
 type TProps = Omit<TDivProps, 'title'> & {
   title: string;
@@ -26,7 +24,7 @@ export const Section: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <div
       className={clsx('column', classValue)}
       id={title}
       {...props}
@@ -36,6 +34,6 @@ export const Section: FC<TProps> = ({
       <P12 classValue='flex lg:hidden' />
       <P16Y classValue='hidden lg:flex' />
       {children}
-    </Root>
+    </div>
   );
 };

@@ -1,13 +1,10 @@
 import { Paragraphs } from '@brysonandrew/gallery/list/item/details/Paragraphs';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Tags } from './Tags';
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/space/P2';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
-
-const Root = styled(motion.div)``;
 
 type TProps<K extends string> = TDivMotionProps & {
   isVisible: boolean;
@@ -25,7 +22,7 @@ export const Details = <
   const { paragraphs, tags } = ITEMS_RECORD[slug];
 
   return (
-    <Root
+    <motion.div
       className='column-stretch'
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
@@ -48,6 +45,6 @@ export const Details = <
           <Tags slug={slug} tags={tags} />
         </>
       )}
-    </Root>
+    </motion.div>
   );
 };

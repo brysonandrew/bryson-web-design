@@ -1,10 +1,7 @@
-import styled from '@emotion/styled';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
-import clsx, { ClassValue } from 'clsx';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-
-const Root = styled(motion.div)``;
 
 export type TFadeProps = TDivMotionProps & {
   from?: `from-${string}`;
@@ -17,7 +14,7 @@ export const Fade: FC<TFadeProps> = ({
   to = 'to-transparent',
   ...props
 }) => (
-  <Root
+  <motion.div
     className={clsx(
       'absolute pointer-events-none',
       from,

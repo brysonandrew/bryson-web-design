@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
@@ -7,8 +6,6 @@ import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import { AURA_ID } from '.';
 import { TClassValueProps } from '@brysonandrew/types/dom';
 
-const Root = styled(motion.div)``;
-
 type TProps = TDivMotionProps & TClassValueProps;
 export const Target: FC<TProps> = ({
   classValue,
@@ -16,7 +13,7 @@ export const Target: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <motion.div
       style={{
         filter: resolveUrlId(AURA_ID),
         ...style,

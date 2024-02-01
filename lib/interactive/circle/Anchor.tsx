@@ -4,8 +4,6 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 
-const Root = styled(motion.a)``;
-
 type TProps = TAnchorMotionProps &
   TClassValueProps &
   TTitleProps;
@@ -16,12 +14,12 @@ export const Anchor: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <motion.a
       className='circle-interactive'
       {...resolveInteractiveLabels(title)}
       {...props}
     >
       <>{children}</>
-    </Root>
+    </motion.a>
   );
 };

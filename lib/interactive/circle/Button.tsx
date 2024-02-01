@@ -8,8 +8,6 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 
-const Root = styled(motion.button)``;
-
 export type TButtonProps = TButtonMotionProps &
   TClassValueProps;
 export const Button: FC<TButtonProps> = ({
@@ -19,7 +17,7 @@ export const Button: FC<TButtonProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <motion.button
       className={clsx(
         'circle-interactive shrink-0 w-14 h-14',
         classValue,
@@ -28,6 +26,6 @@ export const Button: FC<TButtonProps> = ({
       {...props}
     >
       <>{children}</>
-    </Root>
+    </motion.button>
   );
 };

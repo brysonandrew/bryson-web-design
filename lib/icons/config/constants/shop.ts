@@ -1,1 +1,1 @@
-export const SHOP_ICON = 'fa6-solid:store'
+export const SHOP_ICON = 'fa6-solid:store';

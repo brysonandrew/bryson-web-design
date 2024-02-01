@@ -9,7 +9,6 @@ import {
 import { CvProvider } from '@brysonandrew/cv/CvProvider';
 import { Page } from '@brysonandrew/cv/page';
 import { Invert } from '@brysonandrew/cv/controls/Invert';
-import { GlobalColor } from '@app/color';
 
 export const Cv = () => {
   return (
@@ -25,7 +24,6 @@ export const Cv = () => {
       descriptionParagraphs={DESCRIPTION_PARAGRAPHS}
       sections={CV_ITEMS}
     >
-      <GlobalColor />
       <Invert>
         {(filter) => <Page style={{ filter }} />}
       </Invert>

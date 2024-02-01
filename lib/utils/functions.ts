@@ -29,4 +29,4 @@ export const once = (func: any) => {
     }
     return result;
   };
-}
+};

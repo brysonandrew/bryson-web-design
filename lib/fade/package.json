@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "6.22.72",
+  "version": "6.22.78",
   "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",

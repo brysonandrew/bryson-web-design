@@ -12,7 +12,6 @@ import { TPage } from '@brysonandrew/routes/types';
 const { TITLE_KEY_DELIMITER, resolveCompositeTitle } =
   MonoHead;
 import { Global as GlobalPlaceholder } from '@app/placeholder';
-import { GlobalColor } from '@app/color';
 import { capitalize } from '@brysonandrew/utils';
 
 type TPath = TPage<TPageTitle>['path'];
@@ -47,7 +46,6 @@ export const Global: FC = () => {
         titleLookup={titleLookup}
       />
       <GlobalPlaceholder />
-      <GlobalColor />
       <Aura />
     </>
   );

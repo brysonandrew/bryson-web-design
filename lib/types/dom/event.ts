@@ -1,1 +1,1 @@
-export type TTapEvent  =PointerEvent | MouseEvent | TouchEvent
+export type TTapEvent  =PointerEvent | MouseEvent | TouchEvent;

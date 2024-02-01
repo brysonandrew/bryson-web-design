@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TBaseChildren } from '@brysonandrew/types/dom';
 import { Clear } from './Clear';
@@ -12,8 +11,6 @@ import {
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { CONTACT_FORM_INPUT_LAYOUT_ID } from '../config/constants';
-
-const Root = styled(motion.label)``;
 
 export type TShellProps<T extends HTMLElement> = {
   name: TFormKey;
@@ -40,7 +37,7 @@ export const Shell = <T extends HTMLElement>({
   const ShellTextureLIGHT = LIGHT?.Back ?? Back;
 
   return (
-    <Root
+    <motion.label
       className='shell'
       layout
       style={{
@@ -74,6 +71,6 @@ export const Shell = <T extends HTMLElement>({
           layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
         />
       )}
-    </Root>
+    </motion.label>
   );
 };

@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
@@ -21,8 +20,6 @@ const resolveSize = (size: number) => {
   };
 };
 
-const Root = styled(motion.div)``;
-
 type TProps = TDivMotionProps &
   TClassValueProps & {
     size?: number;
@@ -39,7 +36,7 @@ export const Sight: FC<TProps> = ({
   const { cursor, cursorLabel } = useCursor();
 
   return (  
-    <Root
+    <motion.div
       style={{
         left: cursor.x,
         top: cursor.y,
@@ -62,6 +59,6 @@ export const Sight: FC<TProps> = ({
       {...props}
     >
       {children}
-    </Root>
+    </motion.div>
   );
 };

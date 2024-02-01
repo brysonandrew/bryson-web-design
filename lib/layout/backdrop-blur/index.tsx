@@ -1,10 +1,7 @@
 import type { FC } from 'react';
-import styled from '@emotion/styled';
 import { TDivMotionProps } from '@brysonandrew/types/dom';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
-
-const Root = styled(motion.div)``;
 
 type TProps = TDivMotionProps;
 export const BackdropBlur: FC<TProps> = ({
@@ -14,7 +11,7 @@ export const BackdropBlur: FC<TProps> = ({
   const { BORDER_RADIUS, Back, LIGHT, COLOR } = useApp();
 
   return (
-    <Root
+    <motion.div
       whileHover='hover'
       className='backdrop-blur-sm'
       style={{
@@ -39,6 +36,6 @@ export const BackdropBlur: FC<TProps> = ({
         )}
         <div className='relative'>{children}</div>
       </>
-    </Root>
+    </motion.div>
   );
 };

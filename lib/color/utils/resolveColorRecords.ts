@@ -10,8 +10,6 @@ import {
   BASE_COLOR_RECORD,
   BASE_GLOW_RECORD,
 } from '@brysonandrew/color/config/constants';
-import { Global, css } from '@emotion/react';
-import { createElement, FC } from 'react';
 
 export const resolveColorRecords = <
   A extends Record<string, TRgb>,
@@ -51,14 +49,14 @@ export const resolveColorRecords = <
   const colorCssVariables =
     resolveVarCssRecord(colorRecord);
 
-  const GlobalColor: FC = () =>
-    createElement(Global, {
-      styles: css`
-        :root {
-          ${colorCssVariables};
-        }
-      `,
-    });
+  // const GlobalColor: FC = () =>
+  //   createElement(Global, {
+  //     styles: css`
+  //       :root {
+  //         ${colorCssVariables};
+  //       }
+  //     `,
+  //   });
 
   return {
     colorRecord,
@@ -66,6 +64,6 @@ export const resolveColorRecords = <
     colorCssVariables,
     opacityRangeColorRecord,
     glowRecord,
-    GlobalColor,
+    // GlobalColor,
   } as const;
 };

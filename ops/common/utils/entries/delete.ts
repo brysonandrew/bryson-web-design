@@ -9,7 +9,7 @@ export const deleteEntry = async (cwd: string, entryPath: string) => {
   const fullPath = path.join(cwd, entryPath);
   try {
     if (!existsSync(fullPath)) {
-      console.log(faint(`%s entry ${entryPath} doesn't exist`), fullPath)
+      console.log(faint(`%s entry ${entryPath} doesn't exist`), fullPath);
     } else {
       await rm(fullPath, { recursive: true });
       console.log(green(`succeeded to delete ${entryPath} `));
