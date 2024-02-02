@@ -1,4 +1,4 @@
-export * from './Context';
+export * from './AppProvider';
 export * from './config/constants';
 export * from './config/types';
 export * from './layout/types';

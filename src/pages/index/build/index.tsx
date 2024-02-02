@@ -6,6 +6,7 @@ import { PARALLAX_PROPS } from './config/constants';
 import { BuildProvider } from '@pages/index/build/BuildProvider';
 import { SECTION_RECORD } from '@app/routes';
 import { Headline } from '@pages/index/build/headline';
+import { FadeMidPair } from '@brysonandrew/fade-edge/pairs/FadeMidPair';
 
 const Build: FC = () => {
   return (
@@ -22,8 +23,13 @@ const Build: FC = () => {
           </Section>
         )}
       </Parallax>
-      <div className='fill bg-gradient-to-b from-transparent via-black to-transparent opacity-dark z-0 pointer-events-none' />
-      <div className='fill bg-gradient-to-b from-transparent via-white-9 to-transparent opacity-light z-0 pointer-events-none' />
+      <FadeMidPair
+        classValue='h-screen'
+        direction='to bottom'
+        darkMidColor='var(--black-04)'
+        lightMidColor='var(--white-04)'
+        edgeColor='var(--transparent)'
+      />
     </>
   );
 };

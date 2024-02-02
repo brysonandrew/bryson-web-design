@@ -13,7 +13,7 @@ export const Range = styled.input`
   & {
     -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */
-    background-color: transparent; /* Otherwise white-9 in Chrome */
+    background-color: transparent; /* Otherwise white in Chrome */
   }
 
   &::-webkit-slider-thumb {
@@ -139,7 +139,7 @@ export const Option = styled.option``;
 export const ArrowDown = () => (
   <I
     icon='mdi-menu-down'
-    className='absolute top-1/2 -translate-y-1/2 right-2 w-5 h-4 shrink-0 text-white-9 pointer-events-none z-10'
+    className='absolute top-1/2 -translate-y-1/2 right-2 w-5 h-4 shrink-0 text-white pointer-events-none z-10'
   />
 );
 

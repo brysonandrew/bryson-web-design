@@ -1,6 +1,6 @@
 export const INIT = `
   body {
-    background-color: var(--white-9);
+    background-color: var(--white);
   }
   html.dark {
     body {

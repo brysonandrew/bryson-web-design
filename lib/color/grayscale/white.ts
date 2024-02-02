@@ -1,7 +1,7 @@
-import { resolveRgbaOpacityRange } from '@brysonandrew/color/utils/resolveRgbaOpacityRange';
-import { resolveRgbValueSeriesRecord } from '@brysonandrew/color/utils/resolveRgbValueSeriesRecord';
-import { resolveGrayscaleRange } from '@brysonandrew/color/utils/resolveGrayscaleRange';
-import { resolveGrayscaleRgb } from '@brysonandrew/color/utils/resolveGrayscaleRgb';
+import { resolveRgbaOpacityRange } from '@brysonandrew/color-main/resolveRgbaOpacityRange';
+import { resolveRgbValueSeriesRecord } from '@brysonandrew/color-main/resolveRgbValueSeriesRecord';
+import { resolveGrayscaleRange } from '@brysonandrew/color-grayscale/resolveGrayscaleRange';
+import { resolveGrayscaleRgb } from '@brysonandrew/color-grayscale/resolveGrayscaleRgb';
 
 const WHITEST = 255;
 export const WHITE_RGBS = resolveGrayscaleRange(
@@ -11,6 +11,6 @@ export const WHITE_RGBS = resolveGrayscaleRange(
 const WHITEST_RGB = resolveGrayscaleRgb(WHITEST);
 
 export const WHITE = {
-  ...resolveRgbaOpacityRange('white', WHITEST_RGB),
   ...resolveRgbValueSeriesRecord('white', WHITE_RGBS),
+  ...resolveRgbaOpacityRange('white', WHITEST_RGB),
 } as const;

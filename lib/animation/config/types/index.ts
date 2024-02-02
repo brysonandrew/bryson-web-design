@@ -6,10 +6,7 @@ import {
   VALUE_DELIMITER,
 } from '@brysonandrew/animation';
 import { TBaseTransitionConfigs } from '@brysonandrew/animation/config/types/transition/base';
-import {
-  TEasing,
-  TNumberString,
-} from '@brysonandrew/animation/config/types/values';
+import { TEasing } from '@brysonandrew/animation/config/types/values';
 import { TPresenceConfigs } from '@brysonandrew/animation/config/types/presence';
 import {
   MotionValue,
@@ -23,6 +20,7 @@ import {
   HoverHandlers,
   Target,
 } from 'framer-motion';
+import { TNumberString } from '@brysonandrew/types';
 
 export type TMainTransition = {
   duration: number;

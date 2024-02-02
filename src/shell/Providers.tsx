@@ -1,4 +1,4 @@
-import { AppProvider } from '@brysonandrew/app/Context';
+import { AppProvider } from '@brysonandrew/app/AppProvider';
 
 import { ScrollProvider } from '@brysonandrew/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
@@ -25,11 +25,11 @@ import {
   useOnSound,
 } from '@brysonandrew/sounds';
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
-import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { HeadProvider } from 'lib/head';
 import { Glow } from '@brysonandrew/filter-animate';
 import screensRecordJson from './lookup.json';
-import { Responsive } from '@app/placeholder';
+import { PLACEHOLDER } from '@app/placeholder';
+import { TTitle, TSlug, TRest } from '@app/gallery/types';
 
 type TProps = TChildrenProps;
 export const Providers: FC<TProps> = ({
@@ -58,7 +58,7 @@ export const Providers: FC<TProps> = ({
     >
       <ViewerProvider
         screensRecordJson={screensRecordJson}
-        Placeholder={Responsive}
+        Placeholder={PLACEHOLDER.Responsive}
       >
         <AppProvider<TCustomStyle>
           Back={Metal}

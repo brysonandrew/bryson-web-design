@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/types",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,18 +12,19 @@
       "default": "./index.ts"
     },
     "./keys": "./keys.ts",
+    "./numbers": "./numbers.ts",
     "./object": "./object.ts",
     "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./assertions/numbers": "./assertions/numbers.ts",
-    "./transformers/map": "./transformers/map.ts",
-    "./transformers/number": "./transformers/number.ts",
-    "./transformers/parameter": "./transformers/parameter.ts",
-    "./transformers/partial": "./transformers/partial.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
+    "./transformers/map": "./transformers/map.ts",
+    "./transformers/number": "./transformers/number.ts",
+    "./transformers/parameter": "./transformers/parameter.ts",
+    "./transformers/partial": "./transformers/partial.ts",
     "./transformers/format/camel": "./transformers/format/camel.ts",
     "./transformers/format/object": "./transformers/format/object.ts",
     "./transformers/format/pascal": "./transformers/format/pascal.ts",
@@ -45,6 +46,7 @@
   "peerDependencies": {
     "react": "*",
     "clsx": "*",
+    "framer-motion": "*",
     "react-router-dom": "*"
   }
 }

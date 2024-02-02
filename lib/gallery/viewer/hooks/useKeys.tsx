@@ -1,6 +1,6 @@
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useOffSound } from '@brysonandrew/sounds/useOffSound';
-import { useKey } from '@brysonandrew/hooks/dom/useKey';
+import { useKey } from '@brysonandrew/hooks-dom/useKey';
 import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 import { useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router';

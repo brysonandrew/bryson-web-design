@@ -1,10 +1,10 @@
 import type { FC } from 'react';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import { motion } from 'framer-motion';
 import { List } from '@brysonandrew/gallery/list';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 
-type TProps = Partial<TParallaxMotionChildrenProps>;
+type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {
   return (
     <motion.div

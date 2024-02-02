@@ -27,9 +27,6 @@ export const EMPTY_PROPS: TPartialParallaxMotionProps = {
   onUpdateRect: () => null,
 };
 
-export type TParallaxMotionChildrenProps =
-  TPartialParallaxMotionProps;
-
 export type TInputResolverConfig = {
   startScroll: number;
   windowHeight: number;

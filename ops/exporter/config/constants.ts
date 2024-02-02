@@ -7,7 +7,7 @@ export const removeCharsRx = new RegExp(`[;"']`, 'gi');
 export const APP_PREFIX = '@brysonandrew/' as const;
 export type TAppPrefix = typeof APP_PREFIX;
 export const DEP_PREFIX = new RegExp(
-  /import [\w\s{}]* from ['"]/,
+  /import [\w\s{},]* from ['"]/,
   'ig',
 );
 export const PACKAGE_JSON_NAME = 'package.json' as const;

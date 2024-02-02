@@ -1,30 +1,30 @@
 import { defineConfig } from 'unocss';
-import { resolveRules } from './rules';
 import { resolvePreflights } from './preflights';
 import { SHORTCUTS } from './shortcuts';
 import { TRANSFORMERS } from './transformers';
 import { resolvePresets } from './presets';
 import { resolveTheme } from '@brysonandrew/uno-theme';
 import { SPACING } from '@brysonandrew/uno-spacing';
-import { COLOR_CSS_VARS_RECORD } from '../app/color/index';
+import { resolveRules } from './rules';
+import { COLOR_VARS_RECORD } from '../app/color/index';
 
 export const theme = resolveTheme({
-  colors: COLOR_CSS_VARS_RECORD,
+  colors: COLOR_VARS_RECORD,
   spacing: SPACING,
 });
- 
+
 type TTheme = typeof theme;
 
 const rules = resolveRules<TTheme>();
 
-export type TColor = typeof COLOR_CSS_VARS_RECORD;
+export type TColor = typeof COLOR_VARS_RECORD;
 
 const shortcuts = SHORTCUTS;
 
 const presets = resolvePresets<TTheme>();
 
 const preflights = resolvePreflights<TTheme>(
-  COLOR_CSS_VARS_RECORD,
+  COLOR_VARS_RECORD,
 );
 
 const transformers = TRANSFORMERS;

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -35,6 +35,7 @@
     "typescript"
   ],
   "peerDependencies": {
+    "react": "*",
     "@brysonandrew/utils": "*",
     "react-synthwave": "*",
     "@emotion/styled": "*",

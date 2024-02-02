@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
 import {
   TChildren,
@@ -7,8 +6,6 @@ import {
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-
-const Root = styled(motion.div)``;
 
 type TProps = TDivMotionProps &
   TClassValueProps & {
@@ -20,11 +17,11 @@ export const Box: FC<TProps> = ({
   ...props
 }) => {
   return (
-    <Root
+    <motion.div
       className={clsx('relative', classValue)}
       {...props}
     >
       {children}
-    </Root>
+    </motion.div>
   );
 };

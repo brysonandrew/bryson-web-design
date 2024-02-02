@@ -7,7 +7,7 @@ import {
 } from 'react';
 import type { FC } from 'react';
 import { TScreensRecord } from '@brysonandrew/media';
-import { TViewerContext } from '@brysonandrew/gallery/viewer/config/types';
+import { TViewerContext } from '@brysonandrew/gallery-viewer/config/types';
 
 export const VIEWER = createContext<TViewerContext>(
   {} as TViewerContext,

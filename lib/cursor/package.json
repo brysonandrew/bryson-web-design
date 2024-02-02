@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -13,17 +13,17 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./switch/Box": "./switch/Box.tsx",
-    "./switch/IconWithText": "./switch/IconWithText.tsx",
-    "./switch/Sight": "./switch/Sight.tsx",
-    "./switch": "./switch/index.tsx",
-    "./utils": "./utils/index.ts",
-    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./hooks": "./hooks/index.ts",
     "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
     "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
     "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
+    "./utils": "./utils/index.ts",
+    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
+    "./switch/Box": "./switch/Box.tsx",
+    "./switch/IconWithText": "./switch/IconWithText.tsx",
+    "./switch/Sight": "./switch/Sight.tsx",
+    "./switch": "./switch/index.tsx",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   },
   "scripts": {
@@ -41,16 +41,15 @@
   ],
   "peerDependencies": {
     "react": "*",
+    "framer-motion": "*",
     "@brysonandrew/types": "*",
     "@brysonandrew/utils": "*",
+    "@brysonandrew/hooks": "*",
     "@brysonandrew/scroll": "*",
     "@brysonandrew/animation": "*",
-    "framer-motion": "*",
     "clsx": "*",
     "@brysonandrew/app": "*",
     "@brysonandrew/space": "*",
-    "@brysonandrew/icons": "*",
-    "@emotion/styled": "*",
-    "@brysonandrew/hooks": "*"
+    "@brysonandrew/icons": "*"
   }
 }

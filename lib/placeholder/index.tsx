@@ -1,34 +1,35 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import clsx from 'clsx';
-import {
-  TClassValueProps,
-  TDivMotionProps,
-} from '@brysonandrew/types/dom';
-import { resolveGradientStops } from '@brysonandrew/color/utils/resolveGradientStops';
+import { TDivMotionProps } from '@brysonandrew/types/dom';
+import { resolveGradient } from '@brysonandrew/color-gradient/resolveGradient';
+import { TColorStops } from '@brysonandrew/color';
 
-export const Root = styled(motion.div)``;
-
-export type TPlaceholderProps = TClassValueProps &
-  TDivMotionProps & {
-    colors?: string[];
-    clipPathId: string;
-  };
+export type TPlaceholderProps = TDivMotionProps & {
+  colors?: TColorStops;
+  clipPathId: string;
+};
 export type TPartialPlaceholderProps =
   Partial<TPlaceholderProps>;
 export const Placeholder: FC<TPlaceholderProps> = ({
   classValue,
   style,
-  colors = ['teal', 'transparent'],
+  colors = [
+    'var(--secondary)',
+    'transparent',
+  ] as TColorStops,
   clipPathId,
   ...props
 }) => {
+  const colorStops: TColorStops = [...colors, ...colors];
+  const backgroundImage = resolveGradient({
+    name: 'linear-gradient',
+    parts: ['to right', ...colorStops],
+  });
   return (
-    <Root
-      className='absolute center w-full h-full'
-      // layoutId={PLACEHOLDER_LAYOUT_ID}
+    <motion.div
+      className='fill center w-full h-full overflow-hidden'
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.28 }}
       exit={{ opacity: 0 }}
@@ -39,33 +40,29 @@ export const Placeholder: FC<TPlaceholderProps> = ({
         style={{
           width: 24,
           height: 24,
-          clipPath: resolveUrlId(clipPathId),
+          clipPath: resolveUrlId(clipPathId), // `url(#${clipPathId})`,
         }}
       >
         <motion.figure
           className='relative background-color-01 h-full'
           style={{
             width: '300%',
-            backgroundImage: `linear-gradient(to right, ${resolveGradientStops(
-              4,
-              colors,
-            )})`,
+            backgroundImage,
           }}
-          {...{
-            animate: {
-              x: ['0%', '-66.67%'],
-            },
-            transition: {
-              repeat: Infinity,
-              duration: 2,
-              type: 'keyframes',
-            },
+          animate={{
+            x: ['0%', '-66.67%'],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            type: 'keyframes',
           }}
         />
       </div>
-    </Root>
+    </motion.div>
   );
 };
 
 export * from './resolvePlaceholderRules';
+export * from './resolvePlaceholderVarsCss';
 export * from './withPlaceholder';

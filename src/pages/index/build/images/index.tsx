@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { useBuild } from '@pages/index/build/BuildProvider';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TParallaxMotionChildrenProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import styled from '@emotion/styled';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
@@ -20,7 +20,7 @@ const HEIGHT = TITLE_HEIGHT + BUFFER;
 const Root = styled(motion.div)``;
 const List = styled(motion.ul)``;
 
-type TProps = TParallaxMotionChildrenProps;
+type TProps = TPartialParallaxMotionProps;
 export const Images: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
   const { records } = useBuild();

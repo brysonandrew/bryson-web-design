@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -10,33 +10,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
-    "./grayscale/black": "./grayscale/black.ts",
-    "./grayscale/gray": "./grayscale/gray.ts",
-    "./grayscale": "./grayscale/index.ts",
-    "./grayscale/white": "./grayscale/white.ts",
-    "./main": "./main/index.ts",
-    "./utils/formatRgb": "./utils/formatRgb.ts",
-    "./utils/formatRgba": "./utils/formatRgba.ts",
-    "./utils/formatRgbaValue": "./utils/formatRgbaValue.ts",
-    "./utils/resolveColorRecords": "./utils/resolveColorRecords.ts",
-    "./utils/resolveGradientStops": "./utils/resolveGradientStops.ts",
-    "./utils/resolveGrayscaleRange": "./utils/resolveGrayscaleRange.ts",
-    "./utils/resolveGrayscaleRgb": "./utils/resolveGrayscaleRgb.ts",
-    "./utils/resolveRgbSeriesRecord": "./utils/resolveRgbSeriesRecord.ts",
-    "./utils/resolveRgbValueSeriesRecord": "./utils/resolveRgbValueSeriesRecord.ts",
-    "./utils/resolveRgba": "./utils/resolveRgba.ts",
-    "./utils/resolveRgbaOpacityRange": "./utils/resolveRgbaOpacityRange.ts",
-    "./utils/resolveRgbaValue": "./utils/resolveRgbaValue.ts",
-    "./utils/resolveVarCss": "./utils/resolveVarCss.ts",
-    "./utils/resolveVarCssColorRecord": "./utils/resolveVarCssColorRecord.ts",
-    "./utils/rgbToOpacityRangeRecord": "./utils/rgbToOpacityRangeRecord.ts",
-    "./utils/rgbToVarRecord": "./utils/rgbToVarRecord.ts",
-    "./utils/glow/resolveBoxShadow": "./utils/glow/resolveBoxShadow.ts",
-    "./utils/glow/resolveDropShadow": "./utils/glow/resolveDropShadow.ts",
-    "./utils/glow/resolveGlowRecord": "./utils/glow/resolveGlowRecord.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -52,6 +26,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*"
+    "@brysonandrew/color-glow": "*",
+    "@brysonandrew/color-gradient": "*",
+    "@brysonandrew/color-grayscale": "*",
+    "@brysonandrew/color-main": "*"
   }
 }

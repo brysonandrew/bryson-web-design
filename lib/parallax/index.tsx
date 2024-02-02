@@ -5,7 +5,7 @@ import { type FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
   EMPTY_PROPS,
-  TParallaxMotionChildrenProps,
+  TPartialParallaxMotionProps,
   TParallaxOptions,
 } from './config';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
@@ -18,7 +18,7 @@ type TProps = TClassValueProps &
   TParallaxOptions & {
     intersectionOptions?: IntersectionOptions;
     children(
-      props: TParallaxMotionChildrenProps,
+      props: TPartialParallaxMotionProps,
     ): JSX.Element;
   };
 export const Parallax: FC<TProps> = ({
@@ -77,11 +77,11 @@ export const Parallax: FC<TProps> = ({
 };
 
 export * from './config';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';

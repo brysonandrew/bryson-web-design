@@ -9,7 +9,7 @@ export const FadeRight: FC<TProps> = ({
 }) => (
   <Fade
     classValue={clsx(
-      'bg-gradient-to-r left-0 inset-y-0',
+      'left-0 inset-y-0',
       classValue,
     )}
     {...props}

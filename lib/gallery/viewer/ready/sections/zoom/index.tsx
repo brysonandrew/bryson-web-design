@@ -17,7 +17,7 @@ import {
   TImageProps,
   TMoveConfig,
   TSharedConfig,
-} from '@brysonandrew/gallery/viewer/ready/sections/zoom/config';
+} from '@brysonandrew/gallery-viewer/ready/sections/zoom/config';
 
 const MOVE_BUFFER = CURSOR_SIZE_QUARTER;
 

@@ -1,12 +1,9 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TBaseInputProps } from '../config/types';
 import { Box } from '.';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { TInputMotionProps } from '@brysonandrew/types/dom';
-
-const Input = styled(motion.input)``;
 
 type TProps = TInputMotionProps & TBaseInputProps;
 export const Text: FC<TProps> = ({
@@ -20,7 +17,7 @@ export const Text: FC<TProps> = ({
       isDisabled={disabled}
     >
       {({ input, setInput, inputProps }) => (
-        <Input
+        <motion.input
           ref={(instance) => {
             if (instance && !input) {
               setInput(instance);

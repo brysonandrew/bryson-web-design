@@ -7,11 +7,8 @@ import {
   IntersectionOptions,
   useInView,
 } from 'react-intersection-observer';
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-
-const Root = styled(motion.div)``;
 
 export type TInViewChildrenProps = Omit<
   ReturnType<typeof useInView>,
@@ -41,20 +38,15 @@ export const InView = ({
   });
 
   return (
-    <Root
+    <motion.div
       ref={ref}
       style={style}
       className={clsx('relative', classValue)}
       {...props}
     >
       {children(rest)}
-    </Root>
+    </motion.div>
   );
 };
 
 export * from './Replacer';
-
-
-
-
-

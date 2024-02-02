@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -37,8 +37,8 @@
     "framer-motion": "*",
     "@brysonandrew/types": "*",
     "@brysonandrew/utils": "*",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/animation": "*"
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/app": "*"
   },
   "types": "index.d.ts"
 }

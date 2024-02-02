@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "In View library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -29,7 +29,7 @@
     "react": "*",
     "react-device-detect": "*",
     "@brysonandrew/types": "*",
-    "@emotion/styled": "*",
+    "react-intersection-observer": "*",
     "clsx": "*",
     "framer-motion": "*"
   }

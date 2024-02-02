@@ -1,7 +1,8 @@
+import { resolveUrlId } from '@brysonandrew/utils';
 import type { FC } from 'react';
 import { FilterShell } from '../FilterShell';
 
-export const AURA_ID = 'AURA_ID';
+const AURA_ID = 'AURA_ID';
 
 const BASE_ANIMATION = {
   dur: '6s',
@@ -9,13 +10,10 @@ const BASE_ANIMATION = {
 };
 
 type TProps = {
-  intensity?: number;
-  id?: string;
+  intensity: number;
+  id: string;
 };
-export const Aura: FC<TProps> = ({
-  id = AURA_ID,
-  intensity = 10,
-}) => (
+const Filter: FC<TProps> = ({ id, intensity }) => (
   <FilterShell>
     <filter
       id={id}
@@ -88,3 +86,15 @@ export const Aura: FC<TProps> = ({
     </filter>
   </FilterShell>
 );
+
+const GlobalFilter = () => {
+  return <Filter id={AURA_ID} intensity={10} />;
+};
+
+export const AURA = {
+  GLOBAL: {
+    Filter: GlobalFilter,
+    value: resolveUrlId(AURA_ID),
+  },
+  Filter,
+};

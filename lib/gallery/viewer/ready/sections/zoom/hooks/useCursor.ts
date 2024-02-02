@@ -1,4 +1,4 @@
-import { useEventListener } from '@brysonandrew/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   CURSOR_SIZE,
@@ -6,8 +6,8 @@ import {
   TInteractiveEvent,
   resolveCursorCoords,
 } from '@brysonandrew/gallery';
-import { useOutsideClick } from '@brysonandrew/hooks/dom/useOutsideClick';
-import { resolveGalleryWidth } from '@brysonandrew/gallery/viewer/utils/resolveGalleryWidth';
+import { useOutsideClick } from '@brysonandrew/hooks-dom/useOutsideClick';
+import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
 
 type TConfig = TSharedConfig;
 export const useCursor = ({

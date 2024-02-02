@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Viewport library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -30,6 +30,7 @@
   "peerDependencies": {
     "react": "*",
     "framer-motion": "*",
-    "@brysonandrew/hooks": "*"
+    "@brysonandrew/hooks-events": "*",
+    "@brysonandrew/hooks-window": "*"
   }
 }

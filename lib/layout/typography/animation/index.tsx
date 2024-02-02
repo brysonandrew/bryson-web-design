@@ -9,25 +9,19 @@ export const Animation: FC<TChildrenString> = ({
   return (
     <AnimatePresence>
       {children.split(/\s/).map((word, index) => (
-        <motion.div
+        <ShiftUp
           key={word}
+          staggerIndex={index}
+          baseDelay={.2}
         >
           {index % 2 === 0 ? (
-            <ShiftUp
-              classValue='font-extralight'
-              staggerIndex={index}
-            >
-              {word}
-            </ShiftUp>
+            <span className='font-extralight'>{word}</span>
           ) : (
-            <ShiftUp
-              classValue='text-secondary font-black'
-              staggerIndex={index}
-            >
+            <span className='text-secondary font-black'>
               {word}
-            </ShiftUp>
+            </span>
           )}
-        </motion.div>
+        </ShiftUp>
       ))}
     </AnimatePresence>
   );

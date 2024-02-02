@@ -1,0 +1,36 @@
+{
+  "name": "@brysonandrew/color-grayscale",
+  "version": "6.22.102",
+  "description": "Color Grayscale library",
+  "types": "/index.d.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./black": "./black.ts",
+    "./gray": "./gray.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveGrayscaleRange": "./resolveGrayscaleRange.ts",
+    "./resolveGrayscaleRgb": "./resolveGrayscaleRgb.ts",
+    "./white": "./white.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/color-main": "*"
+  }
+}

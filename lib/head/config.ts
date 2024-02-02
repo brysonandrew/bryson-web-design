@@ -4,6 +4,6 @@ export const resolveCompositeTitle = (
 ) => args.filter(Boolean).join(TITLE_KEY_DELIMITER);
 
 export const defaultTitlesResolver = (titles: string[]) =>
-titles.join(TITLE_KEY_DELIMITER)
+titles.join(TITLE_KEY_DELIMITER);
 
-export type TTitlesResolver = (titles: string[]) => string
+export type TTitlesResolver = (titles: string[]) => string;

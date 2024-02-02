@@ -1,16 +1,13 @@
 import { motion } from 'framer-motion';
-import styled from '@emotion/styled';
 import { TBaseProps, useGallery, useViewer as useContext } from '@brysonandrew/gallery';
 import { ViewerHeader } from './header/ViewerHeader';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
-import { useFreezeScrollBar } from '@brysonandrew/hooks/scroll/useFreezeScroll';
+import { useFreezeScrollBar } from '@brysonandrew/hooks-scroll/useFreezeScroll';
 import { useMotionX } from '@brysonandrew/gallery-viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
-
-const Root = styled(motion.div)``;
 
 export type TProps<T extends string> = {
   viewportWidth: number;
@@ -41,7 +38,7 @@ export const Ready = <T extends string>({
   };
 
   return (
-    <Root
+    <motion.div
       className='fixed inset-0 column z-50'
       style={{ z: viewportWidth, zIndex: 9999 }}
     >
@@ -50,6 +47,6 @@ export const Ready = <T extends string>({
       <Sections {...galleryProps} />
       <Footer {...galleryProps} />
       <Arrows max={galleryProps.count} />
-    </Root>
+    </motion.div>
   );
 };

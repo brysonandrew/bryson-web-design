@@ -1,1 +1,1 @@
-export const SQUARE_ICON = "material-symbols:square"
+export const SQUARE_ICON = "material-symbols:square";

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/parallax",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -11,11 +11,11 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./aggregator": "./aggregator/index.tsx",
-    "./aggregator/useScrollYBounds": "./aggregator/useScrollYBounds.ts",
     "./hooks/useDispersion": "./hooks/useDispersion.tsx",
     "./hooks/useResistance": "./hooks/useResistance.tsx",
     "./hooks/useVisibility": "./hooks/useVisibility.tsx",
+    "./aggregator": "./aggregator/index.tsx",
+    "./aggregator/useScrollYBounds": "./aggregator/useScrollYBounds.ts",
     "./aggregator/values/Dispersion": "./aggregator/values/Dispersion.tsx",
     "./aggregator/values/Resistance": "./aggregator/values/Resistance.tsx",
     "./aggregator/values/Visibility": "./aggregator/values/Visibility.tsx"

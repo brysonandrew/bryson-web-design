@@ -1,11 +1,12 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
     "./FadeDown": "./FadeDown.tsx",
+    "./FadeFill": "./FadeFill.tsx",
     "./FadeLeft": "./FadeLeft.tsx",
     "./FadeRight": "./FadeRight.tsx",
     "./FadeUp": "./FadeUp.tsx",
@@ -29,9 +30,10 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/fade-edge": "*",
     "clsx": "*",
     "react": "*",
-    "@emotion/styled": "*",
+    "@brysonandrew/color-gradient": "*",
     "@brysonandrew/types": "*",
     "framer-motion": "*"
   }

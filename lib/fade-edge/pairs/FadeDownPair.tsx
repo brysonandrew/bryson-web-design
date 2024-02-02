@@ -1,23 +1,11 @@
-import { TFadeProps } from '@brysonandrew/fade';
-import { FadeDown } from '@brysonandrew/fade/FadeDown';
-import clsx from 'clsx';
+import { FadeDown } from '@brysonandrew/fade';
+import {
+  FadePair,
+  TFadePairProps,
+} from '@brysonandrew/fade-edge/pairs/FadePair';
 import { FC } from 'react';
 
-type TProps = TFadeProps;
-export const FadeDownPair: FC<TProps> = ({
-  classValue,
-  ...props
-}) => (
-  <>
-    <FadeDown
-      classValue={clsx('h-full opacity-dark', classValue)}
-      from='from-black-05'
-      {...props}
-    />
-    <FadeDown
-      classValue={clsx('h-full opacity-light', classValue)}
-      from='from-white-05'
-      {...props}
-    />
-  </>
+type TProps = TFadePairProps;
+export const FadeDownPair: FC<TProps> = (props) => (
+  <FadePair Fader={FadeDown} {...props} />
 );

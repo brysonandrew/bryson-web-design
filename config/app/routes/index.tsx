@@ -1,10 +1,9 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import * as Pages from '@pages/index';
+import * as WorkshopPages from '@pages/_workshop';
+import { Shell } from '@shell/index';
 import { resolvePageRecords } from '@brysonandrew/routes';
-import { Cv } from '@pages/_workshop/cv';
-import { Reader } from '@pages/_workshop/reader';
-import { Shell } from 'src/shell';
-import { Marketing } from '@pages/_workshop/marketing';
+import { titleToKebab } from '@brysonandrew/utils';
 
 export const PAGE_TITLES = [
   'Index',
@@ -27,23 +26,15 @@ export const SECTION_RECORD = {
   [PAGE_RECORD.contact.key]: 'Get in touch',
 } as const;
 
-const DEV_ROUTES = [
-  {
-    path: '/marketing',
-    element: <Marketing />,
-  },
-];
+const WORKSHOP_ROUTES = Object.entries(WorkshopPages).map(
+  ([key, Component]) => ({
+    path: `/${titleToKebab(key)}`,
+    element: <Component />,
+  }),
+);
 
 const STANDALONE_ROUTES = [
-  ...DEV_ROUTES,
-  {
-    path: '/reader',
-    element: <Reader />,
-  },
-  {
-    path: '/cv',
-    element: <Cv />,
-  },
+  ...WORKSHOP_ROUTES,
   {
     path: '*',
     element: (

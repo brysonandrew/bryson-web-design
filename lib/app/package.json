@@ -1,11 +1,11 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
-    "./Context": "./Context.tsx",
+    "./AppProvider": "./AppProvider.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
@@ -37,11 +37,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils": "*",
-    "lodash": "*",
     "react": "*",
+    "@brysonandrew/utils": "*",
     "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/types": "*",
     "@brysonandrew/color": "*",
+    "@brysonandrew/color-glow": "*",
     "framer-motion": "*",
     "clsx": "*"
   }

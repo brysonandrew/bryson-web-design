@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { Submit } from './box/Submit';
 import { FC, useRef } from 'react';
@@ -8,8 +7,6 @@ import { Text } from './box/Text';
 import { Textarea } from './box/textarea';
 import { Footer } from './footer';
 import { TContactListProps } from '@brysonandrew/contact-list';
-
-const Root = styled(motion.form)``;
 
 type TProps = {
   isDisabled?: boolean;
@@ -26,7 +23,7 @@ export const Contact: FC<TProps> = ({
   useAutoFocus(_isDisabled ?? isDisabled);
 
   return (
-    <Root
+    <motion.form
       className='root'
       initial={false}
       ref={ref}
@@ -62,10 +59,11 @@ export const Contact: FC<TProps> = ({
       </div>
       <Submit isDisabled={isDisabled} />
       {footerInfo && <Footer {...footerInfo} />}
-    </Root>
+    </motion.form>
   );
 };
 
+export * from '@brysonandrew/contact-list';
 export * from './ContactProvider';
 export * from './box/Clear';
 export * from './box/Name';

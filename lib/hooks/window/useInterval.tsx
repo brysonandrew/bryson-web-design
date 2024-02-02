@@ -1,10 +1,5 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import type { MutableRefObject } from "react";
+import { useEffect, useRef } from 'react';
+import type { MutableRefObject } from 'react';
 
 /**
   useInterval source 
@@ -18,7 +13,7 @@ import type { MutableRefObject } from "react";
  */
 export function useInterval(
   callback: () => Promise<void | null> | void,
-  delay: number | null
+  delay: number | null,
 ): MutableRefObject<number | null> {
   const intervalRef = useRef<number | null>(null);
   const callbackRef = useRef(callback);
@@ -38,10 +33,10 @@ export function useInterval(
   // Set up the interval:
 
   useEffect(() => {
-    if (typeof delay === "number") {
+    if (typeof delay === 'number') {
       intervalRef.current = window.setInterval(
         () => callbackRef.current(),
-        delay
+        delay,
       );
 
       // Clear interval if the components is unmounted or the delay changes:

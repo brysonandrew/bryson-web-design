@@ -1,6 +1,5 @@
 import {
-  BASE_COLOR_RECORD,
-  BASE_GLOW_RECORD,
+  BASE_COLOR_RECORD, BASE_GLOW_RECORD,
 } from '@brysonandrew/color';
 
 export const DEFAULT_STYLE = {

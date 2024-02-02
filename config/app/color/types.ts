@@ -1,6 +1,6 @@
 import {
   COLOR_RECORD,
-  COLOR_CSS_VARS_RECORD,
+  COLOR_VARS_RECORD,
 } from '@app/color';
 import {
   OPACITY_RANGE_RGB_RECORD,
@@ -8,7 +8,7 @@ import {
 } from '@app/color/constants';
 
 export type TColorRecord = typeof COLOR_RECORD;
-export type TColorVarsRecord = typeof COLOR_CSS_VARS_RECORD;
+export type TColorVarsRecord = typeof COLOR_VARS_RECORD;
 export type TColorKey =
   | keyof TColorRecord
   | keyof TColorVarsRecord;

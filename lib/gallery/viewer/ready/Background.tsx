@@ -12,7 +12,9 @@ const Root = styled(motion.div)`
 export const Background: FC = () => {
   return (
     <Root
-      className={clsx('absolute inset-0 dark:bg-black-04 bg-white-04')}
+      className={clsx(
+        'absolute inset-0 dark:bg-black-04 bg-white-04',
+      )}
       {...PRESENCE_OPACITY}
     />
   );

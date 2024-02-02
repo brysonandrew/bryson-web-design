@@ -9,7 +9,7 @@ import {
   TGalleryConfig,
   TValue,
 } from '@brysonandrew/gallery/config/types';
-import { once } from 'lodash';
+import { once } from '@brysonandrew/utils/functions';
 
 const initContext = once(<
   T extends string,
@@ -23,8 +23,7 @@ export const useGallery = <
   T extends string,
   K extends string,
   R extends object,
->() =>
-  useReactContext<TValue<T, K, R>>(initContext<T, K, R>());
+>() => useReactContext<TValue<T, K, R>>(initContext());
 
 type TProps<
   T extends string,
@@ -42,7 +41,7 @@ export const GalleryProvider = <
   children,
   ...props
 }: PropsWithChildren<TProps<T, K, R>>) => {
-  const CONTEXT = initContext<T, K, R>();
+  const CONTEXT = initContext();
   const itemsConfig = useItemsConfig<T, K, R>(initItems);
   const value = { ...itemsConfig, ...props } as TValue<
     T,
@@ -71,7 +70,7 @@ export const Consumer = <
 >({
   children,
 }: TConsumerProps<T, K, R>) => {
-  const CONTEXT = initContext<T, K, R>();
+  const CONTEXT = initContext();
 
   return <CONTEXT.Consumer>{children}</CONTEXT.Consumer>;
 };

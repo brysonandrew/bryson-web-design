@@ -5,10 +5,10 @@ export const BACKGROUND: StaticShortcutMap = {
   'bg-dark': 'bg-black-4 opacity-dark',
   'bg-lighter': 'bg-white-8 opacity-light',
   'bg-darker': 'bg-black-1 opacity-dark',
-  'bg-lightest': 'bg-white-9 opacity-light',
+  'bg-lightest': 'bg-white opacity-light',
   'bg-darkest': 'bg-black opacity-dark',
   'bg-main':
-    'bg-white-9 dark:bg-black',
+    'bg-white dark:bg-black',
   'bg-main-inverted':
-    'bg-black dark:bg-white-9',
+    'bg-black dark:bg-white',
 };

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.64",
+  "version": "6.22.102",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -46,14 +46,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "@emotion/styled": "*",
-    "framer-motion": "*",
     "@brysonandrew/contact-list": "*",
+    "react": "*",
+    "framer-motion": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/app": "*",
     "@brysonandrew/types": "*",
+    "@brysonandrew/icons": "*",
     "@brysonandrew/cursor": "*",
     "clsx": "*",
     "@brysonandrew/scroll": "*",
