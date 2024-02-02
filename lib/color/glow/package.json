@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-glow",
-  "version": "6.22.90",
+  "version": "6.22.102",
   "description": "Color Glow library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -31,7 +31,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color": "*",
+    "@brysonandrew/color-main": "*",
     "@brysonandrew/types": "*"
   }
 }

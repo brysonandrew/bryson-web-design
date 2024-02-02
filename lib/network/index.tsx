@@ -1,4 +1,4 @@
-import { useEventListener } from '@brysonandrew/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
 import type { FC } from 'react';
 import { useNetwork } from '@brysonandrew/network';
 import { Offline } from '@brysonandrew/network/Offline';

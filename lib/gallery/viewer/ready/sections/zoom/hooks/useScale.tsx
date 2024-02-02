@@ -1,6 +1,6 @@
 import { clamp, useTransform } from 'framer-motion';
 import { useState } from 'react';
-import { useEventListener } from '@brysonandrew/hooks/events/useEventListener';
+import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
 import {
   CURSOR_SIZE_HALF,
   DELTA_FACTOR,

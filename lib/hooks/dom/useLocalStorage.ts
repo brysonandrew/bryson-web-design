@@ -5,8 +5,8 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useEventListener } from '../events/useEventListener';
-import { useEventCallback } from '../events/useEventCallback';
+import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
+import { useEventCallback } from '@brysonandrew/hooks-events/useEventCallback';
 
 declare global {
   interface WindowEventMap {

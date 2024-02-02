@@ -7,6 +7,7 @@
       "@brysonandrew/color-*": ["lib/color/*"],
       "@brysonandrew/gallery-*": ["lib/gallery/*"],
       "@brysonandrew/uno-*": ["lib/uno/*"],
+      "@brysonandrew/hooks-*": ["lib/hooks/*"],
       "@brysonandrew/*": ["lib/*", "ops/*"],
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],

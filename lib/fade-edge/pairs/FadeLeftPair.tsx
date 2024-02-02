@@ -1,8 +1,11 @@
-import { FadeLeft, TFadeProps } from '@brysonandrew/fade';
-import { FadePair } from '@brysonandrew/fade-edge/pairs/FadePair';
+import { FadeLeft } from '@brysonandrew/fade';
+import {
+  FadePair,
+  TFadePairProps,
+} from '@brysonandrew/fade-edge/pairs/FadePair';
 import { FC } from 'react';
 
-type TProps = TFadeProps;
+type TProps = TFadePairProps;
 export const FadeLeftPair: FC<TProps> = (props) => (
   <FadePair Fader={FadeLeft} {...props} />
 );

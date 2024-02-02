@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "6.22.90",
+  "version": "6.22.102",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -10,40 +10,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./glow": "./glow/index.ts",
-    "./glow/resolveBoxShadow": "./glow/resolveBoxShadow.ts",
-    "./glow/resolveDropShadow": "./glow/resolveDropShadow.ts",
-    "./glow/resolveGlowRecord": "./glow/resolveGlowRecord.ts",
-    "./gradient": "./gradient/index.ts",
-    "./gradient/resolveGradient": "./gradient/resolveGradient.ts",
-    "./gradient/resolveGradientStops": "./gradient/resolveGradientStops.ts",
-    "./grayscale/black": "./grayscale/black.ts",
-    "./grayscale/gray": "./grayscale/gray.ts",
-    "./grayscale": "./grayscale/index.ts",
-    "./grayscale/resolveGrayscaleRange": "./grayscale/resolveGrayscaleRange.ts",
-    "./grayscale/resolveGrayscaleRgb": "./grayscale/resolveGrayscaleRgb.ts",
-    "./grayscale/white": "./grayscale/white.ts",
-    "./main/formatRgb": "./main/formatRgb.ts",
-    "./main/formatRgba": "./main/formatRgba.ts",
-    "./main/formatRgbaValue": "./main/formatRgbaValue.ts",
-    "./main": "./main/index.ts",
-    "./main/resolveColorRecords": "./main/resolveColorRecords.ts",
-    "./main/resolveRgbSeriesRecord": "./main/resolveRgbSeriesRecord.ts",
-    "./main/resolveRgbValueSeriesRecord": "./main/resolveRgbValueSeriesRecord.ts",
-    "./main/resolveRgba": "./main/resolveRgba.ts",
-    "./main/resolveRgbaOpacityRange": "./main/resolveRgbaOpacityRange.ts",
-    "./main/resolveRgbaValue": "./main/resolveRgbaValue.ts",
-    "./main/resolveVarCss": "./main/resolveVarCss.ts",
-    "./main/resolveVarCssColorRecord": "./main/resolveVarCssColorRecord.ts",
-    "./main/rgbToOpacityRangeRecord": "./main/rgbToOpacityRangeRecord.ts",
-    "./main/rgbToVarRecord": "./main/rgbToVarRecord.ts",
-    "./glow/config/constants": "./glow/config/constants.ts",
-    "./glow/config/types": "./glow/config/types.ts",
-    "./gradient/config/constants": "./gradient/config/constants.ts",
-    "./gradient/config/types": "./gradient/config/types.ts",
-    "./main/config/constants": "./main/config/constants.ts",
-    "./main/config/types": "./main/config/types.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -59,8 +26,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/color-grayscale": "*"
+    "@brysonandrew/color-glow": "*",
+    "@brysonandrew/color-gradient": "*",
+    "@brysonandrew/color-grayscale": "*",
+    "@brysonandrew/color-main": "*"
   }
 }

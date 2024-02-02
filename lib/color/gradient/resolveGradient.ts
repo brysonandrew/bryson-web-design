@@ -1,4 +1,4 @@
-import { UGradientConfig } from '@brysonandrew/color/gradient/config/types';
+import { UGradientConfig } from '@brysonandrew/color-gradient/config/types';
 
 type TConfig = UGradientConfig;
 export const resolveGradient = ({

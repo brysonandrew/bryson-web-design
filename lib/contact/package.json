@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.90",
+  "version": "6.22.102",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -11,14 +11,14 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
     "./box/Clear": "./box/Clear.tsx",
     "./box/Name": "./box/Name.tsx",
     "./box/Shell": "./box/Shell.tsx",
     "./box/Submit": "./box/Submit.tsx",
     "./box/Text": "./box/Text.tsx",
     "./box": "./box/index.tsx",
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts",
     "./footer": "./footer/index.tsx",
     "./hooks/useAutoFocus": "./hooks/useAutoFocus.ts",
     "./hooks/useFocus": "./hooks/useFocus.ts",
@@ -46,9 +46,9 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/contact-list": "*",
     "react": "*",
     "framer-motion": "*",
-    "@brysonandrew/contact-list": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/app": "*",

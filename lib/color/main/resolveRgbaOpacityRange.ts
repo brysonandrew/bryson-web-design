@@ -4,8 +4,8 @@ import {
   TRgb,
   TRgbaValue,
   TRgbValue,
-} from '@brysonandrew/color/main/config/types';
-import { resolveRgbaValue } from '@brysonandrew/color/main/resolveRgbaValue';
+} from '@brysonandrew/color-main/config/types';
+import { resolveRgbaValue } from '@brysonandrew/color-main/resolveRgbaValue';
 
 export type TOpacityRangeRecord<
   T extends string,

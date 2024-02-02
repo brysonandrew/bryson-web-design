@@ -1,4 +1,4 @@
-import { rgbToOpacityRangeRecord } from '@brysonandrew/color/main/rgbToOpacityRangeRecord';
+import { rgbToOpacityRangeRecord } from '@brysonandrew/color-main/rgbToOpacityRangeRecord';
 
 export const MAIN_RGBS = {
   secondary: '45, 212, 191',

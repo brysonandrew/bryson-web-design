@@ -1,4 +1,4 @@
-import { TDigit, TRgbRecord, TRgbs } from '@brysonandrew/color/main/config/types';
+import { TDigit, TRgbRecord, TRgbs } from '@brysonandrew/color-main/config/types';
 
 export const resolveRgbSeriesRecord = <T extends string>(
   key: T,

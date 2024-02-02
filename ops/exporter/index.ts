@@ -1,9 +1,9 @@
 import { TTargets } from '@brysonandrew/exporter/config/types';
 import { find } from './find';
 import { init } from './init';
-import { process } from './process';
-import { workspaces } from './workspaces';
 import { parse } from 'path';
+import { workspaces } from '@ops/exporter/workspaces';
+import { process } from '@ops/exporter/process';
 
 (async () => {
   try {
@@ -14,12 +14,16 @@ import { parse } from 'path';
       const { dir, base } = record;
       const parts = dir.split('/');
       const name = parts.slice(1).join('-');
-      // const workspace = `${dir}/${name}`;
+      const subWorkspaces = pkgPaths.filter(
+        (p) => p.startsWith(dir) && p !== pkgPath,
+      );
+
       return {
         base,
         dir,
         name,
         workspace: dir,
+        subWorkspaces,
       };
     });
     await workspaces(

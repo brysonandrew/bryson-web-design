@@ -1,4 +1,4 @@
-import { TIndex, TRgbGrayscale } from '@brysonandrew/color/main/config/types';
+import { TIndex, TRgbGrayscale } from '@brysonandrew/color-main/config/types';
 import { resolveGrayscaleRgb } from './resolveGrayscaleRgb';
 
 const COUNT = 9;

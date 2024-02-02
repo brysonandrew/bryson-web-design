@@ -1,24 +1,34 @@
 import { FadeRight, TFadeProps } from '@brysonandrew/fade';
-import clsx from 'clsx';
+import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 
-type TProps = TFadeProps & { Fader?: FC<TFadeProps> };
-export const FadePair: FC<TProps> = ({
+export type TFadePairProps = TFadeProps & {
+  Fader?: FC<TFadeProps>;
+  darkColor?: string;
+  lightColor?: string;
+  darkClass?: ClassValue;
+  lightClass?: ClassValue;
+};
+export const FadePair: FC<TFadePairProps> = ({
   Fader = FadeRight,
   classValue,
+  darkColor = 'var(--black-05)',
+  lightColor = 'var(--white-05)',
+  darkClass,
+  lightClass,
   ...props
 }) => (
   <>
     <Fader
-      key='FADE_DARK'
-      classValue={clsx('h-full opacity-dark', classValue)}
-      from='var(--black-05)'
+      key='FADE_PAIR_DARK'
+      classValue={clsx(darkClass, classValue)}
+      from={darkColor}
       {...props}
     />
     <Fader
-      key='FADE_LIGHT'
-      classValue={clsx('h-full opacity-light', classValue)}
-      from='var(--white-05)'
+      key='FADE_PAIR_LIGHT'
+      classValue={clsx(lightClass, classValue)}
+      from={lightColor}
       {...props}
     />
   </>

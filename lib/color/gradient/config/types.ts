@@ -4,7 +4,7 @@ import {
   GRADIENT_TYPES,
   RADIAL_EXTENTS,
   RADIAL_SHAPES,
-} from '@brysonandrew/color/gradient/config/constants';
+} from '@brysonandrew/color-gradient/config/constants';
 
 type TColor = string;
 export type TColorStop =

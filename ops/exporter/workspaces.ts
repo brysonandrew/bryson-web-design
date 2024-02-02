@@ -24,8 +24,6 @@ export const workspaces = async (dirPaths: string[]) => {
       null,
       2,
     );
-    console.log(pkgPath);
-
     await writeFile(pkgPath, pkgWithWorkspaces);
   } catch (error: any) {
     throw Error(error);

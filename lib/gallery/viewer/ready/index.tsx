@@ -5,7 +5,7 @@ import { Arrows } from './Arrows';
 import { Background } from './Background';
 import { Footer } from './footer';
 import { Sections } from './sections';
-import { useFreezeScrollBar } from '@brysonandrew/hooks/scroll/useFreezeScroll';
+import { useFreezeScrollBar } from '@brysonandrew/hooks-scroll/useFreezeScroll';
 import { useMotionX } from '@brysonandrew/gallery-viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
 

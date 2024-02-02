@@ -2,8 +2,8 @@ import { TKeyStr } from '@brysonandrew/types/keys';
 import {
   TRgb,
   TRgbaValue,
-} from '@brysonandrew/color/main/config/types';
-import { resolveRgbaValue } from '@brysonandrew/color/main/resolveRgbaValue';
+} from '@brysonandrew/color-main/config/types';
+import { resolveRgbaValue } from '@brysonandrew/color-main/resolveRgbaValue';
 
 export const rgbToVarRecord = <T extends object>(
   rgbRecord: T,

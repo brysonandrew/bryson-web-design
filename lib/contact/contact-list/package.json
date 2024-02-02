@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/contact-list",
-  "version": "6.22.90",
-  "description": "Contact List library",
+  "version": "6.22.102",
+  "description": "Contact Contact List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {

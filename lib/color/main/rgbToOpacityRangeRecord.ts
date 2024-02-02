@@ -1,5 +1,5 @@
 import { TKeyStr } from '@brysonandrew/types/keys';
-import { TRgb } from '@brysonandrew/color/main/config/types';
+import { TRgb } from '@brysonandrew/color-main/config/types';
 import {
   resolveRgbaOpacityRange,
   TOpacityRangeRecord,
