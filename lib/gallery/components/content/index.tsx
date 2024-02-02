@@ -10,7 +10,7 @@ import {
 } from '@brysonandrew/types/dom';
 import { P2 } from '@brysonandrew/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
-import { useDelayCallback } from '@brysonandrew/hooks/window/useDelayCallback';
+import { useDelayCallback } from '@brysonandrew/hooks-window/useDelayCallback';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useApp } from '@brysonandrew/app';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';

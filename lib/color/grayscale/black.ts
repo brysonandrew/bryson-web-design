@@ -1,6 +1,6 @@
-import { resolveRgbaOpacityRange } from '@brysonandrew/color/main/resolveRgbaOpacityRange';
-import { resolveRgbValueSeriesRecord } from '@brysonandrew/color/main/resolveRgbValueSeriesRecord';
-import { resolveGrayscaleRange } from '@brysonandrew/color/grayscale/resolveGrayscaleRange';
+import { resolveRgbaOpacityRange } from '@brysonandrew/color-main/resolveRgbaOpacityRange';
+import { resolveRgbValueSeriesRecord } from '@brysonandrew/color-main/resolveRgbValueSeriesRecord';
+import { resolveGrayscaleRange } from '@brysonandrew/color-grayscale/resolveGrayscaleRange';
 
 export const BLACK_RGBS = resolveGrayscaleRange(0, 85);
 

@@ -1,4 +1,4 @@
-import { resolveBoxShadow } from '@brysonandrew/color/glow/resolveBoxShadow';
+import { resolveBoxShadow } from '@brysonandrew/color-glow/resolveBoxShadow';
 
 export const resolveRgbaSet = (color: string) => {
   return {

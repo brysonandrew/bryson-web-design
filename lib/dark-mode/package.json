@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.90",
+  "version": "6.22.102",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -41,7 +41,7 @@
     "framer-motion": "*",
     "react": "*",
     "@brysonandrew/utils": "*",
-    "@brysonandrew/hooks": "*",
+    "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/interactive": "*",
     "@brysonandrew/app": "*",

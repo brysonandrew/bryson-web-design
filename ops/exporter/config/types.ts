@@ -3,6 +3,8 @@ export type TTarget = {
   dir: string;
   base: string;
   workspace: string;
+  subWorkspaces: string[];
+
 };
 
 export type TTargets = TTarget[];

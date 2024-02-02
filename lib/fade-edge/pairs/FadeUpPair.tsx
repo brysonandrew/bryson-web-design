@@ -1,8 +1,11 @@
-import { FadeUp, TFadeProps } from '@brysonandrew/fade';
-import { FadePair } from '@brysonandrew/fade-edge/pairs/FadePair';
+import { FadeUp } from '@brysonandrew/fade';
+import {
+  FadePair,
+  TFadePairProps,
+} from '@brysonandrew/fade-edge/pairs/FadePair';
 import { FC } from 'react';
 
-type TProps = TFadeProps;
+type TProps = TFadePairProps;
 export const FadeUpPair: FC<TProps> = (props) => (
   <FadePair Fader={FadeUp} {...props} />
 );

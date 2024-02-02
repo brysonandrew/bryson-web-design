@@ -31,6 +31,7 @@ export const Fade: FC<TFadeProps> = ({
   );
 };
 
+export * from '@brysonandrew/fade-edge';
 export * from './FadeDown';
 export * from './FadeFill';
 export * from './FadeLeft';

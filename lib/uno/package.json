@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.90",
+  "version": "6.22.102",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -9,23 +9,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./preflights": "./preflights/index.ts",
-    "./preflights/init": "./preflights/init.ts",
-    "./preflights/reset": "./preflights/reset.ts",
-    "./preflights/resolveInput": "./preflights/resolveInput.ts",
-    "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
-    "./shortcuts/background": "./shortcuts/background.ts",
-    "./shortcuts/flex": "./shortcuts/flex.ts",
-    "./shortcuts": "./shortcuts/index.ts",
-    "./shortcuts/interactive": "./shortcuts/interactive.ts",
-    "./shortcuts/layout": "./shortcuts/layout.ts",
-    "./rules": "./rules/index.ts",
-    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
-    "./spacing": "./spacing/index.ts",
-    "./theme": "./theme/index.ts",
-    "./shortcuts/text/color": "./shortcuts/text/color.ts",
-    "./shortcuts/text": "./shortcuts/text/index.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -41,7 +25,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "unocss": "*",
-    "@emotion/react": "*"
+    "@brysonandrew/uno-rules": "*",
+    "@brysonandrew/uno-spacing": "*",
+    "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/uno-preflights": "*",
+    "@brysonandrew/uno-theme": "*"
   }
 }

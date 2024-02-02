@@ -1,4 +1,4 @@
-import { TCssVar } from '@brysonandrew/color/main/config/types';
+import { TCssVar } from '@brysonandrew/color-main/config/types';
 
 export const resolveVarCss = <K extends string>(
   color: K,

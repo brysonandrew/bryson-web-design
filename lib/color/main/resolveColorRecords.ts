@@ -1,10 +1,10 @@
 import {
   TRgb,
   TRgbaValue,
-} from '@brysonandrew/color/main/config/types';
+} from '@brysonandrew/color-main/config/types';
 import { resolveVarCssColorRecord } from './resolveVarCssColorRecord';
 import { rgbToOpacityRangeRecord } from './rgbToOpacityRangeRecord';
-import { BASE_COLOR_RECORD } from '@brysonandrew/color/main/config/constants';
+import { BASE_COLOR_RECORD } from '@brysonandrew/color-main/config/constants';
 import { resolveVarsCssRecord } from '@brysonandrew/utils/css/resolveVarsCssRecord';
 
 export const resolveColorRecords = <

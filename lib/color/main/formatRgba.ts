@@ -3,7 +3,7 @@ import {
   TRgb,
   TRgba,
   TRgbaDelimiter,
-} from '@brysonandrew/color/main/config/types';
+} from '@brysonandrew/color-main/config/types';
 
 export const formatRgba = <O extends TDigit>(
   rgb: TRgb,

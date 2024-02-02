@@ -3,7 +3,7 @@ import {
   TRgb,
   TRgbaValue,
   TRgbValue,
-} from '@brysonandrew/color/main/config/types';
+} from '@brysonandrew/color-main/config/types';
 import { formatRgbValue } from './formatRgb';
 import { formatRgba } from './formatRgba';
 import { formatRgbaValue } from './formatRgbaValue';

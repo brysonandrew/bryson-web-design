@@ -1,6 +1,7 @@
 export * from './pairs/FadeDownPair';
 export * from './pairs/FadeEdgePair';
 export * from './pairs/FadeLeftPair';
+export * from './pairs/FadeMidPair';
 export * from './pairs/FadePair';
 export * from './pairs/FadeRightPair';
 export * from './pairs/FadeUpPair';

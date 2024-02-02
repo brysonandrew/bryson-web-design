@@ -1,18 +1,19 @@
 import glob from 'fast-glob';
 import { readFile } from '@ops/common/utils';
-import { join } from 'path';
+import { join, parse } from 'path';
 import { TError } from '@brysonandrew/types';
 import { kebabToTitle } from '@brysonandrew/utils';
 
-import { writeFile } from 'fs/promises';
-import { writeIndex } from './writeIndex';
 import { TTargets } from '@brysonandrew/exporter/config/types';
 import { parsePaths } from '@ops/exporter/process/parsePaths';
+import { QUOTE_JSON } from '@ops/exporter/config/constants';
+import { writeIndex } from '@ops/exporter/process/writeIndex';
+import { writeFile } from 'fs/promises';
 
 export const process = async (targets: TTargets) => {
   try {
     for (const target of targets) {
-      const { name, dir, base } = target;
+      const { name, dir, base, subWorkspaces } = target;
       const pkgPath = join(dir, base);
       const pkgStr = readFile(pkgPath);
       const { dependencies: _, ...pkg } =
@@ -30,14 +31,62 @@ export const process = async (targets: TTargets) => {
         continue;
       }
 
-      const paths = await glob([`./**/*.(ts|tsx)`], {
+      let peerDependencies: Record<string, unknown> = {};
+      let indexRows: string[] = [];
+      let exports: Record<string, unknown> = {};
+
+      if (subWorkspaces.length > 0) {
+        for (const subWorkspacePath of subWorkspaces) {
+          const subWorkspacePkgStr = readFile(
+            subWorkspacePath,
+          );
+          const subWorkspacePkg = JSON.parse(
+            subWorkspacePkgStr,
+          );
+          const subWorkspacePkgName = subWorkspacePkg.name;
+
+          indexRows.push(
+            `export * from ${QUOTE_JSON}${subWorkspacePkgName}${QUOTE_JSON};`,
+          );
+
+          peerDependencies = {
+            ...peerDependencies,
+            [subWorkspacePkg.name]: '*',
+          };
+        }
+      }
+
+      const FILES_GLOB = `./**/*.(ts|tsx)`;
+      const ignore = subWorkspaces.map((value) => {
+        const subWorkspace = parse(value);
+        const dirParts = subWorkspace.dir.split('/');
+        const last = dirParts[dirParts.length - 1];
+        const next = join(last, '**/*');
+        return next;
+      });
+      const paths = await glob([FILES_GLOB], {
         cwd: dir,
+        ignore,
       });
 
-      const { exportRows, main, types, indexRows, peerDependencies } =
-        await parsePaths({ paths, target });
-      const pkgExportsStr = `{${exportRows.join(',')}}`;
-      const exports = JSON.parse(pkgExportsStr);
+      const { main, types, ...parsePathsResult } =
+        await parsePaths({
+          paths,
+          target,
+        });
+      const pkgExportsStr = `{${parsePathsResult.exportRows.join(
+        ',',
+      )}}`;
+
+      peerDependencies = {
+        ...peerDependencies,
+        ...parsePathsResult.peerDependencies,
+      };
+      indexRows = [
+        ...indexRows,
+        ...parsePathsResult.indexRows,
+      ];
+      exports = JSON.parse(pkgExportsStr);
 
       const pkgWithExportsStr = JSON.stringify(
         {
@@ -47,13 +96,15 @@ export const process = async (targets: TTargets) => {
           description: `${kebabToTitle(name)} library`,
           version,
           peerDependencies,
-          exports,
+          ...(Object.keys(exports).length > 0
+            ? { exports }
+            : {}),
         },
         null,
         2,
       );
 
-      writeFile(pkgPath, pkgWithExportsStr);
+      await writeFile(pkgPath, pkgWithExportsStr);
       writeIndex({ indexRows, dir });
     }
   } catch (error: TError) {

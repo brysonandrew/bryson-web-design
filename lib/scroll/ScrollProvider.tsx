@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 import type { FC } from 'react';
-import { useTimeoutRef } from '@brysonandrew/hooks/window/useTimeoutRef';
+import { useTimeoutRef } from '@brysonandrew/hooks-window/useTimeoutRef';
 import { useLocation } from 'react-router';
 import type {
   TState,

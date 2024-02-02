@@ -1,33 +1,36 @@
-import { FadeRight, TFadeProps } from '@brysonandrew/fade';
 import {
   FadeFill,
   TFadeFillProps,
 } from '@brysonandrew/fade/FadeFill';
-import clsx from 'clsx';
+import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 
 type TProps = Omit<TFadeFillProps, 'edgeColor'> & {
   Fader?: FC<TFadeFillProps>;
   darkEdgeColor?: string;
   lightEdgeColor?: string;
+  darkClass?: ClassValue;
+  lightClass?: ClassValue;
 };
 export const FadeEdgePair: FC<TProps> = ({
   Fader = FadeFill,
   darkEdgeColor = 'var(--black)',
   lightEdgeColor = 'var(--white)',
+  darkClass,
+  lightClass,
   classValue,
   ...props
 }) => (
   <>
     <Fader
       key='FADE_EDGE_PAIR_DARK'
-      classValue={clsx('h-full opacity-dark', classValue)}
+      classValue={clsx(darkClass, classValue)}
       edgeColor={darkEdgeColor}
       {...props}
     />
     <Fader
       key='FADE_EDGE_PAIR_LIGHT'
-      classValue={clsx('h-full opacity-light', classValue)}
+      classValue={clsx(lightClass, classValue)}
       edgeColor={lightEdgeColor}
       {...props}
     />

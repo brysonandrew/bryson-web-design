@@ -8,6 +8,8 @@ import {
 } from './types';
 import {
   BASE_GLOW_RECORD,
+  MAIN_OPACITY_VARIATIONS,
+  MAIN_RGBS,
   resolveColorRecords,
   resolveGlowRecord,
 } from '@brysonandrew/color';
@@ -20,7 +22,10 @@ const {
 } = resolveColorRecords<
   TOpacityRangeRgbRecord,
   TVariablesRecord
->(OPACITY_RANGE_RGB_RECORD, VARIABLES_RECORD);
+>(
+  { ...OPACITY_RANGE_RGB_RECORD, ...MAIN_RGBS },
+  VARIABLES_RECORD,
+);
 
 export const COLOR_RECORD = colorRecord;
 export const COLOR_VARS_RECORD = colorCssVariablesRecord;
