@@ -7,7 +7,6 @@ import { P24Y } from '@brysonandrew/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';
-import { VerticalEdges } from '@brysonandrew/fade-edge';
 import { BackgroundFill } from '@brysonandrew/dark-mode';
 import { FadeEdgePair } from '@brysonandrew/fade-edge/pairs/FadeEdgePair';
 
@@ -27,6 +26,10 @@ export const Shell: FC = () => {
             direction='to bottom'
             isFixed
             midColor='var(--transparent)'
+            darkEdgeColor='var(--black-04)'
+            lightEdgeColor='var(--white-04)'
+            darkClass='opacity-dark'
+            lightClass='opacity-light'
           />
           <Header />
           <Footer />
