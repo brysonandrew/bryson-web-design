@@ -24,11 +24,13 @@ const Build: FC = () => {
         )}
       </Parallax>
       <FadeMidPair
-        classValue='h-screen'
+        classValue='flex md:hidden h-screen'
         direction='to bottom'
         darkMidColor='var(--black-04)'
         lightMidColor='var(--white-04)'
         edgeColor='var(--transparent)'
+        darkClass='opacity-dark'
+        lightClass='opacity-light'
       />
     </>
   );
