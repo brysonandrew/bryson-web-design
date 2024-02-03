@@ -1,6 +1,6 @@
-import type { TFileComposer, TFileComposerSet } from "../common/types/indexer";
-import { bold, faint, inverse } from "../common/utils";
-import { treeFormat } from "../common/utils/console/format";
+import type { TFileComposer, TFileComposerSet } from "../config/types/indexer";
+import { bold, faint, inverse } from "@ops/console";
+import { treeFormat } from "@ops/console/format";
 import { treePromptExisting } from "./visualizer";
 
 const mapFiles = (files: string[], fileComposer: TFileComposer) =>

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.102",
+  "version": "6.22.107",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -41,7 +41,7 @@
   "peerDependencies": {
     "react": "*",
     "@brysonandrew/gallery": "*",
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "framer-motion": "*",
     "@brysonandrew/space": "*",
     "@brysonandrew/utils": "*",

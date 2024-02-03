@@ -8,7 +8,7 @@ import glob from 'fast-glob';
 import path from 'path';
 import { ensureDir } from 'fs-extra';
 import { writeFile } from 'fs/promises';
-import { matchAlls } from '../common/utils/iterators';
+import { matchAlls } from '../utils/iterators';
 import type {
   TAddToSetterConfig,
   TConfig,
@@ -16,16 +16,16 @@ import type {
   TFileComposer,
   TFileComposerConfig,
   TFileComposerEntry,
-} from '../common/types/indexer';
-import { green, underline } from '../common/utils/console';
-import { yesNo } from '../common/utils/console/interactive';
+} from '../config/types/indexer';
+import { green, underline } from '@ops/console';
+import { yesNo } from '@ops/console/interactive';
 import {
   FROM_TO_DELIMITER,
   OP_INDEXER_NAME,
   DELIMITER,
 } from './constants';
-import { resolveFull } from '../common/utils/files/resolve';
-import { INDEX_BASENAME } from '../common/utils/constants';
+import { resolveFull } from '../utils/files/resolve';
+import { INDEX_BASENAME } from '../utils/constants';
 import { yesNoConfig } from './confirm-dialog';
 const POSSIBLE_INDEX_FILES = ['index.ts', 'index.tsx'];
 const cwd = process.env.PROJECT_CWD || '';

@@ -1,6 +1,6 @@
 import clsx, { ClassValue } from 'clsx';
 import { motion } from 'framer-motion';
-import { TSvgMotionProps } from '@brysonandrew/types';
+import { TSvgMotionProps } from '@brysonandrew/config/types';
 import { FC } from 'react';
 
 type TProps = TSvgMotionProps & {

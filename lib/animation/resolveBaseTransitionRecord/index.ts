@@ -2,7 +2,7 @@ import { _VD } from '@brysonandrew/animation';
 import { TBaseTransitionConfigs } from '@brysonandrew/animation/config/types/transition/base';
 import { TBaseTransitionConfigKey } from '@brysonandrew/animation/config/types/transition/base/key';
 import { resolveEaseStringify } from '@brysonandrew/animation/resolveBaseTransitionRecord/resolveEaseStringify';
-import { TAnyRecord } from '@brysonandrew/types';
+import { TAnyRecord } from '@brysonandrew/config/types';
 
 export const resolveBaseTransitionRecord = <
   T extends TBaseTransitionConfigs,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filters",
-  "version": "6.22.102",
+  "version": "6.22.107",
   "description": "Filters library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -42,7 +42,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "react": "*",
     "@brysonandrew/filter-animate": "*",
     "@brysonandrew/utils": "*",

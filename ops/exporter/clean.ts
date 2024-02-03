@@ -4,11 +4,11 @@ import {
   resolveDir,
   CACHE_EXPORTER_NAME,
   resolveFile,
-} from '../common/utils';
+} from '../utils';
 import type {
   TPath,
   TPathRecord,
-} from '../common/types/entries';
+} from '../config/types/entries';
 
 export const clean = (targets: TPathRecord) => {
   if (!targets) return null;

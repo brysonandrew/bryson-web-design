@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.22.102",
+  "version": "6.22.107",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -33,7 +33,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "sharp": "*",
     "react": "*",
     "@emotion/styled": "*",

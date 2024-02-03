@@ -4,7 +4,7 @@ import {
   TBaseConfig,
   TVisibilityRange,
 } from '@brysonandrew/parallax/config';
-import { TChildren } from '@brysonandrew/types/dom/main';
+import { TChildren } from '@brysonandrew/config/types/dom/main';
 import { useVisibility } from '@brysonandrew/parallax/hooks/useVisibility';
 
 type TProps = TBaseConfig & {

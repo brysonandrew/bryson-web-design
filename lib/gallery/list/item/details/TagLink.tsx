@@ -5,7 +5,7 @@ import {
 } from '@brysonandrew/gallery/config/types';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { motion } from 'framer-motion';
-import { TAnchorMotionProps } from '@brysonandrew/types/dom/motion';
+import { TAnchorMotionProps } from '@brysonandrew/config/types/dom/motion';
 import { useCursor, resolveCompositeHoverKey, HOVER_KEY_DELIMITER } from '@brysonandrew/cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/config/constants/links';

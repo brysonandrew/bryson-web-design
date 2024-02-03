@@ -3,14 +3,14 @@ import {
   resolveInputs,
   mergeTargetPackageJson,
   resolveOutput,
-} from '../common/utils/exporter/config';
+} from '../utils/exporter/config';
 import type {
   TInput,
   TInputConfig,
-} from '../common/types/z-exporter';
-import { initWorkspaces } from '../common/utils/package-json/files';
-import type { TPathRecord } from '../common/types/entries';
-import { INDEX_BASENAME } from '../common/utils/constants';
+} from '../config/types/z-exporter';
+import { initWorkspaces } from '../utils/package-json/files';
+import type { TPathRecord } from '../config/types/entries';
+import { INDEX_BASENAME } from '../utils/constants';
 
 export const foundation = (
   targets: TPathRecord,

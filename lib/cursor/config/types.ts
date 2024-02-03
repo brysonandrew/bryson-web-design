@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/types/dom';
+import { TChildren } from '@brysonandrew/config/types/dom';
 import { resolveHoverKeyVariations } from '@brysonandrew/cursor/utils';
 import { TOffsetRef } from '../hooks/useCursorOffset';
 import { TMotionPoint } from '@brysonandrew/animation';

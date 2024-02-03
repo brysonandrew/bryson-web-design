@@ -1,8 +1,9 @@
 import glob from 'fast-glob';
-import { readFile } from '@ops/common/utils';
+import { readFile } from '@ops/utils';
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
-import { QUOTE_UPDATE_RX, QUOTE } from '@brysonandrew/exporter/config/constants';
+import { QUOTE_UPDATE_RX } from '@brysonandrew/exporter/config/constants';
+import { QUOTE } from '@ops/config/constants';
 
 type TConfig = {
   dir: string;

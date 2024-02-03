@@ -3,7 +3,7 @@ import {
   TRgb,
   TRgbaValue,
 } from '@brysonandrew/color-main/config/types';
-import { TKeyStr } from '@brysonandrew/types/keys';
+import { TKeyStr } from '@brysonandrew/config/types/keys';
 import { resolveRgbaValue } from '@brysonandrew/color-main/resolveRgbaValue';
 import {
   resolveBoxShadow,

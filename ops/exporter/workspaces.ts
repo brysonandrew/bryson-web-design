@@ -1,5 +1,5 @@
-import { PACKAGE_JSON_NAME } from '@brysonandrew/exporter/config/constants';
-import { readFile } from '@ops/common/utils';
+import { PACKAGE_JSON_NAME } from '@ops/config/constants';
+import { readFile } from '@ops/utils';
 import { writeFile } from 'fs/promises';
 import { resolve } from 'path';
 const EXTERNAL = '';

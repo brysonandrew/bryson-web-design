@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.172",
+  "version": "6.21.177",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -49,7 +49,7 @@
     "@brysonandrew/utils": "*",
     "@brysonandrew/gallery": "*",
     "@brysonandrew/interactive": "*",
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "@brysonandrew/filter-animate": "*"
   },
   "types": "index.d.ts"

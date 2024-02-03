@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
-import { TClassValueProps } from '@brysonandrew/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
 import { useCursor } from '@brysonandrew/cursor';
 import {
   DURATION,

@@ -36,7 +36,7 @@ export const Invert: FC<TProps> = ({ children }) => {
               </div>
               <ul>
                 {BUTTONS.map(([title, value]) => (
-                  <li>
+                  <li key={title}>
                     <button
                       className='text-gray hover:text-white py-0.5 uppercase'
                       onClick={() => setInvert(value)}

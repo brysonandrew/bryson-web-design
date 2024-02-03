@@ -1,4 +1,4 @@
-import { TNumberPercentValue } from '@brysonandrew/types';
+import { TNumberPercentValue } from '@brysonandrew/config/types';
 import {
   ANGLE_TYPES,
   GRADIENT_TYPES,

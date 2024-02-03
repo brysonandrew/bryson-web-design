@@ -1,6 +1,6 @@
-import type { TPathRecord } from "../common/types/entries";
-import { CACHE_EXPORTER_NAME } from "../common/utils";
-import { cacheDir } from "../common/utils/dirs/main";
+import type { TPathRecord } from "../config/types/entries";
+import { CACHE_EXPORTER_NAME } from "../utils";
+import { cacheDir } from "../utils/dirs/main";
 
 export const cache = (targets: TPathRecord) => {
   if (!targets) return null;

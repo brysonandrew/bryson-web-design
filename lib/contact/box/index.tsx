@@ -2,7 +2,7 @@ import { TUseInput, useInput } from '../hooks/useInput';
 import { TBaseInputProps } from '../config/types';
 import { Name } from './Name';
 import { Shell, TShellProps } from './Shell';
-import { TBaseChildren } from '@brysonandrew/types/dom';
+import { TBaseChildren } from '@brysonandrew/config/types/dom';
 
 type TProps<T extends HTMLElement> = TBaseInputProps &
   Pick<TShellProps<T>, 'isDisabled'> & {

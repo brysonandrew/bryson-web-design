@@ -11,7 +11,7 @@ import { PricingProvider } from '@pages/index/pricing/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 
-import { TChildrenProps } from '@brysonandrew/types/dom';
+import { TChildrenProps } from '@brysonandrew/config/types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@brysonandrew/layout/utils/arrToNest';
 import { Metal } from '../components/layout/metal';

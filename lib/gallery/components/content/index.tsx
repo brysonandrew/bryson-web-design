@@ -7,7 +7,7 @@ import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/types/dom';
+} from '@brysonandrew/config/types/dom';
 import { P2 } from '@brysonandrew/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks-window/useDelayCallback';

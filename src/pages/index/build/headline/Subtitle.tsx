@@ -1,4 +1,4 @@
-import { TElementProps } from '@brysonandrew/types';
+import { TElementProps } from '@brysonandrew/config/types';
 import type { FC } from 'react';
 
 type TProps = TElementProps;

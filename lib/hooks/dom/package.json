@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "6.21.172",
+  "version": "6.21.177",
   "description": "Hooks Dom library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -33,6 +33,6 @@
   "peerDependencies": {
     "react": "*",
     "@brysonandrew/hooks-events": "*",
-    "@brysonandrew/types": "*"
+    "@brysonandrew/config": "*"
   }
 }

@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/types';
+import { TChildren } from '@brysonandrew/config/types';
 import { NOOP } from '@brysonandrew/utils';
 import {
   useTimeoutRef,

@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import { readFile } from '@ops/common/utils';
+import { readFile } from '@ops/utils';
 
 export const ENTRIES = [
   ['types', './types'],

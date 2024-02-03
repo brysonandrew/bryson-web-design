@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { TBaseInputProps } from '../config/types';
 import { Box } from '.';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
-import { TInputMotionProps } from '@brysonandrew/types/dom';
+import { TInputMotionProps } from '@brysonandrew/config/types/dom';
 
 type TProps = TInputMotionProps & TBaseInputProps;
 export const Text: FC<TProps> = ({
@@ -23,7 +23,7 @@ export const Text: FC<TProps> = ({
               setInput(instance);
             }
           }}
-          className='input-text'
+          className='_contact_input-text'
           type='text'
           autoComplete='off'
           name={name}

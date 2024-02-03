@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@brysonandrew/types';
+import { TTTitleToKebab } from '@brysonandrew/config/types';
 
 export type TPageKey<T extends string> = TTTitleToKebab<T>;
 type TPath<T extends string> = T extends 'Index'

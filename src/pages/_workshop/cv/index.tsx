@@ -9,8 +9,15 @@ import {
 import { CvProvider } from '@brysonandrew/cv/CvProvider';
 import { Page } from '@brysonandrew/cv/page';
 import { Invert } from '@brysonandrew/cv/controls/Invert';
+import { css, Global } from '@emotion/react';
+import { COLOR_VARS_CSS } from '@app/color';
 
 export const Cv = () => {
+  const globalCss = css`
+    :root {
+      ${COLOR_VARS_CSS}
+    }
+  `;
   return (
     <CvProvider
       name='Andrew Bryson'
@@ -24,6 +31,7 @@ export const Cv = () => {
       descriptionParagraphs={DESCRIPTION_PARAGRAPHS}
       sections={CV_ITEMS}
     >
+      <Global styles={globalCss} />
       <Invert>
         {(filter) => <Page style={{ filter }} />}
       </Invert>

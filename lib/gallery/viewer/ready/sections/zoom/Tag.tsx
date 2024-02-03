@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Cross } from '@brysonandrew/gallery-viewer/icons/Cross';
-import { TChildren } from '@brysonandrew/types/dom';
+import { TChildren } from '@brysonandrew/config/types/dom';
 
 const Text = styled.code``;
 

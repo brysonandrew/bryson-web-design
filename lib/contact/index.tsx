@@ -24,7 +24,7 @@ export const Contact: FC<TProps> = ({
 
   return (
     <motion.form
-      className='root'
+      className='_contact_root'
       initial={false}
       ref={ref}
       onSubmit={(event) => {
@@ -33,7 +33,7 @@ export const Contact: FC<TProps> = ({
         }
       }}
     >
-      <div className='inputs'>
+      <div className='_contact_inputs'>
         <Text
           name='name'
           disabled={isDisabled}
@@ -73,11 +73,11 @@ export * from './box/Text';
 export * from './box';
 export * from './config/constants';
 export * from './config/types';
-export * from './footer';
 export * from './hooks/useAutoFocus';
 export * from './hooks/useFocus';
 export * from './hooks/useForm';
 export * from './hooks/useInput';
+export * from './footer';
 export * from './utils/resolveButtonValue';
 export * from './variants/base';
 export * from './variants/glow';

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.102",
+  "version": "6.22.107",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -42,7 +42,7 @@
   "peerDependencies": {
     "react": "*",
     "framer-motion": "*",
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/hooks": "*",
     "@brysonandrew/scroll": "*",

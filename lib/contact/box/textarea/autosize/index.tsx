@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
 import { useViewport } from '@brysonandrew/viewport';
-import { TChildrenElement } from '@brysonandrew/types/dom';
+import { TChildrenElement } from '@brysonandrew/config/types/dom';
 import { motion } from 'framer-motion';
 import { TUseInput } from '@brysonandrew/contact/hooks/useInput';
 
@@ -25,7 +25,7 @@ export const Autosize: FC<TProps> = ({
   });
 
   return (
-    <motion.div style={style} layout className='autosize'>
+    <motion.div style={style} layout className='_contact_autosize'>
       {children(isInit)}
     </motion.div>
   );
