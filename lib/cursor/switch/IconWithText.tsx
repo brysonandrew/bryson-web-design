@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { P_5 } from '@brysonandrew/space/P_5';
-import { TChildren } from '@brysonandrew/types/dom/main';
+import { TChildren } from '@brysonandrew/config/types/dom/main';
 import { I } from '@brysonandrew/icons/icon';
 import { TBaseIconProps } from '@brysonandrew/icons/type';
 import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@brysonandrew/animation';

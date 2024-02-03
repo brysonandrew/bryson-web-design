@@ -1,7 +1,7 @@
 import type { FC, SVGProps } from 'react';
 import type { IconProps } from '@iconify/react';
-import type { TSvgMotionProps } from '@brysonandrew/types/dom/motion';
-import type { TClassValueProps } from '@brysonandrew/types';
+import type { TSvgMotionProps } from '@brysonandrew/config/types/dom/motion';
+import type { TClassValueProps } from '@brysonandrew/config/types';
 
 export type TBaseIconProps = SVGProps<SVGSVGElement> &
   TClassValueProps;

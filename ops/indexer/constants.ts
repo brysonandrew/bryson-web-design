@@ -1,5 +1,5 @@
-import { faint } from "../common/utils/console";
-import { CACHE_BASE_NAME } from "../common/utils/constants";
+import { faint } from "@ops/console";
+import { CACHE_BASE_NAME } from "../utils/constants";
 
 export const FROM_TO_DELIMITER = " ---> ";
 export const REPLACE = " -> ";

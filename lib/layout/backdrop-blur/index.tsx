@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TDivMotionProps } from '@brysonandrew/types/dom';
+import { TDivMotionProps } from '@brysonandrew/config/types/dom';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 

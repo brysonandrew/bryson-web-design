@@ -4,7 +4,7 @@ import {
   TPlaceholderProps,
 } from '@brysonandrew/placeholder';
 import clsx from 'clsx';
-import { TSvgProps } from '@brysonandrew/types';
+import { TSvgProps } from '@brysonandrew/config/types';
 import { resolvePlaceholderRules } from './resolvePlaceholderRules';
 import { resolvePlaceholderVarsCss } from '@brysonandrew/placeholder/resolvePlaceholderVarsCss';
 

@@ -1,9 +1,9 @@
 import {
-  TDigit,
   TRgb,
   TRgba,
   TRgbaDelimiter,
 } from '@brysonandrew/color-main/config/types';
+import { TDigit } from '@brysonandrew/config-types/numbers/series';
 
 export const formatRgba = <O extends TDigit>(
   rgb: TRgb,

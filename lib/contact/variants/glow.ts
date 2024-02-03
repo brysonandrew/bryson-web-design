@@ -1,8 +1,11 @@
+import { prefixInternalKeys } from '@brysonandrew/utils/object';
 import { StaticShortcutMap } from 'unocss';
-import { BASE } from './base';
+import { BASE, PREFIX } from './base';
 
 export const CONTACT_FORM_GLOW_SHORTCUTS: StaticShortcutMap =
-  {
+prefixInternalKeys({
+  prefix: PREFIX,
+  record:{
     ...BASE,
     'bg-input': 'bg-gray-01',
     root: 'column-stretch gap-box-2 mt-1',
@@ -21,4 +24,5 @@ export const CONTACT_FORM_GLOW_SHORTCUTS: StaticShortcutMap =
     'input-text':
       'bg-input border border-transparent input-base py-2',
     name: 'relative flex justify-center shrink-0 w-full py-2 pl-0 md:(w-40 pl-6 justify-start)',
-  };
+  }
+});

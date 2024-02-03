@@ -5,6 +5,7 @@
       "@ops/*": ["ops/*"],
       "@pkg": ["package.json"],
       "@brysonandrew/color-*": ["lib/color/*"],
+      "@brysonandrew/config-*": ["lib/config/*"],
       "@brysonandrew/gallery-*": ["lib/gallery/*"],
       "@brysonandrew/uno-*": ["lib/uno/*"],
       "@brysonandrew/hooks-*": ["lib/hooks/*"],

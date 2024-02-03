@@ -1,5 +1,5 @@
 import { TBaseIconProps } from '@brysonandrew/icons/type';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
 import type { FC } from 'react';
 
 export type TItem = TDivMotionProps & {

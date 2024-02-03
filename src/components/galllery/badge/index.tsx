@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TPricingKey } from '@pages/pricing/config/types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
 import { Text } from './Text';
 import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';

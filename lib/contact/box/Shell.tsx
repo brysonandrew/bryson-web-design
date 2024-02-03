@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { TBaseChildren } from '@brysonandrew/types/dom';
+import { TBaseChildren } from '@brysonandrew/config/types/dom';
 import { Clear } from './Clear';
 import { TFormKey } from '@brysonandrew/contact/config/types';
 import { useFocus } from '../hooks/useFocus';
@@ -38,7 +38,7 @@ export const Shell = <T extends HTMLElement>({
 
   return (
     <motion.label
-      className='shell'
+      className='_contact_shell'
       layout
       style={{
         borderRadius: BORDER_RADIUS.MD,

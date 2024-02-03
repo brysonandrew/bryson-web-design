@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TChildrenString } from '@brysonandrew/types/dom';
+import { TChildrenString } from '@brysonandrew/config/types/dom';
 import { Animation } from '@brysonandrew/layout/typography/animation';
 
 type TProps = TChildrenString;

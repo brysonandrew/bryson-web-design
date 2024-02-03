@@ -5,7 +5,7 @@ import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { TFormKey } from '@brysonandrew/contact/config/types';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 import { useApp } from '@brysonandrew/app';
-import { TButtonMotionProps } from '@brysonandrew/types/dom';
+import { TButtonMotionProps } from '@brysonandrew/config/types/dom';
 import { CROSS_ICON, I } from '@brysonandrew/icons';
 
 
@@ -30,12 +30,12 @@ export const Clear: FC<TProps> = ({
   };
 
   return (
-    <div className='clear'>
+    <div className='_contact_clear'>
       <motion.button
         layout
         tabIndex={-1}
         type='button'
-        className='clear-button'
+        className='_contact_clear-button'
         whileHover={{ opacity: 1 }}
         onTap={handleClear}
         {...resolveInteractiveLabels('Clear')}

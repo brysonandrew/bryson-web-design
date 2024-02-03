@@ -5,7 +5,7 @@ import { DarkMode } from './DarkMode';
 import { isMobile } from 'react-device-detect';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
 
 const Root = styled(motion.div)``;
 

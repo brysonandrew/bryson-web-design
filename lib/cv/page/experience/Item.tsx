@@ -17,7 +17,7 @@ export const Item: FC<TProps> = ({
     <li className='relative center py-8'>
       <div
         className={clsx(
-          'absolute inset-0',
+          'fill',
           index % 2 === 0 ? 'bg-black-1' : 'bg-black-2',
         )}
       />

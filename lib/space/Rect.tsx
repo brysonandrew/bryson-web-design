@@ -1,5 +1,5 @@
 import { useRect } from '@brysonandrew/hooks-dom/useRect';
-import { TChildrenHandlerProps } from '@brysonandrew/types/dom/main';
+import { TChildrenHandlerProps } from '@brysonandrew/config/types/dom/main';
 import { FC } from 'react';
 type TChildrenProps = ReturnType<typeof useRect>;
 type TProps = TChildrenHandlerProps<TChildrenProps>;

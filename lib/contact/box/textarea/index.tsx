@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TBaseInputProps } from '../../config/types';
 import { Box } from '..';
-import { TTextareaMotionProps } from '@brysonandrew/types/dom';
+import { TTextareaMotionProps } from '@brysonandrew/config/types/dom';
 import { Autosize } from './autosize';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
 
@@ -28,7 +28,7 @@ export const Textarea: FC<TProps> = ({
                   setInput(instance);
                 }
               }}
-              className='input-textarea'
+              className='_contact_input-textarea'
               autoComplete='off'
               rows={1}
               name={name}

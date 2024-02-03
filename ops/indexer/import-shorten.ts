@@ -6,19 +6,20 @@ import type {
   TFileComposer,
   TFileComposerSet,
   TImportsMap,
-} from "../common/types/indexer";
-import { addFiles } from "../common/utils/files/add";
-import { resolveFull } from "../common/utils/files/resolve";
+} from "../config/types/indexer";
+import { addFiles } from "../utils/files/add";
+import { resolveFull } from "../utils/files/resolve";
 import {
   EXTRACT_IMPORT_NAMED_RX,
   FULL_IMPORT_PATH_RX,
   IMPORT_LINE_VALUE_RX,
   SHORT_IMPORT_PATH_RX,
-} from "../common/utils/import-export";
+} from "../utils/import-export";
 import { DELIMITER, OP_IMPORT_SHORTEN_NAME } from "./constants";
-import { entriesTempate, ETemplate } from "../common/utils/templates/entries";
-import { cacheDirOps, green } from "../common/utils";
+import { entriesTempate, ETemplate } from "../utils/templates/entries";
+import {  green } from "@ops/console";
 import { addToMap } from "./processing";
+import { cacheDirOps } from "@ops/utils";
 
 const cwd = process.env.PROJECT_CWD;
 if (!cwd) throw Error("No cwd");

@@ -51,12 +51,12 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     >
       {LIGHT ? <LIGHT.Back /> : <Back />}
       <input
-        className='absolute inset-0 pointer-events-none opacity-0'
+        className='_contact_absolute inset-0 pointer-events-none opacity-0'
         type='submit'
         disabled={isDisabled}
       />
       <motion.h4
-        className='submit-text'
+        className='_contact_submit-text'
         transition={TRANSITION_02_EASEIN_008}
         style={{
           letterSpacing: '0.00675em',

@@ -1,5 +1,5 @@
-import type { TConfig } from '../common/types/indexer';
-import { EXTRACT_EXPORT_AND_PREFIX } from '../common/utils';
+import { EXTRACT_EXPORT_AND_PREFIX } from '@ops/utils';
+import type { TConfig } from '../config/types/indexer';
 const DEFAULT_EXCLUDE_INDEXING_DIRS = ['.', 'ops'];
 
 export type TConfigLookup = Record<string, TConfig>;

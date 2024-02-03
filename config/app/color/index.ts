@@ -8,7 +8,6 @@ import {
 } from './types';
 import {
   BASE_GLOW_RECORD,
-  MAIN_OPACITY_VARIATIONS,
   MAIN_RGBS,
   resolveColorRecords,
   resolveGlowRecord,

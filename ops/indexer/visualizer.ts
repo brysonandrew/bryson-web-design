@@ -2,8 +2,8 @@ import type {
   TFileComposer,
   TFileComposerSet,
   TFileComposerSetValue,
-} from "../common/types/indexer";
-import { red, treePrompt } from "../common/utils";
+} from "../config/types/indexer";
+import { red, treePrompt } from "@ops/console";
 
 export const visualizeFileComposer = <T = TFileComposerSetValue>(
   fileComposer: TFileComposer<TFileComposerSet<T>>

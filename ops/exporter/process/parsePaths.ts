@@ -1,11 +1,11 @@
 import {
   DEP_PREFIX,
-  QUOTE_JSON,
 } from '../config/constants';
 import { join, parse } from 'path';
 import { resolveDeps } from './resolveDeps';
-import { readFile } from '@ops/common/utils';
+import { readFile } from '@ops/utils';
 import { TTarget } from '@ops/exporter/config/types';
+import { QUOTE_JSON } from '@ops/config/constants';
 
 type TConfig = { paths: string[]; target: TTarget };
 export const parsePaths = async ({

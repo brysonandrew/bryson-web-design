@@ -9,7 +9,7 @@ import {
 import clsx from 'clsx';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
-import { TImgMotionProps } from '@brysonandrew/types/dom/motion';
+import { TImgMotionProps } from '@brysonandrew/config/types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';

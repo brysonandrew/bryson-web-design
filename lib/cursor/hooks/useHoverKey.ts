@@ -7,7 +7,7 @@ import {
   GLOBAL_KEY,
   TCursorKey,
 } from '@brysonandrew/cursor/config/constants';
-import { TChildren } from '@brysonandrew/types';
+import { TChildren } from '@brysonandrew/config/types';
 
 export const useHoverKey = (
   cursorKey: TCursorKey,

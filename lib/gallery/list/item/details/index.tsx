@@ -3,7 +3,7 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Tags } from './Tags';
 import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/space/P2';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
 type TProps<K extends string> = TDivMotionProps & {

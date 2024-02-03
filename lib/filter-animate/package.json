@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/filter-animate",
-  "version": "6.22.102",
+  "version": "6.22.107",
   "description": "Filter Animate library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -33,7 +33,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config": "*",
     "clsx": "*",
     "framer-motion": "*",
     "react": "*",

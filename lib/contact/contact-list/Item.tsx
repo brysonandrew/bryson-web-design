@@ -1,4 +1,4 @@
-import { TAnchorProps } from '@brysonandrew/types';
+import { TAnchorProps } from '@brysonandrew/config/types';
 import clsx from 'clsx';
 import { FC } from 'react';
 

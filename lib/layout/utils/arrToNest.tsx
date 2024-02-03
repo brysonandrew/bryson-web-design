@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/types/dom';
+import { TChildren } from '@brysonandrew/config/types/dom';
 import { FC, PropsWithChildren } from 'react';
 
 export const arrToNest = <

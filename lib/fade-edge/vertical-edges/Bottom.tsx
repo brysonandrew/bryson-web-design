@@ -1,5 +1,5 @@
 import { FadeUpPair } from '@brysonandrew/fade-edge/pairs/FadeUpPair';
-import { TDivProps } from '@brysonandrew/types';
+import { TDivProps } from '@brysonandrew/config/types';
 import clsx from 'clsx';
 import { FC } from 'react';
 

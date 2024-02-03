@@ -1,5 +1,5 @@
 import { Invert } from '@brysonandrew/filter-animate/Invert';
-import { TClassValueProps } from '@brysonandrew/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
 import clsx, { ClassValue } from 'clsx';
 import { FC, PropsWithChildren } from 'react';
 import { useSkeletonC } from '../context/useSkeletonC';

@@ -14,12 +14,10 @@ export const useCv = (): TCvContext =>
 
 export const CvProvider: FC<
   PropsWithChildren<Partial<TCvContext>>
-> = ({ children, ...value }) => {
+> = ({ children, ...props }) => {
   const cvValue = useCv();
-
+  const values = { ...cvValue, ...props };
   return (
-    <CV.Provider value={{ ...cvValue, ...value }}>
-      {children}
-    </CV.Provider>
+    <CV.Provider value={values}>{children}</CV.Provider>
   );
 };

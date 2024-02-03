@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
 import { rm } from 'fs/promises';
-import { faint, green, red } from '../console';
+import { faint, green, red } from '@ops/console';
 
 export const deleteEntry = async (
   entryPath: string,

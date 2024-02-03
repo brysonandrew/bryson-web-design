@@ -1,5 +1,5 @@
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
-import { TDivProps } from '@brysonandrew/types';
+import { TDivProps } from '@brysonandrew/config/types';
 import { FC } from 'react';
 
 type TProps = TDivProps;

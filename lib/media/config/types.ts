@@ -1,5 +1,5 @@
 import { EXTS } from '@brysonandrew/media/config/constants';
-import { TSource } from '@brysonandrew/types';
+import { TSource } from '@brysonandrew/config/types';
 import type { OutputInfo, Metadata } from 'sharp';
 
 export type TModule = {
