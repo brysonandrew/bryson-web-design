@@ -30,12 +30,15 @@ export const Badge: FC<TPricingProps> = ({
       style={{
         borderRadius: 40,
         backgroundColor: COLOR[type],
-      }} 
+      }}
       {...props}
-    > 
+    >
       <FadeDownPair
+        classValue='h-full'
         darkClass='opacity-dark'
         lightClass='opacity-light'
+        darkColor='var(--black-02)'
+        lightColor='var(--white-02)'
       />
       {(isHover || isText) && <Text>{type}</Text>}
     </motion.div>

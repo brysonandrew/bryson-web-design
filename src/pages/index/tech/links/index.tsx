@@ -1,13 +1,10 @@
 import { Plus } from '@pages/index/tech/icons/Plus';
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Item } from './Item';
 import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import { Transform } from './Transform';
 import { TECH } from '@pages/index/tech/config/constants';
-
-const Inner = styled(motion.div)``;
 
 type TProps = TPartialParallaxMotionProps;
 export const Links: FC<TProps> = ({ style }) => {
