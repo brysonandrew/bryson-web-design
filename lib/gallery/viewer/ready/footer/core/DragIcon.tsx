@@ -6,7 +6,7 @@ import { useHoverKey } from '@brysonandrew/cursor';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { Glow } from '@brysonandrew/filter-animate';
-import { TDivMotionProps } from '@brysonandrew/config/types';
+import { TDivMotionProps } from '@brysonandrew/config-types';
 
 type TProps = TDivMotionProps;
 export const DragIcon: FC<TProps> = ({

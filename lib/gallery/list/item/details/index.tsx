@@ -3,7 +3,7 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Tags } from './Tags';
 import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/space/P2';
-import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
 type TProps<K extends string> = TDivMotionProps & {
@@ -30,10 +30,9 @@ export const Details = <
     >
       {paragraphs && (
         <>
-          <P2 />
           <hr
             className='relative -left-6 border dark:border-accent border-accent opacity-40'
-            style={{ width: `calc(100% + 3rem)` }}
+            style={{ width: `calc(100% + 3.5rem)` }}
           />
           <P2 />
           <Paragraphs paragraphs={paragraphs} />
@@ -45,6 +44,7 @@ export const Details = <
           <Tags slug={slug} tags={tags} />
         </>
       )}
+      <P2 />
     </motion.div>
   );
 };

@@ -6,7 +6,7 @@ import type {
 import { Component } from 'react';
 import type { TFallbackProps } from './Fallback';
 import { Fallback } from './Fallback';
-import { TChildren } from '@brysonandrew/config/types/dom/main';
+import { TChildren } from '@brysonandrew/config-types/dom/main';
 
 type TBoundaryProps = {
   children: TChildren;

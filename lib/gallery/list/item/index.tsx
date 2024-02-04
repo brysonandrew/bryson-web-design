@@ -90,12 +90,7 @@ export const Item = <
         slug={slug}
         isHover={isHover}
         rightHeader={
-          <>
-            <List.RightHeader
-              slug={slug}
-              isHover={isHover}
-            />
-          </>
+          <List.RightHeader slug={slug} isHover={isHover} />
         }
         onLayoutAnimationComplete={
           handleLayoutAnimationComplete

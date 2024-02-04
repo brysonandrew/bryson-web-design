@@ -3,7 +3,7 @@ import {
   TDivMotionProps,
   TClassValueProps,
   TChildren,
-} from '@brysonandrew/config/types/dom';
+} from '@brysonandrew/config-types/dom';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

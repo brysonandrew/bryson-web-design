@@ -7,8 +7,8 @@ import { P24Y } from '@brysonandrew/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';
-import { BackgroundFill } from '@brysonandrew/dark-mode';
 import { FadeEdgePair } from '@brysonandrew/fade-edge/pairs/FadeEdgePair';
+import { motion } from 'framer-motion';
 
 export const Shell: FC = () => {
   return (
@@ -16,9 +16,8 @@ export const Shell: FC = () => {
       <Providers>
         <>
           {/* {import.meta.env.DEV && <Hud />} */}
-          <div className='fill-screen'>
-            <BackgroundFill />
-          </div>
+          <motion.div className='fill-screen bg-darkest' />
+          <motion.div className='fill-screen bg-lightest' />
           <Global />
           <P24Y />
           <Outlet />

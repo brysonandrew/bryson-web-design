@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   TChildrenProps,
   TDivMotionProps,
-} from '@brysonandrew/config/types/dom';
+} from '@brysonandrew/config-types/dom';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { NOOP } from '@brysonandrew/utils/functions';
 import { isDesktop } from 'react-device-detect';

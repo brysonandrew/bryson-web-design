@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TTitleProps } from '@brysonandrew/config/types/dom';
+import { TTitleProps } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 
 type TProps = TTitleProps;

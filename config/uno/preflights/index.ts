@@ -8,7 +8,7 @@ export const resolvePreflights = <T extends object>(
       textColor: colors['black-1'],
       inputBackgroundColor: colors['white-7'],
       textColorDark: colors.accent,
-      inputBackgroundColorDark: colors.accent,
+      inputBackgroundColorDark: colors['black-4'],
     },
     scrollbarConfig: {
       thumb: colors['gray'],

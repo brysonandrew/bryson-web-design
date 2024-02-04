@@ -1,16 +1,18 @@
 import {
   TFormState,
   TContactState,
-  TContactContext,
 } from '@brysonandrew/contact/config/types';
-import { createContext } from 'react';
 
 export const CONTACT_FORM_INPUT_LAYOUT_ID =
   'CONTACT_FORM_INPUT_LAYOUT_ID';
 export const DEFAULT_FOCUS_KEY = 'name';
-export const CONTACT = createContext<TContactContext>(
-  {} as TContactContext,
-);
+
+export const STATUSES = [
+  'idle',
+  'sending',
+  'sent',
+  'error',
+] as const;
 
 export const INIT_STATE: TFormState = {
   email: '',
@@ -19,6 +21,7 @@ export const INIT_STATE: TFormState = {
 };
 
 export const INIT_CONTACT_STATE: TContactState = {
+  isDisabled: false,
   form: INIT_STATE,
   status: 'idle',
   focusKey: 'name',

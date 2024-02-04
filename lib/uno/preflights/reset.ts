@@ -358,8 +358,8 @@ input {
   background-color: transparent;
 }
 
-textarea:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 `;

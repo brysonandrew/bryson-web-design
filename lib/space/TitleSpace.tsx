@@ -1,4 +1,4 @@
-import { TChildrenProps } from '@brysonandrew/config/types/dom/main';
+import { TChildrenProps } from '@brysonandrew/config-types/dom/main';
 import { FC } from 'react';
 
 export const TITLE_HEIGHT = 88;

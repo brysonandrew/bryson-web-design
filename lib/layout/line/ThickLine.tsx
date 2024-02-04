@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import clsx from 'clsx';
-import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 
 type TProps = HTMLMotionProps<'hr'> & TClassValueProps;
 export const ThickLine: FC<TProps> = ({

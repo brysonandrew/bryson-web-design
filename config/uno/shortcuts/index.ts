@@ -1,7 +1,7 @@
 import { SHORTCUTS as DEFAULT_SHORTCUTS } from '@brysonandrew/uno-shortcuts';
-import { CONTACT_FORM_GLOW_SHORTCUTS } from '@brysonandrew/contact/variants/glow';
 import { StaticShortcutMap } from 'unocss';
 import { DARK_MODE_UNO_SHORTCUTS } from '@brysonandrew/dark-mode/config/animation';
+import { CONTACT_FORM_SHORTCUTS } from './contact-form';
 
 const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
   'text-title': 'text-gray dark:text-accent',
@@ -19,11 +19,6 @@ const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
   'title-pricing':
     'font-semibold text-main capitalize char-gap-1',
   'text-pricing': 'text-white-7',
-};
-
-const CONTACT_FORM_SHORTCUTS: StaticShortcutMap = {
-  ...CONTACT_FORM_GLOW_SHORTCUTS,
-  'name-text': 'title-section capitalize',
 };
 
 const SHORTCUTS: StaticShortcutMap = {

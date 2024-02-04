@@ -12,14 +12,19 @@ type TConfig = {
   element: HTMLFormElement | null;
 };
 export const useForm = ({ element }: TConfig) => {
-  const { onStatus, onFocus, onForm, status, focusKey } =
-    useContact();
-  const handleStatus = onStatus;
+  const {
+    status,
+    isDisabled,
+    onStatus,
+    onFocus,
+    onForm,
+    onDisable,
+    focusKey,
+  } = useContact();
 
-  const onSend = async (event: FormEvent) => {
-    if (element === null) return;
-    handleStatus('sending');
-    event.preventDefault();
+  const handleSend = async (event: FormEvent) => {
+    if (element === null || isDisabled) return;
+    onStatus('sending');
 
     try {
       await emailjs.sendForm(
@@ -28,27 +33,28 @@ export const useForm = ({ element }: TConfig) => {
         element,
         import.meta.env.VITE_EMAIL_PUBLIC_KEY,
       );
-      handleStatus('sent');
+      onStatus('sent');
     } catch (error) {
       console.error(error);
-      handleStatus('error'); 
+      onStatus('error');
     }
+
+    event.preventDefault();
   };
 
-  const updateFocus = onFocus;
+  const handleDisable = (isDisabled: boolean) => {
+    onDisable(isDisabled);
+  };
 
   const handleFocus = (event: TFocusEvent) => {
-    const target = event.currentTarget;
-    if (!target) return;
-    updateFocus(target.name as TFormKey);
+    onFocus((event.currentTarget.name as TFormKey) ?? null);
   };
 
   const handleBlur = (event: TFocusEvent) => {
-    const target = event.currentTarget;
-    if (!target) return;
-    if (target.name === focusKey) {
-      // updateFocus(null);
-    }
+    // enable if require no marker when no focus
+    // if (event.currentTarget?.name === focusKey) {
+    //   onFocus(null);
+    // }
   };
 
   const handleChange = ({
@@ -62,8 +68,10 @@ export const useForm = ({ element }: TConfig) => {
   };
 
   return {
-    isDisabled: status !== 'idle',
+    isDisabled: isDisabled || status === 'sent',
+    onSend: handleSend,
+    onDisable: handleDisable,
     inputHandlers,
-    onSend,
   };
 };
+export type TUseForm = ReturnType<typeof useForm>;

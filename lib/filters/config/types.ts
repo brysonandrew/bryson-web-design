@@ -1,4 +1,4 @@
-import type { TChildren } from '@brysonandrew/config/types/dom';
+import type { TChildren } from '@brysonandrew/config-types/dom';
 
 export type TFilterChildrenProps = {
   children?(id: string): TChildren;

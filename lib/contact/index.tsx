@@ -1,87 +1,67 @@
-import { motion } from 'framer-motion';
-import { Submit } from './box/Submit';
-import { FC, useRef } from 'react';
-import { useForm } from './hooks/useForm';
-import { useAutoFocus } from './hooks/useAutoFocus';
-import { Text } from './box/Text';
-import { Textarea } from './box/textarea';
+import { Submit } from './form/input/Submit';
+import { FC } from 'react';
+import { Text } from './form/input/Text';
+import { Textarea } from './form/input/textarea';
 import { Footer } from './footer';
-import { TContactListProps } from '@brysonandrew/contact-list';
+import {
+  Form,
+  TFormChildrenProps,
+} from '@brysonandrew/contact/form';
+import { TFooterInfoProps } from '@brysonandrew/contact/config/types';
 
-type TProps = {
-  isDisabled?: boolean;
-  footerInfo?: TContactListProps;
-};
-export const Contact: FC<TProps> = ({
-  isDisabled: _isDisabled,
-  footerInfo,
-}) => {
-  const ref = useRef<HTMLFormElement | null>(null);
-  const { isDisabled, onSend, inputHandlers } = useForm({
-    element: ref.current,
-  });
-  useAutoFocus(_isDisabled ?? isDisabled);
-
+type TProps = TFooterInfoProps;
+export const Contact: FC<TProps> = ({ footerInfo }) => {
   return (
-    <motion.form
-      className='_contact_root'
-      initial={false}
-      ref={ref}
-      onSubmit={(event) => {
-        if (!isDisabled) {
-          onSend(event);
-        }
-      }}
-    >
-      <div className='_contact_inputs'>
-        <Text
-          name='name'
-          disabled={isDisabled}
-          placeholder=''
-          required
-          {...inputHandlers}
-        />
-        <Text
-          disabled={isDisabled}
-          type='email'
-          name='email'
-          placeholder=''
-          required
-          {...inputHandlers}
-        />
-        <Textarea
-          name='message'
-          placeholder=''
-          disabled={isDisabled}
-          required
-          {...inputHandlers}
-        />
-      </div>
-      <Submit isDisabled={isDisabled} />
-      {footerInfo && <Footer {...footerInfo} />}
-    </motion.form>
+    <Form>
+      {(props: TFormChildrenProps) => (
+        <>
+          <div className='_contact_inputs'>
+            <Text
+              name='name'
+              placeholder=''
+              required
+              {...props}
+            />
+            <Text
+              type='email'
+              name='email'
+              placeholder=''
+              required
+              {...props}
+            />
+            <Textarea
+              name='message'
+              placeholder=''
+              required
+              {...props}
+            />
+          </div>
+          <Submit isDisabled={props.isDisabled} />
+          {footerInfo && <Footer {...footerInfo} />}
+        </>
+      )}
+    </Form>
   );
 };
 
 export * from '@brysonandrew/contact-list';
 export * from './ContactProvider';
-export * from './box/Clear';
-export * from './box/Name';
-export * from './box/Shell';
-export * from './box/Submit';
-export * from './box/Text';
-export * from './box';
 export * from './config/constants';
 export * from './config/types';
-export * from './hooks/useAutoFocus';
-export * from './hooks/useFocus';
-export * from './hooks/useForm';
-export * from './hooks/useInput';
 export * from './footer';
+export * from './form';
+export * from './form/useForm';
 export * from './utils/resolveButtonValue';
 export * from './variants/base';
 export * from './variants/glow';
 export * from './variants/minimalist';
-export * from './box/textarea';
-export * from './box/textarea/autosize';
-export * from './box/textarea/autosize/useAutosize';
+export * from './variants/prefixContact';
+export * from './form/input/Clear';
+export * from './form/input/Name';
+export * from './form/input/Submit';
+export * from './form/input/Text';
+export * from './form/input';
+export * from './form/input/useFocus';
+export * from './form/input/textarea';
+export * from './form/input/textarea/autosize';
+export * from './form/input/textarea/autosize/useAutosize';

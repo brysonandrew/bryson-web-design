@@ -3,7 +3,7 @@ import {
   TGradientAngle,
   TGradientDirection,
 } from '@brysonandrew/color-gradient';
-import { TDivMotionProps } from '@brysonandrew/config/types';
+import { TDivMotionProps } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

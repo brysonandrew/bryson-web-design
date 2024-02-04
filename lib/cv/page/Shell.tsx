@@ -1,4 +1,4 @@
-import type { TChildren } from '@brysonandrew/config/types/dom';
+import type { TChildren } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import type { CSSProperties, FC } from 'react';
 

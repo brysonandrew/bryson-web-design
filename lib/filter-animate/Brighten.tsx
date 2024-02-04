@@ -3,7 +3,7 @@ import { FC } from 'react';
 import {
   TChildrenPartialProps,
   TClassValueProps,
-} from '@brysonandrew/config/types/dom/main';
+} from '@brysonandrew/config-types/dom/main';
 import {
   TPartialBrightenConfigOptions,
   resolveBrightenProps,

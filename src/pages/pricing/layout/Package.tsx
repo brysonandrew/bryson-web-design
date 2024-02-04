@@ -87,10 +87,8 @@ export const Package: FC<TProps> = ({ title }) => {
       >
         <End classValue='title-pricing'>
           <FadeDownPair
-            style={{
-              opacity: 0.4,
-              borderRadius: BORDER_RADIUS.MD,
-            }}
+            darkClass='opacity-dark'
+            lightClass='opacity-light'
           />
           <h4 className='relative w-full text-center text-2xl z-10'>
             {title}
