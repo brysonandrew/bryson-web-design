@@ -27,6 +27,8 @@ export const Metal: FC<TProps> = ({
   const sharedClassValue = clsx('fill', classValue);
   return (
     <motion.div className={sharedClassValue} {...rest}>
+      <motion.div className='fill bg-darkest' {...rest} />
+      <motion.div className='fill bg-lightest' {...rest} />
       <Dark
         className={clsx('bg-darkest', sharedClassValue)}
         {...rest}
