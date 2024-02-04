@@ -8,7 +8,7 @@ export const withLight = (config: TConfig) => {
   const Glow = _Glow(config);
   const configWithGlow: TLayoutComponentProps = {
     ...config,
-    Glow,
+    Glow, 
   };
   return {
     Glow,

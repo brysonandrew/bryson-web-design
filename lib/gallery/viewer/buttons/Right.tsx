@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { ArrowRight } from '@brysonandrew/gallery-viewer/icons/ArrowRight';

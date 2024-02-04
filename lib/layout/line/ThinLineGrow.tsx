@@ -6,7 +6,7 @@ import {
 import { FC } from 'react';
 import { ThinLine } from '.';
 import clsx from 'clsx';
-import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 
 type TProps = { delay?: number } & TClassValueProps;
 export const ThinLineGrow: FC<TProps> = ({

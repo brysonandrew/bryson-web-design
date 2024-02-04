@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TChildren } from '@brysonandrew/config/types';
+import { TChildren } from '@brysonandrew/config-types';
 
 type TProps = { children: TChildren };
 export const List: FC<TProps> = ({ children }) => {

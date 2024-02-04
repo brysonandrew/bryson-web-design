@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.22.107",
+  "version": "6.22.112",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -17,13 +17,15 @@
     "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./key/generateRandomId": "./key/generateRandomId.ts",
     "./key": "./key/index.ts",
+    "./object/prefixKeys": "./object/prefixKeys.ts",
+    "./object/scopeRecord": "./object/scopeRecord.ts",
     "./format": "./format/index.ts",
     "./format/url": "./format/url.ts",
+    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
+    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
     "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
     "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
     "./unit/stripPx": "./unit/stripPx.ts",
-    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
-    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
     "./error/detail/config": "./error/detail/config.ts",
     "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts"
   },
@@ -41,6 +43,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config": "*"
+    "@brysonandrew/config": "*",
+    "@brysonandrew/config-types": "*"
   }
 }

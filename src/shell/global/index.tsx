@@ -41,6 +41,14 @@ export const Global: FC = () => {
         )}${TITLE_KEY_DELIMITER}${name}`
       : resolveCompositeTitle(...titles);
 
+  const SCROLL_DISABLED = `
+  html,
+  body {
+    -webkit-overflow-scrolling: touch !important;
+    overflow: auto !important;
+  }
+  `;
+
   const globalCss = css`
     :root {
       ${COLOR_VARS_CSS}

@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@brysonandrew/config/types';
+import { TClassValueProps } from '@brysonandrew/config-types';
 import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 import { Item } from './Item';

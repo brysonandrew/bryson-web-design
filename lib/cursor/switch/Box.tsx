@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
-import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { useCursor } from '@brysonandrew/cursor';
 import {
   DURATION,
@@ -20,13 +20,13 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { Back, LIGHT, BORDER_RADIUS, COLOR } = useApp();
+  const { Back, LIGHT, BORDER_RADIUS } = useApp();
   const { cursorLabel } = useCursor();
   const Background = LIGHT ? LIGHT.Back : Back;
   return (
     <motion.div
       className={clsx(
-        'absolute top-1/2 left-1/2 px-2',
+        'absolute top-1/2 left-1/2 px-3',
         classValue,
       )}
       style={{

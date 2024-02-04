@@ -14,7 +14,7 @@ import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { NOOP } from '@brysonandrew/utils';
 
-type TProps = { isDisabled: boolean };
+type TProps = { isDisabled?: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
   const { BORDER_RADIUS, LIGHT, Back, sounds } = useApp();
   const { isHover, handlers } = useHoverKey(
@@ -34,11 +34,12 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   return (
     <motion.label
       ref={ref}
-      className={clsx('submit', [
+      className={clsx(
+        '_contact_submit',
         isDisabled
           ? 'cursor-not-allowed'
           : 'cursor-pointer',
-      ])}
+      )}
       layout
       onTap={isDisabled ? () => null : sounds?.move ?? NOOP}
       {...(isDisabled
@@ -51,7 +52,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     >
       {LIGHT ? <LIGHT.Back /> : <Back />}
       <input
-        className='_contact_absolute inset-0 pointer-events-none opacity-0'
+        className='fill pointer-events-none opacity-0'
         type='submit'
         disabled={isDisabled}
       />

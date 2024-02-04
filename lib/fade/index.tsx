@@ -2,7 +2,7 @@ import {
   resolveGradient,
   TGradientDirection,
 } from '@brysonandrew/color-gradient';
-import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

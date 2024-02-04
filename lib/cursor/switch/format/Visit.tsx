@@ -1,4 +1,4 @@
-import { TDivProps } from '@brysonandrew/config/types/dom';
+import { TDivProps } from '@brysonandrew/config-types/dom';
 import type { FC } from 'react';
 
 type TProps = TDivProps;

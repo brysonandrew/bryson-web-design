@@ -12,7 +12,7 @@ import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { isDesktop } from 'react-device-detect';
 import { Rect } from '@brysonandrew/space/Rect';
-import { TClassValueProps } from '@brysonandrew/config/types';
+import { TClassValueProps } from '@brysonandrew/config-types';
 
 type TProps = TClassValueProps &
   TParallaxOptions & {
@@ -77,11 +77,11 @@ export const Parallax: FC<TProps> = ({
 };
 
 export * from './config';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';

@@ -31,6 +31,8 @@ export type TImgMotionProps = HTMLMotionProps<'img'> &
   TClassValueProps;
 export type TInputMotionProps = HTMLMotionProps<'input'> &
   TClassValueProps;
+export type TLabelMotionProps = HTMLMotionProps<'input'> &
+  TClassValueProps;
 
 export type TTextareaMotionProps =
   HTMLMotionProps<'textarea'> & TClassValueProps;

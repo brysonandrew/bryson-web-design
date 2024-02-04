@@ -3,14 +3,13 @@ import styled from '@emotion/styled';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/config/types/dom';
+} from '@brysonandrew/config-types/dom';
 import {
   metalRadialDarkCss,
   metalRadialLightCss,
 } from '@components/layout/metal/css';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { BackgroundFill } from '@brysonandrew/dark-mode';
 
 const Dark = styled(motion.div)`
   ${metalRadialDarkCss}
@@ -28,19 +27,12 @@ export const Metal: FC<TProps> = ({
   const sharedClassValue = clsx('fill', classValue);
   return (
     <motion.div className={sharedClassValue} {...rest}>
-      <BackgroundFill {...rest} />
       <Dark
-        className={clsx(
-          sharedClassValue,
-          'opacity-dark',
-        )}
+        className={clsx('bg-darkest', sharedClassValue)}
         {...rest}
       />
       <Light
-        className={clsx(
-          'opacity-light',
-          sharedClassValue,
-        )}
+        className={clsx('bg-lightest', sharedClassValue)}
         {...rest}
       />
     </motion.div>

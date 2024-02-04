@@ -1,5 +1,5 @@
 import { useApp } from '@brysonandrew/app';
-import { TClassValueProps } from '@brysonandrew/config/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
 import type { FC, PropsWithChildren } from 'react';
 

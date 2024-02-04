@@ -6,7 +6,7 @@ import {
 } from '@brysonandrew/animation/config/types/presence/config';
 import { SHIFT_DIRECTIONS } from '@brysonandrew/animation/config/constants';
 import { resolveNegative } from '@brysonandrew/animation/resolvePresenceRecord/value/resolveNegative';
-import { TNumberPercentValue } from '@brysonandrew/config/types';
+import { TNumberPercentValue } from '@brysonandrew/config-types';
 
 export const isValidShift = (
   shift?: TShift,

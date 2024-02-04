@@ -1,8 +1,8 @@
-import { TDivMotionProps } from '@brysonandrew/config/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import {
   TChildren,
   TClassValueProps,
-} from '@brysonandrew/config/types/dom/main';
+} from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';

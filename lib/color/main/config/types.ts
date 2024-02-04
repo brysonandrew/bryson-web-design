@@ -1,8 +1,9 @@
-import { TDigit, TIndex } from '@brysonandrew/config-types/numbers/series';
+import { BASE_COLOR_RECORD } from '@brysonandrew/color-main';
 import {
-  BASE_COLOR_RECORD,
-  RGBA_DELIMITER,
-} from './constants';
+  TDigit,
+  TIndex,
+} from '@brysonandrew/config-types/numbers/series';
+import { RGBA_DELIMITER } from './constants';
 
 export type TRgbaDelimiter = typeof RGBA_DELIMITER;
 

@@ -2,7 +2,7 @@ import { TPresenceConfigs } from '@brysonandrew/animation/config/types/presence'
 import { TPresenceConfigValue } from '@brysonandrew/animation/config/types/presence/value';
 import { resolveRecordKey } from '@brysonandrew/animation/resolvePresenceRecord/key';
 import { resolveRecordValue } from '@brysonandrew/animation/resolvePresenceRecord/value';
-import { TAnyRecord } from '@brysonandrew/config/types';
+import { TAnyRecord } from '@brysonandrew/config-types';
 
 export const resolvePresenceRecord = <
   A extends TPresenceConfigs,

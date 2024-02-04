@@ -2,7 +2,7 @@ import {
   TRotatePosStringValue,
   TRotateNegStringValue,
 } from '@brysonandrew/animation/config/types/presence/config';
-import { TNumberPosPercentValue, TNumberNegPercentValue } from '@brysonandrew/config/types';
+import { TNumberPosPercentValue, TNumberNegPercentValue } from '@brysonandrew/config-types';
 
 type TStrInput =
   | TNumberPosPercentValue

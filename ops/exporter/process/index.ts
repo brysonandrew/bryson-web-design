@@ -1,7 +1,7 @@
 import glob from 'fast-glob';
 import { readFile } from '@ops/utils';
 import { join, parse } from 'path';
-import { TError } from '@brysonandrew/config/types';
+import { TError } from '@brysonandrew/config-types';
 import { kebabToTitle } from '@brysonandrew/utils';
 
 import { TTargets } from '@brysonandrew/exporter/config/types';

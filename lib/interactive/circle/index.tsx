@@ -2,7 +2,7 @@ import {
   TChildrenProps,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/config/types/dom';
+} from '@brysonandrew/config-types/dom';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import clsx from 'clsx';
 import { FC } from 'react';

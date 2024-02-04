@@ -10,4 +10,4 @@ export const Contact = () => {
       <P60Y />
     </Section>
   );
-};
+}; 

@@ -1,45 +1,43 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { TBaseInputProps } from '../../config/types';
-import { Box } from '..';
-import { TTextareaMotionProps } from '@brysonandrew/config/types/dom';
+import { Input } from '..';
+import { TTextareaMotionProps } from '@brysonandrew/config-types/dom';
 import { Autosize } from './autosize';
 import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { TBaseInputProps } from '@brysonandrew/contact/config/types';
+import { TFormChildrenProps } from '@brysonandrew/contact/form';
 
-type TProps = TTextareaMotionProps & TBaseInputProps;
+type TProps = TFormChildrenProps &
+  TTextareaMotionProps &
+  TBaseInputProps;
 export const Textarea: FC<TProps> = ({
   name,
-  disabled,
+  isDisabled,
+  inputHandlers,
   ...props
 }) => {
   return (
-    <Box<HTMLTextAreaElement>
-      name={name}
-      isDisabled={disabled}
-    >
-      {({ setInput, inputProps, input }) => (
-        <Autosize textarea={input} {...inputProps}>
+    <Input<HTMLTextAreaElement> name={name}>
+      {({ input, resolveRef, ...inputProps }) => (
+        <Autosize textarea={input} value={inputProps.value}>
           {() => (
             <motion.textarea
               layout
               transition={{ duration: 0 }}
-              ref={(instance) => {
-                if (instance && !input) {
-                  setInput(instance);
-                }
-              }}
+              ref={resolveRef}
               className='_contact_input-textarea'
               autoComplete='off'
               rows={1}
               name={name}
-              disabled={disabled}
+              disabled={isDisabled}
               {...resolveInteractiveLabels(name)}
-              {...inputProps}
+              {...inputHandlers}
               {...props}
+              {...inputProps}
             />
           )}
         </Autosize>
       )}
-    </Box>
+    </Input>
   );
 };

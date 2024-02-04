@@ -12,7 +12,7 @@ import {
   TClassValueProps,
   TDivProps,
   TSvgMotionProps,
-} from '@brysonandrew/config/types';
+} from '@brysonandrew/config-types';
 import { Moon, Sun } from './icon';
 import {
   PRESENCE_ROTATE_FROM_TOP,
