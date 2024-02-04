@@ -21,10 +21,7 @@ export const Tips = () => {
   return (
     <>
       {!isDesktop && (
-        <InView
-          className='absolute w-0 h-0 top-1/5 left-1/2'
-          options={{ rootMargin: '400px' }}
-        >
+        <InView className='absolute w-full h-full top-1/2 -translate-y-1/2 left-0'>
           {({ inView }) => (
             <AnimatePresence>
               {inView && !currProject && (
