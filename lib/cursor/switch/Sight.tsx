@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import {
   TChildren,
   TClassValueProps,
-} from '@brysonandrew/types/dom/main';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+} from '@brysonandrew/config-types/dom/main';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useCursor } from '@brysonandrew/cursor';
 
 const DEFAULT_ANIMATE = {

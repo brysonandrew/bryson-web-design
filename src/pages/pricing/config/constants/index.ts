@@ -7,7 +7,7 @@ import { newlineToArr } from '@brysonandrew/utils/transformer/newlineToArr';
 import { FC } from 'react';
 import { PlusContent } from './PlusContent';
 import { titleToKebab } from '@brysonandrew/utils/format';
-import { TTTitleToKebab } from '@brysonandrew/types/transformers/format/title';
+import { TTTitleToKebab } from '@brysonandrew/config-types/transformers/format/title';
 
 export const PACKAGES = [
   'Standard',

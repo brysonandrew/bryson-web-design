@@ -1,7 +1,11 @@
-import { PUBLIC_DIR, SMALL_SUFFIX, SCREENS_DIR, PRECACHE_PATH } from '@ops/screens/process/constants';
+import {
+  PUBLIC_DIR,
+  SMALL_SUFFIX,
+  SCREENS_DIR,
+  PRECACHE_PATH,
+} from '@ops/screens/process/constants';
 import { promises as fs } from 'fs';
 import sharp, { Metadata, OutputInfo } from 'sharp';
-
 
 export { resolveFsInfo } from './resolveFsInfo';
 export { resolveMediaRecord } from './resolveMediaRecord';
@@ -10,11 +14,11 @@ const PUBLIC_DIR_REGEXP = new RegExp(`${PUBLIC_DIR}/`);
 export const removePublicDir = (entry: string) =>
   entry.replace(PUBLIC_DIR_REGEXP, '');
 
-export const writeFileData = (
+export const writeFileData = async (
   path: string,
   data: object,
 ) => {
-  fs.writeFile(path, JSON.stringify(data));
+  return fs.writeFile(path, JSON.stringify(data));
 };
 
 export const resolveSmallEntry = (

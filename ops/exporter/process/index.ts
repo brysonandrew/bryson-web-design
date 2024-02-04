@@ -1,14 +1,14 @@
 import glob from 'fast-glob';
-import { readFile } from '@ops/common/utils';
+import { readFile } from '@ops/utils';
 import { join, parse } from 'path';
-import { TError } from '@brysonandrew/types';
+import { TError } from '@brysonandrew/config-types';
 import { kebabToTitle } from '@brysonandrew/utils';
 
 import { TTargets } from '@brysonandrew/exporter/config/types';
 import { parsePaths } from '@ops/exporter/process/parsePaths';
-import { QUOTE_JSON } from '@ops/exporter/config/constants';
 import { writeIndex } from '@ops/exporter/process/writeIndex';
 import { writeFile } from 'fs/promises';
+import { QUOTE_JSON } from '@ops/config/constants';
 
 export const process = async (targets: TTargets) => {
   try {

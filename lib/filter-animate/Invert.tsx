@@ -4,7 +4,7 @@ import {
 } from '@brysonandrew/filter-animate/utils/invert';
 import { FilterAnimate, TFilterAnimateProps } from '.';
 import { FC } from 'react';
-import { TChildrenPartialProps } from '@brysonandrew/types/dom/main';
+import { TChildrenPartialProps } from '@brysonandrew/config-types/dom/main';
 
 type TProps = TPartialInvertConfigOptions &
   TFilterAnimateProps &

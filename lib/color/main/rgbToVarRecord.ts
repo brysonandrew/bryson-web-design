@@ -1,4 +1,4 @@
-import { TKeyStr } from '@brysonandrew/types/keys';
+import { TKeyStr } from '@brysonandrew/config-types/keys';
 import {
   TRgb,
   TRgbaValue,

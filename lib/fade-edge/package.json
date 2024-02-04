@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-edge",
-  "version": "6.22.102",
+  "version": "6.22.114",
   "description": "Fade Edge library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -38,6 +38,6 @@
     "@brysonandrew/fade": "*",
     "react": "*",
     "clsx": "*",
-    "@brysonandrew/types": "*"
+    "@brysonandrew/config-types": "*"
   }
 }

@@ -1,6 +1,6 @@
 import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
-import { TChildren } from '@brysonandrew/types/dom/main';
+import { TChildren } from '@brysonandrew/config-types/dom/main';
 import { TBaseConfig, TTransformRange } from '@brysonandrew/parallax/config';
 import { useResistance } from '@brysonandrew/parallax/hooks/useResistance';
 

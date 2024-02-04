@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import { TChildrenString } from '@brysonandrew/types/dom';
+import { TChildrenString } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import { ThinLineGrow } from '@brysonandrew/layout';
 import { Subtitle } from '@pages/index/build/headline/Subtitle';

@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/types/dom';
+import { TChildren } from '@brysonandrew/config-types/dom';
 import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
 import { CSSProperties, FC } from 'react';
 import {

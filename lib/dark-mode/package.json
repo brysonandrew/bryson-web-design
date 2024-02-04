@@ -1,11 +1,10 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.102",
+  "version": "6.22.114",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
-    "./BackgroundFill": "./BackgroundFill.tsx",
     "./DarkModeProvider": "./DarkModeProvider.tsx",
     ".": {
       "require": "./index.ts",
@@ -36,15 +35,15 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
-    "clsx": "*",
-    "framer-motion": "*",
     "react": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/hooks-dom": "*",
+    "framer-motion": "*",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/interactive": "*",
     "@brysonandrew/app": "*",
-    "@brysonandrew/animation": "*"
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/animation": "*",
+    "clsx": "*"
   }
 }

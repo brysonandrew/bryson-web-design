@@ -1,5 +1,4 @@
 import { RESET } from './reset';
-import { INIT } from './init';
 import {
   resolveScrollbar,
   TResolveScrollbarConfig,
@@ -22,12 +21,8 @@ export const resolvePreflights = <T extends object>({
     layer: 'reset',
     getCSS: () => RESET,
   },
-  {
-    layer: 'init',
-    getCSS: () => INIT,
-  },
   ...(inputConfig
-    ? [
+    ? [ 
         {
           getCSS: (): string => resolveInput(inputConfig),
         },
@@ -43,7 +38,6 @@ export const resolvePreflights = <T extends object>({
     : []),
 ];
 
-export * from './init';
 export * from './reset';
 export * from './resolveInput';
 export * from './resolveScrollbar';

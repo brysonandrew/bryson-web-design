@@ -8,7 +8,8 @@ export const withStyle =
     style: CSSProperties,
     C?: FC<T>,
   ): FC<T> =>
-  (props: T): JSX.Element | null =>
-    C ? (
+  (props: T): JSX.Element | null => {
+    return C ? (
       <C {...props} style={{ ...style, ...props.style }} />
     ) : null;
+  };

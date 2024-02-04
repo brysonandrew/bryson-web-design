@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import {
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/types/dom';
+} from '@brysonandrew/config-types/dom';
 import clsx from 'clsx';
 
 const Root = styled(motion.div)``;

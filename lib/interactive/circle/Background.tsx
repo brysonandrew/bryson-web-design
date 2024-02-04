@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import {
   DURATION,
   resolvePresence,

@@ -23,32 +23,34 @@ export const resolveGlowProps = ({
   value,
   style,
   ...rest
-}: TPartialGlowConfigOptions) => ({
-  style: {
-    ...(value ? { opacity: value } : {}),
-    ...(text > 0
-      ? { textShadow: resolveBoxShadow(color, text) }
-      : {}),
-    ...(box > 0
-      ? { boxShadow: resolveBoxShadow(color, box) }
-      : {}),
-    ...(drop > 0
-      ? { filter: resolveDropShadow(color, drop) }
-      : {}),
-    ...style,
-  },
-  transition: TRANSITION_02_EASEIN_008,
-  ...(value
-    ? {}
-    : {
-        variants: {
-          idle: {
-            opacity: idle ?? 0,
+}: TPartialGlowConfigOptions) => {
+  return {
+    style: {
+      ...(value ? { opacity: value } : {}),
+      ...(text > 0
+        ? { textShadow: resolveBoxShadow(color, text) }
+        : {}),
+      ...(box > 0
+        ? { boxShadow: resolveBoxShadow(color, box) }
+        : {}),
+      ...(drop > 0
+        ? { filter: resolveDropShadow(color, drop) }
+        : {}),
+      ...style,
+    },
+    transition: TRANSITION_02_EASEIN_008,
+    ...(value
+      ? {}
+      : {
+          variants: {
+            idle: {
+              opacity: idle ?? 0,
+            },
+            hover: {
+              opacity: 1,
+            },
           },
-          hover: {
-            opacity: 1,
-          },
-        },
-      }),
-  ...rest,
-});
+        }),
+    ...rest,
+  };
+};

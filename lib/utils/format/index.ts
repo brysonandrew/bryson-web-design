@@ -5,6 +5,8 @@ export const capitalize = (word: string | null) =>
         .slice(1)}`
     : '';
 
+export const kebabToSnake = <I extends string>(slug: I) =>
+  slug.split('-').join('_');
 export const kebabToTitle = <I extends string>(slug: I) =>
   slug.split('-').map(capitalize).join(' ');
 export const kebabToPascal = <I extends string>(slug: I) =>
@@ -17,6 +19,13 @@ export const titleToKebab = <I extends string>(title: I) =>
     .split(' ')
     .map((v) => v.toLowerCase())
     .join('-');
+export const titleToUpperSnake = <I extends string>(
+  title: I,
+) =>
+  title
+    .split(' ')
+    .map((v) => v.toUpperCase())
+    .join('_');
 
 export const nToMoney = (n: number) =>
   `$${n.toLocaleString()}`;

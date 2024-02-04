@@ -1,8 +1,7 @@
-import { TElementProps } from '@brysonandrew/types/dom';
+import { TElementProps } from '@brysonandrew/config-types/dom';
 
-export type TInteractiveLabelProps = Pick<
-  TElementProps,
-  'title' | 'aria-label'
+export type TInteractiveLabelProps = Required<
+  Pick<TElementProps, 'title' | 'aria-label'>
 >;
 
 export const resolveInteractiveLabels = (

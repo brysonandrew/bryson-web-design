@@ -7,7 +7,7 @@ import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolve
 import { DURATION } from '@app/animation';
 import { ThickLine } from '@brysonandrew/layout/line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
-import { TLinkMotionProps } from '@brysonandrew/types';
+import { TLinkMotionProps } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 
 const Link = styled(motion(_Link))``;

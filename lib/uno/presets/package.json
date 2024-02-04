@@ -1,0 +1,42 @@
+{
+  "name": "@brysonandrew/uno-presets",
+  "version": "6.22.114",
+  "description": "Uno Presets library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolvePresets": "./resolvePresets.ts",
+    "./resolveWebFont": "./resolveWebFont.ts",
+    "./config/types": "./config/types.ts",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/bunny/categories": "./config/constants/bunny/categories.ts",
+    "./config/constants/bunny/fonts": "./config/constants/bunny/fonts.ts",
+    "./config/constants/bunny/names": "./config/constants/bunny/names.ts",
+    "./config/constants/google/categories": "./config/constants/google/categories.ts",
+    "./config/constants/google/fonts": "./config/constants/google/fonts.ts",
+    "./config/constants/google/names": "./config/constants/google/names.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "unocss": "*",
+    "@unocss/preset-web-fonts": "*",
+    "@brysonandrew/config-types": "*"
+  }
+}

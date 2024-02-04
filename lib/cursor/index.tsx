@@ -1,4 +1,4 @@
-import { TChildren } from '@brysonandrew/types';
+import { TChildren } from '@brysonandrew/config-types';
 import { NOOP } from '@brysonandrew/utils';
 import {
   useTimeoutRef,
@@ -84,10 +84,10 @@ export * from './hooks/useCursorAnimate';
 export * from './hooks/useCursorOffset';
 export * from './hooks/useHoverKey';
 export * from './hooks/useViewportPresence';
-export * from './utils';
-export * from './utils/resolveCompositeHoverKey';
 export * from './switch/Box';
 export * from './switch/IconWithText';
 export * from './switch/Sight';
 export * from './switch';
+export * from './utils';
+export * from './utils/resolveCompositeHoverKey';
 export * from './switch/format/Visit';

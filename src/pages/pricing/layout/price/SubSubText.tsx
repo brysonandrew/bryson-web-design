@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@brysonandrew/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { FC, PropsWithChildren } from 'react';
 
 export const SubSubText: FC<

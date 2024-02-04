@@ -4,11 +4,10 @@ import {
   TChildren,
   TChildrenString,
   TDivProps,
-} from '@brysonandrew/types/dom';
+} from '@brysonandrew/config-types/dom';
 import clsx, { ClassValue } from 'clsx';
-import { P12 } from '@brysonandrew/space/P12';
 import { P16Y } from '@brysonandrew/space';
-import { motion } from 'framer-motion';
+import { P12Y } from '@brysonandrew/space/P12Y';
 
 type TProps = Omit<TDivProps, 'title'> & {
   title: string;
@@ -29,9 +28,9 @@ export const Section: FC<TProps> = ({
       id={title}
       {...props}
     >
-      <P12 classValue='flex lg:hidden' />
+      <P12Y classValue='flex lg:hidden' />
       <Title>{title}</Title>
-      <P12 classValue='flex lg:hidden' />
+      <P12Y classValue='flex lg:hidden' />
       <P16Y classValue='hidden lg:flex' />
       {children}
     </div>

@@ -1,5 +1,5 @@
 import { TPricingKey } from '@pages/pricing/config/types';
-import { TTTitleToKebab } from '@brysonandrew/types';
+import { TTTitleToKebab } from '@brysonandrew/config-types';
 import { INIT_PROJECT_ITEMS } from './items';
 
 export type TInitItems = typeof INIT_PROJECT_ITEMS;

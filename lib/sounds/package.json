@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.22.102",
+  "version": "6.22.114",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -39,7 +39,7 @@
     "@brysonandrew/utils": "*",
     "react-synthwave": "*",
     "@emotion/styled": "*",
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config-types": "*",
     "clsx": "*"
   }
 }

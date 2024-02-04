@@ -5,9 +5,9 @@ import {
   PRESENCE_OPACITY_UP_Y,
 } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
-import { TClassValueProps } from '@brysonandrew/types/dom/main';
+import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {

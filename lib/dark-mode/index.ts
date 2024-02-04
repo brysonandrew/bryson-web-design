@@ -1,4 +1,3 @@
-export * from './BackgroundFill';
 export * from './DarkModeProvider';
 export * from './useDarkModeState';
 export * from './button';

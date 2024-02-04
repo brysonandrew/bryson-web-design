@@ -1,4 +1,4 @@
-import { TError } from '@brysonandrew/types';
+import { TError } from '@brysonandrew/config-types';
 
 type TConfig = {
   precacheEntries?: string[];

@@ -17,7 +17,7 @@ export const Footer = () => {
         <BackdropBlur>
           <Settings />
         </BackdropBlur> 
-      </Position>
+      </Position> 
     </Root>
   );
 };

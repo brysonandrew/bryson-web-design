@@ -1,9 +1,10 @@
 import glob from "fast-glob";
 import { readFileSync, writeFileSync } from "fs";
 import path from "path";
-import { bold, inverse, resolveFull, yesNo } from "../common/utils";
-import { LIB_IMPORT_SOURCE_RX } from "../common/utils/import-export";
+import { bold, inverse, yesNo } from "@ops/console";
+import { LIB_IMPORT_SOURCE_RX } from "../utils/import-export";
 import { FROM_TO_DELIMITER } from "./constants";
+import { resolveFull } from "@ops/utils";
 const cwd = process.env.PROJECT_CWD;
 if (!cwd) throw Error("No cwd");
 const initDir = "main/store";

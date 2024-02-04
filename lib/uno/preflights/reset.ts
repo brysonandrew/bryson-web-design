@@ -355,11 +355,11 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 textarea,
 input {
-  background-color: var(--transparent);
+  background-color: transparent;
 }
 
-textarea:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 `;

@@ -21,6 +21,7 @@ export const Space: FC<TProps> = ({
 
 export * from './P1';
 export * from './P12';
+export * from './P12Y';
 export * from './P16Y';
 export * from './P1_5';
 export * from './P2';

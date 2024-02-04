@@ -1,7 +1,9 @@
+import { STATUSES } from '@brysonandrew/contact/config/constants';
+import { TContactListProps } from '@brysonandrew/contact/contact-list';
 import { HTMLMotionProps } from 'framer-motion';
 import { ChangeEvent, FocusEvent } from 'react';
 
-export type TStatus = 'idle' | 'sending' | 'sent' | 'error';
+export type TStatus = (typeof STATUSES)[number];
 
 export type TFormState = {
   email: string;
@@ -11,7 +13,11 @@ export type TFormState = {
 
 export type TFormKey = keyof TFormState;
 
-export type TContactState = {
+export type TDisabledProps = {
+  isDisabled: boolean;
+};
+
+export type TContactState = TDisabledProps & {
   form: TFormState;
   status: TStatus;
   focusKey: TFormKey | null;
@@ -35,8 +41,14 @@ export type TInputHandlers = Pick<
   'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'
 >;
 
-export type TContactContext = TContactState & {
-  onFocus(value: TFormKey | null): void;
-  onStatus(value: TStatus): void;
-  onForm(value: Partial<TFormState>): void;
+export type TContactContext = TContactState &
+  TDisabledProps & {
+    onFocus(value: TFormKey | null): void;
+    onStatus(value: TStatus): void;
+    onForm(value: Partial<TFormState>): void;
+    onDisable(isDisabled: boolean): void;
+  };
+
+export type TFooterInfoProps = {
+  footerInfo?: TContactListProps;
 };

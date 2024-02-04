@@ -1,6 +1,4 @@
-import { StaticShortcutMap } from 'unocss';
-
-export const BASE: StaticShortcutMap = {
+export const CONTACT_FORM_BASE = {
   'gap-box': 'gap-6',
   'gap-box-1_5': 'gap-8',
   'gap-box-2': 'gap-12',

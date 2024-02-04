@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.22.102",
+  "version": "6.22.114",
   "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -47,7 +47,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/types": "*",
+    "@brysonandrew/config-types": "*",
     "framer-motion": "*"
   }
 }

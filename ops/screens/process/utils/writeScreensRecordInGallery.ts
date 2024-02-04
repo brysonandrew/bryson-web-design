@@ -3,7 +3,7 @@ import {
   TFilePathKey,
 } from '@brysonandrew/media';
 import { LOOKUP_PATH } from '@brysonandrew/screens/process/constants';
-import { TAnyRecord } from '@brysonandrew/types';
+import { TAnyRecord } from '@brysonandrew/config-types';
 import { writeFileData } from '@ops/utils/write';
 
 export const writeScreensRecordInGallery = (

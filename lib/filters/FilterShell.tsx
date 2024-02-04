@@ -1,4 +1,4 @@
-import type { TChildren } from '@brysonandrew/types/dom';
+import type { TChildren } from '@brysonandrew/config-types/dom';
 import type { FC, SVGProps } from 'react';
 
 type TProps = {

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TPricingKey } from '@pages/pricing/config/types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { TDivMotionProps } from '@brysonandrew/types/dom/motion';
+import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { Text } from './Text';
 import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
@@ -33,7 +33,13 @@ export const Badge: FC<TPricingProps> = ({
       }}
       {...props}
     >
-      <FadeDownPair />
+      <FadeDownPair
+        classValue='h-full'
+        darkClass='opacity-dark'
+        lightClass='opacity-light'
+        darkColor='var(--black-02)'
+        lightColor='var(--white-02)'
+      />
       {(isHover || isText) && <Text>{type}</Text>}
     </motion.div>
   );

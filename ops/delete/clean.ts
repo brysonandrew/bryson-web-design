@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import { green, inverse, red } from '../console';
+import { green, inverse, red } from '@ops/console';
 import { deleteEntries } from './delete';
 
 const PATTERNS = [

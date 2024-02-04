@@ -1,15 +1,9 @@
+import { BASE_COLOR_RECORD } from '@brysonandrew/color-main';
 import {
-  BASE_COLOR_RECORD,
-  RGBA_DELIMITER,
-  INDICIES,
-  DIGITS,
-} from './constants';
-
-export type TIndicies = typeof INDICIES;
-export type TIndex = TIndicies[number];
-
-export type Digits = typeof DIGITS;
-export type TDigit = Digits[number];
+  TDigit,
+  TIndex,
+} from '@brysonandrew/config-types/numbers/series';
+import { RGBA_DELIMITER } from './constants';
 
 export type TRgbaDelimiter = typeof RGBA_DELIMITER;
 
@@ -69,3 +63,5 @@ export type TRgbRecord<K extends string> = Record<
   TRgbSeriesRecordKey<K>,
   TRgb
 >;
+
+export type { TDigit, TIndex };

@@ -7,7 +7,7 @@ import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
-} from '@brysonandrew/types/dom';
+} from '@brysonandrew/config-types/dom';
 import { P2 } from '@brysonandrew/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks-window/useDelayCallback';
@@ -109,9 +109,8 @@ export const Content = <
           ) : null}
         </>
       )}
-      <P2 />
       <motion.div
-        className='row-space relative left-0 top-0'
+        className='row-space py-4 relative left-0 top-0'
       >
         <Header<T, K, R> slug={slug} />
         <div className='column-end gap-4 lg:row'>
@@ -119,7 +118,6 @@ export const Content = <
         </div>
       </motion.div>
       {children && <>{children}</>}
-      <P2 />
     </motion.div>
   );
 };

@@ -6,7 +6,7 @@ import {
   TClassValueProps,
   TImgMotionProps,
   TSource,
-} from '@brysonandrew/types/dom';
+} from '@brysonandrew/config-types/dom';
 import { TMediaRecord } from '@brysonandrew/media';
 
 const Source = styled.source``;

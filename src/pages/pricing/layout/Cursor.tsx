@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {
   TClassValueProps,
   TElementProps,
-} from '@brysonandrew/types';
+} from '@brysonandrew/config-types';
 
 type TProps = TElementProps & TClassValueProps;
 export const Cursor: FC<TProps> = ({

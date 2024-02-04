@@ -20,7 +20,7 @@ import {
   HoverHandlers,
   Target,
 } from 'framer-motion';
-import { TNumberString } from '@brysonandrew/types';
+import { TNumberString } from '@brysonandrew/config-types';
 
 export type TMainTransition = {
   duration: number;

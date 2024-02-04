@@ -6,7 +6,7 @@ import {
 import {
   TDivMotionProps,
   TClassValueProps,
-} from '@brysonandrew/types';
+} from '@brysonandrew/config-types';
 import { FC } from 'react';
 
 export type TBlankProps = TDivMotionProps &
