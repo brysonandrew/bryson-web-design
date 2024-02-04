@@ -19,7 +19,7 @@ export const Textarea: FC<TProps> = ({
   return (
     <Input<HTMLTextAreaElement> name={name}>
       {({ input, resolveRef, ...inputProps }) => (
-        <Autosize textarea={input} value={inputProps.value}>
+        <Autosize textarea={input} {...inputProps}>
           {() => (
             <motion.textarea
               layout

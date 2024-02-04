@@ -5,7 +5,7 @@ export const CONTACT_FORM_SHORTCUTS =
     const text = 'title-section capitalize';
     return {
       ...record,
-      'name-text': record['name-text'],
+      'name-text': text,
       'submit-text': [
         record['submit-text'],
         text,

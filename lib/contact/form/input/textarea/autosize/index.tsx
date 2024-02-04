@@ -1,10 +1,13 @@
 import { type FC } from 'react';
 import { useAutosize } from './useAutosize';
 import { useViewport } from '@brysonandrew/viewport';
-import { TChildrenElement } from '@brysonandrew/config-types/dom';
+import {
+  TChildrenElement,
+  TDivMotionProps,
+} from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 
-type TProps = {
+type TProps = Omit<TDivMotionProps, 'children'> & {
   value: string;
   textarea: HTMLTextAreaElement | null;
   children(isInit: boolean): TChildrenElement;
@@ -13,6 +16,7 @@ export const Autosize: FC<TProps> = ({
   value,
   textarea,
   children,
+  ...props
 }) => {
   const { isResizing } = useViewport();
 
@@ -26,6 +30,7 @@ export const Autosize: FC<TProps> = ({
     <motion.div
       layout
       className='_contact_autosize'
+      {...props}
     >
       {children(isInit)}
     </motion.div>

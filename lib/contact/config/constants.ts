@@ -21,7 +21,7 @@ export const INIT_STATE: TFormState = {
 };
 
 export const INIT_CONTACT_STATE: TContactState = {
-  isDisabled: false,
+  isDisabled: true,
   form: INIT_STATE,
   status: 'idle',
   focusKey: 'name',
