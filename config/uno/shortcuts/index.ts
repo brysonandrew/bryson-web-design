@@ -4,20 +4,21 @@ import { DARK_MODE_UNO_SHORTCUTS } from '@brysonandrew/dark-mode/config/animatio
 import { CONTACT_FORM_SHORTCUTS } from './contact-form';
 
 const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
-  'text-title': 'text-gray dark:text-accent',
-  typography: 'relative text-main font-sans',
-  title:
-    'relative text-title px-1 text-3xl text-shadow-inherit lg:text-4xl',
-  'title-base': 'font-normal char-gap-1',
-  'title-header': 'title-base uppercase',
-  'title-header-active': 'text-title title-header',
-  'title-main': 'text-title title-base text-2xl',
+  'text-main': 'text-black-7 dark:text-white',
+  'text-main-inverted': 'text-white dark:text-black-7',
+  'text-title': 'text-gray-9 dark:text-accent',
+  typography: 'text-main font-sans',
+  // title:
+  //   'relative text-title text-3xl text-shadow-inherit lg:text-4xl',
+  'title-header': 'uppercase char-gap-1',
+  'title-header-active': 'title-header text-title',
+  'title-main': 'text-title char-gap-1 text-2xl',
   'title-page':
-    'relative uppercase text-4xl text-shadow-inherit px-2 md:text-5xl xl:px-4',
+    'relative text-4xl text-shadow-inherit uppercase md:text-5xl',
   'title-section':
     'relative text-xl text-shadow-inherit char-gap-6 md:text-2xl',
   'title-pricing':
-    'font-semibold text-main capitalize char-gap-1',
+    'text-main capitalize font-semibold char-gap-1',
   'text-pricing': 'text-white-7',
 };
 

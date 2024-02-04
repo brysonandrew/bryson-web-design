@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-main",
-  "version": "6.22.112",
+  "version": "6.22.114",
   "description": "Color Main library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -42,8 +42,7 @@
   ],
   "peerDependencies": {
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/config": "*",
-    "@brysonandrew/color-grayscale": "*"
+    "@brysonandrew/color-grayscale": "*",
+    "@brysonandrew/utils": "*"
   }
 }

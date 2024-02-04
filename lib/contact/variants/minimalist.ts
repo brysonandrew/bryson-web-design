@@ -9,8 +9,7 @@ const record = {
   'bg-input': 'bg-white border-1 border-black-04',
   form: 'column gap-box-2 text-black w-full',
   inputs: 'relative column gap-box w-full',
-  clear:
-    'absolute top-0.5 right-0 z-10 md:(top-3.5 right-2) lg:top-3 xl:top-4',
+  clear: 'absolute top-0.5 right-0 z-10 md:(top-2 right-2)',
   'clear-button':
     'relative text-gray-2 lg:text-gray backdrop-blur-sm bg-white-01',
   'clear-icon': 'w-8 h-8 md:(w-9 h-9) lg:(w-10 h-10)',

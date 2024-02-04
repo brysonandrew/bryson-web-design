@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "6.22.112",
+  "version": "6.22.114",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -26,9 +26,9 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/color-glow": "*",
     "@brysonandrew/color-grayscale": "*",
-    "@brysonandrew/color-main": "*",
     "@brysonandrew/color-gradient": "*",
-    "@brysonandrew/color-glow": "*"
+    "@brysonandrew/color-main": "*"
   }
 }

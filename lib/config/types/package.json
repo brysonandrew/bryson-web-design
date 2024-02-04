@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "6.22.112",
+  "version": "6.22.114",
   "description": "Config Types library",
   "main": "./index.ts",
   "module": "./index.ts",

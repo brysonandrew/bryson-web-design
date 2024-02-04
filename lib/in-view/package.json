@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.22.112",
+  "version": "6.22.114",
   "description": "In View library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -28,7 +28,7 @@
   "peerDependencies": {
     "react": "*",
     "react-device-detect": "*",
-    "@brysonandrew/config": "*",
+    "@brysonandrew/config-types": "*",
     "react-intersection-observer": "*",
     "clsx": "*",
     "framer-motion": "*"
