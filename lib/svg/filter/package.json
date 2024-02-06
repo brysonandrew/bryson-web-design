@@ -1,0 +1,53 @@
+{
+  "name": "@brysonandrew/svg-filter",
+  "version": "6.22.158",
+  "description": "Svg Filter library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveFilter": "./resolveFilter.ts",
+    "./aura": "./aura/index.tsx",
+    "./blur/Blur1": "./blur/Blur1.tsx",
+    "./blur/constants": "./blur/constants.ts",
+    "./blur": "./blur/index.tsx",
+    "./displacement/config": "./displacement/config.ts",
+    "./displacement": "./displacement/index.tsx",
+    "./config": "./config/index.ts",
+    "./config/types": "./config/types.ts",
+    "./motion-blur/Speed": "./motion-blur/Speed.tsx",
+    "./motion-blur/TransformerX": "./motion-blur/TransformerX.tsx",
+    "./motion-blur/TransformerY": "./motion-blur/TransformerY.tsx",
+    "./motion-blur/config": "./motion-blur/config.ts",
+    "./motion-blur": "./motion-blur/index.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/presets": "./config/constants/presets.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/svg": "*",
+    "@brysonandrew/utils": "*",
+    "react": "*",
+    "@brysonandrew/config-types": "*",
+    "framer-motion": "*",
+    "@brysonandrew/utils-attributes": "*",
+    "react-device-detect": "*"
+  }
+}

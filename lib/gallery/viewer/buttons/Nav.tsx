@@ -2,13 +2,13 @@ import type { FC } from 'react';
 import { isDesktop } from 'react-device-detect';
 import {
   LinkFillCenter,
-  TProps as TIconLinkProps,
+  TLinkFillCenterProps,
 } from '@brysonandrew/interactive/LinkFillCenter';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
-import { NOOP } from '@brysonandrew/utils/functions';
+import { NOOP } from '@brysonandrew/utils-function';
 import { useViewer } from '@brysonandrew/gallery-viewer';
 
-type TProps = TIconLinkProps;
+type TProps = TLinkFillCenterProps;
 export const Nav: FC<TProps> = ({
   to,
   children,

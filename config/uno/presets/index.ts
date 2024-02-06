@@ -8,7 +8,7 @@ const sans = resolveWebFont({
   key: 'sans',
   name: 'Supreme',
   provider: 'fontshare',
-  weights: ['500', '600'],
+  weights: ['400', '500', '600'],
 });
 // const mono = resolveWebFont({
 //   key: 'display',
@@ -22,7 +22,7 @@ export type TPresets<T extends object> = (
 )[];
 export const resolvePresets = <
   T extends object,
->(): TPresets<T> => 
+>(): TPresets<T> =>
   withDarkModePreset([
     presetWebFonts({ fonts: { ...sans } }),
   ]);

@@ -30,7 +30,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       ref.current.scrollIntoView({ block: 'center' });
     }
   }, [status]);
-
+console.log(LIGHT);
   return (
     <motion.label
       ref={ref}

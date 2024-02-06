@@ -1,5 +1,5 @@
 import { NOOP } from '@brysonandrew/utils';
-import { SOURCE_SUFFIX } from '@brysonandrew/screens/blur/config';
+import { SOURCE_SUFFIX } from '@ops/screens/blur/config';
 import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
 import fg from 'fast-glob';
 import fs from 'fs';

@@ -1,7 +1,7 @@
 import { DURATION } from '@app/animation';
 import { ThickLine } from '@brysonandrew/layout';
 import { I } from '@brysonandrew/icons';
-import { HOME_ICON } from '@brysonandrew/icons/config/constants/base';
+import { HOME_ICON } from '@brysonandrew/icons-keys/base';
 import clsx from 'clsx';
 import { TPageLinkComponent } from './config';
 

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.114",
+  "version": "6.22.158",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -46,7 +46,7 @@
     "@brysonandrew/space": "*",
     "@brysonandrew/utils": "*",
     "clsx": "*",
-    "@brysonandrew/layout": "*",
+    "@brysonandrew/layout-typography": "*",
     "@brysonandrew/contact-list": "*"
   }
 }

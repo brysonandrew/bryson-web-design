@@ -5,10 +5,10 @@ import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions
 import {
   GRAYED_OUT,
   INIT as INIT_FILTER,
-} from '@brysonandrew/filters';
+} from '@brysonandrew/svg-filter';
 import clsx from 'clsx';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
 import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
@@ -19,7 +19,7 @@ import {
 } from '@pages/index/build/images/hooks/useCircle';
 import { useTapHandler } from '@hooks/useTapHandler';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { GALLERY_ICON } from '@brysonandrew/icons/config/constants/gallery';
+import { GALLERY_ICON } from '@brysonandrew/icons-keys/gallery';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { ORIGIN_50 } from '@pages/index/build/config/constants';
 

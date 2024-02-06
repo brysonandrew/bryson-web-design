@@ -1,5 +1,4 @@
 import { templateArrayConst } from '@ops/templates';
-import { green, red } from '@ops/console';
 import { TGoogleFontResult } from '@ops/fonts/google/types';
 import { writeFile } from 'fs';
 import { join, parse } from 'path';

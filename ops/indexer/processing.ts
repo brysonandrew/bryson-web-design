@@ -27,7 +27,7 @@ import {
 import { resolveFull } from '../utils/files/resolve';
 import { INDEX_BASENAME } from '../utils/constants';
 import { yesNoConfig } from './confirm-dialog';
-const POSSIBLE_INDEX_FILES = ['index.ts', 'index.tsx'];
+const POSSIBLE_INDEX_FILES = ['index.ts',  'index.tsx'];
 const cwd = process.env.PROJECT_CWD || '';
 const DEFAULT_IGNORE = [
   '**/node_modules/**/*',

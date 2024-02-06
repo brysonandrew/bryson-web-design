@@ -1,10 +1,10 @@
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
-import { TProps as TReadyGalleryProps } from './ready';
+import { TReadyProps } from './ready';
 import { useViewport } from '@brysonandrew/viewport';
 import { TChildren } from '@brysonandrew/config-types/dom';
 
 type TProps<T extends string> = {
-  children(props: TReadyGalleryProps<T>): TChildren;
+  children(props: TReadyProps<T>): TChildren;
 };
 export const Shell = <T extends string>({
   children,

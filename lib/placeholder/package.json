@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.114",
+  "version": "6.22.158",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -30,11 +30,12 @@
   "peerDependencies": {
     "framer-motion": "*",
     "react": "*",
-    "@brysonandrew/utils": "*",
+    "@brysonandrew/utils-attributes": "*",
     "clsx": "*",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/color": "*",
-    "unocss": "*"
+    "unocss": "*",
+    "@brysonandrew/utils-css": "*"
   }
 }

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { Images } from './images';
-import { Section } from '@brysonandrew/layout/section';
+import { Section } from '@brysonandrew/layout-section';
 import { Parallax } from '@brysonandrew/parallax';
 import { PARALLAX_PROPS } from './config/constants';
 import { BuildProvider } from '@pages/index/build/BuildProvider';

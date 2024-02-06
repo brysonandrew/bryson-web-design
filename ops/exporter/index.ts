@@ -1,36 +1,18 @@
-import { TTargets } from '@brysonandrew/exporter/config/types';
-import { find } from './find';
-import { init } from './init';
-import { parse } from 'path';
-import { workspaces } from '@ops/exporter/workspaces';
-import { process } from '@ops/exporter/process';
+import { findTargets } from './findTargets';
+import { resolveTargetDirPath } from './resolveTargetDirPath';
+import { writePkgWorkspaces } from '@ops/exporter/writePkgWorkspaces';
+import { processTargets } from '@ops/exporter/processTargets';
+import { writeTsPathWorkspacePaths } from '@ops/exporter/writeTsPathWorkspacePaths';
 
 (async () => {
   try {
-    const workspacePath = init();
-    const pkgPaths = await find(workspacePath);
-    const targets: TTargets = pkgPaths.map((pkgPath) => {
-      const record = parse(pkgPath);
-      const { dir, base } = record;
-      const parts = dir.split('/');
-      const name = parts.slice(1).join('-');
-      const subWorkspaces = pkgPaths.filter(
-        (p) => p.startsWith(dir) && p !== pkgPath,
-      );
-
-      return {
-        base,
-        dir,
-        name,
-        workspace: dir,
-        subWorkspaces,
-      };
-    });
-    await workspaces(
-      targets.map(({ workspace }) => workspace),
-    );
-    process(targets);
+    const targetDirPath = await resolveTargetDirPath();
+    const record = await findTargets(targetDirPath);
+    const { targets, workspaces, tsPathRecord } = record;
+    await writePkgWorkspaces(workspaces);
+    await writeTsPathWorkspacePaths(tsPathRecord);
+    processTargets(targets);
   } catch (error) {
     console.log('Exporter - something went wrong: ', error);
   }
-})();
+})(); 

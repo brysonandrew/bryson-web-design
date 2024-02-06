@@ -1,7 +1,7 @@
 import {
   formatNZLongDate,
   nToMoney,
-} from '@brysonandrew/utils/format';
+} from '@brysonandrew/utils-format';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Banner } from './Banner';
@@ -14,11 +14,11 @@ export type TDiscount = {
   expiry: Date;
 };
 
-export type TProps = {
+export type TPriceProps = {
   price: number | string;
   discount?: TDiscount;
 };
-export const Price: FC<TProps> = ({ price, discount }) => {
+export const Price: FC<TPriceProps> = ({ price, discount }) => {
   const isText =
     typeof price === 'string' && isNaN(Number(price));
 

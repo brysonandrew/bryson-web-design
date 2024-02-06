@@ -6,7 +6,7 @@ import {
 } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 
 export type TButtonProps = TButtonMotionProps &
   TClassValueProps;

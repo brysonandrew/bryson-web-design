@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 
-export type TProps = PropsWithChildren<{ title: string }>;
-export const Section: FC<TProps> = ({
+export type TSectionProps = PropsWithChildren<{ title: string }>;
+export const Section: FC<TSectionProps> = ({
   title,
   children,
 }) => (

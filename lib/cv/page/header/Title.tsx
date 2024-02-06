@@ -1,4 +1,4 @@
-import { Sub } from '@brysonandrew/layout/typography/Sub';
+import { Sub } from '@brysonandrew/layout-typography/Sub';
 import { useCv } from '@brysonandrew/cv/CvProvider';
 
 export const Title = () => {

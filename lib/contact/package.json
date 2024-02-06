@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.114",
+  "version": "6.22.158",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -51,12 +51,14 @@
     "@brysonandrew/config-types": "*",
     "react-intersection-observer": "*",
     "@emailjs/browser": "*",
-    "@brysonandrew/utils": "*",
+    "@brysonandrew/utils-object": "*",
     "@brysonandrew/icons": "*",
     "clsx": "*",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/scroll": "*",
     "@brysonandrew/viewport": "*"
   }

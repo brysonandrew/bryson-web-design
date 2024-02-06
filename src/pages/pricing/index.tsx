@@ -1,4 +1,4 @@
-import { Section } from '@brysonandrew/layout/section';
+import { Section } from '@brysonandrew/layout-section';
 import { FC } from 'react';
 import { Main } from './Main';
 import { P60Y } from '@brysonandrew/space/P60Y';

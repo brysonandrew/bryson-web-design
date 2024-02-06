@@ -3,21 +3,25 @@ import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveParentAnimateConfig } from '@app/animation';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
-import clsx from 'clsx';
 import { useApp } from '@brysonandrew/app';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons/config/constants';
-import { formatUrl } from '@brysonandrew/utils/format/url';
+import { formatUrl } from '@brysonandrew/utils-format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
-import { TItem } from '@pages/index/tech/config/types';
-import { AURA } from '@brysonandrew/filters';
+import { AURA } from '@brysonandrew/svg-filter';
+import {
+  TDivMotionProps,
+  TSvgProps,
+} from '@brysonandrew/config';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
 
-export const Item: FC<TItem & { glow?: MotionValue }> = ({
-  Icon,
-  title,
-  href,
-  glow,
-  ...props
-}) => {
+export type TItemProps = TDivMotionProps & {
+  title: string;
+  href: string;
+  Icon: FC<TSvgProps>;
+};
+
+export const Item: FC<
+  TItemProps & { glow?: MotionValue }
+> = ({ Icon, title, href, glow, ...props }) => {
   const { LIGHT, Back, BORDER_RADIUS, COLOR } = useApp();
   const address = formatUrl(href);
 

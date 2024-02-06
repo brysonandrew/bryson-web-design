@@ -1,5 +1,5 @@
-import { I } from '@brysonandrew/icons/icon';
-import { TICK_CIRCLE_ICON } from '@brysonandrew/icons/config/constants';
+import { I } from '@brysonandrew/icons-i';
+import { TICK_CIRCLE_ICON } from '@brysonandrew/icons-keys';
 import clsx from 'clsx';
 import { FC } from 'react';
 

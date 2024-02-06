@@ -2,20 +2,19 @@ import { useState, useRef } from 'react';
 import clsx from 'clsx';
 import { Header } from './Header';
 import { resolveTitleLayoutId } from '@brysonandrew/gallery/config/constants';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   TChildren,
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
-import { P2 } from '@brysonandrew/space/P2';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { useDelayCallback } from '@brysonandrew/hooks-window/useDelayCallback';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useApp } from '@brysonandrew/app';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 
-type TProps<K extends string> = TSlugProps<K> &
+type TProps<T extends string> = TSlugProps<T> &
   TClassValueProps &
   TDivMotionProps & {
     isHover?: boolean;
@@ -23,7 +22,6 @@ type TProps<K extends string> = TSlugProps<K> &
   };
 export const Content = <
   T extends string,
-  K extends string,
   R extends object,
 >({
   isHover,
@@ -35,7 +33,7 @@ export const Content = <
   onLayoutAnimationComplete,
   style,
   ...props
-}: TProps<K>) => {
+}: TProps<T>) => {
   const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const [isTransitioning, setTransitioning] =
     useState(false);
@@ -109,10 +107,8 @@ export const Content = <
           ) : null}
         </>
       )}
-      <motion.div
-        className='row-space py-4 relative left-0 top-0'
-      >
-        <Header<T, K, R> slug={slug} />
+      <motion.div className='row-space py-4 relative left-0 top-0'>
+        <Header<T, R> slug={slug} />
         <div className='column-end gap-4 lg:row'>
           {rightHeader}
         </div>

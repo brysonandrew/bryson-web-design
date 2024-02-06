@@ -1,4 +1,4 @@
-import { Paragraphs } from '@brysonandrew/gallery/list/item/details/Paragraphs';
+import { Paragraphs } from '@brysonandrew/gallery-list/item/details/Paragraphs';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Tags } from './Tags';
 import { motion } from 'framer-motion';
@@ -6,19 +6,18 @@ import { P2 } from '@brysonandrew/space/P2';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
-type TProps<K extends string> = TDivMotionProps & {
+type TProps<T extends string> = TDivMotionProps & {
   isVisible: boolean;
-} & TSlugProps<K>;
+} & TSlugProps<T>;
 export const Details = <
   T extends string,
-  K extends string,
   R extends object,
 >({
   isVisible,
   slug,
   ...props
-}: TProps<K>) => {
-  const { ITEMS_RECORD } = useGallery<T, K, R>();
+}: TProps<T>) => {
+  const { ITEMS_RECORD } = useGallery<T, R>();
   const { paragraphs, tags } = ITEMS_RECORD[slug];
 
   return (

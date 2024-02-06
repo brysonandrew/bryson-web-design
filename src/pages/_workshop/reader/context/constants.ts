@@ -1,4 +1,4 @@
-import { NOOP } from '@brysonandrew/utils/functions';
+import { NOOP } from '@brysonandrew/utils-function';
 import type { TContext } from './types';
 
 export const context = new AudioContext();

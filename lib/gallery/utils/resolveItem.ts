@@ -2,14 +2,14 @@ import {
   TInitItem,
   TItem,
 } from '@brysonandrew/gallery/config/types';
-import { titleToKebab } from '@brysonandrew/utils/format';
+import { titleToKebab } from '@brysonandrew/utils-format';
 
 export const resolveItem = <
   T extends string,
-  K extends string,
+  R extends object,
 >(
-  item: TInitItem<T>,
-): TItem<T, K> => ({
+  item: TInitItem<T, R>,
+): TItem<T, R> => ({
   ...item,
-  slug: titleToKebab(item.title) as K,
+  slug: titleToKebab(item.title),
 });

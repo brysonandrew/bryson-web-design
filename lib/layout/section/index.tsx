@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Title as DefaultTitle } from '@brysonandrew/layout/typography/title';
+import { Title as DefaultTitle } from '@brysonandrew/layout-typography/title';
 import {
   TChildren,
   TChildrenString,
@@ -36,3 +36,43 @@ export const Section: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

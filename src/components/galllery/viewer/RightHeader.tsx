@@ -7,11 +7,7 @@ import { FC } from 'react';
 
 type TProps = TSlugProps<TSlug>;
 export const RightHeader: FC<TProps> = ({ slug }) => {
-  const { ITEMS_RECORD } = useGallery<
-    TTitle,
-    TSlug,
-    TRest
-  >();
+  const { ITEMS_RECORD } = useGallery<TTitle, TRest>();
   const id = resolveCompositeKey('badge', slug);
 
   return (

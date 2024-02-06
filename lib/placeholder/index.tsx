@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
-import { resolveUrlId } from '@brysonandrew/utils/attributes/resolveUrlId';
+import { resolveUrlId } from '@brysonandrew/utils-attributes/resolveUrlId';
 import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import { resolveGradient } from '@brysonandrew/color-gradient/resolveGradient';
