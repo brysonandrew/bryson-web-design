@@ -6,7 +6,7 @@ import { useOnSound } from '@brysonandrew/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
-import { NOOP } from '@brysonandrew/utils/functions';
+import { NOOP } from '@brysonandrew/utils-function';
 import {
   useHoverKey,
   useCursor,
@@ -18,18 +18,14 @@ import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
 import { useGallery } from '../../GalleryProvider';
 
-type TProps<K extends string> = TSlugProps<K> & {
+type TProps<T extends string> = TSlugProps<T> & {
   index: number;
 };
-export const Item = <
-  T extends string,
-  K extends string,
-  R extends object,
->({
+export const Item = <T extends string, R extends object>({
   slug,
   index,
-}: TProps<K>) => {
-  const { ITEMS_RECORD, List } = useGallery<T, K, R>();
+}: TProps<T>) => {
+  const { ITEMS_RECORD, List } = useGallery<T, R>();
   const { hoverKey } = useCursor();
   const [isExpanded, setExpanded] = useState(false);
   const currProject = useCurrProject();

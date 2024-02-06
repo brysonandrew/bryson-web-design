@@ -2,12 +2,12 @@ import {
   TPricingKey,
   TPricingTitle,
 } from '@pages/pricing/config/types';
-import { TProps as TPriceProps } from '@pages/pricing/layout/price';
-import { newlineToArr } from '@brysonandrew/utils/transformer/newlineToArr';
+import { newlineToArr } from '@brysonandrew/utils-transformer/newlineToArr';
 import { FC } from 'react';
 import { PlusContent } from './PlusContent';
-import { titleToKebab } from '@brysonandrew/utils/format';
-import { TTTitleToKebab } from '@brysonandrew/config-types/transformers/format/title';
+import { titleToKebab } from '@brysonandrew/utils-format';
+import { TPriceProps } from '@pages/pricing/layout/price';
+import { TTTitleToKebab } from '@brysonandrew/config';
 
 export const PACKAGES = [
   'Standard',
@@ -58,12 +58,12 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   },
 } as const;
 
-export const resolvePackageConfig = (
-  title: TPricingTitle,
+export const resolvePackageConfig = <
+  T extends TPricingTitle,
+>(
+  title: T,
 ) => {
-  const key = titleToKebab(title) as TTTitleToKebab<
-    typeof title
-  >;
+  const key = titleToKebab<T>(title);
   const config = CONFIG_LOOKUP[key];
   const { listLiteral, ...rest } = config;
 

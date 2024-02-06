@@ -1,27 +1,27 @@
+import { TTTitleToKebab } from '@brysonandrew/config';
 import { FC } from 'react';
 
 export type TItemsConfig<
   T extends string,
-  K extends string,
-  R extends object,
+  R extends object = object,
+  K extends string = TTTitleToKebab<T>,
 > = {
-  ITEMS: TItems<T, K, R>;
-  ITEMS_RECORD: Record<K, TItem<T, K, R>>;
+  ITEMS: TItems<T, R>;
+  ITEMS_RECORD: Record<K, TItem<T, R>>;
   SLUGS: K[];
 };
 
-export type TGalleryConfig<K extends string> = {
-  Viewer: { RightHeader: FC<TSlugProps<K>> };
+export type TGalleryConfig<T extends string> = {
+  Viewer: { RightHeader: FC<TSlugProps<T>> };
   List: {
-    RightHeader: FC<TSlugProps<K> & { isHover?: boolean }>;
+    RightHeader: FC<TSlugProps<T> & { isHover?: boolean }>;
   };
 };
 
 export type TValue<
   T extends string = string,
-  K extends string = string,
   R extends object = object,
-> = TItemsConfig<T, K, R> & TGalleryConfig<K>;
+> = TItemsConfig<T, R> & TGalleryConfig<T>;
 
 export type TTag = {
   title: string;
@@ -46,17 +46,15 @@ export type TInitItems<
   R extends object = object,
 > = readonly TInitItem<T, R>[];
 
-export type TSlugProps<K extends string = string> = {
-  slug: K;
+export type TSlugProps<T extends string = string> = {
+  slug: TTTitleToKebab<T>;
 };
 
 export type TItem<
   T extends string = string,
-  K extends string = string,
   R extends object = object,
-> = TInitItem<T, R> & TSlugProps<K>;
+> = TInitItem<T, R> & TSlugProps<T>;
 export type TItems<
   T extends string = string,
-  K extends string = string,
   R extends object = object,
-> = readonly TItem<T, K, R>[];
+> = readonly TItem<T, R>[];

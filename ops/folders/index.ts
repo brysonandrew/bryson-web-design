@@ -1,5 +1,5 @@
-import { resolveFsInfo } from '@brysonandrew/utils/resolveFsInfo';
 import { IMAGES_GLOB } from '@ops/screens/process/constants';
+import { resolveFsInfo } from '@ops/utils/resolveFsInfo';
 import fg from 'fast-glob';
 import fs from 'fs';
 

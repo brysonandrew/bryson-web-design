@@ -1,4 +1,4 @@
-import { resolveVarsCssRecord } from '@brysonandrew/utils/css/resolveVarsCssRecord';
+import { resolveVarsCssRecord } from '@brysonandrew/utils-css/resolveVarsCssRecord';
 
 export const resolvePlaceholderVarsCss = () => {
   const PLACEHOLDER_MD = 28;

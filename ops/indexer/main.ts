@@ -8,7 +8,7 @@ import {
   resolveFileComposer,
 } from "./processing";
 import { visualizeFileComposer } from "./visualizer";
-import { resolveCwd } from "../utils/global";
+import { resolveCwd } from "../utils/dirs/cwd";
 import type { TConfigMultiLookup } from "./configs";
 import { configLookup } from "./configs";
 const cwd = resolveCwd();

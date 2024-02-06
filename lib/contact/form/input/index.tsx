@@ -22,7 +22,7 @@ import {
   resolveParentAnimateConfig,
 } from '@brysonandrew/animation';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
-import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 
 type TProps<
   T extends HTMLElement,

@@ -1,5 +1,5 @@
-import { I } from '@brysonandrew/icons/icon';
-import { ADD_ICON, REMOVE_ICON } from '@brysonandrew/icons/config/constants';
+import { I } from '@brysonandrew/icons-i';
+import { ADD_ICON, REMOVE_ICON } from '@brysonandrew/icons-keys';
 import { usePricing } from '@pages/index/pricing/PricingProvider';
 import clsx from 'clsx';
 import { Item as FocusItem } from '../../../focus/Item';

@@ -1,14 +1,10 @@
 {
   "name": "@brysonandrew/filter-animate",
-  "version": "6.22.114",
+  "version": "6.22.158",
   "description": "Filter Animate library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
-    "./Box": "./Box.tsx",
-    "./Brighten": "./Brighten.tsx",
-    "./Glow": "./Glow.tsx",
-    "./Invert": "./Invert.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",

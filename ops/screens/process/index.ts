@@ -1,4 +1,5 @@
-import fs from 'fs';
+import { existsSync } from 'fs';
+import { mkdir, rename } from 'fs/promises';
 import fg from 'fast-glob';
 import sharp, { OutputInfo } from 'sharp';
 import {
@@ -23,7 +24,7 @@ import {
   TMediaRecords,
   TScreensRecord,
 } from '@brysonandrew/media';
-import { writeScreensRecordInGallery } from '@brysonandrew/screens/process/utils/writeScreensRecordInGallery';
+import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScreensRecordInGallery';
 
 (async () => {
   try {
@@ -53,9 +54,9 @@ import { writeScreensRecordInGallery } from '@brysonandrew/screens/process/utils
       const nextEntryBase = `${nextEntryDir}/${nextCount}`;
       const nextEntry = `${nextEntryBase}.${ext}`;
 
-      if (!fs.existsSync(nextEntryDir)) {
-        await fs.promises.mkdir(nextEntryDir);
-        await fs.promises.rename(entry, nextEntry);
+      if (!existsSync(nextEntryDir)) {
+        await mkdir(nextEntryDir);
+        await rename(entry, nextEntry);
         entry = nextEntry;
       }
 

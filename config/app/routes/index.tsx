@@ -3,7 +3,7 @@ import * as Pages from '@pages/index';
 import * as WorkshopPages from '@pages/_workshop';
 import { Shell } from '@shell/index';
 import { resolvePageRecords } from '@brysonandrew/routes';
-import { titleToKebab } from '@brysonandrew/utils';
+import { titleToKebab } from '@brysonandrew/utils-format';
 
 export const PAGE_TITLES = [
   'Index',

@@ -11,10 +11,11 @@ import {
   TPartialDefaultStyle,
   TValue,
 } from '@brysonandrew/app/config/types';
-import { useLayoutRecord } from './layout/useLayoutRecord';
-import { DEFAULT_STYLE } from './style';
-import { TLayoutRecordValue } from './layout/types';
-import { once } from '@brysonandrew/utils';
+import { useLayoutRecord } from './useLayoutRecord';
+import { DEFAULT_STYLE } from './config/constants/style';
+import { TLayoutRecordValue } from './config/types/layout';
+import { once } from '@brysonandrew/utils-function';
+import { mergeDeepObjects } from '@brysonandrew/utils-object';
 
 const initContext = once(<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
@@ -35,6 +36,8 @@ export const AppProvider = <
   style,
   ...rest
 }: TProps<S>) => {
+  const CONTEXT = initContext();
+
   const [isInit, setInit] = useState(false);
   const onInit = () => setInit(true);
 
@@ -42,39 +45,28 @@ export const AppProvider = <
     onInit();
   }, []);
 
-  type TDefaultKey = keyof TDefaultStyle;
-  type TMergedStyle = TDefaultStyle & S;
-
-  type TEntries = [
-    TDefaultKey,
-    TMergedStyle[TDefaultKey],
-  ][];
-  const entries = Object.entries(style) as TEntries;
-  const appStyle = entries.reduce(
-    (a, [key, value]) => {
-      const defaultValue = DEFAULT_STYLE[key];
-
-      return { ...a, [key]: { ...defaultValue, ...value } };
-    },
-    { ...DEFAULT_STYLE } as TMergedStyle,
+  const appStyle = mergeDeepObjects<TDefaultStyle>(
+    DEFAULT_STYLE,
+    style,
   );
+  console.log(rest);
 
   const layoutConfig = {
     ...appStyle,
     ...rest,
   } as const;
+  console.log(layoutConfig);
 
   const layoutRecord: TLayoutRecordValue =
-    useLayoutRecord<TMergedStyle>(layoutConfig);
+    useLayoutRecord(layoutConfig);
 
-  const value: TValue<S> = {
+  const value = {
     ...appStyle,
     ...layoutRecord,
     isInit,
     onInit,
     sounds: {},
-  };
-  const CONTEXT = initContext();
+  } as const;
 
   return (
     <CONTEXT.Provider value={value}>

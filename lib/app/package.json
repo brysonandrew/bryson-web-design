@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.114",
+  "version": "6.22.158",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,17 +11,14 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
-    "./layout/types": "./layout/types.ts",
-    "./layout/useLayoutRecord": "./layout/useLayoutRecord.tsx",
+    "./useLayoutRecord": "./useLayoutRecord.tsx",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
-    "./style": "./style/index.ts",
-    "./layout/withLight/Back": "./layout/withLight/Back.tsx",
-    "./layout/withLight/Glow": "./layout/withLight/Glow.tsx",
-    "./layout/withLight/Marker": "./layout/withLight/Marker.tsx",
-    "./layout/withLight": "./layout/withLight/index.tsx"
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/style": "./config/constants/style.ts",
+    "./config/types": "./config/types/index.ts",
+    "./config/types/layout": "./config/types/layout.ts",
+    "./config/types/sound": "./config/types/sound.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -38,12 +35,16 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/utils-function": "*",
+    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/layout": "*",
+    "@brysonandrew/layout-blank": "*",
+    "@brysonandrew/layout-back": "*",
+    "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "*",
-    "@brysonandrew/color": "*",
-    "clsx": "*"
+    "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/fade-edge": "*",
+    "@brysonandrew/color": "*"
   }
 }

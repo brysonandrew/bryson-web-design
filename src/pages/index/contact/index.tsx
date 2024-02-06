@@ -1,7 +1,7 @@
 import { Parallax } from '@brysonandrew/parallax';
 import { Main } from '@pages/contact/Main';
 import { PARALLAX_PROPS } from './constants';
-import { Section } from '@brysonandrew/layout/section';
+import { Section } from '@brysonandrew/layout-section';
 import { SECTION_RECORD, PAGE_RECORD } from '@app/routes';
 
 const Contact = () => {

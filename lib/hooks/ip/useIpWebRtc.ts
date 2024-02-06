@@ -1,4 +1,4 @@
-import { NOOP } from '@brysonandrew/utils/functions';
+import { NOOP } from '@brysonandrew/utils-function';
 import { useEffect } from 'react';
 
 type TConfig = any;

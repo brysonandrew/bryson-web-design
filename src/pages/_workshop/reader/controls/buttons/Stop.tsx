@@ -1,6 +1,6 @@
 import { Button2 as Button } from '../../components/Buttons';
 import { useReader } from '@pages/_workshop/reader/context';
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
 
 export const Stop = () => {
   const {

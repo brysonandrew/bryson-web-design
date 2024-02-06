@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { TextInput as Input } from './Inputs';
 import { useReader } from '../context';
 import { usePlay } from '../hooks/usePlay';
-import { resolveErrorMessage } from '@brysonandrew/utils/error/resolveErrorMessage';
+import { resolveErrorMessage } from '@brysonandrew/utils-error/resolveErrorMessage';
 
 export const TextInput = () => {
   const ref = useRef<HTMLTextAreaElement | null>(null);

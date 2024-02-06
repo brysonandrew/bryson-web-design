@@ -1,6 +1,6 @@
 import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { Item } from './Item';
-import { List } from '@brysonandrew/layout/lists/List';
+import { List } from '@brysonandrew/layout-lists/List';
 import { EXTRAS } from '../../config';
 
 export const Extras = () => {

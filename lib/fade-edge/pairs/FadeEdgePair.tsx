@@ -5,14 +5,14 @@ import {
 import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 
-type TProps = Omit<TFadeFillProps, 'edgeColor'> & {
+export type TFadeEdgePairProps = Omit<TFadeFillProps, 'edgeColor'> & {
   Fader?: FC<TFadeFillProps>;
   darkEdgeColor?: string;
   lightEdgeColor?: string;
   darkClass?: ClassValue;
   lightClass?: ClassValue;
 };
-export const FadeEdgePair: FC<TProps> = ({
+export const FadeEdgePair: FC<TFadeEdgePairProps> = ({
   Fader = FadeFill,
   darkEdgeColor = 'var(--black)',
   lightEdgeColor = 'var(--white)',

@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
 import { motion } from 'framer-motion';
-import { List } from '@brysonandrew/gallery/list';
-import { TTitle, TSlug, TRest } from '@app/gallery/types';
+import { List } from '@brysonandrew/gallery-list';
+import { TTitle, TRest } from '@app/gallery/types';
 
 type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {
@@ -14,7 +14,7 @@ export const Main: FC<TProps> = ({ style, rect }) => {
         ...style,
       }}
     >
-      <List<TTitle, TSlug, TRest> />
+      <List<TTitle, TRest> />
     </motion.div>
   );
 };

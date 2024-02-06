@@ -15,7 +15,7 @@ export const Animation: FC<TChildrenString> = ({
           baseDelay={.2}
         >
           {index % 2 === 0 ? (
-            <span className='font-extralight'>{word}</span>
+            <span className='font-normal'>{word}</span>
           ) : (
             <span className='text-secondary font-black'>
               {word}

@@ -1,4 +1,4 @@
-import { titleToKebab } from "@brysonandrew/utils";
+import { titleToKebab } from '@brysonandrew/utils-format';
 
 export const resolvePage = <T extends string>(title: T) => {
   const key = titleToKebab<T>(title);

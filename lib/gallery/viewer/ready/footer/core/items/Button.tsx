@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
 import { useViewer as useContext } from '@brysonandrew/gallery';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { Background } from '@brysonandrew/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { useApp } from '@brysonandrew/app';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
-import { Glow } from '@brysonandrew/filter-animate';
+import { Glow } from '@brysonandrew/layout-effects';
 
 const Link = styled(motion(_Link))``;
 

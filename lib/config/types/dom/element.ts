@@ -49,4 +49,6 @@ export type TSource =
 export type TSvgProps = SVGAttributes<SVGElement> &
   TClassValueProps;
 
-  
+  export type TSvgCircleProps = SVGAttributes<SVGCircleElement> &
+  TClassValueProps;
+

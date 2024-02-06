@@ -3,13 +3,11 @@ import {
   MotionProps,
   SVGMotionProps,
 } from 'framer-motion';
-import { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import type { LinkProps } from 'react-router-dom';
 import { TClassValueProps, TTitleProps } from './main';
 
-export type TDivMotionProps = PropsWithChildren<
-  HTMLMotionProps<'div'>
-> &
+export type TDivMotionProps = HTMLMotionProps<'div'> &
   TClassValueProps;
 
 export type TSectionMotionProps = HTMLMotionProps<'hr'> &

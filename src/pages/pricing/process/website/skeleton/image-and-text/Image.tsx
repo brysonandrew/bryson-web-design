@@ -1,5 +1,5 @@
-import { I } from '@brysonandrew/icons/icon';
-import { IMAGE_ICON } from '@brysonandrew/icons/config/constants';
+import { I } from '@brysonandrew/icons-i';
+import { IMAGE_ICON } from '@brysonandrew/icons-keys';
 import { useApp } from '@brysonandrew/app';
 
 export const Image = () => {

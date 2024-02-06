@@ -3,7 +3,7 @@ import { Range } from '../../components/Inputs';
 import { TState } from '../../context/types';
 import clsx from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
 import { resolveBoxShadow } from '@brysonandrew/color';
 
 const Root = styled.label``;

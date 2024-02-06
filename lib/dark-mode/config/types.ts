@@ -1,4 +1,6 @@
-import { MODES } from "./constants";
+import { TMotionProps } from '@brysonandrew/animation';
+import { TElementProps } from '@brysonandrew/config-types';
+import { MODES } from './constants';
 
 export type TDarkKey = (typeof MODES)[number];
 export type TUseDarkMode = {
@@ -7,4 +9,8 @@ export type TUseDarkMode = {
   toggle: () => void;
   enable: () => void;
   disable: () => void;
+};
+
+export type TWithDark<C extends TElementProps | TMotionProps> = C & {
+  dark?: C;
 };

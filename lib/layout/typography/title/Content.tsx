@@ -1,4 +1,4 @@
-import { ThinLineGrow } from '@brysonandrew/layout/line/ThinLineGrow';
+import { ThinLineGrow } from '@brysonandrew/layout-line/ThinLineGrow';
 import { MOTION_CONFIG } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { AURA } from '@brysonandrew/filters/aura';
+import { AURA } from '@brysonandrew/svg-filter/aura';
 import { useCurrParams } from '@brysonandrew/gallery';
 import { Head, MonoHead } from '@brysonandrew/dark-mode';
 import { TTitlesResolver } from '@brysonandrew/head';

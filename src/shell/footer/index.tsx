@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Settings } from './settings';
 import { Network } from '@brysonandrew/network';
-import { BackdropBlur } from '@brysonandrew/layout/backdrop-blur';
+import { BackBlur } from '@brysonandrew/layout-back';
 import { Position } from './Position';
 import { OfflineFC } from './OfflineFC';
 
@@ -14,9 +14,9 @@ export const Footer = () => {
         <Network OfflineFC={OfflineFC} />
       </Position>
       <Position position='right-6'>
-        <BackdropBlur>
+        <BackBlur>
           <Settings />
-        </BackdropBlur> 
+        </BackBlur>  
       </Position> 
     </Root>
   );

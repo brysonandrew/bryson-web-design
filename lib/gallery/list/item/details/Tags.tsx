@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { TagLink } from './TagLink';
-import { Brighten } from '@brysonandrew/filter-animate/Brighten';
+import { Brighten } from '@brysonandrew/layout/effects/Brighten';
 import { useApp } from '@brysonandrew/app';
 import { motion } from 'framer-motion';
 

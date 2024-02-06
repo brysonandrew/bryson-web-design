@@ -5,7 +5,7 @@ import {
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
-import { NOOP } from '@brysonandrew/utils/functions';
+import { NOOP } from '@brysonandrew/utils-function';
 import { isDesktop } from 'react-device-detect';
 import { Close } from '../../buttons/Close';
 import { Content } from '@brysonandrew/gallery';

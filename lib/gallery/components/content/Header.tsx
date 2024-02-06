@@ -2,15 +2,11 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
 import { useGallery } from '../../GalleryProvider';
 
-type TProps<K extends string> = TSlugProps<K>;
-export const Header = <
-  T extends string,
-  K extends string,
-  R extends object,
->({
+type TProps<T extends string> = TSlugProps<T>;
+export const Header = <T extends string, R extends object>({
   slug,
-}: TProps<K>) => {
-  const { ITEMS_RECORD } = useGallery<T, K, R>();
+}: TProps<T>) => {
+  const { ITEMS_RECORD } = useGallery<T, R>();
   const { title, description } = ITEMS_RECORD[slug];
   return (
     <motion.div

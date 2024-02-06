@@ -1,0 +1,34 @@
+{
+  "name": "@brysonandrew/utils-object",
+  "version": "6.22.158",
+  "description": "Utils Object library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./mergeDeep": "./mergeDeep.ts",
+    "./prefixKeys": "./prefixKeys.ts",
+    "./scopeRecord": "./scopeRecord.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/config": "*",
+    "@brysonandrew/config-types": "*"
+  }
+}
