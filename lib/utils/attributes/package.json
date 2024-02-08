@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-attributes",
-  "version": "6.22.164",
+  "version": "6.22.170",
   "description": "Utils Attributes library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,6 +10,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./resolveInteractiveHrefLabels": "./resolveInteractiveHrefLabels.ts",
     "./resolveInteractiveLabels": "./resolveInteractiveLabels.ts",
     "./resolveUrlId": "./resolveUrlId.ts"
   },

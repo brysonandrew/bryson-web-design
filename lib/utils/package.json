@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.22.164",
+  "version": "6.22.170",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -30,8 +30,8 @@
     "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
-    "@brysonandrew/utils-object": "*",
     "@brysonandrew/utils-key": "*",
+    "@brysonandrew/utils-object": "*",
     "@brysonandrew/utils-transformer": "*",
     "@brysonandrew/utils-unit": "*"
   }
