@@ -33,6 +33,7 @@ export const resolveDeps = ({
         `@app/`,
         `@uno/`,
         `@vite/`,
+        '@t/',
       ])
         if (lib.startsWith(excludePrefix)) {
           console.error(

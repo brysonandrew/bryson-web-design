@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.164",
+  "version": "6.22.170",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,11 +26,11 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/utils-function": "*",
     "react": "*"
   }

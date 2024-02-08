@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import { TNotificationsConfig } from 'lib/notifications/config/types';
+import { TNotificationsConfig } from '@brysonandrew/notifications/config/types';
 import { FC } from 'react';
 
 export type TNotificationsProps = TNotificationsConfig & {

@@ -10,10 +10,10 @@ import { FC } from 'react';
 
 const Root = styled.a``;
 
-export type TBAnchorProps = TAnchorProps &
+export type TBAnchorMotionProps = TAnchorProps &
   TClassValueProps &
   TInteractiveProps;
-export const BAnchor: FC<TBAnchorProps> = (props) => {
+export const BAnchorMotion: FC<TBAnchorMotionProps> = (props) => {
   const {
     classValue,
     children,
