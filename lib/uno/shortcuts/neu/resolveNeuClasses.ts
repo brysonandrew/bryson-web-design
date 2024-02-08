@@ -15,7 +15,7 @@ import {
   THslKey,
 } from './types';
 
-export const resolveNeuClasses = ({
+export const resolveNeuRules = ({
   size,
   blur,
   hue,
