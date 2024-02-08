@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "6.22.164",
+  "version": "6.22.170",
   "description": "Svg library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -41,9 +41,6 @@
       "@pages/*": [
         "src/pages/*"
       ],
-      "@t/*": [
-        "src/types/*"
-      ],
       "@utils/*": [
         "src/utils/*"
       ],
