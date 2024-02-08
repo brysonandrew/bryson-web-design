@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-format",
-  "version": "6.22.162",
+  "version": "6.22.164",
   "description": "Utils Format library",
   "main": "./index.ts",
   "module": "./index.ts",

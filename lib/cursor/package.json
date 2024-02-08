@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.162",
+  "version": "6.22.164",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",

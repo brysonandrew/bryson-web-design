@@ -1,4 +1,5 @@
 import { TAnchorProps } from '@brysonandrew/config-types';
+import { BAnchor } from '@brysonandrew/interactive';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -9,8 +10,8 @@ export const Item: FC<TProps> = ({
   ...props
 }) => (
   <li className={clsx(classValue)}>
-    <a target='_top' {...props}>
+    <BAnchor target='_top' {...props}>
       {children}
-    </a>
+    </BAnchor>
   </li>
 );

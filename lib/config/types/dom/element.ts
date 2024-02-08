@@ -8,7 +8,8 @@ import {
   SourceHTMLAttributes,
   SVGAttributes,
 } from 'react';
-import { TClassValueProps } from './main';
+import type { LinkProps } from 'react-router-dom';
+import { TClassValueProps, TTitleProps } from './main';
 
 export type TElementProps = HTMLAttributes<HTMLElement> &
   TClassValueProps;
@@ -22,13 +23,17 @@ export type THeadingProps =
 export type TUlProps = HTMLAttributes<HTMLUListElement> &
   TClassValueProps;
 
-export type TButtonProps =
+export type TButtonProps = TTitleProps &
   ButtonHTMLAttributes<HTMLButtonElement> &
-    TClassValueProps;
+  TClassValueProps;
 
-export type TAnchorProps =
+export type TAnchorProps = TTitleProps &
   AnchorHTMLAttributes<HTMLAnchorElement> &
-    TClassValueProps;
+  TClassValueProps;
+
+export type TLinkProps = TTitleProps &
+  LinkProps &
+  TClassValueProps;
 
 export type TParagraphProps =
   HTMLAttributes<HTMLParagraphElement> & TClassValueProps;
@@ -49,6 +54,5 @@ export type TSource =
 export type TSvgProps = SVGAttributes<SVGElement> &
   TClassValueProps;
 
-  export type TSvgCircleProps = SVGAttributes<SVGCircleElement> &
-  TClassValueProps;
-
+export type TSvgCircleProps =
+  SVGAttributes<SVGCircleElement> & TClassValueProps;

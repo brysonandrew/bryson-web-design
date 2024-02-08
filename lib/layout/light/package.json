@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.162",
+  "version": "6.22.164",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -31,6 +31,7 @@
     "@brysonandrew/app": "*",
     "@brysonandrew/layout-effects": "*",
     "clsx": "*",
-    "@brysonandrew/layout-blank": "*"
+    "@brysonandrew/layout-blank": "*",
+    "framer-motion": "*"
   }
 }
