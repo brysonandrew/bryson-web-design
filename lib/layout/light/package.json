@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -29,7 +29,8 @@
   ],
   "peerDependencies": {
     "@brysonandrew/app": "*",
-    "@brysonandrew/layout": "*",
-    "clsx": "*"
+    "@brysonandrew/layout-effects": "*",
+    "clsx": "*",
+    "@brysonandrew/layout-blank": "*"
   }
 }

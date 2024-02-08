@@ -49,13 +49,11 @@ export const AppProvider = <
     DEFAULT_STYLE,
     style,
   );
-  console.log(rest);
 
   const layoutConfig = {
     ...appStyle,
     ...rest,
   } as const;
-  console.log(layoutConfig);
 
   const layoutRecord: TLayoutRecordValue =
     useLayoutRecord(layoutConfig);

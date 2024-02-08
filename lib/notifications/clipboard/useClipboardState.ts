@@ -1,4 +1,4 @@
-import { useDelayCallback1 } from '@brysonandrew/hooks-window/useDelayCallback1';
+import { useDelayCallbackHandler } from '@brysonandrew/hooks-window/useDelayCallbackHandler';
 import { useState } from 'react';
  
 type THandlerConfig = {
@@ -7,14 +7,14 @@ type THandlerConfig = {
 };
 export type TCopying = THandlerConfig | 'pending';
 
-export const useClipboardContext = () => {
+export const useClipboardState = () => {
   const [copying, setCopying] = useState<TCopying | null>(
     null,
   );
 
   const endCopying = () => setCopying(null);
 
-  const delayCopiedNull = useDelayCallback1(
+  const delayCopiedNull = useDelayCallbackHandler(
     endCopying,
     1200,
   );
@@ -48,6 +48,6 @@ export const useClipboardContext = () => {
     onEnd: endCopying,
   };
 };
-export type TClipboardContext = ReturnType<
-  typeof useClipboardContext
+export type TClipboardState = ReturnType<
+  typeof useClipboardState
 >;

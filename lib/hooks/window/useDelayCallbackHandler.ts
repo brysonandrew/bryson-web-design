@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useTimeoutRef } from './useTimeoutRef';
 
-export const useDelayCallback1 = (
+export const useDelayCallbackHandler = (
   callback: (...args: any) => void,
   delay: number | null,
 ) => {

@@ -1,5 +1,5 @@
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 import { useRef } from 'react';
-import { useReader } from '../context';
 
 export const usePlay = () => {
   const {

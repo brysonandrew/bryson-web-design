@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { TLayoutComponentProps } from '@brysonandrew/app';
-import { TBlankMotionProps } from '@brysonandrew/layout/blank';
+import { TBlankMotionProps } from '@brysonandrew/layout-blank';
+import { motion } from 'framer-motion';
 
 type TProps = TBlankMotionProps;
 export const LightMarker =
@@ -12,8 +13,8 @@ export const LightMarker =
   }: TLayoutComponentProps) =>
   ({ classValue, style, ...props }: TProps) =>
     (
-      <BlankMotion
-        classValue={clsx(
+      <motion.div
+        className={clsx(
           'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 pointer-events-none',
           classValue,
         )}
@@ -25,8 +26,8 @@ export const LightMarker =
         {...props}
       >
         <Glow>
-          <BlankMotion
-            classValue='fill'
+          <motion.div
+            className='fill'
             style={{
               backgroundColor: COLOR.secondary,
               borderRadius: BORDER_RADIUS.SM,
@@ -42,5 +43,5 @@ export const LightMarker =
             }}
           />
         </Glow>
-      </BlankMotion>
+      </motion.div>
     );

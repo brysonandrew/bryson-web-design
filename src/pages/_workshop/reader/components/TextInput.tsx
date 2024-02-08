@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { TextInput as Input } from './Inputs';
-import { useReader } from '../context';
 import { usePlay } from '../hooks/usePlay';
 import { resolveErrorMessage } from '@brysonandrew/utils-error/resolveErrorMessage';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 
 export const TextInput = () => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
   const {
-    clipboardContext: { handler, copying, onEnd },
+    clipboardState: { handler, copying, onEnd },
     phraseState: [phrase, setPhrase],
   } = useReader();
   const handlePlay = usePlay();

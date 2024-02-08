@@ -2,7 +2,6 @@ import { type FC } from 'react';
 import { Global } from './global';
 import { Cursor } from '@brysonandrew/cursor';
 import { isDesktop } from 'react-device-detect';
-import { P24Y } from '@brysonandrew/space/P24Y';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Outlet } from 'react-router';

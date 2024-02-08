@@ -1,4 +1,4 @@
-import { Invert } from '@brysonandrew/layout/effects/Invert';
+import { Invert } from '@brysonandrew/layout-effects/Invert';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import clsx, { ClassValue } from 'clsx';
 import { FC, PropsWithChildren } from 'react';

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { useReader } from '../../context';
 import { Stop } from './Stop';
 import { Play } from './Play';
 import { Pause } from './Pause';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 
 const Root = styled.div``;
 

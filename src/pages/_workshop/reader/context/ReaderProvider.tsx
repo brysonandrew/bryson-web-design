@@ -1,9 +1,10 @@
 import {
+  createContext,
   PropsWithChildren,
+  useContext,
   useState,
   type FC,
 } from 'react';
-import { Reader, useReader } from '.';
 import {
   TContext,
   TLang,
@@ -13,15 +14,40 @@ import {
   TSpeechSynthesis,
   TUtterance,
 } from './types';
-import { useClipboardContext } from './clipboard/useClipboardContext';
 import { useListeners } from '../hooks/useListeners';
 import { useSynthesis } from '../hooks/useSynthesis';
+import { useClipboardState } from '@brysonandrew/notifications';
+import { NOOP } from '@brysonandrew/utils-function';
 
-export const Provider: FC<PropsWithChildren> = ({
+export const context = new AudioContext();
+const master = context.createGain();
+
+const EMPTY_STATE = [null, NOOP];
+const EMPTY_NUMBER_STATE = [1, NOOP];
+
+export const CONTEXT = {
+  context,
+  master,
+  speechSynthesisState: EMPTY_STATE,
+  selectedVoiceState: EMPTY_STATE,
+  phraseState: EMPTY_STATE,
+  utteranceState: EMPTY_STATE,
+  playModeState: EMPTY_STATE,
+  volumeState: EMPTY_NUMBER_STATE,
+  rateState: EMPTY_NUMBER_STATE,
+  pitchState: EMPTY_NUMBER_STATE,
+  langState: EMPTY_STATE,
+  voicesState: EMPTY_STATE,
+} as TContext;
+
+export const Reader = createContext<TContext>(CONTEXT);
+
+export const useReader = () => useContext(Reader);
+
+export const ReaderProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const context = useReader();
-
   const speechSynthesisState =
     useState<TSpeechSynthesis>(null);
   const selectedVoiceState = useState<TSelectedVoice>(null);
@@ -36,7 +62,7 @@ export const Provider: FC<PropsWithChildren> = ({
     SpeechSynthesisVoice[] | null
   >(null);
 
-  const clipboardContext = useClipboardContext();
+  const clipboardState = useClipboardState();
 
   useSynthesis({
     selectedVoiceState,
@@ -63,7 +89,7 @@ export const Provider: FC<PropsWithChildren> = ({
     pitchState,
     langState,
     voicesState,
-    clipboardContext,
+    clipboardState,
   };
 
   return (

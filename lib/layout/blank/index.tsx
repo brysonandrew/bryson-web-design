@@ -1,4 +1,4 @@
-import { TBlankC } from '@brysonandrew/layout/blank/config/types';
+import { TBlankC } from '@brysonandrew/layout-blank/config/types';
 import clsx from 'clsx';
 
 export const Blank: TBlankC = ({ dark, ...props }) => {

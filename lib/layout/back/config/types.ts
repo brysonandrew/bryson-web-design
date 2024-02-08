@@ -1,7 +1,7 @@
 import {
   TBlankMotionProps,
   TBlankProps,
-} from '@brysonandrew/layout/blank/config/types';
+} from '@brysonandrew/layout-blank/config/types';
 import { FC } from 'react';
 
 export type TBackBaseProps = {

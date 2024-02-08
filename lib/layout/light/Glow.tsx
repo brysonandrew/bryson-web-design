@@ -1,5 +1,5 @@
 import { TLayoutComponentProps } from '@brysonandrew/app';
-import { TGlowProps } from '@brysonandrew/layout/effects';
+import { TGlowProps } from '@brysonandrew/layout-effects';
 
 type TProps = TGlowProps;
 export const LightGlow =

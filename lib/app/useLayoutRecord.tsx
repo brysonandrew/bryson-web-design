@@ -1,5 +1,5 @@
 import { TDefaultStyle } from '@brysonandrew/app/config/types';
-import { TBrightenProps } from '@brysonandrew/layout/effects/Brighten';
+import { TBrightenProps } from '@brysonandrew/layout-effects/Brighten';
 import { withStyle } from '@brysonandrew/app/utils/withStyle';
 import {
   DEFAULT_CONFIG,
@@ -8,7 +8,6 @@ import {
   TLayoutRecordProps,
   TLayoutRecordValue,
 } from '@brysonandrew/app';
-import { mergeDeepObjects } from '@brysonandrew/utils-object';
 import {
   TBlankProps,
   TBlankMotionProps,
@@ -25,9 +24,7 @@ type TConfig<S extends TDefaultStyle> = TLayoutRecordProps &
 export const useLayoutRecord = <S extends TDefaultStyle>(
   config: TConfig<S>,
 ) => {
-  console.log(config);
   const APP = { ...DEFAULT_CONFIG, ...config };
-  console.log(APP);
 
   const commonProps = {
     style: {

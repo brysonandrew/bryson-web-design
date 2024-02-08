@@ -1,6 +1,6 @@
 import { I } from '@brysonandrew/icons-i';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 import { Button } from '../../components/Buttons';
-import { useReader } from '../../context';
 
 export const Pause = () => {
   const {

@@ -1,5 +1,5 @@
-import { Back } from '@brysonandrew/layout/back';
-import { TBackC } from '@brysonandrew/layout/back/config/types';
+import { Back } from '@brysonandrew/layout-back';
+import { TBackC } from '@brysonandrew/layout-back/config/types';
 
 export const BackScreen: TBackC = ({
   classValue,

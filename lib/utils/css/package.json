@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-css",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "Utils Css library",
   "main": "./index.ts",
   "module": "./index.ts",
