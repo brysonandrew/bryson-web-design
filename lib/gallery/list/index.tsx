@@ -6,11 +6,10 @@ import { useGallery } from '../GalleryProvider';
 
 export const List = <
   T extends string,
-  K extends string,
   R extends object,
 >() => {
   const currProject = useCurrProject();
-  const { SLUGS } = useGallery<T, K, R>();
+  const { SLUGS } = useGallery<T, R>();
 
   return (
     <>
@@ -20,7 +19,7 @@ export const List = <
           const isSelected = currProject === slug;
           if (isSelected) return null;
           return (
-            <Item<T, K, R>
+            <Item<T, R>
               key={slug}
               slug={slug}
               index={index}

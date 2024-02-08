@@ -1,8 +1,8 @@
 import { Focus } from '@pages/pricing/process/focus';
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
 import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { AnimatePresence, motion } from 'framer-motion';
-import { DARK_MODE_ICON } from '@brysonandrew/icons/config/constants/general';
+import { DARK_MODE_ICON } from '@brysonandrew/icons-keys/general';
 import { DARK_MODE } from '../../config';
 import { PRESENCE_OPACITY } from '@app/animation';
 

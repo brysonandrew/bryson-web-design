@@ -1,12 +1,12 @@
 import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
-import { useReader } from '@pages/_workshop/reader/context';
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
 import { PLAY_ICON } from '@brysonandrew/icons';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 
 export const Play = () => {
   const {
-    clipboardContext,
+    clipboardState,
     phraseState: [phrase],
   } = useReader();
   const handlePlay = usePlay();
@@ -17,7 +17,7 @@ export const Play = () => {
       onClick={handlePlay}
       style={{
         boxShadow:
-          clipboardContext.copying === 'pending'
+          clipboardState.copying === 'pending'
             ? 'border-accent border-1'
             : '',
       }}

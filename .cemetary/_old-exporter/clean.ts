@@ -1,0 +1,24 @@
+import path from 'path';
+import { rmSync } from 'fs';
+import {
+  resolveDir,
+  CACHE_EXPORTER_NAME,
+  resolveFile,
+} from '../../ops/utils';
+import type {
+  TPath,
+  TPathRecord,
+} from '../../ops/config/types/entries';
+
+export const clean = (targets: TPathRecord) => {
+  if (!targets) return null;
+  for (const { full, parent, name } of Object.values(
+    targets,
+  ) as TPath[]) {
+    [].forEach((pathToRm) => {
+      if (resolveDir(pathToRm) || resolveFile(pathToRm)) {
+        rmSync(pathToRm, { recursive: true });
+      }
+    });
+  }
+};

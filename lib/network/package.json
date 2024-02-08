@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/network",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Network library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,7 +21,8 @@
     "react": "*",
     "framer-motion": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/icons": "*",
+    "@brysonandrew/icons-i": "*",
+    "@brysonandrew/icons-keys": "*",
     "@brysonandrew/hooks-events": "*"
   },
   "exports": {

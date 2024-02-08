@@ -1,0 +1,31 @@
+{
+  "name": "@brysonandrew/utils-unit",
+  "version": "6.22.164",
+  "description": "Utils Unit library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveIntRecord": "./resolveIntRecord.ts",
+    "./resolveRemFromPx": "./resolveRemFromPx.ts",
+    "./stripPx": "./stripPx.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {}
+}

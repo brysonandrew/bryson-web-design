@@ -2,7 +2,7 @@ import { TStringOrStringsRecord } from '@brysonandrew/config-types';
 import {
   TPrefixKeysConfig,
   prefixKeys,
-} from '@brysonandrew/utils/object/prefixKeys';
+} from '@brysonandrew/utils-object/prefixKeys';
 
 type TInternalKey<K extends string> = `_${K}_`;
 export const wrapInternal = <V extends string>(v: V) =>

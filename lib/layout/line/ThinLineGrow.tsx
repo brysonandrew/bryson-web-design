@@ -4,7 +4,7 @@ import {
   PRESENCE_SCALE_X,
 } from '@brysonandrew/animation';
 import { FC } from 'react';
-import { ThinLine } from '.';
+import { ThinLine } from './ThinLine';
 import clsx from 'clsx';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 

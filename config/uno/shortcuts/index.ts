@@ -1,6 +1,6 @@
 import { SHORTCUTS as DEFAULT_SHORTCUTS } from '@brysonandrew/uno-shortcuts';
 import { StaticShortcutMap } from 'unocss';
-import { DARK_MODE_UNO_SHORTCUTS } from '@brysonandrew/dark-mode/config/animation';
+import { DARK_MODE_UNO_SHORTCUTS } from '@brysonandrew/dark-mode/config/constants/animation';
 import { CONTACT_FORM_SHORTCUTS } from './contact-form';
 
 const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
@@ -14,7 +14,7 @@ const TYPOGRAPHY_SHORTCUTS: StaticShortcutMap = {
   'title-header-active': 'title-header text-title',
   'title-main': 'text-title char-gap-1 text-2xl',
   'title-page':
-    'relative text-4xl text-shadow-inherit uppercase md:text-5xl',
+    'relative text-shadow-inherit uppercase text-4xl md:text-5xl',
   'title-section':
     'relative text-xl text-shadow-inherit char-gap-6 md:text-2xl',
   'title-pricing':

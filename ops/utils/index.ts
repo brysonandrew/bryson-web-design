@@ -16,7 +16,7 @@ export {
   formatEntry,
 } from "./entries";
 export { extract } from "./extract";
-export { prependCwd } from "./global";
+export { prependCwd } from "./dirs/cwd";
 export {
   IMPORT_LINE_TYPE_RX,
   EXTRACT_IMPORT_NAMED_RX,

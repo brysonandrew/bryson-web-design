@@ -1,33 +1,15 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
-    "./functions": "./functions.ts",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
-    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
-    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
-    "./format": "./format/index.ts",
-    "./format/url": "./format/url.ts",
-    "./key/generateRandomId": "./key/generateRandomId.ts",
-    "./key": "./key/index.ts",
-    "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
-    "./object/prefixKeys": "./object/prefixKeys.ts",
-    "./object/scopeRecord": "./object/scopeRecord.ts",
-    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
-    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
-    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
-    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
-    "./unit/stripPx": "./unit/stripPx.ts",
-    "./error/detail/config": "./error/detail/config.ts",
-    "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -43,6 +25,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/utils-css": "*",
+    "@brysonandrew/utils-error": "*",
+    "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/utils-format": "*",
+    "@brysonandrew/utils-function": "*",
+    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/utils-key": "*",
+    "@brysonandrew/utils-transformer": "*",
+    "@brysonandrew/utils-unit": "*"
   }
 }

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
-import { I } from '@brysonandrew/icons/icon';
-import { TBaseIconProps } from '@brysonandrew/icons/type';
 import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@brysonandrew/animation';
+import { TSvgProps } from '@brysonandrew/config';
+import { I } from '@brysonandrew/icons-i';
 
 type TProps = {
   children: TChildren;
-  Icon?: FC<TBaseIconProps>;
+  Icon?: FC<TSvgProps>;
   iconStr?: string | null;
 };
 export const IconWithText: FC<TProps> = ({

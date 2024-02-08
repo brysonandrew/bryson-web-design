@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
-import { TBaseProps, useGallery, useViewer as useContext } from '@brysonandrew/gallery';
+import {
+  TBaseProps,
+  useGallery,
+  useViewer as useContext,
+} from '@brysonandrew/gallery';
 import { ViewerHeader } from './header/ViewerHeader';
 import { Arrows } from './Arrows';
 import { Background } from './Background';
@@ -8,17 +12,17 @@ import { Sections } from './sections';
 import { useFreezeScrollBar } from '@brysonandrew/hooks-scroll/useFreezeScroll';
 import { useMotionX } from '@brysonandrew/gallery-viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
+import { TTTitleToKebab } from '@brysonandrew/config';
 
-export type TProps<T extends string> = {
+export type TReadyProps<T extends string> = {
   viewportWidth: number;
-  currProject: T;
+  currProject: TTTitleToKebab<T>;
 };
 export const Ready = <T extends string>({
   viewportWidth,
   currProject,
-}: TProps<T>) => {
+}: TReadyProps<T>) => {
   useFreezeScrollBar();
-  const { ITEMS_RECORD } = useGallery();
   const { screensRecord } = useContext();
   const mediaRecords = screensRecord[currProject];
 

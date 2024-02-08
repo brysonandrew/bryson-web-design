@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-window",
-  "version": "6.21.184",
+  "version": "6.21.234",
   "description": "Hooks Window library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,7 +12,7 @@
     },
     "./useDelay": "./useDelay.ts",
     "./useDelayCallback": "./useDelayCallback.ts",
-    "./useDelayCallback1": "./useDelayCallback1.ts",
+    "./useDelayCallbackHandler": "./useDelayCallbackHandler.ts",
     "./useInterval": "./useInterval.tsx",
     "./useMediaQuery": "./useMediaQuery.ts",
     "./useNoPointer": "./useNoPointer.ts",

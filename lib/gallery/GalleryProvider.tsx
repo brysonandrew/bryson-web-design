@@ -9,43 +9,36 @@ import {
   TGalleryConfig,
   TValue,
 } from '@brysonandrew/gallery/config/types';
-import { once } from '@brysonandrew/utils/functions';
+import { once } from '@brysonandrew/utils-function';
 
 const initContext = once(<
   T extends string,
-  K extends string,
   R extends object,
->() =>
-  createContext<TValue<T, K, R>>({} as TValue<T, K, R>),
-);
+>() => createContext<TValue<T, R>>({} as TValue<T, R>));
 
 export const useGallery = <
   T extends string,
-  K extends string,
   R extends object,
->() => useReactContext<TValue<T, K, R>>(initContext());
+>() => useReactContext<TValue<T, R>>(initContext());
 
 type TProps<
   T extends string,
-  K extends string,
   R extends object,
-> = TGalleryConfig<K> & {
+> = TGalleryConfig<T> & {
   initItems: TInitItems<T, R>;
 };
 export const GalleryProvider = <
   T extends string,
-  K extends string,
   R extends object,
 >({
   initItems,
   children,
   ...props
-}: PropsWithChildren<TProps<T, K, R>>) => {
+}: PropsWithChildren<TProps<T, R>>) => {
   const CONTEXT = initContext();
-  const itemsConfig = useItemsConfig<T, K, R>(initItems);
+  const itemsConfig = useItemsConfig<T, R>(initItems);
   const value = { ...itemsConfig, ...props } as TValue<
     T,
-    K,
     R
   >;
 
@@ -54,23 +47,4 @@ export const GalleryProvider = <
       {children}
     </CONTEXT.Provider>
   );
-};
-
-type TConsumerProps<
-  T extends string,
-  K extends string,
-  R extends object,
-> = {
-  children(value: TValue<T, K, R>): JSX.Element;
-};
-export const Consumer = <
-  T extends string,
-  K extends string,
-  R extends object,
->({
-  children,
-}: TConsumerProps<T, K, R>) => {
-  const CONTEXT = initContext();
-
-  return <CONTEXT.Consumer>{children}</CONTEXT.Consumer>;
 };

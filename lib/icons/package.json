@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Icons library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -9,24 +9,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./type": "./type.ts",
-    "./icon": "./icon/index.tsx",
-    "./config/types": "./config/types/index.ts",
-    "./config/constants/base": "./config/constants/base.ts",
-    "./config/constants/clipboard": "./config/constants/clipboard.ts",
-    "./config/constants/contact": "./config/constants/contact.ts",
-    "./config/constants/crud": "./config/constants/crud.ts",
-    "./config/constants/directions": "./config/constants/directions.ts",
-    "./config/constants/gallery": "./config/constants/gallery.ts",
-    "./config/constants/general": "./config/constants/general.ts",
-    "./config/constants/image": "./config/constants/image.ts",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/constants/inputs": "./config/constants/inputs.ts",
-    "./config/constants/links": "./config/constants/links.ts",
-    "./config/constants/shop": "./config/constants/shop.ts",
-    "./config/constants/square": "./config/constants/square.ts",
-    "./config/constants/text": "./config/constants/text.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -42,9 +25,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "@iconify/react": "*",
-    "@brysonandrew/config-types": "*",
-    "clsx": "*"
+    "@brysonandrew/icons-i": "*",
+    "@brysonandrew/icons-keys": "*"
   }
 }

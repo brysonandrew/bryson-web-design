@@ -1,5 +1,5 @@
 import { TStringOrStringsRecord } from '@brysonandrew/config-types';
-import { scopeRecord } from '@brysonandrew/utils/object/scopeRecord';
+import { scopeRecord } from '@brysonandrew/utils-object';
 
 export const PREFIX = 'contact' as const;
 

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useReader } from '../../context';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 import { Item } from './Item';
 
 const Root = styled.div``;

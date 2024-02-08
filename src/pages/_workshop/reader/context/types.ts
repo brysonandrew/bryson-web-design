@@ -1,5 +1,5 @@
+import { TClipboardState } from '@brysonandrew/notifications';
 import { Dispatch, SetStateAction } from 'react';
-import { TClipboardContext } from './clipboard/useClipboardContext';
 
 export type TState<S> = [S, Dispatch<SetStateAction<S>>];
 
@@ -24,5 +24,5 @@ export type TContext = {
   pitchState: TState<number>;
   langState: TState<TLang>;
   voicesState: TState<TVoices>;
-  clipboardContext: TClipboardContext;
+  clipboardState: TClipboardState;
 };

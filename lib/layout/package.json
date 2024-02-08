@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -9,25 +9,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./backdrop-blur": "./backdrop-blur/index.tsx",
-    "./line/Line": "./line/Line.tsx",
-    "./line/ThickLine": "./line/ThickLine.tsx",
-    "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
-    "./line": "./line/index.tsx",
-    "./section": "./section/index.tsx",
-    "./lists/List": "./lists/List.tsx",
-    "./lists/TickList": "./lists/TickList.tsx",
-    "./typography/Letter": "./typography/Letter.tsx",
-    "./typography/Sub": "./typography/Sub.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
-    "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
-    "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
-    "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -43,16 +25,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "@brysonandrew/config-types": "*",
-    "framer-motion": "*",
-    "@brysonandrew/app": "*",
-    "clsx": "*",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/space": "*",
-    "@brysonandrew/icons": "*",
-    "@emotion/styled": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/in-view": "*"
+    "@brysonandrew/layout-back": "*",
+    "@brysonandrew/layout-blank": "*",
+    "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/layout-light": "*",
+    "@brysonandrew/layout-line": "*",
+    "@brysonandrew/layout-lists": "*",
+    "@brysonandrew/layout-section": "*",
+    "@brysonandrew/layout-typography": "*",
+    "@brysonandrew/layout-utils": "*"
   }
 }

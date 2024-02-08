@@ -1,0 +1,44 @@
+{
+  "name": "@brysonandrew/icons-keys",
+  "version": "6.22.164",
+  "description": "Icons Keys library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./base": "./base.ts",
+    "./clipboard": "./clipboard.ts",
+    "./contact": "./contact.ts",
+    "./crud": "./crud.ts",
+    "./directions": "./directions.ts",
+    "./gallery": "./gallery.ts",
+    "./general": "./general.ts",
+    "./image": "./image.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./inputs": "./inputs.ts",
+    "./links": "./links.ts",
+    "./shop": "./shop.ts",
+    "./square": "./square.ts",
+    "./text": "./text.ts",
+    "./config/types": "./config/types.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@iconify/react": "*"
+  }
+}

@@ -1,3 +1,5 @@
+import type { TTTitleToKebab } from '@brysonandrew/config-types';
+
 export const capitalize = (word: string | null) =>
   word
     ? `${word[0].toUpperCase()}${word
@@ -14,11 +16,15 @@ export const kebabToPascal = <I extends string>(slug: I) =>
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
-export const titleToKebab = <I extends string>(title: I) =>
-  title
+export const titleToKebab = <I extends string>(
+  title: I,
+): TTTitleToKebab<I> => {
+  const result = title
     .split(' ')
     .map((v) => v.toLowerCase())
     .join('-');
+  return result as TTTitleToKebab<I>;
+};
 export const titleToUpperSnake = <I extends string>(
   title: I,
 ) =>
@@ -45,3 +51,5 @@ export const formateShortDate = (time?: Date) => {
     year: 'numeric',
   }).format(time);
 };
+
+export * from './url';

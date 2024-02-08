@@ -4,12 +4,18 @@ type TProps = object & {
   style?: CSSProperties | MotionStyle;
 };
 export const withStyle =
-  <T extends TProps>(
-    style: CSSProperties,
-    C?: FC<T>,
-  ): FC<T> =>
+  <T extends TProps>(baseProps: T, C?: FC<T>): FC<T> =>
   (props: T): JSX.Element | null => {
+    const { style, ...restProps } = props;
+    const { style: baseStyle, ...restBaseProps } =
+      baseProps;
+
     return C ? (
-      <C {...props} style={{ ...style, ...props.style }} />
+      <C
+        {...props}
+        style={{ ...style, ...baseStyle }}
+        {...restProps}
+        {...restBaseProps}
+      />
     ) : null;
   };

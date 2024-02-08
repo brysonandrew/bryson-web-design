@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Section } from '@brysonandrew/layout/section';
+import { Section } from '@brysonandrew/layout-section';
 import { P60Y } from '@brysonandrew/space/P60Y';
 import { Main } from './Main';
 import { SECTION_RECORD } from '@app/routes';

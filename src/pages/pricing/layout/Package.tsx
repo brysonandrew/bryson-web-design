@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 import { End } from './End';
-import { Price, TProps as TPriceProps } from './price';
+import { Price, TPriceProps } from './price';
 import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
@@ -11,18 +11,18 @@ import { useHoverKey } from '@brysonandrew/cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import { TPricingTitle } from '@pages/pricing/config/types';
-import { TickList } from '@brysonandrew/layout/lists/TickList';
-import { EMAIL_ICON } from '@brysonandrew/icons/config/constants/contact';
+import { TickList } from '@brysonandrew/layout-lists/TickList';
+import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
 import { TStyle } from '@app/style';
 import { PAGE_RECORD } from '@app/routes';
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 
-export type TProps = Pick<TPriceProps, 'discount'> & {
+export type TPackageProps = Pick<TPriceProps, 'discount'> & {
   title: TPricingTitle;
 };
-export const Package: FC<TProps> = ({ title }) => {
+export const Package: FC<TPackageProps> = ({ title }) => {
   const config = resolvePackageConfig(title);
   const {
     key,

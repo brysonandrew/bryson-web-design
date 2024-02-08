@@ -1,0 +1,47 @@
+{
+  "name": "@brysonandrew/layout-typography",
+  "version": "6.22.164",
+  "description": "Layout Typography library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./Letter": "./Letter.tsx",
+    "./Sub": "./Sub.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./animation/ShiftUp": "./animation/ShiftUp.tsx",
+    "./animation/Stagger": "./animation/Stagger.tsx",
+    "./animation/Word": "./animation/Word.tsx",
+    "./animation": "./animation/index.tsx",
+    "./title/Content": "./title/Content.tsx",
+    "./title": "./title/index.tsx"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@emotion/styled": "*",
+    "clsx": "*",
+    "framer-motion": "*",
+    "react": "*",
+    "@brysonandrew/animation": "*",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/utils-key": "*",
+    "@brysonandrew/layout-line": "*",
+    "@brysonandrew/space": "*",
+    "@brysonandrew/in-view": "*"
+  }
+}

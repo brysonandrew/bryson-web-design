@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { Input } from '..';
 import { TTextareaMotionProps } from '@brysonandrew/config-types/dom';
 import { Autosize } from './autosize';
-import { resolveInteractiveLabels } from '@brysonandrew/utils/attributes/resolveInteractiveLabels';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { TFormChildrenProps } from '@brysonandrew/contact/form';
 

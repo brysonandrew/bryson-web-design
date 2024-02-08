@@ -1,3 +1,4 @@
+import { green } from '@ops/console';
 import {
   PUBLIC_DIR,
   SMALL_SUFFIX,
@@ -18,7 +19,11 @@ export const writeFileData = async (
   path: string,
   data: object,
 ) => {
-  return fs.writeFile(path, JSON.stringify(data));
+  console.log(green(`writing to ${path}.\nfullPath`));
+  // const fullPath = prependPwd(path);
+  await fs.writeFile(path, JSON.stringify(data, null, 2));
+  console.log(green(`wrote to ${path}`));
+  return true;
 };
 
 export const resolveSmallEntry = (

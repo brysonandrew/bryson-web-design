@@ -1,7 +1,7 @@
 import { Parallax } from '@brysonandrew/parallax';
 import { Main } from '@pages/projects/Main';
 import { PARALLAX_PROPS } from './constants';
-import { Section } from '@brysonandrew/layout/section';
+import { Section } from '@brysonandrew/layout-section';
 import { SECTION_RECORD } from '@app/routes';
 
 const Projects = () => {

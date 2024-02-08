@@ -1,6 +1,6 @@
 import { Button2 as Button } from '../../components/Buttons';
-import { useReader } from '@pages/_workshop/reader/context';
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 
 export const Stop = () => {
   const {
@@ -18,7 +18,7 @@ export const Stop = () => {
         }
       }}
     >
-      <I icon="mdi-stop"/>
+      <I icon='mdi-stop' />
     </Button>
   );
 };

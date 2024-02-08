@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import { STAR_ICON } from '@brysonandrew/icons/config/constants/general';
-import { I } from '@brysonandrew/icons/icon';
+import { STAR_ICON } from '@brysonandrew/icons-keys/general';
+import { I } from '@brysonandrew/icons-i';
 import { motion } from 'framer-motion';
 import { TDivMotionProps } from '@brysonandrew/config-types';
 

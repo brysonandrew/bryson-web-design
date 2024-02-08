@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -49,6 +49,7 @@
     "@brysonandrew/animation": "*",
     "clsx": "*",
     "@brysonandrew/app": "*",
-    "@brysonandrew/icons": "*"
+    "@brysonandrew/config": "*",
+    "@brysonandrew/icons-i": "*"
   }
 }

@@ -1,5 +1,5 @@
-import { I } from '@brysonandrew/icons/icon';
-import { TICK_CIRCLE_ICON } from '@brysonandrew/icons/config/constants';
+import { I } from '@brysonandrew/icons-i';
+import { TICK_CIRCLE_ICON } from '@brysonandrew/icons-keys';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -15,7 +15,7 @@ export const TickList: FC<TProps> = ({ items }) => {
           <I
             icon={TICK_CIRCLE_ICON}
             className={clsx(
-              'w-5 h-5 mt-1 shrink-0 text-current',
+              'w-5 h-5 mt-2 shrink-0 text-current',
             )}
           />
           <p className='font-sans text-xl text-main'>

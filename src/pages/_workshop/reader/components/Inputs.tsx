@@ -1,4 +1,4 @@
-import { I } from '@brysonandrew/icons/icon';
+import { I } from '@brysonandrew/icons-i';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, SelectHTMLAttributes } from 'react';

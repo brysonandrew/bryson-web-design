@@ -1,0 +1,34 @@
+{
+  "name": "@brysonandrew/layout-effects",
+  "version": "6.22.164",
+  "description": "Layout Effects library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./Brighten": "./Brighten.tsx",
+    "./Glow": "./Glow.tsx",
+    "./Invert": "./Invert.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "@brysonandrew/filter-animate": "*"
+  }
+}

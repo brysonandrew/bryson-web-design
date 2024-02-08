@@ -1,4 +1,4 @@
-import { useReader } from '@pages/_workshop/reader/context';
+import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
 import { Lang } from './Lang';
 import { Voice } from './Voice';
 

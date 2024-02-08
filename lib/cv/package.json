@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.114",
+  "version": "6.22.164",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,10 +11,10 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./controls/Invert": "./controls/Invert.tsx",
     "./config/constants": "./config/constants.ts",
     "./config/tech-icon-lookup": "./config/tech-icon-lookup.tsx",
     "./config/types": "./config/types.ts",
-    "./controls/Invert": "./controls/Invert.tsx",
     "./page/Description": "./page/Description.tsx",
     "./page/Line": "./page/Line.tsx",
     "./page/Margin": "./page/Margin.tsx",
@@ -46,7 +46,7 @@
     "@brysonandrew/space": "*",
     "@brysonandrew/utils": "*",
     "clsx": "*",
-    "@brysonandrew/layout": "*",
+    "@brysonandrew/layout-typography": "*",
     "@brysonandrew/contact-list": "*"
   }
 }

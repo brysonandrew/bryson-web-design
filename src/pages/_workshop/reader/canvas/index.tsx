@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import type { FC } from "react";
 import styled from "@emotion/styled";
 import { useSpectogram2 } from "./spectogram-2";
-import { useReader } from "../context";
+import { useReader } from "@pages/_workshop/reader/context/ReaderProvider";
 
 const Canvas = styled.canvas`
   position: fixed;

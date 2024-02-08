@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
 import {
-  TClassValueProps,
-  TDivMotionProps,
-} from '@brysonandrew/config-types/dom';
-import {
   metalRadialDarkCss,
   metalRadialLightCss,
 } from '@components/layout/metal/css';
 import clsx from 'clsx';
+import {
+  BackFillMotion,
+  TBackMotionProps,
+} from '@brysonandrew/layout';
 import { motion } from 'framer-motion';
 
 const Dark = styled(motion.div)`
@@ -19,22 +19,22 @@ const Light = styled(motion.div)`
   ${metalRadialLightCss}
 `;
 
-type TProps = TDivMotionProps & TClassValueProps;
+type TProps = TBackMotionProps;
 export const Metal: FC<TProps> = ({
   classValue,
+  children,
   ...rest
 }) => {
-  const sharedClassValue = clsx('fill', classValue);
+  const sharedClassValue = clsx('metal fill', classValue);
   return (
     <motion.div className={sharedClassValue} {...rest}>
-      <motion.div className='fill bg-darkest' {...rest} />
-      <motion.div className='fill bg-lightest' {...rest} />
+      <BackFillMotion {...rest} />
       <Dark
-        className={clsx('bg-darkest', sharedClassValue)}
+        className={clsx('opacity-dark', sharedClassValue)}
         {...rest}
       />
       <Light
-        className={clsx('bg-lightest', sharedClassValue)}
+        className={clsx('opacity-light', sharedClassValue)}
         {...rest}
       />
     </motion.div>

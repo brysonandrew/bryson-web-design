@@ -15,7 +15,6 @@ export const RightHeader: FC<TProps> = ({
 }) => {
   const { ITEMS_RECORD } = useGallery<
     TTitle,
-    TSlug,
     TRest
   >();
   const { time, pricing } = ITEMS_RECORD[slug];

@@ -35,10 +35,6 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
   );
 };
 
-export * from './Box';
-export * from './Brighten';
-export * from './Glow';
-export * from './Invert';
 export * from './utils/blur';
 export * from './utils/brighten';
 export * from './utils/glow';

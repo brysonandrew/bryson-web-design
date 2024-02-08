@@ -1,4 +1,4 @@
-import { ThinLine } from '@brysonandrew/layout/line';
+import { ThinLine } from '@brysonandrew/layout-line/ThinLine';
 import { Money } from '../Money';
 import { List } from './yearly/List';
 
