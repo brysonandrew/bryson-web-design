@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",

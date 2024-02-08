@@ -1,5 +1,5 @@
-import { TBackC } from '@brysonandrew/layout/back/config/types';
-import { Blank } from '@brysonandrew/layout/blank';
+import { TBackC } from '@brysonandrew/layout-back/config/types';
+import { Blank } from '@brysonandrew/layout-blank';
 import clsx from 'clsx';
 
 export const Back: TBackC = ({ dark, ...props }) => {

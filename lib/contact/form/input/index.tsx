@@ -99,7 +99,7 @@ export const Input = <T extends HTMLElement>({
       setInput(instance);
     }
   };
-
+  
   return (
     <motion.label
       className='_contact_label'

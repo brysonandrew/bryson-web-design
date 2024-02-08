@@ -1,4 +1,4 @@
-import { TBlankMotionC } from '@brysonandrew/layout/blank/config/types';
+import { TBlankMotionC } from '@brysonandrew/layout-blank/config/types';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 

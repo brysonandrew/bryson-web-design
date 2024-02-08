@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-back",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "Layout Back library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -36,6 +36,6 @@
     "framer-motion": "*",
     "@brysonandrew/app": "*",
     "clsx": "*",
-    "@brysonandrew/layout": "*"
+    "@brysonandrew/layout-blank": "*"
   }
 }

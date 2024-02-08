@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -37,14 +37,14 @@
     "react": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-object": "*",
-    "@brysonandrew/layout": "*",
+    "@brysonandrew/layout-effects": "*",
     "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-back": "*",
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "*",
-    "@brysonandrew/layout-effects": "*",
     "@brysonandrew/fade-edge": "*",
-    "@brysonandrew/color": "*"
+    "@brysonandrew/color": "*",
+    "@brysonandrew/layout": "*"
   }
 }

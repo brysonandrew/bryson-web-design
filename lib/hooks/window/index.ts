@@ -1,6 +1,6 @@
 export * from './useDelay';
 export * from './useDelayCallback';
-export * from './useDelayCallback1';
+export * from './useDelayCallbackHandler';
 export * from './useInterval';
 export * from './useMediaQuery';
 export * from './useNoPointer';

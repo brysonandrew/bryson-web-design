@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-line",
-  "version": "6.22.158",
+  "version": "6.22.162",
   "description": "Layout Line library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -1,5 +1,5 @@
-import { TBackMotionC } from '@brysonandrew/layout/back/config/types';
-import { BlankMotion } from '@brysonandrew/layout/blank';
+import { TBackMotionC } from '@brysonandrew/layout-back/config/types';
+import { BlankMotion } from '@brysonandrew/layout-blank';
 import clsx from 'clsx';
 
 export const BackMotion: TBackMotionC = ({
