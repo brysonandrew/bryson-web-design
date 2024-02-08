@@ -1,9 +1,8 @@
 var name = "@brysonandrew/service-worker";
-var version = "6.22.46";
+var version = "6.22.164";
 var description = "Service Worker library";
 var types = "/index.d.ts";
 var main = "./index.ts";
-var type = "module";
 var module = "./index.ts";
 var exports = {
 	".": {
@@ -28,7 +27,7 @@ var keywords = [
 	"typescript"
 ];
 var peerDependencies = {
-	"@brysonandrew/types": "*",
+	"@brysonandrew/config-types": "*",
 	"@brysonandrew/media": "*"
 };
 var pkg = {
@@ -37,7 +36,6 @@ var pkg = {
 	description: description,
 	types: types,
 	main: main,
-	type: type,
 	module: module,
 	exports: exports,
 	scripts: scripts,

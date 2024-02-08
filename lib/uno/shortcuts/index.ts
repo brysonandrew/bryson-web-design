@@ -24,7 +24,7 @@ export * from './neu/format';
 export * from './neu/mappers';
 export * from './neu/number';
 export * from './neu/resolveHsl';
-export * from './neu/resolveNeuClasses';
+export * from './neu/resolveNeuRules';
 export * from './neu/resolveNeuShadow';
 export * from './neu/types';
 export * from './text/color';
