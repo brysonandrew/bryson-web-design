@@ -8,7 +8,7 @@ export const I: FC<TProps> = ({ classValue, ...props }) => {
   return (
     <Icon
       className={clsx(
-        'shrink-0 pointer-event-none',
+        'relative shrink-0 pointer-event-none',
         classValue,
       )}
       {...props}

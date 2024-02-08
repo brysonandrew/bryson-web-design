@@ -26,17 +26,26 @@ export const ContactList: FC<TContactListProps> = ({
   return (
     <ul className={clsx(classValue)}>
       {url && (
-        <Item href={`https://${url}`} {...sharedProps}>
+        <Item
+          title={url}
+          href={`https://${url}`}
+          {...sharedProps}
+        >
           {url}
         </Item>
       )}
       {email && (
-        <Item href={`mailto:${email}`} {...sharedProps}>
+        <Item
+          title={email}
+          href={`mailto:${email}`}
+          {...sharedProps}
+        >
           {email}
         </Item>
       )}
       {phone && (
         <Item
+          title={phone.display}
           href={`tel:${phone.withTrunk}`}
           {...sharedProps}
         >
