@@ -23,6 +23,8 @@ export const useForm = ({ element }: TConfig) => {
   } = useContact();
 
   const handleSend = async (event: FormEvent) => {
+    event.preventDefault();
+
     if (element === null || isDisabled) return;
     onStatus('sending');
 
@@ -38,8 +40,6 @@ export const useForm = ({ element }: TConfig) => {
       console.error(error);
       onStatus('error');
     }
-
-    event.preventDefault();
   };
 
   const handleDisable = (isDisabled: boolean) => {
