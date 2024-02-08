@@ -2,24 +2,23 @@ import {
   TAnchorProps,
   TInteractiveProps,
 } from '@brysonandrew/config-types';
-import styled from '@emotion/styled';
+import { resolveInteractiveHrefLabels } from '@brysonandrew/utils-attributes/resolveInteractiveHrefLabels';
 import clsx from 'clsx';
 import { FC } from 'react';
 
-const Root = styled.a``;
-
 export type TBAnchorProps = TAnchorProps &
   TInteractiveProps;
-export const BAnchor: FC<TBAnchorProps> = ({
-  classValue,
-  children,
-  shape = 'interactive-rect',
-  look,
-  target = '_blank',
-  ...props
-}) => {
+export const BAnchor: FC<TBAnchorProps> = (props) => {
+  const {
+    classValue,
+    children,
+    shape = 'interactive-rect',
+    look,
+    target = '_blank',
+    ...rest
+  } = props;
   return (
-    <Root
+    <a
       type='button'
       target={target}
       className={clsx(
@@ -29,9 +28,10 @@ export const BAnchor: FC<TBAnchorProps> = ({
         shape,
         classValue,
       )}
-      {...props}
+      {...resolveInteractiveHrefLabels(props)}
+      {...rest}
     >
       {children}
-    </Root>
+    </a>
   );
 };

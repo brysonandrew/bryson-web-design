@@ -15,7 +15,7 @@ export const TickList: FC<TProps> = ({ items }) => {
           <I
             icon={TICK_CIRCLE_ICON}
             className={clsx(
-              'w-5 h-5 mt-1 shrink-0 text-current',
+              'w-5 h-5 mt-2 shrink-0 text-current',
             )}
           />
           <p className='font-sans text-xl text-main'>
