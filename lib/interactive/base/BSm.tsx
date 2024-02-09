@@ -17,6 +17,7 @@ export const BSm: FC<TProps> = ({
   shape = 'interactive-rect-sm',
   look,
   classValue,
+  children,
   ...props
 }) => {
   return (
@@ -29,7 +30,14 @@ export const BSm: FC<TProps> = ({
       look={look}
       {...props}
     >
-      {typeof icon === 'string' ? <I icon={icon} /> : icon}
+      <>
+        {typeof icon === 'string' ? (
+          <I icon={icon} />
+        ) : (
+          icon
+        )}
+        {children}
+      </>
     </B>
   );
 };

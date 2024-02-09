@@ -39,10 +39,10 @@ export const CartStateHandler: FC<TProps> = ({
     <motion.div
       {...PRESENCE_OPACITY}
       onTap={terminateNotifications}
-      className='cover-fixed center w-full h-full inset-0 bg-black-07 text-4xl z-50 pointer-events-none'
+      className='fill-screen center w-full h-full inset-0 bg-black-07 text-4xl z-50 pointer-events-none'
     >
       {isAdding ? (
-        <div className='cover center'>
+        <div className='fill center'>
           <Loading sizeClassValue='w-24 h-24' />
         </div>
       ) : (
