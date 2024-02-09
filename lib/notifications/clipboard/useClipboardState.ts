@@ -1,6 +1,6 @@
 import { useDelayCallbackHandler } from '@brysonandrew/hooks-window/useDelayCallbackHandler';
 import { useState } from 'react';
- 
+
 type THandlerConfig = {
   title: string;
   value: any;
@@ -28,14 +28,10 @@ export const useClipboardState = () => {
     if (typeof value === 'number') {
       value = value.toString();
     }
-
     if (typeof value === 'string') {
       await navigator.clipboard.writeText(value);
     } else {
       console.log('Not a string to clipboard ', value);
-      // await navigator.clipboard.write(
-      //   value,
-      // );
     }
 
     setCopying({ title, value });

@@ -12,8 +12,8 @@ type TProps = TClassValueProps &
     borderSizeClassValue?: string;
   };
 export const Loading: FC<TProps> = ({
-  sizeClassValue = 'icon-size border-2',
-  borderSizeClassValue = 'border-t-gray-1',
+  sizeClassValue = 'w-12 h-12',
+  borderSizeClassValue = 'border-t-gray-1 border-2',
   classValue,
   children,
   ...props
@@ -21,7 +21,7 @@ export const Loading: FC<TProps> = ({
   return (
     <motion.div
       className={clsx(
-        'relative rounded-full border-gray shrink-0',
+        'relative rounded-full shrink-0',
         classValue,
         sizeClassValue,
         borderSizeClassValue,

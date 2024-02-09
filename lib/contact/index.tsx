@@ -39,7 +39,7 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
           <Submit isDisabled={props.isDisabled} />
           {footerInfo && <Footer {...footerInfo} />}
         </>
-      )}
+      )} 
     </Form>
   );
 };

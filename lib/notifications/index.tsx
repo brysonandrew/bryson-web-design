@@ -5,7 +5,7 @@ import { FC } from 'react';
 export type TNotificationsProps = TNotificationsConfig & {
   Handlers: FC<TNotificationsConfig>[];
 };
-export const Cart = ({
+export const Notifications = ({
   Handlers,
   ...config
 }: TNotificationsProps) => {

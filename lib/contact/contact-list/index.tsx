@@ -1,6 +1,12 @@
 import { TClassValueProps } from '@brysonandrew/config-types';
+import {
+  ClipboardStateHandler,
+  useClipboardState,
+} from '@brysonandrew/notifications';
 import clsx, { ClassValue } from 'clsx';
+import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
+import { createPortal } from 'react-dom';
 import { Item } from './Item';
 
 export type TPhoneLinkInfo = {
@@ -22,37 +28,50 @@ export const ContactList: FC<TContactListProps> = ({
   email,
   phone,
 }) => {
-  const sharedProps = { classValue: itemClassValue };
+  const clipboardState = useClipboardState();
+  const sharedProps = {
+    classValue: itemClassValue,
+    clipboardState,
+  };
   return (
-    <ul className={clsx(classValue)}>
-      {url && (
-        <Item
-          title={url}
-          href={`https://${url}`}
-          {...sharedProps}
-        >
-          {url}
-        </Item>
+    <>
+      <ul className={clsx(classValue)}>
+        {url && (
+          <Item
+            name='url'
+            href={`https://${url}`}
+            {...sharedProps}
+          >
+            {url}
+          </Item>
+        )}
+        {email && (
+          <Item
+            name='email'
+            href={`mailto:${email}`}
+            {...sharedProps}
+          >
+            {email}
+          </Item>
+        )}
+        {phone && (
+          <Item
+            name='phone'
+            href={`tel:${phone.withTrunk}`}
+            {...sharedProps}
+          >
+            {phone.display}
+          </Item>
+        )}
+      </ul>
+      {createPortal(
+        <ClipboardStateHandler
+          key='CLIPBOARD_STATE_HANDLER'
+          {...clipboardState}
+        />,
+        document.body,
       )}
-      {email && (
-        <Item
-          title={email}
-          href={`mailto:${email}`}
-          {...sharedProps}
-        >
-          {email}
-        </Item>
-      )}
-      {phone && (
-        <Item
-          title={phone.display}
-          href={`tel:${phone.withTrunk}`}
-          {...sharedProps}
-        >
-          {phone.display}
-        </Item>
-      )}
-    </ul>
+    </>
   );
 };
 
