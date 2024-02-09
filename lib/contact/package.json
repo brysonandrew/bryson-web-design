@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.170",
+  "version": "6.22.173",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",

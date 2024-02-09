@@ -23,7 +23,6 @@ export const BAnchor: FC<TBAnchorProps> = (props) => {
       target={target}
       className={clsx(
         'interactive',
-        'neu-basic',
         look,
         shape,
         classValue,

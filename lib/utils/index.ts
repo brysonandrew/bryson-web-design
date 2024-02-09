@@ -1,6 +1,6 @@
+export * from '@brysonandrew/utils-attributes';
 export * from '@brysonandrew/utils-css';
 export * from '@brysonandrew/utils-error';
-export * from '@brysonandrew/utils-attributes';
 export * from '@brysonandrew/utils-format';
 export * from '@brysonandrew/utils-function';
 export * from '@brysonandrew/utils-key';

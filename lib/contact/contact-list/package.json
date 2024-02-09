@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact-list",
-  "version": "6.22.170",
+  "version": "6.22.173",
   "description": "Contact Contact List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -30,6 +30,7 @@
     "@brysonandrew/interactive": "*",
     "@brysonandrew/notifications": "*",
     "clsx": "*",
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   }
 }
