@@ -28,7 +28,6 @@ export const BAnchorMotion: FC<TBAnchorMotionProps> = (props) => {
       target={target}
       className={clsx(
         'interactive',
-        'neu-basic',
         look,
         shape,
         classValue,

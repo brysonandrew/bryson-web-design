@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "6.22.170",
+  "version": "6.22.173",
   "description": "Config Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -16,13 +16,13 @@
     "./assertions/numbers": "./assertions/numbers.ts",
     "./css": "./css/index.ts",
     "./css/interactive": "./css/interactive.ts",
+    "./numbers": "./numbers/index.ts",
+    "./numbers/series": "./numbers/series.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
-    "./numbers": "./numbers/index.ts",
-    "./numbers/series": "./numbers/series.ts",
     "./transformers/map": "./transformers/map.ts",
     "./transformers/number": "./transformers/number.ts",
     "./transformers/parameter": "./transformers/parameter.ts",
@@ -48,9 +48,9 @@
   "peerDependencies": {
     "react": "*",
     "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/config-constants": "*",
     "react-router-dom": "*",
     "clsx": "*",
-    "framer-motion": "*",
-    "@brysonandrew/config-constants": "*"
+    "framer-motion": "*"
   }
 }

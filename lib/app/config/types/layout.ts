@@ -4,7 +4,7 @@ import {
   DEFAULT_BLANK,
   DEFAULT_BACK,
   DEFAULT_EFFECTS,
-} from '@brysonandrew/app/config/constants/index';
+} from '@brysonandrew/app/config/constants';
 import { TWithLight } from '@brysonandrew/layout';
 import { TFadeVProps } from '@brysonandrew/fade-edge/pairs/FadeV';
 

@@ -4,7 +4,6 @@ import {
   useClipboardState,
 } from '@brysonandrew/notifications';
 import clsx, { ClassValue } from 'clsx';
-import { AnimatePresence } from 'framer-motion';
 import { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { Item } from './Item';

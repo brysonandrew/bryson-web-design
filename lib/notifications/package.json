@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/notifications",
-  "version": "6.22.170",
+  "version": "6.22.173",
   "description": "Notifications library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -35,7 +35,6 @@
     "@brysonandrew/animation": "*",
     "@brysonandrew/loading": "*",
     "@brysonandrew/icons-i": "*",
-    "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/space": "*"
+    "@brysonandrew/hooks-window": "*"
   }
 }
