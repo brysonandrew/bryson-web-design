@@ -15,6 +15,7 @@ type TProps = TBAnchorProps &
     icon: string;
   };
 export const BAnchorSm: FC<TProps> = ({
+  classValue,
   isActive,
   shape = 'interactive-rect-sm',
   look,
@@ -23,7 +24,7 @@ export const BAnchorSm: FC<TProps> = ({
 }) => {
   return (
     <BAnchor
-      classValue={clsx('relative')}
+      classValue={clsx('relative', classValue)}
       shape={shape}
       look={look}
       {...props}

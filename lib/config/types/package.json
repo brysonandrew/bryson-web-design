@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Config Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,15 +14,15 @@
     "./object": "./object.ts",
     "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./assertions/numbers": "./assertions/numbers.ts",
-    "./css": "./css/index.ts",
-    "./css/interactive": "./css/interactive.ts",
+    "./numbers": "./numbers/index.ts",
+    "./numbers/series": "./numbers/series.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
-    "./numbers": "./numbers/index.ts",
-    "./numbers/series": "./numbers/series.ts",
+    "./css": "./css/index.ts",
+    "./css/interactive": "./css/interactive.ts",
     "./transformers/map": "./transformers/map.ts",
     "./transformers/number": "./transformers/number.ts",
     "./transformers/parameter": "./transformers/parameter.ts",
@@ -39,18 +39,21 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "@brysonandrew/uno-shortcuts": "*",
-    "react-router-dom": "*",
-    "clsx": "*",
-    "framer-motion": "*",
-    "@brysonandrew/config-constants": "*"
+    "@brysonandrew/config-constants": "*",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.21.3",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/uno-shortcuts": "*"
   }
 }

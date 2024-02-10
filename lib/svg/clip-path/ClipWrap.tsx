@@ -1,25 +1,21 @@
 import type { FC } from 'react';
-import { TSvgCircleProps } from '@brysonandrew/config-types';
+import { TSvgClipPathProps } from '@brysonandrew/config-types';
 import { SvgWrap } from '@brysonandrew/svg/SvgWrap';
 
-type TProps = TSvgCircleProps & {
+type TProps = TSvgClipPathProps & {
   clipPathId: string;
   halfSize?: number;
 };
 export const ClipWrap: FC<TProps> = ({
   clipPathId,
   halfSize,
+  children,
   ...props
 }) => {
   return (
     <SvgWrap>
-      <clipPath id={clipPathId}>
-        <circle
-          cx={halfSize}
-          cy={halfSize}
-          r={halfSize}
-          {...props}
-        />
+      <clipPath id={clipPathId} {...props}>
+        {children}
       </clipPath>
     </SvgWrap>
   );

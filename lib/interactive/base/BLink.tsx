@@ -18,7 +18,6 @@ export const BLink: FC<TProps> = ({
     <Link
       className={clsx(
         'interactive',
-        'neu-basic',
         look,
         shape,
         classValue,

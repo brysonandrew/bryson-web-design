@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -17,9 +17,9 @@
     "./useMoveSound": "./useMoveSound.ts",
     "./useOffSound": "./useOffSound.ts",
     "./useOnSound": "./useOnSound.ts",
-    "./config/types": "./config/types.ts",
     "./icons/VolumeOff": "./icons/VolumeOff.tsx",
-    "./icons/VolumeOn": "./icons/VolumeOn.tsx"
+    "./icons/VolumeOn": "./icons/VolumeOn.tsx",
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -28,18 +28,21 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/utils": "*",
-    "react-synthwave": "*",
-    "@emotion/styled": "*",
+    "react-synthwave": "^1.2.7",
+    "@emotion/styled": "^11.11.0",
     "@brysonandrew/config-types": "*",
-    "clsx": "*"
+    "clsx": "^1.2.1"
   }
 }

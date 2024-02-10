@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -19,19 +19,22 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/hooks-events": "*",
+    "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
     "@brysonandrew/utils-function": "*",
-    "react": "*"
+    "react": "^18.2.0"
   }
 }

@@ -113,7 +113,9 @@ self.addEventListener('fetch', (event) => {
 
   const cacheCopy = async () => {
     const cache = await resolveCache();
-    let response = await fetch(request);
+    let response = await fetch(request, {
+      cache: 'no-store',
+    });
     try {
       const copy = response.clone();
       putRequest(cache, request, copy);
@@ -136,7 +138,9 @@ self.addEventListener('fetch', (event) => {
       cache,
       request,
     );
-    const networkResponsePromise = fetch(request);
+    const networkResponsePromise = fetch(request, {
+      cache: 'no-store',
+    });
 
     const updateCache = async () => {
       const networkResponse = await networkResponsePromise;

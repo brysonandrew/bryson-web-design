@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/notifications",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Notifications library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -11,9 +11,9 @@
       "default": "./index.tsx"
     },
     "./cart/CartStateHandler": "./cart/CartStateHandler.tsx",
+    "./config/types": "./config/types.ts",
     "./clipboard/ClipboardStateHandler": "./clipboard/ClipboardStateHandler.tsx",
-    "./clipboard/useClipboardState": "./clipboard/useClipboardState.ts",
-    "./config/types": "./config/types.ts"
+    "./clipboard/useClipboardState": "./clipboard/useClipboardState.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -22,20 +22,22 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "framer-motion": "*",
-    "react": "*",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
     "@brysonandrew/icons-keys": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/loading": "*",
     "@brysonandrew/icons-i": "*",
-    "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/space": "*"
+    "@brysonandrew/hooks-window": "*"
   }
 }

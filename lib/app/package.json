@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -27,14 +27,17 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-object": "*",
     "@brysonandrew/layout-effects": "*",
@@ -42,7 +45,7 @@
     "@brysonandrew/layout-back": "*",
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
-    "framer-motion": "*",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/fade-edge": "*",
     "@brysonandrew/color": "*",
     "@brysonandrew/layout": "*"

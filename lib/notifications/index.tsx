@@ -5,7 +5,7 @@ import { FC } from 'react';
 export type TNotificationsProps = TNotificationsConfig & {
   Handlers: FC<TNotificationsConfig>[];
 };
-export const Cart = ({
+export const Notifications = ({
   Handlers,
   ...config
 }: TNotificationsProps) => {
@@ -24,6 +24,6 @@ export const Cart = ({
 };
 
 export * from './cart/CartStateHandler';
+export * from './config/types';
 export * from './clipboard/ClipboardStateHandler';
 export * from './clipboard/useClipboardState';
-export * from './config/types';

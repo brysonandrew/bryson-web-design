@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "In View library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -19,18 +19,21 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "react-device-detect": "*",
+    "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "@brysonandrew/config-types": "*",
-    "react-intersection-observer": "*",
-    "clsx": "*",
-    "framer-motion": "*"
+    "react-intersection-observer": "^9.5.3",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.18.0"
   }
 }

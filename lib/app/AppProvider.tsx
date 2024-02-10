@@ -72,15 +72,3 @@ export const AppProvider = <
     </CONTEXT.Provider>
   );
 };
-
-type TConsumerProps<S extends TPartialDefaultStyle> = {
-  children(values: TValue<S>): JSX.Element;
-};
-export const AppConsumer = <
-  S extends TPartialDefaultStyle,
->({
-  children,
-}: TConsumerProps<S>) => {
-  const CONTEXT = initContext();
-  return <CONTEXT.Consumer>{children}</CONTEXT.Consumer>;
-};

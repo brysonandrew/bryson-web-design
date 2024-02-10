@@ -5,7 +5,7 @@ import { TClipboardState } from '@brysonandrew/notifications';
 import { resolveErrorMessage } from '@brysonandrew/utils-error';
 import { FC } from 'react';
 
-type TCopyProps = Pick<TClipboardState, 'handler'> &
+export type TCopyProps = Pick<TClipboardState, 'handler'> &
   TTitleProps & {
     value: string;
   };
@@ -17,7 +17,7 @@ export const Copy: FC<TCopyProps> = ({
   return (
     <BSm
       shape='interactive-sq-sm'
-      title={`Copy ${title} text to clipboard`}
+      title={`Copy ${title} to clipboard`}
       icon={COPY_ICON}
       onClick={async () => {
         try {

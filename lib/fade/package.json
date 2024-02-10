@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,7 +23,10 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
@@ -31,10 +34,10 @@
   ],
   "peerDependencies": {
     "@brysonandrew/fade-edge": "*",
-    "clsx": "*",
-    "react": "*",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/config-types": "*",
-    "framer-motion": "*"
+    "framer-motion": "^10.18.0"
   }
 }

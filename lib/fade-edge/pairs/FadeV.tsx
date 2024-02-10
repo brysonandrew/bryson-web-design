@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import {
   FadeEdgePair,
   TFadeEdgePairProps,
-} from '@brysonandrew/fade/index';
+} from '@brysonandrew/fade';
 
 export type TFadeVProps = TFadeEdgePairProps;
 export const FadeV: FC<TFadeVProps> = (props) => {

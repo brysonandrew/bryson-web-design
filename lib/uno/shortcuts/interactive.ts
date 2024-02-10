@@ -16,8 +16,9 @@ export const SHAPES: StaticShortcutMap = {
 };
 
 export const LOOKS: StaticShortcutMap = {
-  'interactive-circ': 'bg-black-2 border-1-gray-04',
-  'interactive-circ-light': 'bg-white-2 border-1-gray-04',
+  'interactive-circ': 'bg-black-2 border-1 border-gray',
+  'interactive-circ-light':
+    'bg-white-2 border-1 border-gray',
   ...(NEU_CLASSES_RECORD as TNewClassesRecord),
 } as const;
 
@@ -25,10 +26,10 @@ export const INTERACTIVE: StaticShortcutMap = {
   'circle-interactive': 'relative center cursor-pointer',
   interactive:
     'relative center hover:interactive-hover disabled:interactive-disabled',
-  'interactive-active': 'shadow-1-teal-04 text-teal',
+  'interactive-active': 'text-accent',
   'interactive-disabled':
     'text-gray-1 cursor-not-allowed opacity-90',
-  'interactive-hover': 'opacity-90',
+  'interactive-hover': 'opacity-60',
   ...SHAPES,
   ...LOOKS,
 } as const;

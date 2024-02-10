@@ -99,7 +99,7 @@ export const Input = <T extends HTMLElement>({
       setInput(instance);
     }
   };
-  
+
   return (
     <motion.label
       className='_contact_label'
@@ -114,7 +114,6 @@ export const Input = <T extends HTMLElement>({
       <>
         <LabelBack
           classValue='_contact_label-texture-glow'
-          layout
         />
         <Name title={name} />
         {children({

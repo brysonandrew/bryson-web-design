@@ -1,6 +1,12 @@
+import pkg from '@pkg';
 import { QUOTE_RX } from '@ops/config/constants';
 import { INTERNAL_PREFIX } from '@ops/exporter/config/constants';
 import { isRelative } from '@ops/utils/exporter/config';
+import { TStringRecord } from '@brysonandrew/config-types';
+const parentDeps: TStringRecord = {
+  ...pkg.dependencies,
+  ...pkg.devDependencies,
+};
 
 type TConfig = {
   file: string;
@@ -48,7 +54,7 @@ export const resolveDeps = ({
         if (name === libName) return;
         lib = [appName, libName].join('/');
       }
-      peerDependencies[lib] = version;
+      peerDependencies[lib] = parentDeps[lib] ?? version;
     }
   });
   return peerDependencies;

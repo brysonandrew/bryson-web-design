@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/head",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,16 +21,19 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "react-helmet-async": "*",
+    "react": "^18.2.0",
+    "react-helmet-async": "^1.3.0",
     "@brysonandrew/app": "*",
-    "react-router": "*"
+    "react-router": "^6.21.1"
   }
 }

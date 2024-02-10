@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -33,21 +33,24 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "framer-motion": "*",
+    "react": "^18.2.0",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/hooks": "*",
     "@brysonandrew/scroll": "*",
     "@brysonandrew/animation": "*",
-    "clsx": "*",
+    "clsx": "^1.2.1",
     "@brysonandrew/app": "*",
     "@brysonandrew/config": "*",
     "@brysonandrew/icons-i": "*"

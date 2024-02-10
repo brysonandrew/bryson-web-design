@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-life-cycle",
-  "version": "6.21.240",
+  "version": "6.21.248",
   "description": "Hooks Life Cycle library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,13 +21,16 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*"
+    "react": "^18.2.0"
   }
 }

@@ -16,7 +16,7 @@ export const Back: TBackC = ({ dark, ...props }) => {
         classValue,
       )}
       dark={{
-        className: clsx(
+        classValue: clsx(
           'bg-black',
           positionClassValue,
           darkClassValue,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -28,24 +28,27 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/hooks-dom": "*",
-    "framer-motion": "*",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/interactive": "*",
     "@brysonandrew/app": "*",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/head": "*",
-    "clsx": "*",
+    "clsx": "^1.2.1",
     "@brysonandrew/utils": "*"
   }
 }

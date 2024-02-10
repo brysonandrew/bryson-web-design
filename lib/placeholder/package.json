@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.170",
+  "version": "6.22.178",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,21 +21,24 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "framer-motion": "*",
-    "react": "*",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
     "@brysonandrew/utils-attributes": "*",
-    "clsx": "*",
+    "clsx": "^1.2.1",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/color": "*",
-    "unocss": "*",
+    "unocss": "^0.53.6",
     "@brysonandrew/utils-css": "*"
   }
 }

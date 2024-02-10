@@ -56,3 +56,6 @@ export type TSvgProps = SVGAttributes<SVGElement> &
 
 export type TSvgCircleProps =
   SVGAttributes<SVGCircleElement> & TClassValueProps;
+
+export type TSvgClipPathProps =
+  SVGAttributes<SVGClipPathElement> & TClassValueProps;
