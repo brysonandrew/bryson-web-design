@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "6.22.177",
+  "version": "6.22.178",
   "description": "Icons library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/service-worker",
-  "version": "6.22.177",
+  "version": "6.22.178",
   "description": "Service Worker library",
   "types": "/index.d.ts",
   "main": "./index.ts",

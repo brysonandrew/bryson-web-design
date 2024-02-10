@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-key",
-  "version": "6.22.177",
+  "version": "6.22.178",
   "description": "Utils Key library",
   "main": "./index.ts",
   "module": "./index.ts",
