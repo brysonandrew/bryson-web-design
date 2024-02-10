@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -16,9 +16,9 @@
     "./hooks/useItemsConfig": "./hooks/useItemsConfig.ts",
     "./hooks/useProjectsRedirect": "./hooks/useProjectsRedirect.ts",
     "./utils/resolveItem": "./utils/resolveItem.ts",
+    "./components/buttons/Circle": "./components/buttons/Circle.tsx",
     "./components/content/Header": "./components/content/Header.tsx",
-    "./components/content": "./components/content/index.tsx",
-    "./components/buttons/Circle": "./components/buttons/Circle.tsx"
+    "./components/content": "./components/content/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -27,7 +27,10 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
@@ -36,20 +39,20 @@
   "peerDependencies": {
     "@brysonandrew/gallery-list": "*",
     "@brysonandrew/gallery-viewer": "*",
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/config": "*",
     "@brysonandrew/app": "*",
-    "react-router": "*",
-    "react-router-dom": "*",
+    "react-router": "^6.21.1",
+    "react-router-dom": "^6.21.3",
     "@brysonandrew/utils-format": "*",
-    "framer-motion": "*",
-    "clsx": "*",
+    "@brysonandrew/interactive": "*",
+    "framer-motion": "^10.18.0",
+    "clsx": "^1.2.1",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/interactive": "*"
+    "@brysonandrew/animation": "*"
   },
   "types": "index.d.ts"
 }

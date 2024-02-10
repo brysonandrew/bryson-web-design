@@ -5,7 +5,7 @@ import {
 } from '@brysonandrew/notifications';
 import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
-import { createPortal } from 'react-dom';
+import ReactDom from 'react-dom';
 import { Item } from './Item';
 
 export type TPhoneLinkInfo = {
@@ -63,7 +63,7 @@ export const ContactList: FC<TContactListProps> = ({
           </Item>
         )}
       </ul>
-      {createPortal(
+      {ReactDom.createPortal(
         <ClipboardStateHandler
           key='CLIPBOARD_STATE_HANDLER'
           {...clipboardState}

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/space",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Space library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -40,16 +40,19 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/hooks-dom": "*",
-    "clsx": "*"
+    "clsx": "^1.2.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-glow",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Color Glow library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -24,7 +24,10 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",

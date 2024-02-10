@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Layout Typography library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,17 +26,20 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/styled": "*",
-    "clsx": "*",
-    "framer-motion": "*",
-    "react": "*",
+    "@emotion/styled": "^11.11.0",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
     "@brysonandrew/animation": "*",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/utils-key": "*",

@@ -9,3 +9,4 @@ export const BackScreen: TBackC = ({
     <Back positionClassValue='fill-screen' {...props} />
   );
 };
+ 

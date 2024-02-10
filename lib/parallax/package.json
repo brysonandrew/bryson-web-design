@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/parallax",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -27,20 +27,23 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "framer-motion": "*",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/in-view": "*",
-    "clsx": "*",
-    "react": "*",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
     "@brysonandrew/animation": "*",
-    "react-intersection-observer": "*",
-    "react-device-detect": "*",
+    "react-intersection-observer": "^9.5.3",
+    "react-device-detect": "^2.2.3",
     "@brysonandrew/space": "*",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/scroll": "*",
