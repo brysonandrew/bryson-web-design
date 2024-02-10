@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-shortcuts",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Uno Shortcuts library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,8 +14,6 @@
     },
     "./interactive": "./interactive.ts",
     "./layout": "./layout.ts",
-    "./text/color": "./text/color.ts",
-    "./text": "./text/index.ts",
     "./neu/constants": "./neu/constants.ts",
     "./neu/format": "./neu/format.ts",
     "./neu/mappers": "./neu/mappers.ts",
@@ -24,6 +22,8 @@
     "./neu/resolveNeuClasses": "./neu/resolveNeuClasses.ts",
     "./neu/resolveNeuShadow": "./neu/resolveNeuShadow.ts",
     "./neu/types": "./neu/types.ts",
+    "./text/color": "./text/color.ts",
+    "./text": "./text/index.ts",
     "./neu/ranges": "./neu/ranges/index.ts",
     "./neu/ranges/resolveRange": "./neu/ranges/resolveRange.ts"
   },
@@ -34,13 +34,16 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "unocss": "*"
+    "unocss": "^0.53.6"
   }
 }

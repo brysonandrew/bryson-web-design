@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.243",
+  "version": "6.21.247",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -26,7 +26,10 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
@@ -35,17 +38,17 @@
   "peerDependencies": {
     "@brysonandrew/animation": "*",
     "@brysonandrew/cursor": "*",
-    "framer-motion": "*",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/gallery-viewer": "*",
     "@brysonandrew/space": "*",
-    "react-dom": "*",
-    "react-device-detect": "*",
+    "react-dom": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "@brysonandrew/app": "*",
-    "react": "*",
+    "react": "^18.2.0",
     "@brysonandrew/in-view": "*",
     "@brysonandrew/icons": "*",
     "@brysonandrew/sounds": "*",
-    "react-router-dom": "*",
+    "react-router-dom": "^6.21.3",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/gallery": "*",
     "@brysonandrew/icons-keys": "*",

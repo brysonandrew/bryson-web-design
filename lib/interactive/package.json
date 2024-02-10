@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -39,7 +39,10 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
@@ -50,11 +53,11 @@
     "@brysonandrew/icons-keys": "*",
     "@brysonandrew/notifications": "*",
     "@brysonandrew/utils-error": "*",
-    "react": "*",
-    "@emotion/styled": "*",
-    "clsx": "*",
-    "react-router-dom": "*",
-    "framer-motion": "*",
+    "react": "^18.2.0",
+    "@emotion/styled": "^11.11.0",
+    "clsx": "^1.2.1",
+    "react-router-dom": "^6.21.3",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/app": "*",

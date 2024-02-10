@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/network",
-  "version": "6.22.173",
+  "version": "6.22.177",
   "description": "Network library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -11,15 +11,18 @@
   },
   "author": "Andrew Bryson <andrewbryson12@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/brysonandrew/brysona.dev.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
   "sideEffects": false,
   "keywords": [
     "react",
     "typescript"
   ],
   "peerDependencies": {
-    "react": "*",
-    "framer-motion": "*",
+    "react": "^18.2.0",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/animation": "*",
     "@brysonandrew/icons-i": "*",
     "@brysonandrew/icons-keys": "*",

@@ -1,13 +1,15 @@
-import {
-  DEP_PREFIX,
-} from '../config/constants';
+import { DEP_PREFIX } from '../config/constants';
 import { join, parse } from 'path';
 import { resolveDeps } from './resolveDeps';
 import { readFile } from '@ops/utils';
 import { TTarget } from '@ops/exporter/config/types';
 import { QUOTE_JSON } from '@ops/config/constants';
+import { TStringRecord } from '@brysonandrew/config-types';
 
-type TConfig = { paths: string[]; target: TTarget };
+type TConfig = {
+  paths: string[];
+  target: TTarget;
+};
 export const parsePaths = async ({
   paths,
   target,
@@ -18,7 +20,7 @@ export const parsePaths = async ({
   let peerDependencies: Record<string, unknown> = {};
   const indexRows: string[] = [];
   const exportRows: string[] = [];
-  
+
   for await (const path of paths) {
     const filePath = join(dir, path);
     const file = readFile(filePath);
@@ -78,5 +80,11 @@ export const parsePaths = async ({
       `${importKey}: ${QUOTE_JSON}./${path}${QUOTE_JSON}`,
     );
   }
-  return { exportRows, indexRows, main, types, peerDependencies };
+  return {
+    exportRows,
+    indexRows,
+    main,
+    types,
+    peerDependencies,
+  };
 };
