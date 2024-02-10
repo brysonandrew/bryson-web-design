@@ -1,9 +1,5 @@
 export * from './Copy';
 export * from './LinkFillCenter';
-export * from './circle/Anchor';
-export * from './circle/Background';
-export * from './circle/Button';
-export * from './circle';
 export * from './base/B';
 export * from './base/BAnchor';
 export * from './base/BAnchorMotion';
@@ -19,3 +15,7 @@ export * from './base/IconLink';
 export * from './base/Row';
 export * from './base/TextAnchor';
 export * from './base/TextLink';
+export * from './circle/Anchor';
+export * from './circle/Background';
+export * from './circle/Button';
+export * from './circle';
