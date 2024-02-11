@@ -1,4 +1,4 @@
-import { findTargets } from './findTargets';
+import { findPkgPaths } from './findPkgPaths';
 import { resolveTargetDirPath } from './resolveTargetDirPath';
 import { writePkgWorkspaces } from '@ops/exporter/writePkgWorkspaces';
 import { processTargets } from '@ops/exporter/processTargets';
@@ -7,7 +7,7 @@ import { writeTsPathWorkspacePaths } from '@ops/exporter/writeTsPathWorkspacePat
 (async () => {
   try {
     const targetDirPath = await resolveTargetDirPath();
-    const record = await findTargets(targetDirPath);
+    const record = await findPkgPaths(targetDirPath);
     const { targets, workspaces, tsPathRecord } = record;
     await writePkgWorkspaces(workspaces);
     await writeTsPathWorkspacePaths(tsPathRecord);
@@ -16,3 +16,4 @@ import { writeTsPathWorkspacePaths } from '@ops/exporter/writeTsPathWorkspacePat
     console.log('Exporter - something went wrong: ', error);
   }
 })(); 
+ 

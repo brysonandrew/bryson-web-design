@@ -60,11 +60,11 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
         className='_contact_submit-text'
         transition={TRANSITION_02_EASEIN_008}
         style={{
-          letterSpacing: '0.00675em',
+          letterSpacing: '0.1em',
         }}
         variants={{
           animate: {
-            letterSpacing: '0.00675em',
+            letterSpacing: '0.1em',
           },
           hover: {
             letterSpacing: '0.25em',

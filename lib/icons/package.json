@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "6.22.179",
+  "version": "6.22.182",
   "description": "Icons library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -28,7 +28,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/icons-keys": "*",
-    "@brysonandrew/icons-i": "*"
+    "@brysonandrew/icons-i": "*",
+    "@brysonandrew/icons-keys": "*"
   }
 }

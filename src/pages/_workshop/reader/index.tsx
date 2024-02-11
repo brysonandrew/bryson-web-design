@@ -4,7 +4,7 @@ import { Voices } from './controls/voices';
 import { Settings } from './controls/settings';
 import { P2 } from '@brysonandrew/space/P2';
 import { TextInput } from './components/TextInput';
-import { ReaderShell } from './components/ReaderShell';
+import { ReaderShell } from './components/Shell';
 
 export const Reader: FC = () => {
   return (
