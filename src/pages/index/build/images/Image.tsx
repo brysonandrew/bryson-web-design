@@ -10,7 +10,6 @@ import clsx from 'clsx';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
-import styled from '@emotion/styled';
 import { isDesktop } from 'react-device-detect';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import {
@@ -22,8 +21,6 @@ import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { GALLERY_ICON } from '@brysonandrew/icons-keys/gallery';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { ORIGIN_50 } from '@pages/index/build/config/constants';
-
-const Button = styled(motion.button)``;
 
 type TProps = TImgMotionProps & {
   isScrolling: boolean;
@@ -83,7 +80,7 @@ export const Image: FC<TProps> = (props) => {
       }}
       {...(isDesktop ? handlers : {})}
     >
-      <Button
+      <motion.button
         className='cursor-zoom-in'
         {...resolveInteractiveLabels(title)}
         onTap={handleTap}
@@ -93,7 +90,7 @@ export const Image: FC<TProps> = (props) => {
           {...pictureProps}
           {...dimensions}
         />
-      </Button>
+      </motion.button>
     </motion.li>
   );
 };

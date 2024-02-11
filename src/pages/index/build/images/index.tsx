@@ -1,10 +1,7 @@
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
 import { useBuild } from '@pages/index/build/BuildProvider';
 import { type FC } from 'react';
 import { Image } from './Image';
 import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
-import styled from '@emotion/styled';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
 import { useScroll } from '@brysonandrew/scroll';
@@ -13,12 +10,10 @@ import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { ORIGIN_50 } from '@pages/index/build/config/constants';
+import { motion } from 'framer-motion';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
-
-const Root = styled(motion.div)``;
-const List = styled(motion.ul)``;
 
 type TProps = TPartialParallaxMotionProps;
 export const Images: FC<TProps> = ({ style }) => {
@@ -37,33 +32,36 @@ export const Images: FC<TProps> = ({ style }) => {
     ? viewportWidth
     : halfViewportWidth;
 
+  const verticalImageSize = viewportWidth * 0.7;
+  const horizontalImageSize =
+    ((radius * Math.PI) / ((records ?? []).length * 0.5)) *
+    0.7;
+
   const imageSize = isVertical
-    ? halfViewportWidth
-    : ((radius * Math.PI) /
-        ((records ?? []).length * 0.5)) *
-      0.7;
+    ? verticalImageSize
+    : horizontalImageSize;
 
   const listStyle = isVertical
     ? {
         rotateY: 0,
         rotateX: 0,
-        x: -halfViewportWidth,
+        x: -verticalImageSize * 0.95,
         z: 0,
-        y: -550,
+        y: -620,
       }
     : {
         rotateY: 0,
         rotateX: -4,
         x: 0,
         z: 0,
-        y: -280,
+        y: -400,
       };
 
   return (
     <>
       <P8 />
-      <Root
-        className={clsx('center relative w-full z-0')}
+      <motion.div
+        className='center relative w-full z-0'
         style={{
           height: HEIGHT,
           opacity,
@@ -73,7 +71,7 @@ export const Images: FC<TProps> = ({ style }) => {
         }}
       >
         {!isResizing && (
-          <List
+          <motion.ul
             className='h-0 w-0 preserve-3d will-change-transform'
             style={{
               perspective: 10000,
@@ -108,9 +106,9 @@ export const Images: FC<TProps> = ({ style }) => {
                 );
               },
             )}
-          </List>
+          </motion.ul>
         )}
-      </Root>
+      </motion.div>
     </>
   );
 };
