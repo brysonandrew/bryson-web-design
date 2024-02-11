@@ -6,7 +6,7 @@ import {
   TDivProps,
 } from '@brysonandrew/config-types/dom';
 import clsx, { ClassValue } from 'clsx';
-import { P16Y } from '@brysonandrew/space';
+import { P16Y, P6 } from '@brysonandrew/space';
 import { P12Y } from '@brysonandrew/space/P12Y';
 
 type TProps = Omit<TDivProps, 'title'> & {
@@ -28,7 +28,7 @@ export const Section: FC<TProps> = ({
       id={title}
       {...props}
     >
-      <P12Y classValue='flex lg:hidden' />
+      <P6 classValue='flex lg:hidden' />
       <Title>{title}</Title>
       <P12Y classValue='flex lg:hidden' />
       <P16Y classValue='hidden lg:flex' />
