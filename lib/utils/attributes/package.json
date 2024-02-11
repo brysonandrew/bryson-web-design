@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-attributes",
-  "version": "6.22.178",
+  "version": "6.22.179",
   "description": "Utils Attributes library",
   "main": "./index.ts",
   "module": "./index.ts",
