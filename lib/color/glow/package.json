@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-glow",
-  "version": "6.22.178",
+  "version": "6.22.179",
   "description": "Color Glow library",
   "types": "/index.d.ts",
   "main": "./index.ts",
