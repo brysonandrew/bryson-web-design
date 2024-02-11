@@ -13,17 +13,19 @@ export const Background: FC<TProps> = ({
   style,
   ...props
 }) => {
-  const { Back, BORDER_RADIUS, GLOW_BOX } = useApp();
+  const { BackBlur, BORDER_RADIUS, GLOW_BOX } = useApp();
   return (
     <motion.div
-      className='absolute w-10 h-10 pointer-events-none'
+      className='absolute w-10 h-10 backdrop-blur-sm bg-black-08 pointer-events-none'
       style={{
         borderRadius: BORDER_RADIUS.XL,
       }}
       transition={{ duration: DURATION * 3 }}
       {...props}
     >
-      <Back style={{ borderRadius: BORDER_RADIUS.XL }} />
+      <BackBlur
+        style={{ borderRadius: BORDER_RADIUS.XL }}
+      />
       <motion.div
         className={clsx('absolute inset-0')}
         {...resolvePresence(

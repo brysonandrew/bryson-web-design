@@ -39,6 +39,10 @@ export const useLayoutRecord = <S extends TDefaultStyle>(
       commonProps,
       APP.BackMotion,
     ),
+    BackFillMotion: withStyle<TBackMotionProps>(
+      commonProps,
+      APP.BackFillMotion,
+    ),
     BackBlur: withStyle<TBackBlurProps>(
       commonProps,
       APP.BackBlur,

@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Core } from './core';
@@ -13,7 +12,7 @@ import {
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
-  const { Back, GLOW_BOX } = useApp();
+  const { BackFillMotion, GLOW_BOX } = useApp();
   const { handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     'footer',
@@ -25,7 +24,9 @@ export const Footer: FC<TProps> = (props) => {
       {...PRESENCE_UP_Y}
       {...handlers}
     >
-      <Back style={{ boxShadow: GLOW_BOX['white'] }} />
+      <BackFillMotion
+        style={{ boxShadow: GLOW_BOX['white'] }}
+      />
       <Core {...props} />
     </motion.footer>
   );

@@ -64,7 +64,7 @@ export const Providers: FC<TProps> = ({
           BackFillMotion={Metal}
           Glow={Glow}
           sounds={{
-            move: handleMove,
+            move: handleMove, 
             on: handleOnSound,
             off: handleOffSound,
           }}

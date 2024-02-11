@@ -19,7 +19,10 @@ import { TStyle } from '@app/style';
 import { PAGE_RECORD } from '@app/routes';
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 
-export type TPackageProps = Pick<TPriceProps, 'discount'> & {
+export type TPackageProps = Pick<
+  TPriceProps,
+  'discount'
+> & {
   title: TPricingTitle;
 };
 export const Package: FC<TPackageProps> = ({ title }) => {
@@ -32,7 +35,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
     PreContent,
     classValue,
   } = config;
-  const { COLOR, LIGHT, BORDER_RADIUS, Back } =
+  const { COLOR, LIGHT, BORDER_RADIUS, BackFillMotion } =
     useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
@@ -61,7 +64,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
       onClick={handleClick}
     >
       {LIGHT && (
-        <LIGHT.Glow
+        <LIGHT.Back
           color={COLOR[key]}
           box={4}
           drop={4}
@@ -77,7 +80,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
               borderRadius: BORDER_RADIUS.MD,
             }}
           />
-        </LIGHT.Glow>
+        </LIGHT.Back>
       )}
       <motion.div
         className={clsx(
@@ -104,7 +107,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
             borderRadius: BORDER_RADIUS.MD,
           }}
         >
-          <Back />
+          <BackFillMotion />
           <P4 />
           <div
             className='relative px-4'
@@ -119,7 +122,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
         </div>
         <P_25 />
         <End>
-          <Back />
+          <BackFillMotion />
           <Price price={price} discount={discount} />
         </End>
       </motion.div>
