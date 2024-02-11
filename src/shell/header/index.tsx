@@ -5,16 +5,14 @@ import { Main } from './main';
 import { Pages } from './pages';
 import { isMobile } from 'react-device-detect';
 import { PRESENCE_DOWN_Y } from '@app/animation';
-
 import { useScroll } from '@brysonandrew/scroll';
-import { P1_5, P2, P4 } from '@brysonandrew/space';
 
 const Root = styled.header``;
 
 export const Header: FC = () => {
   const { isScroll } = useScroll();
   return (
-    <Root className='fixed top-0 left-0 w-full p-8 md:p-6 h-0 z-10'>
+    <Root className='fixed top-0 left-0 w-full p-6 h-0 z-10'>
       <AnimatePresence initial={false}>
         {!isScroll && (
           <motion.nav

@@ -18,6 +18,6 @@ export const resolvePreflights = <T extends object>(
       thumbDark: colors['highlight'],
       thumbBorderDark: colors['accent'],
       thumbHoverDark: colors['gray-3'],
-      backgroundColorDark: colors['black-2'],
+      backgroundColorDark: colors['black-8'],
     },
   });

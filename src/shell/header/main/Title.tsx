@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { List } from '../List';
 import { Item } from '../Item';
 
 const ITEMS = [
@@ -9,10 +8,10 @@ const ITEMS = [
 
 export const Title: FC = () => {
   return (
-    <List>
+    <ul className='row gap-2.5'>
       {ITEMS.map((item) => (
         <Item key={item.title} {...item} />
       ))}
-    </List>
+    </ul>
   );
 };

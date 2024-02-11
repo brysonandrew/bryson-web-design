@@ -16,7 +16,7 @@ export const PARALLAX_PROPS: TParallaxOptions = {
       startScroll,
       startScroll + MAX_SCROLL,
     ],
-    output: [0, 280],
+    output: [0, 400],
   },
   visibility: {
     input: ({ startScroll }) => [

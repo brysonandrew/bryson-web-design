@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/loading",
-  "version": "6.22.179",
+  "version": "6.22.182",
   "description": "Loading library",
   "main": "./index.ts",
   "module": "./index.ts",
