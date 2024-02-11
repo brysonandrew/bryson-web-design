@@ -19,10 +19,10 @@ export const Arrows: FC<TProps> = (props) => {
           BASE_NAV_BUTTON_CLASS,
           'left-4 md:left-6',
         )}
-      >
+      > 
         <Left {...props} />
       </Circle>
-      <Circle
+      <Circle 
         position='absolute'
         classValue={clsx(
           BASE_NAV_BUTTON_CLASS,

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import {
   TBaseProps,
-  useGallery,
   useViewer as useContext,
 } from '@brysonandrew/gallery';
 import { ViewerHeader } from './header/ViewerHeader';
