@@ -7,4 +7,4 @@ export const CONTACT_FORM_BASE = {
   submit: 'bg-input center input-base py-3 pr-3',
   'submit-text': 'relative italic',
   footer: 'column-end gap-2',
-};
+} as const;

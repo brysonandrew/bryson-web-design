@@ -2,9 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ops/*": [
-        "ops/*"
-      ],
       "@pkg": [
         "package.json"
       ],
@@ -14,44 +11,8 @@
       "@ts/paths": [
         "tsconfig.paths.json"
       ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@constants/*": [
-        "src/constants/*"
-      ],
-      "@context/*": [
-        "src/context/*"
-      ],
-      "@css/*": [
-        "src/css/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@icons/*": [
-        "src/icons/*"
-      ],
-      "@logic/*": [
-        "src/logic/*"
-      ],
-      "@main/*": [
-        "src/main/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@app/*": [
-        "config/app/*"
-      ],
-      "@uno/*": [
-        "config/uno/*"
-      ],
-      "@shell/*": [
-        "src/shell/*"
+      "@ops/*": [
+        "ops/*"
       ],
       "@brysonandrew/utils-transformer": [
         "lib/utils/transformer"
@@ -514,6 +475,48 @@
       ],
       "@brysonandrew/loading/*": [
         "lib/loading/*"
+      ],
+      "@app": [
+        "config/app"
+      ],
+      "@uno": [
+        "config/uno"
+      ],
+      "@vite": [
+        "config/vite"
+      ],
+      "@vite/*": [
+        "config/vite/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@hooks": [
+        "src/hooks"
+      ],
+      "@pages": [
+        "src/pages"
+      ],
+      "@shell": [
+        "src/shell"
+      ],
+      "@app/*": [
+        "config/app/*"
+      ],
+      "@uno/*": [
+        "config/uno/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@shell/*": [
+        "src/shell/*"
       ]
     }
   }

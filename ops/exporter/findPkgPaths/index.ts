@@ -1,13 +1,14 @@
-import { parsePkgPaths } from '@ops/exporter/findTargets/parsePkgPaths';
+import { parsePkgPaths } from '@ops/exporter/findPkgPaths/parsePkgPaths';
 import { resolvePwd } from '@ops/utils/dirs/pwd';
 import glob from 'fast-glob';
 import { join } from 'path';
 
-export const findTargets = async (main: string) => {
+export const findPkgPaths = async (main: string) => {
   try {
+    const cwd = resolvePwd();
     const pattern = join(main, `./**/package.json`);
     const paths = await glob([pattern], {
-      cwd: resolvePwd(),
+      cwd,
     });
     const curr = parsePkgPaths(paths);
     return curr;

@@ -3,7 +3,7 @@ import {
   INIT_WORKSPACES,
   INIT_TARGETS,
   INIT_TS_PATH_RECORD,
-} from '@ops/exporter/findTargets/constants';
+} from '@ops/exporter/findPkgPaths/constants';
 import { parse } from 'path';
 
 export const parsePkgPaths = (pkgPaths: string[]) => {

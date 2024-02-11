@@ -22,7 +22,7 @@ const record = {
   'input-text':
     'bg-input border border-transparent input-base py-2',
   name: 'relative flex justify-center shrink-0 w-full py-2 pl-0 md:(w-40 pl-6 justify-start)',
-};
+} as const;
 type TRecord = typeof record;
 export const resolveContactFormGlowShortcuts = (
   resolvePartial?: TResolvePartial<TRecord>,

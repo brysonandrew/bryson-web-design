@@ -24,7 +24,7 @@ const record = {
   'input-text':
     'bg-input input-base py-2 pr-12 md:w-9/12 lg:pr-14',
   name: 'title-input relative shrink-0 w-full py-2 pl-0 leading-none md:(w-3/12 justify-start)',
-};
+} as const;
 type TRecord = typeof record;
 export const resolveContactFormMinimalistShortcuts = (
   resolvePartial?: TResolvePartial<TRecord>,

@@ -1,4 +1,8 @@
-import { Navigate, RouteObject } from 'react-router-dom';
+import {
+  IndexRouteObject,
+  Navigate,
+  RouteObject,
+} from 'react-router-dom';
 import * as Pages from '@pages/index';
 import * as WorkshopPages from '@pages/_workshop';
 import { Shell } from '@shell/index';
@@ -43,18 +47,17 @@ const STANDALONE_ROUTES = [
   },
 ];
 
+const INDEX: IndexRouteObject = {
+  index: true,
+  path: PAGE_RECORD.index.path,
+  Component: Pages.Index,
+};
+
 export const ROUTES: RouteObject[] = [
   {
     path: PAGE_RECORD.index.path,
     Component: Shell,
-    children: [
-      {
-        index: true,
-        path: PAGE_RECORD.index.path,
-        Component: Pages.Index,
-      },
-      ...PAGES_ROUTES,
-    ],
+    children: [INDEX, ...PAGES_ROUTES],
   },
   ...STANDALONE_ROUTES,
 ];
