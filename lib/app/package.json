@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.178",
+  "version": "6.22.179",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
