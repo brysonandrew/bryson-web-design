@@ -1,0 +1,39 @@
+{
+  "name": "@brysonandrew/not-found",
+  "version": "6.22.186",
+  "description": "Routes Not Found library",
+  "types": "/index.d.ts",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./RedirectLink": "./RedirectLink.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/config-types": "*",
+    "react-router-dom": "^6.21.3",
+    "@brysonandrew/app": "*",
+    "react-router": "^6.21.1"
+  }
+}

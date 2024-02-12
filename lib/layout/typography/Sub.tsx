@@ -16,7 +16,7 @@ export const Sub: FC<TProps> = ({
 }) => (
   <motion.h4
     className={clsx(
-      'relative top-0 left-0 text-highlight leading-none',
+      'relative top-0 left-0 text-secondary leading-none',
       classValue,
     )}
     style={style}

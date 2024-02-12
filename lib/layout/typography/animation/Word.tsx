@@ -30,7 +30,7 @@ export const Word: FC<TProps> = ({
         <Stagger classValue='font-thin' {...charsProps} />
       ) : (
         <Stagger
-          classValue='text-secondary font-black'
+          classValue='text-primary font-black'
           {...charsProps}
         />
       )}

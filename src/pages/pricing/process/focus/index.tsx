@@ -24,7 +24,7 @@ export const Focus: FC<TProps> = ({ children }) => {
     <>
       {(isActive || isHover) && (
         <div
-          className='absolute -inset-1 bg-secondary-02 pointer-events-none'
+          className='absolute -inset-1 bg-primary-02 pointer-events-none'
           style={{ borderRadius: BORDER_RADIUS.MD }}
         />
       )}

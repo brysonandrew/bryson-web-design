@@ -16,6 +16,8 @@ const sans = resolveWebFont({
 //   provider: 'google',
 //   weights: ['regular'],
 // });
+export const FONTS = { ...sans } as const;
+
 export type TPresets<T extends object> = (
   | Preset<T>
   | Preset<T>[]
@@ -23,6 +25,4 @@ export type TPresets<T extends object> = (
 export const resolvePresets = <
   T extends object,
 >(): TPresets<T> =>
-  withDarkModePreset([
-    presetWebFonts({ fonts: { ...sans } }),
-  ]);
+  withDarkModePreset([presetWebFonts({ fonts: FONTS })]);

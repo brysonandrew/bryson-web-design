@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "6.22.182",
+  "version": "6.22.186",
   "description": "Viewport library",
   "main": "./index.ts",
   "module": "./index.ts",

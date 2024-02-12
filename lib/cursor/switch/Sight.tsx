@@ -49,7 +49,7 @@ export const Sight: FC<TProps> = ({
         ...style,
       }}
       className={clsx(
-        'fixed center dark:bg-highlight bg-accent glow pointer-events-none rounded-full cursor-default z-50',
+        'fixed center dark:bg-secondary bg-accent glow pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
       animate={{

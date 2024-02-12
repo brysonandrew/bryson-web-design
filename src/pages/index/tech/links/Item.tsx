@@ -59,7 +59,7 @@ export const Item: FC<
           />
           <LIGHT.Glow
             drop={6}
-            color={COLOR.highlight}
+            color={COLOR.secondary}
             initial={false}
             animate={{ opacity: isHover ? 1 : 0.05 }}
           />

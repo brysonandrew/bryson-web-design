@@ -1,4 +1,7 @@
-import { BASE_COLOR_RECORD } from '@brysonandrew/color-main';
+import {
+  BASE_COLOR_RECORD,
+  MAIN_RGBS_RECORD,
+} from '@brysonandrew/color-main';
 import {
   TDigit,
   TIndex,
@@ -63,5 +66,9 @@ export type TRgbRecord<K extends string> = Record<
   TRgbSeriesRecordKey<K>,
   TRgb
 >;
+
+export type TMainKey = keyof typeof MAIN_RGBS_RECORD;
+
+export type TGrayscaleKey = 'black' | 'white' | 'gray';
 
 export type { TDigit, TIndex };

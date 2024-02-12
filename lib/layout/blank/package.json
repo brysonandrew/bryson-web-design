@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-blank",
-  "version": "6.22.182",
+  "version": "6.22.186",
   "description": "Layout Blank library",
   "main": "./index.tsx",
   "module": "./index.tsx",

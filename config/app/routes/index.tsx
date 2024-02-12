@@ -1,13 +1,12 @@
 import {
   IndexRouteObject,
-  Navigate,
   RouteObject,
 } from 'react-router-dom';
 import * as Pages from '@pages/index';
-import * as WorkshopPages from '@pages/_workshop';
-import { Shell } from '@shell/index';
+import { Shell } from '@shell';
 import { resolvePageRecords } from '@brysonandrew/routes';
-import { titleToKebab } from '@brysonandrew/utils-format';
+import { NotFound } from '@brysonandrew/routes/not-found';
+import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 
 export const PAGE_TITLES = [
   'Index',
@@ -21,7 +20,7 @@ export type TPageTitle = (typeof PAGE_TITLES)[number];
 const { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES } =
   resolvePageRecords<TPageTitle, any>(PAGE_TITLES, Pages);
 
-export const SECTION_RECORD = {
+const SECTION_RECORD = {
   build: 'Building websites and apps',
   [PAGE_RECORD.pricing.key]:
     "Choose a plan that's right for you", //; 'Website Packages', //'What I can help you with',
@@ -30,36 +29,36 @@ export const SECTION_RECORD = {
   [PAGE_RECORD.contact.key]: 'Get in touch',
 } as const;
 
-const WORKSHOP_ROUTES = Object.entries(WorkshopPages).map(
-  ([key, Component]) => ({
-    path: `/${titleToKebab(key)}`,
-    element: <Component />,
-  }),
-);
-
-const STANDALONE_ROUTES = [
-  ...WORKSHOP_ROUTES,
-  {
-    path: '*',
-    element: (
-      <Navigate to={PAGE_RECORD.index.path} replace />
-    ),
-  },
-];
-
 const INDEX: IndexRouteObject = {
   index: true,
   path: PAGE_RECORD.index.path,
   Component: Pages.Index,
 };
 
-export const ROUTES: RouteObject[] = [
+const MAIN_ROUTES = [
   {
     path: PAGE_RECORD.index.path,
     Component: Shell,
-    children: [INDEX, ...PAGES_ROUTES],
+    children: [
+      INDEX,
+      ...PAGES_ROUTES,
+      {
+        path: '*',
+        element: <NotFound />,
+      },
+    ],
   },
-  ...STANDALONE_ROUTES,
 ];
 
-export { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES };
+const ROUTES: RouteObject[] = [
+  ...MAIN_ROUTES,
+  ...WORKSHOP_ROUTES,
+];
+
+export {
+  ROUTES,
+  PAGES_ROUTES,
+  PAGE_RECORD,
+  PAGE_VALUES,
+  SECTION_RECORD,
+};

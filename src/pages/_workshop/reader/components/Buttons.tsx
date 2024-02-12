@@ -8,7 +8,7 @@ export const Button = styled.button`
   height: 60px;
   border-radius: 50%;
   color: #000;
-  background-color: var(--highlight);
+  background-color: var(--secondary);
   &:disabled {
     filter: brightness(20%);
     cursor: not-allowed;
@@ -33,7 +33,7 @@ export const Button1 = styled.button`
   line-height: 19px;
   font-weight: 700;
   color: #000;
-  background-color: var(--highlight);
+  background-color: var(--secondary);
   margin-right: 12px;
   &:disabled {
     filter: brightness(20%);
@@ -56,7 +56,7 @@ export const Button2 = styled.button`
   line-height: 19px;
   font-weight: 700;
   color: #000;
-  background-color: var(--highlight);
+  background-color: var(--secondary);
   margin-right: 12px;
   &:disabled {
     filter: brightness(20%);

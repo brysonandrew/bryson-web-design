@@ -15,7 +15,7 @@ export type THeadProps<
   prefix?: string;
   description?: string;
   base?: string;
-  highlight?: string;
+  secondary?: string;
 };
 export const Head = <K extends string, V extends string>({
   description = '',
@@ -30,7 +30,7 @@ export const Head = <K extends string, V extends string>({
     titleLookup,
   );
   const base = props.base ?? COLOR['accent'];
-  const highlight = props.highlight ?? COLOR['highlight'];
+  const secondary = props.secondary ?? COLOR['secondary'];
 
   return (
     <Helmet>
@@ -59,11 +59,11 @@ export const Head = <K extends string, V extends string>({
       <link
         rel='mask-icon'
         href={`${prefix}/safari-pinned-tab.svg`}
-        color={highlight}
+        color={secondary}
       />
       <meta
         name='msapplication-TileColor'
-        content={highlight}
+        content={secondary}
       />
       <meta name='theme-color' content={base} />
     </Helmet>

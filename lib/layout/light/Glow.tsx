@@ -10,7 +10,7 @@ export const LightGlow =
         box={6}
         variants={{
           idle: {
-            color: COLOR.secondary,
+            color: COLOR.primary,
             opacity: 0.6,
           },
           hover: {
@@ -20,7 +20,7 @@ export const LightGlow =
           ...variants,
         }}
         style={{
-          color: COLOR.secondary,
+          color: COLOR.primary,
           opacity: 0.6,
           ...style,
         }}

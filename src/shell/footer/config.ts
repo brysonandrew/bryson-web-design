@@ -2,7 +2,7 @@ import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 
 export const ICON_CLASS_VALUE_PROPS: TClassValueProps = {
   classValue:
-    'dark:fill-highlight fill-current dark:stroke-current stroke-none',
+    'dark:fill-secondary fill-current dark:stroke-current stroke-none',
 };
 
 export const SHARED_ANIMATION_PROPS = {

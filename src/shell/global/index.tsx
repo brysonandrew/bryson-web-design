@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { AURA } from '@brysonandrew/svg-filter/aura';
 import { useCurrParams } from '@brysonandrew/gallery';
 import { Head, MonoHead } from '@brysonandrew/dark-mode';
@@ -20,7 +20,9 @@ type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
 type TTitleLookup = Record<TPath, TPageValue>;
 
-export const Global: FC = () => {
+export const Global: FC<PropsWithChildren> = ({
+  children,
+}) => {
   const { name, project } = useCurrParams();
   const titleLookup = {
     ...Object.values(PAGE_RECORD).reduce(
@@ -57,6 +59,7 @@ export const Global: FC = () => {
       <AURA.GLOBAL.Filter />
       <PLACEHOLDER.GLOBAL.ClipPath />
       <GlobalCss styles={globalCss} />
+      {children}
     </>
   );
 };
