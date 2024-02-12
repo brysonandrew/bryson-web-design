@@ -9,6 +9,7 @@ export const resolveTheme = <T extends Theme>(
     lg: '900px',
     xl: '1100px',
     xxl: '1200px',
+    xxxl: '1480px',
   },
   width: {
     sm: '480px',
@@ -16,6 +17,7 @@ export const resolveTheme = <T extends Theme>(
     lg: '900px',
     xl: '1100px',
     xxl: '1200px',
+    xxxl: '1480px',
   },
   fontSize: {
     xxs: ['0.625rem', '1rem'],
@@ -39,83 +41,6 @@ export const resolveTheme = <T extends Theme>(
   },
   ...partial,
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

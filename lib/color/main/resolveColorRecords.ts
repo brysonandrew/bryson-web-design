@@ -23,9 +23,9 @@ export const resolveColorRecords = <
   >(opacityRgbRecord);
 
   const colorRecord = {
+    ...BASE_COLOR_RECORD,
     ...opacityRangeColorRecord,
     ...customColorRecord,
-    ...BASE_COLOR_RECORD,
   } as const;
 
   const colorCssVariablesRecord =

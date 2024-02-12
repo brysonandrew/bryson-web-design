@@ -9,8 +9,9 @@ export const WHITE_RGBS = resolveGrayscaleRange(
   WHITEST,
 );
 const WHITEST_RGB = resolveGrayscaleRgb(WHITEST);
+export const WHITE_DEFAULT_RGB = WHITEST_RGB;
 
 export const WHITE = {
   ...resolveRgbValueSeriesRecord('white', WHITE_RGBS),
-  ...resolveRgbaOpacityRange('white', WHITEST_RGB),
+  ...resolveRgbaOpacityRange('white', WHITE_DEFAULT_RGB),
 } as const;

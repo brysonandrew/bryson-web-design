@@ -51,19 +51,13 @@ export const Button: FC<TButtonProps> = ({
         {...resolveInteractiveLabels(name)}
       >
         {isActive && (
-          <Background
-            style={{
-              boxShadow: GLOW_BOX.highlight,
-              filter: GLOW_DROP.accent,
-            }}
-            layoutId='GALLERY_BUTTON_FILL'
-          />
+          <Background layoutId='GALLERY_BUTTON_FILL' />
         )}
         <Glow
           text={isActive ? 1 : 0.4}
           drop={isActive ? 1 : 0.4}
           idle={0.1}
-          color={COLOR['highlight']}
+          color={COLOR['secondary']}
           classValue='center fill pointer-events-none'
         >
           <span className='flex relative uppercase text-sm text-center'>

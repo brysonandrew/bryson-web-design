@@ -11,6 +11,9 @@ import { COLOR_VARS_RECORD } from '../app/color/index';
 export const theme = resolveTheme({
   colors: COLOR_VARS_RECORD,
   spacing: SPACING,
+  maxWidth: {
+    shell: '1480px',
+  },
 });
 
 type TTheme = typeof theme;

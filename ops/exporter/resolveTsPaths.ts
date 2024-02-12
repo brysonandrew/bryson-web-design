@@ -6,17 +6,20 @@ import prevTsConfigPaths from '@ts/paths';
 
 export const resolveTsPaths = async () => {
   try {
-    const paths = await glob(['(src|config)/**(!node_*)'], {
-      deep: 2,
-      onlyDirectories: true,
-    });
+    const paths = await glob(
+      ['(src|config)/**(!node_*)', 'src/pages/_workshop'],
+      {
+        deep: 2,
+        onlyDirectories: true,
+      },
+    );
 
     const workspacesTsPathRecord = paths.reduce(
       (a, path) => {
         const parts = path.split('/');
         if (parts.length < 2) return a;
-        const [_, second] = parts;
-        const pathKey = `@${second}`;
+        const last = parts[parts.length - 1];
+        const pathKey = `@${last}`;
         const workspacePathRoot = { [pathKey]: [path] };
         const workspacePath = {
           [`${pathKey}/*`]: [`${path}/*`],

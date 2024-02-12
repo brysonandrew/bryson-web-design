@@ -16,7 +16,7 @@ export const Header: FC = () => {
       <AnimatePresence initial={false}>
         {!isScroll && (
           <motion.nav
-            className='row-start-space w-full'
+            className='w-shell row-start-space'
             {...(!isMobile ? PRESENCE_DOWN_Y : {})}
           >
             <Main />

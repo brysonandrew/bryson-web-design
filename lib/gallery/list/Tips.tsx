@@ -36,8 +36,8 @@ export const Tips = () => {
                         key='FIRST'
                         className='relative row top-0 p-1'
                         style={{
-                          backgroundColor: COLOR.secondary,
-                          boxShadow: GLOW_BOX.secondary,
+                          backgroundColor: COLOR.primary,
+                          boxShadow: GLOW_BOX.primary,
                           borderRadius: BORDER_RADIUS.XL,
                         }}
                         {...PRESENCE_OPACITY}
