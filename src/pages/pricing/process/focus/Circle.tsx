@@ -25,7 +25,7 @@ export const Circle: FC<TProps> = ({
     <motion.div
       className={clsx(
         'w-5 h-5 center bg-main text-main text-xs border-gray border',
-        isActive && 'glow-secondary',
+        isActive && 'glow-primary',
         classValue,
       )}
       style={{ borderRadius: BORDER_RADIUS.XL }}

@@ -22,7 +22,7 @@ export const Item: FC<TProps> = ({ id, children }) => {
       <motion.div
         className={clsx(
           'absolute -inset-1 center pointer-events-none',
-          isHover ? 'bg-secondary-02 z-50' : '',
+          isHover ? 'bg-primary-02 z-50' : '',
         )}
         style={{ borderRadius: BORDER_RADIUS.MD }}
       />

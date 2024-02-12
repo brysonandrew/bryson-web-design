@@ -13401,7 +13401,7 @@ export const BUNNY_FONTS = [
 },
 {
   "key": "display",
-  "name": "Zilla Slab Highlight",
+  "name": "Zilla Slab secondary",
   "weights": [
     400,
     700

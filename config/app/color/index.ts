@@ -8,21 +8,33 @@ import {
 } from './types';
 import {
   BASE_GLOW_RECORD,
-  MAIN_RGBS,
+  BLACK_DEFAULT_RGB,
+  MAIN_RGBS_RECORD,
   resolveColorRecords,
   resolveGlowRecord,
+  TMainKey,
+  TRgb,
 } from '@brysonandrew/color';
+
+const RGB_RECORD = {
+  ...OPACITY_RANGE_RGB_RECORD,
+  ...MAIN_RGBS_RECORD,
+  primary: '45, 212, 191',
+  secondary: '207, 250, 254',
+  accent: '153, 204, 255',
+} as const;
+
+type TRgbRecord = typeof RGB_RECORD;
+//  TOpacityRangeRgbRecord &
+//   Record<TMainKey, TRgb>;
 
 const {
   colorRecord,
   colorCssVariablesRecord,
   colorVarsCss,
   opacityRangeColorRecord,
-} = resolveColorRecords<
-  TOpacityRangeRgbRecord,
-  TVariablesRecord
->(
-  { ...OPACITY_RANGE_RGB_RECORD, ...MAIN_RGBS },
+} = resolveColorRecords<TRgbRecord, TVariablesRecord>(
+  RGB_RECORD,
   VARIABLES_RECORD,
 );
 

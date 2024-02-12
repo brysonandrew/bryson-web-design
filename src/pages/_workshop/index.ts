@@ -1,5 +1,6 @@
-export { Reader } from './reader';
 export { Cv } from './cv';
+export { Design } from './design';
 export { Logo } from './logo';
-export { Placeholders } from './placeholders';
 export { Marketing } from './marketing';
+export { Placeholders } from './placeholders';
+export { Reader } from './reader';

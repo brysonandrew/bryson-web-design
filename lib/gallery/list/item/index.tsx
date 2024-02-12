@@ -36,12 +36,12 @@ export const Item = <T extends string, R extends object>({
   const { isHover: isParentHover, handlers } = useHoverKey(
     ...hoverKeyArgs,
   );
-  const secondaryKey = resolveCursorKeyFromHoverKey(
+  const primaryKey = resolveCursorKeyFromHoverKey(
     hoverKey,
     1,
   );
 
-  const isHover = secondaryKey === slug;
+  const isHover = primaryKey === slug;
   const isChildHover = isHover && !isParentHover;
 
   const item = ITEMS_RECORD[slug];

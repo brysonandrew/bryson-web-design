@@ -3,8 +3,9 @@ import { resolveRgbValueSeriesRecord } from '@brysonandrew/color-main/resolveRgb
 import { resolveGrayscaleRange } from '@brysonandrew/color-grayscale/resolveGrayscaleRange';
 
 export const BLACK_RGBS = resolveGrayscaleRange(0, 85);
+export const BLACK_DEFAULT_RGB = BLACK_RGBS[0];
 
 export const BLACK = {
   ...resolveRgbValueSeriesRecord('black', BLACK_RGBS),
-  ...resolveRgbaOpacityRange('black', BLACK_RGBS[0]),
+  ...resolveRgbaOpacityRange('black', BLACK_DEFAULT_RGB),
 } as const;

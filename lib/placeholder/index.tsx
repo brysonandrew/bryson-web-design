@@ -16,7 +16,7 @@ export const Placeholder: FC<TPlaceholderProps> = ({
   classValue,
   style,
   colors = [
-    'var(--secondary)',
+    'var(--primary)',
     'transparent',
   ] as TColorStops,
   clipPathId,

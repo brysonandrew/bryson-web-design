@@ -13,15 +13,15 @@ export const Head = <K extends string, V extends string>({
   const { isDarkMode } = useDarkMode();
   const prefix = isDarkMode ? '' : '/light';
   const base = isDarkMode ? COLOR['black'] : COLOR['white'];
-  const highlight = isDarkMode
-    ? COLOR['secondary']
+  const secondary = isDarkMode
+    ? COLOR['primary']
     : COLOR['accent'];
 
   return (
     <MonoHead.Head<K, V>
       prefix={prefix}
       base={base}
-      highlight={highlight}
+      secondary={secondary}
       {...props}
     />
   );

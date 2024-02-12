@@ -13,7 +13,7 @@ export const ThinLine: FC<TProps> = ({
   return (
     <motion.hr
       className={clsx(
-        'border border-secondary w-full',
+        'border border-primary w-full',
         classValue,
       )}
       {...rest}

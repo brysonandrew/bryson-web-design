@@ -14140,12 +14140,12 @@
     "defSubset": "latin",
     "category": "serif"
   },
-  "zilla-slab-highlight": {
+  "zilla-slab-secondary": {
     "variants": { "latin": 2, "latin-ext": 2 },
     "isVariable": false,
     "styles": ["normal"],
     "weights": [400, 700],
-    "familyName": "Zilla Slab Highlight",
+    "familyName": "Zilla Slab secondary",
     "defSubset": "latin",
     "category": "display"
   }

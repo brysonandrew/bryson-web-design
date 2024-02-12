@@ -13,7 +13,7 @@ export const Logo = () => {
       <div className='row'>
         <div {...box}>
           <Laptop
-            screen={COLOR_VARS_RECORD['highlight']}
+            screen={COLOR_VARS_RECORD['secondary']}
             trackpad={COLOR_VARS_RECORD['black-1']}
             bottom={COLOR_VARS_RECORD['black']}
             keyboard={COLOR_VARS_RECORD['black-2']}

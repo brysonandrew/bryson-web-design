@@ -1,4 +1,4 @@
-import { MotionValue, motion } from 'framer-motion';
+import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '@brysonandrew/gallery';
@@ -38,7 +38,7 @@ export const Control: FC<TProps> = ({
   };
 
   return (
-    <motion.div className='relative' style={{ width }}>
+    <div className='relative' style={{ width }}>
       <Image
         mediaRecord={mediaRecord}
         container={containerDimensions}
@@ -61,6 +61,6 @@ export const Control: FC<TProps> = ({
           </>
         )}
       </Image>
-    </motion.div>
+    </div>
   );
 };

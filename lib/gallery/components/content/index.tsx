@@ -82,7 +82,7 @@ export const Content = <
       layoutId={resolveTitleLayoutId(slug)}
       layout
       className={clsx(
-        'relative w-full pl-6 pr-4 sm:pl-8 sm:pr-6',
+        'relative w-shell pl-6 pr-4 sm:pl-8 sm:pr-6',
         classValue,
       )}
       onLayoutAnimationStart={handleLayoutAnimationStart}

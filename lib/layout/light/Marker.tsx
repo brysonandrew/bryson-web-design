@@ -29,13 +29,13 @@ export const LightMarker =
           <motion.div
             className='fill'
             style={{
-              backgroundColor: COLOR.secondary,
+              backgroundColor: COLOR.primary,
               borderRadius: BORDER_RADIUS.SM,
             }}
             variants={{
               animate: {
                 opacity: 1,
-                backgroundColor: COLOR.secondary,
+                backgroundColor: COLOR.primary,
               },
               hover: {
                 backgroundColor: COLOR.accent,

@@ -43,13 +43,13 @@ export const Range = styled.input`
     border-radius: 3px;
     background-color: var(--accent);
     cursor: pointer;
-    box-shadow: 1px 1px 1px var(--secondary),
+    box-shadow: 1px 1px 1px var(--primary),
       0px 0px 1px var(--accent); /* Add cool effects to your sliders! */
   }
 
   /* All the same stuff for Firefox */
   &::-moz-range-thumb {
-    box-shadow: 1px 1px 1px var(--secondary),
+    box-shadow: 1px 1px 1px var(--primary),
       0px 0px 1px var(--accent);
     border: 1px solid var(--gray-1);
     height: 16px;

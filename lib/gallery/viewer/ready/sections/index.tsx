@@ -26,7 +26,7 @@ export const Sections: FC<TProps> = (props) => {
   );
 
   return (
-    <motion.div className='h-full grow' {...handlers}>
+    <div className='h-full grow'>
       <motion.ul
         className='flex relative h-full w-0'
         style={{ left, width: viewportWidth * count }}
@@ -36,6 +36,7 @@ export const Sections: FC<TProps> = (props) => {
           }
         }}
         {...PRESENCE_OPACITY_UP_Y}
+        {...handlers}
       >
         {mediaRecords.map(
           (mediaRecord: TMediaRecord, index: number) => (
@@ -59,6 +60,6 @@ export const Sections: FC<TProps> = (props) => {
           ),
         )}
       </motion.ul>
-    </motion.div>
+    </div>
   );
 };

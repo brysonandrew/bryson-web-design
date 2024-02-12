@@ -15679,7 +15679,7 @@ export const GOOGLE_FONTS = [
 },
 {
   "key": "serif",
-  "name": "Zilla Slab Highlight",
+  "name": "Zilla Slab secondary",
   "weights": [
     "regular",
     "700"

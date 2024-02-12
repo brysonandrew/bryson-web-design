@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "6.22.182",
+  "version": "6.22.186",
   "description": "Layout Typography library",
   "main": "./index.ts",
   "module": "./index.ts",

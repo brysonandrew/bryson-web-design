@@ -17,7 +17,7 @@ export const Animation: FC<TChildrenString> = ({
           {index % 2 === 0 ? (
             <span className='font-normal'>{word}</span>
           ) : (
-            <span className='text-secondary font-black'>
+            <span className='text-primary font-black'>
               {word}
             </span>
           )}

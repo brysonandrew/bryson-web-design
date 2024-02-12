@@ -12,15 +12,14 @@ import { P12Y } from '@brysonandrew/space/P12Y';
 export const Shell: FC = withProviders(() => {
   const { BackScreen, FadeV } = useApp();
   return (
-    <>
+    <Global>
       <BackScreen />
-      <Global />
       <P12Y />
       <Outlet />
       <FadeV />
       <Header />
       <Footer />
       {isDesktop && <Cursor />}
-    </>
+    </Global>
   );
 });

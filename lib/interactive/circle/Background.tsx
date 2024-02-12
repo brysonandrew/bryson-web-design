@@ -16,7 +16,7 @@ export const Background: FC<TProps> = ({
   const { BackBlur, BORDER_RADIUS, GLOW_BOX } = useApp();
   return (
     <motion.div
-      className='absolute w-10 h-10 backdrop-blur-sm bg-black-08 pointer-events-none'
+      className='absolute w-10 h-10 backdrop-blur-sm bg-gray-01 pointer-events-none'
       style={{
         borderRadius: BORDER_RADIUS.XL,
       }}
@@ -34,7 +34,7 @@ export const Background: FC<TProps> = ({
         )}
         style={{
           borderRadius: BORDER_RADIUS.XL,
-          boxShadow: GLOW_BOX.highlight,
+          boxShadow: GLOW_BOX.secondary,
           ...style,
         }}
       />
