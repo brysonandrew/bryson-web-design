@@ -12,7 +12,7 @@ type TProps = TElementProps & {
   base: TGrayscaleKey | TMainKey;
   bgs: TMainKey[];
 };
-export const OpacitySeries: FC<TProps> = ({
+export const ColorOpacitySeries: FC<TProps> = ({
   base,
   classValue,
   bgs,

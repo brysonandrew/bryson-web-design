@@ -3,7 +3,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "ABeeZee",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -11,14 +11,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "ADLaM Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "AR One Sans",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -28,14 +28,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Abel",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Abhaya Libre",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -46,49 +46,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Aboreto",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Abril Fatface",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Abyssinica SIL",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Aclonica",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Acme",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Actor",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Adamina",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -98,7 +98,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -119,7 +119,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Afacad",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -133,14 +133,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Agbalumo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Agdasima",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -148,14 +148,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Aguafina Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Akatab",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -167,21 +167,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Akaya Kanadaka",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Akaya Telivigala",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Akronim",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -189,7 +189,7 @@ export const GOOGLE_FONTS = [
   "name": "Akshar",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -199,21 +199,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Aladin",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Alata",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Alatsi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -223,7 +223,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -244,14 +244,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Aldrich",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Alef",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -259,7 +259,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Alegreya",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -277,7 +277,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Alegreya SC",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -297,7 +297,7 @@ export const GOOGLE_FONTS = [
     "100italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -317,7 +317,7 @@ export const GOOGLE_FONTS = [
     "100italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -336,7 +336,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -357,7 +357,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Alex Brush",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -367,7 +367,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -379,42 +379,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Alfa Slab One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Alice",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Alike",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Alike Angular",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Alkalami",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Alkatra",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -424,7 +424,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Allan",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -432,28 +432,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Allerta",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Allerta Stencil",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Allison",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Allura",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -461,7 +461,7 @@ export const GOOGLE_FONTS = [
   "name": "Almarai",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -470,7 +470,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Almendra",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -480,14 +480,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Almendra Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Almendra SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -497,7 +497,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -518,7 +518,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Alumni Sans Collegiate One",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -526,7 +526,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Alumni Sans Inline One",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -534,7 +534,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Alumni Sans Pinstripe",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -542,14 +542,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Amarante",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Amaranth",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -559,7 +559,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Amatic SC",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -567,14 +567,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Amethysta",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Amiko",
   "weights": [
-    "regular",
+    "400",
     "600",
     "700"
   ]
@@ -583,7 +583,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Amiri",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -593,14 +593,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Amiri Quran",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Amita",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -608,14 +608,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Anaheim",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Andada Pro",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -631,7 +631,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Andika",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -644,7 +644,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -658,7 +658,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -672,7 +672,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -686,7 +686,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -700,7 +700,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -714,7 +714,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -728,7 +728,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -742,7 +742,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -756,7 +756,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -770,7 +770,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -781,21 +781,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Angkor",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Annie Use Your Telescope",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Anonymous Pro",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -805,28 +805,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Antic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Antic Didone",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Antic Slab",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Anton",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -836,7 +836,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -849,7 +849,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -862,7 +862,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -883,14 +883,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Aoboshi One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Arapey",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -898,21 +898,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Arbutus",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Arbutus Slab",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Architects Daughter",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -922,7 +922,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -943,14 +943,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Archivo Black",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Archivo Narrow",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -964,14 +964,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Are You Serious",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Aref Ruqaa",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -979,7 +979,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Aref Ruqaa Ink",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -990,7 +990,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -1000,7 +1000,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Arimo",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1014,21 +1014,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Arizonia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Armata",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Arsenal",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1038,14 +1038,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Artifika",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Arvo",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1055,7 +1055,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Arya",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1066,7 +1066,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1091,7 +1091,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1109,14 +1109,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Asar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Asset",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1125,7 +1125,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1136,7 +1136,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Astloch",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1144,7 +1144,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Asul",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1154,7 +1154,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -1164,7 +1164,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Atkinson Hyperlegible",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1175,7 +1175,7 @@ export const GOOGLE_FONTS = [
   "name": "Atma",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -1185,49 +1185,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Atomic Age",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Aubrey",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Audiowide",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Autour One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Average",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Average Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Averia Gruesa Libre",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1236,7 +1236,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1248,7 +1248,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1260,7 +1260,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1273,7 +1273,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1294,7 +1294,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "B612",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1304,7 +1304,7 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "B612 Mono",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1314,7 +1314,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "BIZ UDGothic",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1322,7 +1322,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "BIZ UDMincho",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1330,7 +1330,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "BIZ UDPGothic",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1338,7 +1338,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "BIZ UDPMincho",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1346,42 +1346,42 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Babylonica",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Bacasime Antique",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Bad Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bagel Fat One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bahiana",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bahianita",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1392,7 +1392,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1406,21 +1406,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bakbak One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Ballet",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Baloo 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1431,7 +1431,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Bhai 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1442,7 +1442,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Bhaijaan 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1453,7 +1453,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Bhaina 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1464,7 +1464,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Chettan 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1475,7 +1475,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Da 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1486,7 +1486,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Paaji 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1497,7 +1497,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Tamma 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1508,7 +1508,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Tammudu 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1519,7 +1519,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baloo Thambi 2",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1530,7 +1530,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Balsamiq Sans",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1540,14 +1540,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Balthazar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bangers",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1560,7 +1560,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1584,7 +1584,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1608,7 +1608,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1626,28 +1626,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Barriecito",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Barrio",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Basic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Baskervville",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -1657,7 +1657,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -1666,14 +1666,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Baumans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Bayon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1686,7 +1686,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -1704,21 +1704,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Beau Rivage",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Bebas Neue",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Belanosima",
   "weights": [
-    "regular",
+    "400",
     "600",
     "700"
   ]
@@ -1727,21 +1727,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Belgrano",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Bellefair",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Belleza",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1750,7 +1750,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1762,7 +1762,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -1773,7 +1773,7 @@ export const GOOGLE_FONTS = [
   "name": "BenchNine",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -1781,28 +1781,28 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Benne",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Bentham",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Berkshire Swash",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Besley",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1820,14 +1820,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Beth Ellen",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Bevan",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -1835,7 +1835,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "BhuTuka Expanded One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1845,7 +1845,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1860,7 +1860,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1875,7 +1875,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1890,7 +1890,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1905,7 +1905,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1920,7 +1920,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1932,28 +1932,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bigelow Rules",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bigshot One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Bilbo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Bilbo Swash Caps",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -1962,7 +1962,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -1975,7 +1975,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -1984,14 +1984,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Birthstone",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Birthstone Bounce",
   "weights": [
-    "regular",
+    "400",
     "500"
   ]
 },
@@ -2001,7 +2001,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "600",
     "700",
     "800",
@@ -2015,7 +2015,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2036,42 +2036,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Black And White Picture",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Black Han Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Black Ops One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Blaka",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Blaka Hollow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Blaka Ink",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2081,7 +2081,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "600",
     "700",
     "800",
@@ -2092,7 +2092,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Bodoni Moda",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2110,14 +2110,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bokor",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Bona Nova",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -2126,56 +2126,56 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Bonbon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Bonheur Royale",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Boogaloo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Borel",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bowlby One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bowlby One SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Braah One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Brawler",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2183,7 +2183,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Bree Serif",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2192,7 +2192,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2203,21 +2203,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bruno Ace",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bruno Ace SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Brygada 1918",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2231,14 +2231,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bubblegum Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Bubbler One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2252,7 +2252,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Buenard",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2260,63 +2260,63 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Bungee",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bungee Hairline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bungee Inline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bungee Outline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bungee Shade",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Bungee Spice",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Butcherman",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Butterfly Kids",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cabin",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2330,7 +2330,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Cabin Condensed",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -2340,7 +2340,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Cabin Sketch",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2348,14 +2348,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Caesar Dressing",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cagliostro",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2364,7 +2364,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2378,7 +2378,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2390,7 +2390,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Caladea",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2400,21 +2400,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Calistoga",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Calligraffitti",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cambay",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2424,21 +2424,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Cambo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Candal",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cantarell",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2448,49 +2448,49 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Cantata One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cantora One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Caprasimo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Capriola",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Caramel",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Carattere",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Cardo",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -2499,7 +2499,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Carlito",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2509,35 +2509,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Carme",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Carrois Gothic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Carrois Gothic SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Carter One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Castoro",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -2545,7 +2545,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Castoro Titling",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2555,7 +2555,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2567,7 +2567,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Caudex",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2577,7 +2577,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Caveat",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -2587,21 +2587,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Caveat Brush",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Cedarville Cursive",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ceviche One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2610,7 +2610,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -2626,7 +2626,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2637,7 +2637,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Changa One",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -2645,14 +2645,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Chango",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Charis SIL",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2662,7 +2662,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Charm",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2670,7 +2670,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Charmonman",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2680,7 +2680,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -2689,7 +2689,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Chau Philomene One",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -2697,49 +2697,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Chela One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Chelsea Market",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Chenla",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Cherish",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Cherry Bomb One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Cherry Cream Soda",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Cherry Swash",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2747,21 +2747,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Chewy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Chicle",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Chilanka",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2771,7 +2771,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2795,7 +2795,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2816,21 +2816,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Chokokutai",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Chonburi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Cinzel",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2842,7 +2842,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Cinzel Decorative",
   "weights": [
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -2851,21 +2851,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Clicker Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Climate Crisis",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Coda",
   "weights": [
-    "regular",
+    "400",
     "800"
   ]
 },
@@ -2874,21 +2874,21 @@ export const GOOGLE_FONTS = [
   "name": "Codystar",
   "weights": [
     "300",
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Coiny",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Combo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2896,7 +2896,7 @@ export const GOOGLE_FONTS = [
   "name": "Comfortaa",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -2906,14 +2906,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Comforter",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Comforter Brush",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2922,7 +2922,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -2932,7 +2932,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Coming Soon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -2942,7 +2942,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2957,7 +2957,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -2969,21 +2969,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Concert One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Condiment",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Content",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -2991,35 +2991,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Contrail One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Convergence",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Cookie",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Copse",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Corben",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -3027,7 +3027,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Corinthia",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -3036,7 +3036,7 @@ export const GOOGLE_FONTS = [
   "name": "Cormorant",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3053,7 +3053,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -3069,7 +3069,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -3084,7 +3084,7 @@ export const GOOGLE_FONTS = [
   "name": "Cormorant SC",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3095,7 +3095,7 @@ export const GOOGLE_FONTS = [
   "name": "Cormorant Unicase",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3106,7 +3106,7 @@ export const GOOGLE_FONTS = [
   "name": "Cormorant Upright",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3116,14 +3116,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Courgette",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Courier Prime",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -3133,7 +3133,7 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Cousine",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -3143,7 +3143,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Coustard",
   "weights": [
-    "regular",
+    "400",
     "900"
   ]
 },
@@ -3151,28 +3151,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Covered By Your Grace",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Crafty Girls",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Creepster",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Crete Round",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -3182,7 +3182,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3202,7 +3202,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Crimson Text",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "600",
     "600italic",
@@ -3214,21 +3214,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Croissant One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Crushed",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Cuprum",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3242,21 +3242,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Cute Font",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Cutive",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Cutive Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3265,7 +3265,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic"
@@ -3278,7 +3278,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3299,7 +3299,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "DM Serif Display",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -3307,7 +3307,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "DM Serif Text",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -3317,7 +3317,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -3331,14 +3331,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Damion",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Dancing Script",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3348,7 +3348,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Dangrek",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3356,7 +3356,7 @@ export const GOOGLE_FONTS = [
   "name": "Darker Grotesque",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3368,14 +3368,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Darumadrop One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "David Libre",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -3384,56 +3384,56 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Dawning of a New Day",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Days One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Dekko",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Dela Gothic One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Delicious Handrawn",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Delius",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Delius Swash Caps",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Delius Unicase",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -3441,77 +3441,77 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Della Respira",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Denk One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Devonshire",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Dhurjati",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Didact Gothic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Diphylleia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Diplomata",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Diplomata SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Do Hyeon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Dokdo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Domine",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3521,7 +3521,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Donegal One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3529,7 +3529,7 @@ export const GOOGLE_FONTS = [
   "name": "Dongle",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -3537,14 +3537,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Doppio One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Dorsa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3553,7 +3553,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3564,28 +3564,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "DotGothic16",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Dr Sugiyama",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Duru Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "DynaPuff",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3595,14 +3595,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Dynalight",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "EB Garamond",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3618,28 +3618,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Eagle Lake",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "East Sea Dokdo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Eater",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Economica",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -3649,7 +3649,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Eczar",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3660,7 +3660,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Edu NSW ACT Foundation",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3670,7 +3670,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Edu QLD Beginner",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3680,7 +3680,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Edu SA Beginner",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3690,7 +3690,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Edu TAS Beginner",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3700,7 +3700,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Edu VIC WA NT Beginner",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3710,7 +3710,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "El Messiri",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3720,14 +3720,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Electrolize",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Elsie",
   "weights": [
-    "regular",
+    "400",
     "900"
   ]
 },
@@ -3735,7 +3735,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Elsie Swash Caps",
   "weights": [
-    "regular",
+    "400",
     "900"
   ]
 },
@@ -3743,14 +3743,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Emblema One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Emilys Candy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3760,7 +3760,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3775,7 +3775,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3790,7 +3790,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3805,7 +3805,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3820,7 +3820,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3835,7 +3835,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3847,21 +3847,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Engagement",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Englebert",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Enriqueta",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -3871,7 +3871,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Ephesis",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3881,7 +3881,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3902,35 +3902,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Erica One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Esteban",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Estonia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Euphoria Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ewert",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -3940,7 +3940,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3964,7 +3964,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3985,7 +3985,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Expletus Sans",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -3999,7 +3999,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Explora",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4010,7 +4010,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -4024,7 +4024,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Familjen Grotesk",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4038,7 +4038,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Fanwood Text",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -4047,7 +4047,7 @@ export const GOOGLE_FONTS = [
   "name": "Farro",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -4056,42 +4056,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Farsan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Fascinate",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Fascinate Inline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Faster One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Fasthand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Fauna One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4099,7 +4099,7 @@ export const GOOGLE_FONTS = [
   "name": "Faustina",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4116,35 +4116,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Federant",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Federo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Felipa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Fenix",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Festive",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4152,7 +4152,7 @@ export const GOOGLE_FONTS = [
   "name": "Figtree",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4171,14 +4171,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Finger Paint",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Finlandica",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4193,7 +4193,7 @@ export const GOOGLE_FONTS = [
   "name": "Fira Code",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -4203,7 +4203,7 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Fira Mono",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -4218,7 +4218,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -4242,7 +4242,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -4266,7 +4266,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -4284,14 +4284,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Fjalla One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Fjord One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4299,42 +4299,42 @@ export const GOOGLE_FONTS = [
   "name": "Flamenco",
   "weights": [
     "300",
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Flavors",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Fleur De Leah",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Flow Block",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Flow Circular",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Flow Rounded",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4344,7 +4344,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4356,7 +4356,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Fondamento",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -4364,21 +4364,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Fontdiner Swanky",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Forum",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Fragment Mono",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -4386,7 +4386,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Francois One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4394,7 +4394,7 @@ export const GOOGLE_FONTS = [
   "name": "Frank Ruhl Libre",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4409,7 +4409,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4430,14 +4430,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Freckle Face",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Fredericka the Great",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4445,7 +4445,7 @@ export const GOOGLE_FONTS = [
   "name": "Fredoka",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -4455,28 +4455,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Freehand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Fresca",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Frijole",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Fruktur",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -4484,21 +4484,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Fugaz One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Fuggles",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Fuzzy Bubbles",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4506,14 +4506,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "GFS Didot",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "GFS Neohellenic",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -4523,7 +4523,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Gabarito",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4535,7 +4535,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gabriela",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4543,7 +4543,7 @@ export const GOOGLE_FONTS = [
   "name": "Gaegu",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4551,42 +4551,42 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Gafata",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Gajraj One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Galada",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Galdeano",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Galindo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Gamja Flower",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4596,7 +4596,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4617,7 +4617,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Gasoek One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4625,7 +4625,7 @@ export const GOOGLE_FONTS = [
   "name": "Gayathri",
   "weights": [
     "100",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4633,7 +4633,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gelasio",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -4649,7 +4649,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4663,7 +4663,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4684,7 +4684,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gentium Book Plus",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -4694,7 +4694,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gentium Plus",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -4704,7 +4704,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Geo",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -4715,7 +4715,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4730,7 +4730,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4751,70 +4751,70 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Geostar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Geostar Fill",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Germania One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Gideon Roman",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Gidugu",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Gilda Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Girassol",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Give You Glory",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Glass Antiqua",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Glegoo",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4822,14 +4822,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gloock",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Gloria Hallelujah",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4839,7 +4839,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4861,7 +4861,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4873,21 +4873,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Goblin One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Gochi Hand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Goldman",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4895,7 +4895,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Golos Text",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4907,7 +4907,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Gorditas",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4918,7 +4918,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -4930,21 +4930,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Gotu",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Goudy Bookletter 1911",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Gowun Batang",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -4952,28 +4952,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Gowun Dodum",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Graduate",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Grand Hotel",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Grandiflora One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -4983,7 +4983,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5004,28 +5004,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Grape Nuts",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Gravitas One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Great Vibes",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Grechen Fuemen",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5038,7 +5038,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -5059,7 +5059,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5071,28 +5071,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Grey Qo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Griffy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Gruppo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Gudea",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -5101,21 +5101,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Gugi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Gulzar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Gupter",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -5124,14 +5124,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Gurajada",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Gwendolyn",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -5139,14 +5139,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Habibi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Hachi Maru Pop",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5156,7 +5156,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5169,7 +5169,7 @@ export const GOOGLE_FONTS = [
   "name": "Halant",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5179,21 +5179,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Hammersmith One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Hanalei",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Hanalei Fill",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5203,7 +5203,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5215,7 +5215,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Handlee",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5225,7 +5225,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5248,7 +5248,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -5257,14 +5257,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Happy Monkey",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Harmattan",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5274,21 +5274,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Headland One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Hedvig Letters Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Hedvig Letters Serif",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5298,7 +5298,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5310,7 +5310,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Henny Penny",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5320,7 +5320,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5332,21 +5332,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Herr Von Muellerhoff",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Hi Melody",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Hina Mincho",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5354,7 +5354,7 @@ export const GOOGLE_FONTS = [
   "name": "Hind",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5365,7 +5365,7 @@ export const GOOGLE_FONTS = [
   "name": "Hind Guntur",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5376,7 +5376,7 @@ export const GOOGLE_FONTS = [
   "name": "Hind Madurai",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5387,7 +5387,7 @@ export const GOOGLE_FONTS = [
   "name": "Hind Siliguri",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5398,7 +5398,7 @@ export const GOOGLE_FONTS = [
   "name": "Hind Vadodara",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5408,42 +5408,42 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Holtwood One SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Homemade Apple",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Homenaje",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Honk",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Hubballi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Hurricane",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5456,7 +5456,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -5476,7 +5476,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -5493,7 +5493,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5509,7 +5509,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -5526,7 +5526,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5539,7 +5539,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5552,7 +5552,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5565,7 +5565,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5578,7 +5578,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5591,7 +5591,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -5607,7 +5607,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -5621,7 +5621,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell DW Pica",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5629,14 +5629,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell DW Pica SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "IM Fell Double Pica",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5644,14 +5644,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell Double Pica SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "IM Fell English",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5659,14 +5659,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell English SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "IM Fell French Canon",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5674,14 +5674,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell French Canon SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "IM Fell Great Primer",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5689,14 +5689,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "IM Fell Great Primer SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Ibarra Real Nova",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5710,14 +5710,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Iceberg",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Iceland",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -5727,7 +5727,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5739,21 +5739,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Imperial Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Imprima",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Inclusive Sans",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5763,7 +5763,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5775,28 +5775,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Inder",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Indie Flower",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Ingrid Darling",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Inika",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -5805,7 +5805,7 @@ export const GOOGLE_FONTS = [
   "name": "Inknut Antiqua",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5819,7 +5819,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -5831,7 +5831,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -5841,14 +5841,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Inspiration",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Instrument Sans",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5862,7 +5862,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Instrument Serif",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -5873,7 +5873,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5888,7 +5888,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5909,21 +5909,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Irish Grover",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Island Moments",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Istok Web",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -5933,42 +5933,42 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Italiana",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Italianno",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Itim",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Jacques Francois",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Jacques Francois Shadow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Jaldi",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -5979,7 +5979,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -5998,42 +5998,42 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Jim Nightshade",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Joan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Jockey One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Jolly Lodger",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Jomhuria",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Jomolhari",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6043,7 +6043,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6063,7 +6063,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6083,7 +6083,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6104,21 +6104,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Joti One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Jua",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Judson",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -6127,21 +6127,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Julee",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Julius Sans One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Junge",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6149,7 +6149,7 @@ export const GOOGLE_FONTS = [
   "name": "Jura",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6159,14 +6159,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Just Another Hand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Just Me Again Down Here",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6179,7 +6179,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -6195,14 +6195,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Kablammo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Kadwa",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -6210,7 +6210,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kaisei Decol",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -6219,7 +6219,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kaisei HarunoUmi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -6228,7 +6228,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kaisei Opti",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700"
   ]
@@ -6237,7 +6237,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kaisei Tokumin",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700",
     "800"
@@ -6248,7 +6248,7 @@ export const GOOGLE_FONTS = [
   "name": "Kalam",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -6259,7 +6259,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6269,7 +6269,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kameron",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6285,7 +6285,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -6306,7 +6306,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6324,7 +6324,7 @@ export const GOOGLE_FONTS = [
   "name": "Karantina",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -6334,7 +6334,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6353,7 +6353,7 @@ export const GOOGLE_FONTS = [
   "name": "Karma",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6363,35 +6363,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Katibeh",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Kaushan Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Kavivanar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kavoon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Kay Pho Du",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6401,28 +6401,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Kdam Thmor Pro",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Keania One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kelly Slab",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kenia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6430,7 +6430,7 @@ export const GOOGLE_FONTS = [
   "name": "Khand",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6440,7 +6440,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Khmer",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6448,7 +6448,7 @@ export const GOOGLE_FONTS = [
   "name": "Khula",
   "weights": [
     "300",
-    "regular",
+    "400",
     "600",
     "700",
     "800"
@@ -6458,21 +6458,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Kings",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kirang Haerang",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Kite One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6480,7 +6480,7 @@ export const GOOGLE_FONTS = [
   "name": "Kiwi Maru",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500"
   ]
 },
@@ -6488,7 +6488,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Klee One",
   "weights": [
-    "regular",
+    "400",
     "600"
   ]
 },
@@ -6496,7 +6496,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Knewave",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6507,7 +6507,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -6525,7 +6525,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -6541,7 +6541,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -6550,49 +6550,49 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Kolker Brush",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Konkhmer Sleokchher",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Kosugi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Kosugi Maru",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Kotta One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Koulen",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kranky",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6600,7 +6600,7 @@ export const GOOGLE_FONTS = [
   "name": "Kreon",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6610,14 +6610,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Kristi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Krona One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6628,7 +6628,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -6642,7 +6642,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Kufam",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6664,7 +6664,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "600",
     "600italic",
@@ -6676,14 +6676,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Kumar One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Kumar One Outline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6693,7 +6693,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6705,14 +6705,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Kurale",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "La Belle Aurore",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6722,7 +6722,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6743,7 +6743,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Lacquer",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6751,7 +6751,7 @@ export const GOOGLE_FONTS = [
   "name": "Laila",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6761,28 +6761,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Lakki Reddy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Lalezar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Lancelot",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Langar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6791,7 +6791,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6806,7 +6806,7 @@ export const GOOGLE_FONTS = [
     "100italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic",
@@ -6818,21 +6818,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Lavishly Yours",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "League Gothic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "League Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6842,7 +6842,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6854,21 +6854,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Leckerli One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Ledger",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Lekton",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -6877,7 +6877,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Lemon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -6885,7 +6885,7 @@ export const GOOGLE_FONTS = [
   "name": "Lemonada",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -6898,7 +6898,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6913,7 +6913,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6928,7 +6928,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6943,7 +6943,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6958,7 +6958,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6973,7 +6973,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -6988,7 +6988,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7003,7 +7003,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7015,56 +7015,56 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Libre Barcode 128",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode 128 Text",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode 39",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode 39 Extended",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode 39 Extended Text",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode 39 Text",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Libre Barcode EAN13 Text",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Libre Baskerville",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -7073,7 +7073,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Libre Bodoni",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7087,14 +7087,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Libre Caslon Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Libre Caslon Text",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -7106,7 +7106,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7127,14 +7127,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Licorice",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Life Savers",
   "weights": [
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -7143,28 +7143,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Lilita One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Lily Script One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Limelight",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Linden Hill",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -7175,7 +7175,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7191,7 +7191,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -7211,7 +7211,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7231,7 +7231,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Liu Jian Mao Cao",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7244,7 +7244,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -7260,14 +7260,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Lobster",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Lobster Two",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -7277,21 +7277,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Londrina Outline",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Londrina Shadow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Londrina Sketch",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7300,7 +7300,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "900"
   ]
 },
@@ -7308,14 +7308,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Long Cang",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Lora",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7329,56 +7329,56 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Love Light",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Love Ya Like A Sister",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Loved by the King",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Lovers Quarrel",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Luckiest Guy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Lugrasimo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Lumanosimo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Lunasima",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -7386,7 +7386,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Lusitana",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -7394,21 +7394,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Lustria",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Luxurious Roman",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Luxurious Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7418,7 +7418,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7433,7 +7433,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7445,7 +7445,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "800",
@@ -7459,7 +7459,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7474,7 +7474,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7486,7 +7486,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "800",
@@ -7497,21 +7497,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Ma Shan Zheng",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Macondo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Macondo Swash Caps",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7520,7 +7520,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7532,7 +7532,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Magra",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -7540,7 +7540,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Maiden Orange",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7549,7 +7549,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7559,14 +7559,14 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Major Mono Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Mako",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7577,7 +7577,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -7591,14 +7591,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Mallanna",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Mandali",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7606,7 +7606,7 @@ export const GOOGLE_FONTS = [
   "name": "Manjari",
   "weights": [
     "100",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -7616,7 +7616,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7627,7 +7627,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Mansalva",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7635,7 +7635,7 @@ export const GOOGLE_FONTS = [
   "name": "Manuale",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7652,28 +7652,28 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Marcellus",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Marcellus SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Marck Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Margarine",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7681,7 +7681,7 @@ export const GOOGLE_FONTS = [
   "name": "Marhey",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7691,7 +7691,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Markazi Text",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7701,14 +7701,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Marko One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Marmelad",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7717,7 +7717,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "600",
     "700",
     "800",
@@ -7730,7 +7730,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "600",
     "700",
     "800",
@@ -7744,7 +7744,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7755,7 +7755,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Marvel",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -7765,7 +7765,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Mate",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -7773,42 +7773,42 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Mate SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Material Icons",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Material Icons Outlined",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Material Icons Round",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Material Icons Sharp",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Material Icons Two Tone",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7818,7 +7818,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7831,7 +7831,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7844,7 +7844,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -7854,7 +7854,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Maven Pro",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7866,63 +7866,63 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "McLaren",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mea Culpa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Meddon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "MedievalSharp",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Medula One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Meera Inimai",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Megrim",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Meie Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Meow Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -7930,7 +7930,7 @@ export const GOOGLE_FONTS = [
   "name": "Merienda",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7944,7 +7944,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic",
@@ -7957,7 +7957,7 @@ export const GOOGLE_FONTS = [
   "name": "Merriweather Sans",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -7974,63 +7974,63 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Metal",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Metal Mania",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Metamorphous",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Metrophobic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Michroma",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Milonga",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Miltonian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Miltonian Tattoo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Mina",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8038,21 +8038,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Mingzat",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Miniver",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Miriam Libre",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8060,7 +8060,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Mirza",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8070,7 +8070,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Miss Fajardose",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8079,7 +8079,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8089,35 +8089,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Mochiy Pop One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Mochiy Pop P One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Modak",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Modern Antiqua",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Mogra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8125,7 +8125,7 @@ export const GOOGLE_FONTS = [
   "name": "Mohave",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8140,14 +8140,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Moirai One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Molengo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8161,7 +8161,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Monda",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8169,35 +8169,35 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Monofett",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Monomaniac One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Monoton",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Monsieur La Doulaise",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Montaga",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8207,7 +8207,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8217,14 +8217,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "MonteCarlo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Montez",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8234,7 +8234,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8261,7 +8261,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -8279,7 +8279,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Montserrat Subrayada",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8287,42 +8287,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Moo Lah Lah",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Mooli",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Moon Dance",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Moul",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Moulpali",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Mountains of Christmas",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8330,49 +8330,49 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Mouse Memoirs",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mr Bedfort",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mr Dafoe",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mr De Haviland",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mrs Saint Delafield",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mrs Sheppards",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Ms Madi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8381,7 +8381,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8394,7 +8394,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8407,7 +8407,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8420,7 +8420,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8433,7 +8433,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8456,7 +8456,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8471,7 +8471,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8492,49 +8492,49 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "My Soul",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Mynerve",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Mystery Quest",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "NTR",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nabla",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Nanum Brush Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Nanum Gothic",
   "weights": [
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -8543,7 +8543,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Nanum Gothic Coding",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8551,7 +8551,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Nanum Myeongjo",
   "weights": [
-    "regular",
+    "400",
     "700",
     "800"
   ]
@@ -8560,14 +8560,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Nanum Pen Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Narnoor",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8578,21 +8578,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Neonderthaw",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Nerko One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Neucha",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8601,7 +8601,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "italic",
     "700",
     "800"
@@ -8611,21 +8611,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "New Rocker",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "New Tegomin",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "News Cycle",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -8635,7 +8635,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8653,7 +8653,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Niconne",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8664,7 +8664,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -8678,14 +8678,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Nixie One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Nobile",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -8699,7 +8699,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -8708,35 +8708,35 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Norican",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nosifer",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Notable",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Nothing You Could Do",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Noticia Text",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -8746,7 +8746,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Color Emoji",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8754,7 +8754,7 @@ export const GOOGLE_FONTS = [
   "name": "Noto Emoji",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8767,7 +8767,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8779,14 +8779,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Music",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Noto Naskh Arabic",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8796,7 +8796,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Nastaliq Urdu",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8809,7 +8809,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8824,7 +8824,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8845,7 +8845,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Adlam",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8855,7 +8855,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Adlam Unjoined",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8865,7 +8865,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Anatolian Hieroglyphs",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8875,7 +8875,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8890,7 +8890,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8902,14 +8902,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Avestan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Balinese",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8919,7 +8919,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Bamum",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8929,7 +8929,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Bassa Vah",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -8939,7 +8939,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Batak",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8949,7 +8949,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -8961,28 +8961,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Bhaiksuki",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Brahmi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Buginese",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Buhid",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -8992,7 +8992,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9004,21 +9004,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Carian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Caucasian Albanian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Chakma",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9028,7 +9028,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9043,7 +9043,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9055,42 +9055,42 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Chorasmian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Coptic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Cuneiform",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Cypriot",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Cypro Minoan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Deseret",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9100,7 +9100,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9115,7 +9115,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9136,7 +9136,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Duployan",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -9144,21 +9144,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Egyptian Hieroglyphs",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Elbasan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Elymaic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9168,7 +9168,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9183,7 +9183,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9195,21 +9195,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Glagolitic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Gothic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Grantha",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9219,7 +9219,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9231,7 +9231,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Gunjala Gondi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9244,7 +9244,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9259,7 +9259,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9271,7 +9271,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Hanifi Rohingya",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9281,14 +9281,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Hanunoo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Hatran",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9298,7 +9298,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9310,28 +9310,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Imperial Aramaic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Indic Siyaq Numbers",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Inscriptional Pahlavi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Inscriptional Parthian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9341,7 +9341,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9353,7 +9353,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Javanese",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9366,7 +9366,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9378,7 +9378,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Kaithi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9388,7 +9388,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9400,7 +9400,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Kawi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9410,7 +9410,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Kayah Li",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9420,7 +9420,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Kharoshthi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9430,7 +9430,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9442,14 +9442,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Khojki",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Khudawadi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9459,7 +9459,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9474,7 +9474,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9486,35 +9486,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Lepcha",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Limbu",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Linear A",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Linear B",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Lisu",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9524,21 +9524,21 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Lycian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Lydian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Mahajani",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9548,7 +9548,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9560,49 +9560,49 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Mandaic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Manichaean",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Marchen",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Masaram Gondi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Math",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Mayan Numerals",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Medefaidrin",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9615,7 +9615,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9627,35 +9627,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Mende Kikakui",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Meroitic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Miao",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Modi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Mongolian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9665,7 +9665,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9677,14 +9677,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Mro",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Multani",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9694,7 +9694,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9706,14 +9706,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans NKo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans NKo Unjoined",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9723,14 +9723,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Nabataean",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Nag Mundari",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9740,14 +9740,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Nandinagari",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans New Tai Lue",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9757,28 +9757,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Newa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Nushu",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Ogham",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Ol Chiki",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -9788,56 +9788,56 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Old Hungarian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old Italic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old North Arabian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old Permic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old Persian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old Sogdian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old South Arabian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Old Turkic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9847,7 +9847,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9859,70 +9859,70 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Osage",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Osmanya",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Pahawh Hmong",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Palmyrene",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Pau Cin Hau",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Phags Pa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Phoenician",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Psalter Pahlavi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Rejang",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Runic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9932,7 +9932,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -9944,42 +9944,42 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Samaritan",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Saurashtra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Sharada",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Shavian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Siddham",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans SignWriting",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -9989,7 +9989,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10001,14 +10001,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Sogdian",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Sora Sompeng",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10018,14 +10018,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Soyombo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Sundanese",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10035,7 +10035,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Syloti Nagri",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10045,7 +10045,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10057,7 +10057,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Symbols 2",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10067,7 +10067,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10082,7 +10082,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10097,7 +10097,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10109,28 +10109,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Tagalog",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Tagbanwa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Tai Le",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Tai Tham",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10140,14 +10140,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Tai Viet",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Takri",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10157,7 +10157,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10169,14 +10169,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Tamil Supplement",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Tangsa",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10189,7 +10189,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10204,7 +10204,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10219,7 +10219,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10234,7 +10234,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10246,35 +10246,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Tifinagh",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Tirhuta",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Ugaritic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Vai",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Vithkuqi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10284,28 +10284,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Noto Sans Wancho",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Warang Citi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Yi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Noto Sans Zanabazar Square",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10315,7 +10315,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10336,7 +10336,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Ahom",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10346,7 +10346,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10358,7 +10358,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Balinese",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10368,7 +10368,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10383,7 +10383,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10398,7 +10398,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10419,7 +10419,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Dogra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10429,7 +10429,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10444,7 +10444,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10456,7 +10456,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Grantha",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10466,7 +10466,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10481,7 +10481,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10495,7 +10495,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10510,7 +10510,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10524,7 +10524,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10537,7 +10537,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10551,7 +10551,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10563,7 +10563,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Khitan Small Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10573,7 +10573,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10585,7 +10585,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Khojki",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10598,7 +10598,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10610,7 +10610,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Makasar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10620,7 +10620,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10635,7 +10635,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10647,7 +10647,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif NP Hmong",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10657,14 +10657,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Old Uyghur",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Noto Serif Oriya",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10674,7 +10674,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Ottoman Siyaq",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10683,7 +10683,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10697,7 +10697,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10711,7 +10711,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10725,7 +10725,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10746,7 +10746,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Tangut",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10756,7 +10756,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10771,7 +10771,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10786,7 +10786,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10798,7 +10798,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Toto",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10808,7 +10808,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Vithkuqi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10818,7 +10818,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Noto Serif Yezidi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10829,7 +10829,7 @@ export const GOOGLE_FONTS = [
   "name": "Noto Traditional Nushu",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -10839,63 +10839,63 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Nova Cut",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Flat",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Nova Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Oval",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Round",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Slim",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Nova Square",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Numans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -10904,7 +10904,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10926,7 +10926,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -10946,42 +10946,42 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Nuosu SIL",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Odibee Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Odor Mean Chey",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Offside",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Oi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Old Standard TT",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -10990,21 +10990,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Oldenburg",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Ole",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Oleo Script",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11012,7 +11012,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Oleo Script Swash Caps",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11023,7 +11023,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11035,7 +11035,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Oooh Baby",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11043,7 +11043,7 @@ export const GOOGLE_FONTS = [
   "name": "Open Sans",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11060,21 +11060,21 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Oranienbaum",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Orbit",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Orbitron",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11086,7 +11086,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Oregano",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -11094,21 +11094,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Orelega One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Orienta",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Original Surfer",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11117,7 +11117,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11130,7 +11130,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11142,14 +11142,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Over the Rainbow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Overlock",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic",
@@ -11161,7 +11161,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Overlock SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11171,7 +11171,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11193,7 +11193,7 @@ export const GOOGLE_FONTS = [
   "name": "Overpass Mono",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11203,7 +11203,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Ovo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11212,7 +11212,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11224,7 +11224,7 @@ export const GOOGLE_FONTS = [
   "name": "Oxygen",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11232,21 +11232,21 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Oxygen Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "PT Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "PT Sans",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -11256,7 +11256,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "PT Sans Caption",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11264,7 +11264,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "PT Sans Narrow",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11272,7 +11272,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "PT Serif",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -11282,7 +11282,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "PT Serif Caption",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -11290,14 +11290,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Pacifico",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Padauk",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11305,7 +11305,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Padyakke Expanded One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11315,7 +11315,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11325,7 +11325,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Palanquin Dark",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11335,42 +11335,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Palette Mosaic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Pangolin",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Paprika",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Parisienne",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Passero One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Passion One",
   "weights": [
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -11379,7 +11379,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Passions Conflict",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11389,7 +11389,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11410,84 +11410,84 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Pathway Gothic One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Patrick Hand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Patrick Hand SC",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Pattaya",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Patua One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Pavanam",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Paytone One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Peddana",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Peralta",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Permanent Marker",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Petemoss",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Petit Formal Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11497,7 +11497,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11518,7 +11518,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Philosopher",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -11529,7 +11529,7 @@ export const GOOGLE_FONTS = [
   "name": "Phudu",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11544,7 +11544,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11565,28 +11565,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Piedra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Pinyon Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Pirata One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Pixelify Sans",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11596,14 +11596,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Plaster",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Play",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11611,7 +11611,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Playball",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11619,7 +11619,7 @@ export const GOOGLE_FONTS = [
   "name": "Playfair",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11638,7 +11638,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Playfair Display",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11656,7 +11656,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Playfair Display SC",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic",
@@ -11671,7 +11671,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11684,7 +11684,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11702,7 +11702,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Podkova",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11713,21 +11713,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Poiret One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Poller One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Poltawski Nowy",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11741,7 +11741,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Poly",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -11749,7 +11749,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Pompiere",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11757,7 +11757,7 @@ export const GOOGLE_FONTS = [
   "name": "Pontano Sans",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11767,7 +11767,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Poor Story",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11780,7 +11780,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -11798,28 +11798,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Port Lligat Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Port Lligat Slab",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Potta One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Pragati Narrow",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -11827,28 +11827,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Praise",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Prata",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Preahvihear",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Press Start 2P",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11857,7 +11857,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -11867,14 +11867,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Princess Sofia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Prociono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -11887,7 +11887,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -11905,42 +11905,42 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Prosto One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Protest Guerrilla",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Protest Revolution",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Protest Riot",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Protest Strike",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Proza Libre",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -11959,7 +11959,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -11980,14 +11980,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Puppies Play",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Puritan",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -11997,28 +11997,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Purple Purse",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Qahiri",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Quando",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Quantico",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -12028,7 +12028,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Quattrocento",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12036,7 +12036,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Quattrocento Sans",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -12046,7 +12046,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Questrial",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12054,7 +12054,7 @@ export const GOOGLE_FONTS = [
   "name": "Quicksand",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12064,21 +12064,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Quintessential",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Qwigley",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Qwitcher Grypen",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12089,7 +12089,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12110,7 +12110,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Racing Sans One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12118,7 +12118,7 @@ export const GOOGLE_FONTS = [
   "name": "Radio Canada",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12133,7 +12133,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Radley",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -12142,7 +12142,7 @@ export const GOOGLE_FONTS = [
   "name": "Rajdhani",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12152,7 +12152,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Rakkas",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12162,7 +12162,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12183,28 +12183,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Raleway Dots",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Ramabhadra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Ramaraja",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Rambla",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -12214,35 +12214,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Rammetto One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rampart One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ranchers",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Rancho",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ranga",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12251,7 +12251,7 @@ export const GOOGLE_FONTS = [
   "name": "Rasa",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12266,14 +12266,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Rationale",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ravi Prakash",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12282,7 +12282,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12293,7 +12293,7 @@ export const GOOGLE_FONTS = [
   "name": "Recursive",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12306,7 +12306,7 @@ export const GOOGLE_FONTS = [
   "name": "Red Hat Display",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12326,7 +12326,7 @@ export const GOOGLE_FONTS = [
   "name": "Red Hat Mono",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12342,7 +12342,7 @@ export const GOOGLE_FONTS = [
   "name": "Red Hat Text",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12358,7 +12358,7 @@ export const GOOGLE_FONTS = [
   "name": "Red Rose",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12368,7 +12368,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Redacted",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12376,7 +12376,7 @@ export const GOOGLE_FONTS = [
   "name": "Redacted Script",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12384,14 +12384,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Redressed",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Reem Kufi",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12401,7 +12401,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Reem Kufi Fun",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -12411,28 +12411,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Reem Kufi Ink",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Reenie Beanie",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Reggae One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Rethink Sans",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12448,49 +12448,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Revalia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Rhodium Libre",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ribeye",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ribeye Marrow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Righteous",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Risque",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Road Rage",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12501,7 +12501,7 @@ export const GOOGLE_FONTS = [
     "100italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -12518,7 +12518,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12539,7 +12539,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Roboto Flex",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12549,7 +12549,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12569,7 +12569,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12593,7 +12593,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12605,28 +12605,28 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Rochester",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rock 3D",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Rock Salt",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "RocknRoll One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12636,7 +12636,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12657,14 +12657,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Romanesco",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Ropa Sans",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -12673,7 +12673,7 @@ export const GOOGLE_FONTS = [
   "name": "Rosario",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12688,7 +12688,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Rosarivo",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -12696,7 +12696,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Rouge Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12704,7 +12704,7 @@ export const GOOGLE_FONTS = [
   "name": "Rowdies",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12712,7 +12712,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Rozha One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -12720,7 +12720,7 @@ export const GOOGLE_FONTS = [
   "name": "Rubik",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12739,196 +12739,196 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Rubik 80s Fade",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Beastly",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Broken Fax",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Bubbles",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Burned",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Dirt",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Distressed",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Doodle Shadow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Doodle Triangles",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Gemstones",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Glitch",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Glitch Pop",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Iso",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Lines",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Maps",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Marker Hatch",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Maze",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Microbe",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Rubik Mono One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Moonrocks",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Pixels",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Puddles",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Scribble",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Spray Paint",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Storm",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Vinyl",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Rubik Wet Paint",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Ruda",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -12940,7 +12940,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Rufina",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -12948,49 +12948,49 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Ruge Boogie",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Ruluko",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Rum Raisin",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Ruslan Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Russo One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Ruthie",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Ruwudu",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -13000,14 +13000,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Rye",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "STIX Two Text",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13021,14 +13021,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Sacramento",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Sahitya",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -13036,7 +13036,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Sail",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13046,7 +13046,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13070,7 +13070,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13085,7 +13085,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13100,7 +13100,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13112,21 +13112,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Saira Stencil One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Salsa",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Sanchez",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -13134,14 +13134,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Sancreek",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Sansita",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic",
@@ -13156,7 +13156,7 @@ export const GOOGLE_FONTS = [
   "name": "Sansita Swashed",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13174,7 +13174,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -13190,7 +13190,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Sarala",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -13198,14 +13198,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Sarina",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Sarpanch",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13217,35 +13217,35 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Sassy Frass",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Satisfy",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Sawarabi Gothic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Sawarabi Mincho",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Scada",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -13255,7 +13255,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Scheherazade New",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -13265,7 +13265,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Schibsted Grotesk",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13283,49 +13283,49 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Schoolbell",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Scope One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Seaweed Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Secular One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Sedgwick Ave",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Sedgwick Ave Display",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Sen",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13336,42 +13336,42 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Send Flowers",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Sevillana",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Seymour One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Shadows Into Light",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Shadows Into Light Two",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Shalimar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13379,7 +13379,7 @@ export const GOOGLE_FONTS = [
   "name": "Shantell Sans",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13396,14 +13396,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Shanti",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Share",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -13413,35 +13413,35 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Share Tech",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Share Tech Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Shippori Antique",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Shippori Antique B1",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Shippori Mincho",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13452,7 +13452,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Shippori Mincho B1",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13463,49 +13463,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Shizuru",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Shojumaru",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Short Stack",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Shrikhand",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Siemreap",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Sigmar",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Sigmar One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13513,7 +13513,7 @@ export const GOOGLE_FONTS = [
   "name": "Signika",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -13524,7 +13524,7 @@ export const GOOGLE_FONTS = [
   "name": "Signika Negative",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -13534,7 +13534,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Silkscreen",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -13542,7 +13542,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Simonetta",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "900",
     "900italic"
@@ -13552,14 +13552,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Single Day",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Sintony",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -13567,28 +13567,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Sirin Stencil",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Six Caps",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Sixtyfour",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Skranji",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -13596,42 +13596,42 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Slabo 13px",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Slabo 27px",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Slackey",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Slackside One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Smokum",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Smooch",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13641,7 +13641,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13653,14 +13653,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Smythe",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Sniglet",
   "weights": [
-    "regular",
+    "400",
     "800"
   ]
 },
@@ -13668,28 +13668,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Snippet",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Snowburst One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Sofadi One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Sofia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13699,7 +13699,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13723,7 +13723,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13747,7 +13747,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13771,7 +13771,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13792,7 +13792,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Solitreo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13800,7 +13800,7 @@ export const GOOGLE_FONTS = [
   "name": "Solway",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "800"
@@ -13810,7 +13810,7 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Sometype Mono",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13824,7 +13824,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Song Myung",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13833,7 +13833,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13844,7 +13844,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Sonsie One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13854,7 +13854,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13865,7 +13865,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Sorts Mill Goudy",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -13875,7 +13875,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13897,7 +13897,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13919,7 +13919,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -13940,7 +13940,7 @@ export const GOOGLE_FONTS = [
   "name": "Space Grotesk",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -13950,7 +13950,7 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Space Mono",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -13960,7 +13960,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Special Elite",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -13971,7 +13971,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -13991,7 +13991,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -14007,28 +14007,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Spicy Rice",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Spinnaker",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Spirax",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Splash",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14036,7 +14036,7 @@ export const GOOGLE_FONTS = [
   "name": "Spline Sans",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -14047,7 +14047,7 @@ export const GOOGLE_FONTS = [
   "name": "Spline Sans Mono",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14062,35 +14062,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Squada One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Square Peg",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Sree Krushnadevaraya",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Sriracha",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Srisakdi",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14098,28 +14098,28 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Staatliches",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Stalemate",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Stalinist One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Stardos Stencil",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14127,7 +14127,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Stick",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14136,7 +14136,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14147,14 +14147,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Stint Ultra Condensed",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Stint Ultra Expanded",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14162,42 +14162,42 @@ export const GOOGLE_FONTS = [
   "name": "Stoke",
   "weights": [
     "300",
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Strait",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Style Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Stylish",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Sue Ellen Francisco",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Suez One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14205,7 +14205,7 @@ export const GOOGLE_FONTS = [
   "name": "Sulphur Point",
   "weights": [
     "300",
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14213,7 +14213,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Sumana",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14230,21 +14230,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Sunshiney",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Supermercado One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Sura",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14252,14 +14252,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Suranna",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Suravaram",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14268,7 +14268,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -14277,14 +14277,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Swanky and Moo Moo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Syncopate",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14292,7 +14292,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Syne",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14303,21 +14303,21 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Syne Mono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Syne Tactile",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Tai Heritage Pro",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14327,7 +14327,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "800",
@@ -14338,7 +14338,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Tangerine",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14346,21 +14346,21 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Tapestry",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Taprom",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Tauri",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14373,7 +14373,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -14392,7 +14392,7 @@ export const GOOGLE_FONTS = [
   "name": "Teko",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -14402,7 +14402,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Tektur",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14414,28 +14414,28 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Telex",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Tenali Ramakrishna",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Tenor Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Text Me One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14445,7 +14445,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14466,7 +14466,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Thasadith",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -14476,14 +14476,14 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "The Girl Next Door",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "The Nautigal",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14491,7 +14491,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tienne",
   "weights": [
-    "regular",
+    "400",
     "700",
     "900"
   ]
@@ -14500,7 +14500,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Tillana",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14511,35 +14511,35 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Tilt Neon",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Tilt Prism",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Tilt Warp",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Timmana",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Tinos",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -14549,7 +14549,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Bangla",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14557,7 +14557,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Devanagari Hindi",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14565,7 +14565,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Devanagari Marathi",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14573,7 +14573,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Devanagari Sanskrit",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14581,7 +14581,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Gurmukhi",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14589,7 +14589,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Kannada",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14597,7 +14597,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Tamil",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14605,7 +14605,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Tiro Telugu",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -14613,7 +14613,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Titan One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14624,7 +14624,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "600",
     "600italic",
@@ -14643,7 +14643,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -14664,7 +14664,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14685,14 +14685,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Trade Winds",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Train One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14705,7 +14705,7 @@ export const GOOGLE_FONTS = [
     "200italic",
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -14726,7 +14726,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14737,14 +14737,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Trocchi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Trochut",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700"
   ]
@@ -14756,7 +14756,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14768,7 +14768,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Trykker",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14776,7 +14776,7 @@ export const GOOGLE_FONTS = [
   "name": "Tsukimi Rounded",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -14786,7 +14786,7 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Tulpen One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14795,7 +14795,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "800"
@@ -14805,7 +14805,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Twinkle Star",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14814,7 +14814,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -14826,14 +14826,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Ubuntu Condensed",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Ubuntu Mono",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -14843,14 +14843,14 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Uchen",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Ultra",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14859,7 +14859,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14871,21 +14871,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Uncial Antiqua",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Underdog",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Unica One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14899,14 +14899,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "UnifrakturMaguntia",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Unkempt",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
@@ -14914,14 +14914,14 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Unlock",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Unna",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -14931,7 +14931,7 @@ export const GOOGLE_FONTS = [
   "key": "handwriting",
   "name": "Updock",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14941,7 +14941,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -14962,28 +14962,28 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "VT323",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Vampiro One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Varela",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Varela Round",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -14991,7 +14991,7 @@ export const GOOGLE_FONTS = [
   "name": "Varta",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -15001,7 +15001,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Vast Shadow",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15011,7 +15011,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15023,7 +15023,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Vesper Libre",
   "weights": [
-    "regular",
+    "400",
     "500",
     "700",
     "900"
@@ -15033,21 +15033,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Viaoda Libre",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Vibes",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Vibur",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15057,7 +15057,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15074,35 +15074,35 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Vidaloka",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Viga",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Vina Sans",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Voces",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Volkhov",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "700",
     "700italic"
@@ -15112,7 +15112,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Vollkorn",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15130,7 +15130,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Vollkorn SC",
   "weights": [
-    "regular",
+    "400",
     "600",
     "700",
     "900"
@@ -15140,56 +15140,56 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Voltaire",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Vujahday Script",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Waiting for the Sunrise",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Wallpoet",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Walter Turncoat",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Warnes",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Water Brush",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Waterfall",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15199,7 +15199,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15211,28 +15211,28 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Wellfleet",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Wendy One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Whisper",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "WindSong",
   "weights": [
-    "regular",
+    "400",
     "500"
   ]
 },
@@ -15240,14 +15240,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Wire One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Wix Madefor Display",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15258,7 +15258,7 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Wix Madefor Text",
   "weights": [
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -15277,7 +15277,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15298,14 +15298,14 @@ export const GOOGLE_FONTS = [
   "key": "monospace",
   "name": "Workbench",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "monospace",
   "name": "Xanh Mono",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -15315,7 +15315,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -15327,7 +15327,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700"
@@ -15339,7 +15339,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "100",
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "900"
@@ -15349,49 +15349,49 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Yatra One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Yellowtail",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Yeon Sung",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Yeseva One",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Yesteryear",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Yomogi",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Young Serif",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15399,7 +15399,7 @@ export const GOOGLE_FONTS = [
   "name": "Yrsa",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15417,7 +15417,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15441,7 +15441,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15465,7 +15465,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15489,7 +15489,7 @@ export const GOOGLE_FONTS = [
     "100",
     "200",
     "300",
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15501,84 +15501,84 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Yuji Boku",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Yuji Hentaigana Akari",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Yuji Hentaigana Akebono",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Yuji Mai",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Yuji Syuku",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "Yusei Magic",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "ZCOOL KuaiLe",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "ZCOOL QingKe HuangYou",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "sans-serif",
   "name": "ZCOOL XiaoWei",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Zen Antique",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "serif",
   "name": "Zen Antique Soft",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Zen Dots",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15586,7 +15586,7 @@ export const GOOGLE_FONTS = [
   "name": "Zen Kaku Gothic Antique",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "900"
@@ -15597,7 +15597,7 @@ export const GOOGLE_FONTS = [
   "name": "Zen Kaku Gothic New",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "900"
@@ -15607,14 +15607,14 @@ export const GOOGLE_FONTS = [
   "key": "sans-serif",
   "name": "Zen Kurenaido",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "display",
   "name": "Zen Loop",
   "weights": [
-    "regular",
+    "400",
     "italic"
   ]
 },
@@ -15623,7 +15623,7 @@ export const GOOGLE_FONTS = [
   "name": "Zen Maru Gothic",
   "weights": [
     "300",
-    "regular",
+    "400",
     "500",
     "700",
     "900"
@@ -15633,7 +15633,7 @@ export const GOOGLE_FONTS = [
   "key": "serif",
   "name": "Zen Old Mincho",
   "weights": [
-    "regular",
+    "400",
     "500",
     "600",
     "700",
@@ -15644,21 +15644,21 @@ export const GOOGLE_FONTS = [
   "key": "display",
   "name": "Zen Tokyo Zoo",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Zeyada",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
   "key": "handwriting",
   "name": "Zhi Mang Xing",
   "weights": [
-    "regular"
+    "400"
   ]
 },
 {
@@ -15667,7 +15667,7 @@ export const GOOGLE_FONTS = [
   "weights": [
     "300",
     "300italic",
-    "regular",
+    "400",
     "italic",
     "500",
     "500italic",
@@ -15679,9 +15679,9 @@ export const GOOGLE_FONTS = [
 },
 {
   "key": "serif",
-  "name": "Zilla Slab secondary",
+  "name": "Zilla Slab Highlight",
   "weights": [
-    "regular",
+    "400",
     "700"
   ]
 },
