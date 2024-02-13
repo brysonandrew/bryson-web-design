@@ -23,7 +23,7 @@ export const PALETTE_TITLES = [
 
 export const CASCADE_RECORD = PALETTE_COLORS.reduce(
   (a) => {
-    a.remainder = a.remainder / 2;
+    // a.remainder = a.remainder / 2;
     a.heights.push(a.remainder);
     return a;
   },

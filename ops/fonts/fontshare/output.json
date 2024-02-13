@@ -4,7 +4,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 420,
+        "range_default": 900,
         "range_left": 300,
         "range_right": 900
       }
@@ -456,7 +456,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 500,
+        "range_default": 450,
         "range_left": 200,
         "range_right": 700
       }
@@ -733,7 +733,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 300,
+        "range_default": 550,
         "range_left": 200,
         "range_right": 700
       }
@@ -1568,7 +1568,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 160,
+        "range_default": 700,
         "range_left": 100,
         "range_right": 700
       }
@@ -1975,7 +1975,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 550,
+        "range_default": 400,
         "range_left": 200,
         "range_right": 700
       }
@@ -2252,7 +2252,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 600,
+        "range_default": 650,
         "range_left": 200,
         "range_right": 700
       }
@@ -2534,7 +2534,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 500,
+        "range_default": 180,
         "range_left": 100,
         "range_right": 900
       }
@@ -3113,7 +3113,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 320,
+        "range_default": 380,
         "range_left": 200,
         "range_right": 800
       }
@@ -3534,7 +3534,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 420,
+        "range_default": 260,
         "range_left": 100,
         "range_right": 900
       }
@@ -4014,14 +4014,14 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 400,
+        "range_default": 350,
         "range_left": 200,
         "range_right": 700
       },
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 700,
+        "range_default": 600,
         "range_left": 200,
         "range_right": 700
       }
@@ -4443,7 +4443,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 310,
+        "range_default": 590,
         "range_left": 100,
         "range_right": 800
       }
@@ -4936,7 +4936,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 410,
+        "range_default": 760,
         "range_left": 200,
         "range_right": 900
       }
@@ -5401,7 +5401,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 350,
+        "range_default": 450,
         "range_left": 200,
         "range_right": 700
       }
@@ -5851,7 +5851,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 540,
+        "range_default": 360,
         "range_left": 300,
         "range_right": 900
       }
@@ -6109,14 +6109,14 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 400,
+        "range_default": 750,
         "range_left": 300,
         "range_right": 800
       },
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 350,
+        "range_default": 400,
         "range_left": 300,
         "range_right": 800
       }
@@ -6543,14 +6543,14 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 700,
+        "range_default": 420,
         "range_left": 300,
         "range_right": 700
       },
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 700,
+        "range_default": 380,
         "range_left": 300,
         "range_right": 700
       }
@@ -7003,7 +7003,7 @@
       {
         "name": "wght",
         "property": "wght",
-        "range_default": 740,
+        "range_default": 660,
         "range_left": 100,
         "range_right": 900
       }

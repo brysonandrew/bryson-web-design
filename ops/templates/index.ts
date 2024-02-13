@@ -1,8 +1,9 @@
 import { titleToUpperSnake } from '@brysonandrew/utils';
 import { QUOTE } from '@ops/config/constants';
 
-const quoteWrap = (v: string) => `${QUOTE}${v}${QUOTE}`;
-const commaTrail = (v: string) => `${v},`;
+export const quoteWrap = (v: string) =>
+  `${QUOTE}${v}${QUOTE}`;
+export const commaTrail = (v: string) => `${v},`;
 type TItems = (string | object)[];
 type TConfig = {
   name: string;

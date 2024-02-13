@@ -1508,5 +1508,5 @@ export const BUNNY_NAMES = [
 'Zeyada',
 'Zhi Mang Xing',
 'Zilla Slab',
-'Zilla Slab secondary',
+'Zilla Slab Highlight',
 ] as const;
