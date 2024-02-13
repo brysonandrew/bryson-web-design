@@ -2,21 +2,14 @@ import { presetWebFonts, type Preset } from 'unocss';
 import {
   resolveWebFont,
   withDarkModePreset,
+  TWebFonts,
 } from '@brysonandrew/uno-presets';
+import { FONTS } from './fonts';
 
-const sans = resolveWebFont({
-  key: 'sans',
-  name: 'Supreme',
-  provider: 'fontshare',
-  weights: ['400', '500', '600'],
-});
-// const mono = resolveWebFont({
-//   key: 'display',
-//   name: 'ADLaM Display',
-//   provider: 'google',
-//   weights: ['regular'],
-// });
-export const FONTS = { ...sans } as const;
+const fonts = FONTS.reduce((a, c) => {
+  const record = resolveWebFont(c);
+  return { ...a, ...record };
+}, {} as TWebFonts);
 
 export type TPresets<T extends object> = (
   | Preset<T>
@@ -25,4 +18,4 @@ export type TPresets<T extends object> = (
 export const resolvePresets = <
   T extends object,
 >(): TPresets<T> =>
-  withDarkModePreset([presetWebFonts({ fonts: FONTS })]);
+  withDarkModePreset([presetWebFonts({ fonts })]);

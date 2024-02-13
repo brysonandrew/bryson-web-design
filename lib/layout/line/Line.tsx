@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 export const Line: FC<
   PropsWithChildren<
-    TClassValueProps & { color: ClassValue }
+    TClassValueProps & { color?: ClassValue }
   >
 > = ({ color = 'border-gray-3', classValue }) => {
   return (

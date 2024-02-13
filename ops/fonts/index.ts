@@ -12,15 +12,19 @@ const resolve = (key: string) => {
   switch (key) {
     case 'g': {
       createGoogleFontFiles();
+      break;
     }
     case 'f': {
       createFontshareFiles();
+      break;
     }
     case 'b': {
       createBunnyFontFiles();
+      break;
     }
     default:
       console.log(red(`invalid arg ${key}`));
   }
 };
+
 resolve(lastArg);

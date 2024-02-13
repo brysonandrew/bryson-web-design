@@ -3,6 +3,7 @@ import { TGoogleFontResult } from '@ops/fonts/google/types';
 import { writeFile } from 'fs';
 import { join, parse } from 'path';
 import { writeCallback } from '@ops/console/write';
+import { replaceRegularWith400 } from '@ops/fonts/replaceRegularWith400';
 const GOOGLE_FONTS_URL =
   'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBwIX97bVWr3-6AIUvGkcNnmFgirefZ6Sw';
 const { name } = parse(__dirname);
@@ -42,10 +43,16 @@ export const createGoogleFontFiles = async () => {
     } as const;
     const keys = ['names', 'categories', 'fonts'] as const;
     keys.forEach((key) => {
-      const file = templateArrayConst({
+      const items = [...collection[key]];
+      let file = templateArrayConst({
         name: `google ${key}`,
-        items: [...collection[key]],
+        items,
       });
+      if (key === 'fonts') {
+        console.log(file);
+        file = replaceRegularWith400(file);
+        console.log(file);
+      }
       const path = join(TARGET_DIR, `${key}.ts`);
       writeFile(
         path,
