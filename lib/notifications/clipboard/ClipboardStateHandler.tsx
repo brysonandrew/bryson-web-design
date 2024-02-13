@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-
 import { AnimatePresence, motion } from 'framer-motion';
 import { I } from '@brysonandrew/icons-i';
 import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/icons-keys';
@@ -17,7 +16,7 @@ export const ClipboardStateHandler: FC<TProps> = ({
       {copying && (
         <motion.div
           onClick={onEnd}
-          className='fill-screen center w-full h-full inset-0 bg-black-07 text-4xl z-50 pointer-events-none'
+          className='fill-screen center bg-gray-08 text-4xl z-50 pointer-events-none'
           {...PRESENCE_OPACITY}
         >
           {copying === 'pending' ? (
@@ -38,7 +37,7 @@ export const ClipboardStateHandler: FC<TProps> = ({
                   icon={CLIPBOARD_SUCCESS_ICON}
                 />
               </header>
-              <h4 className='text-teal text-4xl normal-case'>
+              <h4 className='text-4xl'>
                 "{copying.value}"
               </h4>
             </div>
