@@ -75,7 +75,7 @@ export const Input = <T extends HTMLElement>({
 
   useEffect(() => {
     if (isDisabled) {
-      blurInput();
+      //blurInput();
     } else {
       if (
         (focusKey === null && name === DEFAULT_FOCUS_KEY) ||
@@ -90,6 +90,7 @@ export const Input = <T extends HTMLElement>({
   }, [isDisabled, input]);
 
   const handleClear = (_: MouseEvent) => {
+    if (!isFormDisabled) return;
     onForm({ [name]: '' });
     focusInput();
   };
@@ -112,9 +113,7 @@ export const Input = <T extends HTMLElement>({
       {...handlers}
     >
       <>
-        <LabelBack
-          classValue='_contact_label-texture-glow'
-        />
+        <LabelBack classValue='_contact_label-texture-glow' />
         <Name title={name} />
         {children({
           value,
