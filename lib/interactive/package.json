@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.22.197",
+  "version": "6.22.199",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",

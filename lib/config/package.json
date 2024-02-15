@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config",
-  "version": "6.22.197",
+  "version": "6.22.199",
   "description": "Config library",
   "main": "./index.ts",
   "module": "./index.ts",
