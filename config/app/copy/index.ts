@@ -28,9 +28,10 @@ export const CONTACT_FORM_FOOTER = {
 };
 
 export const CV_ITEMS = [
-  RECORD.Juke,
-  RECORD.Canvas,
-  RECORD.Epirus,
+  ...INIT_PROJECT_ITEMS.slice(4),
+  // RECORD.Juke,
+  // RECORD.Canvas,
+  // RECORD.Epirus,
 ];
 
 const TEAM_SENTENCE = `Seeking an opportunity to

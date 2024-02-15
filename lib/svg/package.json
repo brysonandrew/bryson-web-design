@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "6.22.186",
+  "version": "6.22.194",
   "description": "Svg library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,8 +29,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg-filter": "*",
     "@brysonandrew/svg-clip-path": "*",
+    "@brysonandrew/svg-filter": "*",
     "@brysonandrew/config-types": "*",
     "react": "^18.2.0"
   }

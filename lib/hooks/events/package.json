@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-events",
-  "version": "6.21.256",
+  "version": "6.21.264",
   "description": "Hooks Events library",
   "main": "./index.ts",
   "module": "./index.ts",

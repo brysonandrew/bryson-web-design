@@ -4,7 +4,7 @@ import {
   SMALL_SUFFIX,
   SCREENS_DIR,
   PRECACHE_PATH,
-} from '@ops/screens/process/constants';
+} from '@ops/screens/config/constants';
 import { promises as fs } from 'fs';
 import sharp, { Metadata, OutputInfo } from 'sharp';
 

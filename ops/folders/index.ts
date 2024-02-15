@@ -1,4 +1,4 @@
-import { IMAGES_GLOB } from '@ops/screens/process/constants';
+import { IMAGES_GLOB } from '@ops/screens/config/constants';
 import { resolveFsInfo } from '@ops/utils/resolveFsInfo';
 import fg from 'fast-glob';
 import fs from 'fs';

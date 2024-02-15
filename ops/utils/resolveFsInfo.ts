@@ -1,4 +1,4 @@
-import { SCREENS_DIR } from "@ops/screens/process/constants";
+import { SCREENS_DIR } from "@ops/screens/config/constants";
 
 type TDir = string;
 type TName = string;

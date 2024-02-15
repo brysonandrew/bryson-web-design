@@ -4,7 +4,7 @@ import {
 } from '@brysonandrew/media';
 import { TAnyRecord } from '@brysonandrew/config-types';
 import { writeFileData } from '@ops/utils/write';
-import { LOOKUP_PATH } from '@ops/screens/process/constants';
+import { LOOKUP_PATH } from '@ops/screens/config/constants';
 
 export const writeScreensRecordInGallery = (
   next: TMediaRecord | null,

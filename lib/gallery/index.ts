@@ -7,6 +7,6 @@ export * from './config/types';
 export * from './hooks/useItemsConfig';
 export * from './hooks/useProjectsRedirect';
 export * from './utils/resolveItem';
-export * from './components/buttons/Circle';
 export * from './components/content/Header';
 export * from './components/content';
+export * from './components/buttons/Circle';
