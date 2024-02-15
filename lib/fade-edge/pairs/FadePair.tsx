@@ -12,8 +12,8 @@ export type TFadePairProps = TFadeProps & {
 export const FadePair: FC<TFadePairProps> = ({
   Fader = FadeRight,
   classValue,
-  darkColor = 'var(--black-05)',
-  lightColor = 'var(--white-05)',
+  darkColor = 'var(--dark-05)',
+  lightColor = 'var(--light-05)',
   darkClass,
   lightClass,
   ...props

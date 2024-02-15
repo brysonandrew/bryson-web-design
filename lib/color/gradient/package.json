@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-gradient",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Color Gradient library",
   "types": "/index.d.ts",
   "main": "./index.ts",

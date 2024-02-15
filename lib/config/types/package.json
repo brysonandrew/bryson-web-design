@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Config Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,17 +12,17 @@
     },
     "./keys": "./keys.ts",
     "./object": "./object.ts",
-    "./css": "./css/index.ts",
-    "./css/interactive": "./css/interactive.ts",
     "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./assertions/numbers": "./assertions/numbers.ts",
-    "./numbers": "./numbers/index.ts",
-    "./numbers/series": "./numbers/series.ts",
+    "./css": "./css/index.ts",
+    "./css/interactive": "./css/interactive.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
+    "./numbers": "./numbers/index.ts",
+    "./numbers/series": "./numbers/series.ts",
     "./transformers/map": "./transformers/map.ts",
     "./transformers/number": "./transformers/number.ts",
     "./transformers/parameter": "./transformers/parameter.ts",
@@ -51,9 +51,9 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "@brysonandrew/uno-shortcuts": "*",
-    "@brysonandrew/config-constants": "*",
     "react-router-dom": "^6.21.3",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0"
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/config-constants": "*"
   }
 }

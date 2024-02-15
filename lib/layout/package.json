@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,8 +29,8 @@
   ],
   "peerDependencies": {
     "@brysonandrew/layout-back": "*",
-    "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/layout-line": "*",
     "@brysonandrew/layout-lists": "*",

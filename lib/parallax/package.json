@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/parallax",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",

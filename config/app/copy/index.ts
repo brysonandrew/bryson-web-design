@@ -1,14 +1,4 @@
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
-import { TInitItem, TTitle } from '@app/gallery/types';
-
-type TRecord = Record<TTitle, TInitItem>;
-const RECORD = INIT_PROJECT_ITEMS.reduce(
-  (a: TRecord, c) => {
-    a[c.title] = c;
-    return a;
-  },
-  {} as TRecord,
-);
 
 export const CONTACT_PHONE = '020 4069 8339';
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(

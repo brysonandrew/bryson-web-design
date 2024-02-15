@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,10 +29,10 @@
   ],
   "peerDependencies": {
     "@brysonandrew/uno-preflights": "*",
-    "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-presets": "*",
-    "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-spacing": "*",
-    "@brysonandrew/uno-theme": "*"
+    "@brysonandrew/uno-theme": "*",
+    "@brysonandrew/uno-shortcuts": "*"
   }
 }

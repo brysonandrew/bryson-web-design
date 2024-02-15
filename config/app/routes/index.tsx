@@ -7,6 +7,7 @@ import { Shell } from '@shell';
 import { resolvePageRecords } from '@brysonandrew/routes';
 import { NotFound } from '@brysonandrew/routes/not-found';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
+import { DEV_ROUTES } from '@app/routes/dev';
 
 export const PAGE_TITLES = [
   'Index',
@@ -53,6 +54,7 @@ const MAIN_ROUTES = [
 const ROUTES: RouteObject[] = [
   ...MAIN_ROUTES,
   ...WORKSHOP_ROUTES,
+  ...(import.meta.env.DEV ? DEV_ROUTES : []),
 ];
 
 export {

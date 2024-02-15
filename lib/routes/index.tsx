@@ -29,7 +29,7 @@ export const resolvePageRecords = <
   return { PAGE_RECORD, PAGE_VALUES, PAGES_ROUTES };
 };
 
-export * from '@brysonandrew/not-found';
 export * from '@brysonandrew/link-list';
+export * from '@brysonandrew/not-found';
 export * from './resolvePage';
 export * from './types';

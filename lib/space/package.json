@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/space",
-  "version": "6.22.194",
+  "version": "6.22.197",
   "description": "Space library",
   "main": "./index.tsx",
   "module": "./index.tsx",
