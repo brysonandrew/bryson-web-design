@@ -11,7 +11,7 @@ export const TextAnchor: FC<TProps> = ({
   return (
     <a
       className={clsx(
-        'whitespace-nowrap text-light-blue',
+        'whitespace-nowrap title-main',
         classValue,
       )}
       {...props}

@@ -18,7 +18,7 @@ export const FadeFill: FC<TFadeFillProps> = ({
   classValue,
   isFixed,
   direction = 'to right' as TGradientDirection,
-  edgeColor = 'var(--black)',
+  edgeColor = 'var(--dark)',
   midColor = 'var(--transparent)',
   style,
   ...props

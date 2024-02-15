@@ -15,7 +15,7 @@ export type TFadeProps = TDivMotionProps & {
 export const Fade: FC<TFadeProps> = ({
   classValue,
   style,
-  from = 'var(--black)',
+  from = 'var(--dark)',
   to = 'var(--transparent)',
   direction = 'to right' as TGradientDirection,
   ...props

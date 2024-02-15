@@ -5,13 +5,13 @@ import { parse, resolve } from 'path';
 import { kebabToPascal } from '@brysonandrew/utils';
 import { writeFile } from 'fs/promises';
 
-const WORKSHOP_ROOT = 'src/pages/_workshop';
+const WORKSHOP_ROOT = 'src/pages/_dev';
 const WORKSHOP_GLOB = resolve(WORKSHOP_ROOT, '**');
 const WORKSHOP_INDEX = resolve(WORKSHOP_ROOT, 'index.ts');
 
 const DEPTH = 1;
 
-export const resolveWorkshopExports = async () => {
+(async () => {
   try {
     const cwd = resolvePwd();
     const paths = await glob([WORKSHOP_GLOB], {
@@ -33,6 +33,4 @@ export const resolveWorkshopExports = async () => {
   } catch (error: TError) {
     throw new Error(error);
   }
-};
-
-resolveWorkshopExports();
+})();

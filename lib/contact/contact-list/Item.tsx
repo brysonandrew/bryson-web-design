@@ -23,11 +23,11 @@ export const Item: FC<TProps> = ({
 }) => {
   return (
     <li className={clsx('row', classValue)}>
-      <TextAnchor 
+      <TextAnchor
         target='_top'
         href={href}
         title={children}
-        classValue="text-sm lg:text-xl"
+        classValue='text-sm md:text-lg lg:text-xl'
         {...props}
       >
         {children}

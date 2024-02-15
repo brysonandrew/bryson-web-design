@@ -14,8 +14,8 @@ export type TFadeEdgePairProps = Omit<TFadeFillProps, 'edgeColor'> & {
 };
 export const FadeEdgePair: FC<TFadeEdgePairProps> = ({
   Fader = FadeFill,
-  darkEdgeColor = 'var(--black)',
-  lightEdgeColor = 'var(--white)',
+  darkEdgeColor = 'var(--dark)',
+  lightEdgeColor = 'var(--light)',
   darkClass,
   lightClass,
   classValue,
