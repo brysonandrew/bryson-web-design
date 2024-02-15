@@ -13,14 +13,17 @@ export type TPhoneLinkInfo = {
   withTrunk: string;
 };
 
-export type TContactListProps = TClassValueProps &
-  Partial<{
-    url: string;
-    email: string;
-    phone: TPhoneLinkInfo;
-    itemClassValue?: ClassValue;
-  }>;
+export type TContactListItems = {
+  url: string;
+  email: string;
+  phone: TPhoneLinkInfo;
+};
+export type TContactListProps = TClassValueProps & {
+  isCopy?: boolean;
+  itemClassValue?: ClassValue;
+} & Partial<TContactListItems>;
 export const ContactList: FC<TContactListProps> = ({
+  isCopy,
   classValue,
   itemClassValue,
   url,
@@ -31,7 +34,9 @@ export const ContactList: FC<TContactListProps> = ({
   const sharedProps = {
     classValue: itemClassValue,
     clipboardState,
+    isCopy,
   };
+
   return (
     <>
       <ul className={clsx(classValue)}>

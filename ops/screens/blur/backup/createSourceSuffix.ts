@@ -1,8 +1,7 @@
-import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
+import { CANVAS_SCREENS_PATH, SOURCE_SUFFIX } from '@ops/screens/config/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { resolveFsInfo } from 'ops/utils/resolveFsInfo';
-import { SOURCE_SUFFIX } from '../config';
+import { resolveFsInfo } from '@ops/utils/resolveFsInfo';
 
 export const createSourceSuffix = async () => {
   try {

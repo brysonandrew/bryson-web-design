@@ -1,8 +1,8 @@
 import { findPkgPaths } from './findPkgPaths';
 import { resolveTargetDirPath } from './resolveTargetDirPath';
 import { writePkgWorkspaces } from '@ops/exporter/writePkgWorkspaces';
-import { processTargets } from '@ops/exporter/processTargets';
 import { writeTsPathWorkspacePaths } from '@ops/exporter/writeTsPathWorkspacePaths';
+import { processTargets } from '@ops/exporter/processTargets';
 
 (async () => {
   try {

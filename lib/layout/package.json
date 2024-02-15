@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.186",
+  "version": "6.22.194",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -32,10 +32,10 @@
     "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-effects": "*",
     "@brysonandrew/layout-light": "*",
+    "@brysonandrew/layout-line": "*",
     "@brysonandrew/layout-lists": "*",
     "@brysonandrew/layout-section": "*",
     "@brysonandrew/layout-typography": "*",
-    "@brysonandrew/layout-line": "*",
     "@brysonandrew/layout-utils": "*"
   }
 }

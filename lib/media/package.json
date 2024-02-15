@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.22.186",
+  "version": "6.22.194",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",

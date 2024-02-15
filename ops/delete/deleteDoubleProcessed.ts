@@ -1,4 +1,4 @@
-import { DIRS_GLOB } from '@ops/screens/process/constants';
+import { DIRS_GLOB } from '@ops/screens/config/constants';
 import fg from 'fast-glob';
 import { deletePaths } from './deletePaths';
 

@@ -8,7 +8,7 @@ export const Header = () => {
     <header className='row-start-space w-full'>
       <Title />
       <Contact
-        classValue='column-end w-full'
+        classValue='column-end w-full mt-1'
         url={url}
         email={email} 
         phone={phone}

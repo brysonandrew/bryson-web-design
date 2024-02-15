@@ -1,6 +1,5 @@
-import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
+import { CANVAS_SCREENS_PATH, SOURCE_SUFFIX } from '@ops/screens/config/constants';
 import fg from 'fast-glob';
-import { SOURCE_SUFFIX } from '../config';
 
 export const deleteSources = async () => {
   try {
