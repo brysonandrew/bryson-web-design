@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-edge",
-  "version": "6.22.197",
+  "version": "6.22.199",
   "description": "Fade Edge library",
   "main": "./index.ts",
   "module": "./index.ts",

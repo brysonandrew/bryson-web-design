@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-section",
-  "version": "6.22.197",
+  "version": "6.22.199",
   "description": "Layout Section library",
   "main": "./index.tsx",
   "module": "./index.tsx",

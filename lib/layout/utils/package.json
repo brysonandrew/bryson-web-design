@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-utils",
-  "version": "6.22.197",
+  "version": "6.22.199",
   "description": "Layout Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
