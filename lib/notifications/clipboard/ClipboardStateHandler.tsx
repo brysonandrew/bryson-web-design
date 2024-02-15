@@ -47,3 +47,5 @@ export const ClipboardStateHandler: FC<TProps> = ({
     </AnimatePresence>
   );
 };
+
+export { CLIPBOARD_SUCCESS_ICON };

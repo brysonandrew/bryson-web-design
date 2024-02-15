@@ -59,3 +59,5 @@ export const CartStateHandler: FC<TProps> = ({
     </motion.div>
   );
 };
+
+export { CART_ICON };

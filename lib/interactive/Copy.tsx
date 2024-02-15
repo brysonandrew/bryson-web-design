@@ -16,7 +16,7 @@ export const Copy: FC<TCopyProps> = ({
 }) => {
   return (
     <BSm
-      shape='interactive-sq-sm'
+      shape='interactive-circ-lg'
       title={`Copy ${title} to clipboard`}
       icon={COPY_ICON}
       onClick={async () => {

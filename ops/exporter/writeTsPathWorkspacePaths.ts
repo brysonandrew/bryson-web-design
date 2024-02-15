@@ -3,12 +3,19 @@ import { TInternalTsPathRecord } from '@ops/exporter/config/types';
 import { TError } from '@brysonandrew/config';
 import { green } from '@ops/console';
 import { prependPwd } from '@ops/utils/dirs/pwd';
+import { sortByKeys } from '@brysonandrew/utils-object';
 import prevTsConfigPaths from '@ts/paths';
 
 export const writeTsPathWorkspacePaths = async (
   workspacesTsPathRecord: TInternalTsPathRecord,
 ) => {
   try {
+    const pathsRecord = {
+      ...prevTsConfigPaths.compilerOptions.paths,
+      ...workspacesTsPathRecord,
+    };
+    const sortedPaths = sortByKeys(pathsRecord);
+
     const path = 'tsconfig.paths.json';
     const fullPath = prependPwd(path);
 
@@ -16,10 +23,7 @@ export const writeTsPathWorkspacePaths = async (
       ...prevTsConfigPaths,
       compilerOptions: {
         ...prevTsConfigPaths.compilerOptions,
-        paths: {
-          ...prevTsConfigPaths.compilerOptions.paths,
-          ...workspacesTsPathRecord,
-        },
+        paths: sortedPaths,
       },
     };
 

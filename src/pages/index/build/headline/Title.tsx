@@ -7,7 +7,7 @@ export const Title: FC<TProps> = ({ children }) => {
   return (
     <h2
       style={{ lineHeight: 1 }}
-      className='relative row-wrap justify-center gap-4 text-shadow-inherit uppercase char-gap-4 text-4xl sm:text-5xl md:text-5.5xl lg:text-6xl xl:text-8xl'
+      className='relative row-wrap justify-center gap-4 text-shadow-inherit uppercase char-gap-4 text-4xl px-8 sm:(text-5xl px-24) md:(text-5.5xl px-4) lg:(text-6xl px-20) xl:(text-8xl px-4)'
     >
       <Animation>{children}</Animation>
     </h2>

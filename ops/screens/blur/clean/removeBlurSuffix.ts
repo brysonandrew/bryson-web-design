@@ -1,7 +1,6 @@
-import { CANVAS_SCREENS_PATH } from '@ops/screens/process/constants';
+import { BLUR_SUFFIX, CANVAS_SCREENS_PATH } from '@ops/screens/config/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
-import { BLUR_SUFFIX } from '../config';
 
 export const removeBlurSuffix = async () => {
   try {

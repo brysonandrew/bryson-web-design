@@ -15,6 +15,8 @@ import { Global as GlobalCss, css } from '@emotion/react';
 import { capitalize } from '@brysonandrew/utils';
 import { COLOR_VARS_CSS } from '@app/color';
 import { PLACEHOLDER } from '@app/placeholder';
+import { usePreloadIcons } from '@brysonandrew/icons-load';
+import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/notifications/clipboard/ClipboardStateHandler';
 
 type TPath = TPage<TPageTitle>['path'];
 type TPageValue = TPageTitle | string;
@@ -49,6 +51,8 @@ export const Global: FC<PropsWithChildren> = ({
       ${PLACEHOLDER.GLOBAL.VARS_CSS}
     }
   `;
+  usePreloadIcons([CLIPBOARD_SUCCESS_ICON]);
+
   return (
     <>
       <Head<TPath, TPageValue>

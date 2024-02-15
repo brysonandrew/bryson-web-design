@@ -7,6 +7,10 @@ import {
 type TProps = TContactListProps;
 export const Footer: FC<TProps> = (props) => {
   return (
-    <ContactList classValue='_contact_footer' {...props} />
+    <ContactList
+      classValue='_contact_footer'
+      isCopy
+      {...props}
+    />
   );
 };

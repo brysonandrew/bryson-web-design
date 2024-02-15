@@ -10,7 +10,7 @@ import {
   SCREENS_DIR,
   EXCLUDE_SMALLS,
   BASE_SCREENS_ENTRY,
-} from './constants';
+} from '../config/constants';
 import { resolveMediaRecord } from '@ops/utils/resolveMediaRecord';
 import {
   resolveSmallEntry,
