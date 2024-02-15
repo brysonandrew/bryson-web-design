@@ -39,7 +39,7 @@ export const ContactList: FC<TContactListProps> = ({
 
   return (
     <>
-      <ul className={clsx(classValue)}>
+      <ul className={clsx('column-end', classValue)}>
         {url && (
           <Item
             name='url'

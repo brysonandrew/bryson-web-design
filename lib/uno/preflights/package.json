@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-preflights",
-  "version": "6.22.194",
+  "version": "6.22.199",
   "description": "Uno Preflights library",
   "main": "./index.ts",
   "module": "./index.ts",

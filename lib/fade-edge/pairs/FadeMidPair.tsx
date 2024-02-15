@@ -14,8 +14,8 @@ type TProps = Omit<TFadeFillProps, 'midColor'> & {
 };
 export const FadeMidPair: FC<TProps> = ({
   Fader = FadeFill,
-  darkMidColor = 'var(--black)',
-  lightMidColor = 'var(--white)',
+  darkMidColor = 'var(--dark)',
+  lightMidColor = 'var(--light)',
   darkClass,
   lightClass,
   classValue,

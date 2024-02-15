@@ -2,23 +2,21 @@ import {
   OPACITY_RANGE_RGB_RECORD,
   VARIABLES_RECORD,
 } from './constants';
-import {
-  TOpacityRangeRgbRecord,
-  TVariablesRecord,
-} from './types';
+import { TVariablesRecord } from './types';
 import {
   BASE_GLOW_RECORD,
-  BLACK_DEFAULT_RGB,
+  BLACK_RGBS,
   MAIN_RGBS_RECORD,
   resolveColorRecords,
   resolveGlowRecord,
-  TMainKey,
-  TRgb,
+  WHITE_RGBS,
 } from '@brysonandrew/color';
 
 const RGB_RECORD = {
   ...OPACITY_RANGE_RGB_RECORD,
   ...MAIN_RGBS_RECORD,
+  dark: BLACK_RGBS[2],
+  light: WHITE_RGBS[8],
   primary: '45, 212, 191',
   secondary: '207, 250, 254',
   accent: '153, 204, 255',

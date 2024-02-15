@@ -11,8 +11,8 @@ export const FadeV: FC<TFadeVProps> = (props) => {
       direction='to bottom'
       isFixed
       midColor='var(--transparent)'
-      darkEdgeColor='var(--black-04)'
-      lightEdgeColor='var(--white-04)'
+      darkEdgeColor='var(--dark-04)'
+      lightEdgeColor='var(--light-04)'
       darkClass='opacity-dark'
       lightClass='opacity-light'
       {...props}

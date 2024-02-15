@@ -7,7 +7,11 @@ import prevTsConfigPaths from '@ts/paths';
 export const resolveTsPaths = async () => {
   try {
     const paths = await glob(
-      ['(src|config)/**(!node_*)', 'src/pages/_workshop'],
+      [
+        '(src|config)/**(!node_*)',
+        'src/pages/_workshop',
+        'src/pages/_dev',
+      ],
       {
         deep: 2,
         onlyDirectories: true,
