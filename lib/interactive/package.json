@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.22.199",
+  "version": "6.22.200",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,6 +12,10 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./circle/Anchor": "./circle/Anchor.tsx",
+    "./circle/Background": "./circle/Background.tsx",
+    "./circle/Button": "./circle/Button.tsx",
+    "./circle": "./circle/index.tsx",
     "./base/B": "./base/B.tsx",
     "./base/BAnchor": "./base/BAnchor.tsx",
     "./base/BAnchorMotion": "./base/BAnchorMotion.tsx",
@@ -26,11 +30,7 @@
     "./base/IconLink": "./base/IconLink.tsx",
     "./base/Row": "./base/Row.tsx",
     "./base/TextAnchor": "./base/TextAnchor.tsx",
-    "./base/TextLink": "./base/TextLink.tsx",
-    "./circle/Anchor": "./circle/Anchor.tsx",
-    "./circle/Background": "./circle/Background.tsx",
-    "./circle/Button": "./circle/Button.tsx",
-    "./circle": "./circle/index.tsx"
+    "./base/TextLink": "./base/TextLink.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -50,22 +50,23 @@
   ],
   "peerDependencies": {
     "@brysonandrew/config-types": "*",
+    "@brysonandrew/cursor": "*",
     "@brysonandrew/icons-keys": "*",
     "@brysonandrew/notifications": "*",
+    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-error": "*",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
     "react-router-dom": "^6.21.3",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/icons-i": "*",
     "@brysonandrew/animation": "*",
+    "@brysonandrew/app": "*",
+    "@brysonandrew/icons-i": "*",
     "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/app": "*"
+    "@brysonandrew/layout-effects": "*"
   },
   "types": "index.d.ts"
 }

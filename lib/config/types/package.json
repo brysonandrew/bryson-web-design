@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "6.22.199",
+  "version": "6.22.200",
   "description": "Config Types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,13 +14,13 @@
     "./object": "./object.ts",
     "./assertions/isValidKey": "./assertions/isValidKey.ts",
     "./assertions/numbers": "./assertions/numbers.ts",
+    "./css": "./css/index.ts",
+    "./css/interactive": "./css/interactive.ts",
     "./dom/element": "./dom/element.ts",
     "./dom/event": "./dom/event.ts",
     "./dom": "./dom/index.ts",
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
-    "./css": "./css/index.ts",
-    "./css/interactive": "./css/interactive.ts",
     "./numbers": "./numbers/index.ts",
     "./numbers/series": "./numbers/series.ts",
     "./transformers/map": "./transformers/map.ts",
@@ -50,10 +50,10 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
+    "@brysonandrew/uno-shortcuts": "*",
     "react-router-dom": "^6.21.3",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/uno-shortcuts": "*",
     "@brysonandrew/config-constants": "*"
   }
 }

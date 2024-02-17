@@ -19,6 +19,7 @@ export * from './background';
 export * from './flex';
 export * from './interactive';
 export * from './layout';
+export * from './opacity';
 export * from './text/color';
 export * from './text';
 export * from './neu/constants';

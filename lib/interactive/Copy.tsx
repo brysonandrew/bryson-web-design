@@ -1,7 +1,12 @@
 import { TTitleProps } from '@brysonandrew/config-types';
+import {
+  CUSTOM_CURSOR_KEY,
+  useHoverKey,
+} from '@brysonandrew/cursor';
 import { COPY_ICON } from '@brysonandrew/icons-keys';
 import { BSm } from '@brysonandrew/interactive/base/BSm';
 import { TClipboardState } from '@brysonandrew/notifications';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
 import { resolveErrorMessage } from '@brysonandrew/utils-error';
 import { FC } from 'react';
 
@@ -14,10 +19,15 @@ export const Copy: FC<TCopyProps> = ({
   value,
   handler,
 }) => {
+  const longTitle = `Copy ${title} to clipboard`;
+  const { handlers } = useHoverKey(
+    CUSTOM_CURSOR_KEY,
+    longTitle,
+    COPY_ICON,
+  );
   return (
     <BSm
       shape='interactive-circ-md'
-      title={`Copy ${title} to clipboard`}
       icon={COPY_ICON}
       onClick={async () => {
         try {
@@ -26,6 +36,8 @@ export const Copy: FC<TCopyProps> = ({
           resolveErrorMessage(error);
         }
       }}
+      {...resolveInteractiveLabels(longTitle)}
+      {...handlers}
     />
   );
 };
