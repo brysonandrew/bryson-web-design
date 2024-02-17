@@ -3,7 +3,6 @@ import { useDrag } from '@brysonandrew/gallery-viewer/hooks/useDrag';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { Items } from './items';
-import clsx from 'clsx';
 import { isDesktop } from 'react-device-detect';
 import { useKeys } from '@brysonandrew/gallery-viewer/hooks/useKeys';
 import { useApp } from '@brysonandrew/app';

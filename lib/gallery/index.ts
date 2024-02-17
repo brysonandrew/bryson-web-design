@@ -8,5 +8,5 @@ export * from './hooks/useItemsConfig';
 export * from './hooks/useProjectsRedirect';
 export * from './utils/resolveItem';
 export * from './components/buttons/Circle';
-export * from './components/content/Header';
+export * from '../../src/components/galllery/LeftHeader';
 export * from './components/content';

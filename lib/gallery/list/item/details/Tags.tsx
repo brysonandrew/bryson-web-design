@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 type TProps = Required<Pick<TItem, 'slug' | 'tags'>>;
 export const Tags: FC<TProps> = ({ slug, tags }) => {
-  const { BORDER_RADIUS } = useApp();
+  const { BORDER_RADIUS, COLOR } = useApp();
   return (
     <motion.div className='relative'>
       <ul className='row-wrap gap-2'>
@@ -16,8 +16,11 @@ export const Tags: FC<TProps> = ({ slug, tags }) => {
           const content = (
             <Brighten>
               <span
-                className='text-black-9 bg-accent px-2 py-1 whitespace-nowrap'
-                style={{ borderRadius: BORDER_RADIUS.SM }}
+                className='px-2 py-1 whitespace-nowrap'
+                style={{
+                  borderRadius: BORDER_RADIUS.SM,
+                  backgroundColor: COLOR.accent,
+                }}
               >
                 {title}
               </span>

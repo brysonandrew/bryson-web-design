@@ -10,7 +10,7 @@ const Root = styled.footer``;
 export const Footer = () => {
   return (
     <Root className='fixed bottom-0 left-0 w-full h-0 z-0'>
-      <div className='relative w-shell'>
+      <div className='absolute left-1/2 -translate-x-1/2 bottom-0 w-shell'>
         <Position position='left-6'>
           <Network OfflineFC={OfflineFC} />
         </Position>

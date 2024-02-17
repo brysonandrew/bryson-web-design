@@ -2,6 +2,7 @@ import { PRESENCE_UP_Y } from '@brysonandrew/animation';
 import { motion } from 'framer-motion';
 import { FC, useMemo } from 'react';
 import { Stagger } from './Stagger';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = {
   index: number;
@@ -13,6 +14,7 @@ export const Word: FC<TProps> = ({
   children,
   prevWords,
 }) => {
+  const { COLOR } = useApp();
   const charsProps = useMemo(() => {
     const prevCount = prevWords
       .slice(0, index)
@@ -30,7 +32,8 @@ export const Word: FC<TProps> = ({
         <Stagger classValue='font-thin' {...charsProps} />
       ) : (
         <Stagger
-          classValue='text-primary font-black'
+          classValue='font-black'
+          style={{ color: COLOR.primary }}
           {...charsProps}
         />
       )}

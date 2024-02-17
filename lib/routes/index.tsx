@@ -20,6 +20,7 @@ export const resolvePageRecords = <
     ({ title, path }: TPage<T>) => {
       const Component = PageDirectory[title];
       return {
+        index: path === '/',
         path,
         Component,
       };

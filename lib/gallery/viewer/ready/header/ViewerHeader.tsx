@@ -29,10 +29,13 @@ export const ViewerHeader: FC<TProps> = ({
   };
   return (
     <header className='relative left-0 top-0 row w-full z-30'>
-      <BackFillMotion style={{ boxShadow: GLOW_BOX['white'] }} />
+      <BackFillMotion
+        style={{ boxShadow: GLOW_BOX['white'] }}
+      />
       <Content
         isHover
         slug={slug}
+        leftHeader={<Viewer.LeftHeader slug={slug} />}
         rightHeader={
           <>
             <Viewer.RightHeader slug={slug} />

@@ -1,13 +1,12 @@
-import {
-  IndexRouteObject,
-  RouteObject,
-} from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 import * as Pages from '@pages/index';
 import { Shell } from '@shell';
-import { resolvePageRecords } from '@brysonandrew/routes';
-import { NotFound } from '@brysonandrew/routes/not-found';
-import { WORKSHOP_ROUTES } from '@app/routes/workshop';
+import {
+  NotFound,
+  resolvePageRecords,
+} from '@brysonandrew/routes';
 import { DEV_ROUTES } from '@app/routes/dev';
+import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 
 export const PAGE_TITLES = [
   'Index',
@@ -30,18 +29,13 @@ const SECTION_RECORD = {
   [PAGE_RECORD.contact.key]: 'Get in touch',
 } as const;
 
-const INDEX: IndexRouteObject = {
-  index: true,
-  path: PAGE_RECORD.index.path,
-  Component: Pages.Index,
-};
+const path = PAGE_RECORD.index.path;
 
 const MAIN_ROUTES = [
   {
-    path: PAGE_RECORD.index.path,
+    path,
     Component: Shell,
     children: [
-      INDEX,
       ...PAGES_ROUTES,
       {
         path: '*',
