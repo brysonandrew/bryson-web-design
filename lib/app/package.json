@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.199",
+  "version": "6.22.200",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,11 +14,11 @@
     "./useLayoutRecord": "./useLayoutRecord.tsx",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/constants/style": "./config/constants/style.ts",
     "./config/types": "./config/types/index.ts",
     "./config/types/layout": "./config/types/layout.ts",
-    "./config/types/sound": "./config/types/sound.ts"
+    "./config/types/sound": "./config/types/sound.ts",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/style": "./config/constants/style.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -40,14 +40,16 @@
     "react": "^18.2.0",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-object": "*",
+    "@brysonandrew/dark-mode": "*",
     "@brysonandrew/layout-effects": "*",
     "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-back": "*",
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "^10.18.0",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/layout": "*",
     "@brysonandrew/fade-edge": "*",
-    "@brysonandrew/color": "*",
-    "@brysonandrew/layout": "*"
+    "@brysonandrew/color": "*"
   }
 }

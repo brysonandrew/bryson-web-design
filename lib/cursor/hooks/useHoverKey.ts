@@ -34,12 +34,12 @@ export const useHoverKey = (
     update(false);
   };
   const isHover = key === hoverKey;
-
+  
   const handlers = {
-    onHoverStart: onInteractStart,
-    onHoverEnd: onInteractEnd,
-    onPointerLeave: onInteractEnd,
+    onMouseEnter: onInteractStart,
+    onPointerEnter: onInteractStart,
     onMouseLeave: onInteractEnd,
+    onPointerLeave: onInteractEnd,
   };
 
   return {

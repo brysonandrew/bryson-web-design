@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "6.22.199",
+  "version": "6.22.200",
   "description": "Layout Typography library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -43,6 +43,7 @@
     "@brysonandrew/animation": "*",
     "@brysonandrew/config-types": "*",
     "@brysonandrew/utils-key": "*",
+    "@brysonandrew/app": "*",
     "@brysonandrew/layout-line": "*",
     "@brysonandrew/space": "*",
     "@brysonandrew/in-view": "*"

@@ -90,7 +90,7 @@ export const Input = <T extends HTMLElement>({
   }, [isDisabled, input]);
 
   const handleClear = (_: MouseEvent) => {
-    if (!isFormDisabled) return;
+    if (isFormDisabled) return;
     onForm({ [name]: '' });
     focusInput();
   };
@@ -129,10 +129,10 @@ export const Input = <T extends HTMLElement>({
               key={name}
               name={name}
               whileHover={{ opacity: 1 }}
+              onTap={handleClear}
               {...resolveInteractiveLabels(`Clear ${name}`)}
               {...PRESENCE_OPACITY_DELAY}
               animate={{ opacity: isHover ? 0.8 : 0.2 }}
-              onTap={handleClear}
             />
           )}
         </AnimatePresence>

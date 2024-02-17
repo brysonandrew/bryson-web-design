@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export type THoverKey = string | number;
-export const useHoverKey = () => {
+export const useHoverKeyAlt = () => {
   const [hoverKeys, setHoverKeys] =
     useState<THoverKey[]>([]);
 
@@ -37,6 +37,6 @@ export const useHoverKey = () => {
   };
 };
 export type THoverKeyConfig =
-  ReturnType<typeof useHoverKey>;
+  ReturnType<typeof useHoverKeyAlt>;
 export type THoverKeyHandlers =
   THoverKeyConfig['handlers'];

@@ -27,7 +27,7 @@ export const ClipboardStateHandler: FC<TProps> = ({
               </div>
             </div>
           ) : (
-            <div className='column gap-8 text-xl md:text-2xl lg:text-4xl'>
+            <div className='column gap-8 text-xl p-4 dark:bg-black-09 bg-white-09 rounded-md backdrop-blur-md md:text-2xl lg:text-4xl'>
               <header className='row gap-6'>
                 <div className='char-gap-2 uppercase'>
                   {copying.title} copied

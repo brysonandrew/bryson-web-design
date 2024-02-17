@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.199",
+  "version": "6.22.200",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -38,6 +38,7 @@
     "@brysonandrew/config-types": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/color": "*",
+    "@brysonandrew/app": "*",
     "unocss": "^0.53.6",
     "@brysonandrew/utils-css": "*"
   }
