@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import { resolveGradient } from '@brysonandrew/color-gradient/resolveGradient';
 import { TColorStops } from '@brysonandrew/color';
+import { useApp } from '@brysonandrew/app';
 
 export type TPlaceholderProps = TDivMotionProps & {
   colors?: TColorStops;
@@ -15,17 +16,19 @@ export type TPartialPlaceholderProps =
 export const Placeholder: FC<TPlaceholderProps> = ({
   classValue,
   style,
-  colors = [
-    'var(--primary)',
-    'transparent',
-  ] as TColorStops,
   clipPathId,
   ...props
 }) => {
-  const colorStops: TColorStops = [...colors, ...colors];
+  const { COLOR } = useApp();
   const backgroundImage = resolveGradient({
     name: 'linear-gradient',
-    parts: ['to right', ...colorStops],
+    parts: [
+      'to right',
+      COLOR.primary,
+      COLOR.transparent,
+      COLOR.primary,
+      COLOR.transparent,
+    ],
   });
   return (
     <motion.div
@@ -44,7 +47,7 @@ export const Placeholder: FC<TPlaceholderProps> = ({
         }}
       >
         <motion.figure
-          className='relative background-color-01 h-full'
+          className='relative h-full'
           style={{
             width: '300%',
             backgroundImage,

@@ -103,13 +103,13 @@ export const Input = <T extends HTMLElement>({
 
   return (
     <motion.label
-      className='_contact_label'
+      className='_contact_label group'
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
-      {...(isDisabled
-        ? {}
-        : resolveParentAnimateConfig({ isHover }))}
+      // {...(isDisabled
+      //   ? {}
+      //   : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
       <>

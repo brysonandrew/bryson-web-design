@@ -5,12 +5,7 @@ import { motion } from 'framer-motion';
 
 type TProps = TBlankMotionProps;
 export const LightMarker =
-  ({
-    BlankMotion,
-    COLOR,
-    BORDER_RADIUS,
-    Glow,
-  }: TLayoutComponentProps) =>
+  ({ COLOR, BORDER_RADIUS, Glow }: TLayoutComponentProps) =>
   ({ classValue, style, ...props }: TProps) =>
     (
       <motion.div
@@ -22,24 +17,22 @@ export const LightMarker =
           width: `calc(0.5rem + 4px)`,
           height: '100%',
           ...(style ?? {}),
-        }}
+        }} 
         {...props}
       >
         <Glow>
           <motion.div
-            className='fill'
+            className='fill opacity-group-idle' 
             style={{
               backgroundColor: COLOR.primary,
               borderRadius: BORDER_RADIUS.SM,
             }}
-            variants={{
-              animate: {
-                opacity: 1,
-                backgroundColor: COLOR.primary,
-              },
-              hover: {
-                backgroundColor: COLOR.accent,
-              },
+          />
+          <motion.div
+            className='fill opacity-group-hover'
+            style={{
+              backgroundColor: COLOR.accent,
+              borderRadius: BORDER_RADIUS.SM,
             }}
           />
         </Glow>

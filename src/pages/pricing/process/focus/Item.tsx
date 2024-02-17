@@ -9,7 +9,7 @@ type TProps = PropsWithChildren<{
   id: string;
 }>;
 export const Item: FC<TProps> = ({ id, children }) => {
-  const { BORDER_RADIUS } = useApp();
+  const { BORDER_RADIUS, COLOR } = useApp();
   const { handlers, isHover } = useHoverKey(
     NONE_CURSOR_KEY,
     id,
@@ -22,9 +22,12 @@ export const Item: FC<TProps> = ({ id, children }) => {
       <motion.div
         className={clsx(
           'absolute -inset-1 center pointer-events-none',
-          isHover ? 'bg-primary-02 z-50' : '',
+          isHover ? 'z-50' : '',
         )}
-        style={{ borderRadius: BORDER_RADIUS.MD }}
+        style={{
+          borderRadius: BORDER_RADIUS.MD,
+          color: COLOR['primary-02'],
+        }}
       />
       <div className='relative row gap-2'>{children}</div>
     </motion.div>

@@ -1,19 +1,19 @@
 import type { StaticShortcutMap } from 'unocss';
-
 import { BACKGROUND } from './background';
 import { FLEX } from './flex';
 import { INTERACTIVE } from './interactive';
 import { LAYOUT } from './layout';
 import { SHORTCUTS as TEXT } from './text';
+import { OPACITY_TRANSITION_UNO_SHORTCUTS } from './opacity';
 
 export const SHORTCUTS: StaticShortcutMap = {
+  ...OPACITY_TRANSITION_UNO_SHORTCUTS,
   ...TEXT,
   ...BACKGROUND,
   ...FLEX,
   ...INTERACTIVE,
   ...LAYOUT,
 } as const;
-
 
 export * from './background';
 export * from './flex';

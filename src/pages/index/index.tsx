@@ -1,10 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { P48Y } from '@brysonandrew/space/P48Y';
 import { P24Y } from '@brysonandrew/space/P24Y';
+import Build from '@pages/index/build';
 
 const ServicesLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));
-const BuildLazy = lazy(() => import('./build'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
 const ViewerLazy = lazy(
@@ -14,7 +14,7 @@ const ViewerLazy = lazy(
 export const Index = () => {
   return (
     <>
-      <BuildLazy />
+      <Build />
       <P24Y />
       <Suspense fallback={null}>
         <ServicesLazy />

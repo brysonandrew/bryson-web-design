@@ -5,8 +5,13 @@ import {
   TLayoutRecordValue,
 } from './layout';
 import { DEFAULT_STYLE } from '../constants/style';
+import { TTDeepPartial } from '@brysonandrew/config-types';
 
-export type TDefaultStyle = typeof DEFAULT_STYLE;
+type TDarkStyle = {
+  DARK: typeof DEFAULT_STYLE;
+};
+export type TDefaultStyle = typeof DEFAULT_STYLE &
+  TTDeepPartial<TDarkStyle>;
 export type TPartialDefaultStyle = Partial<TDefaultStyle>;
 
 export type TAppProps<

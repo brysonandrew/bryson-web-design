@@ -11,11 +11,13 @@ export type TItemsConfig<
   SLUGS: K[];
 };
 
+export type TGalleryHeaderProps<T extends string> = {
+  LeftHeader: FC<TSlugProps<T>>;
+  RightHeader: FC<TSlugProps<T> & { isHover?: boolean }>;
+};
 export type TGalleryConfig<T extends string> = {
-  Viewer: { RightHeader: FC<TSlugProps<T>> };
-  List: {
-    RightHeader: FC<TSlugProps<T> & { isHover?: boolean }>;
-  };
+  Viewer: TGalleryHeaderProps<T>;
+  List: TGalleryHeaderProps<T>;
 };
 
 export type TValue<

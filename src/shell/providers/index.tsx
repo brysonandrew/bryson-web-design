@@ -1,4 +1,4 @@
-import { AppProvider } from '@brysonandrew/app/AppProvider';
+import { AppProvider } from '@brysonandrew/app';
 
 import { ScrollProvider } from '@brysonandrew/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
@@ -9,14 +9,13 @@ import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
 import { PricingProvider } from '@pages/index/pricing/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
-
 import { TChildrenProps } from '@brysonandrew/config-types/dom';
 import { FC, PropsWithChildren } from 'react';
 import { arrToNest } from '@brysonandrew/layout-utils/arrToNest';
-
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { RightHeader as ListRightHeader } from '@components/galllery/list/RightHeader';
 import { RightHeader as ViewerRightHeader } from '@components/galllery/viewer/RightHeader';
+import { LeftHeader } from '@components/galllery/LeftHeader';
 import {
   useMoveSound,
   useOffSound,
@@ -26,10 +25,10 @@ import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import screensRecordJson from '../lookup.json';
 import { PLACEHOLDER } from '@app/placeholder';
 import { Metal } from '@components/layout/metal';
-import { TTitle, TRest } from '@app/gallery/types';
 import { HeadProvider } from '@brysonandrew/head';
 import { Glow } from '@brysonandrew/layout-effects';
 import { ViewerProvider } from '@brysonandrew/gallery';
+import { TTitle, TRest } from '@app/gallery/types';
 
 type TProps = TChildrenProps;
 export const Providers: FC<TProps> = ({
@@ -53,8 +52,11 @@ export const Providers: FC<TProps> = ({
     ],
     <GalleryProvider<TTitle, TRest>
       initItems={INIT_PROJECT_ITEMS}
-      Viewer={{ RightHeader: ViewerRightHeader }}
-      List={{ RightHeader: ListRightHeader }}
+      Viewer={{
+        RightHeader: ViewerRightHeader,
+        LeftHeader,
+      }}
+      List={{ RightHeader: ListRightHeader, LeftHeader }}
     >
       <ViewerProvider
         screensRecordJson={screensRecordJson}
@@ -64,7 +66,7 @@ export const Providers: FC<TProps> = ({
           BackFillMotion={Metal}
           Glow={Glow}
           sounds={{
-            move: handleMove, 
+            move: handleMove,
             on: handleOnSound,
             off: handleOffSound,
           }}

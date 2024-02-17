@@ -1,12 +1,10 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import {
-  TChildren,
-  TClassValueProps,
-} from '@brysonandrew/config-types/dom/main';
+import { TChildren } from '@brysonandrew/config-types/dom/main';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useCursor } from '@brysonandrew/cursor';
+import { useApp } from '@brysonandrew/app';
 
 const DEFAULT_ANIMATE = {
   opacity: 1,
@@ -20,11 +18,10 @@ const resolveSize = (size: number) => {
   };
 };
 
-type TProps = TDivMotionProps &
-  TClassValueProps & {
-    size?: number;
-    children?: TChildren;
-  };
+type TProps = TDivMotionProps & {
+  size?: number;
+  children?: TChildren;
+};
 export const Sight: FC<TProps> = ({
   classValue,
   style,
@@ -33,9 +30,10 @@ export const Sight: FC<TProps> = ({
   children,
   ...props
 }) => {
+  const { COLOR } = useApp();
   const { cursor, cursorLabel } = useCursor();
 
-  return (  
+  return (
     <motion.div
       style={{
         left: cursor.x,
@@ -44,12 +42,13 @@ export const Sight: FC<TProps> = ({
         originY: '50%',
         opacity: 1,
         scale: 1,
+        backgroundColor: COLOR.accent,
         ...resolveSize(size),
         ...cursorLabel,
         ...style,
       }}
       className={clsx(
-        'fixed center dark:bg-secondary bg-accent glow pointer-events-none rounded-full cursor-default z-50',
+        'fixed center pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}
       animate={{

@@ -1,17 +1,14 @@
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
-import {
-  TChildrenStrings,
-  TClassValueProps,
-} from '@brysonandrew/config-types/dom/main';
+import { TChildrenStrings } from '@brysonandrew/config-types/dom/main';
 import { resolveCompositeKey } from '@brysonandrew/utils-key';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';
 
-type TProps = TClassValueProps & {
-  prevCount?: number;
-} & TDivMotionProps &
-  TChildrenStrings;
+type TProps = TDivMotionProps &
+  TChildrenStrings & {
+    prevCount?: number;
+  };
 export const Stagger: FC<TProps> = ({
   classValue,
   children,

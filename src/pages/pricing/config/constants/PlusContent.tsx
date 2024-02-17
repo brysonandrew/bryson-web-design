@@ -7,16 +7,17 @@ import { P_5 } from '@brysonandrew/space/P_5';
 import { TICK_CIRCLE_ICON } from '@brysonandrew/icons-keys';
 import { PLUS_ICON } from '@brysonandrew/icons-keys/text';
 import { useApp } from '@brysonandrew/app';
+import { TStyle } from '@app/style';
 
 export const PlusContent: FC = () => {
-  const { BORDER_RADIUS } = useApp();
+  const { BORDER_RADIUS, COLOR } = useApp<TStyle>();
 
   return (
     <>
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
         <span
           className={clsx(
-            'hidden lg:block absolute top-3.875 right-full h-2px w-10 -mr-0.5 bg-standard',
+            'hidden lg:block absolute top-3.875 right-full h-2px w-11 -mr-0.5 bg-standard',
           )}
         />
         <I
@@ -25,8 +26,11 @@ export const PlusContent: FC = () => {
         />{' '}
         <p className='leading-7 font-sans text-xl text-main'>
           <span
-            className='absolute -inset-x-1.75 -inset-y-2 border-2 border-standard'
-            style={{ borderRadius: BORDER_RADIUS.MD }}
+            className='absolute -inset-x-1.75 -inset-y-2'
+            style={{
+              borderRadius: BORDER_RADIUS.MD,
+              borderColor: COLOR.standard,
+            }}
           />
           Everything included in the{' '}
           <span className='inline-flex relative px-1.5 text-main-inverted'>
@@ -34,6 +38,7 @@ export const PlusContent: FC = () => {
               className={clsx(
                 'absolute inset-0.5 bg-standard',
               )}
+              style={{ backgroundColor: COLOR.standard }}
             />
             <span className='relative title-pricing'>
               Standard

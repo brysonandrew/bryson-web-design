@@ -11,7 +11,7 @@ export const Hud = () => {
     halfHeight,
     height,
   } = useViewport();
-  const { LIGHT, GLOW_BOX, GLOW_DROP } = useApp();
+  const { COLOR, LIGHT, GLOW_BOX, GLOW_DROP } = useApp();
   const G = LIGHT?.Glow ?? motion.div;
   return (
     <G
@@ -33,9 +33,9 @@ export const Hud = () => {
       <div className='bg-main h-60 w-60' />
       <div className='bg-main-inverted h-60 w-60' />
       <div className='column bg-main-inverted'>
-        <div className='bg-primary h-20 w-20' />
-        <div className='bg-secondary h-20 w-20' />
-        <div className='bg-accent h-20 w-20' />
+        <div className='h-20 w-20' />
+        <div className='h-20 w-20' />
+        <div className='h-20 w-20' />
       </div>
     </G>
   );

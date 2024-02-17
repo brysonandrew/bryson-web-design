@@ -26,7 +26,6 @@ export const INTERACTIVE: StaticShortcutMap = {
   'circle-interactive': 'relative center cursor-pointer',
   interactive:
     'relative center hover:interactive-hover disabled:interactive-disabled',
-  'interactive-active': 'text-accent',
   'interactive-disabled':
     'text-gray-1 cursor-not-allowed opacity-90',
   'interactive-hover': 'opacity-60',

@@ -16,7 +16,7 @@ export const ClipboardStateHandler: FC<TProps> = ({
       {copying && (
         <motion.div
           onClick={onEnd}
-          className='fill-screen center bg-gray-08 text-4xl z-50 pointer-events-none'
+          className='fill-screen center dark:bg-black-08 bg-white-08 text-4xl z-50 pointer-events-none'
           {...PRESENCE_OPACITY}
         >
           {copying === 'pending' ? (
@@ -27,9 +27,9 @@ export const ClipboardStateHandler: FC<TProps> = ({
               </div>
             </div>
           ) : (
-            <div className='column gap-8'>
+            <div className='column gap-8 text-xl md:text-2xl lg:text-4xl'>
               <header className='row gap-6'>
-                <div className='tracking-widest uppercase'>
+                <div className='char-gap-2 uppercase'>
                   {copying.title} copied
                 </div>
                 <I
@@ -37,9 +37,7 @@ export const ClipboardStateHandler: FC<TProps> = ({
                   icon={CLIPBOARD_SUCCESS_ICON}
                 />
               </header>
-              <h4 className='text-4xl'>
-                "{copying.value}"
-              </h4>
+              <h4>"{copying.value}"</h4>
             </div>
           )}
         </motion.div>

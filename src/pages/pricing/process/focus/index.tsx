@@ -11,7 +11,7 @@ type TProps = {
   children: TPart;
 };
 export const Focus: FC<TProps> = ({ children }) => {
-  const { BORDER_RADIUS } = useApp();
+  const { BORDER_RADIUS, COLOR } = useApp();
   const {
     hoverKeyParts: [_, first],
   } = useCursor();
@@ -24,8 +24,11 @@ export const Focus: FC<TProps> = ({ children }) => {
     <>
       {(isActive || isHover) && (
         <div
-          className='absolute -inset-1 bg-primary-02 pointer-events-none'
-          style={{ borderRadius: BORDER_RADIUS.MD }}
+          className='absolute -inset-1 pointer-events-none'
+          style={{
+            borderRadius: BORDER_RADIUS.MD,
+            color: COLOR['primary-02'],
+          }}
         />
       )}
       <Circle
