@@ -5,7 +5,8 @@ import { TRANSFORMERS } from './transformers';
 import { resolvePresets } from './presets';
 import { resolveTheme } from '@brysonandrew/uno-theme';
 import { SPACING } from '@brysonandrew/uno-spacing';
-import { resolveRules } from './rules';
+import { resolveRules as resolveCustomRules } from './rules';
+import { resolveRules } from '@brysonandrew/uno-rules';
 import { COLOR_VARS_RECORD } from '../app/color/index';
 
 export const theme = resolveTheme({
@@ -18,7 +19,10 @@ export const theme = resolveTheme({
 
 type TTheme = typeof theme;
 
-const rules = resolveRules<TTheme>();
+const rules = [
+  ...resolveRules<TTheme>(),
+  ...resolveCustomRules<TTheme>(),
+];
 
 export type TColor = typeof COLOR_VARS_RECORD;
 

@@ -9,6 +9,7 @@ import { ThickLine } from '@brysonandrew/layout-line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { TLinkMotionProps } from '@brysonandrew/config-types';
 import clsx from 'clsx';
+import { useApp } from '@brysonandrew/app';
 
 const Link = styled(motion(_Link))``;
 
@@ -24,6 +25,7 @@ export const Item: FC<TItemProps> = ({
   to,
   ...linkProps
 }) => {
+  const { COLOR } = useApp();
   const { handlers } = useHoverKey(BIG_CURSOR_KEY, title);
 
   return (
@@ -32,8 +34,15 @@ export const Item: FC<TItemProps> = ({
         'relative pb-4',
         isActive ? 'title-header-active' : 'title-header',
       )}
+      style={{
+        ...(isActive
+          ? {
+              color: COLOR.accent,
+            }
+          : {}),
+      }}
     >
-      {children ?? ( 
+      {children ?? (
         <>
           {title}
           {isActive && (

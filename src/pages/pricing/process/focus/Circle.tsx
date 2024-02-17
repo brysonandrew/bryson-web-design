@@ -19,16 +19,18 @@ export const Circle: FC<TProps> = ({
   children,
   ...props
 }) => {
-  const { BORDER_RADIUS } = useApp();
+  const { BORDER_RADIUS, COLOR } = useApp();
 
   return (
     <motion.div
       className={clsx(
         'w-5 h-5 center bg-main text-main text-xs border-gray border',
-        isActive && 'glow-primary',
         classValue,
       )}
-      style={{ borderRadius: BORDER_RADIUS.XL }}
+      style={{
+        borderRadius: BORDER_RADIUS.XL,
+        color: COLOR.gray,
+      }}
       {...props}
     >
       {children}

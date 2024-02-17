@@ -78,13 +78,14 @@ export const Item = <T extends string, R extends object>({
   return (
     <motion.li
       id={slug}
-      className='cursor-pointer border border-transparent'
+      className='cursor-pointer group'
       style={{ zIndex: index }}
       {...eventHandlers}
     >
       <Content
         slug={slug}
         isHover={isHover}
+        leftHeader={<List.LeftHeader slug={slug} />}
         rightHeader={
           <List.RightHeader slug={slug} isHover={isHover} />
         }

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { P2 } from '@brysonandrew/space/P2';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
+import { useApp } from '@brysonandrew/app';
 
 type TProps<T extends string> = TDivMotionProps & {
   isVisible: boolean;
@@ -17,6 +18,7 @@ export const Details = <
   slug,
   ...props
 }: TProps<T>) => {
+  const { COLOR } = useApp();
   const { ITEMS_RECORD } = useGallery<T, R>();
   const { paragraphs, tags } = ITEMS_RECORD[slug];
 
@@ -30,8 +32,11 @@ export const Details = <
       {paragraphs && (
         <>
           <hr
-            className='relative -left-6 border dark:border-accent border-accent opacity-40'
-            style={{ width: `calc(100% + 3.5rem)` }}
+            className='relative -left-6 border opacity-40'
+            style={{
+              width: `calc(100% + 3.5rem)`,
+              borderColor: COLOR.accent,
+            }}
           />
           <P2 />
           <Paragraphs paragraphs={paragraphs} />

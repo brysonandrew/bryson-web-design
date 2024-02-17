@@ -44,8 +44,9 @@ export const Item: FC<
           style={{
             filter: AURA.GLOBAL.value,
             borderRadius: BORDER_RADIUS.MD,
+            backgroundColor: COLOR.accent,
           }}
-          className='fill-1 bg-accent-04 mt-1.5 ml-1 pointer-events-none'
+          className='fill-1 mt-1.5 ml-1 pointer-events-none'
         />
       )}
       {LIGHT ? (
@@ -73,7 +74,12 @@ export const Item: FC<
         target='_blank'
       >
         <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-        <h4 className='title-tech mt-0.75'>{title}</h4>
+        <h4
+          className='relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl'
+          style={{ color: COLOR.accent }}
+        >
+          {title}
+        </h4>
       </a>
     </motion.div>
   );

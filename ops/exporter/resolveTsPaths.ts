@@ -1,8 +1,8 @@
 import glob from 'fast-glob';
-import { writeFile } from 'fs/promises';
 import { TError } from '@brysonandrew/config';
 import { prependPwd } from '@ops/utils/dirs/pwd';
 import prevTsConfigPaths from '@ts/paths';
+import { writeFileAsync } from '@ops/utils/writeFileAsync';
 
 export const resolveTsPaths = async () => {
   try {
@@ -53,10 +53,7 @@ export const resolveTsPaths = async () => {
       },
     };
 
-    await writeFile(
-      fullPath,
-      JSON.stringify(nextTsPaths, null, 2),
-    );
+    await writeFileAsync(fullPath, nextTsPaths);
   } catch (error: TError) {
     throw new Error(error);
   }

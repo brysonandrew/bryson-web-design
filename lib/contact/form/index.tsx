@@ -1,6 +1,5 @@
 import { TChildrenElement } from '@brysonandrew/config-types';
 import { TFooterInfoProps } from '@brysonandrew/contact/config/types';
-import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { Footer } from '@brysonandrew/contact/footer';
 import {
   TUseForm,
@@ -8,10 +7,7 @@ import {
 } from '@brysonandrew/contact/form/useForm';
 import { motion } from 'framer-motion';
 import { FC, useRef } from 'react';
-import {
-  IntersectionOptions,
-  useInView,
-} from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 
 export type TFormChildrenProps = Pick<
   TUseForm,

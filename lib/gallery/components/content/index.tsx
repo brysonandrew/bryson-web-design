@@ -1,11 +1,9 @@
 import { useState, useRef } from 'react';
 import clsx from 'clsx';
-import { Header } from './Header';
 import { resolveTitleLayoutId } from '@brysonandrew/gallery/config/constants';
 import { motion } from 'framer-motion';
 import {
   TChildren,
-  TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
@@ -15,19 +13,17 @@ import { useApp } from '@brysonandrew/app';
 import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 
 type TProps<T extends string> = TSlugProps<T> &
-  TClassValueProps &
   TDivMotionProps & {
     isHover?: boolean;
+    leftHeader: TChildren;
     rightHeader: TChildren;
   };
-export const Content = <
-  T extends string,
-  R extends object,
->({
+export const Content = <T extends string>({
   isHover,
   slug,
   classValue,
   children,
+  leftHeader,
   rightHeader,
   onLayoutAnimationStart,
   onLayoutAnimationComplete,
@@ -108,7 +104,7 @@ export const Content = <
         </>
       )}
       <motion.div className='row-space py-4 relative left-0 top-0'>
-        <Header<T, R> slug={slug} />
+        {leftHeader}
         <div className='column-end gap-4 lg:row'>
           {rightHeader}
         </div>
