@@ -1,5 +1,5 @@
 import { TKeyStr } from '@brysonandrew/config-types/keys';
-import { TRgb } from '@brysonandrew/color-main/config/types';
+import { TRgb } from '@brysonandrew/color-base/config/types';
 import {
   resolveRgbaOpacityRange,
   TOpacityRangeRecord,
@@ -8,7 +8,6 @@ import {
 export const rgbToOpacityRangeRecord = <T extends object>(
   rgbRecord: T,
 ) => {
-
   type TKey = TKeyStr<T>;
   type TEntry = [TKey, TRgb];
   const entries = Object.entries(rgbRecord) as TEntry[];

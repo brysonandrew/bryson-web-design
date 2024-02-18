@@ -1,7 +1,7 @@
 import {
   BASE_COLOR_RECORD,
-  MAIN_RGBS_RECORD,
-} from '@brysonandrew/color-main';
+  BASE_RGBS_RECORD,
+} from '@brysonandrew/color-base';
 import {
   TDigit,
   TIndex,
@@ -37,6 +37,9 @@ export type TOpacityRangeRecordKey<T extends string> =
 export type TBaseColorKey = keyof TBaseColorRecord;
 export type TBaseColorRecord = typeof BASE_COLOR_RECORD;
 
+export type TBaseColorValue =
+  TBaseColorRecord[TBaseColorKey];
+
 export type TCssVar<V extends string = string> =
   `var(--${V})`;
 
@@ -67,8 +70,6 @@ export type TRgbRecord<K extends string> = Record<
   TRgb
 >;
 
-export type TMainKey = keyof typeof MAIN_RGBS_RECORD;
-
-export type TGrayscaleKey = 'black' | 'white' | 'gray';
+export type TBaseKey = keyof typeof BASE_RGBS_RECORD;
 
 export type { TDigit, TIndex };

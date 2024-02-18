@@ -2,7 +2,7 @@ import {
   TRgbSeriesRecordKey,
   TRgbValue,
   TRgbs,
-} from '@brysonandrew/color-main/config/types';
+} from '@brysonandrew/color-base/config/types';
 import { formatRgbValue } from './formatRgb';
 
 export type TRgbSeriesKey<T extends string> =

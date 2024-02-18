@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "6.22.200",
+  "version": "6.22.211",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -17,9 +17,9 @@
     "./useMoveSound": "./useMoveSound.ts",
     "./useOffSound": "./useOffSound.ts",
     "./useOnSound": "./useOnSound.ts",
+    "./config/types": "./config/types.ts",
     "./icons/VolumeOff": "./icons/VolumeOff.tsx",
-    "./icons/VolumeOn": "./icons/VolumeOn.tsx",
-    "./config/types": "./config/types.ts"
+    "./icons/VolumeOn": "./icons/VolumeOn.tsx"
   },
   "scripts": {
     "format": "prettier .",

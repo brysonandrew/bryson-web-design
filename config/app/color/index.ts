@@ -6,7 +6,7 @@ import { TVariablesRecord } from './types';
 import {
   BASE_GLOW_RECORD,
   BLACK_RGBS,
-  MAIN_RGBS_RECORD,
+  BASE_RGBS_RECORD,
   resolveColorRecords,
   resolveGlowRecord,
   WHITE_RGBS,
@@ -14,7 +14,7 @@ import {
 
 const RGB_RECORD = {
   ...OPACITY_RANGE_RGB_RECORD,
-  ...MAIN_RGBS_RECORD,
+  ...BASE_RGBS_RECORD,
   dark: BLACK_RGBS[2],
   light: WHITE_RGBS[8],
   primary: '45, 212, 191',
@@ -24,7 +24,7 @@ const RGB_RECORD = {
 
 type TRgbRecord = typeof RGB_RECORD;
 //  TOpacityRangeRgbRecord &
-//   Record<TMainKey, TRgb>;
+//   Record<TBaseKey, TRgb>;
 
 const {
   colorRecord,

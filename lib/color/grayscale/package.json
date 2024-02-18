@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-grayscale",
-  "version": "6.22.200",
+  "version": "6.22.211",
   "description": "Color Grayscale library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -15,7 +15,8 @@
     },
     "./resolveGrayscaleRange": "./resolveGrayscaleRange.ts",
     "./resolveGrayscaleRgb": "./resolveGrayscaleRgb.ts",
-    "./white": "./white.ts"
+    "./white": "./white.ts",
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -34,6 +35,6 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-main": "*"
+    "@brysonandrew/color-base": "*"
   }
 }

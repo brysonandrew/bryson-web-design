@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/head",
-  "version": "6.22.200",
+  "version": "6.22.211",
   "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -12,7 +12,8 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./useHtmlTitle": "./useHtmlTitle.ts"
+    "./useHtmlTitle": "./useHtmlTitle.ts",
+    "./useTitleLookup": "./useTitleLookup.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -34,6 +35,8 @@
     "react": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "@brysonandrew/app": "*",
+    "@brysonandrew/routes": "*",
+    "@brysonandrew/color-base": "*",
     "react-router": "^6.21.1"
   }
 }

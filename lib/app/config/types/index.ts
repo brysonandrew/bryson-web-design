@@ -14,11 +14,19 @@ export type TDefaultStyle = typeof DEFAULT_STYLE &
   TTDeepPartial<TDarkStyle>;
 export type TPartialDefaultStyle = Partial<TDefaultStyle>;
 
+export type TAppInitProps = {
+  APP_DESCRIPTION: string;
+  APP_TITLE: string;
+  APP_VERSION: string;
+};
+
+export type TBaseConfig = TSoundConfig & TAppInitProps;
+
 export type TAppProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = PropsWithChildren<
   TLayoutRecordProps &
-    TSoundConfig & {
+    TBaseConfig & {
       style: S;
     }
 >;
@@ -26,7 +34,7 @@ export type TAppProps<
 export type TValue<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = TLayoutRecordValue &
-  TSoundConfig &
+  TBaseConfig &
   TDefaultStyle &
   S & {
     isInit: boolean;

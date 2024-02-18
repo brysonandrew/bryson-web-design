@@ -1,5 +1,5 @@
 import { useApp } from '@brysonandrew/app';
-import { TMainKey } from '@brysonandrew/color';
+import { TBaseKey } from '@brysonandrew/color';
 import {
   CASCADE_RECORD,
   PALETTE_COLORS,
@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import { FC } from 'react';
 
 type TProps = {
-  activeKey: TMainKey;
+  activeKey: TBaseKey;
 };
 export const ColorPalatte: FC<TProps> = ({ activeKey }) => {
   const appState = useApp();

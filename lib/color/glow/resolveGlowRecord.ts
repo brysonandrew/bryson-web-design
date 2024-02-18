@@ -2,9 +2,9 @@ import {
   TColorValue,
   TRgb,
   TRgbaValue,
-} from '@brysonandrew/color-main/config/types';
+} from '@brysonandrew/color-base/config/types';
 import { TKeyStr } from '@brysonandrew/config-types/keys';
-import { resolveRgbaValue } from '@brysonandrew/color-main/resolveRgbaValue';
+import { resolveRgbaValue } from '@brysonandrew/color-base/resolveRgbaValue';
 import {
   resolveBoxShadow,
   TBoxShadow,

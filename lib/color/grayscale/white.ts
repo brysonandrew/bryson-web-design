@@ -1,5 +1,5 @@
-import { resolveRgbaOpacityRange } from '@brysonandrew/color-main/resolveRgbaOpacityRange';
-import { resolveRgbValueSeriesRecord } from '@brysonandrew/color-main/resolveRgbValueSeriesRecord';
+import { resolveRgbaOpacityRange } from '@brysonandrew/color-base/resolveRgbaOpacityRange';
+import { resolveRgbValueSeriesRecord } from '@brysonandrew/color-base/resolveRgbValueSeriesRecord';
 import { resolveGrayscaleRange } from '@brysonandrew/color-grayscale/resolveGrayscaleRange';
 import { resolveGrayscaleRgb } from '@brysonandrew/color-grayscale/resolveGrayscaleRgb';
 
