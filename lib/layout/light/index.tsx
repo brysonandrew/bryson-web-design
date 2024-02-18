@@ -1,24 +1,21 @@
-import { TLayoutComponentProps } from '@brysonandrew/app/config/types/layout';
-import { LightBack } from './Back';
-import { LightGlow } from './Glow';
-import { LightMarker } from './Marker';
+import { useMemo } from 'react';
+import {
+  TAppLayoutProps,
+  TPartialDefaultStyle,
+  TValue,
+} from '@brysonandrew/app';
+import { withLight } from '@brysonandrew/layout-light/withLight';
 
-type TConfig = TLayoutComponentProps;
-export const withLight = (config: TConfig) => {
-  const Glow = LightGlow(config);
-  const configWithGlow: TLayoutComponentProps = {
-    ...config,
-    Glow,
-  }; 
-  return {
-    Glow,
-    Back: LightBack(configWithGlow),
-    Marker: LightMarker(configWithGlow),
-  };
+export const LayoutLight = <
+  S extends TPartialDefaultStyle = TPartialDefaultStyle,
+>({
+  children,
+  ...value
+}: TAppLayoutProps<S>) => {
+  const nextValue = useMemo<TValue<S>>(() => {
+    const LIGHT = withLight(value);
+    return { ...value, LIGHT } as TValue<S>;
+  }, [value]);
+
+  return <>{children(nextValue)}</>;
 };
-
-export type TWithLight = ReturnType<typeof withLight>;
-
-export * from './Back';
-export * from './Glow';
-export * from './Marker';

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.211",
+  "version": "6.22.220",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -32,9 +32,12 @@
   ],
   "peerDependencies": {
     "@brysonandrew/app": "*",
-    "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/glow": "*",
+    "@brysonandrew/color": "*",
     "clsx": "^1.2.1",
-    "@brysonandrew/layout-blank": "*",
-    "framer-motion": "^10.18.0"
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/color-glow": "*",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/filter-animate": "*"
   }
 }

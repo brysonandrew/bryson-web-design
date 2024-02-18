@@ -5,7 +5,6 @@ import { Price, TPriceProps } from './price';
 import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useContact } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
@@ -35,7 +34,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
     PreContent,
     classValue,
   } = config;
-  const { COLOR, LIGHT, BORDER_RADIUS, BackFillMotion } =
+  const { COLOR, LIGHT, BORDER_RADIUS, BackFill } =
     useApp<TStyle>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
@@ -64,11 +63,10 @@ export const Package: FC<TPackageProps> = ({ title }) => {
       onClick={handleClick}
     >
       {LIGHT && (
-        <LIGHT.Back
+        <LIGHT.MOTION.Back
           color={COLOR[key]}
           box={4}
           drop={4}
-          animate={{ opacity: isHover ? 1 : 0.5 }}
         >
           <div
             className={clsx(
@@ -80,12 +78,10 @@ export const Package: FC<TPackageProps> = ({ title }) => {
               borderRadius: BORDER_RADIUS.MD,
             }}
           />
-        </LIGHT.Back>
+        </LIGHT.MOTION.Back>
       )}
-      <motion.div
-        className={clsx(
-          'relative column-stretch grow w-full h-full text-base',
-        )}
+      <div
+        className='relative column-stretch grow w-full h-full text-base'
         {...handlers}
       >
         <End classValue='title-pricing'>
@@ -107,7 +103,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
             borderRadius: BORDER_RADIUS.MD,
           }}
         >
-          <BackFillMotion />
+          {/* <BackFill /> */}
           <P4 />
           <div
             className='relative px-4'
@@ -122,10 +118,10 @@ export const Package: FC<TPackageProps> = ({ title }) => {
         </div>
         <P_25 />
         <End>
-          <BackFillMotion />
+          <BackFill />
           <Price price={price} discount={discount} />
         </End>
-      </motion.div>
+      </div>
     </Link>
   );
 };

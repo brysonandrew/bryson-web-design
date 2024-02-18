@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Content } from '../../components/content';
-import {} from '@brysonandrew/cursor/hooks/useHoverKey';
 import { useOnSound } from '@brysonandrew/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
@@ -71,12 +69,12 @@ export const Item = <T extends string, R extends object>({
   };
 
   const eventHandlers = {
-    onTap: isChildHover ? NOOP : handleTap,
+    onClick: isChildHover ? NOOP : handleTap,
     ...(isDesktop ? handlers : {}),
   };
 
   return (
-    <motion.li
+    <li
       id={slug}
       className='cursor-pointer group'
       style={{ zIndex: index }}
@@ -97,6 +95,6 @@ export const Item = <T extends string, R extends object>({
           <Details isVisible={isExpanded} {...item} />
         )}
       </Content>
-    </motion.li>
+    </li>
   );
 };

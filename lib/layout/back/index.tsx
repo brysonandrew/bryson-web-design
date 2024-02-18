@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import { TBackC } from '@brysonandrew/layout-back/config/types';
 import { Blank } from '@brysonandrew/layout-blank';
-import clsx from 'clsx';
 
 export const Back: TBackC = ({ dark, ...props }) => {
   const { positionClassValue, ...sharedProps } = props;
@@ -30,7 +30,8 @@ export const Back: TBackC = ({ dark, ...props }) => {
 
 export * from './Blur';
 export * from './Fill';
-export * from './FillMotion';
-export * from './Motion';
 export * from './Screen';
+export * from './motion/Blur';
+export * from './motion/Fill';
+export * from './motion';
 export * from './config/types';

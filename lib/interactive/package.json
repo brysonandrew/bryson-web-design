@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.22.211",
+  "version": "6.22.220",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -49,23 +49,19 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/cursor": "*",
-    "@brysonandrew/icons-keys": "*",
-    "@brysonandrew/notifications": "*",
-    "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/utils-error": "*",
-    "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
+    "react": "^18.2.0",
     "react-router-dom": "^6.21.3",
     "framer-motion": "^10.18.0",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/app": "*",
-    "@brysonandrew/icons-i": "*",
     "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/filter-animate": "*",
+    "@brysonandrew/icons-i": "*",
     "@brysonandrew/layout-effects": "*"
   },
   "types": "index.d.ts"

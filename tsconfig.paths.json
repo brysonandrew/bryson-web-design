@@ -164,6 +164,12 @@
       "@brysonandrew/gallery/*": [
         "lib/gallery/*"
       ],
+      "@brysonandrew/glow": [
+        "lib/glow"
+      ],
+      "@brysonandrew/glow/*": [
+        "lib/glow/*"
+      ],
       "@brysonandrew/head": [
         "lib/head"
       ],
@@ -409,6 +415,18 @@
       ],
       "@brysonandrew/svg/*": [
         "lib/svg/*"
+      ],
+      "@brysonandrew/texture": [
+        "lib/texture"
+      ],
+      "@brysonandrew/texture-metal": [
+        "lib/texture/metal"
+      ],
+      "@brysonandrew/texture-metal/*": [
+        "lib/texture/metal/*"
+      ],
+      "@brysonandrew/texture/*": [
+        "lib/texture/*"
       ],
       "@brysonandrew/uno": [
         "lib/uno"

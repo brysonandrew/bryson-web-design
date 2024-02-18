@@ -73,7 +73,7 @@ export const Head = <
   );
 };
 
-export * from './HeadProvider';
+export * from './HelmetProvider';
 export * from './config';
 export * from './useHtmlTitle';
 export * from './useTitleLookup';

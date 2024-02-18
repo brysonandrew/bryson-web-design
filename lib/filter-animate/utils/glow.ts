@@ -5,15 +5,17 @@ import { TFilterAnimateProps } from '..';
 import { TRANSITION_02_EASEIN_008 } from '@brysonandrew/animation';
 
 export type TGlowConfigOptions = {
-  text?: number;
-  box?: number;
-  drop?: number;
-  color?: string;
-  value?: MotionValue;
-  idle?: number;
+  text: number;
+  box: number;
+  drop: number;
+  color: string;
+  value: MotionValue;
+  idle: number;
 };
 export type TPartialGlowConfigOptions =
-  Partial<TGlowConfigOptions> & TFilterAnimateProps;
+  Partial<TGlowConfigOptions>;
+export type TGlowConfig = TPartialGlowConfigOptions &
+  TFilterAnimateProps;
 export const resolveGlowProps = ({
   text = 0,
   box = 0,
@@ -23,7 +25,7 @@ export const resolveGlowProps = ({
   value,
   style,
   ...rest
-}: TPartialGlowConfigOptions) => {
+}: TGlowConfig) => {
   return {
     style: {
       ...(value ? { opacity: value } : {}),

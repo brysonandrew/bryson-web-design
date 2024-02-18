@@ -11,6 +11,10 @@ export type TUseDarkMode = {
   disable: () => void;
 };
 
-export type TWithDark<C extends TElementProps | TMotionProps> = C & {
-  dark?: C;
+export type TWithDark<P extends TElementProps> = P & {
+  dark?: P;
+};
+
+export type TWithDarkMotion<P extends TMotionProps> = P & {
+  dark?: P;
 };

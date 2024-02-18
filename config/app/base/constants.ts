@@ -1,12 +1,12 @@
 import packageJson from '@pkg';
 import { kebabToTitle } from '@brysonandrew/utils-format';
-import { TAppInitProps } from '@brysonandrew/app';
+import { TAppPackageProps } from '@brysonandrew/app';
 
 export const APP_TITLE = kebabToTitle(packageJson.name);
 export const APP_DESCRIPTION = packageJson.description;
 export const APP_VERSION = packageJson.version;
 
-export const APP_INIT_PROPS: TAppInitProps = {
+export const APP_INIT_PROPS: TAppPackageProps = {
   APP_TITLE,
   APP_DESCRIPTION,
   APP_VERSION,

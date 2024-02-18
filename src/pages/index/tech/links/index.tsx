@@ -15,18 +15,17 @@ export const Links: FC<TProps> = ({ style }) => {
   return (
     <Transform motionValue={style[glowKey]}>
       {(glow) => (
-        <motion.div className='center' style={style}>
-          <motion.div
+        <div className='center'>
+          <div
             className='column gap-2 ml-2 lg:row preserve-3d'
-            style={style}
           >
             <Item glow={glow} {...TECH.REACT} />
             <div className='center w-full xl:pt-1'>
               <Plus classValue='h-7 w-7' />
             </div>
             <Item glow={glow} {...TECH.TYPESCRIPT} />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       )}
     </Transform>
   );

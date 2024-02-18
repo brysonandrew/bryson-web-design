@@ -1,10 +1,9 @@
-import { DEP_PREFIX } from '../config/constants';
+import { DEP_PREFIX_RX } from '../config/constants';
 import { join, parse } from 'path';
-import { resolveDeps } from './resolveDeps';
+import { resolveDeps } from './deps/resolveDeps';
 import { readFile } from '@ops/utils';
 import { TTarget } from '@ops/exporter/config/types';
 import { QUOTE_JSON } from '@ops/config/constants';
-import { TStringRecord } from '@brysonandrew/config-types';
 
 type TConfig = {
   paths: string[];
@@ -23,7 +22,7 @@ export const parsePaths = async ({
 
   for await (const path of paths) {
     const filePath = join(dir, path);
-    const file = readFile(filePath);
+
 
     const {
       root,
@@ -31,10 +30,10 @@ export const parsePaths = async ({
       name: pathName,
     } = parse(path);
 
-    const deps = resolveDeps({
-      file,
-      name,
-      prefix: DEP_PREFIX,
+    const deps = await resolveDeps({
+      filePath,
+      targetName:name,
+      prefix: DEP_PREFIX_RX,
       version: '*',
     });
 

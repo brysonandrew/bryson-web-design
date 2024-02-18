@@ -23,8 +23,8 @@ export const TECH = {
 export const PARALLAX_PROPS: TParallaxOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
-      startScroll + windowHeight * 0.25,
-      startScroll + windowHeight * 0.25 + MAX_SCROLL,
+      startScroll,
+      startScroll + windowHeight,
     ],
     output: [-1, 3],
   },

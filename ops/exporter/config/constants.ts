@@ -8,7 +8,7 @@ export const exportsPrefixRx = new RegExp(
 export const removeCharsRx = new RegExp(`[;"']`, 'gi');
 export const INTERNAL_PREFIX = '@brysonandrew/' as const;
 
-export const DEP_PREFIX = new RegExp(
+export const DEP_PREFIX_RX = new RegExp(
   /import [*\w\s{},]+ from ['"]/,
   'ig',
 );
