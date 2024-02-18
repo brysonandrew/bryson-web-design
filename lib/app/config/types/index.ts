@@ -6,6 +6,7 @@ import {
 } from './layout';
 import { DEFAULT_STYLE } from '../constants/style';
 import { TTDeepPartial } from '@brysonandrew/config-types';
+import { TScrollState } from '@brysonandrew/scroll';
 
 type TDarkStyle = {
   DARK: typeof DEFAULT_STYLE;
@@ -36,10 +37,7 @@ export type TValue<
 > = TLayoutRecordValue &
   TBaseConfig &
   TDefaultStyle &
-  S & {
-    isInit: boolean;
-    onInit(): void;
-  };
+  S & TScrollState;
 
 export type TAppContext<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,

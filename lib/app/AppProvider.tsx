@@ -17,6 +17,8 @@ import { TLayoutRecordValue } from './config/types/layout';
 import { once } from '@brysonandrew/utils-function';
 import { mergeDeepObjects } from '@brysonandrew/utils-object';
 import { useDarkMode } from '@brysonandrew/dark-mode';
+import { useAppStyle } from '@brysonandrew/app/useAppStyle';
+import { useInit } from '@brysonandrew/app/useInit';
 
 const initContext = once(<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
@@ -37,27 +39,11 @@ export const AppProvider = <
   style,
   ...rest
 }: TProps<S>) => {
-  const { isDarkMode } = useDarkMode();
   const CONTEXT = initContext();
 
-  const [isInit, setInit] = useState(false);
-  const onInit = () => setInit(true);
+  const initState = useInit();
+  const appStyle = useAppStyle({ style });
 
-  useEffect(() => {
-    onInit();
-  }, []);
-
-  const initStyle =
-    isDarkMode && style.DARK
-      ? mergeDeepObjects<S>(style, style.DARK)
-      : style;
-  console.log(initStyle);
-
-  const appStyle = mergeDeepObjects<TDefaultStyle>(
-    DEFAULT_STYLE,
-    initStyle,
-  );
-  console.log(appStyle);
   const layoutConfig = {
     ...appStyle,
     ...rest,
@@ -67,8 +53,7 @@ export const AppProvider = <
     useLayoutRecord(layoutConfig);
 
   const value = {
-    isInit,
-    onInit,
+    initState,
     sounds: {},
     ...appStyle,
     ...layoutRecord,
