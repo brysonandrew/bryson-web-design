@@ -35,6 +35,12 @@
       "@brysonandrew/color": [
         "lib/color"
       ],
+      "@brysonandrew/color-base": [
+        "lib/color/base"
+      ],
+      "@brysonandrew/color-base/*": [
+        "lib/color/base/*"
+      ],
       "@brysonandrew/color-glow": [
         "lib/color/glow"
       ],
@@ -91,6 +97,18 @@
       ],
       "@brysonandrew/contact/*": [
         "lib/contact/*"
+      ],
+      "@brysonandrew/css": [
+        "lib/css"
+      ],
+      "@brysonandrew/css-base": [
+        "lib/css/base"
+      ],
+      "@brysonandrew/css-base/*": [
+        "lib/css/base/*"
+      ],
+      "@brysonandrew/css/*": [
+        "lib/css/*"
       ],
       "@brysonandrew/cursor": [
         "lib/cursor"

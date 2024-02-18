@@ -1,4 +1,3 @@
-
 import { AppProvider } from '@brysonandrew/app';
 
 import { ScrollProvider } from '@brysonandrew/scroll';
@@ -29,6 +28,7 @@ import { Metal } from '@components/layout/metal';
 import { HeadProvider } from '@brysonandrew/head';
 import { Glow } from '@brysonandrew/layout-effects';
 import { ViewerProvider } from '@brysonandrew/gallery';
+import { APP_INIT_PROPS } from '@app/base/constants';
 import { TTitle, TRest } from '@app/gallery/types';
 
 type TProps = TChildrenProps;
@@ -72,6 +72,7 @@ export const Providers: FC<TProps> = ({
             off: handleOffSound,
           }}
           style={CUSTOM_STYLE}
+          {...APP_INIT_PROPS}
         >
           {_children}
         </AppProvider>

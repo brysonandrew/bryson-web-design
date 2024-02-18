@@ -3,8 +3,10 @@ import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils-attributes/resolveUrlId';
 import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
-import { resolveGradient } from '@brysonandrew/color-gradient/resolveGradient';
-import { TColorStops } from '@brysonandrew/color';
+import {
+  TColorStops,
+  resolveGradient,
+} from '@brysonandrew/color-gradient';
 import { useApp } from '@brysonandrew/app';
 
 export type TPlaceholderProps = TDivMotionProps & {

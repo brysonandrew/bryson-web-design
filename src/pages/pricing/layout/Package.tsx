@@ -54,7 +54,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
     onForm({
       message: `I am writing in regard to the ${title} website package.\nPlease contact me via email as soon as possible to we can discuss further.\nKind regards`,
     });
-    handlers.onHoverEnd();
+    handlers.onMouseLeave();
     window.scrollTo(0, 0);
   };
   return (

@@ -1,4 +1,4 @@
-import { TColorValue } from '@brysonandrew/color-main/config/types';
+import { TColorValue } from '@brysonandrew/color-base/config/types';
 
 export const resolveBoxShadow = <V extends TColorValue>(
   color: V,

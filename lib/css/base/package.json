@@ -1,0 +1,37 @@
+{
+  "name": "@brysonandrew/css-base",
+  "version": "6.22.211",
+  "description": "Css Base library",
+  "types": "/index.d.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useBaseGlobalCss": "./useBaseGlobalCss.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/placeholder": "*",
+    "@emotion/react": "^11.11.3",
+    "react": "^18.2.0"
+  }
+}

@@ -47,13 +47,17 @@ export const AppProvider = <
     onInit();
   }, []);
 
-  const appStyle = mergeDeepObjects<TDefaultStyle>(
-    DEFAULT_STYLE,
+  const initStyle =
     isDarkMode && style.DARK
       ? mergeDeepObjects<S>(style, style.DARK)
-      : style,
-  );
+      : style;
+  console.log(initStyle);
 
+  const appStyle = mergeDeepObjects<TDefaultStyle>(
+    DEFAULT_STYLE,
+    initStyle,
+  );
+  console.log(appStyle);
   const layoutConfig = {
     ...appStyle,
     ...rest,

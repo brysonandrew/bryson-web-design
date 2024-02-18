@@ -1,7 +1,7 @@
 import {
   TBaseColorRecord,
   TCssVar,
-} from '@brysonandrew/color-main/config/types';
+} from '@brysonandrew/color-base/config/types';
 import { TKeyStr } from '@brysonandrew/config-types/keys';
 import { resolveVarCss } from './resolveVarCss';
 

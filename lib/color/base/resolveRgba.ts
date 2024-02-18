@@ -1,7 +1,7 @@
 import {
   TDigit,
   TRgbRecord,
-} from '@brysonandrew/color-main/config/types';
+} from '@brysonandrew/color-base/config/types';
 import { formatRgba } from './formatRgba';
 import { formatRgbaValue } from './formatRgbaValue';
 

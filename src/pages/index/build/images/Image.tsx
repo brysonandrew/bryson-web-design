@@ -63,7 +63,7 @@ export const Image: FC<TProps> = (props) => {
     if (isHover) {
       handler();
     } else if (!isDesktop) {
-      handlers.onHoverStart();
+      handlers.onMouseEnter();
     }
   };
 
@@ -80,17 +80,17 @@ export const Image: FC<TProps> = (props) => {
       }}
       {...(isDesktop ? handlers : {})}
     >
-      <motion.button
+      <button
         className='cursor-zoom-in'
         {...resolveInteractiveLabels(title)}
-        onTap={handleTap}
+        onClick={handleTap}
       >
         <Picture
           mediaRecord={mediaRecord}
           {...pictureProps}
           {...dimensions}
         />
-      </motion.button>
+      </button>
     </motion.li>
   );
 };

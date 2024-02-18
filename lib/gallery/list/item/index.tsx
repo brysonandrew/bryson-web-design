@@ -50,7 +50,7 @@ export const Item = <T extends string, R extends object>({
   const to = useToFirst(slug);
 
   useEffect(() => {
-    handlers.onHoverEnd();
+    handlers.onMouseLeave();
   }, [isGallery]);
 
   const handleLayoutAnimationComplete = () => {
@@ -66,7 +66,7 @@ export const Item = <T extends string, R extends object>({
     if (isHover) {
       handleGallery();
     } else if (!isDesktop) {
-      handlers.onHoverStart();
+      handlers.onMouseEnter();
     }
   };
 
