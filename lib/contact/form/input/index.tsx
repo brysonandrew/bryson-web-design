@@ -17,10 +17,7 @@ import {
   BIG_CURSOR_KEY,
 } from '@brysonandrew/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  PRESENCE_OPACITY_DELAY,
-  resolveParentAnimateConfig,
-} from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 
@@ -74,9 +71,7 @@ export const Input = <T extends HTMLElement>({
   };
 
   useEffect(() => {
-    if (isDisabled) {
-      //blurInput();
-    } else {
+    if (!isDisabled) {
       if (
         (focusKey === null && name === DEFAULT_FOCUS_KEY) ||
         isFocused
@@ -107,9 +102,6 @@ export const Input = <T extends HTMLElement>({
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
-      // {...(isDisabled
-      //   ? {}
-      //   : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
       <>
@@ -137,7 +129,7 @@ export const Input = <T extends HTMLElement>({
           )}
         </AnimatePresence>
         {LIGHT && isFocused && (
-          <LIGHT.Marker
+          <LIGHT.MOTION.Marker
             classValue='z-10'
             layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
           />

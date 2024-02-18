@@ -1,6 +1,5 @@
 import { InView } from '@brysonandrew/in-view';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
@@ -8,7 +7,6 @@ import {
   TPartialParallaxMotionProps,
   TParallaxOptions,
 } from './config';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { IntersectionOptions } from 'react-intersection-observer';
 import { isDesktop } from 'react-device-detect';
 import { Rect } from '@brysonandrew/space/Rect';
@@ -59,11 +57,10 @@ export const Parallax: FC<TProps> = ({
             }
             if (typeof rect !== 'undefined') {
               return (
-                <motion.div
+                <div
                   style={{
                     height: rect?.height,
                   }}
-                  {...PRESENCE_OPACITY}
                 />
               );
             }

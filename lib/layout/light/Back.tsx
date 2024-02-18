@@ -1,11 +1,11 @@
 import { TLayoutComponentProps } from '@brysonandrew/app';
-import { TGlowProps } from '@brysonandrew/layout-effects';
+import { TGlowHoverGroupProps } from '@brysonandrew/glow';
 
-type TProps = TGlowProps;
+type TProps = TGlowHoverGroupProps;
 export const LightBack =
   ({
     Glow,
-    BackFillMotion,
+    BackFill,
     BORDER_RADIUS,
   }: TLayoutComponentProps) =>
   ({ children, style, ...rest }: TProps) => {
@@ -14,10 +14,9 @@ export const LightBack =
     };
     return (
       <>
-        <Glow {...props} {...rest}>
-          <BackFillMotion {...props} />
-        </Glow>
+        <Glow {...props} {...rest} />
+        <BackFill {...props} />
         {children}
-      </>
+      </> 
     );
   };

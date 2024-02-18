@@ -1,7 +1,7 @@
 import { BackMotion } from '@brysonandrew/layout-back';
 import { TBackMotionC } from '@brysonandrew/layout-back/config/types';
 
-export const BackFillMotion: TBackMotionC = ({
+export const BackMotionFill: TBackMotionC = ({
   classValue,
   ...props
 }) => {

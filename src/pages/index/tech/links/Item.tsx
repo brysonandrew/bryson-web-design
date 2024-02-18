@@ -1,19 +1,16 @@
 import { MotionValue, motion } from 'framer-motion';
 import type { FC } from 'react';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { resolveParentAnimateConfig } from '@app/animation';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { formatUrl } from '@brysonandrew/utils-format/url';
 import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
 import { AURA } from '@brysonandrew/svg-filter';
-import {
-  TDivMotionProps,
-  TSvgProps,
-} from '@brysonandrew/config';
+import { TDivProps, TSvgProps } from '@brysonandrew/config';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
+import { MOTION_CONFIG } from '@brysonandrew/animation';
 
-export type TItemProps = TDivMotionProps & {
+export type TItemProps = TDivProps & {
   title: string;
   href: string;
   Icon: FC<TSvgProps>;
@@ -33,9 +30,8 @@ export const Item: FC<
   );
 
   return (
-    <motion.div
-      className='relative cursor-pointer'
-      {...resolveParentAnimateConfig({ isHover })}
+    <div
+      className='relative group cursor-pointer'
       {...handlers}
       {...props}
     >
@@ -51,19 +47,20 @@ export const Item: FC<
       )}
       {LIGHT ? (
         <>
-          <LIGHT.Back
+          <LIGHT.MOTION.Back
             drop={8}
             color={COLOR.accent}
             initial={false}
             style={{ borderRadius: BORDER_RADIUS.MD }}
             value={glow}
+            transition={{ ...MOTION_CONFIG, delay: 0 }}
           />
-          <LIGHT.Glow
+          {/* <LIGHT.Glow
             drop={6}
             color={COLOR.secondary}
             initial={false}
             animate={{ opacity: isHover ? 1 : 0.05 }}
-          />
+          /> */}
         </>
       ) : (
         <Back style={{ borderRadius: BORDER_RADIUS.MD }} />
@@ -71,16 +68,14 @@ export const Item: FC<
       <a
         className='row gap-2 relative pl-4 pr-3 py-3'
         href={href}
+        style={{ color: COLOR.accent }}
         target='_blank'
       >
         <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-        <h4
-          className='relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl'
-          style={{ color: COLOR.accent }}
-        >
+        <h4 className='relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl'>
           {title}
         </h4>
       </a>
-    </motion.div>
+    </div>
   );
 };

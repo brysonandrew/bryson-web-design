@@ -9,7 +9,7 @@ const Tech = () => (
     <Parallax {...PARALLAX_PROPS}>
       {(props) => <Links {...props} />}
     </Parallax>
-  </Section>
+  </Section> 
 );
 
 export default Tech;

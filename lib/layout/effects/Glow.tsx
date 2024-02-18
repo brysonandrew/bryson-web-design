@@ -1,11 +1,11 @@
 import {
-  TPartialGlowConfigOptions,
   resolveGlowProps,
+  TGlowConfig,
 } from '@brysonandrew/filter-animate/utils/glow';
 import { FilterAnimate } from '@brysonandrew/filter-animate';
 import { FC } from 'react';
 
-export type TGlowProps = TPartialGlowConfigOptions;
+export type TGlowProps = TGlowConfig;
 export const Glow: FC<TGlowProps> = ({
   children,
   ...options

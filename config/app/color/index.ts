@@ -19,7 +19,7 @@ const RGB_RECORD = {
   light: WHITE_RGBS[8],
   primary: '45, 212, 191',
   secondary: '207, 250, 254',
-  accent: '153, 204, 255',
+  accent: '113, 174, 225',
 } as const;
 
 type TRgbRecord = typeof RGB_RECORD;

@@ -1,5 +1,4 @@
 import { AppProvider } from '@brysonandrew/app';
-
 import { ScrollProvider } from '@brysonandrew/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
 import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
@@ -24,11 +23,16 @@ import {
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import screensRecordJson from '../lookup.json';
 import { PLACEHOLDER } from '@app/placeholder';
-import { Metal } from '@components/layout/metal';
-import { HeadProvider } from '@brysonandrew/head';
-import { Glow } from '@brysonandrew/layout-effects';
+import { HeadHelmetProvider } from '@brysonandrew/head';
 import { ViewerProvider } from '@brysonandrew/gallery';
 import { APP_INIT_PROPS } from '@app/base/constants';
+import {
+  Metal,
+  MetalMotion,
+} from '@brysonandrew/texture-metal';
+import { AppInit } from '@brysonandrew/app/AppInit';
+import { arrToChainedValueNest } from '@brysonandrew/layout-utils/arrToChainedValueNest';
+import { LayoutLight } from '@brysonandrew/layout-light';
 import { TTitle, TRest } from '@app/gallery/types';
 
 type TProps = TChildrenProps;
@@ -41,7 +45,7 @@ export const Providers: FC<TProps> = ({
 
   const children = arrToNest<PropsWithChildren>(
     [
-      HeadProvider,
+      HeadHelmetProvider,
       PricingProvider,
       ContactProvider,
       CursorProvider,
@@ -63,9 +67,9 @@ export const Providers: FC<TProps> = ({
         screensRecordJson={screensRecordJson}
         Placeholder={PLACEHOLDER.Responsive}
       >
-        <AppProvider<TCustomStyle>
-          BackFillMotion={Metal}
-          Glow={Glow}
+        <AppInit<TCustomStyle>
+          BackFill={Metal}
+          BackMotionFill={MetalMotion}
           sounds={{
             move: handleMove,
             on: handleOnSound,
@@ -74,8 +78,19 @@ export const Providers: FC<TProps> = ({
           style={CUSTOM_STYLE}
           {...APP_INIT_PROPS}
         >
-          {_children}
-        </AppProvider>
+          {(value) => (
+            <>
+              {arrToChainedValueNest<typeof value>(
+                [LayoutLight],
+                (nextValue) => (
+                  <AppProvider<TCustomStyle> {...nextValue}>
+                    {_children}
+                  </AppProvider>
+                ),
+              )(value)}
+            </>
+          )}
+        </AppInit>
       </ViewerProvider>
     </GalleryProvider>,
     {},

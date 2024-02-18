@@ -1,18 +1,22 @@
 import { useMemo } from 'react';
-import { TDefaultStyle } from '@brysonandrew/app/config/types';
 import { DEFAULT_STYLE } from './config/constants/style';
 import { mergeDeepObjects } from '@brysonandrew/utils-object';
+import { TAnyRecord } from '@brysonandrew/config-types';
+import { TDefaultStyle } from '@brysonandrew/app/config/types';
 
-type TConfig = { style: any };
-export const useAppStyle = ({ style }: TConfig) => {
+type TConfig<S extends TAnyRecord> = { style: S };
+export const useAppStyle = <S extends TAnyRecord>({
+  style,
+}: TConfig<S>) => {
+  type TStyle = S & TDefaultStyle;
   // const initStyle =
   //   isDarkMode && style.DARK
   //     ? mergeDeepObjects<S>(style, style.DARK)
   //     : style;
 
   const appStyle = useMemo(() => {
-    const result = mergeDeepObjects<TDefaultStyle>(
-      DEFAULT_STYLE,
+    const result = mergeDeepObjects<TStyle>(
+      DEFAULT_STYLE as TStyle,
       style,
     );
 

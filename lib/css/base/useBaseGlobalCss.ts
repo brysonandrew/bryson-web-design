@@ -14,6 +14,23 @@ export const useBaseGlobalCss = ({
       :root {
         ${colorVars}
         ${PLACEHOLDER_GLOBAL_VARS_CSS}
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fade-out {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
       }
     `;
   }, []);
