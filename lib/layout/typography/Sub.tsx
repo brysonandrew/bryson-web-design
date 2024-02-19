@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import type { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import type { HTMLMotionProps } from 'framer-motion';

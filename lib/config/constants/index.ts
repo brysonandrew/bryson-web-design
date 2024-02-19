@@ -1,2 +1,2 @@
-
-export * from './number/series';
+export * from '@brysonandrew/config-constants-number';
+export * from '@brysonandrew/config-constants-fonts';

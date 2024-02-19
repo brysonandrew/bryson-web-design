@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Config Constants library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -9,8 +9,7 @@
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
-    },
-    "./number/series": "./number/series.ts"
+    }
   },
   "scripts": {
     "format": "prettier .",
@@ -28,5 +27,8 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {
+    "@brysonandrew/config-constants-number": "*",
+    "@brysonandrew/config-constants-fonts": "*"
+  }
 }

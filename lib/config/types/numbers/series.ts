@@ -1,4 +1,4 @@
-import { INDICIES, DIGITS } from "@brysonandrew/config-constants/number/series";
+import { INDICIES, DIGITS } from "@brysonandrew/config-constants-number/series";
 
 export type TIndicies = typeof INDICIES;
 export type TIndex = TIndicies[number];

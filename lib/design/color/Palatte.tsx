@@ -1,12 +1,6 @@
 import { useApp } from '@brysonandrew/app';
 import { TBaseKey } from '@brysonandrew/color';
-import {
-  CASCADE_RECORD,
-  PALETTE_COLORS,
-  PALETTE_COLORS_DARK_MODE,
-  PALETTE_TITLES,
-} from '@pages/_workshop/design/config/constants';
-import clsx from 'clsx';
+import { PALETTE_COLORS_DARK_MODE, PALETTE_COLORS, CASCADE_RECORD, PALETTE_TITLES } from '@brysonandrew/design/config/constants';
 import { FC } from 'react';
 
 type TProps = {

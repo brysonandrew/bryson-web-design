@@ -1,4 +1,4 @@
-import { TSvgProps } from '@brysonandrew/config';
+import { TSvgProps } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 import type { FC } from 'react';
 

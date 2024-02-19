@@ -7,7 +7,7 @@ import { FC } from 'react';
 import { PlusContent } from './PlusContent';
 import { titleToKebab } from '@brysonandrew/utils-format';
 import { TPriceProps } from '@pages/pricing/layout/price';
-import { TTTitleToKebab } from '@brysonandrew/config';
+import { TTTitleToKebab } from '@brysonandrew/config-types';
 
 export const PACKAGES = [
   'Standard',

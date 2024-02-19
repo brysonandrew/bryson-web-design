@@ -12,6 +12,7 @@ import {
   TTDeepPartial,
 } from '@brysonandrew/config-types';
 import { TState } from '@brysonandrew/config-types/state';
+import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
 
 type TDarkStyle = {
   DARK: typeof DEFAULT_STYLE;
@@ -26,7 +27,11 @@ export type TAppPackageProps = {
   APP_VERSION: string;
 };
 
-export type TBaseConfig = TSoundConfig & TAppPackageProps;
+export type TAppBaseProps = TAppPackageProps & {
+  FONTS: readonly TResolveWebFontConfig[];
+};
+
+export type TBaseConfig = TSoundConfig & TAppBaseProps;
 
 export type TAppInitProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
@@ -36,7 +41,7 @@ export type TAppInitProps<
     style: S;
   };
 
-  export type TAppLayoutProps<
+export type TAppLayoutProps<
   S extends TPartialDefaultStyle,
 > = TPropsWithChildrenHandler<TValue<S>>;
 

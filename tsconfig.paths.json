@@ -74,6 +74,18 @@
       "@brysonandrew/config-constants": [
         "lib/config/constants"
       ],
+      "@brysonandrew/config-constants-fonts": [
+        "lib/config/constants/fonts"
+      ],
+      "@brysonandrew/config-constants-fonts/*": [
+        "lib/config/constants/fonts/*"
+      ],
+      "@brysonandrew/config-constants-number": [
+        "lib/config/constants/number"
+      ],
+      "@brysonandrew/config-constants-number/*": [
+        "lib/config/constants/number/*"
+      ],
       "@brysonandrew/config-constants/*": [
         "lib/config/constants/*"
       ],
@@ -127,6 +139,12 @@
       ],
       "@brysonandrew/dark-mode/*": [
         "lib/dark-mode/*"
+      ],
+      "@brysonandrew/design": [
+        "lib/design"
+      ],
+      "@brysonandrew/design/*": [
+        "lib/design/*"
       ],
       "@brysonandrew/fade": [
         "lib/fade"

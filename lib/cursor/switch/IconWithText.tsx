@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
 import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@brysonandrew/animation';
-import { TSvgProps } from '@brysonandrew/config';
+import { TSvgProps } from '@brysonandrew/config-types';
 import { I } from '@brysonandrew/icons-i';
 
 type TProps = {

@@ -14,6 +14,5 @@ import { processTargets } from '@ops/exporter/processTargets';
     processTargets(targets);
   } catch (error) {
     console.log('Exporter - something went wrong: ', error);
-  }
-})(); 
- 
+  } 
+})();

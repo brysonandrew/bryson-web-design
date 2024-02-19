@@ -8,11 +8,11 @@ import {
   FONT_KEYS,
   FONT_SHARE_CATEGORIES,
   FONT_SHARE_NAMES,
-} from '@brysonandrew/uno-presets/config/constants';
+  GOOGLE_CATEGORIES,
+  GOOGLE_NAMES,
+  GOOGLE_FONTS,
+} from '@brysonandrew/config-constants-fonts';
 import { TDigit } from '@brysonandrew/config-types';
-import { GOOGLE_CATEGORIES } from '@brysonandrew/uno-presets/config/constants/google/categories';
-import { GOOGLE_NAMES } from '@brysonandrew/uno-presets/config/constants/google/names';
-import { GOOGLE_FONTS } from '@brysonandrew/uno-presets/config/constants/google/fonts';
 
 export type TPreset<T extends object> = Preset<T>;
 

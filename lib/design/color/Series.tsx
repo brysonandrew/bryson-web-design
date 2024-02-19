@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { TElementProps } from '@brysonandrew/config-types/dom';
-import { INDICIES } from '@brysonandrew/config-constants';
+import { INDICIES } from '@brysonandrew/config-constants-number';
 import { useApp } from '@brysonandrew/app';
 import { TGrayscaleKey } from '@brysonandrew/color';
 

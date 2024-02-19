@@ -1,9 +1,9 @@
+import { TStyle } from '@app/style';
 import { useApp } from '@brysonandrew/app';
 import { TDivProps } from '@brysonandrew/config-types';
 import { Moon, Sun } from '@brysonandrew/dark-mode';
+import { FontItem } from '@brysonandrew/design/typography/font/item';
 import { Line } from '@brysonandrew/layout-line';
-import { FontItem } from '@pages/_workshop/design/font/item';
-import { FONTS } from '@uno/presets/fonts';
 import clsx from 'clsx';
 import { FC, Fragment } from 'react';
 
@@ -16,7 +16,7 @@ export const DesignFont: FC<TProps> = ({
   mode,
   ...props
 }) => {
-  const { COLOR } = useApp();
+  const { COLOR, FONTS } = useApp();
   return (
     <div
       className={clsx('row-space pl-2 text-4xl', classValue)}
