@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/not-found",
-  "version": "6.22.199",
+  "version": "6.22.251",
   "description": "Routes Not Found library",
   "types": "/index.d.ts",
   "main": "./index.tsx",

@@ -1,23 +1,19 @@
-import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { Sound } from './Sound';
 import { DarkMode } from './DarkMode';
 import { isMobile } from 'react-device-detect';
-import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
+import { TDivProps } from '@brysonandrew/config-types';
 
-const Root = styled(motion.div)``;
-
-type TProps = TDivMotionProps;
+type TProps = TDivProps;
 export const Settings: FC<TProps> = (props) => {
   return (
-    <Root
+    <div
       className={clsx('row z-10', !isMobile && 'gap-1')}
       {...props}
     >
-      <DarkMode  />
+      <DarkMode />
       {!isMobile && <Sound />}
-    </Root>
-  ); 
-};
+    </div>
+  );
+}; 

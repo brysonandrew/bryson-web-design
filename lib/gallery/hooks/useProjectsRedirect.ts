@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 
 export const useProjectsRedirect = () => {
-  const { isInit } = useApp();
+  const {
+    initState: [isInit],
+  } = useApp();
   const [searchParams] = useSearchParams();
   const selectedKey = searchParams.get(PROJECT_KEY);
   const navigate = useNavigate();

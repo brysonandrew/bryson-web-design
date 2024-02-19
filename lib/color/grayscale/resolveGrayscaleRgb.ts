@@ -1,7 +1,7 @@
 import {
   TRgbaDelimiter,
   TRgbGrayscale,
-} from '@brysonandrew/color-main/config/types';
+} from '@brysonandrew/color-base/config/types';
 
 export const resolveGrayscaleRgb = <N extends number>(
   n: number,

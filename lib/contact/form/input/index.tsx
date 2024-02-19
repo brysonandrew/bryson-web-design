@@ -17,10 +17,7 @@ import {
   BIG_CURSOR_KEY,
 } from '@brysonandrew/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
-import {
-  PRESENCE_OPACITY_DELAY,
-  resolveParentAnimateConfig,
-} from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 
@@ -74,9 +71,7 @@ export const Input = <T extends HTMLElement>({
   };
 
   useEffect(() => {
-    if (isDisabled) {
-      //blurInput();
-    } else {
+    if (!isDisabled) {
       if (
         (focusKey === null && name === DEFAULT_FOCUS_KEY) ||
         isFocused
@@ -90,7 +85,7 @@ export const Input = <T extends HTMLElement>({
   }, [isDisabled, input]);
 
   const handleClear = (_: MouseEvent) => {
-    if (!isFormDisabled) return;
+    if (isFormDisabled) return;
     onForm({ [name]: '' });
     focusInput();
   };
@@ -102,18 +97,15 @@ export const Input = <T extends HTMLElement>({
   };
 
   return (
-    <motion.label
+    <label
       className='_contact_label group'
       style={{
         borderRadius: BORDER_RADIUS.MD,
       }}
-      // {...(isDisabled
-      //   ? {}
-      //   : resolveParentAnimateConfig({ isHover }))}
       {...handlers}
     >
       <>
-        <LabelBack classValue='_contact_label-texture-glow' />
+        <LabelBack classValue='_contact_label-back' />
         <Name title={name} />
         {children({
           value,
@@ -129,20 +121,20 @@ export const Input = <T extends HTMLElement>({
               key={name}
               name={name}
               whileHover={{ opacity: 1 }}
+              onTap={handleClear}
               {...resolveInteractiveLabels(`Clear ${name}`)}
               {...PRESENCE_OPACITY_DELAY}
               animate={{ opacity: isHover ? 0.8 : 0.2 }}
-              onTap={handleClear}
             />
           )}
         </AnimatePresence>
         {LIGHT && isFocused && (
-          <LIGHT.Marker
+          <LIGHT.MOTION.Marker
             classValue='z-10'
             layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
           />
         )}
       </>
-    </motion.label>
+    </label>
   );
 };

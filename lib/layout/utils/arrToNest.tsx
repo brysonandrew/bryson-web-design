@@ -6,10 +6,13 @@ export const arrToNest = <
 >(
   arr: FC<P>[],
   init: TChildren,
-  props: P ,
+  props: P,
 ) => {
-  return arr.reduce((a: TChildren, C: FC<P>) => {
-    const next = <C {...props}>{a}</C>;
-    return next;
-  }, init);
+  return arr.reduce(
+    (a: TChildren, C: FC<P>) => {
+      const next = <C {...props}>{a}</C>;
+      return next;
+    },
+    init,
+  );
 };

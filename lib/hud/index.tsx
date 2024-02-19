@@ -12,7 +12,7 @@ export const Hud = () => {
     height,
   } = useViewport();
   const { COLOR, LIGHT, GLOW_BOX, GLOW_DROP } = useApp();
-  const G = LIGHT?.Glow ?? motion.div;
+  const G = LIGHT?.MOTION.GlowFill ?? motion.div;
   return (
     <G
       drag
@@ -40,6 +40,58 @@ export const Hud = () => {
     </G>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

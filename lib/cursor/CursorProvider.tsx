@@ -12,10 +12,9 @@ import { TCursorOffset } from './hooks/useCursorOffset';
 import {
   TContext,
   THover,
-  TState,
 } from '@brysonandrew/cursor/config/types';
 
-export const STATE: TState = {
+export const STATE = {
   isCursorReady: false,
   hoverKey: null,
   children: null,

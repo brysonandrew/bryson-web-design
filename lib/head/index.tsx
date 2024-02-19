@@ -5,32 +5,35 @@ import {
   defaultTitlesResolver,
   TTitlesResolver,
 } from '@brysonandrew/head/config';
+import { TPage } from '@brysonandrew/routes';
+import { useTitleLookup } from '@brysonandrew/head/useTitleLookup';
+import {
+  TBaseColorRecord,
+  TBaseColorValue,
+} from '@brysonandrew/color-base';
 
-export type THeadProps<
-  K extends string,
-  V extends string,
-> = {
-  titleLookup: Record<K, V>;
-  titlesResolver?: TTitlesResolver;
-  prefix?: string;
-  description?: string;
-  base?: string;
-  secondary?: string;
-};
-export const Head = <K extends string, V extends string>({
-  description = '',
-  titleLookup,
+export type THeadProps<T extends string = string> =
+  Partial<TBaseColorRecord> & {
+    titlesResolver?: TTitlesResolver;
+    prefix?: string;
+    base?: TBaseColorValue;
+    pageValues: TPage<T>[];
+  };
+export const Head = <
+  T extends string = string,
+>({
+  pageValues,
   titlesResolver = defaultTitlesResolver,
   prefix = '',
   ...props
-}: THeadProps<K, V>) => {
+}: THeadProps<T>) => {
   const { COLOR } = useApp();
-  const titles = useHtmlTitle<K, V>(
-    description,
-    titleLookup,
-  );
-  const base = props.base ?? COLOR['accent'];
-  const secondary = props.secondary ?? COLOR['secondary'];
+  const titleLookup = useTitleLookup<T>({ pageValues });
+  const titles = useHtmlTitle<T>({
+    lookup: titleLookup,
+  });
+  const base = props.base ?? COLOR.light;
+  const primary = props.primary ?? COLOR['primary'];
 
   return (
     <Helmet>
@@ -59,22 +62,18 @@ export const Head = <K extends string, V extends string>({
       <link
         rel='mask-icon'
         href={`${prefix}/safari-pinned-tab.svg`}
-        color={secondary}
+        color={primary}
       />
       <meta
         name='msapplication-TileColor'
-        content={secondary}
+        content={primary}
       />
       <meta name='theme-color' content={base} />
     </Helmet>
   );
 };
 
-export * from './HeadProvider';
+export * from './HelmetProvider';
 export * from './config';
 export * from './useHtmlTitle';
-
-
-
-
-
+export * from './useTitleLookup';

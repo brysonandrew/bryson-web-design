@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/parallax",
-  "version": "6.22.199",
+  "version": "6.22.251",
   "description": "Parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -41,7 +41,6 @@
     "@brysonandrew/in-view": "*",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "@brysonandrew/animation": "*",
     "react-intersection-observer": "^9.5.3",
     "react-device-detect": "^2.2.3",
     "@brysonandrew/space": "*",

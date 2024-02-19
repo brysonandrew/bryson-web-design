@@ -12,7 +12,7 @@ import {
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {
-  const { BackFillMotion, GLOW_BOX } = useApp();
+  const { BackMotionFill, GLOW_BOX } = useApp();
   const { handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     'footer',
@@ -24,7 +24,7 @@ export const Footer: FC<TProps> = (props) => {
       {...PRESENCE_UP_Y}
       {...handlers}
     >
-      <BackFillMotion
+      <BackMotionFill
         style={{ boxShadow: GLOW_BOX['white'] }}
       />
       <Core {...props} />

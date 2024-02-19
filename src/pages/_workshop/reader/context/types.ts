@@ -1,7 +1,5 @@
+import { TState } from '@brysonandrew/config-types/state';
 import { TClipboardState } from '@brysonandrew/notifications';
-import { Dispatch, SetStateAction } from 'react';
-
-export type TState<S> = [S, Dispatch<SetStateAction<S>>];
 
 export type TSpeechSynthesis = SpeechSynthesis | null;
 export type TSelectedVoice = string | null;

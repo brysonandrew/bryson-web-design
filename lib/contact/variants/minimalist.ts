@@ -15,7 +15,7 @@ const record = {
   'clear-icon': 'w-8 h-8 md:(w-9 h-9) lg:(w-10 h-10)',
   label:
     'relative column-start w-full gap-2 md:(row-start-space gap-0)',
-  'label-texture-glow': 'hidden',
+  'label-back': 'hidden',
   'input-base':
     'title-input relative pl-4 w-full tracking-widest rounded-md leading-none shrink-0 disabled:cursor-not-allowed',
   autosize: 'bg-input relative w-full md:w-9/12',

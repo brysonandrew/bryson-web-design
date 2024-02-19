@@ -7,22 +7,27 @@ export const capitalize = (word: string | null) =>
         .slice(1)}`
     : '';
 
-export const kebabToSnake = <I extends string>(slug: I) =>
-  slug.split('-').join('_');
-export const kebabToTitle = <I extends string>(slug: I) =>
-  slug.split('-').map(capitalize).join(' ');
-export const kebabToPascal = <I extends string>(slug: I) =>
-  slug.split('-').map(capitalize).join('');
+export const lowerCase = <I extends string>(
+  value: I,
+): Lowercase<I> => value.toLowerCase() as Lowercase<I>;
+
+export const upperCase = <I extends string>(
+  value: I,
+): Uppercase<I> => value.toUpperCase() as Uppercase<I>;
+
+export const kebabToSnake = <I extends string>(value: I) =>
+  value.split('-').join('_');
+export const kebabToTitle = <I extends string>(value: I) =>
+  value.split('-').map(capitalize).join(' ');
+export const kebabToPascal = <I extends string>(value: I) =>
+  value.split('-').map(capitalize).join('');
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
 export const titleToKebab = <I extends string>(
   title: I,
 ): TTTitleToKebab<I> => {
-  const result = title
-    .split(' ')
-    .map((v) => v.toLowerCase())
-    .join('-');
+  const result = title.split(' ').map(lowerCase).join('-');
   return result as TTTitleToKebab<I>;
 };
 export const titleToUpperSnake = <I extends string>(
@@ -30,7 +35,7 @@ export const titleToUpperSnake = <I extends string>(
 ) =>
   title
     .split(' ')
-    .map((v) => v.toUpperCase())
+    .map(upperCase)
     .join('_');
 
 export const nToMoney = (n: number) =>

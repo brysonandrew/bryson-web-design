@@ -1,4 +1,7 @@
+export * from './AppInit';
 export * from './AppProvider';
+export * from './useAppStyle';
+export * from './useInit';
 export * from './useLayoutRecord';
 export * from './utils/resolveColorSet';
 export * from './utils/withStyle';

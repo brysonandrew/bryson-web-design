@@ -1,16 +1,19 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.199",
+  "version": "6.22.251",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./AppInit": "./AppInit.tsx",
     "./AppProvider": "./AppProvider.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./useAppStyle": "./useAppStyle.ts",
+    "./useInit": "./useInit.ts",
     "./useLayoutRecord": "./useLayoutRecord.tsx",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
@@ -40,14 +43,15 @@
     "react": "^18.2.0",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-object": "*",
-    "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/layout-blank": "*",
-    "@brysonandrew/layout-back": "*",
+    "@brysonandrew/config-types": "*",
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "^10.18.0",
+    "@brysonandrew/layout-back": "*",
+    "@brysonandrew/layout-blank": "*",
+    "@brysonandrew/layout-effects": "*",
     "@brysonandrew/fade-edge": "*",
-    "@brysonandrew/color": "*",
+    "@brysonandrew/color-base": "*",
     "@brysonandrew/layout": "*"
   }
 }

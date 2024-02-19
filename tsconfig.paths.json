@@ -35,6 +35,12 @@
       "@brysonandrew/color": [
         "lib/color"
       ],
+      "@brysonandrew/color-base": [
+        "lib/color/base"
+      ],
+      "@brysonandrew/color-base/*": [
+        "lib/color/base/*"
+      ],
       "@brysonandrew/color-glow": [
         "lib/color/glow"
       ],
@@ -92,6 +98,18 @@
       "@brysonandrew/contact/*": [
         "lib/contact/*"
       ],
+      "@brysonandrew/css": [
+        "lib/css"
+      ],
+      "@brysonandrew/css-base": [
+        "lib/css/base"
+      ],
+      "@brysonandrew/css-base/*": [
+        "lib/css/base/*"
+      ],
+      "@brysonandrew/css/*": [
+        "lib/css/*"
+      ],
       "@brysonandrew/cursor": [
         "lib/cursor"
       ],
@@ -145,6 +163,12 @@
       ],
       "@brysonandrew/gallery/*": [
         "lib/gallery/*"
+      ],
+      "@brysonandrew/glow": [
+        "lib/glow"
+      ],
+      "@brysonandrew/glow/*": [
+        "lib/glow/*"
       ],
       "@brysonandrew/head": [
         "lib/head"
@@ -391,6 +415,18 @@
       ],
       "@brysonandrew/svg/*": [
         "lib/svg/*"
+      ],
+      "@brysonandrew/texture": [
+        "lib/texture"
+      ],
+      "@brysonandrew/texture-metal": [
+        "lib/texture/metal"
+      ],
+      "@brysonandrew/texture-metal/*": [
+        "lib/texture/metal/*"
+      ],
+      "@brysonandrew/texture/*": [
+        "lib/texture/*"
       ],
       "@brysonandrew/uno": [
         "lib/uno"

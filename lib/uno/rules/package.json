@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-rules",
-  "version": "6.22.199",
+  "version": "6.22.251",
   "description": "Uno Rules library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,7 +10,8 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./resolveCharGapRules": "./resolveCharGapRules.ts"
+    "./resolveCharGapRules": "./resolveCharGapRules.ts",
+    "./resolveOpacityRules": "./resolveOpacityRules.ts"
   },
   "scripts": {
     "format": "prettier .",

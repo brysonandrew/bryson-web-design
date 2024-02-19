@@ -5,12 +5,12 @@ import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
 import {
   TGrayscaleKey,
-  TMainKey,
+  TBaseKey,
 } from '@brysonandrew/color';
 
 type TProps = TElementProps & {
-  base: TGrayscaleKey | TMainKey;
-  bgs: TMainKey[];
+  base: TGrayscaleKey | TBaseKey;
+  bgs: TBaseKey[];
 };
 export const ColorOpacitySeries: FC<TProps> = ({
   base,

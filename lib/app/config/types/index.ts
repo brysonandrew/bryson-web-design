@@ -1,11 +1,17 @@
 import { TSoundConfig } from '@brysonandrew/app/config/types/sound';
-import { Context, PropsWithChildren } from 'react';
+import { Context } from 'react';
 import {
   TLayoutRecordProps,
   TLayoutRecordValue,
 } from './layout';
 import { DEFAULT_STYLE } from '../constants/style';
-import { TTDeepPartial } from '@brysonandrew/config-types';
+import {
+  TChildrenHandlerProps,
+  TPropsWithChildren,
+  TPropsWithChildrenHandler,
+  TTDeepPartial,
+} from '@brysonandrew/config-types';
+import { TState } from '@brysonandrew/config-types/state';
 
 type TDarkStyle = {
   DARK: typeof DEFAULT_STYLE;
@@ -14,23 +20,37 @@ export type TDefaultStyle = typeof DEFAULT_STYLE &
   TTDeepPartial<TDarkStyle>;
 export type TPartialDefaultStyle = Partial<TDefaultStyle>;
 
-export type TAppProps<
+export type TAppPackageProps = {
+  APP_DESCRIPTION: string;
+  APP_TITLE: string;
+  APP_VERSION: string;
+};
+
+export type TBaseConfig = TSoundConfig & TAppPackageProps;
+
+export type TAppInitProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = PropsWithChildren<
+> = TChildrenHandlerProps<TValue<S>> &
   TLayoutRecordProps &
-    TSoundConfig & {
-      style: S;
-    }
->;
+  TBaseConfig & {
+    style: S;
+  };
+
+  export type TAppLayoutProps<
+  S extends TPartialDefaultStyle,
+> = TPropsWithChildrenHandler<TValue<S>>;
+
+export type TAppProviderProps<
+  S extends TPartialDefaultStyle,
+> = TPropsWithChildren<TValue<S>>;
 
 export type TValue<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
 > = TLayoutRecordValue &
-  TSoundConfig &
+  TBaseConfig &
   TDefaultStyle &
   S & {
-    isInit: boolean;
-    onInit(): void;
+    initState: TState<boolean>;
   };
 
 export type TAppContext<

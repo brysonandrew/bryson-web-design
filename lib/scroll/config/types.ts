@@ -1,11 +1,10 @@
 import { TMotionPoint } from '@brysonandrew/animation/config/types';
 
-export type TState = {
+export type TScrollState = {
   isScrolling: boolean;
   isScroll: boolean;
-
 };
 
-export type TScrollContext = TState & {
+export type TScrollContext = TScrollState & {
   scroll: TMotionPoint;
 };

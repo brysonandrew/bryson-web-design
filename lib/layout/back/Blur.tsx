@@ -1,44 +1,24 @@
-import type { FC, PropsWithChildren } from 'react';
-import { TDivMotionProps } from '@brysonandrew/config-types/dom';
-import { motion } from 'framer-motion';
-import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
+import { TBackC } from '@brysonandrew/layout-back/config/types';
+import { BackFill } from '@brysonandrew/layout-back/Fill';
 
-export type TBackBlurProps =
-  PropsWithChildren<TDivMotionProps>;
-export const BackBlur: FC<TBackBlurProps> = ({
+export const BackBlur: TBackC = ({
   classValue,
   children,
   ...props
 }) => {
-  const { BORDER_RADIUS, Back, LIGHT } = useApp();
-
   return (
-    <motion.div
-      whileHover='hover'
-      className={clsx('backdrop-blur-sm', classValue)}
-      style={{
-        borderRadius: BORDER_RADIUS.XL,
-      }}
+    <div
+      className={clsx(
+        'backdrop-blur-sm',
+        classValue,
+      )}
       {...props}
     >
-      <>
-        {LIGHT ? (
-          <LIGHT.Back
-            style={{
-              borderRadius: BORDER_RADIUS.XL,
-            }}
-          />
-        ) : (
-          <Back
-            classValue='opacity-50'
-            style={{
-              borderRadius: BORDER_RADIUS.XL,
-            }}
-          />
-        )}
-        <div className='relative'>{children}</div>
-      </>
-    </motion.div>
+      <div className='fill opacity-50'>
+        <BackFill {...props} />
+      </div>
+      <div className='relative'>{children}</div>
+    </div>
   );
 };

@@ -8,31 +8,20 @@ import {
 import type { FC } from 'react';
 import { useTimeoutRef } from '@brysonandrew/hooks-window/useTimeoutRef';
 import { useLocation } from 'react-router';
-import type {
-  TState,
-  TScrollContext,
-} from '@brysonandrew/scroll/config/types';
+import type { TScrollContext } from '@brysonandrew/scroll/config/types';
 import {
-  motionValue,
   useMotionValueEvent,
   useScroll as useMotionScroll,
 } from 'framer-motion';
 import {
   SCROLL_COOLDOWN,
   INIT_SCROLL,
+  INIT_SCROLL_CONTEXT,
 } from '@brysonandrew/scroll/config/constants';
 
-const STATE: TState = {
-  isScrolling: false,
-  isScroll: false,
-};
-
-const CONTEXT: TScrollContext = {
-  ...STATE,
-  scroll: { x: motionValue(0), y: motionValue(0) },
-};
-
-const SCROLL = createContext<TScrollContext>(CONTEXT);
+const SCROLL = createContext<TScrollContext>(
+  INIT_SCROLL_CONTEXT,
+);
 export const useScroll = (): TScrollContext =>
   useContext<TScrollContext>(SCROLL);
 

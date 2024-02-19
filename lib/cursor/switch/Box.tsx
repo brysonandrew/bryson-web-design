@@ -20,13 +20,14 @@ export const Box: FC<TProps> = ({
   delay = 0.2,
   exitDelay = 0,
 }) => {
-  const { Back, LIGHT, BORDER_RADIUS } = useApp();
+  const { BackFill, LIGHT, BORDER_RADIUS, COLOR } =
+    useApp();
   const { cursorLabel } = useCursor();
-  const Background = LIGHT ? LIGHT.Back : Back;
+  const Background = LIGHT ? LIGHT.MOTION.Back : BackFill;
   return (
     <motion.div
       className={clsx(
-        'absolute top-1/2 left-1/2 px-3',
+        'absolute top-1/2 left-1/2 px-3 group',
         classValue,
       )}
       style={{
@@ -45,16 +46,12 @@ export const Box: FC<TProps> = ({
           opacity: 1,
           transition: {
             duration: DURATION * 2,
-            delay: 0 + delay,
+            delay: delay,
           },
         },
       )}
     >
-      <Background
-        style={{
-          borderRadius: BORDER_RADIUS.MD,
-        }}
-      />
+      <Background color={COLOR.accent} />
       {children}
     </motion.div>
   );

@@ -1,25 +1,28 @@
 import { TDefaultStyle } from '@brysonandrew/app/config/types';
 import { FC } from 'react';
 import {
-  DEFAULT_BLANK,
-  DEFAULT_BACK,
+  DEFAULT_BLANKS,
+  DEFAULT_BACKS,
   DEFAULT_EFFECTS,
+  DEFAULT_LAYOUT,
+  DEFAULT_CONFIG,
 } from '@brysonandrew/app/config/constants';
+
 import { TWithLight } from '@brysonandrew/layout';
 import { TFadeVProps } from '@brysonandrew/fade-edge/pairs/FadeV';
+import { TAnyRecord } from '@brysonandrew/config-types';
 
-export type TDefaultBlankRecord = typeof DEFAULT_BLANK;
-export type TDefaultBackRecord = typeof DEFAULT_BACK;
+export type TDefaultBlanksRecord = typeof DEFAULT_BLANKS;
+export type TDefaultBacksRecord = typeof DEFAULT_BACKS;
 export type TDefaultEffectsRecord = typeof DEFAULT_EFFECTS;
+export type TDefaultLayoutRecord = typeof DEFAULT_LAYOUT;
+export type TDefaultConfigRecord = typeof DEFAULT_CONFIG;
 
-type TDefaultU = TDefaultBackRecord &
-  TDefaultBlankRecord &
-  Pick<TDefaultEffectsRecord, 'Brighten'>;
+type TDefaultU = TDefaultBacksRecord &
+  TDefaultBlanksRecord &
+  TDefaultEffectsRecord;
 
-export type TInitLayoutRecord = Pick<
-  TDefaultEffectsRecord,
-  'Glow'
->;
+export type TInitLayoutRecord = TAnyRecord;
 
 export type TCoreLayoutRecord = TDefaultU & {
   FadeV: FC<TFadeVProps>;

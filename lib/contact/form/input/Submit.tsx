@@ -6,17 +6,20 @@ import {
   useContact,
 } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/cursor';
-import {
-  TRANSITION_02_EASEIN_008,
-  resolveParentAnimateConfig,
-} from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/animation';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { NOOP } from '@brysonandrew/utils';
 
 type TProps = { isDisabled?: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {
-  const { BORDER_RADIUS, LIGHT, Back, sounds } = useApp();
+  const {
+    BORDER_RADIUS,
+    LIGHT,
+    Back: _Back,
+    sounds,
+  } = useApp();
+  const Back = LIGHT?.Back ?? _Back;
   const { isHover, handlers } = useHoverKey(
     BIGGER_CURSOR_KEY,
     'form-submit',
@@ -35,7 +38,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     <motion.label
       ref={ref}
       className={clsx(
-        '_contact_submit',
+        '_contact_submit group',
         isDisabled
           ? 'cursor-not-allowed'
           : 'cursor-pointer',
@@ -50,29 +53,15 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
       }}
       {...handlers}
     >
-      {LIGHT ? <LIGHT.Back /> : <Back />}
+      <Back />
       <input
         className='fill pointer-events-none opacity-0'
         type='submit'
         disabled={isDisabled}
       />
-      <motion.h4
-        className='_contact_submit-text'
-        transition={TRANSITION_02_EASEIN_008}
-        style={{
-          letterSpacing: '0.1em',
-        }}
-        variants={{
-          animate: {
-            letterSpacing: '0.1em',
-          },
-          hover: {
-            letterSpacing: '0.25em',
-          },
-        }}
-      >
+      <h4 className='_contact_submit-text'>
         {title}
-      </motion.h4>
+      </h4>
     </motion.label>
   );
 };

@@ -97,18 +97,18 @@ export const Content = <T extends string>({
         <>
           {LIGHT ? (
             <>
-              <LIGHT.Marker classValue='z-50' />
-              <LIGHT.Back />
+              <LIGHT.MOTION.Back />
+              <LIGHT.MOTION.Marker classValue='z-50' />
             </>
           ) : null}
         </>
       )}
-      <motion.div className='row-space py-4 relative left-0 top-0'>
+      <div className='row-space py-4 relative left-0 top-0'>
         {leftHeader}
         <div className='column-end gap-4 lg:row'>
           {rightHeader}
         </div>
-      </motion.div>
+      </div>
       {children && <>{children}</>}
     </motion.div>
   );
