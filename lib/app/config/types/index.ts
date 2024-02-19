@@ -3,6 +3,7 @@ import { Context } from 'react';
 import {
   TLayoutRecordProps,
   TLayoutRecordValue,
+  TPartialLayoutOptionsRecord,
 } from './layout';
 import { DEFAULT_STYLE } from '../constants/style';
 import {
@@ -35,7 +36,8 @@ export type TBaseConfig = TSoundConfig & TAppBaseProps;
 
 export type TAppInitProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = TChildrenHandlerProps<TValue<S>> &
+  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = TChildrenHandlerProps<TValue<S, L>> &
   TLayoutRecordProps &
   TBaseConfig & {
     style: S;
@@ -43,21 +45,27 @@ export type TAppInitProps<
 
 export type TAppLayoutProps<
   S extends TPartialDefaultStyle,
-> = TPropsWithChildrenHandler<TValue<S>>;
+  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+  V extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = TPropsWithChildrenHandler<TValue<S, V & L>, V>;
 
 export type TAppProviderProps<
   S extends TPartialDefaultStyle,
-> = TPropsWithChildren<TValue<S>>;
+  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = TPropsWithChildren<TValue<S, L>>;
 
 export type TValue<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = TLayoutRecordValue &
+  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = L &
+  TLayoutRecordValue &
   TBaseConfig &
-  TDefaultStyle &
-  S & {
+  S &
+  TDefaultStyle & {
     initState: TState<boolean>;
   };
 
 export type TAppContext<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = Context<TValue<S>>;
+  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = Context<TValue<S, L>>;

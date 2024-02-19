@@ -3,7 +3,7 @@ import {
   GLOW_BOX,
   COLOR_RECORD,
 } from '@app/color';
-import { GRADIENT_CLASS } from '@app/color/constants/pricing';
+import { GRADIENT_CLASS } from '@app/color/config/pricing';
 import { TDefaultStyle } from '@brysonandrew/app';
 import { BORDER_RADIUS } from './border-radius';
 

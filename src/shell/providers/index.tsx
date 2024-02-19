@@ -1,4 +1,7 @@
-import { AppProvider } from '@brysonandrew/app';
+import {
+  AppProvider,
+  TAppProviderProps,
+} from '@brysonandrew/app';
 import { ScrollProvider } from '@brysonandrew/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
 import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
@@ -22,7 +25,6 @@ import {
 } from '@brysonandrew/sounds';
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import screensRecordJson from '../lookup.json';
-import { PLACEHOLDER } from '@app/placeholder';
 import { HeadHelmetProvider } from '@brysonandrew/head';
 import { ViewerProvider } from '@brysonandrew/gallery';
 import { APP_BASE_PROPS } from '@app/base';
@@ -33,6 +35,7 @@ import {
 import { AppInit } from '@brysonandrew/app/AppInit';
 import { arrToChainedValueNest } from '@brysonandrew/layout-utils/arrToChainedValueNest';
 import { LayoutLight } from '@brysonandrew/layout-light';
+import { LayoutPlaceholder } from '@brysonandrew/layout/placeholder';
 import { TTitle, TRest } from '@app/gallery/types';
 
 type TProps = TChildrenProps;
@@ -63,35 +66,36 @@ export const Providers: FC<TProps> = ({
       }}
       List={{ RightHeader: ListRightHeader, LeftHeader }}
     >
-      <ViewerProvider
-        screensRecordJson={screensRecordJson}
-        Placeholder={PLACEHOLDER.Responsive}
+      <AppInit<TCustomStyle>
+        BackFill={Metal}
+        BackMotionFill={MetalMotion}
+        sounds={{
+          move: handleMove,
+          on: handleOnSound,
+          off: handleOffSound,
+        }}
+        style={CUSTOM_STYLE}
+        {...APP_BASE_PROPS}
       >
-        <AppInit<TCustomStyle>
-          BackFill={Metal}
-          BackMotionFill={MetalMotion}
-          sounds={{
-            move: handleMove,
-            on: handleOnSound,
-            off: handleOffSound,
-          }}
-          style={CUSTOM_STYLE}
-          {...APP_BASE_PROPS}
-        >
-          {(value) => (
-            <>
-              {arrToChainedValueNest<typeof value>(
-                [LayoutLight],
-                (nextValue) => (
+        {(value: TAppProviderProps<TCustomStyle>) => (
+          <>
+            {arrToChainedValueNest<typeof value>(
+              [LayoutLight, LayoutPlaceholder],
+              (
+                nextValue: TAppProviderProps<TCustomStyle>,
+              ) => (
+                <ViewerProvider
+                  screensRecordJson={screensRecordJson}
+                >
                   <AppProvider<TCustomStyle> {...nextValue}>
                     {_children}
                   </AppProvider>
-                ),
-              )(value)}
-            </>
-          )}
-        </AppInit>
-      </ViewerProvider>
+                </ViewerProvider>
+              ),
+            )(value)}
+          </>
+        )}
+      </AppInit>
     </GalleryProvider>,
     {},
   );

@@ -7,10 +7,4 @@ export const FONTS: readonly TResolveWebFontConfig[] = [
     provider: 'fontshare',
     weights: ['400', '500', '600'],
   },
-  // {
-  //   key: 'display',
-  //   name: 'ADLaM Display',
-  //   provider: 'google',
-  //   weights: ['400'],
-  // },
 ];
