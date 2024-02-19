@@ -9,13 +9,14 @@ import {
   TDivMotionProps,
   TDivProps,
 } from '@brysonandrew/config-types';
-import { TUDivProps } from '@brysonandrew/config-types/dom/unions';
 import { TPartialGlowConfigOptions } from '@brysonandrew/filter-animate';
-
-type TGlowProps = TDivProps & TPartialGlowConfigOptions;
-type TGlowMotionProps = TDivMotionProps &
-  TPartialGlowConfigOptions;
-type TUGlowProps = TGlowProps | TGlowMotionProps;
+import {
+  TGlowProps,
+  TUGlowProps,
+  TGlowMotionProps,
+} from '@brysonandrew/layout-light/config/types';
+import { Marker } from '@brysonandrew/layout-light/marker';
+import { MarkerMotion } from '@brysonandrew/layout-light/marker/Motion';
 
 type TConfig = TLayoutComponentProps;
 export const withLight = (config: TConfig) => {
@@ -27,22 +28,6 @@ export const withLight = (config: TConfig) => {
     Glow,
   } = config;
   const commonStyle = { borderRadius: BORDER_RADIUS.MD };
-  const markerProps = <T extends TUDivProps>({
-    style,
-    classValue,
-    ...props
-  }: T) => ({
-    className: clsx(
-      'absolute left-0 top-0 bottom-0 -mr-1 -mb-1 pointer-events-none',
-      classValue,
-    ),
-    style: {
-      width: `calc(0.5rem + 4px)`,
-      height: '100%',
-      ...style,
-    },
-    ...props,
-  });
 
   const glowStyle = <T extends TUGlowProps>({
     style,
@@ -50,8 +35,9 @@ export const withLight = (config: TConfig) => {
     box = 4,
     drop = 0,
     color = COLOR.primary,
+    isBackground,
   }: T) => ({
-    backgroundColor: color,
+    ...(isBackground ? { backgroundColor: color } : {}),
     ...(text > 0
       ? { textShadow: resolveBoxShadow(color, text) }
       : {}),
@@ -66,9 +52,9 @@ export const withLight = (config: TConfig) => {
   });
 
   const idleProps = <T extends TUGlowProps>({
-    color = COLOR.primary,
     classValue,
     style,
+    color = COLOR.primary,
     ...props
   }: T) => ({
     style: {
@@ -83,9 +69,9 @@ export const withLight = (config: TConfig) => {
   });
 
   const hoverProps = <T extends TUGlowProps>({
-    color = COLOR.accent,
-    style,
     classValue,
+    style,
+    color = COLOR.accent,
     ...props
   }: T) => ({
     style: {
@@ -96,20 +82,32 @@ export const withLight = (config: TConfig) => {
     ...props,
   });
 
-  const GlowFill = (props: TGlowProps) => (
+  const GlowFillBorder = (props: TGlowProps) => (
     <>
-      <div {...idleProps<TDivProps>(props) as TDivProps} />
-      <div {...hoverProps<TDivProps>(props) as TDivProps} />
+      <div
+        {...(idleProps<TDivProps>(props) as TDivProps)}
+      />
+      <div
+        {...(hoverProps<TDivProps>(props) as TDivProps)}
+      />
     </>
   );
 
-  const GlowFillMotion = ({
-    ...props
-  }: TGlowMotionProps) => (
+  const GlowFill = (props: TGlowProps) => (
+    <GlowFillBorder {...props} isBackground />
+  );
+
+  const GlowFillBorderMotion = (
+    props: TGlowMotionProps,
+  ) => (
     <>
       <motion.div {...idleProps<TDivMotionProps>(props)} />
       <motion.div {...hoverProps<TDivMotionProps>(props)} />
     </>
+  );
+
+  const GlowFillMotion = (props: TGlowMotionProps) => (
+    <GlowFillBorderMotion {...props} isBackground />
   );
 
   const BackMotionFill = ({
@@ -117,14 +115,14 @@ export const withLight = (config: TConfig) => {
     ...props
   }: TGlowMotionProps) => (
     <_BackMotionFill
-      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
+      style={{ ...commonStyle, ...style }}
       {...props}
     />
   );
 
   const BackFill = ({ style, ...props }: TGlowProps) => (
     <_BackFill
-      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
+      style={{ ...commonStyle, ...style }}
       {...props}
     />
   );
@@ -166,7 +164,7 @@ export const withLight = (config: TConfig) => {
   }: TDivMotionProps & TPartialGlowConfigOptions) => (
     <Glow
       color={color}
-      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
+      style={{ ...commonStyle, ...style }}
       {...props}
     >
       <>{children ?? <BackMotionFill />}</>
@@ -195,28 +193,18 @@ export const withLight = (config: TConfig) => {
     </>
   );
 
-  const Marker = ({ ...props }: TDivProps) => (
-    <div {...(markerProps<TDivProps>(props) as TDivProps)}>
-      <GlowFill {...props} />
-    </div>
-  );
-
-  const MarkerMotion = ({ ...props }: TDivMotionProps) => (
-    <motion.div {...markerProps(props)}>
-      <GlowFillMotion />
-    </motion.div>
-  );
-
   return {
     GlowFill,
+    GlowFillBorder,
     GlowWrap,
     Back,
-    Marker,
+    Marker: Marker(GlowFill),
     MOTION: {
       GlowFill: GlowFillMotion,
+      GlowFillBorder: GlowFillBorderMotion,
       GlowWrap: GlowWrapMotion,
       Back: BackMotion,
-      Marker: MarkerMotion,
+      Marker: MarkerMotion(GlowFillMotion),
     },
   };
 };

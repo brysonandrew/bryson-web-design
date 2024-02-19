@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.22.251",
+  "version": "6.22.256",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,8 +15,8 @@
     "./config/types": "./config/types.ts",
     "./hooks/useItemsConfig": "./hooks/useItemsConfig.ts",
     "./hooks/useProjectsRedirect": "./hooks/useProjectsRedirect.ts",
-    "./utils/resolveItem": "./utils/resolveItem.ts",
     "./components/buttons/Circle": "./components/buttons/Circle.tsx",
+    "./utils/resolveItem": "./utils/resolveItem.ts",
     "./components/content": "./components/content/index.tsx"
   },
   "scripts": {
@@ -45,8 +45,8 @@
     "@brysonandrew/app": "*",
     "react-router": "^6.21.1",
     "react-router-dom": "^6.21.3",
-    "@brysonandrew/utils-format": "*",
     "@brysonandrew/interactive": "*",
+    "@brysonandrew/utils-format": "*",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "@brysonandrew/config-types": "*",

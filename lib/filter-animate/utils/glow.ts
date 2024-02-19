@@ -3,17 +3,19 @@ import { resolveDropShadow } from '@brysonandrew/color-glow/resolveDropShadow';
 import { resolveBoxShadow } from '@brysonandrew/color-glow/resolveBoxShadow';
 import { TFilterAnimateProps } from '..';
 import { TRANSITION_02_EASEIN_008 } from '@brysonandrew/animation';
+import { TColorValue } from '@brysonandrew/color';
 
-export type TGlowConfigOptions = {
+export type TGlowConfigOptions<T extends TColorValue = TColorValue> = {
   text: number;
   box: number;
   drop: number;
-  color: string;
+  color: T;
   value: MotionValue;
   idle: number;
+  isBackground: boolean
 };
-export type TPartialGlowConfigOptions =
-  Partial<TGlowConfigOptions>;
+export type TPartialGlowConfigOptions<T extends TColorValue = TColorValue> =
+  Partial<TGlowConfigOptions<T>>;
 export type TGlowConfig = TPartialGlowConfigOptions &
   TFilterAnimateProps;
 export const resolveGlowProps = ({

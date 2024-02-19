@@ -41,7 +41,6 @@ export const Image: FC<TProps> = (props) => {
   const title = 'View in image gallery';
   const name = useCurrName();
   const isGallery = Boolean(name);
-  const isInteractionDisabled = isGallery || isScrolling;
   const size = positionConfig.imageSize;
 
   const circleStyle = useCircle(positionConfig);
@@ -57,7 +56,12 @@ export const Image: FC<TProps> = (props) => {
     <div>{title}</div>,
   );
 
-  const handler = useTapHandler({ mediaRecord });
+  const { isExiting, handler } = useTapHandler({
+    mediaRecord,
+  });
+
+  const isInteractionDisabled =
+    isGallery || isScrolling || isExiting;
 
   const handleTap = () => {
     if (isHover) {
@@ -74,8 +78,11 @@ export const Image: FC<TProps> = (props) => {
         isInteractionDisabled && 'pointer-events-none',
       )}
       style={{
-        filter: isHover ? INIT_FILTER : GRAYED_OUT,
-        ...circleStyle,
+        filter:
+          isHover && !isInteractionDisabled
+            ? INIT_FILTER
+            : GRAYED_OUT,
+        ...(isExiting ? { opacity: 0 } : circleStyle),
         ...ORIGIN_50,
       }}
       {...(isDesktop ? handlers : {})}

@@ -1,18 +1,12 @@
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
-import {
-  TChildrenPartialProps,
-  TClassValueProps,
-} from '@brysonandrew/config-types/dom/main';
+import { TPropsWithChildren } from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
-export type TFilterAnimateProps = Omit<
-  TDivMotionProps,
-  'color'
-> &
-  TClassValueProps &
-  TChildrenPartialProps;
+export type TFilterAnimateProps = TPropsWithChildren<
+  Omit<TDivMotionProps, 'color'>
+>;
 export const FilterAnimate: FC<TFilterAnimateProps> = ({
   classValue,
   children,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hud",
-  "version": "6.22.251",
+  "version": "6.22.256",
   "description": "Hud library",
   "main": "./index.tsx",
   "module": "./index.tsx",

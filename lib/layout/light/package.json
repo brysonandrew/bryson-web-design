@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.251",
+  "version": "6.22.256",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,7 +10,11 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./withLight": "./withLight.tsx"
+    "./withLight": "./withLight.tsx",
+    "./config/types": "./config/types.ts",
+    "./marker/Motion": "./marker/Motion.tsx",
+    "./marker": "./marker/index.tsx",
+    "./marker/markerProps": "./marker/markerProps.ts"
   },
   "scripts": {
     "format": "prettier .",

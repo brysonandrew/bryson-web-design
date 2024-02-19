@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/css-base",
-  "version": "6.22.251",
+  "version": "6.22.256",
   "description": "Css Base library",
   "types": "/index.d.ts",
   "main": "./index.ts",

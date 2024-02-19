@@ -8,6 +8,7 @@ import {
   TFormChildrenProps,
 } from '@brysonandrew/contact/form';
 import { TFooterInfoProps } from '@brysonandrew/contact/config/types';
+import { motion } from 'framer-motion';
 
 type TProps = TFooterInfoProps;
 export const Contact: FC<TProps> = ({ footerInfo }) => {
@@ -38,9 +39,12 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
           </div>
           <Submit isDisabled={props.isDisabled} />
           {footerInfo && (
-            <footer className='_contact_footer'>
+            <motion.footer
+              layout
+              className='_contact_footer'
+            >
               <Footer {...footerInfo} />
-            </footer>
+            </motion.footer>
           )}
         </>
       )}
