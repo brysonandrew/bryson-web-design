@@ -1,6 +1,6 @@
-import { ColorOpacitySeries } from '@pages/_workshop/design/color/OpacitySeries';
-import { ColorPalatte } from '@pages/_workshop/design/color/Palatte';
-import { ColorSeries } from '@pages/_workshop/design/color/Series';
+import { ColorOpacitySeries } from '@brysonandrew/design/color/OpacitySeries';
+import { ColorPalatte } from '@brysonandrew/design/color/Palatte';
+import { ColorSeries } from '@brysonandrew/design/color/Series';
 
 export const DesignColor = () => {
   return (

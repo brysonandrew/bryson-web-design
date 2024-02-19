@@ -11,7 +11,7 @@ import { Sections } from './sections';
 import { useFreezeScrollBar } from '@brysonandrew/hooks-scroll/useFreezeScroll';
 import { useMotionX } from '@brysonandrew/gallery-viewer/hooks/motion/useMotionX';
 import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
-import { TTTitleToKebab } from '@brysonandrew/config';
+import { TTTitleToKebab } from '@brysonandrew/config-types';
 
 export type TReadyProps<T extends string> = {
   viewportWidth: number;

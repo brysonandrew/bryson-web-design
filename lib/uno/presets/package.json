@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-presets",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Uno Presets library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,16 +10,10 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./resolveFonts": "./resolveFonts.ts",
     "./resolvePresets": "./resolvePresets.ts",
     "./resolveWebFont": "./resolveWebFont.ts",
-    "./config/types": "./config/types.ts",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/constants/bunny/categories": "./config/constants/bunny/categories.ts",
-    "./config/constants/bunny/fonts": "./config/constants/bunny/fonts.ts",
-    "./config/constants/bunny/names": "./config/constants/bunny/names.ts",
-    "./config/constants/google/categories": "./config/constants/google/categories.ts",
-    "./config/constants/google/fonts": "./config/constants/google/fonts.ts",
-    "./config/constants/google/names": "./config/constants/google/names.ts"
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -38,8 +32,9 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/config-types": "*",
     "unocss": "^0.53.6",
     "@unocss/preset-web-fonts": "*",
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-constants-fonts": "*"
   }
 }

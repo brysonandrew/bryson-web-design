@@ -10,7 +10,7 @@ export type TPartialInvertConfigOptions =
 export type TInvertConfig = TPartialInvertConfigOptions &
   TFilterAnimateProps;
 export const resolveInvertProps = ({
-  value = 0.5,
+  value = 1,
   opacity = value / 100,
   ...props
 }: TInvertConfig) => ({

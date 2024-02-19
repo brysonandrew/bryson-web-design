@@ -25,7 +25,7 @@ import screensRecordJson from '../lookup.json';
 import { PLACEHOLDER } from '@app/placeholder';
 import { HeadHelmetProvider } from '@brysonandrew/head';
 import { ViewerProvider } from '@brysonandrew/gallery';
-import { APP_PACKAGE_PROPS } from '@app/base/constants';
+import { APP_BASE_PROPS } from '@app/base';
 import {
   Metal,
   MetalMotion,
@@ -76,7 +76,7 @@ export const Providers: FC<TProps> = ({
             off: handleOffSound,
           }}
           style={CUSTOM_STYLE}
-          {...APP_PACKAGE_PROPS}
+          {...APP_BASE_PROPS}
         >
           {(value) => (
             <>

@@ -1,15 +1,9 @@
 import { presetWebFonts, type Preset } from 'unocss';
-import {
-  resolveWebFont,
-  withDarkModePreset,
-  TWebFonts,
-} from '@brysonandrew/uno-presets';
-import { FONTS } from './fonts';
+import { withDarkModePreset } from '@brysonandrew/uno-presets';
+import { FONTS } from '../../app/base/fonts';
+import { resolveFonts } from '@brysonandrew/uno-presets/resolveFonts';
 
-const fonts = FONTS.reduce((a, c) => {
-  const record = resolveWebFont(c);
-  return { ...a, ...record };
-}, {} as TWebFonts);
+const fonts = resolveFonts(FONTS);
 
 export type TPresets<T extends object> = (
   | Preset<T>

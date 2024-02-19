@@ -1,0 +1,55 @@
+{
+  "name": "@brysonandrew/design",
+  "version": "6.22.271",
+  "description": "Design library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    "./Layout": "./Layout.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./color/OpacitySeries": "./color/OpacitySeries.tsx",
+    "./color/Palatte": "./color/Palatte.tsx",
+    "./color/Series": "./color/Series.tsx",
+    "./color": "./color/index.tsx",
+    "./config/constants": "./config/constants.ts",
+    "./typography": "./typography/index.tsx",
+    "./typography/font": "./typography/font/index.tsx",
+    "./typography/font/item/Left": "./typography/font/item/Left.tsx",
+    "./typography/font/item/Right": "./typography/font/item/Right.tsx",
+    "./typography/font/item": "./typography/font/item/index.tsx",
+    "./typography/font/item/resolveHref": "./typography/font/item/resolveHref.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-constants": "*",
+    "@brysonandrew/app": "*",
+    "clsx": "^1.2.1",
+    "@brysonandrew/color": "*",
+    "@brysonandrew/config-constants-number": "*",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/dark-mode": "*",
+    "@brysonandrew/layout-line": "*",
+    "@brysonandrew/uno-presets": "*"
+  }
+}

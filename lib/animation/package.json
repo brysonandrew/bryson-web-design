@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/animation",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Animation library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -25,11 +25,11 @@
     "./resolvePresenceRecord/value/rotate": "./resolvePresenceRecord/value/rotate.ts",
     "./resolvePresenceRecord/value/shift": "./resolvePresenceRecord/value/shift.ts",
     "./resolvePresenceRecord/value/zoom": "./resolvePresenceRecord/value/zoom.ts",
+    "./config/types/transition/transition": "./config/types/transition/transition.ts",
     "./config/types/presence/config": "./config/types/presence/config.ts",
     "./config/types/presence": "./config/types/presence/index.ts",
     "./config/types/presence/key": "./config/types/presence/key.ts",
     "./config/types/presence/value": "./config/types/presence/value.ts",
-    "./config/types/transition/transition": "./config/types/transition/transition.ts",
     "./config/types/transition/base": "./config/types/transition/base/index.ts",
     "./config/types/transition/base/key": "./config/types/transition/base/key.ts"
   },

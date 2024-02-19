@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-rules",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Uno Rules library",
   "main": "./index.ts",
   "module": "./index.ts",

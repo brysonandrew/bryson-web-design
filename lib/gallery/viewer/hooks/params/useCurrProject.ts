@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@brysonandrew/config';
+import { TTTitleToKebab } from '@brysonandrew/config-types';
 import { PROJECT_KEY } from '@brysonandrew/gallery/config/constants';
 import { useSearchParams } from 'react-router-dom';
 

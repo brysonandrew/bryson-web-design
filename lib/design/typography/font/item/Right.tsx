@@ -1,5 +1,5 @@
+import { resolveFontProviderHref } from '@brysonandrew/design/typography/font/item/resolveHref';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
-import { resolveFontProviderHref } from '@pages/_workshop/design/font/item/resolveHref';
 import { FC } from 'react';
 
 type TProps = {
