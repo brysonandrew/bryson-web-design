@@ -5,7 +5,7 @@ import {
 import {
   OPACITY_RANGE_RGB_RECORD,
   VARIABLES_RECORD,
-} from '@app/color/constants';
+} from '@app/color/config/constants';
 
 export type TColorRecord = typeof COLOR_RECORD;
 export type TColorVarsRecord = typeof COLOR_VARS_RECORD;

@@ -6,28 +6,22 @@ import {
   TPartialLayoutOptionsRecord,
   TValue,
 } from '@brysonandrew/app';
-import { withLight } from '@brysonandrew/layout-light/withLight';
+import { withPlaceholder } from '@brysonandrew/placeholder';
 
-export const LayoutLight = <
+export const LayoutPlaceholder = <
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
   L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
   V extends TPartialLayoutOptionsRecord = L &
-    Pick<TLayoutOptionsRecord, 'LIGHT'>,
+    Pick<TLayoutOptionsRecord, 'PLACEHOLDER'>,
 >({
   children,
   ...value
 }: TAppLayoutProps<S, L, V>) => {
   type TReturn = TValue<S, V>;
-  const nextValue = useMemo(() => {
-    const LIGHT = withLight(value);
-    return { ...value, LIGHT } as TReturn;
+  const nextValue = useMemo<TReturn>(() => {
+    const PLACEHOLDER = withPlaceholder();
+    return { ...value, PLACEHOLDER } as TReturn;
   }, [value]);
 
   return <>{children(nextValue)}</>;
 };
-
-export * from './withLight';
-export * from './config/types';
-export * from './marker/Motion';
-export * from './marker';
-export * from './marker/markerProps';

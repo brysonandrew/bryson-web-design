@@ -1,4 +1,3 @@
-import { TStyle } from '@app/style';
 import { useApp } from '@brysonandrew/app';
 import { TDivProps } from '@brysonandrew/config-types';
 import { Moon, Sun } from '@brysonandrew/dark-mode';
@@ -19,15 +18,18 @@ export const DesignFont: FC<TProps> = ({
   const { COLOR, FONTS } = useApp();
   return (
     <div
-      className={clsx('row-space pl-2 text-4xl', classValue)}
+      className={clsx(
+        'row-space pl-2 text-4xl',
+        classValue,
+      )}
       style={{
-        ...style,
         color: COLOR[mode === 'dark' ? 'light' : 'dark'],
         backgroundColor: COLOR[mode],
+        ...style,
       }}
       {...props}
     >
-      {{ dark: <Moon />, light: <Sun /> }[mode]}
+      <div>{{ dark: <Moon />, light: <Sun /> }[mode]}</div>
       <ul className='column-stretch'>
         {FONTS.map((item, index, { length: count }) => {
           return (
