@@ -2,6 +2,7 @@ import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { useOnSound } from '@brysonandrew/sounds/useOnSound';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
 type TConfig = {
   mediaRecord: TMediaRecord;
@@ -11,6 +12,7 @@ export const useTapHandler = ({
   mediaRecord,
   projectsId = 'projects',
 }: TConfig) => {
+  const [isExiting, setExiting] = useState(false);
   const navigate = useNavigate();
 
   const to = useTo({
@@ -26,6 +28,7 @@ export const useTapHandler = ({
       projectsMarker.scrollIntoView({
         block: 'start',
       });
+      setExiting(true);
     }
   };
 
@@ -35,5 +38,5 @@ export const useTapHandler = ({
     handleOnSound();
   };
 
-  return handler;
+  return { isExiting, handler };
 };

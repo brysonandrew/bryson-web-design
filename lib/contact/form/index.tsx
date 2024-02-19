@@ -1,6 +1,4 @@
 import { TChildrenElement } from '@brysonandrew/config-types';
-import { TFooterInfoProps } from '@brysonandrew/contact/config/types';
-import { Footer } from '@brysonandrew/contact/footer';
 import {
   TUseForm,
   useForm,
@@ -13,13 +11,10 @@ export type TFormChildrenProps = Pick<
   TUseForm,
   'isDisabled' | 'inputHandlers'
 >;
-type TProps = TFooterInfoProps & {
+type TProps = {
   children(props: TFormChildrenProps): TChildrenElement;
 };
-export const Form: FC<TProps> = ({
-  footerInfo,
-  children,
-}) => {
+export const Form: FC<TProps> = ({ children }) => {
   const mutableRef = useRef<HTMLFormElement | null>(null);
   const { onSend, onDisable, ...rest } = useForm({
     element: mutableRef.current,
@@ -43,7 +38,6 @@ export const Form: FC<TProps> = ({
       onSubmit={onSend}
     >
       {children(rest)}
-      {footerInfo && <Footer {...footerInfo} />}
     </motion.form>
   );
 };

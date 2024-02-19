@@ -5,8 +5,7 @@ import {
 import { FilterAnimate } from '@brysonandrew/filter-animate';
 import { FC } from 'react';
 
-export type TGlowProps = TGlowConfig;
-export const Glow: FC<TGlowProps> = ({
+export const Glow: FC<TGlowConfig> = ({
   children,
   ...options
 }) => {

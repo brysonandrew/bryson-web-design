@@ -1,6 +1,9 @@
 import { TBaseInputProps } from '../../config/types';
 import { Name } from './Name';
-import { TBaseChildren } from '@brysonandrew/config-types/dom';
+import {
+  TBaseChildren,
+  TChildren,
+} from '@brysonandrew/config-types/dom';
 import {
   InputHTMLAttributes,
   useEffect,
@@ -16,7 +19,7 @@ import {
   useHoverKey,
   BIG_CURSOR_KEY,
 } from '@brysonandrew/cursor';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
@@ -26,6 +29,7 @@ type TProps<
   P extends InputHTMLAttributes<T> = InputHTMLAttributes<T>,
 > = TBaseInputProps &
   Omit<P, 'children'> & {
+    renderLabelBack?: TChildren;
     children(
       props: Pick<P, 'style'> & {
         value: string;
@@ -37,6 +41,7 @@ type TProps<
 export const Input = <T extends HTMLElement>({
   name,
   disabled,
+  renderLabelBack,
   children,
 }: TProps<T>) => {
   const inputState = useState<T | null>(null);
@@ -105,7 +110,9 @@ export const Input = <T extends HTMLElement>({
       {...handlers}
     >
       <>
-        <LabelBack classValue='_contact_label-back' />
+        {renderLabelBack ?? (
+          <LabelBack classValue='_contact_label-back' />
+        )}
         <Name title={name} />
         {children({
           value,

@@ -10,11 +10,14 @@ export type TBrightenConfigOptions = {
 };
 export type TPartialBrightenConfigOptions =
   Partial<TBrightenConfigOptions> & TFilterAnimateProps;
+
+export type TBrightenConfig =
+  TPartialBrightenConfigOptions & TFilterAnimateProps;
 export const resolveBrightenProps = ({
   brightness = 120,
   value,
   style,
-}: TPartialBrightenConfigOptions) => ({
+}: TBrightenConfig) => ({
   style: {
     opacity: value ?? 0,
     filter: resolveBrightness(brightness),
