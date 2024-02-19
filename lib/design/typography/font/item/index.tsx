@@ -1,6 +1,5 @@
+import { FontLeft } from '@brysonandrew/design/typography/font/item/Left';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
-import { FontLeft } from '@pages/_workshop/design/font/item/Left';
-import { FontRight } from '@pages/_workshop/design/font/item/Right';
 import clsx from 'clsx';
 import { FC } from 'react';
 

@@ -1,4 +1,4 @@
-import { TAnyRecord } from '@brysonandrew/config';
+import { TAnyRecord } from '@brysonandrew/config-types';
 
 export const mergeDeepObjects = <
   T extends TAnyRecord = TAnyRecord,

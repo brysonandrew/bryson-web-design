@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,13 +29,13 @@
   ],
   "peerDependencies": {
     "@brysonandrew/layout-back": "*",
-    "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/layout-light": "*",
     "@brysonandrew/layout-blank": "*",
-    "@brysonandrew/layout-section": "*",
+    "@brysonandrew/layout-effects": "*",
     "@brysonandrew/layout-line": "*",
-    "@brysonandrew/layout-lists": "*",
+    "@brysonandrew/layout-light": "*",
+    "@brysonandrew/layout-section": "*",
+    "@brysonandrew/layout-utils": "*",
     "@brysonandrew/layout-typography": "*",
-    "@brysonandrew/layout-utils": "*"
+    "@brysonandrew/layout-lists": "*"
   }
 }

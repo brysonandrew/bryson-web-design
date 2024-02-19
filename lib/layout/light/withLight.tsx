@@ -30,12 +30,12 @@ export const withLight = (config: TConfig) => {
   const commonStyle = { borderRadius: BORDER_RADIUS.MD };
 
   const glowStyle = <T extends TUGlowProps>({
-    style,
+    isBackground,
     text = 0,
     box = 4,
     drop = 0,
     color = COLOR.primary,
-    isBackground,
+    style,
   }: T) => ({
     ...(isBackground ? { backgroundColor: color } : {}),
     ...(text > 0
@@ -55,11 +55,13 @@ export const withLight = (config: TConfig) => {
     classValue,
     style,
     color = COLOR.primary,
+    isBackground,
     ...props
   }: T) => ({
     style: {
       ...glowStyle<T>({
         ...props,
+        isBackground,
         color,
       } as T),
       ...style,
@@ -72,10 +74,15 @@ export const withLight = (config: TConfig) => {
     classValue,
     style,
     color = COLOR.accent,
+    isBackground,
     ...props
   }: T) => ({
     style: {
-      ...glowStyle<T>({ ...props, color } as T),
+      ...glowStyle<T>({
+        ...props,
+        isBackground,
+        color,
+      } as T),
       ...style,
     },
     className: clsx('fill opacity-group-hover', classValue),

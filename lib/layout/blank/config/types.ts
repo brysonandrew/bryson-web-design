@@ -1,7 +1,7 @@
 import {
   TDivMotionProps,
   TDivProps,
-} from '@brysonandrew/config';
+} from '@brysonandrew/config-types';
 import {
   TWithDark,
   TWithDarkMotion,

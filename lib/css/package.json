@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/css",
-  "version": "6.22.256",
+  "version": "6.22.271",
   "description": "Css library",
   "types": "/index.d.ts",
   "main": "./index.ts",

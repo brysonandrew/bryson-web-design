@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import { TError } from '@brysonandrew/config';
+import { TError } from '@brysonandrew/config-types';
 import { prependPwd } from '@ops/utils/dirs/pwd';
 import prevTsConfigPaths from '@ts/paths';
 import { writeFileAsync } from '@ops/utils/writeFileAsync';

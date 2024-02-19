@@ -12,7 +12,6 @@ export const processTargets = async (targets: TTargets) => {
   try {
     for await (const target of targets) {
       const { name, dir, base, subWorkspaces } = target;
-   
 
       const pkgPath = join(dir, base);
       const pkgStr = await readFile(pkgPath, {
@@ -48,7 +47,7 @@ export const processTargets = async (targets: TTargets) => {
           ...indexRows,
           ...parentResult.indexRows,
         ];
-
+  
         peerDependencies = {
           ...peerDependencies,
           ...parentResult.peerDependencies,
@@ -76,10 +75,12 @@ export const processTargets = async (targets: TTargets) => {
         ...peerDependencies,
         ...parsePathsResult.peerDependencies,
       };
+
       indexRows = [
         ...indexRows,
         ...parsePathsResult.indexRows,
       ];
+
       exports = JSON.parse(pkgExportsStr);
 
       const pkgWithExportsStr = JSON.stringify(

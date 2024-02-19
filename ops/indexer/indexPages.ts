@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import { TError } from '@brysonandrew/config';
+import { TError } from '@brysonandrew/config-types';
 import { resolvePwd } from '@ops/utils/dirs/pwd';
 import { parse, resolve } from 'path';
 import { kebabToPascal } from '@brysonandrew/utils';

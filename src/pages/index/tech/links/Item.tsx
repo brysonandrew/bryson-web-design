@@ -10,7 +10,7 @@ import {
   TDivProps,
   TSvgProps,
   TTitleProps,
-} from '@brysonandrew/config';
+} from '@brysonandrew/config-types';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
 
 export type TItemProps = TDivProps &

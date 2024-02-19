@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import type { TDivMotionProps } from '@brysonandrew/config-types/dom';
-import { PALETTE_COLORS } from '@pages/_workshop/design/config/constants';
 import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
+import { PALETTE_COLORS } from '@brysonandrew/design/config/constants';
 
 type TProps = TDivMotionProps & {
   typographies: string[];
 };
-export const Typographies: FC<TProps> = ({
+export const DesignTypography: FC<TProps> = ({
   title,
   typographies,
   ...props

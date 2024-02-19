@@ -7,7 +7,7 @@ import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolveInteractiveLabels } from '@brysonandrew/utils';
-import { APP_DESCRIPTION } from '@app/base/constants';
+import { APP_DESCRIPTION } from '@app/base/package';
 import { PAGE_RECORD } from '@app/routes';
 
 const _Link = styled(motion(__Link))``;

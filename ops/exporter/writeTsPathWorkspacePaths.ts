@@ -1,6 +1,6 @@
 import { writeFile } from 'fs/promises';
 import { TInternalTsPathRecord } from '@ops/exporter/config/types';
-import { TError } from '@brysonandrew/config';
+import { TError } from '@brysonandrew/config-types';
 import { green } from '@ops/console';
 import { prependPwd } from '@ops/utils/dirs/pwd';
 import { sortByKeys } from '@brysonandrew/utils-object';

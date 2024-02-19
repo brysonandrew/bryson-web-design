@@ -1,4 +1,4 @@
-import { TTTitleToKebab } from '@brysonandrew/config';
+import { TTTitleToKebab } from '@brysonandrew/config-types';
 import { FC } from 'react';
 
 export type TItemsConfig<

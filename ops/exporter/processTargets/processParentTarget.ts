@@ -3,11 +3,11 @@ import { QUOTE_JSON } from '@ops/config/constants';
 import { parse, join } from 'path';
 
 export const processParentTarget = async (
-  subWorkspaces: string[],
+  subWorkspacePaths: string[],
 ) => {
   let peerDependencies: Record<string, unknown> = {};
   let indexRows: string[] = [];
-  for await (const subWorkspacePath of subWorkspaces) {
+  for await (const subWorkspacePath of subWorkspacePaths) {
     const subWorkspacePkgStr = await readFile(
       subWorkspacePath,
       { encoding: 'utf-8' },
@@ -26,7 +26,7 @@ export const processParentTarget = async (
     };
   }
 
-  const ignore = subWorkspaces.map((value) => {
+  const ignore = subWorkspacePaths.map((value) => {
     const subWorkspace = parse(value);
     const dirParts = subWorkspace.dir.split('/');
     const last = dirParts[dirParts.length - 1];
