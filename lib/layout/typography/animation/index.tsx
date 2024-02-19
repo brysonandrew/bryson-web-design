@@ -14,7 +14,7 @@ export const Animation: FC<TChildrenString> = ({
         <ShiftUp
           key={word}
           staggerIndex={index}
-          baseDelay={0.2}
+          baseDuration={0.6}
         >
           {index % 2 === 0 ? (
             <span className='font-normal'>{word}</span>
