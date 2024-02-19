@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-theme",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Uno Theme library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -7,3 +7,9 @@ export const PLANS_COLOR_VARIABLES = {
   plus: PLUS_PLAN_COLOR,
   select: SELECT_PLAN_COLOR,
 } as const;
+
+export const GRADIENT_CLASS = {
+  standard: 'bg-standard gradient-standard',
+  plus: 'bg-plus gradient-plus',
+  select: 'bg-select gradient-select',
+} as const;

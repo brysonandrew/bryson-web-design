@@ -9,7 +9,7 @@ import { useApp } from '@brysonandrew/app';
 const Root = styled.footer``;
 
 export const Footer = () => {
-  const { BORDER_RADIUS, LIGHT, Glow } = useApp();
+  const { COLOR, BORDER_RADIUS, LIGHT, Glow } = useApp();
   const GlowWrap = LIGHT?.GlowWrap ?? Glow;
   return (
     <Root className='fixed bottom-0 left-0 w-full h-0 z-0'>
@@ -18,11 +18,14 @@ export const Footer = () => {
           <Network OfflineFC={OfflineFC} />
         </Position>
         <Position position='right-6'>
-          <GlowWrap 
-          box={10}
+          <GlowWrap
+            box={6}
+            
+            color={COLOR.accent}
             style={{
+              backgroundColor:'transparent',
               borderRadius: BORDER_RADIUS.XL,
-            }} 
+            }}
           >
             <BackBlur
               style={{

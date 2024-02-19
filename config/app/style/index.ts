@@ -3,23 +3,18 @@ import {
   GLOW_BOX,
   COLOR_RECORD,
 } from '@app/color';
+import { GRADIENT_CLASS } from '@app/color/constants/pricing';
 import { TDefaultStyle } from '@brysonandrew/app';
 import { BORDER_RADIUS } from './border-radius';
 
-// const DARK = {
-//   COLOR: {
-//     accent: COLOR_RECORD.accent,
-//   },
-// };
 export const CUSTOM_STYLE = {
   BORDER_RADIUS,
   GLOW_DROP,
   GLOW_BOX,
-  COLOR: {
-    ...COLOR_RECORD,
-    // accent: COLOR_RECORD['gray-4'],
+  COLOR: COLOR_RECORD,
+  CLASS: {
+    GRADIENT: GRADIENT_CLASS,
   },
-  // DARK,
 } as const;
 export type TCustomStyle = typeof CUSTOM_STYLE;
 export type TStyle = TDefaultStyle & TCustomStyle;

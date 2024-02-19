@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",

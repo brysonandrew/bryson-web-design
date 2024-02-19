@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Fade library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -36,7 +36,6 @@
     "@brysonandrew/fade-edge": "*",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    ".": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/config-types": "*",
     "framer-motion": "^10.18.0"

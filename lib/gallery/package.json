@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -36,8 +36,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/gallery-viewer": "*",
     "@brysonandrew/gallery-list": "*",
+    "@brysonandrew/gallery-viewer": "*",
     "react": "^18.2.0",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",

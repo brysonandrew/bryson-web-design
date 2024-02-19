@@ -1,6 +1,6 @@
 
-export * from '@brysonandrew/gallery-viewer';
 export * from '@brysonandrew/gallery-list';
+export * from '@brysonandrew/gallery-viewer';
 export * from './GalleryProvider';
 export * from './config/constants';
 export * from './config/types';

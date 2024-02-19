@@ -30,8 +30,8 @@ export type TClassValueProps = {
   classValue?: ClassValue;
 };
 
-export type TTitleProps = {
-  title: string;
+export type TTitleProps<T extends string = string> = {
+  title: T;
 };
 
 export type TRect = DOMRect | null;

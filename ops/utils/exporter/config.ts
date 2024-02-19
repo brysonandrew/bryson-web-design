@@ -373,4 +373,4 @@ export const createLibLookup = ({
       };
 
 export const isRelative = (path: string) =>
-  /\.\//.test(path.slice(0, 2));
+  /[./]/.test(path.slice(0, 2));
