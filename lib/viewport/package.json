@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Viewport library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -34,6 +34,7 @@
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
     "@brysonandrew/hooks-events": "*",
-    "@brysonandrew/hooks-window": "*"
+    "@brysonandrew/hooks-window": "*",
+    "../useMeasure": "*"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/parallax",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -38,8 +38,16 @@
   ],
   "peerDependencies": {
     "framer-motion": "^10.18.0",
-    "@brysonandrew/viewport": "*",
+    "@brysonandrew/in-view": "*",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-device-detect": "^2.2.3",
+    "@brysonandrew/space": "*",
     "@brysonandrew/config-types": "*",
-    "react": "^18.2.0"
+    "../config": "*",
+    "@brysonandrew/scroll": "*",
+    "@brysonandrew/viewport": "*",
+    "../../config": "*"
   }
 }

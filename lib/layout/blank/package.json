@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-blank",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Layout Blank library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -30,8 +30,10 @@
     "typescript"
   ],
   "peerDependencies": {
+    "clsx": "^1.2.1",
     "@brysonandrew/config": "*",
     "@brysonandrew/dark-mode": "*",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "framer-motion": "^10.18.0"
   }
 }

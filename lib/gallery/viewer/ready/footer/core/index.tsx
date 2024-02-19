@@ -11,7 +11,7 @@ import { PADDING_X } from '@brysonandrew/gallery-viewer/ready/footer/core/config
 
 type TProps = TBaseProps;
 export const Core: FC<TProps> = (props) => {
-  const { LIGHT, BackFillMotion, BORDER_RADIUS } = useApp();
+  const { LIGHT, BackMotionFill, BORDER_RADIUS } = useApp();
   const { count, motionX, width, mediaRecords } = props;
   useKeys({ readyCount: count });
   const itemWidth = width / count;
@@ -23,7 +23,7 @@ export const Core: FC<TProps> = (props) => {
 
   const left = -width + itemWidth;
 
-  const Background = LIGHT?.Back ?? BackFillMotion;
+  const Background = LIGHT?.Back ?? BackMotionFill;
 
   return (
     <div className='relative' style={{ width: itemWidth }}>

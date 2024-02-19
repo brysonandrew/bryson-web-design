@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -43,13 +43,19 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/hooks": "*",
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
     "@brysonandrew/config-types": "*",
+    "@brysonandrew/utils": "*",
+    "@brysonandrew/hooks": "*",
+    "@brysonandrew/scroll": "*",
+    "../hooks/useCursorOffset": "*",
     "@brysonandrew/animation": "*",
+    "clsx": "^1.2.1",
+    "@brysonandrew/app": "*",
     "@brysonandrew/config": "*",
-    "@brysonandrew/icons-i": "*"
+    "@brysonandrew/icons-i": "*",
+    "../config/constants": "*",
+    "../config/types": "*"
   }
 }

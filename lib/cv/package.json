@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -42,8 +42,16 @@
     "typescript"
   ],
   "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/gallery": "*",
     "@brysonandrew/config-types": "*",
     "framer-motion": "^10.18.0",
-    "react": "^18.2.0"
+    "../config/constants": "*",
+    "@brysonandrew/space": "*",
+    "@brysonandrew/utils": "*",
+    "clsx": "^1.2.1",
+    "../Margin": "*",
+    "@brysonandrew/layout-typography": "*",
+    "@brysonandrew/contact-list": "*"
   }
 }

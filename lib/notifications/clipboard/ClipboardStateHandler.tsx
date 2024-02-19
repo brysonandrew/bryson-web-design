@@ -4,7 +4,7 @@ import { I } from '@brysonandrew/icons-i';
 import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/icons-keys';
 import { PRESENCE_OPACITY } from '@brysonandrew/animation';
 import { TClipboardState } from '@brysonandrew/notifications/clipboard/useClipboardState';
-import { Loading } from '@brysonandrew/loading/Loading';
+import { Loading } from '@brysonandrew/loading';
 
 type TProps = TClipboardState;
 export const ClipboardStateHandler: FC<TProps> = ({

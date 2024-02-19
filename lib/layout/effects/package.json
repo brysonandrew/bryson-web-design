@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-effects",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Layout Effects library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-back",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Layout Back library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -13,10 +13,10 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
+    "./config/types": "./config/types.ts",
     "./motion/Blur": "./motion/Blur.tsx",
     "./motion/Fill": "./motion/Fill.tsx",
-    "./motion": "./motion/index.tsx",
-    "./config/types": "./config/types.ts"
+    "./motion": "./motion/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -35,7 +35,10 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/app": "*",
+    "clsx": "^1.2.1",
     "@brysonandrew/layout-blank": "*",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "framer-motion": "^10.18.0"
   }
 }

@@ -1,10 +1,11 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./AppInit": "./AppInit.tsx",
     "./AppProvider": "./AppProvider.tsx",
     ".": {
       "require": "./index.ts",
@@ -40,8 +41,18 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
+    "@brysonandrew/utils-function": "*",
+    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/color-base": "*"
+    "@brysonandrew/layout-back": "*",
+    "@brysonandrew/layout-blank": "*",
+    "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/fade-edge": "*",
+    "@brysonandrew/color-base": "*",
+    "../constants/style": "*",
+    "@brysonandrew/layout": "*"
   }
 }

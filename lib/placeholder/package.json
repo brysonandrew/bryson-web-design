@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",

@@ -37,7 +37,6 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
             />
           </div>
           <Submit isDisabled={props.isDisabled} />
-
           {footerInfo && (
             <footer className='_contact_footer'>
               <Footer {...footerInfo} />

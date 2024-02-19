@@ -97,7 +97,7 @@ export const Input = <T extends HTMLElement>({
   };
 
   return (
-    <motion.label
+    <label
       className='_contact_label group'
       style={{
         borderRadius: BORDER_RADIUS.MD,
@@ -105,7 +105,7 @@ export const Input = <T extends HTMLElement>({
       {...handlers}
     >
       <>
-        <LabelBack classValue='_contact_label-texture-glow' />
+        <LabelBack classValue='_contact_label-back' />
         <Name title={name} />
         {children({
           value,
@@ -135,6 +135,6 @@ export const Input = <T extends HTMLElement>({
           />
         )}
       </>
-    </motion.label>
+    </label>
   );
 };

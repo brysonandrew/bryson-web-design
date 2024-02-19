@@ -5,6 +5,7 @@ import {
   DEFAULT_BACKS,
   DEFAULT_EFFECTS,
   DEFAULT_LAYOUT,
+  DEFAULT_CONFIG,
 } from '@brysonandrew/app/config/constants';
 
 import { TWithLight } from '@brysonandrew/layout';
@@ -15,11 +16,11 @@ export type TDefaultBlanksRecord = typeof DEFAULT_BLANKS;
 export type TDefaultBacksRecord = typeof DEFAULT_BACKS;
 export type TDefaultEffectsRecord = typeof DEFAULT_EFFECTS;
 export type TDefaultLayoutRecord = typeof DEFAULT_LAYOUT;
+export type TDefaultConfigRecord = typeof DEFAULT_CONFIG;
 
 type TDefaultU = TDefaultBacksRecord &
   TDefaultBlanksRecord &
-  Pick<TDefaultEffectsRecord, 'Brighten'> &
-  Pick<TDefaultLayoutRecord, 'GlowHoverGroup'>;
+  TDefaultEffectsRecord;
 
 export type TInitLayoutRecord = TAnyRecord;
 

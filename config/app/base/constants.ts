@@ -6,7 +6,7 @@ export const APP_TITLE = kebabToTitle(packageJson.name);
 export const APP_DESCRIPTION = packageJson.description;
 export const APP_VERSION = packageJson.version;
 
-export const APP_INIT_PROPS: TAppPackageProps = {
+export const APP_PACKAGE_PROPS: TAppPackageProps = {
   APP_TITLE,
   APP_DESCRIPTION,
   APP_VERSION,

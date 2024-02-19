@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-error",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Utils Error library",
   "main": "./index.ts",
   "module": "./index.ts",

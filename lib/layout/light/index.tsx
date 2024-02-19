@@ -19,3 +19,5 @@ export const LayoutLight = <
 
   return <>{children(nextValue)}</>;
 };
+
+export * from './withLight';

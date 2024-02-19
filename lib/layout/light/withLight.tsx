@@ -12,10 +12,20 @@ import {
 import { TUDivProps } from '@brysonandrew/config-types/dom/unions';
 import { TPartialGlowConfigOptions } from '@brysonandrew/filter-animate';
 
+type TGlowProps = TDivProps & TPartialGlowConfigOptions;
+type TGlowMotionProps = TDivMotionProps &
+  TPartialGlowConfigOptions;
+type TUGlowProps = TGlowProps | TGlowMotionProps;
+
 type TConfig = TLayoutComponentProps;
 export const withLight = (config: TConfig) => {
-  const { COLOR, BORDER_RADIUS, BackFill, BackMotionFill } =
-    config;
+  const {
+    COLOR,
+    BORDER_RADIUS,
+    BackFill: _BackFill,
+    BackMotionFill: _BackMotionFill,
+    Glow,
+  } = config;
   const commonStyle = { borderRadius: BORDER_RADIUS.MD };
   const markerProps = <T extends TUDivProps>({
     style,
@@ -33,13 +43,14 @@ export const withLight = (config: TConfig) => {
     },
     ...props,
   });
-  const glowStyle = <T extends TUDivProps>({
+
+  const glowStyle = <T extends TUGlowProps>({
     style,
     text = 0,
     box = 4,
     drop = 0,
     color = COLOR.primary,
-  }: T & TPartialGlowConfigOptions) => ({
+  }: T) => ({
     backgroundColor: color,
     ...(text > 0
       ? { textShadow: resolveBoxShadow(color, text) }
@@ -53,27 +64,37 @@ export const withLight = (config: TConfig) => {
     ...commonStyle,
     ...style,
   });
-  const idleProps = <T extends TUDivProps>(
-    props: T & TPartialGlowConfigOptions,
-  ) => ({
-    style: glowStyle<T>({ ...props, color: COLOR.primary }),
+
+  const idleProps = <T extends TUGlowProps>({
+    color = COLOR.primary,
+    ...props
+  }: T) => ({
+    style: glowStyle<T>({
+      ...props,
+      color,
+    } as T),
     className: clsx(
       'fill opacity-group-idle',
       props.classValue,
     ),
     ...props,
   });
-  const hoverProps = <T extends TUDivProps>(
-    props: T & TPartialGlowConfigOptions,
-  ) => ({
-    style: glowStyle<T>({ ...props, color: COLOR.accent }),
+
+  const hoverProps = <T extends TUGlowProps>({
+    color = COLOR.accent,
+    ...props
+  }: T) => ({
+    style: glowStyle<T>({ ...props, color } as T),
     className: clsx(
       'fill opacity-group-hover',
       props.classValue,
     ),
     ...props,
   });
-  const Glow = (props: TDivProps) => (
+
+  const GlowFill = (
+    props: TDivProps & TPartialGlowConfigOptions,
+  ) => (
     <>
       <div
         {...(idleProps<TDivProps>(props) as TDivProps)}
@@ -84,7 +105,7 @@ export const withLight = (config: TConfig) => {
     </>
   );
 
-  const GlowMotion = ({
+  const GlowFillMotion = ({
     ...props
   }: TDivMotionProps & TPartialGlowConfigOptions) => (
     <>
@@ -93,12 +114,69 @@ export const withLight = (config: TConfig) => {
     </>
   );
 
+  const BackMotionFill = ({
+    style,
+    ...props
+  }: TDivMotionProps & TPartialGlowConfigOptions) => (
+    <_BackMotionFill
+      style={{ borderRadius: BORDER_RADIUS.MD }}
+      {...props}
+    />
+  );
+
+  const BackFill = ({
+    style,
+    ...props
+  }: TDivProps & TPartialGlowConfigOptions) => (
+    <_BackFill
+      style={{ borderRadius: BORDER_RADIUS.MD }}
+      {...props}
+    />
+  );
+
+  const GlowWrap = ({
+    children,
+    style,
+    classValue,
+    color = COLOR.secondary,
+    ...props
+  }: TDivProps & TPartialGlowConfigOptions) => {
+    const commonProps = {
+      style: { borderRadius: BORDER_RADIUS.MD, ...style },
+      ...props,
+    };
+    return (
+      <div
+        className={clsx('relative', classValue)}
+        {...commonProps}
+      >
+        <GlowFill color={color} {...commonProps} />
+        {children}
+      </div>
+    );
+  };
+
+  const GlowWrapMotion = ({
+    children,
+    style,
+    color = COLOR.secondary,
+    ...props
+  }: TDivMotionProps & TPartialGlowConfigOptions) => (
+    <Glow
+      color={color}
+      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
+      {...props}
+    >
+      <>{children ?? <BackMotionFill />}</>
+    </Glow>
+  );
+
   const Back = ({
     children,
     ...props
   }: TDivProps & TPartialGlowConfigOptions) => (
     <>
-      <Glow {...props} />
+      <GlowFill {...props} />
       <BackFill {...props} />
       {children}
     </>
@@ -109,7 +187,7 @@ export const withLight = (config: TConfig) => {
     ...props
   }: TDivMotionProps & TPartialGlowConfigOptions) => (
     <>
-      <GlowMotion {...props} />
+      <GlowFillMotion {...props} />
       <BackMotionFill {...props} />
       {children}
     </>
@@ -117,22 +195,24 @@ export const withLight = (config: TConfig) => {
 
   const Marker = ({ ...props }: TDivProps) => (
     <div {...(markerProps<TDivProps>(props) as TDivProps)}>
-      <Glow {...props} />
+      <GlowFill {...props} />
     </div>
   );
 
   const MarkerMotion = ({ ...props }: TDivMotionProps) => (
     <motion.div {...markerProps(props)}>
-      <GlowMotion />
+      <GlowFillMotion />
     </motion.div>
   );
 
   return {
-    Glow,
+    GlowFill,
+    GlowWrap,
     Back,
     Marker,
     MOTION: {
-      Glow: GlowMotion,
+      GlowFill: GlowFillMotion,
+      GlowWrap: GlowWrapMotion,
       Back: BackMotion,
       Marker: MarkerMotion,
     },
