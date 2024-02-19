@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -52,7 +52,6 @@
     "@brysonandrew/layout-effects": "*",
     "@brysonandrew/fade-edge": "*",
     "@brysonandrew/color-base": "*",
-    "../constants/style": "*",
     "@brysonandrew/layout": "*"
   }
 }

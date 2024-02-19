@@ -67,47 +67,45 @@ export const withLight = (config: TConfig) => {
 
   const idleProps = <T extends TUGlowProps>({
     color = COLOR.primary,
+    classValue,
+    style,
     ...props
   }: T) => ({
-    style: glowStyle<T>({
-      ...props,
-      color,
-    } as T),
-    className: clsx(
-      'fill opacity-group-idle',
-      props.classValue,
-    ),
+    style: {
+      ...glowStyle<T>({
+        ...props,
+        color,
+      } as T),
+      ...style,
+    },
+    className: clsx('fill opacity-group-idle', classValue),
     ...props,
   });
 
   const hoverProps = <T extends TUGlowProps>({
     color = COLOR.accent,
+    style,
+    classValue,
     ...props
   }: T) => ({
-    style: glowStyle<T>({ ...props, color } as T),
-    className: clsx(
-      'fill opacity-group-hover',
-      props.classValue,
-    ),
+    style: {
+      ...glowStyle<T>({ ...props, color } as T),
+      ...style,
+    },
+    className: clsx('fill opacity-group-hover', classValue),
     ...props,
   });
 
-  const GlowFill = (
-    props: TDivProps & TPartialGlowConfigOptions,
-  ) => (
+  const GlowFill = (props: TGlowProps) => (
     <>
-      <div
-        {...(idleProps<TDivProps>(props) as TDivProps)}
-      />
-      <div
-        {...(hoverProps<TDivProps>(props) as TDivProps)}
-      />
+      <div {...idleProps<TDivProps>(props) as TDivProps} />
+      <div {...hoverProps<TDivProps>(props) as TDivProps} />
     </>
   );
 
   const GlowFillMotion = ({
     ...props
-  }: TDivMotionProps & TPartialGlowConfigOptions) => (
+  }: TGlowMotionProps) => (
     <>
       <motion.div {...idleProps<TDivMotionProps>(props)} />
       <motion.div {...hoverProps<TDivMotionProps>(props)} />
@@ -117,40 +115,44 @@ export const withLight = (config: TConfig) => {
   const BackMotionFill = ({
     style,
     ...props
-  }: TDivMotionProps & TPartialGlowConfigOptions) => (
+  }: TGlowMotionProps) => (
     <_BackMotionFill
-      style={{ borderRadius: BORDER_RADIUS.MD }}
+      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
       {...props}
     />
   );
 
-  const BackFill = ({
-    style,
-    ...props
-  }: TDivProps & TPartialGlowConfigOptions) => (
+  const BackFill = ({ style, ...props }: TGlowProps) => (
     <_BackFill
-      style={{ borderRadius: BORDER_RADIUS.MD }}
+      style={{ borderRadius: BORDER_RADIUS.MD, ...style }}
       {...props}
     />
   );
 
   const GlowWrap = ({
+    text = 0,
+    box = 4,
+    drop = 0,
+    color = COLOR.primary,
     children,
     style,
     classValue,
-    color = COLOR.secondary,
     ...props
-  }: TDivProps & TPartialGlowConfigOptions) => {
-    const commonProps = {
-      style: { borderRadius: BORDER_RADIUS.MD, ...style },
-      ...props,
-    };
+  }: TGlowProps) => {
     return (
       <div
-        className={clsx('relative', classValue)}
-        {...commonProps}
+        className={clsx('relative group', classValue)}
+        style={{ ...commonStyle, ...style }}
+        {...props}
       >
-        <GlowFill color={color} {...commonProps} />
+        <GlowFill
+          text={text}
+          box={box}
+          drop={drop}
+          color={color}
+          style={{ ...commonStyle, ...style }}
+          {...props}
+        />
         {children}
       </div>
     );

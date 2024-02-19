@@ -34,7 +34,7 @@ export const Button: FC<TProps> = ({
 
   const key = isDarkMode ? 'light' : 'dark';
   const title =
-    buttonProps?.title ?? `Switch to ${key} mode`;
+    buttonProps?.title ?? `Use ${key} mode`;
 
   const { handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,

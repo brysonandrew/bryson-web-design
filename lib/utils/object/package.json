@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-object",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Utils Object library",
   "main": "./index.ts",
   "module": "./index.ts",

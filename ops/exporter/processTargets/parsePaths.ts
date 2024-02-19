@@ -41,9 +41,6 @@ export const parsePaths = async ({
       ...peerDependencies,
       ...deps,
     };
-    if (name === 'notifications') {
-      console.log(deps);
-    }
     if (path.endsWith('.d.ts')) {
       types = { types: path };
       continue;

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cursor",
-  "version": "6.22.246",
+  "version": "6.22.251",
   "description": "Cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -49,13 +49,10 @@
     "@brysonandrew/utils": "*",
     "@brysonandrew/hooks": "*",
     "@brysonandrew/scroll": "*",
-    "../hooks/useCursorOffset": "*",
     "@brysonandrew/animation": "*",
     "clsx": "^1.2.1",
     "@brysonandrew/app": "*",
     "@brysonandrew/config": "*",
-    "@brysonandrew/icons-i": "*",
-    "../config/constants": "*",
-    "../config/types": "*"
+    "@brysonandrew/icons-i": "*"
   }
 }

@@ -16,18 +16,18 @@ export const ClipboardStateHandler: FC<TProps> = ({
       {copying && (
         <motion.div
           onClick={onEnd}
-          className='fill-screen center dark:bg-black-08 bg-white-08 text-4xl z-50 pointer-events-none'
+          className='fill-screen center dark:bg-black-08 bg-white-08 text-4xl z-50 overflow-hidden pointer-events-none'
           {...PRESENCE_OPACITY}
         >
           {copying === 'pending' ? (
             <div className='row gap-6'>
               <Loading sizeClassValue='w-16 h-16' />
-              <div className='tracking-widest uppercase'>
+              <div className='char-gap-4 uppercase'>
                 copying
               </div>
             </div>
           ) : (
-            <div className='column gap-8 text-xl p-4 dark:bg-black-09 bg-white-09 rounded-md backdrop-blur-md md:text-2xl lg:text-4xl'>
+            <div className='column gap-8 text-xl py-4 px-8 dark:bg-black-09 bg-white-09 rounded-md backdrop-blur-md md:text-2xl lg:text-4xl'>
               <header className='row gap-6'>
                 <div className='char-gap-2 uppercase'>
                   {copying.title} copied

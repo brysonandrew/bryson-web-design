@@ -23,7 +23,6 @@ export const MetalMotion: FC<TProps> = ({
   children,
   ...rest
 }) => {
-  console.log(rest);
   const sharedClassValue = clsx('fill', classValue);
   return (
     <motion.div className={sharedClassValue} {...rest}>

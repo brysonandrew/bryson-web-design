@@ -66,26 +66,13 @@ export const resolveDeps = async ({
         if (targetName === libName) continue partsLoop;
         lib = [appName, libName].join('/');
       }
-  
+
       peerDependencies = {
         ...peerDependencies,
-        [lib]: parentDeps[lib] ?? version
+        [lib]: parentDeps[lib] ?? version,
       };
-      // if (targetName === 'notifications') {
-      //   console.log( peerDependencies);
-      // }
     }
   }
-  // if (targetName === 'notifications') {
-  //   console.log({
-  //     filePath,
-  //     prefix,
-  //     targetName,
-  //     version,
-  //   });
-  //   console.log(file);
 
-  //   console.log(peerDependencies);
-  // }
   return peerDependencies;
 };
