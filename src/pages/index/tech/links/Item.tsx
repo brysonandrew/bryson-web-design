@@ -21,8 +21,7 @@ export type TItemProps = TDivProps &
 export const Item: FC<
   TItemProps & { glow?: MotionValue }
 > = ({ Icon, title, href, glow, ...props }) => {
-  const { Glow, BackFill, BORDER_RADIUS, COLOR, LIGHT } =
-    useApp();
+  const { Glow, BORDER_RADIUS, COLOR, LIGHT } = useApp();
   const address = formatUrl(href);
 
   const { isHover, handlers } = useHoverKey(
@@ -45,15 +44,16 @@ export const Item: FC<
           style={{
             filter: AURA.GLOBAL.value,
             borderRadius: BORDER_RADIUS.MD,
-            backgroundColor: COLOR.accent,
+            backgroundColor: COLOR.primary,
+            opacity: 0.5,
           }}
           className='fade-in fill-1 mt-1.5 ml-1 pointer-events-none'
         />
       )}
       <GlowWrap
-        box={12}
+        box={20}
         value={glow}
-        color={COLOR.secondary}
+        color={COLOR.accent}
       />
       <a
         className='row gap-2 relative pl-4 pr-3 py-3'

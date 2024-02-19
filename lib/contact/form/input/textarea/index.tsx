@@ -6,6 +6,7 @@ import { Autosize } from './autosize';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { TFormChildrenProps } from '@brysonandrew/contact/form';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = TFormChildrenProps &
   TTextareaMotionProps &
@@ -16,8 +17,18 @@ export const Textarea: FC<TProps> = ({
   inputHandlers,
   ...props
 }) => {
+  const { LIGHT, BackMotion } = useApp();
+  const LabelBack = LIGHT?.MOTION.Back ?? BackMotion;
   return (
-    <Input<HTMLTextAreaElement> name={name}>
+    <Input<HTMLTextAreaElement>
+      name={name}
+      renderLabelBack={
+        <LabelBack
+          layout
+          classValue='_contact_label-back'
+        />
+      }
+    >
       {({ input, resolveRef, ...inputProps }) => (
         <Autosize textarea={input} {...inputProps}>
           {() => (
