@@ -12,20 +12,20 @@ import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 type TProps = TClassValueProps &
   TDivMotionProps & {
     staggerIndex?: number;
-    baseDelay?: number;
+    baseDuration?: number;
   };
 export const ShiftUp: FC<TProps> = ({
-  baseDelay = 0,
   classValue,
+  baseDuration = 0,
   staggerIndex = 0,
   ...props
 }) => {
   return (
     <motion.div
-      className={clsx(classValue)}
+      className={clsx('fade-in', classValue)}
       transition={{
-        delay:
-          baseDelay + (staggerIndex * DURATION * 2) / 4,
+        duration:
+          baseDuration + (staggerIndex * DURATION * 2) / 4,
         ...MOTION_CONFIG,
       }}
       {...PRESENCE_OPACITY_UP_Y}
