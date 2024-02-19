@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/space",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Space library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -50,8 +50,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/hooks-dom": "*",
+    "react": "^18.2.0",
+    ".": "*",
     "@brysonandrew/config-types": "*",
-    "react": "^18.2.0"
+    "@brysonandrew/hooks-dom": "*",
+    "clsx": "^1.2.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/scroll",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -32,6 +32,11 @@
     "typescript"
   ],
   "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/hooks-window": "*",
+    "react-router": "^6.21.1",
+    "framer-motion": "^10.18.0",
+    "react-router-dom": "^6.21.3",
     "@brysonandrew/animation": "*"
   }
 }

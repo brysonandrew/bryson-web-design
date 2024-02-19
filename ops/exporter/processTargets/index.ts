@@ -12,6 +12,7 @@ export const processTargets = async (targets: TTargets) => {
   try {
     for await (const target of targets) {
       const { name, dir, base, subWorkspaces } = target;
+   
 
       const pkgPath = join(dir, base);
       const pkgStr = await readFile(pkgPath, {

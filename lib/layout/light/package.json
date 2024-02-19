@@ -1,18 +1,16 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
-    "./Back": "./Back.tsx",
-    "./Glow": "./Glow.tsx",
-    "./Marker": "./Marker.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
-    }
+    },
+    "./withLight": "./withLight.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -31,9 +29,8 @@
     "typescript"
   ],
   "peerDependencies": {
+    "react": "^18.2.0",
     "@brysonandrew/app": "*",
-    "@brysonandrew/glow": "*",
-    "@brysonandrew/color": "*",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "@brysonandrew/color-glow": "*",

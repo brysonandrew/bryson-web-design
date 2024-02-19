@@ -20,7 +20,7 @@ export const ViewerHeader: FC<TProps> = ({
   ...props
 }) => {
   const { Viewer } = useGallery();
-  const { sounds, BackFillMotion, GLOW_BOX } = useApp();
+  const { sounds, BackMotionFill, GLOW_BOX } = useApp();
 
   const handleClose = () => {
     if (sounds?.off) {
@@ -29,7 +29,7 @@ export const ViewerHeader: FC<TProps> = ({
   };
   return (
     <header className='relative left-0 top-0 row w-full z-30'>
-      <BackFillMotion
+      <BackMotionFill
         style={{ boxShadow: GLOW_BOX['white'] }}
       />
       <Content

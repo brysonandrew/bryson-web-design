@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-keys",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Icons Keys library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -41,5 +41,7 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {
+    "@iconify/react": "^4.1.1"
+  }
 }

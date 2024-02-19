@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/service-worker",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Service Worker library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -31,6 +31,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/media": "*"
   }
 }

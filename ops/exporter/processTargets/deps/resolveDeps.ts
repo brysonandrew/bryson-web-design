@@ -27,11 +27,12 @@ export const resolveDeps = async ({
   const file = await readFile(filePath, {
     encoding: 'utf-8',
   });
-  const peerDependencies: Record<string, unknown> = {};
+
+  let peerDependencies: Record<string, unknown> = {};
   const parts = file.split(prefix).slice(1);
 
-  for await (const part of parts) {
-    if (isRelative(part)) return;
+  partsLoop: for await (const part of parts) {
+    if (isRelative(part)) continue partsLoop;
 
     const endRx = QUOTE_RX;
     const endIndex = part.search(endRx);
@@ -39,7 +40,7 @@ export const resolveDeps = async ({
     if (endIndex > -1) {
       let lib = part.slice(0, endIndex);
 
-      for (const excludePrefix of EXCLUDE_PREFIXES)
+      excludeLoop: for await (const excludePrefix of EXCLUDE_PREFIXES)
         if (lib.startsWith(excludePrefix)) {
           const errorMessage = `Invalid absolute import found: ${lib}`;
           console.error(errorMessage);
@@ -49,26 +50,42 @@ export const resolveDeps = async ({
               excludePrefix,
               INTERNAL_PREFIX,
             );
-            const nextFile = file.replace(
-              prevLib,
-              lib,
-            );
+            const nextFile = file.replace(prevLib, lib);
             await writeFile(filePath, nextFile);
             const fixMessage = `Replaced ${prevLib} with ${lib}`;
             console.log(green(fixMessage));
+            break excludeLoop;
           } else {
-            return;
+            continue partsLoop;
           }
         }
 
       if (lib.startsWith(INTERNAL_PREFIX)) {
         const [appName, libName] = lib.split('/');
-        if (targetName === libName) return;
+
+        if (targetName === libName) continue partsLoop;
         lib = [appName, libName].join('/');
       }
-      peerDependencies[lib] = parentDeps[lib] ?? version;
+  
+      peerDependencies = {
+        ...peerDependencies,
+        [lib]: parentDeps[lib] ?? version
+      };
+      // if (targetName === 'notifications') {
+      //   console.log( peerDependencies);
+      // }
     }
   }
+  // if (targetName === 'notifications') {
+  //   console.log({
+  //     filePath,
+  //     prefix,
+  //     targetName,
+  //     version,
+  //   });
+  //   console.log(file);
 
+  //   console.log(peerDependencies);
+  // }
   return peerDependencies;
 };

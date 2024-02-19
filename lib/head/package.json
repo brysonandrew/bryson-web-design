@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/head",
-  "version": "6.22.220",
+  "version": "6.22.246",
   "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -35,7 +35,8 @@
     "react": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "@brysonandrew/app": "*",
-    "react-router": "^6.21.1",
-    "@brysonandrew/routes": "*"
+    "@brysonandrew/routes": "*",
+    "@brysonandrew/color-base": "*",
+    "react-router": "^6.21.1"
   }
 }

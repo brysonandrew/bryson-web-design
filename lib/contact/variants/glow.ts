@@ -13,7 +13,7 @@ const record = {
   'clear-button': 'relative dark:text-gray-3 text-gray-1',
   'clear-icon': 'w-6 h-6 md:(w-7 h-7) lg:(w-8 h-8)',
   label: 'relative column-start w-full p-2 md:row-start',
-  'label-texture-glow': '',
+  'label-back': '',
   'input-base': 'title-input relative text-2xl px-4 w-full',
   autosize:
     'bg-input border border-transparent relative w-full overflow-hidden',

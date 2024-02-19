@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.290",
+  "version": "6.21.316",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -47,11 +47,20 @@
     "react": "^18.2.0",
     "@brysonandrew/in-view": "*",
     "@brysonandrew/icons": "*",
+    "../GalleryProvider": "*",
+    "../../components/content": "*",
+    "@brysonandrew/sounds": "*",
+    "react-router-dom": "^6.21.3",
+    "@brysonandrew/utils-function": "*",
+    "@brysonandrew/gallery": "*",
+    "../../GalleryProvider": "*",
     "@brysonandrew/icons-keys": "*",
     "@brysonandrew/utils-format": "*",
-    "react-router-dom": "^6.21.3",
     "@brysonandrew/interactive": "*",
-    "@brysonandrew/gallery": "*"
+    "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/config-types": "*",
+    "../resolveHoverKeyArgs": "*",
+    "@brysonandrew/layout-effects": "*"
   },
   "types": "index.d.ts"
 }
