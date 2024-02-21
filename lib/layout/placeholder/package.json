@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/layout-placeholder",
-  "version": "6.22.271",
-  "description": "Layout Section library",
+  "version": "6.22.272",
+  "description": "Layout Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "exports": {
@@ -29,9 +29,7 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/layout-typography": "*",
-    "@brysonandrew/config-types": "*",
-    "clsx": "^1.2.1",
-    "@brysonandrew/space": "*"
+    "@brysonandrew/app": "*",
+    "@brysonandrew/placeholder": "*"
   }
 }

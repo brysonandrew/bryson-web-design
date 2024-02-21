@@ -17,6 +17,7 @@ import { Cursor } from './Cursor';
 import { TStyle } from '@app/style';
 import { PAGE_RECORD } from '@app/routes';
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
+import { TApp } from '@shell/providers';
 
 export type TPackageProps = Pick<
   TPriceProps,
@@ -35,7 +36,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
     classValue,
   } = config;
   const { COLOR, LIGHT, BORDER_RADIUS, BackFill } =
-    useApp<TStyle>();
+    useApp<TApp>();
   const { onForm } = useContact();
   const { isHover, handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.22.271",
+  "version": "6.22.272",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -14,7 +14,6 @@
     },
     "./useAppStyle": "./useAppStyle.ts",
     "./useInit": "./useInit.ts",
-    "./useLayoutRecord": "./useLayoutRecord.tsx",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
     "./config/constants": "./config/constants/index.ts",
@@ -44,7 +43,6 @@
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-object": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/layout-light": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "^10.18.0",
     "@brysonandrew/layout-back": "*",
@@ -53,6 +51,7 @@
     "@brysonandrew/fade-edge": "*",
     "@brysonandrew/color-base": "*",
     "@brysonandrew/uno-presets": "*",
-    "@brysonandrew/layout": "*"
+    "@brysonandrew/layout": "*",
+    "@brysonandrew/placeholder": "*"
   }
 }

@@ -2,22 +2,21 @@ import { useMemo } from 'react';
 import {
   TAppLayoutProps,
   TLayoutOptionsRecord,
-  TPartialDefaultStyle,
+  TPartialDefaultApp,
   TPartialLayoutOptionsRecord,
   TValue,
 } from '@brysonandrew/app';
 import { withPlaceholder } from '@brysonandrew/placeholder';
 
 export const LayoutPlaceholder = <
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-  V extends TPartialLayoutOptionsRecord = L &
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+  V extends TPartialLayoutOptionsRecord = T &
     Pick<TLayoutOptionsRecord, 'PLACEHOLDER'>,
 >({
   children,
   ...value
-}: TAppLayoutProps<S, L, V>) => {
-  type TReturn = TValue<S, V>;
+}: TAppLayoutProps<T, V>) => {
+  type TReturn = TValue<V>;
   const nextValue = useMemo<TReturn>(() => {
     const PLACEHOLDER = withPlaceholder();
     return { ...value, PLACEHOLDER } as TReturn;

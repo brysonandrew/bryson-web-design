@@ -15,6 +15,9 @@ import {
 import { TState } from '@brysonandrew/config-types/state';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
 
+export type TPartialDefaultApp = TPartialDefaultStyle &
+  TPartialLayoutOptionsRecord;
+
 type TDarkStyle = {
   DARK: typeof DEFAULT_STYLE;
 };
@@ -36,36 +39,30 @@ export type TBaseConfig = TSoundConfig & TAppBaseProps;
 
 export type TAppInitProps<
   S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-> = TChildrenHandlerProps<TValue<S, L>> &
+> = TChildrenHandlerProps<TValue<S>> &
   TLayoutRecordProps &
   TBaseConfig & {
     style: S;
   };
 
 export type TAppLayoutProps<
-  S extends TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+  T extends TPartialDefaultApp = TPartialDefaultApp,
   V extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-> = TPropsWithChildrenHandler<TValue<S, V & L>, V>;
+> = TPropsWithChildrenHandler<TValue<T & V>, V>;
 
 export type TAppProviderProps<
-  S extends TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-> = TPropsWithChildren<TValue<S, L>>;
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = TPropsWithChildren<TValue<T>>;
 
 export type TValue<
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-> = L &
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = T &
   TLayoutRecordValue &
   TBaseConfig &
-  S &
   TDefaultStyle & {
     initState: TState<boolean>;
   };
 
 export type TAppContext<
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-> = Context<TValue<S, L>>;
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = Context<TValue<T>>;

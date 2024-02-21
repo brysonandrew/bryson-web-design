@@ -1,16 +1,10 @@
 import { COLOR_VARS_CSS } from '@app/color';
-import { TStyle } from '@app/style';
-import {
-  TLayoutOptionsRecord,
-  useApp,
-} from '@brysonandrew/app';
+import { useApp } from '@brysonandrew/app';
 import { css, Global } from '@emotion/react';
+import { TApp } from '@shell/providers';
 
 export const Placeholders = () => {
-  const { PLACEHOLDER } = useApp<
-    TStyle,
-    TLayoutOptionsRecord
-  >();
+  const { PLACEHOLDER } = useApp<TApp>();
   const globalCss = css`
     :root {
       ${PLACEHOLDER.GLOBAL.VARS_CSS}

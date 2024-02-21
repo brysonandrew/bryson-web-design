@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-unit",
-  "version": "6.22.271",
+  "version": "6.22.272",
   "description": "Utils Unit library",
   "main": "./index.ts",
   "module": "./index.ts",

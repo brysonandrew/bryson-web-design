@@ -47,3 +47,4 @@ export const resolveTheme = <T extends Theme>(
   fontSize: THEME_FONT_SIZE,
   ...partial,
 });
+

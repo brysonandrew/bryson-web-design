@@ -6,6 +6,7 @@ import { useApp } from '@brysonandrew/app';
 type TProps = TTitleProps;
 export const Name: FC<TProps> = ({ title }) => {
   const { COLOR } = useApp();
+  
   return (
     <motion.div layout='size' className='_contact_name'>
       <motion.h4
