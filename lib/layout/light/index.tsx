@@ -2,22 +2,21 @@ import { useMemo } from 'react';
 import {
   TAppLayoutProps,
   TLayoutOptionsRecord,
-  TPartialDefaultStyle,
+  TPartialDefaultApp,
   TPartialLayoutOptionsRecord,
   TValue,
 } from '@brysonandrew/app';
 import { withLight } from '@brysonandrew/layout-light/withLight';
 
 export const LayoutLight = <
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
-  V extends TPartialLayoutOptionsRecord = L &
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+  V extends TPartialLayoutOptionsRecord = T &
     Pick<TLayoutOptionsRecord, 'LIGHT'>,
 >({
   children,
   ...value
-}: TAppLayoutProps<S, L, V>) => {
-  type TReturn = TValue<S, V>;
+}: TAppLayoutProps<T, V>) => {
+  type TReturn = TValue<T & V>;
   const nextValue = useMemo(() => {
     const LIGHT = withLight(value);
     return { ...value, LIGHT } as TReturn;

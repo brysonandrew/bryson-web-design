@@ -311,6 +311,12 @@
       "@brysonandrew/layout-lists/*": [
         "lib/layout/lists/*"
       ],
+      "@brysonandrew/layout-placeholder": [
+        "lib/layout/placeholder"
+      ],
+      "@brysonandrew/layout-placeholder/*": [
+        "lib/layout/placeholder/*"
+      ],
       "@brysonandrew/layout-section": [
         "lib/layout/section"
       ],

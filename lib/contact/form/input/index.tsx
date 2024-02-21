@@ -5,6 +5,7 @@ import {
   TChildren,
 } from '@brysonandrew/config-types/dom';
 import {
+  Fragment,
   InputHTMLAttributes,
   useEffect,
   useState,
@@ -53,6 +54,7 @@ export const Input = <T extends HTMLElement>({
   } = useContact();
   const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const LabelBack = LIGHT?.Back ?? Back;
+  const ActiveMarker = LIGHT?.MOTION.Marker ?? Fragment;
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
@@ -123,7 +125,7 @@ export const Input = <T extends HTMLElement>({
           },
         })}
         <AnimatePresence>
-          {isValue && (
+          {isValue && !isFormDisabled && (
             <Clear
               key={name}
               name={name}
@@ -135,8 +137,8 @@ export const Input = <T extends HTMLElement>({
             />
           )}
         </AnimatePresence>
-        {LIGHT && isFocused && (
-          <LIGHT.MOTION.Marker
+        {isFocused && ActiveMarker && (
+          <ActiveMarker
             classValue='z-10'
             layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
           />

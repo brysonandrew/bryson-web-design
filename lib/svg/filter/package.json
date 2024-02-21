@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "6.22.271",
+  "version": "6.22.272",
   "description": "Svg Filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -17,13 +17,13 @@
     "./blur": "./blur/index.tsx",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
+    "./config": "./config/index.ts",
+    "./config/types": "./config/types.ts",
     "./motion-blur/Speed": "./motion-blur/Speed.tsx",
     "./motion-blur/TransformerX": "./motion-blur/TransformerX.tsx",
     "./motion-blur/TransformerY": "./motion-blur/TransformerY.tsx",
     "./motion-blur/config": "./motion-blur/config.ts",
     "./motion-blur": "./motion-blur/index.tsx",
-    "./config": "./config/index.ts",
-    "./config/types": "./config/types.ts",
     "./config/constants": "./config/constants/index.ts",
     "./config/constants/presets": "./config/constants/presets.ts"
   },

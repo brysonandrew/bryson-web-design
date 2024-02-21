@@ -5,32 +5,28 @@ import {
 import {
   TAppContext,
   TAppProviderProps,
-  TPartialDefaultStyle,
+  TPartialDefaultApp,
   TValue,
 } from '@brysonandrew/app/config/types';
 import { once } from '@brysonandrew/utils-function';
-import { TPartialLayoutOptionsRecord } from '@brysonandrew/app/config/types/layout';
 
 const initContext = once(<
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
->() => createContext<TValue<S, L>>({} as TValue<S, L>));
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+>() => createContext<TValue<T>>({} as TValue<T>));
 
 export const useApp = <
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+  T extends TPartialDefaultApp = TPartialDefaultApp,
 >() =>
-  useReactContext<TValue<S, L>>(
-    initContext() as TAppContext<S, L>,
+  useReactContext<TValue<T>>(
+    initContext() as TAppContext<T>,
   );
 
 export const AppProvider = <
-  S extends TPartialDefaultStyle,
-  L extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+  T extends TPartialDefaultApp = TPartialDefaultApp,
 >({
   children,
   ...value
-}: TAppProviderProps<S, L>) => {
+}: TAppProviderProps<T>) => {
   const CONTEXT = initContext();
 
   return (
