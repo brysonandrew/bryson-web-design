@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.22.272",
+  "version": "6.22.275",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -5,7 +5,6 @@ import {
   TChildren,
 } from '@brysonandrew/config-types/dom';
 import {
-  Fragment,
   InputHTMLAttributes,
   useEffect,
   useState,
@@ -54,7 +53,6 @@ export const Input = <T extends HTMLElement>({
   } = useContact();
   const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const LabelBack = LIGHT?.Back ?? Back;
-  const ActiveMarker = LIGHT?.MOTION.Marker ?? Fragment;
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
     name,
@@ -86,6 +84,7 @@ export const Input = <T extends HTMLElement>({
         focusInput();
       }
     }
+
     return () => {
       blurInput();
     };
@@ -137,8 +136,9 @@ export const Input = <T extends HTMLElement>({
             />
           )}
         </AnimatePresence>
-        {isFocused && ActiveMarker && (
-          <ActiveMarker
+        {isFocused && LIGHT && (
+          <LIGHT.MOTION.Marker
+            key={name}
             classValue='z-10'
             layoutId={CONTACT_FORM_INPUT_LAYOUT_ID}
           />

@@ -17,11 +17,27 @@ export const CONTACT_FORM_FOOTER = {
   },
 };
 
+const arrToRecord = <T extends object>(
+  items: readonly T[],
+  key: keyof T,
+) =>
+  items.reduce((a, c) => {
+    const value = c[key];
+    if (typeof value === 'string') {
+      return { ...a, [value]: c };
+    }
+    return a;
+  }, {} as Record<string, T>);
+
+const RECORD = arrToRecord(INIT_PROJECT_ITEMS, 'title');
+
 export const CV_ITEMS = [
-  ...INIT_PROJECT_ITEMS.slice(4),
-  // RECORD.Juke,
-  // RECORD.Canvas,
-  // RECORD.Epirus,
+  // ...INIT_PROJECT_ITEMS.filter(
+  //   ({ pricing }) => pricing === 'select',
+  // ).slice(0, 4),
+  RECORD['Insight Factory'],
+  RECORD.Juke,
+  RECORD.Buzzcast,
 ];
 
 const TEAM_SENTENCE = `Seeking an opportunity to

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.22.272",
+  "version": "6.22.275",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -28,8 +28,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-error": "*",
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",

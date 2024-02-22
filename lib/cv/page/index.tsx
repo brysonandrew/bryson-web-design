@@ -14,7 +14,7 @@ type TProps = {
 export const Page: FC<TProps> = ({ style = {} }) => {
   return (
     <Shell>
-      <motion.div
+      <div
         className='relative column-stretch shrink-0 bg-black-2 overflow-hidden'
         style={{ ...SIZE, ...style }}
       >
@@ -28,7 +28,7 @@ export const Page: FC<TProps> = ({ style = {} }) => {
         </div>
         <P1 />
         <Experience />
-      </motion.div>
+      </div>
       <div className='py-2' />
     </Shell>
   );
