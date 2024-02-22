@@ -24,7 +24,7 @@ export const INIT_PROJECT_ITEMS = [
     title: 'Anaesco',
     description: 'Patient Portal',
     pricing: 'select',
-    // href: 'https://anaesco.com.au/',
+    href: 'https://anaesco.com.au/',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION],
     time: new Date(2024, 0, 5),
     paragraphs: [
@@ -75,9 +75,9 @@ export const INIT_PROJECT_ITEMS = [
     ],
     time: new Date(2023, 4, 1),
     paragraphs: [
-      'Migration from Blazer (C# and HTML) to React.',
-      'Rethinking the structure in a "contextual" approach to improve UX.',
-      'Replaced vis.js with d3 and added a lot of new graphical features.',
+      'Migration/rewrite of app from (Blazer to React).',
+      'Rethinking app structure for a more "contextual" user experience.',
+      'Implementation of new features.',
     ],
   },
   {
@@ -96,7 +96,8 @@ export const INIT_PROJECT_ITEMS = [
     href: 'https://canvas.co/',
     time: new Date(2022, 8, 1),
     paragraphs: [
-      'Codebase required a lot of work and refactor. Integration with metamask and Web3 API.',
+      'Codebase required a lot of work and refactor.',
+      'Integration with metamask and Web3 API.'
     ],
   },
   {

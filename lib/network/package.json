@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/network",
-  "version": "6.22.272",
+  "version": "6.22.275",
   "description": "Network library",
   "main": "./index.tsx",
   "module": "./index.tsx",

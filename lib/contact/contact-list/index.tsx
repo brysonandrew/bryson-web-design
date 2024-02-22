@@ -1,4 +1,4 @@
-import { TClassValueProps } from '@brysonandrew/config-types';
+import { TClassValueProps, TUlProps } from '@brysonandrew/config-types';
 import {
   ClipboardStateHandler,
   useClipboardState,
@@ -18,7 +18,7 @@ export type TContactListItems = {
   email: string;
   phone: TPhoneLinkInfo;
 };
-export type TContactListProps = TClassValueProps & {
+export type TContactListProps = TUlProps & {
   isCopy?: boolean;
   itemClassValue?: ClassValue;
 } & Partial<TContactListItems>;
@@ -29,12 +29,14 @@ export const ContactList: FC<TContactListProps> = ({
   url,
   email,
   phone,
+  ...props
 }) => {
   const clipboardState = useClipboardState();
   const sharedProps = {
     classValue: itemClassValue,
     clipboardState,
     isCopy,
+    ...props
   };
 
   return (

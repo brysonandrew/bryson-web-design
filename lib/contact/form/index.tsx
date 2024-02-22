@@ -5,7 +5,7 @@ import {
 } from '@brysonandrew/contact/form/useForm';
 import { useRefState } from '@brysonandrew/hooks-dom/useRefState';
 import { motion } from 'framer-motion';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export type TFormChildrenProps = Pick<
@@ -16,9 +16,13 @@ type TProps = {
   children(props: TFormChildrenProps): TChildrenElement;
 };
 export const Form: FC<TProps> = ({ children }) => {
-  const [form, setForm] = useState<HTMLFormElement | null>(
-    null,
-  );
+  const handleFormRef = (element: HTMLFormElement) => {
+    inViewRef(element);
+  };
+
+  const { element: form, handler: handleRef } =
+    useRefState<HTMLFormElement>(handleFormRef);
+
   const { onSend, onDisable, ...rest } = useForm({
     element: form,
   });
@@ -28,16 +32,6 @@ export const Form: FC<TProps> = ({ children }) => {
       onDisable(!inView);
     },
   });
-
-  const handleFormRef = (element: HTMLFormElement) => {
-    setForm(element);
-    inViewRef(element);
-  };
-
-  const handleRef = useRefState<HTMLFormElement>(
-    form,
-    handleFormRef,
-  );
 
   return (
     <motion.form

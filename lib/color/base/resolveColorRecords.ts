@@ -14,18 +14,15 @@ export const resolveColorRecords = <
   customOpacityRgbRecord: A,
   customColorRecord: B,
 ) => {
-  const opacityRgbRecord = {
-    ...customOpacityRgbRecord,
-  } as const;
 
   const opacityRangeColorRecord = rgbToOpacityRangeRecord<
     typeof customOpacityRgbRecord
-  >(opacityRgbRecord);
+  >(customOpacityRgbRecord);
 
   const colorRecord = {
     ...BASE_COLOR_RECORD,
-    ...opacityRangeColorRecord,
     ...customColorRecord,
+    ...opacityRangeColorRecord,
   } as const;
 
   const colorCssVariablesRecord =

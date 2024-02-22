@@ -51,10 +51,10 @@ export const useForm = ({ element }: TConfig) => {
   };
 
   const handleBlur = ({ currentTarget }: TFocusEvent) => {
-    // enable if require no marker when no focus
-    if (currentTarget?.name === focusKey) {
-      onFocus(null);
-    }
+    //if (currentTarget?.name === focusKey) {
+      // enable if require no marker when no focus
+      //onFocus(null);
+    //}
   };
 
   const handleChange = ({

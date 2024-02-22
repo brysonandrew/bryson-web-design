@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "6.21.342",
+  "version": "6.21.345",
   "description": "Hooks Dom library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,7 +15,8 @@
     "./useKey": "./useKey.ts",
     "./useLocalStorage": "./useLocalStorage.ts",
     "./useOutsideClick": "./useOutsideClick.ts",
-    "./useRect": "./useRect.ts"
+    "./useRect": "./useRect.ts",
+    "./useRefState": "./useRefState.ts"
   },
   "scripts": {
     "format": "prettier .",
