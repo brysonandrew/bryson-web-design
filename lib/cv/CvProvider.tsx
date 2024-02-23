@@ -20,4 +20,4 @@ export const CvProvider: FC<
   return (
     <CV.Provider value={values}>{children}</CV.Provider>
   );
-};
+}; 

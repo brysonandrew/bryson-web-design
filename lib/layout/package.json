@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.22.275",
+  "version": "6.22.276",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",

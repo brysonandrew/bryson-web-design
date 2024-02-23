@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion';
 import type { CSSProperties, FC } from 'react';
 import { SIZE } from '../config/constants';
-import { Shell } from './Shell';
 import { Description } from './Description';
 import { Experience } from './experience';
 import { Header } from './header';
@@ -13,7 +11,7 @@ type TProps = {
 };
 export const Page: FC<TProps> = ({ style = {} }) => {
   return (
-    <Shell>
+    <>
       <div
         className='relative column-stretch shrink-0 bg-black-2 overflow-hidden'
         style={{ ...SIZE, ...style }}
@@ -30,6 +28,6 @@ export const Page: FC<TProps> = ({ style = {} }) => {
         <Experience />
       </div>
       <div className='py-2' />
-    </Shell>
+    </>
   );
 };

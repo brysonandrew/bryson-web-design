@@ -115,10 +115,10 @@ export const resolveParentAnimateConfig =
 export * from './resolveAnimation';
 export * from './resolveTransitionRecord';
 export * from './config/constants';
-export * from './resolveBaseTransitionRecord';
-export * from './resolveBaseTransitionRecord/resolveEaseStringify';
 export * from './resolvePresenceRecord';
 export * from './resolvePresenceRecord/key';
+export * from './resolveBaseTransitionRecord';
+export * from './resolveBaseTransitionRecord/resolveEaseStringify';
 export * from './config/types';
 export * from './config/types/values';
 export * from './resolvePresenceRecord/value/fade';

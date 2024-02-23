@@ -1,4 +1,7 @@
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
+import { TTitle } from '@app/gallery/types';
+import { arrToRecord } from '@brysonandrew/utils-object/arrToRecord';
+import { TInitItem } from '@brysonandrew/gallery';
 
 export const CONTACT_PHONE = '020 4069 8339';
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(
@@ -17,28 +20,42 @@ export const CONTACT_FORM_FOOTER = {
   },
 };
 
-const arrToRecord = <T extends object>(
-  items: readonly T[],
-  key: keyof T,
-) =>
-  items.reduce((a, c) => {
-    const value = c[key];
-    if (typeof value === 'string') {
-      return { ...a, [value]: c };
-    }
-    return a;
-  }, {} as Record<string, T>);
-
-const RECORD = arrToRecord(INIT_PROJECT_ITEMS, 'title');
+const RECORD = arrToRecord<TInitItem<TTitle>, 'title'>(
+  INIT_PROJECT_ITEMS,
+  'title',
+);
 
 export const CV_ITEMS = [
-  // ...INIT_PROJECT_ITEMS.filter(
-  //   ({ pricing }) => pricing === 'select',
-  // ).slice(0, 4),
   RECORD['Insight Factory'],
   RECORD.Juke,
   RECORD.Buzzcast,
 ];
+
+export const CV_PRESETS_RECORD = {
+  LATEST: [
+    ...INIT_PROJECT_ITEMS.filter(
+      ({ pricing }) => pricing === 'select',
+    ).slice(0, 3),
+  ],
+  MEDIA: [
+    RECORD['Insight Factory'],
+    RECORD.Juke,
+    RECORD.Buzzcast,
+  ],
+  CRYPTO: [RECORD.Juke, RECORD.Buzzcast, RECORD.Epirus],
+} as const;
+
+type TPresetRecord = typeof CV_PRESETS_RECORD;
+export type TPresetName = keyof TPresetRecord;
+type TPresetEntry = [
+  TPresetName,
+  TPresetRecord[TPresetName],
+];
+type TPresetEntries = TPresetEntry[];
+
+export const CV_PRESETS = Object.entries(
+  CV_PRESETS_RECORD,
+) as TPresetEntries;
 
 const TEAM_SENTENCE = `Seeking an opportunity to
 contribute my technical skills and creativity to a

@@ -1,13 +1,11 @@
 import { FC, Fragment, PropsWithChildren } from 'react';
 import { AURA } from '@brysonandrew/svg-filter/aura';
 import { Head } from '@brysonandrew/dark-mode';
-import { Global as GlobalCss } from '@emotion/react';
 import { usePreloadIcons } from '@brysonandrew/icons-load';
 import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/notifications/clipboard/ClipboardStateHandler';
 import { useHeadProps } from '@shell/global/useHeadProps';
-import { useBaseGlobalCss } from '@brysonandrew/css-base/useBaseGlobalCss';
-import { COLOR_VARS_CSS } from '@app/color';
 import { useApp } from '@brysonandrew/app';
+import { GlobalCss } from '@shell/global/Css';
 import { TPageTitle } from '@app/routes';
 
 export const Global: FC<PropsWithChildren> = ({
@@ -17,9 +15,7 @@ export const Global: FC<PropsWithChildren> = ({
   const PlaceholderClipPath =
     PLACEHOLDER?.GLOBAL.ClipPath ?? Fragment;
   const headProps = useHeadProps();
-  const globalCss = useBaseGlobalCss({
-    colorVars: COLOR_VARS_CSS,
-  });
+
   usePreloadIcons([CLIPBOARD_SUCCESS_ICON]);
 
   return (
@@ -27,8 +23,7 @@ export const Global: FC<PropsWithChildren> = ({
       <Head<TPageTitle> {...headProps} />
       <AURA.GLOBAL.Filter />
       <PlaceholderClipPath />
-      <GlobalCss styles={globalCss} />
-      {children}
+      <GlobalCss>{children}</GlobalCss>
     </>
   );
 };

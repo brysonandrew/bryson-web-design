@@ -2,7 +2,7 @@ export * from './CvProvider';
 export * from './config/constants';
 export * from './config/tech-icon-lookup';
 export * from './config/types';
-export * from './controls/Invert';
+export * from './controls';
 export * from './page/Description';
 export * from './page/Line';
 export * from './page/Margin';

@@ -4,12 +4,12 @@ import { TTag } from '@brysonandrew/gallery';
 export type TCvSection = {
   title: string;
   description: string;
-  tags: readonly TTag[];
-  paragraphs: readonly string[];
+  tags:  TTag[];
+  paragraphs:  string[];
   time?: Date;
 };
 
 export type TCvContext = typeof BASE_CV_INIT & {
   descriptionParagraphs: string[];
-  sections: TCvSection[];
+  sections:  TCvSection[];
 };
