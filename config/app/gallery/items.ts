@@ -29,8 +29,8 @@ export const INIT_PROJECT_ITEMS = [
     time: new Date(2024, 0, 5),
     paragraphs: [
       'Portal for authenticating anaesthetist patients.',
-      'Included a questionnaire wizard.',
-      'Data was sensitive therefore security was a high priority.',
+      'Creation of a questionnaire wizard.',
+      'Data security was a high priority.',
     ],
   },
   {
@@ -53,7 +53,7 @@ export const INIT_PROJECT_ITEMS = [
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION],
     time: new Date(2023, 8, 1),
     paragraphs: [
-      'Leading their frontend team to bring better cohesian with the goals of management.',
+      'Leading their development team to bring better cohesian with the goals of management.',
       'Implementing UI components from mockups.',
       'Included tabling UI with virtualization, adjustable widths and column reordering.',
     ],
@@ -75,7 +75,7 @@ export const INIT_PROJECT_ITEMS = [
     ],
     time: new Date(2023, 4, 1),
     paragraphs: [
-      'Migration/rewrite of app from (Blazer to React).',
+      'Migration/rewrite of app to React.',
       'Rethinking app structure for a more "contextual" user experience.',
       'Implementation of new features.',
     ],

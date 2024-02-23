@@ -29,7 +29,6 @@ export const resolveColorRecords = <
     resolveVarCssColorRecord<typeof colorRecord>(
       colorRecord,
     );
-
   const colorVarsCss = resolveVarsCssRecord(colorRecord);
 
   return {
