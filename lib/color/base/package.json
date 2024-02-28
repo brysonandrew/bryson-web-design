@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-base",
-  "version": "6.22.276",
+  "version": "6.22.277",
   "description": "Color Base library",
   "types": "/index.d.ts",
   "main": "./index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config",
-  "version": "6.22.276",
+  "version": "6.22.277",
   "description": "Config library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -30,7 +30,7 @@
   "peerDependencies": {
     "@brysonandrew/config-constants": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/config-constants-number": "*",
-    "@brysonandrew/config-constants-fonts": "*"
+    "@brysonandrew/config-constants-fonts": "*",
+    "@brysonandrew/config-constants-number": "*"
   }
 }

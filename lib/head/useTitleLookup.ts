@@ -1,9 +1,9 @@
 import { useApp } from '@brysonandrew/app';
-import { TPage } from '@brysonandrew/routes';
+import { TRoute } from '@brysonandrew/routes';
 
 type TConfig<T extends string = string> = {
   appTitle?: string;
-  pageValues: TPage<T>[];
+  pageValues: TRoute<T>[];
 };
 export const useTitleLookup = <T extends string = string>({
   appTitle,

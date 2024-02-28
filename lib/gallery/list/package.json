@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.21.346",
+  "version": "6.21.347",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",

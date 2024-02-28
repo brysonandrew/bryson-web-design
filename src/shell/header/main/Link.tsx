@@ -1,16 +1,12 @@
-import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import type { FC } from 'react';
-import { Link as __Link } from 'react-router-dom';
+import { Link as _Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
 import { resolveInteractiveLabels } from '@brysonandrew/utils';
 import { APP_DESCRIPTION } from '@app/base/package';
-import { PAGE_RECORD } from '@app/routes';
-
-const _Link = styled(motion(__Link))``;
+import { PAGE_RECORDS } from '@app/routes';
 
 export const Link: FC = () => {
   const { handlers } = useHoverKey(BIG_CURSOR_KEY, 'home');
@@ -23,7 +19,7 @@ export const Link: FC = () => {
   return (
     <_Link
       className='relative left-0 cursor-pointer'
-      to={PAGE_RECORD.index.path}
+      to={PAGE_RECORDS.record.index.path}
       onClick={handleClick}
       {...resolveInteractiveLabels(APP_DESCRIPTION)}
       {...handlers}

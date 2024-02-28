@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import { Home } from './Home';
 import { TPageLinks, TPageLinkRecord } from './config';
 import { List } from '../List';
-import { PAGE_RECORD } from '@app/routes';
+import { PAGE_RECORDS } from '@app/routes';
 
 const Root = styled.nav``;
 
@@ -18,7 +18,7 @@ export const Pages = () => {
   };
   const navItems = useMemo<TPageLinks>(() => {
     const pageNavRecord = {
-      ...PAGE_RECORD,
+      ...PAGE_RECORDS.record,
     } as TPageLinkRecord;
     pageNavRecord.index.Component = Home;
     return Object.values(pageNavRecord);
