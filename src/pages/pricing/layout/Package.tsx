@@ -14,8 +14,7 @@ import { TickList } from '@brysonandrew/layout-lists/TickList';
 import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
-import { TStyle } from '@app/style';
-import { PAGE_RECORD } from '@app/routes';
+import { PAGE_RECORDS } from '@app/routes';
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 import { TApp } from '@shell/providers';
 
@@ -38,7 +37,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
   const { COLOR, LIGHT, BORDER_RADIUS, BackFill } =
     useApp<TApp>();
   const { onForm } = useContact();
-  const { isHover, handlers } = useHoverKey(
+  const { handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
     title,
     EMAIL_ICON,
@@ -59,7 +58,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
   };
   return (
     <Link
-      to={PAGE_RECORD.contact.path}
+      to={PAGE_RECORDS.record.contact.path}
       className='relative grow w-full'
       onClick={handleClick}
     >

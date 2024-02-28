@@ -1,36 +1,70 @@
-import { TPageRecord, TPage } from './types';
-import { resolvePage } from './resolvePage';
+import { resolveRoute } from './resolveRoute';
+import {
+  IndexRouteObject,
+  NonIndexRouteObject,
+  RouteObject,
+} from 'react-router';
+import { ComponentType } from 'react';
+import { TLinkProps } from '@brysonandrew/config-types';
+import {
+  TPath,
+  TRoute,
+  TRouteObjects,
+  TRouteRecord,
+  TRoutes,
+} from '@brysonandrew/routes/config/types';
 
-export const resolvePageRecords = <
+export type TBaseRouteRecord = {
+  linkProps: TLinkProps[];
+  routes: RouteObject[];
+};
+
+export const resolveRouteRecords = <
   T extends string,
-  P extends Record<T, unknown>,
+  P extends Record<T, null | ComponentType>,
 >(
   pageTitles: readonly T[],
   PageDirectory: P,
+  base: TPath<string> = '/',
 ) => {
-  const PAGE_RECORD = pageTitles.reduce((a, title) => {
-    const page = resolvePage<typeof title>(title);
-    return { ...a, ...page };
-  }, {} as TPageRecord<T>);
-
-  const PAGE_VALUES: TPage<T>[] =
-    Object.values(PAGE_RECORD);
-
-  const PAGES_ROUTES = PAGE_VALUES.map(
-    ({ title, path }: TPage<T>) => {
+  const result = pageTitles.reduce(
+    (a, title: T) => {
+      const page: TRoute<T> = resolveRoute<typeof title>(
+        title,
+        base,
+      );
+      const { path } = page;
       const Component = PageDirectory[title];
-      return {
-        index: path === '/',
-        path,
-        Component,
-      };
+      if (path === '/') {
+        const indexRoute: IndexRouteObject = {
+          index: true,
+          path,
+          Component,
+        };
+        a.routes.push(indexRoute);
+      } else {
+        const route: NonIndexRouteObject = {
+          index: false,
+          path,
+          Component,
+        };
+        a.routes.push(route);
+      }
+
+      return { ...a, record: { ...a.record, ...page } };
+    },
+    {
+      record: {} as TRouteRecord<T>,
+      routes: [] as TRouteObjects,
+      values: [] as TRoutes<T>,
+      menuItems: [] as TLinkProps[],
     },
   );
 
-  return { PAGE_RECORD, PAGE_VALUES, PAGES_ROUTES };
+  return result;
 };
 
 export * from '@brysonandrew/link-list';
 export * from '@brysonandrew/not-found';
-export * from './resolvePage';
-export * from './types';
+export * from './resolveRoute';
+export * from './config/types';

@@ -1,4 +1,4 @@
-import { PAGE_RECORD } from '@app/routes';
+import { PAGE_RECORDS } from '@app/routes';
 import { useCurrParams } from '@brysonandrew/gallery';
 import {
   TTitlesResolver,
@@ -9,7 +9,7 @@ import { capitalize } from '@brysonandrew/utils-format';
 
 export const useHeadProps = () => {
   const { name, project } = useCurrParams();
-  const pageValues = Object.values(PAGE_RECORD);
+  const pageValues = Object.values(PAGE_RECORDS.record);
   const titlesResolver: TTitlesResolver = (
     titles: string[],
   ) =>

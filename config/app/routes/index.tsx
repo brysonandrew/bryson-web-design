@@ -3,40 +3,36 @@ import * as Pages from '@pages/index';
 import { Shell } from '@shell';
 import {
   NotFound,
-  resolvePageRecords,
+  resolveRouteRecords,
 } from '@brysonandrew/routes';
 import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
+import { TPageTitle } from '@app/routes/config/types';
 
-export const PAGE_TITLES = [
-  'Index',
-  'Pricing',
-  'Projects',
-  'Contact',
-] as const;
+export const PAGE_TITLES = Object.keys(
+  Pages,
+) as TPageTitle[];
 
-export type TPageTitle = (typeof PAGE_TITLES)[number];
-
-const { PAGES_ROUTES, PAGE_RECORD, PAGE_VALUES } =
-  resolvePageRecords<TPageTitle, any>(PAGE_TITLES, Pages);
-
+const PAGE_RECORDS = resolveRouteRecords<
+  TPageTitle,
+  typeof Pages
+>(PAGE_TITLES, Pages);
+const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
-  [PAGE_RECORD.pricing.key]:
+  [record.pricing.key]:
     "Choose a plan that's right for you", //; 'Website Packages', //'What I can help you with',
   tech: 'Powered by',
-  [PAGE_RECORD.projects.key]: 'Selected works',
-  [PAGE_RECORD.contact.key]: 'Get in touch',
+  [record.projects.key]: 'Selected works',
+  [record.contact.key]: 'Get in touch',
 } as const;
-
-const path = PAGE_RECORD.index.path;
 
 const MAIN_ROUTES = [
   {
-    path,
+    path: record.index.path,
     Component: Shell,
     children: [
-      ...PAGES_ROUTES,
+      ...routes,
       {
         path: '*',
         element: <NotFound />,
@@ -51,10 +47,4 @@ const ROUTES: RouteObject[] = [
   ...(import.meta.env.DEV ? DEV_ROUTES : []),
 ];
 
-export {
-  ROUTES,
-  PAGES_ROUTES,
-  PAGE_RECORD,
-  PAGE_VALUES,
-  SECTION_RECORD,
-};
+export { PAGE_RECORDS, ROUTES, SECTION_RECORD };

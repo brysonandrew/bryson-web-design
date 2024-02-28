@@ -1,10 +1,11 @@
 {
   "name": "@brysonandrew/utils-object",
-  "version": "6.22.276",
+  "version": "6.22.277",
   "description": "Utils Object library",
   "main": "./index.ts",
   "module": "./index.ts",
   "exports": {
+    "./arrToRecord": "./arrToRecord.ts",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",

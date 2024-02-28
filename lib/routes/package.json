@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "6.22.276",
+  "version": "6.22.277",
   "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,8 +10,8 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./resolvePage": "./resolvePage.ts",
-    "./types": "./types.ts"
+    "./resolveRouteEntry": "./resolveRouteEntry.ts",
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -32,7 +32,9 @@
   "peerDependencies": {
     "@brysonandrew/link-list": "*",
     "@brysonandrew/not-found": "*",
-    "@brysonandrew/utils-format": "*",
-    "@brysonandrew/config-types": "*"
+    "react-router": "^6.21.1",
+    "react": "^18.2.0",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/utils-format": "*"
   }
 }

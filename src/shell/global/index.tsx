@@ -6,7 +6,7 @@ import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/notifications/clipboard/Cl
 import { useHeadProps } from '@shell/global/useHeadProps';
 import { useApp } from '@brysonandrew/app';
 import { GlobalCss } from '@shell/global/Css';
-import { TPageTitle } from '@app/routes';
+import { TPageTitle } from '@app/routes/config/types';
 
 export const Global: FC<PropsWithChildren> = ({
   children,
