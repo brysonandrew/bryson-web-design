@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-presets",
-  "version": "6.22.277",
+  "version": "6.22.278",
   "description": "Uno Presets library",
   "main": "./index.ts",
   "module": "./index.ts",

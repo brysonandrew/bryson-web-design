@@ -3,7 +3,7 @@ import {
   MotionProps,
   SVGMotionProps,
 } from 'framer-motion';
-import { FC, PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import type { LinkProps } from 'react-router-dom';
 import { TClassValueProps, TTitleProps } from './main';
 
@@ -45,3 +45,7 @@ export type TLinkMotionProps = LinkProps &
   MotionProps &
   TTitleProps &
   TClassValueProps;
+
+export type TSpanMotionProps = HTMLMotionProps<'span'>;
+export type TSampMotionProps = HTMLMotionProps<'samp'>;
+export type TFigureMotionProps = HTMLMotionProps<'figure'>;

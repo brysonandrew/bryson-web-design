@@ -1,4 +1,5 @@
 import {
+  TBaseColorRecord,
   TRgb,
   TRgbaValue,
 } from '@brysonandrew/color-base/config/types';
@@ -14,12 +15,13 @@ export const resolveColorRecords = <
   customOpacityRgbRecord: A,
   customColorRecord: B,
 ) => {
-
   const opacityRangeColorRecord = rgbToOpacityRangeRecord<
     typeof customOpacityRgbRecord
   >(customOpacityRgbRecord);
 
-  const colorRecord = {
+  const colorRecord: B &
+    typeof opacityRangeColorRecord &
+    TBaseColorRecord = {
     ...BASE_COLOR_RECORD,
     ...customColorRecord,
     ...opacityRangeColorRecord,

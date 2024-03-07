@@ -33,7 +33,7 @@ export const resolveRouteRecords = <
         title,
         base,
       );
-      const { path } = page;
+      const { key, path } = page;
       const Component = PageDirectory[title];
       if (path === '/') {
         const indexRoute: IndexRouteObject = {
@@ -51,7 +51,7 @@ export const resolveRouteRecords = <
         a.routes.push(route);
       }
 
-      return { ...a, record: { ...a.record, ...page } };
+      return { ...a, record: { ...a.record, [key]: page } };
     },
     {
       record: {} as TRouteRecord<T>,

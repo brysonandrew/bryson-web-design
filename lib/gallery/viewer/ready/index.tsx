@@ -54,4 +54,4 @@ export const Ready = <T extends string>({
       </div>
     </motion.div>
   );
-};
+}; 
