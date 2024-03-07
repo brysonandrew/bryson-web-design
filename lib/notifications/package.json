@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/notifications",
-  "version": "6.22.271",
+  "version": "6.22.278",
   "description": "Notifications library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,10 +10,10 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
+    "./cart/CartStateHandler": "./cart/CartStateHandler.tsx",
     "./clipboard/ClipboardStateHandler": "./clipboard/ClipboardStateHandler.tsx",
     "./clipboard/useClipboardState": "./clipboard/useClipboardState.ts",
-    "./config/types": "./config/types.ts",
-    "./cart/CartStateHandler": "./cart/CartStateHandler.tsx"
+    "./config/types": "./config/types.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -33,11 +33,11 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/icons-i": "*",
     "@brysonandrew/icons-keys": "*",
+    "framer-motion": "^10.18.0",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/loading": "*",
-    "@brysonandrew/hooks-window": "*"
+    "@brysonandrew/icons-i": "*",
+    "@brysonandrew/hooks-window": "*",
+    "@brysonandrew/loading": "*"
   }
 }

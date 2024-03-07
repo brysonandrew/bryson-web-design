@@ -3,6 +3,7 @@ import { Context } from 'react';
 import {
   TLayoutRecordProps,
   TLayoutRecordValue,
+  TPartialLayoutOptionsRecord,
 } from './layout';
 import { DEFAULT_STYLE } from '../constants/style';
 import {
@@ -13,6 +14,9 @@ import {
 } from '@brysonandrew/config-types';
 import { TState } from '@brysonandrew/config-types/state';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
+
+export type TPartialDefaultApp = TPartialDefaultStyle &
+  TPartialLayoutOptionsRecord;
 
 type TDarkStyle = {
   DARK: typeof DEFAULT_STYLE;
@@ -42,22 +46,23 @@ export type TAppInitProps<
   };
 
 export type TAppLayoutProps<
-  S extends TPartialDefaultStyle,
-> = TPropsWithChildrenHandler<TValue<S>>;
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+  V extends TPartialLayoutOptionsRecord = TPartialLayoutOptionsRecord,
+> = TPropsWithChildrenHandler<TValue<T & V>, V>;
 
 export type TAppProviderProps<
-  S extends TPartialDefaultStyle,
-> = TPropsWithChildren<TValue<S>>;
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = TPropsWithChildren<TValue<T>>;
 
 export type TValue<
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = TLayoutRecordValue &
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = T &
+  TLayoutRecordValue &
   TBaseConfig &
-  TDefaultStyle &
-  S & {
+  TDefaultStyle & {
     initState: TState<boolean>;
   };
 
 export type TAppContext<
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
-> = Context<TValue<S>>;
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+> = Context<TValue<T>>;

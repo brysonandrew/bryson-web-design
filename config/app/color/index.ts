@@ -1,8 +1,8 @@
 import {
   OPACITY_RANGE_RGB_RECORD,
   VARIABLES_RECORD,
-} from './constants';
-import { TVariablesRecord } from './types';
+} from './config/constants';
+import { TVariablesRecord } from './config/types';
 import {
   BASE_GLOW_RECORD,
   BLACK_RGBS,
@@ -23,8 +23,6 @@ const RGB_RECORD = {
 } as const;
 
 type TRgbRecord = typeof RGB_RECORD;
-//  TOpacityRangeRgbRecord &
-//   Record<TBaseKey, TRgb>;
 
 const {
   colorRecord,

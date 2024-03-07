@@ -3,8 +3,9 @@ import {
   TUseForm,
   useForm,
 } from '@brysonandrew/contact/form/useForm';
+import { useRefState } from '@brysonandrew/hooks-dom/useRefState';
 import { motion } from 'framer-motion';
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export type TFormChildrenProps = Pick<
@@ -15,9 +16,15 @@ type TProps = {
   children(props: TFormChildrenProps): TChildrenElement;
 };
 export const Form: FC<TProps> = ({ children }) => {
-  const mutableRef = useRef<HTMLFormElement | null>(null);
+  const handleFormRef = (element: HTMLFormElement) => {
+    inViewRef(element);
+  };
+
+  const { element: form, handler: handleRef } =
+    useRefState<HTMLFormElement>(handleFormRef);
+
   const { onSend, onDisable, ...rest } = useForm({
-    element: mutableRef.current,
+    element: form,
   });
   const { ref: inViewRef } = useInView({
     threshold: 0.2,
@@ -29,12 +36,7 @@ export const Form: FC<TProps> = ({ children }) => {
   return (
     <motion.form
       className='_contact_form'
-      ref={(instance) => {
-        if (instance && !mutableRef.current) {
-          mutableRef.current = instance;
-          inViewRef(instance);
-        }
-      }}
+      ref={handleRef}
       onSubmit={onSend}
     >
       {children(rest)}

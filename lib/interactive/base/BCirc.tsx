@@ -1,10 +1,10 @@
 import { I } from '@brysonandrew/icons-i';
-import { TIconKey } from '@brysonandrew/icons-keys';
+import { TIconValue } from '@brysonandrew/icons-keys';
 import { FC } from 'react';
 import { B, TBProps } from './B';
 
 type TProps = TBProps & {
-  icon: TIconKey;
+  icon: TIconValue;
 };
 export const BCirc: FC<TProps> = ({
   icon,

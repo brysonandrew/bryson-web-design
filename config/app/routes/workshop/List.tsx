@@ -1,16 +1,18 @@
 import type { FC } from 'react';
-import { motion } from 'framer-motion';
-import { WORKSHOP_RECORD } from '@app/routes/workshop/config/constants';
+import { WORKSHOP_PATH_BASE } from '@app/routes/workshop/config/constants';
 import { LinkList } from '@brysonandrew/routes/link-list';
 import { withProviders } from '@shell/providers/withProviders';
+import { GlobalCss } from '@shell/global/Css';
+import { WORKSHOP_RECORD } from '@app/routes/workshop';
 
-export const List: FC = withProviders((props) => {
+export const List: FC = withProviders(() => {
   return (
-    <motion.div {...props}>
+    <GlobalCss>
       <LinkList
         title='Workshop Links'
-        linkProps={WORKSHOP_RECORD.linkProps}
+        indexPath={WORKSHOP_PATH_BASE}
+        linkProps={WORKSHOP_RECORD.menuItems}
       />
-    </motion.div>
+    </GlobalCss>
   );
 });

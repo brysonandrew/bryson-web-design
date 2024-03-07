@@ -12,7 +12,7 @@ const Root = styled.header``;
 export const Header: FC = () => {
   const { isScroll } = useScroll();
   return (
-    <Root className='fixed top-0 left-0 w-full p-6 h-0 z-10'>
+    <Root className='fixed top-0 left-0 w-full my-6 px-6 h-0 z-10'>
       <AnimatePresence initial={false}>
         {!isScroll && (
           <motion.nav

@@ -1,20 +1,25 @@
 import { useMemo } from 'react';
 import {
   TAppLayoutProps,
-  TPartialDefaultStyle,
+  TLayoutOptionsRecord,
+  TPartialDefaultApp,
+  TPartialLayoutOptionsRecord,
   TValue,
 } from '@brysonandrew/app';
 import { withLight } from '@brysonandrew/layout-light/withLight';
 
 export const LayoutLight = <
-  S extends TPartialDefaultStyle = TPartialDefaultStyle,
+  T extends TPartialDefaultApp = TPartialDefaultApp,
+  V extends TPartialLayoutOptionsRecord = T &
+    Pick<TLayoutOptionsRecord, 'LIGHT'>,
 >({
   children,
   ...value
-}: TAppLayoutProps<S>) => {
-  const nextValue = useMemo<TValue<S>>(() => {
+}: TAppLayoutProps<T, V>) => {
+  type TReturn = TValue<T & V>;
+  const nextValue = useMemo(() => {
     const LIGHT = withLight(value);
-    return { ...value, LIGHT } as TValue<S>;
+    return { ...value, LIGHT } as TReturn;
   }, [value]);
 
   return <>{children(nextValue)}</>;

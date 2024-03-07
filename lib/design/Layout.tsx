@@ -13,5 +13,5 @@ export const DesignLayout = () => {
       </div>
       <DesignColor />
     </div>
-  );
+  ); 
 };

@@ -18,8 +18,15 @@ export type TChildrenHandler<T> = (props: T) => TChildren;
 export type TChildrenHandlerProps<T> = {
   children: TChildrenHandler<T>;
 };
-export type TPropsWithChildrenHandler<P = unknown> = P & {
-  children: TChildrenHandler<P>;
+// export type TPropsWithChildrenHandler<P = unknown> = P & {
+//   children: TChildrenHandler<P>;
+// };
+
+export type TPropsWithChildrenHandler<
+  P extends object = object,
+  N extends object = object,
+> = P & {
+  children: TChildrenHandler<N>;
 };
 
 export type TChildrenPartialProps = Partial<TChildrenProps>;

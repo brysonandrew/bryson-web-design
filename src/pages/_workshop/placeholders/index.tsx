@@ -1,12 +1,12 @@
-import { COLOR_VARS_CSS } from '@app/color';
-import { withPlaceholder } from '@brysonandrew/placeholder';
+import { useApp } from '@brysonandrew/app';
 import { css, Global } from '@emotion/react';
-const { PLACEHOLDER } = withPlaceholder();
+import { TApp } from '@shell/providers';
+
 export const Placeholders = () => {
+  const { PLACEHOLDER } = useApp<TApp>();
   const globalCss = css`
     :root {
       ${PLACEHOLDER.GLOBAL.VARS_CSS}
-      ${COLOR_VARS_CSS}
     }
   `;
   return (

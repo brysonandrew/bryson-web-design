@@ -8,9 +8,10 @@ import {
   DEFAULT_CONFIG,
 } from '@brysonandrew/app/config/constants';
 
-import { TWithLight } from '@brysonandrew/layout';
 import { TFadeVProps } from '@brysonandrew/fade-edge/pairs/FadeV';
 import { TAnyRecord } from '@brysonandrew/config-types';
+import { TWithLight } from '@brysonandrew/layout';
+import { TWithPlaceholder } from '@brysonandrew/placeholder';
 
 export type TDefaultBlanksRecord = typeof DEFAULT_BLANKS;
 export type TDefaultBacksRecord = typeof DEFAULT_BACKS;
@@ -28,15 +29,17 @@ export type TCoreLayoutRecord = TDefaultU & {
   FadeV: FC<TFadeVProps>;
 };
 
-export type TLayoutRecord = {
-  LIGHT?: TWithLight;
-};
-
 export type TLayoutRecordProps =
   Partial<TInitLayoutRecord> & Partial<TCoreLayoutRecord>;
-export type TLayoutRecordValue = TCoreLayoutRecord &
-  TLayoutRecord;
+export type TLayoutRecordValue = TCoreLayoutRecord;
 
 export type TLayoutComponentProps = TInitLayoutRecord &
   TCoreLayoutRecord &
   TDefaultStyle;
+
+export type TLayoutOptionsRecord = {
+  LIGHT: TWithLight;
+  PLACEHOLDER: TWithPlaceholder;
+};
+export type TPartialLayoutOptionsRecord =
+  Partial<TLayoutOptionsRecord>;

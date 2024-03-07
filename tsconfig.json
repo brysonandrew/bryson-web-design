@@ -19,6 +19,6 @@
     "jsx": "react-jsx",
     "noImplicitThis": false
   },
-  "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.jsx", "**/*.tsx", ".cemetary/resolveCharGapRules.ts"],
+  "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.jsx", "**/*.tsx"],
   "extends": "./tsconfig.paths.json"
 }

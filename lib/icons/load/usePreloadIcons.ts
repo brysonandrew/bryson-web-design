@@ -1,19 +1,18 @@
 import { TError } from '@brysonandrew/config-types';
-import { TIconValue } from '@brysonandrew/icons-keys';
+import { TIconLoadValue } from '@brysonandrew/icons-keys';
 import {
   IconifyIconLoaderAbort,
-  IconifyIconName,
   loadIcons,
 } from '@iconify/react';
 import { useEffect, useRef } from 'react';
 
-export const usePreloadIcons = (iconKeys: TIconValue[]) => {
+export const usePreloadIcons = (iconKeys: TIconLoadValue[]) => {
   const unsubscribeRef =
     useRef<null | IconifyIconLoaderAbort>(null);
 
   useEffect(() => {
     const loadTestIcons = (
-      icons: (IconifyIconName | string)[],
+      icons: TIconLoadValue[],
     ) => {
       return new Promise((fulfill, reject) => {
         loadIcons(

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.22.271",
+  "version": "6.22.278",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -52,6 +52,7 @@
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
     "@brysonandrew/config-types": "*",
+    "@brysonandrew/hooks-dom": "*",
     "react-intersection-observer": "^9.5.3",
     "@emailjs/browser": "^3.12.1",
     "@brysonandrew/utils-object": "*",

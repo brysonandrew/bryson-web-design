@@ -13,13 +13,13 @@ type TConfig = {
 };
 export const useForm = ({ element }: TConfig) => {
   const {
+    focusKey,
     status,
     isDisabled,
     onStatus,
     onFocus,
     onForm,
     onDisable,
-    focusKey,
   } = useContact();
 
   const handleSend = async (event: FormEvent) => {
@@ -46,15 +46,15 @@ export const useForm = ({ element }: TConfig) => {
     onDisable(isDisabled);
   };
 
-  const handleFocus = (event: TFocusEvent) => {
-    onFocus((event.currentTarget.name as TFormKey) ?? null);
+  const handleFocus = ({ currentTarget }: TFocusEvent) => {
+    onFocus((currentTarget.name as TFormKey) ?? null);
   };
 
-  const handleBlur = (event: TFocusEvent) => {
-    // enable if require no marker when no focus
-    // if (event.currentTarget?.name === focusKey) {
-    //   onFocus(null);
-    // }
+  const handleBlur = ({ currentTarget }: TFocusEvent) => {
+    //if (currentTarget?.name === focusKey) {
+      // enable if require no marker when no focus
+      //onFocus(null);
+    //}
   };
 
   const handleChange = ({
@@ -74,4 +74,5 @@ export const useForm = ({ element }: TConfig) => {
     inputHandlers,
   };
 };
+
 export type TUseForm = ReturnType<typeof useForm>;

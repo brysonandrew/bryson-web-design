@@ -5,23 +5,21 @@ import {
   defaultTitlesResolver,
   TTitlesResolver,
 } from '@brysonandrew/head/config';
-import { TPage } from '@brysonandrew/routes';
 import { useTitleLookup } from '@brysonandrew/head/useTitleLookup';
 import {
   TBaseColorRecord,
   TBaseColorValue,
 } from '@brysonandrew/color-base';
+import { TRoute } from '@brysonandrew/routes';
 
 export type THeadProps<T extends string = string> =
   Partial<TBaseColorRecord> & {
     titlesResolver?: TTitlesResolver;
     prefix?: string;
     base?: TBaseColorValue;
-    pageValues: TPage<T>[];
+    pageValues: TRoute<T>[];
   };
-export const Head = <
-  T extends string = string,
->({
+export const Head = <T extends string = string>({
   pageValues,
   titlesResolver = defaultTitlesResolver,
   prefix = '',

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.22.271",
+  "version": "6.22.278",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,14 +12,14 @@
       "default": "./index.ts"
     },
     "./useDarkModeState": "./useDarkModeState.ts",
-    "./config/types": "./config/types.ts",
     "./button": "./button/index.tsx",
+    "./config/types": "./config/types.ts",
     "./head": "./head/index.tsx",
-    "./config/constants/animation": "./config/constants/animation.ts",
-    "./config/constants": "./config/constants/index.tsx",
     "./button/icon/Moon": "./button/icon/Moon.tsx",
     "./button/icon/Sun": "./button/icon/Sun.tsx",
-    "./button/icon": "./button/icon/index.ts"
+    "./button/icon": "./button/icon/index.ts",
+    "./config/constants/animation": "./config/constants/animation.ts",
+    "./config/constants": "./config/constants/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -41,14 +41,14 @@
     "react": "^18.2.0",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/hooks-dom": "*",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/config-types": "*",
     "framer-motion": "^10.18.0",
     "@brysonandrew/cursor": "*",
     "@brysonandrew/interactive": "*",
     "@brysonandrew/app": "*",
+    "@brysonandrew/config-types": "*",
+    "@brysonandrew/animation": "*",
     "@brysonandrew/head": "*",
-    "@brysonandrew/utils": "*",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "@brysonandrew/utils": "*"
   }
 }

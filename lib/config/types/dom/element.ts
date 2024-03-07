@@ -20,6 +20,8 @@ export type TDivProps = HTMLAttributes<HTMLDivElement> &
 export type THeadingProps =
   HTMLAttributes<HTMLHeadingElement> & TClassValueProps;
 
+export type TLiProps = HTMLAttributes<HTMLLIElement>;
+
 export type TUlProps = HTMLAttributes<HTMLUListElement> &
   TClassValueProps;
 

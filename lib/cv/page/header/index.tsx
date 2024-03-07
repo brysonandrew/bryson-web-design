@@ -7,11 +7,12 @@ export const Header = () => {
   return (
     <header className='row-start-space w-full'>
       <Title />
-      <Contact
+      <Contact 
         classValue='column-end w-full mt-1'
         url={url}
         email={email} 
         phone={phone}
+        style={{fontSize: 16}}
       />
     </header>
   );

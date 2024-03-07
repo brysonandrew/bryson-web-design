@@ -1,19 +1,29 @@
-import { DEV_RECORD } from './config/constants';
-import { DEV_PATH_BASE } from '@app/routes/dev/config/constants';
+import {
+  DEV_PATH_BASE,
+  DEV_PATH_KEYS,
+} from '@app/routes/dev/config/constants';
 import { NotFound } from '@brysonandrew/routes/not-found';
 import { List } from './List';
 import { RouteObject } from 'react-router';
+import { TDevPageTitle } from '@app/routes/dev/config/types';
+import { resolveRouteRecords } from '@brysonandrew/routes';
+import * as DevPages from '@pages/_dev';
 
-const INDEX: RouteObject = {
-  path: DEV_PATH_BASE,
-  Component: List,
-};
+export const DEV_RECORD = resolveRouteRecords<
+  TDevPageTitle,
+  typeof DevPages
+>(DEV_PATH_KEYS, DevPages, DEV_PATH_BASE);
 
 export const DEV_ROUTES: RouteObject[] = [
-  INDEX,
-  ...DEV_RECORD.routes,
   {
-    path: '*',
-    element: <NotFound homePath={DEV_PATH_BASE} />,
+    path: DEV_PATH_BASE,
+    Component: List,
+    children: [
+      ...DEV_RECORD.routes,
+      {
+        path: '*',
+        element: <NotFound homePath={DEV_PATH_BASE} />,
+      },
+    ],
   },
 ];
