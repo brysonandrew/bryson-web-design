@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "6.22.277",
+  "version": "6.22.278",
   "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -10,7 +10,7 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./resolveRouteEntry": "./resolveRouteEntry.ts",
+    "./resolveRoute": "./resolveRoute.ts",
     "./config/types": "./config/types.ts"
   },
   "scripts": {

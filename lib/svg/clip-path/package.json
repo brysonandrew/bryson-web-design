@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-clip-path",
-  "version": "6.22.277",
+  "version": "6.22.278",
   "description": "Svg Clip Path library",
   "main": "./index.ts",
   "module": "./index.ts",

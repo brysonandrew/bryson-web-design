@@ -7,7 +7,6 @@ import { FC } from 'react';
 import { PlusContent } from './PlusContent';
 import { titleToKebab } from '@brysonandrew/utils-format';
 import { TPriceProps } from '@pages/pricing/layout/price';
-import { TTTitleToKebab } from '@brysonandrew/config-types';
 
 export const PACKAGES = [
   'Standard',
@@ -22,7 +21,7 @@ type TConfig = {
 } & TPriceProps;
 export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   standard: {
-    price: 799,
+    price: 2999,
     classValue: 'gradient-standard',
     listLiteral: `
     Perfect for small businesses and startups
@@ -32,7 +31,7 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
     Quick turnaround: Get online in no time!`,
   },
   plus: {
-    price: 1399,
+    price: 5999,
     classValue: 'gradient-plus',
     discount: {
       value: 200,
