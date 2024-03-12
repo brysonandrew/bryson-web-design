@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-i",
-  "version": "6.22.278",
+  "version": "6.22.279",
   "description": "Icons I library",
   "main": "./index.tsx",
   "module": "./index.tsx",

@@ -17,26 +17,52 @@
       "@brysonandrew/color-base/*": ["lib/color/base/*"],
       "@brysonandrew/color-glow": ["lib/color/glow"],
       "@brysonandrew/color-glow/*": ["lib/color/glow/*"],
-      "@brysonandrew/color-gradient": ["lib/color/gradient"],
-      "@brysonandrew/color-gradient/*": ["lib/color/gradient/*"],
-      "@brysonandrew/color-grayscale": ["lib/color/grayscale"],
-      "@brysonandrew/color-grayscale/*": ["lib/color/grayscale/*"],
+      "@brysonandrew/color-gradient": [
+        "lib/color/gradient"
+      ],
+      "@brysonandrew/color-gradient/*": [
+        "lib/color/gradient/*"
+      ],
+      "@brysonandrew/color-grayscale": [
+        "lib/color/grayscale"
+      ],
+      "@brysonandrew/color-grayscale/*": [
+        "lib/color/grayscale/*"
+      ],
       "@brysonandrew/color-main": ["lib/color/main"],
       "@brysonandrew/color-main/*": ["lib/color/main/*"],
       "@brysonandrew/color/*": ["lib/color/*"],
       "@brysonandrew/config": ["lib/config"],
-      "@brysonandrew/config-constants": ["lib/config/constants"],
-      "@brysonandrew/config-constants-fonts": ["lib/config/constants/fonts"],
-      "@brysonandrew/config-constants-fonts/*": ["lib/config/constants/fonts/*"],
-      "@brysonandrew/config-constants-number": ["lib/config/constants/number"],
-      "@brysonandrew/config-constants-number/*": ["lib/config/constants/number/*"],
-      "@brysonandrew/config-constants/*": ["lib/config/constants/*"],
+      "@brysonandrew/config-constants": [
+        "lib/config/constants"
+      ],
+      "@brysonandrew/config-constants-fonts": [
+        "lib/config/constants/fonts"
+      ],
+      "@brysonandrew/config-constants-fonts/*": [
+        "lib/config/constants/fonts/*"
+      ],
+      "@brysonandrew/config-constants-number": [
+        "lib/config/constants/number"
+      ],
+      "@brysonandrew/config-constants-number/*": [
+        "lib/config/constants/number/*"
+      ],
+      "@brysonandrew/config-constants/*": [
+        "lib/config/constants/*"
+      ],
       "@brysonandrew/config-types": ["lib/config/types"],
-      "@brysonandrew/config-types/*": ["lib/config/types/*"],
+      "@brysonandrew/config-types/*": [
+        "lib/config/types/*"
+      ],
       "@brysonandrew/config/*": ["lib/config/*"],
       "@brysonandrew/contact": ["lib/contact"],
-      "@brysonandrew/contact-contact-list": ["lib/contact/contact-list"],
-      "@brysonandrew/contact-contact-list/*": ["lib/contact/contact-list/*"],
+      "@brysonandrew/contact-contact-list": [
+        "lib/contact/contact-list"
+      ],
+      "@brysonandrew/contact-contact-list/*": [
+        "lib/contact/contact-list/*"
+      ],
       "@brysonandrew/contact/*": ["lib/contact/*"],
       "@brysonandrew/css": ["lib/css"],
       "@brysonandrew/css-base": ["lib/css/base"],
@@ -54,13 +80,23 @@
       "@brysonandrew/fade-edge": ["lib/fade-edge"],
       "@brysonandrew/fade-edge/*": ["lib/fade-edge/*"],
       "@brysonandrew/fade/*": ["lib/fade/*"],
-      "@brysonandrew/filter-animate": ["lib/filter-animate"],
-      "@brysonandrew/filter-animate/*": ["lib/filter-animate/*"],
+      "@brysonandrew/filter-animate": [
+        "lib/filter-animate"
+      ],
+      "@brysonandrew/filter-animate/*": [
+        "lib/filter-animate/*"
+      ],
       "@brysonandrew/gallery": ["lib/gallery"],
       "@brysonandrew/gallery-list": ["lib/gallery/list"],
-      "@brysonandrew/gallery-list/*": ["lib/gallery/list/*"],
-      "@brysonandrew/gallery-viewer": ["lib/gallery/viewer"],
-      "@brysonandrew/gallery-viewer/*": ["lib/gallery/viewer/*"],
+      "@brysonandrew/gallery-list/*": [
+        "lib/gallery/list/*"
+      ],
+      "@brysonandrew/gallery-viewer": [
+        "lib/gallery/viewer"
+      ],
+      "@brysonandrew/gallery-viewer/*": [
+        "lib/gallery/viewer/*"
+      ],
       "@brysonandrew/gallery/*": ["lib/gallery/*"],
       "@brysonandrew/glow": ["lib/glow"],
       "@brysonandrew/glow/*": ["lib/glow/*"],
@@ -70,13 +106,23 @@
       "@brysonandrew/hooks-dom": ["lib/hooks/dom"],
       "@brysonandrew/hooks-dom/*": ["lib/hooks/dom/*"],
       "@brysonandrew/hooks-events": ["lib/hooks/events"],
-      "@brysonandrew/hooks-events/*": ["lib/hooks/events/*"],
-      "@brysonandrew/hooks-life-cycle": ["lib/hooks/life-cycle"],
-      "@brysonandrew/hooks-life-cycle/*": ["lib/hooks/life-cycle/*"],
+      "@brysonandrew/hooks-events/*": [
+        "lib/hooks/events/*"
+      ],
+      "@brysonandrew/hooks-life-cycle": [
+        "lib/hooks/life-cycle"
+      ],
+      "@brysonandrew/hooks-life-cycle/*": [
+        "lib/hooks/life-cycle/*"
+      ],
       "@brysonandrew/hooks-scroll": ["lib/hooks/scroll"],
-      "@brysonandrew/hooks-scroll/*": ["lib/hooks/scroll/*"],
+      "@brysonandrew/hooks-scroll/*": [
+        "lib/hooks/scroll/*"
+      ],
       "@brysonandrew/hooks-window": ["lib/hooks/window"],
-      "@brysonandrew/hooks-window/*": ["lib/hooks/window/*"],
+      "@brysonandrew/hooks-window/*": [
+        "lib/hooks/window/*"
+      ],
       "@brysonandrew/hooks/*": ["lib/hooks/*"],
       "@brysonandrew/hud": ["lib/hud"],
       "@brysonandrew/hud/*": ["lib/hud/*"],
@@ -96,23 +142,47 @@
       "@brysonandrew/layout-back": ["lib/layout/back"],
       "@brysonandrew/layout-back/*": ["lib/layout/back/*"],
       "@brysonandrew/layout-blank": ["lib/layout/blank"],
-      "@brysonandrew/layout-blank/*": ["lib/layout/blank/*"],
-      "@brysonandrew/layout-effects": ["lib/layout/effects"],
-      "@brysonandrew/layout-effects/*": ["lib/layout/effects/*"],
+      "@brysonandrew/layout-blank/*": [
+        "lib/layout/blank/*"
+      ],
+      "@brysonandrew/layout-effects": [
+        "lib/layout/effects"
+      ],
+      "@brysonandrew/layout-effects/*": [
+        "lib/layout/effects/*"
+      ],
       "@brysonandrew/layout-light": ["lib/layout/light"],
-      "@brysonandrew/layout-light/*": ["lib/layout/light/*"],
+      "@brysonandrew/layout-light/*": [
+        "lib/layout/light/*"
+      ],
       "@brysonandrew/layout-line": ["lib/layout/line"],
       "@brysonandrew/layout-line/*": ["lib/layout/line/*"],
       "@brysonandrew/layout-lists": ["lib/layout/lists"],
-      "@brysonandrew/layout-lists/*": ["lib/layout/lists/*"],
-      "@brysonandrew/layout-placeholder": ["lib/layout/placeholder"],
-      "@brysonandrew/layout-placeholder/*": ["lib/layout/placeholder/*"],
-      "@brysonandrew/layout-section": ["lib/layout/section"],
-      "@brysonandrew/layout-section/*": ["lib/layout/section/*"],
-      "@brysonandrew/layout-typography": ["lib/layout/typography"],
-      "@brysonandrew/layout-typography/*": ["lib/layout/typography/*"],
+      "@brysonandrew/layout-lists/*": [
+        "lib/layout/lists/*"
+      ],
+      "@brysonandrew/layout-placeholder": [
+        "lib/layout/placeholder"
+      ],
+      "@brysonandrew/layout-placeholder/*": [
+        "lib/layout/placeholder/*"
+      ],
+      "@brysonandrew/layout-section": [
+        "lib/layout/section"
+      ],
+      "@brysonandrew/layout-section/*": [
+        "lib/layout/section/*"
+      ],
+      "@brysonandrew/layout-typography": [
+        "lib/layout/typography"
+      ],
+      "@brysonandrew/layout-typography/*": [
+        "lib/layout/typography/*"
+      ],
       "@brysonandrew/layout-utils": ["lib/layout/utils"],
-      "@brysonandrew/layout-utils/*": ["lib/layout/utils/*"],
+      "@brysonandrew/layout-utils/*": [
+        "lib/layout/utils/*"
+      ],
       "@brysonandrew/layout/*": ["lib/layout/*"],
       "@brysonandrew/loading": ["lib/loading"],
       "@brysonandrew/loading/*": ["lib/loading/*"],
@@ -123,66 +193,106 @@
       "@brysonandrew/not-found": ["lib/not-found"],
       "@brysonandrew/not-found/*": ["lib/not-found/*"],
       "@brysonandrew/notifications": ["lib/notifications"],
-      "@brysonandrew/notifications/*": ["lib/notifications/*"],
+      "@brysonandrew/notifications/*": [
+        "lib/notifications/*"
+      ],
       "@brysonandrew/parallax": ["lib/parallax"],
       "@brysonandrew/parallax/*": ["lib/parallax/*"],
       "@brysonandrew/placeholder": ["lib/placeholder"],
       "@brysonandrew/placeholder/*": ["lib/placeholder/*"],
       "@brysonandrew/routes": ["lib/routes"],
-      "@brysonandrew/routes-link-list": ["lib/routes/link-list"],
-      "@brysonandrew/routes-link-list/*": ["lib/routes/link-list/*"],
-      "@brysonandrew/routes-not-found": ["lib/routes/not-found"],
-      "@brysonandrew/routes-not-found/*": ["lib/routes/not-found/*"],
+      "@brysonandrew/routes-link-list": [
+        "lib/routes/link-list"
+      ],
+      "@brysonandrew/routes-link-list/*": [
+        "lib/routes/link-list/*"
+      ],
+      "@brysonandrew/routes-not-found": [
+        "lib/routes/not-found"
+      ],
+      "@brysonandrew/routes-not-found/*": [
+        "lib/routes/not-found/*"
+      ],
       "@brysonandrew/routes/*": ["lib/routes/*"],
       "@brysonandrew/scroll": ["lib/scroll"],
       "@brysonandrew/scroll/*": ["lib/scroll/*"],
-      "@brysonandrew/service-worker": ["lib/service-worker"],
-      "@brysonandrew/service-worker/*": ["lib/service-worker/*"],
+      "@brysonandrew/service-worker": [
+        "lib/service-worker"
+      ],
+      "@brysonandrew/service-worker/*": [
+        "lib/service-worker/*"
+      ],
       "@brysonandrew/sounds": ["lib/sounds"],
       "@brysonandrew/sounds/*": ["lib/sounds/*"],
       "@brysonandrew/space": ["lib/space"],
       "@brysonandrew/space/*": ["lib/space/*"],
       "@brysonandrew/svg": ["lib/svg"],
       "@brysonandrew/svg-clip-path": ["lib/svg/clip-path"],
-      "@brysonandrew/svg-clip-path/*": ["lib/svg/clip-path/*"],
+      "@brysonandrew/svg-clip-path/*": [
+        "lib/svg/clip-path/*"
+      ],
       "@brysonandrew/svg-filter": ["lib/svg/filter"],
       "@brysonandrew/svg-filter/*": ["lib/svg/filter/*"],
       "@brysonandrew/svg/*": ["lib/svg/*"],
       "@brysonandrew/texture": ["lib/texture"],
       "@brysonandrew/texture-metal": ["lib/texture/metal"],
-      "@brysonandrew/texture-metal/*": ["lib/texture/metal/*"],
+      "@brysonandrew/texture-metal/*": [
+        "lib/texture/metal/*"
+      ],
       "@brysonandrew/texture/*": ["lib/texture/*"],
       "@brysonandrew/uno": ["lib/uno"],
-      "@brysonandrew/uno-preflights": ["lib/uno/preflights"],
-      "@brysonandrew/uno-preflights/*": ["lib/uno/preflights/*"],
+      "@brysonandrew/uno-preflights": [
+        "lib/uno/preflights"
+      ],
+      "@brysonandrew/uno-preflights/*": [
+        "lib/uno/preflights/*"
+      ],
       "@brysonandrew/uno-presets": ["lib/uno/presets"],
       "@brysonandrew/uno-presets/*": ["lib/uno/presets/*"],
       "@brysonandrew/uno-rules": ["lib/uno/rules"],
       "@brysonandrew/uno-rules/*": ["lib/uno/rules/*"],
       "@brysonandrew/uno-shortcuts": ["lib/uno/shortcuts"],
-      "@brysonandrew/uno-shortcuts/*": ["lib/uno/shortcuts/*"],
+      "@brysonandrew/uno-shortcuts/*": [
+        "lib/uno/shortcuts/*"
+      ],
       "@brysonandrew/uno-spacing": ["lib/uno/spacing"],
       "@brysonandrew/uno-spacing/*": ["lib/uno/spacing/*"],
       "@brysonandrew/uno-theme": ["lib/uno/theme"],
       "@brysonandrew/uno-theme/*": ["lib/uno/theme/*"],
       "@brysonandrew/uno/*": ["lib/uno/*"],
       "@brysonandrew/utils": ["lib/utils"],
-      "@brysonandrew/utils-attributes": ["lib/utils/attributes"],
-      "@brysonandrew/utils-attributes/*": ["lib/utils/attributes/*"],
+      "@brysonandrew/utils-attributes": [
+        "lib/utils/attributes"
+      ],
+      "@brysonandrew/utils-attributes/*": [
+        "lib/utils/attributes/*"
+      ],
       "@brysonandrew/utils-css": ["lib/utils/css"],
       "@brysonandrew/utils-css/*": ["lib/utils/css/*"],
       "@brysonandrew/utils-error": ["lib/utils/error"],
       "@brysonandrew/utils-error/*": ["lib/utils/error/*"],
       "@brysonandrew/utils-format": ["lib/utils/format"],
-      "@brysonandrew/utils-format/*": ["lib/utils/format/*"],
-      "@brysonandrew/utils-function": ["lib/utils/function"],
-      "@brysonandrew/utils-function/*": ["lib/utils/function/*"],
+      "@brysonandrew/utils-format/*": [
+        "lib/utils/format/*"
+      ],
+      "@brysonandrew/utils-function": [
+        "lib/utils/function"
+      ],
+      "@brysonandrew/utils-function/*": [
+        "lib/utils/function/*"
+      ],
       "@brysonandrew/utils-key": ["lib/utils/key"],
       "@brysonandrew/utils-key/*": ["lib/utils/key/*"],
       "@brysonandrew/utils-object": ["lib/utils/object"],
-      "@brysonandrew/utils-object/*": ["lib/utils/object/*"],
-      "@brysonandrew/utils-transformer": ["lib/utils/transformer"],
-      "@brysonandrew/utils-transformer/*": ["lib/utils/transformer/*"],
+      "@brysonandrew/utils-object/*": [
+        "lib/utils/object/*"
+      ],
+      "@brysonandrew/utils-transformer": [
+        "lib/utils/transformer"
+      ],
+      "@brysonandrew/utils-transformer/*": [
+        "lib/utils/transformer/*"
+      ],
       "@brysonandrew/utils-unit": ["lib/utils/unit"],
       "@brysonandrew/utils-unit/*": ["lib/utils/unit/*"],
       "@brysonandrew/utils/*": ["lib/utils/*"],
