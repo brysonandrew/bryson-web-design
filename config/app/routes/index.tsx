@@ -9,9 +9,15 @@ import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 import { TPageTitle } from '@app/routes/config/types';
 
-export const PAGE_TITLES = Object.keys(
-  Pages,
-) as TPageTitle[];
+const PAGE_KEYS = Object.keys(Pages) as TPageTitle[];
+export const PAGE_TITLES = PAGE_KEYS.sort(
+  (a: TPageTitle) => {
+    if (a === 'Index') {
+      return -1;
+    }
+    return 0;
+  }
+);
 
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,
@@ -21,7 +27,7 @@ const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
   [record.pricing.key]:
-    "Choose a plan that's right for you", //; 'Website Packages', //'What I can help you with',
+    "Choose a plan that's right for you",
   tech: 'Powered by',
   [record.projects.key]: 'Selected works',
   [record.contact.key]: 'Get in touch',
