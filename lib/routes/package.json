@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "6.22.279",
+  "version": "6.23.1",
   "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -30,8 +30,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/link-list": "*",
     "@brysonandrew/not-found": "*",
+    "@brysonandrew/link-list": "*",
     "react-router": "^6.21.1",
     "react": "^18.2.0",
     "@brysonandrew/config-types": "*",

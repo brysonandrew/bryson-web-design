@@ -64,7 +64,7 @@ export const resolveRouteRecords = <
   return result;
 };
 
-export * from '@brysonandrew/link-list';
 export * from '@brysonandrew/not-found';
+export * from '@brysonandrew/link-list';
 export * from './resolveRoute';
 export * from './config/types';
