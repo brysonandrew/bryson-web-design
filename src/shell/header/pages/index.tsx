@@ -23,8 +23,9 @@ export const Pages = () => {
     pageNavRecord.index.Component = Home;
     return Object.values(pageNavRecord);
   }, []);
+
   return (
-    <Root className='text-right'>
+    <Root className="text-right">
       <List>
         {navItems.map(({ key, title, path, Component }) => {
           const isActive = pathname === path;
@@ -35,7 +36,7 @@ export const Pages = () => {
               to={path}
               title={title}
               isActive={isActive}
-              layoutId='PAGE_ACTIVE_UNDERLINE_KEY'
+              layoutId="PAGE_ACTIVE_UNDERLINE_KEY"
               onClick={handleClick}
             >
               {Component && (
