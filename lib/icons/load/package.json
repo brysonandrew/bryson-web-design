@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-load",
-  "version": "6.22.278",
+  "version": "6.23.1",
   "description": "Icons Load library",
   "main": "./index.ts",
   "module": "./index.ts",

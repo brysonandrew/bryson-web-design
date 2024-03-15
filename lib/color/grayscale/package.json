@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-grayscale",
-  "version": "6.22.278",
+  "version": "6.23.1",
   "description": "Color Grayscale library",
   "types": "/index.d.ts",
   "main": "./index.ts",

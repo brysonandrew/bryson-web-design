@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "6.22.278",
+  "version": "6.23.1",
   "description": "Layout Typography library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,12 +12,12 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./title/Content": "./title/Content.tsx",
-    "./title": "./title/index.tsx",
     "./animation/ShiftUp": "./animation/ShiftUp.tsx",
     "./animation/Stagger": "./animation/Stagger.tsx",
     "./animation/Word": "./animation/Word.tsx",
-    "./animation": "./animation/index.tsx"
+    "./animation": "./animation/index.tsx",
+    "./title/Content": "./title/Content.tsx",
+    "./title": "./title/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -40,12 +40,12 @@
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
-    "@brysonandrew/layout-line": "*",
     "@brysonandrew/animation": "*",
-    "@brysonandrew/space": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/in-view": "*",
     "@brysonandrew/utils-key": "*",
-    "@brysonandrew/app": "*"
+    "@brysonandrew/app": "*",
+    "@brysonandrew/layout-line": "*",
+    "@brysonandrew/space": "*",
+    "@brysonandrew/in-view": "*"
   }
 }

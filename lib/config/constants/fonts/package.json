@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants-fonts",
-  "version": "6.22.278",
+  "version": "6.23.1",
   "description": "Config Constants Fonts library",
   "main": "./index.ts",
   "module": "./index.ts",

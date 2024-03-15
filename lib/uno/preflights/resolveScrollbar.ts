@@ -7,6 +7,8 @@ export type TResolveScrollbarConfig = {
   thumbBorderDark?: string;
   thumbHoverDark?: string;
   backgroundColorDark?: string;
+  width?: number;
+  borderWidth?: number;
 };
 export const resolveScrollbar = ({
   thumb,
@@ -17,10 +19,12 @@ export const resolveScrollbar = ({
   thumbBorderDark = thumbBorder,
   thumbHoverDark = thumbHover,
   backgroundColorDark = backgroundColor,
+  width = 6,
+  borderWidth = 1,
 }: TResolveScrollbarConfig) => `
 ::-webkit-scrollbar {
   background-color: ${backgroundColor};
-  width: 6px;
+  width: ${width}px;
 }
 
 html.dark ::-webkit-scrollbar {
@@ -29,12 +33,12 @@ html.dark ::-webkit-scrollbar {
 
 ::-webkit-scrollbar-thumb {
   background-color: ${thumb};
-  border: 1px solid ${thumbBorder};
+  border: ${borderWidth}px solid ${thumbBorder};
 }
 
 html.dark ::-webkit-scrollbar-thumb {
   background-color: ${thumbDark};
-  border: 1px solid ${thumbBorderDark};
+  border: ${borderWidth}px solid ${thumbBorderDark};
 }
 
 ::-webkit-scrollbar-thumb:hover {
