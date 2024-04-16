@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.23.1",
+  "version": "6.24.4",
   "description": "App library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -16,11 +16,11 @@
     "./useInit": "./useInit.ts",
     "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
     "./utils/withStyle": "./utils/withStyle.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/style": "./config/constants/style.ts",
     "./config/types": "./config/types/index.ts",
     "./config/types/layout": "./config/types/layout.ts",
-    "./config/types/sound": "./config/types/sound.ts",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/constants/style": "./config/constants/style.ts"
+    "./config/types/sound": "./config/types/sound.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -45,13 +45,13 @@
     "@brysonandrew/config-types": "*",
     "@brysonandrew/color-glow": "*",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/uno-presets": "*",
-    "@brysonandrew/fade-edge": "*",
-    "@brysonandrew/layout": "*",
-    "@brysonandrew/placeholder": "*",
     "@brysonandrew/layout-back": "*",
     "@brysonandrew/layout-blank": "*",
     "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/color-base": "*"
+    "@brysonandrew/fade-edge": "*",
+    "@brysonandrew/color-base": "*",
+    "@brysonandrew/uno-presets": "*",
+    "@brysonandrew/layout": "*",
+    "@brysonandrew/placeholder": "*"
   }
 }

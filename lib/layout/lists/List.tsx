@@ -14,7 +14,9 @@ export const List: FC<TProps> = ({ items }) => {
         <motion.li
           key={typeof key === 'string' ? key : `${index}`}
           className='relative w-full'
+          
           {...props}
+          
         >
           {children}
         </motion.li>

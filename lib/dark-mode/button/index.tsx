@@ -13,7 +13,7 @@ import {
   TDivProps,
   TSvgMotionProps,
 } from '@brysonandrew/config-types';
-import { Moon, Sun } from './icon';
+import { Moon as MoonIcon, Sun as SunIcon } from './icon';
 import {
   PRESENCE_ROTATE_FROM_TOP,
   PRESENCE_ROTATE_FROM_BOTTOM,
@@ -23,22 +23,25 @@ type TProps = Partial<{
   buttonProps: Partial<TButtonProps>;
   backgroundProps: TDivProps;
   iconProps: TSvgMotionProps & TClassValueProps;
+  Moon: FC;
+  Sun: FC;
 }>;
 export const Button: FC<TProps> = ({
   buttonProps,
   backgroundProps,
   iconProps,
+  Moon = MoonIcon,
+  Sun = SunIcon,
 }) => {
   const { BORDER_RADIUS, sounds } = useApp();
   const { isDarkMode, toggle } = useDarkMode();
 
   const key = isDarkMode ? 'light' : 'dark';
-  const title =
-    buttonProps?.title ?? `Use ${key} mode`;
+  const title = buttonProps?.title ?? `Use ${key} mode`;
 
   const { handlers } = useHoverKey(
     CUSTOM_CURSOR_KEY,
-    title,
+    title
   );
   const handleTap = () => {
     if (sounds?.move) {
@@ -48,7 +51,7 @@ export const Button: FC<TProps> = ({
   };
 
   return (
-    <AnimatePresence initial={false} mode='wait'>
+    <AnimatePresence initial={false} mode="wait">
       <_Button
         key={title}
         title={title}
@@ -57,7 +60,7 @@ export const Button: FC<TProps> = ({
         {...buttonProps}
       >
         <div
-          className='fill preserve-3d perspective-1000 -mt-0.5 center overflow-hidden'
+          className="fill preserve-3d perspective-1000 -mt-0.5 center overflow-hidden"
           style={{ borderRadius: BORDER_RADIUS.LG }}
           {...backgroundProps}
         >
