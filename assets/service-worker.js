@@ -1,5 +1,5 @@
 var name = "@brysonandrew/service-worker";
-var version = "6.22.173";
+var version = "6.24.4";
 var description = "Service Worker library";
 var types = "/index.d.ts";
 var main = "./index.ts";
@@ -20,7 +20,10 @@ var scripts = {
 };
 var author = "Andrew Bryson <andrewbryson12@gmail.com>";
 var license = "MIT";
-var repository = "https://github.com/brysonandrew/brysona.dev.git";
+var repository = {
+	type: "git",
+	url: "git+https://github.com/brysonandrew/brysona.dev.git"
+};
 var sideEffects = false;
 var keywords = [
 	"react",
@@ -132,7 +135,9 @@ self.addEventListener('fetch', (event) => {
         request.url.startsWith(location.origin);
     const cacheCopy = async () => {
         const cache = await resolveCache();
-        let response = await fetch(request);
+        let response = await fetch(request, {
+            cache: 'no-store',
+        });
         try {
             const copy = response.clone();
             putRequest(cache, request, copy);
@@ -150,7 +155,9 @@ self.addEventListener('fetch', (event) => {
     const staleWhileRevalidate = async () => {
         const cache = await resolveCache();
         const cachedResponse = await matchRequest(cache, request);
-        const networkResponsePromise = fetch(request);
+        const networkResponsePromise = fetch(request, {
+            cache: 'no-store',
+        });
         const updateCache = async () => {
             const networkResponse = await networkResponsePromise;
             const copy = networkResponse.clone();

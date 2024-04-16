@@ -9,7 +9,7 @@ import { ReaderShell } from './components/Shell';
 export const Reader: FC = () => {
   return (
     <ReaderShell>
-      <div className='column bg-grey p-4 w-full h-screen'>
+      <div className='relative column bg-grey p-4 w-full h-screen'>
         <div className='column w-full gap-4 md:row-space'>
           <Buttons />
           <div className='row w-full gap-4'>

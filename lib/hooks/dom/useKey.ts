@@ -1,5 +1,5 @@
-import type { MutableRefObject } from "react";
 import { useEffect, useRef } from "react";
+import type { MutableRefObject } from "react";
 
 type THandlers = {
   onKeyDown: (event: KeyboardEvent) => void;
@@ -7,11 +7,11 @@ type THandlers = {
 };
 type TConfig = {
   handlers: THandlers;
-  isMarker: boolean;
+  isDisabled?: boolean;
 };
 export const useKey = ({
   handlers,
-  isMarker,
+  isDisabled,
 }: TConfig): MutableRefObject<THandlers> => {
   const handlersRef = useRef(handlers);
   const removeListeners = () => {
@@ -27,7 +27,9 @@ export const useKey = ({
     }
   };
   useEffect(() => {
-    if (isMarker) {
+    if (Boolean(isDisabled)) {
+      removeListeners();
+    } else {
       window.addEventListener(
         "keydown",
         handlersRef.current.onKeyDown,
@@ -38,10 +40,8 @@ export const useKey = ({
           handlersRef.current.onKeyUp,
         );
       }
-    } else {
-      removeListeners();
     }
     return removeListeners;
-  }, [isMarker]);
+  }, [isDisabled]);
   return handlersRef;
 };

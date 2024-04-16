@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.23.1",
+  "version": "6.24.4",
   "description": "Dark Mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -15,11 +15,11 @@
     "./button": "./button/index.tsx",
     "./config/types": "./config/types.ts",
     "./head": "./head/index.tsx",
-    "./config/constants/animation": "./config/constants/animation.ts",
-    "./config/constants": "./config/constants/index.tsx",
     "./button/icon/Moon": "./button/icon/Moon.tsx",
     "./button/icon/Sun": "./button/icon/Sun.tsx",
-    "./button/icon": "./button/icon/index.ts"
+    "./button/icon": "./button/icon/index.ts",
+    "./config/constants/animation": "./config/constants/animation.ts",
+    "./config/constants": "./config/constants/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -48,7 +48,7 @@
     "@brysonandrew/config-types": "*",
     "@brysonandrew/animation": "*",
     "@brysonandrew/head": "*",
-    "@brysonandrew/utils": "*",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "@brysonandrew/utils": "*"
   }
 }

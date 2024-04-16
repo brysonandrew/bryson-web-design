@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/link-list",
-  "version": "6.23.1",
+  "version": "6.24.4",
   "description": "Routes Link List library",
   "types": "/index.d.ts",
   "main": "./index.tsx",

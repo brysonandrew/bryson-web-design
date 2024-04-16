@@ -7,7 +7,7 @@
     "useDefineForClassFields": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -19,6 +19,12 @@
     "jsx": "react-jsx",
     "noImplicitThis": false
   },
-  "include": ["**/*.json", "**/*.ts", "**/*.js", "**/*.jsx", "**/*.tsx"],
+  "include": [
+    "**/*.json",
+    "**/*.ts",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.tsx"
+  ],
   "extends": "./tsconfig.paths.json"
 }

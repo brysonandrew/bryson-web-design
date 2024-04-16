@@ -30,6 +30,7 @@ export const FadeFill: FC<TFadeFillProps> = ({
       edgeColor,
       midColor,
       midColor,
+      midColor,
       edgeColor,
     ],
   });

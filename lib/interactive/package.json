@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "6.23.1",
+  "version": "6.24.4",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -12,10 +12,6 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./circle/Anchor": "./circle/Anchor.tsx",
-    "./circle/Background": "./circle/Background.tsx",
-    "./circle/Button": "./circle/Button.tsx",
-    "./circle": "./circle/index.tsx",
     "./base/B": "./base/B.tsx",
     "./base/BAnchor": "./base/BAnchor.tsx",
     "./base/BAnchorMotion": "./base/BAnchorMotion.tsx",
@@ -30,7 +26,11 @@
     "./base/IconLink": "./base/IconLink.tsx",
     "./base/Row": "./base/Row.tsx",
     "./base/TextAnchor": "./base/TextAnchor.tsx",
-    "./base/TextLink": "./base/TextLink.tsx"
+    "./base/TextLink": "./base/TextLink.tsx",
+    "./circle/Anchor": "./circle/Anchor.tsx",
+    "./circle/Background": "./circle/Background.tsx",
+    "./circle/Button": "./circle/Button.tsx",
+    "./circle": "./circle/index.tsx"
   },
   "scripts": {
     "format": "prettier .",
@@ -60,13 +60,13 @@
     "clsx": "^1.2.1",
     "react-router-dom": "^6.21.3",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/app": "*",
     "@brysonandrew/icons-i": "*",
+    "@brysonandrew/animation": "*",
     "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/filter-animate": "*",
-    "@brysonandrew/layout-effects": "*"
+    "@brysonandrew/layout-effects": "*",
+    "@brysonandrew/app": "*"
   },
   "types": "index.d.ts"
 }

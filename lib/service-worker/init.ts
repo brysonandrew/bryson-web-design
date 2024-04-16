@@ -8,7 +8,7 @@ type TConfig = {
 export const init = async ({
   isDisabled,
   precacheEntries,
-  path = '/service-worker.js',
+  path = './service-worker.js',
 }: TConfig) => {
   if (!isDisabled && navigator.serviceWorker) {
     try {
