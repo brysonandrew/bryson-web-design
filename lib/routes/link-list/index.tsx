@@ -21,7 +21,7 @@ export const LinkList: FC<
   return (
     <div className='fill-screen center'>
       <BackScreen />
-      <div className='column-start gap-4 w-core'>
+      <div className='relative column-start gap-4 w-core'>
         <h2>{title ?? 'Links'}</h2>
         <List
           items={linkProps.map((v) => ({
@@ -34,6 +34,10 @@ export const LinkList: FC<
     </div>
   );
 };
+
+
+
+
 
 
 

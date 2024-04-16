@@ -4,10 +4,12 @@ import { LinkList } from '@brysonandrew/routes/link-list';
 import { withProviders } from '@shell/providers/withProviders';
 import { GlobalCss } from '@shell/global/Css';
 import { WORKSHOP_RECORD } from '@app/routes/workshop';
+import { BackFill } from '@brysonandrew/layout-back';
 
 export const List: FC = withProviders(() => {
   return (
     <GlobalCss>
+      <BackFill/>
       <LinkList
         title='Workshop Links'
         indexPath={WORKSHOP_PATH_BASE}

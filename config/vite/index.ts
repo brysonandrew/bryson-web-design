@@ -20,8 +20,8 @@ export default defineConfig({
     tsConfigPaths({
       loose: true,
     }),
-    react(),
-    compileTsServiceWorker() as PluginOption,
+    react()
+    // compileTsServiceWorker() as PluginOption,
   ],
   server: {
     port: 3000,
