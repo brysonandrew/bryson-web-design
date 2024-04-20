@@ -1,23 +1,9 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "6.24.21",
-  "description": "Hooks Dom library",
+  "version": "7.0.7",
+  "description": "hooks-dom library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./useDomCondition": "./useDomCondition.ts",
-    "./useHoverKeyAlt": "./useHoverKeyAlt.ts",
-    "./useKey": "./useKey.ts",
-    "./useLocalStorage": "./useLocalStorage.ts",
-    "./useOutsideClick": "./useOutsideClick.ts",
-    "./useRect": "./useRect.ts",
-    "./useRefState": "./useRefState.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -36,7 +22,21 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/hooks-events": "*",
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/hooks-events": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useDomCondition": "./useDomCondition.ts",
+    "./useHoverKeyAlt": "./useHoverKeyAlt.ts",
+    "./useKey": "./useKey.ts",
+    "./useLocalStorage": "./useLocalStorage.ts",
+    "./useOutsideClick": "./useOutsideClick.ts",
+    "./useRect": "./useRect.ts",
+    "./useRefState": "./useRefState.ts"
   }
 }

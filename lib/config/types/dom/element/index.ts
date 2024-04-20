@@ -8,7 +8,6 @@ import {
   ThHTMLAttributes,
   TdHTMLAttributes,
   SourceHTMLAttributes,
-  SVGAttributes,
 } from 'react';
 import type { LinkProps } from 'react-router-dom';
 import { TClassValueProps, TTitleProps } from '../main';

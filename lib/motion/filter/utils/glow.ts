@@ -1,8 +1,7 @@
 import { MotionValue } from 'framer-motion';
-import { formatFilterDropShadow } from '@brysonandrew/css/format/filter/drop-shadow';
-import { formatShadow } from '@brysonandrew/css/format/shadow';
+import { formatFilterDropShadow } from '@brysonandrew/css-format/filter/drop-shadow';
+import { formatShadow } from '@brysonandrew/css-format/shadow';
 import { TFilterAnimateProps } from '..';
-import { TRANSITION_02_EASEIN_008 } from '@brysonandrew/motion/core/config';
 import { TColorValue } from '@brysonandrew/color';
 
 export type TGlowConfigOptions<T extends TColorValue = TColorValue> = {
@@ -42,7 +41,6 @@ export const resolveGlowProps = ({
         : {}),
       ...style,
     },
-    transition: TRANSITION_02_EASEIN_008,
     ...(value
       ? {}
       : {

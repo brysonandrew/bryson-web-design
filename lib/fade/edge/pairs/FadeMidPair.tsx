@@ -1,7 +1,7 @@
 import {
   FadeFill,
   TFadeFillProps,
-} from '@brysonandrew/fade/core/FadeFill';
+} from '@brysonandrew/fade-core/FadeFill';
 import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 

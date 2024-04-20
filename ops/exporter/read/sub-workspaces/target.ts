@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { QUOTE_JSON } from '@ops/config/constants';
-import { TStringRecord } from '@brysonandrew/config-types';
+import { TStringRecord } from '@brysonandrew/config-types/object';
 
 export const readSubWorkspacesTarget = async (
   subWorkspaces: string[],

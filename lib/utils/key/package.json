@@ -1,18 +1,9 @@
 {
   "name": "@brysonandrew/utils-key",
-  "version": "6.24.21",
-  "description": "Utils Key library",
+  "version": "7.0.7",
+  "description": "utils-key library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./generateRandomId": "./generateRandomId.ts",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./resolve-composite-key": "./resolve-composite-key.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,5 +20,14 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "exports": {
+    "./generateRandomId": "./generateRandomId.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolve-composite-key": "./resolve-composite-key.ts"
+  }
 }

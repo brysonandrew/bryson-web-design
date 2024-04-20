@@ -11,12 +11,14 @@ export const transformPkgPaths = (pkgPaths: string[]) => {
   const result = pkgPaths.reduce(
     (a, pkgPath) => {
       const record = parse(pkgPath);
+
       const { dir, base } = record;
       const parts = dir.split('/');
+
       const name = parts.slice(1).join('-');
-      const subWorkspaces = pkgPaths.filter(
+      const subWorkspaces = parts.length === 2 ? pkgPaths.filter(
         (p) => p.startsWith(dir) && p !== pkgPath
-      );
+      ) : [];
 
       const pathKey = `${INTERNAL_PREFIX}${name}`;
       const workspacePathRoot = { [pathKey]: [dir] };
@@ -39,7 +41,6 @@ export const transformPkgPaths = (pkgPaths: string[]) => {
               ...a.tsPathsRecord,
               ...nextPaths,
             };
-
       const target = {
         ...EMPTY_TARGET,
         base,

@@ -1,21 +1,9 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "6.24.21",
-  "description": "Viewport library",
+  "version": "7.0.7",
+  "description": "viewport library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./ViewportProvider": "./ViewportProvider.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./use-container-measure": "./use-container-measure.ts",
-    "./use-grid": "./use-grid.ts",
-    "./use-measure": "./use-measure.ts",
-    "./config/types": "./config/types.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -34,10 +22,22 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/measure": "*",
-    "@brysonandrew/hooks-events": "*",
-    "@brysonandrew/hooks-window": "*",
+    "@brysonandrew/measure": "7.0.7",
+    "@brysonandrew/hooks-events": "7.0.7",
+    "@brysonandrew/hooks-window": "7.0.7",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/utils-unit": "*"
+    "@brysonandrew/utils-unit": "7.0.7"
+  },
+  "exports": {
+    "./ViewportProvider": "./ViewportProvider.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./use-container-measure": "./use-container-measure.ts",
+    "./use-grid": "./use-grid.ts",
+    "./use-measure": "./use-measure.ts",
+    "./config/types": "./config/types.ts"
   }
 }

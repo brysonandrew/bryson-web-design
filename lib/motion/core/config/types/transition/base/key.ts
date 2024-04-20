@@ -1,17 +1,17 @@
 import {
   TPlaceholder,
   T_VD,
-} from '@brysonandrew/motion/core/config';
+} from '@brysonandrew/motion-core';
 import {
   TBaseTransitionConfig,
   TDelayValue,
   TDurationValue,
   TEaseValue,
-} from '@brysonandrew/motion/core/config/types/transition/base';
+} from '@brysonandrew/motion-core';
 import {
   TEasing,
   TBezierDefinition,
-} from '@brysonandrew/motion/core/config/types/values';
+} from '@brysonandrew/motion-core';
 
 //duration
 type TDurationKey<T extends TDurationValue> =

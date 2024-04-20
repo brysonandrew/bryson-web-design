@@ -2,13 +2,10 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { Core } from './core';
 import { TBaseProps } from '@brysonandrew/gallery';
-import { useHoverKey } from '@brysonandrew/motion/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
-import {
-  PRESENCE_UP_Y,
-  TRANSITION_04_EASEIN_008,
-} from '@brysonandrew/motion/core/config';
+import { TRANSITION_04_EASEIN_008, PRESENCE_UP_Y } from '@brysonandrew/motion-core';
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {

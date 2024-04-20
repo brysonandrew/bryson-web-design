@@ -5,7 +5,6 @@ import {
   TDivMotionProps,
   TDivProps,
 } from '@brysonandrew/config-types';
-import { TPartialGlowConfigOptions } from '@brysonandrew/motion/filter';
 import {
   TGlowProps,
   TUGlowProps,
@@ -13,7 +12,8 @@ import {
 } from '@brysonandrew/layout-light/config/types';
 import { Marker } from '@brysonandrew/layout-light/marker';
 import { MarkerMotion } from '@brysonandrew/layout-light/marker/Motion';
-import { formatShadow, formatFilterDropShadow } from '@brysonandrew/css-format';
+import { TPartialGlowConfigOptions } from '@brysonandrew/motion-filter';
+import { formatFilterDropShadow, formatShadow } from '@brysonandrew/css-format';
 
 type TConfig = TLayoutComponentProps;
 export const withLight = (config: TConfig) => {

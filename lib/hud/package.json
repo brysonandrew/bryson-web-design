@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/hud",
-  "version": "6.24.21",
-  "description": "Hud library",
+  "version": "7.0.7",
+  "description": "hud library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -28,9 +21,16 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/app": "*",
-    "@brysonandrew/viewport": "*",
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/viewport": "7.0.7",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

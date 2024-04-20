@@ -1,4 +1,4 @@
-import { TVariantLabels } from '@brysonandrew/motion/core/config/types';
+import { TVariantLabels } from '@brysonandrew/motion-core';
 
 export const INITIAL_KEY: TVariantLabels =
   'initial' as const;

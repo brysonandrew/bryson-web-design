@@ -1,20 +1,9 @@
 {
   "name": "@brysonandrew/svg-icon",
-  "version": "6.24.21",
-  "description": "Svg Icon library",
+  "version": "7.0.7",
+  "description": "svg-icon library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./160": "./160.tsx",
-    "./24": "./24.tsx",
-    "./28": "./28.tsx",
-    "./40": "./40.tsx",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -33,9 +22,19 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/svg": "*",
-    "@brysonandrew/measure": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/measure": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
     "clsx": "^1.2.1"
+  },
+  "exports": {
+    "./160": "./160.tsx",
+    "./24": "./24.tsx",
+    "./28": "./28.tsx",
+    "./40": "./40.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Home as Index } from '@pages/index/home';
+import { Index } from '@pages/index/home';
 
 export { Index };
 export { Pricing } from '../pricing';

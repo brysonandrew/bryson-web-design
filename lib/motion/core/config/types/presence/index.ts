@@ -1,6 +1,6 @@
-import { TPresenceConfigKey } from '@brysonandrew/motion/core/config/types/presence/key';
-import { TPresenceConfig } from '@brysonandrew/motion/core/config/types/presence/config';
-import { TPresenceConfigValue } from '@brysonandrew/motion/core/config/types/presence/value';
+import { TPresenceConfigKey } from '@brysonandrew/motion-core';
+import { TPresenceConfig } from '@brysonandrew/motion-core';
+import { TPresenceConfigValue } from '@brysonandrew/motion-core';
 
 export type TPresenceConfigs = readonly TPresenceConfig[];
 export type TPresenceConfigRecord<

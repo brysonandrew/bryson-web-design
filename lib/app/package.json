@@ -1,27 +1,9 @@
 {
   "name": "@brysonandrew/app",
-  "version": "6.24.21",
-  "description": "App library",
+  "version": "7.0.7",
+  "description": "app library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./AppInit": "./AppInit.tsx",
-    "./AppProvider": "./AppProvider.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./useAppStyle": "./useAppStyle.ts",
-    "./useInit": "./useInit.ts",
-    "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
-    "./utils/withStyle": "./utils/withStyle.tsx",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/constants/style": "./config/constants/style.ts",
-    "./config/types": "./config/types/index.ts",
-    "./config/types/layout": "./config/types/layout.ts",
-    "./config/types/sound": "./config/types/sound.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -40,19 +22,37 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/utils-function": "*",
-    "@brysonandrew/utils-object": "*",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/css": "*",
+    "@brysonandrew/utils-function": "7.0.7",
+    "@brysonandrew/utils-object": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/css-format": "7.0.7",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/layout-back": "*",
-    "@brysonandrew/layout-blank": "*",
-    "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/fade": "*",
-    "@brysonandrew/color-base": "*",
-    "@brysonandrew/color-glow": "*",
-    "@brysonandrew/uno-presets": "*",
-    "@brysonandrew/layout": "*",
-    "@brysonandrew/placeholder": "*"
+    "@brysonandrew/layout-back": "7.0.7",
+    "@brysonandrew/layout-blank": "7.0.7",
+    "@brysonandrew/layout-effects": "7.0.7",
+    "@brysonandrew/fade-edge": "7.0.7",
+    "@brysonandrew/color-base": "7.0.7",
+    "@brysonandrew/color-glow": "7.0.7",
+    "@brysonandrew/uno-presets": "7.0.7",
+    "@brysonandrew/layout": "7.0.7",
+    "@brysonandrew/placeholder": "7.0.7"
+  },
+  "exports": {
+    "./AppInit": "./AppInit.tsx",
+    "./AppProvider": "./AppProvider.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useAppStyle": "./useAppStyle.ts",
+    "./useInit": "./useInit.ts",
+    "./utils/resolveColorSet": "./utils/resolveColorSet.ts",
+    "./utils/withStyle": "./utils/withStyle.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/constants/style": "./config/constants/style.ts",
+    "./config/types": "./config/types/index.ts",
+    "./config/types/layout": "./config/types/layout.ts",
+    "./config/types/sound": "./config/types/sound.ts"
   }
 }

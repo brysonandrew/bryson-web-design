@@ -8,7 +8,8 @@ import { Anchor } from '@brysonandrew/interactive/circle/Anchor';
 import { TItem } from '@brysonandrew/gallery/config/types';
 import { motion } from 'framer-motion';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
-import { I, OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
+import { I } from '@brysonandrew/icons-i';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
 
 const InternalLink = motion(Link);
 
@@ -23,30 +24,30 @@ export const Buttons: FC<TProps> = ({
   const to = useTo({ project: slug, next: 1 });
 
   return (
-    <div className='row-space'>
-      <ul className='column-start w-full md:row'>
-        <li className='row-space w-full md:w-auto md:row'>
+    <div className="row-space">
+      <ul className="column-start w-full md:row">
+        <li className="row-space w-full md:w-auto md:row">
           <h3>Screenshots</h3>
           <P1 />
           <Circle>
             <InternalLink
               to={to}
               onClick={onClose}
-              className='circle-interactive'
+              className="circle-interactive"
             >
               <Gallery />
             </InternalLink>
           </Circle>
         </li>
-        <P3 element='li' />
-        <li className='row-space w-full md:w-auto md:row'>
+        <P3 element="li" />
+        <li className="row-space w-full md:w-auto md:row">
           <h3>Link</h3>
           <P1 />
           <Circle>
             <Anchor
               href={href}
-              title='Open in new'
-              target='_blank'
+              title="Open in new"
+              target="_blank"
             >
               <I icon={OPEN_IN_NEW_ICON} />
             </Anchor>

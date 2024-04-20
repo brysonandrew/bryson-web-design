@@ -3,7 +3,7 @@ import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import {
   DURATION,
   resolvePresence,
-} from '@brysonandrew/motion/core/config';
+} from '@brysonandrew/motion-core';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';

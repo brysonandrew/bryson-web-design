@@ -1,18 +1,9 @@
 {
   "name": "@brysonandrew/uno-rules",
-  "version": "6.24.21",
-  "description": "Uno Rules library",
+  "version": "7.0.7",
+  "description": "uno-rules library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./resolveCharGapRules": "./resolveCharGapRules.ts",
-    "./resolveOpacityRules": "./resolveOpacityRules.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,6 +22,15 @@
   ],
   "peerDependencies": {
     "unocss": "^0.53.6",
-    "@brysonandrew/placeholder": "*"
+    "@brysonandrew/placeholder": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveCharGapRules": "./resolveCharGapRules.ts",
+    "./resolveOpacityRules": "./resolveOpacityRules.ts"
   }
 }

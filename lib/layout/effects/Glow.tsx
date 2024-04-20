@@ -1,8 +1,8 @@
 import {
+  FilterAnimate,
   resolveGlowProps,
   TGlowConfig,
-} from '@brysonandrew/motion/filter/utils/glow';
-import { FilterAnimate } from '@brysonandrew/motion/filter';
+} from '@brysonandrew/motion-filter';
 import { FC } from 'react';
 
 export const Glow: FC<TGlowConfig> = ({

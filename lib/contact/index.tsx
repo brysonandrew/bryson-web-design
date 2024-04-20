@@ -52,7 +52,6 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
   );
 };
 
-export * from '@brysonandrew/contact-list';
 export * from './ContactProvider';
 export * from './config/constants';
 export * from './config/types';
@@ -73,3 +72,4 @@ export * from './form/input/useFocus';
 export * from './form/input/textarea';
 export * from './form/input/textarea/autosize';
 export * from './form/input/textarea/autosize/useAutosize';
+export * from './list/Item';

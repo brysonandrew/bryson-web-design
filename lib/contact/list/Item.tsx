@@ -2,14 +2,14 @@ import { TClassValueProps } from '@brysonandrew/config-types';
 import {
   useHoverKey,
   CUSTOM_CURSOR_KEY,
-} from '@brysonandrew/motion/cursor';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
+} from '@brysonandrew/motion-cursor';
 import { TextAnchor } from '@brysonandrew/interactive';
 import { Copy } from '@brysonandrew/interactive/Copy';
 import { TClipboardState } from '@brysonandrew/notifications';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
 import clsx from 'clsx';
 import { FC } from 'react';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
 
 type TProps = TClassValueProps & {
   name: string;

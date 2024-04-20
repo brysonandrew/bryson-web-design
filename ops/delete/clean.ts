@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
 import { green, inverse, red } from '@ops/console';
-import { deleteEntries } from './delete';
+import { deleteEntries } from './entries';
 
 const PATTERNS = [
   'package.lock',

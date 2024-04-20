@@ -8,9 +8,9 @@ import { type FC, useRef, memo } from 'react';
 import { useCursorOffset } from './hooks';
 import { useViewportPresence } from './hooks/useViewportPresence';
 import { Switch } from './switch';
-import { useScroll as useScrollContext } from '@brysonandrew/motion/scroll';
-import { resolveCursorKeyFromHoverKey } from '@brysonandrew/motion/cursor/config/constants';
-import { useCursor } from '@brysonandrew/motion/cursor';
+import { useScroll as useScrollContext } from '@brysonandrew/motion-scroll';
+import { resolveCursorKeyFromHoverKey } from '@brysonandrew/motion-cursor/config/constants';
+import { useCursor } from '@brysonandrew/motion-cursor';
 
 export type TCursorProps = {
   children?: TChildren;
@@ -79,15 +79,15 @@ export const Cursor: FC<TCursorProps> = memo(
 export * from './CursorProvider';
 export * from './config/constants';
 export * from './config/types';
+export * from './utils';
+export * from './utils/resolveCompositeHoverKey';
+export * from './switch/Box';
+export * from './switch/IconWithText';
+export * from './switch/Sight';
+export * from './switch';
+export * from './switch/format/Visit';
 export * from './hooks';
 export * from './hooks/useCursorAnimate';
 export * from './hooks/useCursorOffset';
 export * from './hooks/useHoverKey';
 export * from './hooks/useViewportPresence';
-export * from './switch/Box';
-export * from './switch/IconWithText';
-export * from './switch/Sight';
-export * from './switch';
-export * from './utils';
-export * from './utils/resolveCompositeHoverKey';
-export * from './switch/format/Visit';

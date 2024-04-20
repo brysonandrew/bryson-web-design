@@ -1,28 +1,24 @@
 import { RouteObject } from 'react-router-dom';
 import * as Pages from '@pages/index';
 import { Shell } from '@shell';
-import {
-  NotFound,
-  resolveRouteRecords,
-} from '@brysonandrew/routes';
+import { resolveRouteRecords } from '@brysonandrew/routes';
 import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 import { TPageTitle } from '@app/routes/config/types';
-
-const PAGE_KEYS = Object.keys(Pages) as TPageTitle[];
-export const PAGE_TITLES = PAGE_KEYS.sort(
-  (a: TPageTitle) => {
-    if (a === 'Index') {
-      return -1;
-    }
-    return 0;
-  }
-);
+import { NotFound } from '@brysonandrew/routes-not-found';
 
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,
   typeof Pages
->(PAGE_TITLES, Pages);
+>(
+  [
+    'Index',
+    'Projects',
+    'Pricing',
+    'Contact',
+  ] as TPageTitle[],
+  Pages
+);
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',

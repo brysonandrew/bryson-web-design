@@ -1,7 +1,7 @@
 import { join } from 'path';
-import { TError } from '@brysonandrew/config-types';
 import { readFile } from 'fs/promises';
 import { TTargets } from '@ops/exporter/config/types';
+import { TError } from '@brysonandrew/config-types/dom';
 
 export const readPackageTargets = async (
   targets: TTargets
@@ -16,7 +16,8 @@ export const readPackageTargets = async (
       const pkgStr = await readFile(pkgPath, {
         encoding: 'utf-8',
       });
-      const { dependencies: _, ...pkg } =
+      
+      const { dependencies: _, exports:__, ...pkg } =
         JSON.parse(pkgStr);
 
       const version = pkg.version

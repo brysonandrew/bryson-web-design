@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Content } from '../../components/content';
 import { useOnSound } from '@brysonandrew/sounds/useOnSound';
 import { useNavigate } from 'react-router-dom';
 import { Details } from './details';
@@ -9,12 +8,13 @@ import {
   useHoverKey,
   useCursor,
   resolveCursorKeyFromHoverKey,
-} from '@brysonandrew/motion/cursor';
+} from '@brysonandrew/motion-cursor';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
 import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
-import { useGallery } from '../../GalleryProvider';
+import { Content } from '@brysonandrew/gallery/components/content';
+import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
 type TProps<T extends string> = TSlugProps<T> & {
   index: number;

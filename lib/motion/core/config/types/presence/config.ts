@@ -3,9 +3,9 @@ import {
   ROTATE_TYPES,
   SHIFT_DIRECTIONS,
   ZOOM_DIRECTIONS,
-} from '@brysonandrew/motion/core/config/constants';
+} from '@brysonandrew/motion-core';
 import { TNumberPosPercentValue } from '@brysonandrew/config-types';
-import { TPositive } from '@brysonandrew/config-types/assertions/numbers';
+import { TPositive } from '@brysonandrew/config-types/validation/numbers';
 
 export type TXyAxis = 'x' | 'y';
 

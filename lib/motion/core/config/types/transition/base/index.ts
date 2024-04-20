@@ -1,5 +1,5 @@
-import { TBaseTransitionConfigKey } from '@brysonandrew/motion/core/config/types/transition/base/key';
-import { TEasingDefinition } from '@brysonandrew/motion/core/config/types/values';
+import { TBaseTransitionConfigKey } from '@brysonandrew/motion-core';
+import { TEasingDefinition } from '@brysonandrew/motion-core';
 
 export type TDurationValue = number;
 export type TEaseValue = TEasingDefinition;

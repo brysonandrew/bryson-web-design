@@ -1,4 +1,4 @@
-import { useCursor } from '@brysonandrew/motion/cursor';
+import { useCursor } from '@brysonandrew/motion-cursor';
 import {
   ValueTarget,
   ValueAnimationTransition,
@@ -10,8 +10,8 @@ import {
   CUSTOM_CURSOR_KEY,
   resolveCursorKeyFromHoverKey,
   THoverKey,
-} from '@brysonandrew/motion/cursor/config/constants';
-import { TAnimationControlsPoint } from '@brysonandrew/motion/core/config/types';
+} from '@brysonandrew/motion-cursor/config/constants';
+import { TAnimationControlsPoint } from '@brysonandrew/motion-core';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;

@@ -1,4 +1,4 @@
-import { TPresenceConfig, TTarget } from "@brysonandrew/motion/core/config";
+import { TPresenceConfig, TTarget } from "@brysonandrew/motion-core";
 
 export type TPresenceConfigValue<
   T extends TPresenceConfig,

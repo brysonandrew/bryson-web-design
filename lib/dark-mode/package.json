@@ -1,26 +1,9 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "6.24.21",
-  "description": "Dark Mode library",
+  "version": "7.0.7",
+  "description": "dark-mode library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./DarkModeProvider": "./DarkModeProvider.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./useDarkModeState": "./useDarkModeState.ts",
-    "./button": "./button/index.tsx",
-    "./head": "./head/index.tsx",
-    "./config/types": "./config/types.ts",
-    "./button/icon/Moon": "./button/icon/Moon.tsx",
-    "./button/icon/Sun": "./button/icon/Sun.tsx",
-    "./button/icon": "./button/icon/index.ts",
-    "./config/constants/animation": "./config/constants/animation.ts",
-    "./config/constants": "./config/constants/index.tsx"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -39,15 +22,33 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/utils-key": "*",
-    "@brysonandrew/hooks-dom": "*",
+    "@brysonandrew/utils-key": "7.0.7",
+    "@brysonandrew/hooks-dom": "7.0.7",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/motion": "*",
-    "@brysonandrew/interactive": "*",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/head": "*",
+    "@brysonandrew/motion-cursor": "7.0.7",
+    "@brysonandrew/interactive": "7.0.7",
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/motion-core": "7.0.7",
+    "@brysonandrew/head": "7.0.7",
     "clsx": "^1.2.1",
-    "@brysonandrew/utils": "*"
+    "@brysonandrew/utils": "7.0.7"
+  },
+  "exports": {
+    "./DarkModeProvider": "./DarkModeProvider.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useDarkModeState": "./useDarkModeState.ts",
+    "./button": "./button/index.tsx",
+    "./head": "./head/index.tsx",
+    "./config/types": "./config/types.ts",
+    "./button/icon/Moon": "./button/icon/Moon.tsx",
+    "./button/icon/Sun": "./button/icon/Sun.tsx",
+    "./button/icon": "./button/icon/index.ts",
+    "./config/constants/animation": "./config/constants/animation.ts",
+    "./config/constants": "./config/constants/index.tsx"
   }
 }

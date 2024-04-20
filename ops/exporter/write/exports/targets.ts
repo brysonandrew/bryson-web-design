@@ -1,10 +1,9 @@
-import { TError } from '@brysonandrew/config-types';
+import { TError } from '@brysonandrew/config-types/dom';
 import {
   TTargets,
   TTarget,
 } from '@ops/exporter/config/types';
 import { writeExportsTarget } from '@ops/exporter/write/exports/target';
-import { green } from '@ops/console';
 
 export const writeExportsTargets = async (
   targets: TTargets
@@ -13,15 +12,13 @@ export const writeExportsTargets = async (
 
   try {
     for await (const target of targets) {
-      const name = target.name;
-      green(`Writing exports for ${name}`);
-
       const { indexRows } = await writeExportsTarget(
-        target
+        target,
+        targets
       );
       const nextTarget: TTarget = {
         ...target,
-        indexRows: [...target.indexRows, ...indexRows],
+        indexRows,
       };
       nextTargets.push(nextTarget);
     }

@@ -2,7 +2,7 @@ import {
   TDivProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types';
-import { TPartialGlowConfigOptions } from '@brysonandrew/motion/filter';
+import { TPartialGlowConfigOptions } from '@brysonandrew/motion-filter';
 import { FC } from 'react';
 
 export type TGlowProps = TDivProps &

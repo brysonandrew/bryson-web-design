@@ -1,8 +1,8 @@
-import { FadeLeft } from '@brysonandrew/fade/core';
+import { FadeLeft } from '@brysonandrew/fade-core';
 import {
   FadePair,
   TFadePairProps,
-} from '@brysonandrew/fade/edge/pairs/FadePair';
+} from '@brysonandrew/fade-edge/pairs/FadePair';
 import { FC } from 'react';
 
 type TProps = TFadePairProps;

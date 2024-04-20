@@ -1,8 +1,8 @@
-import { TEaseValue } from '@brysonandrew/motion/core/config/types/transition/base';
+import { TEaseValue } from '@brysonandrew/motion-core';
 import {
   TBezierString,
   TEaseStringify,
-} from '@brysonandrew/motion/core/config/types/transition/base/key';
+} from '@brysonandrew/motion-core';
 
 export const resolveEaseStringify = (
   ease: TEaseValue,

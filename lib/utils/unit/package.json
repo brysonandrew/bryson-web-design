@@ -1,19 +1,9 @@
 {
   "name": "@brysonandrew/utils-unit",
-  "version": "6.24.21",
-  "description": "Utils Unit library",
+  "version": "7.0.7",
+  "description": "utils-unit library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./resolveIntRecord": "./resolveIntRecord.ts",
-    "./resolveRemFromPx": "./resolveRemFromPx.ts",
-    "./stripPx": "./stripPx.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -30,5 +20,15 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveIntRecord": "./resolveIntRecord.ts",
+    "./resolveRemFromPx": "./resolveRemFromPx.ts",
+    "./stripPx": "./stripPx.ts"
+  }
 }

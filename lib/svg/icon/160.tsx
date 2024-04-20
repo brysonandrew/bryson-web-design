@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { IconsSvg, TIconsSvgProps } from "@brysonandrew/svg/icon";
+import { IconsSvg, TIconsSvgProps } from "@brysonandrew/svg-icon";
 
 export const Icon160: FC<
   TIconsSvgProps

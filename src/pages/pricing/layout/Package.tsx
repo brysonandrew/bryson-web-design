@@ -15,7 +15,7 @@ import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
 import { PAGE_RECORDS } from '@app/routes';
-import { FadeDownPair } from '@brysonandrew/fade/edge/pairs/FadeDownPair';
+import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
 import { TApp } from '@shell/providers';
 
 export type TPackageProps = Pick<

@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/utils-format",
-  "version": "6.24.21",
-  "description": "Utils Format library",
+  "version": "7.0.7",
+  "description": "utils-format library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./url": "./url.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,6 +21,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./url": "./url.ts"
   }
 }

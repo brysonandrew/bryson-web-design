@@ -1,57 +1,58 @@
-import { parsePaths } from '@ops/exporter/write/exports/parsePaths';
 import { writeFile } from 'fs/promises';
 import {
-  TIndexRows,
+  TStrRows,
   TTarget,
+  TTargets,
 } from '@ops/exporter/config/types';
-import { kebabToTitle } from '@brysonandrew/utils-format';
-import glob from 'fast-glob';
-import { parse, join } from 'path';
+// import { kebabToTitle } from '@brysonandrew/utils-format';
 
 export const writeExportsTarget = async (
-  target: TTarget
+  target: TTarget,
+  targets: TTargets
 ) => {
-  let indexRows: TIndexRows = [];
+  let indexRows: TStrRows = [];
   try {
-    const { name, dir, pkgPath, version, pkg } = target;
+    const {
+      subWorkspaces,
+      main,
+      types,
+      name,
+      dir,
+      pkgPath,
+      version,
+      pkg,
+      peerDependencies,
+      ...rest
+    } = target;
+    let exportRows = rest.exportRows;
+    indexRows = [...indexRows, ...rest.indexRows];
 
-    const ignorePaths = target.subWorkspaces.map(
-      (value) => {
-        const subWorkspace = parse(value);
-        const dirParts = subWorkspace.dir.split('/');
-        const last = dirParts[dirParts.length - 1];
-        const next = join(last, '**/*');
-        return next;
-      }
-    );
+    if (subWorkspaces.length > 0) {
+      subWorkspaces.forEach((swsId) => {
+        const sws = targets.find(
+          (v) => v.pkgPath === swsId
+        );
+        if (typeof sws !== 'undefined' && sws.dir !== dir) {
+          const dirToSws = `${sws.dir
+            .replace(dir, '') 
+            .slice(1)}/`;
+          const replacer = (v: string) =>
+            v.replaceAll('./', `./${dirToSws}`);
 
-    const FILES_GLOB = `./**/*.(ts|tsx)`;
-    const paths = await glob([FILES_GLOB], {
-      cwd: dir,
-      ignore: ignorePaths,
-    });
+          const swsExports = sws.exportRows
+            .filter((v) => !v.includes('"require": '))
+            .map(replacer);
+          const swsIndexRows = sws.indexRows.map(replacer);
 
-    const parsePathsValue = await parsePaths({
-      paths,
-      target,
-    });
+          exportRows = [...exportRows, ...swsExports];
+          indexRows = [...indexRows, ...swsIndexRows];
+      
+    
+        }
+      });
+    }
 
-    const { main, types, ...parsePathsValueRest } =
-      parsePathsValue;
-
-    indexRows = [
-      ...indexRows,
-      ...parsePathsValueRest.indexRows,
-    ];
-
-    const peerDependencies = {
-      ...target.peerDependencies,
-      ...parsePathsValueRest.peerDependencies,
-    };
-
-    const pkgExportsStr = `{${parsePathsValueRest.exportRows.join(
-      ','
-    )}}`;
+    const pkgExportsStr = `{${exportRows.join(',')}}`;
 
     const exportsRecord = JSON.parse(pkgExportsStr);
     const exportsKeys = Object.keys(exportsRecord);
@@ -61,7 +62,7 @@ export const writeExportsTarget = async (
       ...pkg,
       ...main,
       ...types,
-      description: `${kebabToTitle(name)} library`,
+      description: `${name} library`,
       version,
       peerDependencies,
       ...(isExports ? { exports: exportsRecord } : {}),

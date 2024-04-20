@@ -1,4 +1,4 @@
-import { INTERNAL_PREFIX } from '../config/constants';
+import { INTERNAL_PREFIX } from '../../ops/exporter/config/constants';
 import { KEYS } from './_replaceImports';
 
 export const x = (file: string) => {

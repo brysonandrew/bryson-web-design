@@ -1,16 +1,12 @@
+import { BASE_RGBS_RECORD, resolveColorRecords } from '@brysonandrew/color-base';
+import { resolveGlowRecord, BASE_GLOW_RECORD } from '@brysonandrew/color-glow';
+import { BLACK_RGBS, WHITE_RGBS } from '@brysonandrew/color-grayscale';
 import {
   OPACITY_RANGE_RGB_RECORD,
   VARIABLES_RECORD,
 } from './config/constants';
 import { TVariablesRecord } from './config/types';
-import {
-  BASE_GLOW_RECORD,
-  BLACK_RGBS,
-  BASE_RGBS_RECORD,
-  resolveColorRecords,
-  resolveGlowRecord,
-  WHITE_RGBS,
-} from '@brysonandrew/color';
+
 
 const RGB_RECORD = {
   ...OPACITY_RANGE_RGB_RECORD,

@@ -2,7 +2,7 @@ import { motionValue } from 'framer-motion';
 import {
   TScrollState,
   TScrollContext,
-} from '@brysonandrew/motion/scroll/config/types';
+} from '@brysonandrew/motion-scroll/config/types';
 
 export const INIT_SCROLL = 200;
 export const SCROLL_COOLDOWN = 200;

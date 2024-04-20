@@ -1,7 +1,7 @@
 import { DURATION } from '@app/animation';
-import { ThickLine } from '@brysonandrew/layout';
-import { I } from '@brysonandrew/icons';
+import { I } from '@brysonandrew/icons-i';
 import { HOME_ICON } from '@brysonandrew/icons-keys/base';
+import { ThickLine } from '@brysonandrew/layout-line';
 import clsx from 'clsx';
 import { TPageLinkComponent } from './config';
 
@@ -11,14 +11,14 @@ export const Home: TPageLinkComponent = ({ isActive }) => {
       <I
         classValue={clsx(
           'inline-flex h-5 w-5 mb-1',
-          isActive && 'title-main',
+          isActive && 'title-main'
         )}
         icon={HOME_ICON}
       />
       {isActive && (
         <ThickLine
-          classValue='top-3/4 right-1.5 w-2 h-2'
-          layoutId='PAGE_ACTIVE_UNDERLINE_KEY'
+          classValue="top-3/4 right-1.5 w-2 h-2"
+          layoutId="PAGE_ACTIVE_UNDERLINE_KEY"
           transition={{ duration: DURATION * 2 }}
         />
       )}

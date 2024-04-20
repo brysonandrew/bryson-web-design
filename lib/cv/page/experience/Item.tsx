@@ -1,5 +1,5 @@
 import { TCvSection } from '@brysonandrew/cv/config/types';
-import { formateShortDate } from '@brysonandrew/utils';
+import { formateShortDate } from '@brysonandrew/utils-format';
 import clsx from 'clsx';
 import type { FC } from 'react';
 import { Fragment } from 'react';
