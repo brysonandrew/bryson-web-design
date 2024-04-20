@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "6.24.4",
-  "description": "Utils library",
+  "version": "7.0.7",
+  "description": "utils library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -28,14 +21,47 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-css": "*",
-    "@brysonandrew/utils-format": "*",
-    "@brysonandrew/utils-error": "*",
     "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/utils-css": "*",
+    "@brysonandrew/utils-error": "*",
+    "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/utils-object": "*",
     "@brysonandrew/utils-transformer": "*",
-    "@brysonandrew/utils-unit": "*"
+    "@brysonandrew/utils-unit": "*",
+    "@brysonandrew/utils-validation": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./attributes/resolveInteractiveHrefLabels": "./attributes/resolveInteractiveHrefLabels.ts",
+    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
+    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
+    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
+    "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
+    "./error/detail/config": "./error/detail/config.ts",
+    "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts",
+    "./format/url": "./format/url.ts",
+    "./function/noop": "./function/noop.ts",
+    "./function/once": "./function/once.ts",
+    "./key/generateRandomId": "./key/generateRandomId.ts",
+    "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
+    "./object/arrToRecord": "./object/arrToRecord.ts",
+    "./object/mergeDeep": "./object/mergeDeep.ts",
+    "./object/prefixKeys": "./object/prefixKeys.ts",
+    "./object/scopeRecord": "./object/scopeRecord.ts",
+    "./object/sortKeys": "./object/sortKeys.ts",
+    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
+    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
+    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
+    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
+    "./unit/stripPx": "./unit/stripPx.ts",
+    "./validation/assertion": "./validation/assertion.ts",
+    "./validation/is-falsy": "./validation/is-falsy.ts",
+    "./validation/is-truthy": "./validation/is-truthy.ts"
   }
 }

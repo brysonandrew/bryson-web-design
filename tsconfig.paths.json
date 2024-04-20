@@ -14,12 +14,6 @@
       "@app/*": [
         "config/app/*"
       ],
-      "@brysonandrew/animation": [
-        "lib/animation"
-      ],
-      "@brysonandrew/animation/*": [
-        "lib/animation/*"
-      ],
       "@brysonandrew/app": [
         "lib/app"
       ],
@@ -107,6 +101,12 @@
       "@brysonandrew/contact-contact-list/*": [
         "lib/contact/contact-list/*"
       ],
+      "@brysonandrew/contact-list": [
+        "lib/contact/list"
+      ],
+      "@brysonandrew/contact-list/*": [
+        "lib/contact/list/*"
+      ],
       "@brysonandrew/contact/*": [
         "lib/contact/*"
       ],
@@ -118,6 +118,12 @@
       ],
       "@brysonandrew/css-base/*": [
         "lib/css/base/*"
+      ],
+      "@brysonandrew/css-format": [
+        "lib/css/format"
+      ],
+      "@brysonandrew/css-format/*": [
+        "lib/css/format/*"
       ],
       "@brysonandrew/css/*": [
         "lib/css/*"
@@ -149,11 +155,17 @@
       "@brysonandrew/fade": [
         "lib/fade"
       ],
+      "@brysonandrew/fade-core": [
+        "lib/fade/core"
+      ],
+      "@brysonandrew/fade-core/*": [
+        "lib/fade/core/*"
+      ],
       "@brysonandrew/fade-edge": [
-        "lib/fade-edge"
+        "lib/fade/edge"
       ],
       "@brysonandrew/fade-edge/*": [
-        "lib/fade-edge/*"
+        "lib/fade/edge/*"
       ],
       "@brysonandrew/fade/*": [
         "lib/fade/*"
@@ -244,6 +256,12 @@
       ],
       "@brysonandrew/icons-i/*": [
         "lib/icons/i/*"
+      ],
+      "@brysonandrew/icons-inline": [
+        "lib/icons/inline"
+      ],
+      "@brysonandrew/icons-inline/*": [
+        "lib/icons/inline/*"
       ],
       "@brysonandrew/icons-keys": [
         "lib/icons/keys"
@@ -344,11 +362,59 @@
       "@brysonandrew/loading/*": [
         "lib/loading/*"
       ],
+      "@brysonandrew/measure": [
+        "lib/measure"
+      ],
+      "@brysonandrew/measure/*": [
+        "lib/measure/*"
+      ],
       "@brysonandrew/media": [
         "lib/media"
       ],
       "@brysonandrew/media/*": [
         "lib/media/*"
+      ],
+      "@brysonandrew/motion": [
+        "lib/motion"
+      ],
+      "@brysonandrew/motion-core": [
+        "lib/motion/core"
+      ],
+      "@brysonandrew/motion-core/*": [
+        "lib/motion/core/*"
+      ],
+      "@brysonandrew/motion-cursor": [
+        "lib/motion/cursor"
+      ],
+      "@brysonandrew/motion-cursor/*": [
+        "lib/motion/cursor/*"
+      ],
+      "@brysonandrew/motion-filter": [
+        "lib/motion/filter"
+      ],
+      "@brysonandrew/motion-filter-animate": [
+        "lib/motion/filter-animate"
+      ],
+      "@brysonandrew/motion-filter-animate/*": [
+        "lib/motion/filter-animate/*"
+      ],
+      "@brysonandrew/motion-filter/*": [
+        "lib/motion/filter/*"
+      ],
+      "@brysonandrew/motion-parallax": [
+        "lib/motion/parallax"
+      ],
+      "@brysonandrew/motion-parallax/*": [
+        "lib/motion/parallax/*"
+      ],
+      "@brysonandrew/motion-scroll": [
+        "lib/motion/scroll"
+      ],
+      "@brysonandrew/motion-scroll/*": [
+        "lib/motion/scroll/*"
+      ],
+      "@brysonandrew/motion/*": [
+        "lib/motion/*"
       ],
       "@brysonandrew/network": [
         "lib/network"
@@ -436,6 +502,12 @@
       ],
       "@brysonandrew/svg-filter/*": [
         "lib/svg/filter/*"
+      ],
+      "@brysonandrew/svg-icon": [
+        "lib/svg/icon"
+      ],
+      "@brysonandrew/svg-icon/*": [
+        "lib/svg/icon/*"
       ],
       "@brysonandrew/svg/*": [
         "lib/svg/*"
@@ -550,6 +622,12 @@
       ],
       "@brysonandrew/utils-unit/*": [
         "lib/utils/unit/*"
+      ],
+      "@brysonandrew/utils-validation": [
+        "lib/utils/validation"
+      ],
+      "@brysonandrew/utils-validation/*": [
+        "lib/utils/validation/*"
       ],
       "@brysonandrew/utils/*": [
         "lib/utils/*"

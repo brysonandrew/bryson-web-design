@@ -1,10 +1,31 @@
 {
   "name": "@brysonandrew/color-base",
-  "version": "6.24.4",
-  "description": "Color Base library",
+  "version": "7.0.7",
+  "description": "color-base library",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/color-grayscale": "7.0.7",
+    "@brysonandrew/utils-css": "7.0.7"
+  },
   "exports": {
     "./formatRgb": "./formatRgb.ts",
     "./formatRgba": "./formatRgba.ts",
@@ -26,26 +47,5 @@
     "./rgbToVarRecord": "./rgbToVarRecord.ts",
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts"
-  },
-  "scripts": {
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "peerDependencies": {
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/color-grayscale": "*",
-    "@brysonandrew/utils-css": "*"
   }
 }

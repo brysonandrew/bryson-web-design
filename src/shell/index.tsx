@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { Global } from './global';
-import { Cursor } from '@brysonandrew/cursor';
+import { Cursor } from 'lib/motion/cursor';
 import { isDesktop } from 'react-device-detect';
 import { Footer } from './footer';
 import { Header } from './header';

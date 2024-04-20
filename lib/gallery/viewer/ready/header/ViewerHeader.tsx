@@ -6,11 +6,10 @@ import {
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { NOOP } from '@brysonandrew/utils-function';
 import { isDesktop } from 'react-device-detect';
-import { Close } from '../../buttons/Close';
-import { Content } from '@brysonandrew/gallery';
+import { Close, Content } from '@brysonandrew/gallery';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { useApp } from '@brysonandrew/app';
-import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/motion-core';
 
 type TProps = TDivMotionProps &
   TSlugProps &
@@ -28,7 +27,7 @@ export const ViewerHeader: FC<TProps> = ({
     }
   };
   return (
-    <header className='relative left-0 top-0 row w-full z-30'>
+    <header className="relative left-0 top-0 row w-full z-30">
       <BackMotionFill
         style={{ boxShadow: GLOW_BOX['white'] }}
       />

@@ -1,23 +1,10 @@
 {
   "name": "@brysonandrew/color-grayscale",
-  "version": "6.24.4",
-  "description": "Color Grayscale library",
+  "version": "7.0.7",
+  "description": "color-grayscale library",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./black": "./black.ts",
-    "./gray": "./gray.ts",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./resolveGrayscaleRange": "./resolveGrayscaleRange.ts",
-    "./resolveGrayscaleRgb": "./resolveGrayscaleRgb.ts",
-    "./white": "./white.ts",
-    "./config/types": "./config/types.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -35,6 +22,19 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-base": "*"
+    "@brysonandrew/color-base": "7.0.7"
+  },
+  "exports": {
+    "./black": "./black.ts",
+    "./gray": "./gray.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveGrayscaleRange": "./resolveGrayscaleRange.ts",
+    "./resolveGrayscaleRgb": "./resolveGrayscaleRgb.ts",
+    "./white": "./white.ts",
+    "./config/types": "./config/types.ts"
   }
 }

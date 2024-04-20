@@ -1,20 +1,9 @@
 {
   "name": "@brysonandrew/head",
-  "version": "6.24.4",
-  "description": "Head library",
+  "version": "7.0.7",
+  "description": "head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./HelmetProvider": "./HelmetProvider.tsx",
-    "./config": "./config.ts",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./useHtmlTitle": "./useHtmlTitle.ts",
-    "./useTitleLookup": "./useTitleLookup.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -34,9 +23,20 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/color-base": "*",
-    "@brysonandrew/routes": "*",
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/color-base": "7.0.7",
+    "@brysonandrew/routes": "7.0.7",
     "react-router": "^6.21.1"
+  },
+  "exports": {
+    "./HelmetProvider": "./HelmetProvider.tsx",
+    "./config": "./config.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./useHtmlTitle": "./useHtmlTitle.ts",
+    "./useTitleLookup": "./useTitleLookup.ts"
   }
 }

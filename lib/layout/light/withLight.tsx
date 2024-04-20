@@ -2,14 +2,9 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { TLayoutComponentProps } from '@brysonandrew/app/config/types/layout';
 import {
-  resolveBoxShadow,
-  resolveDropShadow,
-} from '@brysonandrew/color-glow';
-import {
   TDivMotionProps,
   TDivProps,
 } from '@brysonandrew/config-types';
-import { TPartialGlowConfigOptions } from '@brysonandrew/filter-animate';
 import {
   TGlowProps,
   TUGlowProps,
@@ -17,6 +12,8 @@ import {
 } from '@brysonandrew/layout-light/config/types';
 import { Marker } from '@brysonandrew/layout-light/marker';
 import { MarkerMotion } from '@brysonandrew/layout-light/marker/Motion';
+import { TPartialGlowConfigOptions } from '@brysonandrew/motion-filter';
+import { formatFilterDropShadow, formatShadow } from '@brysonandrew/css-format';
 
 type TConfig = TLayoutComponentProps;
 export const withLight = (config: TConfig) => {
@@ -39,13 +36,13 @@ export const withLight = (config: TConfig) => {
   }: T) => ({
     ...(isBackground ? { backgroundColor: color } : {}),
     ...(text > 0
-      ? { textShadow: resolveBoxShadow(color, text) }
+      ? { textShadow: formatShadow(color, text) }
       : {}),
     ...(box > 0
-      ? { boxShadow: resolveBoxShadow(color, box) }
+      ? { boxShadow: formatShadow(color, box) }
       : {}),
     ...(drop > 0
-      ? { filter: resolveDropShadow(color, drop) }
+      ? { filter: formatFilterDropShadow(color, drop) }
       : {}),
     ...commonStyle,
     ...style,

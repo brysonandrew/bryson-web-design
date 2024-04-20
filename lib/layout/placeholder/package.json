@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/layout-placeholder",
-  "version": "6.24.4",
-  "description": "Layout Placeholder library",
+  "version": "7.0.7",
+  "description": "layout-placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,7 +22,14 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/placeholder": "*"
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/placeholder": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

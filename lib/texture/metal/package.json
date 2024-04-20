@@ -1,18 +1,9 @@
 {
   "name": "@brysonandrew/texture-metal",
-  "version": "6.24.4",
-  "description": "Texture Metal library",
+  "version": "7.0.7",
+  "description": "texture-metal library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./css": "./css.ts",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./motion": "./motion/index.tsx"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -33,11 +24,19 @@
     "@emotion/react": "^11.11.3",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
-    "@brysonandrew/texture": "*",
     "clsx": "^1.2.1",
-    "@brysonandrew/layout": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/layout": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/layout-back": "*"
+    "@brysonandrew/layout-back": "7.0.7"
+  },
+  "exports": {
+    "./css": "./css.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./motion": "./motion/index.tsx"
   }
 }

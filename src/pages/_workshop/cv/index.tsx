@@ -1,3 +1,4 @@
+
 import {
   CONTACT_URL,
   CONTACT_EMAIL,
@@ -5,17 +6,19 @@ import {
   CONTACT_PHONE_WITH_NATIONAL_TRUNK,
   CV_ITEMS,
   CV_PRESETS_RECORD,
+  CV_PRESETS,
   DESCRIPTION_PARAGRAPHS,
   TPresetName,
+  TPresetValue,
 } from '@app/copy';
 import { CvProvider } from '@brysonandrew/cv/CvProvider';
 import { Page } from '@brysonandrew/cv/page';
-import { Controls } from '@brysonandrew/cv/controls';
+import { CvControls } from '@brysonandrew/cv/controls';
 import { TCvSection } from '@brysonandrew/cv';
 
 export const Cv = () => {
   return (
-    <Controls<TPresetName> initPreset='LATEST'>
+    <CvControls<TPresetName, TPresetValue> initPreset='LATEST' presetsEntries={CV_PRESETS}>
       {({ filter, preset }) => (
         <>
           <CvProvider
@@ -40,6 +43,6 @@ export const Cv = () => {
           </CvProvider>
         </>
       )}
-    </Controls>
+    </CvControls>
   );
 };

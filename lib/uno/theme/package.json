@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/uno-theme",
-  "version": "6.24.4",
-  "description": "Uno Theme library",
+  "version": "7.0.7",
+  "description": "uno-theme library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,5 +22,12 @@
   ],
   "peerDependencies": {
     "@emotion/react": "^11.11.3"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
   }
 }

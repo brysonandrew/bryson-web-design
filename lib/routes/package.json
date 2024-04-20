@@ -1,18 +1,9 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "6.24.4",
-  "description": "Routes library",
+  "version": "7.0.7",
+  "description": "routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./resolveRoute": "./resolveRoute.ts",
-    "./config/types": "./config/types.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -30,11 +21,21 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/not-found": "*",
     "@brysonandrew/link-list": "*",
+    "@brysonandrew/not-found": "*",
     "react-router": "^6.21.1",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/utils-format": "*"
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/utils-format": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./resolveRoute": "./resolveRoute.ts",
+    "./config/types": "./config/types.ts",
+    "./not-found/RedirectLink": "./not-found/RedirectLink.tsx"
   }
 }

@@ -1,9 +1,45 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.24.4",
-  "description": "Contact library",
+  "version": "7.0.7",
+  "description": "contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/contact-list": "7.0.7",
+    "react": "^18.2.0",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/hooks-dom": "7.0.7",
+    "react-intersection-observer": "^9.5.3",
+    "@emailjs/browser": "^3.12.1",
+    "@brysonandrew/utils-object": "7.0.7",
+    "@brysonandrew/icons": "7.0.7",
+    "@brysonandrew/icons-i": "7.0.7",
+    "@brysonandrew/app": "7.0.7",
+    "clsx": "^1.2.1",
+    "@brysonandrew/motion-cursor": "7.0.7",
+    "@brysonandrew/motion-core": "7.0.7",
+    "@brysonandrew/utils": "7.0.7",
+    "@brysonandrew/utils-attributes": "7.0.7",
+    "@brysonandrew/motion-scroll": "7.0.7",
+    "@brysonandrew/viewport": "7.0.7"
+  },
   "exports": {
     "./ContactProvider": "./ContactProvider.tsx",
     ".": {
@@ -29,41 +65,7 @@
     "./form/input/useFocus": "./form/input/useFocus.ts",
     "./form/input/textarea": "./form/input/textarea/index.tsx",
     "./form/input/textarea/autosize": "./form/input/textarea/autosize/index.tsx",
-    "./form/input/textarea/autosize/useAutosize": "./form/input/textarea/autosize/useAutosize.ts"
-  },
-  "scripts": {
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "peerDependencies": {
-    "@brysonandrew/contact-list": "*",
-    "react": "^18.2.0",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/hooks-dom": "*",
-    "react-intersection-observer": "^9.5.3",
-    "@emailjs/browser": "^3.12.1",
-    "@brysonandrew/utils-object": "*",
-    "@brysonandrew/icons": "*",
-    "@brysonandrew/app": "*",
-    "clsx": "^1.2.1",
-    "@brysonandrew/cursor": "*",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/scroll": "*",
-    "@brysonandrew/viewport": "*"
+    "./form/input/textarea/autosize/useAutosize": "./form/input/textarea/autosize/useAutosize.ts",
+    "./list/Item": "./list/Item.tsx"
   }
 }

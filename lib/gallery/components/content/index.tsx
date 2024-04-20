@@ -10,7 +10,7 @@ import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCur
 import { useDelayCallback } from '@brysonandrew/hooks-window/useDelayCallback';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useApp } from '@brysonandrew/app';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 
 type TProps<T extends string> = TSlugProps<T> &
   TDivMotionProps & {

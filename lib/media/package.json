@@ -1,24 +1,9 @@
 {
   "name": "@brysonandrew/media",
-  "version": "6.24.4",
-  "description": "Media library",
+  "version": "7.0.7",
+  "description": "media library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts",
-    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
-    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
-    "./picture": "./picture/index.tsx",
-    "./utils/resolveAspectRatio": "./utils/resolveAspectRatio.ts",
-    "./utils/resolveDimensions": "./utils/resolveDimensions.ts",
-    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -36,11 +21,24 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "sharp": "^0.32.6",
+    "@brysonandrew/measure": "7.0.7",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config/constants": "./config/constants.ts",
+    "./config/types": "./config/types.ts",
+    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
+    "./picture": "./picture/index.tsx",
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
   }
 }

@@ -1,19 +1,9 @@
 {
   "name": "@brysonandrew/layout-effects",
-  "version": "6.24.4",
-  "description": "Layout Effects library",
+  "version": "7.0.7",
+  "description": "layout-effects library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./Brighten": "./Brighten.tsx",
-    "./Glow": "./Glow.tsx",
-    "./Invert": "./Invert.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,7 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "@brysonandrew/filter-animate": "*"
+    "@brysonandrew/motion-filter": "7.0.7",
+    "react": "^18.2.0"
+  },
+  "exports": {
+    "./Brighten": "./Brighten.tsx",
+    "./Glow": "./Glow.tsx",
+    "./Invert": "./Invert.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
   }
 }

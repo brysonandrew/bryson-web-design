@@ -1,18 +1,9 @@
 {
   "name": "@brysonandrew/layout-lists",
-  "version": "6.24.4",
-  "description": "Layout Lists library",
+  "version": "7.0.7",
+  "description": "layout-lists library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./List": "./List.tsx",
-    "./TickList": "./TickList.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -30,11 +21,20 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
-    "@brysonandrew/icons-i": "*",
-    "@brysonandrew/icons-keys": "*",
+    "@brysonandrew/icons-i": "7.0.7",
+    "@brysonandrew/icons-keys": "7.0.7",
     "clsx": "^1.2.1"
+  },
+  "exports": {
+    "./List": "./List.tsx",
+    "./TickList": "./TickList.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
   }
 }

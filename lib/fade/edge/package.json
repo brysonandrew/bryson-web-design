@@ -1,0 +1,47 @@
+{
+  "name": "@brysonandrew/fade-edge",
+  "version": "7.0.7",
+  "description": "fade-edge library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/fade-core": "7.0.7",
+    "react": "^18.2.0",
+    "clsx": "^1.2.1",
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./pairs/FadeDownPair": "./pairs/FadeDownPair.tsx",
+    "./pairs/FadeEdgePair": "./pairs/FadeEdgePair.tsx",
+    "./pairs/FadeLeftPair": "./pairs/FadeLeftPair.tsx",
+    "./pairs/FadeMidPair": "./pairs/FadeMidPair.tsx",
+    "./pairs/FadePair": "./pairs/FadePair.tsx",
+    "./pairs/FadeRightPair": "./pairs/FadeRightPair.tsx",
+    "./pairs/FadeUpPair": "./pairs/FadeUpPair.tsx",
+    "./pairs/FadeV": "./pairs/FadeV.tsx",
+    "./vertical-edges/Bottom": "./vertical-edges/Bottom.tsx",
+    "./vertical-edges/Top": "./vertical-edges/Top.tsx",
+    "./vertical-edges": "./vertical-edges/index.tsx"
+  }
+}

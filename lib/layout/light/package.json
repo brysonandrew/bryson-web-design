@@ -1,21 +1,9 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.24.4",
-  "description": "Layout Light library",
+  "version": "7.0.7",
+  "description": "layout-light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./withLight": "./withLight.tsx",
-    "./config/types": "./config/types.ts",
-    "./marker/Motion": "./marker/Motion.tsx",
-    "./marker": "./marker/index.tsx",
-    "./marker/markerProps": "./marker/markerProps.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -34,11 +22,23 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/app": "*",
+    "@brysonandrew/app": "7.0.7",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/color-glow": "*",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/filter-animate": "*"
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/motion-filter": "7.0.7",
+    "@brysonandrew/css-format": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./withLight": "./withLight.tsx",
+    "./config/types": "./config/types.ts",
+    "./marker/Motion": "./marker/Motion.tsx",
+    "./marker": "./marker/index.tsx",
+    "./marker/markerProps": "./marker/markerProps.ts"
   }
 }

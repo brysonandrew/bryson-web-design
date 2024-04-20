@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useCurrParams } from '@brysonandrew/gallery-viewer/hooks/params/useCurrParams';
 import { TBaseProps } from '../ready/types';
 import { useX } from './motion/useX';
-import { DURATION } from '@brysonandrew/animation';
+import { DURATION } from '@brysonandrew/motion-core';
 
 type TConfig = Pick<
   TBaseProps,

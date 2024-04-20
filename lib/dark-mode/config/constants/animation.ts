@@ -1,7 +1,7 @@
 import {
   TBezierDefinition,
   TTransition,
-} from '@brysonandrew/animation';
+} from '@brysonandrew/motion-core';
 
 export const DARK_MODE_DURATION_MS = 1000;
 export const DARK_MODE_DURATION =

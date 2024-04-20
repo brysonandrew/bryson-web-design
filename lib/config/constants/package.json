@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/config-constants",
-  "version": "6.24.4",
-  "description": "Config Constants library",
+  "version": "7.0.7",
+  "description": "config-constants library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -27,8 +20,21 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {
-    "@brysonandrew/config-constants-fonts": "*",
-    "@brysonandrew/config-constants-number": "*"
+  "peerDependencies": {},
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./fonts": "./fonts/index.ts",
+    "./number": "./number/index.ts",
+    "./number/series": "./number/series.ts",
+    "./fonts/bunny/categories": "./fonts/bunny/categories.ts",
+    "./fonts/bunny/fonts": "./fonts/bunny/fonts.ts",
+    "./fonts/bunny/names": "./fonts/bunny/names.ts",
+    "./fonts/google/categories": "./fonts/google/categories.ts",
+    "./fonts/google/fonts": "./fonts/google/fonts.ts",
+    "./fonts/google/names": "./fonts/google/names.ts"
   }
 }

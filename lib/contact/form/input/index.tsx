@@ -1,5 +1,3 @@
-import { TBaseInputProps } from '../../config/types';
-import { Name } from './Name';
 import {
   TBaseChildren,
   TChildren,
@@ -18,11 +16,13 @@ import { Clear } from '@brysonandrew/contact/form/input/Clear';
 import {
   useHoverKey,
   BIG_CURSOR_KEY,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion-cursor';
 import { AnimatePresence } from 'framer-motion';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { TBaseInputProps } from '@brysonandrew/contact/config/types';
+import { Name } from '@brysonandrew/contact/form/input/Name';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-core';
 
 type TProps<
   T extends HTMLElement,

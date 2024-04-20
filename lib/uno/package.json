@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "6.24.4",
-  "description": "Uno library",
+  "version": "7.0.7",
+  "description": "uno library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -32,7 +25,40 @@
     "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-shortcuts": "*",
-    "@brysonandrew/uno-spacing": "*",
-    "@brysonandrew/uno-theme": "*"
+    "@brysonandrew/uno-theme": "*",
+    "@brysonandrew/uno-spacing": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./preflights/reset": "./preflights/reset.ts",
+    "./preflights/resolveInput": "./preflights/resolveInput.ts",
+    "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
+    "./presets/resolveFonts": "./presets/resolveFonts.ts",
+    "./presets/resolvePresets": "./presets/resolvePresets.ts",
+    "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
+    "./presets/config/types": "./presets/config/types.ts",
+    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
+    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
+    "./shortcuts/background": "./shortcuts/background.ts",
+    "./shortcuts/flex": "./shortcuts/flex.ts",
+    "./shortcuts/interactive": "./shortcuts/interactive.ts",
+    "./shortcuts/layout": "./shortcuts/layout.ts",
+    "./shortcuts/opacity": "./shortcuts/opacity.ts",
+    "./shortcuts/neu/constants": "./shortcuts/neu/constants.ts",
+    "./shortcuts/neu/format": "./shortcuts/neu/format.ts",
+    "./shortcuts/neu/mappers": "./shortcuts/neu/mappers.ts",
+    "./shortcuts/neu/number": "./shortcuts/neu/number.ts",
+    "./shortcuts/neu/resolveHsl": "./shortcuts/neu/resolveHsl.ts",
+    "./shortcuts/neu/resolveNeuClasses": "./shortcuts/neu/resolveNeuClasses.ts",
+    "./shortcuts/neu/resolveNeuShadow": "./shortcuts/neu/resolveNeuShadow.ts",
+    "./shortcuts/neu/types": "./shortcuts/neu/types.ts",
+    "./shortcuts/text/color": "./shortcuts/text/color.ts",
+    "./shortcuts/text": "./shortcuts/text/index.ts",
+    "./shortcuts/neu/ranges": "./shortcuts/neu/ranges/index.ts",
+    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts"
   }
 }

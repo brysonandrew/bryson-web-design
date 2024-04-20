@@ -5,7 +5,6 @@ import {
   TLayoutRecordValue,
   TPartialLayoutOptionsRecord,
 } from './layout';
-import { DEFAULT_STYLE } from '../constants/style';
 import {
   TChildrenHandlerProps,
   TPropsWithChildren,
@@ -14,6 +13,7 @@ import {
 } from '@brysonandrew/config-types';
 import { TState } from '@brysonandrew/config-types/state';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
+import { DEFAULT_STYLE } from '@brysonandrew/app/config/constants';
 
 export type TPartialDefaultApp = TPartialDefaultStyle &
   TPartialLayoutOptionsRecord;

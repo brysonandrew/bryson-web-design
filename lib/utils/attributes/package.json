@@ -1,19 +1,9 @@
 {
   "name": "@brysonandrew/utils-attributes",
-  "version": "6.24.4",
-  "description": "Utils Attributes library",
+  "version": "7.0.7",
+  "description": "utils-attributes library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./resolveInteractiveHrefLabels": "./resolveInteractiveHrefLabels.ts",
-    "./resolveInteractiveLabels": "./resolveInteractiveLabels.ts",
-    "./resolveUrlId": "./resolveUrlId.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,6 +21,16 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveInteractiveHrefLabels": "./resolveInteractiveHrefLabels.ts",
+    "./resolveInteractiveLabels": "./resolveInteractiveLabels.ts",
+    "./resolveUrlId": "./resolveUrlId.ts"
   }
 }

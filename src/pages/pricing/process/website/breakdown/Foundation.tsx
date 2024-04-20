@@ -1,6 +1,6 @@
 import { Item } from '@pages/pricing/process/focus/Item';
 import { Circle } from '@pages/pricing/process/focus/Circle';
-import { useCursor } from '@brysonandrew/cursor';
+import { useCursor } from 'lib/motion/cursor';
 import { List } from '@brysonandrew/layout-lists/List';
 import { FOUNDATION } from '@pages/pricing/process/website/config';
 

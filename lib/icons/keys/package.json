@@ -1,9 +1,28 @@
 {
   "name": "@brysonandrew/icons-keys",
-  "version": "6.24.4",
-  "description": "Icons Keys library",
+  "version": "7.0.7",
+  "description": "icons-keys library",
   "main": "./index.ts",
   "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@iconify/react": "^4.1.1"
+  },
   "exports": {
     "./base": "./base.ts",
     "./clipboard": "./clipboard.ts",
@@ -24,24 +43,5 @@
     "./square": "./square.ts",
     "./text": "./text.ts",
     "./config/types": "./config/types.ts"
-  },
-  "scripts": {
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "peerDependencies": {
-    "@iconify/react": "^4.1.1"
   }
 }

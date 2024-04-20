@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/network",
-  "version": "6.24.4",
-  "description": "Network library",
+  "version": "7.0.7",
+  "description": "network library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -23,10 +23,10 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/icons-i": "*",
-    "@brysonandrew/icons-keys": "*",
-    "@brysonandrew/hooks-events": "*"
+    "@brysonandrew/motion-core": "7.0.7",
+    "@brysonandrew/icons-i": "7.0.7",
+    "@brysonandrew/icons-keys": "7.0.7",
+    "@brysonandrew/hooks-events": "7.0.7"
   },
   "exports": {
     "./NetworkProvider": "./NetworkProvider.tsx",

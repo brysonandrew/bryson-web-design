@@ -9,9 +9,6 @@ import {
 } from '@brysonandrew/config-types/dom';
 import { TMediaRecord } from '@brysonandrew/media';
 
-const Source = styled.source``;
-const Img = styled(motion.img)``;
-
 type TProps = TImgMotionProps &
   TClassValueProps & {
     mediaRecord: TMediaRecord;
@@ -29,13 +26,13 @@ export const Picture: FC<TProps> = ({
   return (
     <picture>
       {sources.map((sourceProps: TSource) => (
-        <Source
+        <source
           key={sourceProps.srcSet}
           {...sourceProps}
           srcSet={`/${sourceProps.srcSet}`}
         />
       ))}
-      <Img
+      <motion.img
         ref={imageRef}
         className={clsx(classValue)}
         src={src}

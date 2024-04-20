@@ -3,8 +3,8 @@ import { Range } from '../../components/Inputs';
 import clsx from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
 import { I } from '@brysonandrew/icons-i';
-import { resolveBoxShadow } from '@brysonandrew/color';
 import { TState } from '@brysonandrew/config-types';
+import { formatShadow } from '@brysonandrew/css-format';
 
 const Root = styled.label``;
 
@@ -30,7 +30,7 @@ export const Item: FC<TProps> = ({
       </div>
       <div className='relative row gap-2'>
         <Range
-          style={{ boxShadow: resolveBoxShadow('white') }}
+          style={{ boxShadow: formatShadow('white') }}
           type='range'
           value={value}
           onChange={({ currentTarget: { value } }) =>

@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "6.24.4",
-  "description": "Layout library",
+  "version": "7.0.7",
+  "description": "layout library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -30,13 +23,54 @@
   "peerDependencies": {
     "@brysonandrew/layout-back": "*",
     "@brysonandrew/layout-blank": "*",
-    "@brysonandrew/layout-lists": "*",
-    "@brysonandrew/layout-light": "*",
     "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/layout-placeholder": "*",
+    "@brysonandrew/layout-light": "*",
     "@brysonandrew/layout-line": "*",
+    "@brysonandrew/layout-lists": "*",
+    "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-section": "*",
     "@brysonandrew/layout-typography": "*",
     "@brysonandrew/layout-utils": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./back/Blur": "./back/Blur.tsx",
+    "./back/Fill": "./back/Fill.tsx",
+    "./back/Screen": "./back/Screen.tsx",
+    "./back/config/types": "./back/config/types.ts",
+    "./back/motion/Blur": "./back/motion/Blur.tsx",
+    "./back/motion/Fill": "./back/motion/Fill.tsx",
+    "./back/motion": "./back/motion/index.tsx",
+    "./blank/config/types": "./blank/config/types.ts",
+    "./blank/motion": "./blank/motion/index.tsx",
+    "./effects/Brighten": "./effects/Brighten.tsx",
+    "./effects/Glow": "./effects/Glow.tsx",
+    "./effects/Invert": "./effects/Invert.tsx",
+    "./light/withLight": "./light/withLight.tsx",
+    "./light/config/types": "./light/config/types.ts",
+    "./light/marker/Motion": "./light/marker/Motion.tsx",
+    "./light/marker": "./light/marker/index.tsx",
+    "./light/marker/markerProps": "./light/marker/markerProps.ts",
+    "./line/Line": "./line/Line.tsx",
+    "./line/ThickLine": "./line/ThickLine.tsx",
+    "./line/ThinLine": "./line/ThinLine.tsx",
+    "./line/ThinLineGrow": "./line/ThinLineGrow.tsx",
+    "./lists/List": "./lists/List.tsx",
+    "./lists/TickList": "./lists/TickList.tsx",
+    "./typography/Letter": "./typography/Letter.tsx",
+    "./typography/Sub": "./typography/Sub.tsx",
+    "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
+    "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
+    "./typography/animation/Word": "./typography/animation/Word.tsx",
+    "./typography/animation": "./typography/animation/index.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
+    "./utils/arrToChainedValueNest": "./utils/arrToChainedValueNest.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx"
   }
 }

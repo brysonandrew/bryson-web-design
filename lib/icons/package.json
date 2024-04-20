@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "6.24.4",
-  "description": "Icons library",
+  "version": "7.0.7",
+  "description": "icons library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,5 +24,28 @@
     "@brysonandrew/icons-i": "*",
     "@brysonandrew/icons-load": "*",
     "@brysonandrew/icons-keys": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./i/config/types": "./i/config/types.ts",
+    "./load/usePreloadIcons": "./load/usePreloadIcons.ts",
+    "./keys/base": "./keys/base.ts",
+    "./keys/clipboard": "./keys/clipboard.ts",
+    "./keys/contact": "./keys/contact.ts",
+    "./keys/crud": "./keys/crud.ts",
+    "./keys/directions": "./keys/directions.ts",
+    "./keys/gallery": "./keys/gallery.ts",
+    "./keys/general": "./keys/general.ts",
+    "./keys/image": "./keys/image.ts",
+    "./keys/inputs": "./keys/inputs.ts",
+    "./keys/links": "./keys/links.ts",
+    "./keys/shop": "./keys/shop.ts",
+    "./keys/square": "./keys/square.ts",
+    "./keys/text": "./keys/text.ts",
+    "./keys/config/types": "./keys/config/types.ts"
   }
 }

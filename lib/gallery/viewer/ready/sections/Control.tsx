@@ -1,12 +1,11 @@
 import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
-import { TBaseProps } from '@brysonandrew/gallery';
-import { useScroll } from '@brysonandrew/scroll';
+import { TBaseProps, useCurrName } from '@brysonandrew/gallery';
+import { useScroll } from '@brysonandrew/motion-scroll';
 import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { useCurrName } from '../../hooks/params/useCurrName';
 
 type TProps = Pick<TBaseProps, 'width'> & {
   index: number;

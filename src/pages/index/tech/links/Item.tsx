@@ -1,10 +1,10 @@
 import { MotionValue } from 'framer-motion';
 import type { FC } from 'react';
-import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
+import { CUSTOM_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { formatUrl } from '@brysonandrew/utils-format/url';
-import { Visit } from '@brysonandrew/cursor/switch/format/Visit';
+import { Visit } from 'lib/motion/cursor/switch/format/Visit';
 import { AURA } from '@brysonandrew/svg-filter';
 import {
   TDivProps,

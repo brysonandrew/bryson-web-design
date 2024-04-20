@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@brysonandrew/layout-section';
-import { Parallax } from '@brysonandrew/parallax';
+import { Parallax } from 'lib/motion/parallax';
 import { PARALLAX_PROPS } from './config/constants';
 import { BuildProvider } from '@pages/index/build/BuildProvider';
 import { SECTION_RECORD } from '@app/routes';

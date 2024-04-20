@@ -1,8 +1,8 @@
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion-core';
 import {
   CUSTOM_CURSOR_KEY,
   useCursor,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion-cursor';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@brysonandrew/gallery-viewer/tips/Touch';
 import { P2 } from '@brysonandrew/space/P2';
@@ -12,7 +12,7 @@ import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCur
 import { useApp } from '@brysonandrew/app';
 import { Fragment } from 'react';
 import { InView } from '@brysonandrew/in-view';
-import { GALLERY_ICON } from '@brysonandrew/icons';
+import { GALLERY_ICON } from '@brysonandrew/icons-keys';
 
 export const Tips = () => {
   const { COLOR, GLOW_BOX, BORDER_RADIUS } = useApp();

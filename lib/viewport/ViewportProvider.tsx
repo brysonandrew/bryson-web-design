@@ -8,7 +8,7 @@ import {
   useMeasure,
   TViewport,
   INIT_VIEWPORT,
-} from './useMeasure';
+} from './use-measure';
 import { TContext } from '@brysonandrew/viewport/config/types';
 
 const INIT: TContext = {

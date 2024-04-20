@@ -1,4 +1,4 @@
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { GALLERY_ICON } from '@brysonandrew/icons-keys/gallery';
 import { kebabToTitle } from '@brysonandrew/utils-format';
 

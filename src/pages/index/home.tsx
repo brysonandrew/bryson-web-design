@@ -11,7 +11,7 @@ const ViewerLazy = lazy(
   () => import('@brysonandrew/gallery-viewer'),
 );
 
-export const Home = () => {
+export const Index = () => {
   return (
     <>
       <Build />

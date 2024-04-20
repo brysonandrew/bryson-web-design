@@ -1,19 +1,9 @@
 {
   "name": "@brysonandrew/uno-preflights",
-  "version": "6.24.4",
-  "description": "Uno Preflights library",
+  "version": "7.0.7",
+  "description": "uno-preflights library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./reset": "./reset.ts",
-    "./resolveInput": "./resolveInput.ts",
-    "./resolveScrollbar": "./resolveScrollbar.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -32,5 +22,15 @@
   ],
   "peerDependencies": {
     "unocss": "^0.53.6"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./reset": "./reset.ts",
+    "./resolveInput": "./resolveInput.ts",
+    "./resolveScrollbar": "./resolveScrollbar.ts"
   }
 }

@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "6.24.4",
-  "description": "Texture library",
+  "version": "7.0.7",
+  "description": "texture library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,5 +22,14 @@
   ],
   "peerDependencies": {
     "@brysonandrew/texture-metal": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./metal/css": "./metal/css.ts",
+    "./metal/motion": "./metal/motion/index.tsx"
   }
 }

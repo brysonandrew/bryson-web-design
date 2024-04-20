@@ -1,20 +1,9 @@
 {
   "name": "@brysonandrew/layout-line",
-  "version": "6.24.4",
-  "description": "Layout Line library",
+  "version": "7.0.7",
+  "description": "layout-line library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./Line": "./Line.tsx",
-    "./ThickLine": "./ThickLine.tsx",
-    "./ThinLine": "./ThinLine.tsx",
-    "./ThinLineGrow": "./ThinLineGrow.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -32,11 +21,22 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/animation": "*"
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/motion-core": "7.0.7"
+  },
+  "exports": {
+    "./Line": "./Line.tsx",
+    "./ThickLine": "./ThickLine.tsx",
+    "./ThinLine": "./ThinLine.tsx",
+    "./ThinLineGrow": "./ThinLineGrow.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
   }
 }

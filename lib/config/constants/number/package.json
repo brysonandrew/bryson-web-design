@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/config-constants-number",
-  "version": "6.24.4",
-  "description": "Config Constants Number library",
+  "version": "7.0.7",
+  "description": "config-constants-number library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./series": "./series.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -28,5 +20,13 @@
     "react",
     "typescript"
   ],
-  "peerDependencies": {}
+  "peerDependencies": {},
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./series": "./series.ts"
+  }
 }

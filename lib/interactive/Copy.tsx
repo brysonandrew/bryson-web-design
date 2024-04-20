@@ -2,7 +2,7 @@ import { TTitleProps } from '@brysonandrew/config-types';
 import {
   CUSTOM_CURSOR_KEY,
   useHoverKey,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion-cursor';
 import { COPY_ICON } from '@brysonandrew/icons-keys';
 import { BSm } from '@brysonandrew/interactive/base/BSm';
 import { TClipboardState } from '@brysonandrew/notifications';

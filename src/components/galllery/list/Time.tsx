@@ -1,4 +1,4 @@
-import { formateShortDate } from '@brysonandrew/utils';
+import { formateShortDate } from '@brysonandrew/utils-format';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';

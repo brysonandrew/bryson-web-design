@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { TICK_ICON } from '@brysonandrew/icons-keys/inputs';
 import { motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion-core';
 import { TNotificationsConfig } from '@brysonandrew/notifications/config/types';
 import { I } from '@brysonandrew/icons-i';
 import { useDelayCallbackHandler } from '@brysonandrew/hooks-window';

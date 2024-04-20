@@ -1,33 +1,9 @@
 {
   "name": "@brysonandrew/uno-shortcuts",
-  "version": "6.24.4",
-  "description": "Uno Shortcuts library",
+  "version": "7.0.7",
+  "description": "uno-shortcuts library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./background": "./background.ts",
-    "./flex": "./flex.ts",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./interactive": "./interactive.ts",
-    "./layout": "./layout.ts",
-    "./opacity": "./opacity.ts",
-    "./text/color": "./text/color.ts",
-    "./text": "./text/index.ts",
-    "./neu/constants": "./neu/constants.ts",
-    "./neu/format": "./neu/format.ts",
-    "./neu/mappers": "./neu/mappers.ts",
-    "./neu/number": "./neu/number.ts",
-    "./neu/resolveHsl": "./neu/resolveHsl.ts",
-    "./neu/resolveNeuClasses": "./neu/resolveNeuClasses.ts",
-    "./neu/resolveNeuShadow": "./neu/resolveNeuShadow.ts",
-    "./neu/types": "./neu/types.ts",
-    "./neu/ranges": "./neu/ranges/index.ts",
-    "./neu/ranges/resolveRange": "./neu/ranges/resolveRange.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -46,5 +22,29 @@
   ],
   "peerDependencies": {
     "unocss": "^0.53.6"
+  },
+  "exports": {
+    "./background": "./background.ts",
+    "./flex": "./flex.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./interactive": "./interactive.ts",
+    "./layout": "./layout.ts",
+    "./opacity": "./opacity.ts",
+    "./neu/constants": "./neu/constants.ts",
+    "./neu/format": "./neu/format.ts",
+    "./neu/mappers": "./neu/mappers.ts",
+    "./neu/number": "./neu/number.ts",
+    "./neu/resolveHsl": "./neu/resolveHsl.ts",
+    "./neu/resolveNeuClasses": "./neu/resolveNeuClasses.ts",
+    "./neu/resolveNeuShadow": "./neu/resolveNeuShadow.ts",
+    "./neu/types": "./neu/types.ts",
+    "./text/color": "./text/color.ts",
+    "./text": "./text/index.ts",
+    "./neu/ranges": "./neu/ranges/index.ts",
+    "./neu/ranges/resolveRange": "./neu/ranges/resolveRange.ts"
   }
 }

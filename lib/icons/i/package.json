@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/icons-i",
-  "version": "6.24.4",
-  "description": "Icons I library",
+  "version": "7.0.7",
+  "description": "icons-i library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./config/types": "./config/types.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -32,6 +24,14 @@
     "react": "^18.2.0",
     "clsx": "^1.2.1",
     "@iconify/react": "^4.1.1",
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./config/types": "./config/types.ts"
   }
 }

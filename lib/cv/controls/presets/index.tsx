@@ -1,13 +1,14 @@
-import { CV_PRESETS } from '@app/copy';
 import { TState } from '@brysonandrew/config-types';
 import { TChangeEvent } from '@brysonandrew/contact';
 
-type TProps<T extends string> = {
+type TProps<T extends string, V extends object> = {
   presetState: TState<T | null>;
+  presetsEntries: [T,V][];
 };
-export const CvControlsPresets = <T extends string>({
+export const CvControlsPresets = <T extends string, V extends object>({
   presetState: [preset, setPreset],
-}: TProps<T>) => {
+  presetsEntries
+}: TProps<T,V>) => {
   const handleChange = ({
     currentTarget: { name, value },
   }: TChangeEvent) => {
@@ -17,7 +18,7 @@ export const CvControlsPresets = <T extends string>({
     <div className='column-start gap-2 bg-black text-white text-sm py-8 px-12'>
       <div className='font-semibold'>Presets</div>
       <ul>
-        {CV_PRESETS.map(([key]) => {
+        {presetsEntries.map(([key]) => {
           return (
             <li key={key}>
               <label className='row gap-1'>

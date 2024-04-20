@@ -1,18 +1,10 @@
 {
   "name": "@brysonandrew/not-found",
-  "version": "6.24.4",
-  "description": "Routes Not Found library",
+  "version": "7.0.7",
+  "description": "routes-not-found library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./RedirectLink": "./RedirectLink.tsx",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,9 +23,17 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "react-router-dom": "^6.21.3",
-    "@brysonandrew/app": "*",
+    "@brysonandrew/app": "7.0.7",
     "react-router": "^6.21.1"
+  },
+  "exports": {
+    "./RedirectLink": "./RedirectLink.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

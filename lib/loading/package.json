@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/loading",
-  "version": "6.24.4",
-  "description": "Loading library",
+  "version": "7.0.7",
+  "description": "loading library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./Loading": "./Loading.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,9 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0"
+  },
+  "exports": {
+    "./Loading": "./Loading.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
   }
 }

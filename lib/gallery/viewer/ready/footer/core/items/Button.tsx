@@ -10,7 +10,7 @@ import { Background } from '@brysonandrew/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { useApp } from '@brysonandrew/app';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { Glow } from '@brysonandrew/layout-effects';
 
 const Link = styled(motion(_Link))``;

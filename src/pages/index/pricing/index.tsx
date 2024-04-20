@@ -1,4 +1,4 @@
-import { Parallax } from '@brysonandrew/parallax';
+import { Parallax } from 'lib/motion/parallax';
 import { Main } from '@pages/pricing/Main';
 import { PARALLAX_PROPS } from './config/constants';
 import { Section } from '@brysonandrew/layout-section';
