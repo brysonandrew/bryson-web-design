@@ -1,2 +1,0 @@
-export const MOTION_BLUR_ID = 'MOTION_BLUR_ID';
-export const MOTION_BLUR_INTENSITY = 200;

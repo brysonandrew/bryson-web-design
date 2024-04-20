@@ -1,8 +1,8 @@
-import { TFilterAnimateProps, FilterAnimate } from '@brysonandrew/filter-animate';
+import { TFilterAnimateProps, FilterAnimate } from '@brysonandrew/motion/filter';
 import {
   TPartialInvertConfigOptions,
   resolveInvertProps,
-} from '@brysonandrew/filter-animate/utils/invert';
+} from '@brysonandrew/motion/filter/utils/invert';
 import { FC } from 'react';
 
 export type TInvertProps = TPartialInvertConfigOptions &

@@ -1,4 +1,4 @@
-import { resolveAnimation } from '@brysonandrew/animation';
+import { resolveAnimation } from '@brysonandrew/motion';
 
 const presenceConfigs = [
   { fade: [] },
@@ -104,4 +104,4 @@ export const resolvePresence = resolvers.resolvePresence;
 export const resolveParentAnimateConfig =
   resolvers.resolveParentAnimateConfig;
 
-export * from '@brysonandrew/animation';
+export * from 'lib/motion/core/config';

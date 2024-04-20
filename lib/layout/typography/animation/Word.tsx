@@ -1,4 +1,4 @@
-import { PRESENCE_UP_Y } from '@brysonandrew/animation';
+import { PRESENCE_UP_Y } from '@brysonandrew/motion/core/config';
 import { motion } from 'framer-motion';
 import { FC, useMemo } from 'react';
 import { Stagger } from './Stagger';

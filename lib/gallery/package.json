@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Gallery library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -50,7 +50,7 @@
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/animation": "*"
+    "@brysonandrew/motion": "*"
   },
   "types": "index.d.ts"
 }

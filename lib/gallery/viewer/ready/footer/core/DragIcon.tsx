@@ -2,9 +2,9 @@ import { Drag } from '@brysonandrew/gallery-viewer/icons/Drag';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useHoverKey } from '@brysonandrew/cursor';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { useHoverKey } from '@brysonandrew/motion/cursor';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion/core/config';
 import { TDivMotionProps } from '@brysonandrew/config-types';
 import { Glow } from '@brysonandrew/layout-effects';
 

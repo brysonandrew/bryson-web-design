@@ -6,8 +6,8 @@ import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
 import { useContact } from '@brysonandrew/contact';
-import { useHoverKey } from '@brysonandrew/cursor';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { useHoverKey } from 'lib/motion/cursor';
+import { CUSTOM_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import { TPricingTitle } from '@pages/pricing/config/types';
 import { TickList } from '@brysonandrew/layout-lists/TickList';
@@ -15,7 +15,7 @@ import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';
 import { Cursor } from './Cursor';
 import { PAGE_RECORDS } from '@app/routes';
-import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
+import { FadeDownPair } from '@brysonandrew/fade/edge/pairs/FadeDownPair';
 import { TApp } from '@shell/providers';
 
 export type TPackageProps = Pick<

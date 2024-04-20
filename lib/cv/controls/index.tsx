@@ -1,3 +1,5 @@
+
+
 import { CvControlsInvert } from '@brysonandrew/cv/controls/invert';
 import { CvControlsPresets } from '@brysonandrew/cv/controls/presets';
 import { PrintInstructions } from '@brysonandrew/cv/controls/print-instructions';
@@ -8,14 +10,16 @@ type TControls<T extends string> = {
   preset: null | T;
 };
 
-type TProps<T extends string> = {
+type TProps<T extends string, V extends object> = {
   initPreset?: T | null;
+  presetsEntries: [T,V][];
   children(controls: TControls<T>): void;
 };
-export const Controls = <T extends string>({
+export const CvControls = <T extends string, V extends object>({
   initPreset = null,
+  presetsEntries,
   children,
-}: TProps<T>) => {
+}: TProps<T,V>) => {
   const invertState = useState(0);
   const [invert] = invertState;
   const filter = `invert(${invert}%)` as const;
@@ -28,7 +32,7 @@ export const Controls = <T extends string>({
       <div className='row-start gap-4'>
         <div className='row-start gap-4' style={{ filter }}>
           <CvControlsInvert invertState={invertState} />
-          <CvControlsPresets<T> presetState={presetState} />
+          <CvControlsPresets<T,V> presetState={presetState} presetsEntries={presetsEntries} />
           <PrintInstructions />
         </div>
       </div>

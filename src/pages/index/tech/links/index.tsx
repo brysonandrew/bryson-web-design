@@ -1,7 +1,7 @@
 import { Plus } from '@pages/index/tech/icons/Plus';
 import type { FC } from 'react';
 import { Item } from './Item';
-import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
 import { Transform } from './Transform';
 import { TECH } from '@pages/index/tech/config/constants';
 

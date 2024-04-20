@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact-list",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Contact Contact List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -30,7 +30,7 @@
   ],
   "peerDependencies": {
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/cursor": "*",
+    "@brysonandrew/motion": "*",
     "@brysonandrew/icons": "*",
     "@brysonandrew/interactive": "*",
     "@brysonandrew/notifications": "*",

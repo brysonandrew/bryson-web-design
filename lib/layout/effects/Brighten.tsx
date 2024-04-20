@@ -2,8 +2,8 @@ import { FC } from 'react';
 import {
   TPartialBrightenConfigOptions,
   resolveBrightenProps,
-} from '@brysonandrew/filter-animate/utils/brighten';
-import { FilterAnimate } from '@brysonandrew/filter-animate';
+} from '@brysonandrew/motion/filter/utils/brighten';
+import { FilterAnimate } from '@brysonandrew/motion/filter';
 
 export const Brighten: FC<
   TPartialBrightenConfigOptions

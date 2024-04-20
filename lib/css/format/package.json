@@ -1,0 +1,42 @@
+{
+  "name": "@brysonandrew/css-format",
+  "version": "6.24.21",
+  "description": "Css Format library",
+  "types": "/index.d.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./filter/blur": "./filter/blur.ts",
+    "./filter/brightness": "./filter/brightness.ts",
+    "./filter/drop-shadow": "./filter/drop-shadow.ts",
+    "./filter/grayscale": "./filter/grayscale.ts",
+    "./filter": "./filter/index.ts",
+    "./shadow": "./shadow/index.ts",
+    "./filter/presets": "./filter/presets/index.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/color-base": "*",
+    "@brysonandrew/css": "*"
+  }
+}

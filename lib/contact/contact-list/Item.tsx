@@ -2,7 +2,7 @@ import { TClassValueProps } from '@brysonandrew/config-types';
 import {
   useHoverKey,
   CUSTOM_CURSOR_KEY,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion/cursor';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
 import { TextAnchor } from '@brysonandrew/interactive';
 import { Copy } from '@brysonandrew/interactive/Copy';

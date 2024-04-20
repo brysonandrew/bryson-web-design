@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
 import { Contact } from '@brysonandrew/contact';
 import { CONTACT_FORM_FOOTER } from '@app/copy';
 

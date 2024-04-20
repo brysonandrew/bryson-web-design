@@ -10,7 +10,7 @@ import { Close } from '../../buttons/Close';
 import { Content } from '@brysonandrew/gallery';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { useApp } from '@brysonandrew/app';
-import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/motion/core/config';
 
 type TProps = TDivMotionProps &
   TSlugProps &

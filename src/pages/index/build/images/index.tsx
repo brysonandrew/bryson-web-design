@@ -1,10 +1,10 @@
 import { useBuild } from '@pages/index/build/BuildProvider';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TPartialParallaxMotionProps } from '@brysonandrew/parallax/config';
+import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
-import { useScroll } from '@brysonandrew/scroll';
+import { useScroll } from 'lib/motion/scroll';
 import { useViewport } from '@brysonandrew/viewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';

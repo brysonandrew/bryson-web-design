@@ -1,8 +1,8 @@
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion/core/config';
 import {
   CUSTOM_CURSOR_KEY,
   useCursor,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion/cursor';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Touch } from '@brysonandrew/gallery-viewer/tips/Touch';
 import { P2 } from '@brysonandrew/space/P2';

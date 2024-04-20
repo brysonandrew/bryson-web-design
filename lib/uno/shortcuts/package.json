@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-shortcuts",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Uno Shortcuts library",
   "main": "./index.ts",
   "module": "./index.ts",

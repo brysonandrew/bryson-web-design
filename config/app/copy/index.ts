@@ -1,3 +1,4 @@
+
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { TTitle } from '@app/gallery/types';
 import { arrToRecord } from '@brysonandrew/utils-object/arrToRecord';
@@ -47,11 +48,13 @@ export const CV_PRESETS_RECORD = {
 
 type TPresetRecord = typeof CV_PRESETS_RECORD;
 export type TPresetName = keyof TPresetRecord;
+export type TPresetValue = TPresetRecord[TPresetName];
+
 type TPresetEntry = [
   TPresetName,
-  TPresetRecord[TPresetName],
+  TPresetValue
 ];
-type TPresetEntries = TPresetEntry[];
+export type TPresetEntries = TPresetEntry[];
 
 export const CV_PRESETS = Object.entries(
   CV_PRESETS_RECORD,

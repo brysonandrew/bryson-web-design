@@ -1,0 +1,42 @@
+{
+  "name": "@brysonandrew/fade-core",
+  "version": "6.24.21",
+  "description": "Fade Core library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    "./FadeDown": "./FadeDown.tsx",
+    "./FadeFill": "./FadeFill.tsx",
+    "./FadeLeft": "./FadeLeft.tsx",
+    "./FadeRight": "./FadeRight.tsx",
+    "./FadeUp": "./FadeUp.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "@brysonandrew/color-gradient": "*",
+    "@brysonandrew/config-types": "*",
+    "framer-motion": "^10.18.0"
+  }
+}

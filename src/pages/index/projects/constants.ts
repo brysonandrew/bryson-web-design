@@ -1,7 +1,7 @@
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from '@brysonandrew/parallax/config';
+} from 'lib/motion/parallax/config';
 
 export const PARALLAX_PROPS: TParallaxOptions = {
   dispersion: {

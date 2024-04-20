@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Layout Light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -37,8 +37,8 @@
     "@brysonandrew/app": "*",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/color-glow": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/filter-animate": "*"
+    "@brysonandrew/motion": "*",
+    "@brysonandrew/css-format": "*"
   }
 }

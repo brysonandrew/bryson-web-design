@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,7 +10,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./ip/useIpWebRtc": "./ip/useIpWebRtc.ts"
+    "./network/useIpWebRtc": "./network/useIpWebRtc.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -29,8 +29,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
+    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",

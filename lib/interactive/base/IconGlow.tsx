@@ -1,4 +1,4 @@
-import { TPartialGlowConfigOptions } from '@brysonandrew/filter-animate';
+import { TPartialGlowConfigOptions } from '@brysonandrew/motion/filter';
 import { I, TIConfigProps } from '@brysonandrew/icons-i';
 import { Glow } from '@brysonandrew/layout-effects';
 import { FC } from 'react';

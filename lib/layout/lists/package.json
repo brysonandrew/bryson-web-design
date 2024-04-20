@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-lists",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Layout Lists library",
   "main": "./index.ts",
   "module": "./index.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Contact library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -59,11 +59,9 @@
     "@brysonandrew/icons": "*",
     "@brysonandrew/app": "*",
     "clsx": "^1.2.1",
-    "@brysonandrew/cursor": "*",
-    "@brysonandrew/animation": "*",
+    "@brysonandrew/motion": "*",
     "@brysonandrew/utils": "*",
     "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/scroll": "*",
     "@brysonandrew/viewport": "*"
   }
 }
