@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { Nav } from './Nav';
-import { useHoverKey } from '@brysonandrew/motion/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
 import { ArrowRight } from '@brysonandrew/gallery-viewer/icons/ArrowRight';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion/core/config';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { useNext } from '../hooks/nav/useNext';
-import { BIG_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 
 type TProps = TClassValueProps & {
   max: number;

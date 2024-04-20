@@ -3,9 +3,9 @@ import {
   TShiftDirection,
   TShiftValue,
   TXyAxis,
-} from '@brysonandrew/motion/core/config/types/presence/config';
-import { SHIFT_DIRECTIONS } from '@brysonandrew/motion/core/config/constants';
-import { resolveNegative } from '@brysonandrew/motion/core/resolvePresenceRecord/value/resolveNegative';
+} from '@brysonandrew/motion-core';
+import { SHIFT_DIRECTIONS } from '@brysonandrew/motion-core';
+import { resolveNegative } from '@brysonandrew/motion-core';
 import { TNumberPercentValue } from '@brysonandrew/config-types';
 
 export const isValidShift = (

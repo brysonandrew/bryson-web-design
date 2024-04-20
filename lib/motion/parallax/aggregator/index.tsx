@@ -4,12 +4,12 @@ import {
   TParallaxOptions,
   TPartialStyle,
 } from '../config';
-import { useScroll } from '@brysonandrew/motion/scroll';
+import { useScroll } from '@brysonandrew/motion-scroll';
 import { TRect } from '@brysonandrew/config-types/dom/main';
-import { useScrollYBounds } from '@brysonandrew/motion/parallax/aggregator/useScrollYBounds';
-import { Dispersion } from '@brysonandrew/motion/parallax/aggregator/values/Dispersion';
-import { Resistance } from '@brysonandrew/motion/parallax/aggregator/values/Resistance';
-import { Visibility } from '@brysonandrew/motion/parallax/aggregator/values/Visibility';
+import { useScrollYBounds } from '@brysonandrew/motion-parallax/aggregator/useScrollYBounds';
+import { Dispersion } from '@brysonandrew/motion-parallax/aggregator/values/Dispersion';
+import { Resistance } from '@brysonandrew/motion-parallax/aggregator/values/Resistance';
+import { Visibility } from '@brysonandrew/motion-parallax/aggregator/values/Visibility';
 
 type TProps = TParallaxOptions & {
   rect: TRect;

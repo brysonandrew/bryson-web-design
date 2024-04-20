@@ -1,9 +1,31 @@
 {
   "name": "@brysonandrew/space",
-  "version": "6.24.21",
-  "description": "Space library",
+  "version": "7.0.7",
+  "description": "space library",
   "main": "./index.tsx",
   "module": "./index.tsx",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/hooks-dom": "7.0.7",
+    "clsx": "^1.2.1"
+  },
   "exports": {
     "./P1": "./P1.tsx",
     "./P12": "./P12.tsx",
@@ -32,27 +54,5 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     }
-  },
-  "scripts": {
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/hooks-dom": "*",
-    "clsx": "^1.2.1"
   }
 }

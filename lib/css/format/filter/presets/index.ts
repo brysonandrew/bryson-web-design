@@ -1,4 +1,4 @@
-import { formatFilter } from "@brysonandrew/css/format/filter";
+import { formatFilter } from "@brysonandrew/css-format/filter";
 
 export const DISABLED = formatFilter({
   blur: 0,

@@ -1,25 +1,9 @@
 {
   "name": "@brysonandrew/motion-parallax",
-  "version": "6.24.21",
-  "description": "Motion Parallax library",
+  "version": "7.0.7",
+  "description": "motion-parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./config": "./config.ts",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    },
-    "./aggregator": "./aggregator/index.tsx",
-    "./aggregator/useScrollYBounds": "./aggregator/useScrollYBounds.ts",
-    "./hooks/useDispersion": "./hooks/useDispersion.tsx",
-    "./hooks/useResistance": "./hooks/useResistance.tsx",
-    "./hooks/useVisibility": "./hooks/useVisibility.tsx",
-    "./aggregator/values/Dispersion": "./aggregator/values/Dispersion.tsx",
-    "./aggregator/values/Resistance": "./aggregator/values/Resistance.tsx",
-    "./aggregator/values/Visibility": "./aggregator/values/Visibility.tsx"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -38,14 +22,30 @@
   ],
   "peerDependencies": {
     "framer-motion": "^10.18.0",
-    "@brysonandrew/in-view": "*",
+    "@brysonandrew/in-view": "7.0.7",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-intersection-observer": "^9.5.3",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/space": "*",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/motion": "*",
-    "@brysonandrew/viewport": "*"
+    "@brysonandrew/space": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/motion-scroll": "7.0.7",
+    "@brysonandrew/viewport": "7.0.7"
+  },
+  "exports": {
+    "./config": "./config.ts",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./aggregator": "./aggregator/index.tsx",
+    "./aggregator/useScrollYBounds": "./aggregator/useScrollYBounds.ts",
+    "./hooks/useDispersion": "./hooks/useDispersion.tsx",
+    "./hooks/useResistance": "./hooks/useResistance.tsx",
+    "./hooks/useVisibility": "./hooks/useVisibility.tsx",
+    "./aggregator/values/Dispersion": "./aggregator/values/Dispersion.tsx",
+    "./aggregator/values/Resistance": "./aggregator/values/Resistance.tsx",
+    "./aggregator/values/Visibility": "./aggregator/values/Visibility.tsx"
   }
 }

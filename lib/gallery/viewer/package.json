@@ -1,9 +1,53 @@
 {
   "name": "@brysonandrew/gallery-viewer",
-  "version": "6.24.21",
-  "description": "Gallery Viewer library",
+  "version": "7.0.7",
+  "description": "gallery-viewer library",
   "main": "./index.tsx",
   "module": "./index.tsx",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/viewport": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
+    "react": "^18.2.0",
+    "@brysonandrew/media": "7.0.7",
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/motion-cursor": "7.0.7",
+    "@brysonandrew/interactive": "7.0.7",
+    "@brysonandrew/motion-core": "7.0.7",
+    "react-device-detect": "^2.2.3",
+    "@brysonandrew/sounds": "7.0.7",
+    "@brysonandrew/utils-function": "7.0.7",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/gallery": "7.0.7",
+    "react-router-dom": "^6.21.3",
+    "@brysonandrew/hooks-dom": "7.0.7",
+    "react-router": "^6.21.1",
+    "clsx": "^1.2.1",
+    "@emotion/styled": "^11.11.0",
+    "@brysonandrew/hooks-scroll": "7.0.7",
+    "@brysonandrew/motion-scroll": "7.0.7",
+    "@brysonandrew/measure": "7.0.7",
+    "@brysonandrew/svg-filter": "7.0.7",
+    "@brysonandrew/layout-effects": "7.0.7",
+    "@brysonandrew/utils-attributes": "7.0.7",
+    "@brysonandrew/hooks-events": "7.0.7"
+  },
+  "types": "index.d.ts",
   "exports": {
     "./Shell": "./Shell.tsx",
     "./ViewerProvider": "./ViewerProvider.tsx",
@@ -24,11 +68,11 @@
     "./icons/Cross": "./icons/Cross.tsx",
     "./icons/Drag": "./icons/Drag.tsx",
     "./icons/Gallery": "./icons/Gallery.tsx",
+    "./tips/Touch": "./tips/Touch.tsx",
     "./ready/Arrows": "./ready/Arrows.tsx",
     "./ready/Background": "./ready/Background.tsx",
     "./ready": "./ready/index.tsx",
     "./ready/types": "./ready/types.ts",
-    "./tips/Touch": "./tips/Touch.tsx",
     "./utils/resolveActiveIndex": "./utils/resolveActiveIndex.ts",
     "./utils/resolveGalleryWidth": "./utils/resolveGalleryWidth.ts",
     "./utils/resolveTo": "./utils/resolveTo.ts",
@@ -44,10 +88,10 @@
     "./hooks/nav/useTo": "./hooks/nav/useTo.ts",
     "./hooks/nav/useToFirst": "./hooks/nav/useToFirst.ts",
     "./ready/footer": "./ready/footer/index.tsx",
-    "./ready/header/ViewerHeader": "./ready/header/ViewerHeader.tsx",
     "./ready/sections/Control": "./ready/sections/Control.tsx",
     "./ready/sections/Image": "./ready/sections/Image.tsx",
     "./ready/sections": "./ready/sections/index.tsx",
+    "./ready/header/ViewerHeader": "./ready/header/ViewerHeader.tsx",
     "./ready/footer/core/DragIcon": "./ready/footer/core/DragIcon.tsx",
     "./ready/footer/core/config": "./ready/footer/core/config.ts",
     "./ready/footer/core": "./ready/footer/core/index.tsx",
@@ -60,47 +104,5 @@
     "./ready/sections/zoom/hooks/useCursor": "./ready/sections/zoom/hooks/useCursor.ts",
     "./ready/sections/zoom/hooks/useScale": "./ready/sections/zoom/hooks/useScale.tsx",
     "./ready/sections/zoom/hooks/useTapEvents": "./ready/sections/zoom/hooks/useTapEvents.ts"
-  },
-  "scripts": {
-    "format": "prettier .",
-    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
-  },
-  "sideEffects": false,
-  "keywords": [
-    "react",
-    "typescript"
-  ],
-  "peerDependencies": {
-    "@brysonandrew/viewport": "*",
-    "@brysonandrew/config-types": "*",
-    "react": "^18.2.0",
-    "@brysonandrew/media": "*",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/motion": "*",
-    "@brysonandrew/interactive": "*",
-    "react-device-detect": "^2.2.3",
-    "@brysonandrew/sounds": "*",
-    "@brysonandrew/utils-function": "*",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/gallery": "*",
-    "react-router-dom": "^6.21.3",
-    "@brysonandrew/hooks-dom": "*",
-    "react-router": "^6.21.1",
-    "clsx": "^1.2.1",
-    "@emotion/styled": "^11.11.0",
-    "@brysonandrew/hooks-scroll": "*",
-    "@brysonandrew/measure": "*",
-    "@brysonandrew/svg-filter": "*",
-    "@brysonandrew/layout-effects": "*",
-    "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/hooks-events": "*"
-  },
-  "types": "index.d.ts"
+  }
 }

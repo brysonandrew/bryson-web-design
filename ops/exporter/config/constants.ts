@@ -31,8 +31,22 @@ export const EMPTY_TARGET: TTarget = {
   indexRows: [],
   dependencies: {},
   peerDependencies: {},
+  exportRows: [],
+  main: {},
+  types: {},
+  writeUpdates: []
 };
 
 export const INIT_WORKSPACES: TWorkspaces = [];
 export const INIT_TS_PATH_RECORD: TInternalTsPathRecord =
   {};
+  export const EXCLUDE_PREFIXES = [
+    'src/',
+    'ops/',
+    'lib/',
+    `@app/`,
+    `@uno/`,
+    `@vite/`,
+    '@t/',
+  ] as const;
+  

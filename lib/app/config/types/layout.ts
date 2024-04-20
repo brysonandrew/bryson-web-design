@@ -8,7 +8,7 @@ import {
   DEFAULT_CONFIG,
 } from '@brysonandrew/app/config/constants';
 
-import { TFadeVProps } from '@brysonandrew/fade/edge/pairs/FadeV';
+import { TFadeVProps } from '@brysonandrew/fade-edge/pairs/FadeV';
 import { TAnyRecord } from '@brysonandrew/config-types';
 import { TWithLight } from '@brysonandrew/layout';
 import { TWithPlaceholder } from '@brysonandrew/placeholder';

@@ -4,10 +4,10 @@ import {
   SUB_VALUE_DELIMITER,
   TTransitionConfigs,
   VALUE_DELIMITER,
-} from '@brysonandrew/motion/core/config';
-import { TBaseTransitionConfigs } from '@brysonandrew/motion/core/config/types/transition/base';
-import { TEasing } from '@brysonandrew/motion/core/config/types/values';
-import { TPresenceConfigs } from '@brysonandrew/motion/core/config/types/presence';
+} from '@brysonandrew/motion-core';
+import { TBaseTransitionConfigs } from '@brysonandrew/motion-core';
+import { TEasing } from '@brysonandrew/motion-core';
+import { TPresenceConfigs } from '@brysonandrew/motion-core';
 import {
   MotionValue,
   AnimationPlaybackControls,

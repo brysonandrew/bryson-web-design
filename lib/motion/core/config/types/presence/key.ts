@@ -3,7 +3,7 @@ import {
   TPlaceholder,
   T_SVD,
   T_VD,
-} from '@brysonandrew/motion/core/config';
+} from '@brysonandrew/motion-core';
 import {
   TFade,
   TFadeValue,
@@ -17,7 +17,7 @@ import {
   TZoom,
   TZoomDirection,
   TZoomValue,
-} from '@brysonandrew/motion/core/config/types/presence/config';
+} from '@brysonandrew/motion-core';
 
 type TSuffixDefinedN<T extends number | undefined> =
   T extends undefined ? '' : `${T}${T_SVD}`;

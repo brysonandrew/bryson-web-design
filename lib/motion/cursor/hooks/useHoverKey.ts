@@ -1,12 +1,12 @@
 import {
   resolveCompositeHoverKey,
   useCursor,
-} from '@brysonandrew/motion/cursor';
+} from '@brysonandrew/motion-cursor';
 import { useCursorAnimate } from './useCursorAnimate';
 import {
   GLOBAL_KEY,
   TCursorKey,
-} from '@brysonandrew/motion/cursor/config/constants';
+} from '@brysonandrew/motion-cursor/config/constants';
 import { TChildren } from '@brysonandrew/config-types';
 
 export const useHoverKey = (

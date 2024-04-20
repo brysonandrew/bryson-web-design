@@ -1,18 +1,10 @@
 {
   "name": "@brysonandrew/boundary",
-  "version": "6.24.21",
-  "description": "Boundary library",
+  "version": "7.0.7",
+  "description": "boundary library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./Fallback": "./Fallback.tsx",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,6 +23,14 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    "./Fallback": "./Fallback.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

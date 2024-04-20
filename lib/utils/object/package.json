@@ -1,21 +1,9 @@
 {
   "name": "@brysonandrew/utils-object",
-  "version": "6.24.21",
-  "description": "Utils Object library",
+  "version": "7.0.7",
+  "description": "utils-object library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./arrToRecord": "./arrToRecord.ts",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./mergeDeep": "./mergeDeep.ts",
-    "./prefixKeys": "./prefixKeys.ts",
-    "./scopeRecord": "./scopeRecord.ts",
-    "./sortKeys": "./sortKeys.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -33,6 +21,18 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "*"
+    "@brysonandrew/config-types": "7.0.7"
+  },
+  "exports": {
+    "./arrToRecord": "./arrToRecord.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./mergeDeep": "./mergeDeep.ts",
+    "./prefixKeys": "./prefixKeys.ts",
+    "./scopeRecord": "./scopeRecord.ts",
+    "./sortKeys": "./sortKeys.ts"
   }
 }

@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "6.24.21",
-  "description": "In View library",
+  "version": "7.0.7",
+  "description": "in-view library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    "./Replacer": "./Replacer.tsx",
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -31,9 +23,17 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "react-intersection-observer": "^9.5.3",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0"
+  },
+  "exports": {
+    "./Replacer": "./Replacer.tsx",
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

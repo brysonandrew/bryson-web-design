@@ -1,17 +1,9 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "6.24.21",
-  "description": "Svg library",
+  "version": "7.0.7",
+  "description": "svg library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./SvgWrap": "./SvgWrap.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -32,7 +24,35 @@
     "@brysonandrew/svg-clip-path": "*",
     "@brysonandrew/svg-icon": "*",
     "@brysonandrew/svg-filter": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "react": "^18.2.0"
+  },
+  "exports": {
+    "./SvgWrap": "./SvgWrap.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
+    "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx",
+    "./icon/160": "./icon/160.tsx",
+    "./icon/24": "./icon/24.tsx",
+    "./icon/28": "./icon/28.tsx",
+    "./icon/40": "./icon/40.tsx",
+    "./filter/aura": "./filter/aura/index.tsx",
+    "./filter/blur/basic": "./filter/blur/basic.tsx",
+    "./filter/blur/motion": "./filter/blur/motion.tsx",
+    "./filter/config": "./filter/config/index.ts",
+    "./filter/displacement/config": "./filter/displacement/config.ts",
+    "./filter/displacement": "./filter/displacement/index.tsx",
+    "./filter/blur/motion-blur/Speed": "./filter/blur/motion-blur/Speed.tsx",
+    "./filter/blur/motion-blur/TransformerX": "./filter/blur/motion-blur/TransformerX.tsx",
+    "./filter/blur/motion-blur/TransformerY": "./filter/blur/motion-blur/TransformerY.tsx",
+    "./filter/blur/motion-blur/config": "./filter/blur/motion-blur/config.ts",
+    "./filter/blur/motion-blur": "./filter/blur/motion-blur/index.tsx",
+    "./filter/config/constants": "./filter/config/constants/index.ts",
+    "./filter/config/types/dom": "./filter/config/types/dom.ts",
+    "./filter/config/types": "./filter/config/types/index.ts"
   }
 }

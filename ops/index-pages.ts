@@ -1,9 +1,9 @@
 import glob from 'fast-glob';
-import { TError } from '@brysonandrew/config-types';
 import { resolvePwd } from '@ops/utils/dirs/pwd';
 import { parse, resolve } from 'path';
-import { kebabToPascal } from '@brysonandrew/utils';
+// import { kebabToPascal } from '@brysonandrew/utils';
 import { writeFile } from 'fs/promises';
+import { TError } from '@brysonandrew/config-types/dom';
 
 const WORKSHOP_ROOT = 'src/pages/_dev';
 const WORKSHOP_GLOB = resolve(WORKSHOP_ROOT, '**');
@@ -20,11 +20,9 @@ const DEPTH = 1;
       cwd,
     });
 
-    console.log(paths);
-
     const file = paths.reduce((a: string, path) => {
       const { base } = parse(path);
-      const name = kebabToPascal(base);
+      const name = base;// kebabToPascal(base);
       a = `${a}export { ${name} } from './${base}';\n`;
       return a;
     }, '');

@@ -1,7 +1,7 @@
 import {
   TRotatePosStringValue,
   TRotateNegStringValue,
-} from '@brysonandrew/motion/core/config/types/presence/config';
+} from '@brysonandrew/motion-core';
 import { TNumberPosPercentValue, TNumberNegPercentValue } from '@brysonandrew/config-types';
 
 type TStrInput =

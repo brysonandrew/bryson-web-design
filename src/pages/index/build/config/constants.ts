@@ -1,4 +1,4 @@
-import { TTransition } from '@app/animation';
+import { TTransition } from '@brysonandrew/motion-core';
 import {
   MAX_SCROLL,
   TParallaxOptions,

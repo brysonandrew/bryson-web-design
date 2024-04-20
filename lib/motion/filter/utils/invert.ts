@@ -1,5 +1,4 @@
-import { TRANSITION_02_EASEIN_008 } from '@brysonandrew/motion/core/config';
-import { TFilterAnimateProps } from '@brysonandrew/motion/filter';
+import { TFilterAnimateProps } from '@brysonandrew/motion-filter';
 
 export type TInvertConfigOptions = {
   value: number;
@@ -17,7 +16,6 @@ export const resolveInvertProps = ({
   style: {
     filter: 'invert(100%)',
   },
-  transition: TRANSITION_02_EASEIN_008,
   initial: false,
   animate: { opacity },
   ...props,

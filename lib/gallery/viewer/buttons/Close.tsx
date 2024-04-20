@@ -2,8 +2,8 @@ import { Cross } from '@brysonandrew/gallery-viewer/icons/Cross';
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from '@brysonandrew/motion/cursor';
-import { BIG_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import {
   Circle,
   LinkFillCenter,

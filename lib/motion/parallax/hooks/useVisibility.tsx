@@ -1,5 +1,5 @@
 import { useTransform } from 'framer-motion';
-import { TBaseConfig, TVisibilityRange } from '@brysonandrew/motion/parallax/config';
+import { TBaseConfig, TVisibilityRange } from '@brysonandrew/motion-parallax/config';
 
 export const useVisibility = ({
   scrollY,

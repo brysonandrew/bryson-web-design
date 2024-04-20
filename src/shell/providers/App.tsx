@@ -21,7 +21,7 @@ import {
 import { AppInit } from '@brysonandrew/app/AppInit';
 import { arrToChainedValueNest } from '@brysonandrew/layout-utils/arrToChainedValueNest';
 import { LayoutLight } from '@brysonandrew/layout-light';
-import { LayoutPlaceholder } from '@brysonandrew/layout/placeholder';
+import { LayoutPlaceholder } from '@brysonandrew/layout-placeholder';
 
 type TLayoutOptions = TLayoutOptionsRecord;
 export type TApp = TCustomStyle & TLayoutOptions;

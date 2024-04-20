@@ -3,9 +3,9 @@ import { ArrowLeft } from '@brysonandrew/gallery-viewer/icons/ArrowLeft';
 import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { Nav } from './Nav';
-import { useHoverKey } from '@brysonandrew/motion/cursor';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion/core/config';
-import { BIG_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 
 type TProps = TClassValueProps & {
   max: number;

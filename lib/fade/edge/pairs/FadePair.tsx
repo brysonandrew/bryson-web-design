@@ -1,4 +1,4 @@
-import { FadeRight, TFadeProps } from '@brysonandrew/fade/core';
+import { FadeRight, TFadeProps } from '@brysonandrew/fade-core';
 import clsx, { ClassValue } from 'clsx';
 import { FC } from 'react';
 

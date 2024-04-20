@@ -1,7 +1,7 @@
 
-import { formatFilterBlur } from '@brysonandrew/css/format/filter/blur';
-import { formatFilterBrightness } from '@brysonandrew/css/format/filter/brightness';
-import { formatFilterGrayscale } from '@brysonandrew/css/format/filter/grayscale';
+import { formatFilterBlur } from '@brysonandrew/css-format/filter/blur';
+import { formatFilterBrightness } from '@brysonandrew/css-format/filter/brightness';
+import { formatFilterGrayscale } from '@brysonandrew/css-format/filter/grayscale';
 
 const resolvePart = (
   resolver: (value: number) => string,

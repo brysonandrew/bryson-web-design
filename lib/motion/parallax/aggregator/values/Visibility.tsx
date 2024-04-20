@@ -3,9 +3,9 @@ import { type FC } from 'react';
 import {
   TBaseConfig,
   TVisibilityRange,
-} from '@brysonandrew/motion/parallax/config';
+} from '@brysonandrew/motion-parallax/config';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
-import { useVisibility } from '@brysonandrew/motion/parallax/hooks/useVisibility';
+import { useVisibility } from '@brysonandrew/motion-parallax/hooks/useVisibility';
 
 type TProps = TBaseConfig & {
   children(result: MotionValue<number>): TChildren;

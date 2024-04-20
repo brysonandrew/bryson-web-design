@@ -1,24 +1,9 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "6.24.21",
-  "description": "Layout Typography library",
+  "version": "7.0.7",
+  "description": "layout-typography library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./Letter": "./Letter.tsx",
-    "./Sub": "./Sub.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./animation/ShiftUp": "./animation/ShiftUp.tsx",
-    "./animation/Stagger": "./animation/Stagger.tsx",
-    "./animation/Word": "./animation/Word.tsx",
-    "./animation": "./animation/index.tsx",
-    "./title/Content": "./title/Content.tsx",
-    "./title": "./title/index.tsx"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -40,12 +25,27 @@
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
-    "@brysonandrew/motion": "*",
-    "@brysonandrew/config-types": "*",
-    "@brysonandrew/utils-key": "*",
-    "@brysonandrew/app": "*",
-    "@brysonandrew/layout-line": "*",
-    "@brysonandrew/space": "*",
-    "@brysonandrew/in-view": "*"
+    "@brysonandrew/motion-core": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/utils-key": "7.0.7",
+    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/layout-line": "7.0.7",
+    "@brysonandrew/space": "7.0.7",
+    "@brysonandrew/in-view": "7.0.7"
+  },
+  "exports": {
+    "./Letter": "./Letter.tsx",
+    "./Sub": "./Sub.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./animation/ShiftUp": "./animation/ShiftUp.tsx",
+    "./animation/Stagger": "./animation/Stagger.tsx",
+    "./animation/Word": "./animation/Word.tsx",
+    "./animation": "./animation/index.tsx",
+    "./title/Content": "./title/Content.tsx",
+    "./title": "./title/index.tsx"
   }
 }

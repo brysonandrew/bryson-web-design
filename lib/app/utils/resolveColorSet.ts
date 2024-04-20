@@ -1,4 +1,4 @@
-import { formatShadow } from '@brysonandrew/css/format/shadow';
+import { formatShadow } from '@brysonandrew/css-format/shadow';
 
 export const resolveRgbaSet = (color: string) => {
   return {

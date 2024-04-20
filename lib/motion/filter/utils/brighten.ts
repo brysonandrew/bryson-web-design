@@ -1,4 +1,4 @@
-import { formatFilterBrightness } from '@brysonandrew/css/format/filter/brightness';
+import { formatFilterBrightness } from '@brysonandrew/css-format/filter/brightness';
 import { MotionValue } from 'framer-motion';
 import { TFilterAnimateProps } from '..';
 

@@ -1,8 +1,8 @@
 import { Button } from '../../components/Buttons';
 import { usePlay } from '@pages/_workshop/reader/hooks/usePlay';
 import { I } from '@brysonandrew/icons-i';
-import { PLAY_ICON } from '@brysonandrew/icons';
 import { useReader } from '@pages/_workshop/reader/context/ReaderProvider';
+import { PLAY_ICON } from '@brysonandrew/icons-keys';
 
 export const Play = () => {
   const {

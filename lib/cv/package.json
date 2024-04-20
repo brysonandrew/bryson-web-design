@@ -1,32 +1,9 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "6.24.21",
-  "description": "Cv library",
+  "version": "7.0.7",
+  "description": "cv library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    "./CvProvider": "./CvProvider.tsx",
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./config/constants": "./config/constants.ts",
-    "./config/tech-icon-lookup": "./config/tech-icon-lookup.tsx",
-    "./config/types": "./config/types.ts",
-    "./controls": "./controls/index.tsx",
-    "./page/Description": "./page/Description.tsx",
-    "./page/Line": "./page/Line.tsx",
-    "./page/Margin": "./page/Margin.tsx",
-    "./page": "./page/index.tsx",
-    "./controls/invert": "./controls/invert/index.tsx",
-    "./controls/presets": "./controls/presets/index.tsx",
-    "./controls/print-instructions": "./controls/print-instructions/index.tsx",
-    "./page/experience/Item": "./page/experience/Item.tsx",
-    "./page/experience": "./page/experience/index.tsx",
-    "./page/header/Title": "./page/header/Title.tsx",
-    "./page/header": "./page/header/index.tsx"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -45,15 +22,38 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/gallery": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/gallery": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/space": "*",
+    "@brysonandrew/space": "7.0.7",
     "clsx": "^1.2.1",
-    "@brysonandrew/contact": "*",
-    "@brysonandrew/interactive": "*",
-    "@brysonandrew/utils": "*",
-    "@brysonandrew/layout-typography": "*",
-    "@brysonandrew/contact-list": "*"
+    "@brysonandrew/interactive": "7.0.7",
+    "@brysonandrew/utils-format": "7.0.7",
+    "@brysonandrew/contact": "7.0.7",
+    "@brysonandrew/layout-typography": "7.0.7",
+    "@brysonandrew/contact-list": "7.0.7"
+  },
+  "exports": {
+    "./CvProvider": "./CvProvider.tsx",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config/constants": "./config/constants.ts",
+    "./config/tech-icon-lookup": "./config/tech-icon-lookup.tsx",
+    "./config/types": "./config/types.ts",
+    "./controls": "./controls/index.tsx",
+    "./page/Description": "./page/Description.tsx",
+    "./page/Line": "./page/Line.tsx",
+    "./page/Margin": "./page/Margin.tsx",
+    "./page": "./page/index.tsx",
+    "./controls/invert": "./controls/invert/index.tsx",
+    "./controls/print-instructions": "./controls/print-instructions/index.tsx",
+    "./page/experience/Item": "./page/experience/Item.tsx",
+    "./page/experience": "./page/experience/index.tsx",
+    "./controls/presets": "./controls/presets/index.tsx",
+    "./page/header/Title": "./page/header/Title.tsx",
+    "./page/header": "./page/header/index.tsx"
   }
 }

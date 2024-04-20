@@ -1,7 +1,7 @@
-import { _VD } from '@brysonandrew/motion/core/config';
-import { TBaseTransitionConfigs } from '@brysonandrew/motion/core/config/types/transition/base';
-import { TBaseTransitionConfigKey } from '@brysonandrew/motion/core/config/types/transition/base/key';
-import { resolveEaseStringify } from '@brysonandrew/motion/core/resolveBaseTransitionRecord/resolveEaseStringify';
+import { _VD } from '@brysonandrew/motion-core';
+import { TBaseTransitionConfigs } from '@brysonandrew/motion-core';
+import { TBaseTransitionConfigKey } from '@brysonandrew/motion-core';
+import { resolveEaseStringify } from '@brysonandrew/motion-core';
 import { TAnyRecord } from '@brysonandrew/config-types';
 
 export const resolveBaseTransitionRecord = <

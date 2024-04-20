@@ -1,4 +1,4 @@
-import { resolveAnimation } from '@brysonandrew/motion';
+import { resolveAnimation } from "@brysonandrew/motion-core";
 
 const presenceConfigs = [
   { fade: [] },
@@ -103,5 +103,3 @@ export const PRESENCE_OPACITY_ANIMATE_DELAY_04 = {
 export const resolvePresence = resolvers.resolvePresence;
 export const resolveParentAnimateConfig =
   resolvers.resolveParentAnimateConfig;
-
-export * from 'lib/motion/core/config';

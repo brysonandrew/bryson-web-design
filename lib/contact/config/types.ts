@@ -1,5 +1,5 @@
+import { TContactListProps } from '@brysonandrew/contact-list';
 import { STATUSES } from '@brysonandrew/contact/config/constants';
-import { TContactListProps } from '@brysonandrew/contact/contact-list';
 import { HTMLMotionProps } from 'framer-motion';
 import { ChangeEvent, FocusEvent } from 'react';
 

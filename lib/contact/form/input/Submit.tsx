@@ -5,9 +5,9 @@ import {
   resolveButtonValue,
   useContact,
 } from '@brysonandrew/contact';
-import { useHoverKey } from '@brysonandrew/motion/cursor';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion/core/config';
-import { BIGGER_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
+import { BIGGER_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { NOOP } from '@brysonandrew/utils';
 

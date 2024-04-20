@@ -101,6 +101,12 @@
       "@brysonandrew/contact-contact-list/*": [
         "lib/contact/contact-list/*"
       ],
+      "@brysonandrew/contact-list": [
+        "lib/contact/list"
+      ],
+      "@brysonandrew/contact-list/*": [
+        "lib/contact/list/*"
+      ],
       "@brysonandrew/contact/*": [
         "lib/contact/*"
       ],
@@ -616,6 +622,12 @@
       ],
       "@brysonandrew/utils-unit/*": [
         "lib/utils/unit/*"
+      ],
+      "@brysonandrew/utils-validation": [
+        "lib/utils/validation"
+      ],
+      "@brysonandrew/utils-validation/*": [
+        "lib/utils/validation/*"
       ],
       "@brysonandrew/utils/*": [
         "lib/utils/*"

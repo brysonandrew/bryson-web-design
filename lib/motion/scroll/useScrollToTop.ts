@@ -1,5 +1,5 @@
 import { useTimeoutRef } from '@brysonandrew/hooks-window/useTimeoutRef';
-import { useScroll } from '@brysonandrew/motion/scroll';
+import { useScroll } from '@brysonandrew/motion-scroll';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 

@@ -1,22 +1,22 @@
 import {
   isValidFade,
   TTarget,
-} from '@brysonandrew/motion/core/config';
-import { TPresenceConfig } from '@brysonandrew/motion/core/config/types/presence/config';
-import { TPresenceConfigValue } from '@brysonandrew/motion/core/config/types/presence/value';
+} from '@brysonandrew/motion-core';
+import { TPresenceConfig } from '@brysonandrew/motion-core';
+import { TPresenceConfigValue } from '@brysonandrew/motion-core';
 import {
   isValidRotate,
   resolveRotateKey,
-} from '@brysonandrew/motion/core/resolvePresenceRecord/value/rotate';
+} from '@brysonandrew/motion-core';
 import {
   isValidShift,
   resolveShiftKey,
   resolveShiftValue,
-} from '@brysonandrew/motion/core/resolvePresenceRecord/value/shift';
+} from '@brysonandrew/motion-core';
 import {
   isValidZoom,
   resolveZoomKey,
-} from '@brysonandrew/motion/core/resolvePresenceRecord/value/zoom';
+} from '@brysonandrew/motion-core';
 
 export const resolveRecordValue = <
   T extends TPresenceConfig,

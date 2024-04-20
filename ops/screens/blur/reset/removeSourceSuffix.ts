@@ -1,4 +1,4 @@
-import { NOOP } from '@brysonandrew/utils';
+// import { NOOP } from '@brysonandrew/utils';
 import { CANVAS_SCREENS_PATH, SOURCE_SUFFIX } from '@ops/screens/config/constants';
 import fg from 'fast-glob';
 import fs from 'fs';
@@ -10,7 +10,7 @@ export const removeSourceSuffix = async () => {
     ]);
     paths.forEach((path: string) => {
       const nextPath = path.replace(SOURCE_SUFFIX, '');
-      fs.rename(path, nextPath, NOOP);
+      fs.rename(path, nextPath, () => null);
     });
   } catch (error) {
   }

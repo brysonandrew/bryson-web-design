@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
-import { useCursor } from '@brysonandrew/motion/cursor';
+import { useCursor } from '@brysonandrew/motion-cursor';
 import { useApp } from '@brysonandrew/app';
 
 const DEFAULT_ANIMATE = {

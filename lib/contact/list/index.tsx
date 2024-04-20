@@ -1,4 +1,4 @@
-import { TClassValueProps, TUlProps } from '@brysonandrew/config-types';
+import { TUlProps } from '@brysonandrew/config-types';
 import {
   ClipboardStateHandler,
   useClipboardState,
@@ -36,7 +36,7 @@ export const ContactList: FC<TContactListProps> = ({
     classValue: itemClassValue,
     clipboardState,
     isCopy,
-    ...props
+    ...props,
   };
 
   return (
@@ -75,7 +75,7 @@ export const ContactList: FC<TContactListProps> = ({
           key='CLIPBOARD_STATE_HANDLER'
           {...clipboardState}
         />,
-        document.body,
+        document.body
       )}
     </>
   );

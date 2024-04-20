@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
 import clsx from 'clsx';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import { useCursor } from '@brysonandrew/motion/cursor';
+import { useCursor } from '@brysonandrew/motion-cursor';
 import {
   DURATION,
   resolvePresence,
-} from '@brysonandrew/motion/core/config';
+} from '@brysonandrew/motion-core';
 import { useApp } from '@brysonandrew/app';
 
 type TProps = TClassValueProps & {

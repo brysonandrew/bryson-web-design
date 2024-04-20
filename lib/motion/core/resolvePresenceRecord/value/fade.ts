@@ -1,4 +1,4 @@
-import { TFade } from '@brysonandrew/motion/core/config/types/presence/config';
+import { TFade } from '@brysonandrew/motion-core';
 
 export const isValidFade = (
   fade?: TFade,

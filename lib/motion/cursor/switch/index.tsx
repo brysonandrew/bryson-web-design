@@ -7,9 +7,9 @@ import {
   CUSTOM_CURSOR_KEY,
   GLOBAL_KEY,
   NONE_CURSOR_KEY,
-} from '@brysonandrew/motion/cursor/config/constants';
-import { useScroll } from '@brysonandrew/motion/scroll';
-import { useCursor } from '@brysonandrew/motion/cursor';
+} from '@brysonandrew/motion-cursor/config/constants';
+import { useScroll } from '@brysonandrew/motion-scroll';
+import { useCursor } from '@brysonandrew/motion-cursor';
 import { HOVER_KEY_DELIMITER } from '../config/constants';
 
 export const Switch = () => {

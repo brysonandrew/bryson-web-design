@@ -6,19 +6,17 @@ import {
 import { TKeyStr } from '@brysonandrew/config-types/keys';
 import { resolveRgbaValue } from '@brysonandrew/color-base/resolveRgbaValue';
 import {
-  formatShadow,
+  TDropShadow,
   TShadow,
   TShadowDouble,
-} from '../../css/format/shadow';
-import {
   formatFilterDropShadow,
-  TDropShadow,
-} from '../../css/format/filter/drop-shadow';
+  formatShadow,
+} from '@brysonandrew/css-format';
 
 export const resolveGlowRecord = <
-  T extends Record<string, TRgb>,
+  T extends Record<string, TRgb>
 >(
-  record: T,
+  record: T
 ) => {
   type TKey = TKeyStr<T>;
   type TValue = Extract<T[TKey], string>;
@@ -31,13 +29,14 @@ export const resolveGlowRecord = <
     (a, [key, rgb]) => {
       const color = resolveRgbaValue(rgb);
       const color05 = resolveRgbaValue(rgb, 5);
-      a.drop[key] = formatFilterDropShadow<TColorValue>(color);
+      a.drop[key] =
+        formatFilterDropShadow<TColorValue>(color);
       a.box[key] = `${formatShadow<TColorValue>(
-        color,
+        color
       )}, ${formatShadow<TRgbaValue>(color05)}`;
       return a;
     },
-    { drop: {}, box: {} } as TResult,
+    { drop: {}, box: {} } as TResult
   );
   return result;
 };

@@ -1,20 +1,9 @@
 {
   "name": "@brysonandrew/hooks-events",
-  "version": "6.24.21",
-  "description": "Hooks Events library",
+  "version": "7.0.7",
+  "description": "hooks-events library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./useEventCallback": "./useEventCallback.ts",
-    "./useEventListener": "./useEventListener.ts",
-    "./useHover": "./useHover.ts",
-    "./useLongPress": "./useLongPress.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -34,6 +23,17 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/hooks-window": "*"
+    "@brysonandrew/hooks-window": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./useEventCallback": "./useEventCallback.ts",
+    "./useEventListener": "./useEventListener.ts",
+    "./useHover": "./useHover.ts",
+    "./useLongPress": "./useLongPress.ts"
   }
 }

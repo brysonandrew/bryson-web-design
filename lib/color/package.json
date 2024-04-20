@@ -1,17 +1,10 @@
 {
   "name": "@brysonandrew/color",
-  "version": "6.24.21",
-  "description": "Color library",
+  "version": "7.0.7",
+  "description": "color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,9 +22,44 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-glow": "*",
     "@brysonandrew/color-base": "*",
+    "@brysonandrew/color-glow": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/color-grayscale": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./base/formatRgb": "./base/formatRgb.ts",
+    "./base/formatRgba": "./base/formatRgba.ts",
+    "./base/formatRgbaValue": "./base/formatRgbaValue.ts",
+    "./base/resolveColorRecords": "./base/resolveColorRecords.ts",
+    "./base/resolveRgbSeriesRecord": "./base/resolveRgbSeriesRecord.ts",
+    "./base/resolveRgbValueSeriesRecord": "./base/resolveRgbValueSeriesRecord.ts",
+    "./base/resolveRgba": "./base/resolveRgba.ts",
+    "./base/resolveRgbaOpacityRange": "./base/resolveRgbaOpacityRange.ts",
+    "./base/resolveRgbaValue": "./base/resolveRgbaValue.ts",
+    "./base/resolveVarCss": "./base/resolveVarCss.ts",
+    "./base/resolveVarCssColorRecord": "./base/resolveVarCssColorRecord.ts",
+    "./base/rgbToOpacityRangeRecord": "./base/rgbToOpacityRangeRecord.ts",
+    "./base/rgbToVarRecord": "./base/rgbToVarRecord.ts",
+    "./base/config/constants": "./base/config/constants.ts",
+    "./base/config/types": "./base/config/types.ts",
+    "./glow/resolveGlowRecord": "./glow/resolveGlowRecord.ts",
+    "./glow/config/constants": "./glow/config/constants.ts",
+    "./glow/config/types": "./glow/config/types.ts",
+    "./gradient/resolveGradient": "./gradient/resolveGradient.ts",
+    "./gradient/resolveGradientStops": "./gradient/resolveGradientStops.ts",
+    "./gradient/config/constants": "./gradient/config/constants.ts",
+    "./gradient/config/types": "./gradient/config/types.ts",
+    "./grayscale/black": "./grayscale/black.ts",
+    "./grayscale/gray": "./grayscale/gray.ts",
+    "./grayscale/resolveGrayscaleRange": "./grayscale/resolveGrayscaleRange.ts",
+    "./grayscale/resolveGrayscaleRgb": "./grayscale/resolveGrayscaleRgb.ts",
+    "./grayscale/white": "./grayscale/white.ts",
+    "./grayscale/config/types": "./grayscale/config/types.ts"
   }
 }

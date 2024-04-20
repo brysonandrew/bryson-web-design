@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import {
   metalRadialDarkCss,
   metalRadialLightCss,
-} from '@brysonandrew/texture/metal/css';
+} from '@brysonandrew/texture-metal/css';
 import clsx from 'clsx';
 import { BackFill } from '@brysonandrew/layout';
 import { TDivProps } from '@brysonandrew/config-types';

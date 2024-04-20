@@ -2,7 +2,7 @@ import { useTransform } from 'framer-motion';
 import {
   TBaseConfig,
   TTransformRange,
-} from '@brysonandrew/motion/parallax/config';
+} from '@brysonandrew/motion-parallax/config';
 
 export const useResistance = ({
   scrollY,

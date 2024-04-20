@@ -7,12 +7,12 @@ import {
 } from 'react';
 import type { FC } from 'react';
 import { motionValue, useMotionValue } from 'framer-motion';
-import { resolveHoverKeyVariations } from '@brysonandrew/motion/cursor/utils';
+import { resolveHoverKeyVariations } from '@brysonandrew/motion-cursor/utils';
 import { TCursorOffset } from './hooks/useCursorOffset';
 import {
   TContext,
   THover,
-} from '@brysonandrew/motion/cursor/config/types';
+} from '@brysonandrew/motion-cursor/config/types';
 
 export const STATE = {
   isCursorReady: false,

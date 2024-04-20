@@ -1,4 +1,4 @@
-import { titleToUpperSnake } from '@brysonandrew/utils';
+// import { titleToUpperSnake } from '@brysonandrew/utils';
 import { QUOTE } from '@ops/config/constants';
 
 export const quoteWrap = (v: string) =>
@@ -19,12 +19,13 @@ const resolveItems = (items: TItems) =>
     ),
   );
 
-export const templateArray = ({ name, items }: TConfig) => {
-  return `export const ${titleToUpperSnake(name)} = [
-  ${resolveItems(items).join(`
-`)}
-]`;
-};
+export const templateArray = ({ name, items }: TConfig) => '';
+//   {
+//   return `export const ${titleToUpperSnake(name)} = [
+//   ${resolveItems(items).join(`
+// `)}
+// ]`;
+// };
 
 export const templateArrayConst = (config: TConfig) => {
   return `${templateArray(config)} as const;

@@ -1,10 +1,10 @@
-import { TZoomMotionPropsKey } from '@brysonandrew/motion/core/config';
+import { TZoomMotionPropsKey } from '@brysonandrew/motion-core';
 import {
   TZoom,
   TZoomDirection,
   TZoomValue,
-} from '@brysonandrew/motion/core/config/types/presence/config';
-import { ZOOM_DIRECTIONS } from '@brysonandrew/motion/core/config/constants';
+} from '@brysonandrew/motion-core';
+import { ZOOM_DIRECTIONS } from '@brysonandrew/motion-core';
 
 export const isValidZoom = (
   zoom?: TZoom,

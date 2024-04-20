@@ -1,30 +1,9 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "6.24.21",
-  "description": "Svg Filter library",
+  "version": "7.0.7",
+  "description": "svg-filter library",
   "main": "./index.ts",
   "module": "./index.ts",
-  "exports": {
-    ".": {
-      "require": "./index.ts",
-      "import": "./index.ts",
-      "default": "./index.ts"
-    },
-    "./aura": "./aura/index.tsx",
-    "./blur/basic": "./blur/basic.tsx",
-    "./blur/motion": "./blur/motion.tsx",
-    "./config": "./config/index.ts",
-    "./displacement/config": "./displacement/config.ts",
-    "./displacement": "./displacement/index.tsx",
-    "./config/constants": "./config/constants/index.ts",
-    "./blur/motion-blur/Speed": "./blur/motion-blur/Speed.tsx",
-    "./blur/motion-blur/TransformerX": "./blur/motion-blur/TransformerX.tsx",
-    "./blur/motion-blur/TransformerY": "./blur/motion-blur/TransformerY.tsx",
-    "./blur/motion-blur/config": "./blur/motion-blur/config.ts",
-    "./blur/motion-blur": "./blur/motion-blur/index.tsx",
-    "./config/types/dom": "./config/types/dom.ts",
-    "./config/types": "./config/types/index.ts"
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -42,12 +21,33 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg": "*",
-    "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/svg": "7.0.7",
+    "@brysonandrew/utils-attributes": "7.0.7",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/config-types": "7.0.7",
     "framer-motion": "^10.18.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/utils-key": "*"
+    "@brysonandrew/utils-key": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./aura": "./aura/index.tsx",
+    "./blur/basic": "./blur/basic.tsx",
+    "./blur/motion": "./blur/motion.tsx",
+    "./config": "./config/index.ts",
+    "./displacement/config": "./displacement/config.ts",
+    "./displacement": "./displacement/index.tsx",
+    "./blur/motion-blur/Speed": "./blur/motion-blur/Speed.tsx",
+    "./blur/motion-blur/TransformerX": "./blur/motion-blur/TransformerX.tsx",
+    "./blur/motion-blur/TransformerY": "./blur/motion-blur/TransformerY.tsx",
+    "./blur/motion-blur/config": "./blur/motion-blur/config.ts",
+    "./blur/motion-blur": "./blur/motion-blur/index.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/types/dom": "./config/types/dom.ts",
+    "./config/types": "./config/types/index.ts"
   }
 }

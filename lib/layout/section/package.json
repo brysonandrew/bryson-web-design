@@ -1,16 +1,9 @@
 {
   "name": "@brysonandrew/layout-section",
-  "version": "6.24.21",
-  "description": "Layout Section library",
+  "version": "7.0.7",
+  "description": "layout-section library",
   "main": "./index.tsx",
   "module": "./index.tsx",
-  "exports": {
-    ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
-    }
-  },
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -29,9 +22,16 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/layout-typography": "*",
-    "@brysonandrew/config-types": "*",
+    "@brysonandrew/layout-typography": "7.0.7",
+    "@brysonandrew/config-types": "7.0.7",
     "clsx": "^1.2.1",
-    "@brysonandrew/space": "*"
+    "@brysonandrew/space": "7.0.7"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
   }
 }

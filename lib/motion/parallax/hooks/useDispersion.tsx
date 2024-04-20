@@ -1,5 +1,5 @@
 import { useTransform } from 'framer-motion';
-import { TBaseConfig, TTransformRange } from '@brysonandrew/motion/parallax/config';
+import { TBaseConfig, TTransformRange } from '@brysonandrew/motion-parallax/config';
 
 export const useDispersion = ({
   scrollY,
