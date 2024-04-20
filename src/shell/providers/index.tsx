@@ -1,9 +1,9 @@
 import { TLayoutOptionsRecord } from '@brysonandrew/app';
-import { ScrollProvider } from '@brysonandrew/scroll';
+import { ScrollProvider } from 'lib/motion/scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
 import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
 import { NetworkProvider } from '@brysonandrew/network/NetworkProvider';
-import { CursorProvider } from '@brysonandrew/cursor';
+import { CursorProvider } from 'lib/motion/cursor';
 import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
 import { PricingProvider } from '@pages/index/pricing/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/ContactProvider';

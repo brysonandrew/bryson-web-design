@@ -18,9 +18,9 @@ import { Clear } from '@brysonandrew/contact/form/input/Clear';
 import {
   useHoverKey,
   BIG_CURSOR_KEY,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion/cursor';
 import { AnimatePresence } from 'framer-motion';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion/core/config';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 

@@ -9,7 +9,7 @@ import {
   useHoverKey,
   useCursor,
   resolveCursorKeyFromHoverKey,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion/cursor';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';

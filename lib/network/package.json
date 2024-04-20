@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/network",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Network library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,7 +23,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/animation": "*",
+    "@brysonandrew/motion": "*",
     "@brysonandrew/icons-i": "*",
     "@brysonandrew/icons-keys": "*",
     "@brysonandrew/hooks-events": "*"

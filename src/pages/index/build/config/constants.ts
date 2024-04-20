@@ -2,7 +2,7 @@ import { TTransition } from '@app/animation';
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from '@brysonandrew/parallax/config';
+} from 'lib/motion/parallax/config';
 
 export const ORIGIN_50: TTransition = {
   originX: '50%',

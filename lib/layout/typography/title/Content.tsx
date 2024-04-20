@@ -1,5 +1,5 @@
 import { ThinLineGrow } from '@brysonandrew/layout-line/ThinLineGrow';
-import { MOTION_CONFIG } from '@brysonandrew/animation';
+import { MOTION_CONFIG } from '@brysonandrew/motion/core/config';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TitleSpace } from '@brysonandrew/space/TitleSpace';

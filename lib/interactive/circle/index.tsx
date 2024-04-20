@@ -3,7 +3,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
-import { resolveParentAnimateConfig } from '@brysonandrew/animation';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion/core/config';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Background } from './Background';

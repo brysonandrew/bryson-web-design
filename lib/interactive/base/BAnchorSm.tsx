@@ -7,7 +7,7 @@ import {
   TBAnchorProps,
 } from '@brysonandrew/interactive/base/BAnchor';
 import { motion } from 'framer-motion';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion/core/config';
 
 type TProps = TBAnchorProps &
   TInteractiveProps & {

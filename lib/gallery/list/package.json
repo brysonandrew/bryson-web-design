@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/gallery-list",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Gallery List library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -36,8 +36,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/animation": "*",
-    "@brysonandrew/cursor": "*",
+    "@brysonandrew/motion": "*",
     "framer-motion": "^10.18.0",
     "@brysonandrew/gallery-viewer": "*",
     "@brysonandrew/space": "*",

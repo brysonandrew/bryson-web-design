@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import {
   MOTION_CONFIG,
   PRESENCE_SCALE_X,
-} from '@brysonandrew/animation';
+} from '@brysonandrew/motion/core/config';
 import { FC } from 'react';
 import { ThinLine } from './ThinLine';
 import clsx from 'clsx';

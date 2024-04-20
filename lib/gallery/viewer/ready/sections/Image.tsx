@@ -4,12 +4,12 @@ import { useViewer as useContext } from '@brysonandrew/gallery';
 import { Picture } from '@brysonandrew/media/picture';
 import { useLoadImage } from '@brysonandrew/media/hooks/useLoadImage';
 import {
-  TDimensions,
   TMediaRecord,
 } from '@brysonandrew/media/config/types';
-import { useImageDimensions } from '@brysonandrew/media/hooks/useImageDimensions';
+import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
 import { TChildren } from '@brysonandrew/config-types/dom';
-import { MotionBlur } from '@brysonandrew/svg-filter/motion-blur';
+import { MotionBlur } from '@brysonandrew/svg-filter/blur/motion-blur';
+import { TDimensions } from '@brysonandrew/measure';
 
 type TProps = {
   mediaRecord: TMediaRecord;
@@ -30,7 +30,7 @@ export const Image: FC<TProps> = ({
     useContext();
 
   const dimensions = useImageDimensions({
-    container,
+    box:container,
     image: mediaRecord,
   });
   const isDimensions = dimensions !== null;

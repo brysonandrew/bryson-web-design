@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Svg Filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -10,22 +10,20 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./resolveFilter": "./resolveFilter.ts",
     "./aura": "./aura/index.tsx",
-    "./blur/Blur1": "./blur/Blur1.tsx",
-    "./blur/constants": "./blur/constants.ts",
-    "./blur": "./blur/index.tsx",
+    "./blur/basic": "./blur/basic.tsx",
+    "./blur/motion": "./blur/motion.tsx",
+    "./config": "./config/index.ts",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
-    "./config": "./config/index.ts",
-    "./config/types": "./config/types.ts",
-    "./motion-blur/Speed": "./motion-blur/Speed.tsx",
-    "./motion-blur/TransformerX": "./motion-blur/TransformerX.tsx",
-    "./motion-blur/TransformerY": "./motion-blur/TransformerY.tsx",
-    "./motion-blur/config": "./motion-blur/config.ts",
-    "./motion-blur": "./motion-blur/index.tsx",
     "./config/constants": "./config/constants/index.ts",
-    "./config/constants/presets": "./config/constants/presets.ts"
+    "./blur/motion-blur/Speed": "./blur/motion-blur/Speed.tsx",
+    "./blur/motion-blur/TransformerX": "./blur/motion-blur/TransformerX.tsx",
+    "./blur/motion-blur/TransformerY": "./blur/motion-blur/TransformerY.tsx",
+    "./blur/motion-blur/config": "./blur/motion-blur/config.ts",
+    "./blur/motion-blur": "./blur/motion-blur/index.tsx",
+    "./config/types/dom": "./config/types/dom.ts",
+    "./config/types": "./config/types/index.ts"
   },
   "scripts": {
     "format": "prettier .",
@@ -44,13 +42,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/filter-animate": "*",
     "@brysonandrew/svg": "*",
-    "@brysonandrew/utils": "*",
+    "@brysonandrew/utils-attributes": "*",
     "react": "^18.2.0",
     "@brysonandrew/config-types": "*",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/utils-attributes": "*",
-    "react-device-detect": "^2.2.3"
+    "react-device-detect": "^2.2.3",
+    "@brysonandrew/utils-key": "*"
   }
 }

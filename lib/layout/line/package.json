@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-line",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Layout Line library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -37,6 +37,6 @@
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
     "@brysonandrew/app": "*",
-    "@brysonandrew/animation": "*"
+    "@brysonandrew/motion": "*"
   }
 }

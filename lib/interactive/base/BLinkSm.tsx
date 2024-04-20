@@ -1,4 +1,4 @@
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion/core/config';
 import {
   TLinkProps,
   TInteractiveProps,

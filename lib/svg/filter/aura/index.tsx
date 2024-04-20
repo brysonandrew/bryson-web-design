@@ -1,19 +1,23 @@
+
+
+
 import { SvgWrap } from '@brysonandrew/svg';
-import { resolveUrlId } from '@brysonandrew/utils';
-import type { FC } from 'react';
+import { resolveUrlId } from '@brysonandrew/utils-attributes';
+import type { FC, SVGProps } from 'react';
 
 const AURA_ID = 'AURA_ID';
 
-const BASE_ANIMATION = {
+const DEFAULT_ANIMATE_PROPS = {
   dur: '6s',
   repeatCount: 'indefinite',
 };
 
 type TProps = {
-  intensity: number;
   id: string;
+  intensity?: number;
+  animateProps?: Partial<typeof DEFAULT_ANIMATE_PROPS> & SVGProps<SVGElement>
 };
-const Filter: FC<TProps> = ({ id, intensity }) => (
+const Filter: FC<TProps> = ({ id, intensity = 10, animateProps = DEFAULT_ANIMATE_PROPS }) => (
   <SvgWrap>
     <filter
       id={id}
@@ -33,7 +37,7 @@ const Filter: FC<TProps> = ({ id, intensity }) => (
         <animate
           attributeName='baseFrequency'
           values='0.08;0.12;0.08'
-          {...BASE_ANIMATION}
+          {...animateProps}
         />
       </feTurbulence>
       <feOffset
@@ -47,14 +51,14 @@ const Filter: FC<TProps> = ({ id, intensity }) => (
           values={`${-intensity * 0.25};${
             -intensity * 0.5
           };${-intensity * 0.25}`}
-          {...BASE_ANIMATION}
+          {...animateProps}
         />
         <animate
           attributeName='dy'
           values={`${-intensity * 0.25};${
             -intensity * 0.5
           };${-intensity * 0.25}`}
-          {...BASE_ANIMATION}
+          {...animateProps}
         />
       </feOffset>
       <feDisplacementMap
@@ -70,7 +74,7 @@ const Filter: FC<TProps> = ({ id, intensity }) => (
           values={`${intensity * 0.5};${intensity};${
             intensity * 0.5
           }`}
-          {...BASE_ANIMATION}
+          {...animateProps}
         />
       </feDisplacementMap>
       <feGaussianBlur
@@ -80,15 +84,15 @@ const Filter: FC<TProps> = ({ id, intensity }) => (
         <animate
           attributeName='baseFrequency'
           values='0 0.7;0 1.3;0 0.7'
-          {...BASE_ANIMATION}
+          {...animateProps}
         />
       </feGaussianBlur>
     </filter>
   </SvgWrap>
 );
 
-const GlobalFilter = () => {
-  return <Filter id={AURA_ID} intensity={10} />;
+const GlobalFilter: FC<Partial<TProps>>  = (props) => {
+  return <Filter id={AURA_ID} {...props} />;
 };
 
 export const AURA = {

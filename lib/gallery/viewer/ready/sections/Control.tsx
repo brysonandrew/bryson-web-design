@@ -2,7 +2,7 @@ import { MotionValue } from 'framer-motion';
 import { type FC } from 'react';
 import { Zoom } from './zoom';
 import { TBaseProps } from '@brysonandrew/gallery';
-import { useScroll } from '@brysonandrew/scroll';
+import { useScroll } from '@brysonandrew/motion/scroll';
 import { isDesktop } from 'react-device-detect';
 import { Image } from './Image';
 import { TMediaRecord } from '@brysonandrew/media/config/types';

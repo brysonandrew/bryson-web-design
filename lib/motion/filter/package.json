@@ -1,0 +1,42 @@
+{
+  "name": "@brysonandrew/motion-filter",
+  "version": "6.24.21",
+  "description": "Motion Filter library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    },
+    "./utils/brighten": "./utils/brighten.ts",
+    "./utils/glow": "./utils/glow.ts",
+    "./utils/invert": "./utils/invert.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/config-types": "*",
+    "clsx": "^1.2.1",
+    "framer-motion": "^10.18.0",
+    "react": "^18.2.0",
+    "@brysonandrew/css": "*",
+    "@brysonandrew/motion": "*",
+    "@brysonandrew/color": "*"
+  }
+}

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { I } from '@brysonandrew/icons-i';
 import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/icons-keys';
-import { PRESENCE_OPACITY } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion/core/config';
 import { TClipboardState } from '@brysonandrew/notifications/clipboard/useClipboardState';
 import { Loading } from '@brysonandrew/loading';
 

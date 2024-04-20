@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { Images } from './images';
 import { Section } from '@brysonandrew/layout-section';
-import { Parallax } from '@brysonandrew/parallax';
+import { Parallax } from 'lib/motion/parallax';
 import { PARALLAX_PROPS } from './config/constants';
 import { BuildProvider } from '@pages/index/build/BuildProvider';
 import { SECTION_RECORD } from '@app/routes';
 import { Headline } from '@pages/index/build/headline';
-import { FadeMidPair } from '@brysonandrew/fade-edge/pairs/FadeMidPair';
+import { FadeMidPair } from '@brysonandrew/fade/edge/pairs/FadeMidPair';
 
 const Build: FC = () => {
   return (

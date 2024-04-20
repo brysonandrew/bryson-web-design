@@ -1,0 +1,39 @@
+{
+  "name": "@brysonandrew/measure",
+  "version": "6.24.21",
+  "description": "Measure library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./config/types": "./config/types.ts",
+    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
+    "./utils/resolveAspectRatio": "./utils/resolveAspectRatio.ts",
+    "./utils/resolveElementDimensions": "./utils/resolveElementDimensions.ts",
+    "./utils/resolveSquare": "./utils/resolveSquare.ts"
+  },
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/config-types": "*"
+  }
+}

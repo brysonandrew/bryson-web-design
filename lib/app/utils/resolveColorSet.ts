@@ -1,8 +1,8 @@
-import { resolveBoxShadow } from '@brysonandrew/color-glow/resolveBoxShadow';
+import { formatShadow } from '@brysonandrew/css/format/shadow';
 
 export const resolveRgbaSet = (color: string) => {
   return {
-    boxShadow: resolveBoxShadow(color),
+    boxShadow: formatShadow(color),
     backgroundColor: color,
   };
 };

@@ -1,11 +1,11 @@
 import { AnimatePresence } from 'framer-motion';
-import { useHoverKey } from '@brysonandrew/cursor';
+import { useHoverKey } from '@brysonandrew/motion/cursor';
 import {
   Button as _Button,
   TButtonProps,
 } from '@brysonandrew/interactive/circle/Button';
 import { createElement, FC } from 'react';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { useDarkMode } from '@brysonandrew/dark-mode';
 import {
@@ -17,7 +17,7 @@ import { Moon as MoonIcon, Sun as SunIcon } from './icon';
 import {
   PRESENCE_ROTATE_FROM_TOP,
   PRESENCE_ROTATE_FROM_BOTTOM,
-} from '@brysonandrew/animation';
+} from '@brysonandrew/motion/core/config';
 
 type TProps = Partial<{
   buttonProps: Partial<TButtonProps>;

@@ -5,10 +5,10 @@ import { Control } from './Control';
 import {
   useHoverKey,
   NONE_CURSOR_KEY,
-} from '@brysonandrew/cursor';
+} from '@brysonandrew/motion/cursor';
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/animation';
+import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion/core/config';
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {

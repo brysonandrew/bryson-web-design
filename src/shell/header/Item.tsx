@@ -1,9 +1,9 @@
 import { type FC } from 'react';
-import { useHoverKey } from '@brysonandrew/cursor/hooks/useHoverKey';
+import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { DURATION } from '@app/animation';
 import { ThickLine } from '@brysonandrew/layout-line/ThickLine';
-import { BIG_CURSOR_KEY } from '@brysonandrew/cursor/config/constants';
+import { BIG_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
 import { TLinkMotionProps } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 import { useApp } from '@brysonandrew/app';

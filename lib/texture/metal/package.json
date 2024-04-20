@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture-metal",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Texture Metal library",
   "main": "./index.tsx",
   "module": "./index.tsx",

@@ -1,6 +1,7 @@
 import { EXTS } from '@brysonandrew/media/config/constants';
 import { TSource } from '@brysonandrew/config-types';
 import type { OutputInfo, Metadata } from 'sharp';
+import { TDimensions } from '@brysonandrew/measure';
 
 export type TModule = {
   default: string;
@@ -39,8 +40,6 @@ export type TImageResolverEntry = [TFilePathKey, any];
 export type TImageResolverEntries = TImageResolverEntry[];
 
 export type TExtKey = (typeof EXTS)[number];
-
-export type TDimensions = { width: number; height: number };
 
 export type TFilePathKey = string;
 export type TFilePathBaseKey = string;

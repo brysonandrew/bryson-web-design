@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-effects",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Layout Effects library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -32,6 +32,6 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/filter-animate": "*"
+    "@brysonandrew/motion": "*"
   }
 }

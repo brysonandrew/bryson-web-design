@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "6.24.4",
+  "version": "6.24.21",
   "description": "Viewport library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -11,7 +11,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./useMeasure": "./useMeasure.ts",
+    "./use-container-measure": "./use-container-measure.ts",
+    "./use-grid": "./use-grid.ts",
+    "./use-measure": "./use-measure.ts",
     "./config/types": "./config/types.ts"
   },
   "scripts": {
@@ -32,8 +34,10 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "framer-motion": "^10.18.0",
+    "@brysonandrew/measure": "*",
     "@brysonandrew/hooks-events": "*",
-    "@brysonandrew/hooks-window": "*"
+    "@brysonandrew/hooks-window": "*",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/utils-unit": "*"
   }
 }
