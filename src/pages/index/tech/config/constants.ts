@@ -1,7 +1,7 @@
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from 'lib/motion/parallax/config';
+} from '@brysonandrew/motion-parallax/config';
 import { React } from '@pages/index/tech/icons/React';
 import { Typescript } from '@pages/index/tech/icons/Typescript';
 import {

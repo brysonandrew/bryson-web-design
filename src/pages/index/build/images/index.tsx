@@ -4,7 +4,7 @@ import { Image } from './Image';
 import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
-import { useScroll } from 'lib/motion/scroll';
+import { useScroll } from '@brysonandrew/motion-scroll';
 import { useViewport } from '@brysonandrew/viewport';
 import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
 import { useSpin } from '@pages/index/build/images/hooks/useSpin';
