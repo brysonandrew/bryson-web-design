@@ -6,6 +6,7 @@ import { validate } from '@ops/exporter/write/succession/validate';
 import { TTargets } from '@ops/exporter/config/types';
 import { faint, green } from '@brysonandrew/ops';
 import { TWuRecord } from '@ops/exporter/write/succession/update';
+import { writeFile } from 'fs/promises';
 
 export const succession = async (targets: TTargets) => {
   try {
@@ -28,19 +29,20 @@ export const succession = async (targets: TTargets) => {
     const entries = Object.entries(updates);
     console.log(`${entries.length} found`);
     // console.log(JSON.stringify(updates, null, 2));
-    // for await (const [key, writeUpdate] of entries) {
-    //   console.log('----');
+    for await (const [key, writeUpdate] of entries) {
+      //   console.log('----');
 
-    //   console.log(key);
-    //   const [path, nextFile, reason] = writeUpdate;
-    //   console.log('----');
-    //   console.log(path);
-    //   console.log(reason);
-    //   console.log('||||');
+      //   console.log(key);
+      const [path, nextFile, reason] = writeUpdate;
+      await writeFile(path, nextFile);
+      //   console.log('----');
+      //   console.log(path);
+      //   console.log(reason);
+      //   console.log('||||');
 
-    //   console.log(nextFile);
-    //   console.log('----');
-    // }
+      //   console.log(nextFile);
+      //   console.log('----');
+    }
   } catch (error: TError) {
     throw new Error(error);
   }
