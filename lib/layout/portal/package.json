@@ -1,0 +1,37 @@
+{
+  "name": "@brysonandrew/layout-portal",
+  "version": "7.0.22",
+  "description": "layout-section library",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@brysonandrew/layout-typography": "7.0.22",
+    "@brysonandrew/config-types": "7.0.22",
+    "clsx": "^1.2.1",
+    "@brysonandrew/space": "7.0.22"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  }
+}

@@ -41,12 +41,12 @@ export const INIT_WORKSPACES: TWorkspaces = [];
 export const INIT_TS_PATH_RECORD: TInternalTsPathRecord =
   {};
   export const EXCLUDE_PREFIXES = [
-    'src/',
-    'ops/',
+    // 'src/',
+    // 'ops/',
     'lib/',
-    `@app/`,
-    `@uno/`,
-    `@vite/`,
-    '@t/',
+    // `@app/`,
+    // `@uno/`,
+    // `@vite/`,
+    // '@t/',
   ] as const;
   

@@ -11,16 +11,17 @@ import { Speed } from './Speed';
 import { TransformerX } from './TransformerX';
 import { TransformerY } from './TransformerY';
 import {
-  TShiftProps,
+  TDirectionProps,
   TIdProps,
 } from '@brysonandrew/svg-filter';
 import { resolveCompositeKey } from '@brysonandrew/utils-key';
 import { SvgWrap } from '@brysonandrew/svg';
+import { resolveBlurMotionKeys } from '@brysonandrew/svg-filter/blur/motion/keys';
 
 const intensity = 200;
 const isMotionBlur = !(isSafari && isBrowser);
 const MOTION_BLUR_ID = 'MOTION_BLUR_ID';
-type TProps = TShiftProps &
+type TProps = TDirectionProps &
   TIdProps & {
     isOn: boolean;
     motionValue: MotionValue;
@@ -28,7 +29,7 @@ type TProps = TShiftProps &
       filterProps: Partial<Pick<CSSProperties, 'filter'>>
     ): TChildren;
   };
-export const MotionBlur: FC<TProps> = ({
+export const BlurMotion: FC<TProps> = ({
   isOn,
   axis = 'x',
   motionValue,
@@ -38,17 +39,12 @@ export const MotionBlur: FC<TProps> = ({
   if (!isMotionBlur || !isOn || !isDesktop) {
     return <>{children({})}</>;
   }
-
-  const TURBULANCE_KEY = resolveCompositeKey(
-    id,
-    'TURBULANCE'
-  );
-  const MORPH_KEY = resolveCompositeKey(id, 'MORPH');
-  const DISPLACEMENT_KEY = resolveCompositeKey(
-    id,
-    'DISPLACEMENT'
-  );
-  const OFFSET_KEY = resolveCompositeKey(id, 'OFFSET');
+  const {
+    TURBULANCE_KEY,
+    MORPH_KEY,
+    DISPLACEMENT_KEY,
+    OFFSET_KEY,
+  } = resolveBlurMotionKeys(id);
 
   return (
     <>

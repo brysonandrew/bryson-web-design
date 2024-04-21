@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-core",
-  "version": "7.0.7",
+  "version": "7.0.22",
   "description": "motion-core library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/config-types": "7.0.22",
     "framer-motion": "^10.18.0"
   },
   "exports": {

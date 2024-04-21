@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "7.0.7",
+  "version": "7.0.22",
   "description": "svg-filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,13 +21,13 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg": "7.0.7",
-    "@brysonandrew/utils-attributes": "7.0.7",
+    "@brysonandrew/svg": "7.0.22",
+    "@brysonandrew/utils-attributes": "7.0.22",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/config-types": "7.0.22",
     "framer-motion": "^10.18.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/utils-key": "7.0.7"
+    "@brysonandrew/utils-key": "7.0.22"
   },
   "exports": {
     ".": {
@@ -37,17 +37,21 @@
     },
     "./aura": "./aura/index.tsx",
     "./blur/basic": "./blur/basic.tsx",
-    "./blur/motion": "./blur/motion.tsx",
     "./config": "./config/index.ts",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
-    "./blur/motion-blur/Speed": "./blur/motion-blur/Speed.tsx",
-    "./blur/motion-blur/TransformerX": "./blur/motion-blur/TransformerX.tsx",
-    "./blur/motion-blur/TransformerY": "./blur/motion-blur/TransformerY.tsx",
-    "./blur/motion-blur/config": "./blur/motion-blur/config.ts",
-    "./blur/motion-blur": "./blur/motion-blur/index.tsx",
+    "./blur/motion/Speed": "./blur/motion/Speed.tsx",
+    "./blur/motion/TransformerX": "./blur/motion/TransformerX.tsx",
+    "./blur/motion/TransformerY": "./blur/motion/TransformerY.tsx",
+    "./blur/motion/config": "./blur/motion/config.ts",
+    "./blur/motion": "./blur/motion/index.tsx",
+    "./blur/motion/keys": "./blur/motion/keys.ts",
     "./config/constants": "./config/constants/index.ts",
     "./config/types/dom": "./config/types/dom.ts",
-    "./config/types": "./config/types/index.ts"
+    "./config/types": "./config/types/index.ts",
+    "./blur/motion/2": "./blur/motion/2/index.tsx",
+    "./blur/motion/2/speed": "./blur/motion/2/speed.tsx",
+    "./blur/motion/2/transformer/x": "./blur/motion/2/transformer/x.tsx",
+    "./blur/motion/2/transformer/y": "./blur/motion/2/transformer/y.tsx"
   }
 }
