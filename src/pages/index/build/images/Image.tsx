@@ -7,7 +7,7 @@ import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
 import {
   TPositionConfig,
   useCircle,

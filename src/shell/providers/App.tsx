@@ -12,7 +12,7 @@ import {
 } from '@brysonandrew/sounds';
 import { CUSTOM_STYLE, TCustomStyle } from '@app/style';
 import screensRecordJson from '../lookup.json';
-import { ViewerProvider } from '@brysonandrew/gallery';
+import { ViewerProvider } from '@brysonandrew/gallery-viewer';
 import { APP_BASE_PROPS } from '@app/base';
 import {
   Metal,

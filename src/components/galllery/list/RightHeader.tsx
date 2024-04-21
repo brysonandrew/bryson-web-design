@@ -4,7 +4,7 @@ import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Badge } from '@components/galllery/badge';
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
-import { resolveCompositeKey } from '@brysonandrew/utils';
+import { resolveCompositeKey } from '@brysonandrew/utils-key';
 
 type TProps = TSlugProps<TSlug> & {
   isHover?: boolean;

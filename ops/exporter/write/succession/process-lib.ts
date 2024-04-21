@@ -120,7 +120,7 @@ export const processLib = async ({
             });
 
             imports.forEach((v) => {
-              const rx = new RegExp(`export const ${v}`);
+              const rx = new RegExp(`export const ${v}[\\s,\\n]`);
 
               const matches = wsPathFile.match(rx);
 

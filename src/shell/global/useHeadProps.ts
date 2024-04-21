@@ -1,5 +1,5 @@
 import { PAGE_RECORDS } from '@app/routes';
-import { useCurrParams } from '@brysonandrew/gallery';
+import { useCurrParams } from '@brysonandrew/gallery-viewer';
 import {
   TTitlesResolver,
   TITLE_KEY_DELIMITER,

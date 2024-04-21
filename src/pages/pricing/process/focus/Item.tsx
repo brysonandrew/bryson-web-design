@@ -1,5 +1,5 @@
 import { NONE_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
-import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/motion/cursor/hooks/useHoverKey';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';

@@ -7,7 +7,7 @@ import {
   CUSTOM_CURSOR_KEY,
   useHoverKey,
 } from 'lib/motion/cursor';
-import { resolveGradient } from '@brysonandrew/color';
+import { resolveGradient } from '@brysonandrew/color-gradient';
 
 type TProps = TUpworkFilterConfig;
 export const Item: FC<TProps> = (config) => {

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import styled from '@emotion/styled';
 import { TChildrenString } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
-import { ThinLineGrow } from '@brysonandrew/layout';
+import { ThinLineGrow } from '@brysonandrew/layout-line';
 import { Subtitle } from '@pages/index/build/headline/Subtitle';
 import { Title } from '@pages/index/build/headline/Title';
 

@@ -4,7 +4,7 @@ import { Title } from './Title';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
 import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
 import { BIG_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
-import { resolveInteractiveLabels } from '@brysonandrew/utils';
+import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
 import { APP_DESCRIPTION } from '@app/base/package';
 import { PAGE_RECORDS } from '@app/routes';
 

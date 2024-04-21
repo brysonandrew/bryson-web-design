@@ -1,7 +1,7 @@
 import { createContext, FC, PropsWithChildren, useContext } from 'react';
 import { TExtrasRecord, TPricingContext } from './config/types';
 import { useLocalStorage } from '@brysonandrew/hooks-dom/useLocalStorage';
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
 
 export const PRICING = createContext<TPricingContext>({
   extras: {},
