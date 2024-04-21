@@ -21,12 +21,16 @@ export const Images: FC<TProps> = ({ style }) => {
   const { records } = useBuild();
   const { isScrolling } = useScroll();
   const spin = useSpin();
+  const vp = useViewport();
+
+  if (!vp.isDimensions) return null;
+
   const {
-    width: viewportWidth = 0,
-    halfWidth: halfViewportWidth,
     isResizing,
     isVertical,
-  } = useViewport();
+    width: viewportWidth,
+    halfWidth: halfViewportWidth,
+  } = vp;
 
   const radius = isVertical
     ? viewportWidth
@@ -61,7 +65,7 @@ export const Images: FC<TProps> = ({ style }) => {
     <>
       <P8 />
       <motion.div
-        className='center relative w-full z-0'
+        className="center relative w-full z-0"
         style={{
           height: HEIGHT,
           opacity,
@@ -72,7 +76,7 @@ export const Images: FC<TProps> = ({ style }) => {
       >
         {!isResizing && (
           <motion.ul
-            className='h-0 w-0 preserve-3d will-change-transform'
+            className="h-0 w-0 preserve-3d will-change-transform"
             style={{
               perspective: 10000,
               ...ORIGIN_50,
@@ -83,7 +87,7 @@ export const Images: FC<TProps> = ({ style }) => {
               (
                 record: TMediaRecord,
                 index: number,
-                { length: count }: TMediaRecord[],
+                { length: count }: TMediaRecord[]
               ) => {
                 const positionConfig: TPositionConfig = {
                   index,
@@ -104,7 +108,7 @@ export const Images: FC<TProps> = ({ style }) => {
                     positionConfig={positionConfig}
                   />
                 );
-              },
+              }
             )}
           </motion.ul>
         )}

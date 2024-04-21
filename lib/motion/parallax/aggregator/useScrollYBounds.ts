@@ -6,7 +6,8 @@ type TConfig = {
   rect: TRect;
 };
 export const useScrollYBounds = ({ rect }: TConfig) => {
-  const { height: windowHeight = 0 } = useViewport();
+  const vp = useViewport();
+  const windowHeight = vp.isDimensions ? vp.height : 0;
   const top = rect?.top ?? 0;
 
   const startScroll = useMemo(() => {
@@ -14,7 +15,7 @@ export const useScrollYBounds = ({ rect }: TConfig) => {
       document.body.getBoundingClientRect();
     const result = Math.max(
       0,
-      top - bodyTop - windowHeight,
+      top - bodyTop - windowHeight
     );
     return result;
   }, [top, windowHeight]);

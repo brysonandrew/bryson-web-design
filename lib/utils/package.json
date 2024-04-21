@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.7",
+  "version": "7.0.22",
   "description": "utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-error": "*",
+    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
@@ -38,13 +38,13 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./attributes/resolveInteractiveHrefLabels": "./attributes/resolveInteractiveHrefLabels.ts",
-    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
-    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
     "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./error/detail/config": "./error/detail/config.ts",
     "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts",
+    "./attributes/resolveInteractiveHrefLabels": "./attributes/resolveInteractiveHrefLabels.ts",
+    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
+    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
     "./format/url": "./format/url.ts",
     "./function/noop": "./function/noop.ts",
     "./function/once": "./function/once.ts",

@@ -1,9 +1,3 @@
-;
-
-
-
-
-
 export * from './fonts';
 export * from './number';
 export * from './number/series';

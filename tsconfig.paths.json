@@ -685,6 +685,18 @@
       ],
       "@vite/*": [
         "config/vite/*"
+      ],
+      "@brysonandrew/ops": [
+        "lib/ops"
+      ],
+      "@brysonandrew/ops/*": [
+        "lib/ops/*"
+      ],
+      "@brysonandrew/ops-eraser": [
+        "lib/ops/eraser"
+      ],
+      "@brysonandrew/ops-eraser/*": [
+        "lib/ops/eraser/*"
       ]
     }
   }

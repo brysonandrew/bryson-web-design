@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "7.0.7",
+  "version": "7.0.22",
   "description": "layout-light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,12 +22,12 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/app": "7.0.7",
+    "@brysonandrew/app": "7.0.22",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.7",
-    "@brysonandrew/motion-filter": "7.0.7",
-    "@brysonandrew/css-format": "7.0.7"
+    "@brysonandrew/config-types": "7.0.22",
+    "@brysonandrew/motion-filter": "7.0.22",
+    "@brysonandrew/css-format": "7.0.22"
   },
   "exports": {
     ".": {
@@ -36,9 +36,9 @@
       "default": "./index.tsx"
     },
     "./withLight": "./withLight.tsx",
-    "./config/types": "./config/types.ts",
     "./marker/Motion": "./marker/Motion.tsx",
     "./marker": "./marker/index.tsx",
-    "./marker/markerProps": "./marker/markerProps.ts"
+    "./marker/markerProps": "./marker/markerProps.ts",
+    "./config/types": "./config/types.ts"
   }
 }

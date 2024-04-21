@@ -6,13 +6,13 @@ export type TTransformerProps = {
 };
 
 export const AXES = ['x', 'y'] as const;
-export type TShiftAxis = (typeof AXES)[number];
+export type TDirectionAxis = (typeof AXES)[number];
 
-export type TShiftProps = {
-  axis?: TShiftAxis;
+export type TDirectionProps = {
+  axis?: TDirectionAxis;
 };
 
-export type TMotionBlurProps = TShiftProps & {
+export type TMotionBlurProps = TDirectionProps & {
   turbulence: MotionValue;
   blur: MotionValue;
 };

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "7.0.7",
+  "version": "7.0.22",
   "description": "uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -25,8 +25,8 @@
     "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-shortcuts": "*",
-    "@brysonandrew/uno-theme": "*",
-    "@brysonandrew/uno-spacing": "*"
+    "@brysonandrew/uno-spacing": "*",
+    "@brysonandrew/uno-theme": "*"
   },
   "exports": {
     ".": {
@@ -48,6 +48,8 @@
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
     "./shortcuts/layout": "./shortcuts/layout.ts",
     "./shortcuts/opacity": "./shortcuts/opacity.ts",
+    "./shortcuts/text/color": "./shortcuts/text/color.ts",
+    "./shortcuts/text": "./shortcuts/text/index.ts",
     "./shortcuts/neu/constants": "./shortcuts/neu/constants.ts",
     "./shortcuts/neu/format": "./shortcuts/neu/format.ts",
     "./shortcuts/neu/mappers": "./shortcuts/neu/mappers.ts",
@@ -56,8 +58,6 @@
     "./shortcuts/neu/resolveNeuClasses": "./shortcuts/neu/resolveNeuClasses.ts",
     "./shortcuts/neu/resolveNeuShadow": "./shortcuts/neu/resolveNeuShadow.ts",
     "./shortcuts/neu/types": "./shortcuts/neu/types.ts",
-    "./shortcuts/text/color": "./shortcuts/text/color.ts",
-    "./shortcuts/text": "./shortcuts/text/index.ts",
     "./shortcuts/neu/ranges": "./shortcuts/neu/ranges/index.ts",
     "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts"
   }

@@ -1,48 +1,97 @@
 import { useState } from 'react';
+import { useEventListener } from '@brysonandrew/hooks-events';
+import {
+  useTimeoutRef,
+  useDelayCallback,
+} from '@brysonandrew/hooks-window';
 import { useIsomorphicLayoutEffect } from 'framer-motion';
-import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
-import { useTimeoutRef } from '@brysonandrew/hooks-window/useTimeoutRef';
+import {
+  TDimensionsInit,
+  TDimensionsReady,
+} from '@brysonandrew/measure';
+import { measureContainer } from '@brysonandrew/viewport/measure-container';
 
 const RESIZE_COOLDOWN = 400;
 
-export const INIT_VIEWPORT = {
-  isResizing: false,
+export type TContainerState = {
+  container?: TDimensionsInit | TDimensionsReady;
 };
 
-export type TViewport = {
+type TInit = TDimensionsInit & {
   isResizing: boolean;
-  width?: number;
-  height?: number;
 };
 
-export const useMeasure = (): TViewport => {
-  const [windowSize, setViewport] =
+export const INIT_VIEWPORT: TInit = {
+  isResizing: false,
+  isDimensions: false,
+} as const;
+
+type TReady = TDimensionsReady & {
+  width: number;
+  isResizing: boolean;
+  halfWidth: number;
+  halfHeight: number;
+  isVertical: boolean;
+};
+export type TViewport = TInit | (TReady & TContainerState);
+type TConfig = { isContainer?: boolean };
+export const useViewportMeasure = (
+  config: TConfig = {}
+): TViewport => {
+  const [viewport, setViewport] =
     useState<TViewport>(INIT_VIEWPORT);
   const { timeoutRef, endTimeout } = useTimeoutRef();
 
-  const handleSize = (size?: Partial<TViewport>) => {
-    const next = {
-      isResizing: false,
-      width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight,
-      ...size,
-    };
+  const handleSize = (next?: TViewport) => {
+    let isResizing = false;
+    if (typeof next !== 'undefined') {
+      isResizing = next.isResizing;
+    }
 
-    setViewport(next);
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
+
+    const isDimensions =
+      typeof width !== 'undefined' &&
+      typeof height !== 'undefined';
+    if (isDimensions) {
+      const ready = {
+        ...(next = INIT_VIEWPORT),
+        ...(config.isContainer
+          ? {
+              container: measureContainer(),
+            }
+          : {}),
+        width,
+        height,
+        halfWidth: width * 0.5,
+        halfHeight: height * 0.5,
+        isVertical: width < height && width < 700,
+        isDimensions,
+        isResizing,
+      } as TReady;
+      setViewport(ready);
+      return;
+    }
+
+    setViewport(next ?? INIT_VIEWPORT);
   };
 
   const handleResize = () => {
     handleSize({
+      ...INIT_VIEWPORT,
       isResizing: true,
     });
     endTimeout();
     timeoutRef.current = setTimeout(() => {
-      handleSize({ isResizing: false });
+      handleSize(INIT_VIEWPORT);
     }, RESIZE_COOLDOWN);
   };
+
+  useDelayCallback(handleResize, 1000);
 
   useEventListener('resize', handleResize);
   useIsomorphicLayoutEffect(handleSize, []);
 
-  return windowSize;
+  return viewport;
 };

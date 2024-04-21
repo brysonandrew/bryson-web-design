@@ -129,6 +129,10 @@ export const readAllDeps = async ({
         }
       }
 
+      if (lib.includes('/') && !lib.startsWith('@')) {
+        lib = lib.split('/')[0];
+      }
+
       peerDependencies = {
         ...peerDependencies,
         [lib]: isInternal

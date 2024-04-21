@@ -6,10 +6,6 @@ import { motion } from 'framer-motion';
 export const Hud = () => {
   const {
     isResizing,
-    width,
-    halfWidth,
-    halfHeight,
-    height,
   } = useViewport();
   const { COLOR, LIGHT, GLOW_BOX, GLOW_DROP } = useApp();
   const G = LIGHT?.MOTION.GlowFill ?? motion.div;
@@ -298,6 +294,21 @@ export const Hud = () => {
 
 
 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
