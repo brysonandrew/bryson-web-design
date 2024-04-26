@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.22",
-  "description": "motion-cursor library",
+  "version": "7.0.33",
+  "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -23,17 +23,20 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.22",
-    "@brysonandrew/utils": "7.0.22",
-    "@brysonandrew/hooks": "7.0.22",
-    "@brysonandrew/motion-scroll": "7.0.22",
-    "@brysonandrew/motion-core": "7.0.22",
+    "@brysonandrew/config-types": "7.0.33",
+    "@brysonandrew/utils-function": "7.0.33",
+    "@brysonandrew/hooks": "7.0.33",
+    "@brysonandrew/motion": "7.0.33",
+    "@brysonandrew/motion-scroll": "7.0.33",
+    "@brysonandrew/motion-config-types": "7.0.33",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.22",
-    "@brysonandrew/icons-i": "7.0.22"
+    "@brysonandrew/motion-core": "7.0.33",
+    "@brysonandrew/app": "7.0.33",
+    "@brysonandrew/icons-i": "7.0.33"
   },
   "exports": {
     "./CursorProvider": "./CursorProvider.tsx",
+    "./base": "./base.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
@@ -41,10 +44,6 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./switch/Box": "./switch/Box.tsx",
-    "./switch/IconWithText": "./switch/IconWithText.tsx",
-    "./switch/Sight": "./switch/Sight.tsx",
-    "./switch": "./switch/index.tsx",
     "./hooks": "./hooks/index.ts",
     "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
@@ -52,6 +51,10 @@
     "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
     "./utils": "./utils/index.ts",
     "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
+    "./switch/Box": "./switch/Box.tsx",
+    "./switch/IconWithText": "./switch/IconWithText.tsx",
+    "./switch/Sight": "./switch/Sight.tsx",
+    "./switch": "./switch/index.tsx",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   }
 }

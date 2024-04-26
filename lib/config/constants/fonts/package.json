@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/config-constants-fonts",
-  "version": "7.0.22",
-  "description": "config-constants-fonts library",
+  "version": "7.0.33",
+  "description": "Config constants fonts library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {

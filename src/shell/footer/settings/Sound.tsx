@@ -3,9 +3,9 @@ import {
   VolumeOff,
   VolumeOn,
 } from '@brysonandrew/sounds';
-import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
 import { Button } from '@brysonandrew/interactive/circle/Button';
-import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion/cursor/config/constants';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { ICON_CLASS_VALUE_PROPS } from '../config';
 
 export const Sound = () => {

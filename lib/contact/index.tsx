@@ -55,14 +55,14 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
 export * from './ContactProvider';
 export * from './config/constants';
 export * from './config/types';
+export * from './footer';
 export * from './form';
 export * from './form/useForm';
-export * from './footer';
-export * from './utils/resolveButtonValue';
 export * from './variants/base';
 export * from './variants/glow';
 export * from './variants/minimalist';
 export * from './variants/prefixContact';
+export * from './utils/resolveButtonValue';
 export * from './form/input/Clear';
 export * from './form/input/Name';
 export * from './form/input/Submit';

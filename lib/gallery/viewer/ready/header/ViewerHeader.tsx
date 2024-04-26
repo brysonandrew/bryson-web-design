@@ -9,7 +9,7 @@ import { isDesktop } from 'react-device-detect';
 import { Close, Content } from '@brysonandrew/gallery';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { useApp } from '@brysonandrew/app';
-import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_DURATION_DELAY } from '@brysonandrew/motion-config-constants';
 
 type TProps = TDivMotionProps &
   TSlugProps &

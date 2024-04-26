@@ -1,9 +1,9 @@
 {
   "name": "@brysonandrew/layout-portal",
-  "version": "7.0.22",
-  "description": "layout-section library",
-  "main": "./index.tsx",
-  "module": "./index.tsx",
+  "version": "7.0.33",
+  "description": "Layout portal library",
+  "main": "./index.ts",
+  "module": "./index.ts",
   "scripts": {
     "format": "prettier .",
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
@@ -22,16 +22,15 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/layout-typography": "7.0.22",
-    "@brysonandrew/config-types": "7.0.22",
-    "clsx": "^1.2.1",
-    "@brysonandrew/space": "7.0.22"
+    "react-dom": "^18.2.0",
+    "@brysonandrew/config-types": "7.0.33"
   },
   "exports": {
+    "./body": "./body.tsx",
     ".": {
-      "require": "./index.tsx",
-      "import": "./index.tsx",
-      "default": "./index.tsx"
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/media",
-  "version": "7.0.22",
-  "description": "media library",
+  "version": "7.0.33",
+  "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,13 +21,13 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/config-types": "7.0.33",
+    "sharp": "^0.32.6",
+    "@brysonandrew/measure": "7.0.33",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.22",
-    "sharp": "^0.32.6",
-    "@brysonandrew/measure": "7.0.22"
+    "framer-motion": "^10.18.0"
   },
   "exports": {
     ".": {
@@ -35,10 +35,10 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
-    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts",
-    "./picture": "./picture/index.tsx",
     "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts"
+    "./config/types": "./config/types.ts",
+    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
+    "./picture": "./picture/index.tsx",
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
   }
 }

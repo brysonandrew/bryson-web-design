@@ -11,7 +11,7 @@ import {
   resolveCursorKeyFromHoverKey,
   THoverKey,
 } from '@brysonandrew/motion-cursor/config/constants';
-import { TAnimationControlsPoint } from '@brysonandrew/motion-core';
+import { TAnimationControlsPoint } from '@brysonandrew/motion-config-types';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;

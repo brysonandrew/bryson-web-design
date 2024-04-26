@@ -1,31 +1,31 @@
 import { QUOTE_RX } from '@ops/config/constants';
 import { isRelative } from '@ops/utils/exporter/config';
-import { readFile } from 'fs/promises';
-import {
-  TTargets,
-  TWriteUpdate,
-  TWriteUpdates,
-} from '@ops/exporter/config/types';
+import { TTargets } from '@ops/exporter/config/types';
 import { processLib } from '@ops/exporter/write/succession/process-lib';
 import { TWuRecord } from '@ops/exporter/write/succession/update';
+import {
+  fileParts,
+  TFilePartsConfig,
+} from '@ops/exporter/utils/file-parts';
+import { filePartsMatch } from '@ops/exporter/utils/file-parts/match';
 
-type TConfig = {
-  filePath: string;
-  prefix: RegExp;
+type TConfig = TFilePartsConfig & {
   targets: TTargets;
 };
 export const validate = async ({
-  filePath,
-  prefix,
   targets,
+  ...filePartsConfig
 }: TConfig) => {
-  const file = await readFile(filePath, {
-    encoding: 'utf-8',
-  });
-
   let nextWriteUpdates: TWuRecord = {};
 
-  const parts = file.split(prefix).slice(1);
+  const filePartsResult = await filePartsMatch(
+    filePartsConfig
+  );
+  if (filePartsResult === null) return nextWriteUpdates;
+  const { file, parts } = filePartsResult;
+  if (parts) {
+    console.log(parts);
+  }
   let index = 0;
   partsLoop: for await (const part of parts) {
     if (isRelative(part)) {
@@ -33,23 +33,17 @@ export const validate = async ({
       continue partsLoop;
     }
 
-    const endRx = QUOTE_RX;
-    const endIndex = part.search(endRx);
-
-    if (endIndex > -1) {
-      const writeUpdates = await processLib({
-        lib: part.slice(0, endIndex),
-        filePath,
-        file,
-        targets,
-        index,
-        prefix,
-      });
-      nextWriteUpdates = {
-        ...nextWriteUpdates,
-        ...writeUpdates,
-      };
-    }
+    const writeUpdates = await processLib({
+      lib: part,  
+      file,
+      index,
+      targets,
+      ...filePartsConfig,
+    });
+    nextWriteUpdates = {
+      ...nextWriteUpdates,
+      ...writeUpdates,
+    };
     index++;
   }
 

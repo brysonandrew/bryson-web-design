@@ -1,5 +1,5 @@
-import { TPresenceConfigs } from '@brysonandrew/motion-core';
-import { TPresenceConfigValue } from '@brysonandrew/motion-core';
+import { TPresenceConfigs } from '@brysonandrew/motion-config-types';
+import { TPresenceConfigValue } from '@brysonandrew/motion-config-types';
 import { resolveRecordKey } from '@brysonandrew/motion-core';
 import { resolveRecordValue } from '@brysonandrew/motion-core';
 import { TAnyRecord } from '@brysonandrew/config-types';

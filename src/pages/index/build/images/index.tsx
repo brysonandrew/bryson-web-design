@@ -1,7 +1,7 @@
 import { useBuild } from '@pages/index/build/BuildProvider';
 import { type FC } from 'react';
 import { Image } from './Image';
-import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
 import { useScroll } from '@brysonandrew/motion-scroll';

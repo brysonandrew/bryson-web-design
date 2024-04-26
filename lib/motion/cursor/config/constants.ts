@@ -1,4 +1,4 @@
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
 
 export const GLOBAL_KEY = 'GLOBAL_KEY';
 

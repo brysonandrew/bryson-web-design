@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/motion-scroll",
-  "version": "7.0.22",
-  "description": "motion-scroll library",
+  "version": "7.0.33",
+  "description": "Motion scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -22,11 +22,11 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/hooks-window": "7.0.22",
+    "@brysonandrew/hooks-window": "7.0.33",
     "react-router": "^6.21.1",
+    "@brysonandrew/motion": "7.0.33",
     "framer-motion": "^10.18.0",
-    "react-router-dom": "^6.21.3",
-    "@brysonandrew/motion-core": "7.0.22"
+    "react-router-dom": "^6.21.3"
   },
   "exports": {
     "./ScrollProvider": "./ScrollProvider.tsx",
@@ -36,7 +36,6 @@
       "default": "./index.ts"
     },
     "./useScrollToTop": "./useScrollToTop.ts",
-    "./config/constants": "./config/constants.ts",
-    "./config/types": "./config/types.ts"
+    "./config/constants": "./config/constants.ts"
   }
 }

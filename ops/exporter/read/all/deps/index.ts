@@ -1,6 +1,7 @@
 import pkg from '@pkg';
 import { QUOTE_RX } from '@ops/config/constants';
 import {
+  DEP_PREFIX_RX,
   EXCLUDE_PREFIXES,
   INTERNAL_PREFIX,
 } from '@ops/exporter/config/constants';
@@ -15,6 +16,7 @@ import {
 } from '@ops/exporter/config/types';
 import { quoteWrap } from '@ops/templates';
 import { TStringRecord } from '@brysonandrew/config-types/object';
+import { fileParts } from '@ops/exporter/utils/file-parts';
 
 const parentDeps: TStringRecord = {
   ...pkg.dependencies,
@@ -23,27 +25,30 @@ const parentDeps: TStringRecord = {
 
 type TConfig = {
   filePath: string;
-  prefix: RegExp;
+  prefix?: RegExp;
   target: TTarget;
   version: string;
   targets: TTargets;
 };
 export const readAllDeps = async ({
-  filePath,
-  prefix,
   target,
   version,
   targets,
+  filePath,
+  prefix,
 }: TConfig) => {
   const targetName = target.name;
-  const file = await readFile(filePath, {
-    encoding: 'utf-8',
-  });
 
   let peerDependencies: TStringRecord = {};
   const writeUpdates: TWriteUpdates = [];
 
-  const parts = file.split(prefix).slice(1);
+  const filePartsResult = await fileParts({
+    filePath,
+    prefix,
+  });
+  if (filePartsResult === null)
+    return { peerDependencies, writeUpdates };
+  const { file, parts } = filePartsResult;
   partsLoop: for await (const part of parts) {
     if (isRelative(part)) {
       continue partsLoop;

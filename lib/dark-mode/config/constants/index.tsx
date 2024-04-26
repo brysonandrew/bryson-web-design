@@ -1,4 +1,4 @@
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
 import { createContext } from 'react';
 import { TUseDarkMode } from '@brysonandrew/dark-mode/config/types';
 

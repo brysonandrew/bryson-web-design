@@ -9,7 +9,7 @@ import { useHoverKey } from '@brysonandrew/motion-cursor';
 import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
 
 type TProps = { isDisabled?: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {

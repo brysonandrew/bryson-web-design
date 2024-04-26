@@ -10,14 +10,14 @@ import {
   TRotate,
   TShift,
   TZoom,
-} from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
 import {
   TFadeKey,
   TPresenceConfigKey,
   TRotateKey,
   TShiftKey,
   TZoomKey,
-} from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
 import { isValidFade } from '@brysonandrew/motion-core';
 import { isValidRotate } from '@brysonandrew/motion-core';
 import { isValidShift } from '@brysonandrew/motion-core';

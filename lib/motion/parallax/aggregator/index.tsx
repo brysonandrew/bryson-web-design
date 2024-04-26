@@ -1,15 +1,11 @@
 import { type FC, useRef, useEffect } from 'react';
-import {
-  TPartialParallaxMotionProps,
-  TParallaxOptions,
-  TPartialStyle,
-} from '../config';
 import { useScroll } from '@brysonandrew/motion-scroll';
 import { TRect } from '@brysonandrew/config-types/dom/main';
 import { useScrollYBounds } from '@brysonandrew/motion-parallax/aggregator/useScrollYBounds';
 import { Dispersion } from '@brysonandrew/motion-parallax/aggregator/values/Dispersion';
 import { Resistance } from '@brysonandrew/motion-parallax/aggregator/values/Resistance';
 import { Visibility } from '@brysonandrew/motion-parallax/aggregator/values/Visibility';
+import { TParallaxOptions, TPartialParallaxMotionProps, TPartialStyle } from '@brysonandrew/motion-parallax/config';
 
 type TProps = TParallaxOptions & {
   rect: TRect;

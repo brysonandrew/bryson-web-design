@@ -8,7 +8,7 @@ import {
 } from '@brysonandrew/motion-cursor';
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-config-constants';
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {

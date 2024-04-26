@@ -1,0 +1,32 @@
+{
+  "name": "@brysonandrew/motion-config-constants",
+  "version": "7.0.33",
+  "description": "Motion config constants library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {},
+  "exports": {
+    "./core": "./core.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
+  }
+}

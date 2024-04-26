@@ -1,9 +1,11 @@
 import { PACKAGE_JSON_NAME } from '@ops/config/constants';
 import {
+  DEP_PREFIX_RX,
   EXCLUDE_PREFIXES,
   INTERNAL_PREFIX,
 } from '@ops/exporter/config/constants';
 import { TTargets } from '@ops/exporter/config/types';
+import { TFilePartsConfig } from '@ops/exporter/utils/file-parts';
 import {
   TWuRecord,
   update,
@@ -15,17 +17,15 @@ export const processLib = async ({
   lib,
   targets,
   file,
-  filePath,
   index,
-  prefix,
+  filePath,
+  prefix = DEP_PREFIX_RX,
 }: {
   lib: string;
   targets: TTargets;
+  index:number;
   file: string;
-  filePath: string;
-  index: number;
-  prefix: RegExp;
-}) => {
+} & TFilePartsConfig) => {
   let nextWriteUpdates: TWuRecord = {};
 
   try {
@@ -39,7 +39,6 @@ export const processLib = async ({
             excludePrefix,
             INTERNAL_PREFIX
           );
-          // const nextFile = file.replace(prevLib, lib);
           const u0 = update({
             m: '0',
             file,
@@ -50,17 +49,6 @@ export const processLib = async ({
           });
           nextWriteUpdates = u0.nextWriteUpdates;
           file = u0.nextFile;
-          // const entry: TWriteUpdate = [
-          //   filePath,
-          //   nextFile,
-          // ] as const;
-          // nextWriteUpdates[filePath].push(entry);
-          // const fixMessage = `Replacement of "${quoteWrap(
-          //   prevLib
-          // )} with ${quoteWrap(
-          //   lib
-          // )}" added to write updates`;
-          // console.log(green(fixMessage));
           break excludeLoop;
         }
       }
@@ -104,9 +92,10 @@ export const processLib = async ({
         );
 
         if (ws) {
+          console.log('WS ', ws);
           const xs = file.match(prefix) ?? [];
           const x = xs[index];
-          let imports = x.split(/[{}]/g) ?? [];
+          let imports = x?.split(/[{}]/g) ?? [];
           imports = imports.filter(
             (v) => !(/import /.test(v) || /from /.test(v))
           );
@@ -120,7 +109,9 @@ export const processLib = async ({
             });
 
             imports.forEach((v) => {
-              const rx = new RegExp(`export const ${v}[\\s,\\n]`);
+              const rx = new RegExp(
+                `export const ${v}[\\s,\\n]`
+              );
 
               const matches = wsPathFile.match(rx);
 

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/measure",
-  "version": "7.0.22",
-  "description": "measure library",
+  "version": "7.0.33",
+  "description": "Measure library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -22,7 +22,7 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.22"
+    "@brysonandrew/config-types": "7.0.33"
   },
   "exports": {
     ".": {
@@ -30,8 +30,8 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
     "./config/types": "./config/types.ts",
+    "./hooks/useImageDimensions": "./hooks/useImageDimensions.ts",
     "./utils/resolveAspectRatio": "./utils/resolveAspectRatio.ts",
     "./utils/resolveElementDimensions": "./utils/resolveElementDimensions.ts",
     "./utils/resolveSquare": "./utils/resolveSquare.ts"

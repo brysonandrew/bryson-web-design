@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/boundary",
-  "version": "7.0.22",
-  "description": "boundary library",
+  "version": "7.0.33",
+  "description": "Boundary library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,7 +23,7 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.22"
+    "@brysonandrew/config-types": "7.0.33"
   },
   "exports": {
     "./Fallback": "./Fallback.tsx",

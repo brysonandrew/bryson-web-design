@@ -1,4 +1,4 @@
-import { HOVER_KEY_DELIMITER, TCursorKey, THoverKey } from '../config/constants';
+import { TCursorKey, HOVER_KEY_DELIMITER, THoverKey } from "@brysonandrew/motion-cursor/base";
 
 export const resolveCompositeHoverKey = (
   cursorKey: TCursorKey,
