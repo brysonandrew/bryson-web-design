@@ -5,7 +5,7 @@ import {
   TSharedConfig,
   TInteractiveEvent,
   resolveCursorCoords,
-} from '@brysonandrew/gallery';
+} from '@brysonandrew/gallery-viewer';
 import { useOutsideClick } from '@brysonandrew/hooks-dom/useOutsideClick';
 import { resolveGalleryWidth } from '@brysonandrew/gallery-viewer/utils/resolveGalleryWidth';
 

@@ -1,4 +1,4 @@
-import { TTransitionConfig } from '@brysonandrew/motion-core';
+import { TTransitionConfig } from '@brysonandrew/motion-config-types';
 
 export const resolveTransitionRecord = <
   T extends TTransitionConfig,

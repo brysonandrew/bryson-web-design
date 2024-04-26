@@ -34,7 +34,7 @@ export const writeExportsTarget = async (
         );
         if (typeof sws !== 'undefined' && sws.dir !== dir) {
           const dirToSws = `${sws.dir
-            .replace(dir, '') 
+            .replace(dir, '')
             .slice(1)}/`;
           const replacer = (v: string) =>
             v.replaceAll('./', `./${dirToSws}`);
@@ -46,8 +46,6 @@ export const writeExportsTarget = async (
 
           exportRows = [...exportRows, ...swsExports];
           indexRows = [...indexRows, ...swsIndexRows];
-      
-    
         }
       });
     }
@@ -62,7 +60,11 @@ export const writeExportsTarget = async (
       ...pkg,
       ...main,
       ...types,
-      description: `${name} library`,
+      description: `${name
+        .replace(/-/g, ' ')
+        .replace(/\b[a-z]/, (v) =>
+          v.toUpperCase()
+        )} library`,
       version,
       peerDependencies,
       ...(isExports ? { exports: exportsRecord } : {}),

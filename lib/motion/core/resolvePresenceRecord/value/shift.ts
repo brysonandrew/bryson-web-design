@@ -3,8 +3,8 @@ import {
   TShiftDirection,
   TShiftValue,
   TXyAxis,
-} from '@brysonandrew/motion-core';
-import { SHIFT_DIRECTIONS } from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
+import { SHIFT_DIRECTIONS } from '@brysonandrew/motion-config-constants';
 import { resolveNegative } from '@brysonandrew/motion-core';
 import { TNumberPercentValue } from '@brysonandrew/config-types';
 

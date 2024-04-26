@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TButtonMotionProps } from '@brysonandrew/config-types/dom';
-import { CROSS_ICON } from '@brysonandrew/icons';
+import { CROSS_ICON } from '@brysonandrew/icons-keys';
 import { I } from '@brysonandrew/icons-i';
 
 type TProps = TButtonMotionProps;

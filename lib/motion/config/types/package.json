@@ -1,0 +1,45 @@
+{
+  "name": "@brysonandrew/motion-config-types",
+  "version": "7.0.33",
+  "description": "Motion config types library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/motion-core": "7.0.33",
+    "framer-motion": "^10.18.0",
+    "@brysonandrew/config-types": "7.0.33",
+    "@brysonandrew/motion": "7.0.33"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./scroll": "./scroll.ts",
+    "./values": "./values.ts",
+    "./presence/config": "./presence/config.ts",
+    "./presence": "./presence/index.ts",
+    "./presence/key": "./presence/key.ts",
+    "./presence/value": "./presence/value.ts",
+    "./transition/transition": "./transition/transition.ts",
+    "./transition/base": "./transition/base/index.ts",
+    "./transition/base/key": "./transition/base/key.ts"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils-error",
-  "version": "7.0.22",
-  "description": "utils-error library",
+  "version": "7.0.33",
+  "description": "Utils error library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,8 +21,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.22",
-    "@brysonandrew/utils": "7.0.22"
+    "@brysonandrew/config-types": "7.0.33",
+    "@brysonandrew/utils": "7.0.33"
   },
   "exports": {
     ".": {

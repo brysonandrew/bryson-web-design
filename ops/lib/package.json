@@ -1,0 +1,36 @@
+{
+  "name": "@brysonandrew/ops",
+  "version": "7.0.26",
+  "description": "ops library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/ops-eraser": "*"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./eraser/display": "./eraser/display/index.ts",
+    "./eraser/delete/entries": "./eraser/delete/entries.ts",
+    "./eraser/delete/entry": "./eraser/delete/entry.ts"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils-attributes",
-  "version": "7.0.22",
-  "description": "utils-attributes library",
+  "version": "7.0.33",
+  "description": "Utils attributes library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.22"
+    "@brysonandrew/config-types": "7.0.33"
   },
   "exports": {
     ".": {
@@ -29,6 +29,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./resolveFilterAttr": "./resolveFilterAttr.ts",
     "./resolveInteractiveHrefLabels": "./resolveInteractiveHrefLabels.ts",
     "./resolveInteractiveLabels": "./resolveInteractiveLabels.ts",
     "./resolveUrlId": "./resolveUrlId.ts"

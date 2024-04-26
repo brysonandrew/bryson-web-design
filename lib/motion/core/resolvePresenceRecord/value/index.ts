@@ -2,8 +2,8 @@ import {
   isValidFade,
   TTarget,
 } from '@brysonandrew/motion-core';
-import { TPresenceConfig } from '@brysonandrew/motion-core';
-import { TPresenceConfigValue } from '@brysonandrew/motion-core';
+import { TPresenceConfig } from '@brysonandrew/motion-config-types';
+import { TPresenceConfigValue } from '@brysonandrew/motion-config-types';
 import {
   isValidRotate,
   resolveRotateKey,

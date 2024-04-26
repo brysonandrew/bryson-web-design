@@ -1,6 +1,5 @@
-import { green } from '@brysonandrew/ops';
+import { green } from '@ops/lib';
 import { TWriteUpdate } from '@ops/exporter/config/types';
-import { quoteWrap } from '@ops/templates';
 export type TWuRecord = Record<string, TWriteUpdate>;
 type TConfig = {
   m: string;
@@ -14,27 +13,29 @@ export const update = ({
   m,
   file,
   path: _path,
-  prev,
-  next,
+  prev: _prev,
+  next: _next,
   nextWriteUpdates: _nextWriteUpdates,
 }: TConfig) => {
+  const prev = new RegExp(`(['"])${_prev}([/'"])`);
+
   const key = [_path, prev].join('|');
   const value = _nextWriteUpdates[key];
   if (value) {
     console.log('update not allowed on ', key);
-    return {
-      nextWriteUpdates: _nextWriteUpdates,
-      nextFile: file,
-    };
+    // return {
+    //   nextWriteUpdates: _nextWriteUpdates,
+    //   nextFile: file,
+    // };
   }
 
-  const nextFile = file.replace(prev, next);
-  const fixMessage = `+ [${m}] Replacement of "${quoteWrap(
-    prev
-  )} with ${quoteWrap(next)}" added.`;
-  const reason = `"${quoteWrap(prev)} ---> ${quoteWrap(
-    next
-  )}"`;
+  const RX = new RegExp(prev, 'g');
+  if (!RX.test(file)) {
+    console.log(m, 'NOT FOUND');
+  }
+  const nextFile = file.replace(RX, `$1${_next}$2`);
+  const reason = `${m} - [${_prev}] with [${_next}]`;
+  const fixMessage = `+ Replacement of ${reason} added.`;
   console.log(green(fixMessage));
   const wu: TWriteUpdate = [_path, nextFile, reason];
   const nextWriteUpdates = {

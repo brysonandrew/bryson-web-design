@@ -1,5 +1,5 @@
 import { TLayoutOptionsRecord } from '@brysonandrew/app';
-import { ScrollProvider } from 'lib/motion/scroll';
+import { ScrollProvider } from '@brysonandrew/motion-scroll';
 import { DarkModeProvider } from '@brysonandrew/dark-mode';
 import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
 import { NetworkProvider } from '@brysonandrew/network/NetworkProvider';

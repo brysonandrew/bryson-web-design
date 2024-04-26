@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/placeholder",
-  "version": "7.0.22",
-  "description": "placeholder library",
+  "version": "7.0.33",
+  "description": "Placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -23,13 +23,13 @@
   "peerDependencies": {
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
-    "@brysonandrew/utils-attributes": "7.0.22",
+    "@brysonandrew/utils-attributes": "7.0.33",
     "clsx": "^1.2.1",
-    "@brysonandrew/config-types": "7.0.22",
-    "@brysonandrew/color-gradient": "7.0.22",
-    "@brysonandrew/app": "7.0.22",
+    "@brysonandrew/config-types": "7.0.33",
+    "@brysonandrew/color-gradient": "7.0.33",
+    "@brysonandrew/app": "7.0.33",
     "unocss": "^0.53.6",
-    "@brysonandrew/utils-css": "7.0.22"
+    "@brysonandrew/utils-css": "7.0.33"
   },
   "exports": {
     ".": {

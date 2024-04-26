@@ -1,6 +1,6 @@
-import { _VD } from '@brysonandrew/motion-core';
-import { TBaseTransitionConfigs } from '@brysonandrew/motion-core';
-import { TBaseTransitionConfigKey } from '@brysonandrew/motion-core';
+import { _VD } from '@brysonandrew/motion-config-constants';
+import { TBaseTransitionConfigs } from '@brysonandrew/motion-config-types';
+import { TBaseTransitionConfigKey } from '@brysonandrew/motion-config-types';
 import { resolveEaseStringify } from '@brysonandrew/motion-core';
 import { TAnyRecord } from '@brysonandrew/config-types';
 

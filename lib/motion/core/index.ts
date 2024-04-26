@@ -1,4 +1,9 @@
 import {
+  resolveBaseTransitionRecord,
+  resolvePresenceRecord,
+  resolveTransitionRecord,
+} from '@brysonandrew/motion-core';
+import {
   TPresenceConfigs,
   TBaseTransitionConfigs,
   TTransitionConfigs,
@@ -6,23 +11,20 @@ import {
   TResolveAnimationConfig,
   TResolveParentAnimateConfig,
   TMotionProps,
-  INITIAL_KEY,
-  IDLE_KEY,
-  HOVER_KEY,
-  EXIT_KEY,
-  HOVER_VARIANT,
   TVariant,
   TVariants,
   TPresenceConfigRecord,
   TBaseTransitionRecord,
   TAnimationProps,
   TTarget,
-} from '@brysonandrew/motion-core/config';
+} from '@brysonandrew/motion-config-types';
 import {
-  resolveBaseTransitionRecord,
-  resolvePresenceRecord,
-  resolveTransitionRecord,
-} from '@brysonandrew/motion-core';
+  INITIAL_KEY,
+  IDLE_KEY,
+  HOVER_KEY,
+  EXIT_KEY,
+  HOVER_VARIANT,
+} from '@brysonandrew/motion-config-constants';
 
 export const resolveAnimation = <
   P extends TPresenceConfigs,
@@ -239,24 +241,13 @@ export const resolveParentAnimateConfig =
   resolvers.resolveParentAnimateConfig;
 
 export * from './resolveTransitionRecord';
-export * from './config/constants';
-export * from './config';
 export * from './resolveBaseTransitionRecord';
 export * from './resolveBaseTransitionRecord/resolveEaseStringify';
 export * from './resolvePresenceRecord';
 export * from './resolvePresenceRecord/key';
-export * from './config/types';
-export * from './config/types/values';
 export * from './resolvePresenceRecord/value/fade';
 export * from './resolvePresenceRecord/value';
 export * from './resolvePresenceRecord/value/resolveNegative';
 export * from './resolvePresenceRecord/value/rotate';
 export * from './resolvePresenceRecord/value/shift';
 export * from './resolvePresenceRecord/value/zoom';
-export * from './config/types/presence/config';
-export * from './config/types/presence';
-export * from './config/types/presence/key';
-export * from './config/types/presence/value';
-export * from './config/types/transition/transition';
-export * from './config/types/transition/base';
-export * from './config/types/transition/base/key';

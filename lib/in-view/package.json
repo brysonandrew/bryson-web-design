@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "7.0.22",
-  "description": "in-view library",
+  "version": "7.0.33",
+  "description": "In view library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -23,7 +23,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/config-types": "7.0.22",
+    "@brysonandrew/config-types": "7.0.33",
     "react-intersection-observer": "^9.5.3",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0"

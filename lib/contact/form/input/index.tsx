@@ -22,7 +22,7 @@ import { useContact } from '@brysonandrew/contact/ContactProvider';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { Name } from '@brysonandrew/contact/form/input/Name';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-config-constants';
 
 type TProps<
   T extends HTMLElement,

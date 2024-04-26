@@ -1,9 +1,9 @@
-import { TRotateMotionPropsKey } from '@brysonandrew/motion-core';
+import { TRotateMotionPropsKey } from '@brysonandrew/motion-config-types';
 import {
   TRotate,
   TRotateType,
-} from '@brysonandrew/motion-core';
-import { ROTATE_TYPES } from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
+import { ROTATE_TYPES } from '@brysonandrew/motion-config-constants';
 
 export const isValidRotate = (
   rotate?: TRotate,

@@ -697,6 +697,24 @@
       ],
       "@brysonandrew/ops-eraser/*": [
         "lib/ops/eraser/*"
+      ],
+      "@brysonandrew/layout-portal": [
+        "lib/layout/portal"
+      ],
+      "@brysonandrew/layout-portal/*": [
+        "lib/layout/portal/*"
+      ],
+      "@brysonandrew/motion-config-types": [
+        "lib/motion/config/types"
+      ],
+      "@brysonandrew/motion-config-types/*": [
+        "lib/motion/config/types/*"
+      ],
+      "@brysonandrew/motion-config-constants": [
+        "lib/motion/config/constants"
+      ],
+      "@brysonandrew/motion-config-constants/*": [
+        "lib/motion/config/constants/*"
       ]
     }
   }

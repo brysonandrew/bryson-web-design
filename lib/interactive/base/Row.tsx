@@ -2,7 +2,7 @@ import type { ComponentElement, FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-config-constants';
 import { TUlMotionProps } from '@brysonandrew/config-types';
 
 const Root = styled(motion.ul)``;

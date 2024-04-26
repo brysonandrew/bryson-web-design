@@ -1,10 +1,8 @@
 import { QUOTE_JSON } from '@ops/config/constants';
 import {
-  TStrRows,
   TTarget,
   TTargets,
 } from '@ops/exporter/config/types';
-import { DEP_PREFIX_RX } from '@ops/exporter/config/constants';
 import glob from 'fast-glob';
 import { parse, join } from 'path';
 import { readAllDeps } from '@ops/exporter/read/all/deps';
@@ -35,8 +33,6 @@ export const readAllTarget = async (
       ignore: ignorePaths,
     });
 
-
-
     for await (const path of paths) {
       const filePath = join(dir, path);
 
@@ -50,12 +46,11 @@ export const readAllTarget = async (
         await readAllDeps({
           filePath,
           target,
-          prefix: DEP_PREFIX_RX,
           version: '*',
           targets,
         });
 
-        target.peerDependencies = {
+      target.peerDependencies = {
         ...target.peerDependencies,
         ...peerDependencies,
       };

@@ -6,7 +6,7 @@ import { UPWORK_BASE } from '@pages/_dev/work/config/constants';
 import {
   CUSTOM_CURSOR_KEY,
   useHoverKey,
-} from 'lib/motion/cursor';
+} from '@brysonandrew/motion-cursor';
 import { resolveGradient } from '@brysonandrew/color-gradient';
 
 type TProps = TUpworkFilterConfig;

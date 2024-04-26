@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/layout-placeholder",
-  "version": "7.0.22",
-  "description": "layout-placeholder library",
+  "version": "7.0.33",
+  "description": "Layout placeholder library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -22,8 +22,8 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/app": "7.0.22",
-    "@brysonandrew/placeholder": "7.0.22"
+    "@brysonandrew/app": "7.0.33",
+    "@brysonandrew/placeholder": "7.0.33"
   },
   "exports": {
     ".": {

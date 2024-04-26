@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/uno-rules",
-  "version": "7.0.22",
-  "description": "uno-rules library",
+  "version": "7.0.33",
+  "description": "Uno rules library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -22,7 +22,7 @@
   ],
   "peerDependencies": {
     "unocss": "^0.53.6",
-    "@brysonandrew/placeholder": "7.0.22"
+    "@brysonandrew/placeholder": "7.0.33"
   },
   "exports": {
     ".": {

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "7.0.22",
-  "description": "svg-filter library",
+  "version": "7.0.33",
+  "description": "Svg filter library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,13 +21,13 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg": "7.0.22",
-    "@brysonandrew/utils-attributes": "7.0.22",
+    "@brysonandrew/svg": "7.0.33",
+    "@brysonandrew/utils-attributes": "7.0.33",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.22",
+    "@brysonandrew/config-types": "7.0.33",
     "framer-motion": "^10.18.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/utils-key": "7.0.22"
+    "@brysonandrew/utils-key": "7.0.33"
   },
   "exports": {
     ".": {

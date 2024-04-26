@@ -1,4 +1,4 @@
-import { validateEntryPoint } from './validate/entry-point';
+import { validateEntryPoint } from '../validate/entry-point';
 import { readPackagePaths } from './read/package/paths';
 import { writeWorkspacesPkg } from '@ops/exporter/write/workspaces/pkg';
 import { writeWorkspacesTsPaths } from '@ops/exporter/write/workspaces/ts-paths';
@@ -31,7 +31,7 @@ import { succession } from '@ops/exporter/write/succession';
     targets = await readSubWorkspacesTargets(targets); // iterate over sub workspaces to use them as index rows and peer deps
     targets = await readAllTargets(targets);
 
-    succession(targets);
+   succession(targets);
     return;
     // write workspaces
     await writeWorkspacesPkg(workspaces); // to root package.json

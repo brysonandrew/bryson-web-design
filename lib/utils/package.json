@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.22",
-  "description": "utils library",
+  "version": "7.0.33",
+  "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,16 +21,16 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-error": "*",
-    "@brysonandrew/utils-attributes": "*",
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/utils-object": "*",
     "@brysonandrew/utils-transformer": "*",
-    "@brysonandrew/utils-unit": "*",
-    "@brysonandrew/utils-validation": "*"
+    "@brysonandrew/utils-validation": "*",
+    "@brysonandrew/utils-unit": "*"
   },
   "exports": {
     ".": {
@@ -38,13 +38,14 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./attributes/resolveFilterAttr": "./attributes/resolveFilterAttr.ts",
+    "./attributes/resolveInteractiveHrefLabels": "./attributes/resolveInteractiveHrefLabels.ts",
+    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
+    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
     "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./error/detail/config": "./error/detail/config.ts",
     "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts",
-    "./attributes/resolveInteractiveHrefLabels": "./attributes/resolveInteractiveHrefLabels.ts",
-    "./attributes/resolveInteractiveLabels": "./attributes/resolveInteractiveLabels.ts",
-    "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
     "./format/url": "./format/url.ts",
     "./function/noop": "./function/noop.ts",
     "./function/once": "./function/once.ts",
@@ -57,11 +58,11 @@
     "./object/sortKeys": "./object/sortKeys.ts",
     "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
     "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
-    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
-    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
-    "./unit/stripPx": "./unit/stripPx.ts",
     "./validation/assertion": "./validation/assertion.ts",
     "./validation/is-falsy": "./validation/is-falsy.ts",
-    "./validation/is-truthy": "./validation/is-truthy.ts"
+    "./validation/is-truthy": "./validation/is-truthy.ts",
+    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
+    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
+    "./unit/stripPx": "./unit/stripPx.ts"
   }
 }

@@ -1,6 +1,6 @@
-import { CUSTOM_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
-import { useCursor } from 'lib/motion/cursor';
-import { useHoverKey } from '@brysonandrew/motion/cursor/hooks/useHoverKey';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
+import { useCursor } from '@brysonandrew/motion-cursor';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
 import { TPart } from '@pages/pricing/process/website/config';
 import clsx from 'clsx';
 import { FC } from 'react';

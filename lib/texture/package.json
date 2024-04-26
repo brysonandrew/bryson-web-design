@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.22",
-  "description": "texture library",
+  "version": "7.0.33",
+  "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {

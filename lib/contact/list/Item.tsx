@@ -9,7 +9,7 @@ import { TClipboardState } from '@brysonandrew/notifications';
 import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
 import clsx from 'clsx';
 import { FC } from 'react';
-import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons';
+import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
 
 type TProps = TClassValueProps & {
   name: string;
