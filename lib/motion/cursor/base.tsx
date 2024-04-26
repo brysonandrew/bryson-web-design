@@ -10,7 +10,7 @@ import { useViewportPresence } from './hooks/useViewportPresence';
 import { Switch } from './switch';
 import { resolveCursorKeyFromHoverKey } from '@brysonandrew/motion-cursor/config/constants';
 import { useCursor } from '@brysonandrew/motion-cursor';
-import { TScrollContext } from '@brysonandrew/motion/config/types/scroll';
+import { TScrollContext } from '@brysonandrew/motion-config-types/scroll';
 
 export type TCursorProps = {
   children?: TChildren;

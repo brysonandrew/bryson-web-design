@@ -15,7 +15,7 @@ import { resolvePossibleWs } from '@ops/exporter/write/succession/resolve-possib
 export const succession = async (targets: TTargets) => {
   try {
     const cwd = resolvePwd();
-    const GLOBS = ['lib/**/*.(ts|tsx)'];
+    const GLOBS = ['src/**/*.(ts|tsx)'];
     const paths = await glob(GLOBS, { cwd });
     let updates: TWuRecord = {};
     updates = updates;
@@ -358,8 +358,8 @@ export const succession = async (targets: TTargets) => {
       //   console.log('----');
       //   console.log(key);
       const [path, nextFile, reason] = writeUpdate;
-      console.log(nextFile);
-     // await writeFile(path, nextFile);
+    //  console.log(nextFile);
+  //   await writeFile(path, nextFile);
       //   console.log('----');
       console.log(path);
       console.log(reason);
