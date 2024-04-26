@@ -1,6 +1,6 @@
 export type TTKebabToTitle<
   T extends string,
-  A extends string = '',
+  A extends string = ''
 > = T extends `${infer F}${infer R}`
   ? TTKebabToTitle<
       F extends '-' ? ` ${Capitalize<F>}` : R,
@@ -14,10 +14,11 @@ export type TTKebabToTitle<
 
 export type TTTitleToKebab<
   T extends string,
-  A extends string = '',
+  A extends string = ''
 > = T extends `${infer F}${infer R}`
   ? TTTitleToKebab<
       R,
       `${A}${F extends ' ' ? '-' : `${Lowercase<F>}`}`
     >
   : A;
+

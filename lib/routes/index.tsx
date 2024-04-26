@@ -53,7 +53,7 @@ export const resolveRouteRecords = <
 
       return { ...a, record: { ...a.record, [key]: page } };
     },
-    {
+    { 
       record: {} as TRouteRecord<T>,
       routes: [] as TRouteObjects,
       values: [] as TRoutes<T>,
