@@ -2,9 +2,8 @@ import {
   FADE_PREFIX,
   PLACEHOLDER,
   SUB_VALUE_DELIMITER,
-  TTransitionConfigs,
   VALUE_DELIMITER,
-} from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-constants';
 import { TBaseTransitionConfigs } from '@brysonandrew/motion-config-types';
 import { TEasing } from '@brysonandrew/motion-config-types';
 import { TPresenceConfigs } from '@brysonandrew/motion-config-types';
@@ -21,6 +20,7 @@ import {
   Target,
 } from 'framer-motion';
 import { TNumberString } from '@brysonandrew/config-types';
+import { TTransitionConfigs } from '@brysonandrew/motion/config/types/transition/transition';
 
 export type TMainTransition = {
   duration: number;
@@ -31,7 +31,7 @@ export type TMainTransition = {
 export type TResolveAnimationConfig<
   P extends TPresenceConfigs,
   B extends TBaseTransitionConfigs,
-  T extends TTransitionConfigs,
+  T extends TTransitionConfigs
 > = Partial<TMainTransition> & {
   isDisabled?: boolean;
   presenceConfigs: P;
