@@ -5,7 +5,7 @@ export type TTCamelToPascal<T extends string> =
 
 export type TTKebabToPascal<
   T extends string,
-  A extends string = '',
+  A extends string = ''
 > = T extends `${infer F}${infer R}`
   ? TTKebabToPascal<
       F extends '-' ? Capitalize<R> : R,
@@ -16,3 +16,17 @@ export type TTKebabToPascal<
         : F}`
     >
   : A;
+
+export type TTPascalToKebab<T extends string> =
+  T extends `${infer Head} ${infer Tail}`
+    ? `${Capitalize<Head>}${TTPascalToKebab<Tail>}`
+    : Capitalize<T>;
+//   export type TTPascalToKebab<
+//   T extends string,
+//   A extends string = ''
+// > = T extends `${infer F}${infer R}`
+//   ? TTPascalToKebab<
+//       R,
+//       `${A}${F extends '' ? '-' : `${Lowercase<F>}`}`
+//     >
+//   : A;

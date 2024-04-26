@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-validation",
-  "version": "7.0.33",
+  "version": "7.0.34",
   "description": "Utils validation library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.33"
+    "@brysonandrew/config-types": "7.0.34"
   },
   "exports": {
     "./assertion": "./assertion.ts",

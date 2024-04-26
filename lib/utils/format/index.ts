@@ -1,4 +1,7 @@
-import type { TTTitleToKebab } from '@brysonandrew/config-types';
+import type {
+  TTPascalToKebab,
+  TTTitleToKebab,
+} from '@brysonandrew/config-types';
 
 export const capitalize = (word: string | null) =>
   word
@@ -8,11 +11,11 @@ export const capitalize = (word: string | null) =>
     : '';
 
 export const lowerCase = <I extends string>(
-  value: I,
+  value: I
 ): Lowercase<I> => value.toLowerCase() as Lowercase<I>;
 
 export const upperCase = <I extends string>(
-  value: I,
+  value: I
 ): Uppercase<I> => value.toUpperCase() as Uppercase<I>;
 
 export const kebabToSnake = <I extends string>(value: I) =>
@@ -24,19 +27,20 @@ export const kebabToPascal = <I extends string>(value: I) =>
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
+export const pascalToKebab = (value: string) =>
+  value
+    .replace(/([a-z0–9])([A-Z])/g, '$1-$2')
+    .toLowerCase() as TTPascalToKebab<typeof value>;
+
 export const titleToKebab = <I extends string>(
-  title: I,
+  title: I
 ): TTTitleToKebab<I> => {
   const result = title.split(' ').map(lowerCase).join('-');
   return result as TTTitleToKebab<I>;
 };
 export const titleToUpperSnake = <I extends string>(
-  title: I,
-) =>
-  title
-    .split(' ')
-    .map(upperCase)
-    .join('_');
+  title: I
+) => title.split(' ').map(upperCase).join('_');
 
 export const nToMoney = (n: number) =>
   `$${n.toLocaleString()}`;

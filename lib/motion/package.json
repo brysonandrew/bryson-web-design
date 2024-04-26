@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion",
-  "version": "7.0.33",
+  "version": "7.0.34",
   "description": "Motion library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,15 +21,15 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-core": "7.0.33",
+    "@brysonandrew/motion-core": "*",
     "@brysonandrew/motion-cursor": "*",
     "@brysonandrew/motion-filter": "*",
     "@brysonandrew/motion-parallax": "*",
     "@brysonandrew/motion-scroll": "*",
-    "@brysonandrew/motion-config-constants": "*",
-    "@brysonandrew/motion-config-types": "7.0.33",
+    "@brysonandrew/motion-config-constants": "7.0.34",
+    "@brysonandrew/motion-config-types": "7.0.34",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.33"
+    "@brysonandrew/config-types": "7.0.34"
   },
   "exports": {
     ".": {
@@ -65,13 +65,13 @@
     "./cursor/base": "./cursor/base.tsx",
     "./cursor/config/constants": "./cursor/config/constants.ts",
     "./cursor/config/types": "./cursor/config/types.ts",
+    "./cursor/utils": "./cursor/utils/index.ts",
+    "./cursor/utils/resolveCompositeHoverKey": "./cursor/utils/resolveCompositeHoverKey.ts",
     "./cursor/hooks": "./cursor/hooks/index.ts",
     "./cursor/hooks/useCursorAnimate": "./cursor/hooks/useCursorAnimate.ts",
     "./cursor/hooks/useCursorOffset": "./cursor/hooks/useCursorOffset.ts",
     "./cursor/hooks/useHoverKey": "./cursor/hooks/useHoverKey.ts",
     "./cursor/hooks/useViewportPresence": "./cursor/hooks/useViewportPresence.tsx",
-    "./cursor/utils": "./cursor/utils/index.ts",
-    "./cursor/utils/resolveCompositeHoverKey": "./cursor/utils/resolveCompositeHoverKey.ts",
     "./cursor/switch/Box": "./cursor/switch/Box.tsx",
     "./cursor/switch/IconWithText": "./cursor/switch/IconWithText.tsx",
     "./cursor/switch/Sight": "./cursor/switch/Sight.tsx",
