@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants",
-  "version": "7.0.44",
+  "version": "7.0.47",
   "description": "Config constants library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -30,11 +30,11 @@
     "./fonts": "./fonts/index.ts",
     "./number": "./number/index.ts",
     "./number/series": "./number/series.ts",
-    "./fonts/google/categories": "./fonts/google/categories.ts",
-    "./fonts/google/fonts": "./fonts/google/fonts.ts",
-    "./fonts/google/names": "./fonts/google/names.ts",
     "./fonts/bunny/categories": "./fonts/bunny/categories.ts",
     "./fonts/bunny/fonts": "./fonts/bunny/fonts.ts",
-    "./fonts/bunny/names": "./fonts/bunny/names.ts"
+    "./fonts/bunny/names": "./fonts/bunny/names.ts",
+    "./fonts/google/categories": "./fonts/google/categories.ts",
+    "./fonts/google/fonts": "./fonts/google/fonts.ts",
+    "./fonts/google/names": "./fonts/google/names.ts"
   }
 }

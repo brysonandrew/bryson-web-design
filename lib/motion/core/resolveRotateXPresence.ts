@@ -3,7 +3,7 @@ import {
   TTarget,
   TTransition,
   TVariant,
-} from '@brysonandrew/motion/config';
+} from '@brysonandrew/motion-config-types';
 
 export const resolveRotateXPresence = (
   origin: '100%' | '-100%',

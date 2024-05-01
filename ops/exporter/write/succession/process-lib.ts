@@ -40,7 +40,7 @@ export const processLib = async ({
             INTERNAL_PREFIX
           );
           const u0 = update({
-            m: '0',
+            mode: '0',
             file,
             path: filePath,
             prev: prevLib,
@@ -74,7 +74,7 @@ export const processLib = async ({
           // )} with ${quoteWrap(lib)}"`;
           // console.log(bold(fixMessage));
           const u1 = update({
-            m: '1',
+            mode: '1',
             file,
             path: filePath,
             prev: prevLib,
@@ -137,7 +137,7 @@ export const processLib = async ({
                       '/'
                     );
                     const u2 = update({
-                      m: '2',
+                      mode: '2',
                       file,
                       path: filePath,
                       prev,

@@ -2,7 +2,7 @@ import { green } from '@ops/lib';
 import { TWriteUpdate } from '@ops/exporter/config/types';
 export type TWuRecord = Record<string, TWriteUpdate>;
 type TConfig = {
-  m: string;
+  mode: string;
   path: string;
   file: string;
   prev: string;
@@ -10,7 +10,7 @@ type TConfig = {
   nextWriteUpdates: TWuRecord;
 };
 export const update = ({
-  m,
+  mode,
   file,
   path: _path,
   prev: _prev,
@@ -31,10 +31,10 @@ export const update = ({
 
   const RX = new RegExp(prev, 'g');
   if (!RX.test(file)) {
-    console.log(m, 'NOT FOUND');
+    console.log(mode, 'NOT FOUND');
   }
   const nextFile = file.replace(RX, `$1${_next}$2`);
-  const reason = `${m} - [${_prev}] with [${_next}]`;
+  const reason = `${mode} - [${_prev}] with [${_next}]`;
   const fixMessage = `+ Replacement of ${reason} added.`;
   console.log(green(fixMessage));
   const wu: TWriteUpdate = [_path, nextFile, reason];

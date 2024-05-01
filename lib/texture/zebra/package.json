@@ -1,6 +1,6 @@
 {
-  "name": "@brysonandrew/texture-mesh",
-  "version": "7.0.44",
+  "name": "@brysonandrew/texture-zebra",
+  "version": "7.0.47",
   "description": "Texture zebra library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "clsx": "^1.2.1",
-    "@brysonandrew/config-types": "7.0.44",
-    "@brysonandrew/color-gradient": "7.0.44"
+    "@brysonandrew/config-types": "7.0.47",
+    "@brysonandrew/color-gradient": "7.0.47"
   },
   "exports": {
     ".": {

@@ -3,7 +3,7 @@ import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
-import { DURATION, PRESENCE_OPACITY } from '@brysonandrew/motion';
+import { DURATION, PRESENCE_OPACITY } from '@brysonandrew/motion-config-constants';
 
 type TProps = TDivMotionProps;
 export const Background: FC<TProps> = ({
