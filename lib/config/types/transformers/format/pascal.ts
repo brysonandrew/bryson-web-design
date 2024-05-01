@@ -1,7 +1,7 @@
+import { TTCapitalize } from '@brysonandrew/config-types/transformers/format/capitalize';
+
 export type TTCamelToPascal<T extends string> =
-  T extends `${infer F}${infer R}`
-    ? `${Capitalize<F>}${R}`
-    : never;
+  TTCapitalize<T>;
 
 export type TTKebabToPascal<
   T extends string,
@@ -16,17 +16,3 @@ export type TTKebabToPascal<
         : F}`
     >
   : A;
-
-export type TTPascalToKebab<T extends string> =
-  T extends `${infer Head} ${infer Tail}`
-    ? `${Capitalize<Head>}${TTPascalToKebab<Tail>}`
-    : Capitalize<T>;
-//   export type TTPascalToKebab<
-//   T extends string,
-//   A extends string = ''
-// > = T extends `${infer F}${infer R}`
-//   ? TTPascalToKebab<
-//       R,
-//       `${A}${F extends '' ? '-' : `${Lowercase<F>}`}`
-//     >
-//   : A;

@@ -1,4 +1,4 @@
-import { TState } from '@brysonandrew/config-types';
+import { TStateEntry } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 import type { ChangeEvent, FC } from 'react';
 
@@ -8,7 +8,7 @@ const BUTTONS = [
 ] as const;
 
 type TProps = {
-  invertState: TState<number>;
+  invertState: TStateEntry<number>;
 };
 export const CvControlsInvert: FC<TProps> = ({
   invertState: [invert, setInvert],

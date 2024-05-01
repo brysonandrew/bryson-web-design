@@ -1,4 +1,4 @@
-import { TDimensions } from "@brysonandrew/measure";
+import { TDimensions } from '@brysonandrew/config-types';
 
 type TConfig = number;
 export const resolveSquare = (

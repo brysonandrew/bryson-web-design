@@ -1,4 +1,4 @@
-import { TState } from '@brysonandrew/config-types/state';
+import { TStateEntry } from '@brysonandrew/config-types/state';
 import { TClipboardState } from '@brysonandrew/notifications';
 
 export type TSpeechSynthesis = SpeechSynthesis | null;
@@ -12,15 +12,15 @@ export type TUtterance = SpeechSynthesisUtterance | null;
 export type TContext = {
   context: AudioContext;
   master: GainNode;
-  speechSynthesisState: TState<TSpeechSynthesis>;
-  selectedVoiceState: TState<TSelectedVoice>;
-  phraseState: TState<TPhrase>;
-  utteranceState: TState<TUtterance>;
-  playModeState: TState<TPlayMode>;
-  volumeState: TState<number>;
-  rateState: TState<number>;
-  pitchState: TState<number>;
-  langState: TState<TLang>;
-  voicesState: TState<TVoices>;
+  speechSynthesisState: TStateEntry<TSpeechSynthesis>;
+  selectedVoiceState: TStateEntry<TSelectedVoice>;
+  phraseState: TStateEntry<TPhrase>;
+  utteranceState: TStateEntry<TUtterance>;
+  playModeState: TStateEntry<TPlayMode>;
+  volumeState: TStateEntry<number>;
+  rateState: TStateEntry<number>;
+  pitchState: TStateEntry<number>;
+  langState: TStateEntry<TLang>;
+  voicesState: TStateEntry<TVoices>;
   clipboardState: TClipboardState;
 };

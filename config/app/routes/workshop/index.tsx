@@ -1,4 +1,4 @@
-import { NotFound } from '@brysonandrew/routes/not-found';
+import { AppNotFound } from '@brysonandrew/app';
 import { List } from './List';
 import { RouteObject } from 'react-router';
 import { TWorkshopPageTitle } from '@app/routes/workshop/config/types';
@@ -22,7 +22,7 @@ export const WORKSHOP_ROUTES: RouteObject[] = [
       ...WORKSHOP_RECORD.routes,
       {
         path: '*',
-        element: <NotFound homePath={WORKSHOP_PATH_BASE} />,
+        element: <AppNotFound homePath={WORKSHOP_PATH_BASE} />,
       },
     ],
   },

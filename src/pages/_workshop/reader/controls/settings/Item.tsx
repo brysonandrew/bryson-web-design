@@ -3,13 +3,13 @@ import { Range } from '../../components/Inputs';
 import clsx from 'clsx';
 import { FC, InputHTMLAttributes } from 'react';
 import { I } from '@brysonandrew/icons-i';
-import { TState } from '@brysonandrew/config-types';
+import { TStateEntry } from '@brysonandrew/config-types';
 import { formatShadow } from '@brysonandrew/css-format';
 
 const Root = styled.label``;
 
 type TProps = InputHTMLAttributes<HTMLInputElement> & {
-  state: TState<number>;
+  state: TStateEntry<number>;
   iconClassValue: string;
 };
 export const Item: FC<TProps> = ({

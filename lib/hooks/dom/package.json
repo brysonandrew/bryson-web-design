@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Hooks dom library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,8 +22,8 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/hooks-events": "7.0.34",
-    "@brysonandrew/config-types": "7.0.34"
+    "@brysonandrew/hooks-events": "7.0.41",
+    "@brysonandrew/config-types": "7.0.41"
   },
   "exports": {
     ".": {
