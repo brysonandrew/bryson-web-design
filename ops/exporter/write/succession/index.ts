@@ -15,7 +15,7 @@ import { resolvePossibleWs } from '@ops/exporter/write/succession/resolve-possib
 export const succession = async (targets: TTargets) => {
   try {
     const cwd = resolvePwd();
-    const GLOBS = ['src/**/*.(ts|tsx)'];
+    const GLOBS = ['lib/**/*.(ts|tsx)'];
     const paths = await glob(GLOBS, { cwd });
     let updates: TWuRecord = {};
     updates = updates;
@@ -78,7 +78,7 @@ export const succession = async (targets: TTargets) => {
     let nextWriteUpdates: TWuRecord = {};
 
     for await (const filePath of paths) {
-      console.log(filePath);
+  //    console.log(filePath);
       let file = await readFile(filePath, {
         encoding: 'utf-8',
       });
@@ -136,7 +136,7 @@ export const succession = async (targets: TTargets) => {
 
         if (INTERNAL_LIB_RX.test(libPath)) {
           const y0 = () => {
-            console.log(`import of ${imports} from ${lib}`);
+           // console.log(`import of ${imports} from ${lib}`);
 
             const [appName, _wsName, subWsName] =
               lib.split('/');
@@ -147,7 +147,7 @@ export const succession = async (targets: TTargets) => {
                 wsName,
                 subWsName,
               ].join('-');
-              console.log('subWsName 3' + possibleSubWs);
+          //    console.log('subWsName 3' + possibleSubWs);
 
               return resolvePossibleWs({
                 lib,
@@ -165,7 +165,7 @@ export const succession = async (targets: TTargets) => {
           if (yResult) {
             // console.log(yResult);
             const u1 = update({
-              m: 'poss yResult',
+              mode: 'poss yResult',
               file,
               ...yResult,
               nextWriteUpdates,
@@ -195,7 +195,7 @@ export const succession = async (targets: TTargets) => {
               subWsName,
               subWsName1,
             ].join('/');
-            console.log('subWsName 2' + subWsName);
+         //   console.log('subWsName 2' + subWsName);
             if (subWsName && !/[A-Z]/.test(subWsName)) {
               const possibleSubWs = [
                 wsName,
@@ -226,7 +226,7 @@ export const succession = async (targets: TTargets) => {
           if (xResult) {
             //console.log(xResult);
             const u1 = update({
-              m: 'poss xResult',
+              mode: 'poss xResult',
               file,
               nextWriteUpdates,
               ...xResult,
@@ -246,7 +246,7 @@ export const succession = async (targets: TTargets) => {
           );
 
           if (ws) {
-            console.log('WS ', ws.name, libPath, imports);
+       //     console.log('WS ', ws.name, libPath, imports);
             // const xs = file.match(prefix) ?? [];
             // const x = xs[index];
             // imports = x?.split(/[{}]/g) ?? [];
@@ -304,6 +304,9 @@ export const succession = async (targets: TTargets) => {
                         .filter(Boolean);
 
                       const nextParts = next.split(/[/-]/g);
+                      // console.log('PREVPARTS');
+                      // console.log(prevParts);
+                      // console.log('PREVPARTS');
 
                       prev = prevParts
                         .filter((_, i) =>
@@ -312,12 +315,12 @@ export const succession = async (targets: TTargets) => {
                         .map((v, i) =>
                           i === 0
                             ? v
-                            : `${prevDelimiters[i]}${v}`
+                            : `${prevDelimiters[i] ?? '/'}${v}`
                         )
                         .join('');
 
                       const u2 = update({
-                        m: '2',
+                        mode: '2',
                         file,
                         path: filePath,
                         prev,
@@ -358,8 +361,8 @@ export const succession = async (targets: TTargets) => {
       //   console.log('----');
       //   console.log(key);
       const [path, nextFile, reason] = writeUpdate;
-    //  console.log(nextFile);
-  //   await writeFile(path, nextFile);
+      //  console.log(nextFile);
+    //  await writeFile(path, nextFile);
       //   console.log('----');
       console.log(path);
       console.log(reason);

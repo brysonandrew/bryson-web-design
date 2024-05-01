@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-config-types",
-  "version": "7.0.44",
+  "version": "7.0.47",
   "description": "Motion config types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,10 +21,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-config-constants": "7.0.44",
+    "@brysonandrew/motion-config-constants": "7.0.47",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.44",
-    "@brysonandrew/motion": "7.0.44"
+    "@brysonandrew/config-types": "7.0.47",
+    "@brysonandrew/motion": "7.0.47"
   },
   "exports": {
     ".": {

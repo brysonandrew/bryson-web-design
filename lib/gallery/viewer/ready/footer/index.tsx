@@ -8,7 +8,7 @@ import { useApp } from '@brysonandrew/app';
 import {
   TRANSITION_04_EASEIN_008,
   PRESENCE_UP_Y,
-} from '@brysonandrew/motion';
+} from '@brysonandrew/motion-config-constants';
 
 type TProps = TBaseProps;
 export const Footer: FC<TProps> = (props) => {

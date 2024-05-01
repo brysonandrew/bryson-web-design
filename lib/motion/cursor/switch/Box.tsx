@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { useCursor } from '@brysonandrew/motion-cursor';
 import { useApp } from '@brysonandrew/app';
-import { DURATION } from '@brysonandrew/motion/config/constants';
+import { DURATION } from '@brysonandrew/motion-config-constants';
 
 type TProps = TClassValueProps & {
   children: ReactNode;

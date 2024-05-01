@@ -17,7 +17,7 @@ import { Moon as MoonIcon, Sun as SunIcon } from './icon';
 import {
   PRESENCE_ROTATE_FROM_TOP,
   PRESENCE_ROTATE_FROM_BOTTOM,
-} from '@brysonandrew/motion';
+} from '@brysonandrew/motion-config-constants';
 
 type TProps = Partial<{
   buttonProps: Partial<TButtonProps>;

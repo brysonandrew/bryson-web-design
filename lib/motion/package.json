@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion",
-  "version": "7.0.44",
+  "version": "7.0.47",
   "description": "Motion library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,10 +26,10 @@
     "@brysonandrew/motion-filter": "*",
     "@brysonandrew/motion-parallax": "*",
     "@brysonandrew/motion-scroll": "*",
-    "@brysonandrew/motion-config-constants": "7.0.44",
-    "@brysonandrew/motion-config-types": "7.0.44",
+    "@brysonandrew/motion-config-constants": "7.0.47",
+    "@brysonandrew/motion-config-types": "7.0.47",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.44"
+    "@brysonandrew/config-types": "7.0.47"
   },
   "exports": {
     ".": {
@@ -67,6 +67,8 @@
     "./core/resolvePresenceRecord/value/zoom": "./core/resolvePresenceRecord/value/zoom.ts",
     "./cursor/CursorProvider": "./cursor/CursorProvider.tsx",
     "./cursor/base": "./cursor/base.tsx",
+    "./cursor/config/constants": "./cursor/config/constants.ts",
+    "./cursor/config/types": "./cursor/config/types.ts",
     "./cursor/hooks": "./cursor/hooks/index.ts",
     "./cursor/hooks/useCursorAnimate": "./cursor/hooks/useCursorAnimate.ts",
     "./cursor/hooks/useCursorOffset": "./cursor/hooks/useCursorOffset.ts",
@@ -76,8 +78,6 @@
     "./cursor/switch/IconWithText": "./cursor/switch/IconWithText.tsx",
     "./cursor/switch/Sight": "./cursor/switch/Sight.tsx",
     "./cursor/switch": "./cursor/switch/index.tsx",
-    "./cursor/config/constants": "./cursor/config/constants.ts",
-    "./cursor/config/types": "./cursor/config/types.ts",
     "./cursor/utils": "./cursor/utils/index.ts",
     "./cursor/utils/resolveCompositeHoverKey": "./cursor/utils/resolveCompositeHoverKey.ts",
     "./cursor/switch/format/Visit": "./cursor/switch/format/Visit.tsx",

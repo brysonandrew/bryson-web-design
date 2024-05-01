@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
-import { DURATION, MOTION_CONFIG, PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion';
+import { DURATION, MOTION_CONFIG, PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-config-constants';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {

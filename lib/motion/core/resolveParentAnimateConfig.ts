@@ -8,7 +8,7 @@ import {
   HOVER_KEY,
   EXIT_KEY,
   HOVER_VARIANT,
-} from '@brysonandrew/motion/config/constants';
+} from '@brysonandrew/motion-config-constants';
 
 export const resolveParentAnimateConfig = (
   config: TResolveParentAnimateConfig = {}

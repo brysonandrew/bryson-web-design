@@ -31,8 +31,8 @@ import { succession } from '@ops/exporter/write/succession';
     targets = await readSubWorkspacesTargets(targets); // iterate over sub workspaces to use them as index rows and peer deps
     targets = await readAllTargets(targets);
 
-   //succession(targets);
-   // return;
+  //  succession(targets);
+  //  return;
     // write workspaces
     await writeWorkspacesPkg(workspaces); // to root package.json
     await writeWorkspacesTsPaths(tsPathsRecord); // to ts-paths

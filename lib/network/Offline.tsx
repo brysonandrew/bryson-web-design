@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { I } from '@brysonandrew/icons-i';
 import { OFFLINE_ICON } from '@brysonandrew/icons-keys/base';
-import { PRESENCE_OPACITY } from '@brysonandrew/motion/config/constants';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion-config-constants';
 
 export const Offline: FC = () => {
   return (

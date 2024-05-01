@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-transformer",
-  "version": "7.0.44",
+  "version": "7.0.47",
   "description": "Utils transformer library",
   "main": "./index.ts",
   "module": "./index.ts",
