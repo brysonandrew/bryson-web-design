@@ -1,9 +1,6 @@
-;
-
-
-
-
-
+export * from './glow/resolveGlowRecord';
+export * from './glow/config/constants';
+export * from './glow/config/types';
 export * from './base/formatRgb';
 export * from './base/formatRgba';
 export * from './base/formatRgbaValue';
@@ -19,9 +16,6 @@ export * from './base/rgbToOpacityRangeRecord';
 export * from './base/rgbToVarRecord';
 export * from './base/config/constants';
 export * from './base/config/types';
-export * from './glow/resolveGlowRecord';
-export * from './glow/config/constants';
-export * from './glow/config/types';
 export * from './gradient/resolveGradient';
 export * from './gradient/resolveGradientStops';
 export * from './gradient/config/constants';

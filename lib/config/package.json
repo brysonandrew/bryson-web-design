@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Config library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "@brysonandrew/config-constants": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/config-constants-number": "*",
-    "@brysonandrew/config-constants-fonts": "*"
+    "@brysonandrew/config-constants-fonts": "*",
+    "@brysonandrew/config-constants-number": "*"
   },
   "exports": {
     ".": {
@@ -32,9 +32,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./constants/fonts": "./constants/fonts/index.ts",
     "./constants/number": "./constants/number/index.ts",
     "./constants/number/series": "./constants/number/series.ts",
-    "./constants/fonts": "./constants/fonts/index.ts",
     "./constants/fonts/bunny/categories": "./constants/fonts/bunny/categories.ts",
     "./constants/fonts/bunny/fonts": "./constants/fonts/bunny/fonts.ts",
     "./constants/fonts/bunny/names": "./constants/fonts/bunny/names.ts",
@@ -42,10 +42,9 @@
     "./constants/fonts/google/fonts": "./constants/fonts/google/fonts.ts",
     "./constants/fonts/google/names": "./constants/fonts/google/names.ts",
     "./types/keys": "./types/keys.ts",
+    "./types/measure": "./types/measure.ts",
     "./types/object": "./types/object.ts",
     "./types/state": "./types/state.ts",
-    "./types/css": "./types/css/index.ts",
-    "./types/css/interactive": "./types/css/interactive.ts",
     "./types/fonts": "./types/fonts/index.ts",
     "./types/numbers": "./types/numbers/index.ts",
     "./types/numbers/series": "./types/numbers/series.ts",
@@ -54,14 +53,16 @@
     "./types/dom/main": "./types/dom/main.ts",
     "./types/dom/motion": "./types/dom/motion.ts",
     "./types/dom/unions": "./types/dom/unions.ts",
+    "./types/css": "./types/css/index.ts",
+    "./types/css/interactive": "./types/css/interactive.ts",
     "./types/transformers/map": "./types/transformers/map.ts",
     "./types/transformers/number": "./types/transformers/number.ts",
     "./types/transformers/parameter": "./types/transformers/parameter.ts",
     "./types/transformers/partial": "./types/transformers/partial.ts",
-    "./types/uno": "./types/uno/index.ts",
-    "./types/validation": "./types/validation/index.ts",
+    "./types/validation/is": "./types/validation/is.ts",
     "./types/validation/isValidKey": "./types/validation/isValidKey.ts",
     "./types/validation/numbers": "./types/validation/numbers.ts",
+    "./types/uno": "./types/uno/index.ts",
     "./types/dom/element": "./types/dom/element/index.ts",
     "./types/dom/element/svg": "./types/dom/element/svg.ts",
     "./types/transformers/format/camel": "./types/transformers/format/camel.ts",

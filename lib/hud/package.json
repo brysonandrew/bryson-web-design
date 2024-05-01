@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hud",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Hud library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,8 +21,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/app": "7.0.34",
-    "@brysonandrew/viewport": "7.0.34",
+    "@brysonandrew/app": "7.0.41",
+    "@brysonandrew/viewport": "7.0.41",
     "clsx": "^1.2.1",
     "framer-motion": "^10.18.0"
   },

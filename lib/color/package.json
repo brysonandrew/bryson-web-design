@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,8 +22,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-base": "*",
     "@brysonandrew/color-glow": "*",
+    "@brysonandrew/color-base": "*",
     "@brysonandrew/color-gradient": "*",
     "@brysonandrew/color-grayscale": "*"
   },
@@ -33,6 +33,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./glow/resolveGlowRecord": "./glow/resolveGlowRecord.ts",
+    "./glow/config/constants": "./glow/config/constants.ts",
+    "./glow/config/types": "./glow/config/types.ts",
     "./base/formatRgb": "./base/formatRgb.ts",
     "./base/formatRgba": "./base/formatRgba.ts",
     "./base/formatRgbaValue": "./base/formatRgbaValue.ts",
@@ -48,9 +51,6 @@
     "./base/rgbToVarRecord": "./base/rgbToVarRecord.ts",
     "./base/config/constants": "./base/config/constants.ts",
     "./base/config/types": "./base/config/types.ts",
-    "./glow/resolveGlowRecord": "./glow/resolveGlowRecord.ts",
-    "./glow/config/constants": "./glow/config/constants.ts",
-    "./glow/config/types": "./glow/config/types.ts",
     "./gradient/resolveGradient": "./gradient/resolveGradient.ts",
     "./gradient/resolveGradientStops": "./gradient/resolveGradientStops.ts",
     "./gradient/config/constants": "./gradient/config/constants.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -27,9 +27,9 @@
     "@brysonandrew/layout-light": "*",
     "@brysonandrew/layout-lists": "*",
     "@brysonandrew/layout-line": "*",
+    "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-portal": "*",
     "@brysonandrew/layout-section": "*",
-    "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-typography": "*",
     "@brysonandrew/layout-utils": "*"
   },
@@ -46,8 +46,8 @@
     "./back/motion/Blur": "./back/motion/Blur.tsx",
     "./back/motion/Fill": "./back/motion/Fill.tsx",
     "./back/motion": "./back/motion/index.tsx",
-    "./blank/config/types": "./blank/config/types.ts",
     "./blank/motion": "./blank/motion/index.tsx",
+    "./blank/config/types": "./blank/config/types.ts",
     "./effects/Brighten": "./effects/Brighten.tsx",
     "./effects/Glow": "./effects/Glow.tsx",
     "./effects/Invert": "./effects/Invert.tsx",

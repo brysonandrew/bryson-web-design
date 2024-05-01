@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TSvgClipPathProps } from '@brysonandrew/config-types';
-import { SvgWrap } from '@brysonandrew/svg/SvgWrap';
+import { SvgWrap } from '@brysonandrew/svg/dimensionless/dimensionless';
 
 type TProps = TSvgClipPathProps & {
   clipPathId: string;

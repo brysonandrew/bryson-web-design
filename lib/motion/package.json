@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Motion library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,10 +26,10 @@
     "@brysonandrew/motion-filter": "*",
     "@brysonandrew/motion-parallax": "*",
     "@brysonandrew/motion-scroll": "*",
-    "@brysonandrew/motion-config-constants": "7.0.34",
-    "@brysonandrew/motion-config-types": "7.0.34",
+    "@brysonandrew/motion-config-constants": "7.0.41",
+    "@brysonandrew/motion-config-types": "7.0.41",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.34"
+    "@brysonandrew/config-types": "7.0.41"
   },
   "exports": {
     ".": {
@@ -81,11 +81,11 @@
     "./filter/utils/glow": "./filter/utils/glow.ts",
     "./filter/utils/invert": "./filter/utils/invert.ts",
     "./parallax/config": "./parallax/config.ts",
+    "./parallax/aggregator": "./parallax/aggregator/index.tsx",
+    "./parallax/aggregator/useScrollYBounds": "./parallax/aggregator/useScrollYBounds.ts",
     "./parallax/hooks/useDispersion": "./parallax/hooks/useDispersion.tsx",
     "./parallax/hooks/useResistance": "./parallax/hooks/useResistance.tsx",
     "./parallax/hooks/useVisibility": "./parallax/hooks/useVisibility.tsx",
-    "./parallax/aggregator": "./parallax/aggregator/index.tsx",
-    "./parallax/aggregator/useScrollYBounds": "./parallax/aggregator/useScrollYBounds.ts",
     "./parallax/aggregator/values/Dispersion": "./parallax/aggregator/values/Dispersion.tsx",
     "./parallax/aggregator/values/Resistance": "./parallax/aggregator/values/Resistance.tsx",
     "./parallax/aggregator/values/Visibility": "./parallax/aggregator/values/Visibility.tsx",

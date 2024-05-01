@@ -9,7 +9,7 @@ import {
 import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
 import { TChildren } from '@brysonandrew/config-types/dom';
 import { BlurMotion } from '@brysonandrew/svg-filter/blur/motion';
-import { TDimensions } from '@brysonandrew/measure';
+import { TDimensions } from '@brysonandrew/config-types';
 
 type TProps = {
   mediaRecord: TMediaRecord;

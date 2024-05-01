@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/contact-list",
-  "version": "7.0.34",
+  "version": "7.0.41",
   "description": "Contact list library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,14 +21,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.34",
-    "@brysonandrew/motion-cursor": "7.0.34",
-    "@brysonandrew/interactive": "7.0.34",
-    "@brysonandrew/notifications": "7.0.34",
-    "@brysonandrew/utils-attributes": "7.0.34",
+    "@brysonandrew/config-types": "7.0.41",
+    "@brysonandrew/motion-cursor": "7.0.41",
+    "@brysonandrew/interactive": "7.0.41",
+    "@brysonandrew/notifications": "7.0.41",
+    "@brysonandrew/utils-attributes": "7.0.41",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "@brysonandrew/icons-keys": "7.0.34",
+    "@brysonandrew/icons-keys": "7.0.41",
     "react-dom": "^18.2.0"
   },
   "exports": {

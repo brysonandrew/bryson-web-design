@@ -35,6 +35,18 @@ export const PRESENCE_OPACITY = {
     },
 };
 
+export const PRESENCE_OPACITY_05 = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 0.5,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
 export const PRESENCE_OPACITY_ANIMATE_DELAY_04 = {
     initial: {
       opacity: 0,

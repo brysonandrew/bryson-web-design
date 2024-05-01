@@ -1,5 +1,5 @@
 
-import { TDimensions, TDimensionsInit, TDimensionsReady } from '@brysonandrew/measure/config/types';
+import { TDimensions, TDimensionsInit, TDimensionsReady } from '@brysonandrew/config-types/measure';
 import { useMemo } from 'react';
 
 export type TImageDimensions =

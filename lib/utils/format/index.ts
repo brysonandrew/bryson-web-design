@@ -1,7 +1,5 @@
-import type {
-  TTPascalToKebab,
-  TTTitleToKebab,
-} from '@brysonandrew/config-types';
+import type { TTTitleToKebab } from '@brysonandrew/config-types';
+import { TTPascalToKebab } from '@brysonandrew/config-types/transformers/format/kebab';
 
 export const capitalize = (word: string | null) =>
   word

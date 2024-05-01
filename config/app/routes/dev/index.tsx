@@ -2,7 +2,7 @@ import {
   DEV_PATH_BASE,
   DEV_PATH_KEYS,
 } from '@app/routes/dev/config/constants';
-import { NotFound } from '@brysonandrew/routes/not-found';
+import { AppNotFound } from '@brysonandrew/app';
 import { List } from './List';
 import { RouteObject } from 'react-router';
 import { TDevPageTitle } from '@app/routes/dev/config/types';
@@ -22,7 +22,7 @@ export const DEV_ROUTES: RouteObject[] = [
       ...DEV_RECORD.routes,
       {
         path: '*',
-        element: <NotFound homePath={DEV_PATH_BASE} />,
+        element: <AppNotFound homePath={DEV_PATH_BASE} />,
       },
     ],
   },

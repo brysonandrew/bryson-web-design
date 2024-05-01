@@ -5,11 +5,11 @@ import {
   useDelayCallback,
 } from '@brysonandrew/hooks-window';
 import { useIsomorphicLayoutEffect } from 'framer-motion';
+import { measureContainer } from '@brysonandrew/viewport/measure-container';
 import {
   TDimensionsInit,
   TDimensionsReady,
-} from '@brysonandrew/measure';
-import { measureContainer } from '@brysonandrew/viewport/measure-container';
+} from '@brysonandrew/config-types';
 
 const RESIZE_COOLDOWN = 400;
 
