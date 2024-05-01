@@ -1,13 +1,9 @@
 import type { FC } from 'react';
-import {
-  MOTION_CONFIG,
-  DURATION,
-  PRESENCE_OPACITY_UP_Y,
-} from '@brysonandrew/motion-core';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import clsx from 'clsx';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
+import { DURATION, MOTION_CONFIG, PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion';
 
 type TProps = TClassValueProps &
   TDivMotionProps & {

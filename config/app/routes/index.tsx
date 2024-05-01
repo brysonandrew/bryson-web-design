@@ -38,7 +38,7 @@ const MAIN_ROUTES = [
       ...routes,
       {
         path: '*',
-        element: <AppNotFound pathnameColor={COLOR_RECORD.accent} />,
+        element: <AppNotFound  />,
       },
     ],
   },

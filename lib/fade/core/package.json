@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-core",
-  "version": "7.0.41",
+  "version": "7.0.44",
   "description": "Fade core library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "@brysonandrew/color-gradient": "7.0.41",
-    "@brysonandrew/config-types": "7.0.41",
+    "@brysonandrew/color-gradient": "7.0.44",
+    "@brysonandrew/config-types": "7.0.44",
     "framer-motion": "^10.18.0"
   },
   "exports": {

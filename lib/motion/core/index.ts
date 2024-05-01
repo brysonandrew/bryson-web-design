@@ -1,4 +1,8 @@
 
+export * from './resolveAnimation';
+export * from './resolveParentAnimateConfig';
+export * from './resolvePresence';
+export * from './resolveRotateXPresence';
 export * from './resolveTransitionRecord';
 export * from './resolveBaseTransitionRecord';
 export * from './resolveBaseTransitionRecord/resolveEaseStringify';

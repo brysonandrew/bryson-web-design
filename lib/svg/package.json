@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "7.0.41",
+  "version": "7.0.44",
   "description": "Svg library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,13 +22,11 @@
   ],
   "peerDependencies": {
     "@brysonandrew/svg-clip-path": "*",
+    "@brysonandrew/svg-dimensionless": "*",
     "@brysonandrew/svg-filter": "*",
-    "@brysonandrew/svg-icon": "*",
-    "@brysonandrew/config-types": "7.0.41",
-    "react": "^18.2.0"
+    "@brysonandrew/svg-icon": "*"
   },
   "exports": {
-    "./SvgWrap": "./SvgWrap.tsx",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
@@ -36,6 +34,7 @@
     },
     "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
     "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx",
+    "./dimensionless/dimensionless": "./dimensionless/dimensionless.tsx",
     "./filter/aura": "./filter/aura/index.tsx",
     "./filter/blur/basic": "./filter/blur/basic.tsx",
     "./filter/displacement/config": "./filter/displacement/config.ts",

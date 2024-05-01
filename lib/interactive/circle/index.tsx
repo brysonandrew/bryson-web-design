@@ -3,12 +3,12 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Background } from './Background';
 import { useApp } from '@brysonandrew/app';
 import { motion } from 'framer-motion';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 
 type TPosition = 'relative' | 'absolute';
 
@@ -32,7 +32,7 @@ export const Circle: FC<TProps> = ({
       className={clsx(
         position,
         'center w-10 h-10',
-        classValue,
+        classValue
       )}
       style={{
         borderRadius: BORDER_RADIUS.XL,

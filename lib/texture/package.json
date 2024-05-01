@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.41",
+  "version": "7.0.44",
   "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,6 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/texture-mesh": "*",
     "@brysonandrew/texture-metal": "*"
   },
   "exports": {

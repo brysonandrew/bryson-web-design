@@ -715,6 +715,30 @@
       ],
       "@brysonandrew/motion-config-constants/*": [
         "lib/motion/config/constants/*"
+      ],
+      "@brysonandrew/utils-box": [
+        "lib/utils/box"
+      ],
+      "@brysonandrew/utils-box/*": [
+        "lib/utils/box/*"
+      ],
+      "@brysonandrew/texture-zebra": [
+        "lib/texture/zebra"
+      ],
+      "@brysonandrew/texture-zebra/*": [
+        "lib/texture/zebra/*"
+      ],
+      "@brysonandrew/texture-mesh": [
+        "lib/texture/mesh"
+      ],
+      "@brysonandrew/texture-mesh/*": [
+        "lib/texture/mesh/*"
+      ],
+      "@brysonandrew/svg-dimensionless": [
+        "lib/svg/dimensionless"
+      ],
+      "@brysonandrew/svg-dimensionless/*": [
+        "lib/svg/dimensionless/*"
       ]
     }
   }

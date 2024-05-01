@@ -11,6 +11,6 @@ export * from './controls/invert';
 export * from './controls/presets';
 export * from './page/experience/Item';
 export * from './page/experience';
-export * from './controls/print-instructions';
 export * from './page/header/Title';
 export * from './page/header';
+export * from './controls/print-instructions';
