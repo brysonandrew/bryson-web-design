@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/interactive",
-  "version": "7.0.41",
+  "version": "7.0.44",
   "description": "Interactive library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,25 +21,26 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.41",
-    "@brysonandrew/motion-cursor": "7.0.41",
-    "@brysonandrew/icons-keys": "7.0.41",
-    "@brysonandrew/notifications": "7.0.41",
-    "@brysonandrew/utils-attributes": "7.0.41",
-    "@brysonandrew/utils-error": "7.0.41",
+    "@brysonandrew/config-types": "7.0.44",
+    "@brysonandrew/motion-cursor": "7.0.44",
+    "@brysonandrew/icons-keys": "7.0.44",
+    "@brysonandrew/notifications": "7.0.44",
+    "@brysonandrew/utils-attributes": "7.0.44",
+    "@brysonandrew/utils-error": "7.0.44",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
     "react-router-dom": "^6.21.3",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/motion-core": "7.0.41",
-    "@brysonandrew/app": "7.0.41",
-    "@brysonandrew/icons-i": "7.0.41",
-    "@brysonandrew/motion-config-constants": "7.0.41",
-    "@brysonandrew/hooks-events": "7.0.41",
-    "@brysonandrew/hooks-dom": "7.0.41",
-    "@brysonandrew/motion-filter": "7.0.41",
-    "@brysonandrew/layout-effects": "7.0.41"
+    "@brysonandrew/icons-i": "7.0.44",
+    "@brysonandrew/motion-config-constants": "7.0.44",
+    "@brysonandrew/hooks-events": "7.0.44",
+    "@brysonandrew/hooks-dom": "7.0.44",
+    "@brysonandrew/motion-filter": "7.0.44",
+    "@brysonandrew/layout-effects": "7.0.44",
+    "@brysonandrew/app": "7.0.44",
+    "@brysonandrew/motion": "7.0.44",
+    "@brysonandrew/motion-core": "7.0.44"
   },
   "types": "index.d.ts",
   "exports": {
@@ -50,10 +51,6 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./circle/Anchor": "./circle/Anchor.tsx",
-    "./circle/Background": "./circle/Background.tsx",
-    "./circle/Button": "./circle/Button.tsx",
-    "./circle": "./circle/index.tsx",
     "./base/B": "./base/B.tsx",
     "./base/BAnchor": "./base/BAnchor.tsx",
     "./base/BAnchorMotion": "./base/BAnchorMotion.tsx",
@@ -68,6 +65,10 @@
     "./base/IconLink": "./base/IconLink.tsx",
     "./base/Row": "./base/Row.tsx",
     "./base/TextAnchor": "./base/TextAnchor.tsx",
-    "./base/TextLink": "./base/TextLink.tsx"
+    "./base/TextLink": "./base/TextLink.tsx",
+    "./circle/Anchor": "./circle/Anchor.tsx",
+    "./circle/Background": "./circle/Background.tsx",
+    "./circle/Button": "./circle/Button.tsx",
+    "./circle": "./circle/index.tsx"
   }
 }

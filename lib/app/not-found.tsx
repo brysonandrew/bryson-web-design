@@ -1,12 +1,14 @@
 import type { FC } from 'react';
-import { NotFound } from '@brysonandrew/routes-not-found';
-import type { TDivProps } from '@brysonandrew/config-types/dom';
+import {
+  NotFound,
+  TNotFoundProps,
+} from '@brysonandrew/routes-not-found';
 import { useApp } from '@brysonandrew/app/AppProvider';
 
-type TProps = TDivProps;
+type TProps = TNotFoundProps;
 export const AppNotFound: FC<TProps> = (props) => {
   const {
     COLOR: { accent },
   } = useApp();
-  return <NotFound pathnameColor={accent} />;
+  return <NotFound pathnameColor={accent} {...props} />;
 };

@@ -1,7 +1,7 @@
 
-export * from './dimensionless/dimensionless';
 export * from './clip-path/ClipWrap';
 export * from './clip-path/shapes/circle';
+export * from './dimensionless/dimensionless';
 export * from './filter/aura';
 export * from './filter/blur/basic';
 export * from './filter/displacement/config';

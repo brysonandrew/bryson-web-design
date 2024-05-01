@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { TDivProps } from '@brysonandrew/config-types';
 import { resolveGradient } from '@brysonandrew/color-gradient';
 import { resolveVarCss } from '@brysonandrew/color-base';
-import { resolveBackground } from '@brysonandrew/utils/box';
+import { resolveBackground } from '@brysonandrew/utils-box';
 
 type TProps = TDivProps & {
   materialColor: string;
@@ -39,3 +39,5 @@ export const Mesh: FC<TProps> = ({
     </div>
   );
 };
+
+

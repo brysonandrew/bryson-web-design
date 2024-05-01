@@ -2,13 +2,13 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { I } from '@brysonandrew/icons-i';
 import { OFFLINE_ICON } from '@brysonandrew/icons-keys/base';
-import { PRESENCE_OPACITY } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY } from '@brysonandrew/motion/config/constants';
 
 export const Offline: FC = () => {
   return (
     <motion.div
-      className='row gap-1 uppercase pl-1 pr-2.5 py-0.5'
-      layout='position'
+      className="row gap-1 uppercase pl-1 pr-2.5 py-0.5"
+      layout="position"
       {...PRESENCE_OPACITY}
     >
       <I

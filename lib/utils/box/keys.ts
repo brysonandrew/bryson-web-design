@@ -9,7 +9,7 @@ import {
   TCssBoxTailKey,
   TCssBoxBorderTailKey,
   TCssBoxBackgroundTailKey,
-} from '@brysonandrew/utils/box/types';
+} from '@brysonandrew/utils-box/types';
 
 export const resolveBoxCssKey = <T extends TBoxVariant>(
   variant: T,

@@ -3,7 +3,7 @@ import {
   TBorderConfig,
   TBoxConfig,
   TBoxVariant,
-} from '@brysonandrew/utils/box/types';
+} from '@brysonandrew/utils-box/types';
 
 export const isBoxBackgroundConfig = (
   config: TBoxConfig<TBoxVariant>

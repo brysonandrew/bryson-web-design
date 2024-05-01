@@ -16,7 +16,7 @@ import { Motion2Speed } from '@brysonandrew/svg-filter/blur/motion/2/speed';
 import { Motion2TransformerX } from '@brysonandrew/svg-filter/blur/motion/2/transformer/x';
 import { Motion2TransformerY } from '@brysonandrew/svg-filter/blur/motion/2/transformer/y';
 import { resolveBlurMotionKeys } from '@brysonandrew/svg-filter/blur/motion/keys';
-import { SvgWrap } from '@brysonandrew/svg/dimensionless/dimensionless';
+import { SvgWrap } from '@brysonandrew/svg-dimensionless/dimensionless';
 
 export const MOTION_BLUR_ID_2 = 'MOTION_BLUR_ID_2';
 

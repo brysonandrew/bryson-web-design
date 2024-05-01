@@ -1,5 +1,6 @@
 export * from './AppInit';
 export * from './AppProvider';
+export * from './not-found';
 export * from './useAppStyle';
 export * from './useInit';
 export * from './utils/resolveColorSet';

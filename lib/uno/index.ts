@@ -1,5 +1,3 @@
-export * from './rules/resolveCharGapRules';
-export * from './rules/resolveOpacityRules';
 export * from './preflights/reset';
 export * from './preflights/resolveInput';
 export * from './preflights/resolveScrollbar';
@@ -7,6 +5,8 @@ export * from './presets/resolveFonts';
 export * from './presets/resolvePresets';
 export * from './presets/resolveWebFont';
 export * from './presets/config/types';
+export * from './rules/resolveCharGapRules';
+export * from './rules/resolveOpacityRules';
 export * from './shortcuts/background';
 export * from './shortcuts/flex';
 export * from './shortcuts/interactive';

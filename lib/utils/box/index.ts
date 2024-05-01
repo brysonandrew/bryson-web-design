@@ -1,15 +1,12 @@
 import {
   isBoxBackgroundConfig,
   isBoxBorderConfig,
-} from '@brysonandrew/utils/box/is';
+} from '@brysonandrew/utils-box/is';
+import { resolveBoxCssKey } from '@brysonandrew/utils-box/keys';
 import {
   TBoxVariant,
   TBoxConfig,
-  TBoxVariantTail,
-  TCssBoxTailKey,
-  TCssBoxBorderTailKey,
-} from '@brysonandrew/utils/box/types';
-
+} from '@brysonandrew/utils-box/types';
 
 export const resolveFill = <T extends TBoxVariant>(
   config: TBoxConfig<T>
@@ -17,8 +14,8 @@ export const resolveFill = <T extends TBoxVariant>(
   const { variant = 'background', color, image } = config;
 
   const result = {
-    [resolveBoxCssKey(variant,'Image')]: image,
-    [resolveBoxCssKey(variant,'Color')]: color,
+    [resolveBoxCssKey(variant, 'Image')]: image,
+    [resolveBoxCssKey(variant, 'Color')]: color,
   };
   if (isBoxBackgroundConfig(config)) {
     const { position, size } = config;

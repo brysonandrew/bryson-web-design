@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "7.0.41",
+  "version": "7.0.44",
   "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -25,8 +25,8 @@
     "@brysonandrew/not-found": "*",
     "react-router": "^6.21.1",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.41",
-    "@brysonandrew/utils-format": "7.0.41"
+    "@brysonandrew/config-types": "7.0.44",
+    "@brysonandrew/utils-format": "7.0.44"
   },
   "exports": {
     ".": {

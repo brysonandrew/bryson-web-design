@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils-box",
-  "version": "7.0.41",
-  "description": "Utils css library",
+  "version": "7.0.44",
+  "description": "Utils box library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.41"
+    "@brysonandrew/config-types": "7.0.44",
+    "@brysonandrew/utils-format": "7.0.44",
+    "react": "^18.2.0"
   },
   "exports": {
     ".": {
@@ -29,6 +31,8 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./resolveVarsCssRecord": "./resolveVarsCssRecord.ts"
+    "./is": "./is.ts",
+    "./keys": "./keys.ts",
+    "./types": "./types.ts"
   }
 }

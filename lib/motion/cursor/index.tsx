@@ -14,10 +14,6 @@ export const Cursor: FC<TCursorProps> = memo((props) => {
 
 export * from './CursorProvider';
 export * from './base';
-export * from './config/constants';
-export * from './config/types';
-export * from './utils';
-export * from './utils/resolveCompositeHoverKey';
 export * from './hooks';
 export * from './hooks/useCursorAnimate';
 export * from './hooks/useCursorOffset';
@@ -27,4 +23,8 @@ export * from './switch/Box';
 export * from './switch/IconWithText';
 export * from './switch/Sight';
 export * from './switch';
+export * from './config/constants';
+export * from './config/types';
+export * from './utils';
+export * from './utils/resolveCompositeHoverKey';
 export * from './switch/format/Visit';

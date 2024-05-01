@@ -24,7 +24,6 @@
     "**/*.ts",
     "**/*.js",
     "**/*.jsx",
-    "**/*.tsx"
-, ".cemetary/core.ts"  ],
+    "**/*.tsx"],
   "extends": "./tsconfig.paths.json"
 }
