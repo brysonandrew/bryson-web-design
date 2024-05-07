@@ -6,31 +6,37 @@ import { resolveBoxCssKey } from '@brysonandrew/utils-box/keys';
 import {
   TBoxVariant,
   TBoxConfig,
+  TBoxCommonConfig,
 } from '@brysonandrew/utils-box/types';
+
+const resolveCommon = (
+  variant: TBoxVariant,
+  config: TBoxCommonConfig<typeof variant>
+) => ({
+  [resolveBoxCssKey(variant, 'Image')]: config['image'],
+  [resolveBoxCssKey(variant, 'Color')]: config['color'],
+});
 
 export const resolveFill = <T extends TBoxVariant>(
   config: TBoxConfig<T>
 ) => {
-  const { variant = 'background', color, image } = config;
-
-  const result = {
-    [resolveBoxCssKey(variant, 'Image')]: image,
-    [resolveBoxCssKey(variant, 'Color')]: color,
-  };
   if (isBoxBackgroundConfig(config)) {
-    const { position, size } = config;
+    const variant = 'background' as const;
+    const { position, size, ...commonConfig } = config;
     return {
       [`${variant}Position`]: position,
       [`${variant}Size`]: size,
-      ...result,
+      ...resolveCommon(variant, commonConfig),
     };
   }
 
   if (isBoxBorderConfig(config)) {
-    const { style, width } = config;
+    const variant: TBoxVariant = 'border';
+    const { style, width, ...commonConfig } = config;
     return {
       [`${variant}Style`]: style,
       [`${variant}Width`]: width,
+      ...resolveCommon(variant, commonConfig),
     };
   }
 };
@@ -39,7 +45,6 @@ export const resolveBorder = (
   config: TBoxConfig<'border'>
 ) =>
   resolveFill({
-    variant: 'border',
     ...config,
   });
 
@@ -47,7 +52,6 @@ export const resolveBackground = (
   config: TBoxConfig<'background'>
 ) =>
   resolveFill({
-    variant: 'background',
     ...config,
   });
 

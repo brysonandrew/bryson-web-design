@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "7.0.53",
+  "version": "7.0.54",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/uno-preflights": "*",
     "@brysonandrew/uno-presets": "*",
+    "@brysonandrew/uno-preflights": "*",
     "@brysonandrew/uno-spacing": "*",
-    "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-theme": "*",
-    "@brysonandrew/uno-shortcuts": "*"
+    "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/uno-rules": "*"
   },
   "exports": {
     ".": {
@@ -34,22 +34,18 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./preflights/reset": "./preflights/reset.ts",
-    "./preflights/resolveInput": "./preflights/resolveInput.ts",
-    "./preflights/resolveScrollbar": "./preflights/resolveScrollbar.ts",
     "./presets/resolveFonts": "./presets/resolveFonts.ts",
     "./presets/resolvePresets": "./presets/resolvePresets.ts",
     "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
     "./presets/config/types": "./presets/config/types.ts",
-    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
-    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
+    "./preflights/reset": "./preflights/reset.ts",
+    "./preflights/resolveInput": "./preflights/resolveInput.ts",
+    "./preflights/preflightsScrollbarCss": "./preflights/preflightsScrollbarCss.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
     "./shortcuts/flex": "./shortcuts/flex.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
     "./shortcuts/layout": "./shortcuts/layout.ts",
     "./shortcuts/opacity": "./shortcuts/opacity.ts",
-    "./shortcuts/text/color": "./shortcuts/text/color.ts",
-    "./shortcuts/text": "./shortcuts/text/index.ts",
     "./shortcuts/neu/constants": "./shortcuts/neu/constants.ts",
     "./shortcuts/neu/format": "./shortcuts/neu/format.ts",
     "./shortcuts/neu/mappers": "./shortcuts/neu/mappers.ts",
@@ -58,7 +54,11 @@
     "./shortcuts/neu/resolveNeuClasses": "./shortcuts/neu/resolveNeuClasses.ts",
     "./shortcuts/neu/resolveNeuShadow": "./shortcuts/neu/resolveNeuShadow.ts",
     "./shortcuts/neu/types": "./shortcuts/neu/types.ts",
+    "./shortcuts/text/color": "./shortcuts/text/color.ts",
+    "./shortcuts/text": "./shortcuts/text/index.ts",
     "./shortcuts/neu/ranges": "./shortcuts/neu/ranges/index.ts",
-    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts"
+    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts",
+    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
+    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts"
   }
 }

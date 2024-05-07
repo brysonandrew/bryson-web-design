@@ -1,9 +1,4 @@
-import {
-  TTCamelToPascal,
-  TTPascalToCamel,
-} from '@brysonandrew/config-types';
-import { TTCapitalize } from '@brysonandrew/config-types/transformers/format/capitalize';
-import { capitalize } from '@brysonandrew/utils-format';
+import { TTPascalToCamel } from '@brysonandrew/config-types';
 import {
   TBoxVariant,
   TCssBoxTailKey,
