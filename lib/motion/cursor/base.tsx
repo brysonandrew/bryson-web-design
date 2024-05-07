@@ -76,7 +76,7 @@ export const CursorBase: FC<TCursorProps> = memo(
   }
 );
 
-export * from './CursorProvider';
+export * from './cursor-provider';
 export * from './config/constants';
 export * from './config/types';
 export * from './utils';

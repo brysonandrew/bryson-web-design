@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
 import { TSvgProps } from '@brysonandrew/config-types';
 import { I } from '@brysonandrew/icons-i';
-import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@brysonandrew/motion/config/constants';
+import { PRESENCE_OPACITY_ANIMATE_DELAY_04 } from '@brysonandrew/motion-config-constants';
 
 type TProps = {
   children: TChildren;

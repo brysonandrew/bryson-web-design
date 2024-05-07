@@ -5,7 +5,7 @@ const COPY_SIGN_SPACE_REGEXP = /(\s*\w):\s/; // start & middle
 const BACKWARD_CURLY_BRACE_COMMA_SPACE = /\}(\,)/; // start & middle
 
 //const PATH = 'lib/motion/config/generate.ts';
-const WRITE_TO = 'lib/motion/config/constants/core.ts';
+const WRITE_TO = 'lib/motion-config-constants/core.ts';
 (async () => {
   try {
     const targetFilePath = await validateEntryPoint(

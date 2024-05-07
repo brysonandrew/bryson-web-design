@@ -1,7 +1,7 @@
 import {
   TVariant,
   TVariants,
-} from '@brysonandrew/motion/config';
+} from '@brysonandrew/motion-config-types';
 
 export const resolvePresence = (
   initial: TVariant,

@@ -362,7 +362,7 @@ export const succession = async (targets: TTargets) => {
       //   console.log(key);
       const [path, nextFile, reason] = writeUpdate;
       //  console.log(nextFile);
-    //  await writeFile(path, nextFile);
+    await writeFile(path, nextFile);
       //   console.log('----');
       console.log(path);
       console.log(reason);

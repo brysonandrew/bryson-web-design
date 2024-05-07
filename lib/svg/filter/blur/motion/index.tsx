@@ -14,7 +14,6 @@ import {
   TDirectionProps,
   TIdProps,
 } from '@brysonandrew/svg-filter';
-import { resolveCompositeKey } from '@brysonandrew/utils-key';
 import { SvgWrap } from '@brysonandrew/svg';
 import { resolveBlurMotionKeys } from '@brysonandrew/svg-filter/blur/motion/keys';
 

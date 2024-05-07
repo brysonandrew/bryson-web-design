@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/head",
-  "version": "7.0.47",
+  "version": "7.0.53",
   "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,9 +23,9 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-helmet-async": "^1.3.0",
-    "@brysonandrew/app": "7.0.47",
-    "@brysonandrew/color-base": "7.0.47",
-    "@brysonandrew/routes": "7.0.47",
+    "@brysonandrew/app": "7.0.53",
+    "@brysonandrew/color-base": "7.0.53",
+    "@brysonandrew/routes": "7.0.53",
     "react-router": "^6.21.1"
   },
   "exports": {
