@@ -1,8 +1,8 @@
 import { RESET } from './reset';
 import {
-  resolveScrollbar,
-  TResolveScrollbarConfig,
-} from './resolveScrollbar';
+  preflightsScrollbarCss,
+  TPreflightsScrollbarCssConfig,
+} from './scrollbar';
 import {
   resolveInput,
   TResolveInputConfig,
@@ -11,7 +11,7 @@ import { Preflight } from 'unocss';
 
 type TPreflightConfig = {
   inputConfig?: TResolveInputConfig;
-  scrollbarConfig?: TResolveScrollbarConfig;
+  scrollbarConfig?: TPreflightsScrollbarCssConfig;
 };
 export const resolvePreflights = <T extends object>({
   inputConfig,
@@ -22,7 +22,7 @@ export const resolvePreflights = <T extends object>({
     getCSS: () => RESET,
   },
   ...(inputConfig
-    ? [ 
+    ? [
         {
           getCSS: (): string => resolveInput(inputConfig),
         },
@@ -32,7 +32,7 @@ export const resolvePreflights = <T extends object>({
     ? [
         {
           getCSS: (): string =>
-            resolveScrollbar(scrollbarConfig),
+            preflightsScrollbarCss(scrollbarConfig),
         },
       ]
     : []),
@@ -40,4 +40,4 @@ export const resolvePreflights = <T extends object>({
 
 export * from './reset';
 export * from './resolveInput';
-export * from './resolveScrollbar';
+export * from './scrollbar';

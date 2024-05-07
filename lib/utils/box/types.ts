@@ -13,15 +13,15 @@ export type TBoxVariantTail<
 
 type TCssKeys = keyof CSSProperties;
 
-export type TCssBoxTailKey<T extends TBoxVariant> = TBoxVariantTail<TCssKeys, T>;
+export type TCssBoxTailKey<T extends TBoxVariant> =
+  TBoxVariantTail<TCssKeys, T>;
 
 export type TCssBoxBackgroundTailKey = TBoxVariantTail<
   TCssKeys,
   'background'
 >;
 
-export type TBackgroundConfig = {
-  variant?: 'background';
+export type TBoxBackgroundConfig = {
   size?: CSSProperties['backgroundSize'];
   position?: CSSProperties['backgroundPosition'];
   clip?: CSSProperties['backgroundClip'];
@@ -35,19 +35,32 @@ export type TCssBoxBorderTailKey = TBoxVariantTail<
   TCssKeys,
   'border'
 >;
+export type TBoxBorderConfigKey =
+  Lowercase<TCssBoxBorderTailKey>;
+export type TBoxBorderConfigValue<
+  T extends TCssBoxBorderTailKey = TCssBoxBorderTailKey
+> = CSSProperties[`border${T}`];
+export type TBoxBorderConfigAttr<
+  T extends TCssBoxBorderTailKey
+> = Record<Lowercase<T>, TBoxBorderConfigValue<T>>;
 
-export type TBorderConfig = {
-  variant?: 'border';
-  width?: CSSProperties['borderWidth'];
-  style?: CSSProperties['borderStyle'];
-  color?: CSSProperties['borderColor'];
-  image?: CSSProperties['borderImage'];
-};
+export type TBoxBorderConfigAll =
+  TBoxBorderConfigAttr<'Width'> &
+    TBoxBorderConfigAttr<'Style'> &
+    TBoxBorderConfigAttr<'Color'> &
+    TBoxBorderConfigAttr<'Image'>;
+export type TBoxBorderConfig = Partial<TBoxBorderConfigAll>;
+// TBoxBorderConfigAttr<TCssBoxBorderTailKey>;
 
 export type TBoxConfig<
   T extends TBoxVariant = 'background'
 > = T extends 'background'
-  ? TBackgroundConfig
+  ? TBoxBackgroundConfig
   : T extends 'border'
-  ? TBorderConfig
+  ? TBoxBorderConfig
   : never;
+
+export type TBoxCommonConfig<T extends TBoxVariant> = Pick<
+  TBoxConfig<T>,
+  'color' | 'image'
+>;

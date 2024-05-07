@@ -1,3 +1,5 @@
+export * from './blank/config/types';
+export * from './blank/motion';
 export * from './back/Blur';
 export * from './back/Fill';
 export * from './back/Screen';
@@ -5,8 +7,6 @@ export * from './back/config/types';
 export * from './back/motion/Blur';
 export * from './back/motion/Fill';
 export * from './back/motion';
-export * from './blank/motion';
-export * from './blank/config/types';
 export * from './effects/Brighten';
 export * from './effects/Glow';
 export * from './effects/Invert';

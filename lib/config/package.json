@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config",
-  "version": "7.0.53",
+  "version": "7.0.54",
   "description": "Config library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "@brysonandrew/config-constants": "*",
     "@brysonandrew/config-types": "*",
-    "@brysonandrew/config-constants-number": "*",
-    "@brysonandrew/config-constants-fonts": "*"
+    "@brysonandrew/config-constants-fonts": "*",
+    "@brysonandrew/config-constants-number": "*"
   },
   "exports": {
     ".": {
@@ -35,12 +35,12 @@
     "./constants/number": "./constants/number/index.ts",
     "./constants/number/series": "./constants/number/series.ts",
     "./constants/fonts": "./constants/fonts/index.ts",
-    "./constants/fonts/google/categories": "./constants/fonts/google/categories.ts",
-    "./constants/fonts/google/fonts": "./constants/fonts/google/fonts.ts",
-    "./constants/fonts/google/names": "./constants/fonts/google/names.ts",
     "./constants/fonts/bunny/categories": "./constants/fonts/bunny/categories.ts",
     "./constants/fonts/bunny/fonts": "./constants/fonts/bunny/fonts.ts",
     "./constants/fonts/bunny/names": "./constants/fonts/bunny/names.ts",
+    "./constants/fonts/google/categories": "./constants/fonts/google/categories.ts",
+    "./constants/fonts/google/fonts": "./constants/fonts/google/fonts.ts",
+    "./constants/fonts/google/names": "./constants/fonts/google/names.ts",
     "./types/keys": "./types/keys.ts",
     "./types/measure": "./types/measure.ts",
     "./types/object": "./types/object.ts",
@@ -48,13 +48,13 @@
     "./types/css": "./types/css/index.ts",
     "./types/css/interactive": "./types/css/interactive.ts",
     "./types/fonts": "./types/fonts/index.ts",
-    "./types/numbers": "./types/numbers/index.ts",
-    "./types/numbers/series": "./types/numbers/series.ts",
     "./types/dom/event": "./types/dom/event.ts",
     "./types/dom": "./types/dom/index.ts",
     "./types/dom/main": "./types/dom/main.ts",
     "./types/dom/motion": "./types/dom/motion.ts",
     "./types/dom/unions": "./types/dom/unions.ts",
+    "./types/numbers": "./types/numbers/index.ts",
+    "./types/numbers/series": "./types/numbers/series.ts",
     "./types/uno": "./types/uno/index.ts",
     "./types/validation/is": "./types/validation/is.ts",
     "./types/validation/isValidKey": "./types/validation/isValidKey.ts",

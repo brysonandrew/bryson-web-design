@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-scroll",
-  "version": "7.0.53",
+  "version": "7.0.54",
   "description": "Motion scroll library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,9 +22,9 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/hooks-window": "7.0.53",
+    "@brysonandrew/hooks-window": "7.0.54",
     "react-router": "^6.21.1",
-    "@brysonandrew/motion-config-types": "7.0.53",
+    "@brysonandrew/motion-config-types": "7.0.54",
     "framer-motion": "^10.18.0",
     "react-router-dom": "^6.21.3"
   },

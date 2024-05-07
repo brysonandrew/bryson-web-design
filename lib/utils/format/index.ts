@@ -25,10 +25,10 @@ export const kebabToPascal = <I extends string>(value: I) =>
 export const pascalToTitle = (pascal: string): string =>
   pascal.split(/(?=[A-Z])/).join(' ');
 
-export const pascalToKebab = (value: string) =>
+export const pascalToKebab = <T extends string>(value: T) =>
   value
     .replace(/([a-z0–9])([A-Z])/g, '$1-$2')
-    .toLowerCase() as TTPascalToKebab<typeof value>;
+    .toLowerCase() as TTPascalToKebab<T>;
 
 export const titleToKebab = <I extends string>(
   title: I
