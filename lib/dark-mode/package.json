@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "7.0.47",
+  "version": "7.0.53",
   "description": "Dark mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,18 +22,18 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/utils-key": "7.0.47",
-    "@brysonandrew/hooks-dom": "7.0.47",
+    "@brysonandrew/utils-key": "7.0.53",
+    "@brysonandrew/hooks-dom": "7.0.53",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/motion-cursor": "7.0.47",
-    "@brysonandrew/interactive": "7.0.47",
-    "@brysonandrew/app": "7.0.47",
-    "@brysonandrew/config-types": "7.0.47",
-    "@brysonandrew/motion": "7.0.47",
-    "@brysonandrew/motion-config-types": "7.0.47",
-    "@brysonandrew/head": "7.0.47",
+    "@brysonandrew/motion-cursor": "7.0.53",
+    "@brysonandrew/interactive": "7.0.53",
+    "@brysonandrew/app": "7.0.53",
+    "@brysonandrew/config-types": "7.0.53",
+    "@brysonandrew/motion-config-constants": "7.0.53",
+    "@brysonandrew/motion-config-types": "7.0.53",
+    "@brysonandrew/head": "7.0.53",
     "clsx": "^1.2.1",
-    "@brysonandrew/utils-function": "7.0.47"
+    "@brysonandrew/utils-function": "7.0.53"
   },
   "exports": {
     "./DarkModeProvider": "./DarkModeProvider.tsx",

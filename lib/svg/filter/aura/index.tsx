@@ -1,7 +1,7 @@
 
 
 
-import { SvgWrap } from '@brysonandrew/svg';
+import { SvgWrap } from '@brysonandrew/svg-dimensionless';
 import { resolveUrlId } from '@brysonandrew/utils-attributes';
 import type { FC, SVGProps } from 'react';
 

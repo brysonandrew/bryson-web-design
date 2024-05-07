@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "7.0.47",
+  "version": "7.0.53",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,16 +22,16 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/gallery": "7.0.47",
-    "@brysonandrew/config-types": "7.0.47",
+    "@brysonandrew/gallery": "7.0.53",
+    "@brysonandrew/config-types": "7.0.53",
     "framer-motion": "^10.18.0",
-    "@brysonandrew/space": "7.0.47",
+    "@brysonandrew/space": "7.0.53",
     "clsx": "^1.2.1",
-    "@brysonandrew/interactive": "7.0.47",
-    "@brysonandrew/contact": "7.0.47",
-    "@brysonandrew/utils-format": "7.0.47",
-    "@brysonandrew/layout-typography": "7.0.47",
-    "@brysonandrew/contact-list": "7.0.47"
+    "@brysonandrew/contact": "7.0.53",
+    "@brysonandrew/utils-format": "7.0.53",
+    "@brysonandrew/interactive": "7.0.53",
+    "@brysonandrew/layout-typography": "7.0.53",
+    "@brysonandrew/contact-list": "7.0.53"
   },
   "exports": {
     "./CvProvider": "./CvProvider.tsx",
@@ -49,10 +49,10 @@
     "./page/Margin": "./page/Margin.tsx",
     "./page": "./page/index.tsx",
     "./controls/invert": "./controls/invert/index.tsx",
-    "./controls/print-instructions": "./controls/print-instructions/index.tsx",
     "./controls/presets": "./controls/presets/index.tsx",
     "./page/experience/Item": "./page/experience/Item.tsx",
     "./page/experience": "./page/experience/index.tsx",
+    "./controls/print-instructions": "./controls/print-instructions/index.tsx",
     "./page/header/Title": "./page/header/Title.tsx",
     "./page/header": "./page/header/index.tsx"
   }

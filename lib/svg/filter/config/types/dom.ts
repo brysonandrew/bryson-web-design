@@ -1,4 +1,3 @@
-import { SVGProps } from "react";
 import { SVGMotionProps } from "framer-motion";
 import { TSvgDisplacementProps, TSvgElementProps, TSvgFilterMorphologyProps, TSvgFilterProps, TSvgProps } from "@brysonandrew/config-types/dom/element/svg";
 

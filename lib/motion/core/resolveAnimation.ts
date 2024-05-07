@@ -15,7 +15,7 @@ import {
   TResolveAnimationConfig,
   TResolveParentAnimateConfig,
   TTransitionConfigs,
-} from '@brysonandrew/motion/config';
+} from '@brysonandrew/motion-config-types';
 import {
   INITIAL_KEY,
   IDLE_KEY,

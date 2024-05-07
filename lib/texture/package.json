@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.47",
+  "version": "7.0.53",
   "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,7 +23,10 @@
   "peerDependencies": {
     "@brysonandrew/texture-mesh": "*",
     "@brysonandrew/texture-metal": "*",
-    "@brysonandrew/texture-zebra": "*"
+    "@brysonandrew/texture-zebra": "*",
+    "react": "^18.2.0",
+    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.3"
   },
   "exports": {
     ".": {
@@ -31,6 +34,8 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./carbon": "./carbon/index.tsx",
+    "./carbon/textures": "./carbon/textures.ts",
     "./metal/css": "./metal/css.ts",
     "./metal/motion": "./metal/motion/index.tsx"
   }

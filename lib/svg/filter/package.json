@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "7.0.47",
+  "version": "7.0.53",
   "description": "Svg filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,14 +21,14 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg": "7.0.47",
-    "@brysonandrew/utils-attributes": "7.0.47",
+    "@brysonandrew/svg-dimensionless": "7.0.53",
+    "@brysonandrew/utils-attributes": "7.0.53",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.47",
+    "@brysonandrew/config-types": "7.0.53",
     "framer-motion": "^10.18.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/utils-key": "7.0.47",
-    "@brysonandrew/svg-dimensionless": "7.0.47"
+    "@brysonandrew/svg": "7.0.53",
+    "@brysonandrew/utils-key": "7.0.53"
   },
   "exports": {
     ".": {
@@ -38,6 +38,7 @@
     },
     "./aura": "./aura/index.tsx",
     "./blur/basic": "./blur/basic.tsx",
+    "./config": "./config/index.ts",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
     "./blur/motion/Speed": "./blur/motion/Speed.tsx",
@@ -46,12 +47,11 @@
     "./blur/motion/config": "./blur/motion/config.ts",
     "./blur/motion": "./blur/motion/index.tsx",
     "./blur/motion/keys": "./blur/motion/keys.ts",
-    "./config": "./config/index.ts",
-    "./blur/motion/2": "./blur/motion/2/index.tsx",
-    "./blur/motion/2/speed": "./blur/motion/2/speed.tsx",
     "./config/constants": "./config/constants/index.ts",
     "./config/types/dom": "./config/types/dom.ts",
     "./config/types": "./config/types/index.ts",
+    "./blur/motion/2": "./blur/motion/2/index.tsx",
+    "./blur/motion/2/speed": "./blur/motion/2/speed.tsx",
     "./blur/motion/2/transformer/x": "./blur/motion/2/transformer/x.tsx",
     "./blur/motion/2/transformer/y": "./blur/motion/2/transformer/y.tsx"
   }
