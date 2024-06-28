@@ -22,7 +22,7 @@ export const TextureMetal: FC<TProps> = ({
   children,
   ...rest
 }) => {
-  const sharedClassValue = clsx('fill', classValue);
+  const sharedClassValue = clsx('fill bg-red', classValue);
   return (
     <div className={sharedClassValue} {...rest}>
       <BackFill {...rest} />
