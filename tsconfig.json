@@ -24,7 +24,6 @@
     "**/*.ts",
     "**/*.js",
     "**/*.jsx",
-    "**/*.tsx"
-  ],
+    "**/*.tsx"],
   "extends": "./tsconfig.paths.json"
 }

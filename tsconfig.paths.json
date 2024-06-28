@@ -685,6 +685,60 @@
       ],
       "@vite/*": [
         "config/vite/*"
+      ],
+      "@brysonandrew/ops": [
+        "lib/ops"
+      ],
+      "@brysonandrew/ops/*": [
+        "lib/ops/*"
+      ],
+      "@brysonandrew/ops-eraser": [
+        "lib/ops/eraser"
+      ],
+      "@brysonandrew/ops-eraser/*": [
+        "lib/ops/eraser/*"
+      ],
+      "@brysonandrew/layout-portal": [
+        "lib/layout/portal"
+      ],
+      "@brysonandrew/layout-portal/*": [
+        "lib/layout/portal/*"
+      ],
+      "@brysonandrew/motion-config-types": [
+        "lib/motion/config/types"
+      ],
+      "@brysonandrew/motion-config-types/*": [
+        "lib/motion/config/types/*"
+      ],
+      "@brysonandrew/motion-config-constants": [
+        "lib/motion/config/constants"
+      ],
+      "@brysonandrew/motion-config-constants/*": [
+        "lib/motion/config/constants/*"
+      ],
+      "@brysonandrew/utils-box": [
+        "lib/utils/box"
+      ],
+      "@brysonandrew/utils-box/*": [
+        "lib/utils/box/*"
+      ],
+      "@brysonandrew/texture-zebra": [
+        "lib/texture/zebra"
+      ],
+      "@brysonandrew/texture-zebra/*": [
+        "lib/texture/zebra/*"
+      ],
+      "@brysonandrew/texture-mesh": [
+        "lib/texture/mesh"
+      ],
+      "@brysonandrew/texture-mesh/*": [
+        "lib/texture/mesh/*"
+      ],
+      "@brysonandrew/svg-dimensionless": [
+        "lib/svg/dimensionless"
+      ],
+      "@brysonandrew/svg-dimensionless/*": [
+        "lib/svg/dimensionless/*"
       ]
     }
   }

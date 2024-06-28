@@ -8,11 +8,12 @@ import {
 } from '@brysonandrew/motion-cursor';
 import { useViewport } from '@brysonandrew/viewport';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-config-constants';
 
 type TProps = TBaseProps;
 export const Sections: FC<TProps> = (props) => {
-  const { width: viewportWidth = 0 } = useViewport();
+  const vp = useViewport();
+  const viewportWidth = vp.isDimensions ? vp.width : 0;
   const { count, width, mediaRecords } = props;
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
@@ -22,13 +23,13 @@ export const Sections: FC<TProps> = (props) => {
     props.motionX,
     (v) =>
       v * count * (viewportWidth / width) +
-      viewportWidth * 0.5 * (count - 1),
+      viewportWidth * 0.5 * (count - 1)
   );
 
   return (
-    <div className='h-full grow'>
+    <div className="h-full grow">
       <motion.ul
-        className='flex relative h-full w-0'
+        className="flex relative h-full w-0"
         style={{ left, width: viewportWidth * count }}
         ref={(instance) => {
           if (instance && !container) {
@@ -42,7 +43,7 @@ export const Sections: FC<TProps> = (props) => {
           (mediaRecord: TMediaRecord, index: number) => (
             <li
               key={mediaRecord.src}
-              className='relative flex justify-center'
+              className="relative flex justify-center"
               style={{ width: viewportWidth }}
             >
               {container && (
@@ -57,7 +58,7 @@ export const Sections: FC<TProps> = (props) => {
                 />
               )}
             </li>
-          ),
+          )
         )}
       </motion.ul>
     </div>

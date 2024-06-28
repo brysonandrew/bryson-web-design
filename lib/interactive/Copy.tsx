@@ -6,7 +6,7 @@ import {
 import { COPY_ICON } from '@brysonandrew/icons-keys';
 import { BSm } from '@brysonandrew/interactive/base/BSm';
 import { TClipboardState } from '@brysonandrew/notifications';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
 import { resolveErrorMessage } from '@brysonandrew/utils-error';
 import { FC } from 'react';
 
@@ -36,7 +36,7 @@ export const Copy: FC<TCopyProps> = ({
           resolveErrorMessage(error);
         }
       }}
-      {...resolveInteractiveLabels(longTitle)}
+      {...resolveAccessibilityTitles(longTitle)}
       {...handlers}
     />
   );

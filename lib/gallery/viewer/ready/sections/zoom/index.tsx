@@ -10,7 +10,7 @@ import { useScale } from './hooks/useScale';
 import { Picture } from '@brysonandrew/media/picture';
 import { useTapEvents } from './hooks/useTapEvents';
 import { Tag } from './Tag';
-import { TMotionPoint } from '@brysonandrew/motion-core';
+import { TMotionPoint } from '@brysonandrew/motion-config-types';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
 import {
   CURSOR_SIZE_QUARTER,

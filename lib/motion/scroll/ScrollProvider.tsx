@@ -8,7 +8,7 @@ import {
 import type { FC } from 'react';
 import { useTimeoutRef } from '@brysonandrew/hooks-window/useTimeoutRef';
 import { useLocation } from 'react-router';
-import type { TScrollContext } from '@brysonandrew/motion-scroll/config/types';
+import type { TScrollContext } from '@brysonandrew/motion-config-types/scroll';
 import {
   useMotionValueEvent,
   useScroll as useMotionScroll,
@@ -20,7 +20,7 @@ import {
 } from '@brysonandrew/motion-scroll/config/constants';
 
 const SCROLL = createContext<TScrollContext>(
-  INIT_SCROLL_CONTEXT,
+  INIT_SCROLL_CONTEXT
 );
 export const useScroll = (): TScrollContext =>
   useContext<TScrollContext>(SCROLL);

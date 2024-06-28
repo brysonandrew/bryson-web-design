@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils-attributes",
-  "version": "7.0.7",
-  "description": "utils-attributes library",
+  "version": "7.0.74",
+  "description": "Utils attributes library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7"
+    "@brysonandrew/config-types": "7.0.74"
   },
   "exports": {
     ".": {
@@ -29,8 +29,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./resolveInteractiveHrefLabels": "./resolveInteractiveHrefLabels.ts",
-    "./resolveInteractiveLabels": "./resolveInteractiveLabels.ts",
+    "./resolveAccessibilityHrefTitles": "./resolveAccessibilityHrefTitles.ts",
+    "./resolveAccessibilityTitles": "./resolveAccessibilityTitles.ts",
+    "./resolveFilterAttr": "./resolveFilterAttr.ts",
     "./resolveUrlId": "./resolveUrlId.ts"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@brysonandrew/not-found",
-  "version": "7.0.7",
-  "description": "routes-not-found library",
+  "name": "@brysonandrew/routes-not-found",
+  "version": "7.0.74",
+  "description": "Routes not found library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,9 +23,8 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/config-types": "7.0.74",
     "react-router-dom": "^6.21.3",
-    "@brysonandrew/app": "7.0.7",
     "react-router": "^6.21.1"
   },
   "exports": {

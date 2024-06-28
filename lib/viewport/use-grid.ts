@@ -1,62 +1,45 @@
-import { useMemo } from "react";
-import { TViewport } from "@brysonandrew/viewport/use-measure";
-import { TContainerMeasure } from "@brysonandrew/viewport/use-container-measure";
-import { resolveIntRecord } from "@brysonandrew/utils-unit";
-
-
-
-export const BREAKPOINT_RECORD = {};
-
-export const BREAKPOINT_INT_RECORD =
-  resolveIntRecord(BREAKPOINT_RECORD);
+import { useMemo } from 'react';
+import {
+  resolveIntRecord,
+  TPxRecord,
+} from '@brysonandrew/utils-unit';
+import { TViewport } from '@brysonandrew/viewport/use-measure';
 
 export const GRID_CLASS_VALUE =
-  "sm:grid-cols-2 xl:grid-cols-3" as const;
+  'sm:grid-cols-2 xl:grid-cols-3' as const;
 type TBreakpointKey = string;
-const colSets =
-  GRID_CLASS_VALUE.split(" ");
-const colBreaks: [
-  TBreakpointKey,
-  number
-][] = colSets.reverse().map((v) => {
-  const [bp, cols] = v.split(":");
-  const colCount = parseInt(
-    cols.replace("grid-cols-", "")
-  );
-  return [
-    bp as TBreakpointKey,
-    colCount,
-  ];
-});
+const colSets = GRID_CLASS_VALUE.split(' ');
+const colBreaks: [TBreakpointKey, number][] = colSets
+  .reverse()
+  .map((v) => {
+    const [bp, cols] = v.split(':');
+    const colCount = parseInt(
+      cols.replace('grid-cols-', '')
+    );
+    return [bp as TBreakpointKey, colCount];
+  });
 
-export const useGrid = (
-  vp: TContainerMeasure
-) => {
+export const useGrid = (vp: TViewport, bpr: TPxRecord) => {
+  const bpri = resolveIntRecord(bpr);
   const grid = useMemo(() => {
     if (vp.isDimensions) {
       const width = vp.width;
 
       const resolveColsCount = () => {
-        for (const [
-          bp,
-          count,
-        ] of colBreaks) {
-          if (
-            width >
-            BREAKPOINT_INT_RECORD[bp]
-          ) {
+        for (const [bp, count] of colBreaks) {
+          if (width > bpri[bp]) {
             return count;
           }
         }
         return 1;
       };
 
-      const colsCount =
-        resolveColsCount();
+      const colsCount = resolveColsCount();
 
       return {
-        size:
-          vp.containerWidth / colsCount,
+        size: vp.container?.isDimensions
+          ? vp.container.width
+          : 0 / colsCount,
         colsCount,
       };
     }
@@ -67,6 +50,4 @@ export const useGrid = (
   return grid;
 };
 
-export type TUseGrid = ReturnType<
-  typeof useGrid
->;
+export type TUseGrid = ReturnType<typeof useGrid>;

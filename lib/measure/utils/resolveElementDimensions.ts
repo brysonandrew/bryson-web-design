@@ -1,7 +1,7 @@
 
 
 import { TReplacedElement, TElement } from '@brysonandrew/config-types';
-import { TDimensions } from '@brysonandrew/measure';
+import { TDimensions } from '@brysonandrew/config-types';
 
 export const resolveElementDimensions = <
   T extends

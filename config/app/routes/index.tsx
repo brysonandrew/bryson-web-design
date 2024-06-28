@@ -5,7 +5,8 @@ import { resolveRouteRecords } from '@brysonandrew/routes';
 import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 import { TPageTitle } from '@app/routes/config/types';
-import { NotFound } from '@brysonandrew/routes-not-found';
+import { AppNotFound } from '@brysonandrew/app';
+import { COLOR_RECORD } from '@app/color';
 
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,
@@ -37,7 +38,7 @@ const MAIN_ROUTES = [
       ...routes,
       {
         path: '*',
-        element: <NotFound />,
+        element: <AppNotFound  />,
       },
     ],
   },

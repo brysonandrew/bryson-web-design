@@ -1,17 +1,17 @@
 import { type FC } from 'react';
 import styled from '@emotion/styled';
-import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
-import { useViewer as useContext } from '@brysonandrew/gallery';
+import { useViewer as useContext } from '@brysonandrew/gallery-viewer';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { Background } from '@brysonandrew/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
 import { useApp } from '@brysonandrew/app';
 import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { Glow } from '@brysonandrew/layout-effects';
+import { NAME_KEY } from '@brysonandrew/gallery/config/constants';
 
 const Link = styled(motion(_Link))``;
 
@@ -39,28 +39,28 @@ export const Button: FC<TButtonProps> = ({
 
   return (
     <motion.div
-      className='center relative h-16'
+      className="center relative h-16"
       style={{ width, zIndex: isActive ? 1 : 0 }}
-      whileHover='hover'
+      whileHover="hover"
       {...resolveParentAnimateConfig({ isHover: isActive })}
     >
       <Link
         to={to}
         onTap={handleTap}
-        className='center relative w-full h-full'
-        {...resolveInteractiveLabels(name)}
+        className="center relative w-full h-full"
+        {...resolveAccessibilityTitles(name)}
       >
         {isActive && (
-          <Background layoutId='GALLERY_BUTTON_FILL' />
+          <Background layoutId="GALLERY_BUTTON_FILL" />
         )}
         <Glow
           text={isActive ? 1 : 0.4}
           drop={isActive ? 1 : 0.4}
           idle={0.1}
           color={COLOR['secondary']}
-          classValue='center fill pointer-events-none'
+          classValue="center fill pointer-events-none"
         >
-          <span className='flex relative uppercase text-sm text-center'>
+          <span className="flex relative uppercase text-sm text-center">
             {name}
           </span>
         </Glow>

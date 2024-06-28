@@ -5,45 +5,27 @@ import {
   useContext,
 } from 'react';
 import {
-  useMeasure,
-  TViewport,
   INIT_VIEWPORT,
-} from './use-measure';
-import { TContext } from '@brysonandrew/viewport/config/types';
+  TViewport,
+  useViewportMeasure,
+} from '@brysonandrew/viewport/use-measure';
 
-const INIT: TContext = {
+const INIT: TViewport = {
   ...INIT_VIEWPORT,
-  isVertical: false,
-  halfHeight: 0,
-  halfWidth: 0,
 };
 
-export const VIEWPORT = createContext<TContext>(INIT);
+export const VIEWPORT = createContext<TViewport>(INIT);
 
-export const useViewport = (): TContext =>
-  useContext<TContext>(VIEWPORT);
+export const useViewport = (): TViewport =>
+  useContext<TViewport>(VIEWPORT);
 
 export const ViewportProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const viewport = useMeasure();
-
-  const isVertical = ({
-    width = 0,
-    height = 0,
-  }: TViewport) => {
-    return (width ?? 0) < (height ?? 0) && width < 700;
-  };
+  const viewport = useViewportMeasure();
 
   return (
-    <VIEWPORT.Provider
-      value={{
-        ...viewport,
-        halfWidth: (viewport.width ?? 0) * 0.5,
-        halfHeight: (viewport.height ?? 0) * 0.5,
-        isVertical: isVertical(viewport),
-      }}
-    >
+    <VIEWPORT.Provider value={viewport}>
       {children}
     </VIEWPORT.Provider>
   );

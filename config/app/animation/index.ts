@@ -1,4 +1,4 @@
-import { resolveAnimation } from "@brysonandrew/motion-core";
+import { resolveAnimation } from "@brysonandrew/motion-core/resolveAnimation";
 
 const presenceConfigs = [
   { fade: [] },

@@ -18,7 +18,7 @@ const Light = styled(motion.div)`
 `;
 
 type TProps = TDivMotionProps;
-export const MetalMotion: FC<TProps> = ({
+export const TextureMetalMotion: FC<TProps> = ({
   classValue,
   children,
   ...rest

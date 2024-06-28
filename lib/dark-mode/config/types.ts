@@ -1,4 +1,4 @@
-import { TMotionProps } from '@brysonandrew/motion-core';
+import { TMotionProps } from '@brysonandrew/motion-config-types';
 import { TElementProps } from '@brysonandrew/config-types';
 import { MODES } from './constants';
 

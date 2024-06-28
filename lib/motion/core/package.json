@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/motion-core",
-  "version": "7.0.7",
-  "description": "motion-core library",
+  "version": "7.0.74",
+  "description": "Motion core library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,8 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7",
-    "framer-motion": "^10.18.0"
+    "@brysonandrew/motion-config-types": "7.0.74",
+    "@brysonandrew/motion-config-constants": "7.0.74",
+    "@brysonandrew/config-types": "7.0.74"
   },
   "exports": {
     ".": {
@@ -30,27 +31,20 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./resolveAnimation": "./resolveAnimation.ts",
+    "./resolveParentAnimateConfig": "./resolveParentAnimateConfig.ts",
+    "./resolvePresence": "./resolvePresence.ts",
+    "./resolveRotateXPresence": "./resolveRotateXPresence.ts",
     "./resolveTransitionRecord": "./resolveTransitionRecord.ts",
-    "./config/constants": "./config/constants.ts",
-    "./config": "./config/index.ts",
-    "./resolveBaseTransitionRecord": "./resolveBaseTransitionRecord/index.ts",
-    "./resolveBaseTransitionRecord/resolveEaseStringify": "./resolveBaseTransitionRecord/resolveEaseStringify.ts",
     "./resolvePresenceRecord": "./resolvePresenceRecord/index.ts",
     "./resolvePresenceRecord/key": "./resolvePresenceRecord/key.ts",
-    "./config/types": "./config/types/index.ts",
-    "./config/types/values": "./config/types/values.ts",
+    "./resolveBaseTransitionRecord": "./resolveBaseTransitionRecord/index.ts",
+    "./resolveBaseTransitionRecord/resolveEaseStringify": "./resolveBaseTransitionRecord/resolveEaseStringify.ts",
     "./resolvePresenceRecord/value/fade": "./resolvePresenceRecord/value/fade.ts",
     "./resolvePresenceRecord/value": "./resolvePresenceRecord/value/index.ts",
     "./resolvePresenceRecord/value/resolveNegative": "./resolvePresenceRecord/value/resolveNegative.ts",
     "./resolvePresenceRecord/value/rotate": "./resolvePresenceRecord/value/rotate.ts",
     "./resolvePresenceRecord/value/shift": "./resolvePresenceRecord/value/shift.ts",
-    "./resolvePresenceRecord/value/zoom": "./resolvePresenceRecord/value/zoom.ts",
-    "./config/types/presence/config": "./config/types/presence/config.ts",
-    "./config/types/presence": "./config/types/presence/index.ts",
-    "./config/types/presence/key": "./config/types/presence/key.ts",
-    "./config/types/presence/value": "./config/types/presence/value.ts",
-    "./config/types/transition/transition": "./config/types/transition/transition.ts",
-    "./config/types/transition/base": "./config/types/transition/base/index.ts",
-    "./config/types/transition/base/key": "./config/types/transition/base/key.ts"
+    "./resolvePresenceRecord/value/zoom": "./resolvePresenceRecord/value/zoom.ts"
   }
 }

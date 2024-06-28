@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/utils-validation",
-  "version": "7.0.7",
-  "description": "utils-validation library",
+  "version": "7.0.74",
+  "description": "Utils validation library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7"
+    "@brysonandrew/config-types": "7.0.74"
   },
   "exports": {
     "./assertion": "./assertion.ts",
@@ -30,7 +30,14 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./is-falsy": "./is-falsy.ts",
-    "./is-truthy": "./is-truthy.ts"
+    "./is/defined": "./is/defined.ts",
+    "./is/falsy": "./is/falsy.ts",
+    "./is/null": "./is/null.ts",
+    "./is/string": "./is/string.ts",
+    "./is/timeout": "./is/timeout.ts",
+    "./is/truthy": "./is/truthy.ts",
+    "./is/value": "./is/value.ts",
+    "./is/number/finite": "./is/number/finite.ts",
+    "./is/number": "./is/number/index.ts"
   }
 }

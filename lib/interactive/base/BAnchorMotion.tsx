@@ -3,7 +3,7 @@ import {
   TClassValueProps,
   TInteractiveProps,
 } from '@brysonandrew/config-types';
-import { resolveInteractiveHrefLabels } from '@brysonandrew/utils-attributes/resolveInteractiveHrefLabels';
+import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityHrefTitles';
 import styled from '@emotion/styled';
 import clsx from 'clsx';
 import { FC } from 'react';
@@ -32,7 +32,7 @@ export const BAnchorMotion: FC<TBAnchorMotionProps> = (props) => {
         shape,
         classValue,
       )}
-      {...resolveInteractiveHrefLabels(props)}
+      {...resolveAccessibilityHrefTitles(props)}
       {...rest}
     >
       {children}

@@ -1,8 +1,8 @@
-import { TTransition } from '@brysonandrew/motion-core';
+import { TTransition } from '@brysonandrew/motion-config-types';
 import {
   MAX_SCROLL,
   TParallaxOptions,
-} from 'lib/motion/parallax/config';
+} from '@brysonandrew/motion-parallax/config';
 
 export const ORIGIN_50: TTransition = {
   originX: '50%',

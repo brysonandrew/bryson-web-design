@@ -2,26 +2,27 @@ import {
   FADE_PREFIX,
   PLACEHOLDER,
   _SVD,
-  _VD,
-} from '@brysonandrew/motion-core';
+  VALUE_DELIMITER,
+} from '@brysonandrew/motion-config-constants';
 import {
   TFade,
   TPresenceConfig,
   TRotate,
   TShift,
   TZoom,
-} from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
 import {
   TFadeKey,
   TPresenceConfigKey,
   TRotateKey,
   TShiftKey,
   TZoomKey,
-} from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
 import { isValidFade } from '@brysonandrew/motion-core';
 import { isValidRotate } from '@brysonandrew/motion-core';
 import { isValidShift } from '@brysonandrew/motion-core';
 import { isValidZoom } from '@brysonandrew/motion-core';
+
 const suffixDefined = <T extends string | number>(v?: T) =>
   typeof v === 'undefined' ? '' : (`${v}${_SVD}` as const);
 const prefixDefined = <T extends string | number>(v?: T) =>
@@ -84,6 +85,6 @@ export const resolveRecordKey = <
       ? resolveRotateKey(rotate)
       : PLACEHOLDER;
   const recordKey =
-    `${fadeKey}${_VD}${shiftKey}${_VD}${zoomKey}${_VD}${rotateKey}` as TPresenceConfigKey<T>;
+    `${fadeKey}${VALUE_DELIMITER}${shiftKey}${VALUE_DELIMITER}${zoomKey}${VALUE_DELIMITER}${rotateKey}` as TPresenceConfigKey<T>;
   return recordKey;
 };

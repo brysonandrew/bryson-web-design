@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/routes",
-  "version": "7.0.7",
-  "description": "routes library",
+  "version": "7.0.74",
+  "description": "Routes library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/link-list": "*",
-    "@brysonandrew/not-found": "*",
+    "@brysonandrew/routes-link-list": "*",
+    "@brysonandrew/routes-not-found": "*",
     "react-router": "^6.21.1",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.7",
-    "@brysonandrew/utils-format": "7.0.7"
+    "@brysonandrew/config-types": "7.0.74",
+    "@brysonandrew/utils-format": "7.0.74"
   },
   "exports": {
     ".": {

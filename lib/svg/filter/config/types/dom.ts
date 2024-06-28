@@ -1,6 +1,7 @@
-import { SVGProps } from "react";
 import { SVGMotionProps } from "framer-motion";
-import { TSvgDisplacementProps, TSvgElementProps, TSvgFilterMorphologyProps, TSvgFilterProps } from "@brysonandrew/config-types/dom/element/svg";
+import { TSvgDisplacementProps, TSvgElementProps, TSvgFilterMorphologyProps, TSvgFilterProps, TSvgProps } from "@brysonandrew/config-types/dom/element/svg";
+
+export type TSvgPropsAttr = {svgProps: TSvgProps};
 
 export type TTurbulenceMotionPropsAttr = {turbulenceMotionProps: SVGMotionProps<SVGFETurbulenceElement>};
 export type TMorphologyPropsAttr = {morphologyProps: TSvgFilterMorphologyProps};

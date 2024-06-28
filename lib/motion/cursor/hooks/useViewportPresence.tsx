@@ -18,12 +18,12 @@ export const useViewportPresence = ({
   useEventListener<'pointerenter', HTMLElement>(
     'pointerenter',
     onPointerEnter,
-    docRef,
+    docRef
   );
 
   useEventListener<'pointerleave', HTMLElement>(
     'pointerleave',
     onPointerLeave,
-    docRef,
+    docRef
   );
 };

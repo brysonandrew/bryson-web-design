@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.7",
-  "description": "texture library",
+  "version": "7.0.74",
+  "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/texture-metal": "*"
+    "@brysonandrew/texture-mesh": "*",
+    "@brysonandrew/texture-zebra": "*",
+    "@brysonandrew/texture-metal": "*",
+    "react": "^18.2.0",
+    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.11.3"
   },
   "exports": {
     ".": {
@@ -29,7 +34,13 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./carbon": "./carbon/index.tsx",
+    "./carbon/textures": "./carbon/textures.ts",
+    "./metal/center": "./metal/center.ts",
+    "./metal/conical": "./metal/conical.ts",
     "./metal/css": "./metal/css.ts",
+    "./metal/diamond": "./metal/diamond.ts",
+    "./metal/linear": "./metal/linear.ts",
     "./metal/motion": "./metal/motion/index.tsx"
   }
 }

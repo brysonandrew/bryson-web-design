@@ -1,8 +1,8 @@
-import { TState } from '@brysonandrew/config-types';
+import { TStateEntry } from '@brysonandrew/config-types';
 import { TChangeEvent } from '@brysonandrew/contact';
 
 type TProps<T extends string, V extends object> = {
-  presetState: TState<T | null>;
+  presetState: TStateEntry<T | null>;
   presetsEntries: [T,V][];
 };
 export const CvControlsPresets = <T extends string, V extends object>({

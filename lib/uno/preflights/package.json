@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/uno-preflights",
-  "version": "7.0.7",
-  "description": "uno-preflights library",
+  "version": "7.0.74",
+  "description": "Uno preflights library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,7 +21,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "unocss": "^0.53.6"
+    "unocss": "^0.53.6",
+    "@brysonandrew/utils-box": "7.0.74"
   },
   "exports": {
     ".": {
@@ -31,6 +32,8 @@
     },
     "./reset": "./reset.ts",
     "./resolveInput": "./resolveInput.ts",
-    "./resolveScrollbar": "./resolveScrollbar.ts"
+    "./scrollbar": "./scrollbar/index.ts",
+    "./scrollbar/manual": "./scrollbar/manual/index.ts",
+    "./scrollbar/manual/is": "./scrollbar/manual/is.ts"
   }
 }

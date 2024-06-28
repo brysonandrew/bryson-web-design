@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
 import { Package } from './layout/Package';
 
 const Root = styled(motion.div)``;

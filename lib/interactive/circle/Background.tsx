@@ -1,12 +1,9 @@
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
-import {
-  DURATION,
-  resolvePresence,
-} from '@brysonandrew/motion-core';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
 import clsx from 'clsx';
+import { DURATION, PRESENCE_OPACITY } from '@brysonandrew/motion-config-constants';
 
 type TProps = TDivMotionProps;
 export const Background: FC<TProps> = ({
@@ -28,10 +25,7 @@ export const Background: FC<TProps> = ({
       />
       <motion.div
         className={clsx('absolute inset-0')}
-        {...resolvePresence(
-          { opacity: 0.5 },
-          { opacity: 1 },
-        )}
+        {...PRESENCE_OPACITY}
         style={{
           borderRadius: BORDER_RADIUS.XL,
           boxShadow: GLOW_BOX.secondary,

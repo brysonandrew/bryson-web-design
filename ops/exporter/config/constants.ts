@@ -11,12 +11,17 @@ export const exportsPrefixRx = new RegExp(
   'gi'
 );
 export const removeCharsRx = new RegExp(`[;"']`, 'gi');
-export const INTERNAL_PREFIX = '@brysonandrew/' as const;
+export const INTERNAL_NAME = '@brysonandrew' as const;
+export const INTERNAL_PREFIX = `${INTERNAL_NAME}/` as const;
 
 export const DEP_PREFIX_RX = new RegExp(
   /import [*\w\s{},]+ from ['"]/,
   'ig'
 );
+// export const INTERNAL_DEPENDENCY_PREFIX_RX = new RegExp(
+//   /((;['"]\n)*^)import \{\s*([\w\s,]+|\n)*\s*\} from ['"]/,
+//   'ig'
+// );
 export const QUOTE_UPDATE_RX = new RegExp(QUOTE_RX, 'ig');
 
 export const EMPTY_TARGET: TTarget = {
@@ -34,19 +39,18 @@ export const EMPTY_TARGET: TTarget = {
   exportRows: [],
   main: {},
   types: {},
-  writeUpdates: []
+  writeUpdates: [],
 };
 
 export const INIT_WORKSPACES: TWorkspaces = [];
 export const INIT_TS_PATH_RECORD: TInternalTsPathRecord =
   {};
-  export const EXCLUDE_PREFIXES = [
-    'src/',
-    'ops/',
-    'lib/',
-    `@app/`,
-    `@uno/`,
-    `@vite/`,
-    '@t/',
-  ] as const;
-  
+export const EXCLUDE_PREFIXES = [
+  // 'src/',
+  // 'ops/',
+  'lib/',
+  // `@app/`,
+  // `@uno/`,
+  // `@vite/`,
+  // '@t/',
+] as const;

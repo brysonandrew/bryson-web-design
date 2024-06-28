@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { TPartialParallaxMotionProps } from 'lib/motion/parallax/config';
+import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
 import { motion } from 'framer-motion';
 import { List } from '@brysonandrew/gallery-list';
 import { TTitle, TRest } from '@app/gallery/types';

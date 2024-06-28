@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { Title } from './Title';
 import { useMoveSound } from '@brysonandrew/sounds/useMoveSound';
-import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
-import { BIG_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
-import { resolveInteractiveLabels } from '@brysonandrew/utils';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
 import { APP_DESCRIPTION } from '@app/base/package';
 import { PAGE_RECORDS } from '@app/routes';
 
@@ -21,7 +21,7 @@ export const Link: FC = () => {
       className='relative left-0 cursor-pointer'
       to={PAGE_RECORDS.record.index.path}
       onClick={handleClick}
-      {...resolveInteractiveLabels(APP_DESCRIPTION)}
+      {...resolveAccessibilityTitles(APP_DESCRIPTION)}
       {...handlers}
     >
       <Title />

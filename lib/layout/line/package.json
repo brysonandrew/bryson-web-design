@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/layout-line",
-  "version": "7.0.7",
-  "description": "layout-line library",
+  "version": "7.0.74",
+  "description": "Layout line library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/config-types": "7.0.74",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/app": "7.0.7",
-    "@brysonandrew/motion-core": "7.0.7"
+    "framer-motion": "^11.2.4",
+    "@brysonandrew/app": "7.0.74",
+    "@brysonandrew/motion-config-constants": "7.0.74"
   },
   "exports": {
     "./Line": "./Line.tsx",

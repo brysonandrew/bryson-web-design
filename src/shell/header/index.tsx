@@ -5,7 +5,7 @@ import { Main } from './main';
 import { Pages } from './pages';
 import { isMobile } from 'react-device-detect';
 import { PRESENCE_DOWN_Y } from '@app/animation';
-import { useScroll } from 'lib/motion/scroll';
+import { useScroll } from '@brysonandrew/motion-scroll';
 
 const Root = styled.header``;
 

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.7",
-  "description": "motion-cursor library",
+  "version": "7.0.74",
+  "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -21,19 +21,21 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/config-types": "7.0.74",
+    "@brysonandrew/utils-function": "7.0.74",
+    "@brysonandrew/hooks": "7.0.74",
     "react": "^18.2.0",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/config-types": "7.0.7",
-    "@brysonandrew/utils": "7.0.7",
-    "@brysonandrew/hooks": "7.0.7",
-    "@brysonandrew/motion-scroll": "7.0.7",
-    "@brysonandrew/motion-core": "7.0.7",
+    "@brysonandrew/motion-config-types": "7.0.74",
+    "framer-motion": "^11.2.4",
+    "@brysonandrew/motion-scroll": "7.0.74",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.7",
-    "@brysonandrew/icons-i": "7.0.7"
+    "@brysonandrew/app": "7.0.74",
+    "@brysonandrew/motion-config-constants": "7.0.74",
+    "@brysonandrew/icons-i": "7.0.74"
   },
   "exports": {
-    "./CursorProvider": "./CursorProvider.tsx",
+    "./base": "./base.tsx",
+    "./cursor-provider": "./cursor-provider.tsx",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
@@ -41,17 +43,17 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
+    "./hooks": "./hooks/index.ts",
+    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
+    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
+    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
+    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
     "./utils": "./utils/index.ts",
     "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./switch/Box": "./switch/Box.tsx",
     "./switch/IconWithText": "./switch/IconWithText.tsx",
     "./switch/Sight": "./switch/Sight.tsx",
     "./switch": "./switch/index.tsx",
-    "./switch/format/Visit": "./switch/format/Visit.tsx",
-    "./hooks": "./hooks/index.ts",
-    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
-    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
-    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
-    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx"
+    "./switch/format/Visit": "./switch/format/Visit.tsx"
   }
 }

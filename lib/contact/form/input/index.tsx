@@ -19,10 +19,10 @@ import {
 } from '@brysonandrew/motion-cursor';
 import { AnimatePresence } from 'framer-motion';
 import { useContact } from '@brysonandrew/contact/ContactProvider';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { Name } from '@brysonandrew/contact/form/input/Name';
-import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-core';
+import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-config-constants';
 
 type TProps<
   T extends HTMLElement,
@@ -130,7 +130,7 @@ export const Input = <T extends HTMLElement>({
               name={name}
               whileHover={{ opacity: 1 }}
               onTap={handleClear}
-              {...resolveInteractiveLabels(`Clear ${name}`)}
+              {...resolveAccessibilityTitles(`Clear ${name}`)}
               {...PRESENCE_OPACITY_DELAY}
               animate={{ opacity: isHover ? 0.8 : 0.2 }}
             />

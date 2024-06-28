@@ -8,7 +8,8 @@ export type TTargetId = string;
 
 export type TWriteUpdate = readonly [
   entryPath: string,
-  content: string
+  content: string,
+  reason?: string
 ];
 export type TWriteUpdates = TWriteUpdate[];
 

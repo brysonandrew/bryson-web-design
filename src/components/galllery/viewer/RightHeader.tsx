@@ -1,7 +1,7 @@
 import { TTitle, TSlug, TRest } from '@app/gallery/types';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
-import { resolveCompositeKey } from '@brysonandrew/utils';
+import { resolveCompositeKey } from '@brysonandrew/utils-key';
 import { Badge } from '@components/galllery/badge';
 import { FC } from 'react';
 

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.7",
-  "description": "hooks library",
+  "version": "7.0.74",
+  "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -26,7 +26,7 @@
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.7",
+    "@brysonandrew/utils-function": "7.0.74",
     "react": "^18.2.0"
   },
   "exports": {
@@ -51,6 +51,7 @@
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
     "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
     "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
+    "./window/use-time-bomb": "./window/use-time-bomb.ts",
     "./window/useDelay": "./window/useDelay.ts",
     "./window/useDelayCallback": "./window/useDelayCallback.ts",
     "./window/useDelayCallbackHandler": "./window/useDelayCallbackHandler.ts",

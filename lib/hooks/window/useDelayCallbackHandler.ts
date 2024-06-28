@@ -7,7 +7,7 @@ export const useDelayCallbackHandler = (
 ) => {
   const { timeoutRef, endTimeout } = useTimeoutRef();
 
-  const handler = () => {
+  const trigger = () => {
     endTimeout();
     if (typeof delay !== 'number') {
       return;
@@ -16,8 +16,8 @@ export const useDelayCallbackHandler = (
   };
 
   useEffect(() => {
-    handler();
+    trigger();
   }, []);
 
-  return handler;
+  return trigger;
 };

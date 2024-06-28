@@ -1,4 +1,4 @@
-import { TErrorDetail } from '@brysonandrew/utils';
+import { TErrorDetail } from '@brysonandrew/utils-error';
 
 export const resolveDetailMessage = (
   rows: TErrorDetail[],

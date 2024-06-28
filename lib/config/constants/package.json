@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/config-constants",
-  "version": "7.0.7",
-  "description": "config-constants library",
+  "version": "7.0.74",
+  "description": "Config constants library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {

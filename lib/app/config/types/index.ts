@@ -11,7 +11,7 @@ import {
   TPropsWithChildrenHandler,
   TTDeepPartial,
 } from '@brysonandrew/config-types';
-import { TState } from '@brysonandrew/config-types/state';
+import { TStateEntry } from '@brysonandrew/config-types/state';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
 import { DEFAULT_STYLE } from '@brysonandrew/app/config/constants';
 
@@ -60,7 +60,7 @@ export type TValue<
   TLayoutRecordValue &
   TBaseConfig &
   TDefaultStyle & {
-    initState: TState<boolean>;
+    initState: TStateEntry<boolean>;
   };
 
 export type TAppContext<

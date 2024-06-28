@@ -11,14 +11,18 @@ export const Shell = <T extends string>({
 }: TProps<T>) => {
   const currProject = useCurrProject<T>();
   const isSelectedProject = currProject !== null;
-  const { isResizing, width } = useViewport();
+  const vp = useViewport();
+  const { isResizing, isDimensions } = vp;
   if (
+    isDimensions &&
     isSelectedProject &&
     !isResizing &&
-    typeof width === 'number'
+    typeof vp.width === 'number'
   ) {
     return (
-      <>{children({ currProject, viewportWidth: width })}</>
+      <>
+        {children({ currProject, viewportWidth: vp.width })}
+      </>
     );
   }
   return null;

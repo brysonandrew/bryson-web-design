@@ -6,10 +6,10 @@ import {
   useContact,
 } from '@brysonandrew/contact';
 import { useHoverKey } from '@brysonandrew/motion-cursor';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 
 type TProps = { isDisabled?: boolean };
 export const Submit: FC<TProps> = ({ isDisabled }) => {

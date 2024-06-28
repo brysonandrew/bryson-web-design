@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/texture-metal",
-  "version": "7.0.7",
-  "description": "texture-metal library",
+  "version": "7.0.74",
+  "description": "Texture metal library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -22,21 +22,25 @@
   ],
   "peerDependencies": {
     "@emotion/react": "^11.11.3",
+    "@brysonandrew/color": "7.0.74",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
-    "@brysonandrew/layout": "7.0.7",
-    "@brysonandrew/config-types": "7.0.7",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/layout-back": "7.0.7"
+    "@brysonandrew/layout-back": "7.0.74",
+    "@brysonandrew/config-types": "7.0.74",
+    "framer-motion": "^11.2.4"
   },
   "exports": {
+    "./center": "./center.ts",
+    "./conical": "./conical.ts",
     "./css": "./css.ts",
+    "./diamond": "./diamond.ts",
     ".": {
       "require": "./index.tsx",
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
+    "./linear": "./linear.ts",
     "./motion": "./motion/index.tsx"
   }
 }

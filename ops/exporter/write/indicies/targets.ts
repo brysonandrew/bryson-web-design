@@ -6,6 +6,7 @@ export const writeIndiciesTargets = async (
   targets: TConfig
 ) => {
   for await (const { name, dir, indexRows } of targets) {
+ 
     await writeIndiciesTarget({ dir, indexRows });
   }
 };

@@ -1,4 +1,5 @@
 
-export * from './resolveInteractiveHrefLabels';
-export * from './resolveInteractiveLabels';
+export * from './resolveAccessibilityHrefTitles';
+export * from './resolveAccessibilityTitles';
+export * from './resolveFilterAttr';
 export * from './resolveUrlId';

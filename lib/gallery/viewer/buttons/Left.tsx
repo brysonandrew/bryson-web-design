@@ -4,8 +4,8 @@ import { usePrev } from '../hooks/nav/usePrev';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { Nav } from './Nav';
 import { useHoverKey } from '@brysonandrew/motion-cursor';
-import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
+import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 
 type TProps = TClassValueProps & {
   max: number;
@@ -15,7 +15,7 @@ export const Left: FC<TProps> = ({ max, ...props }) => {
   const title = 'Left';
   const { isHover, handlers } = useHoverKey(
     BIG_CURSOR_KEY,
-    title,
+    title
   );
 
   if (!to) return null;

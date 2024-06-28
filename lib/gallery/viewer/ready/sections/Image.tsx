@@ -8,8 +8,8 @@ import {
 } from '@brysonandrew/media/config/types';
 import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
 import { TChildren } from '@brysonandrew/config-types/dom';
-import { MotionBlur } from '@brysonandrew/svg-filter/blur/motion-blur';
-import { TDimensions } from '@brysonandrew/measure';
+import { BlurMotion } from '@brysonandrew/svg-filter/blur/motion';
+import { TDimensions } from '@brysonandrew/config-types';
 
 type TProps = {
   mediaRecord: TMediaRecord;
@@ -38,7 +38,7 @@ export const Image: FC<TProps> = ({
     <>
       {!isLoaded && <Placeholder key={mediaRecord.src} />}
       {mediaRecord && (
-        <MotionBlur
+        <BlurMotion
           isOn={isTransitioningGallery}
           motionValue={motionX}
           axis='x'
@@ -57,7 +57,7 @@ export const Image: FC<TProps> = ({
               {...(isDimensions ? dimensions : {})}
             />
           )}
-        </MotionBlur>
+        </BlurMotion>
       )}
       {image && children(image)}
     </>

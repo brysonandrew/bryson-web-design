@@ -1,5 +1,7 @@
+import { resolveGradient } from '@brysonandrew/color';
 import { resolvePreflights as _resolvePreflights } from '@brysonandrew/uno-preflights';
 import { TColor } from '../index';
+
 export const resolvePreflights = <T extends object>(
   colors: TColor,
 ) =>
@@ -15,6 +17,7 @@ export const resolvePreflights = <T extends object>(
       thumbBorder: colors['gray-1'],
       thumbHover: colors['white-01'],
       backgroundColor: colors['white-7'],
+      backgroundImage: resolveGradient({'name': 'linear-gradient', parts: [colors['white-7'],colors['transparent']]}),
       thumbDark: colors['secondary'],
       thumbBorderDark: colors['accent'],
       thumbHoverDark: colors['gray-3'],

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Picture } from '@brysonandrew/media/picture';
-import { useImageDimensions } from 'lib/measure/hooks/useImageDimensions';
+import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
 import clsx from 'clsx';
-import { useHoverKey } from 'lib/motion/cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { isDesktop } from 'react-device-detect';
-import { CUSTOM_CURSOR_KEY } from 'lib/motion/cursor/config/constants';
+import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import {
   TPositionConfig,
   useCircle,
@@ -86,7 +86,7 @@ export const Image: FC<TProps> = (props) => {
     >
       <button
         className="cursor-zoom-in"
-        {...resolveInteractiveLabels(title)}
+        {...resolveAccessibilityTitles(title)}
         onClick={handleTap}
       >
         <Picture

@@ -1,9 +1,9 @@
+import { isValidFade } from '@brysonandrew/motion-core';
 import {
-  isValidFade,
+  TPresenceConfig,
   TTarget,
-} from '@brysonandrew/motion-core';
-import { TPresenceConfig } from '@brysonandrew/motion-core';
-import { TPresenceConfigValue } from '@brysonandrew/motion-core';
+} from '@brysonandrew/motion-config-types';
+import { TPresenceConfigValue } from '@brysonandrew/motion-config-types';
 import {
   isValidRotate,
   resolveRotateKey,
@@ -19,7 +19,7 @@ import {
 } from '@brysonandrew/motion-core';
 
 export const resolveRecordValue = <
-  T extends TPresenceConfig,
+  T extends TPresenceConfig
 >({
   fade,
   shift,
@@ -42,7 +42,7 @@ export const resolveRecordValue = <
     const shiftKey = resolveShiftKey(direction);
     const originShiftValue = resolveShiftValue(
       initialValue,
-      direction,
+      direction
     );
 
     initial[shiftKey] = originShiftValue;

@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/space",
-  "version": "7.0.7",
-  "description": "space library",
+  "version": "7.0.74",
+  "description": "Space library",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "scripts": {
@@ -22,8 +22,8 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.7",
-    "@brysonandrew/hooks-dom": "7.0.7",
+    "@brysonandrew/config-types": "7.0.74",
+    "@brysonandrew/hooks-dom": "7.0.74",
     "clsx": "^1.2.1"
   },
   "exports": {

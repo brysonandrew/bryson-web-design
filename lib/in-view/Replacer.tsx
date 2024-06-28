@@ -1,6 +1,9 @@
 import { type FC } from 'react';
-import { isMobile } from 'react-device-detect';
-import { InView, TInViewProps } from '@brysonandrew/in-view';
+import * as RDD from 'react-device-detect';
+import {
+  InView,
+  TInViewProps,
+} from '@brysonandrew/in-view';
 import { TChildren } from '@brysonandrew/config-types/dom';
 
 type TProps = {
@@ -13,7 +16,7 @@ export const Replacer: FC<TProps> = ({
   children,
   ...props
 }) => {
-  if (isMobile) {
+  if (RDD.isMobile) {
     return <>{children}</>;
   }
   return (

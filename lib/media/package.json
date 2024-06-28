@@ -1,7 +1,7 @@
 {
   "name": "@brysonandrew/media",
-  "version": "7.0.7",
-  "description": "media library",
+  "version": "7.0.74",
+  "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
   "scripts": {
@@ -21,13 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.7",
+    "@brysonandrew/config-types": "7.0.74",
     "sharp": "^0.32.6",
-    "@brysonandrew/measure": "7.0.7",
-    "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.18.0"
+    "react": "^18.2.0",
+    "framer-motion": "^11.2.4"
   },
   "exports": {
     ".": {
@@ -37,8 +36,8 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
-    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./picture": "./picture/index.tsx",
+    "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
     "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
   }
 }

@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 import { TSoundContext } from '@brysonandrew/sounds/config/types';
-import { NOOP } from '@brysonandrew/utils';
+import { NOOP } from '@brysonandrew/utils-function';
 
 const INIT = {
   context: new AudioContext(),

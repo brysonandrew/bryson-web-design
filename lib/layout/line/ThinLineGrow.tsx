@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import {
-  MOTION_CONFIG,
-  PRESENCE_SCALE_X,
-} from '@brysonandrew/motion-core';
 import { FC } from 'react';
 import { ThinLine } from './ThinLine';
 import clsx from 'clsx';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
+import {
+  PRESENCE_SCALE_X,
+  MOTION_CONFIG,
+} from '@brysonandrew/motion-config-constants';
 
 type TProps = { delay?: number } & TClassValueProps;
 export const ThinLineGrow: FC<TProps> = ({
@@ -15,7 +15,7 @@ export const ThinLineGrow: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={clsx( classValue)}
+      className={clsx(classValue)}
       {...PRESENCE_SCALE_X}
       {...{
         ...MOTION_CONFIG.transition,

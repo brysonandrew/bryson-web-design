@@ -75,3 +75,4 @@ export * from './HelmetProvider';
 export * from './config';
 export * from './useHtmlTitle';
 export * from './useTitleLookup';
+export * from './head';
