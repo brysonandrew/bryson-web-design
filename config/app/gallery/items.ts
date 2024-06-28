@@ -6,12 +6,30 @@ import {
   FIGMA,
   INVISION,
   STRIPE,
+  REMOTION,
 } from './third-party';
 
 export const INIT_PROJECT_ITEMS = [
   {
+    title: 'Repurpose Video Editor',
+    description: 'Multimedia Video Editor',
+    pricing: 'select',
+    href: 'TBA',
+    tags: [
+      REMOTION,
+      REACT,
+      TYPESCRIPT,
+      FRAMER_MOTION,
+      NEXT_JS,
+    ],
+    paragraphs: [
+      'Virtualized product list.',
+      'AI Image generation with ComfyUI integration.',
+    ],
+  },
+  {
     title: 'Luridescence',
-    description: 'Prints E-commerce',
+    description: 'Prints E-commerce (Concept)',
     pricing: 'plus',
     href: 'TBA',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION, STRIPE],
@@ -97,7 +115,7 @@ export const INIT_PROJECT_ITEMS = [
     time: new Date(2022, 8, 1),
     paragraphs: [
       'Codebase required a lot of work and refactor.',
-      'Integration with metamask and Web3 API.'
+      'Integration with metamask and Web3 API.',
     ],
   },
   {

@@ -14,6 +14,14 @@ export const NEXT_JS = {
   title: 'Next.js',
   href: 'https://nextjs.org/',
 };
+export const NODE_JS = {
+  title: 'Node.js',
+  href: 'https://nodejs.org/',
+};
+export const REMOTION = {
+  title: 'Remotion',
+  href: 'https://www.remotion.dev/',
+};
 export const FIGMA = {
   title: 'Figma',
   href: 'https://www.figma.com/',
