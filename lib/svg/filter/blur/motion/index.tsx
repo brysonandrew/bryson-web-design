@@ -14,7 +14,7 @@ import {
   TDirectionProps,
   TIdProps,
 } from '@brysonandrew/svg-filter';
-import { SvgWrap } from '@brysonandrew/svg';
+import { SvgWrap } from '@brysonandrew/svg-dimensionless';
 import { resolveBlurMotionKeys } from '@brysonandrew/svg-filter/blur/motion/keys';
 
 const intensity = 200;

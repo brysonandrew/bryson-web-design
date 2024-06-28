@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "7.0.54",
+  "version": "7.0.74",
   "description": "Svg filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,14 +21,13 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg-dimensionless": "7.0.54",
-    "@brysonandrew/utils-attributes": "7.0.54",
+    "@brysonandrew/config-types": "7.0.74",
+    "@brysonandrew/svg-dimensionless": "7.0.74",
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.54",
-    "framer-motion": "^10.18.0",
-    "react-device-detect": "^2.2.3",
-    "@brysonandrew/svg": "7.0.54",
-    "@brysonandrew/utils-key": "7.0.54"
+    "@brysonandrew/utils-key": "7.0.74",
+    "@brysonandrew/utils-attributes": "7.0.74",
+    "framer-motion": "^11.2.4",
+    "react-device-detect": "^2.2.3"
   },
   "exports": {
     ".": {
@@ -36,20 +35,21 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./anti-camo": "./anti-camo/index.tsx",
     "./aura": "./aura/index.tsx",
-    "./blur/basic": "./blur/basic.tsx",
+    "./config": "./config/index.ts",
     "./displacement/config": "./displacement/config.ts",
     "./displacement": "./displacement/index.tsx",
-    "./config": "./config/index.ts",
+    "./blur/basic": "./blur/basic.tsx",
+    "./config/constants": "./config/constants/index.ts",
+    "./config/types/dom": "./config/types/dom.ts",
+    "./config/types": "./config/types/index.ts",
     "./blur/motion/Speed": "./blur/motion/Speed.tsx",
     "./blur/motion/TransformerX": "./blur/motion/TransformerX.tsx",
     "./blur/motion/TransformerY": "./blur/motion/TransformerY.tsx",
     "./blur/motion/config": "./blur/motion/config.ts",
     "./blur/motion": "./blur/motion/index.tsx",
     "./blur/motion/keys": "./blur/motion/keys.ts",
-    "./config/constants": "./config/constants/index.ts",
-    "./config/types/dom": "./config/types/dom.ts",
-    "./config/types": "./config/types/index.ts",
     "./blur/motion/2": "./blur/motion/2/index.tsx",
     "./blur/motion/2/speed": "./blur/motion/2/speed.tsx",
     "./blur/motion/2/transformer/x": "./blur/motion/2/transformer/x.tsx",

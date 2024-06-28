@@ -18,11 +18,11 @@ html.dark ::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-  ${thumb};
+  ${thumb.idle};
 }
 
 html.dark ::-webkit-scrollbar-thumb {
-  ${dark.thumb};
+  ${dark.thumb.idle};
 }
 
 ::-webkit-scrollbar-thumb:hover {

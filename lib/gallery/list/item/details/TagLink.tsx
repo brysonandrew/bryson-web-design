@@ -3,7 +3,7 @@ import {
   TSlugProps,
   TTag,
 } from '@brysonandrew/gallery/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { motion } from 'framer-motion';
 import { TAnchorMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { useCursor, resolveCompositeHoverKey, HOVER_KEY_DELIMITER } from '@brysonandrew/motion-cursor';
@@ -62,7 +62,7 @@ export const TagLink: FC<TProps> = ({
       animate={isHover ? 'hover' : 'animate'}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      {...resolveInteractiveLabels(title)}
+      {...resolveAccessibilityTitles(title)}
       {...props}
     >
       {children}

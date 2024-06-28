@@ -1,6 +1,7 @@
 import { resolveGradient } from '@brysonandrew/color';
 import { resolvePreflights as _resolvePreflights } from '@brysonandrew/uno-preflights';
 import { TColor } from '../index';
+
 export const resolvePreflights = <T extends object>(
   colors: TColor,
 ) =>

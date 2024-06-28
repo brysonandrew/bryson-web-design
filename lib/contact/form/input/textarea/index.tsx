@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { Input } from '..';
 import { TTextareaMotionProps } from '@brysonandrew/config-types/dom';
 import { Autosize } from './autosize';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { TFormChildrenProps } from '@brysonandrew/contact/form';
 import { useApp } from '@brysonandrew/app';
@@ -41,7 +41,7 @@ export const Textarea: FC<TProps> = ({
               rows={1}
               name={name}
               disabled={isDisabled}
-              {...resolveInteractiveLabels(name)}
+              {...resolveAccessibilityTitles(name)}
               {...inputHandlers}
               {...props}
               {...inputProps}

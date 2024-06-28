@@ -10,8 +10,8 @@ import {
 
 import { TFadeVProps } from '@brysonandrew/fade-edge/pairs/FadeV';
 import { TAnyRecord } from '@brysonandrew/config-types';
-import { TWithLight } from '@brysonandrew/layout';
 import { TWithPlaceholder } from '@brysonandrew/placeholder';
+import { TWithLight } from '@brysonandrew/layout-light';
 
 export type TDefaultBlanksRecord = typeof DEFAULT_BLANKS;
 export type TDefaultBacksRecord = typeof DEFAULT_BACKS;

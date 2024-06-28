@@ -1,21 +1,88 @@
+import {
+  TBoxBackgroundLookup,
+  TBoxBorderLookup,
+  TBoxVariantTail,
+} from '@brysonandrew/utils-box/types';
+
 export const COMMON_ATTRIBUTES = {
   Image: 'Image',
   Color: 'Color',
-};
+} as const;
 
-export const BORDER_ATTRIBUTES = {
+export const BORDER_ATTRIBUTES: TBoxBorderLookup = {
   Width: 'Width',
   Style: 'Style',
-  Color: 'Color',
-  Image: 'Image',
+  ImageSlice: 'ImageSlice',
+  BlockColor: 'BlockColor',
+  BlockEndColor: 'BlockEndColor',
+  BlockEndStyle: 'BlockEndStyle',
+  BlockEndWidth: 'BlockEndWidth',
+  BlockStartColor: 'BlockStartColor',
+  BlockStartStyle: 'BlockStartStyle',
+  BlockStartWidth: 'BlockStartWidth',
+  BlockStyle: 'BlockStyle',
+  BlockWidth: 'BlockWidth',
+  BottomColor: 'BottomColor',
+  BottomLeftRadius: 'BottomLeftRadius',
+  BottomRightRadius: 'BottomRightRadius',
+  BottomStyle: 'BottomStyle',
+  BottomWidth: 'BottomWidth',
+  Collapse: 'Collapse',
+  EndStartRadius: 'EndStartRadius',
+  ImageOutset: 'ImageOutset',
+  ImageRepeat: 'ImageRepeat',
+  EndEndRadius: 'EndEndRadius',
+  ImageSource: 'ImageSource',
+  ImageWidth: 'ImageWidth',
+  InlineColor: 'InlineColor',
+  InlineEndColor: 'InlineEndColor',
+  InlineEndStyle: 'InlineEndStyle',
+  InlineEndWidth: 'InlineEndWidth',
+  InlineStartColor: 'InlineStartColor',
+  InlineStartStyle: 'InlineStartStyle',
+  InlineStartWidth: 'InlineStartWidth',
+  InlineStyle: 'InlineStyle',
+  InlineWidth: 'InlineWidth',
+  LeftColor: 'LeftColor',
+  LeftStyle: 'LeftStyle',
+  LeftWidth: 'LeftWidth',
+  RightColor: 'RightColor',
+  StartEndRadius: 'StartEndRadius',
+  RightStyle: 'RightStyle',
+  RightWidth: 'RightWidth',
+  Spacing: 'Spacing',
+  StartStartRadius: 'StartStartRadius',
+  TopColor: 'TopColor',
+  TopLeftRadius: 'TopLeftRadius',
+  TopRightRadius: 'TopRightRadius',
+  TopStyle: 'TopStyle',
+  TopWidth: 'TopWidth',
+  Block: 'Block',
+  BlockEnd: 'BlockEnd',
+
+  BlockStart: 'BlockStart',
+  Bottom: 'Bottom',
+  Inline: 'Inline',
+  InlineEnd: 'InlineEnd',
+
+  InlineStart: 'InlineStart',
+  Left: 'Left',
+  Radius: 'Radius',
+  Right: 'Right',
+  Top: 'Top',
+
+  ...COMMON_ATTRIBUTES,
 };
 
-export const BACKGROUND_ATTRIBUTES = {
+export const BACKGROUND_ATTRIBUTES: TBoxBackgroundLookup = {
   Size: 'Size',
   Position: 'Position',
   Clip: 'Clip',
   BlendMode: 'BlendMode',
   Repeat: 'Repeat',
-  Color: 'Color',
-  Image: 'Image',
-};
+  Attachment: 'Attachment',
+  Origin: 'Origin',
+  PositionX: 'PositionX',
+  PositionY: 'PositionY',
+  ...COMMON_ATTRIBUTES,
+} as const;

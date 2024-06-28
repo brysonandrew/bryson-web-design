@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-core",
-  "version": "7.0.54",
+  "version": "7.0.74",
   "description": "Motion core library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-config-types": "7.0.54",
-    "@brysonandrew/motion-config-constants": "7.0.54",
-    "@brysonandrew/config-types": "7.0.54"
+    "@brysonandrew/motion-config-types": "7.0.74",
+    "@brysonandrew/motion-config-constants": "7.0.74",
+    "@brysonandrew/config-types": "7.0.74"
   },
   "exports": {
     ".": {
@@ -36,10 +36,10 @@
     "./resolvePresence": "./resolvePresence.ts",
     "./resolveRotateXPresence": "./resolveRotateXPresence.ts",
     "./resolveTransitionRecord": "./resolveTransitionRecord.ts",
-    "./resolveBaseTransitionRecord": "./resolveBaseTransitionRecord/index.ts",
-    "./resolveBaseTransitionRecord/resolveEaseStringify": "./resolveBaseTransitionRecord/resolveEaseStringify.ts",
     "./resolvePresenceRecord": "./resolvePresenceRecord/index.ts",
     "./resolvePresenceRecord/key": "./resolvePresenceRecord/key.ts",
+    "./resolveBaseTransitionRecord": "./resolveBaseTransitionRecord/index.ts",
+    "./resolveBaseTransitionRecord/resolveEaseStringify": "./resolveBaseTransitionRecord/resolveEaseStringify.ts",
     "./resolvePresenceRecord/value/fade": "./resolvePresenceRecord/value/fade.ts",
     "./resolvePresenceRecord/value": "./resolvePresenceRecord/value/index.ts",
     "./resolvePresenceRecord/value/resolveNegative": "./resolvePresenceRecord/value/resolveNegative.ts",

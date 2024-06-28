@@ -7,7 +7,7 @@ type TProps = TDivProps & {
   materialColor: string;
   gapShade: string;
 };
-export const Mesh: FC<TProps> = ({
+export const TextureZebra: FC<TProps> = ({
   classValue,
   style,
   children,
@@ -43,6 +43,26 @@ export const Mesh: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

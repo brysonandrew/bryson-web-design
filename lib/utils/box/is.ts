@@ -7,7 +7,7 @@ import {
 import {
   BACKGROUND_ATTRIBUTES,
   BORDER_ATTRIBUTES,
-} from '@brysonandrew/utils/box/constants';
+} from '@brysonandrew/utils-box/constants';
 const isKeyMatch = (
   config: TBoxConfig<TBoxVariant>,
   LOOKUP:

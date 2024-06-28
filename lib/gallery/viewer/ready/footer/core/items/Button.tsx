@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link as _Link } from 'react-router-dom';
 import { useViewer as useContext } from '@brysonandrew/gallery-viewer';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { Background } from '@brysonandrew/interactive/circle/Background';
 import { useTo } from '@brysonandrew/gallery-viewer/hooks/nav/useTo';
 import { useCurrName } from '@brysonandrew/gallery-viewer/hooks/params/useCurrName';
@@ -48,7 +48,7 @@ export const Button: FC<TButtonProps> = ({
         to={to}
         onTap={handleTap}
         className="center relative w-full h-full"
-        {...resolveInteractiveLabels(name)}
+        {...resolveAccessibilityTitles(name)}
       >
         {isActive && (
           <Background layoutId="GALLERY_BUTTON_FILL" />

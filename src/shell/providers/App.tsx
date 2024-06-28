@@ -15,8 +15,8 @@ import screensRecordJson from '../lookup.json';
 import { ViewerProvider } from '@brysonandrew/gallery-viewer';
 import { APP_BASE_PROPS } from '@app/base';
 import {
-  Metal,
-  MetalMotion,
+  TextureMetal,
+  TextureMetalMotion,
 } from '@brysonandrew/texture-metal';
 import { AppInit } from '@brysonandrew/app/AppInit';
 import { arrToChainedValueNest } from '@brysonandrew/layout-utils/arrToChainedValueNest';
@@ -33,8 +33,8 @@ export const App: FC<TProps> = ({ children }) => {
 
   return (
     <AppInit<TCustomStyle>
-      BackFill={Metal}
-      BackMotionFill={MetalMotion}
+      BackFill={TextureMetal}
+      BackMotionFill={TextureMetalMotion}
       sounds={{
         move: handleMove,
         on: handleOnSound,

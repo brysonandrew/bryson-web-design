@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { DURATION } from '@app/animation';
 import { ThickLine } from '@brysonandrew/layout-line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
@@ -55,7 +55,7 @@ export const Item: FC<TItemProps> = ({
           to={to}
           className='absolute -inset-1.25'
           {...(title
-            ? resolveInteractiveLabels(title)
+            ? resolveAccessibilityTitles(title)
             : {})}
           {...handlers}
           {...linkProps}

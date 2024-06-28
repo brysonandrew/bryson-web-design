@@ -4,15 +4,15 @@ import { useNetwork } from '@brysonandrew/network';
 import { Offline } from '@brysonandrew/network/Offline';
 
 type TProps = {
-  OfflineFC: FC;
+  OfflineFc: FC;
 };
-export const Network: FC<TProps> = ({ OfflineFC = Offline }) => {
+export const Network: FC<TProps> = ({ OfflineFc = Offline }) => {
   const { isOffline, onOffline, onOnline } = useNetwork();
   useEventListener('offline', onOffline);
   useEventListener('online', onOnline);
 
   if (isOffline) {
-    return <OfflineFC />;
+    return <OfflineFc />;
   } else {
     return null;
   }

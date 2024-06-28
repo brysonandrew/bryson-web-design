@@ -6,8 +6,8 @@ import { isPreflightsScrollbarManualCss } from '@brysonandrew/uno-preflights/scr
 import {
   boxBackgroundColorCss,
   boxBackgroundImageCss,
-} from '@brysonandrew/utils/box/css/background/css';
-import { boxBorderShorthandCss } from '@brysonandrew/utils/box/css/border/css';
+} from '@brysonandrew/utils-box/css/background/css';
+import { boxBorderShorthandCss } from '@brysonandrew/utils-box/css/border/css';
 
 type TScrollbarStrConfig = {
   backgroundColor: string;
@@ -87,7 +87,7 @@ export const preflightsScrollbarCss = (
       thumb: {
         idle: `${boxBackgroundColorCss(
           thumbDark
-        )}${boxBorderCss({
+        )}${boxBorderShorthandCss({
           width: borderWidth,
           color: thumbBorderDark,
         })}`,

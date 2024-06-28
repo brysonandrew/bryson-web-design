@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Input } from '@brysonandrew/contact/form/input';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
 import { TFormChildrenProps } from '@brysonandrew/contact/form';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { TInputMotionProps } from '@brysonandrew/config-types';
@@ -25,7 +25,7 @@ export const Text: FC<TProps> = ({
           autoComplete='off'
           name={name}
           disabled={isDisabled}
-          {...resolveInteractiveLabels(name)}
+          {...resolveAccessibilityTitles(name)}
           {...inputHandlers}
           {...props}
           {...inputProps}

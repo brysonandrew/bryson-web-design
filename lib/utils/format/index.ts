@@ -1,5 +1,11 @@
-import type { TTTitleToKebab } from '@brysonandrew/config-types';
-import { TTPascalToKebab } from '@brysonandrew/config-types/transformers/format/kebab';
+import type {
+  TTCamelToPascal,
+  TTTitleToKebab,
+} from '@brysonandrew/config-types';
+import {
+  TTCamelToKebab,
+  TTPascalToKebab,
+} from '@brysonandrew/config-types/transformers/format/kebab';
 
 export const capitalize = (word: string | null) =>
   word
@@ -29,6 +35,12 @@ export const pascalToKebab = <T extends string>(value: T) =>
   value
     .replace(/([a-z0–9])([A-Z])/g, '$1-$2')
     .toLowerCase() as TTPascalToKebab<T>;
+
+export const camelToKebab = <T extends string>(value: T) =>
+  pascalToKebab(value) as TTCamelToKebab<T>;
+
+export const camelToPascal = <T extends string>(value: T) =>
+  `${value[0].toUpperCase()}${value.slice(1)}` as TTCamelToPascal<T>;
 
 export const titleToKebab = <I extends string>(
   title: I

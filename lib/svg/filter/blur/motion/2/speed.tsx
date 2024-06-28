@@ -23,3 +23,9 @@ export const Motion2Speed = ({
 
   return <>{children({ velocity, acceleration })}</>;
 };
+  // const turbulenceLiteral = isVertical
+  //   ? `${a} 0`
+  //   : `0 ${a}`;
+  // const turbulence = useMotionTemplate`${turbulenceLiteral}`;
+  // const blurLiteral = isVertical ? `0 ${v}` : `${v} 0`;
+  // const blur = useMotionTemplate`${blurLiteral}`;

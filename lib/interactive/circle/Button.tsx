@@ -5,7 +5,7 @@ import {
 } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 
 export type TButtonProps = TButtonMotionProps &
   TClassValueProps;
@@ -21,7 +21,7 @@ export const Button: FC<TButtonProps> = ({
         'circle-interactive shrink-0 w-14 h-14',
         classValue,
       )}
-      {...resolveInteractiveLabels(title)}
+      {...resolveAccessibilityTitles(title)}
       {...props}
     >
       <>{children}</>

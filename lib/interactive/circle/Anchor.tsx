@@ -1,7 +1,7 @@
 import { TAnchorMotionProps } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes/resolveInteractiveLabels';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 
 type TProps = TAnchorMotionProps;
 export const Anchor: FC<TProps> = ({
@@ -13,7 +13,7 @@ export const Anchor: FC<TProps> = ({
   return (
     <motion.a
       className='circle-interactive'
-      {...resolveInteractiveLabels(title)}
+      {...resolveAccessibilityTitles(title)}
       {...props}
     >
       <>{children}</>

@@ -1,3 +1,4 @@
+export * from './use-time-bomb';
 export * from './useDelay';
 export * from './useDelayCallback';
 export * from './useDelayCallbackHandler';
