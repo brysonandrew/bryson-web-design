@@ -13,7 +13,6 @@ export * from './events/useLongPress';
 export * from './life-cycle/useIsFirstRender';
 export * from './life-cycle/useIsomorphicLayoutEffect';
 export * from './life-cycle/useUpdateEffect';
-export * from './scroll/useFreezeScroll';
 export * from './window/use-time-bomb';
 export * from './window/useDelay';
 export * from './window/useDelayCallback';
@@ -22,6 +21,7 @@ export * from './window/useInterval';
 export * from './window/useMediaQuery';
 export * from './window/useNoPointer';
 export * from './window/useTimeoutRef';
+export * from './scroll/useFreezeScroll';
 
 
 
