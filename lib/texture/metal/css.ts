@@ -1,9 +1,9 @@
 import { METAL_RADIAL_GRADIENT_CENTER } from '@brysonandrew/texture-metal/center';
 import { METAL_CONICAL_GRADIENT } from '@brysonandrew/texture-metal/conical';
-import { METAL_RADIAL_GRADIENT_DIAMOND } from '@brysonandrew/texture-metal/diamond';
+import { METAL_LINEAR_GRADIENT } from '@brysonandrew/texture-metal/linear';
 import { css } from '@emotion/react';
 
-export const METAL_RADIAL_GRADIENT_CSS = `${METAL_RADIAL_GRADIENT_DIAMOND},${METAL_RADIAL_GRADIENT_CENTER};
+export const METAL_RADIAL_GRADIENT_CSS = `${METAL_LINEAR_GRADIENT},${METAL_RADIAL_GRADIENT_CENTER};
 `;
 
 export const metalConicalCss = css`
@@ -47,4 +47,3 @@ export const metalRadialDarkCss = css`
   ${baseRadialMetalCss}
   filter: brightness(16%) opacity(100%);
 `;
-
