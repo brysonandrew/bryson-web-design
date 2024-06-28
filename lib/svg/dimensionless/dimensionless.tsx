@@ -8,7 +8,7 @@ export const SvgWrap: FC<TProps> = ({
   children,
   ...props
 }) => (
-  <svg width='0%' height='0%' {...props}>
+  <svg width='0' height='0' style={{width:0,height:0}} {...props}>
     {children}
   </svg>
 );

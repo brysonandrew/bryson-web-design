@@ -3,8 +3,8 @@ import { Settings } from './settings';
 import { Network } from '@brysonandrew/network';
 import { BackBlur } from '@brysonandrew/layout-back';
 import { Position } from './Position';
-import { OfflineFC } from './OfflineFC';
 import { useApp } from '@brysonandrew/app';
+import { OfflineFc } from '@shell/footer/OfflineFc';
 
 const Root = styled.footer``;
 
@@ -15,7 +15,7 @@ export const Footer = () => {
     <Root className='fixed bottom-0 left-0 w-full h-0 z-0'>
       <div className='absolute left-1/2 -translate-x-1/2 bottom-0 w-shell'>
         <Position position='left-6'>
-          <Network OfflineFC={OfflineFC} />
+          <Network OfflineFc={OfflineFc} />
         </Position>
         <Position position='right-6'>
           <GlowWrap

@@ -45,18 +45,14 @@ export const BlurMotion2 = ({
   tSeed = 2,
   mRadius = 10,
   axis = 'x',
+  svgProps,
   filterProps,
   turbulenceMotionProps,
   morphologyProps,
   displacementProps,
   gaussianBlurMotionProps,
 }: TProps) => {
-  // const turbulenceLiteral = isVertical
-  //   ? `${a} 0`
-  //   : `0 ${a}`;
-  // const turbulence = useMotionTemplate`${turbulenceLiteral}`;
-  // const blurLiteral = isVertical ? `0 ${v}` : `${v} 0`;
-  // const blur = useMotionTemplate`${blurLiteral}`;
+
   return (
     <Motion2Speed motionValue={motionValue}>
       {(transformerProps) => {
@@ -77,7 +73,7 @@ export const BlurMotion2 = ({
         return (
           <Transformer {...props}>
             {({ turbulence, blur }) => (
-              <SvgWrap>
+              <SvgWrap {...svgProps}>
                 <filter
                   id={id}
                   x="-25%"

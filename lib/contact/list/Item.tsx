@@ -6,7 +6,7 @@ import {
 import { TextAnchor } from '@brysonandrew/interactive';
 import { Copy } from '@brysonandrew/interactive/Copy';
 import { TClipboardState } from '@brysonandrew/notifications';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
 import clsx from 'clsx';
 import { FC } from 'react';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
@@ -45,7 +45,7 @@ export const Item: FC<TProps> = ({
         target='_top'
         href={href}
         classValue='text-sm char-gap-4 md:text-lg lg:text-xl'
-        {...resolveInteractiveLabels(title)}
+        {...resolveAccessibilityTitles(title)}
         {...handlers}
         {...props}
       >

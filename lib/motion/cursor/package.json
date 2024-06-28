@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.54",
+  "version": "7.0.74",
   "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.54",
-    "@brysonandrew/utils-function": "7.0.54",
-    "@brysonandrew/hooks": "7.0.54",
+    "@brysonandrew/config-types": "7.0.74",
+    "@brysonandrew/utils-function": "7.0.74",
+    "@brysonandrew/hooks": "7.0.74",
     "react": "^18.2.0",
-    "@brysonandrew/motion-config-types": "7.0.54",
-    "framer-motion": "^10.18.0",
-    "@brysonandrew/motion-scroll": "7.0.54",
+    "@brysonandrew/motion-config-types": "7.0.74",
+    "framer-motion": "^11.2.4",
+    "@brysonandrew/motion-scroll": "7.0.74",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.54",
-    "@brysonandrew/motion-config-constants": "7.0.54",
-    "@brysonandrew/icons-i": "7.0.54"
+    "@brysonandrew/app": "7.0.74",
+    "@brysonandrew/motion-config-constants": "7.0.74",
+    "@brysonandrew/icons-i": "7.0.74"
   },
   "exports": {
     "./base": "./base.tsx",
@@ -48,12 +48,12 @@
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
     "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
     "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
+    "./utils": "./utils/index.ts",
+    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./switch/Box": "./switch/Box.tsx",
     "./switch/IconWithText": "./switch/IconWithText.tsx",
     "./switch/Sight": "./switch/Sight.tsx",
     "./switch": "./switch/index.tsx",
-    "./utils": "./utils/index.ts",
-    "./utils/resolveCompositeHoverKey": "./utils/resolveCompositeHoverKey.ts",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   }
 }

@@ -1,6 +1,13 @@
+import { TTPascalToCamel } from '@brysonandrew/config-types';
+import { TRequireAtLeastOne } from '@brysonandrew/uno-shortcuts';
 import { CSSProperties } from 'react';
 
-export type TBoxVariant = 'background' | 'border';
+export type TBoxVariant =
+  | 'background'
+  // | 'WebkitBackground'
+  | 'border';
+// | 'WebkitBorder'
+// | 'WebkitText';
 
 export type TBoxVariantTail<
   T extends string,
@@ -20,6 +27,7 @@ export type TCssBoxBackgroundTailKey = TBoxVariantTail<
   TCssKeys,
   'background'
 >;
+// | TBoxVariantTail<TCssKeys, 'WebkitBackground'>;
 
 export type TBoxBackgroundConfig = {
   size?: CSSProperties['backgroundSize'];
@@ -31,26 +39,34 @@ export type TBoxBackgroundConfig = {
   image?: CSSProperties['backgroundImage'];
 };
 
+export type TBoxBackgroundLookup = Record<
+  TCssBoxBackgroundTailKey,
+  TCssBoxBackgroundTailKey
+>;
+
 export type TCssBoxBorderTailKey = TBoxVariantTail<
   TCssKeys,
   'border'
 >;
+// | TBoxVariantTail<TCssKeys, 'WebkitBorder'>;
 export type TBoxBorderConfigKey =
-  Lowercase<TCssBoxBorderTailKey>;
+  TTPascalToCamel<TCssBoxBorderTailKey>;
 export type TBoxBorderConfigValue<
   T extends TCssBoxBorderTailKey = TCssBoxBorderTailKey
-> = CSSProperties[`border${T}`];
+> = CSSProperties[`border${T}`]; //| CSSProperties[`WebkitBorder${T}`];
 export type TBoxBorderConfigAttr<
   T extends TCssBoxBorderTailKey
-> = Record<Lowercase<T>, TBoxBorderConfigValue<T>>;
-
+> = Record<TTPascalToCamel<T>, TBoxBorderConfigValue<T>>;
 export type TBoxBorderConfigAll =
-  TBoxBorderConfigAttr<'Width'> &
-    TBoxBorderConfigAttr<'Style'> &
-    TBoxBorderConfigAttr<'Color'> &
-    TBoxBorderConfigAttr<'Image'>;
-export type TBoxBorderConfig = Partial<TBoxBorderConfigAll>;
-// TBoxBorderConfigAttr<TCssBoxBorderTailKey>;
+  TBoxBorderConfigAttr<TCssBoxBorderTailKey>;
+
+export type TBoxBorderConfig =
+  TRequireAtLeastOne<TBoxBorderConfigAll>;
+
+export type TBoxBorderLookup = Record<
+  TCssBoxBorderTailKey,
+  TCssBoxBorderTailKey
+>;
 
 export type TBoxConfig<
   T extends TBoxVariant = 'background'
@@ -64,3 +80,18 @@ export type TBoxCommonConfig<T extends TBoxVariant> = Pick<
   TBoxConfig<T>,
   'color' | 'image'
 >;
+
+//   TBoxBorderConfigAttr<'Width'> &
+//     TBoxBorderConfigAttr<'Style'> &
+//     TBoxBorderConfigAttr<'Color'> &
+//     TBoxBorderConfigAttr<'Image'> &
+//     TBoxBorderConfigAttr<'ImageSlice'> &
+// TBoxBorderConfigAttr<'ImageSlice'> &
+// TBoxBorderConfigAttr<'BlockColor'> &
+// TBoxBorderConfigAttr<'BlockEndColor'> &
+// TBoxBorderConfigAttr<'BlockEndStyle'> &
+// TBoxBorderConfigAttr<'BlockEndWidth'> &
+// TBoxBorderConfigAttr<'BlockStartColor'> &
+// TBoxBorderConfigAttr<'BlockStartStyle'> &
+// TBoxBorderConfigAttr<'BlockStartWidth'> &
+// TBoxBorderConfigAttr<TCssBoxBorderTailKey>;

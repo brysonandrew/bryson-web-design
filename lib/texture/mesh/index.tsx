@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import { TDivProps } from '@brysonandrew/config-types';
 import { resolveGradient } from '@brysonandrew/color-gradient';
 import { resolveVarCss } from '@brysonandrew/color-base';
-import { resolveBackground } from '@brysonandrew/utils-box';
+import { resolveBoxBackground } from '@brysonandrew/utils-box';
 
 type TProps = TDivProps & {
   materialColor: string;
   gapShade: string;
 };
-export const Mesh: FC<TProps> = ({
+export const TextureMesh: FC<TProps> = ({
   classValue,
   style,
   children,
@@ -18,10 +18,11 @@ export const Mesh: FC<TProps> = ({
   ...rest
 }) => {
   const gradient = useMemo(() => {
-    const result = resolveBackground({
+    const black06VarCss = resolveVarCss('black-06');
+    const result = resolveBoxBackground({
       image: resolveGradient({
         name: 'repeating-conic-gradient',
-        parts: ['rgba(0,0,0,0)', resolveVarCss('black-06')],
+        parts: ['rgba(0,0,0,0)', black06VarCss],
       }),
       size: '4px 4px',
     });
@@ -39,6 +40,14 @@ export const Mesh: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
 
 
 

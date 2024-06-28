@@ -41,3 +41,5 @@ export const resolvePreflights = <T extends object>({
 export * from './reset';
 export * from './resolveInput';
 export * from './scrollbar';
+export * from './scrollbar/manual';
+export * from './scrollbar/manual/is';

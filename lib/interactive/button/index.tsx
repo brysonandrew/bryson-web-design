@@ -26,7 +26,7 @@ type TProps = Partial<{
   Moon: FC;
   Sun: FC;
 }>;
-export const Button: FC<TProps> = ({
+export const DarkMode: FC<TProps> = ({
   buttonProps,
   backgroundProps,
   iconProps,

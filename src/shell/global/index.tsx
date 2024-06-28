@@ -1,6 +1,6 @@
 import { FC, Fragment, PropsWithChildren } from 'react';
 import { AURA } from '@brysonandrew/svg-filter/aura';
-import { Head } from '@brysonandrew/dark-mode';
+import { Head } from '@brysonandrew/head/head';
 import { usePreloadIcons } from '@brysonandrew/icons-load';
 import { CLIPBOARD_SUCCESS_ICON } from '@brysonandrew/notifications/clipboard/ClipboardStateHandler';
 import { useHeadProps } from '@shell/global/useHeadProps';

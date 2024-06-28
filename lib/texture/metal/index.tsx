@@ -5,7 +5,7 @@ import {
   metalRadialLightCss,
 } from '@brysonandrew/texture-metal/css';
 import clsx from 'clsx';
-import { BackFill } from '@brysonandrew/layout';
+import { BackFill } from '@brysonandrew/layout-back';
 import { TDivProps } from '@brysonandrew/config-types';
 
 const Dark = styled.div`
@@ -17,7 +17,7 @@ const Light = styled.div`
 `;
 
 type TProps = TDivProps;
-export const Metal: FC<TProps> = ({
+export const TextureMetal: FC<TProps> = ({
   classValue,
   children,
   ...rest
@@ -38,5 +38,9 @@ export const Metal: FC<TProps> = ({
   );
 }; 
 
+export * from './center';
+export * from './conical';
 export * from './css';
+export * from './diamond';
+export * from './linear';
 export * from './motion';

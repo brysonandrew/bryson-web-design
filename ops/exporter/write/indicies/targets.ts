@@ -6,9 +6,7 @@ export const writeIndiciesTargets = async (
   targets: TConfig
 ) => {
   for await (const { name, dir, indexRows } of targets) {
-    if (name === 'layout-portal') {
-      console.log(indexRows);
-    }
+ 
     await writeIndiciesTarget({ dir, indexRows });
   }
 };

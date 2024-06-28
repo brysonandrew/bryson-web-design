@@ -1,5 +1,5 @@
 import { TAnchorProps } from '@brysonandrew/config-types';
-import { resolveInteractiveLabels } from '@brysonandrew/utils-attributes';
+import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -16,7 +16,7 @@ export const TextAnchor: FC<TProps> = ({
         'whitespace-nowrap title-main',
         classValue,
       )}
-      {...resolveInteractiveLabels(title)}
+      {...resolveAccessibilityTitles(title)}
 
       {...props}
     >

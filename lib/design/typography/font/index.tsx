@@ -1,7 +1,7 @@
 import { useApp } from '@brysonandrew/app';
 import { TDivProps } from '@brysonandrew/config-types';
-import { Moon, Sun } from '@brysonandrew/dark-mode';
 import { FontItem } from '@brysonandrew/design/typography/font/item';
+import { Moon, Sun } from '@brysonandrew/interactive';
 import { Line } from '@brysonandrew/layout-line';
 import clsx from 'clsx';
 import { FC, Fragment } from 'react';

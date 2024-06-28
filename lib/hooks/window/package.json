@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-window",
-  "version": "7.0.54",
+  "version": "7.0.74",
   "description": "Hooks window library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,6 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
+    "@brysonandrew/utils-validation": "7.0.74",
     "react": "^18.2.0"
   },
   "exports": {
@@ -29,6 +30,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./use-time-bomb": "./use-time-bomb.ts",
     "./useDelay": "./useDelay.ts",
     "./useDelayCallback": "./useDelayCallback.ts",
     "./useDelayCallbackHandler": "./useDelayCallbackHandler.ts",

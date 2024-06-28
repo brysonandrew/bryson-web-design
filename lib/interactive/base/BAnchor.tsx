@@ -2,7 +2,7 @@ import {
   TAnchorProps,
   TInteractiveProps,
 } from '@brysonandrew/config-types';
-import { resolveInteractiveHrefLabels } from '@brysonandrew/utils-attributes/resolveInteractiveHrefLabels';
+import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityHrefTitles';
 import clsx from 'clsx';
 import { FC } from 'react';
 
@@ -27,7 +27,7 @@ export const BAnchor: FC<TBAnchorProps> = (props) => {
         shape,
         classValue,
       )}
-      {...resolveInteractiveHrefLabels(props)}
+      {...resolveAccessibilityHrefTitles(props)}
       {...rest}
     >
       {children}
