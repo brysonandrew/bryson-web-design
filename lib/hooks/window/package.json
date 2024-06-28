@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-window",
-  "version": "7.0.74",
+  "version": "7.0.76",
   "description": "Hooks window library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-validation": "7.0.74",
+    "@brysonandrew/utils-validation": "7.0.76",
     "react": "^18.2.0"
   },
   "exports": {
