@@ -21,7 +21,7 @@ type TConfig = {
 } & TPriceProps;
 export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   standard: {
-    price: 2999,
+    price: 4250,
     classValue: 'gradient-standard',
     listLiteral: `
     Perfect for small businesses and startups
@@ -31,7 +31,7 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
     Quick turnaround: Get online in no time!`,
   },
   plus: {
-    price: 5999,
+    price: 7800,
     classValue: 'gradient-plus',
     discount: {
       value: 200,
@@ -52,15 +52,15 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
     In-depth consultation and planning
     Unlimited features and customization
     Ongoing support and maintenance
-    Integration of cutting-edge technologies (AI, 3D rendering, IoT)
+    Integration of cutting-edge technologies (Artificial Intelligence, 3D graphics, Internet of Things)
     `,
   },
 } as const;
 
 export const resolvePackageConfig = <
-  T extends TPricingTitle,
+  T extends TPricingTitle
 >(
-  title: T,
+  title: T
 ) => {
   const key = titleToKebab<T>(title);
   const config = CONFIG_LOOKUP[key];
