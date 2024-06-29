@@ -30,6 +30,7 @@ export const useCursorOffset = (offsetRef: TOffsetRef) => {
     const signY =
       nextY < viewportHalfHeight - BOUND_Y ? 1 : -1;
 
+
     if (
       offsetRef.current.x !== signX ||
       offsetRef.current.y !== signY

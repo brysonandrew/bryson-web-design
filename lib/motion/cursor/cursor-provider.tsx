@@ -13,6 +13,10 @@ import {
   TContext,
   THover,
 } from '@brysonandrew/motion-cursor/config/types';
+import {
+  INIT_CALC,
+  resolveCalc,
+} from '@brysonandrew/motion-cursor/utils/calc';
 
 export const STATE = {
   isCursorReady: false,
@@ -40,7 +44,7 @@ export const CursorProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
   const [isCursorReady, setCursorReady] = useState(
-    STATE.isCursorReady,
+    STATE.isCursorReady
   );
   const [hover, setHoverKey] = useState<THover>(STATE);
 
@@ -51,8 +55,8 @@ export const CursorProvider: FC<PropsWithChildren> = ({
     x: 1,
     y: -1,
   });
-  const cursorLabelX = useMotionValue(0);
-  const cursorLabelY = useMotionValue(0);
+  const cursorLabelX = useMotionValue(INIT_CALC);
+  const cursorLabelY = useMotionValue(INIT_CALC);
   const cursorX = useMotionValue(-999);
   const cursorY = useMotionValue(-999);
 
