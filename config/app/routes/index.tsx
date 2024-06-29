@@ -6,7 +6,6 @@ import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 import { TPageTitle } from '@app/routes/config/types';
 import { AppNotFound } from '@brysonandrew/app';
-import { COLOR_RECORD } from '@app/color';
 
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,

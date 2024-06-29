@@ -11,8 +11,8 @@ import {
 
 export const INIT_PROJECT_ITEMS = [
   {
-    title: 'Repurpose Video Editor',
-    description: 'Multimedia Video Editor',
+    title: 'Repurpose',
+    description: 'Video Editor',
     pricing: 'select',
     href: 'TBA',
     tags: [
