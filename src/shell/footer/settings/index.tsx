@@ -9,11 +9,15 @@ type TProps = TDivProps;
 export const Settings: FC<TProps> = (props) => {
   return (
     <div
-      className={clsx('row z-10', !isMobile && 'gap-1')}
+      className={clsx(
+        'row-stretch z-10',
+        !isMobile && 'gap-1'
+      )}
       {...props}
     >
       <DarkMode />
+      <div className="grow w-[1px] bg-accent-02" />
       {!isMobile && <Sound />}
     </div>
   );
-}; 
+};
