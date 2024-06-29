@@ -11,7 +11,7 @@ export const deleteEntry = async (entryPath: string) => {
         fullPath
       );
     } else {
-      await rm(fullPath, { recursive: true });
+      await rm(fullPath, { recursive: true, force:true });
       console.log(
         green(`succeeded to delete ${entryPath} `)
       );

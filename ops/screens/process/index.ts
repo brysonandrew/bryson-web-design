@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
 import { mkdir, rename } from 'fs/promises';
-import fg from 'fast-glob';
+import fglob from 'fast-glob';
 import sharp, { OutputInfo } from 'sharp';
 import {
   IMAGES_GLOB,
@@ -25,18 +25,28 @@ import {
   TScreensRecord,
 } from '@brysonandrew/media';
 import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScreensRecordInGallery';
+import { deleteEntry } from '@ops/lib';
 
 (async () => {
   try {
     let screensRecord: TScreensRecord = {};
     const smallRecords: TMediaRecords = [];
     const entriesCountRecord: Record<string, number> = {};
-
-    const entries = await fg([IMAGES_GLOB]);
-
+    const entries = await fglob([
+      'assets/screens/*/[1-9]/[1-9].png',
+    ]);
+    // const deleteEntries = await fglob(
+    //   ['assets/screens/**/0'],
+    //   { onlyDirectories: true }
+    // );
+    // console.log(deleteEntries);
+    // deleteEntries.forEach((p) => {
+    //   deleteEntry(p);
+    // });
+    // return;
     writePrecachePath(entries);
 
-    for await (let entry of entries) {
+    for await (const entry of entries) {
       const { ext } = resolveFsInfo(entry);
       const [_, tail] = entry.split(BASE_SCREENS_ENTRY);
       const [name] = tail.split('/');
@@ -45,6 +55,7 @@ import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScr
       const nextCount = currCount + 1;
 
       entriesCountRecord[name] = nextCount;
+
       const nextEntryDir = [
         SCREENS_DIR,
         name,
@@ -54,20 +65,20 @@ import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScr
       const nextEntryBase = `${nextEntryDir}/${nextCount}`;
       const nextEntry = `${nextEntryBase}.${ext}`;
 
-      if (!existsSync(nextEntryDir)) {
-        await mkdir(nextEntryDir);
-        await rename(entry, nextEntry);
-        entry = nextEntry;
-      }
+      // if (!existsSync(nextEntryDir)) {
+      //   await mkdir(nextEntryDir);
+      //   await rename(entry, nextEntry);
+      //   entry = nextEntry;
+      // }
 
       const originalMetaData = await resolveMetaDataFile(
         entry,
-        `${nextEntryBase}-meta.md`,
+        `${nextEntryBase}-meta.md`
       );
 
       const webpEntry = await resolveWebp(
         entry,
-        `${nextEntryBase}`,
+        `${nextEntryBase}`
       );
 
       const record = resolveMediaRecord({
@@ -79,7 +90,7 @@ import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScr
       screensRecord = writeScreensRecordInGallery(
         record,
         name,
-        screensRecord,
+        screensRecord
       );
 
       if (EXCLUDE_SMALLS.includes(name)) {
@@ -88,7 +99,7 @@ import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScr
 
       const smallEntry = resolveSmallEntry(
         nextEntryBase,
-        ext,
+        ext
       );
       const small: OutputInfo = await sharp(entry)
         .resize({ width: SMALL_W })
@@ -97,12 +108,12 @@ import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScr
       const smallMeta = await resolveMetaDataFile(
         smallEntry,
         `${nextEntryBase}-meta-output-${SMALL_SUFFIX}.md`,
-        small,
+        small
       );
 
       const webpSmallEntry = await resolveWebp(
         smallEntry,
-        `${nextEntryBase}${SMALL_SUFFIX}`,
+        `${nextEntryBase}${SMALL_SUFFIX}`
       );
 
       const smallRecord = resolveMediaRecord({

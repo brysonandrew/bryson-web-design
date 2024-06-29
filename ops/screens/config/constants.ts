@@ -25,8 +25,7 @@ export const GALLERY_CONTEXT = 'src/screens/gallery';
 export const EXTS = ['png', 'jpg', 'jpeg'] as const;
 export const PROCESS_EXTS = ['webp', 'md'] as const;
 export const ALL_EXTS = [...EXTS, ...PROCESS_EXTS] as const;
-export const DIRS_GLOB = `${SCREENS_DIR}/**` as const;
-export const FILES_GLOB = `${DIRS_GLOB}/[0-9]` as const;
+export const FILES_GLOB = `assets/screens/**/[0-9]` as const;
 export const SMALL_W = 320;
 export const SMALL_SUFFIX = `-${SMALL_W}w` as const;
 export const LOOKUP_SMALL_PATH =
@@ -52,8 +51,6 @@ export const ALL_EXCLUDE_ORIGINAL_GLOBS = [
   `${FILES_GLOB}${SMALL_SUFFIX}.png`,
   `${FILES_GLOB}.(${[...PROCESS_EXTS].join('|')})`,
 ];
-
-export const EMPTY_DIRS = [`${DIRS_GLOB}/[0-9]/[0-9]`];
 
 export const EXCLUDE_SMALLS = ['canvas'];
 

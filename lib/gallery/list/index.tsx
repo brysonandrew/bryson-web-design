@@ -6,18 +6,19 @@ import { useGallery } from '../GalleryProvider';
 
 export const List = <
   T extends string,
-  R extends object,
+  R extends object
 >() => {
   const currProject = useCurrProject();
-  const { SLUGS } = useGallery<T, R>();
-
+  const gallery = useGallery<T, R>();
+  const { SLUGS } = gallery;
   return (
     <>
       <Tips />
-      <motion.ul className='column-stretch gap-box'>
+      <motion.ul className="column-stretch gap-box">
         {SLUGS.map((slug, index) => {
           const isSelected = currProject === slug;
           if (isSelected) return null;
+
           return (
             <Item<T, R>
               key={slug}
