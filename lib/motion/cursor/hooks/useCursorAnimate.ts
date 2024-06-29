@@ -12,16 +12,10 @@ import {
   THoverKey,
 } from '@brysonandrew/motion-cursor/config/constants';
 import { TAnimationControlsPoint } from '@brysonandrew/motion-config-types';
+import { resolveCalc } from '@brysonandrew/motion-cursor/utils/calc';
 
 export const LABEL_SIZE = 280;
 const OFFSET = 20;
-
-const resolveCalc = (
-  percent: number,
-  sign: TSign,
-  px: number,
-): ValueTarget =>
-  `calc(${percent}% ${sign < 0 ? '-' : '+'} ${px}px)`;
 
 const ANIMATION_OPTIONS: ValueAnimationTransition = {
   type: 'tween',

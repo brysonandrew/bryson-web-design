@@ -1,28 +1,27 @@
-import { useBuild } from '@pages/index/build/BuildProvider';
+import { useHomeBuild } from '@pages/index/build/context';
 import { type FC } from 'react';
-import { Image } from './Image';
 import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
 import { P8 } from '@brysonandrew/space/P8';
 import { TITLE_HEIGHT } from '@brysonandrew/space/TitleSpace';
 import { useScroll } from '@brysonandrew/motion-scroll';
 import { useViewport } from '@brysonandrew/viewport';
-import { TPositionConfig } from '@pages/index/build/images/hooks/useCircle';
-import { useSpin } from '@pages/index/build/images/hooks/useSpin';
 import { TMediaRecord } from '@brysonandrew/media/config/types';
-import { ORIGIN_50 } from '@pages/index/build/config/constants';
+import { ORIGIN_50 } from '@pages/index/build/constants';
 import { motion } from 'framer-motion';
+import { useSpin } from '@pages/index/build/carousel/spin';
+import { BuildImage } from '@pages/index/build/image';
+import { TPositionConfig } from '@pages/index/build/image/circle';
 
 const BUFFER = 440;
 const HEIGHT = TITLE_HEIGHT + BUFFER;
 
 type TProps = TPartialParallaxMotionProps;
-export const Images: FC<TProps> = ({ style }) => {
+export const BuildCarousel: FC<TProps> = ({ style }) => {
   const { y, opacity } = style;
-  const { records } = useBuild();
+  const { records } = useHomeBuild();
   const { isScrolling } = useScroll();
   const spin = useSpin();
   const vp = useViewport();
-
   if (!vp.isDimensions) return null;
 
   const {
@@ -99,7 +98,7 @@ export const Images: FC<TProps> = ({ style }) => {
                 };
 
                 return (
-                  <Image
+                  <BuildImage
                     key={record.src}
                     isScrolling={isScrolling}
                     index={index}

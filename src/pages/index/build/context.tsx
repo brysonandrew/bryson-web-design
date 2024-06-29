@@ -8,11 +8,11 @@ import {
 import type { FC } from 'react';
 import allRecords from '../../../screens/build/lookup-320w.json';
 import { TMediaRecords } from '@brysonandrew/media/config/types';
-import { TContext } from './config/types';
+import { TContext } from './types';
 
 const Build = createContext<TContext>({} as TContext);
 
-export const useBuild = (): TContext =>
+export const useHomeBuild = (): TContext =>
   useContext<TContext>(Build);
 
 export const BuildProvider: FC<PropsWithChildren> = ({
@@ -51,7 +51,7 @@ export const BuildProvider: FC<PropsWithChildren> = ({
         const start = ~~(Math.random() * (count - SIZE));
         const next = (allRecords as TMediaRecords).slice(
           start,
-          start + SIZE,
+          start + SIZE
         );
         setRecords(next);
       }
@@ -59,11 +59,19 @@ export const BuildProvider: FC<PropsWithChildren> = ({
 
     initScreens();
   }, []);
+  const removeRecord = (src: string) => {
+    setRecords(
+      (prevs) =>
+        prevs?.filter((prev) => prev.src !== src) ?? []
+    );
+  };
 
   return (
     <Build.Provider
       value={{
         records,
+        updateRecords: setRecords,
+        removeRecord,
       }}
     >
       {children}

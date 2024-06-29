@@ -20,7 +20,6 @@ export const Footer = () => {
         <Position position='right-6'>
           <GlowWrap
             box={6}
-            
             color={COLOR.accent}
             style={{
               backgroundColor:'transparent',

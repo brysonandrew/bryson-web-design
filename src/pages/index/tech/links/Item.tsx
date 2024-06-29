@@ -28,14 +28,14 @@ export const Item: FC<
     CUSTOM_CURSOR_KEY,
     href,
     OPEN_IN_NEW_ICON,
-    <Visit>{address}</Visit>,
+    <Visit>{address}</Visit>
   );
 
   const GlowWrap = LIGHT?.MOTION.GlowWrap ?? Glow;
 
   return (
     <div
-      className='relative group cursor-pointer'
+      className="relative group cursor-pointer"
       {...handlers}
       {...props}
     >
@@ -47,22 +47,32 @@ export const Item: FC<
             backgroundColor: COLOR.primary,
             opacity: 0.5,
           }}
-          className='fade-in fill-1 mt-1.5 ml-1 pointer-events-none'
+          className="fade-in fill-1 mt-1.5 ml-1 pointer-events-none"
         />
       )}
       <GlowWrap
-        box={20}
+        box={60}
         value={glow}
-        color={COLOR.accent}
+        color={COLOR['primary-02']}
+      />
+      <GlowWrap
+        box={40}
+        value={glow}
+        color={COLOR['white-04']}
+      />
+      <GlowWrap
+        box={28}
+        value={glow}
+        color={COLOR['accent-06']}
       />
       <a
-        className='row gap-2 relative pl-4 pr-3 py-3'
+        className="row gap-4 relative pl-4 pr-5 py-3"
         href={href}
         style={{ color: COLOR.accent }}
-        target='_blank'
+        target="_blank"
       >
-        <Icon classValue='w-10 h-10 lg:(w-12 h-12)' />
-        <h4 className='relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl'>
+        <Icon classValue="w-10 h-10 lg:(w-12 h-12)" />
+        <h4 className="relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl">
           {title}
         </h4>
       </a>

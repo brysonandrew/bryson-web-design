@@ -88,8 +88,6 @@ export const useViewportMeasure = (
     }, RESIZE_COOLDOWN);
   };
 
-  useDelayCallback(handleResize, 1000);
-
   useEventListener('resize', handleResize);
   useIsomorphicLayoutEffect(handleSize, []);
 

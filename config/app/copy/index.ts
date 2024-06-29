@@ -1,4 +1,3 @@
-
 import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
 import { TTitle } from '@app/gallery/types';
 import { arrToRecord } from '@brysonandrew/utils-object/arrToRecord';
@@ -6,7 +5,7 @@ import { TInitItem } from '@brysonandrew/gallery';
 
 export const CONTACT_PHONE = '020 4069 8339';
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(
-  1,
+  1
 ).replace(/\s/g, '')}`;
 
 export const CONTACT_EMAIL =
@@ -23,10 +22,11 @@ export const CONTACT_FORM_FOOTER = {
 
 const RECORD = arrToRecord<TInitItem<TTitle>, 'title'>(
   INIT_PROJECT_ITEMS,
-  'title',
+  'title'
 );
 
 export const CV_ITEMS = [
+  RECORD.Repurpose,
   RECORD['Insight Factory'],
   RECORD.Juke,
   RECORD.Buzzcast,
@@ -35,7 +35,7 @@ export const CV_ITEMS = [
 export const CV_PRESETS_RECORD = {
   LATEST: [
     ...INIT_PROJECT_ITEMS.filter(
-      ({ pricing }) => pricing === 'select',
+      ({ pricing }) => pricing === 'select'
     ).slice(0, 3),
   ],
   MEDIA: [
@@ -50,14 +50,11 @@ type TPresetRecord = typeof CV_PRESETS_RECORD;
 export type TPresetName = keyof TPresetRecord;
 export type TPresetValue = TPresetRecord[TPresetName];
 
-type TPresetEntry = [
-  TPresetName,
-  TPresetValue
-];
+type TPresetEntry = [TPresetName, TPresetValue];
 export type TPresetEntries = TPresetEntry[];
 
 export const CV_PRESETS = Object.entries(
-  CV_PRESETS_RECORD,
+  CV_PRESETS_RECORD
 ) as TPresetEntries;
 
 const TEAM_SENTENCE = `Seeking an opportunity to
