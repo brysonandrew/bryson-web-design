@@ -4,6 +4,13 @@ import {
   TParallaxOptions,
 } from '@brysonandrew/motion-parallax/config';
 
+export const IMAGE_STATUSES = [
+  'init',
+  'loading',
+  'ready',
+  'error',
+] as const;
+
 export const ORIGIN_50: TTransition = {
   originX: '50%',
   originY: '50%',

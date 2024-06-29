@@ -27,7 +27,6 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emailjs/browser": "^3.10.0",
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
     "framer-motion": "^10.3.2",
