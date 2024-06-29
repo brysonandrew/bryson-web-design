@@ -14,7 +14,7 @@ export const INIT_PROJECT_ITEMS = [
     title: 'Repurpose',
     description: 'Video Editor',
     pricing: 'select',
-    href: 'TBA',
+    href: 'https://repurpose.io/',
     tags: [
       REMOTION,
       REACT,
@@ -23,8 +23,8 @@ export const INIT_PROJECT_ITEMS = [
       NEXT_JS,
     ],
     paragraphs: [
-      'Virtualized product list.',
-      'AI Image generation with ComfyUI integration.',
+      'Allow user to add text and images to an uploaded video.',
+      'AI subtitles and video clip generation.',
     ],
   },
   {
@@ -33,6 +33,7 @@ export const INIT_PROJECT_ITEMS = [
     pricing: 'plus',
     href: 'TBA',
     tags: [REACT, TYPESCRIPT, FRAMER_MOTION, STRIPE],
+    time: new Date(2024, 3, 5),
     paragraphs: [
       'Virtualized product list.',
       'AI Image generation with ComfyUI integration.',
