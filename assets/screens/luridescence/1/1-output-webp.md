@@ -1,1 +1,8 @@
-{"format":"webp","width":3456,"height":3456,"channels":4,"premultiplied":false,"size":652464}
+{
+  "format": "webp",
+  "width": 3456,
+  "height": 2520,
+  "channels": 4,
+  "premultiplied": false,
+  "size": 1041862
+}

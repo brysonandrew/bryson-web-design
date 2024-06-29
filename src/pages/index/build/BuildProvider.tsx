@@ -6,7 +6,7 @@ import {
   createContext,
 } from 'react';
 import type { FC } from 'react';
-import allRecords from './lookup-320w.json';
+import allRecords from '../../../screens/build/lookup-320w.json';
 import { TMediaRecords } from '@brysonandrew/media/config/types';
 import { TContext } from './config/types';
 

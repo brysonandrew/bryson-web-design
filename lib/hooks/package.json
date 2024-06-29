@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.74",
+  "version": "7.0.76",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -24,9 +24,9 @@
     "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-life-cycle": "*",
-    "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.74",
+    "@brysonandrew/hooks-scroll": "*",
+    "@brysonandrew/utils-function": "7.0.76",
     "react": "^18.2.0"
   },
   "exports": {
@@ -50,7 +50,6 @@
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
     "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
-    "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./window/use-time-bomb": "./window/use-time-bomb.ts",
     "./window/useDelay": "./window/useDelay.ts",
     "./window/useDelayCallback": "./window/useDelayCallback.ts",
@@ -58,6 +57,7 @@
     "./window/useInterval": "./window/useInterval.tsx",
     "./window/useMediaQuery": "./window/useMediaQuery.ts",
     "./window/useNoPointer": "./window/useNoPointer.ts",
-    "./window/useTimeoutRef": "./window/useTimeoutRef.ts"
+    "./window/useTimeoutRef": "./window/useTimeoutRef.ts",
+    "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts"
   }
 }

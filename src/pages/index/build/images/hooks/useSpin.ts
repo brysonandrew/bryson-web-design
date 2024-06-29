@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import {
   useMotionValueEvent,
   animate,
@@ -16,32 +16,28 @@ export const useSpin = () => {
   const spin = useMotionValue(0);
   const yVelocity = useVelocity(scroll.y);
 
-  useEffect(() => {
-    return yVelocity.onChange((velocity) => {
-      console.log('Velocity', velocity);
+  useMotionValueEvent(yVelocity, 'change', (velocity) => {
+    if (spin.isAnimating()) {
+      animateRef.current?.stop();
+    }
 
-      if (spin.isAnimating()) {
-        animateRef.current?.stop();
-      }
+    if (velocity === 0) {
+      const spinValue = spin.get();
+      const previousSpinValue = spin.getPrevious();
+      if (!isDefined(previousSpinValue)) return;
+      const spinDelta = spinValue - previousSpinValue;
 
-      if (velocity === 0) {
-        const spinValue = spin.get();
-        const previousSpinValue = spin.getPrevious();
-        if (!isDefined(previousSpinValue)) return;
-        const spinDelta = spinValue - previousSpinValue;
-
-        animateRef.current = animate(spin, 0, {
-          type: 'inertia',
-          restDelta: 0,
-          velocity: spinDelta * 10,
-        });
-      } else {
-        const prev = spin.get();
-        const next = prev + velocity * 0.00002;
-        spin.set(next, false);
-      }
-    });
-  }, []);
+      animateRef.current = animate(spin, 0, {
+        type: 'inertia',
+        restDelta: 0,
+        velocity: spinDelta * 10,
+      });
+    } else {
+      const prev = spin.get();
+      const next = prev + velocity * 0.00002;
+      spin.set(next, false);
+    }
+  });
 
   return spin;
 };
