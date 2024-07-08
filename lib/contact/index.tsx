@@ -53,9 +53,9 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
 };
 
 export * from './ContactProvider';
-export * from './footer';
 export * from './config/constants';
 export * from './config/types';
+export * from './footer';
 export * from './form';
 export * from './form/useForm';
 export * from './utils/resolveButtonValue';
