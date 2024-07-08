@@ -19,7 +19,7 @@ import {
   TPositionConfig,
   useCircle,
 } from '@pages/index/build/image/circle';
-import { useHomeBuild } from '@pages/index/build/context';
+import { TRANSITION_04_EASEIN_008 } from '@brysonandrew/motion';
 
 type TProps = TImgMotionProps & {
   isScrolling: boolean;
@@ -37,13 +37,16 @@ export const BuildImage: FC<TProps> = (props) => {
     positionConfig,
     ...pictureProps
   } = props;
-  const [status, statusHandlers] = usImageStatus(mediaRecord);
+  const [status, statusHandlers] =
+    usImageStatus(mediaRecord);
   const title = 'View in image gallery';
   const name = useCurrName();
   const isGallery = Boolean(name);
   const size = positionConfig.imageSize;
 
   const circleStyle = useCircle(positionConfig);
+  const { opacity: circleOpacity, ...circlePosition } =
+    circleStyle;
   const dimensions = useImageDimensions({
     box: { width: size, height: size },
     image: mediaRecord,
@@ -72,11 +75,11 @@ export const BuildImage: FC<TProps> = (props) => {
       handlers.onMouseEnter();
     }
   };
-
   return (
     <motion.li
       className={clsx(
         'absolute',
+        status === 'init' ? 'bg-teal' : 'bg-transparent',
         isInteractionDisabled && 'pointer-events-none'
       )}
       style={{
@@ -84,19 +87,25 @@ export const BuildImage: FC<TProps> = (props) => {
           isHover && !isInteractionDisabled
             ? INIT
             : GRAYED_OUT,
-        ...(isExiting ? { opacity: 0 } : circleStyle),
+        ...(isExiting
+          ? { opacity: 0 }
+          : status === 'init'
+          ? circlePosition
+          : circleStyle),
+        ...dimensions,
         ...ORIGIN_50,
       }}
       animate={{
         opacity:
           status === 'init'
-            ? 0
+            ? 0.25
             : status === 'loading'
             ? 0.5
             : status === 'ready'
             ? 1
             : 0.2,
       }}
+      transition={TRANSITION_04_EASEIN_008}
       {...(isDesktop ? handlers : {})}
     >
       <button
