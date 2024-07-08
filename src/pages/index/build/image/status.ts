@@ -6,7 +6,7 @@ import { TMediaRecord } from '@brysonandrew/media';
 
 type TConfig = TMediaRecord;
 export const usImageStatus = (config: TConfig) => {
-  const { removeRecord } = useHomeBuild();
+  const { replaceRecord } = useHomeBuild();
 
   const [status, setStatus] =
     useState<TImageStatus>('init');
@@ -24,7 +24,7 @@ export const usImageStatus = (config: TConfig) => {
     onError: (e) => {
       console.error(e);
       setStatus('error');
-      removeRecord(config.src);
+      replaceRecord(config.src);
     },
   };
 

@@ -7,7 +7,12 @@ import {
 } from 'react';
 import type { FC } from 'react';
 import allRecords from '../../../screens/build/lookup-320w.json';
-import { TMediaRecords } from '@brysonandrew/media/config/types';
+const allRecordsCount = allRecords.length;
+
+import {
+  TMediaRecord,
+  TMediaRecords,
+} from '@brysonandrew/media/config/types';
 import { TContext } from './types';
 
 const Build = createContext<TContext>({} as TContext);
@@ -18,51 +23,52 @@ export const useHomeBuild = (): TContext =>
 export const BuildProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
-  const [records, setRecords] =
-    useState<TMediaRecords | null>(null);
+  const [records, setRecords] = useState<TMediaRecords>([]);
+
+  const isDuplicateCheck = (record: TMediaRecord) =>
+    records.some(({ src }) => src === record.src);
+
+  const resolveRandomUnique = () => {
+    let result: TMediaRecord | null = null;
+    let i = 0;
+    while (result === null && i < allRecordsCount) {
+      const randomIndex = ~~(
+        Math.random() * allRecordsCount
+      );
+      const next = allRecords[randomIndex];
+      if (next && !isDuplicateCheck(next)) {
+        result = next;
+      }
+      i++;
+    }
+
+    return result;
+  };
 
   useEffect(() => {
     const initScreens = async () => {
-      if (
-        'serviceWorker' in navigator &&
-        !import.meta.env.DEV
-      ) {
-        const sw: ServiceWorkerContainer =
-          navigator.serviceWorker;
-        sw.ready.then((registration) => {
-          if (!registration.active) return null;
-          registration.active.postMessage({
-            type: 'init-screens',
-            records: allRecords,
-            from: 'PROVIDER',
-          });
-        });
-        sw.onmessage = (event) => {
-          if (event.data.type === 'init-screens') {
-            setRecords(event.data.records);
-          }
-        };
-        sw.onmessageerror = (event) => {
-          console.error(event);
-        };
-      } else {
-        const count = allRecords.length;
-        const SIZE = 8;
-        const start = ~~(Math.random() * (count - SIZE));
-        const next = (allRecords as TMediaRecords).slice(
-          start,
-          start + SIZE
-        );
-        setRecords(next);
-      }
+      const SIZE = 8;
+      const next: TMediaRecords = [];
+      [...Array(SIZE)].forEach((_) => {
+        const randomUnique = resolveRandomUnique();
+        if (randomUnique) {
+          next.push(randomUnique);
+        }
+      });
+      setRecords(next);
     };
 
     initScreens();
   }, []);
-  const removeRecord = (src: string) => {
+
+  const replaceRecord = (src: string) => {
     setRecords(
       (prevs) =>
-        prevs?.filter((prev) => prev.src !== src) ?? []
+        prevs?.map((prev) =>
+          prev.src === src
+            ? resolveRandomUnique() ?? prev
+            : prev
+        ) ?? []
     );
   };
 
@@ -71,7 +77,7 @@ export const BuildProvider: FC<PropsWithChildren> = ({
       value={{
         records,
         updateRecords: setRecords,
-        removeRecord,
+        replaceRecord,
       }}
     >
       {children}

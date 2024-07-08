@@ -4,7 +4,7 @@ import { IMAGE_STATUSES } from '@pages/index/build/constants';
 export type TContext = {
   records: TMediaRecords | null;
   updateRecords(next: TMediaRecords): void;
-  removeRecord(src: string): void;
+  replaceRecord(src: string): void;
 };
 
 export type TPositionStyle = {
