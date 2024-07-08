@@ -14,7 +14,7 @@ export const List = <
   return (
     <>
       <Tips />
-      <motion.ul className="column-stretch gap-box">
+      <motion.ul className='column-stretch gap-box'>
         {SLUGS.map((slug, index) => {
           const isSelected = currProject === slug;
           if (isSelected) return null;
