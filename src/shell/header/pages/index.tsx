@@ -29,7 +29,6 @@ export const Pages = () => {
       <List>
         {navItems.map(({ key, title, path, Component }) => {
           const isActive = pathname === path;
-
           return (
             <Item
               key={key}

@@ -12,7 +12,7 @@ export const resolveRoute = <T extends string>(
   const page = {
     key,
     title,
-    path: `${base}/${
+    path: `${base}${
       'Index' === title || 'Home' === title ? '' : key
     }` as const,
   } as const;
