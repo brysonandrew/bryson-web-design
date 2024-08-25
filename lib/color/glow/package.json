@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-glow",
-  "version": "7.0.77",
+  "version": "7.0.79",
   "description": "Color glow library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,9 +22,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-base": "7.0.77",
-    "@brysonandrew/config-types": "7.0.77",
-    "@brysonandrew/css-format": "7.0.77"
+    "@brysonandrew/color-base": "7.0.79",
+    "@brysonandrew/config-types": "7.0.79",
+    "@brysonandrew/css-format": "7.0.79"
   },
   "exports": {
     ".": {

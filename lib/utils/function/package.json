@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-function",
-  "version": "7.0.77",
+  "version": "7.0.79",
   "description": "Utils function library",
   "main": "./index.ts",
   "module": "./index.ts",

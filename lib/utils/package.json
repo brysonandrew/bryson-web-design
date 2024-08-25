@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.77",
+  "version": "7.0.79",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-attributes": "*",
+    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-box": "*",
     "@brysonandrew/utils-error": "*",
     "@brysonandrew/utils-format": "*",
-    "@brysonandrew/utils-key": "*",
     "@brysonandrew/utils-function": "*",
-    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/utils-key": "*",
     "@brysonandrew/utils-transformer": "*",
-    "@brysonandrew/utils-validation": "*",
-    "@brysonandrew/utils-unit": "*"
+    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/utils-unit": "*",
+    "@brysonandrew/utils-validation": "*"
   },
   "exports": {
     ".": {
@@ -39,11 +39,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./attributes/resolveAccessibilityHrefTitles": "./attributes/resolveAccessibilityHrefTitles.ts",
     "./attributes/resolveAccessibilityTitles": "./attributes/resolveAccessibilityTitles.ts",
     "./attributes/resolveFilterAttr": "./attributes/resolveFilterAttr.ts",
     "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
+    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./box/constants": "./box/constants.ts",
     "./box/is": "./box/is.ts",
     "./box/keys": "./box/keys.ts",
@@ -57,17 +57,21 @@
     "./error/detail/config": "./error/detail/config.ts",
     "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts",
     "./format/url": "./format/url.ts",
-    "./key/generateRandomId": "./key/generateRandomId.ts",
-    "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
     "./function/noop": "./function/noop.ts",
     "./function/once": "./function/once.ts",
+    "./key/generateRandomId": "./key/generateRandomId.ts",
+    "./key/local-storage": "./key/local-storage.ts",
+    "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
+    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
+    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
     "./object/arrToRecord": "./object/arrToRecord.ts",
     "./object/mergeDeep": "./object/mergeDeep.ts",
     "./object/prefixKeys": "./object/prefixKeys.ts",
     "./object/scopeRecord": "./object/scopeRecord.ts",
     "./object/sortKeys": "./object/sortKeys.ts",
-    "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
-    "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
+    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
+    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
+    "./unit/stripPx": "./unit/stripPx.ts",
     "./validation/assertion": "./validation/assertion.ts",
     "./validation/is/defined": "./validation/is/defined.ts",
     "./validation/is/falsy": "./validation/is/falsy.ts",
@@ -77,9 +81,6 @@
     "./validation/is/truthy": "./validation/is/truthy.ts",
     "./validation/is/value": "./validation/is/value.ts",
     "./validation/is/number/finite": "./validation/is/number/finite.ts",
-    "./validation/is/number": "./validation/is/number/index.ts",
-    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
-    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
-    "./unit/stripPx": "./unit/stripPx.ts"
+    "./validation/is/number": "./validation/is/number/index.ts"
   }
 }

@@ -9,12 +9,12 @@ export const UPWORK_BASE =
 const DEFAULT_INT_AND_EXPERT: TUpworkFilterConfig = {
   isExpert: true,
   isIntermediate: true,
-  location: 'Australia and New Zealand',
+  // location: 'Australia and New Zealand',
 };
 
 const DEFAULT_EXPERT_ONLY: TUpworkFilterConfig = {
   isExpert: true,
-  location: 'Australia and New Zealand',
+  // location: 'Australia and New Zealand',
 };
 
 const DEFAULTS = [

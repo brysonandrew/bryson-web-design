@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "7.0.77",
+  "version": "7.0.79",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,8 +29,8 @@
     "@brysonandrew/layout-lists": "*",
     "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-portal": "*",
-    "@brysonandrew/layout-section": "*",
     "@brysonandrew/layout-typography": "*",
+    "@brysonandrew/layout-section": "*",
     "@brysonandrew/layout-utils": "*"
   },
   "exports": {
@@ -42,10 +42,10 @@
     "./back/Blur": "./back/Blur.tsx",
     "./back/Fill": "./back/Fill.tsx",
     "./back/Screen": "./back/Screen.tsx",
-    "./back/config/types": "./back/config/types.ts",
     "./back/motion/Blur": "./back/motion/Blur.tsx",
     "./back/motion/Fill": "./back/motion/Fill.tsx",
     "./back/motion": "./back/motion/index.tsx",
+    "./back/config/types": "./back/config/types.ts",
     "./blank/config/types": "./blank/config/types.ts",
     "./blank/motion": "./blank/motion/index.tsx",
     "./effects/Brighten": "./effects/Brighten.tsx",

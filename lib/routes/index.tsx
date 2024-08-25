@@ -21,18 +21,22 @@ export type TBaseRouteRecord = {
 
 export const resolveRouteRecords = <
   T extends string,
-  P extends Record<T, null | ComponentType>,
+  P extends Record<T, null | ComponentType>
 >(
   pageTitles: readonly T[],
   PageDirectory: P,
-  base: TPath<string> = '/',
+  base: TPath<string> = '/'
 ) => {
   const result = pageTitles.reduce(
     (a, title: T) => {
       const page: TRoute<T> = resolveRoute<typeof title>(
         title,
-        base,
+        base
       );
+      a.menuItems.push({
+        to: page.path,
+        title: page.title,
+      });
       const { key, path } = page;
       const Component = PageDirectory[title];
       if (path === '/') {
@@ -53,14 +57,13 @@ export const resolveRouteRecords = <
 
       return { ...a, record: { ...a.record, [key]: page } };
     },
-    { 
+    {
       record: {} as TRouteRecord<T>,
       routes: [] as TRouteObjects,
       values: [] as TRoutes<T>,
       menuItems: [] as TLinkProps[],
-    },
+    }
   );
-
   return result;
 };
 
