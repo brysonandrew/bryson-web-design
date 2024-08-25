@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-key",
-  "version": "7.0.76",
+  "version": "7.0.79",
   "description": "Utils key library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -28,6 +28,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./local-storage": "./local-storage.ts",
     "./resolve-composite-key": "./resolve-composite-key.ts"
   }
 }

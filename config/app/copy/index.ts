@@ -43,7 +43,7 @@ export const CV_PRESETS_RECORD = {
     RECORD.Juke,
     RECORD.Buzzcast,
   ],
-  CRYPTO: [RECORD.Juke, RECORD.Buzzcast, RECORD.Epirus],
+  CRYPTO: [RECORD.Juke, RECORD.Canvas, RECORD.Epirus],
 } as const;
 
 type TPresetRecord = typeof CV_PRESETS_RECORD;
@@ -67,7 +67,7 @@ designing and developing user-centric,
 high-performance websites.`;
 
 export const DESCRIPTION_PARAGRAPHS = [
-  `Results-driven and detail-oriented Web Developer with
-7 years of experience creating and implementing
+  `Results-driven and detail-oriented Web Developer with over
+8 years of experience creating and implementing
 innovative web solutions.`,
 ];

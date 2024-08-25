@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-line",
-  "version": "7.0.76",
+  "version": "7.0.79",
   "description": "Layout line library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.76",
+    "@brysonandrew/config-types": "7.0.79",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/app": "7.0.76",
-    "@brysonandrew/motion-config-constants": "7.0.76"
+    "@brysonandrew/app": "7.0.79",
+    "@brysonandrew/motion-config-constants": "7.0.79"
   },
   "exports": {
     "./Line": "./Line.tsx",

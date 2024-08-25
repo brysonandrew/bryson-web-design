@@ -98,14 +98,25 @@ export const BuildImage: FC<TProps> = (props) => {
       animate={{
         opacity:
           status === 'init'
-            ? 0.25
+            ? [0.25, 0.5]
             : status === 'loading'
             ? 0.5
             : status === 'ready'
             ? 1
             : 0.2,
       }}
-      transition={TRANSITION_04_EASEIN_008}
+      transition={
+        status === 'init'
+          ? {
+              type: 'keyframes',
+              ease: 'linear',
+              repeat: Infinity,
+              repeatType: 'mirror',
+              duration: 1,
+              delay:(index*2)/count
+            }
+          : TRANSITION_04_EASEIN_008
+      }
       {...(isDesktop ? handlers : {})}
     >
       <button

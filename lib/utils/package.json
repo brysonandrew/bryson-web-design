@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.76",
+  "version": "7.0.79",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -60,6 +60,7 @@
     "./function/noop": "./function/noop.ts",
     "./function/once": "./function/once.ts",
     "./key/generateRandomId": "./key/generateRandomId.ts",
+    "./key/local-storage": "./key/local-storage.ts",
     "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
     "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
     "./transformer/newlineToArr": "./transformer/newlineToArr.ts",

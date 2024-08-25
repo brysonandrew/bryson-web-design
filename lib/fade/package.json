@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "7.0.76",
+  "version": "7.0.79",
   "description": "Fade library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -35,9 +35,6 @@
     "./core/FadeLeft": "./core/FadeLeft.tsx",
     "./core/FadeRight": "./core/FadeRight.tsx",
     "./core/FadeUp": "./core/FadeUp.tsx",
-    "./edge/vertical-edges/Bottom": "./edge/vertical-edges/Bottom.tsx",
-    "./edge/vertical-edges/Top": "./edge/vertical-edges/Top.tsx",
-    "./edge/vertical-edges": "./edge/vertical-edges/index.tsx",
     "./edge/pairs/FadeDownPair": "./edge/pairs/FadeDownPair.tsx",
     "./edge/pairs/FadeEdgePair": "./edge/pairs/FadeEdgePair.tsx",
     "./edge/pairs/FadeLeftPair": "./edge/pairs/FadeLeftPair.tsx",
@@ -45,6 +42,9 @@
     "./edge/pairs/FadePair": "./edge/pairs/FadePair.tsx",
     "./edge/pairs/FadeRightPair": "./edge/pairs/FadeRightPair.tsx",
     "./edge/pairs/FadeUpPair": "./edge/pairs/FadeUpPair.tsx",
-    "./edge/pairs/FadeV": "./edge/pairs/FadeV.tsx"
+    "./edge/pairs/FadeV": "./edge/pairs/FadeV.tsx",
+    "./edge/vertical-edges/Bottom": "./edge/vertical-edges/Bottom.tsx",
+    "./edge/vertical-edges/Top": "./edge/vertical-edges/Top.tsx",
+    "./edge/vertical-edges": "./edge/vertical-edges/index.tsx"
   }
 }

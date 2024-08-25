@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
-import { resolveCompositeKey } from '@brysonandrew/utils-key';
+import { resolveKeyLocalStorage } from '@brysonandrew/utils-key';
 import pkg from './package.json';
 import { useLocalStorage } from '@brysonandrew/hooks-dom/useLocalStorage';
 import { TUseDarkMode } from '@brysonandrew/dark-mode/config/types';
 
 export const useDarkModeState = (
-  defaultValue?: boolean,
+  defaultValue?: boolean
 ): TUseDarkMode => {
   const [isDarkMode, setDarkMode] =
     useLocalStorage<boolean>(
-      resolveCompositeKey(pkg.name, 'dark-mode'),
-      defaultValue ?? true,
+      resolveKeyLocalStorage(pkg.version, pkg.name),
+      defaultValue ?? true
     );
 
   const enable = () => {

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-lists",
-  "version": "7.0.76",
+  "version": "7.0.79",
   "description": "Layout lists library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,11 +21,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.76",
+    "@brysonandrew/config-types": "7.0.79",
     "framer-motion": "^11.2.4",
     "react": "^18.2.0",
-    "@brysonandrew/icons-i": "7.0.76",
-    "@brysonandrew/icons-keys": "7.0.76",
+    "@brysonandrew/icons-i": "7.0.79",
+    "@brysonandrew/icons-keys": "7.0.79",
     "clsx": "^1.2.1"
   },
   "exports": {

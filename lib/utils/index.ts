@@ -25,6 +25,7 @@ export * from './format/url';
 export * from './function/noop';
 export * from './function/once';
 export * from './key/generateRandomId';
+export * from './key/local-storage';
 export * from './key/resolve-composite-key';
 export * from './transformer/colorToStyles';
 export * from './transformer/newlineToArr';
