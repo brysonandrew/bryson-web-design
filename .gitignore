@@ -20,3 +20,5 @@ tsconfig.tsbuildinfo
 .assets/**/*
 .env
 assets/canvas*
+.screens/**/*
+.screens/*
