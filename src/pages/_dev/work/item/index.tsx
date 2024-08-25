@@ -12,7 +12,10 @@ import { resolveGradient } from '@brysonandrew/color-gradient';
 type TProps = TUpworkFilterConfig;
 export const Item: FC<TProps> = (config) => {
   const { isIntermediate, isExpert, q, location } = config;
-  const params = useUpworkParams(config);
+  const params = useUpworkParams({
+    ...config,
+    hourly: { min: 40 },
+  });
   const href = `${UPWORK_BASE}?${params}`;
   const { handlers, isHover } = useHoverKey(
     CUSTOM_CURSOR_KEY,

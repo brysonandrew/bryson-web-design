@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.77",
+  "version": "7.0.79",
   "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.77",
-    "@brysonandrew/utils-function": "7.0.77",
-    "@brysonandrew/hooks": "7.0.77",
+    "@brysonandrew/config-types": "7.0.79",
+    "@brysonandrew/utils-function": "7.0.79",
+    "@brysonandrew/hooks": "7.0.79",
     "react": "^18.2.0",
-    "@brysonandrew/motion-config-types": "7.0.77",
+    "@brysonandrew/motion-config-types": "7.0.79",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/motion-scroll": "7.0.77",
+    "@brysonandrew/motion-scroll": "7.0.79",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.77",
-    "@brysonandrew/motion-config-constants": "7.0.77",
-    "@brysonandrew/icons-i": "7.0.77"
+    "@brysonandrew/app": "7.0.79",
+    "@brysonandrew/motion-config-constants": "7.0.79",
+    "@brysonandrew/icons-i": "7.0.79"
   },
   "exports": {
     "./base": "./base.tsx",
@@ -41,11 +41,6 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./hooks": "./hooks/index.ts",
-    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
-    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
-    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
-    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
     "./utils/calc": "./utils/calc.ts",
@@ -55,6 +50,11 @@
     "./switch/IconWithText": "./switch/IconWithText.tsx",
     "./switch/Sight": "./switch/Sight.tsx",
     "./switch": "./switch/index.tsx",
+    "./hooks": "./hooks/index.ts",
+    "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
+    "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
+    "./hooks/useHoverKey": "./hooks/useHoverKey.ts",
+    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   }
 }

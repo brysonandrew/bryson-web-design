@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useEventListener } from '@brysonandrew/hooks-events';
 import {
   useTimeoutRef,
-  useDelayCallback,
 } from '@brysonandrew/hooks-window';
 import { useIsomorphicLayoutEffect } from 'framer-motion';
 import { measureContainer } from '@brysonandrew/viewport/measure-container';
