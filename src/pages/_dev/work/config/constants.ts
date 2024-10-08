@@ -6,42 +6,34 @@ import {
 export const UPWORK_BASE =
   'https://www.upwork.com/nx/search/jobs/';
 
-const DEFAULT_INT_AND_EXPERT: TUpworkFilterConfig = {
-  isExpert: true,
-  isIntermediate: true,
-  // location: 'Australia and New Zealand',
-};
-
-const DEFAULT_EXPERT_ONLY: TUpworkFilterConfig = {
-  isExpert: true,
-  // location: 'Australia and New Zealand',
-};
-
-const DEFAULTS = [
-  DEFAULT_INT_AND_EXPERT,
-  DEFAULT_EXPERT_ONLY,
-];
+const DEFAULTS = [{}];
 
 const applyDefaults = (
-  values: TUpworkFilterConfigs,
+  values: TUpworkFilterConfigs
 ): TUpworkFilterConfigs =>
   DEFAULTS.reduce(
     (
       a: TUpworkFilterConfigs,
-      defaultValue: TUpworkFilterConfig,
+      defaultValue: TUpworkFilterConfig
     ) => {
       const next = values.map(
         (value: TUpworkFilterConfig) => ({
           ...defaultValue,
           ...value,
-        }),
+        })
       );
       return [...a, ...next];
     },
-    [],
+    []
   );
 
 const INIT_ITEMS: TUpworkFilterConfigs = [
+  {
+    q: 'React and Typescript Gatsby SEO',
+  },
+  {
+    q: 'React and Typescript SEO',
+  },
   {
     q: 'React and Typescript',
   },

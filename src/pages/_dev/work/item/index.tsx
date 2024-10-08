@@ -10,12 +10,16 @@ import {
 import { resolveGradient } from '@brysonandrew/color-gradient';
 
 type TProps = TUpworkFilterConfig;
-export const Item: FC<TProps> = (config) => {
-  const { isIntermediate, isExpert, q, location } = config;
-  const params = useUpworkParams({
-    ...config,
+export const WorkItem: FC<TProps> = (config) => {
+  const { q, ...restConfig } = config;
+  const { isIntermediate, isExpert, location } = restConfig;
+  const restParams = useUpworkParams({
+    ...restConfig,
     hourly: { min: 40 },
   });
+  const params = `q=${q}${
+    restParams ? `&${restParams}` : ''
+  }`;
   const href = `${UPWORK_BASE}?${params}`;
   const { handlers, isHover } = useHoverKey(
     CUSTOM_CURSOR_KEY,
@@ -47,7 +51,7 @@ export const Item: FC<TProps> = (config) => {
         {...handlers}
       >
         <ul className="row-start-space w-full gap-4">
-          {q && <li className="text-4xl">{q}</li>}
+          {q && <li className="text-2xl">{q}</li>}
           <li>
             <ul className="column-end gap-1 text-white-2">
               {location && <li>{location}</li>}

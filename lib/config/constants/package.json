@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Config constants library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -27,9 +27,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./fonts": "./fonts/index.ts",
     "./number": "./number/index.ts",
     "./number/series": "./number/series.ts",
-    "./fonts": "./fonts/index.ts",
     "./fonts/bunny/categories": "./fonts/bunny/categories.ts",
     "./fonts/bunny/fonts": "./fonts/bunny/fonts.ts",
     "./fonts/bunny/names": "./fonts/bunny/names.ts",

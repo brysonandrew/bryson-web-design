@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-filter",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Svg filter library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,11 +21,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.79",
-    "@brysonandrew/svg-dimensionless": "7.0.79",
+    "@brysonandrew/config-types": "7.0.80",
+    "@brysonandrew/svg-dimensionless": "7.0.80",
     "react": "^18.2.0",
-    "@brysonandrew/utils-key": "7.0.79",
-    "@brysonandrew/utils-attributes": "7.0.79",
+    "@brysonandrew/utils-key": "7.0.80",
+    "@brysonandrew/utils-attributes": "7.0.80",
     "framer-motion": "^11.2.4",
     "react-device-detect": "^2.2.3"
   },
@@ -37,10 +37,10 @@
     },
     "./anti-camo": "./anti-camo/index.tsx",
     "./aura": "./aura/index.tsx",
-    "./displacement/config": "./displacement/config.ts",
-    "./displacement": "./displacement/index.tsx",
     "./config": "./config/index.ts",
     "./blur/basic": "./blur/basic.tsx",
+    "./displacement/config": "./displacement/config.ts",
+    "./displacement": "./displacement/index.tsx",
     "./config/constants": "./config/constants/index.ts",
     "./config/types/dom": "./config/types/dom.ts",
     "./config/types": "./config/types/index.ts",

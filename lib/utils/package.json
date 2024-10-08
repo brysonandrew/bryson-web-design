@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,16 +22,17 @@
   ],
   "peerDependencies": {
     "@brysonandrew/utils-attributes": "*",
-    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-box": "*",
+    "@brysonandrew/utils-css": "*",
     "@brysonandrew/utils-error": "*",
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
     "@brysonandrew/utils-transformer": "*",
-    "@brysonandrew/utils-object": "*",
+    "@brysonandrew/utils-random": "*",
     "@brysonandrew/utils-unit": "*",
-    "@brysonandrew/utils-validation": "*"
+    "@brysonandrew/utils-validation": "*",
+    "@brysonandrew/utils-object": "*"
   },
   "exports": {
     ".": {
@@ -43,7 +44,6 @@
     "./attributes/resolveAccessibilityTitles": "./attributes/resolveAccessibilityTitles.ts",
     "./attributes/resolveFilterAttr": "./attributes/resolveFilterAttr.ts",
     "./attributes/resolveUrlId": "./attributes/resolveUrlId.ts",
-    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./box/constants": "./box/constants.ts",
     "./box/is": "./box/is.ts",
     "./box/keys": "./box/keys.ts",
@@ -53,6 +53,7 @@
     "./box/css/background/str": "./box/css/background/str.ts",
     "./box/css/border/css": "./box/css/border/css.ts",
     "./box/css/border/str": "./box/css/border/str.ts",
+    "./css/resolveVarsCssRecord": "./css/resolveVarsCssRecord.ts",
     "./error/resolveErrorMessage": "./error/resolveErrorMessage.ts",
     "./error/detail/config": "./error/detail/config.ts",
     "./error/detail/resolveDetailMessage": "./error/detail/resolveDetailMessage.ts",
@@ -64,11 +65,10 @@
     "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
     "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
     "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
-    "./object/arrToRecord": "./object/arrToRecord.ts",
-    "./object/mergeDeep": "./object/mergeDeep.ts",
-    "./object/prefixKeys": "./object/prefixKeys.ts",
-    "./object/scopeRecord": "./object/scopeRecord.ts",
-    "./object/sortKeys": "./object/sortKeys.ts",
+    "./random/resolveRandomDate": "./random/resolveRandomDate.ts",
+    "./random/resolveRandomGaussian": "./random/resolveRandomGaussian.ts",
+    "./random/resolveRandomItem": "./random/resolveRandomItem.ts",
+    "./random/uuid": "./random/uuid.ts",
     "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
     "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
     "./unit/stripPx": "./unit/stripPx.ts",
@@ -81,6 +81,11 @@
     "./validation/is/truthy": "./validation/is/truthy.ts",
     "./validation/is/value": "./validation/is/value.ts",
     "./validation/is/number/finite": "./validation/is/number/finite.ts",
-    "./validation/is/number": "./validation/is/number/index.ts"
+    "./validation/is/number": "./validation/is/number/index.ts",
+    "./object/arrToRecord": "./object/arrToRecord.ts",
+    "./object/mergeDeep": "./object/mergeDeep.ts",
+    "./object/prefixKeys": "./object/prefixKeys.ts",
+    "./object/scopeRecord": "./object/scopeRecord.ts",
+    "./object/sortKeys": "./object/sortKeys.ts"
   }
 }

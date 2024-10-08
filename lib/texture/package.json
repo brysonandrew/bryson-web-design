@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",

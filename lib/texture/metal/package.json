@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture-metal",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Texture metal library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,12 +22,12 @@
   ],
   "peerDependencies": {
     "@emotion/react": "^11.11.3",
-    "@brysonandrew/color": "7.0.79",
+    "@brysonandrew/color": "7.0.80",
     "react": "^18.2.0",
     "@emotion/styled": "^11.11.0",
     "clsx": "^1.2.1",
-    "@brysonandrew/layout-back": "7.0.79",
-    "@brysonandrew/config-types": "7.0.79",
+    "@brysonandrew/layout-back": "7.0.80",
+    "@brysonandrew/config-types": "7.0.80",
     "framer-motion": "^11.2.4"
   },
   "exports": {

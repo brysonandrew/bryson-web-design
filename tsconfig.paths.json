@@ -739,6 +739,12 @@
       ],
       "@brysonandrew/svg-dimensionless/*": [
         "lib/svg/dimensionless/*"
+      ],
+      "@brysonandrew/utils-random": [
+        "lib/utils/random"
+      ],
+      "@brysonandrew/utils-random/*": [
+        "lib/utils/random/*"
       ]
     }
   }
