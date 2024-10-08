@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Fade library",
   "main": "./index.ts",
   "module": "./index.ts",

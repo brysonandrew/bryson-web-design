@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-effects",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Layout effects library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-filter": "7.0.79",
+    "@brysonandrew/motion-filter": "7.0.80",
     "react": "^18.2.0"
   },
   "exports": {

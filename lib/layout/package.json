@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -29,9 +29,9 @@
     "@brysonandrew/layout-lists": "*",
     "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-portal": "*",
-    "@brysonandrew/layout-typography": "*",
     "@brysonandrew/layout-section": "*",
-    "@brysonandrew/layout-utils": "*"
+    "@brysonandrew/layout-utils": "*",
+    "@brysonandrew/layout-typography": "*"
   },
   "exports": {
     ".": {
@@ -42,12 +42,12 @@
     "./back/Blur": "./back/Blur.tsx",
     "./back/Fill": "./back/Fill.tsx",
     "./back/Screen": "./back/Screen.tsx",
+    "./back/config/types": "./back/config/types.ts",
     "./back/motion/Blur": "./back/motion/Blur.tsx",
     "./back/motion/Fill": "./back/motion/Fill.tsx",
     "./back/motion": "./back/motion/index.tsx",
-    "./back/config/types": "./back/config/types.ts",
-    "./blank/config/types": "./blank/config/types.ts",
     "./blank/motion": "./blank/motion/index.tsx",
+    "./blank/config/types": "./blank/config/types.ts",
     "./effects/Brighten": "./effects/Brighten.tsx",
     "./effects/Glow": "./effects/Glow.tsx",
     "./effects/Invert": "./effects/Invert.tsx",
@@ -63,16 +63,16 @@
     "./lists/List": "./lists/List.tsx",
     "./lists/TickList": "./lists/TickList.tsx",
     "./portal/body": "./portal/body.tsx",
+    "./utils/arrToChainedValueNest": "./utils/arrToChainedValueNest.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
     "./typography/Letter": "./typography/Letter.tsx",
     "./typography/Sub": "./typography/Sub.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx",
-    "./utils/arrToChainedValueNest": "./utils/arrToChainedValueNest.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx"
+    "./typography/animation": "./typography/animation/index.tsx"
   }
 }

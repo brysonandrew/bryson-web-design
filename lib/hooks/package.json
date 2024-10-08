@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
     "@brysonandrew/hooks-life-cycle": "*",
+    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.79",
+    "@brysonandrew/utils-function": "7.0.80",
     "react": "^18.2.0"
   },
   "exports": {
@@ -36,10 +36,6 @@
       "default": "./index.ts"
     },
     "./network/useIpWebRtc": "./network/useIpWebRtc.ts",
-    "./events/useEventCallback": "./events/useEventCallback.ts",
-    "./events/useEventListener": "./events/useEventListener.ts",
-    "./events/useHover": "./events/useHover.ts",
-    "./events/useLongPress": "./events/useLongPress.ts",
     "./dom/useDomCondition": "./dom/useDomCondition.ts",
     "./dom/useHoverKeyAlt": "./dom/useHoverKeyAlt.ts",
     "./dom/useKey": "./dom/useKey.ts",
@@ -50,6 +46,10 @@
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
     "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",
+    "./events/useEventCallback": "./events/useEventCallback.ts",
+    "./events/useEventListener": "./events/useEventListener.ts",
+    "./events/useHover": "./events/useHover.ts",
+    "./events/useLongPress": "./events/useLongPress.ts",
     "./scroll/useFreezeScroll": "./scroll/useFreezeScroll.ts",
     "./window/use-time-bomb": "./window/use-time-bomb.ts",
     "./window/useDelay": "./window/useDelay.ts",

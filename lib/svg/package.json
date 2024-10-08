@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "7.0.79",
+  "version": "7.0.80",
   "description": "Svg library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,10 +21,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg-clip-path": "*",
     "@brysonandrew/svg-dimensionless": "*",
     "@brysonandrew/svg-filter": "*",
-    "@brysonandrew/svg-icon": "*"
+    "@brysonandrew/svg-icon": "*",
+    "@brysonandrew/svg-clip-path": "*"
   },
   "exports": {
     ".": {
@@ -32,15 +32,13 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
-    "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx",
     "./dimensionless/dimensionless": "./dimensionless/dimensionless.tsx",
     "./filter/anti-camo": "./filter/anti-camo/index.tsx",
     "./filter/aura": "./filter/aura/index.tsx",
-    "./filter/displacement/config": "./filter/displacement/config.ts",
-    "./filter/displacement": "./filter/displacement/index.tsx",
     "./filter/config": "./filter/config/index.ts",
     "./filter/blur/basic": "./filter/blur/basic.tsx",
+    "./filter/displacement/config": "./filter/displacement/config.ts",
+    "./filter/displacement": "./filter/displacement/index.tsx",
     "./filter/config/constants": "./filter/config/constants/index.ts",
     "./filter/config/types/dom": "./filter/config/types/dom.ts",
     "./filter/config/types": "./filter/config/types/index.ts",
@@ -57,6 +55,8 @@
     "./icon/160": "./icon/160.tsx",
     "./icon/24": "./icon/24.tsx",
     "./icon/28": "./icon/28.tsx",
-    "./icon/40": "./icon/40.tsx"
+    "./icon/40": "./icon/40.tsx",
+    "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
+    "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx"
   }
 }
