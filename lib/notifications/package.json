@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/notifications",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Notifications library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,12 +22,12 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/icons-keys": "7.0.80",
+    "@brysonandrew/icons-keys": "7.0.82",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/motion-config-constants": "7.0.80",
-    "@brysonandrew/icons-i": "7.0.80",
-    "@brysonandrew/hooks-window": "7.0.80",
-    "@brysonandrew/loading": "7.0.80"
+    "@brysonandrew/motion-config-constants": "7.0.82",
+    "@brysonandrew/icons-i": "7.0.82",
+    "@brysonandrew/hooks-window": "7.0.82",
+    "@brysonandrew/loading": "7.0.82"
   },
   "exports": {
     ".": {

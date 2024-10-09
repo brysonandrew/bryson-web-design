@@ -1,55 +1,99 @@
-import {
-  ITEMS,
-  UPWORK_BASE,
-} from '@pages/_dev/work/config/constants';
-import { WorkExperience } from '@pages/_dev/work/experience';
+import { WorkButton } from '@pages/_dev/work/button';
+import { UPWORK_BASE } from '@pages/_dev/work/config/constants';
+import { WorkFilters } from '@pages/_dev/work/filters';
 import { WorkItemCustom } from '@pages/_dev/work/item/custom';
+import {
+  useWorkState,
+  WorkStateProvider,
+} from '@pages/_dev/work/context';
+import { WorkTitle } from '@pages/_dev/work/title';
 import { GlobalCss } from '@shell/global/Css';
 import { withProviders } from '@shell/providers/withProviders';
 import { WorkItem } from './item';
+import { WorkItemLabel } from '@pages/_dev/work/item/label';
+import './reset.css';
+import { Fragment } from 'react/jsx-runtime';
 
-export const Work = withProviders(() => {
+const _Work = withProviders(() => {
+  const { remove, reset, add, items, isQ } = useWorkState();
   return (
-    <div className="bg-main w-full min-h-screen">
+    <div className="center bg-main w-full min-h-screen">
       <GlobalCss />
-      <div className="column">
+      <div className="column-stretch w-full px-5 xxl:w-[900px]">
         <div className="py-6" />
-        <h4 className="text-4xl text-white-8">
-          Upwork links
-        </h4>
-        <div className="py-2" />
-        <h3 className="text-xl text-gray">
+        <div className="row gap-2">
+          <h4 className="text-2xl text-gray-8 uppercase">
+            Upwork links
+          </h4>
+          <WorkButton title="Reset list" onClick={reset}>
+            ↺
+          </WorkButton>
+        </div>
+
+        <div className="py-0.25" />
+        <h3 className="text-xl text-gray truncate">
           {UPWORK_BASE}?
         </h3>
-        <div className="py-2" />
-        <div>
-          <WorkExperience>
-            {(workExperienceState) => (
-              <div className='column-stretch'>
-                <div className="p-2 rounded-xl border border-gray">
-                  <h2 className="text-3xl">Custom</h2>
-                  <WorkItemCustom
-                    {...workExperienceState}
-                  />
+        <div className="py-4" />
+        <WorkFilters>
+          {(workCommonState) => (
+            <div className="column-stretch gap-4">
+              <div className="px-2 pt-0.5 pb-3 rounded-xl border border-gray">
+                <div className="row-space">
+                  <WorkTitle>Custom</WorkTitle>
+                  <div></div>
                 </div>
-                <div className="p-2 rounded-xl border border-gray">
-                  <h2 className="text-3xl">Predefined</h2>
+                <WorkItemCustom>
+                  {(next) => (
+                    <WorkButton
+                      title="Add item"
+                      disabled={!isQ}
+                      onClick={() => {
+                        if (!isQ) return;
+                        add({
+                          ...next,
+                          ...workCommonState,
+                        });
+                      }}
+                    >
+                      {/* ➕ ⧺ ⧻  */}⨁{/* ＋ */}
+                    </WorkButton>
+                  )}
+                </WorkItemCustom>
+              </div>
+              <div className="px-2 py-0.5 pb-3 rounded-xl border border-gray">
+                <div className="row-space">
+                  <WorkTitle>Predefined</WorkTitle>
+                  <div></div>
+                </div>
+                {items.length === 0 ? (
+                  <WorkItemLabel title="No entries" />
+                ) : (
                   <ul className="column-stretch gap-4">
-                    {ITEMS.map((item, index) => (
-                      <WorkItem
-                        key={`${index}`}
-                        {...item}
-                        {...workExperienceState}
-                      />
+                    {items.map((item, index) => (
+                      <WorkItem key={`${index}`} {...item}>
+                        <WorkButton
+                          title="Delete item"
+                          onClick={() => remove(item.id)}
+                        >
+                          ⊖{/* 𝕏 */}
+                        </WorkButton>
+                      </WorkItem>
                     ))}
                   </ul>
-                </div>
+                )}
               </div>
-            )}
-          </WorkExperience>
-        </div>
+            </div>
+          )}
+        </WorkFilters>
       </div>
       <div className="py-24" />
     </div>
   );
 });
+
+export const Work = () => (
+  <WorkStateProvider>
+    <_Work />
+  </WorkStateProvider>
+);

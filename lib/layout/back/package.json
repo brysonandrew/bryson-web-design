@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-back",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Layout back library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,10 +22,10 @@
   ],
   "peerDependencies": {
     "clsx": "^1.2.1",
-    "@brysonandrew/layout-blank": "7.0.80",
+    "@brysonandrew/layout-blank": "7.0.82",
     "react": "^18.2.0",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/app": "7.0.80"
+    "@brysonandrew/app": "7.0.82"
   },
   "exports": {
     "./Blur": "./Blur.tsx",

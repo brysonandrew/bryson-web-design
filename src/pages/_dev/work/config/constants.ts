@@ -1,33 +1,35 @@
+import { keysUuid } from '@brysonandrew/utils';
 import {
-  TUpworkFilterConfig,
-  TUpworkFilterConfigs,
+  TInitIdItem,
+  TInitIdItems,
+  TInitItem,
 } from '@pages/_dev/work/config/types';
+
+export const HOURLY_MAX = 120;
+
+export const HOURLY_DEFAULT = {
+  min: 40,
+  max: HOURLY_MAX,
+} as const;
+
+export const RANGE_WIDTH = 120;
 
 export const UPWORK_BASE =
   'https://www.upwork.com/nx/search/jobs/';
 
-const DEFAULTS = [{}];
-
 const applyDefaults = (
-  values: TUpworkFilterConfigs
-): TUpworkFilterConfigs =>
-  DEFAULTS.reduce(
-    (
-      a: TUpworkFilterConfigs,
-      defaultValue: TUpworkFilterConfig
-    ) => {
-      const next = values.map(
-        (value: TUpworkFilterConfig) => ({
-          ...defaultValue,
-          ...value,
-        })
-      );
-      return [...a, ...next];
-    },
-    []
-  );
+  values: readonly TInitItem[]
+): TInitIdItem[] =>
+  values.reduce((a: TInitIdItem[], value: TInitItem) => {
+    const next = {
+      id: keysUuid(),
+      ...value,
+    } as TInitIdItem;
 
-const INIT_ITEMS: TUpworkFilterConfigs = [
+    return [...a, next];
+  }, []);
+
+const INIT_ITEMS = [
   {
     q: 'React and Typescript Gatsby SEO',
   },
@@ -55,9 +57,9 @@ const INIT_ITEMS: TUpworkFilterConfigs = [
   {
     q: 'web designer',
   },
-];
+] as const;
 
-export const ITEMS: TUpworkFilterConfigs =
+export const ITEMS: TInitIdItems =
   applyDefaults(INIT_ITEMS);
 
 // href: 'https://www.upwork.com/nx/search/jobs/?contractor_tier=2,3&hourly_rate=-100&location=Australia%20and%20New%20Zealand&nbs=1&q=react%20typescript&sort=recency&t=0',

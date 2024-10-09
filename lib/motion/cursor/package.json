@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.80",
-    "@brysonandrew/utils-function": "7.0.80",
-    "@brysonandrew/hooks": "7.0.80",
+    "@brysonandrew/config-types": "7.0.82",
+    "@brysonandrew/utils-function": "7.0.82",
+    "@brysonandrew/hooks": "7.0.82",
     "react": "^18.2.0",
-    "@brysonandrew/motion-config-types": "7.0.80",
+    "@brysonandrew/motion-config-types": "7.0.82",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/motion-scroll": "7.0.80",
+    "@brysonandrew/motion-scroll": "7.0.82",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.80",
-    "@brysonandrew/motion-config-constants": "7.0.80",
-    "@brysonandrew/icons-i": "7.0.80"
+    "@brysonandrew/app": "7.0.82",
+    "@brysonandrew/motion-config-constants": "7.0.82",
+    "@brysonandrew/icons-i": "7.0.82"
   },
   "exports": {
     "./base": "./base.tsx",

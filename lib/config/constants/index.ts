@@ -1,6 +1,6 @@
-export * from './fonts';
 export * from './number';
 export * from './number/series';
+export * from './fonts';
 export * from './fonts/bunny/categories';
 export * from './fonts/bunny/fonts';
 export * from './fonts/bunny/names';
