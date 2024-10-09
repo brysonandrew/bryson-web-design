@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-core",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Motion core library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-config-types": "7.0.80",
-    "@brysonandrew/motion-config-constants": "7.0.80",
-    "@brysonandrew/config-types": "7.0.80"
+    "@brysonandrew/motion-config-types": "7.0.82",
+    "@brysonandrew/motion-config-constants": "7.0.82",
+    "@brysonandrew/config-types": "7.0.82"
   },
   "exports": {
     ".": {

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-base",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Color base library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,9 +22,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.80",
-    "@brysonandrew/color-grayscale": "7.0.80",
-    "@brysonandrew/utils-css": "7.0.80"
+    "@brysonandrew/config-types": "7.0.82",
+    "@brysonandrew/color-grayscale": "7.0.82",
+    "@brysonandrew/utils-css": "7.0.82"
   },
   "exports": {
     "./formatRgb": "./formatRgb.ts",

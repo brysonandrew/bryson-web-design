@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-events",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Hooks events library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,7 +23,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/hooks-window": "7.0.80"
+    "@brysonandrew/hooks-window": "7.0.82"
   },
   "exports": {
     ".": {

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Layout typography library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -25,13 +25,13 @@
     "clsx": "^1.2.1",
     "framer-motion": "^11.2.4",
     "react": "^18.2.0",
-    "@brysonandrew/layout-line": "7.0.80",
-    "@brysonandrew/motion-config-constants": "7.0.80",
-    "@brysonandrew/space": "7.0.80",
-    "@brysonandrew/config-types": "7.0.80",
-    "@brysonandrew/in-view": "7.0.80",
-    "@brysonandrew/utils-key": "7.0.80",
-    "@brysonandrew/app": "7.0.80"
+    "@brysonandrew/config-types": "7.0.82",
+    "@brysonandrew/motion-config-constants": "7.0.82",
+    "@brysonandrew/utils-key": "7.0.82",
+    "@brysonandrew/app": "7.0.82",
+    "@brysonandrew/layout-line": "7.0.82",
+    "@brysonandrew/space": "7.0.82",
+    "@brysonandrew/in-view": "7.0.82"
   },
   "exports": {
     "./Letter": "./Letter.tsx",
@@ -41,11 +41,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./title/Content": "./title/Content.tsx",
-    "./title": "./title/index.tsx",
     "./animation/ShiftUp": "./animation/ShiftUp.tsx",
     "./animation/Stagger": "./animation/Stagger.tsx",
     "./animation/Word": "./animation/Word.tsx",
-    "./animation": "./animation/index.tsx"
+    "./animation": "./animation/index.tsx",
+    "./title/Content": "./title/Content.tsx",
+    "./title": "./title/index.tsx"
   }
 }

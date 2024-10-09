@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Layout library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -30,8 +30,8 @@
     "@brysonandrew/layout-placeholder": "*",
     "@brysonandrew/layout-portal": "*",
     "@brysonandrew/layout-section": "*",
-    "@brysonandrew/layout-utils": "*",
-    "@brysonandrew/layout-typography": "*"
+    "@brysonandrew/layout-typography": "*",
+    "@brysonandrew/layout-utils": "*"
   },
   "exports": {
     ".": {
@@ -63,16 +63,16 @@
     "./lists/List": "./lists/List.tsx",
     "./lists/TickList": "./lists/TickList.tsx",
     "./portal/body": "./portal/body.tsx",
-    "./utils/arrToChainedValueNest": "./utils/arrToChainedValueNest.tsx",
-    "./utils/arrToNest": "./utils/arrToNest.tsx",
-    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx",
     "./typography/Letter": "./typography/Letter.tsx",
     "./typography/Sub": "./typography/Sub.tsx",
-    "./typography/title/Content": "./typography/title/Content.tsx",
-    "./typography/title": "./typography/title/index.tsx",
     "./typography/animation/ShiftUp": "./typography/animation/ShiftUp.tsx",
     "./typography/animation/Stagger": "./typography/animation/Stagger.tsx",
     "./typography/animation/Word": "./typography/animation/Word.tsx",
-    "./typography/animation": "./typography/animation/index.tsx"
+    "./typography/animation": "./typography/animation/index.tsx",
+    "./typography/title/Content": "./typography/title/Content.tsx",
+    "./typography/title": "./typography/title/index.tsx",
+    "./utils/arrToChainedValueNest": "./utils/arrToChainedValueNest.tsx",
+    "./utils/arrToNest": "./utils/arrToNest.tsx",
+    "./utils/arrToNestWithProps": "./utils/arrToNestWithProps.tsx"
   }
 }

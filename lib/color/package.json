@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color",
-  "version": "7.0.80",
+  "version": "7.0.82",
   "description": "Color library",
   "types": "/index.d.ts",
   "main": "./index.ts",
