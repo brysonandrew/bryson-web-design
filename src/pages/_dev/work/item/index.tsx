@@ -5,7 +5,7 @@ import { TInitIdItem } from '@pages/_dev/work/config/types';
 import { WorkItemAnchor } from '@pages/_dev/work/item/anchor';
 import {
   CUSTOM_CURSOR_KEY,
-  useHoverKey,
+  useHover,
 } from '@brysonandrew/motion-cursor';
 import { useWorkState } from '@pages/_dev/work/context';
 import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes';
@@ -24,7 +24,7 @@ export const WorkItem: FC<TWorkItemProps> = ({
   const params = pathHandlers.params(config.q,commonState);
   const href = pathHandlers.href(params);
 
-  const { handlers, isHover } = useHoverKey(
+  const { handlers, isHover } = useHover(
     CUSTOM_CURSOR_KEY,
     href
   );

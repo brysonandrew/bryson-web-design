@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants-fonts",
-  "version": "7.0.87",
+  "version": "7.0.90",
   "description": "Config constants fonts library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -27,11 +27,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./google/categories": "./google/categories.ts",
-    "./google/fonts": "./google/fonts.ts",
-    "./google/names": "./google/names.ts",
     "./bunny/categories": "./bunny/categories.ts",
     "./bunny/fonts": "./bunny/fonts.ts",
-    "./bunny/names": "./bunny/names.ts"
+    "./bunny/names": "./bunny/names.ts",
+    "./google/categories": "./google/categories.ts",
+    "./google/fonts": "./google/fonts.ts",
+    "./google/names": "./google/names.ts"
   }
 }

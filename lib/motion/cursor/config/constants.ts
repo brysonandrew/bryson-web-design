@@ -9,10 +9,10 @@ export const EMPTY_HANDLERS = {
   onMouseLeave: NOOP,
 };
 
-export type THoverKeyDelimiter = typeof HOVER_KEY_DELIMITER;
+export type THoverDelimiter = typeof HOVER_KEY_DELIMITER;
 
 export type THoverKey =
-  | `${TCursorKey}${THoverKeyDelimiter}${string}${THoverKeyDelimiter}${string}`
+  | `${TCursorKey}${THoverDelimiter}${string}${THoverDelimiter}${string}`
   | null;
 
 export const HOVER_KEY_DELIMITER = '=[hover]>';
@@ -34,12 +34,12 @@ export type TCursorKey =
   | (typeof CURSOR_KEYS)[number]
   | null;
 
-export const resolveCursorKeyFromHoverKey = (
-  hoverKey: THoverKey,
+export const resolveCursorKeyFromHover = (
+  hover: THoverKey,
   index?: number,
 ) => {
-  if (hoverKey === null) return null;
-  const cursorKey = hoverKey.split(HOVER_KEY_DELIMITER)[
+  if (hover === null) return null;
+  const cursorKey = hover.split(HOVER_KEY_DELIMITER)[
     index ?? 0
   ];
   return cursorKey as typeof index extends undefined

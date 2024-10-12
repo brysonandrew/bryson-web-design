@@ -1,14 +1,14 @@
 import { TChildren } from '@brysonandrew/config-types';
 import {
-  THoverKeyConfig,
-  useHoverKeyAlt,
+  THoverMultiConfig,
+  useHoverMulti,
 } from '@brysonandrew/hooks-dom';
 import type { FC } from 'react';
 
 type TProps = {
-  children(config: THoverKeyConfig): TChildren;
+  children(config: THoverMultiConfig): TChildren;
 };
-export const HoverKey: FC<TProps> = ({ children }) => {
-  const config = useHoverKeyAlt();
+export const HoverMulti: FC<TProps> = ({ children }) => {
+  const config = useHoverMulti();
   return <>{children(config)}</>;
 };

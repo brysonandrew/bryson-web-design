@@ -5,7 +5,7 @@ import {
   FiltersSlider,
   TFiltersSliderProps,
 } from '@pages/_dev/work/filters/slider';
-import { useHoverKeyBasic } from '@brysonandrew/hooks-dom/useHoverKeyBasic';
+import { useHoverBasic } from '@brysonandrew/hooks-dom/hover/useHoverBasic';
 
 type TProps = TFiltersSliderProps & {
   x: string;
@@ -17,7 +17,7 @@ export const WorkFiltersHourly: FC<TProps> = ({
   prefix,
   ...props
 }) => {
-  const { isHover, handlers } = useHoverKeyBasic();
+  const { isHover, handlers } = useHoverBasic();
   return (
     <motion.label
       className="relative row gap-0.5 bg-black-2 pl-4 pr-5 rounded-lg py-2 sm:gap-2"

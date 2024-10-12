@@ -1,7 +1,7 @@
 import { TTitleProps } from '@brysonandrew/config-types';
 import {
   CUSTOM_CURSOR_KEY,
-  useHoverKey,
+  useHover,
 } from '@brysonandrew/motion-cursor';
 import { COPY_ICON } from '@brysonandrew/icons-keys';
 import { BSm } from '@brysonandrew/interactive/base/BSm';
@@ -20,7 +20,7 @@ export const Copy: FC<TCopyProps> = ({
   handler,
 }) => {
   const longTitle = `Copy ${title} to clipboard`;
-  const { handlers } = useHoverKey(
+  const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     longTitle,
     COPY_ICON,

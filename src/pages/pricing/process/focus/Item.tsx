@@ -1,5 +1,5 @@
 import { NONE_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
@@ -10,7 +10,7 @@ type TProps = PropsWithChildren<{
 }>;
 export const Item: FC<TProps> = ({ id, children }) => {
   const { BORDER_RADIUS, COLOR } = useApp();
-  const { handlers, isHover } = useHoverKey(
+  const { handlers, isHover } = useHover(
     NONE_CURSOR_KEY,
     id,
   );

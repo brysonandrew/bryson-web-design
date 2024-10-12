@@ -5,14 +5,14 @@ import { Details } from './details';
 import { isDesktop } from 'react-device-detect';
 import { NOOP } from '@brysonandrew/utils-function';
 import {
-  useHoverKey,
+  useHover,
   useCursor,
-  resolveCursorKeyFromHoverKey,
+  resolveCursorKeyFromHover,
 } from '@brysonandrew/motion-cursor';
 import { useCurrProject } from '@brysonandrew/gallery-viewer/hooks/params/useCurrProject';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useToFirst } from '@brysonandrew/gallery-viewer/hooks/nav/useToFirst';
-import { resolveHoverKeyArgs } from './resolveHoverKeyArgs';
+import { resolveHoverArgs } from './resolveHoverArgs';
 import { Content } from '@brysonandrew/gallery/components/content';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 
@@ -29,12 +29,12 @@ export const Item = <T extends string, R extends object>({
   const currProject = useCurrProject();
   const isGallery = Boolean(currProject);
 
-  const hoverKeyArgs = resolveHoverKeyArgs(slug);
+  const hoverArgs = resolveHoverArgs(slug);
 
-  const { isHover: isParentHover, handlers } = useHoverKey(
-    ...hoverKeyArgs,
+  const { isHover: isParentHover, handlers } = useHover(
+    ...hoverArgs,
   );
-  const primaryKey = resolveCursorKeyFromHoverKey(
+  const primaryKey = resolveCursorKeyFromHover(
     hoverKey,
     1,
   );

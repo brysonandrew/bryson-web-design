@@ -7,28 +7,25 @@ import {
 } from 'react';
 import type { FC } from 'react';
 import { motionValue, useMotionValue } from 'framer-motion';
-import { resolveHoverKeyVariations } from '@brysonandrew/motion-cursor/utils';
+import { resolveHoverVariations } from '@brysonandrew/motion-cursor/utils';
 import { TCursorOffset } from './hooks/useCursorOffset';
 import {
   TContext,
   THover,
 } from '@brysonandrew/motion-cursor/config/types';
-import {
-  INIT_CALC,
-  resolveCalc,
-} from '@brysonandrew/motion-cursor/utils/calc';
+import { INIT_CALC } from '@brysonandrew/motion-cursor/utils/calc';
 
 export const STATE = {
   isCursorReady: false,
   hoverKey: null,
   children: null,
-  hoverKeyParts: [],
+  hoverParts: [],
   cursorKey: null,
 };
 
 export const CONTEXT: TContext = {
   ...STATE,
-  onHoverKey: (_: THover) => null,
+  onHover: (_: THover) => null,
   onCursorReady: (_: boolean) => null,
   offsetRef: { current: { x: 1, y: 1 } },
   cursorLabel: { x: motionValue(0), y: motionValue(0) },
@@ -46,10 +43,9 @@ export const CursorProvider: FC<PropsWithChildren> = ({
   const [isCursorReady, setCursorReady] = useState(
     STATE.isCursorReady
   );
-  const [hover, setHoverKey] = useState<THover>(STATE);
+  const [hover, setHover] = useState<THover>(STATE);
 
-  const hoverKeyVariations =
-    resolveHoverKeyVariations(hover);
+  const hoverVariations = resolveHoverVariations(hover);
 
   const offsetRef = useRef<TCursorOffset>({
     x: 1,
@@ -70,9 +66,9 @@ export const CursorProvider: FC<PropsWithChildren> = ({
           y: cursorLabelY,
         },
         isCursorReady,
-        onHoverKey: setHoverKey,
+        onHover: setHover,
         onCursorReady: setCursorReady,
-        ...hoverKeyVariations,
+        ...hoverVariations,
       }}
     >
       {children}

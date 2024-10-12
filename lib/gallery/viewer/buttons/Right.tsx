@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { Nav } from './Nav';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { ArrowRight } from '@brysonandrew/gallery-viewer/icons/ArrowRight';
 import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { useNext } from '../hooks/nav/useNext';
@@ -13,7 +13,7 @@ type TProps = TClassValueProps & {
 export const Right: FC<TProps> = ({ max, ...props }) => {
   const to = useNext(max);
   const title = 'Right';
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     BIG_CURSOR_KEY,
     title,
   );

@@ -17,7 +17,7 @@ import { GALLERY_ICON } from '@brysonandrew/icons-keys';
 export const Tips = () => {
   const { COLOR, GLOW_BOX, BORDER_RADIUS } = useApp();
   const currProject = useCurrProject();
-  const { hoverKeyParts } = useCursor();
+  const { hoverParts } = useCursor();
   return (
     <>
       {!isDesktop && (
@@ -45,9 +45,9 @@ export const Tips = () => {
                         <Touch />
                       </motion.li>
                       <P2 element='li' />
-                      {hoverKeyParts[0] ===
+                      {hoverParts[0] ===
                         CUSTOM_CURSOR_KEY &&
-                        hoverKeyParts[2] ===
+                        hoverParts[2] ===
                           GALLERY_ICON && (
                           <motion.li
                             key='SECOND'

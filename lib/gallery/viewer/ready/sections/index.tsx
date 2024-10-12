@@ -3,7 +3,7 @@ import { motion, useTransform } from 'framer-motion';
 import { TBaseProps } from '@brysonandrew/gallery';
 import { Control } from './Control';
 import {
-  useHoverKey,
+  useHover,
   NONE_CURSOR_KEY,
 } from '@brysonandrew/motion-cursor';
 import { useViewport } from '@brysonandrew/viewport';
@@ -18,7 +18,7 @@ export const Sections: FC<TProps> = (props) => {
   const [container, setContainer] =
     useState<HTMLElement | null>(null);
   const { isHover, handlers } =
-    useHoverKey(NONE_CURSOR_KEY);
+    useHover(NONE_CURSOR_KEY);
   const left = useTransform(
     props.motionX,
     (v) =>

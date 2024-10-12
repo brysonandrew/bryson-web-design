@@ -8,7 +8,7 @@ import { TSign } from './useCursorOffset';
 import { useEffect, useRef } from 'react';
 import {
   CUSTOM_CURSOR_KEY,
-  resolveCursorKeyFromHoverKey,
+  resolveCursorKeyFromHover,
   THoverKey,
 } from '@brysonandrew/motion-cursor/config/constants';
 import { TAnimationControlsPoint } from '@brysonandrew/motion-config-types';
@@ -22,7 +22,7 @@ const ANIMATION_OPTIONS: ValueAnimationTransition = {
 };
 
 type THandlerConfig = {
-  nextHoverKey?: THoverKey;
+  nextHover?: THoverKey;
   nextSignX?: TSign;
   nextSignY?: TSign;
 };
@@ -34,12 +34,12 @@ export const useCursorAnimate = () => {
   >({});
 
   const handler = ({
-    nextHoverKey = hoverKey,
+    nextHover = hoverKey,
     nextSignX = offsetRef.current.x,
     nextSignY = offsetRef.current.y,
   }: THandlerConfig = {}) => {
     const cursorKey =
-      resolveCursorKeyFromHoverKey(nextHoverKey);
+      resolveCursorKeyFromHover(nextHover);
 
     const zeroX = resolveCalc(0, nextSignX, 0);
     const zeroY = resolveCalc(0, nextSignY, 0);

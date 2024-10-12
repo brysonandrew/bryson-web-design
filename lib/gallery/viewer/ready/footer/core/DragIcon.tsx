@@ -2,7 +2,7 @@ import { Drag } from '@brysonandrew/gallery-viewer/icons/Drag';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { resolveParentAnimateConfig } from '@brysonandrew/motion-core';
 import { TDivMotionProps } from '@brysonandrew/config-types';
@@ -13,7 +13,7 @@ export const DragIcon: FC<TProps> = ({
   classValue,
   ...props
 }) => {
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     BIG_CURSOR_KEY,
     'drag',
   );
