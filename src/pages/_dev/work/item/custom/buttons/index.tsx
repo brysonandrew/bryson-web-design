@@ -1,15 +1,11 @@
 import { FC } from 'react';
 import { ItemClear } from '@pages/_dev/work/item/custom/buttons/clear';
 import clsx from 'clsx';
-import {
-  ItemSelect,
-  TItemSelectProps,
-} from '@pages/_dev/work/item/custom/buttons/select';
+import { ItemSelect } from '@pages/_dev/work/item/custom/buttons/select';
 
-type TProps = TItemSelectProps & { isValue: boolean };
+type TProps = { isValue: boolean };
 export const WorkItemEditButtons: FC<TProps> = ({
   isValue,
-  input,
 }) => {
   return (
     <div
@@ -19,7 +15,7 @@ export const WorkItemEditButtons: FC<TProps> = ({
     >
       {isValue ? (
         <>
-          <ItemSelect input={input} />
+          <ItemSelect />
           <ItemClear />
         </>
       ) : (

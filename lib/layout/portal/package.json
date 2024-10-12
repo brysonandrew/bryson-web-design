@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-portal",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Layout portal library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,7 +23,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.82"
+    "@brysonandrew/config-types": "7.0.87"
   },
   "exports": {
     "./body": "./body.tsx",

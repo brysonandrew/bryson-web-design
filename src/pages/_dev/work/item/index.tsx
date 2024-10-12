@@ -3,6 +3,12 @@ import { TPropsWithChildren } from '@brysonandrew/config-types';
 import clsx from 'clsx';
 import { TInitIdItem } from '@pages/_dev/work/config/types';
 import { WorkItemAnchor } from '@pages/_dev/work/item/anchor';
+import {
+  CUSTOM_CURSOR_KEY,
+  useHoverKey,
+} from '@brysonandrew/motion-cursor';
+import { useWorkState } from '@pages/_dev/work/context';
+import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes';
 
 export type TWorkItemProps = TPropsWithChildren<
   TInitIdItem & { input?: JSX.Element }
@@ -12,6 +18,16 @@ export const WorkItem: FC<TWorkItemProps> = ({
   input,
   ...config
 }) => {
+  const { pathHandlers, commonState } = useWorkState();
+  const { isExpert, isIntermediate, hourly, location } =
+    commonState;
+  const params = pathHandlers.params(config.q,commonState);
+  const href = pathHandlers.href(params);
+
+  const { handlers, isHover } = useHoverKey(
+    CUSTOM_CURSOR_KEY,
+    href
+  );
   return (
     <li className="relative group">
       <div
@@ -20,14 +36,6 @@ export const WorkItem: FC<TWorkItemProps> = ({
           input ? 'rounded-b-lg rounded-tr-lg' : ''
         )}
       />
-      {/* {isHover && (
-        <div
-          className="relative fill-4 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage,
-          }}
-        />
-      )} */}
       <div className="relative row-start-space text-white-1 w-full gap-4">
         {input ? (
           <>{input}</>
@@ -37,13 +45,25 @@ export const WorkItem: FC<TWorkItemProps> = ({
           </h3>
         )}
         {children && (
-          <div className="row elative visible group-hover:visible">
+          <div className="row relative invisible group-hover:visible">
             {children}
           </div>
         )}
       </div>
       <div className="h-2.5" />
-      <WorkItemAnchor {...config} />
+      <WorkItemAnchor
+        isHover={isHover}
+        params={params}
+        anchorProps={{
+          href,
+          ...resolveAccessibilityHrefTitles({
+            title: config.q ?? 'upwork',
+            href,
+          }),
+          ...handlers,
+        }}
+        {...config}
+      />
     </li>
   );
 };

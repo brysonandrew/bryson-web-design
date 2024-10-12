@@ -1,31 +1,36 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Input } from '..';
-import { TTextareaMotionProps } from '@brysonandrew/config-types/dom';
+import {
+  TClassValueProps,
+  TTextareaMotionProps,
+} from '@brysonandrew/config-types/dom';
 import { Autosize } from './autosize';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TBaseInputProps } from '@brysonandrew/contact/config/types';
 import { TFormChildrenProps } from '@brysonandrew/contact/form';
-import { useApp } from '@brysonandrew/app';
+import { TMotionProps } from '@brysonandrew/motion';
 
 type TProps = TFormChildrenProps &
   TTextareaMotionProps &
-  TBaseInputProps;
+  TBaseInputProps & {
+    LabelBack?: FC<TMotionProps & TClassValueProps>;
+  };
 export const Textarea: FC<TProps> = ({
   name,
   isDisabled,
   inputHandlers,
+  LabelBack: _LabelBack,
   ...props
 }) => {
-  const { LIGHT, BackMotion } = useApp();
-  const LabelBack = LIGHT?.MOTION.Back ?? BackMotion;
+  const LabelBack = _LabelBack ?? motion.div;
   return (
     <Input<HTMLTextAreaElement>
       name={name}
       renderLabelBack={
         <LabelBack
           layout
-          classValue='_contact_label-back'
+          classValue="_contact_label-back"
         />
       }
     >
@@ -36,8 +41,8 @@ export const Textarea: FC<TProps> = ({
               layout
               transition={{ duration: 0 }}
               ref={resolveRef}
-              className='_contact_input-textarea'
-              autoComplete='off'
+              className="_contact_input-textarea"
+              autoComplete="off"
               rows={1}
               name={name}
               disabled={isDisabled}

@@ -6,19 +6,30 @@ import {
   useWorkState,
   WorkStateProvider,
 } from '@pages/_dev/work/context';
-import { WorkTitle } from '@pages/_dev/work/title';
 import { GlobalCss } from '@shell/global/Css';
 import { withProviders } from '@shell/providers/withProviders';
 import { WorkItem } from './item';
 import { WorkItemLabel } from '@pages/_dev/work/item/label';
+import { WorkBox } from '@pages/_dev/work/box';
+import { WorkKeywords } from '@pages/_dev/work/keywords';
 import './reset.css';
-import { Fragment } from 'react/jsx-runtime';
+import { ItemClear } from '@pages/_dev/work/item/custom/buttons/clear';
+import { WorkGradient } from '@pages/_dev/work/gradient';
+import { IconsSave } from '@pages/_dev/work/icons/save';
+import { IconLink } from '@brysonandrew/interactive';
+import { IconsQuery } from '@pages/_dev/work/icons/query';
+import { IconsReplace } from '@pages/_dev/work/icons/replace';
+import { IconsAppend } from '@pages/_dev/work/icons/append';
 
 const _Work = withProviders(() => {
-  const { remove, reset, add, items, isQ } = useWorkState();
+  const { remove, reset, add, items, isQ, keyRecord } =
+    useWorkState();
+  const isKeyDown = keyRecord.alt || keyRecord.shift;
+
   return (
     <div className="center bg-main w-full min-h-screen">
       <GlobalCss />
+      <WorkGradient />
       <div className="column-stretch w-full px-5 xxl:w-[900px]">
         <div className="py-6" />
         <div className="row gap-2">
@@ -31,18 +42,14 @@ const _Work = withProviders(() => {
         </div>
 
         <div className="py-0.25" />
-        <h3 className="text-xl text-gray truncate">
+        <h3 className="text-sm text-gray truncate">
           {UPWORK_BASE}?
         </h3>
         <div className="py-4" />
         <WorkFilters>
           {(workCommonState) => (
             <div className="column-stretch gap-4">
-              <div className="px-2 pt-0.5 pb-3 rounded-xl border border-gray">
-                <div className="row-space">
-                  <WorkTitle>Custom</WorkTitle>
-                  <div></div>
-                </div>
+              <WorkBox title="Query" Icon={IconsQuery}>
                 <WorkItemCustom>
                   {(next) => (
                     <WorkButton
@@ -60,12 +67,17 @@ const _Work = withProviders(() => {
                     </WorkButton>
                   )}
                 </WorkItemCustom>
-              </div>
-              <div className="px-2 py-0.5 pb-3 rounded-xl border border-gray">
-                <div className="row-space">
-                  <WorkTitle>Predefined</WorkTitle>
-                  <div></div>
-                </div>
+              </WorkBox>
+              <WorkBox
+                title={isKeyDown ? 'Replace' : 'Append'}
+                Icon={
+                  isKeyDown ? IconsReplace : IconsAppend
+                }
+                right={<ItemClear />}
+              >
+                <WorkKeywords />
+              </WorkBox>
+              <WorkBox title="Saved" Icon={IconsSave}>
                 {items.length === 0 ? (
                   <WorkItemLabel title="No entries" />
                 ) : (
@@ -82,7 +94,7 @@ const _Work = withProviders(() => {
                     ))}
                   </ul>
                 )}
-              </div>
+              </WorkBox>
             </div>
           )}
         </WorkFilters>

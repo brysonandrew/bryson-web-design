@@ -7,7 +7,6 @@ export const useUpworkParams = (config: TCommonState) => {
   const [searchParams] = useSearchParams(params);
   const handler = () => {
     const next = searchParams;
-    console.log(next);
     return next.toString();
   };
   return handler;

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/design",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Design library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,16 +22,16 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.82",
-    "@brysonandrew/config-constants": "7.0.82",
-    "@brysonandrew/app": "7.0.82",
+    "@brysonandrew/config-types": "7.0.87",
+    "@brysonandrew/config-constants": "7.0.87",
+    "@brysonandrew/app": "7.0.87",
     "clsx": "^1.2.1",
-    "@brysonandrew/color": "7.0.82",
-    "@brysonandrew/config-constants-number": "7.0.82",
+    "@brysonandrew/color": "7.0.87",
+    "@brysonandrew/config-constants-number": "7.0.87",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/interactive": "7.0.82",
-    "@brysonandrew/layout-line": "7.0.82",
-    "@brysonandrew/uno-presets": "7.0.82"
+    "@brysonandrew/interactive": "7.0.87",
+    "@brysonandrew/layout-line": "7.0.87",
+    "@brysonandrew/uno-presets": "7.0.87"
   },
   "exports": {
     "./Layout": "./Layout.tsx",

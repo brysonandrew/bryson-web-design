@@ -1,6 +1,7 @@
 export * from './network/useIpWebRtc';
 export * from './dom/useDomCondition';
 export * from './dom/useHoverKeyAlt';
+export * from './dom/useHoverKeyBasic';
 export * from './dom/useKey';
 export * from './dom/useLocalStorage';
 export * from './dom/useOutsideClick';

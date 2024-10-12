@@ -1,42 +1,63 @@
-import { FC, KeyboardEventHandler, useRef } from 'react';
-import { TInputProps } from '@brysonandrew/config-types';
+import { FC, KeyboardEventHandler } from 'react';
 import { useWorkState } from '@pages/_dev/work/context';
 import { WorkItemEditButtons } from '@pages/_dev/work/item/custom/buttons';
+import { WorkItemCustomAutocomplete } from '@pages/_dev/work/item/custom/autocomplete';
 
-export const WorkItemEdit: FC<TInputProps> = ({
-  children,
-  ...props
-}) => {
-  const ref = useRef<HTMLInputElement | null>(null);
-  const { q, pathHandlers, onQChange } = useWorkState();
-  const params = pathHandlers.params(q);
+export const INUT_NAME_Q = 'q';
+export const WorkItemEdit: FC = () => {
+  const {
+    viewport,
+    q,
+    pathHandlers,
+    onQChange,
+    commonState,
+    onInputRef,
+  } = useWorkState();
+  const params = pathHandlers.params(q, commonState);
   const href = pathHandlers.href(params);
 
   const isValue = Boolean(q);
-  const width = `${q.toString().length}ch`;
+  const width = `calc(${q.toString().length}ch + 6rem)`;
 
   const handleKeyDown: KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       window.open(href, '_newtab', 'noopener noreferrer');
     }
   };
+  if (
+    !(
+      viewport.isDimensions &&
+      viewport.container?.isDimensions
+    )
+  )
+    return null;
 
+  const maxWidth = viewport.container.width;
+  const widthStyle = {
+    width,
+    minWidth: 100,
+    maxWidth,
+  };
   return (
-    <label className="relative row-space group">
-      <div className="hidden group-hover:flex absolute pointer-events-none -inset-1 bg-black-7 rounded-md" />
-      <input
-        ref={ref}
-        className="relative text-2xl"
-        value={q}
-        onChange={onQChange}
-        style={{ width, minWidth: 100 }}
-        onKeyDown={handleKeyDown}
-        {...props}
-      />
- {ref.current &&     <WorkItemEditButtons
-        input={ref.current}
-        isValue={isValue}
-      />}
-    </label>
+    <div className="relative container group">
+      <label
+        className="relative row-space"
+        style={widthStyle}
+      >
+        <div className="hidden group-hover:flex absolute pointer-events-none -inset-1 bg-black-7 rounded-md" />
+        <input
+          name={INUT_NAME_Q}
+          placeholder="EMPTY"
+          title="Enter search query"
+          ref={onInputRef}
+          className="relative text-2xl placeholder-gray w-full truncate"
+          value={q}
+          onChange={onQChange}
+          onKeyDown={handleKeyDown}
+        />
+        <WorkItemCustomAutocomplete />
+        <WorkItemEditButtons isValue={isValue} />
+      </label>
+    </div>
   );
 };
