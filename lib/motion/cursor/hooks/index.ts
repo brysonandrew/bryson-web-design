@@ -1,4 +1,4 @@
 export * from "./useCursorAnimate";
 export * from "./useCursorOffset";
-export * from "./useHoverKey";
+export * from "./useHover";
 export * from "./useViewportPresence";

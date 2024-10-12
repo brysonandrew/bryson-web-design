@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "7.0.87",
+  "version": "7.0.90",
   "description": "Config types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,14 +22,14 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
+    "@brysonandrew/config-constants-number": "7.0.90",
+    "@unocss/preset-web-fonts": "*",
+    "@brysonandrew/config-constants-fonts": "7.0.90",
+    "unocss": "^0.53.6",
     "clsx": "^1.2.1",
     "framer-motion": "^11.2.4",
     "react-router-dom": "^6.21.3",
-    "@brysonandrew/uno-shortcuts": "7.0.87",
-    "@brysonandrew/config-constants-number": "7.0.87",
-    "@unocss/preset-web-fonts": "*",
-    "@brysonandrew/config-constants-fonts": "7.0.87",
-    "unocss": "^0.53.6"
+    "@brysonandrew/uno-shortcuts": "7.0.90"
   },
   "exports": {
     ".": {
@@ -41,13 +41,6 @@
     "./measure": "./measure.ts",
     "./object": "./object.ts",
     "./state": "./state.ts",
-    "./dom/event": "./dom/event.ts",
-    "./dom": "./dom/index.ts",
-    "./dom/main": "./dom/main.ts",
-    "./dom/motion": "./dom/motion.ts",
-    "./dom/unions": "./dom/unions.ts",
-    "./css": "./css/index.ts",
-    "./css/interactive": "./css/interactive.ts",
     "./numbers": "./numbers/index.ts",
     "./numbers/series": "./numbers/series.ts",
     "./fonts": "./fonts/index.ts",
@@ -56,16 +49,23 @@
     "./transformers/number": "./transformers/number.ts",
     "./transformers/parameter": "./transformers/parameter.ts",
     "./transformers/partial": "./transformers/partial.ts",
+    "./dom/event": "./dom/event.ts",
+    "./dom": "./dom/index.ts",
+    "./dom/main": "./dom/main.ts",
+    "./dom/motion": "./dom/motion.ts",
+    "./dom/unions": "./dom/unions.ts",
+    "./css": "./css/index.ts",
+    "./css/interactive": "./css/interactive.ts",
     "./validation/is": "./validation/is.ts",
     "./validation/isValidKey": "./validation/isValidKey.ts",
     "./validation/numbers": "./validation/numbers.ts",
-    "./dom/element": "./dom/element/index.ts",
-    "./dom/element/inputs": "./dom/element/inputs.ts",
-    "./dom/element/svg": "./dom/element/svg.ts",
     "./transformers/format/camel": "./transformers/format/camel.ts",
     "./transformers/format/capitalize": "./transformers/format/capitalize.ts",
     "./transformers/format/kebab": "./transformers/format/kebab.ts",
     "./transformers/format/pascal": "./transformers/format/pascal.ts",
-    "./transformers/format/title": "./transformers/format/title.ts"
+    "./transformers/format/title": "./transformers/format/title.ts",
+    "./dom/element": "./dom/element/index.ts",
+    "./dom/element/inputs": "./dom/element/inputs.ts",
+    "./dom/element/svg": "./dom/element/svg.ts"
   }
 }

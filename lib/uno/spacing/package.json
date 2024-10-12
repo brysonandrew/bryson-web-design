@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-spacing",
-  "version": "7.0.87",
+  "version": "7.0.90",
   "description": "Uno spacing library",
   "main": "./index.ts",
   "module": "./index.ts",

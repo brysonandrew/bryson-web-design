@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { Picture } from '@brysonandrew/media/picture';
 import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
 import clsx from 'clsx';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { isDesktop } from 'react-device-detect';
@@ -52,7 +52,7 @@ export const BuildImage: FC<TProps> = (props) => {
     image: mediaRecord,
   });
 
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     mediaRecord.src,
     GALLERY_ICON,

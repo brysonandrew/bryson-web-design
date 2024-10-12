@@ -6,7 +6,7 @@ import { FOUNDATION } from '@pages/pricing/process/website/config';
 
 export const Foundation = () => {
   const {
-    hoverKeyParts: [_, first],
+    hoverParts: [_, first],
   } = useCursor();
   return (
     <List

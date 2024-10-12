@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import {
   Button as _Button,
   TButtonProps,
@@ -39,7 +39,7 @@ export const DarkMode: FC<TProps> = ({
   const key = isDarkMode ? 'light' : 'dark';
   const title = buttonProps?.title ?? `Use ${key} mode`;
 
-  const { handlers } = useHoverKey(
+  const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     title
   );

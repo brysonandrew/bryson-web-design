@@ -6,7 +6,7 @@ import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
 import { useContact } from '@brysonandrew/contact';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
 import { TPricingTitle } from '@pages/pricing/config/types';
@@ -37,7 +37,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
   const { COLOR, LIGHT, BORDER_RADIUS, BackFill } =
     useApp<TApp>();
   const { onForm } = useContact();
-  const { handlers } = useHoverKey(
+  const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     title,
     EMAIL_ICON,

@@ -1,6 +1,6 @@
 import { TClassValueProps } from '@brysonandrew/config-types';
 import {
-  useHoverKey,
+  useHover,
   CUSTOM_CURSOR_KEY,
 } from '@brysonandrew/motion-cursor';
 import { TextAnchor } from '@brysonandrew/interactive';
@@ -28,7 +28,7 @@ export const Item: FC<TProps> = ({
   ...props
 }) => {
   const title = `Open ${name} client`;
-  const { handlers } = useHoverKey(
+  const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     title,
     OPEN_IN_NEW_ICON,

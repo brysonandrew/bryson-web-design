@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { DURATION } from '@app/animation';
 import { ThickLine } from '@brysonandrew/layout-line/ThickLine';
@@ -22,7 +22,7 @@ export const Item: FC<TItemProps> = ({
   ...linkProps
 }) => {
   const { COLOR } = useApp();
-  const { handlers } = useHoverKey(BIG_CURSOR_KEY, title);
+  const { handlers } = useHover(BIG_CURSOR_KEY, title);
 
   return (
     <li

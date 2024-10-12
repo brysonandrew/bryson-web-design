@@ -5,7 +5,7 @@ import {
   resolveButtonValue,
   useContact,
 } from '@brysonandrew/contact';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import { BIGGER_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { NOOP } from '@brysonandrew/utils-function';
@@ -20,7 +20,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
     sounds,
   } = useApp();
   const Back = LIGHT?.Back ?? _Back;
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     BIGGER_CURSOR_KEY,
     'form-submit',
   );

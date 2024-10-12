@@ -1,5 +1,5 @@
 import {
-  resolveCompositeHoverKey,
+  resolveCompositeHover,
   useCursor,
 } from '@brysonandrew/motion-cursor';
 import { useCursorAnimate } from './useCursorAnimate';
@@ -9,23 +9,23 @@ import {
 } from '@brysonandrew/motion-cursor/config/constants';
 import { TChildren } from '@brysonandrew/config-types';
 
-export const useHoverKey = (
+export const useHover = (
   cursorKey: TCursorKey,
   key1 = GLOBAL_KEY,
   iconKey = '',
   children: TChildren = null,
 ) => {
   const animate = useCursorAnimate();
-  const { hoverKey, onHoverKey } = useCursor();
-  const key = resolveCompositeHoverKey(
+  const { hoverKey, onHover } = useCursor();
+  const key = resolveCompositeHover(
     cursorKey,
     key1,
     iconKey,
   );
   const update = (isOn: boolean) => {
     const next = isOn ? key : null;
-    animate({ nextHoverKey: next });
-    onHoverKey({ hoverKey: next, children });
+    animate({ nextHover: next });
+    onHover({ hoverKey: next, children });
   };
   const onInteractStart = () => {
     update(true);

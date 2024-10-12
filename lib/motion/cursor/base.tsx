@@ -8,7 +8,7 @@ import { type FC, useRef, memo } from 'react';
 import { useCursorOffset } from './hooks';
 import { useViewportPresence } from './hooks/useViewportPresence';
 import { Switch } from './switch';
-import { resolveCursorKeyFromHoverKey } from '@brysonandrew/motion-cursor/config/constants';
+import { resolveCursorKeyFromHover } from '@brysonandrew/motion-cursor/config/constants';
 import { useCursor } from '@brysonandrew/motion-cursor';
 import { TScrollContext } from '@brysonandrew/motion-config-types/scroll';
 
@@ -31,7 +31,7 @@ export const CursorBase: FC<TCursorProps> = memo(
     const isOnscreenRef = useRef(false);
     const handler = useCursorOffset(offsetRef);
     const cursorKey =
-      resolveCursorKeyFromHoverKey(hoverKey);
+      resolveCursorKeyFromHover(hoverKey);
 
     const onPointerEnter = () => {
       isOnscreenRef.current = true;
@@ -80,7 +80,7 @@ export * from './cursor-provider';
 export * from './config/constants';
 export * from './config/types';
 export * from './utils';
-export * from './utils/resolveCompositeHoverKey';
+export * from './utils/resolveCompositeHover';
 export * from './switch/Box';
 export * from './switch/IconWithText';
 export * from './switch/Sight';
@@ -88,6 +88,6 @@ export * from './switch';
 export * from './hooks';
 export * from './hooks/useCursorAnimate';
 export * from './hooks/useCursorOffset';
-export * from './hooks/useHoverKey';
+export * from './hooks/useHover';
 export * from './hooks/useViewportPresence';
 export * from './switch/format/Visit';
