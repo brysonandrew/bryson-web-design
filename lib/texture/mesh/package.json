@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture-mesh",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Texture mesh library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,10 +23,10 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "clsx": "^1.2.1",
-    "@brysonandrew/config-types": "7.0.82",
-    "@brysonandrew/color-gradient": "7.0.82",
-    "@brysonandrew/color-base": "7.0.82",
-    "@brysonandrew/utils-box": "7.0.82"
+    "@brysonandrew/config-types": "7.0.87",
+    "@brysonandrew/color-gradient": "7.0.87",
+    "@brysonandrew/color-base": "7.0.87",
+    "@brysonandrew/utils-box": "7.0.87"
   },
   "exports": {
     ".": {

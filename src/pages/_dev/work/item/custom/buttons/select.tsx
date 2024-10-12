@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 import { WorkButton } from '@pages/_dev/work/button';
-export type TItemSelectProps = { input: HTMLInputElement };
-export const ItemSelect: FC<TItemSelectProps> = ({ input }) => {
+import { useWorkState } from '@pages/_dev/work/context';
+export const ItemSelect: FC = () => {
+  const { input } = useWorkState();
   const title = 'Select search query';
   const handleClick = () => {
-    input.select();
+    if (input) input.select();
   };
   return (
     <WorkButton onClick={handleClick} title={title}>

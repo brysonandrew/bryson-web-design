@@ -26,7 +26,7 @@ export const LayoutLight = <
 };
 
 export * from './withLight';
-export * from './config/types';
 export * from './marker/Motion';
 export * from './marker';
 export * from './marker/markerProps';
+export * from './config/types';

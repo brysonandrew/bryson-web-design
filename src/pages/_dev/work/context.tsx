@@ -4,10 +4,10 @@ import {
   FC,
   PropsWithChildren,
   useContext,
+  useState,
 } from 'react';
 import { useLocalStorage } from '@brysonandrew/hooks-dom/useLocalStorage';
 import { NOOP } from '@brysonandrew/utils-function';
-import { useUpworkParams } from '@pages/_dev/work/item/useUpworkParams';
 import {
   HOURLY_DEFAULT,
   ITEMS,
@@ -19,7 +19,14 @@ import {
   TUpworkFilterConfig,
 } from '@pages/_dev/work/config/types';
 import { resolveKey } from '@pages/_dev/work/key';
-import { valueToNamePath } from '@pages/_dev/work/forms/value-to-name-path';
+import { valueToNamePath } from '@pages/_dev/work/utils/value-to-name-path';
+import { resolveUpworkParams } from '@pages/_dev/work/item/resolveUpworkParams';
+import {
+  INIT_VIEWPORT,
+  TViewport,
+  useViewportMeasure,
+} from '@brysonandrew/viewport';
+import { useKey } from '@brysonandrew/hooks';
 
 export type TCommonState = Required<
   Pick<
@@ -29,9 +36,17 @@ export type TCommonState = Required<
 > &
   Pick<TUpworkFilterConfig, 'location'>;
 
+type TWorkInputElement = HTMLInputElement;
+export type TWorkInput = TWorkInputElement | null;
+
 type TPathHandlers = {
-  params(q: string): string;
+  params(q: string, commonState: TCommonState): string;
   href(params: string): string;
+};
+
+const INIT_KEY_RECORD = {
+  shift: false,
+  alt: false,
 };
 
 export type TWorkStateContext = {
@@ -42,10 +57,15 @@ export type TWorkStateContext = {
   reset(): void;
   remove(id: string): void;
   add(item: TInitIdItem): void;
-  onCommonStateChange: ChangeEventHandler<HTMLInputElement>;
-  onQChange: ChangeEventHandler<HTMLInputElement>;
+  onCommonStateChange: ChangeEventHandler<TWorkInputElement>;
+  onQChange: ChangeEventHandler<TWorkInputElement>;
   onQDelete(): void;
   pathHandlers: TPathHandlers;
+  onKeywordClick(value: string): void;
+  input: TWorkInput;
+  onInputRef(next: TWorkInput): void;
+  viewport: TViewport;
+  keyRecord: typeof INIT_KEY_RECORD;
 };
 
 const pathHandlers: TPathHandlers = {
@@ -69,7 +89,12 @@ const INIT: TWorkStateContext = {
   onQChange: NOOP,
   onQDelete: NOOP,
   pathHandlers,
-};
+  onKeywordClick: NOOP,
+  input: null,
+  onInputRef: NOOP,
+  viewport: INIT_VIEWPORT,
+  keyRecord: INIT_KEY_RECORD,
+} as TWorkStateContext;
 export const STATE = createContext<TWorkStateContext>(INIT);
 
 export const useWorkState = (): TWorkStateContext =>
@@ -78,6 +103,13 @@ export const useWorkState = (): TWorkStateContext =>
 export const WorkStateProvider: FC<PropsWithChildren> = ({
   children,
 }) => {
+  const viewport = useViewportMeasure({
+    isContainer: true,
+  });
+  const [keyRecord, setKeyRecord] = useState(
+    INIT.keyRecord
+  );
+  const [input, setWorkInput] = useState<TWorkInput>(null);
   const [items, setItems] = useLocalStorage<TInitIdItems>(
     resolveKey('items'),
     INIT.items
@@ -97,8 +129,50 @@ export const WorkStateProvider: FC<PropsWithChildren> = ({
     INIT.q ?? 'query'
   );
 
+  useKey({
+    handlers: {
+      onKeyDown: (event) => {
+        if (event.altKey) {
+          setKeyRecord((prev) => ({
+            ...prev,
+            alt: true,
+          }));
+        }
+        if (event.shiftKey) {
+          setKeyRecord((prev) => ({
+            ...prev,
+            shift: true,
+          }));
+        }
+      },
+      onKeyUp: (event) => {
+        if (event.key === 'Alt') {
+          console.log(
+            'KEY UP ',
+            event.shiftKey,
+            event.altKey,
+            event,
+            event.key
+          );
+          setKeyRecord((prev) => ({
+            ...prev,
+            alt: false,
+          }));
+        }
+
+       
+        if (event.key === 'Shift') {
+          setKeyRecord((prev) => ({
+            ...prev,
+            shift: false,
+          }));
+        }
+      },
+    },
+  });
+
   const handleQChange: ChangeEventHandler<
-    HTMLInputElement
+    TWorkInputElement
   > = (event) => {
     setQ(event.target.value);
   };
@@ -108,11 +182,12 @@ export const WorkStateProvider: FC<PropsWithChildren> = ({
   };
 
   const handleCommonStateChange: ChangeEventHandler<
-    HTMLInputElement
+    TWorkInputElement
   > = (event) => {
     const namePath = event.target.name;
     const value =
-      event.target.type === 'checkbox'
+      event.target.type === 'checkbox' &&
+      'checked' in event.target
         ? event.target.checked
         : event.target.value;
     setState((prev) => {
@@ -121,19 +196,52 @@ export const WorkStateProvider: FC<PropsWithChildren> = ({
     });
   };
 
-  const handler = useUpworkParams(commonState);
-  const restParams = handler();
-  const resolveParams = (q: string) =>
-    q
+  const resolveParams = (
+    q: string,
+    commonState: TCommonState
+  ) => {
+    const params = resolveUpworkParams(commonState);
+    const restParams = new URLSearchParams(
+      params
+    ).toString();
+    return q
       ? `q=${q}${restParams ? `&${restParams}` : ''}`
       : restParams;
+  };
+
   const resolveHref = (params: string) => {
     return `${UPWORK_BASE}?${params}`;
   };
+  const handleKeywordClick = (value: string) => {
+    if (keyRecord.alt || keyRecord.shift) {
+      setQ(value);
+    } else {
+      setQ((prev) => {
+        if (!prev) return value;
+        if (prev.includes(value)) {
+          const rx = new RegExp(`${value}`, 'gi');
+          const next = prev.replace(rx, '');
+          return next;
+        }
+        return `${prev} ${value}`;
+      });
+    }
 
+    if (input) input.select();
+  };
+  const handleInputRef = (instance: TWorkInput) => {
+    if (instance && !input) {
+      console.log(instance, input);
+      setWorkInput(instance);
+    }
+  };
   return (
     <STATE.Provider
       value={{
+        keyRecord,
+        viewport,
+        input,
+        onInputRef: handleInputRef,
         q,
         isQ: Boolean(q),
         items,
@@ -144,6 +252,7 @@ export const WorkStateProvider: FC<PropsWithChildren> = ({
         onCommonStateChange: handleCommonStateChange,
         onQChange: handleQChange,
         onQDelete: handleQDelete,
+        onKeywordClick: handleKeywordClick,
         pathHandlers: {
           params: resolveParams,
           href: resolveHref,

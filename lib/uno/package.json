@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,11 +22,11 @@
   ],
   "peerDependencies": {
     "@brysonandrew/uno-preflights": "*",
-    "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-rules": "*",
+    "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-spacing": "*",
-    "@brysonandrew/uno-shortcuts": "*",
-    "@brysonandrew/uno-theme": "*"
+    "@brysonandrew/uno-theme": "*",
+    "@brysonandrew/uno-shortcuts": "*"
   },
   "exports": {
     ".": {
@@ -39,12 +39,12 @@
     "./preflights/scrollbar": "./preflights/scrollbar/index.ts",
     "./preflights/scrollbar/manual": "./preflights/scrollbar/manual/index.ts",
     "./preflights/scrollbar/manual/is": "./preflights/scrollbar/manual/is.ts",
+    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
+    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
     "./presets/resolveFonts": "./presets/resolveFonts.ts",
     "./presets/resolvePresets": "./presets/resolvePresets.ts",
     "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
     "./presets/config/types": "./presets/config/types.ts",
-    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
-    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
     "./shortcuts/flex": "./shortcuts/flex.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",

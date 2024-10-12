@@ -1,3 +1,4 @@
+import { isString } from '@brysonandrew/utils-validation';
 import {
   REACT,
   TYPESCRIPT,
@@ -189,3 +190,16 @@ export const INIT_PROJECT_ITEMS = [
     ],
   },
 ] as const;
+
+export const KEYWORDS_AND_PHRASES =
+  INIT_PROJECT_ITEMS.reduce((a, c) => {
+    if (isString(c.description)) {
+      a.push(c.description);
+    }
+    const tagTitles = c.tags.map(({ title }) => title);
+    const next = [...a, ...tagTitles];
+    return next;
+  }, [] as string[]);
+export const KEYWORDS_AND_PHRASES_UNIQUE = [
+  ...new Set(KEYWORDS_AND_PHRASES),
+];

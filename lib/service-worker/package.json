@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/service-worker",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Service worker library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,8 +22,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.82",
-    "@brysonandrew/media": "7.0.82"
+    "@brysonandrew/config-types": "7.0.87",
+    "@brysonandrew/media": "7.0.87"
   },
   "exports": {
     ".": {

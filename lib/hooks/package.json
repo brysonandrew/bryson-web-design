@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.82",
+  "version": "7.0.87",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,7 +26,7 @@
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.82",
+    "@brysonandrew/utils-function": "7.0.87",
     "react": "^18.2.0"
   },
   "exports": {
@@ -38,6 +38,7 @@
     "./network/useIpWebRtc": "./network/useIpWebRtc.ts",
     "./dom/useDomCondition": "./dom/useDomCondition.ts",
     "./dom/useHoverKeyAlt": "./dom/useHoverKeyAlt.ts",
+    "./dom/useHoverKeyBasic": "./dom/useHoverKeyBasic.ts",
     "./dom/useKey": "./dom/useKey.ts",
     "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",

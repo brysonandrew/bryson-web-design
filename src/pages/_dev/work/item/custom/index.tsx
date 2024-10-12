@@ -17,16 +17,7 @@ export const WorkItemCustom: FC<TWorkItemCustomProps> = ({
 
   return (
     <ul>
-      <WorkItem
-        {...state}
-        input={
-          <WorkItemEdit
-            name="q"
-            placeholder="Enter search query"
-            title="Enter search query"
-          />
-        }
-      >
+      <WorkItem {...state} input={<WorkItemEdit />}>
         {children(next)}
       </WorkItem>
     </ul>
