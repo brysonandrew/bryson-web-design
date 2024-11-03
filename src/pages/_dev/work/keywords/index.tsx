@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { KEYWORDS_AND_PHRASES_UNIQUE } from '@app/gallery/items';
+import { KEYWORDS_AND_PHRASES_UNIQUE } from 'lib/copy/items';
 import { useWorkState } from '@pages/_dev/work/context';
 import { WorkItemBox } from '@pages/_dev/work/item/box';
 

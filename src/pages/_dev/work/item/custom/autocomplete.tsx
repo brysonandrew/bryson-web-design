@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { INUT_NAME_Q } from '@pages/_dev/work/item/custom/edit';
-import { KEYWORDS_AND_PHRASES_UNIQUE } from '@app/gallery/items';
+import { KEYWORDS_AND_PHRASES_UNIQUE } from 'lib/copy/items';
 
 export const WorkItemCustomAutocomplete: FC = () => {
   return (

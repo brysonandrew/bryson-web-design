@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
 import { motion } from 'framer-motion';
 import { List } from '@brysonandrew/gallery-list';
-import { TTitle, TRest } from '@app/gallery/types';
+import { TTitle, TRest } from 'lib/copy/types';
 
 type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style, rect }) => {

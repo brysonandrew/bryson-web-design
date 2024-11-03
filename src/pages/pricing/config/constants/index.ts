@@ -1,18 +1,12 @@
-import {
-  TPricingKey,
-  TPricingTitle,
-} from '@pages/pricing/config/types';
 import { newlineToArr } from '@brysonandrew/utils-transformer/newlineToArr';
 import { FC } from 'react';
 import { PlusContent } from './PlusContent';
 import { titleToKebab } from '@brysonandrew/utils-format';
 import { TPriceProps } from '@pages/pricing/layout/price';
-
-export const PACKAGES = [
-  'Standard',
-  'Plus',
-  'Select',
-] as const;
+import {
+  TPricingKey,
+  TPricingTitle,
+} from '@brysonandrew/copy';
 
 type TConfig = {
   listLiteral: string;

@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
-import { RANGE_WIDTH } from '@pages/_dev/work/config/constants';
 import {
   FiltersSlider,
   TFiltersSliderProps,
 } from '@pages/_dev/work/filters/slider';
 import { useHoverBasic } from '@brysonandrew/hooks-dom/hover/useHoverBasic';
+import { RANGE_WIDTH } from '@pages/_dev/work/config/constants';
 
 type TProps = TFiltersSliderProps & {
   x: string;

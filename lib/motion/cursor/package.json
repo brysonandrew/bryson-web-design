@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.90",
+  "version": "7.0.105",
   "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.90",
-    "@brysonandrew/utils-function": "7.0.90",
-    "@brysonandrew/hooks": "7.0.90",
+    "@brysonandrew/config-types": "7.0.105",
+    "@brysonandrew/utils-function": "7.0.105",
+    "@brysonandrew/hooks": "7.0.105",
     "react": "^18.2.0",
-    "@brysonandrew/motion-config-types": "7.0.90",
+    "@brysonandrew/motion-config-types": "7.0.105",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/motion-scroll": "7.0.90",
+    "@brysonandrew/motion-scroll": "7.0.105",
     "clsx": "^1.2.1",
-    "@brysonandrew/app": "7.0.90",
-    "@brysonandrew/motion-config-constants": "7.0.90",
-    "@brysonandrew/icons-i": "7.0.90"
+    "@brysonandrew/app": "7.0.105",
+    "@brysonandrew/motion-config-constants": "7.0.105",
+    "@brysonandrew/icons-i": "7.0.105"
   },
   "exports": {
     "./base": "./base.tsx",
@@ -50,11 +50,11 @@
     "./switch/IconWithText": "./switch/IconWithText.tsx",
     "./switch/Sight": "./switch/Sight.tsx",
     "./switch": "./switch/index.tsx",
+    "./switch/format/Visit": "./switch/format/Visit.tsx",
     "./hooks": "./hooks/index.ts",
     "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
     "./hooks/useHover": "./hooks/useHover.ts",
-    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
-    "./switch/format/Visit": "./switch/format/Visit.tsx"
+    "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx"
   }
 }

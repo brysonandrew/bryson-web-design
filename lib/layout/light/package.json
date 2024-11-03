@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-light",
-  "version": "7.0.90",
+  "version": "7.0.105",
   "description": "Layout light library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,12 +22,12 @@
   ],
   "peerDependencies": {
     "react": "^18.2.0",
-    "@brysonandrew/app": "7.0.90",
+    "@brysonandrew/app": "7.0.105",
     "clsx": "^1.2.1",
     "framer-motion": "^11.2.4",
-    "@brysonandrew/config-types": "7.0.90",
-    "@brysonandrew/motion-filter": "7.0.90",
-    "@brysonandrew/css-format": "7.0.90"
+    "@brysonandrew/config-types": "7.0.105",
+    "@brysonandrew/motion-filter": "7.0.105",
+    "@brysonandrew/css-format": "7.0.105"
   },
   "exports": {
     ".": {

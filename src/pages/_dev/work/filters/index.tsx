@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { motion } from 'framer-motion';
 import {
   HOURLY_MAX,
   RANGE_WIDTH,
@@ -9,7 +8,6 @@ import {
   useWorkState,
 } from '@pages/_dev/work/context';
 import clsx from 'clsx';
-import { FiltersSlider } from '@pages/_dev/work/filters/slider';
 import { WorkItemBox } from '@pages/_dev/work/item/box';
 import { WorkFiltersHourly } from '@pages/_dev/work/filters/hourly';
 

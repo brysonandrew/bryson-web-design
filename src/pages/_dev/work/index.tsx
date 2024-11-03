@@ -16,7 +16,6 @@ import './reset.css';
 import { ItemClear } from '@pages/_dev/work/item/custom/buttons/clear';
 import { WorkGradient } from '@pages/_dev/work/gradient';
 import { IconsSave } from '@pages/_dev/work/icons/save';
-import { IconLink } from '@brysonandrew/interactive';
 import { IconsQuery } from '@pages/_dev/work/icons/query';
 import { IconsReplace } from '@pages/_dev/work/icons/replace';
 import { IconsAppend } from '@pages/_dev/work/icons/append';

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-css",
-  "version": "7.0.90",
+  "version": "7.0.105",
   "description": "Utils css library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.90"
+    "@brysonandrew/config-types": "7.0.105"
   },
   "exports": {
     ".": {

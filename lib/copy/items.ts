@@ -189,7 +189,35 @@ export const INIT_PROJECT_ITEMS = [
       'Features such as interactive tool-tips, custom auto-correct, meta-data upload, paginated routing',
     ],
   },
+  {
+    title: 'Porizi',
+    time: new Date(2016, 10, 7),
+    pricing: 'select',
+    category: 'Web App',
+    tags: [REACT, TYPESCRIPT],
+    description: 'Marketing website',
+  },
 ] as const;
+
+export const COPY_TOTAL_YEARS = INIT_PROJECT_ITEMS.reduce(
+  (a, c) => {
+    let years = 0;
+    if ('time' in c) {
+      years = new Date(
+        Date.now() - c.time.getMilliseconds()
+      ).getFullYear();
+      const nowYears = new Date(Date.now()).getFullYear();
+      const thenYears = c.time.getFullYear();
+      years = nowYears - thenYears;
+
+      if (years > a) {
+        a = years;
+      }
+    }
+    return a;
+  },
+  0
+);
 
 export const KEYWORDS_AND_PHRASES =
   INIT_PROJECT_ITEMS.reduce((a, c) => {

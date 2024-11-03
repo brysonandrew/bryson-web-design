@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
-import { CONTACT_FORM_FOOTER } from '@app/copy';
+import { CONTACT_FORM_FOOTER } from 'lib/copy/base';
 import { Contact } from '@brysonandrew/contact';
 
 type TProps = Partial<TPartialParallaxMotionProps>;

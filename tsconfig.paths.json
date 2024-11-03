@@ -745,6 +745,18 @@
       ],
       "@brysonandrew/utils-random/*": [
         "lib/utils/random/*"
+      ],
+      "@brysonandrew/copy": [
+        "lib/copy"
+      ],
+      "@brysonandrew/copy/*": [
+        "lib/copy/*"
+      ],
+      "@brysonandrew/layout-lines": [
+        "lib/layout/lines"
+      ],
+      "@brysonandrew/layout-lines/*": [
+        "lib/layout/lines/*"
       ]
     }
   }

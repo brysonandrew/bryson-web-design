@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-box",
-  "version": "7.0.90",
+  "version": "7.0.105",
   "description": "Utils box library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.90",
-    "@brysonandrew/utils-format": "7.0.90",
-    "@brysonandrew/uno-shortcuts": "7.0.90",
+    "@brysonandrew/config-types": "7.0.105",
+    "@brysonandrew/utils-format": "7.0.105",
+    "@brysonandrew/uno-shortcuts": "7.0.105",
     "react": "^18.2.0"
   },
   "exports": {
@@ -37,9 +37,9 @@
     "./keys": "./keys.ts",
     "./types": "./types.ts",
     "./css/format": "./css/format.ts",
-    "./css/border/css": "./css/border/css.ts",
-    "./css/border/str": "./css/border/str.ts",
     "./css/background/css": "./css/background/css.ts",
-    "./css/background/str": "./css/background/str.ts"
+    "./css/background/str": "./css/background/str.ts",
+    "./css/border/css": "./css/border/css.ts",
+    "./css/border/str": "./css/border/str.ts"
   }
 }

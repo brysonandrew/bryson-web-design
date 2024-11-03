@@ -1,0 +1,40 @@
+{
+  "name": "@brysonandrew/copy",
+  "version": "7.0.105",
+  "description": "Copy library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@brysonandrew/utils-object": "7.0.105",
+    "@brysonandrew/gallery": "7.0.105",
+    "@brysonandrew/utils-validation": "7.0.105",
+    "@brysonandrew/config-types": "7.0.105"
+  },
+  "exports": {
+    "./base": "./base.ts",
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./items": "./items.ts",
+    "./third-party": "./third-party.ts",
+    "./types": "./types.ts"
+  }
+}

@@ -7,7 +7,7 @@ import { Typescript } from '@pages/index/tech/icons/Typescript';
 import {
   REACT,
   TYPESCRIPT,
-} from '@app/gallery/third-party';
+} from 'lib/copy/third-party';
 
 export const TECH = {
   REACT: {

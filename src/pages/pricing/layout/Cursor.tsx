@@ -6,7 +6,7 @@ import {
 } from '@brysonandrew/config-types';
 import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
-import { TPricingTitle } from '@pages/pricing/config/types';
+import { TPricingTitle } from '@brysonandrew/copy';
 import { lowerCase } from '@brysonandrew/utils-format';
 
 type TProps = TElementProps & TTitleProps<TPricingTitle>;

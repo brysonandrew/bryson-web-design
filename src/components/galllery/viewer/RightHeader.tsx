@@ -1,4 +1,4 @@
-import { TTitle, TSlug, TRest } from '@app/gallery/types';
+import { TTitle, TSlug, TRest } from 'lib/copy/types';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { resolveCompositeKey } from '@brysonandrew/utils-key';
