@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-constants-number",
-  "version": "7.0.90",
+  "version": "7.0.105",
   "description": "Config constants number library",
   "main": "./index.ts",
   "module": "./index.ts",

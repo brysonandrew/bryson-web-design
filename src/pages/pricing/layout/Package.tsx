@@ -9,7 +9,7 @@ import { useContact } from '@brysonandrew/contact';
 import { useHover } from '@brysonandrew/motion-cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
-import { TPricingTitle } from '@pages/pricing/config/types';
+import { TPricingTitle } from '@brysonandrew/copy';
 import { TickList } from '@brysonandrew/layout-lists/TickList';
 import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';

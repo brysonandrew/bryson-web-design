@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Time } from '@components/galllery/list/Time';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';
 import { Badge } from '@components/galllery/badge';
-import { TTitle, TSlug, TRest } from '@app/gallery/types';
+import { TTitle, TSlug, TRest } from 'lib/copy/types';
 import { useGallery } from '@brysonandrew/gallery/GalleryProvider';
 import { resolveCompositeKey } from '@brysonandrew/utils-key';
 

@@ -1,5 +1,3 @@
-import { TWorkStateContext } from '@pages/_dev/work/context';
-
 type TSortValue = 'recency';
 type TLocationValue = 'Australia and New Zealand';
 type TBaseConfig = {
@@ -16,7 +14,7 @@ export type TUpworkFilterConfig = TBaseConfig & {
 };
 
 export type TIdItem = { id: string };
-export type TInitItem = Pick<TWorkStateContext, 'q'>;
+export type TInitItem = { q: string };
 export type TInitIdItem = TInitItem & TIdItem;
 export type TInitIdItems = TInitIdItem[];
 export type TUpworkFilterWithIdConfig =

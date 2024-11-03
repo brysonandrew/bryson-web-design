@@ -1,7 +1,13 @@
-import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
-import { TTitle } from '@app/gallery/types';
+import { INIT_PROJECT_ITEMS } from '@brysonandrew/copy/items';
+import { TTitle } from '@brysonandrew/copy/types';
 import { arrToRecord } from '@brysonandrew/utils-object/arrToRecord';
 import { TInitItem } from '@brysonandrew/gallery';
+
+export const PACKAGES = [
+  'Standard',
+  'Plus',
+  'Select',
+] as const;
 
 export const CONTACT_PHONE = '020 4069 8339';
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(
@@ -9,7 +15,7 @@ export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(
 ).replace(/\s/g, '')}`;
 
 export const CONTACT_EMAIL =
-  'andrewbrysonwebdesign@gmail.com'; // 'andrew@brysonwebdesign.co.nz';
+  'andrewbryson12@gmail.com'; // 'andrew@brysonwebdesign.co.nz';
 export const CONTACT_URL = 'www.brysonwebdesign.co.nz';
 
 export const CONTACT_FORM_FOOTER = {

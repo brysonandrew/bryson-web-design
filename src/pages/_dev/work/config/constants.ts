@@ -3,7 +3,7 @@ import {
   TInitIdItem,
   TInitIdItems,
   TInitItem,
-} from '@pages/_dev/work/config/types';
+} from './types';
 
 export const HOURLY_MAX = 120;
 
