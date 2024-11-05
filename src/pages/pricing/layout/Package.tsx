@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { End } from './End';
 import { Price, TPriceProps } from './price';
@@ -6,10 +6,10 @@ import { P_25 } from '@brysonandrew/space/P_25';
 import { P4 } from '@brysonandrew/space/P4';
 import { Link } from 'react-router-dom';
 import { useContact } from '@brysonandrew/contact';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { resolvePackageConfig } from '@pages/pricing/config/constants';
-import { TPricingTitle } from '@pages/pricing/config/types';
+import { TPricingTitle } from '@brysonandrew/copy';
 import { TickList } from '@brysonandrew/layout-lists/TickList';
 import { EMAIL_ICON } from '@brysonandrew/icons-keys/contact';
 import { useApp } from '@brysonandrew/app';
@@ -37,7 +37,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
   const { COLOR, LIGHT, BORDER_RADIUS, BackFill } =
     useApp<TApp>();
   const { onForm } = useContact();
-  const { handlers } = useHoverKey(
+  const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     title,
     EMAIL_ICON,
@@ -69,7 +69,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
           drop={4}
         >
           <div
-            className={clsx(
+            className={cx(
               'absolute -inset-0.5',
               classValue,
             )}

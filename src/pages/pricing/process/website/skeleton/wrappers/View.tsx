@@ -1,5 +1,5 @@
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, PropsWithChildren } from 'react';
 
 export const View: FC<
@@ -7,7 +7,7 @@ export const View: FC<
 > = ({ classValue, children }) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'relative w-full h-full py-4 bg-main-inverted',
         classValue,
       )}

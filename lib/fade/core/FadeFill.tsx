@@ -4,7 +4,7 @@ import {
   TGradientDirection,
 } from '@brysonandrew/color-gradient';
 import { TDivProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -36,7 +36,7 @@ export const FadeFill: FC<TFadeFillProps> = ({
   });
   return (
     <div
-      className={clsx(
+      className={cx(
         'pointer-events-none',
         isFixed ? 'fill-screen' : 'fill',
         classValue

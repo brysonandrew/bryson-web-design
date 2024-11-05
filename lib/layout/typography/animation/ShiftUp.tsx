@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { DURATION, MOTION_CONFIG, PRESENCE_OPACITY_UP_Y } from '@brysonandrew/motion-config-constants';
 
@@ -18,7 +18,7 @@ export const ShiftUp: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={clsx('fade-in', classValue)}
+      className={cx('fade-in', classValue)}
       transition={{
         duration:
           baseDuration + (staggerIndex * DURATION * 2) / 4,

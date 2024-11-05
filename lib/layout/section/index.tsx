@@ -5,9 +5,10 @@ import {
   TChildrenString,
   TDivProps,
 } from '@brysonandrew/config-types/dom';
-import clsx, { ClassValue } from 'clsx';
 import { P16Y, P6 } from '@brysonandrew/space';
 import { P12Y } from '@brysonandrew/space/P12Y';
+import { cx } from 'class-variance-authority';
+import { ClassValue } from 'class-variance-authority/dist/types';
 
 type TProps = Omit<TDivProps, 'title'> & {
   title: string;
@@ -24,7 +25,7 @@ export const Section: FC<TProps> = ({
 }) => {
   return (
     <div
-      className={clsx('column', classValue)}
+      className={cx('column', classValue)}
       id={title}
       {...props}
     >
@@ -36,6 +37,34 @@ export const Section: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

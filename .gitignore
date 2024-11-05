@@ -22,3 +22,6 @@ tsconfig.tsbuildinfo
 assets/canvas*
 .screens/**/*
 .screens/*
+.assets/**/*
+.cemetary/**/*
+.cemetary/*

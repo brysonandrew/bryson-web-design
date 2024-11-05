@@ -4,7 +4,7 @@ import {
   metalRadialDarkCss,
   metalRadialLightCss,
 } from '@brysonandrew/texture-metal/css';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { BackFill } from '@brysonandrew/layout-back';
 import { TDivProps } from '@brysonandrew/config-types';
 
@@ -22,16 +22,16 @@ export const TextureMetal: FC<TProps> = ({
   children,
   ...rest
 }) => {
-  const sharedClassValue = clsx('fill', classValue);
+  const sharedClassValue = cx('fill', classValue);
   return (
     <div className={sharedClassValue} {...rest}>
       <BackFill {...rest} />
       <Dark
-        className={clsx('opacity-dark', sharedClassValue)}
+        className={cx('opacity-dark', sharedClassValue)}
         {...rest}
       />
       <Light
-        className={clsx('opacity-light', sharedClassValue)}
+        className={cx('opacity-light', sharedClassValue)}
         {...rest}
       />
     </div>

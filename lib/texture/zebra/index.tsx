@@ -1,5 +1,5 @@
 import { FC, useMemo } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TDivProps } from '@brysonandrew/config-types';
 import { resolveGradient } from '@brysonandrew/color-gradient';
 
@@ -31,7 +31,7 @@ export const TextureZebra: FC<TProps> = ({
     };
     return result;
   }, []);
-  const className = clsx('fill', classValue);
+  const className = cx('fill', classValue);
 
   return (
     <div
@@ -43,6 +43,34 @@ export const TextureZebra: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

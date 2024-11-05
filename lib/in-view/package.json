@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/in-view",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "In view library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/config-types": "7.0.79",
-    "react-intersection-observer": "^9.5.3",
-    "clsx": "^1.2.1",
-    "framer-motion": "^11.2.4"
+    "@brysonandrew/config-types": "7.0.107",
+    "react-intersection-observer": "^9.13.1",
+    "class-variance-authority": "^0.7.0",
+    "framer-motion": "^11.11.11"
   },
   "exports": {
     "./Replacer": "./Replacer.tsx",

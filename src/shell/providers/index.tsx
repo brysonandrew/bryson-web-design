@@ -11,14 +11,14 @@ import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 import { TChildrenProps } from '@brysonandrew/config-types/dom';
 import { FC, PropsWithChildren, useMemo } from 'react';
 import { arrToNest } from '@brysonandrew/layout-utils/arrToNest';
-import { INIT_PROJECT_ITEMS } from '@app/gallery/items';
+import { INIT_PROJECT_ITEMS } from 'lib/copy/items';
 import { RightHeader as ListRightHeader } from '@components/galllery/list/RightHeader';
 import { RightHeader as ViewerRightHeader } from '@components/galllery/viewer/RightHeader';
 import { LeftHeader } from '@components/galllery/LeftHeader';
 import { TCustomStyle } from '@app/style';
 import { HeadHelmetProvider } from '@brysonandrew/head';
 import { App } from '@shell/providers/App';
-import { TTitle, TRest } from '@app/gallery/types';
+import { TTitle, TRest } from 'lib/copy/types';
 
 type TLayoutOptions = TLayoutOptionsRecord;
 export type TApp = TCustomStyle & TLayoutOptions;

@@ -1,5 +1,5 @@
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC, SVGAttributes } from 'react';
 
 type TProps = SVGAttributes<SVGElement> & TClassValueProps;
@@ -8,7 +8,7 @@ export const VolumeOn: FC<TProps> = ({
   ...props
 }) => (
   <svg
-    className={clsx(classValue)}
+    className={cx(classValue)}
     viewBox='0 0 24 24'
     width='24'
     height='24'

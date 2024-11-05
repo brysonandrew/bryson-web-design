@@ -10,7 +10,7 @@ import {
   DESCRIPTION_PARAGRAPHS,
   TPresetName,
   TPresetValue,
-} from '@app/copy';
+} from 'lib/copy/base';
 import { CvProvider } from '@brysonandrew/cv/CvProvider';
 import { Page } from '@brysonandrew/cv/page';
 import { CvControls } from '@brysonandrew/cv/controls';

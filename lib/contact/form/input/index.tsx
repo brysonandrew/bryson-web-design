@@ -14,7 +14,7 @@ import {
 } from '@brysonandrew/contact/config/constants';
 import { Clear } from '@brysonandrew/contact/form/input/Clear';
 import {
-  useHoverKey,
+  useHover,
   BIG_CURSOR_KEY,
 } from '@brysonandrew/motion-cursor';
 import { AnimatePresence } from 'framer-motion';
@@ -53,7 +53,7 @@ export const Input = <T extends HTMLElement>({
   } = useContact();
   const { LIGHT, Back, BORDER_RADIUS } = useApp();
   const LabelBack = LIGHT?.Back ?? Back;
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     BIG_CURSOR_KEY,
     name,
   );

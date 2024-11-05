@@ -1,6 +1,6 @@
 import { FontLeft } from '@brysonandrew/design/typography/font/item/Left';
 import { TResolveWebFontConfig } from '@brysonandrew/uno-presets';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = { item: TResolveWebFontConfig };
@@ -10,7 +10,7 @@ export const FontItem: FC<TProps> = ({
   return (
     <li
       key={key}
-      className={clsx(
+      className={cx(
         'column-start md:row-end-space px-2 py-1.5',
       )}
       style={{ fontFamily: name }}

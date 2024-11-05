@@ -1,6 +1,6 @@
 import { NONE_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
-import clsx from 'clsx';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
 import { useApp } from '@brysonandrew/app';
@@ -10,7 +10,7 @@ type TProps = PropsWithChildren<{
 }>;
 export const Item: FC<TProps> = ({ id, children }) => {
   const { BORDER_RADIUS, COLOR } = useApp();
-  const { handlers, isHover } = useHoverKey(
+  const { handlers, isHover } = useHover(
     NONE_CURSOR_KEY,
     id,
   );
@@ -20,7 +20,7 @@ export const Item: FC<TProps> = ({ id, children }) => {
       {...handlers}
     >
       <motion.div
-        className={clsx(
+        className={cx(
           'absolute -inset-1 center pointer-events-none',
           isHover ? 'z-50' : '',
         )}

@@ -1,8 +1,9 @@
-import clsx, { ClassValue } from 'clsx';
+import { TClassValue } from '@brysonandrew/config-types';
+import { cx } from 'class-variance-authority';
 import type { FC, SVGAttributes } from 'react';
 
 type TProps = SVGAttributes<SVGElement> & {
-  classValue?: ClassValue;
+  classValue?: TClassValue;
 };
 export const Drag: FC<TProps> = ({
   classValue,
@@ -10,7 +11,7 @@ export const Drag: FC<TProps> = ({
 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    className={clsx(classValue)}
+    className={cx(classValue)}
     width='32px'
     height='32px'
     viewBox='0 -960 960 960'

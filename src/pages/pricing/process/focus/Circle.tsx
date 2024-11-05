@@ -4,7 +4,7 @@ import {
   TClassValueProps,
   TChildren,
 } from '@brysonandrew/config-types/dom';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -23,7 +23,7 @@ export const Circle: FC<TProps> = ({
 
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'w-5 h-5 center bg-main text-main text-xs border-gray border',
         classValue,
       )}

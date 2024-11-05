@@ -34,7 +34,7 @@ export const List = <
 
 export * from './Tips';
 export * from './item';
-export * from './item/resolveHoverKeyArgs';
+export * from './item/resolveHoverArgs';
 export * from './item/details/Buttons';
 export * from './item/details/Paragraphs';
 export * from './item/details/TagLink';

@@ -1,47 +1,41 @@
+import { keysUuid } from '@brysonandrew/utils';
 import {
-  TUpworkFilterConfig,
-  TUpworkFilterConfigs,
-} from '@pages/_dev/work/config/types';
+  TInitIdItem,
+  TInitIdItems,
+  TInitItem,
+} from './types';
+
+export const HOURLY_MAX = 120;
+
+export const HOURLY_DEFAULT = {
+  min: 40,
+  max: HOURLY_MAX,
+} as const;
+
+export const RANGE_WIDTH = 120;
 
 export const UPWORK_BASE =
   'https://www.upwork.com/nx/search/jobs/';
 
-const DEFAULT_INT_AND_EXPERT: TUpworkFilterConfig = {
-  isExpert: true,
-  isIntermediate: true,
-  // location: 'Australia and New Zealand',
-};
-
-const DEFAULT_EXPERT_ONLY: TUpworkFilterConfig = {
-  isExpert: true,
-  // location: 'Australia and New Zealand',
-};
-
-const DEFAULTS = [
-  DEFAULT_INT_AND_EXPERT,
-  DEFAULT_EXPERT_ONLY,
-];
-
 const applyDefaults = (
-  values: TUpworkFilterConfigs,
-): TUpworkFilterConfigs =>
-  DEFAULTS.reduce(
-    (
-      a: TUpworkFilterConfigs,
-      defaultValue: TUpworkFilterConfig,
-    ) => {
-      const next = values.map(
-        (value: TUpworkFilterConfig) => ({
-          ...defaultValue,
-          ...value,
-        }),
-      );
-      return [...a, ...next];
-    },
-    [],
-  );
+  values: readonly TInitItem[]
+): TInitIdItem[] =>
+  values.reduce((a: TInitIdItem[], value: TInitItem) => {
+    const next = {
+      id: keysUuid(),
+      ...value,
+    } as TInitIdItem;
 
-const INIT_ITEMS: TUpworkFilterConfigs = [
+    return [...a, next];
+  }, []);
+
+const INIT_ITEMS = [
+  {
+    q: 'React and Typescript Gatsby SEO',
+  },
+  {
+    q: 'React and Typescript SEO',
+  },
   {
     q: 'React and Typescript',
   },
@@ -63,9 +57,9 @@ const INIT_ITEMS: TUpworkFilterConfigs = [
   {
     q: 'web designer',
   },
-];
+] as const;
 
-export const ITEMS: TUpworkFilterConfigs =
+export const ITEMS: TInitIdItems =
   applyDefaults(INIT_ITEMS);
 
 // href: 'https://www.upwork.com/nx/search/jobs/?contractor_tier=2,3&hourly_rate=-100&location=Australia%20and%20New%20Zealand&nbs=1&q=react%20typescript&sort=recency&t=0',

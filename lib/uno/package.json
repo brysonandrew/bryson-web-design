@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,9 +22,9 @@
   ],
   "peerDependencies": {
     "@brysonandrew/uno-preflights": "*",
-    "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-rules": "*",
     "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-spacing": "*",
     "@brysonandrew/uno-theme": "*"
   },
@@ -39,10 +39,6 @@
     "./preflights/scrollbar": "./preflights/scrollbar/index.ts",
     "./preflights/scrollbar/manual": "./preflights/scrollbar/manual/index.ts",
     "./preflights/scrollbar/manual/is": "./preflights/scrollbar/manual/is.ts",
-    "./presets/resolveFonts": "./presets/resolveFonts.ts",
-    "./presets/resolvePresets": "./presets/resolvePresets.ts",
-    "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
-    "./presets/config/types": "./presets/config/types.ts",
     "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
     "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
@@ -61,6 +57,10 @@
     "./shortcuts/neu/resolveNeuShadow": "./shortcuts/neu/resolveNeuShadow.ts",
     "./shortcuts/neu/types": "./shortcuts/neu/types.ts",
     "./shortcuts/neu/ranges": "./shortcuts/neu/ranges/index.ts",
-    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts"
+    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts",
+    "./presets/resolveFonts": "./presets/resolveFonts.ts",
+    "./presets/resolvePresets": "./presets/resolvePresets.ts",
+    "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
+    "./presets/config/types": "./presets/config/types.ts"
   }
 }

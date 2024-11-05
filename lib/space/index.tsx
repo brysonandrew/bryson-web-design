@@ -1,6 +1,6 @@
 import { FC, createElement } from 'react';
-import { clsx } from 'clsx';
 import { TAmount, TSpaceProps } from '@brysonandrew/space';
+import { cx } from 'class-variance-authority';
 
 type TProps = TSpaceProps & {
   spaceClass: `p-${TAmount}` | `py-${TAmount}`;
@@ -14,7 +14,7 @@ export const Space: FC<TProps> = ({
 }) => {
   return createElement(
     element,
-    { className: clsx(spaceClass, classValue), ...props },
+    { className: cx(spaceClass, classValue), ...props },
     children,
   );
 };

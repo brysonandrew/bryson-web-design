@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import {
   TButtonMotionProps,
   TClassValueProps,
@@ -17,7 +17,7 @@ export const Button: FC<TButtonProps> = ({
 }) => {
   return (
     <motion.button
-      className={clsx(
+      className={cx(
         'circle-interactive shrink-0 w-14 h-14',
         classValue,
       )}

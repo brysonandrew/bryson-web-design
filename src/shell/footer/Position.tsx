@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { TDivProps } from '@brysonandrew/config-types';
 
@@ -13,7 +13,7 @@ export const Position: FC<TProps> = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'absolute bottom-6 z-10',
         position,
         classValue,

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-filter",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "Motion filter library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.79",
-    "clsx": "^1.2.1",
-    "framer-motion": "^11.2.4",
-    "react": "^18.2.0",
-    "@brysonandrew/css-format": "7.0.79",
-    "@brysonandrew/color": "7.0.79"
+    "@brysonandrew/config-types": "7.0.107",
+    "class-variance-authority": "^0.7.0",
+    "framer-motion": "^11.11.11",
+    "react": "^18.3.1",
+    "@brysonandrew/css-format": "7.0.107",
+    "@brysonandrew/color": "7.0.107"
   },
   "exports": {
     ".": {

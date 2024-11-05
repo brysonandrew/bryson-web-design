@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/css-base",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "Css base library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,9 +22,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/placeholder": "7.0.79",
-    "@emotion/react": "^11.11.3",
-    "react": "^18.2.0"
+    "@brysonandrew/placeholder": "7.0.107",
+    "@emotion/react": "^11.13.3",
+    "react": "^18.3.1"
   },
   "exports": {
     ".": {

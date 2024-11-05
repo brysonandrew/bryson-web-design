@@ -9,9 +9,12 @@ import {
 } from '@brysonandrew/contact/form';
 import { TFooterInfoProps } from '@brysonandrew/contact/config/types';
 import { motion } from 'framer-motion';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = TFooterInfoProps;
 export const Contact: FC<TProps> = ({ footerInfo }) => {
+  const { LIGHT, BackMotion } = useApp();
+  const LabelBack = LIGHT?.MOTION.Back ?? BackMotion;
   return (
     <Form>
       {(props: TFormChildrenProps) => (
@@ -34,6 +37,7 @@ export const Contact: FC<TProps> = ({ footerInfo }) => {
               name='message'
               placeholder=''
               required
+              LabelBack={LabelBack}
               {...props}
             />
           </div>

@@ -19,7 +19,6 @@ export const Autosize: FC<TProps> = ({
   ...props
 }) => {
   const { isResizing } = useViewport();
-
   const isInit = useAutosize({
     textarea,
     value,

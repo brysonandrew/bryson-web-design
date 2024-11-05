@@ -1,17 +1,17 @@
 import {
   HOVER_KEY_DELIMITER,
-  resolveCursorKeyFromHoverKey,
+  resolveCursorKeyFromHover,
   THover,
 } from '@brysonandrew/motion-cursor/base';
 
-export const resolveHoverKeyParts = (hover: THover) => {
+export const resolveHoverParts = (hover: THover) => {
   const { hoverKey } = hover;
   if (!hoverKey) return [];
   const parts = hoverKey.split(HOVER_KEY_DELIMITER);
   return parts;
 };
 
-export const resolveHoverKeyVariations = (
+export const resolveHoverVariations = (
   hover: THover,
   index?: number
 ) => {
@@ -19,10 +19,7 @@ export const resolveHoverKeyVariations = (
   return {
     hoverKey,
     children,
-    hoverKeyParts: resolveHoverKeyParts(hover),
-    cursorKey: resolveCursorKeyFromHoverKey(
-      hoverKey,
-      index
-    ),
+    hoverParts: resolveHoverParts(hover),
+    cursorKey: resolveCursorKeyFromHover(hoverKey, index),
   };
 };

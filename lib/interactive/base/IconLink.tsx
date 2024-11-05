@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { TLinkProps } from '@brysonandrew/config-types';
@@ -18,7 +18,7 @@ export const IconLink: FC<TProps> = ({
 }) => {
   return (
     <Link
-      className={clsx(
+      className={cx(
         'absolute inset-0 center cursor-pointer z-10',
       )}
       {...resolveAccessibilityTitles(title)}

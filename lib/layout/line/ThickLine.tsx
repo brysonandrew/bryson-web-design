@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { useApp } from '@brysonandrew/app';
 
@@ -13,7 +13,7 @@ export const ThickLine: FC<TProps> = ({
   const { COLOR } = useApp();
   return (
     <motion.hr
-      className={clsx('absolute border-4', classValue)}
+      className={cx('absolute border-4', classValue)}
       style={{ ...style, borderColor: COLOR.primary }}
       {...props}
     />

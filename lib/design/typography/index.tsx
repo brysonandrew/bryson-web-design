@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import type { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import { useApp } from '@brysonandrew/app';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { PALETTE_COLORS } from '@brysonandrew/design/config/constants';
 
 type TProps = TDivMotionProps & {
@@ -22,7 +22,7 @@ export const DesignTypography: FC<TProps> = ({
             (textTitle) => (
               <li
                 key={textTitle}
-                className={clsx('relative', titleKey)}
+                className={cx('relative', titleKey)}
                 style={{
                   color: COLOR[textTitle],
                 }}

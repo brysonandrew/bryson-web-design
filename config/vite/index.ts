@@ -1,8 +1,7 @@
-import { defineConfig, PluginOption } from 'vite';
+import { defineConfig } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import react from '@vitejs/plugin-react';
 import unoCss from 'unocss/vite';
-import { compileTsServiceWorker } from './compile-ts-service-worker';
 
 export default defineConfig({
   build: {
@@ -16,11 +15,13 @@ export default defineConfig({
     },
   },
   plugins: [
-    unoCss({ inspector: true }),
-    tsConfigPaths({
-      loose: true,
-    }),
-    react()
+    react(),
+    unoCss(
+      // { inspector: true }
+    ),
+    tsConfigPaths(
+      // {loose: true}
+    ),
     // compileTsServiceWorker() as PluginOption,
   ],
   server: {

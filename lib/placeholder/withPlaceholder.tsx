@@ -3,7 +3,7 @@ import {
   TPartialPlaceholderProps,
   TPlaceholderProps,
 } from '@brysonandrew/placeholder';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TSvgProps } from '@brysonandrew/config-types';
 import { resolvePlaceholderRules } from './resolvePlaceholderRules';
 import { resolvePlaceholderVarsCss } from '@brysonandrew/placeholder/resolvePlaceholderVarsCss';
@@ -44,7 +44,7 @@ export const withPlaceholder = (config: TConfig = {}) => {
       <Placeholder
         {...placeholderProps}
         {...props}
-        classValue={clsx(
+        classValue={cx(
           'origin-center placeholder sm:+placeholder md:++placeholder',
           placeholderProps?.classValue,
           props.classValue,
@@ -55,7 +55,7 @@ export const withPlaceholder = (config: TConfig = {}) => {
       <Placeholder
         {...placeholderProps}
         {...props}
-        classValue={clsx(
+        classValue={cx(
           'origin-top placeholder',
           placeholderProps?.classValue,
           props.classValue,

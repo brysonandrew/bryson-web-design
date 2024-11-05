@@ -1,7 +1,4 @@
-import {
-  TResolveWebFontConfig,
-  TWebFonts,
-} from '@brysonandrew/config-types';
+import { TResolveWebFontConfig } from '@brysonandrew/config-types';
 import { resolveWebFont } from '@brysonandrew/uno-presets/resolveWebFont';
 
 export const resolveFonts = (
@@ -10,4 +7,4 @@ export const resolveFonts = (
   fonts.reduce((a, c) => {
     const record = resolveWebFont(c);
     return { ...a, ...record };
-  }, {} as TWebFonts);
+  }, {});

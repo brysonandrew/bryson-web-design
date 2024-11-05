@@ -2,7 +2,7 @@ import {
   TInteractiveProps,
   TLinkProps,
 } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ export const BLink: FC<TProps> = ({
 }) => {
   return (
     <Link
-      className={clsx(
+      className={cx(
         'interactive',
         look,
         shape,

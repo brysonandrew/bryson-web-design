@@ -1,5 +1,5 @@
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = {
@@ -14,11 +14,11 @@ export const TextLines: FC<TProps> = ({
   classValue,
 }) => {
   return (
-    <ul className={clsx('column w-full', gap)}>
+    <ul className={cx('column w-full', gap)}>
       {[...Array(count)].map((_, index) => (
         <li
           key={`${index}`}
-          className={clsx(
+          className={cx(
             'w-full',
             height,
             classValue ?? 'bg-main',

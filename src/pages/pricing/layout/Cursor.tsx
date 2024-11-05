@@ -1,12 +1,12 @@
 import type { FC } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import {
   TElementProps,
   TTitleProps,
 } from '@brysonandrew/config-types';
 import { useApp } from '@brysonandrew/app';
 import { TStyle } from '@app/style';
-import { TPricingTitle } from '@pages/pricing/config/types';
+import { TPricingTitle } from '@brysonandrew/copy';
 import { lowerCase } from '@brysonandrew/utils-format';
 
 type TProps = TElementProps & TTitleProps<TPricingTitle>;
@@ -24,7 +24,7 @@ export const Cursor: FC<TProps> = ({
       Inquire about the
       {
         <span
-          className={clsx(
+          className={cx(
             'px-1 mx-1 title-pricing',
             gradientClassValue,
             classValue,

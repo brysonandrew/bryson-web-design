@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 import { TChildren } from '@brysonandrew/config-types/dom/main';
@@ -47,7 +47,7 @@ export const Sight: FC<TProps> = ({
         ...cursorLabel,
         ...style,
       }}
-      className={clsx(
+      className={cx(
         'fixed center pointer-events-none rounded-full cursor-default z-50',
         classValue,
       )}

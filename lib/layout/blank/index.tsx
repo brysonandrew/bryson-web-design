@@ -1,5 +1,5 @@
 import { TBlankC } from '@brysonandrew/layout-blank/config/types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 export const Blank: TBlankC = ({ dark, ...props }) => {
   const { classValue: darkClassValue, ...darkRest } =
@@ -8,11 +8,11 @@ export const Blank: TBlankC = ({ dark, ...props }) => {
   return (
     <>
       <div
-        className={clsx('opacity-dark', darkClassValue)}
+        className={cx('opacity-dark', darkClassValue)}
         {...darkRest}
       />
       <div
-        className={clsx('opacity-light', classValue)}
+        className={cx('opacity-light', classValue)}
         {...rest}
       />
     </>

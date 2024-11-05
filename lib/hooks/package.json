@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,13 +21,13 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-dom": "*",
+    "@brysonandrew/hooks-events": "*",
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.79",
-    "react": "^18.2.0"
+    "@brysonandrew/utils-function": "7.0.107",
+    "react": "^18.3.1"
   },
   "exports": {
     ".": {
@@ -36,17 +36,18 @@
       "default": "./index.ts"
     },
     "./network/useIpWebRtc": "./network/useIpWebRtc.ts",
-    "./events/useEventCallback": "./events/useEventCallback.ts",
-    "./events/useEventListener": "./events/useEventListener.ts",
-    "./events/useHover": "./events/useHover.ts",
-    "./events/useLongPress": "./events/useLongPress.ts",
     "./dom/useDomCondition": "./dom/useDomCondition.ts",
-    "./dom/useHoverKeyAlt": "./dom/useHoverKeyAlt.ts",
     "./dom/useKey": "./dom/useKey.ts",
     "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
     "./dom/useRect": "./dom/useRect.ts",
     "./dom/useRefState": "./dom/useRefState.ts",
+    "./dom/hover/useHoverBasic": "./dom/hover/useHoverBasic.ts",
+    "./dom/hover/useHoverMulti": "./dom/hover/useHoverMulti.ts",
+    "./events/useEventCallback": "./events/useEventCallback.ts",
+    "./events/useEventListener": "./events/useEventListener.ts",
+    "./events/useHover": "./events/useHover.ts",
+    "./events/useLongPress": "./events/useLongPress.ts",
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",
     "./life-cycle/useIsomorphicLayoutEffect": "./life-cycle/useIsomorphicLayoutEffect.ts",
     "./life-cycle/useUpdateEffect": "./life-cycle/useUpdateEffect.ts",

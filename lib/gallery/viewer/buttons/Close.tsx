@@ -2,7 +2,7 @@ import { Cross } from '@brysonandrew/gallery-viewer/icons/Cross';
 import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import { useTo } from '../hooks/nav/useTo';
-import { useHoverKey } from '@brysonandrew/motion-cursor';
+import { useHover } from '@brysonandrew/motion-cursor';
 import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import {
   Circle,
@@ -17,7 +17,7 @@ export const Close: FC<TProps> = ({
   ...props
 }) => {
   const to = useTo({});
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     BIG_CURSOR_KEY,
     'close',
   );

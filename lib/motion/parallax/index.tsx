@@ -1,5 +1,5 @@
 import { InView } from '@brysonandrew/in-view';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { type FC } from 'react';
 import { Aggregator } from './aggregator';
 import {
@@ -29,7 +29,7 @@ export const Parallax: FC<TProps> = ({
 
   return (
     <InView
-      classValue={clsx(classValue)}
+      classValue={cx(classValue)}
       options={{
         triggerOnce: false,
         threshold: 0,
@@ -74,11 +74,11 @@ export const Parallax: FC<TProps> = ({
 };
 
 export * from './config';
+export * from './aggregator';
+export * from './aggregator/useScrollYBounds';
 export * from './hooks/useDispersion';
 export * from './hooks/useResistance';
 export * from './hooks/useVisibility';
-export * from './aggregator';
-export * from './aggregator/useScrollYBounds';
 export * from './aggregator/values/Dispersion';
 export * from './aggregator/values/Resistance';
 export * from './aggregator/values/Visibility';

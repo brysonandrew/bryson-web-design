@@ -1,6 +1,6 @@
 import { useApp } from '@brysonandrew/app';
 import { useViewport } from '@brysonandrew/viewport';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 
 export const Hud = () => {
@@ -22,7 +22,7 @@ export const Hud = () => {
         bottom: 600,
         right: 800,
       }}
-      className={clsx(
+      className={cx(
         'row fixed left-0 top-0 right-0 z-50 h-40 w-140',
       )}
     >
@@ -294,6 +294,34 @@ export const Hud = () => {
 
 
 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

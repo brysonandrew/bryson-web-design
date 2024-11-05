@@ -3,7 +3,7 @@ import {
   TInteractiveProps,
 } from '@brysonandrew/config-types';
 import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityHrefTitles';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 export type TBAnchorProps = TAnchorProps &
@@ -21,7 +21,7 @@ export const BAnchor: FC<TBAnchorProps> = (props) => {
     <a
       type='button'
       target={target}
-      className={clsx(
+      className={cx(
         'interactive',
         look,
         shape,

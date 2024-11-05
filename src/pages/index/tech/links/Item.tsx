@@ -1,6 +1,6 @@
 import { MotionValue } from 'framer-motion';
 import type { FC } from 'react';
-import { useHoverKey } from '@brysonandrew/motion-cursor/hooks/useHoverKey';
+import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { useApp } from '@brysonandrew/app';
 import { formatUrl } from '@brysonandrew/utils-format/url';
@@ -24,7 +24,7 @@ export const Item: FC<
   const { Glow, BORDER_RADIUS, COLOR, LIGHT } = useApp();
   const address = formatUrl(href);
 
-  const { isHover, handlers } = useHoverKey(
+  const { isHover, handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     href,
     OPEN_IN_NEW_ICON,

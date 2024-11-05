@@ -3,7 +3,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types/dom';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Background } from './Background';
 import { useApp } from '@brysonandrew/app';
@@ -29,7 +29,7 @@ export const Circle: FC<TProps> = ({
 
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         position,
         'center w-10 h-10',
         classValue

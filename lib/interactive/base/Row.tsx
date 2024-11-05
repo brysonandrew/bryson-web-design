@@ -1,7 +1,7 @@
 import type { ComponentElement, FC } from 'react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { PRESENCE_OPACITY_DELAY } from '@brysonandrew/motion-config-constants';
 import { TUlMotionProps } from '@brysonandrew/config-types';
 
@@ -19,7 +19,7 @@ export const Row: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx('row gap-4', !isInline && 'w-full')}
+      className={cx('row gap-4', !isInline && 'w-full')}
       layout
       {...props}
     >

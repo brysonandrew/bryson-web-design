@@ -1,0 +1,35 @@
+{
+  "name": "@brysonandrew/utils-random",
+  "version": "7.0.107",
+  "description": "Utils random library",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "scripts": {
+    "format": "prettier .",
+    "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brysonandrew/brysona.dev.git"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "peerDependencies": {},
+  "exports": {
+    ".": {
+      "require": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./resolveRandomDate": "./resolveRandomDate.ts",
+    "./resolveRandomGaussian": "./resolveRandomGaussian.ts",
+    "./resolveRandomItem": "./resolveRandomItem.ts",
+    "./id/uuid": "./id/uuid.ts"
+  }
+}

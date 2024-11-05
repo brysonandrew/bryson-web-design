@@ -1,4 +1,4 @@
-import { TItem, TSlug } from '@app/gallery/types';
+import { TItem, TSlug } from 'lib/copy/types';
 import { useApp } from '@brysonandrew/app';
 import { useGallery } from '@brysonandrew/gallery';
 import { TSlugProps } from '@brysonandrew/gallery/config/types';

@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Fade, TFadeProps } from '.';
 
@@ -8,7 +8,7 @@ export const FadeRight: FC<TProps> = ({
   ...props
 }) => (
   <Fade
-    classValue={clsx(
+    classValue={cx(
       'left-0 inset-y-0',
       classValue,
     )}

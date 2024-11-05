@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Range } from '../../components/Inputs';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, InputHTMLAttributes } from 'react';
 import { I } from '@brysonandrew/icons-i';
 import { TStateEntry } from '@brysonandrew/config-types';
@@ -22,7 +22,7 @@ export const Item: FC<TProps> = ({
     <Root className='column-start'>
       <div className='row-space w-full'>
         <div className='row gap-1'>
-          <i className={clsx('')} />
+          <i className={cx('')} />
           <I icon={iconClassValue} />
           <kbd>{title}</kbd>
         </div>

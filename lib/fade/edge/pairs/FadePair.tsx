@@ -1,13 +1,17 @@
-import { FadeRight, TFadeProps } from '@brysonandrew/fade-core';
-import clsx, { ClassValue } from 'clsx';
+import { TClassValue } from '@brysonandrew/config-types';
+import {
+  FadeRight,
+  TFadeProps,
+} from '@brysonandrew/fade-core';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 export type TFadePairProps = TFadeProps & {
   Fader?: FC<TFadeProps>;
   darkColor?: string;
   lightColor?: string;
-  darkClass?: ClassValue;
-  lightClass?: ClassValue;
+  darkClass?: TClassValue;
+  lightClass?: TClassValue;
 };
 export const FadePair: FC<TFadePairProps> = ({
   Fader = FadeRight,
@@ -20,14 +24,14 @@ export const FadePair: FC<TFadePairProps> = ({
 }) => (
   <>
     <Fader
-      key='FADE_PAIR_DARK'
-      classValue={clsx(darkClass, classValue)}
+      key="FADE_PAIR_DARK"
+      classValue={cx(darkClass, classValue)}
       from={darkColor}
       {...props}
     />
     <Fader
-      key='FADE_PAIR_LIGHT'
-      classValue={clsx(lightClass, classValue)}
+      key="FADE_PAIR_LIGHT"
+      classValue={cx(lightClass, classValue)}
       from={lightColor}
       {...props}
     />

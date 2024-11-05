@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "7.0.79",
+  "version": "7.0.107",
   "description": "Hooks dom library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "@brysonandrew/hooks-events": "7.0.79",
-    "@brysonandrew/config-types": "7.0.79"
+    "react": "^18.3.1",
+    "@brysonandrew/hooks-events": "7.0.107",
+    "@brysonandrew/config-types": "7.0.107"
   },
   "exports": {
     ".": {
@@ -32,11 +32,12 @@
       "default": "./index.ts"
     },
     "./useDomCondition": "./useDomCondition.ts",
-    "./useHoverKeyAlt": "./useHoverKeyAlt.ts",
     "./useKey": "./useKey.ts",
     "./useLocalStorage": "./useLocalStorage.ts",
     "./useOutsideClick": "./useOutsideClick.ts",
     "./useRect": "./useRect.ts",
-    "./useRefState": "./useRefState.ts"
+    "./useRefState": "./useRefState.ts",
+    "./hover/useHoverBasic": "./hover/useHoverBasic.ts",
+    "./hover/useHoverMulti": "./hover/useHoverMulti.ts"
   }
 }

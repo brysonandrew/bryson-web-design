@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { DURATION, PRESENCE_OPACITY } from '@brysonandrew/motion-config-constants';
 
 type TProps = TDivMotionProps;
@@ -24,7 +24,7 @@ export const Background: FC<TProps> = ({
         style={{ borderRadius: BORDER_RADIUS.XL }}
       />
       <motion.div
-        className={clsx('absolute inset-0')}
+        className={cx('absolute inset-0')}
         {...PRESENCE_OPACITY}
         style={{
           borderRadius: BORDER_RADIUS.XL,
