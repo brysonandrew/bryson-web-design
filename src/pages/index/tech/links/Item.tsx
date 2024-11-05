@@ -69,7 +69,7 @@ export const Item: FC<
         className="row gap-4 relative pl-4 pr-5 py-3"
         href={href}
         style={{ color: COLOR.accent }}
-        target="_blank"
+        target="_blank" rel="noreferrer"
       >
         <Icon classValue="w-10 h-10 lg:(w-12 h-12)" />
         <h4 className="relative text-3xl text-shadow-inherit mt-0.75 lg:text-4xl">

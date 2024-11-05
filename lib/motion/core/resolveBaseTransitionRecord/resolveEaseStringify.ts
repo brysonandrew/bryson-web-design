@@ -10,7 +10,5 @@ export const resolveEaseStringify = (
   if (typeof ease === 'string') {
     return ease;
   }
-  return `${ease[0]},${ease[1]},${ease[2]},${ease[3]}` as TBezierString<
-    typeof ease
-  >;
+  return `${ease[0]},${ease[1]},${ease[2]},${ease[3]}`;
 };

@@ -15,7 +15,7 @@ export const resolveElementDimensions = <
   let height = 0;
   if (element) {
     width =
-      (element as T as HTMLImageElement)
+      (element as HTMLImageElement)
         .naturalWidth ??
       (element as TElement)
         .clientWidth ??

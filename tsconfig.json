@@ -24,6 +24,8 @@
     "**/*.ts",
     "**/*.js",
     "**/*.jsx",
-    "**/*.tsx", "config/vite/index.ts"],
+    "**/*.tsx",
+    "eslint.config.js"
+  ],
   "extends": "./tsconfig.paths.json"
 }

@@ -42,7 +42,5 @@ export const resolveCursorKeyFromHover = (
   const cursorKey = hover.split(HOVER_KEY_DELIMITER)[
     index ?? 0
   ];
-  return cursorKey as typeof index extends undefined
-    ? TCursorKey
-    : string;
+  return cursorKey;
 };

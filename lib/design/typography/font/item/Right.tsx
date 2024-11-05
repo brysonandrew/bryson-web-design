@@ -22,7 +22,7 @@ export const FontRight: FC<TProps> = ({
       <a
         className='row-base gap-2 w-36 bg-black'
         target='_blank'
-        href={resolveFontProviderHref(provider)}
+        href={resolveFontProviderHref(provider)} rel="noreferrer"
       >
         <span className='text-xxs uppercase'>provider</span>
         <span className='text-sm uppercase'>

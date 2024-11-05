@@ -23,7 +23,7 @@ export const processLib = async ({
 }: {
   lib: string;
   targets: TTargets;
-  index:number;
+  index: number;
   file: string;
 } & TFilePartsConfig) => {
   let nextWriteUpdates: TWuRecord = {};
@@ -37,7 +37,7 @@ export const processLib = async ({
           const prevLib = lib;
           lib = prevLib.replace(
             excludePrefix,
-            INTERNAL_PREFIX
+            INTERNAL_PREFIX,
           );
           const u0 = update({
             mode: '0',
@@ -62,7 +62,7 @@ export const processLib = async ({
         const possibleSubWs = [wsName, subWsName].join('-');
         if (
           targets.some(
-            (target) => target.name === possibleSubWs
+            (target) => target.name === possibleSubWs,
           )
         ) {
           const prevLib = [lib, subWsName].join('/');
@@ -88,7 +88,8 @@ export const processLib = async ({
       } else if (!subWsName) {
         const ws = targets.find(
           (v) =>
-            v.name === _wsName && v.subWorkspaces.length > 0
+            v.name === _wsName &&
+            v.subWorkspaces.length > 0,
         );
 
         if (ws) {
@@ -97,7 +98,7 @@ export const processLib = async ({
           const x = xs[index];
           let imports = x?.split(/[{}]/g) ?? [];
           imports = imports.filter(
-            (v) => !(/import /.test(v) || /from /.test(v))
+            (v) => !(/import /.test(v) || /from /.test(v)),
           );
           imports = imports.map((v) => v.trim());
           const FILES_GLOB = `${ws.dir}/**/*.(ts|tsx)`;
@@ -110,7 +111,7 @@ export const processLib = async ({
 
             imports.forEach((v) => {
               const rx = new RegExp(
-                `export const ${v}[\\s,\\n]`
+                `export const ${v}[\\s,\\n]`,
               );
 
               const matches = wsPathFile.match(rx);
@@ -121,20 +122,20 @@ export const processLib = async ({
                 ws.subWorkspaces.forEach((swsPkgPath) => {
                   const swsId = swsPkgPath.replace(
                     `/${PACKAGE_JSON_NAME}`,
-                    ''
+                    '',
                   );
                   // console.log(wsPath, swsId);
                   if (wsPath.includes(swsId)) {
                     const sws = targets.find(
-                      (v) => v.workspace === swsId
+                      (v) => v.workspace === swsId,
                     );
 
                     if (!sws) return;
                     const prev = [appName, wsName].join(
-                      '/'
+                      '/',
                     );
                     const next = [appName, sws.name].join(
-                      '/'
+                      '/',
                     );
                     const u2 = update({
                       mode: '2',
@@ -156,7 +157,6 @@ export const processLib = async ({
     }
   } catch (error) {
     console.error(error);
-  } finally {
-    return nextWriteUpdates;
   }
+  return nextWriteUpdates;
 };

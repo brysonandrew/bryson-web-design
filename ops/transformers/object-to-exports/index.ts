@@ -2,7 +2,7 @@ import { validateEntryPoint } from '@ops/validate/entry-point';
 import { readFile, writeFile } from 'fs/promises';
 const CAPITALIZED_VARIABLE_REGEXP = /\s*[A-Z]{2,}/; // start
 const COPY_SIGN_SPACE_REGEXP = /(\s*\w):\s/; // start & middle
-const BACKWARD_CURLY_BRACE_COMMA_SPACE = /\}(\,)/; // start & middle
+const BACKWARD_CURLY_BRACE_COMMA_SPACE = /\}(,)/; // start & middle
 
 //const PATH = 'lib/motion/config/generate.ts';
 const WRITE_TO = 'lib/motion-config-constants/core.ts';

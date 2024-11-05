@@ -1,4 +1,4 @@
-export const PACKAGE_JSON_NAME = 'package.json' as const;
+export const PACKAGE_JSON_NAME = 'package.json';
 export const QUOTE_RX = /['"]/;
 export const QUOTE_FWD_SLASH_RX = /['"/]/;
 
