@@ -1,6 +1,6 @@
 import { I } from '@brysonandrew/icons-i';
 import { TICK_CIRCLE_ICON } from '@brysonandrew/icons-keys';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = { items: string[] };
@@ -14,7 +14,7 @@ export const TickList: FC<TProps> = ({ items }) => {
         >
           <I
             icon={TICK_CIRCLE_ICON}
-            className={clsx(
+            className={cx(
               'w-5 h-5 mt-2 shrink-0 text-current',
             )}
           />

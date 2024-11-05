@@ -7,7 +7,7 @@ import {
   IntersectionOptions,
   useInView,
 } from 'react-intersection-observer';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 
 export type TInViewChildrenProps = Omit<
@@ -41,7 +41,7 @@ export const InView = ({
     <motion.div
       ref={ref}
       style={style}
-      className={clsx('relative', classValue)}
+      className={cx('relative', classValue)}
       {...props}
     >
       {children(rest)}

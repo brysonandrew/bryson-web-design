@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { TLayoutComponentProps } from '@brysonandrew/app/config/types/layout';
 import {
@@ -63,7 +63,7 @@ export const withLight = (config: TConfig) => {
       } as T),
       ...style,
     },
-    className: clsx('fill opacity-group-idle', classValue),
+    className: cx('fill opacity-group-idle', classValue),
     ...props,
   });
 
@@ -82,7 +82,7 @@ export const withLight = (config: TConfig) => {
       } as T),
       ...style,
     },
-    className: clsx('fill opacity-group-hover', classValue),
+    className: cx('fill opacity-group-hover', classValue),
     ...props,
   });
 
@@ -143,7 +143,7 @@ export const withLight = (config: TConfig) => {
   }: TGlowProps) => {
     return (
       <div
-        className={clsx('relative group', classValue)}
+        className={cx('relative group', classValue)}
         style={{ ...commonStyle, ...style }}
         {...props}
       >

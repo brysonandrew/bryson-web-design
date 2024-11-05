@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { resolveUrlId } from '@brysonandrew/utils-attributes/resolveUrlId';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom';
 import {
   TColorStops,
@@ -41,7 +41,7 @@ export const Placeholder: FC<TPlaceholderProps> = ({
       {...props}
     >
       <div
-        className={clsx(classValue)}
+        className={cx(classValue)}
         style={{
           width: 24,
           height: 24,

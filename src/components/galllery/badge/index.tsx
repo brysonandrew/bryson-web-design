@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TPricingKey } from '@brysonandrew/copy';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { Text } from './Text';
@@ -23,7 +23,7 @@ export const Badge: FC<TPricingProps> = ({
   const { COLOR, CLASS, BORDER_RADIUS } = useApp<TStyle>();
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'relative center p-4 overflow-hidden',
         CLASS.GRADIENT[type],
       )}

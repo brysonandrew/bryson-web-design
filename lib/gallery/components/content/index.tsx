@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { resolveTitleLayoutId } from '@brysonandrew/gallery/config/constants';
 import { motion } from 'framer-motion';
 import {
@@ -77,7 +77,7 @@ export const Content = <T extends string>({
       key={slug}
       layoutId={resolveTitleLayoutId(slug)}
       layout
-      className={clsx(
+      className={cx(
         'relative w-shell pl-6 pr-4 sm:pl-8 sm:pr-6',
         classValue,
       )}

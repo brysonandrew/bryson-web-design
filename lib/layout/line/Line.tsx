@@ -1,15 +1,15 @@
-import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
-import clsx, { ClassValue } from 'clsx';
+import { TClassValue, TClassValueProps } from '@brysonandrew/config-types/dom/main';
+import { cx } from 'class-variance-authority';
 import type { FC, PropsWithChildren } from 'react';
 
 export const Line: FC<
   PropsWithChildren<
-    TClassValueProps & { color?: ClassValue }
+    TClassValueProps & { color?: TClassValue }
   >
 > = ({ color = 'border-gray-3', classValue }) => {
   return (
     <hr
-      className={clsx('w-full border', color, classValue)}
+      className={cx('w-full border', color, classValue)}
     />
   );
 };

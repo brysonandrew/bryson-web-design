@@ -1,6 +1,6 @@
 import { PRESENCE_OPACITY } from '@brysonandrew/motion-config-constants';
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 
@@ -12,7 +12,7 @@ const Root = styled(motion.div)`
 export const Background: FC = () => {
   return (
     <Root
-      className={clsx(
+      className={cx(
         'absolute inset-0 dark:bg-black-04 bg-white-04',
       )}
       {...PRESENCE_OPACITY}

@@ -1,6 +1,6 @@
 import { TCvSection } from '@brysonandrew/cv/config/types';
 import { formateShortDate } from '@brysonandrew/utils-format';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC } from 'react';
 import { Fragment } from 'react';
 import { Margin } from '../Margin';
@@ -16,7 +16,7 @@ export const Item: FC<TProps> = ({
   <Fragment>
     <li className='relative center py-8'>
       <div
-        className={clsx(
+        className={cx(
           'fill',
           index % 2 === 0 ? 'bg-black-1' : 'bg-black-2',
         )}

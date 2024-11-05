@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TBackC } from '@brysonandrew/layout-back/config/types';
 import { BackFill } from '@brysonandrew/layout-back/Fill';
 
@@ -9,7 +9,7 @@ export const BackBlur: TBackC = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'backdrop-blur-sm',
         classValue,
       )}

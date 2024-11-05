@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-random",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Utils random library",
   "main": "./index.ts",
   "module": "./index.ts",

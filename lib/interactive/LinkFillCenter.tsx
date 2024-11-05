@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC } from 'react';
 import { Link as _Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -19,7 +19,7 @@ export const LinkFillCenter: FC<TLinkFillCenterProps> = ({
   return (
     <Link
       to={to}
-      className={clsx('fill center cursor-pointer')}
+      className={cx('fill center cursor-pointer')}
       {...resolveAccessibilityTitles(title)}
       {...props}
     >

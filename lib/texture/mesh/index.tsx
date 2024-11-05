@@ -1,5 +1,5 @@
 import { FC, useMemo } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TDivProps } from '@brysonandrew/config-types';
 import { resolveGradient } from '@brysonandrew/color-gradient';
 import { resolveVarCss } from '@brysonandrew/color-base';
@@ -28,7 +28,7 @@ export const TextureMesh: FC<TProps> = ({
     });
     return result;
   }, []);
-  const className = clsx('fill', classValue);
+  const className = cx('fill', classValue);
 
   return (
     <div
@@ -40,6 +40,8 @@ export const TextureMesh: FC<TProps> = ({
     </div>
   );
 };
+
+
 
 
 

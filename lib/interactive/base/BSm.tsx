@@ -3,7 +3,7 @@ import {
   TInteractiveProps,
 } from '@brysonandrew/config-types';
 import { I } from '@brysonandrew/icons-i';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { B } from './B';
 
@@ -22,7 +22,7 @@ export const BSm: FC<TProps> = ({
 }) => {
   return (
     <B
-      classValue={clsx(
+      classValue={cx(
         isActive && 'interactive-active',
         classValue,
       )}

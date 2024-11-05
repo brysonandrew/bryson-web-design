@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { Left } from '../buttons/Left';
 import { Right } from '../buttons/Right';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { Circle } from '@brysonandrew/interactive/circle';
 
 const BASE_NAV_BUTTON_CLASS =
@@ -15,7 +15,7 @@ export const Arrows: FC<TProps> = (props) => {
     <>
       <Circle
         position='absolute'
-        classValue={clsx(
+        classValue={cx(
           BASE_NAV_BUTTON_CLASS,
           'left-4 md:left-6',
         )}
@@ -24,7 +24,7 @@ export const Arrows: FC<TProps> = (props) => {
       </Circle>
       <Circle 
         position='absolute'
-        classValue={clsx(
+        classValue={cx(
           BASE_NAV_BUTTON_CLASS,
           'right-4 md:right-6',
         )}

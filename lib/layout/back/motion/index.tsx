@@ -1,6 +1,6 @@
 import { TBackMotionC } from '@brysonandrew/layout-back/config/types';
 import { BlankMotion } from '@brysonandrew/layout-blank';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 export const BackMotion: TBackMotionC = ({
   dark,
@@ -15,13 +15,13 @@ export const BackMotion: TBackMotionC = ({
   } = props;
   return (
     <BlankMotion
-      classValue={clsx(
+      classValue={cx(
         'bg-white',
         positionClassValue,
         classValue,
       )}
       dark={{
-        className: clsx(
+        className: cx(
           'bg-black',
           positionClassValue,
           darkClassValue,

@@ -24,6 +24,6 @@
     "**/*.ts",
     "**/*.js",
     "**/*.jsx",
-    "**/*.tsx"],
+    "**/*.tsx", "config/vite/index.ts"],
   "extends": "./tsconfig.paths.json"
 }

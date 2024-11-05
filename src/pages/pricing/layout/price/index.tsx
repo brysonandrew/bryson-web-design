@@ -2,7 +2,7 @@ import {
   formatNZLongDate,
   nToMoney,
 } from '@brysonandrew/utils-format';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Banner } from './Banner';
 import { Cost } from './Cost';
@@ -58,7 +58,7 @@ export const Price: FC<TPriceProps> = ({ price, discount }) => {
         )}
         <div className='relative row gap-2'>
           <Cost
-            classValue={clsx(!isExpired && 'line-through')}
+            classValue={cx(!isExpired && 'line-through')}
           >
             {textPrice}
           </Cost>

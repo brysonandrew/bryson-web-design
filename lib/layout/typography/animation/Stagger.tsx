@@ -1,7 +1,7 @@
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { TChildrenStrings } from '@brysonandrew/config-types/dom/main';
 import { resolveCompositeKey } from '@brysonandrew/utils-key';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { ShiftUp } from './ShiftUp';
 
@@ -26,7 +26,7 @@ export const Stagger: FC<TProps> = ({
       {children.map((char, ci) => (
         <ShiftUp
           key={resolveCompositeKey(char, ci)}
-          classValue={clsx(classValue)}
+          classValue={cx(classValue)}
           {...animation(prevCount + ci)}
           {...props}
         >

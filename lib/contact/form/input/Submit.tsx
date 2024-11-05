@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { useEffect, type FC, useRef } from 'react';
 import {
@@ -37,7 +37,7 @@ export const Submit: FC<TProps> = ({ isDisabled }) => {
   return (
     <motion.label
       ref={ref}
-      className={clsx(
+      className={cx(
         '_contact_submit group',
         isDisabled
           ? 'cursor-not-allowed'

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TElementProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TIconsSvgProps } from '@brysonandrew/svg-icon';
 
 type TProps = TElementProps & { Icon?: FC<TIconsSvgProps> };
@@ -15,7 +15,7 @@ export const WorkTitle: FC<TProps> = ({
       <div className="row gap-2">
         {Icon && <Icon />}
         <h2
-          className={clsx(
+          className={cx(
             'pointer-events-none',
             'text-lg text-gray-1 uppercase',
             classValue

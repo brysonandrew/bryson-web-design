@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
@@ -13,7 +13,7 @@ type TProps = {
 export const Tag: FC<TProps> = ({ children }) => {
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'absolute right-0 top-0 flex items-center pl-1.5 pr-2 pt-0.25 pb-0.5  bg-main z-10',
       )}
     >

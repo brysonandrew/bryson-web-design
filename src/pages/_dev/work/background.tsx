@@ -1,5 +1,5 @@
 import { useWorkState } from '@pages/_dev/work/context';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC } from 'react';
 
 export const WorkBackground: FC = () => {
@@ -7,7 +7,7 @@ export const WorkBackground: FC = () => {
 
   return (
     <div
-      className={clsx(
+      className={cx(
         'absolute -inset-0.5 rounded-md',
         isQ
           ? 'bg-black-2 group-hover:bg-black-5'

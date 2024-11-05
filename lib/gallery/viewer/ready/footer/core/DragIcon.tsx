@@ -1,5 +1,5 @@
 import { Drag } from '@brysonandrew/gallery-viewer/icons/Drag';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { useHover } from '@brysonandrew/motion-cursor';
@@ -20,7 +20,7 @@ export const DragIcon: FC<TProps> = ({
 
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'hidden absolute bottom-0 h-full cursor-grab active:cursor-grabbing md:flex',
         classValue,
       )}

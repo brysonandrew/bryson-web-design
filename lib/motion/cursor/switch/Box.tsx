@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ReactNode, type FC } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { useCursor } from '@brysonandrew/motion-cursor';
 import { useApp } from '@brysonandrew/app';
@@ -31,7 +31,7 @@ export const Box: FC<TProps> = ({
 
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'absolute top-1/2 left-1/2 px-3 group',
         classValue
       )}

@@ -7,7 +7,7 @@ import {
   TClassValueProps,
   TSvgProps,
 } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 export type TIconsSvgProps = Omit<
   TSvgProps,
@@ -35,7 +35,7 @@ export const IconsSvg: FC<
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className={clsx(
+      className={cx(
         className,
         classValue
       )}

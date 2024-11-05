@@ -1,9 +1,12 @@
-import { TUlProps } from '@brysonandrew/config-types';
+import {
+  TClassValue,
+  TUlProps,
+} from '@brysonandrew/config-types';
 import {
   ClipboardStateHandler,
   useClipboardState,
 } from '@brysonandrew/notifications';
-import clsx, { ClassValue } from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import ReactDom from 'react-dom';
 import { Item } from './Item';
@@ -20,7 +23,7 @@ export type TContactListItems = {
 };
 export type TContactListProps = TUlProps & {
   isCopy?: boolean;
-  itemClassValue?: ClassValue;
+  itemClassValue?: TClassValue;
 } & Partial<TContactListItems>;
 export const ContactList: FC<TContactListProps> = ({
   isCopy,
@@ -41,7 +44,7 @@ export const ContactList: FC<TContactListProps> = ({
 
   return (
     <>
-      <ul className={clsx('column-end', classValue)}>
+      <ul className={cx('column-end', classValue)}>
         {url && (
           <Item
             name='url'
@@ -75,7 +78,7 @@ export const ContactList: FC<TContactListProps> = ({
           key='CLIPBOARD_STATE_HANDLER'
           {...clipboardState}
         />,
-        document.body
+        document.body,
       )}
     </>
   );

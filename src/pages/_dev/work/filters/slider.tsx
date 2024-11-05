@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { TClassValueProps, TInputMotionProps, TInputProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 
 export type TFiltersSliderProps = TInputProps & TClassValueProps & {
@@ -17,7 +17,7 @@ export const FiltersSlider: FC<TFiltersSliderProps> = ({
   return (
     <input
       type="range"
-      className={clsx(
+      className={cx(
         'relative rounded-lg border border-gray',
         'appearance-none',
         'truncate',

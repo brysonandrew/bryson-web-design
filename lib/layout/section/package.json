@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-section",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Layout section library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,11 +21,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "@brysonandrew/layout-typography": "7.0.105",
-    "@brysonandrew/config-types": "7.0.105",
-    "clsx": "^1.2.1",
-    "@brysonandrew/space": "7.0.105"
+    "react": "^18.3.1",
+    "@brysonandrew/layout-typography": "7.0.107",
+    "@brysonandrew/config-types": "7.0.107",
+    "@brysonandrew/space": "7.0.107",
+    "class-variance-authority": "^0.7.0"
   },
   "exports": {
     ".": {

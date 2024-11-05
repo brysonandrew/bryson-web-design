@@ -1,6 +1,6 @@
 import { FadeUpPair } from '@brysonandrew/fade-edge/pairs/FadeUpPair';
 import { TDivProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = TDivProps;
@@ -10,7 +10,7 @@ export const Bottom: FC<TProps> = ({
   ...props
 }) => (
   <div
-    className={clsx(
+    className={cx(
       'fixed bottom-0 w-full z-0 pointer-events-none',
       classValue,
     )}

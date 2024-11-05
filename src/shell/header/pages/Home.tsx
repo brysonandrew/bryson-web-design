@@ -2,14 +2,14 @@ import { DURATION } from '@app/animation';
 import { I } from '@brysonandrew/icons-i';
 import { HOME_ICON } from '@brysonandrew/icons-keys/base';
 import { ThickLine } from '@brysonandrew/layout-line';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TPageLinkComponent } from './config';
 
 export const Home: TPageLinkComponent = ({ isActive }) => {
   return (
     <>
       <I
-        classValue={clsx(
+        classValue={cx(
           'inline-flex h-5 w-5 mb-1',
           isActive && 'title-main'
         )}

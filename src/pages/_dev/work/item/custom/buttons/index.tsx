@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ItemClear } from '@pages/_dev/work/item/custom/buttons/clear';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { ItemSelect } from '@pages/_dev/work/item/custom/buttons/select';
 
 type TProps = { isValue: boolean };
@@ -9,7 +9,7 @@ export const WorkItemEditButtons: FC<TProps> = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'relative hidden group-hover:flex gap-1.5'
       )}
     >

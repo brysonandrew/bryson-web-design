@@ -1,6 +1,6 @@
 import { TAnchorProps } from '@brysonandrew/config-types';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = TAnchorProps;
@@ -12,7 +12,7 @@ export const TextAnchor: FC<TProps> = ({
 }) => {
   return (
     <a
-      className={clsx(
+      className={cx(
         'whitespace-nowrap title-main',
         classValue,
       )}
