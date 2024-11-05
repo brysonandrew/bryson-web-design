@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/bryson-web-design",
-  "version": "7.0.2",
+  "version": "7.1.2",
   "description": "Building websites and apps",
   "main": "src/main.tsx",
   "types": "src/index.d.ts",
@@ -92,7 +92,7 @@
   "publishConfig": {
     "@brysonandrew:registry": "https://npm.pkg.github.com"
   },
-  "homepage": "brysona-web-design.co.nz",
+  "homepage": "brysona.dev",
   "workspaces": [
     "lib/app",
     "lib/boundary",
