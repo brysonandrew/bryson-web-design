@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-icon",
-  "version": "7.0.108",
+  "version": "7.0.109",
   "description": "Svg icon library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,8 +22,8 @@
   ],
   "peerDependencies": {
     "react": "^18.3.1",
-    "@brysonandrew/measure": "7.0.108",
-    "@brysonandrew/config-types": "7.0.108",
+    "@brysonandrew/measure": "7.0.109",
+    "@brysonandrew/config-types": "7.0.109",
     "class-variance-authority": "^0.7.0"
   },
   "exports": {

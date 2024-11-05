@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno",
-  "version": "7.0.108",
+  "version": "7.0.109",
   "description": "Uno library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/uno-preflights": "*",
-    "@brysonandrew/uno-presets": "*",
     "@brysonandrew/uno-rules": "*",
-    "@brysonandrew/uno-theme": "*",
+    "@brysonandrew/uno-presets": "*",
+    "@brysonandrew/uno-shortcuts": "*",
+    "@brysonandrew/uno-preflights": "*",
     "@brysonandrew/uno-spacing": "*",
-    "@brysonandrew/uno-shortcuts": "*"
+    "@brysonandrew/uno-theme": "*"
   },
   "exports": {
     ".": {
@@ -34,17 +34,12 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./preflights/reset": "./preflights/reset.ts",
-    "./preflights/resolveInput": "./preflights/resolveInput.ts",
-    "./preflights/scrollbar": "./preflights/scrollbar/index.ts",
-    "./preflights/scrollbar/manual": "./preflights/scrollbar/manual/index.ts",
-    "./preflights/scrollbar/manual/is": "./preflights/scrollbar/manual/is.ts",
+    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
+    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
     "./presets/resolveFonts": "./presets/resolveFonts.ts",
     "./presets/resolvePresets": "./presets/resolvePresets.ts",
     "./presets/resolveWebFont": "./presets/resolveWebFont.ts",
     "./presets/config/types": "./presets/config/types.ts",
-    "./rules/resolveCharGapRules": "./rules/resolveCharGapRules.ts",
-    "./rules/resolveOpacityRules": "./rules/resolveOpacityRules.ts",
     "./shortcuts/background": "./shortcuts/background.ts",
     "./shortcuts/flex": "./shortcuts/flex.ts",
     "./shortcuts/interactive": "./shortcuts/interactive.ts",
@@ -61,6 +56,11 @@
     "./shortcuts/neu/resolveNeuShadow": "./shortcuts/neu/resolveNeuShadow.ts",
     "./shortcuts/neu/types": "./shortcuts/neu/types.ts",
     "./shortcuts/neu/ranges": "./shortcuts/neu/ranges/index.ts",
-    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts"
+    "./shortcuts/neu/ranges/resolveRange": "./shortcuts/neu/ranges/resolveRange.ts",
+    "./preflights/reset": "./preflights/reset.ts",
+    "./preflights/resolveInput": "./preflights/resolveInput.ts",
+    "./preflights/scrollbar": "./preflights/scrollbar/index.ts",
+    "./preflights/scrollbar/manual": "./preflights/scrollbar/manual/index.ts",
+    "./preflights/scrollbar/manual/is": "./preflights/scrollbar/manual/is.ts"
   }
 }
