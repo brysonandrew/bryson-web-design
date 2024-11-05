@@ -1,4 +1,5 @@
 export * from './anti-camo';
+export * from './aura';
 export * from './blur/basic';
 export * from './config';
 export * from './displacement/config';
@@ -12,7 +13,6 @@ export * from './blur/motion/keys';
 export * from './config/constants';
 export * from './config/types/dom';
 export * from './config/types';
-export * from './aura';
 export * from './blur/motion/2';
 export * from './blur/motion/2/speed';
 export * from './blur/motion/2/transformer/x';

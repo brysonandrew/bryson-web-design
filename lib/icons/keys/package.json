@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-keys",
-  "version": "7.0.108",
+  "version": "7.0.109",
   "description": "Icons keys library",
   "main": "./index.ts",
   "module": "./index.ts",

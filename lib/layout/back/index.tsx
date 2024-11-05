@@ -31,7 +31,7 @@ export const Back: TBackC = ({ dark, ...props }) => {
 export * from './Blur';
 export * from './Fill';
 export * from './Screen';
+export * from './config/types';
 export * from './motion/Blur';
 export * from './motion/Fill';
 export * from './motion';
-export * from './config/types';

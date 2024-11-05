@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/viewport",
-  "version": "7.0.108",
+  "version": "7.0.109",
   "description": "Viewport library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,11 +22,11 @@
   ],
   "peerDependencies": {
     "react": "^18.3.1",
-    "@brysonandrew/utils-unit": "7.0.108",
-    "@brysonandrew/hooks-events": "7.0.108",
-    "@brysonandrew/hooks-window": "7.0.108",
+    "@brysonandrew/utils-unit": "7.0.109",
+    "@brysonandrew/hooks-events": "7.0.109",
+    "@brysonandrew/hooks-window": "7.0.109",
     "framer-motion": "^11.11.11",
-    "@brysonandrew/config-types": "7.0.108"
+    "@brysonandrew/config-types": "7.0.109"
   },
   "exports": {
     "./ViewportProvider": "./ViewportProvider.tsx",

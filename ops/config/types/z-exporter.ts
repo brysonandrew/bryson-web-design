@@ -1,5 +1,5 @@
 import type { OutputOptions } from 'rollup';
-import type { TypescriptPluginOptions } from 'rollup-plugin-ts';
+import type { RollupTypescriptPluginOptions } from '@rollup/plugin-typescript'
 export const DEFAULT_VERSION = '1.0.0';
 export const DEPS_KEY = 'dependencies';
 export const DEV_DEPS_KEY = 'devDependencies';
@@ -64,7 +64,7 @@ export type TOutputConfig = {
 export type TInput = {
   input: string;
   output: TOutputForRollup[];
-  options: Partial<TypescriptPluginOptions>;
+  options: Partial<RollupTypescriptPluginOptions>;
 };
 
 export type TOutputResult = Pick<
@@ -80,7 +80,7 @@ export type TOutputResult = Pick<
 
 export type TInputConfig = {
   output: TOutputResult;
-  options: Partial<TypescriptPluginOptions>;
+  options: Partial<RollupTypescriptPluginOptions>;
 };
 
 export type TResolveExportValueConfig = {
