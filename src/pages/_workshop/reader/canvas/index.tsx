@@ -19,7 +19,7 @@ export const VisualizerCanvas: FC = () => {
   const frameRequest = useRef<number | null>(null);
   const analyzerRef = useRef(context.createAnalyser());
   const render = useSpectogram2({
-    analyzer: analyzerRef.current as AnalyserNode,
+    analyzer: analyzerRef.current,
     values: null,
     values2: null,
     bufferLength: 2

@@ -6,7 +6,7 @@ import {
 import { writeExportsTarget } from '@ops/exporter/write/exports/target';
 
 export const writeExportsTargets = async (
-  targets: TTargets
+  targets: TTargets,
 ) => {
   const nextTargets: TTargets = [];
 
@@ -14,7 +14,7 @@ export const writeExportsTargets = async (
     for await (const target of targets) {
       const { indexRows } = await writeExportsTarget(
         target,
-        targets
+        targets,
       );
       const nextTarget: TTarget = {
         ...target,
@@ -24,7 +24,6 @@ export const writeExportsTargets = async (
     }
   } catch (error: TError) {
     throw Error(error);
-  } finally {
-    return nextTargets;
   }
+  return nextTargets;
 };

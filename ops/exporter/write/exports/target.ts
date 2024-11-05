@@ -8,7 +8,7 @@ import {
 
 export const writeExportsTarget = async (
   target: TTarget,
-  targets: TTargets
+  targets: TTargets,
 ) => {
   let indexRows: TStrRows = [];
   try {
@@ -30,7 +30,7 @@ export const writeExportsTarget = async (
     if (subWorkspaces.length > 0) {
       subWorkspaces.forEach((swsId) => {
         const sws = targets.find(
-          (v) => v.pkgPath === swsId
+          (v) => v.pkgPath === swsId,
         );
         if (typeof sws !== 'undefined' && sws.dir !== dir) {
           const dirToSws = `${sws.dir
@@ -63,7 +63,7 @@ export const writeExportsTarget = async (
       description: `${name
         .replace(/-/g, ' ')
         .replace(/\b[a-z]/, (v) =>
-          v.toUpperCase()
+          v.toUpperCase(),
         )} library`,
       version,
       peerDependencies,
@@ -73,13 +73,12 @@ export const writeExportsTarget = async (
     const pkgWithExportsStr = JSON.stringify(
       pkgWithExportsRecord,
       null,
-      2
+      2,
     );
 
     writeFile(pkgPath, pkgWithExportsStr);
   } catch (error) {
     console.error(error);
-  } finally {
-    return { indexRows };
   }
+  return { indexRows };
 };

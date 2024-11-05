@@ -7,11 +7,12 @@ export type TCursorProps = {
   children?: TChildren;
   onTap?(event: PointerEvent): void;
 };
-export const Cursor: FC<TCursorProps> = memo((props) => {
+const Cursor: FC<TCursorProps> = memo((props) => {
   const { scroll } = useScrollContext();
   return <CursorBase scroll={scroll} {...props} />;
 });
-
+Cursor.displayName = 'Cursor';
+export { Cursor };
 export * from './base';
 export * from './cursor-provider';
 export * from './config/constants';

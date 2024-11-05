@@ -6,7 +6,7 @@ import {
 
 type TInternalKey<K extends string> = `_${K}_`;
 export const wrapInternal = <V extends string>(v: V) =>
-  `_${v}_` as TInternalKey<V>;
+  `_${v}_` as const;
 export const scopeRecord = <
   P extends string,
   T extends TStringOrStringsRecord = TStringOrStringsRecord,
@@ -18,8 +18,9 @@ export const scopeRecord = <
   const prevKeysUnions = prevKeys.join('|');
   const prefixValuesRx = new RegExp(prevKeysUnions, 'g');
   type TPrefix = TInternalKey<typeof prefix>;
+  const wrappedPrefix = wrapInternal<P>(prefix);
   return prefixKeys<TPrefix, T>({
-    prefix: wrapInternal<P>(prefix),
+    prefix: wrappedPrefix,
     record,
     prefixValuesRx,
   });

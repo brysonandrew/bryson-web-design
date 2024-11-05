@@ -127,9 +127,8 @@ self.addEventListener('fetch', (event) => {
       if (cachedResponse) {
         response = cachedResponse;
       }
-    } finally {
-      return response;
     }
+    return response;
   };
 
   const staleWhileRevalidate = async () => {

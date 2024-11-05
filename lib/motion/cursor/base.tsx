@@ -17,7 +17,7 @@ export type TCursorProps = {
   onTap?(event: PointerEvent): void;
   scroll: TScrollContext['scroll'];
 };
-export const CursorBase: FC<TCursorProps> = memo(
+const CursorBase: FC<TCursorProps> = memo(
   ({ scroll, onTap, children }) => {
     const {
       hoverKey,
@@ -30,8 +30,7 @@ export const CursorBase: FC<TCursorProps> = memo(
     const { timeoutRef } = useTimeoutRef();
     const isOnscreenRef = useRef(false);
     const handler = useCursorOffset(offsetRef);
-    const cursorKey =
-      resolveCursorKeyFromHover(hoverKey);
+    const cursorKey = resolveCursorKeyFromHover(hoverKey);
 
     const onPointerEnter = () => {
       isOnscreenRef.current = true;
@@ -62,19 +61,23 @@ export const CursorBase: FC<TCursorProps> = memo(
 
     useEventListener<'pointermove'>(
       'pointermove',
-      cursorKey === 'none' ? NOOP : handleMove
+      cursorKey === 'none' ? NOOP : handleMove,
     );
 
     useViewportPresence({ onPointerEnter, onPointerLeave });
 
     useEventListener(
       children && onTap ? 'pointerdown' : null,
-      onTap ?? NOOP
+      onTap ?? NOOP,
     );
 
     return <>{isCursorReady && <Switch />}</>;
-  }
+  },
 );
+
+CursorBase.displayName = 'CursorBase';
+
+export { CursorBase };
 
 export * from './cursor-provider';
 export * from './config/constants';

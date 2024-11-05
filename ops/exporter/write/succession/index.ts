@@ -18,10 +18,9 @@ export const succession = async (targets: TTargets) => {
     const GLOBS = ['lib/**/*.(ts|tsx)'];
     const paths = await glob(GLOBS, { cwd });
     let updates: TWuRecord = {};
-    updates = updates;
     const WS_UNION_RX_KEY = targets
       .filter(
-        ({ subWorkspaces }) => subWorkspaces.length > 0
+        ({ subWorkspaces }) => subWorkspaces.length > 0,
       )
       .map(({ name }) => name)
       .join('|');
@@ -58,7 +57,7 @@ export const succession = async (targets: TTargets) => {
 
     const INTERNAL_DEPENDENCY_PREFIX_RX = new RegExp(
       INTERNAL_DEPENDENCY_PREFIX_KEY,
-      'gs'
+      'gs',
     );
 
     const IMPORT_RX = new RegExp(`import`, 'g');
@@ -66,19 +65,19 @@ export const succession = async (targets: TTargets) => {
     const FROM_RX = new RegExp(FROM_RX_KEY);
     const INTERNAL_LIB_RX = new RegExp(
       INTERNAL_LIB_RX_KEY,
-      'g'
+      'g',
     );
     const WS_UNION_RX = new RegExp(`(${WS_UNION_RX_KEY})`);
     const WITH_IMPORTS_RX = new RegExp(
       WITH_IMPORTS_RX_KEY,
-      'g'
+      'g',
     );
     const COMMA_NL_RX = new RegExp(/,\n/, 'g');
 
     let nextWriteUpdates: TWuRecord = {};
 
     for await (const filePath of paths) {
-  //    console.log(filePath);
+      //    console.log(filePath);
       let file = await readFile(filePath, {
         encoding: 'utf-8',
       });
@@ -111,7 +110,7 @@ export const succession = async (targets: TTargets) => {
 
         const _wsName = libPath.replace(
           new RegExp(`.*?${INTERNAL_LIB_RX_KEY}\\/.*`),
-          'lib/$1'
+          'lib/$1',
         );
         // console.log(_wsName);
         imports = imports.replace(IMPORT_RX, '');
@@ -136,7 +135,7 @@ export const succession = async (targets: TTargets) => {
 
         if (INTERNAL_LIB_RX.test(libPath)) {
           const y0 = () => {
-           // console.log(`import of ${imports} from ${lib}`);
+            // console.log(`import of ${imports} from ${lib}`);
 
             const [appName, _wsName, subWsName] =
               lib.split('/');
@@ -147,7 +146,7 @@ export const succession = async (targets: TTargets) => {
                 wsName,
                 subWsName,
               ].join('-');
-          //    console.log('subWsName 3' + possibleSubWs);
+              //    console.log('subWsName 3' + possibleSubWs);
 
               return resolvePossibleWs({
                 lib,
@@ -195,7 +194,7 @@ export const succession = async (targets: TTargets) => {
               subWsName,
               subWsName1,
             ].join('/');
-         //   console.log('subWsName 2' + subWsName);
+            //   console.log('subWsName 2' + subWsName);
             if (subWsName && !/[A-Z]/.test(subWsName)) {
               const possibleSubWs = [
                 wsName,
@@ -242,11 +241,11 @@ export const succession = async (targets: TTargets) => {
           const ws = targets.find(
             (v) =>
               v.workspace === _wsName &&
-              v.subWorkspaces.length > 0
+              v.subWorkspaces.length > 0,
           );
 
           if (ws) {
-       //     console.log('WS ', ws.name, libPath, imports);
+            //     console.log('WS ', ws.name, libPath, imports);
             // const xs = file.match(prefix) ?? [];
             // const x = xs[index];
             // imports = x?.split(/[{}]/g) ?? [];
@@ -264,7 +263,7 @@ export const succession = async (targets: TTargets) => {
 
               imports.split(',').forEach((v) => {
                 const rx = new RegExp(
-                  `export (const|type) ${v}[\\s,\\n]`
+                  `export (const|type) ${v}[\\s,\\n]`,
                 );
 
                 const matches = wsPathFile.match(rx);
@@ -275,24 +274,19 @@ export const succession = async (targets: TTargets) => {
                   ws.subWorkspaces.forEach((swsPkgPath) => {
                     const swsId = swsPkgPath.replace(
                       `/${PACKAGE_JSON_NAME}`,
-                      ''
+                      '',
                     );
                     // console.log(wsPath, swsId);
                     if (wsPath.includes(swsId)) {
                       const sws = targets.find(
-                        (v) => v.workspace === swsId
+                        (v) => v.workspace === swsId,
                       );
 
                       if (!sws) return;
                       let prev = libPath.replace(
                         /[;'"]/g,
-                        ''
+                        '',
                       );
-                      prev = prev;
-
-                      // [appName, wsName].join(
-                      //   '/'
-                      // );
                       const next = [
                         INTERNAL_NAME,
                         sws.name,
@@ -310,12 +304,12 @@ export const succession = async (targets: TTargets) => {
 
                       prev = prevParts
                         .filter((_, i) =>
-                          Boolean(nextParts[i])
+                          Boolean(nextParts[i]),
                         )
                         .map((v, i) =>
                           i === 0
                             ? v
-                            : `${prevDelimiters[i] ?? '/'}${v}`
+                            : `${prevDelimiters[i] ?? '/'}${v}`,
                         )
                         .join('');
 
@@ -346,12 +340,12 @@ export const succession = async (targets: TTargets) => {
       updates = { ...updates, ...nextWriteUpdates };
     }
     console.log(
-      '██████████████▓▒░ 🧨 ░▒ END ▓▒░ 🧨 ░▒██████████████'
+      '██████████████▓▒░ 🧨 ░▒ END ▓▒░ 🧨 ░▒██████████████',
     );
     // console.log(updates);
     // console.log(INTERNAL_DEPENDENCY_PREFIX_RX);
     console.log(
-      faint(`${paths.length} paths found in ${GLOBS}`)
+      faint(`${paths.length} paths found in ${GLOBS}`),
     );
 
     const entries = Object.entries(updates);
@@ -362,7 +356,7 @@ export const succession = async (targets: TTargets) => {
       //   console.log(key);
       const [path, nextFile, reason] = writeUpdate;
       //  console.log(nextFile);
-    await writeFile(path, nextFile);
+      await writeFile(path, nextFile);
       //   console.log('----');
       console.log(path);
       console.log(reason);

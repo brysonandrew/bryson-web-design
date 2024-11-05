@@ -22,7 +22,7 @@ export type TRgbs = TRgb[];
 export type TRgba<O extends TDigit> =
   `${TRgb}${TRgbaDelimiter}0.${O}`;
 
-export type TColorValue = string | TRgbaValue | TRgbValue;
+export type TColorValue = string | TRgbaValue  ;
 export type TRgbaValue<O extends number = number> =
   O extends TDigit ? `rgba(${TRgba<O>})` : TRgbValue;
 

@@ -13,7 +13,7 @@ export const valueToNamePath = <
   const parent = pathParts.reduce(
     (result, key) => result[key],
     partial
-  ) as T;
+  );
   if (isString(prop) && isValidKey(prop, parent)) {
     parent[prop] = nextValue;
   }

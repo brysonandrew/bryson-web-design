@@ -148,7 +148,7 @@ const resolveTargetPackageJson = ({
   packageJsonExport = null,
   depsReducer = null,
 }: TResolveTargetPackageJson) => ({
-  ...(Boolean(targetToName)
+  ...(targetToName
     ? {
         targetPackageJson: {
           ...mergeTargetPackageJson({

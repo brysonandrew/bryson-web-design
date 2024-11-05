@@ -29,9 +29,9 @@ export const findEntryPaths = (parentPath: string, exclude: string[] = []): TPat
 
 type TOpTailConfig = { fromDir: string; filePath: string };
 export const removeTail = ({ fromDir, filePath }: TOpTailConfig) =>
-  filePath.replace(new RegExp(`(?<=(\/${fromDir})).+`), "");
+  filePath.replace(new RegExp(`(?<=(/${fromDir})).+`), "");
 export const extractTail = ({ fromDir, filePath }: TOpTailConfig) =>
-  filePath.replace(new RegExp(`.+(?=${fromDir}\/)`), "");
+  filePath.replace(new RegExp(`.+(?=${fromDir}/)`), "");
 
 export const formatEntry = (entry: string) =>
   entry.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
