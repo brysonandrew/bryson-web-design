@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-load",
-  "version": "7.0.107",
+  "version": "7.0.108",
   "description": "Icons load library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,8 +21,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.107",
-    "@brysonandrew/icons-keys": "7.0.107",
+    "@brysonandrew/config-types": "7.0.108",
+    "@brysonandrew/icons-keys": "7.0.108",
     "@iconify/react": "*",
     "react": "^18.3.1"
   },

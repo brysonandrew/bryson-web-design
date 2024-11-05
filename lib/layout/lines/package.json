@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-lines",
-  "version": "7.0.107",
+  "version": "7.0.108",
   "description": "Layout lines library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.107",
+    "@brysonandrew/config-types": "7.0.108",
     "react": "^18.3.1",
     "framer-motion": "^11.11.11",
     "class-variance-authority": "^0.7.0"
@@ -34,9 +34,9 @@
     },
     "./types": "./types.ts",
     "./_line": "./_line/index.tsx",
+    "./vertical": "./vertical/index.tsx",
     "./horizontal": "./horizontal/index.tsx",
     "./horizontal/light": "./horizontal/light.tsx",
-    "./horizontal/shadow": "./horizontal/shadow.tsx",
-    "./vertical": "./vertical/index.tsx"
+    "./horizontal/shadow": "./horizontal/shadow.tsx"
   }
 }
