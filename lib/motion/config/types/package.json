@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-config-types",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Motion config types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/motion-config-constants": "7.0.105",
-    "framer-motion": "^11.2.4",
-    "@brysonandrew/config-types": "7.0.105"
+    "@brysonandrew/motion-config-constants": "7.0.107",
+    "framer-motion": "^11.11.11",
+    "@brysonandrew/config-types": "7.0.107"
   },
   "exports": {
     ".": {
@@ -34,11 +34,11 @@
     "./main": "./main.ts",
     "./scroll": "./scroll.ts",
     "./values": "./values.ts",
-    "./transition/transition": "./transition/transition.ts",
     "./presence/config": "./presence/config.ts",
     "./presence": "./presence/index.ts",
     "./presence/key": "./presence/key.ts",
     "./presence/value": "./presence/value.ts",
+    "./transition/transition": "./transition/transition.ts",
     "./transition/base": "./transition/base/index.ts",
     "./transition/base/key": "./transition/base/key.ts"
   }

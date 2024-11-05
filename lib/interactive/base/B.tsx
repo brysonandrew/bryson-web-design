@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { motion } from 'framer-motion';
 import { TButtonMotionProps } from '@brysonandrew/config-types';
@@ -16,7 +16,7 @@ export const B: FC<TBProps> = ({
   return (
     <motion.button
       type='button'
-      className={clsx(
+      className={cx(
         'interactive',
         look,
         shape,

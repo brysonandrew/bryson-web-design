@@ -1,14 +1,14 @@
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import type { FC } from "react";
+import { TClassValue } from '@brysonandrew/config-types';
+import { cx } from 'class-variance-authority';
+import type { FC } from 'react';
 
 type TProps = {
-  classValue?: ClassValue;
+  classValue?: TClassValue;
 };
 export const Plus: FC<TProps> = ({ classValue }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx(classValue)}
+    className={cx(classValue)}
     viewBox="0 0 24 24"
     width="24"
     height="24"

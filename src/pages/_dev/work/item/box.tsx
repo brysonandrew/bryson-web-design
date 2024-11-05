@@ -3,7 +3,7 @@ import {
   TDivProps,
   TPropsWithChildren,
 } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 type TProps = TDivProps & {
   isActive?: boolean;
@@ -19,7 +19,7 @@ export const WorkItemBox: FC<TProps> = ({
   const { classValue: backgroundClassValue } = background;
   return (
     <div
-      className={clsx(
+      className={cx(
         'row py-1 px-2',
         isActive ? 'text-blue' : 'text-gray',
         classValue
@@ -27,7 +27,7 @@ export const WorkItemBox: FC<TProps> = ({
       {...props}
     >
       <div
-        className={clsx(
+        className={cx(
           'absolute inset-0 border rounded-md',
           isActive
             ? 'border-gray-5 bg-black-4'

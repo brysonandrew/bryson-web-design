@@ -7,7 +7,7 @@ import {
   TCommonState,
   useWorkState,
 } from '@pages/_dev/work/context';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { WorkItemBox } from '@pages/_dev/work/item/box';
 import { WorkFiltersHourly } from '@pages/_dev/work/filters/hourly';
 
@@ -35,7 +35,7 @@ export const WorkFilters: FC<TProps> = ({ children }) => {
 
               return (
                 <label
-                  className={clsx('relative')}
+                  className={cx('relative')}
                   key={key}
                 >
                   <WorkItemBox
@@ -49,7 +49,7 @@ export const WorkFilters: FC<TProps> = ({ children }) => {
                       checked={isChecked}
                       type="checkbox"
                       onChange={onCommonStateChange}
-                      className={clsx(
+                      className={cx(
                         'opacity-0 absolute inset-0'
                       )}
                     />

@@ -1,7 +1,7 @@
 import { usePricing } from '@pages/index/pricing/PricingProvider';
 import { Normal } from './variants/Normal';
 import { Reversed } from './variants/Reversed';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, PropsWithChildren } from 'react';
 import { ADDITIONAL_CONTENT } from '@pages/pricing/process/website/config';
 
@@ -20,7 +20,7 @@ export const ImageAndText: FC<TProps> = ({ children }) => {
         return (
           <div
             key={`${index}`}
-            className={clsx(
+            className={cx(
               'relative w-full',
               !isContent && 'opacity-50',
             )}

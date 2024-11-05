@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { Sound } from './Sound';
 import { isMobile } from 'react-device-detect';
 import { FC } from 'react';
@@ -9,7 +9,7 @@ type TProps = TDivProps;
 export const Settings: FC<TProps> = (props) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'row-stretch z-10',
         !isMobile && 'gap-1'
       )}

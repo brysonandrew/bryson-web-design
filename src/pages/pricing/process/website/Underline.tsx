@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 const Root = styled.div``;
 
@@ -16,7 +16,7 @@ export const Underline: FC<TProps> = ({
 }) => {
   return (
     <Root
-      className={clsx(
+      className={cx(
         'absolute left-0 -bottom-2 w-full',
         height,
         color,
@@ -24,7 +24,7 @@ export const Underline: FC<TProps> = ({
     >
       {isDouble && (
         <div
-          className={clsx(
+          className={cx(
             'absolute h-px left-0 -bottom-1 w-full',
             color,
           )}

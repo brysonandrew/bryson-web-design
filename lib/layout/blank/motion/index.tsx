@@ -1,5 +1,5 @@
 import { TBlankMotionC } from '@brysonandrew/layout-blank/config/types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 
 export const BlankMotion: TBlankMotionC = ({
@@ -12,11 +12,11 @@ export const BlankMotion: TBlankMotionC = ({
   return (
     <>
       <motion.div
-        className={clsx('opacity-dark', darkClassValue)}
+        className={cx('opacity-dark', darkClassValue)}
         {...darkRest}
       />
       <motion.div
-        className={clsx('opacity-light', classValue)}
+        className={cx('opacity-light', classValue)}
         {...rest}
       />
     </>

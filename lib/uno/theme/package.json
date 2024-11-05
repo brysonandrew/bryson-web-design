@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-theme",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Uno theme library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/react": "^11.11.3"
+    "@emotion/react": "^11.13.3"
   },
   "exports": {
     ".": {

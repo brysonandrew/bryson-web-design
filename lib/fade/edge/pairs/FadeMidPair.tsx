@@ -1,16 +1,17 @@
+import { TClassValue } from '@brysonandrew/config-types';
 import {
   FadeFill,
   TFadeFillProps,
 } from '@brysonandrew/fade-core/FadeFill';
-import clsx, { ClassValue } from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 type TProps = Omit<TFadeFillProps, 'midColor'> & {
   Fader?: FC<TFadeFillProps>;
   darkMidColor?: string;
   lightMidColor?: string;
-  darkClass?: ClassValue;
-  lightClass?: ClassValue;
+  darkClass?: TClassValue;
+  lightClass?: TClassValue;
 };
 export const FadeMidPair: FC<TProps> = ({
   Fader = FadeFill,
@@ -24,13 +25,13 @@ export const FadeMidPair: FC<TProps> = ({
   <>
     <Fader
       key='FADE_MID_PAIR_DARK'
-      classValue={clsx(darkClass, classValue)}
+      classValue={cx(darkClass, classValue)}
       midColor={darkMidColor}
       {...props}
     />
     <Fader
       key='FADE_MID_PAIR_LIGHT'
-      classValue={clsx(lightClass, classValue)}
+      classValue={cx(lightClass, classValue)}
       midColor={lightMidColor}
       {...props}
     />

@@ -1,6 +1,6 @@
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { TPropsWithChildren } from '@brysonandrew/config-types/dom/main';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -18,7 +18,7 @@ export const FilterAnimate: FC<TFilterAnimateProps> = ({
         <>
           {children}
           <motion.div
-            className={clsx('fill', classValue)}
+            className={cx('fill', classValue)}
             {...props}
           >
             {children}

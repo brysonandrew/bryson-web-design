@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useApp } from '@brysonandrew/app';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TBackMotionC } from '@brysonandrew/layout-back/config/types';
 
 export const BackMotionBlur: TBackMotionC = ({
@@ -13,7 +13,7 @@ export const BackMotionBlur: TBackMotionC = ({
   return (
     <motion.div
       whileHover='hover'
-      className={clsx('backdrop-blur-sm', classValue)}
+      className={cx('backdrop-blur-sm', classValue)}
       style={{
         borderRadius: BORDER_RADIUS.XL,
       }}

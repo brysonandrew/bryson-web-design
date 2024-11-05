@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import {
   clamp,
   motion,
@@ -104,7 +104,7 @@ export const Zoom: FC<TProps> = ({
       {isCursorReady && (
         <>
           <motion.div
-            className={clsx(
+            className={cx(
               'absolute pointer-events-none z-10',
             )}
             {...rootProps}

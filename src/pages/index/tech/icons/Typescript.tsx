@@ -1,5 +1,5 @@
 import { TSvgProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { FC } from 'react';
 
 type TProps = TSvgProps;
@@ -12,7 +12,7 @@ export const Typescript: FC<TProps> = ({
     height='20px'
     fill='#007ACC'
     viewBox='0 0 256.000000 256.000000'
-    className={clsx(classValue)}
+    className={cx(classValue)}
     {...props}
   >
     <title>Typescript</title>

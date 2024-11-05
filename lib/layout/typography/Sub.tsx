@@ -1,11 +1,11 @@
-import type { ClassValue } from 'clsx';
-import clsx from 'clsx';
+import { TClassValue } from '@brysonandrew/config-types';
+import { cx } from 'class-variance-authority';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 import type { FC } from 'react';
 
 type TProps = HTMLMotionProps<'h4'> & {
-  classValue?: ClassValue;
+  classValue?: TClassValue;
 };
 export const Sub: FC<TProps> = ({
   classValue,
@@ -14,7 +14,7 @@ export const Sub: FC<TProps> = ({
   ...props
 }) => (
   <motion.h4
-    className={clsx(
+    className={cx(
       'relative top-0 left-0 text-secondary leading-none',
       classValue,
     )}

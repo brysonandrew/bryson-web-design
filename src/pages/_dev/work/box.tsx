@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { TDivProps } from '@brysonandrew/config-types';
 import { WorkTitle } from '@pages/_dev/work/title';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TIconsSvgProps } from '@brysonandrew/svg-icon';
 
 type TProps = TDivProps & {
@@ -19,7 +19,7 @@ export const WorkBox: FC<TProps> = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cx(
         'px-2 py-0.5 pb-3 rounded-xl border border-gray',
         classValue
       )}

@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TBackC } from '@brysonandrew/layout-back/config/types';
 import { Blank } from '@brysonandrew/layout-blank';
 
@@ -10,13 +10,13 @@ export const Back: TBackC = ({ dark, ...props }) => {
 
   return (
     <Blank
-      classValue={clsx(
+      classValue={cx(
         'bg-white',
         positionClassValue,
         classValue,
       )}
       dark={{
-        classValue: clsx(
+        classValue: cx(
           'bg-black',
           positionClassValue,
           darkClassValue,

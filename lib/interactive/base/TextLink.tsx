@@ -1,5 +1,5 @@
 import { TLinkProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ export const TextLink: FC<TProps> = ({
 }) => {
   return (
     <Link
-      className={clsx(
+      className={cx(
         'whitespace-nowrap text-light-blue',
         classValue,
       )}

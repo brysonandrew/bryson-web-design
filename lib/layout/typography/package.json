@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-typography",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Layout typography library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,17 +21,16 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@emotion/styled": "^11.11.0",
-    "clsx": "^1.2.1",
-    "framer-motion": "^11.2.4",
-    "react": "^18.2.0",
-    "@brysonandrew/config-types": "7.0.105",
-    "@brysonandrew/motion-config-constants": "7.0.105",
-    "@brysonandrew/utils-key": "7.0.105",
-    "@brysonandrew/app": "7.0.105",
-    "@brysonandrew/layout-line": "7.0.105",
-    "@brysonandrew/space": "7.0.105",
-    "@brysonandrew/in-view": "7.0.105"
+    "@brysonandrew/config-types": "7.0.107",
+    "class-variance-authority": "^0.7.0",
+    "framer-motion": "^11.11.11",
+    "react": "^18.3.1",
+    "@brysonandrew/motion-config-constants": "7.0.107",
+    "@brysonandrew/utils-key": "7.0.107",
+    "@brysonandrew/app": "7.0.107",
+    "@brysonandrew/layout-line": "7.0.107",
+    "@brysonandrew/space": "7.0.107",
+    "@brysonandrew/in-view": "7.0.107"
   },
   "exports": {
     "./Letter": "./Letter.tsx",

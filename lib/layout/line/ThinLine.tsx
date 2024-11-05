@@ -1,6 +1,6 @@
 import { useApp } from '@brysonandrew/app';
 import { THrMotionProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -15,7 +15,7 @@ export const ThinLine: FC<TProps> = ({
 
   return (
     <motion.hr
-      className={clsx('border w-full', classValue)}
+      className={cx('border w-full', classValue)}
       style={{ ...style, borderColor: COLOR.primary }}
       {...props}
     />

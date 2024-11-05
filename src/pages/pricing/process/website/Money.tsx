@@ -1,6 +1,6 @@
 import { TChildren, TClassValueProps } from '@brysonandrew/config-types/dom';
 import { nToMoney } from '@brysonandrew/utils-format';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 export type TMoneyProps = TClassValueProps & {
@@ -16,7 +16,7 @@ export const Money: FC<TMoneyProps> = ({
 }) => {
   return (
     <span
-      className={clsx(
+      className={cx(
         'relative  whitespace-nowrap',
         // classValue ?? '',
       )}

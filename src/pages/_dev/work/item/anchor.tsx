@@ -4,7 +4,7 @@ import { WorkItemLabel } from '@pages/_dev/work/item/label';
 import { useWorkState } from '@pages/_dev/work/context';
 import { WorkButton } from '@pages/_dev/work/button';
 import { TAnchorProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 
 type TProps = {
   isHover: boolean;
@@ -70,7 +70,7 @@ export const WorkItemAnchor: FC<TProps> = ({
         {params}
       </div>
       <div
-        className={clsx(
+        className={cx(
           'absolute right-0 top-1/2 -translate-y-1/2',
           isHover ? 'opacity-100' : 'opacity-10'
         )}

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { Picture } from '@brysonandrew/media/picture';
 import { useImageDimensions } from '@brysonandrew/measure/hooks/useImageDimensions';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
 import { TImgMotionProps } from '@brysonandrew/config-types/dom/motion';
@@ -77,7 +77,7 @@ export const BuildImage: FC<TProps> = (props) => {
   };
   return (
     <motion.li
-      className={clsx(
+      className={cx(
         'absolute',
         status === 'init' ? 'bg-teal' : 'bg-transparent',
         isInteractionDisabled && 'pointer-events-none'

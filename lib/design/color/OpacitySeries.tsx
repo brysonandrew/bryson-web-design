@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { TElementProps } from '@brysonandrew/config-types/dom';
 import { INDICIES } from '@brysonandrew/config-constants';
 import { useApp } from '@brysonandrew/app';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import {
   TGrayscaleKey,
   TBaseKey,
@@ -31,7 +31,7 @@ export const ColorOpacitySeries: FC<TProps> = ({
         {bgs.map((bg) => (
           <ul
             key={bg}
-            className={clsx(
+            className={cx(
               'grow row h-full uppercase',
               classValue,
             )}

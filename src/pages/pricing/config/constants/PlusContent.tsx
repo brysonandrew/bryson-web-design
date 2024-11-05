@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { I } from '@brysonandrew/icons-i';
 import { P2 } from '@brysonandrew/space/P2';
 import { P3 } from '@brysonandrew/space/P3';
@@ -16,7 +16,7 @@ export const PlusContent: FC = () => {
     <>
       <div className='relative row-start gap-2 w-full leading-7 py-0.5'>
         <span
-          className={clsx(
+          className={cx(
             'hidden lg:block absolute top-3.875 right-full h-2px w-11 -mr-0.5 bg-standard',
           )}
         />
@@ -35,7 +35,7 @@ export const PlusContent: FC = () => {
           Everything included in the{' '}
           <span className='inline-flex relative px-1.5 text-main-inverted'>
             <span
-              className={clsx(
+              className={cx(
                 'absolute inset-0.5 bg-standard',
               )}
               style={{ backgroundColor: COLOR.standard }}
@@ -51,7 +51,7 @@ export const PlusContent: FC = () => {
       <P_5 />
       <div className='center'>
         <I
-          className={clsx(
+          className={cx(
             'shrink-0 w-5.5 h-5.5 text-current',
           )}
           icon={PLUS_ICON}

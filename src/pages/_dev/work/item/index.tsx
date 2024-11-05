@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { TPropsWithChildren } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TInitIdItem } from '@pages/_dev/work/config/types';
 import { WorkItemAnchor } from '@pages/_dev/work/item/anchor';
 import {
@@ -31,7 +31,7 @@ export const WorkItem: FC<TWorkItemProps> = ({
   return (
     <li className="relative group">
       <div
-        className={clsx(
+        className={cx(
           'absolute -inset-1 -bottom-2 bg-black-3',
           input ? 'rounded-b-lg rounded-tr-lg' : ''
         )}

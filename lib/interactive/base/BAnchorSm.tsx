@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { TInteractiveProps } from '@brysonandrew/config-types';
 import { I } from '@brysonandrew/icons-i';
@@ -24,7 +24,7 @@ export const BAnchorSm: FC<TProps> = ({
 }) => {
   return (
     <BAnchor
-      classValue={clsx('relative', classValue)}
+      classValue={cx('relative', classValue)}
       shape={shape}
       look={look}
       {...props}

@@ -1,4 +1,4 @@
-import { ClassValue } from 'clsx';
+import { ClassValue } from 'class-variance-authority/dist/types';
 import { PropsWithChildren } from 'react';
 
 export type TError = any | unknown;
@@ -33,8 +33,10 @@ export type TChildrenPartialProps = Partial<TChildrenProps>;
 export type TChildrenString = { children: string };
 export type TChildrenStrings = { children: string[] };
 
+export type TClassValue = ClassValue;
+
 export type TClassValueProps = {
-  classValue?: ClassValue;
+  classValue?: TClassValue;
 };
 
 export type TTitleProps<T extends string = string> = {

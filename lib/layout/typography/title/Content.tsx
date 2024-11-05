@@ -3,7 +3,7 @@ import { MOTION_CONFIG } from '@brysonandrew/motion-config-constants';
 import { motion } from 'framer-motion';
 import { type FC } from 'react';
 import { TitleSpace } from '@brysonandrew/space/TitleSpace';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TChildrenString } from '@brysonandrew/config-types/dom';
 
 type TProps = TChildrenString;

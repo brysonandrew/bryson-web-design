@@ -3,7 +3,7 @@ import { TDivProps } from '@brysonandrew/config-types';
 import { FontItem } from '@brysonandrew/design/typography/font/item';
 import { Moon, Sun } from '@brysonandrew/interactive';
 import { Line } from '@brysonandrew/layout-line';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, Fragment } from 'react';
 
 type TProps = TDivProps & {
@@ -18,7 +18,7 @@ export const DesignFont: FC<TProps> = ({
   const { COLOR, FONTS } = useApp();
   return (
     <div
-      className={clsx(
+      className={cx(
         'row-space pl-2 text-4xl',
         classValue,
       )}

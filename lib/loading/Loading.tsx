@@ -2,7 +2,7 @@ import {
   TClassValueProps,
   TDivMotionProps,
 } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -20,7 +20,7 @@ export const Loading: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={clsx(
+      className={cx(
         'relative rounded-full shrink-0',
         classValue,
         sizeClassValue,

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { ThinLine } from './ThinLine';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import {
   PRESENCE_SCALE_X,
@@ -15,7 +15,7 @@ export const ThinLineGrow: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={clsx(classValue)}
+      className={cx(classValue)}
       {...PRESENCE_SCALE_X}
       {...{
         ...MOTION_CONFIG.transition,

@@ -7,7 +7,7 @@ import { TextAnchor } from '@brysonandrew/interactive';
 import { Copy } from '@brysonandrew/interactive/Copy';
 import { TClipboardState } from '@brysonandrew/notifications';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { OPEN_IN_NEW_ICON } from '@brysonandrew/icons-keys';
 
@@ -40,7 +40,7 @@ export const Item: FC<TProps> = ({
     </div>,
   );
   return (
-    <li className={clsx('row gap-1', classValue)}>
+    <li className={cx('row gap-1', classValue)}>
       <TextAnchor
         target='_top'
         href={href}

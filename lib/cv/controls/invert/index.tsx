@@ -1,5 +1,5 @@
 import { TStateEntry } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import type { ChangeEvent, FC } from 'react';
 
 const BUTTONS = [
@@ -27,7 +27,7 @@ export const CvControlsInvert: FC<TProps> = ({
           {BUTTONS.map(([title, value]) => (
             <li key={title}>
               <button
-                className={clsx('hover:text-white py-0.5 uppercase', invert === value ? 'text-white-5' : 'text-gray-5')}
+                className={cx('hover:text-white py-0.5 uppercase', invert === value ? 'text-white-5' : 'text-gray-5')}
                 onClick={() => setInvert(value)}
               >
                 {title} - {value}%

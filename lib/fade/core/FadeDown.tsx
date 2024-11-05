@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Fade, TFadeProps } from '.';
 
@@ -8,7 +8,7 @@ export const FadeDown: FC<TProps> = ({
   ...props
 }) => (
   <Fade
-    classValue={clsx('top-0 inset-x-0', classValue)}
+    classValue={cx('top-0 inset-x-0', classValue)}
     {...props}
   />
 );

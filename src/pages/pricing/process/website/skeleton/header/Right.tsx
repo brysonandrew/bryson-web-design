@@ -1,5 +1,5 @@
 import { I } from '@brysonandrew/icons-i';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, PropsWithChildren, useContext } from 'react';
 import { Context } from '../context';
 
@@ -22,7 +22,7 @@ export const Right: FC<PropsWithChildren> = ({
     <div className='relative row gap-4'>
       {children}
       {icon}
-      <div className={clsx('h-2 w-8 bg-main-inverted')} />
+      <div className={cx('h-2 w-8 bg-main-inverted')} />
     </div>
   );
 };

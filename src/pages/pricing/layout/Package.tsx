@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { End } from './End';
 import { Price, TPriceProps } from './price';
@@ -69,7 +69,7 @@ export const Package: FC<TPackageProps> = ({ title }) => {
           drop={4}
         >
           <div
-            className={clsx(
+            className={cx(
               'absolute -inset-0.5',
               classValue,
             )}

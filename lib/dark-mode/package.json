@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/dark-mode",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Dark mode library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,12 +21,12 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.2.0",
-    "@brysonandrew/utils-key": "7.0.105",
-    "@brysonandrew/hooks-dom": "7.0.105",
-    "@brysonandrew/motion-config-types": "7.0.105",
-    "@brysonandrew/config-types": "7.0.105",
-    "@brysonandrew/utils-function": "7.0.105"
+    "react": "^18.3.1",
+    "@brysonandrew/utils-key": "7.0.107",
+    "@brysonandrew/hooks-dom": "7.0.107",
+    "@brysonandrew/motion-config-types": "7.0.107",
+    "@brysonandrew/config-types": "7.0.107",
+    "@brysonandrew/utils-function": "7.0.107"
   },
   "exports": {
     "./DarkModeProvider": "./DarkModeProvider.tsx",

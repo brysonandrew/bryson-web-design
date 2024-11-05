@@ -3,7 +3,7 @@ import {
   TGradientDirection,
 } from '@brysonandrew/color-gradient';
 import { TDivProps } from '@brysonandrew/config-types';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 export type TFadeProps = TDivProps & {
@@ -25,7 +25,7 @@ export const Fade: FC<TFadeProps> = ({
   });
   return (
     <div
-      className={clsx(
+      className={cx(
         'absolute pointer-events-none',
         classValue
       )}

@@ -5,7 +5,7 @@ import {
 } from '@brysonandrew/config-types';
 import { resolveAccessibilityHrefTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityHrefTitles';
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 
 const Root = styled.a``;
@@ -26,7 +26,7 @@ export const BAnchorMotion: FC<TBAnchorMotionProps> = (props) => {
     <Root
       type='button'
       target={target}
-      className={clsx(
+      className={cx(
         'interactive',
         look,
         shape,

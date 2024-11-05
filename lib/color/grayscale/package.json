@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/color-grayscale",
-  "version": "7.0.105",
+  "version": "7.0.107",
   "description": "Color grayscale library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,7 +22,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-base": "7.0.105"
+    "@brysonandrew/color-base": "7.0.107"
   },
   "exports": {
     "./black": "./black.ts",

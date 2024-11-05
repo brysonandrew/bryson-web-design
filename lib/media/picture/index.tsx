@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import {
@@ -34,7 +34,7 @@ export const Picture: FC<TProps> = ({
       ))}
       <motion.img
         ref={imageRef}
-        className={clsx(classValue)}
+        className={cx(classValue)}
         src={src}
         alt={alt}
         width={width}

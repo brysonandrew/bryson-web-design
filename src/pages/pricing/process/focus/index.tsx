@@ -2,7 +2,7 @@ import { CUSTOM_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants'
 import { useCursor } from '@brysonandrew/motion-cursor';
 import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { TPart } from '@pages/pricing/process/website/config';
-import clsx from 'clsx';
+import { cx } from 'class-variance-authority';
 import { FC } from 'react';
 import { Circle } from './Circle';
 import { useApp } from '@brysonandrew/app';
@@ -32,7 +32,7 @@ export const Focus: FC<TProps> = ({ children }) => {
         />
       )}
       <Circle
-        classValue={clsx(
+        classValue={cx(
           'absolute right-full top-1/2 -translate-y-1/2 mr-2',
         )}
         isActive={isActive}

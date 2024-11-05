@@ -13,7 +13,6 @@ type TConfig = {
 };
 export const useForm = ({ element }: TConfig) => {
   const {
-    focusKey,
     status,
     isDisabled,
     onStatus,
