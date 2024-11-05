@@ -5,7 +5,6 @@
 
 
 export * from './i/config/types';
-export * from './load/usePreloadIcons';
 export * from './keys/base';
 export * from './keys/clipboard';
 export * from './keys/contact';
@@ -20,3 +19,4 @@ export * from './keys/shop';
 export * from './keys/square';
 export * from './keys/text';
 export * from './keys/config/types';
+export * from './load/usePreloadIcons';

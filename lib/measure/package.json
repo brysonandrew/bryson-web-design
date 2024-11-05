@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/measure",
-  "version": "7.0.107",
+  "version": "7.0.108",
   "description": "Measure library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.107",
+    "@brysonandrew/config-types": "7.0.108",
     "react": "^18.3.1"
   },
   "exports": {

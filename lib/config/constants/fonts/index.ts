@@ -21,9 +21,9 @@ export const FONT_SHARE_NAMES = [
   'General Sans',
 ] as const;
 
-export * from './google/categories';
-export * from './google/fonts';
-export * from './google/names';
 export * from './bunny/categories';
 export * from './bunny/fonts';
 export * from './bunny/names';
+export * from './google/categories';
+export * from './google/fonts';
+export * from './google/names';

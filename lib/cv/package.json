@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/cv",
-  "version": "7.0.107",
+  "version": "7.0.108",
   "description": "Cv library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,16 +22,16 @@
   ],
   "peerDependencies": {
     "react": "^18.3.1",
-    "@brysonandrew/gallery": "7.0.107",
-    "@brysonandrew/config-types": "7.0.107",
+    "@brysonandrew/gallery": "7.0.108",
+    "@brysonandrew/config-types": "7.0.108",
     "framer-motion": "^11.11.11",
-    "@brysonandrew/space": "7.0.107",
+    "@brysonandrew/space": "7.0.108",
+    "@brysonandrew/utils-format": "7.0.108",
     "class-variance-authority": "^0.7.0",
-    "@brysonandrew/contact": "7.0.107",
-    "@brysonandrew/interactive": "7.0.107",
-    "@brysonandrew/utils-format": "7.0.107",
-    "@brysonandrew/layout-typography": "7.0.107",
-    "@brysonandrew/contact-list": "7.0.107"
+    "@brysonandrew/layout-typography": "7.0.108",
+    "@brysonandrew/contact-list": "7.0.108",
+    "@brysonandrew/contact": "7.0.108",
+    "@brysonandrew/interactive": "7.0.108"
   },
   "exports": {
     "./CvProvider": "./CvProvider.tsx",
@@ -40,7 +40,6 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./controls": "./controls/index.tsx",
     "./config/constants": "./config/constants.ts",
     "./config/tech-icon-lookup": "./config/tech-icon-lookup.tsx",
     "./config/types": "./config/types.ts",
@@ -48,12 +47,13 @@
     "./page/Line": "./page/Line.tsx",
     "./page/Margin": "./page/Margin.tsx",
     "./page": "./page/index.tsx",
-    "./controls/invert": "./controls/invert/index.tsx",
-    "./controls/presets": "./controls/presets/index.tsx",
-    "./controls/print-instructions": "./controls/print-instructions/index.tsx",
+    "./controls": "./controls/index.tsx",
     "./page/experience/Item": "./page/experience/Item.tsx",
     "./page/experience": "./page/experience/index.tsx",
     "./page/header/Title": "./page/header/Title.tsx",
-    "./page/header": "./page/header/index.tsx"
+    "./page/header": "./page/header/index.tsx",
+    "./controls/invert": "./controls/invert/index.tsx",
+    "./controls/presets": "./controls/presets/index.tsx",
+    "./controls/print-instructions": "./controls/print-instructions/index.tsx"
   }
 }
