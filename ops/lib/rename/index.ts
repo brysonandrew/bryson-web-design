@@ -1,34 +1,30 @@
-import { inverse, green, red } from '@ops/lib/eraser';
-import { deleteEntries } from '@ops/lib/eraser';
 import glob from 'fast-glob';
+import { inverse, green, red } from './display';
+import { renameEntries } from './entries';
 
-const TASK_TITLE = 'Clean task';
-
-const PATTERNS = [
-  'package-lock.json',
-  'yarn.lock',
-  'node_modules',
-  'dist',
-];
+const TASK_TITLE = 'Rename task';
+const PATTERNS = ['src/**/*.tsx'];
 
 async function* fire(): AsyncGenerator<any> {
   let i = 0;
   while (true) {
     if (PATTERNS[i]) {
-      const files = await glob(PATTERNS[i], {
+      const filePaths = await glob(PATTERNS[i], {
         onlyFiles: false,
         dot: true,
+        ignore: ['node_modules'],
       });
-      yield files;
+      yield filePaths;
       i++;
     } else {
       return;
     }
   }
 }
+
 const cleanGenerator = fire();
 
-export const eraser = async () => {
+export const go = async () => {
   const run = async () => {
     const next: IteratorResult<string[], void> =
       (await cleanGenerator.next()) ?? null;
@@ -44,14 +40,12 @@ export const eraser = async () => {
       process.exit();
     } else {
       console.log(inverse(`Using pattern: ${next.value}`));
-      await deleteEntries(next.value ?? [], run);
+      console.log(next);
+
+      await renameEntries(next.value ?? [], run);
+      run();
     }
   };
   await run();
 };
-
-eraser();
-
-export * from './display';
-export * from './delete/entries';
-export * from './delete/entry';
+go();
