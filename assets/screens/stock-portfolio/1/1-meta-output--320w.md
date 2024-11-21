@@ -10,5 +10,5 @@
   "hasProfile": false,
   "hasAlpha": false,
   "premultiplied": false,
-  "size": 13523
+  "size": 13494
 }
