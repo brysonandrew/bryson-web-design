@@ -10,6 +10,10 @@ export const FRAMER_MOTION = {
   title: 'Framer Motion',
   href: 'https://www.framer.com/motion/',
 };
+export const TAILWIND_CSS = {
+  title: 'Tailwind CSS',
+  href: 'https://tailwindcss.com/',
+};
 export const NEXT_JS = {
   title: 'Next.js',
   href: 'https://nextjs.org/',

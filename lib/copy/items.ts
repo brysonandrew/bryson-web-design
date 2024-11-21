@@ -8,9 +8,29 @@ import {
   INVISION,
   STRIPE,
   REMOTION,
+  TAILWIND_CSS,
 } from './third-party';
 
 export const INIT_PROJECT_ITEMS = [
+  {
+    title: 'Take Shape',
+    description: 'Painting services portal',
+    pricing: 'select',
+    href: 'https://www.takeshapehome.com/',
+    time: new Date(2024, 11, 1),
+    tags: [
+      REACT,
+      TYPESCRIPT,
+      FRAMER_MOTION,
+      NEXT_JS,
+      TAILWIND_CSS,
+      FIGMA,
+    ],
+    paragraphs: [
+      'Converting Figma designs into React code.',
+      'Conditional forms',
+    ],
+  },
   {
     title: 'Repurpose',
     description: 'Video Editor',
@@ -21,8 +41,10 @@ export const INIT_PROJECT_ITEMS = [
       REACT,
       TYPESCRIPT,
       FRAMER_MOTION,
+      TAILWIND_CSS,
       NEXT_JS,
     ],
+    time: new Date(2024, 7, 15),
     paragraphs: [
       'Allow user to add text and images to an uploaded video.',
       'AI subtitles and video clip generation.',
@@ -204,7 +226,7 @@ export const COPY_TOTAL_YEARS = INIT_PROJECT_ITEMS.reduce(
     let years = 0;
     if ('time' in c) {
       years = new Date(
-        Date.now() - c.time.getMilliseconds()
+        Date.now() - c.time.getMilliseconds(),
       ).getFullYear();
       const nowYears = new Date(Date.now()).getFullYear();
       const thenYears = c.time.getFullYear();
@@ -216,7 +238,7 @@ export const COPY_TOTAL_YEARS = INIT_PROJECT_ITEMS.reduce(
     }
     return a;
   },
-  0
+  0,
 );
 
 export const KEYWORDS_AND_PHRASES =
