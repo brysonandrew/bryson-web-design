@@ -6,7 +6,7 @@ import {
   useContext,
   useState,
 } from 'react';
-import { useLocalStorage } from '@brysonandrew/hooks-dom/useLocalStorage';
+import { useLocalStorage } from '@brysonandrew/hooks-dom/local-storage';
 import { NOOP } from '@brysonandrew/utils-function';
 import {
   HOURLY_DEFAULT,

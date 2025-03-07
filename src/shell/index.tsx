@@ -13,6 +13,7 @@ export const Shell: FC = withProviders(() => {
   const { BackScreen, FadeV } = useApp();
   return (
     <Global>
+    
       <BackScreen />
       <P12Y />
       <Outlet />
