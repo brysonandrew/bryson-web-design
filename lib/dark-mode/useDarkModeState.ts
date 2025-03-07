@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { resolveKeyLocalStorage } from '@brysonandrew/utils-key';
 import pkg from './package.json';
-import { useLocalStorage } from '@brysonandrew/hooks-dom/useLocalStorage';
+import { useLocalStorage } from '@brysonandrew/hooks-dom/local-storage';
 import { TUseDarkMode } from '@brysonandrew/dark-mode/config/types';
 
 export const useDarkModeState = (
