@@ -10,7 +10,7 @@ export const withStyle =
     const { style: baseStyle, ...restBaseProps } =
       baseProps;
 
-    return C ? (
+    const render = C ? (
       <C
         {...props}
         style={{ ...style, ...baseStyle }}
@@ -18,4 +18,6 @@ export const withStyle =
         {...restBaseProps}
       />
     ) : null;
+
+    return render;
   };

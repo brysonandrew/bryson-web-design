@@ -24,7 +24,7 @@ export const ViewerProvider: FC<
 > = ({ screensRecordJson, children }) => {
   const { PLACEHOLDER } = useApp();
   const screensRecord =
-    screensRecordJson as TScreensRecord;
+    screensRecordJson;
   const [isTransitioningGallery, setTransitioningGallery] =
     useState(false);
   const onDrag = setTransitioningGallery;

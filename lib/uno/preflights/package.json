@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/uno-preflights",
-  "version": "7.0.107",
+  "version": "7.0.109",
   "description": "Uno preflights library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,7 +22,7 @@
   ],
   "peerDependencies": {
     "unocss": "^0.64.0",
-    "@brysonandrew/utils-box": "7.0.107"
+    "@brysonandrew/utils-box": "7.0.109"
   },
   "exports": {
     ".": {

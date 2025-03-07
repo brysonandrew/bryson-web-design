@@ -1,11 +1,5 @@
 
-export * from './clip-path/ClipWrap';
-export * from './clip-path/shapes/circle';
 export * from './dimensionless/dimensionless';
-export * from './icon/160';
-export * from './icon/24';
-export * from './icon/28';
-export * from './icon/40';
 export * from './filter/anti-camo';
 export * from './filter/aura';
 export * from './filter/blur/basic';
@@ -25,3 +19,9 @@ export * from './filter/blur/motion/2';
 export * from './filter/blur/motion/2/speed';
 export * from './filter/blur/motion/2/transformer/x';
 export * from './filter/blur/motion/2/transformer/y';
+export * from './clip-path/ClipWrap';
+export * from './clip-path/shapes/circle';
+export * from './icon/160';
+export * from './icon/24';
+export * from './icon/28';
+export * from './icon/40';

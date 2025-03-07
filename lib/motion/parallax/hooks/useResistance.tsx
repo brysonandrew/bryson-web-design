@@ -10,11 +10,11 @@ export const useResistance = ({
   output,
   ...inputConfig
 }: TBaseConfig & TTransformRange) => {
-  const dispersion = useTransform(
+  const resistance = useTransform(
     scrollY,
     input(inputConfig),
     output,
   );
 
-  return dispersion;
+  return resistance;
 };

@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 type TConfig = any;
 export const useIpWebRtc = (config: TConfig) => {
   useEffect(() => {
-    window.RTCPeerConnection = window.RTCPeerConnection;
     const pc = new RTCPeerConnection({ iceServers: [] });
     pc.createDataChannel(''); //create a bogus data channel
     pc.createOffer(pc.setLocalDescription.bind(pc), NOOP); // create offer and set local description

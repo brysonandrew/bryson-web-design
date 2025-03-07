@@ -2,6 +2,8 @@ import { inverse, green, red } from '@ops/lib/eraser';
 import { deleteEntries } from '@ops/lib/eraser';
 import glob from 'fast-glob';
 
+const TASK_TITLE = 'Clean task';
+
 const PATTERNS = [
   'package-lock.json',
   'yarn.lock',
@@ -31,12 +33,14 @@ export const eraser = async () => {
     const next: IteratorResult<string[], void> =
       (await cleanGenerator.next()) ?? null;
     if (!next) {
-      console.log(red('Clean task failed'));
-      cleanGenerator.throw('Clean task failed');
+      const errorMessage = `${TASK_TITLE} failed`;
+      console.log(red(errorMessage));
+      cleanGenerator.throw(errorMessage);
     }
     if (next.done) {
-      console.log(green('Clean task done'));
-      cleanGenerator.return('Clean task complete');
+      const doneMessage = `${TASK_TITLE} done`;
+      console.log(green(doneMessage));
+      cleanGenerator.return(doneMessage);
       process.exit();
     } else {
       console.log(inverse(`Using pattern: ${next.value}`));
@@ -45,6 +49,7 @@ export const eraser = async () => {
   };
   await run();
 };
+
 eraser();
 
 export * from './display';

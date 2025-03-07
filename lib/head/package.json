@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/head",
-  "version": "7.0.107",
+  "version": "7.0.109",
   "description": "Head library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,11 +23,11 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-helmet-async": "^2.0.5",
-    "@brysonandrew/app": "7.0.107",
-    "@brysonandrew/color-base": "7.0.107",
-    "@brysonandrew/routes": "7.0.107",
+    "@brysonandrew/app": "7.0.109",
+    "@brysonandrew/color-base": "7.0.109",
+    "@brysonandrew/routes": "7.0.109",
     "react-router": "^6.27.0",
-    "@brysonandrew/dark-mode": "7.0.107"
+    "@brysonandrew/dark-mode": "7.0.109"
   },
   "exports": {
     "./HelmetProvider": "./HelmetProvider.tsx",

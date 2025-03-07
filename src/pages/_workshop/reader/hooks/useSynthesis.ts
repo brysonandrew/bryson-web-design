@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useEventListener } from '@brysonandrew/hooks-events/useEventListener';
+import { useEventListener } from '@brysonandrew/hooks-events/event-listener';
 import { TContext } from '../context/types';
 const PREFERRED_VOICE_URI =
   'Daniel (English (United Kingdom))'; //'Rocko (English (UK))';

@@ -1,6 +1,7 @@
 import {
   TDigit,
   TRgbRecord,
+  TRgba,
 } from '@brysonandrew/color-base/config/types';
 import { formatRgba } from './formatRgba';
 import { formatRgbaValue } from './formatRgbaValue';
@@ -16,7 +17,7 @@ export const resolveRgba = <K extends string>({
   opacity,
 }: TConfig<K>) => {
   const rgb = rgbValueRecord[colorKey];
-  const rgba = formatRgba(rgb, opacity);
+  const rgba: TRgba<TDigit> = formatRgba(rgb, opacity);
   const rgbaValue = formatRgbaValue(rgba);
   return rgbaValue;
 };

@@ -15,7 +15,7 @@ export const Website = () => {
       <p className='text-left'>
         A versitile single page website package. Use the
         breakdown below to sharpen your vision. When you
-        it's time to get started please get in touch.
+        it&apos;s time to get started please get in touch.
       </p>
       <div className='column gap-1 lg:gap-8 md:row-start h-full w-full'>
         <div className='column-start-stretch gap-1 lg:gap-4 w-full md:w-1/2 h-full'>

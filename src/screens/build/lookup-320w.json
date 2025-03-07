@@ -266,101 +266,6 @@
     ]
   },
   {
-    "src": "screens/insight-factory/1/1-320w.png",
-    "alt": "1",
-    "project": "insight-factory",
-    "name": "1",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 149,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/1/1-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/1/1-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/2/2-320w.png",
-    "alt": "2",
-    "project": "insight-factory",
-    "name": "2",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 150,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/2/2-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/2/2-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/3/3-320w.png",
-    "alt": "3",
-    "project": "insight-factory",
-    "name": "3",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 149,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/3/3-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/3/3-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/4/4-320w.png",
-    "alt": "4",
-    "project": "insight-factory",
-    "name": "4",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 160,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/4/4-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/4/4-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/5/5-320w.png",
-    "alt": "5",
-    "project": "insight-factory",
-    "name": "5",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 151,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/5/5-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/5/5-320w.png"
-      }
-    ]
-  },
-  {
     "src": "screens/juke/1/1-320w.png",
     "alt": "1",
     "project": "juke",
@@ -481,7 +386,7 @@
     "name": "3",
     "dir": "lambda-x",
     "width": 320,
-    "height": 165,
+    "height": 290,
     "sources": [
       {
         "type": "image/webp",
@@ -519,7 +424,7 @@
     "name": "5",
     "dir": "lambda-x",
     "width": 320,
-    "height": 164,
+    "height": 165,
     "sources": [
       {
         "type": "image/webp",
@@ -538,7 +443,7 @@
     "name": "6",
     "dir": "lambda-x",
     "width": 320,
-    "height": 290,
+    "height": 164,
     "sources": [
       {
         "type": "image/webp",
@@ -566,6 +471,101 @@
       {
         "type": "image/png",
         "srcSet": "screens/lambda-x/7/7-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/1/1-320w.png",
+    "alt": "1",
+    "project": "insight-factory",
+    "name": "1",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 149,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/1/1-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/1/1-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/2/2-320w.png",
+    "alt": "2",
+    "project": "insight-factory",
+    "name": "2",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 150,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/2/2-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/2/2-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/3/3-320w.png",
+    "alt": "3",
+    "project": "insight-factory",
+    "name": "3",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 149,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/3/3-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/3/3-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/4/4-320w.png",
+    "alt": "4",
+    "project": "insight-factory",
+    "name": "4",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 160,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/4/4-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/4/4-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/5/5-320w.png",
+    "alt": "5",
+    "project": "insight-factory",
+    "name": "5",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 151,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/5/5-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/5/5-320w.png"
       }
     ]
   },
@@ -728,7 +728,7 @@
     "name": "2",
     "dir": "repurpose",
     "width": 320,
-    "height": 189,
+    "height": 165,
     "sources": [
       {
         "type": "image/webp",
@@ -747,7 +747,7 @@
     "name": "3",
     "dir": "repurpose",
     "width": 320,
-    "height": 165,
+    "height": 164,
     "sources": [
       {
         "type": "image/webp",
@@ -785,7 +785,7 @@
     "name": "5",
     "dir": "repurpose",
     "width": 320,
-    "height": 164,
+    "height": 135,
     "sources": [
       {
         "type": "image/webp",
@@ -804,7 +804,7 @@
     "name": "6",
     "dir": "repurpose",
     "width": 320,
-    "height": 135,
+    "height": 134,
     "sources": [
       {
         "type": "image/webp",
@@ -823,7 +823,7 @@
     "name": "7",
     "dir": "repurpose",
     "width": 320,
-    "height": 134,
+    "height": 135,
     "sources": [
       {
         "type": "image/webp",
@@ -832,25 +832,6 @@
       {
         "type": "image/png",
         "srcSet": "screens/repurpose/7/7-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/repurpose/8/8-320w.png",
-    "alt": "8",
-    "project": "repurpose",
-    "name": "8",
-    "dir": "repurpose",
-    "width": 320,
-    "height": 135,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/repurpose/8/8-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/repurpose/8/8-320w.png"
       }
     ]
   },
@@ -880,7 +861,7 @@
     "name": "2",
     "dir": "stock-portfolio",
     "width": 320,
-    "height": 174,
+    "height": 153,
     "sources": [
       {
         "type": "image/webp",
@@ -899,7 +880,7 @@
     "name": "3",
     "dir": "stock-portfolio",
     "width": 320,
-    "height": 153,
+    "height": 174,
     "sources": [
       {
         "type": "image/webp",

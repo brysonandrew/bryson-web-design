@@ -19,7 +19,7 @@ export const LOOKS: StaticShortcutMap = {
   'interactive-circ': 'bg-black-2 border-1 border-gray',
   'interactive-circ-light':
     'bg-white-2 border-1 border-gray',
-  ...(NEU_CLASSES_RECORD as TNewClassesRecord),
+  ...(NEU_CLASSES_RECORD),
 } as const;
 
 export const INTERACTIVE: StaticShortcutMap = {

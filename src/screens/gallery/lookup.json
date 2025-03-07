@@ -387,103 +387,6 @@
       ]
     }
   ],
-  "insight-factory": [
-    {
-      "src": "screens/insight-factory/1/1.png",
-      "alt": "1",
-      "project": "insight-factory",
-      "name": "1",
-      "dir": "insight-factory",
-      "width": 3452,
-      "height": 1612,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/insight-factory/1/1.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/insight-factory/1/1.png"
-        }
-      ]
-    },
-    {
-      "src": "screens/insight-factory/2/2.png",
-      "alt": "2",
-      "project": "insight-factory",
-      "name": "2",
-      "dir": "insight-factory",
-      "width": 3450,
-      "height": 1612,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/insight-factory/2/2.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/insight-factory/2/2.png"
-        }
-      ]
-    },
-    {
-      "src": "screens/insight-factory/3/3.png",
-      "alt": "3",
-      "project": "insight-factory",
-      "name": "3",
-      "dir": "insight-factory",
-      "width": 3456,
-      "height": 1614,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/insight-factory/3/3.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/insight-factory/3/3.png"
-        }
-      ]
-    },
-    {
-      "src": "screens/insight-factory/4/4.png",
-      "alt": "4",
-      "project": "insight-factory",
-      "name": "4",
-      "dir": "insight-factory",
-      "width": 3456,
-      "height": 1728,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/insight-factory/4/4.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/insight-factory/4/4.png"
-        }
-      ]
-    },
-    {
-      "src": "screens/insight-factory/5/5.png",
-      "alt": "5",
-      "project": "insight-factory",
-      "name": "5",
-      "dir": "insight-factory",
-      "width": 3456,
-      "height": 1630,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/insight-factory/5/5.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/insight-factory/5/5.png"
-        }
-      ]
-    }
-  ],
   "juke": [
     {
       "src": "screens/juke/1/1.png",
@@ -607,8 +510,8 @@
       "project": "lambda-x",
       "name": "3",
       "dir": "lambda-x",
-      "width": 3406,
-      "height": 1760,
+      "width": 1954,
+      "height": 1772,
       "sources": [
         {
           "type": "image/webp",
@@ -626,8 +529,8 @@
       "project": "lambda-x",
       "name": "4",
       "dir": "lambda-x",
-      "width": 3436,
-      "height": 1776,
+      "width": 3406,
+      "height": 1760,
       "sources": [
         {
           "type": "image/webp",
@@ -645,8 +548,8 @@
       "project": "lambda-x",
       "name": "5",
       "dir": "lambda-x",
-      "width": 3440,
-      "height": 1758,
+      "width": 3436,
+      "height": 1776,
       "sources": [
         {
           "type": "image/webp",
@@ -664,8 +567,8 @@
       "project": "lambda-x",
       "name": "6",
       "dir": "lambda-x",
-      "width": 1954,
-      "height": 1772,
+      "width": 3440,
+      "height": 1758,
       "sources": [
         {
           "type": "image/webp",
@@ -693,6 +596,103 @@
         {
           "type": "image/png",
           "srcSet": "screens/lambda-x/7/7.png"
+        }
+      ]
+    }
+  ],
+  "insight-factory": [
+    {
+      "src": "screens/insight-factory/1/1.png",
+      "alt": "1",
+      "project": "insight-factory",
+      "name": "1",
+      "dir": "insight-factory",
+      "width": 3452,
+      "height": 1612,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcSet": "screens/insight-factory/1/1.webp"
+        },
+        {
+          "type": "image/png",
+          "srcSet": "screens/insight-factory/1/1.png"
+        }
+      ]
+    },
+    {
+      "src": "screens/insight-factory/2/2.png",
+      "alt": "2",
+      "project": "insight-factory",
+      "name": "2",
+      "dir": "insight-factory",
+      "width": 3450,
+      "height": 1612,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcSet": "screens/insight-factory/2/2.webp"
+        },
+        {
+          "type": "image/png",
+          "srcSet": "screens/insight-factory/2/2.png"
+        }
+      ]
+    },
+    {
+      "src": "screens/insight-factory/3/3.png",
+      "alt": "3",
+      "project": "insight-factory",
+      "name": "3",
+      "dir": "insight-factory",
+      "width": 3456,
+      "height": 1614,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcSet": "screens/insight-factory/3/3.webp"
+        },
+        {
+          "type": "image/png",
+          "srcSet": "screens/insight-factory/3/3.png"
+        }
+      ]
+    },
+    {
+      "src": "screens/insight-factory/4/4.png",
+      "alt": "4",
+      "project": "insight-factory",
+      "name": "4",
+      "dir": "insight-factory",
+      "width": 3456,
+      "height": 1728,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcSet": "screens/insight-factory/4/4.webp"
+        },
+        {
+          "type": "image/png",
+          "srcSet": "screens/insight-factory/4/4.png"
+        }
+      ]
+    },
+    {
+      "src": "screens/insight-factory/5/5.png",
+      "alt": "5",
+      "project": "insight-factory",
+      "name": "5",
+      "dir": "insight-factory",
+      "width": 3456,
+      "height": 1630,
+      "sources": [
+        {
+          "type": "image/webp",
+          "srcSet": "screens/insight-factory/5/5.webp"
+        },
+        {
+          "type": "image/png",
+          "srcSet": "screens/insight-factory/5/5.png"
         }
       ]
     }
@@ -858,8 +858,8 @@
       "project": "repurpose",
       "name": "2",
       "dir": "repurpose",
-      "width": 3680,
-      "height": 2172,
+      "width": 3450,
+      "height": 1776,
       "sources": [
         {
           "type": "image/webp",
@@ -878,7 +878,7 @@
       "name": "3",
       "dir": "repurpose",
       "width": 3450,
-      "height": 1776,
+      "height": 1770,
       "sources": [
         {
           "type": "image/webp",
@@ -896,8 +896,8 @@
       "project": "repurpose",
       "name": "4",
       "dir": "repurpose",
-      "width": 3450,
-      "height": 1770,
+      "width": 3446,
+      "height": 1764,
       "sources": [
         {
           "type": "image/webp",
@@ -916,7 +916,7 @@
       "name": "5",
       "dir": "repurpose",
       "width": 3446,
-      "height": 1764,
+      "height": 1450,
       "sources": [
         {
           "type": "image/webp",
@@ -934,8 +934,8 @@
       "project": "repurpose",
       "name": "6",
       "dir": "repurpose",
-      "width": 3446,
-      "height": 1450,
+      "width": 3450,
+      "height": 1446,
       "sources": [
         {
           "type": "image/webp",
@@ -953,8 +953,8 @@
       "project": "repurpose",
       "name": "7",
       "dir": "repurpose",
-      "width": 3450,
-      "height": 1446,
+      "width": 3448,
+      "height": 1456,
       "sources": [
         {
           "type": "image/webp",
@@ -963,25 +963,6 @@
         {
           "type": "image/png",
           "srcSet": "screens/repurpose/7/7.png"
-        }
-      ]
-    },
-    {
-      "src": "screens/repurpose/8/8.png",
-      "alt": "8",
-      "project": "repurpose",
-      "name": "8",
-      "dir": "repurpose",
-      "width": 3448,
-      "height": 1456,
-      "sources": [
-        {
-          "type": "image/webp",
-          "srcSet": "screens/repurpose/8/8.webp"
-        },
-        {
-          "type": "image/png",
-          "srcSet": "screens/repurpose/8/8.png"
         }
       ]
     }
@@ -1012,8 +993,8 @@
       "project": "stock-portfolio",
       "name": "2",
       "dir": "stock-portfolio",
-      "width": 3294,
-      "height": 1796,
+      "width": 3266,
+      "height": 1558,
       "sources": [
         {
           "type": "image/webp",
@@ -1031,8 +1012,8 @@
       "project": "stock-portfolio",
       "name": "3",
       "dir": "stock-portfolio",
-      "width": 3266,
-      "height": 1558,
+      "width": 3294,
+      "height": 1796,
       "sources": [
         {
           "type": "image/webp",

@@ -7,9 +7,9 @@ export const resolveHoverArgs = (slug: string) => {
     CUSTOM_CURSOR_KEY,
     slug,
     GALLERY_ICON,
-    <span>
+    <span key="view">
       View{' '}
-      <span className='title-main'>
+      <span className="title-main">
         {kebabToTitle(slug)}
       </span>{' '}
       in gallery

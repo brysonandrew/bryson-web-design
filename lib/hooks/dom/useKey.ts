@@ -27,7 +27,7 @@ export const useKey = ({
     }
   };
   useEffect(() => {
-    if (Boolean(isDisabled)) {
+    if (isDisabled) {
       removeListeners();
     } else {
       window.addEventListener(

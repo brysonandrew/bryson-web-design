@@ -9,4 +9,4 @@ export const formatRgba = <O extends TDigit>(
   rgb: TRgb,
   opacity: O,
 ) =>
-  `${rgb}${', ' as TRgbaDelimiter}0.${opacity}` as TRgba<O>;
+  `${rgb}${', ' as TRgbaDelimiter}0.${opacity}` as const;

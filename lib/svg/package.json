@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg",
-  "version": "7.0.107",
+  "version": "7.0.109",
   "description": "Svg library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,10 +21,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/svg-clip-path": "*",
     "@brysonandrew/svg-dimensionless": "*",
-    "@brysonandrew/svg-icon": "*",
-    "@brysonandrew/svg-filter": "*"
+    "@brysonandrew/svg-filter": "*",
+    "@brysonandrew/svg-clip-path": "*",
+    "@brysonandrew/svg-icon": "*"
   },
   "exports": {
     ".": {
@@ -32,13 +32,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
-    "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx",
     "./dimensionless/dimensionless": "./dimensionless/dimensionless.tsx",
-    "./icon/160": "./icon/160.tsx",
-    "./icon/24": "./icon/24.tsx",
-    "./icon/28": "./icon/28.tsx",
-    "./icon/40": "./icon/40.tsx",
     "./filter/anti-camo": "./filter/anti-camo/index.tsx",
     "./filter/aura": "./filter/aura/index.tsx",
     "./filter/blur/basic": "./filter/blur/basic.tsx",
@@ -57,6 +51,12 @@
     "./filter/blur/motion/2": "./filter/blur/motion/2/index.tsx",
     "./filter/blur/motion/2/speed": "./filter/blur/motion/2/speed.tsx",
     "./filter/blur/motion/2/transformer/x": "./filter/blur/motion/2/transformer/x.tsx",
-    "./filter/blur/motion/2/transformer/y": "./filter/blur/motion/2/transformer/y.tsx"
+    "./filter/blur/motion/2/transformer/y": "./filter/blur/motion/2/transformer/y.tsx",
+    "./clip-path/ClipWrap": "./clip-path/ClipWrap.tsx",
+    "./clip-path/shapes/circle": "./clip-path/shapes/circle.tsx",
+    "./icon/160": "./icon/160.tsx",
+    "./icon/24": "./icon/24.tsx",
+    "./icon/28": "./icon/28.tsx",
+    "./icon/40": "./icon/40.tsx"
   }
 }

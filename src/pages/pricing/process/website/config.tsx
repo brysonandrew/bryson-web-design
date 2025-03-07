@@ -1,17 +1,11 @@
-export const HEADER = 'Header' as const;
-export const HEADLINE = 'Headline/Hero' as const;
-export const FOOTER = 'Footer' as const;
+export const HEADER = 'Header';
+export const HEADLINE = 'Headline/Hero';
+export const FOOTER = 'Footer';
 export const FOUNDATION = [
   HEADER,
   HEADLINE,
   FOOTER,
 ] as const;
-
-const PerAnum = () => (
-  <div className='absolute left-full top-1/2 -translate-y-1/2'>
-    per annum
-  </div>
-);
 
 export type TExtraConfig = [
   key: string,
@@ -19,13 +13,12 @@ export type TExtraConfig = [
   max?: number,
 ];
 
-export const TABLET_SIZE = 'tablet size' as const;
-export const MOBILE_SIZE = 'mobile size' as const;
-export const ADDITIONAL_CONTENT =
-  'Sections' as const;
-export const CONTACT_FORM = 'contact form' as const;
-export const DARK_MODE = 'dark/light mode' as const;
-export const SPLASH_SCREEN = 'splash screen' as const;
+export const TABLET_SIZE = 'tablet size';
+export const MOBILE_SIZE = 'mobile size';
+export const ADDITIONAL_CONTENT = 'Sections';
+export const CONTACT_FORM = 'contact form';
+export const DARK_MODE = 'dark/light mode';
+export const SPLASH_SCREEN = 'splash screen';
 
 export const FOUNDATION_COST = 600;
 export const CONTENT_COST = 100;

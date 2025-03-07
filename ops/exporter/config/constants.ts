@@ -11,7 +11,7 @@ export const exportsPrefixRx = new RegExp(
   'gi'
 );
 export const removeCharsRx = new RegExp(`[;"']`, 'gi');
-export const INTERNAL_NAME = '@brysonandrew' as const;
+export const INTERNAL_NAME = '@brysonandrew';
 export const INTERNAL_PREFIX = `${INTERNAL_NAME}/` as const;
 
 export const DEP_PREFIX_RX = new RegExp(

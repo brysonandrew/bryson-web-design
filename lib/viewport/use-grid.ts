@@ -6,7 +6,7 @@ import {
 import { TViewport } from '@brysonandrew/viewport/use-measure';
 
 export const GRID_CLASS_VALUE =
-  'sm:grid-cols-2 xl:grid-cols-3' as const;
+  'sm:grid-cols-2 xl:grid-cols-3';
 type TBreakpointKey = string;
 const colSets = GRID_CLASS_VALUE.split(' ');
 const colBreaks: [TBreakpointKey, number][] = colSets
@@ -16,7 +16,7 @@ const colBreaks: [TBreakpointKey, number][] = colSets
     const colCount = parseInt(
       cols.replace('grid-cols-', '')
     );
-    return [bp as TBreakpointKey, colCount];
+    return [bp, colCount];
   });
 
 export const useGrid = (vp: TViewport, bpr: TPxRecord) => {

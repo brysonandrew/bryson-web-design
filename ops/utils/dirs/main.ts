@@ -22,7 +22,7 @@ export const findDirPaths = (parentPath: string, exclude?: string[]): TPathRecor
   const dirs = {} as TPathRecord;
   findEntryPaths(parentPath, exclude).forEach((fsEntry: TPath) => {
     if (resolveDir(fsEntry.full)) {
-      (dirs as TPathRecord)[fsEntry.name as string] = fsEntry;
+      (dirs)[fsEntry.name] = fsEntry;
     }
   });
   return dirs;

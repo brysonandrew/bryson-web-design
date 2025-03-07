@@ -9,7 +9,7 @@ import { readAllDeps } from '@ops/exporter/read/all/deps';
 
 export const readAllTarget = async (
   target: TTarget,
-  targets: TTargets
+  targets: TTargets,
 ) => {
   try {
     const { name, dir } = target;
@@ -24,7 +24,7 @@ export const readAllTarget = async (
         const last = dirParts[dirParts.length - 1];
         const next = join(last, '**/*');
         return next;
-      }
+      },
     );
 
     const FILES_GLOB = `./**/*.(ts|tsx)`;
@@ -75,10 +75,10 @@ export const readAllTarget = async (
             default: indexPath,
           },
           null,
-          2
+          2,
         );
         target.exportRows.push(
-          `${QUOTE_JSON}.${QUOTE_JSON}: ${value}`
+          `${QUOTE_JSON}.${QUOTE_JSON}: ${value}`,
         );
         continue;
       }
@@ -96,7 +96,6 @@ export const readAllTarget = async (
     }
   } catch (error) {
     console.error(error);
-  } finally {
-    return target;
   }
+  return target;
 };

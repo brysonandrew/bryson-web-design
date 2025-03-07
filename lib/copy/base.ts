@@ -9,14 +9,14 @@ export const PACKAGES = [
   'Select',
 ] as const;
 
-export const CONTACT_PHONE = '020 4069 8339';
-export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+64${CONTACT_PHONE.slice(
+export const CONTACT_PHONE = '889 167 902';
+export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.slice(
   1
 ).replace(/\s/g, '')}`;
 
 export const CONTACT_EMAIL =
   'andrewbryson12@gmail.com'; // 'andrew@brysonwebdesign.co.nz';
-export const CONTACT_URL = 'www.brysonwebdesign.co.nz';
+export const CONTACT_URL = 'www.brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
   email: CONTACT_EMAIL,
@@ -73,7 +73,5 @@ designing and developing user-centric,
 high-performance websites.`;
 
 export const DESCRIPTION_PARAGRAPHS = [
-  `Results-driven and detail-oriented Web Developer with over
-8 years of experience creating and implementing
-innovative web solutions.`,
+  `(Visit brysona.dev) 8+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
 ];

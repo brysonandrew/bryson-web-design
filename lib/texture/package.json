@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/texture",
-  "version": "7.0.107",
+  "version": "7.0.109",
   "description": "Texture library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/texture-zebra": "*",
     "@brysonandrew/texture-mesh": "*",
     "@brysonandrew/texture-metal": "*",
+    "@brysonandrew/texture-zebra": "*",
     "react": "^18.3.1",
     "@emotion/styled": "^11.13.0",
     "@emotion/react": "^11.13.3"

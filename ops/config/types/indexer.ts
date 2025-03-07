@@ -1,5 +1,5 @@
 export type TCompareSetValue = string;
-export type TFileComposerSetValue = string | TCompareSetValue;
+export type TFileComposerSetValue = string  ;
 export type TFileComposerSet<T = TFileComposerSetValue> = Set<T>;
 export type TFileComposer<T = TFileComposerSet> = Map<string, T>;
 export type TFileComposerEntry = [string, TFileComposerSet];

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-blank",
-  "version": "7.0.107",
+  "version": "7.0.109",
   "description": "Layout blank library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,10 +22,10 @@
   ],
   "peerDependencies": {
     "class-variance-authority": "^0.7.0",
-    "@brysonandrew/config-types": "7.0.107",
-    "@brysonandrew/dark-mode": "7.0.107",
-    "react": "^18.3.1",
-    "framer-motion": "^11.11.11"
+    "framer-motion": "^11.11.11",
+    "@brysonandrew/config-types": "7.0.109",
+    "@brysonandrew/dark-mode": "7.0.109",
+    "react": "^18.3.1"
   },
   "exports": {
     ".": {
@@ -33,7 +33,7 @@
       "import": "./index.tsx",
       "default": "./index.tsx"
     },
-    "./config/types": "./config/types.ts",
-    "./motion": "./motion/index.tsx"
+    "./motion": "./motion/index.tsx",
+    "./config/types": "./config/types.ts"
   }
 }

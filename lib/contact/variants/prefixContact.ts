@@ -1,7 +1,7 @@
 import { TStringOrStringsRecord } from '@brysonandrew/config-types';
 import { scopeRecord } from '@brysonandrew/utils-object';
 
-export const PREFIX = 'contact' as const;
+export const PREFIX = 'contact';
 
 export type TResolvePartial<
   T extends TStringOrStringsRecord,

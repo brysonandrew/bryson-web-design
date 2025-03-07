@@ -47,7 +47,7 @@ export const resolveBoxBackground = ({
   color,
   ...config
 }: TBoxBackgroundConfig) => {
-  const variant = 'background' as const;
+  const variant = 'background';
   type TFromKey = Extract<keyof typeof config, string>;
   type TToKey =
     `${typeof variant}${TTCamelToPascal<TFromKey>}`;

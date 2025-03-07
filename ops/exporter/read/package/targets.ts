@@ -4,7 +4,7 @@ import { TTargets } from '@ops/exporter/config/types';
 import { TError } from '@brysonandrew/config-types/dom';
 
 export const readPackageTargets = async (
-  targets: TTargets
+  targets: TTargets,
 ) => {
   const nextTargets: TTargets = [];
 
@@ -16,14 +16,17 @@ export const readPackageTargets = async (
       const pkgStr = await readFile(pkgPath, {
         encoding: 'utf-8',
       });
-      
-      const { dependencies: _, exports:__, ...pkg } =
-        JSON.parse(pkgStr);
+
+      const {
+        dependencies: _,
+        exports: __,
+        ...pkg
+      } = JSON.parse(pkgStr);
 
       const version = pkg.version
         .split('.')
         .map((v: string, i: number) =>
-          i === 2 ? Number(v) + 1 : v
+          i === 2 ? Number(v) + 1 : v,
         )
         .join('.');
 
@@ -42,7 +45,6 @@ export const readPackageTargets = async (
     }
   } catch (error: TError) {
     throw Error(error);
-  } finally {
-    return nextTargets;
   }
+  return nextTargets;
 };
