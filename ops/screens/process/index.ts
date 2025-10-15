@@ -33,7 +33,7 @@ import { deleteEntry } from '@ops/lib';
     const smallRecords: TMediaRecords = [];
     const entriesCountRecord: Record<string, number> = {};
     const entries = await fglob([
-      'assets/screens/*/[1-9]/[1-9].png',
+      'assets/screens/*/[1-9]/[1-9].(jpg|png)',
     ]);
     // const deleteEntries = await fglob(
     //   ['assets/screens/**/0'],

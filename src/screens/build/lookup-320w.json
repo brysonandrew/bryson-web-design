@@ -6,7 +6,7 @@
     "name": "1",
     "dir": "anaesco",
     "width": 320,
-    "height": 162,
+    "height": 163,
     "sources": [
       {
         "type": "image/webp",
@@ -25,7 +25,7 @@
     "name": "2",
     "dir": "anaesco",
     "width": 320,
-    "height": 163,
+    "height": 162,
     "sources": [
       {
         "type": "image/webp",
@@ -342,6 +342,101 @@
     ]
   },
   {
+    "src": "screens/insight-factory/1/1-320w.png",
+    "alt": "1",
+    "project": "insight-factory",
+    "name": "1",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 149,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/1/1-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/1/1-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/2/2-320w.png",
+    "alt": "2",
+    "project": "insight-factory",
+    "name": "2",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 151,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/2/2-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/2/2-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/3/3-320w.png",
+    "alt": "3",
+    "project": "insight-factory",
+    "name": "3",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 160,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/3/3-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/3/3-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/4/4-320w.png",
+    "alt": "4",
+    "project": "insight-factory",
+    "name": "4",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 149,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/4/4-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/4/4-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/insight-factory/5/5-320w.png",
+    "alt": "5",
+    "project": "insight-factory",
+    "name": "5",
+    "dir": "insight-factory",
+    "width": 320,
+    "height": 150,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/insight-factory/5/5-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/insight-factory/5/5-320w.png"
+      }
+    ]
+  },
+  {
     "src": "screens/lambda-x/1/1-320w.png",
     "alt": "1",
     "project": "lambda-x",
@@ -424,7 +519,7 @@
     "name": "5",
     "dir": "lambda-x",
     "width": 320,
-    "height": 165,
+    "height": 164,
     "sources": [
       {
         "type": "image/webp",
@@ -443,7 +538,7 @@
     "name": "6",
     "dir": "lambda-x",
     "width": 320,
-    "height": 164,
+    "height": 165,
     "sources": [
       {
         "type": "image/webp",
@@ -471,101 +566,6 @@
       {
         "type": "image/png",
         "srcSet": "screens/lambda-x/7/7-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/1/1-320w.png",
-    "alt": "1",
-    "project": "insight-factory",
-    "name": "1",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 149,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/1/1-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/1/1-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/2/2-320w.png",
-    "alt": "2",
-    "project": "insight-factory",
-    "name": "2",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 150,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/2/2-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/2/2-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/3/3-320w.png",
-    "alt": "3",
-    "project": "insight-factory",
-    "name": "3",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 149,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/3/3-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/3/3-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/4/4-320w.png",
-    "alt": "4",
-    "project": "insight-factory",
-    "name": "4",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 160,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/4/4-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/4/4-320w.png"
-      }
-    ]
-  },
-  {
-    "src": "screens/insight-factory/5/5-320w.png",
-    "alt": "5",
-    "project": "insight-factory",
-    "name": "5",
-    "dir": "insight-factory",
-    "width": 320,
-    "height": 151,
-    "sources": [
-      {
-        "type": "image/webp",
-        "srcSet": "screens/insight-factory/5/5-320w.webp"
-      },
-      {
-        "type": "image/png",
-        "srcSet": "screens/insight-factory/5/5-320w.png"
       }
     ]
   },
@@ -633,7 +633,7 @@
     "name": "4",
     "dir": "luridescence",
     "width": 320,
-    "height": 242,
+    "height": 149,
     "sources": [
       {
         "type": "image/webp",
@@ -652,7 +652,7 @@
     "name": "5",
     "dir": "luridescence",
     "width": 320,
-    "height": 148,
+    "height": 242,
     "sources": [
       {
         "type": "image/webp",
@@ -671,7 +671,7 @@
     "name": "6",
     "dir": "luridescence",
     "width": 320,
-    "height": 149,
+    "height": 148,
     "sources": [
       {
         "type": "image/webp",
@@ -709,7 +709,7 @@
     "name": "1",
     "dir": "repurpose",
     "width": 320,
-    "height": 163,
+    "height": 165,
     "sources": [
       {
         "type": "image/webp",
@@ -785,7 +785,7 @@
     "name": "5",
     "dir": "repurpose",
     "width": 320,
-    "height": 135,
+    "height": 163,
     "sources": [
       {
         "type": "image/webp",
@@ -804,7 +804,7 @@
     "name": "6",
     "dir": "repurpose",
     "width": 320,
-    "height": 134,
+    "height": 135,
     "sources": [
       {
         "type": "image/webp",
@@ -832,6 +832,25 @@
       {
         "type": "image/png",
         "srcSet": "screens/repurpose/7/7-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/repurpose/8/8-320w.png",
+    "alt": "8",
+    "project": "repurpose",
+    "name": "8",
+    "dir": "repurpose",
+    "width": 320,
+    "height": 134,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/repurpose/8/8-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/repurpose/8/8-320w.png"
       }
     ]
   },
@@ -1003,6 +1022,63 @@
       {
         "type": "image/png",
         "srcSet": "screens/superior-concrete/4/4-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/take-shape/1/1-320w.png",
+    "alt": "1",
+    "project": "take-shape",
+    "name": "1",
+    "dir": "take-shape",
+    "width": 320,
+    "height": 2000,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/take-shape/1/1-320w.webp"
+      },
+      {
+        "type": "image/png",
+        "srcSet": "screens/take-shape/1/1-320w.png"
+      }
+    ]
+  },
+  {
+    "src": "screens/take-shape/2/2-320w.jpg",
+    "alt": "2",
+    "project": "take-shape",
+    "name": "2",
+    "dir": "take-shape",
+    "width": 320,
+    "height": 821,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/take-shape/2/2-320w.webp"
+      },
+      {
+        "type": "image/jpg",
+        "srcSet": "screens/take-shape/2/2-320w.jpg"
+      }
+    ]
+  },
+  {
+    "src": "screens/take-shape/3/3-320w.jpg",
+    "alt": "3",
+    "project": "take-shape",
+    "name": "3",
+    "dir": "take-shape",
+    "width": 320,
+    "height": 500,
+    "sources": [
+      {
+        "type": "image/webp",
+        "srcSet": "screens/take-shape/3/3-320w.webp"
+      },
+      {
+        "type": "image/jpg",
+        "srcSet": "screens/take-shape/3/3-320w.jpg"
       }
     ]
   }
