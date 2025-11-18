@@ -20,10 +20,6 @@ export const Index = () => {
       </Suspense>
       <P48Y />
       <Suspense fallback={null}>
-        <TechLazy />
-      </Suspense>
-      <P48Y />
-      <Suspense fallback={null}>
         <ProjectsLazy />
       </Suspense>
       <P48Y />

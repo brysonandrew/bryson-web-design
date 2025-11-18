@@ -19,9 +19,9 @@ export const Links: FC<TProps> = ({ style }) => {
             className='column gap-2 ml-2 lg:row preserve-3d'
           >
             <Item glow={glow} {...TECH.REACT} />
-            <div className='center w-full xl:pt-1'>
+            {/* <div className='center w-full xl:pt-1'>
               <Plus classValue='h-7 w-7' />
-            </div>
+            </div> */}
             <Item glow={glow} {...TECH.TYPESCRIPT} />
           </div>
         </div>
