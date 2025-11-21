@@ -9,7 +9,7 @@
     "lint": "tsc --build . & eslint . --fix --ext ts,tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "author": "Andrew Bryson <andrew@bryson.dev>",
   "license": "MIT",
   "repository": {
     "type": "git",
