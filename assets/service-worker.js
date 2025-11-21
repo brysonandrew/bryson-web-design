@@ -18,7 +18,7 @@ var scripts = {
   lint: 'tsc --build . & eslint . --fix --ext ts,tsx',
   test: 'echo "Error: no test specified" && exit 1',
 };
-var author = 'Andrew Bryson <andrew@bryson.dev>';
+var author = 'Andrew Bryson <andrew@brysona.dev>';
 var license = 'MIT';
 var repository = {
   type: 'git',
