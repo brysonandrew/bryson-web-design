@@ -36,7 +36,7 @@
     "object-to-exports": "esrun ops/transformers/object-to-exports lib/motion/config/constants/generate.ts",
     "obfuscate": "ops/screens/obfuscate.sh"
   },
-  "author": "Andrew Bryson <andrewbryson12@gmail.com>",
+  "author": "Andrew Bryson <andrew@bryson.dev>",
   "license": "MIT",
   "repository": {
     "type": "git",

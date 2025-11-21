@@ -9,19 +9,18 @@ export const PACKAGES = [
   'Select',
 ] as const;
 
-export const CONTACT_PHONE = '889 167 902';
-export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.slice(
-  1
-).replace(/\s/g, '')}`;
+export const CONTACT_PHONE = '516 407 953';
+export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.replace(/\s/g, '')}`;
+export const CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY = `+48 ${CONTACT_PHONE}`;
 
 export const CONTACT_EMAIL =
-  'andrewbryson12@gmail.com'; // 'andrew@brysonwebdesign.co.nz';
+  'andrew@bryson.dev'; // 'andrew@brysonwebdesign.co.nz';
 export const CONTACT_URL = 'www.brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
   email: CONTACT_EMAIL,
   phone: {
-    display: CONTACT_PHONE,
+    display: CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY,
     withTrunk: CONTACT_PHONE_WITH_NATIONAL_TRUNK,
   },
 };
