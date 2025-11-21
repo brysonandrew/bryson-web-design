@@ -14,7 +14,7 @@ export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.replace(/\s
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY = `+48 ${CONTACT_PHONE}`;
 
 export const CONTACT_EMAIL =
-  'andrew@bryson.dev'; // 'andrew@brysonwebdesign.co.nz';
+  'andrew@brysona.dev'; // 'andrew@brysonwebdesign.co.nz';
 export const CONTACT_URL = 'www.brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
