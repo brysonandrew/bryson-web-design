@@ -15,7 +15,7 @@ type TConfig = {
 } & TPriceProps;
 export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
   standard: {
-    price: 4250,
+    price: 2800,
     classValue: 'gradient-standard',
     listLiteral: `
     Perfect for small businesses and startups
@@ -25,7 +25,7 @@ export const CONFIG_LOOKUP: Record<TPricingKey, TConfig> = {
     Quick turnaround: Get online in no time!`,
   },
   plus: {
-    price: 7800,
+    price: 4000,
     classValue: 'gradient-plus',
     discount: {
       value: 200,
