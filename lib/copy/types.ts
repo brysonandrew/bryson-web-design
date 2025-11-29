@@ -5,7 +5,6 @@ import { PACKAGES } from './base';
 export type TPricingTitle = (typeof PACKAGES)[number];
 export type TPricingKey = TTTitleToKebab<TPricingTitle>;
 
-
 export type TInitItems = typeof INIT_PROJECT_ITEMS;
 export type TRest = {
   time?: Date;

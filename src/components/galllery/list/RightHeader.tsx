@@ -18,19 +18,19 @@ export const RightHeader: FC<TProps> = ({
     TRest
   >();
   const { time, pricing } = ITEMS_RECORD[slug];
-  const id = resolveCompositeKey('badge', slug);
+  // const id = resolveCompositeKey('badge', slug);
 
   return (
     <>
       <Time time={time} />
-      <Badge
+      {/* <Badge
         key={resolveCompositeKey('list', id)}
         layoutId={id}
         type={pricing}
         isHover={isHover}
       >
         {pricing}
-      </Badge>
+      </Badge> */}
     </>
   );
 };

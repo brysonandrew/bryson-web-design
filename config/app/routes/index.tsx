@@ -13,18 +13,18 @@ const PAGE_RECORDS = resolveRouteRecords<
 >(
   [
     'Index',
+    'About',
+    'Services',
     'Projects',
-    'Pricing',
     'Contact',
   ] as TPageTitle[],
-  Pages
+  Pages,
 );
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
-  [record.pricing.key]:
-    "Choose a plan that's right for you",
-  tech: 'Powered by',
+  about: 'Nice to meet you',
+  services: 'How I can help',
   [record.projects.key]: 'Selected works',
   [record.contact.key]: 'Get in touch',
 } as const;
@@ -37,7 +37,7 @@ const MAIN_ROUTES = [
       ...routes,
       {
         path: '*',
-        element: <AppNotFound  />,
+        element: <AppNotFound />,
       },
     ],
   },

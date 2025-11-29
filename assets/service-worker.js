@@ -1,3 +1,5 @@
+/* eslint-env serviceworker */
+/* global self, caches, console, fetch, location */
 var name = '@brysonandrew/service-worker';
 var version = '6.24.4';
 var description = 'Service Worker library';
