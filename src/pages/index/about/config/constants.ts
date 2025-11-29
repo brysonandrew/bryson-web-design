@@ -6,10 +6,10 @@ import {
 export const PARALLAX_PROPS: TParallaxOptions = {
   dispersion: {
     input: ({ startScroll, windowHeight }) => [
-      startScroll + windowHeight * 0.75,
-      startScroll + windowHeight * 0.75 + MAX_SCROLL,
+      startScroll,
+      startScroll + windowHeight,
     ],
-    output: [0, 20],
+    output: [-1, 3],
   },
   resistance: {
     input: ({ startScroll }) => [

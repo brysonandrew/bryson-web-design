@@ -1,4 +1,3 @@
-import { Plus } from '@pages/index/tech/icons/Plus';
 import type { FC } from 'react';
 import { Item } from './Item';
 import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';

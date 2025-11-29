@@ -5,8 +5,24 @@ import pluginReact from 'eslint-plugin-react';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
-  { languageOptions: { globals: globals.browser } },
+  {
+    // ⛔ tell ESLint to skip generated stuff
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      'build/**',
+      '.next/**',
+      'out/**',
+      'coverage/**',
+      'public/**',
+      // add others here if you have e.g. 'storybook-static', 'vite.config.ts' output, etc.
+    ],
+  },
+  {
+    // ✅ only lint your actual source files
+    files: ['src/**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: { globals: globals.browser },
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat?.recommended,

@@ -25,3 +25,5 @@ assets/canvas*
 .assets/**/*
 .cemetary/**/*
 .cemetary/*
+.trash/**/*
+.trash/*
