@@ -50,7 +50,7 @@ export const BuildCarousel: FC<TProps> = ({ style }) => {
         rotateX: 0,
         x: -verticalImageSize * 0.95,
         z: 0,
-        y: -620,
+        y: -560,
       }
     : {
         rotateY: 0,

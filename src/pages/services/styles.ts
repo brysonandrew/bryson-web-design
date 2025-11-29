@@ -88,9 +88,9 @@ export const ServicesStylesRoot = styled(motion.div)`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 50;
+    z-index: 9999;
     display: flex;
-    align-items: top;
+    align-items: center;
     justify-content: center;
     padding-top: 1.5rem;
     padding-right: 1.5rem;
@@ -178,6 +178,13 @@ export const ServicesStylesRoot = styled(motion.div)`
       padding-right: 1.5rem;
       padding-bottom: 1.85rem;
       padding-left: 1.5rem;
+    }
+
+    .service-card {
+      padding-top: 0.75rem;
+      padding-right: 0.5rem;
+      padding-bottom: 0.75rem;
+      padding-left: 0.5rem;
     }
   }
 `;

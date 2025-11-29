@@ -1,12 +1,4 @@
-// src/data/services.ts
-
-export type TService = {
-  id: string;
-  title: string;
-  short: string;
-  full: string;
-  bullets: string[];
-};
+import { TService } from "@pages/services/config/types";
 
 export const SERVICES: TService[] = [
   {
@@ -24,6 +16,7 @@ export const SERVICES: TService[] = [
       "Migrations from older React codebases"
     ]
   },
+
   {
     id: "vue-nuxt",
     title: "Vue & Nuxt Development",
@@ -39,6 +32,7 @@ export const SERVICES: TService[] = [
       "Upgrades from Vue 2 → Vue 3"
     ]
   },
+
   {
     id: "headless-wp",
     title: "Headless WordPress",
@@ -54,6 +48,7 @@ export const SERVICES: TService[] = [
       "SEO- and content-friendly architectures"
     ]
   },
+
   {
     id: "ui-ux",
     title: "UI/UX & Pixel-Perfect Implementation",
@@ -68,6 +63,7 @@ export const SERVICES: TService[] = [
       "Design collaboration with product and UX teams"
     ]
   },
+
   {
     id: "animations",
     title: "Animations & Interactions",
@@ -82,6 +78,7 @@ export const SERVICES: TService[] = [
       "Light 3D / WebGL-style effects when needed"
     ]
   },
+
   {
     id: "ai-tools",
     title: "AI-Powered Interfaces & Tools",
@@ -96,6 +93,7 @@ export const SERVICES: TService[] = [
       "Custom creative tools (music, video, transcription, etc.)"
     ]
   },
+
   {
     id: "performance-seo",
     title: "Performance, SEO & Core Web Vitals",
@@ -111,6 +109,7 @@ export const SERVICES: TService[] = [
       "Image/video optimisation"
     ]
   },
+
   {
     id: "ongoing",
     title: "Ongoing Development & Maintenance",
