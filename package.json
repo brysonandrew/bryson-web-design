@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/bryson-web-design",
-  "version": "7.1.2",
+  "version": "8.1.2",
   "description": "Building websites and apps",
   "main": "src/main.tsx",
   "types": "src/index.d.ts",
