@@ -15,6 +15,7 @@ const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
   about: 'Nice to meet you',
+  services: 'How I can help',
   tech: 'Powered by',
   [record.projects.key]: 'Selected works',
   [record.contact.key]: 'Get in touch',
