@@ -22,7 +22,6 @@ export const Main: FC<TProps> = ({ style }) => {
     >
       <div className="services-inner">
         <header className="services-header">
-          <h2>Services</h2>
           <p>
             Front-end development with React, Vue,
             TypeScript, and Headless WordPress — with a

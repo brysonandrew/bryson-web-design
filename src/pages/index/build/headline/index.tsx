@@ -13,12 +13,12 @@ export const Headline: FC<TProps> = ({ children }) => {
   return (
     <Root className='relative column gap-8 w-core z-10 lg:gap-12'>
       <Title>{children}</Title>
-      <div className='relative column-stretch gap-2'>
+      <div className='relative column gap-2'>
         <Subtitle>
           New Zealand born
           {/* Based In Christchurch */}
           </Subtitle>
-        <ThinLineGrow delay={0.2} classValue='w-full' />
+        <ThinLineGrow delay={0.2} classValue='w-3/4 opacity-40' />
         <Subtitle>
           Digital Nomad
           {/* New Zealand */}

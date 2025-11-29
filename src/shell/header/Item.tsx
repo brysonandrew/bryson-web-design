@@ -27,7 +27,7 @@ export const Item: FC<TItemProps> = ({
   return (
     <li
       className={cx(
-        'relative pb-4',
+        'relative pb-1.25',
         isActive ? 'title-header-active' : 'title-header',
       )}
       style={{
