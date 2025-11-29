@@ -1,5 +1,7 @@
+import { useApp } from '@brysonandrew/app';
 import { useOutsideClick } from '@brysonandrew/hooks';
 import { TService } from '@pages/services/config/types';
+import { SERVICES_ICONS } from '@pages/services/icons';
 import { motion } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 
@@ -11,6 +13,8 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
   selected,
   close,
 }) => {
+  const { BackFill, GLOW_BOX, BORDER_RADIUS } = useApp();
+
   const ref = useRef<HTMLDivElement | null>(null);
 
   useOutsideClick({
@@ -20,9 +24,13 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.scrollIntoView();
+      ref.current.scrollIntoView({
+        block: 'center',
+        inline: 'center',
+      });
     }
   }, []);
+
   return (
     <>
       {/* Modal */}
@@ -32,10 +40,15 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div ref={ref}>
+        <div ref={ref} className="relative bg-red">
+          <BackFill />
           <motion.div
             layoutId={selected.id}
             className="services-modal"
+            style={{
+              boxShadow: GLOW_BOX.accent,
+              borderRadius: BORDER_RADIUS.LG
+            }}
           >
             <button
               className="services-modal-close"
@@ -55,7 +68,10 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
               </svg>
             </button>
 
-            <h3>{selected.title}</h3>
+            <h3 className='flex items-center gap-2'>
+              <div>{SERVICES_ICONS[selected.id]}</div>
+              <div>{selected.title}</div>
+            </h3>
             <p className="services-modal-full">
               {selected.full}
             </p>

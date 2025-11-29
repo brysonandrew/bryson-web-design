@@ -29,7 +29,7 @@ export const Section: FC<TProps> = ({
       id={title}
       {...props}
     >
-      <P6 classValue='flex lg:hidden' />
+      <div className='h-44 flex lg:hidden' />
       <Title>{title}</Title>
       <P12Y classValue='flex lg:hidden' />
       <P16Y classValue='hidden lg:flex' />

@@ -10,13 +10,21 @@ import { AppNotFound } from '@brysonandrew/app';
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,
   typeof Pages
->(['Index', 'Projects', 'Contact'] as TPageTitle[], Pages);
+>(
+  [
+    'Index',
+    'About',
+    'Services',
+    'Projects',
+    'Contact',
+  ] as TPageTitle[],
+  Pages,
+);
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
   about: 'Nice to meet you',
   services: 'How I can help',
-  tech: 'Powered by',
   [record.projects.key]: 'Selected works',
   [record.contact.key]: 'Get in touch',
 } as const;
