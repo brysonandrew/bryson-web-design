@@ -38,6 +38,5 @@ export const Index = () => {
   );
 };
 
-export { Pricing } from '../../../.trash/pricing';
 export { Projects } from '../projects';
 export { Contact } from '../contact';
