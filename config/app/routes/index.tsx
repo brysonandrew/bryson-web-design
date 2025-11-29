@@ -14,7 +14,6 @@ const PAGE_RECORDS = resolveRouteRecords<
   [
     'Index',
     'Projects',
-    'Pricing',
     'Contact',
   ] as TPageTitle[],
   Pages
@@ -22,8 +21,6 @@ const PAGE_RECORDS = resolveRouteRecords<
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
   build: 'Building websites and apps',
-  [record.pricing.key]:
-    "Choose a plan that's right for you",
   tech: 'Powered by',
   [record.projects.key]: 'Selected works',
   [record.contact.key]: 'Get in touch',

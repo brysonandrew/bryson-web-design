@@ -2,7 +2,6 @@ import { Suspense, lazy } from 'react';
 import { P48Y } from '@brysonandrew/space/P48Y';
 import { P24Y } from '@brysonandrew/space/P24Y';
 import Build from '@pages/index/build';
-const PricingLazy = lazy(() => import('./pricing'));
 const TechLazy = lazy(() => import('./tech'));
 const ProjectsLazy = lazy(() => import('./projects'));
 const ContactLazy = lazy(() => import('./contact'));
@@ -15,10 +14,6 @@ export const Index = () => {
     <>
       <Build />
       <P24Y />
-      <Suspense fallback={null}>
-        <PricingLazy />
-      </Suspense>
-      <P48Y />
       <Suspense fallback={null}>
         <ProjectsLazy />
       </Suspense>

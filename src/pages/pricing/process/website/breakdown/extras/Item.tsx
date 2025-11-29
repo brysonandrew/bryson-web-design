@@ -1,6 +1,6 @@
 import { I } from '@brysonandrew/icons-i';
 import { ADD_ICON, REMOVE_ICON } from '@brysonandrew/icons-keys';
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { cx } from 'class-variance-authority';
 import { Item as FocusItem } from '../../../focus/Item';
 import { FC } from 'react';

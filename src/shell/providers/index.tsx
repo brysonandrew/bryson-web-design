@@ -5,7 +5,7 @@ import { SoundProvider } from '@brysonandrew/sounds/SoundProvider';
 import { NetworkProvider } from '@brysonandrew/network/NetworkProvider';
 import { CursorProvider } from '@brysonandrew/motion-cursor';
 import { GalleryProvider } from '@brysonandrew/gallery/GalleryProvider';
-import { PricingProvider } from '@pages/index/pricing/PricingProvider';
+import { PricingProvider } from '@pages/index/_pricing/PricingProvider';
 import { ContactProvider } from '@brysonandrew/contact/ContactProvider';
 import { ViewportProvider } from '@brysonandrew/viewport/ViewportProvider';
 import { TChildrenProps } from '@brysonandrew/config-types/dom';

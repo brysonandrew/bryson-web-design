@@ -1,4 +1,4 @@
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { Normal } from './variants/Normal';
 import { Reversed } from './variants/Reversed';
 import { cx } from 'class-variance-authority';

@@ -1,6 +1,6 @@
 import { Focus } from '@pages/pricing/process/focus';
 import { I } from '@brysonandrew/icons-i';
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { AnimatePresence, motion } from 'framer-motion';
 import { DARK_MODE_ICON } from '@brysonandrew/icons-keys/general';
 import { DARK_MODE } from '../../config';

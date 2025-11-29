@@ -8,7 +8,7 @@ import { Annotations } from '../website/layouts/Annotations';
 import { ImageAndText } from '../website/skeleton/image-and-text';
 import { Focus } from '@pages/pricing/process/focus';
 import { Item } from '../website/breakdown/extras/Item';
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { Price } from '../website/breakdown/Price';
 import { Section } from '../Section';
 

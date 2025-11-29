@@ -1,4 +1,4 @@
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { ADDITIONAL_CONTENT, CONTENT_COST } from '@pages/pricing/process/website/config';
 import { Item } from './extras/Item';
 

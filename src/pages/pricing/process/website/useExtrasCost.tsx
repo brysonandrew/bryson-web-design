@@ -1,4 +1,4 @@
-import { usePricing } from '@pages/index/pricing/PricingProvider';
+import { usePricing } from '@pages/index/_pricing/PricingProvider';
 import { EXTRAS, TExtraConfig } from './config';
 
 export const useExtrasCost = () => {
