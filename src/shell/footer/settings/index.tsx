@@ -11,7 +11,8 @@ export const Settings: FC<TProps> = (props) => {
     <div
       className={cx(
         'row-stretch z-10',
-        !isMobile && 'gap-1'
+        !isMobile && 'gap-1',
+      
       )}
       {...props}
     >

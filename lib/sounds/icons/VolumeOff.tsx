@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { TClassValueProps } from '@brysonandrew/config-types/dom/main';
 import { cx } from 'class-variance-authority';
 import type { FC, SVGAttributes } from 'react';
@@ -11,8 +10,8 @@ export const VolumeOff: FC<TProps> = ({
   <svg
     className={cx(classValue)}
     viewBox='0 0 24 24'
-    width='24'
-    height='24'
+    width='15'
+    height='15'
     fill='currentColor'
     {...props}
   >

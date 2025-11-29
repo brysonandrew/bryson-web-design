@@ -18,7 +18,7 @@ export const Button: FC<TButtonProps> = ({
   return (
     <motion.button
       className={cx(
-        'circle-interactive shrink-0 w-14 h-14',
+        'circle-interactive shrink-0 w-10 h-10',
         classValue,
       )}
       {...resolveAccessibilityTitles(title)}

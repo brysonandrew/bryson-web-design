@@ -10,8 +10,8 @@ export const VolumeOn: FC<TProps> = ({
   <svg
     className={cx(classValue)}
     viewBox='0 0 24 24'
-    width='24'
-    height='24'
+    width='15'
+    height='15'
     fill='currentColor'
     {...props}
   >
