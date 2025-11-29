@@ -15,13 +15,13 @@ export const Home: TPageLinkComponent = ({ isActive }) => {
         )}
         icon={HOME_ICON}
       />
-      {isActive && (
+      {/* {isActive && (
         <ThickLine
           classValue="top-3/4 right-1.5 w-2 h-0"
           layoutId="PAGE_ACTIVE_UNDERLINE_KEY"
           transition={{ duration: DURATION * 2 }}
         />
-      )}
+      )} */}
     </>
   );
 };

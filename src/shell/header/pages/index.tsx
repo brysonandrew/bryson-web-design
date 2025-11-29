@@ -5,7 +5,7 @@ import { useCoinDropSound } from '@brysonandrew/sounds/useCoinDropSound';
 import { useMemo } from 'react';
 import { Home } from './Home';
 import { TPageLinks, TPageLinkRecord } from './config';
-import { List } from '../List';
+import { List } from './List';
 import { PAGE_RECORDS } from '@app/routes';
 
 const Root = styled.nav``;

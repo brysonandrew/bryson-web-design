@@ -41,13 +41,13 @@ export const Item: FC<TItemProps> = ({
       {children ?? (
         <>
           {title}
-          {isActive && (
+          {/* {isActive && (
             <ThickLine
               classValue='top-3/4 w-full'
               layoutId={layoutId}
               transition={{ duration: DURATION * 2 }}
             />
-          )}
+          )} */}
         </>
       )}
       {to && (
