@@ -5,21 +5,29 @@ import { useApp } from '@brysonandrew/app';
 
 type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style }) => {
-  const { COLOR } = useApp();
+  const { COLOR, LIGHT } = useApp();
 
   return (
     <motion.div
       className="title-section w-core flex flex-col items-center gap-16"
       style={style}
     >
-      <h3
-        className="relative uppercase text-main text-lg char-gap-4 text-center w-[400px] lg:text-xl"
-        style={{ color: COLOR.accent }}
-      >
-        Hi, I’m Andrew — a New Zealand Front-End Developer
-        focused on clean, modern, reliable interfaces.
-      </h3>
-      <div className="flex flex-col items-center gap-6">
+      <div className="relative pl-6">
+        {LIGHT && (
+          <>
+            <LIGHT.MOTION.Marker classValue="z-50" />
+          </>
+        )}
+        <h3
+          className="relative text-main"
+          style={{ color: COLOR.accent }}
+        >
+          Hi, I’m Andrew — a New Zealand Front-End Developer
+          focused on clean, modern, reliable interfaces.
+        </h3>
+      </div>
+
+      <div className="flex flex-col items-center gap-6 pl-6">
         <p className="title-section">
           With 9+ years of experience building fast,
           responsive, and user-friendly web applications

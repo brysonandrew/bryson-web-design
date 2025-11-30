@@ -6,9 +6,11 @@ import { ServicesStylesRoot } from '@pages/services/styles';
 import { TService } from '@pages/services/config/types';
 import { ServicesFullscreenOverlay } from '@pages/services/FullscreenOverlay';
 import { ServicesCard } from '@pages/services/Card';
+import { useApp } from '@brysonandrew/app';
 
 type TProps = Partial<TPartialParallaxMotionProps>;
 export const Main: FC<TProps> = ({ style }) => {
+  const { LIGHT } = useApp();
   const [selected, setSelected] = useState<TService | null>(
     null,
   );
@@ -19,8 +21,14 @@ export const Main: FC<TProps> = ({ style }) => {
       style={style}
     >
       <div className="services-inner">
-        <header className="services-header">
-          <p>
+        <header className="relative services-header">
+          {LIGHT && (
+            <>
+              {/* <LIGHT.MOTION.Back /> */}
+              {/* <LIGHT.MOTION.Marker classValue="z-50" /> */}
+            </>
+          )}
+          <p className='pl-0' >
             Front-end development with React, Vue,
             TypeScript, and Headless WordPress — with a
             focus on performance, UX, and long-term

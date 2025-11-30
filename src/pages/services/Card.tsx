@@ -14,7 +14,7 @@ type TProps = {
   onServiceSelect(service:TService): void
 };
 export const ServicesCard: FC<TProps> = ({service, onServiceSelect}) => {
-  const { GLOW_BOX, BORDER_RADIUS, BackFill, COLOR } =
+  const { GLOW_BOX, BORDER_RADIUS, BackFill, COLOR, LIGHT } =
     useApp();
 
   const title = 'open';
@@ -40,7 +40,12 @@ export const ServicesCard: FC<TProps> = ({service, onServiceSelect}) => {
       }}
       {...handlers}
     >
-      <BackFill />
+  {LIGHT && (
+            <>
+              <LIGHT.MOTION.Back />
+              <LIGHT.MOTION.Marker classValue="z-50" />
+            </>
+          )}
       <h3
         className="relative flex gap-2 items-stretch md:gap-4"
         style={{ color: COLOR.accent }}
