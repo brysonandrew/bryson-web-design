@@ -11,21 +11,22 @@ import type { FC } from 'react';
 
 type TProps = {
   service: TService;
-  onServiceSelect(service:TService): void
+  onServiceSelect(service: TService): void;
 };
-export const ServicesCard: FC<TProps> = ({service, onServiceSelect}) => {
-  const { GLOW_BOX, BORDER_RADIUS, BackFill, COLOR, LIGHT } =
+export const ServicesCard: FC<TProps> = ({
+  service,
+  onServiceSelect,
+}) => {
+  const { GLOW_BOX, BORDER_RADIUS, COLOR, LIGHT } =
     useApp();
 
-  const title = 'open';
-  const {handlers} = useHover(
-    CUSTOM_CURSOR_KEY,
-    title,
-    OPEN_IN_NEW_ICON,
-    <div className="column-start">
-      <span className="italics">{title}</span>
-    </div>,
-  );
+  // const title = 'open';
+  // const { handlers } = useHover(
+  //   CUSTOM_CURSOR_KEY,
+  //   title,
+  //   OPEN_IN_NEW_ICON,
+  //   title,
+  // );
   return (
     <motion.button
       key={service.id}
@@ -38,14 +39,14 @@ export const ServicesCard: FC<TProps> = ({service, onServiceSelect}) => {
         borderRadius: BORDER_RADIUS.MD,
         boxShadow: GLOW_BOX.accent,
       }}
-      {...handlers}
+      // {...handlers}
     >
-  {LIGHT && (
-            <>
-              <LIGHT.MOTION.Back />
-              <LIGHT.MOTION.Marker classValue="z-50" />
-            </>
-          )}
+      {LIGHT && (
+        <>
+          <LIGHT.MOTION.Back />
+          <LIGHT.MOTION.Marker classValue="z-50" />
+        </>
+      )}
       <h3
         className="relative flex gap-2 items-stretch md:gap-4"
         style={{ color: COLOR.accent }}

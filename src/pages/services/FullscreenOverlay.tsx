@@ -1,7 +1,12 @@
 import { useApp } from '@brysonandrew/app';
+import { Fade, FadeFill } from '@brysonandrew/fade-core';
 import { useOutsideClick } from '@brysonandrew/hooks';
 import { I } from '@brysonandrew/icons-i';
 import { CLOSE_ICON } from '@brysonandrew/icons-keys';
+import {
+  CUSTOM_CURSOR_KEY,
+  useHover,
+} from '@brysonandrew/motion-cursor';
 import { TService } from '@pages/services/config/types';
 import { SERVICES_ICONS } from '@pages/services/icons';
 import { motion } from 'framer-motion';
@@ -34,6 +39,14 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
     }
   }, []);
 
+  const title = 'close';
+  const { handlers } = useHover(
+    CUSTOM_CURSOR_KEY,
+    title,
+    CLOSE_ICON,
+    title,
+  );
+
   return (
     <>
       {/* Modal */}
@@ -53,13 +66,14 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
               borderRadius: BORDER_RADIUS.LG,
             }}
           >
-            <button
+            <motion.button
               className="services-modal-close"
               onClick={close}
               aria-label="Close"
+              {...handlers}
             >
               <I icon={CLOSE_ICON} />
-            </button>
+            </motion.button>
 
             <h3
               className="flex items-center gap-2"
