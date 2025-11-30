@@ -1,8 +1,6 @@
 import { type FC } from 'react';
 import { useHover } from '@brysonandrew/motion-cursor/hooks/useHover';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
-import { DURATION } from '@app/animation';
-import { ThickLine } from '@brysonandrew/layout-line/ThickLine';
 import { BIG_CURSOR_KEY } from '@brysonandrew/motion-cursor/config/constants';
 import { TLinkMotionProps } from '@brysonandrew/config-types';
 import { cx } from 'class-variance-authority';
@@ -27,7 +25,7 @@ export const Item: FC<TItemProps> = ({
   return (
     <li
       className={cx(
-        'relative pb-1.25',
+        'relative pb-1.25 tracking-wide',
         isActive ? 'title-header-active' : 'title-header',
       )}
       style={{
@@ -40,7 +38,7 @@ export const Item: FC<TItemProps> = ({
     >
       {children ?? (
         <>
-          {title}
+          {(title = title === 'Index' ? 'Home' : title)}
           {/* {isActive && (
             <ThickLine
               classValue='top-3/4 w-full'
@@ -53,7 +51,7 @@ export const Item: FC<TItemProps> = ({
       {to && (
         <Link
           to={to}
-          className='absolute -inset-1.25'
+          className="absolute -inset-1.25"
           {...(title
             ? resolveAccessibilityTitles(title)
             : {})}

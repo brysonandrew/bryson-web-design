@@ -27,13 +27,14 @@ export const useCircle = ({
   });
   const z = useTransform(depth, (v) => {
     return (
-      -v * radius + (isVertical ? -1000 : -imageSize - radius)
+      -v * radius +
+      (isVertical ? -1000 : -imageSize - radius)
     );
   });
   const opacity = useTransform(depth, (v) => {
     const offset = 1 + MIN_OPACITY;
     const next = offset - (v + offset) * 0.5;
-    return next;
+    return next * 0.4;
   });
   const spread = useTransform(radians, (v) => {
     return (
@@ -49,18 +50,14 @@ export const useCircle = ({
     ? {
         x: imageSize * 0.5,
         y: spread,
-        z,
         rotateX: rotation,
         rotateY: 0,
-        opacity,
       }
     : {
         x: spread,
         y: 0,
-        z,
         rotateX: 0,
         rotateY: rotation,
-        opacity,
       };
-  return style;
+  return { ...style, z, opacity };
 };

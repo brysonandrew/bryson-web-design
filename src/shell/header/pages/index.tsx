@@ -20,7 +20,6 @@ export const Pages = () => {
     const pageNavRecord = {
       ...PAGE_RECORDS.record,
     } as TPageLinkRecord;
-    pageNavRecord.index.Component = Home;
     return Object.values(pageNavRecord);
   }, []);
 

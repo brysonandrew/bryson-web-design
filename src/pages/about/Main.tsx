@@ -16,7 +16,7 @@ export const Main: FC<TProps> = ({ style }) => {
         className="title-main"
         style={{ color: COLOR.accent }}
       >
-        Hi, I’m Andrew — a Front-End Developer focused on
+        Hi, I’m Andrew — a New Zealand Front-End Developer focused on
         clean, modern, reliable interfaces.
       </h3>
       <p className="title-section">

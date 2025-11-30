@@ -19,7 +19,7 @@ export const INIT = formatFilter({
 });
 
 export const GRAYED_OUT = formatFilter({
-  blur: 0.1,
+  blur: 1,
   brightness: 80,
   grayscale: 100,
 });

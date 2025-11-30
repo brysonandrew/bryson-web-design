@@ -26,8 +26,8 @@ const BuildMain: FC = () => {
       <FadeMidPair
         classValue="flex md:hidden h-screen"
         direction="to bottom"
-        darkMidColor="var(--black-08)"
-        lightMidColor="var(--white-08)"
+        darkMidColor="var(--black-06)"
+        lightMidColor="var(--white-06)"
         edgeColor="var(--transparent)"
         darkClass="opacity-dark"
         lightClass="opacity-light"

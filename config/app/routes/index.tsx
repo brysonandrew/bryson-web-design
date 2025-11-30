@@ -22,7 +22,7 @@ const PAGE_RECORDS = resolveRouteRecords<
 );
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
-  build: 'Building websites and apps',
+  build: 'BUILDING MODERN, FAST & BEAUTIFUL WEB EXPERIENCES',
   about: 'Nice to meet you',
   services: 'How I can help',
   [record.projects.key]: 'Selected works',

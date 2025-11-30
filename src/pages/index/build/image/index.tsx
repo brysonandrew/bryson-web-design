@@ -56,7 +56,7 @@ export const BuildImage: FC<TProps> = (props) => {
     CUSTOM_CURSOR_KEY,
     mediaRecord.src,
     GALLERY_ICON,
-    <div>{title}</div>
+    <div>{title}</div>,
   );
 
   const { isExiting, handler } = useTapHandler({
@@ -75,35 +75,33 @@ export const BuildImage: FC<TProps> = (props) => {
       handlers.onMouseEnter();
     }
   };
+  console.log();
   return (
     <motion.li
       className={cx(
         'absolute',
         status === 'init' ? 'bg-teal' : 'bg-transparent',
-        isInteractionDisabled && 'pointer-events-none'
+        isInteractionDisabled && 'pointer-events-none',
       )}
       style={{
         filter:
           isHover && !isInteractionDisabled
             ? INIT
             : GRAYED_OUT,
-        ...(isExiting
-          ? { opacity: 0 }
-          : status === 'init'
-          ? circlePosition
-          : circleStyle),
+        ...(isExiting ? { opacity: 0 } : circlePosition),
         ...dimensions,
         ...ORIGIN_50,
       }}
       animate={{
-        opacity:
-          status === 'init'
-            ? [0.25, 0.5]
+        opacity: isHover
+          ? 1
+          : status === 'init'
+            ? [0.05, 0.1]
             : status === 'loading'
-            ? 0.5
-            : status === 'ready'
-            ? 1
-            : 0.2,
+              ? 0.5
+              : status === 'ready'
+                ? 0.1
+                : 0.05,
       }}
       transition={
         status === 'init'
@@ -113,7 +111,7 @@ export const BuildImage: FC<TProps> = (props) => {
               repeat: Infinity,
               repeatType: 'mirror',
               duration: 1,
-              delay:(index*2)/count
+              delay: (index * 2) / count,
             }
           : TRANSITION_04_EASEIN_008
       }

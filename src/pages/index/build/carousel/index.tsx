@@ -57,7 +57,7 @@ export const BuildCarousel: FC<TProps> = ({ style }) => {
         rotateX: -4,
         x: 0,
         z: 0,
-        y: -400,
+        y: -360,
       };
 
   return (
