@@ -37,7 +37,6 @@ export const ViewerHeader: FC<TProps> = ({
         leftHeader={<Viewer.LeftHeader slug={slug} />}
         rightHeader={
           <>
-            <Viewer.RightHeader slug={slug} />
             <Close
               onClick={isDesktop ? handleClose : NOOP}
               {...PRESENCE_OPACITY_DURATION_DELAY}
