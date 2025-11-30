@@ -16,7 +16,7 @@ export const Headline: FC<TProps> = ({ children }) => {
       <div className="h-6" />
       <div className="relative column gap-2">
         <Subtitle>
-          Clean engineering, refined UI,
+          Clean engineering, refined UI
         </Subtitle>
         <ThinLineGrow
           delay={0.2}

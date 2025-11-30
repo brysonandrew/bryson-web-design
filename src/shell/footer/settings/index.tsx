@@ -3,7 +3,7 @@ import { Sound } from './Sound';
 import { isMobile } from 'react-device-detect';
 import { FC } from 'react';
 import { TDivProps } from '@brysonandrew/config-types';
-import { DarkMode } from '@brysonandrew/interactive';
+import { DarkMode } from '@shell/footer/settings/dark-mode';
 
 type TProps = TDivProps;
 export const Settings: FC<TProps> = (props) => {

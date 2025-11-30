@@ -33,10 +33,7 @@ export const Item: FC<TProps> = ({
     title,
     OPEN_IN_NEW_ICON,
     <div className='column-start'>
-      <span className='text-xl'>{title}</span>
-      {/* <span className='text-base'>(if nothing happens</span>
-      <span className='text-base'>please check your</span>
-      <span className='text-base'>browser settings)</span> */}
+      <span className='italics'>{title}</span>
     </div>,
   );
   return (

@@ -6,7 +6,9 @@ import {
   createContext,
 } from 'react';
 import type { FC } from 'react';
-import allRecords from '../../../screens/build/lookup-320w.json';
+import x from '../../../screens/build/lookup-320w.json';
+console.log(x);
+const allRecords = x.slice(0, 11);
 const allRecordsCount = allRecords.length;
 
 import {
@@ -25,10 +27,14 @@ export const BuildProvider: FC<PropsWithChildren> = ({
 }) => {
   const [records, setRecords] = useState<TMediaRecords>([]);
 
-  const isDuplicateCheck = (record: TMediaRecord) =>
-    records.some(({ src }) => src === record.src);
+  const isDuplicateCheck = (
+    accRecords: TMediaRecords,
+    record: TMediaRecord,
+  ) => accRecords.some(({ src }) => src === record.src);
 
-  const resolveRandomUnique = () => {
+  const resolveRandomUnique = (
+    accRecords: TMediaRecords,
+  ) => {
     let result: TMediaRecord | null = null;
     let i = 0;
     while (result === null && i < allRecordsCount) {
@@ -36,7 +42,7 @@ export const BuildProvider: FC<PropsWithChildren> = ({
         Math.random() * allRecordsCount
       );
       const next = allRecords[randomIndex];
-      if (next && !isDuplicateCheck(next)) {
+      if (next && !isDuplicateCheck(accRecords, next)) {
         result = next;
       }
       i++;
@@ -50,10 +56,13 @@ export const BuildProvider: FC<PropsWithChildren> = ({
       const SIZE = 8;
       const next: TMediaRecords = [];
       [...Array(SIZE)].forEach((_) => {
-        const randomUnique = resolveRandomUnique();
+        const randomUnique = resolveRandomUnique(next);
+        console.log(randomUnique);
+
         if (randomUnique) {
           next.push(randomUnique);
         }
+        console.log(next);
       });
       setRecords(next);
     };
@@ -66,9 +75,9 @@ export const BuildProvider: FC<PropsWithChildren> = ({
       (prevs) =>
         prevs?.map((prev) =>
           prev.src === src
-            ? resolveRandomUnique() ?? prev
-            : prev
-        ) ?? []
+            ? (resolveRandomUnique(records) ?? prev)
+            : prev,
+        ) ?? [],
     );
   };
 

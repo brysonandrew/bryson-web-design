@@ -20,6 +20,7 @@ import {
   useCircle,
 } from '@pages/index/build/image/circle';
 import { TRANSITION_04_EASEIN_008 } from '@brysonandrew/motion';
+import { TypographyTooltip } from '@components/typography/tooltip';
 
 type TProps = TImgMotionProps & {
   isScrolling: boolean;
@@ -56,7 +57,7 @@ export const BuildImage: FC<TProps> = (props) => {
     CUSTOM_CURSOR_KEY,
     mediaRecord.src,
     GALLERY_ICON,
-    <div>{title}</div>,
+    title
   );
 
   const { isExiting, handler } = useTapHandler({
@@ -96,11 +97,11 @@ export const BuildImage: FC<TProps> = (props) => {
         opacity: isHover
           ? 1
           : status === 'init'
-            ? [0.05, 0.1]
+            ? [0, 0.15]
             : status === 'loading'
               ? 0.5
               : status === 'ready'
-                ? 0.1
+                ? 0.15
                 : 0.05,
       }}
       transition={

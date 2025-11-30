@@ -15,6 +15,8 @@ export const Sound = () => {
   const { handlers } = useHover(
     CUSTOM_CURSOR_KEY,
     title,
+    '',
+    title,
   );
   const handleTap = toggleSound;
 

@@ -1,5 +1,7 @@
 import { useApp } from '@brysonandrew/app';
 import { useOutsideClick } from '@brysonandrew/hooks';
+import { I } from '@brysonandrew/icons-i';
+import { CLOSE_ICON } from '@brysonandrew/icons-keys';
 import { TService } from '@pages/services/config/types';
 import { SERVICES_ICONS } from '@pages/services/icons';
 import { motion } from 'framer-motion';
@@ -13,7 +15,8 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
   selected,
   close,
 }) => {
-  const { BackFill, GLOW_BOX, BORDER_RADIUS } = useApp();
+  const { BackFill, GLOW_BOX, BORDER_RADIUS, COLOR } =
+    useApp();
 
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -47,7 +50,7 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
             className="services-modal"
             style={{
               boxShadow: GLOW_BOX.accent,
-              borderRadius: BORDER_RADIUS.LG
+              borderRadius: BORDER_RADIUS.LG,
             }}
           >
             <button
@@ -55,20 +58,13 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
               onClick={close}
               aria-label="Close"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
-                />
-              </svg>
+              <I icon={CLOSE_ICON} />
             </button>
 
-            <h3 className='flex items-center gap-2'>
+            <h3
+              className="flex items-center gap-2"
+              style={{ color: COLOR.accent }}
+            >
               <div>{SERVICES_ICONS[selected.id]}</div>
               <div>{selected.title}</div>
             </h3>

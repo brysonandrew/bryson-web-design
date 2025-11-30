@@ -16,10 +16,11 @@ export const IconWithText: FC<TProps> = ({
   children,
 }) => {
   return (
-    <motion.div className='relative text-2xl row gap-1.5 z-50'>
+    <motion.div className='relative row gap-1.5 title-header text-base tracking-wide py-1 z-50'>
       {iconStr && (
         <I classValue='text-current' icon={iconStr} />
       )}
+
       {Icon && <Icon classValue='w-4 h-4' />}
       <motion.div
         className='whitespace-nowrap'

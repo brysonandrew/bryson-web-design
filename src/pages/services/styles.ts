@@ -24,7 +24,7 @@ export const ServicesStylesRoot = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(260px, 1fr)
+      minmax(400px, 1fr)
     );
     row-gap: 1.5rem;
     column-gap: 1.5rem;
@@ -37,18 +37,18 @@ export const ServicesStylesRoot = styled(motion.div)`
   }
 
   .service-card h3 {
-    font-size: 1.1rem;
+    // font-size: 1.1rem;
     margin-bottom: 0.45rem;
   }
 
   .service-card p {
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 0.9rem;
   }
 
   .service-cta {
-    font-size: 0.85rem;
+    // font-size: 0.85rem;
     font-weight: 500;
     opacity: 0.9;
   }
@@ -113,12 +113,12 @@ export const ServicesStylesRoot = styled(motion.div)`
   }
 
   .services-modal h3 {
-    font-size: 1.4rem;
+    // font-size: 1.4rem;
     margin-bottom: 0.75rem;
   }
 
   .services-modal-full {
-    font-size: 0.95rem;
+    // font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.2rem;
   }
@@ -129,7 +129,7 @@ export const ServicesStylesRoot = styled(motion.div)`
     display: grid;
     row-gap: 0.45rem;
     column-gap: 0.45rem;
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
   }
 
   .services-modal-close {
@@ -137,7 +137,7 @@ export const ServicesStylesRoot = styled(motion.div)`
     top: 0.85rem;
     right: 0.9rem;
     border-width: 0;
-    font-size: 1rem;
+    // font-size: 1rem;
     cursor: pointer;
   }
 
