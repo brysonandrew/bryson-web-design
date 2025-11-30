@@ -1,6 +1,6 @@
 {
   "format": "jpeg",
-  "width": 320,
+  "width": 780,
   "height": 2000,
   "space": "srgb",
   "channels": 3,

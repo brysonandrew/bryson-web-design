@@ -1,3 +1,5 @@
+import fs from 'fs/promises';
+import path from 'path';
 import fglob from 'fast-glob';
 import sharp, { OutputInfo } from 'sharp';
 import {
@@ -22,14 +24,35 @@ import {
   TScreensRecord,
 } from '@brysonandrew/media';
 import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScreensRecordInGallery';
+import { green } from '@ops/console';
 
 (async () => {
   try {
     // check for entries that do not have a numbered folder assigned (loose entries)
     const entries = await fglob([
-      'assets/screens/*/[1-9].(jpg|png)',
+      'assets/screens/*/*.(jpg|png)', // first * is project name, second * is image file name
     ]);
-    console.log(entries);
+    let index = 1;
+    for await (const entry of entries) {
+      const data = await fs.readFile(entry);
+
+      const dir = path.dirname(entry);
+      const ext = path.extname(entry);
+
+      let nextPath = path.join(dir, `${index}`);
+
+      await fs.mkdir(nextPath);
+
+      nextPath = path.join(nextPath, `${index}${ext}`);
+
+      await fs.writeFile(nextPath, data);
+
+      console.log(
+        green(`wrote missing dir to  ${nextPath}.`),
+      );
+
+      index++;
+    }
   } catch (error) {
     console.error('Error processing loose entries', error);
   }

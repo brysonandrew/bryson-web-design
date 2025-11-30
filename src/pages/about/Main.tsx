@@ -13,7 +13,7 @@ export const Main: FC<TProps> = ({ style }) => {
       style={style}
     >
       <h3
-        className="title-main text-center lg:w-1/2 text-3xl"
+        className="relative uppercase text-main text-lg char-gap-4 text-center w-[400px] lg:text-xl"
         style={{ color: COLOR.accent }}
       >
         Hi, I’m Andrew — a New Zealand Front-End Developer

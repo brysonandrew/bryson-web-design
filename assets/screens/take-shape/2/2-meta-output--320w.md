@@ -1,7 +1,7 @@
 {
   "format": "jpeg",
   "width": 320,
-  "height": 821,
+  "height": 500,
   "space": "srgb",
   "channels": 3,
   "depth": "uchar",
@@ -11,5 +11,5 @@
   "hasProfile": false,
   "hasAlpha": false,
   "premultiplied": false,
-  "size": 36981
+  "size": 27585
 }
