@@ -20,6 +20,7 @@ export const useAutosize = ({
       const clone = textarea.cloneNode(
         true,
       ) as HTMLTextAreaElement;
+      clone.value = "X" // otherwise the empty textarea is collapsed
       textarea.after(clone);
       clone.style.height = '0px';
       const next = `${clone.scrollHeight}px`;

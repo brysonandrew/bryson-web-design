@@ -1,9 +1,6 @@
-import { existsSync } from 'fs';
-import { mkdir, rename } from 'fs/promises';
 import fglob from 'fast-glob';
 import sharp, { OutputInfo } from 'sharp';
 import {
-  IMAGES_GLOB,
   SMALL_W,
   SMALL_SUFFIX,
   LOOKUP_SMALL_PATH,
@@ -25,9 +22,17 @@ import {
   TScreensRecord,
 } from '@brysonandrew/media';
 import { writeScreensRecordInGallery } from '@ops/screens/process/utils/writeScreensRecordInGallery';
-import { deleteEntry } from '@ops/lib';
 
 (async () => {
+  try {
+    // check for entries that do not have a numbered folder assigned (loose entries)
+    const entries = await fglob([
+      'assets/screens/*/[1-9].(jpg|png)',
+    ]);
+    console.log(entries);
+  } catch (error) {
+    console.error('Error processing loose entries', error);
+  }
   try {
     let screensRecord: TScreensRecord = {};
     const smallRecords: TMediaRecords = [];
@@ -35,15 +40,6 @@ import { deleteEntry } from '@ops/lib';
     const entries = await fglob([
       'assets/screens/*/[1-9]/[1-9].(jpg|png)',
     ]);
-    // const deleteEntries = await fglob(
-    //   ['assets/screens/**/0'],
-    //   { onlyDirectories: true }
-    // );
-    // console.log(deleteEntries);
-    // deleteEntries.forEach((p) => {
-    //   deleteEntry(p);
-    // });
-    // return;
     writePrecachePath(entries);
 
     for await (const entry of entries) {
@@ -73,12 +69,12 @@ import { deleteEntry } from '@ops/lib';
 
       const originalMetaData = await resolveMetaDataFile(
         entry,
-        `${nextEntryBase}-meta.md`
+        `${nextEntryBase}-meta.md`,
       );
 
       const webpEntry = await resolveWebp(
         entry,
-        `${nextEntryBase}`
+        `${nextEntryBase}`,
       );
 
       const record = resolveMediaRecord({
@@ -90,7 +86,7 @@ import { deleteEntry } from '@ops/lib';
       screensRecord = writeScreensRecordInGallery(
         record,
         name,
-        screensRecord
+        screensRecord,
       );
 
       if (EXCLUDE_SMALLS.includes(name)) {
@@ -99,7 +95,7 @@ import { deleteEntry } from '@ops/lib';
 
       const smallEntry = resolveSmallEntry(
         nextEntryBase,
-        ext
+        ext,
       );
       const small: OutputInfo = await sharp(entry)
         .resize({ width: SMALL_W })
@@ -108,12 +104,12 @@ import { deleteEntry } from '@ops/lib';
       const smallMeta = await resolveMetaDataFile(
         smallEntry,
         `${nextEntryBase}-meta-output-${SMALL_SUFFIX}.md`,
-        small
+        small,
       );
 
       const webpSmallEntry = await resolveWebp(
         smallEntry,
-        `${nextEntryBase}${SMALL_SUFFIX}`
+        `${nextEntryBase}${SMALL_SUFFIX}`,
       );
 
       const smallRecord = resolveMediaRecord({

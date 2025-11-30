@@ -6,9 +6,7 @@ import {
   createContext,
 } from 'react';
 import type { FC } from 'react';
-import x from '../../../screens/build/lookup-320w.json';
-console.log(x);
-const allRecords = x.slice(0, 11);
+import allRecords from '../../../screens/build/lookup-320w.json';
 const allRecordsCount = allRecords.length;
 
 import {
@@ -57,12 +55,9 @@ export const BuildProvider: FC<PropsWithChildren> = ({
       const next: TMediaRecords = [];
       [...Array(SIZE)].forEach((_) => {
         const randomUnique = resolveRandomUnique(next);
-        console.log(randomUnique);
-
         if (randomUnique) {
           next.push(randomUnique);
         }
-        console.log(next);
       });
       setRecords(next);
     };
