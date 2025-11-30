@@ -57,12 +57,54 @@ import { green } from '@ops/console';
     console.error('Error processing loose entries', error);
   }
   try {
+    const entries = await fglob([
+      'assets/screens/*/[1-9]/[1-9].webp',
+    ]);
+    for await (const entry of entries) {
+      try {
+        const dirPath = path.dirname(entry);
+        const basename = path.basename(entry);
+        const ext = path.extname(entry);
+        const name = basename.replace(ext, '');
+
+        const dirEntries = await fs.readdir(dirPath);
+        const pngName = `${name}.png`;
+        const outputPath = `${dirPath}/${pngName}`;
+        if (dirEntries.some((value) => value === pngName)) {
+          console.log(green('already contains png'), entry);
+        } else {
+          console.log('no png', entry);
+          try {
+            const result = await sharp(entry)
+              .png()
+              .toFile(outputPath);
+            console.log(
+              green('Converted webp to png:'),
+              outputPath,
+              result,
+            );
+          } catch (error) {
+            console.error('Error converting to png', error);
+          }
+        }
+      } catch (error) {
+        console.error('Error reading dir', error);
+      }
+    }
+  } catch (error) {
+    console.error(
+      'Error processing missing fallback entries',
+      error,
+    );
+  }
+  try {
     let screensRecord: TScreensRecord = {};
     const smallRecords: TMediaRecords = [];
     const entriesCountRecord: Record<string, number> = {};
     const entries = await fglob([
       'assets/screens/*/[1-9]/[1-9].(jpg|png)',
     ]);
+
     writePrecachePath(entries);
 
     for await (const entry of entries) {
