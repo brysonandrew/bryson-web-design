@@ -3,12 +3,11 @@
   "width": 320,
   "height": 149,
   "space": "srgb",
-  "channels": 4,
+  "channels": 3,
   "depth": "uchar",
-  "density": 72,
   "isProgressive": false,
   "hasProfile": false,
-  "hasAlpha": true,
-  "premultiplied": true,
-  "size": 34224
+  "hasAlpha": false,
+  "premultiplied": false,
+  "size": 32127
 }

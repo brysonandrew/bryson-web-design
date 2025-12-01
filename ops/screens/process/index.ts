@@ -53,6 +53,9 @@ import { green } from '@ops/console';
 
       index++;
     }
+    if (entries.length === 0) {
+      console.log(green('No loose entries found.\n'));
+    }
   } catch (error) {
     console.error('Error processing loose entries', error);
   }
@@ -87,6 +90,11 @@ import { green } from '@ops/console';
             console.error('Error converting to png', error);
           }
         }
+        if (entries.length === 0) {
+          console.log(
+            green('No missing png entries found.\n'),
+          );
+        }
       } catch (error) {
         console.error('Error reading dir', error);
       }
@@ -102,7 +110,7 @@ import { green } from '@ops/console';
     const smallRecords: TMediaRecords = [];
     const entriesCountRecord: Record<string, number> = {};
     const entries = await fglob([
-      'assets/screens/*/[1-9]/[1-9].(jpg|png)',
+      'assets/screens/*/[1-9]/[1-9].png',
     ]);
 
     writePrecachePath(entries);
