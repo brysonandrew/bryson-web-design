@@ -1,7 +1,7 @@
 {
   "format": "png",
   "width": 3456,
-  "height": 2296,
+  "height": 1750,
   "space": "srgb",
   "channels": 3,
   "depth": "uchar",

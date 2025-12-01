@@ -25,7 +25,7 @@ export const Content: FC<TProps> = ({ children }) => {
       <div className='relative w-1/6'>
         <ThinLineGrow
           delay={0.2}
-          classValue='absolute left-0 w-full top-1 opacity-50'
+          classValue='absolute left-0 w-full top-1'
         />
       </div>
     </TitleSpace>

@@ -15,7 +15,7 @@ export const ThinLineGrow: FC<TProps> = ({
 }) => {
   return (
     <motion.div
-      className={cx(classValue)}
+      className={cx('opacity-20', classValue)}
       {...PRESENCE_SCALE_X}
       {...{
         ...MOTION_CONFIG.transition,

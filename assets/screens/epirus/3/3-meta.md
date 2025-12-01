@@ -1,7 +1,7 @@
 {
   "format": "jpeg",
-  "width": 3338,
-  "height": 1686,
+  "width": 3340,
+  "height": 1680,
   "space": "srgb",
   "channels": 3,
   "depth": "uchar",

@@ -1,126 +1,122 @@
-import { useApp } from '@brysonandrew/app';
+import { ThinLineGrow } from '@brysonandrew/layout';
+import { useIntoViewOnMount } from '@hooks/into-view-on-mount';
+import { AboutBlocks } from '@pages/about/Blocks';
+import { AboutBullets } from '@pages/about/Bullets';
+import { AboutTitle } from '@pages/about/Title';
 import type { FC } from 'react';
 
 export const AboutLong: FC = () => {
-  const { COLOR } = useApp();
+  const ref = useIntoViewOnMount<HTMLHRElement>({
+    block: 'start',
+  });
 
   return (
-    <div>
-      <h3
-        className="title-main"
-        style={{ color: COLOR.accent }}
-      >
-        What I do
-      </h3>
-      <p>
-        I design and build front-end experiences that feel
-        fast, intuitive, and polished.
-      </p>
-      <div>
-        <h4 className="title-main">My work spans:</h4>
-        <ul>
-          <li>React / Next.js applications</li>
-          <li>Vue / Nuxt applications</li>
-          <li>API-driven and headless CMS setups</li>
-          <li>High-performance, SEO-optimised websites</li>
-          <li>UI/UX for interactive and media-rich apps</li>
-          <li>
-            Advanced animations (Framer Motion, GSAP,
-            scroll-based, micro-interactions)
-          </li>
-          <li>
-            AI-powered interfaces for creative,
-            productivity, and automation tools
-          </li>
-        </ul>
+    <>
+      <div ref={ref} className="w-full">
+        <ThinLineGrow />
       </div>
-      <p>
-        I focus on performance, maintainability, and
-        long-term scalability — writing clean code that your
-        team can build on.
-      </p>
-      <hr />
+      <AboutTitle>What I do</AboutTitle>
+      <AboutBlocks>
+        {[
+          `I design and build front-end experiences
+          that feel fast, intuitive, and polished.`,
+          <AboutBullets key="0" title="My work spans:">
+            {[
+              'React / Next.js applications',
+              'Vue / Nuxt applications',
+              'API-driven and headless CMS setups',
+              'High-performance, SEO-optimised websites',
+              'UI/UX for interactive and media-rich apps',
+              'Advanced animations (Framer Motion, GSAP, scroll-based, micro-interactions)',
+              'AI-powered interfaces for creative, productivity, and automation tools',
+            ]}
+          </AboutBullets>,
+          `I focus on performance, maintainability, and
+          long-term scalability — writing clean code that your
+          team can build on.`,
+        ]}
+      </AboutBlocks>
 
-      <h3>How I work</h3>
+      <ThinLineGrow />
 
-      <h4>My approach is simple:</h4>
-      <p>
-        communicate clearly, deliver reliably, and respect
-        your time.
-      </p>
+      <AboutTitle>How I work</AboutTitle>
 
-      <ul>
-        <li>I provide realistic estimates</li>
-        <li>I share progress early and often</li>
-        <li>I solve problems collaboratively</li>
-        <li>
-          I keep codebases tidy, consistent, and documented
-        </li>
-        <li>
-          I take ownership of the work from start to finish
-        </li>
-      </ul>
+      <AboutBlocks>
+        {[
+          `My approach is simple: communicate clearly, deliver reliably, and respect
+          your time.`,
+          <AboutBullets key="0">
+            {[
+              'I provide realistic estimates',
+              'I share progress early and often',
+              'I solve problems collaboratively',
+              'I keep codebases tidy, consistent, and documented',
+              'I take ownership of the work from start to finish',
+            ]}
+          </AboutBullets>,
+          `I treat every project like a partnership, not a
+          handoff.
+          `,
+        ]}
+      </AboutBlocks>
 
-      <p>
-        I treat every project like a partnership, not a
-        handoff.
-      </p>
+      <ThinLineGrow />
 
-      <hr />
+      <AboutTitle>Who I work with</AboutTitle>
 
-      <h3>Who I work with</h3>
+      <AboutBlocks>
+        {[
+          <AboutBullets
+            key="0"
+            title="I’ve collaborated with:"
+          >
+            {[
+              'digital agencies',
+              'SaaS companies',
+              'creative studios',
+              'e-commerce teams',
+              'startups and founders',
+            ]}
+          </AboutBullets>,
+          `…across New Zealand, Australia, Europe, and North
+          America — often bridging multiple time zones.
+          `,
+          `Whether you need a single front-end feature, a
+          complete web application, or ongoing support, I can
+          integrate smoothly with your team and deliver work
+          you can trust.
+          `,
+        ]}
+      </AboutBlocks>
 
-      <h4>I’ve collaborated with:</h4>
-      <ul>
-        <li>digital agencies</li>
-        <li>SaaS companies</li>
-        <li>creative studios</li>
-        <li>e-commerce teams</li>
-        <li>startups and founders</li>
-      </ul>
+      <ThinLineGrow />
 
-      <p>
-        …across New Zealand, Australia, Europe, and North
-        America — often bridging multiple time zones.
-      </p>
+      <AboutTitle>A bit more about me</AboutTitle>
 
-      <p>
-        Whether you need a single front-end feature, a
-        complete web application, or ongoing support, I can
-        integrate smoothly with your team and deliver work
-        you can trust.
-      </p>
+      <AboutBlocks>
+        {[
+          `I’m originally from New Zealand, now based in
+          Poland, working primarily with clients in Europe,
+          Australia, and North America.`,
+          `Outside of development, I spend my time creating
+          AI-driven projects, audio tools, and music — often
+          combining technology and creativity in unique ways.`,
+        ]}
+      </AboutBlocks>
 
-      <hr />
+      <ThinLineGrow />
 
-      <h3>A bit more about me</h3>
+      <AboutTitle>Let’s work together</AboutTitle>
 
-      <p>
-        I’m originally from New Zealand, now based in
-        Poland, working primarily with clients in Europe,
-        Australia, and North America.
-      </p>
-
-      <p>
-        Outside of development, I spend my time creating
-        AI-driven projects, audio tools, and music — often
-        combining technology and creativity in unique ways.
-      </p>
-
-      <hr />
-
-      <h3>Let’s work together</h3>
-
-      <p>
-        If you need a senior front-end developer who values
-        clarity, quality, and reliability, I’d be happy to
-        help.
-      </p>
-
-      <p>
-        You can reach me anytime through my contact form —
-        or connect via email if you prefer.
-      </p>
-    </div>
+      <AboutBlocks>
+        {[
+          `If you need a senior front-end developer who values
+          clarity, quality, and reliability, I’d be happy to
+          help.`,
+          `You can reach me anytime through my contact form —
+          or connect via email if you prefer.`,
+        ]}
+      </AboutBlocks>
+    </>
   );
 };
