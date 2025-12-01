@@ -4,12 +4,12 @@ import { Section } from '@brysonandrew/layout-section';
 import { SECTION_RECORD } from '@app/routes';
 import { Main } from '@pages/about/Main';
 
-const Tech = () => (
+const About = () => (
   <Section title={SECTION_RECORD.about}>
     <Parallax {...PARALLAX_PROPS}>
-      {(props) => <Main {...props} />}
+      {(props) => <Main isCollapsible {...props} />}
     </Parallax>
-  </Section> 
+  </Section>
 );
 
-export default Tech;
+export default About;

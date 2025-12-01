@@ -27,3 +27,4 @@ assets/canvas*
 .cemetary/*
 .trash/**/*
 .trash/*
+.search-notes/*

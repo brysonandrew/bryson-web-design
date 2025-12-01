@@ -11,6 +11,26 @@ import {
   TAILWIND_CSS,
 } from './third-party';
 
+export const REPURPOSE = {
+  title: 'Repurpose',
+  description: 'Video Editor',
+  pricing: 'select',
+  href: 'https://repurpose.io/',
+  tags: [
+    REMOTION,
+    REACT,
+    TYPESCRIPT,
+    FRAMER_MOTION,
+    TAILWIND_CSS,
+    NEXT_JS,
+  ],
+  time: new Date(2024, 7, 15),
+  paragraphs: [
+    'Allow user to add text and images to an uploaded video.',
+    'AI subtitles and video clip generation.',
+  ],
+};
+
 export const INIT_PROJECT_ITEMS = [
   {
     title: 'Take Shape',
@@ -29,25 +49,6 @@ export const INIT_PROJECT_ITEMS = [
     paragraphs: [
       'Converting Figma designs into React code.',
       'Conditional forms.',
-    ],
-  },
-  {
-    title: 'Repurpose',
-    description: 'Video Editor',
-    pricing: 'select',
-    href: 'https://repurpose.io/',
-    tags: [
-      REMOTION,
-      REACT,
-      TYPESCRIPT,
-      FRAMER_MOTION,
-      TAILWIND_CSS,
-      NEXT_JS,
-    ],
-    time: new Date(2024, 7, 15),
-    paragraphs: [
-      'Allow user to add text and images to an uploaded video.',
-      'AI subtitles and video clip generation.',
     ],
   },
   {

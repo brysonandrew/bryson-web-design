@@ -20,7 +20,7 @@ export const Headline: FC<TProps> = ({ children }) => {
         </Subtitle>
         <ThinLineGrow
           delay={0.2}
-          classValue="w-3/4 opacity-40"
+          classValue="w-3/4"
         />
         <Subtitle>and reliable delivery</Subtitle>
       </div>

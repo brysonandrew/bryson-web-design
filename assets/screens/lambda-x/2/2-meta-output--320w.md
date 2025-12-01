@@ -1,7 +1,7 @@
 {
   "format": "png",
   "width": 320,
-  "height": 290,
+  "height": 162,
   "space": "srgb",
   "channels": 4,
   "depth": "uchar",
@@ -10,5 +10,5 @@
   "hasProfile": false,
   "hasAlpha": true,
   "premultiplied": true,
-  "size": 10403
+  "size": 10611
 }

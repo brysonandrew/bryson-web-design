@@ -31,11 +31,7 @@ export const useCircle = ({
       (isVertical ? -1000 : -imageSize - radius)
     );
   });
-  const opacity = useTransform(depth, (v) => {
-    const offset = 1 + MIN_OPACITY;
-    const next = offset - (v + offset) * 0.5;
-    return next * 0.4;
-  });
+
   const spread = useTransform(radians, (v) => {
     return (
       Math.cos(v) * radius * (isVertical ? 0.6 : 1) +
@@ -59,5 +55,5 @@ export const useCircle = ({
         rotateX: 0,
         rotateY: rotation,
       };
-  return { ...style, z, opacity };
+  return { ...style, z };
 };

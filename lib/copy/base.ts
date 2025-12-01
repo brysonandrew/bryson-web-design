@@ -1,4 +1,7 @@
-import { INIT_PROJECT_ITEMS } from '@brysonandrew/copy/items';
+import {
+  INIT_PROJECT_ITEMS,
+  REPURPOSE,
+} from '@brysonandrew/copy/items';
 import { TTitle } from '@brysonandrew/copy/types';
 import { arrToRecord } from '@brysonandrew/utils-object/arrToRecord';
 import { TInitItem } from '@brysonandrew/gallery';
@@ -13,8 +16,7 @@ export const CONTACT_PHONE = '516 407 953';
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.replace(/\s/g, '')}`;
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY = `+48 ${CONTACT_PHONE}`;
 
-export const CONTACT_EMAIL =
-  'andrew@brysona.dev'; // 'andrew@brysonwebdesign.co.nz';
+export const CONTACT_EMAIL = 'andrew@brysona.dev'; // 'andrew@brysonwebdesign.co.nz';
 export const CONTACT_URL = 'www.brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
@@ -27,11 +29,11 @@ export const CONTACT_FORM_FOOTER = {
 
 const RECORD = arrToRecord<TInitItem<TTitle>, 'title'>(
   INIT_PROJECT_ITEMS,
-  'title'
+  'title',
 );
 
 export const CV_ITEMS = [
-  RECORD.Repurpose,
+  REPURPOSE,
   RECORD['Insight Factory'],
   RECORD.Juke,
   RECORD.Buzzcast,
@@ -40,7 +42,7 @@ export const CV_ITEMS = [
 export const CV_PRESETS_RECORD = {
   LATEST: [
     ...INIT_PROJECT_ITEMS.filter(
-      ({ pricing }) => pricing === 'select'
+      ({ pricing }) => pricing === 'select',
     ).slice(0, 3),
   ],
   MEDIA: [
@@ -59,7 +61,7 @@ type TPresetEntry = [TPresetName, TPresetValue];
 export type TPresetEntries = TPresetEntry[];
 
 export const CV_PRESETS = Object.entries(
-  CV_PRESETS_RECORD
+  CV_PRESETS_RECORD,
 ) as TPresetEntries;
 
 const TEAM_SENTENCE = `Seeking an opportunity to

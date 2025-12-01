@@ -1,8 +1,8 @@
 {
   "format": "webp",
   "width": 3456,
-  "height": 1768,
+  "height": 1760,
   "channels": 3,
   "premultiplied": false,
-  "size": 382100
+  "size": 437828
 }

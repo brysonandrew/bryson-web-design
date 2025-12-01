@@ -1,13 +1,11 @@
 {
-  "format": "jpeg",
+  "format": "png",
   "width": 2096,
   "height": 1059,
   "space": "srgb",
   "channels": 3,
   "depth": "uchar",
-  "density": 72,
-  "chromaSubsampling": "4:4:4",
-  "isProgressive": true,
+  "isProgressive": false,
   "hasProfile": false,
   "hasAlpha": false
 }

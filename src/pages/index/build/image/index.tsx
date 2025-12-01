@@ -20,7 +20,6 @@ import {
   useCircle,
 } from '@pages/index/build/image/circle';
 import { TRANSITION_04_EASEIN_008 } from '@brysonandrew/motion';
-import { TypographyTooltip } from '@components/typography/tooltip';
 
 type TProps = TImgMotionProps & {
   isScrolling: boolean;
@@ -46,8 +45,6 @@ export const BuildImage: FC<TProps> = (props) => {
   const size = positionConfig.imageSize;
 
   const circleStyle = useCircle(positionConfig);
-  const { opacity: circleOpacity, ...circlePosition } =
-    circleStyle;
   const dimensions = useImageDimensions({
     box: { width: size, height: size },
     image: mediaRecord,
@@ -57,7 +54,7 @@ export const BuildImage: FC<TProps> = (props) => {
     CUSTOM_CURSOR_KEY,
     mediaRecord.src,
     GALLERY_ICON,
-    title
+    title,
   );
 
   const { isExiting, handler } = useTapHandler({
@@ -76,7 +73,6 @@ export const BuildImage: FC<TProps> = (props) => {
       handlers.onMouseEnter();
     }
   };
-  console.log();
   return (
     <motion.li
       className={cx(
@@ -89,9 +85,10 @@ export const BuildImage: FC<TProps> = (props) => {
           isHover && !isInteractionDisabled
             ? INIT
             : GRAYED_OUT,
-        ...(isExiting ? { opacity: 0 } : circlePosition),
+        ...circleStyle,
         ...dimensions,
         ...ORIGIN_50,
+        opacity: 0,
       }}
       animate={{
         opacity: isHover

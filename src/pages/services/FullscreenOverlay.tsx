@@ -6,10 +6,11 @@ import {
   CUSTOM_CURSOR_KEY,
   useHover,
 } from '@brysonandrew/motion-cursor';
+import { useIntoViewOnMount } from '@hooks/into-view-on-mount';
 import { TService } from '@pages/services/config/types';
 import { SERVICES_ICONS } from '@pages/services/icons';
 import { motion } from 'framer-motion';
-import { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 
 type TProps = {
   selected: TService;
@@ -22,21 +23,12 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
   const { LIGHT, GLOW_BOX, BORDER_RADIUS, COLOR } =
     useApp();
 
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useIntoViewOnMount<HTMLDivElement>();
 
   useOutsideClick({
     ref,
     handler: close,
   });
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.scrollIntoView({
-        block: 'center',
-        inline: 'center',
-      });
-    }
-  }, []);
 
   const title = 'close';
   const { handlers } = useHover(
