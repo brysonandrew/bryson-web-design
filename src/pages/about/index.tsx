@@ -6,7 +6,7 @@ import { SECTION_RECORD } from '@app/routes';
 export const About = () => {
   return (
     <Section title={SECTION_RECORD.about}>
-      <Main />
+      <Main  />
       <P60Y />
     </Section>
   );
