@@ -45,7 +45,7 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div ref={ref} className="relative bg-red">
+      <div ref={ref} className="relative">
         {LIGHT && (
           <>
             <LIGHT.MOTION.Back />
@@ -57,7 +57,7 @@ export const ServicesFullscreenOverlay: FC<TProps> = ({
           className="services-modal"
           style={{
             boxShadow: GLOW_BOX.accent,
-            borderRadius: BORDER_RADIUS.LG,
+            borderRadius: BORDER_RADIUS.MD,
           }}
         >
           <motion.button

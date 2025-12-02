@@ -58,9 +58,6 @@ export const ServicesCard: FC<TProps> = ({
       </h3>
       <div className="h-4" />
       <p className="relative">{service.short}</p>
-      <span className="service-cta text-lg">
-        Learn more →
-      </span>
     </motion.button>
   );
 };
