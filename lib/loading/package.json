@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/loading",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Loading library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
     "class-variance-authority": "^0.7.0",
     "framer-motion": "^11.11.11",
     "react": "^18.3.1"

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Icons library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,8 +21,8 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/icons-keys": "*",
     "@brysonandrew/icons-i": "*",
+    "@brysonandrew/icons-keys": "*",
     "@brysonandrew/icons-load": "*"
   },
   "exports": {
@@ -31,6 +31,7 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./i/config/types": "./i/config/types.ts",
     "./keys/base": "./keys/base.ts",
     "./keys/clipboard": "./keys/clipboard.ts",
     "./keys/contact": "./keys/contact.ts",
@@ -45,7 +46,6 @@
     "./keys/square": "./keys/square.ts",
     "./keys/text": "./keys/text.ts",
     "./keys/config/types": "./keys/config/types.ts",
-    "./i/config/types": "./i/config/types.ts",
     "./load/usePreloadIcons": "./load/usePreloadIcons.ts"
   }
 }

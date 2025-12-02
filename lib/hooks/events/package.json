@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-events",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Hooks events library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -23,16 +23,16 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "framer-motion": "^11.11.11",
-    "@brysonandrew/hooks-window": "7.0.109"
+    "@brysonandrew/hooks-window": "7.0.111"
   },
   "exports": {
+    "./event-callback": "./event-callback.ts",
+    "./event-listener": "./event-listener.ts",
     ".": {
       "require": "./index.ts",
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./useEventCallback": "./useEventCallback.ts",
-    "./useEventListener": "./useEventListener.ts",
     "./useHover": "./useHover.ts",
     "./useLongPress": "./useLongPress.ts"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-dimensionless",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Svg dimensionless library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
     "react": "^18.3.1"
   },
   "exports": {

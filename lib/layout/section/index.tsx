@@ -27,10 +27,12 @@ export const Section: FC<TProps> = ({
       id={title}
       {...props}
     >
-      <div className="h-44 flex lg:hidden" />
+      <div className='h-44 flex lg:hidden' />
       <Title>{title}</Title>
-      <div className="h-32 flex lg:h-24" />
+      <div className='h-32 flex lg:h-24' />
       {children}
     </div>
   );
 };
+
+

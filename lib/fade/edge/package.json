@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/fade-edge",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Fade edge library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/fade-core": "7.0.109",
+    "@brysonandrew/fade-core": "7.0.111",
     "react": "^18.3.1",
-    "@brysonandrew/config-types": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
     "class-variance-authority": "^0.7.0"
   },
   "exports": {

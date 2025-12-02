@@ -1,6 +1,6 @@
+export * from './local-storage';
 export * from './useDomCondition';
 export * from './useKey';
-export * from './local-storage';
 export * from './useOutsideClick';
 export * from './useRect';
 export * from './useRefState';
