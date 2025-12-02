@@ -19,7 +19,6 @@ export const Main: FC<TProps> = ({
   style,
   isCollapsible,
 }) => {
-  const { COLOR, LIGHT } = useApp();
   const [isLong, setLong] = useState(!isCollapsible);
   const buttonTitle = isLong ? 'Show less' : 'Read more';
 
