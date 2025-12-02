@@ -5,6 +5,7 @@
   "main": "src/main.tsx",
   "types": "src/index.d.ts",
   "type": "module",
+  "private": true,
   "engines": {
     "npm": ">=10.0.0",
     "node": ">=20.0.0"
@@ -12,8 +13,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --config vite.config.ts",
-    "lint": "tsc --build . & eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tsc --build . && eslint . --fix",
+    "test": "vitest",
     "screens": "esrun ops/screens/process",
     "d": "npm run dev",
     "e": "esrun ops/exporter lib",
@@ -26,7 +27,7 @@
     "iw": "npm install --ws",
     "el": "npm run e && npm run l",
     "epl": "npm run e && npm run p && npm run l",
-    "service-worker": "npx nodemon --exec 'yarn build && yarn dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
+    "service-worker": "npx nodemon --exec 'npm run build && npm run dev' -w src -w vite.config.ts -e 'ts,js,tsx,jsx'",
     "clean": "esrun ops/delete/clean.ts",
     "fonts": "esrun ops/fonts/index.ts",
     "ets": "esrun ops/resolve-ts-paths.ts",
