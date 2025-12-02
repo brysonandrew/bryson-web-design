@@ -14,7 +14,7 @@ export const AboutTitle: FC<PropsWithChildren> = ({
         </>
       )}
       <h3
-        className="relative text-main"
+        className="relative title-section text-3xl"
         style={{ color: COLOR.accent }}
       >
         {children}{' '}
