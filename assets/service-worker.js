@@ -202,7 +202,7 @@ self.addEventListener('fetch', (event) => {
       // Prefer cached (fast) if present, else fresh network
       return cachedResponse || networkResponse;
     } catch (error) {
-      console.error('[SW] staleWhileRevalidate network error', error);
+      console.warn('[SW] staleWhileRevalidate network error', error);
 
       if (cachedResponse) return cachedResponse;
 
