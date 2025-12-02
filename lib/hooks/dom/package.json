@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-dom",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Hooks dom library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,8 +22,8 @@
   ],
   "peerDependencies": {
     "react": "^18.3.1",
-    "@brysonandrew/hooks-events": "7.0.109",
-    "@brysonandrew/config-types": "7.0.109"
+    "@brysonandrew/hooks-events": "7.0.111",
+    "@brysonandrew/config-types": "7.0.111"
   },
   "exports": {
     ".": {
@@ -31,9 +31,9 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./local-storage": "./local-storage.ts",
     "./useDomCondition": "./useDomCondition.ts",
     "./useKey": "./useKey.ts",
-    "./useLocalStorage": "./useLocalStorage.ts",
     "./useOutsideClick": "./useOutsideClick.ts",
     "./useRect": "./useRect.ts",
     "./useRefState": "./useRefState.ts",

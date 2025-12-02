@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/sounds",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Sounds library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -23,10 +23,9 @@
   ],
   "peerDependencies": {
     "react": "^18.3.1",
-    "@brysonandrew/utils-function": "7.0.109",
+    "@brysonandrew/utils-function": "7.0.111",
     "react-synthwave": "^1.2.7",
-    "@emotion/styled": "^11.13.0",
-    "@brysonandrew/config-types": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
     "class-variance-authority": "^0.7.0"
   },
   "exports": {
@@ -36,11 +35,15 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
+    "./useClickSound": "./useClickSound.ts",
     "./useCoinDropSound": "./useCoinDropSound.ts",
     "./useFocusSound": "./useFocusSound.ts",
+    "./useHoverSound": "./useHoverSound.ts",
     "./useMoveSound": "./useMoveSound.ts",
     "./useOffSound": "./useOffSound.ts",
     "./useOnSound": "./useOnSound.ts",
+    "./usePopSound": "./usePopSound.ts",
+    "./useWhooshSound": "./useWhooshSound.ts",
     "./config/types": "./config/types.ts",
     "./icons/VolumeOff": "./icons/VolumeOff.tsx",
     "./icons/VolumeOn": "./icons/VolumeOn.tsx"

@@ -1,3 +1,8 @@
+export * from './preflights/reset';
+export * from './preflights/resolveInput';
+export * from './preflights/scrollbar';
+export * from './preflights/scrollbar/manual';
+export * from './preflights/scrollbar/manual/is';
 export * from './rules/resolveCharGapRules';
 export * from './rules/resolveOpacityRules';
 export * from './presets/resolveFonts';
@@ -21,8 +26,3 @@ export * from './shortcuts/neu/resolveNeuShadow';
 export * from './shortcuts/neu/types';
 export * from './shortcuts/neu/ranges';
 export * from './shortcuts/neu/ranges/resolveRange';
-export * from './preflights/reset';
-export * from './preflights/resolveInput';
-export * from './preflights/scrollbar';
-export * from './preflights/scrollbar/manual';
-export * from './preflights/scrollbar/manual/is';

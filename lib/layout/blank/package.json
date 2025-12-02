@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/layout-blank",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Layout blank library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -23,8 +23,8 @@
   "peerDependencies": {
     "class-variance-authority": "^0.7.0",
     "framer-motion": "^11.11.11",
-    "@brysonandrew/config-types": "7.0.109",
-    "@brysonandrew/dark-mode": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
+    "@brysonandrew/dark-mode": "7.0.111",
     "react": "^18.3.1"
   },
   "exports": {

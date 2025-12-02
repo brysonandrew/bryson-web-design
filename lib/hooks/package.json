@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,7 +26,7 @@
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.109",
+    "@brysonandrew/utils-function": "7.0.111",
     "react": "^18.3.1"
   },
   "exports": {
@@ -36,16 +36,16 @@
       "default": "./index.ts"
     },
     "./network/useIpWebRtc": "./network/useIpWebRtc.ts",
+    "./dom/local-storage": "./dom/local-storage.ts",
     "./dom/useDomCondition": "./dom/useDomCondition.ts",
     "./dom/useKey": "./dom/useKey.ts",
-    "./dom/useLocalStorage": "./dom/useLocalStorage.ts",
     "./dom/useOutsideClick": "./dom/useOutsideClick.ts",
     "./dom/useRect": "./dom/useRect.ts",
     "./dom/useRefState": "./dom/useRefState.ts",
     "./dom/hover/useHoverBasic": "./dom/hover/useHoverBasic.ts",
     "./dom/hover/useHoverMulti": "./dom/hover/useHoverMulti.ts",
-    "./events/useEventCallback": "./events/useEventCallback.ts",
-    "./events/useEventListener": "./events/useEventListener.ts",
+    "./events/event-callback": "./events/event-callback.ts",
+    "./events/event-listener": "./events/event-listener.ts",
     "./events/useHover": "./events/useHover.ts",
     "./events/useLongPress": "./events/useLongPress.ts",
     "./life-cycle/useIsFirstRender": "./life-cycle/useIsFirstRender.ts",

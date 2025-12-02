@@ -1,0 +1,17 @@
+{
+  "name": "@brysonandrew/snowfall",
+  "version": "7.0.111",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "description": "Snowfall library",
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "exports": {
+    ".": {
+      "require": "./index.tsx",
+      "import": "./index.tsx",
+      "default": "./index.tsx"
+    }
+  }
+}

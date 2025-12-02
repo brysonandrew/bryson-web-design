@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-box",
-  "version": "7.0.109",
+  "version": "7.0.111",
   "description": "Utils box library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.109",
-    "@brysonandrew/utils-format": "7.0.109",
-    "@brysonandrew/uno-shortcuts": "7.0.109",
+    "@brysonandrew/config-types": "7.0.111",
+    "@brysonandrew/utils-format": "7.0.111",
+    "@brysonandrew/uno-shortcuts": "7.0.111",
     "react": "^18.3.1"
   },
   "exports": {
