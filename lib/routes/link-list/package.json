@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes-link-list",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Routes link list library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
@@ -22,11 +22,11 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/app": "7.0.111",
-    "@brysonandrew/config-types": "7.0.111",
-    "@brysonandrew/layout-lists": "7.0.111",
-    "react": "^18.3.1",
-    "react-router-dom": "^6.27.0"
+    "@brysonandrew/app": "7.0.112",
+    "@brysonandrew/config-types": "7.0.112",
+    "@brysonandrew/layout-lists": "7.0.112",
+    "react": "^19.2.0",
+    "react-router-dom": "^7.10.0"
   },
   "exports": {
     ".": {

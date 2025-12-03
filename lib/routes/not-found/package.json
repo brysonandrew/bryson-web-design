@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes-not-found",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Routes not found library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
@@ -22,10 +22,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.3.1",
-    "@brysonandrew/config-types": "7.0.111",
-    "react-router-dom": "^6.27.0",
-    "react-router": "^6.27.0"
+    "react": "^19.2.0",
+    "@brysonandrew/config-types": "7.0.112",
+    "react-router-dom": "^7.10.0",
+    "react-router": "^7.10.0"
   },
   "exports": {
     "./RedirectLink": "./RedirectLink.tsx",

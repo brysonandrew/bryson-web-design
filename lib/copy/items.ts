@@ -9,7 +9,30 @@ import {
   STRIPE,
   REMOTION,
   TAILWIND_CSS,
+  VUE,
+  NUXT_JS,
 } from './third-party';
+
+export const INSURGENCE = {
+  title: 'Insurgence',
+  description: 'AI Consultants and Engineers',
+  pricing: 'select',
+  href: 'https://insurgence.ai/',
+  tags: [
+    VUE,
+    NUXT_JS,
+    REACT,
+    NEXT_JS,
+    TYPESCRIPT,
+    TAILWIND_CSS,
+  ],
+  time: new Date(2025, 11, 1),
+  paragraphs: [
+    'Vue & React frontend development.',
+    'UI/UX work for AI-powered applications.',
+    'Developed a PDF templater app.',
+  ],
+};
 
 export const REPURPOSE = {
   title: 'Repurpose',
@@ -26,8 +49,9 @@ export const REPURPOSE = {
   ],
   time: new Date(2024, 7, 15),
   paragraphs: [
-    'Allow user to add text and images to an uploaded video.',
+    'Using Remotion to programmatically combine text, images, and background layers into a rendered video.',
     'AI subtitles and video clip generation.',
+    'Video player UI/UX — controls, interactions, and viewing experience.'
   ],
 };
 
@@ -118,9 +142,9 @@ export const INIT_PROJECT_ITEMS = [
     ],
     time: new Date(2023, 4, 1),
     paragraphs: [
-      'Migration/rewrite of app to React.',
+      'Migration/rewrite of app from Blaze.js to React.js.',
       'Rethinking app structure for a more "contextual" user experience.',
-      'Implementation of new features.',
+      'Implementation of new, client requested features.',
     ],
   },
   {

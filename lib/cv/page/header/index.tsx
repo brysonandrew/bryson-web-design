@@ -11,7 +11,7 @@ export const Header = () => {
         classValue='column-end w-full mt-1'
         url={url}
         email={email} 
-        phone={phone}
+        // phone={phone}
         style={{fontSize: 16}}
       />
     </header>

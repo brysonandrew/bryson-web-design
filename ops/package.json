@@ -29,14 +29,14 @@
   "peerDependencies": {
     "@iconify/react": "^4.1.1",
     "clsx": "^1.2.1",
-    "framer-motion": "^10.3.2",
-    "react": "^18.2.0",
+    "framer-motion": "^12.23.25",
+    "react": "^19.2.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.2.0",
     "react-helmet-async": "^2.0.5",
-    "react-intersection-observer": "^9.5.2",
-    "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
+    "react-intersection-observer": "^10.0.0",
+    "react-router": "^7.10.0",
+    "react-router-dom": "^7.10.0",
     "react-synthwave": "^1.2.7"
   },
   "devDependencies": {

@@ -18,5 +18,5 @@ export const Blank: TBlankC = ({ dark, ...props }) => {
     </>
   );
 };
-export * from './motion';
 export * from './config/types';
+export * from './motion';

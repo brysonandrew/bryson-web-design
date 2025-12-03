@@ -2,21 +2,29 @@ export const REACT = {
   title: 'React',
   href: 'https://reactjs.org/',
 };
+export const NEXT_JS = {
+  title: 'Next.js',
+  href: 'https://nextjs.org/',
+};
+export const VUE = {
+  title: 'Vue',
+  href: 'https://vuejs.org/',
+};
+export const NUXT_JS = {
+  title: 'Nuxt.js',
+  href: 'https://nuxt.com/',
+};
 export const TYPESCRIPT = {
   title: 'Typescript',
   href: 'https://www.typescriptlang.org/',
-};
-export const FRAMER_MOTION = {
-  title: 'Framer Motion',
-  href: 'https://www.framer.com/motion/',
 };
 export const TAILWIND_CSS = {
   title: 'Tailwind CSS',
   href: 'https://tailwindcss.com/',
 };
-export const NEXT_JS = {
-  title: 'Next.js',
-  href: 'https://nextjs.org/',
+export const FRAMER_MOTION = {
+  title: 'Framer Motion',
+  href: 'https://www.framer.com/motion/',
 };
 export const NODE_JS = {
   title: 'Node.js',

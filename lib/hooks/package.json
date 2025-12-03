@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Hooks library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -26,8 +26,8 @@
     "@brysonandrew/hooks-life-cycle": "*",
     "@brysonandrew/hooks-scroll": "*",
     "@brysonandrew/hooks-window": "*",
-    "@brysonandrew/utils-function": "7.0.111",
-    "react": "^18.3.1"
+    "@brysonandrew/utils-function": "7.0.112",
+    "react": "^19.2.0"
   },
   "exports": {
     ".": {

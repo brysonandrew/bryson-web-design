@@ -1,5 +1,6 @@
 import {
   INIT_PROJECT_ITEMS,
+  INSURGENCE,
   REPURPOSE,
 } from '@brysonandrew/copy/items';
 import { TTitle } from '@brysonandrew/copy/types';
@@ -17,7 +18,7 @@ export const CONTACT_PHONE_WITH_NATIONAL_TRUNK = `+48${CONTACT_PHONE.replace(/\s
 export const CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY = `+48 ${CONTACT_PHONE}`;
 
 export const CONTACT_EMAIL = 'andrew@brysona.dev'; // 'andrew@brysonwebdesign.co.nz';
-export const CONTACT_URL = 'www.brysona.dev';
+export const CONTACT_URL = 'brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
   email: CONTACT_EMAIL,
@@ -33,18 +34,19 @@ const RECORD = arrToRecord<TInitItem<TTitle>, 'title'>(
 );
 
 export const CV_ITEMS = [
+  INSURGENCE,
   REPURPOSE,
   RECORD['Insight Factory'],
-  RECORD.Juke,
-  RECORD.Buzzcast,
 ];
 
-export const CV_PRESETS_RECORD = {
-  LATEST: [
+const LATEST_PROJECTS= [
     ...INIT_PROJECT_ITEMS.filter(
       ({ pricing }) => pricing === 'select',
     ).slice(0, 3),
-  ],
+  ]
+
+export const CV_PRESETS_RECORD = {
+  LATEST: CV_ITEMS,
   MEDIA: [
     RECORD['Insight Factory'],
     RECORD.Juke,
@@ -74,5 +76,5 @@ designing and developing user-centric,
 high-performance websites.`;
 
 export const DESCRIPTION_PARAGRAPHS = [
-  `(Visit brysona.dev) 8+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
+  `(Visit brysona.dev) 9+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
 ];

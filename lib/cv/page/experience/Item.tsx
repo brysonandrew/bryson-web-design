@@ -27,14 +27,14 @@ export const Item: FC<TProps> = ({
             <p className='absolute right-full top-0 mr-4 text-right'>
               {formateShortDate(time)}
             </p>
-            <h6>{item.title}</h6>
+            <h6 className='text-lg font-800'>{item.title}</h6>
           </div>
-          <p>{item.description}</p>
+          <p className='text-lg'>{item.description}</p>
         </div>
-        <div className='py-1' />
+        <div className='py-2' />
         <div>
           {item.paragraphs && (
-            <ul>
+            <ul className='flex flex-col items-stretch gap-0.5'>
               {item.paragraphs.map((v, index) => (
                 <Fragment key={`index-${index}`}>
                   <li className='py-0.25' />
@@ -47,7 +47,7 @@ export const Item: FC<TProps> = ({
           )}
           {item.tags && (
             <>
-              <div className='py-1' />
+              <div className='py-2' />
               <i>
                 {item.tags
                   .map(({ title }) => title)

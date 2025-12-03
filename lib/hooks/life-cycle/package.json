@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/hooks-life-cycle",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Hooks life cycle library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.3.1"
+    "react": "^19.2.0"
   },
   "exports": {
     ".": {

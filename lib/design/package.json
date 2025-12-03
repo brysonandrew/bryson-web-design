@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/design",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Design library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.3.1",
-    "@brysonandrew/config-types": "7.0.111",
-    "@brysonandrew/config-constants": "7.0.111",
-    "@brysonandrew/app": "7.0.111",
-    "class-variance-authority": "^0.7.0",
-    "@brysonandrew/color": "7.0.111",
-    "@brysonandrew/config-constants-number": "7.0.111",
-    "framer-motion": "^11.11.11",
-    "@brysonandrew/interactive": "7.0.111",
-    "@brysonandrew/layout-line": "7.0.111",
-    "@brysonandrew/uno-presets": "7.0.111"
+    "react": "^19.2.0",
+    "@brysonandrew/config-types": "7.0.112",
+    "@brysonandrew/config-constants": "7.0.112",
+    "@brysonandrew/app": "7.0.112",
+    "class-variance-authority": "^0.7.1",
+    "@brysonandrew/color": "7.0.112",
+    "@brysonandrew/config-constants-number": "7.0.112",
+    "framer-motion": "^12.23.25",
+    "@brysonandrew/interactive": "7.0.112",
+    "@brysonandrew/layout-line": "7.0.112",
+    "@brysonandrew/uno-presets": "7.0.112"
   },
   "exports": {
     "./Layout": "./Layout.tsx",
@@ -40,11 +40,11 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./config/constants": "./config/constants.ts",
     "./color/OpacitySeries": "./color/OpacitySeries.tsx",
     "./color/Palatte": "./color/Palatte.tsx",
     "./color/Series": "./color/Series.tsx",
     "./color": "./color/index.tsx",
+    "./config/constants": "./config/constants.ts",
     "./typography": "./typography/index.tsx",
     "./typography/font": "./typography/font/index.tsx",
     "./typography/font/item/Left": "./typography/font/item/Left.tsx",

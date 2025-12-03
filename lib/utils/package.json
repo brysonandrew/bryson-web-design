@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Utils library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -28,11 +28,11 @@
     "@brysonandrew/utils-format": "*",
     "@brysonandrew/utils-function": "*",
     "@brysonandrew/utils-key": "*",
+    "@brysonandrew/utils-random": "*",
     "@brysonandrew/utils-object": "*",
     "@brysonandrew/utils-transformer": "*",
-    "@brysonandrew/utils-random": "*",
-    "@brysonandrew/utils-unit": "*",
-    "@brysonandrew/utils-validation": "*"
+    "@brysonandrew/utils-validation": "*",
+    "@brysonandrew/utils-unit": "*"
   },
   "exports": {
     ".": {
@@ -63,6 +63,10 @@
     "./key/generateRandomId": "./key/generateRandomId.ts",
     "./key/local-storage": "./key/local-storage.ts",
     "./key/resolve-composite-key": "./key/resolve-composite-key.ts",
+    "./random/resolveRandomDate": "./random/resolveRandomDate.ts",
+    "./random/resolveRandomGaussian": "./random/resolveRandomGaussian.ts",
+    "./random/resolveRandomItem": "./random/resolveRandomItem.ts",
+    "./random/id/uuid": "./random/id/uuid.ts",
     "./object/arrToRecord": "./object/arrToRecord.ts",
     "./object/mergeDeep": "./object/mergeDeep.ts",
     "./object/prefixKeys": "./object/prefixKeys.ts",
@@ -70,13 +74,6 @@
     "./object/sortKeys": "./object/sortKeys.ts",
     "./transformer/colorToStyles": "./transformer/colorToStyles.ts",
     "./transformer/newlineToArr": "./transformer/newlineToArr.ts",
-    "./random/resolveRandomDate": "./random/resolveRandomDate.ts",
-    "./random/resolveRandomGaussian": "./random/resolveRandomGaussian.ts",
-    "./random/resolveRandomItem": "./random/resolveRandomItem.ts",
-    "./random/id/uuid": "./random/id/uuid.ts",
-    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
-    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
-    "./unit/stripPx": "./unit/stripPx.ts",
     "./validation/assertion": "./validation/assertion.ts",
     "./validation/is/defined": "./validation/is/defined.ts",
     "./validation/is/falsy": "./validation/is/falsy.ts",
@@ -86,6 +83,9 @@
     "./validation/is/truthy": "./validation/is/truthy.ts",
     "./validation/is/value": "./validation/is/value.ts",
     "./validation/is/number/finite": "./validation/is/number/finite.ts",
-    "./validation/is/number": "./validation/is/number/index.ts"
+    "./validation/is/number": "./validation/is/number/index.ts",
+    "./unit/resolveIntRecord": "./unit/resolveIntRecord.ts",
+    "./unit/resolveRemFromPx": "./unit/resolveRemFromPx.ts",
+    "./unit/stripPx": "./unit/stripPx.ts"
   }
 }

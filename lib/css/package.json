@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/css",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Css library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -32,12 +32,12 @@
       "default": "./index.ts"
     },
     "./base/useBaseGlobalCss": "./base/useBaseGlobalCss.ts",
+    "./format/shadow": "./format/shadow/index.ts",
     "./format/filter/blur": "./format/filter/blur.ts",
     "./format/filter/brightness": "./format/filter/brightness.ts",
     "./format/filter/drop-shadow": "./format/filter/drop-shadow.ts",
     "./format/filter/grayscale": "./format/filter/grayscale.ts",
     "./format/filter": "./format/filter/index.ts",
-    "./format/shadow": "./format/shadow/index.ts",
     "./format/filter/presets": "./format/filter/presets/index.ts"
   }
 }

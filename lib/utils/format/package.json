@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/utils-format",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Utils format library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.111"
+    "@brysonandrew/config-types": "7.0.112"
   },
   "exports": {
     ".": {

@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/svg-clip-path",
-  "version": "7.0.111",
+  "version": "7.0.112",
   "description": "Svg clip path library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,9 +21,9 @@
     "typescript"
   ],
   "peerDependencies": {
-    "react": "^18.3.1",
-    "@brysonandrew/config-types": "7.0.111",
-    "@brysonandrew/svg-dimensionless": "7.0.111"
+    "react": "^19.2.0",
+    "@brysonandrew/config-types": "7.0.112",
+    "@brysonandrew/svg-dimensionless": "7.0.112"
   },
   "exports": {
     "./ClipWrap": "./ClipWrap.tsx",

@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { TDivMotionProps } from '@brysonandrew/config-types/dom/motion';
 import { Text } from './Text';
 import { useApp } from '@brysonandrew/app';
-import { TStyle } from '@app/style';
 import { FadeDownPair } from '@brysonandrew/fade-edge/pairs/FadeDownPair';
+import { TStyle } from '@app/style';
 
 export type TPricingProps = {
   type: TPricingKey;
