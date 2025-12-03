@@ -1,5 +1,15 @@
-import { TClassOverrides, TDivMotionProps, TDivProps } from '@brysonandrew/config-types';
+import {
+  TClassOverrides,
+  TDivMotionProps,
+  TDivProps,
+  THrMotionProps,
+  THrProps,
+} from '@brysonandrew/config-types';
 
-export type TLinesOptions = TDivProps &
+export type TLinesDivOptions = TDivProps &
   TDivMotionProps &
+  TClassOverrides;
+
+export type TLinesOptions = THrProps &
+  THrMotionProps &
   TClassOverrides;

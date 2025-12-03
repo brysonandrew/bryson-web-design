@@ -1,11 +1,4 @@
-import {
-  Inertia,
-  Keyframes,
-  None,
-  Spring,
-  Tween,
-  Orchestration,
-} from 'framer-motion';
+import { Keyframes } from "@emotion/react";
 
 type PermissiveTransitionDefinition = {
   [key: string]: any;
@@ -20,13 +13,15 @@ type TJust = {
 };
 
 export type TTransition =
-  | Tween
-  | Spring
+  // | Tween
+  // | Spring
   | Keyframes
-  | Inertia
+  // | Inertia
   | TJust
-  | None
+  // | None
   | PermissiveTransitionDefinition;
+
+type Orchestration = any;
 
 export type TAllTransitionProps = Orchestration &
   TTransition & {

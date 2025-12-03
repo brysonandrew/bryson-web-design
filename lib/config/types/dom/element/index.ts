@@ -18,6 +18,8 @@ export type TElementProps = HTMLAttributes<HTMLElement> &
 export type TDivProps = HTMLAttributes<HTMLDivElement> &
   TClassValueProps;
 
+export type THrProps = HTMLAttributes<HTMLHRElement> & TClassValueProps
+
 export type THeadingProps =
   HTMLAttributes<HTMLHeadingElement> & TClassValueProps;
 

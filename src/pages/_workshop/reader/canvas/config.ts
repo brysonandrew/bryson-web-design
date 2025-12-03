@@ -21,7 +21,7 @@ export type TConfigInit = {
 
 export type TConfigLoop = {
   method: TByteMethod;
-  values: Uint8Array;
+  values: Uint8Array<ArrayBuffer>;
   bufferLength: number;
   canvasContext: CanvasRenderingContext2D;
   canvas: HTMLCanvasElement;

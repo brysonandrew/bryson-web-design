@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/snowfall",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "main": "./index.tsx",
   "module": "./index.tsx",
   "description": "Snowfall library",

@@ -11,11 +11,11 @@ export const IMAGE_STATUSES = [
   'error',
 ] as const;
 
-export const ORIGIN_50: TTransition = {
+export const ORIGIN_50 = {
   originX: '50%',
   originY: '50%',
   originZ: '50%',
-};
+} as const;
 
 export const PARALLAX_PROPS: TParallaxOptions = {
   resistance: {

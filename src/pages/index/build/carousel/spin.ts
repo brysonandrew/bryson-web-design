@@ -35,7 +35,7 @@ export const useSpin = () => {
     } else {
       const prev = spin.get();
       const next = prev + velocity * 0.00002;
-      spin.set(next, false);
+      spin.set(next);
     }
   });
 

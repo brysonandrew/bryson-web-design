@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/config-types",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Config types library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -22,14 +22,14 @@
   ],
   "peerDependencies": {
     "react": "^19.2.0",
-    "@brysonandrew/uno-shortcuts": "7.0.112",
+    "@brysonandrew/uno-shortcuts": "7.0.122",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.23.25",
     "react-router-dom": "^7.10.0",
-    "@brysonandrew/config-constants-number": "7.0.112",
-    "unocss": "^66.5.10",
     "@unocss/preset-web-fonts": "*",
-    "@brysonandrew/config-constants-fonts": "7.0.112"
+    "@brysonandrew/config-constants-fonts": "7.0.122",
+    "@brysonandrew/config-constants-number": "7.0.122",
+    "unocss": "^66.5.10"
   },
   "exports": {
     ".": {
@@ -49,6 +49,7 @@
     "./dom/main": "./dom/main.ts",
     "./dom/motion": "./dom/motion.ts",
     "./dom/unions": "./dom/unions.ts",
+    "./fonts": "./fonts/index.ts",
     "./numbers": "./numbers/index.ts",
     "./numbers/series": "./numbers/series.ts",
     "./uno": "./uno/index.ts",
@@ -59,7 +60,6 @@
     "./transformers/number": "./transformers/number.ts",
     "./transformers/parameter": "./transformers/parameter.ts",
     "./transformers/partial": "./transformers/partial.ts",
-    "./fonts": "./fonts/index.ts",
     "./dom/element": "./dom/element/index.ts",
     "./dom/element/inputs": "./dom/element/inputs.ts",
     "./dom/element/svg": "./dom/element/svg.ts",

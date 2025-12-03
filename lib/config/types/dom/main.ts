@@ -1,4 +1,4 @@
-import { ClassValue } from 'class-variance-authority/dist/types';
+import { ClassValue } from 'class-variance-authority/types';
 import { PropsWithChildren } from 'react';
 
 export type TError = any | unknown;

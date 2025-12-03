@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-config-constants",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Motion config constants library",
   "main": "./index.ts",
   "module": "./index.ts",

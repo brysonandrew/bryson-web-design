@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/icons-i",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Icons i library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -24,7 +24,7 @@
     "react": "^19.2.0",
     "class-variance-authority": "^0.7.1",
     "@iconify/react": "*",
-    "@brysonandrew/config-types": "7.0.112"
+    "@brysonandrew/config-types": "7.0.122"
   },
   "exports": {
     ".": {

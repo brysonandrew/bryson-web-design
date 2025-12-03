@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/media",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Media library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,7 +21,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.112",
+    "@brysonandrew/config-types": "7.0.122",
     "sharp": "^0.34.5",
     "react": "^19.2.0",
     "@emotion/styled": "^11.14.1",
@@ -37,7 +37,7 @@
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
     "./hooks/useLoadImage": "./hooks/useLoadImage.ts",
-    "./picture": "./picture/index.tsx",
-    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts"
+    "./utils/resolveRandomIndicies": "./utils/resolveRandomIndicies.ts",
+    "./picture": "./picture/index.tsx"
   }
 }

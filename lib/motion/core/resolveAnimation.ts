@@ -37,7 +37,6 @@ export const resolveAnimation = <
   transitionConfigs,
 }: TResolveAnimationConfig<P, B, T>) => {
   const transition = {
-    type: 'custom',
     ease,
     duration,
     delay,

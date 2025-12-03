@@ -6,7 +6,7 @@ import {
   TDivProps,
 } from '@brysonandrew/config-types/dom';
 import { cx } from 'class-variance-authority';
-import { ClassValue } from 'class-variance-authority/dist/types';
+import { ClassValue } from 'class-variance-authority/types';
 
 type TProps = Omit<TDivProps, 'title'> & {
   title: string;
@@ -34,6 +34,16 @@ export const Section: FC<TProps> = ({
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
 
 
 

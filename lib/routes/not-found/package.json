@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/routes-not-found",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Routes not found library",
   "types": "/index.d.ts",
   "main": "./index.tsx",
@@ -23,7 +23,7 @@
   ],
   "peerDependencies": {
     "react": "^19.2.0",
-    "@brysonandrew/config-types": "7.0.112",
+    "@brysonandrew/config-types": "7.0.122",
     "react-router-dom": "^7.10.0",
     "react-router": "^7.10.0"
   },

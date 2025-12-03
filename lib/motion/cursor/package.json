@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-cursor",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Motion cursor library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -21,17 +21,17 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/config-types": "7.0.112",
-    "@brysonandrew/utils-function": "7.0.112",
-    "@brysonandrew/hooks": "7.0.112",
+    "@brysonandrew/config-types": "7.0.122",
+    "@brysonandrew/utils-function": "7.0.122",
+    "@brysonandrew/hooks": "7.0.122",
     "react": "^19.2.0",
-    "@brysonandrew/motion-config-types": "7.0.112",
+    "@brysonandrew/motion-config-types": "7.0.122",
     "framer-motion": "^12.23.25",
-    "@brysonandrew/motion-scroll": "7.0.112",
+    "@brysonandrew/motion-scroll": "7.0.122",
     "class-variance-authority": "^0.7.1",
-    "@brysonandrew/app": "7.0.112",
-    "@brysonandrew/motion-config-constants": "7.0.112",
-    "@brysonandrew/icons-i": "7.0.112"
+    "@brysonandrew/app": "7.0.122",
+    "@brysonandrew/motion-config-constants": "7.0.122",
+    "@brysonandrew/icons-i": "7.0.122"
   },
   "exports": {
     "./base": "./base.tsx",
@@ -43,18 +43,18 @@
     },
     "./config/constants": "./config/constants.ts",
     "./config/types": "./config/types.ts",
+    "./utils/calc": "./utils/calc.ts",
+    "./utils": "./utils/index.ts",
+    "./utils/resolveCompositeHover": "./utils/resolveCompositeHover.ts",
+    "./switch/Box": "./switch/Box.tsx",
+    "./switch/IconWithText": "./switch/IconWithText.tsx",
+    "./switch/Sight": "./switch/Sight.tsx",
+    "./switch": "./switch/index.tsx",
     "./hooks": "./hooks/index.ts",
     "./hooks/useCursorAnimate": "./hooks/useCursorAnimate.ts",
     "./hooks/useCursorOffset": "./hooks/useCursorOffset.ts",
     "./hooks/useHover": "./hooks/useHover.ts",
     "./hooks/useViewportPresence": "./hooks/useViewportPresence.tsx",
-    "./switch/Box": "./switch/Box.tsx",
-    "./switch/IconWithText": "./switch/IconWithText.tsx",
-    "./switch/Sight": "./switch/Sight.tsx",
-    "./switch": "./switch/index.tsx",
-    "./utils/calc": "./utils/calc.ts",
-    "./utils": "./utils/index.ts",
-    "./utils/resolveCompositeHover": "./utils/resolveCompositeHover.ts",
     "./switch/format/Visit": "./switch/format/Visit.tsx"
   }
 }

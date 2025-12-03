@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/copy",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Copy library",
   "main": "./index.ts",
   "module": "./index.ts",
@@ -21,10 +21,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/utils-object": "7.0.112",
-    "@brysonandrew/gallery": "7.0.112",
-    "@brysonandrew/utils-validation": "7.0.112",
-    "@brysonandrew/config-types": "7.0.112"
+    "@brysonandrew/utils-object": "7.0.122",
+    "@brysonandrew/gallery": "7.0.122",
+    "@brysonandrew/utils-validation": "7.0.122",
+    "@brysonandrew/config-types": "7.0.122"
   },
   "exports": {
     "./base": "./base.ts",

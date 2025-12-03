@@ -7,7 +7,7 @@ import {
 
 export const resolveRotateXPresence = (
   origin: '100%' | '-100%',
-  transition: TTransition
+  transition: any
 ): TAnimationProps => {
   const initial: TTarget = {
     opacity: 1,

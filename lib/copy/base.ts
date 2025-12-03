@@ -75,6 +75,23 @@ front-end and back-end technologies, I am dedicated to
 designing and developing user-centric,
 high-performance websites.`;
 
+export const getYearsSince2016 = (): number => {
+  const start = new Date(2016, 0, 1); // Jan 1, 2016
+  const now = new Date();
+
+  let years = now.getFullYear() - start.getFullYear();
+
+  const hasHadAnniversary =
+    now.getMonth() > start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() >= start.getDate());
+
+  if (!hasHadAnniversary) years--;
+
+  return years;
+};
+
+const years = getYearsSince2016()
+
 export const DESCRIPTION_PARAGRAPHS = [
-  `(Visit brysona.dev) 9+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
+  `(Visit brysona.dev) ${years}+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
 ];

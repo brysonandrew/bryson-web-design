@@ -23,7 +23,7 @@ export const Textarea: FC<TProps> = ({
   LabelBack: _LabelBack,
   ...props
 }) => {
-  const LabelBack = _LabelBack ?? motion.div;
+  const LabelBack = (_LabelBack ?? motion.div) as FC<TMotionProps & TClassValueProps>;
   return (
     <Input<HTMLTextAreaElement>
       name={name}

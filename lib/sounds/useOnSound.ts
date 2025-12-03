@@ -20,7 +20,6 @@ export const useOnSound = () => {
       midi: 90,
       detune: 0,
       attack: 0,
-      delay: 0,
       count: 11,
       spread: 2,
       decay: 0.1,

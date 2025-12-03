@@ -7,13 +7,10 @@ import {
 import {
   MotionValue,
   AnimationPlaybackControls,
-  AnimationControls,
   TargetAndTransition,
   VariantLabels,
-  AnimationProps,
   Variant,
   Variants,
-  HoverHandlers,
   Target,
 } from 'framer-motion';
 import { TNumberString } from '@brysonandrew/config-types';
@@ -21,6 +18,10 @@ import { TTransitionConfigs } from '@brysonandrew/motion-config-types/transition
 import { TPresenceConfigs } from '@brysonandrew/motion-config-types/presence';
 import { TBaseTransitionConfigs } from '@brysonandrew/motion-config-types/transition/base';
 import { TEasing } from '@brysonandrew/motion-config-types/values';
+
+type AnimationControls = any;
+type AnimationProps = any;
+type HoverHandlers = any;
 
 export type TMainTransition = {
   duration: number;
@@ -31,7 +32,7 @@ export type TMainTransition = {
 export type TResolveAnimationConfig<
   P extends TPresenceConfigs,
   B extends TBaseTransitionConfigs,
-  T extends TTransitionConfigs
+  T extends TTransitionConfigs,
 > = Partial<TMainTransition> & {
   isDisabled?: boolean;
   presenceConfigs: P;

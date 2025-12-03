@@ -1,6 +1,5 @@
 import { useCursor } from '@brysonandrew/motion-cursor';
 import {
-  ValueTarget,
   ValueAnimationTransition,
   animate,
 } from 'framer-motion';
@@ -44,8 +43,8 @@ export const useCursorAnimate = () => {
     const zeroX = resolveCalc(0, nextSignX, 0);
     const zeroY = resolveCalc(0, nextSignY, 0);
 
-    let labelXValue: ValueTarget = zeroX;
-    let labelYValue: ValueTarget = zeroY;
+    let labelXValue = zeroX;
+    let labelYValue = zeroY;
 
     if (cursorKey === CUSTOM_CURSOR_KEY) {
       const percentX = nextSignX < 0 ? -100 : 0;

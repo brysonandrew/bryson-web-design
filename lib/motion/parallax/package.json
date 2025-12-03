@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/motion-parallax",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Motion parallax library",
   "main": "./index.tsx",
   "module": "./index.tsx",
@@ -22,15 +22,15 @@
   ],
   "peerDependencies": {
     "framer-motion": "^12.23.25",
-    "@brysonandrew/in-view": "7.0.112",
+    "@brysonandrew/in-view": "7.0.122",
     "class-variance-authority": "^0.7.1",
     "react": "^19.2.0",
     "react-intersection-observer": "^10.0.0",
     "react-device-detect": "^2.2.3",
-    "@brysonandrew/space": "7.0.112",
-    "@brysonandrew/config-types": "7.0.112",
-    "@brysonandrew/motion-scroll": "7.0.112",
-    "@brysonandrew/viewport": "7.0.112"
+    "@brysonandrew/space": "7.0.122",
+    "@brysonandrew/config-types": "7.0.122",
+    "@brysonandrew/motion-scroll": "7.0.122",
+    "@brysonandrew/viewport": "7.0.122"
   },
   "exports": {
     "./config": "./config.ts",

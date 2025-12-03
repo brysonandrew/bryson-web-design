@@ -14,12 +14,11 @@ export const INITIAL_KEY = 'initial';
 
 export const MOTION_CONFIG = {
     transition: {
-      type: 'custom',
       ease: 'linear',
       duration: 0.2,
       delay: 0,
     },
-};
+} as const;
 
 export const PLACEHOLDER = '';
 
@@ -62,7 +61,7 @@ export const PRESENCE_OPACITY_ANIMATE_DELAY_04 = {
     exit: {
       opacity: 0,
     },
-};
+} as const;
 
 export const PRESENCE_OPACITY_DELAY = {
     initial: {
@@ -79,7 +78,7 @@ export const PRESENCE_OPACITY_DELAY = {
       ease: 'easeIn',
       delay: 0.08,
     },
-};
+} as const;
 
 export const PRESENCE_OPACITY_DURATION_DELAY = {
     initial: {
@@ -96,7 +95,7 @@ export const PRESENCE_OPACITY_DURATION_DELAY = {
       ease: 'easeIn',
       delay: 0.2,
     },
-};
+} as const;
 
 export const PRESENCE_OPACITY_UP_Y = {
     initial: {
@@ -111,7 +110,7 @@ export const PRESENCE_OPACITY_UP_Y = {
       opacity: 0,
       y: '100%',
     },
-};
+} as const;
 
 export const PRESENCE_ROTATE_FROM_BOTTOM = {
     initial: {
@@ -126,7 +125,7 @@ export const PRESENCE_ROTATE_FROM_BOTTOM = {
       y: '100%',
       rotateX: 45,
     },
-};
+} as const;
 
 export const PRESENCE_ROTATE_FROM_TOP = {
     initial: {
@@ -141,7 +140,7 @@ export const PRESENCE_ROTATE_FROM_TOP = {
       y: '-100%',
       rotateX: 45,
     },
-};
+} as const;
 
 export const PRESENCE_SCALE_X = {
     initial: {
@@ -153,7 +152,7 @@ export const PRESENCE_SCALE_X = {
     exit: {
       scaleX: 0,
     },
-};
+} as const;
 
 export const PRESENCE_UP_Y = {
     initial: {
@@ -168,7 +167,7 @@ export const PRESENCE_UP_Y = {
       opacity: 0,
       y: '100%',
     },
-};
+} as const;
 
 export const ROTATE_DIRECTIONS = ['clockwise', 'anti-clockwise'];
 
@@ -183,31 +182,31 @@ export const TRANSITION = {
     ease: 'linear',
     duration: 0.2,
     delay: 0,
-};
+} as const;
 
 export const TRANSITION_02_EASEIN_008 = {
     duration: 0.2,
     ease: 'easeIn',
     delay: 0.08,
-};
+} as const;
 
 export const TRANSITION_02_EASE_IN_02 = {
     duration: 0.2,
     ease: 'easeIn',
     delay: 0.2,
-};
+} as const;
 
 export const TRANSITION_02_EASE_IN_04 = {
     duration: 0.2,
     ease: 'easeIn',
     delay: 0.4,
-};
+} as const;
 
 export const TRANSITION_04_EASEIN_008 = {
     duration: 0.4,
     ease: 'easeIn',
     delay: 0.08,
-};
+} as const;
 
 export const VALUE_DELIMITER = '|';
 

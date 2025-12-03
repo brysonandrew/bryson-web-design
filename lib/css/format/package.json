@@ -1,6 +1,6 @@
 {
   "name": "@brysonandrew/css-format",
-  "version": "7.0.112",
+  "version": "7.0.122",
   "description": "Css format library",
   "types": "/index.d.ts",
   "main": "./index.ts",
@@ -22,7 +22,7 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@brysonandrew/color-base": "7.0.112"
+    "@brysonandrew/color-base": "7.0.122"
   },
   "exports": {
     ".": {
@@ -30,12 +30,12 @@
       "import": "./index.ts",
       "default": "./index.ts"
     },
-    "./shadow": "./shadow/index.ts",
     "./filter/blur": "./filter/blur.ts",
     "./filter/brightness": "./filter/brightness.ts",
     "./filter/drop-shadow": "./filter/drop-shadow.ts",
     "./filter/grayscale": "./filter/grayscale.ts",
     "./filter": "./filter/index.ts",
+    "./shadow": "./shadow/index.ts",
     "./filter/presets": "./filter/presets/index.ts"
   }
 }
