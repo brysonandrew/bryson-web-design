@@ -28,7 +28,7 @@
     "@brysonandrew/config-types": "7.0.111",
     "@brysonandrew/color-gradient": "7.0.111",
     "@brysonandrew/app": "7.0.111",
-    "unocss": "^0.64.0",
+    "unocss": "^66.5.10",
     "@brysonandrew/utils-css": "7.0.111"
   },
   "exports": {

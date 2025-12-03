@@ -29,7 +29,7 @@
     "@unocss/preset-web-fonts": "*",
     "@brysonandrew/config-constants-fonts": "7.0.111",
     "@brysonandrew/config-constants-number": "7.0.111",
-    "unocss": "^0.64.0"
+    "unocss": "^66.5.10"
   },
   "exports": {
     ".": {
