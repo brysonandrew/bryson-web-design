@@ -4,7 +4,7 @@ import { useNetwork } from '@brysonandrew/network';
 import { Offline } from '@brysonandrew/network/Offline';
 
 type TProps = {
-  OfflineFc: FC;
+  OfflineFc?: FC;
 };
 export const Network: FC<TProps> = ({ OfflineFc = Offline }) => {
   const { isOffline, onOffline, onOnline } = useNetwork();

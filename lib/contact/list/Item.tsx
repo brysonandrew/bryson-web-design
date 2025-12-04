@@ -34,8 +34,10 @@ export const Item: FC<TProps> = ({
     OPEN_IN_NEW_ICON,
     <div className='column-start'>
       <span className='italics'>{title}</span>
+      <span className='text-xxs text-gray whitespace-wrap'>Must be enabled.</span>
     </div>,
   );
+  
   return (
     <li className={cx('row gap-1', classValue)}>
       <TextAnchor

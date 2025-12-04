@@ -22,10 +22,11 @@ export const CONTACT_URL = 'brysona.dev';
 
 export const CONTACT_FORM_FOOTER = {
   email: CONTACT_EMAIL,
-  phone: {
-    display: CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY,
-    withTrunk: CONTACT_PHONE_WITH_NATIONAL_TRUNK,
-  },
+  // don't want people calling me
+  // phone: {
+  //   display: CONTACT_PHONE_WITH_NATIONAL_TRUNK_DISPLAY,
+  //   withTrunk: CONTACT_PHONE_WITH_NATIONAL_TRUNK,
+  // },
 };
 
 const RECORD = arrToRecord<TInitItem<TTitle>, 'title'>(
@@ -39,11 +40,11 @@ export const CV_ITEMS = [
   RECORD['Insight Factory'],
 ];
 
-const LATEST_PROJECTS= [
-    ...INIT_PROJECT_ITEMS.filter(
-      ({ pricing }) => pricing === 'select',
-    ).slice(0, 3),
-  ]
+const LATEST_PROJECTS = [
+  ...INIT_PROJECT_ITEMS.filter(
+    ({ pricing }) => pricing === 'select',
+  ).slice(0, 3),
+];
 
 export const CV_PRESETS_RECORD = {
   LATEST: CV_ITEMS,
@@ -66,15 +67,6 @@ export const CV_PRESETS = Object.entries(
   CV_PRESETS_RECORD,
 ) as TPresetEntries;
 
-const TEAM_SENTENCE = `Seeking an opportunity to
-contribute my technical skills and creativity to a
-dynamic team.`;
-
-const LONG_SENTENCE = `Proficient in various
-front-end and back-end technologies, I am dedicated to
-designing and developing user-centric,
-high-performance websites.`;
-
 export const getYearsSince2016 = (): number => {
   const start = new Date(2016, 0, 1); // Jan 1, 2016
   const now = new Date();
@@ -83,14 +75,15 @@ export const getYearsSince2016 = (): number => {
 
   const hasHadAnniversary =
     now.getMonth() > start.getMonth() ||
-    (now.getMonth() === start.getMonth() && now.getDate() >= start.getDate());
+    (now.getMonth() === start.getMonth() &&
+      now.getDate() >= start.getDate());
 
   if (!hasHadAnniversary) years--;
 
   return years;
 };
 
-const years = getYearsSince2016()
+const years = getYearsSince2016();
 
 export const DESCRIPTION_PARAGRAPHS = [
   `(Visit brysona.dev) ${years}+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
