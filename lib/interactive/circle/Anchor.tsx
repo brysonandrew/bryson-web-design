@@ -2,6 +2,7 @@ import { TAnchorMotionProps } from '@brysonandrew/config-types/dom';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 import { resolveAccessibilityTitles } from '@brysonandrew/utils-attributes/resolveAccessibilityTitles';
+import { cx } from 'class-variance-authority';
 
 type TProps = TAnchorMotionProps;
 export const Anchor: FC<TProps> = ({
@@ -12,7 +13,7 @@ export const Anchor: FC<TProps> = ({
 }) => {
   return (
     <motion.a
-      className='circle-interactive'
+      className={cx('circle-interactive', classValue)}
       {...resolveAccessibilityTitles(title)}
       {...props}
     >

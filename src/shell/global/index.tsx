@@ -7,6 +7,7 @@ import { useHeadProps } from '@shell/global/useHeadProps';
 import { useApp } from '@brysonandrew/app';
 import { GlobalCss } from '@shell/global/Css';
 import { TPageTitle } from '@app/routes/config/types';
+import { OFFLINE_ICON } from '@brysonandrew/icons-keys/network';
 
 export const Global: FC<PropsWithChildren> = ({
   children,
@@ -16,7 +17,7 @@ export const Global: FC<PropsWithChildren> = ({
     PLACEHOLDER?.GLOBAL.ClipPath ?? Fragment;
   const headProps = useHeadProps();
 
-  usePreloadIcons([CLIPBOARD_SUCCESS_ICON]);
+  usePreloadIcons([CLIPBOARD_SUCCESS_ICON, OFFLINE_ICON]);
 
   return (
     <>

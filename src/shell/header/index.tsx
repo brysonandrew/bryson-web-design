@@ -6,6 +6,8 @@ import { Pages } from './pages';
 import { isMobile } from 'react-device-detect';
 import { PRESENCE_DOWN_Y } from '@app/animation';
 import { useScroll } from '@brysonandrew/motion-scroll';
+import { Network } from '@brysonandrew/network';
+import { OFFLINE_ICON } from '@brysonandrew/icons-keys/network';
 
 const Root = styled.header``;
 
@@ -19,7 +21,13 @@ export const Header: FC = () => {
             className="w-shell row-start-space"
             {...(!isMobile ? PRESENCE_DOWN_Y : {})}
           >
-            <Main />
+            <div>
+              <Main />
+              <div className="row relative -left-2 top-3">
+                <Network />
+              </div>
+            </div>
+
             <Pages />
           </motion.nav>
         )}
