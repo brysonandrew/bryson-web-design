@@ -2,7 +2,7 @@
 /* global self, caches, console, fetch, location, Response */
 
 var name = '@brysonandrew/service-worker';
-var version = '6.24.5';
+var version = '6.24.6';
 var description = 'Service Worker library';
 var types = '/index.d.ts';
 var main = './index.ts';
