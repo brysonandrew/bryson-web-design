@@ -1,7 +1,6 @@
 import { useState, type FC } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TPartialParallaxMotionProps } from '@brysonandrew/motion-parallax/config';
-import { useApp } from '@brysonandrew/app';
 import { AboutLong } from '@pages/about/Long';
 import { Button } from '@brysonandrew/interactive';
 import { I } from '@brysonandrew/icons-i';
@@ -27,16 +26,34 @@ export const Main: FC<TProps> = ({
       className="title-section w-core flex flex-col items-stretch gap-16"
       style={style}
     >
-      <AboutTitle>
-        Hi, I’m Andrew — a New Zealand Front-End Developer
-        focused on clean, modern, reliable interfaces.
-      </AboutTitle>
-      <AboutBlocks>
-        {[
-          `I’ve spent the last 9+ years building fast, accessible, and user-friendly web applications using React, Vue, TypeScript, and Next.js/Nuxt.`,
-          `I specialise in turning ideas and complex requirements into clean, production-ready interfaces — built with clarity, communication, and attention to detail.`,
-        ]}
-      </AboutBlocks>
+      <div className="flex flex-col-reverse items-center justify-between gap-16 lg:(flex-row items-start)">
+        <div className="flex flex-col gap-16 grow">
+          <AboutTitle>
+            <div className="flex gap-4">
+              Hi, I’m Andrew — a New Zealand Front-End
+              Developer focused on clean, modern, reliable
+              interfaces.
+            </div>
+          </AboutTitle>
+          <AboutBlocks>
+            {[
+              `I’ve spent the last 9+ years building fast, accessible, and user-friendly web applications using React, Vue, TypeScript, and Next.js/Nuxt.`,
+              `I specialise in turning ideas and complex requirements into clean, production-ready interfaces — built with clarity, communication, and attention to detail.`,
+            ]}
+          </AboutBlocks>
+        </div>
+
+        <video
+          controls
+          className="w-[280px] bg-white rounded-2xl"
+        >
+          <source
+            src="/videos/portrait.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
       <AnimatePresence>
         {isLong && <AboutLong />}
       </AnimatePresence>

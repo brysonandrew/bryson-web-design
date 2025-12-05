@@ -5,7 +5,7 @@ import { Anchor } from '@brysonandrew/interactive';
 
 export const ShellFooterSocial: FC = () => {
   return (
-    <ul className="column gap-6 lg:row">
+    <ul className="relative column gap-6 -left-4 lg:(row h-0 bg-red bottom-4)">
       {[
         ['Github', 'https://github.com/brysonandrew', GITHUB_ICON],
         ['LinkedIn', 'https://www.linkedin.com/in/brysona', LINKEDIN_ICON],
