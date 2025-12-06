@@ -10,7 +10,7 @@ export const Header = () => {
       <Contact 
         classValue='column-end w-full mt-1'
         url={url}
-        email={email} 
+        // email={email} 
         // phone={phone}
         style={{fontSize: 16}}
       />

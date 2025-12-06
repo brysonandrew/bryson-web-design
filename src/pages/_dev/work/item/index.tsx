@@ -19,21 +19,19 @@ export const WorkItem: FC<TWorkItemProps> = ({
   ...config
 }) => {
   const { pathHandlers, commonState } = useWorkState();
-  const { isExpert, isIntermediate, hourly, location } =
-    commonState;
-  const params = pathHandlers.params(config.q,commonState);
+  const params = pathHandlers.params(config.q, commonState);
   const href = pathHandlers.href(params);
 
   const { handlers, isHover } = useHover(
     CUSTOM_CURSOR_KEY,
-    href
+    href,
   );
   return (
     <li className="relative group">
       <div
         className={cx(
           'absolute -inset-1 -bottom-2 bg-black-3',
-          input ? 'rounded-b-lg rounded-tr-lg' : ''
+          input ? 'rounded-b-lg rounded-tr-lg' : '',
         )}
       />
       <div className="relative row-start-space text-white-1 w-full gap-4">

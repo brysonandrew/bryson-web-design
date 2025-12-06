@@ -1,3 +1,4 @@
+import { SORT_DEFAULT } from '@pages/_dev/work/config/constants';
 import {
   TUpworkParams,
   TContractorTierValue,
@@ -7,6 +8,7 @@ import {
 
 const DEFAULTS = {
   t: '0',
+  ...SORT_DEFAULT,
   q: '',
   nbs: '1',
 } as const;

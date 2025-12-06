@@ -12,7 +12,7 @@ import * as DevPages from '@pages/_dev';
 export const DEV_RECORD = resolveRouteRecords<
   TDevPageTitle,
   typeof DevPages
->(DEV_PATH_KEYS, DevPages, DEV_PATH_BASE);
+>(DEV_PATH_KEYS, DevPages, `${DEV_PATH_BASE}/`);
 
 export const DEV_ROUTES: RouteObject[] = [
   {

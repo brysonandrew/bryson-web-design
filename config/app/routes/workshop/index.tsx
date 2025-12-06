@@ -12,7 +12,7 @@ import {
 export const WORKSHOP_RECORD = resolveRouteRecords<
   TWorkshopPageTitle,
   typeof WorkshopPages
->(WORKSHOP_PATH_KEYS, WorkshopPages, WORKSHOP_PATH_BASE);
+>(WORKSHOP_PATH_KEYS, WorkshopPages, `${WORKSHOP_PATH_BASE}/`);
 
 export const WORKSHOP_ROUTES: RouteObject[] = [
   {

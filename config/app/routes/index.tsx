@@ -6,6 +6,7 @@ import { DEV_ROUTES } from '@app/routes/dev';
 import { WORKSHOP_ROUTES } from '@app/routes/workshop';
 import { TPageTitle } from '@app/routes/config/types';
 import { AppNotFound } from '@brysonandrew/app';
+import { Video } from '@pages/video';
 
 const PAGE_RECORDS = resolveRouteRecords<
   TPageTitle,
@@ -22,7 +23,8 @@ const PAGE_RECORDS = resolveRouteRecords<
 );
 const { routes, record } = PAGE_RECORDS;
 const SECTION_RECORD = {
-  build: 'BUILDING MODERN, FAST & BEAUTIFUL WEB EXPERIENCES',
+  build:
+    'BUILDING MODERN, FAST & BEAUTIFUL WEB EXPERIENCES',
   about: 'Nice to meet you',
   services: 'How I can help',
   [record.projects.key]: 'Selected works',
@@ -45,6 +47,10 @@ const MAIN_ROUTES = [
 
 const ROUTES: RouteObject[] = [
   ...MAIN_ROUTES,
+  {
+    path: '/video',
+    element: <Video />,
+  },
   ...WORKSHOP_ROUTES,
   ...(import.meta.env.DEV ? DEV_ROUTES : []),
 ];

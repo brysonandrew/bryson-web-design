@@ -86,5 +86,5 @@ export const getYearsSince2016 = (): number => {
 const years = getYearsSince2016();
 
 export const DESCRIPTION_PARAGRAPHS = [
-  `(Visit brysona.dev) ${years}+ years experience in front-end web technologies, specializing in React and Typescript and the frameworks Next.js and Gatsby.`,
+  `(Visit brysona.dev) ${years}+ years experience in front-end web technologies, specializing in React, Vue and Typescript and the frameworks Next.js and Nuxt.js.`,
 ];

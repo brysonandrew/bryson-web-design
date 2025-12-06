@@ -10,6 +10,7 @@ import {
 } from '@brysonandrew/icons-keys';
 import { AboutTitle } from '@pages/about/Title';
 import { AboutBlocks } from '@pages/about/Blocks';
+import { Player } from '@components/Player';
 
 type TProps = Partial<TPartialParallaxMotionProps> & {
   isCollapsible?: boolean;
@@ -43,15 +44,7 @@ export const Main: FC<TProps> = ({
           </AboutBlocks>
         </div>
 
-        <video
-          controls
-          className="w-[280px] bg-white rounded-2xl"
-        >
-          <source
-            src="/videos/portrait.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <Player/>
       </div>
 
       <AnimatePresence>

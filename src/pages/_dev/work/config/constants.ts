@@ -12,13 +12,18 @@ export const HOURLY_DEFAULT = {
   max: HOURLY_MAX,
 } as const;
 
+export const SORT_DEFAULT = {
+  // &sort=recency&t=0
+  sort: 'recency',
+} as const;
+
 export const RANGE_WIDTH = 120;
 
 export const UPWORK_BASE =
   'https://www.upwork.com/nx/search/jobs/';
 
 const applyDefaults = (
-  values: readonly TInitItem[]
+  values: readonly TInitItem[],
 ): TInitIdItem[] =>
   values.reduce((a: TInitIdItem[], value: TInitItem) => {
     const next = {
