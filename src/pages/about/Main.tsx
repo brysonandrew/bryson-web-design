@@ -43,8 +43,7 @@ export const Main: FC<TProps> = ({
             ]}
           </AboutBlocks>
         </div>
-
-        <Player/>
+        <Player />
       </div>
 
       <AnimatePresence>

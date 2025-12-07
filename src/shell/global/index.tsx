@@ -8,7 +8,15 @@ import { useApp } from '@brysonandrew/app';
 import { GlobalCss } from '@shell/global/Css';
 import { TPageTitle } from '@app/routes/config/types';
 import { OFFLINE_ICON } from '@brysonandrew/icons-keys/network';
-import { ARROW_DOWN, ARROW_UP } from '@brysonandrew/icons-keys';
+import {
+  ARROW_DOWN,
+  ARROW_UP,
+} from '@brysonandrew/icons-keys';
+import {
+  GITHUB_ICON,
+  LINKEDIN_ICON,
+  WHATSAPP_ICON,
+} from '@brysonandrew/icons-keys/social';
 
 export const Global: FC<PropsWithChildren> = ({
   children,
@@ -18,7 +26,15 @@ export const Global: FC<PropsWithChildren> = ({
     PLACEHOLDER?.GLOBAL.ClipPath ?? Fragment;
   const headProps = useHeadProps();
 
-  usePreloadIcons([CLIPBOARD_SUCCESS_ICON, OFFLINE_ICON, ARROW_DOWN, ARROW_UP]);
+  usePreloadIcons([
+    CLIPBOARD_SUCCESS_ICON,
+    OFFLINE_ICON,
+    ARROW_DOWN,
+    ARROW_UP,
+    WHATSAPP_ICON,
+    LINKEDIN_ICON,
+    GITHUB_ICON,
+  ]);
 
   return (
     <>
