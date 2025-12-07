@@ -11,6 +11,7 @@ import {
 import { AboutTitle } from '@pages/about/Title';
 import { AboutBlocks } from '@pages/about/Blocks';
 import { Player } from '@components/Player';
+import { ABOUT_COPY } from '@pages/about/constants';
 
 type TProps = Partial<TPartialParallaxMotionProps> & {
   isCollapsible?: boolean;
@@ -31,20 +32,14 @@ export const Main: FC<TProps> = ({
         <div className="flex flex-col gap-16 grow">
           <AboutTitle>
             <div className="flex gap-4">
-              Hi, I’m Andrew — a New Zealand Front-End
-              Developer focused on clean, modern, reliable
-              interfaces.
+              {ABOUT_COPY.intro.title}
             </div>
           </AboutTitle>
           <AboutBlocks>
-            {[
-              `I’ve spent the last 9+ years building fast, accessible, and user-friendly web applications using React, Vue, TypeScript, and Next.js/Nuxt.`,
-              `I specialise in turning ideas and complex requirements into clean, production-ready interfaces — built with clarity, communication, and attention to detail.`,
-            ]}
+            {ABOUT_COPY.intro.paragraphs}
           </AboutBlocks>
         </div>
-
-        <Player/>
+        <Player />
       </div>
 
       <AnimatePresence>

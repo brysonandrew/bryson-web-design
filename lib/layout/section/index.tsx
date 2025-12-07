@@ -23,7 +23,7 @@ export const Section: FC<TProps> = ({
 }) => {
   return (
     <div
-      className={cx('column', classValue)}
+      className={cx('relative column z-0', classValue)}
       id={title}
       {...props}
     >
