@@ -36,7 +36,7 @@
     "motion-constants": "esrun ops/motion/generate-constants",
     "object-to-exports": "esrun ops/transformers/object-to-exports lib/motion/config/constants/generate.ts",
     "obfuscate": "ops/screens/obfuscate.sh",
-    "outreacher": "ts-node-dev --respawn ops/outreacher/index.ts"
+    "outreacher": "esrun ops/outreacher/index.ts"
   },
   "author": "Andrew Bryson <andrew@brysona.dev>",
   "license": "MIT",
@@ -56,6 +56,7 @@
   "dependencies": {
     "@brysonandrew/ops": "^7.0.26",
     "@emailjs/browser": "^4.4.1",
+    "axios": "^1.13.2",
     "cheerio": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "cors": "^2.8.5",
