@@ -1,5 +1,5 @@
 import type { FC, FormEvent } from 'react';
-import { useEffect, useRef } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { GOOGLE_MAPS_API_KEY } from '@pages/_dev/outreacher/timezone-timeline/constants';
 import { useOutreacher } from './context';
 
@@ -14,6 +14,18 @@ export type TBusiness = {
   rawTypes?: string[];
 };
 
+type TGenerateButtonProps = {
+  handleGenerate: () => void;
+  isLoading: boolean;
+  disabled?: boolean;
+};
+
+type TSearchResults = {
+  businesses: TBusiness[];
+  isLoading: boolean;
+  statusMessage: string | null;
+};
+
 export const BusinessSearchPanel: FC = () => {
   const {
     businessIndustry,
@@ -21,20 +33,34 @@ export const BusinessSearchPanel: FC = () => {
     businessLocation,
     setBusinessLocation,
     businessFinderLocation,
-    businessLastQuerySummary,
-    businessError,
+    setUrl,
     handleBusinessSearch,
+    businessSearchResults,
+    businessError,
+    businessLastQuerySummary,
   } = useOutreacher();
+
+  const [industry, setIndustry] = useState(businessIndustry);
+  const [location, setLocation] = useState(businessLocation);
   const locationInputRef = useRef<HTMLInputElement>(null);
   const autocompleteElementRef = useRef<google.maps.places.PlaceAutocompleteElement | null>(null);
   const placeSelectHandlerRef = useRef<((event: { place: google.maps.places.Place }) => void) | null>(null);
 
+  // Sync local state with context
+  useEffect(() => {
+    setIndustry(businessIndustry);
+  }, [businessIndustry]);
+
+  useEffect(() => {
+    setLocation(businessLocation);
+  }, [businessLocation]);
+
   // Update location when businessFinderLocation changes
   useEffect(() => {
-    if (businessFinderLocation !== businessLocation) {
-      setBusinessLocation(businessFinderLocation);
+    if (businessFinderLocation !== location) {
+      setLocation(businessFinderLocation);
     }
-  }, [businessFinderLocation, businessLocation, setBusinessLocation]);
+  }, [businessFinderLocation, location]);
 
   // Initialize Google Places Autocomplete using PlaceAutocompleteElement
   useEffect(() => {
@@ -107,9 +133,9 @@ export const BusinessSearchPanel: FC = () => {
           const name = place.name || place.displayName;
           
           if (address) {
-            setBusinessLocation(address);
+            setLocation(address);
           } else if (name) {
-            setBusinessLocation(name);
+            setLocation(name);
           }
         }
       };
@@ -129,10 +155,23 @@ export const BusinessSearchPanel: FC = () => {
       }
     };
   }, []);
-  const handleSubmit = (event?: FormEvent) => {
-    event?.preventDefault();
-    handleBusinessSearch();
-  };
+  // Update context when local state changes
+  useEffect(() => {
+    setBusinessIndustry(industry);
+  }, [industry, setBusinessIndustry]);
+
+  useEffect(() => {
+    setBusinessLocation(location);
+  }, [location, setBusinessLocation]);
+
+  const handleSubmit = useCallback(
+    async (event?: FormEvent) => {
+      event?.preventDefault();
+      // Pass current form values directly to handleBusinessSearch
+      await handleBusinessSearch(industry, location);
+    },
+    [industry, location, handleBusinessSearch],
+  );
 
   return (
     <section className="w-full rounded-t-2xl border-t border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl flex flex-col gap-4 p-4 md:p-6">
@@ -177,8 +216,8 @@ export const BusinessSearchPanel: FC = () => {
               id="industry-input"
               className="h-9 rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
               placeholder="e.g. bakery, tattoo studio, SaaS agency"
-              value={businessIndustry}
-              onChange={(e) => setBusinessIndustry(e.target.value)}
+              value={industry}
+              onChange={(e) => setIndustry(e.target.value)}
             />
           </div>
 
@@ -194,8 +233,8 @@ export const BusinessSearchPanel: FC = () => {
               id="location-input"
               className="h-9 rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
               placeholder="e.g. Stockholm, Sweden"
-              value={businessLocation}
-              onChange={(e) => setBusinessLocation(e.target.value)}
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
             {/* <p className="mt-0.5 text-[10px] text-white-06">
               Free text; backend uses Google Places for matching.

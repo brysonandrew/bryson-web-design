@@ -71,7 +71,7 @@ type TOutreacherContextValue = {
   businessSearchResults: TBusinessSearchResults | null;
   businessLastQuerySummary: string | null;
   businessError: string | null;
-  handleBusinessSearch: () => Promise<void>;
+  handleBusinessSearch: (industry?: string, location?: string) => Promise<void>;
 
   // Timezone timeline state
   selectedTimezones: Set<number>;
@@ -240,11 +240,11 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
     }
   }, [businessFinderLocation, businessLocation]);
 
-  const handleBusinessSearch = useCallback(async () => {
+  const handleBusinessSearch = useCallback(async (industryOverride?: string, locationOverride?: string) => {
     setBusinessError(null);
 
-    const trimmedIndustry = businessIndustry.trim();
-    const trimmedLocation = businessLocation.trim();
+    const trimmedIndustry = (industryOverride || businessIndustry).trim();
+    const trimmedLocation = (locationOverride || businessLocation).trim();
 
     if (!trimmedIndustry || !trimmedLocation) {
       setBusinessError(
@@ -317,6 +317,13 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
       setBusinessLoading(false);
     }
   }, [businessIndustry, businessLocation]);
+  
+  // Also update context state if overrides were provided
+  const handleBusinessSearchWithState = useCallback(async (industry?: string, location?: string) => {
+    if (industry) setBusinessIndustry(industry);
+    if (location) setBusinessLocation(location);
+    await handleBusinessSearch(industry, location);
+  }, [handleBusinessSearch, setBusinessIndustry, setBusinessLocation]);
 
   // Expose business generate button props
   useEffect(() => {
@@ -325,14 +332,14 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
     const isDisabled = !trimmedIndustry || !trimmedLocation;
 
     setBusinessGenerateButtonProps({
-      handleGenerate: handleBusinessSearch,
+      handleGenerate: () => handleBusinessSearchWithState(),
       isLoading: businessLoading,
       disabled: isDisabled,
     });
   }, [
     businessIndustry,
     businessLocation,
-    handleBusinessSearch,
+    handleBusinessSearchWithState,
     businessLoading,
   ]);
 
@@ -391,7 +398,7 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
     businessSearchResults,
     businessLastQuerySummary,
     businessError,
-    handleBusinessSearch,
+    handleBusinessSearch: handleBusinessSearchWithState,
 
     // Timezone timeline state
     selectedTimezones,

@@ -1,10 +1,11 @@
 import type { TBusiness } from '@pages/_dev/outreacher/business-search-panel';
 
+import { useOutreacher } from './context';
+
 type TBusinessSearchResultsProps = {
   businesses: TBusiness[];
   isLoading: boolean;
   statusMessage: string | null;
-  onSelectBusiness?: (business: TBusiness) => void;
 };
 
 /**
@@ -100,8 +101,8 @@ export const BusinessSearchResults = ({
   businesses,
   isLoading,
   statusMessage,
-  onSelectBusiness,
 }: TBusinessSearchResultsProps) => {
+  const { setUrl } = useOutreacher();
   if (isLoading) {
     return (
       <div className="min-h-[1.5rem]">
@@ -190,10 +191,14 @@ export const BusinessSearchResults = ({
                       </a>
                     )}
 
-                    {onSelectBusiness && biz.website && (
+                    {biz.website && (
                       <button
                         type="button"
-                        onClick={() => onSelectBusiness(biz)}
+                        onClick={() => {
+                          if (biz.website) {
+                            setUrl(biz.website);
+                          }
+                        }}
                         className="text-[0.65rem] px-2 py-0.5 rounded-lg bg-primary text-black font-semibold hover:bg-primary-08 transition-colors"
                       >
                         Use
