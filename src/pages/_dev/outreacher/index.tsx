@@ -48,8 +48,8 @@ const OutreacherContent: FC = () => {
 
               {timezoneGenerateButtonProps && (
                 <>
-                  <div className="border-t border-white-02" />
-                  <section className="flex flex-col gap-4 w-full rounded-b-2xl bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6">
+                  <div className="border-t border-white-04" />
+                  <section className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6">
                     {townSearchResults && (
                       <TimezoneTimelineSearchResults
                         towns={townSearchResults.towns}
@@ -112,7 +112,7 @@ const OutreacherContent: FC = () => {
 
               {businessGenerateButtonProps && (
                 <>
-                  <div className="border-t border-white-02" />
+                  <div className="border-t border-white-04" />
                   <section className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6">
                     {businessSearchResults && (
                       <BusinessSearchResults
