@@ -22,15 +22,15 @@ export const EmailPreviewSidebar: FC<
   setEmailPreviewBody,
   copy,
 }) => (
-  <aside className="space-y-4 hidden lg:block">
-    <div className="rounded-2xl border border-white-02 bg-black-3 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-2xl p-4 md:p-5 space-y-4">
+  <aside className="hidden lg:block">
+    <div className="rounded-2xl border border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6 flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <div>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-gray-6">
+        <div className="flex flex-col gap-1">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-white-06">
             Email preview
           </p>
-          <p className="text-sm text-white-9">
+          <p className="text-sm text-white-09">
             Subject & body editor
           </p>
         </div>
@@ -40,7 +40,7 @@ export const EmailPreviewSidebar: FC<
             href={mailtoHref}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-primary-02 px-3 py-1 text-[11px] font-medium text-primary border border-primary-04"
+            className="rounded-xl bg-primary px-3 py-1.5 text-[11px] font-semibold text-black hover:bg-primary-08 transition-colors"
           >
             Open mail client
           </a>
@@ -48,10 +48,10 @@ export const EmailPreviewSidebar: FC<
       </div>
 
       {/* To */}
-      <div className="space-y-1.5">
+      <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-gray-6">
-            To
+          <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+            To / recipient
           </span>
 
           {primaryEmail && (
@@ -63,30 +63,30 @@ export const EmailPreviewSidebar: FC<
                   'button',
                 )
               }
-              className="rounded-lg border bg-dark-06 px-2 py-0.5 text-[11px] text-white-8"
+              className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
             >
               Copy email
             </button>
           )}
         </div>
 
-        <p className="text-xs font-mono break-all text-white-8">
+        <p className="text-xs font-mono break-all text-white-08">
           {primaryEmail || 'hello@agency.com'}
         </p>
       </div>
 
       {/* Subject */}
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-gray-6">
-            Subject
+          <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+            Subject / email subject
           </span>
 
           <button
             onClick={() =>
               copy('Subject', emailPreviewSubject, 'button')
             }
-            className="rounded-lg border bg-dark-06 px-2 py-0.5 text-[11px]"
+            className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
           >
             Copy
           </button>
@@ -98,22 +98,22 @@ export const EmailPreviewSidebar: FC<
             setEmailPreviewSubject(e.target.value)
           }
           rows={2}
-          className="w-full rounded-xl border bg-dark-08 px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
         />
       </div>
 
       {/* Body */}
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-gray-6">
-            Body
+          <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+            Body / email body
           </span>
 
           <button
             onClick={() =>
               copy('Email body', emailPreviewBody, 'button')
             }
-            className="rounded-lg border bg-dark-06 px-2 py-0.5 text-[11px]"
+            className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
           >
             Copy
           </button>
@@ -125,22 +125,22 @@ export const EmailPreviewSidebar: FC<
             setEmailPreviewBody(e.target.value)
           }
           rows={10}
-          className="w-full rounded-xl border bg-dark-08 px-3 py-2 text-sm"
+          className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
         />
       </div>
 
       {/* Mailto Preview */}
-      <div className="space-y-2">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-gray-6">
-            mailto link
+          <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+            Mailto link / mailto URL
           </span>
 
           <button
             onClick={() =>
               copy('mailto link', mailtoHref, 'button')
             }
-            className="rounded-lg border bg-dark-06 px-2 py-0.5 text-[11px]"
+            className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
           >
             Copy
           </button>
@@ -153,7 +153,7 @@ export const EmailPreviewSidebar: FC<
             mailtoHref ||
             'mailto:hello@agency.com?subject=...&body=...'
           }
-          className="w-full rounded-xl border bg-black-2 px-3 py-2 text-[11px] font-mono"
+          className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-[11px] font-mono text-white-08"
         />
       </div>
     </div>

@@ -9,8 +9,28 @@ import {
   getOffsetLabel,
   getViewerTimeZone,
 } from '@pages/_dev/outreacher/timezone-timeline/utils';
+import { TSearchTown } from '@pages/_dev/outreacher/timezone-timeline/types';
+import { useState, useMemo } from 'react';
 
-export const TimezoneTimeline = () => {
+type TGenerateButtonProps = {
+  handleGenerate: () => void;
+  isLoading: boolean;
+  disabled?: boolean;
+};
+
+type TSearchResults = {
+  towns: TSearchTown[];
+  isLoading: boolean;
+  statusMessage: string | null;
+};
+
+type TTimezoneTimelineProps = {
+  onSelectTown?: (town: TSearchTown) => void;
+  onGenerateButton?: (props: TGenerateButtonProps | null) => void;
+  onSearchResults?: (results: TSearchResults) => void;
+};
+
+export const TimezoneTimeline = ({ onSelectTown, onGenerateButton, onSearchResults }: TTimezoneTimelineProps = {}) => {
   const now = new Date();
   const viewerTimeZone = getViewerTimeZone();
   const viewerOffset = getOffsetHours(viewerTimeZone);
@@ -28,8 +48,38 @@ export const TimezoneTimeline = () => {
       0,
     ) || 1;
 
+  // Get unique timezones from rows that have cities
+  const availableTimezones = useMemo(() => {
+    return rows
+      .filter((row) => row.countryCount > 0)
+      .map((row) => row.offsetHours);
+  }, [rows]);
+
+  // Initialize selected timezones with those that have office hours now
+  const initialSelectedTimezones = useMemo(() => {
+    return rows
+      .filter((row) => row.hasOfficeNow && row.countryCount > 0)
+      .map((row) => row.offsetHours);
+  }, [rows]);
+
+  const [selectedTimezones, setSelectedTimezones] = useState<Set<number>>(
+    () => new Set(initialSelectedTimezones),
+  );
+
+  const handleTimezoneToggle = (offsetHours: number) => {
+    setSelectedTimezones((prev) => {
+      const next = new Set(prev);
+      if (next.has(offsetHours)) {
+        next.delete(offsetHours);
+      } else {
+        next.add(offsetHours);
+      }
+      return next;
+    });
+  };
+
   return (
-    <section className="w-full rounded-2xl border border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 flex flex-col gap-4">
+    <section className="w-full rounded-t-2xl border border-white-02 border-b-0 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6 flex flex-col gap-4">
       <div className="flex items-start gap-6 w-full">
         <div className='grow flex flex-col items-stretch gap-2'>
           <TimezoneTimelineHeader />
@@ -39,6 +89,8 @@ export const TimezoneTimeline = () => {
             utcHour={utcHour}
             utcMinutes={utcMinutes}
             maxCountries={maxCountries}
+            selectedTimezones={selectedTimezones}
+            onRowClick={handleTimezoneToggle}
           />
         </div>
         <div className='flex flex-col gap-2 max-w-[200px]'>
@@ -47,7 +99,15 @@ export const TimezoneTimeline = () => {
             viewerTime={viewerTime}
             viewerOffsetLabel={viewerOffsetLabel}
           />
-          <TimezoneTimelineSearch />
+          <TimezoneTimelineSearch
+            rows={rows}
+            availableTimezones={availableTimezones}
+            selectedTimezones={selectedTimezones}
+            onTimezoneToggle={handleTimezoneToggle}
+            onSelectTown={onSelectTown}
+            onGenerateButton={onGenerateButton}
+            onSearchResults={onSearchResults}
+          />
         </div>
       </div>
     </section>

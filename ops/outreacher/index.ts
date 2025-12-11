@@ -166,7 +166,7 @@ const generateEmailBits = async (
   const { title, metaDescription, content, emails, url } = siteInfo;
 
   const systemPrompt = `
-You help a senior frontend developer (Andrew Bryson: 9+ years, React/Next.js/Vue/TypeScript, NZ-born, now based in Poland) generate high-value cold outreach to web studios and digital agencies.
+You help a senior frontend developer (Andrew Bryson: 9+ years, React/Next.js/Vue/TypeScript, based in North Vancouver, Vancouver, Canada) generate high-value cold outreach to web studios and digital agencies.
 
 You will receive:
 - basic site metadata
@@ -296,7 +296,7 @@ const buildEmail = (bits: EmailBits): BuiltEmail => {
 
   const body = `Hi ${safeName},
 
-I’m a frontend web developer from New Zealand, now based in Poland, with 9+ years of experience building React, Next.js, and Vue interfaces in TypeScript.
+I’m a frontend web developer based in North Vancouver, Vancouver, Canada, with 9+ years of experience building React, Next.js, and Vue interfaces in TypeScript.
 
 ${cta}
 

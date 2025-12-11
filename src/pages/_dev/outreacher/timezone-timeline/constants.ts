@@ -1,4 +1,8 @@
-import { TOutreachCountry, TCityCoords, TNearbyTownConfig } from "@pages/_dev/outreacher/timezone-timeline/types";
+import {
+  TOutreachCountry,
+  TCityCoords,
+  TNearbyTownConfig,
+} from '@pages/_dev/outreacher/timezone-timeline/types';
 
 export const OUTREACH_COUNTRIES: TOutreachCountry[] = [
   {
@@ -56,12 +60,6 @@ export const OUTREACH_COUNTRIES: TOutreachCountry[] = [
     region: 'EU',
   },
   {
-    country: 'Poland',
-    city: 'Warsaw',
-    timeZone: 'Europe/Warsaw',
-    region: 'EU',
-  },
-  {
     country: 'Netherlands',
     city: 'Amsterdam',
     timeZone: 'Europe/Amsterdam',
@@ -91,7 +89,6 @@ export const CITY_COORDS: Record<string, TCityCoords> = {
   Sydney: { lat: -33.86882, lng: 151.209296 },
   Auckland: { lat: -36.848461, lng: 174.763336 },
   Stockholm: { lat: 59.329323, lng: 18.068581 },
-  Warsaw: { lat: 52.229676, lng: 21.012229 },
   Amsterdam: { lat: 52.367573, lng: 4.904138 },
   London: { lat: 51.507351, lng: -0.127758 },
   Berlin: { lat: 52.520008, lng: 13.404954 },
@@ -180,15 +177,6 @@ export const NEARBY_TOWNS: TNearbyTownConfig[] = [
     nearbyTowns: ['Solna', 'Sundbyberg', 'Nacka', 'Täby'],
   },
   {
-    city: 'Warsaw',
-    nearbyTowns: [
-      'Pruszków',
-      'Piaseczno',
-      'Legionowo',
-      'Ząbki',
-    ],
-  },
-  {
     city: 'Amsterdam',
     nearbyTowns: [
       'Haarlem',
@@ -220,3 +208,17 @@ export const NEARBY_TOWNS: TNearbyTownConfig[] = [
 
 export const GOOGLE_MAPS_API_KEY = import.meta.env
   .VITE_GOOGLE_MAPS_API_KEY as string | undefined;
+
+// Simple map from UTC offset → human timezone name(s)
+export const OFFSET_TIMEZONE_NAMES: Record<string, string> =
+  {
+    '0': 'UTC',
+    '1': 'CET / CEST',
+    '2': 'EET / EEST',
+    '-5': 'EST / EDT',
+    '-4': 'AST / ADT',
+    '-8': 'PST / PDT',
+    '8': 'AWST',
+    '10': 'AEST / AEDT',
+    '12': 'NZST / NZDT',
+  };

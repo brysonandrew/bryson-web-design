@@ -13,6 +13,7 @@ export type TOffsetRow = {
   countryCount: number;
   sampleCities: string[];
   hasOfficeNow: boolean;
+  regions: TRegion[];
 };
 
 export type TCityCoords = {

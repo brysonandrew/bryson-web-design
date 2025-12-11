@@ -1,3 +1,4 @@
+import { OFFSET_TIMEZONE_NAMES } from '@pages/_dev/outreacher/timezone-timeline/constants';
 import { TOffsetRow } from '@pages/_dev/outreacher/timezone-timeline/types';
 import { cx } from 'class-variance-authority';
 
@@ -7,19 +8,8 @@ type TTimelineProps = {
   utcHour: number;
   utcMinutes: number;
   maxCountries: number;
-};
-
-// Simple map from UTC offset → human timezone name(s)
-const OFFSET_TIMEZONE_NAMES: Record<string, string> = {
-  '0': 'UTC',
-  '1': 'CET / CEST',
-  '2': 'EET / EEST',
-  '-5': 'EST / EDT',
-  '-4': 'AST / ADT',
-  '-8': 'PST / PDT',
-  '8': 'AWST',
-  '10': 'AEST / AEDT',
-  '12': 'NZST / NZDT',
+  selectedTimezones: Set<number>;
+  onRowClick: (offsetHours: number) => void;
 };
 
 export const TimezoneTimelineGraph = ({
@@ -27,6 +17,8 @@ export const TimezoneTimelineGraph = ({
   viewerOffset,
   utcHour,
   utcMinutes,
+  selectedTimezones,
+  onRowClick,
 }: TTimelineProps) => {
   return (
     <div className="flex flex-col gap-1">
@@ -34,6 +26,10 @@ export const TimezoneTimelineGraph = ({
         const isViewerOffset =
           row.offsetHours === viewerOffset;
         const isIdealNow = row.hasOfficeNow;
+        const isSelected = selectedTimezones.has(
+          row.offsetHours,
+        );
+        const isClickable = row.countryCount > 0;
 
         const localHour =
           (utcHour + row.offsetHours + 24) % 24;
@@ -60,18 +56,36 @@ export const TimezoneTimelineGraph = ({
           ? 'text-primary-04'
           : 'text-white-05';
 
+        const regionClass = isIdealNow
+          ? 'text-primary-05'
+          : 'text-white-04';
+
         // Zebra background
         const zebraBg =
           index % 2 === 0
             ? 'bg-black-1/40'
             : 'bg-black-2/40';
 
+        const rowBg = isSelected
+          ? 'bg-primary-01/20 border-primary-04/40'
+          : isClickable
+            ? 'hover:bg-black-3/40 cursor-pointer border-transparent'
+            : 'border-transparent';
+
         return (
           <div
             key={row.offsetLabel}
-            className={`flex items-center gap-2 text-[0.65rem] rounded-lg px-2 py-0.5 ${zebraBg}`}
+            onClick={() =>
+              isClickable && onRowClick(row.offsetHours)
+            }
+            className={cx(
+              `flex items-center gap-2 text-xs rounded-lg px-2 py-0.5 transition-colors`,
+              'border border-white-02',
+              zebraBg,
+              rowBg,
+            )}
           >
-            {/* Left: time + UTC + tz name */}
+            {/* Left: region + time + UTC + tz name */}
             <div className="flex items-baseline gap-2 min-w-0">
               <span className={`font-mono ${timeClass}`}>
                 {localTime}
@@ -88,6 +102,14 @@ export const TimezoneTimelineGraph = ({
                   {timezoneName}
                 </span>
               )}
+
+              {row.regions.length > 0 && (
+                <span
+                  className={`font-semibold uppercase ${regionClass}`}
+                >
+                  {row.regions.join(', ')}
+                </span>
+              )}
             </div>
 
             {/* Cluster (cities) */}
@@ -101,12 +123,12 @@ export const TimezoneTimelineGraph = ({
                   <span
                     key={city}
                     className={cx(
-                      'border border-black-7',
+                      'border border-white-02',
                       isIdealNow
                         ? // Highlighted cluster: white text
-                          'px-1.5 py-0.5 rounded-md bg-primary-01/40 text-white text-[0.65rem]'
+                          'px-1.5 py-0.5 rounded-md bg-primary-01/40 text-white-09 text-xs'
                         : // Normal cluster
-                          'px-1.5 py-0.5 rounded-md bg-black-3 text-white-06 text-[0.65rem]',
+                          'px-1.5 py-0.5 rounded-md bg-black-2 text-white-06 text-xs',
                     )}
                   >
                     {city}

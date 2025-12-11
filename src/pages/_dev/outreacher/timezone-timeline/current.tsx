@@ -13,15 +13,15 @@ export const TimezoneTimelineCurrent: FC<THeaderProps> = ({
 }) => {
   return (
     <div className='flex justify-end'>
-      <div className="px-3 py-2 rounded-xl bg-black-3 border border-primary-04 text-xs inline-flex flex-col items-start md:items-end gap-0.5">
-        <span className="text-white-07">
+      <div className="px-3 py-2 rounded-xl bg-black-2 border border-white-02 text-xs inline-flex flex-col items-start md:items-end gap-0.5">
+        <span className="text-white-08">
           Your timezone:{' '}
           <span className="font-semibold text-primary">
             {viewerTimeZone}
           </span>
         </span>
 
-        <span className="text-white-07">
+        <span className="text-white-08">
           Local time:{' '}
           <span className="font-mono text-primary-08">
             {viewerTime}

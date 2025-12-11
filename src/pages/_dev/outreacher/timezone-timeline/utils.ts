@@ -1,5 +1,5 @@
 import { OUTREACH_COUNTRIES } from '@pages/_dev/outreacher/timezone-timeline/constants';
-import { TOffsetRow } from '@pages/_dev/outreacher/timezone-timeline/types';
+import { TOffsetRow, TRegion } from '@pages/_dev/outreacher/timezone-timeline/types';
 
 export const isOfficeHour = (
   date: Date,
@@ -82,6 +82,7 @@ export const buildOffsetRows = (
       cities: Set<string>;
       countries: Set<string>;
       timeZones: Set<string>;
+      regions: Set<string>;
       hasOfficeNow: boolean;
     }
   >();
@@ -95,12 +96,14 @@ export const buildOffsetRows = (
       existing.cities.add(entry.city);
       existing.countries.add(entry.country);
       existing.timeZones.add(entry.timeZone);
+      existing.regions.add(entry.region);
       if (officeNow) existing.hasOfficeNow = true;
     } else {
       byOffset.set(offsetHours, {
         cities: new Set([entry.city]),
         countries: new Set([entry.country]),
         timeZones: new Set([entry.timeZone]),
+        regions: new Set([entry.region]),
         hasOfficeNow: officeNow,
       });
     }
@@ -118,6 +121,7 @@ export const buildOffsetRows = (
         countryCount: bucket.countries.size,
         sampleCities: Array.from(bucket.cities).slice(0, 4),
         hasOfficeNow: bucket.hasOfficeNow,
+        regions: Array.from(bucket.regions) as TRegion[],
       });
     } else {
       rows.push({
@@ -126,6 +130,7 @@ export const buildOffsetRows = (
         countryCount: 0,
         sampleCities: [],
         hasOfficeNow: false,
+        regions: [],
       });
     }
   }

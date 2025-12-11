@@ -1,3 +1,4 @@
+import { GOOGLE_MAPS_API_KEY } from '@pages/_dev/outreacher/timezone-timeline/constants';
 import { useEffect, useState } from 'react';
 
 let scriptLoadingPromise: Promise<void> | null = null;
@@ -13,7 +14,7 @@ export function useGoogleMapsLoader(
     if (!scriptLoadingPromise) {
       scriptLoadingPromise = new Promise<void>(
         (resolve, reject) => {
-          const key = import.meta.env.GOOGLE_MAPS_API_KEY;
+          const key = GOOGLE_MAPS_API_KEY;
 
           if (!key) {
             console.error('Missing GOOGLE_MAPS_API_KEY');
