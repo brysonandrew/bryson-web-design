@@ -11,29 +11,13 @@ import {
   getOffsetHours,
 } from '@pages/_dev/outreacher/timezone-timeline/utils';
 import { useState, useEffect, useCallback } from 'react';
-
-type TGenerateButtonProps = {
-  handleGenerate: () => void;
-  isLoading: boolean;
-  disabled?: boolean;
-};
-
-type TSearchResults = {
-  towns: TSearchTown[];
-  isLoading: boolean;
-  statusMessage: string | null;
-};
+import { useOutreacher } from '@pages/_dev/outreacher/context';
 
 type TTimezoneTimelineSearchProps = {
   rows: TOffsetRow[];
   availableTimezones: number[];
   selectedTimezones: Set<number>;
   onTimezoneToggle: (offsetHours: number) => void;
-  onSelectTown?: (town: TSearchTown) => void;
-  onGenerateButton?: (
-    props: TGenerateButtonProps | null,
-  ) => void;
-  onSearchResults?: (results: TSearchResults) => void;
 };
 
 export const TimezoneTimelineSearch = ({
@@ -41,10 +25,12 @@ export const TimezoneTimelineSearch = ({
   availableTimezones,
   selectedTimezones,
   onTimezoneToggle,
-  onSelectTown,
-  onGenerateButton,
-  onSearchResults,
 }: TTimezoneTimelineSearchProps) => {
+  const {
+    setTownSearchResults,
+    setTimezoneGenerateButtonProps,
+    setBusinessFinderLocation,
+  } = useOutreacher();
   const [results, setResults] = useState<TSearchTown[]>([]);
   const [statusMessage, setStatusMessage] = useState<
     string | null
@@ -82,10 +68,17 @@ export const TimezoneTimelineSearch = ({
   };
 
   const handleSelectTown = (town: TSearchTown) => {
-    // Callback with full town object
-    // You can later wire this into your Outreacher flow
-    console.log('Selected town for outreach:', town);
-    onSelectTown?.(town);
+    // Find the country for the baseCity
+    const countryEntry = OUTREACH_COUNTRIES.find(
+      (c) => c.city === town.baseCity,
+    );
+    const country = countryEntry?.country || '';
+
+    // Format as "town, city, country"
+    const location = `${town.name}, ${town.baseCity}${
+      country ? `, ${country}` : ''
+    }`;
+    setBusinessFinderLocation(location);
   };
 
   const handleGenerate = useCallback(async () => {
@@ -177,42 +170,49 @@ export const TimezoneTimelineSearch = ({
 
       setResults(unique);
       setStatusMessage(null);
+      setTownSearchResults({
+        towns: unique,
+        isLoading: false,
+        statusMessage: null,
+      });
     } catch {
       setResults([]);
       setStatusMessage(
         'Error while searching towns. Try again in a moment.',
       );
+      setTownSearchResults({
+        towns: [],
+        isLoading: false,
+        statusMessage:
+          'Error while searching towns. Try again in a moment.',
+      });
     } finally {
       setIsLoading(false);
     }
-  }, [selectedTimezones]);
+  }, [selectedTimezones, setTownSearchResults]);
 
-  // Expose button props to parent
+  // Expose button props to context
   useEffect(() => {
-    if (onGenerateButton) {
-      onGenerateButton({
-        handleGenerate,
-        isLoading,
-        disabled: selectedTimezones.size === 0,
-      });
-    }
+    setTimezoneGenerateButtonProps({
+      handleGenerate,
+      isLoading,
+      disabled: selectedTimezones.size === 0,
+    });
   }, [
-    onGenerateButton,
+    setTimezoneGenerateButtonProps,
     handleGenerate,
     isLoading,
     selectedTimezones,
   ]);
 
-  // Expose search results to parent
+  // Expose search results to context
   useEffect(() => {
-    if (onSearchResults) {
-      onSearchResults({
-        towns: results,
-        isLoading,
-        statusMessage,
-      });
-    }
-  }, [onSearchResults, results, isLoading, statusMessage]);
+    setTownSearchResults({
+      towns: results,
+      isLoading,
+      statusMessage,
+    });
+  }, [setTownSearchResults, results, isLoading, statusMessage]);
 
   return (
     <div className="pt-3 border-t border-white-02 mt-1 flex flex-col gap-6">

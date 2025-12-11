@@ -1,26 +1,17 @@
-import { createCopy } from '@pages/_dev/outreacher/copy-helpers';
 import { LeadPanel } from '@pages/_dev/outreacher/lead-panel';
-import { TGenerateEmailResponse } from '@pages/_dev/outreacher/types';
 import { FormEvent, FC } from 'react';
+import { useOutreacher } from './context';
 
-type TUrlFormProps = {
-  url: string;
-  loading: boolean;
-  error: string | null;
-  result: TGenerateEmailResponse | null;
-  onUrlChange: (value: string) => void;
-  onSubmit: (e: FormEvent) => void;
-  copy: ReturnType<typeof createCopy>;
-};
-export const UrlForm: FC<TUrlFormProps> = ({
-  url,
-  loading,
-  error,
-  result,
-  onUrlChange,
-  onSubmit,
-  copy,
-}) => {
+export const UrlForm: FC = () => {
+  const {
+    url,
+    setUrl,
+    loading,
+    error,
+    result,
+    handleSubmit,
+    copy,
+  } = useOutreacher();
   const normalizedUrl = result?.normalizedUrl;
 
   return (
@@ -41,7 +32,7 @@ export const UrlForm: FC<TUrlFormProps> = ({
       </header>
 
       <form
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
         className="flex flex-col gap-4"
       >
         <label className="flex flex-col gap-1.5">
@@ -53,7 +44,7 @@ export const UrlForm: FC<TUrlFormProps> = ({
             <input
               type="url"
               value={url}
-              onChange={(e) => onUrlChange(e.target.value)}
+              onChange={(e) => setUrl(e.target.value)}
               placeholder="https://example-agency.com"
               className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
             />

@@ -9,28 +9,11 @@ import {
   getOffsetLabel,
   getViewerTimeZone,
 } from '@pages/_dev/outreacher/timezone-timeline/utils';
-import { TSearchTown } from '@pages/_dev/outreacher/timezone-timeline/types';
-import { useState, useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
+import { useOutreacher } from '../context';
 
-type TGenerateButtonProps = {
-  handleGenerate: () => void;
-  isLoading: boolean;
-  disabled?: boolean;
-};
-
-type TSearchResults = {
-  towns: TSearchTown[];
-  isLoading: boolean;
-  statusMessage: string | null;
-};
-
-type TTimezoneTimelineProps = {
-  onSelectTown?: (town: TSearchTown) => void;
-  onGenerateButton?: (props: TGenerateButtonProps | null) => void;
-  onSearchResults?: (results: TSearchResults) => void;
-};
-
-export const TimezoneTimeline = ({ onSelectTown, onGenerateButton, onSearchResults }: TTimezoneTimelineProps = {}) => {
+export const TimezoneTimeline = () => {
+  const { selectedTimezones, setSelectedTimezones } = useOutreacher();
   const now = new Date();
   const viewerTimeZone = getViewerTimeZone();
   const viewerOffset = getOffsetHours(viewerTimeZone);
@@ -62,9 +45,12 @@ export const TimezoneTimeline = ({ onSelectTown, onGenerateButton, onSearchResul
       .map((row) => row.offsetHours);
   }, [rows]);
 
-  const [selectedTimezones, setSelectedTimezones] = useState<Set<number>>(
-    () => new Set(initialSelectedTimezones),
-  );
+  // Initialize selected timezones if empty
+  useEffect(() => {
+    if (selectedTimezones.size === 0 && initialSelectedTimezones.length > 0) {
+      setSelectedTimezones(new Set(initialSelectedTimezones));
+    }
+  }, [selectedTimezones.size, initialSelectedTimezones, setSelectedTimezones]);
 
   const handleTimezoneToggle = (offsetHours: number) => {
     setSelectedTimezones((prev) => {
@@ -104,9 +90,6 @@ export const TimezoneTimeline = ({ onSelectTown, onGenerateButton, onSearchResul
             availableTimezones={availableTimezones}
             selectedTimezones={selectedTimezones}
             onTimezoneToggle={handleTimezoneToggle}
-            onSelectTown={onSelectTown}
-            onGenerateButton={onGenerateButton}
-            onSearchResults={onSearchResults}
           />
         </div>
       </div>

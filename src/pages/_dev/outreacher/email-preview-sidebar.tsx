@@ -1,27 +1,18 @@
-import { createCopy } from "@pages/_dev/outreacher/copy-helpers";
 import { FC } from "react";
+import { useOutreacher } from "./context";
 
-type TEmailPreviewSidebarProps = {
-  primaryEmail: string;
-  mailtoHref: string;
-  emailPreviewSubject: string;
-  emailPreviewBody: string;
-  setEmailPreviewSubject: (value: string) => void;
-  setEmailPreviewBody: (value: string) => void;
-  copy: ReturnType<typeof createCopy>;
-};
+export const EmailPreviewSidebar: FC = () => {
+  const {
+    primaryEmail,
+    mailtoHref,
+    emailPreviewSubject,
+    emailPreviewBody,
+    setEmailPreviewSubject,
+    setEmailPreviewBody,
+    copy,
+  } = useOutreacher();
 
-export const EmailPreviewSidebar: FC<
-  TEmailPreviewSidebarProps
-> = ({
-  primaryEmail,
-  mailtoHref,
-  emailPreviewSubject,
-  emailPreviewBody,
-  setEmailPreviewSubject,
-  setEmailPreviewBody,
-  copy,
-}) => (
+  return (
   <aside className="hidden lg:block">
     <div className="rounded-2xl border border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6 flex flex-col gap-4">
       {/* Header */}
@@ -158,4 +149,5 @@ export const EmailPreviewSidebar: FC<
       </div>
     </div>
   </aside>
-);
+  );
+};

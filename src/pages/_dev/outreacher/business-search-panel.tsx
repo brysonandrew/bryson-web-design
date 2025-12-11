@@ -1,6 +1,7 @@
 import type { FC, FormEvent } from 'react';
-import { useCallback, useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { GOOGLE_MAPS_API_KEY } from '@pages/_dev/outreacher/timezone-timeline/constants';
+import { useOutreacher } from './context';
 
 export type TBusiness = {
   id: string;
@@ -13,56 +14,27 @@ export type TBusiness = {
   rawTypes?: string[];
 };
 
-type TGenerateButtonProps = {
-  handleGenerate: () => void;
-  isLoading: boolean;
-  disabled?: boolean;
-};
-
-type TSearchResults = {
-  businesses: TBusiness[];
-  isLoading: boolean;
-  statusMessage: string | null;
-};
-
-export type TBusinessSearchPanelProps = {
-  defaultIndustry?: string;
-  defaultLocation?: string;
-  onResults?: (businesses: TBusiness[]) => void;
-  onUrl?(selected: string): void;
-  externalLocation?: string;
-  onGenerateButton?: (
-    props: TGenerateButtonProps | null,
-  ) => void;
-  onSearchResults?: (results: TSearchResults) => void;
-};
-
-export const BusinessSearchPanel: FC<
-  TBusinessSearchPanelProps
-> = ({
-  defaultIndustry = 'web developer',
-  defaultLocation = 'Stockholm, Sweden',
-  onResults,
-  onUrl,
-  externalLocation,
-  onGenerateButton,
-  onSearchResults,
-}) => {
-  const [industry, setIndustry] = useState(defaultIndustry);
-  const [location, setLocation] = useState(defaultLocation);
+export const BusinessSearchPanel: FC = () => {
+  const {
+    businessIndustry,
+    setBusinessIndustry,
+    businessLocation,
+    setBusinessLocation,
+    businessFinderLocation,
+    businessLastQuerySummary,
+    businessError,
+    handleBusinessSearch,
+  } = useOutreacher();
   const locationInputRef = useRef<HTMLInputElement>(null);
   const autocompleteElementRef = useRef<google.maps.places.PlaceAutocompleteElement | null>(null);
   const placeSelectHandlerRef = useRef<((event: { place: google.maps.places.Place }) => void) | null>(null);
 
-  // Update location when externalLocation prop changes
+  // Update location when businessFinderLocation changes
   useEffect(() => {
-    if (
-      externalLocation !== undefined &&
-      externalLocation !== location
-    ) {
-      setLocation(externalLocation);
+    if (businessFinderLocation !== businessLocation) {
+      setBusinessLocation(businessFinderLocation);
     }
-  }, [externalLocation]);
+  }, [businessFinderLocation, businessLocation, setBusinessLocation]);
 
   // Initialize Google Places Autocomplete using PlaceAutocompleteElement
   useEffect(() => {
@@ -135,9 +107,9 @@ export const BusinessSearchPanel: FC<
           const name = place.name || place.displayName;
           
           if (address) {
-            setLocation(address);
+            setBusinessLocation(address);
           } else if (name) {
-            setLocation(name);
+            setBusinessLocation(name);
           }
         }
       };
@@ -157,129 +129,10 @@ export const BusinessSearchPanel: FC<
       }
     };
   }, []);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [businesses, setBusinesses] = useState<TBusiness[]>(
-    [],
-  );
-  const [lastQuerySummary, setLastQuerySummary] = useState<
-    string | null
-  >(null);
-
-  const handleSubmit = useCallback(
-    async (event?: FormEvent) => {
-      event?.preventDefault();
-      setError(null);
-
-      const trimmedIndustry = industry.trim();
-      const trimmedLocation = location.trim();
-
-      if (!trimmedIndustry || !trimmedLocation) {
-        setError(
-          'Please enter both an industry and a location.',
-        );
-        if (onSearchResults) {
-          onSearchResults({
-            businesses: [],
-            isLoading: false,
-            statusMessage:
-              'Please enter both an industry and a location.',
-          });
-        }
-        return;
-      }
-
-      setIsLoading(true);
-      if (onSearchResults) {
-        onSearchResults({
-          businesses: [],
-          isLoading: true,
-          statusMessage: 'Searching businesses…',
-        });
-      }
-
-      try {
-        const response = await fetch(
-          'http://localhost:4000/api/businesses/search',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              businessType: trimmedIndustry,
-              location: trimmedLocation,
-              limit: 30,
-            }),
-          },
-        );
-
-        if (!response.ok) {
-          const text = await response.text();
-          throw new Error(
-            `Request failed with status ${response.status}: ${text}`,
-          );
-        }
-
-        const data = await response.json();
-        const results: TBusiness[] = data.businesses ?? [];
-
-        setBusinesses(results);
-        setLastQuerySummary(
-          `${trimmedIndustry} in ${trimmedLocation} (${results.length} found)`,
-        );
-
-        onResults?.(results);
-
-        if (onSearchResults) {
-          onSearchResults({
-            businesses: results,
-            isLoading: false,
-            statusMessage: null,
-          });
-        }
-      } catch (err: any) {
-        console.error('Business search failed:', err);
-        const errorMessage =
-          err?.message ||
-          'Something went wrong while searching for businesses.';
-        setError(errorMessage);
-
-        if (onSearchResults) {
-          onSearchResults({
-            businesses: [],
-            isLoading: false,
-            statusMessage: errorMessage,
-          });
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [industry, location, onResults, onSearchResults],
-  );
-
-  // Expose button props to parent
-  useEffect(() => {
-    if (onGenerateButton) {
-      const trimmedIndustry = industry.trim();
-      const trimmedLocation = location.trim();
-      const isDisabled =
-        !trimmedIndustry || !trimmedLocation;
-
-      onGenerateButton({
-        handleGenerate: handleSubmit,
-        isLoading,
-        disabled: isDisabled,
-      });
-    }
-  }, [
-    onGenerateButton,
-    handleSubmit,
-    isLoading,
-    industry,
-    location,
-  ]);
+  const handleSubmit = (event?: FormEvent) => {
+    event?.preventDefault();
+    handleBusinessSearch();
+  };
 
   return (
     <section className="w-full rounded-t-2xl border-t border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl flex flex-col gap-4 p-4 md:p-6">
@@ -295,13 +148,13 @@ export const BusinessSearchPanel: FC<
           </p>
         </div>
 
-        {lastQuerySummary && (
+        {businessLastQuerySummary && (
           <div className="flex max-w-xs flex-col items-start md:items-end">
             <span className="text-[10px] uppercase tracking-[0.08em] text-white-06">
               Last search
             </span>
             <span className="mt-0.5 text-[11px] text-white-08 text-left md:text-right">
-              {lastQuerySummary}
+              {businessLastQuerySummary}
             </span>
           </div>
         )}
@@ -316,33 +169,33 @@ export const BusinessSearchPanel: FC<
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="industry-input"
-              className="text-xs font-medium uppercase tracking-[0.16em] text-white-06"
+              className="text-xs font-medium text-white-06"
             >
-              Industry / business type
+              Industry
             </label>
             <input
               id="industry-input"
               className="h-9 rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
               placeholder="e.g. bakery, tattoo studio, SaaS agency"
-              value={industry}
-              onChange={(e) => setIndustry(e.target.value)}
+              value={businessIndustry}
+              onChange={(e) => setBusinessIndustry(e.target.value)}
             />
           </div>
 
           <div className="flex flex-col gap-1.5">
             <label
               htmlFor="location-input"
-              className="text-xs font-medium uppercase tracking-[0.16em] text-white-06"
+              className="text-xs font-medium text-white-06"
             >
-              Location / city
+              Location
             </label>
             <input
               ref={locationInputRef}
               id="location-input"
               className="h-9 rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
               placeholder="e.g. Stockholm, Sweden"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              value={businessLocation}
+              onChange={(e) => setBusinessLocation(e.target.value)}
             />
             {/* <p className="mt-0.5 text-[10px] text-white-06">
               Free text; backend uses Google Places for matching.
@@ -352,9 +205,9 @@ export const BusinessSearchPanel: FC<
       </form>
 
       {/* Error */}
-      {error && (
+      {businessError && (
         <div className="rounded-xl border border-red/40 bg-red/10 px-3.5 py-2.5 text-sm text-white">
-          {error}
+          {businessError}
         </div>
       )}
     </section>
