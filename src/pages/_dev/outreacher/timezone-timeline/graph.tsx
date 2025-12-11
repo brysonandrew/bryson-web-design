@@ -1,4 +1,5 @@
-import { TOffsetRow } from "@pages/_dev/outreacher/timezone-timeline/types";
+import { TOffsetRow } from '@pages/_dev/outreacher/timezone-timeline/types';
+import { cx } from 'class-variance-authority';
 
 type TTimelineProps = {
   rows: TOffsetRow[];
@@ -8,69 +9,105 @@ type TTimelineProps = {
   maxCountries: number;
 };
 
+// Simple map from UTC offset → human timezone name(s)
+const OFFSET_TIMEZONE_NAMES: Record<string, string> = {
+  '0': 'UTC',
+  '1': 'CET / CEST',
+  '2': 'EET / EEST',
+  '-5': 'EST / EDT',
+  '-4': 'AST / ADT',
+  '-8': 'PST / PDT',
+  '8': 'AWST',
+  '10': 'AEST / AEDT',
+  '12': 'NZST / NZDT',
+};
+
 export const TimezoneTimelineGraph = ({
   rows,
   viewerOffset,
   utcHour,
   utcMinutes,
-  maxCountries,
 }: TTimelineProps) => {
   return (
-    <div className="flex flex-col gap-1.5">
-      {rows.map((row) => {
-        const isViewerOffset = row.offsetHours === viewerOffset;
+    <div className="flex flex-col gap-1">
+      {rows.map((row, index) => {
+        const isViewerOffset =
+          row.offsetHours === viewerOffset;
+        const isIdealNow = row.hasOfficeNow;
 
-        const localHour = (utcHour + row.offsetHours + 24) % 24;
-        const localTime = `${localHour.toString().padStart(2, "0")}:${utcMinutes
+        const localHour =
+          (utcHour + row.offsetHours + 24) % 24;
+        const localTime = `${localHour.toString().padStart(2, '0')}:${utcMinutes
           .toString()
-          .padStart(2, "0")}`;
+          .padStart(2, '0')}`;
 
-        const widthPercent =
-          row.countryCount === 0
-            ? 10
-            : 20 + (row.countryCount / maxCountries) * 60;
+        const timezoneName =
+          OFFSET_TIMEZONE_NAMES[String(row.offsetHours)] ??
+          '';
 
-        const barColor = isViewerOffset
-          ? "bg-primary-04"
-          : row.countryCount > 0
-          ? "bg-primary-02"
-          : "bg-black-6";
+        // Highlight left-side text if ideal
+        const timeClass = isIdealNow
+          ? 'text-primary-03'
+          : 'text-white-07';
+
+        const offsetClass = isIdealNow
+          ? 'text-primary'
+          : isViewerOffset
+            ? 'text-primary'
+            : 'text-white-08';
+
+        const tzNameClass = isIdealNow
+          ? 'text-primary-04'
+          : 'text-white-05';
+
+        // Zebra background
+        const zebraBg =
+          index % 2 === 0
+            ? 'bg-black-1/40'
+            : 'bg-black-2/40';
 
         return (
           <div
             key={row.offsetLabel}
-            className="flex flex-col gap-1 text-[0.7rem] rounded-lg px-2 py-1"
+            className={`flex items-center gap-2 text-[0.65rem] rounded-lg px-2 py-0.5 ${zebraBg}`}
           >
-            {/* Time + UTC + bar */}
-            <div className="flex items-center gap-2 min-w-0">
-              <div className="w-32 flex items-center gap-1">
-                <span className="font-mono text-white-07">{localTime}</span>
-                <span
-                  className={`font-semibold ${
-                    isViewerOffset ? "text-primary" : "text-white-08"
-                  }`}
-                >
-                  {row.offsetLabel}
-                </span>
-              </div>
+            {/* Left: time + UTC + tz name */}
+            <div className="flex items-baseline gap-2 min-w-0">
+              <span className={`font-mono ${timeClass}`}>
+                {localTime}
+              </span>
 
-              <div className="flex-1">
-                <div className="h-1 bg-black-5 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full ${barColor}`}
-                    style={{ width: `${widthPercent}%` }}
-                  />
-                </div>
-              </div>
+              <span
+                className={`font-semibold ${offsetClass}`}
+              >
+                {row.offsetLabel}
+              </span>
+
+              {timezoneName && (
+                <span className={tzNameClass}>
+                  {timezoneName}
+                </span>
+              )}
             </div>
 
-            {/* Cities below line */}
+            {/* Cluster (cities) */}
             {row.sampleCities.length > 0 && (
-              <div className="ml-32 flex flex-wrap gap-1">
+              <div
+                className={cx(
+                  `flex flex-wrap gap-1 ml-auto`,
+                )}
+              >
                 {row.sampleCities.map((city) => (
                   <span
                     key={city}
-                    className="px-2 py-0.5 rounded-md bg-black-3 border border-black-7 text-[0.65rem] text-white-06"
+                    className={cx(
+                      'border border-black-7',
+                      isIdealNow
+                        ? // Highlighted cluster: white text
+                          'px-1.5 py-0.5 rounded-md bg-primary-01/40 text-white text-[0.65rem]'
+                        : // Normal cluster
+                          'px-1.5 py-0.5 rounded-md bg-black-3 text-white-06 text-[0.65rem]',
+                    )}
                   >
                     {city}
                   </span>

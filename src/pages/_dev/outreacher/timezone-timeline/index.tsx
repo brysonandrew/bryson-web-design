@@ -30,7 +30,7 @@ export const TimezoneTimeline = () => {
 
   return (
     <section className="w-full rounded-2xl border border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 flex flex-col gap-4">
-      <div className="flex items-start gap-2 w-full">
+      <div className="flex items-start gap-6 w-full">
         <div className='grow flex flex-col items-stretch gap-2'>
           <TimezoneTimelineHeader />
           <TimezoneTimelineGraph
