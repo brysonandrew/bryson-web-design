@@ -1,5 +1,5 @@
 import { LeadPanel } from '@pages/_dev/outreacher/lead-panel';
-import { FormEvent, FC } from 'react';
+import { FormEvent, FC, useRef, useEffect } from 'react';
 import { useOutreacher } from './context';
 
 export const UrlForm: FC = () => {
@@ -11,8 +11,16 @@ export const UrlForm: FC = () => {
     result,
     handleSubmit,
     copy,
+    setUrlInputRef,
   } = useOutreacher();
   const normalizedUrl = result?.normalizedUrl;
+  const urlInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (setUrlInputRef) {
+      setUrlInputRef(urlInputRef);
+    }
+  }, [setUrlInputRef]);
 
   return (
     <div className="rounded-2xl border border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6 flex flex-col gap-6">
@@ -42,6 +50,7 @@ export const UrlForm: FC = () => {
 
           <div className="relative">
             <input
+              ref={urlInputRef}
               type="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}

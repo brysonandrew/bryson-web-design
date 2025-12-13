@@ -102,7 +102,7 @@ export const BusinessSearchResults = ({
   isLoading,
   statusMessage,
 }: TBusinessSearchResultsProps) => {
-  const { setUrl } = useOutreacher();
+  const { setUrl, scrollToUrlInput } = useOutreacher();
   if (isLoading) {
     return (
       <div className="min-h-[1.5rem]">
@@ -197,6 +197,7 @@ export const BusinessSearchResults = ({
                         onClick={() => {
                           if (biz.website) {
                             setUrl(biz.website);
+                            scrollToUrlInput();
                           }
                         }}
                         className="text-[0.65rem] px-2 py-0.5 rounded-lg bg-primary text-black font-semibold hover:bg-primary-08 transition-colors"

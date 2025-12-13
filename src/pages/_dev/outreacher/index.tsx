@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { withProviders } from '@shell/providers/withProviders';
 
@@ -37,6 +38,9 @@ const OutreacherContent: FC = () => {
   } = useOutreacher();
 
   const isLoaded = useGoogleMapsLoader();
+  const townResultsRef = useRef<HTMLElement>(null);
+  const businessResultsRef = useRef<HTMLElement>(null);
+  const businessSearchPanelRef = useRef<HTMLElement>(null);
 
   if (!isLoaded) return null;
 
@@ -56,7 +60,10 @@ const OutreacherContent: FC = () => {
               {timezoneGenerateButtonProps && (
                 <>
                   <div className="border-t border-white-04" />
-                  <section className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6">
+                  <section
+                    ref={townResultsRef}
+                    className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6"
+                  >
                     {townSearchResults && (
                       <TimezoneTimelineSearchResults
                         towns={townSearchResults.towns}
@@ -83,6 +90,14 @@ const OutreacherContent: FC = () => {
                           setBusinessFinderLocation(
                             location,
                           );
+                          
+                          // Scroll to business search panel
+                          setTimeout(() => {
+                            businessSearchPanelRef.current?.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start',
+                            });
+                          }, 100);
                         }}
                       />
                     )}
@@ -90,9 +105,15 @@ const OutreacherContent: FC = () => {
                     <div className="flex justify-center">
                       <button
                         type="button"
-                        onClick={
-                          timezoneGenerateButtonProps.handleGenerate
-                        }
+                        onClick={() => {
+                          timezoneGenerateButtonProps.handleGenerate();
+                          setTimeout(() => {
+                            townResultsRef.current?.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start',
+                            });
+                          }, 100);
+                        }}
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-08 text-black text-sm font-semibold transition-all shadow-[0_0_18px_rgba(56,189,248,0.55)] hover:shadow-[0_0_26px_rgba(56,189,248,0.8)] disabled:opacity-60 disabled:shadow-none"
                         disabled={
                           timezoneGenerateButtonProps.isLoading ||
@@ -114,13 +135,16 @@ const OutreacherContent: FC = () => {
         {/* Business finder */}
         <div className="relative z-10 flex items-start justify-center">
           <div className="flex items-start justify-center max-w-6xl mx-auto w-full gap-8">
-            <div className="w-full flex flex-col">
+            <div ref={businessSearchPanelRef} className="w-full flex flex-col">
               <BusinessSearchPanel />
 
               {businessGenerateButtonProps && (
                 <>
                   <div className="border-t border-white-04" />
-                  <section className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6">
+                  <section
+                    ref={businessResultsRef}
+                    className="flex flex-col gap-4 w-full rounded-b-2xl border-b border-l border-r border-white-02 bg-dark-07 shadow-[0_18px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-4 md:p-6"
+                  >
                     {businessSearchResults && (
                       <BusinessSearchResults
                         businesses={
@@ -138,9 +162,15 @@ const OutreacherContent: FC = () => {
                     <div className="flex justify-center">
                       <button
                         type="button"
-                        onClick={
-                          businessGenerateButtonProps.handleGenerate
-                        }
+                        onClick={() => {
+                          businessGenerateButtonProps.handleGenerate();
+                          setTimeout(() => {
+                            businessResultsRef.current?.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start',
+                            });
+                          }, 100);
+                        }}
                         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-08 text-black text-sm font-semibold transition-all shadow-[0_0_18px_rgba(56,189,248,0.55)] hover:shadow-[0_0_26px_rgba(56,189,248,0.8)] disabled:opacity-60 disabled:shadow-none"
                         disabled={
                           businessGenerateButtonProps.isLoading ||

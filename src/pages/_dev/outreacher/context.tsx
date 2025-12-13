@@ -6,6 +6,7 @@ import {
   useCallback,
   useMemo,
   useEffect,
+  useRef,
 } from 'react';
 import type {
   TGenerateEmailResponse,
@@ -44,6 +45,8 @@ type TOutreacherContextValue = {
   error: string | null;
   result: TGenerateEmailResponse | null;
   handleSubmit: (e: React.FormEvent) => Promise<void>;
+  setUrlInputRef: (ref: React.RefObject<HTMLInputElement>) => void;
+  scrollToUrlInput: () => void;
 
   // Email preview state
   emailPreviewSubject: string;
@@ -144,6 +147,26 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
   const [townSearchResults, setTownSearchResultsState] =
     useState<TTownSearchResults | null>(null);
   const [townSearchLoading, setTownSearchLoading] = useState(false);
+
+  // URL input ref for scrolling
+  const urlInputRef = useRef<HTMLInputElement | null>(null);
+
+  const setUrlInputRef = useCallback((ref: React.RefObject<HTMLInputElement>) => {
+    urlInputRef.current = ref.current;
+  }, []);
+
+  const scrollToUrlInput = useCallback(() => {
+    if (urlInputRef.current) {
+      urlInputRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+      // Optionally focus the input after scrolling
+      setTimeout(() => {
+        urlInputRef.current?.focus();
+      }, 300);
+    }
+  }, []);
 
   const showToast = useCallback(
     (
@@ -371,6 +394,8 @@ export const OutreacherProvider: FC<TOutreacherProviderProps> = ({
     error,
     result,
     handleSubmit,
+    setUrlInputRef,
+    scrollToUrlInput,
 
     // Email preview state
     emailPreviewSubject,
