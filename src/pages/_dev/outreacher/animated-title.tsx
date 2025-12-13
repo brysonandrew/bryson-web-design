@@ -1,11 +1,8 @@
-import { useApp } from '@brysonandrew/app';
 import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export const AnimatedTitle = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
-  const app = useApp()
-  console.log(app)
 
   useEffect(() => {
     // Mark as animated after the animation completes

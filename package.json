@@ -36,7 +36,8 @@
     "motion-constants": "esrun ops/motion/generate-constants",
     "object-to-exports": "esrun ops/transformers/object-to-exports lib/motion/config/constants/generate.ts",
     "obfuscate": "ops/screens/obfuscate.sh",
-    "outreacher": "esrun ops/outreacher/index.ts"
+    "ops:outreacher:backend": "esrun ops/outreacher/index.ts",
+    "outreacher": "npm run dev & npm run ops:outreacher:backend"
   },
   "author": "Andrew Bryson <andrew@brysona.dev>",
   "license": "MIT",

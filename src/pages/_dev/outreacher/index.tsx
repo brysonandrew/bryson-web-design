@@ -17,6 +17,13 @@ import {
   OutreacherProvider,
   useOutreacher,
 } from './context';
+import styled from '@emotion/styled';
+
+const Root = styled.div`
+  .pac-container {
+    z-index: 99999 !important;
+  }
+`;
 
 const OutreacherContent: FC = () => {
   const {
@@ -34,7 +41,7 @@ const OutreacherContent: FC = () => {
   if (!isLoaded) return null;
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-black via-dark to-black text-white-8">
+    <Root className="min-h-screen w-full bg-gradient-to-br from-black via-dark to-black text-white-8">
       {/* Soft radial accents using primary / accent */}
       <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.18),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(113,174,225,0.22),_transparent_55%)]" />
       <div className="column-stretch gap-8 px-4 py-10 md:px-6 lg:px-8">
@@ -164,7 +171,7 @@ const OutreacherContent: FC = () => {
       <AnimatePresence>
         <OutreacherToastWrapper />
       </AnimatePresence>
-    </div>
+    </Root>
   );
 };
 

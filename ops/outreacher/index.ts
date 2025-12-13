@@ -304,7 +304,8 @@ ${offer ? `${offer}\n` : ''}${
     demoIdea
       ? `If it helps, I'm happy to put together a small demo along these lines: ${demoIdea}\n`
       : ''
-  }References available. I can send a couple of recent projects, or we can jump on a quick call if that’s easier.
+  }
+References available. I can send a couple of recent projects, or we can jump on a quick call if that’s easier.
 
 Kind regards,
 Andrew Bryson

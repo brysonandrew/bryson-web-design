@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useOutreacher } from './context';
 
 export type TLeadPanelData = {
   url: string;
@@ -30,6 +31,7 @@ export type TLeadPanelProps = {
 
 export const LeadPanel: FC<TLeadPanelProps> = memo(
   ({ data }) => {
+    const { copy } = useOutreacher();
     const {
       name,
       normalizedUrl,
@@ -96,7 +98,7 @@ export const LeadPanel: FC<TLeadPanelProps> = memo(
 
     return (
       <motion.section
-        className="w-full rounded-2xl border border-white-02 bg-dark-07 backdrop-blur-2xl shadow-[0_18px_60px_rgba(0,0,0,0.7)] p-4 md:p-6 flex flex-col gap-6"
+        className="w-full rounded-2xl border border-white-02 bg-dark-07 backdrop-blur-2xl shadow-[0_18px_60px_rgba(0,0,0,0.7)] p-4 md:p-6 flex flex-col gap-4"
         initial={{ opacity: 0, y: 16, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.22, ease: 'easeOut' }}
@@ -240,55 +242,65 @@ export const LeadPanel: FC<TLeadPanelProps> = memo(
           </div>
         </section>
 
-        {/* Emails + demo + micro-fix */}
-        <section className="grid gap-4 md:grid-cols-3">
-          {/* Contacts */}
-          <div className="rounded-xl bg-black-2 border border-white-02 p-4 flex flex-col gap-2">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
-                Contacts
+        {/* Contacts + Demo idea + Micro-fix */}
+        <section className="rounded-xl bg-black-2 border border-white-02 p-4 flex flex-col gap-3">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+              Contacts, Demo idea & Micro-fix
+            </span>
+            <span className="text-[10px] text-white-06">
+              From scraping
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-3 text-sm text-white-08 whitespace-pre-wrap">
+            {/* Contacts */}
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.16em] text-white-06 font-semibold">
+                Contacts:{' '}
               </span>
-              <span className="text-[10px] text-white-06">
-                From scraping
-              </span>
+              {emailContacts.length > 0 ? (
+                <span className="inline-flex flex-wrap gap-1.5">
+                  {emailContacts.map((email, index) => (
+                    <span key={email} className="inline-flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-dark-07 border border-white-02 px-2 py-0.5 group">
+                        <span className="text-[11px] font-mono text-white-08">
+                          {email}
+                        </span>
+                        <button
+                          onClick={() => copy('Contact email', email, 'button')}
+                          className="opacity-50 group-hover:opacity-100 transition-opacity rounded px-1 py-0.5 hover:bg-black-2 text-[10px] text-white-07 hover:text-white-09"
+                          title={`Copy ${email} to clipboard`}
+                        >
+                          Copy
+                        </button>
+                      </span>
+                      {index < emailContacts.length - 1 && (
+                        <span className="text-white-05">,</span>
+                      )}
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span className="text-white-06">No valid email addresses detected.</span>
+              )}
             </div>
 
-            {emailContacts.length > 0 ? (
-              <div className="flex flex-wrap gap-1.5">
-                {emailContacts.map((email) => (
-                  <span
-                    key={email}
-                    className="rounded-full bg-dark-07 border border-white-02 px-2 py-0.5 text-[11px] font-mono text-white-08"
-                  >
-                    {email}
-                  </span>
-                ))}
-              </div>
-            ) : (
-              <p className="text-xs text-white-06">
-                No valid email addresses detected.
-              </p>
-            )}
-          </div>
+            {/* Demo idea */}
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.16em] text-white-06 font-semibold">
+                Demo idea:{' '}
+              </span>
+              <span>{demoIdea || '—'}</span>
+            </div>
 
-          {/* Demo idea */}
-          <div className="rounded-xl bg-black-2 border border-white-02 p-4 flex flex-col gap-1.5">
-            <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
-              Demo idea
-            </span>
-            <p className="text-xs text-white-08 whitespace-pre-wrap">
-              {demoIdea || '—'}
-            </p>
-          </div>
-
-          {/* Micro fix */}
-          <div className="rounded-xl bg-black-2 border border-white-02 p-4 flex flex-col gap-1.5">
-            <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
-              Micro-fix
-            </span>
-            <p className="text-xs text-white-08 whitespace-pre-wrap">
-              {microFix || '—'}
-            </p>
+            {/* Micro fix */}
+            <div>
+              <span className="text-[11px] uppercase tracking-[0.16em] text-white-06 font-semibold">
+                Micro-fix:{' '}
+              </span>
+              <span>{microFix || '—'}</span>
+            </div>
           </div>
         </section>
 
