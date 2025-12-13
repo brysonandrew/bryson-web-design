@@ -1,6 +1,11 @@
-import { FC } from 'react';
+import { FC, useRef, useEffect } from 'react';
 import { useOutreacher } from './context';
 import { cx } from 'class-variance-authority';
+
+const adjustTextareaHeight = (textarea: HTMLTextAreaElement) => {
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+};
 
 export const EmailPreviewSidebar: FC = () => {
   const {
@@ -12,6 +17,31 @@ export const EmailPreviewSidebar: FC = () => {
     setEmailPreviewBody,
     copy,
   } = useOutreacher();
+
+  const subjectTextareaRef = useRef<HTMLTextAreaElement>(null);
+  const bodyTextareaRef = useRef<HTMLTextAreaElement>(null);
+  const mailtoTextareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Adjust subject textarea height
+  useEffect(() => {
+    if (subjectTextareaRef.current) {
+      adjustTextareaHeight(subjectTextareaRef.current);
+    }
+  }, [emailPreviewSubject]);
+
+  // Adjust body textarea height
+  useEffect(() => {
+    if (bodyTextareaRef.current) {
+      adjustTextareaHeight(bodyTextareaRef.current);
+    }
+  }, [emailPreviewBody]);
+
+  // Adjust mailto textarea height
+  useEffect(() => {
+    if (mailtoTextareaRef.current) {
+      adjustTextareaHeight(mailtoTextareaRef.current);
+    }
+  }, [mailtoHref]);
 
   return (
     <aside className="hidden lg:block">
@@ -38,6 +68,35 @@ export const EmailPreviewSidebar: FC = () => {
             </a>
           )}
         </div>
+
+        {/* Mailto Preview */}
+        {/* <div className="flex flex-col gap-2">
+          <div className="flex justify-between">
+            <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
+              Mailto link / mailto URL
+            </span>
+
+            <button
+              onClick={() =>
+                copy('mailto link', mailtoHref, 'button')
+              }
+              className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
+            >
+              Copy
+            </button>
+          </div>
+
+          <textarea
+            ref={mailtoTextareaRef}
+            readOnly
+            rows={3}
+            value={
+              mailtoHref ||
+              'mailto:hello@agency.com?subject=...&body=...'
+            }
+            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-[11px] font-mono text-white-08 resize-none overflow-hidden"
+          />
+        </div> */}
 
         {/* To */}
         <div className="flex flex-col gap-1.5">
@@ -96,12 +155,14 @@ export const EmailPreviewSidebar: FC = () => {
           </div>
 
           <textarea
+            ref={subjectTextareaRef}
             value={emailPreviewSubject}
-            onChange={(e) =>
-              setEmailPreviewSubject(e.target.value)
-            }
+            onChange={(e) => {
+              setEmailPreviewSubject(e.target.value);
+              adjustTextareaHeight(e.target);
+            }}
             rows={2}
-            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
+            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06 resize-none overflow-hidden"
           />
         </div>
 
@@ -127,40 +188,14 @@ export const EmailPreviewSidebar: FC = () => {
           </div>
 
           <textarea
+            ref={bodyTextareaRef}
             value={emailPreviewBody}
-            onChange={(e) =>
-              setEmailPreviewBody(e.target.value)
-            }
+            onChange={(e) => {
+              setEmailPreviewBody(e.target.value);
+              adjustTextareaHeight(e.target);
+            }}
             rows={10}
-            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06"
-          />
-        </div>
-
-        {/* Mailto Preview */}
-        <div className="flex flex-col gap-2">
-          <div className="flex justify-between">
-            <span className="text-[11px] uppercase tracking-[0.16em] text-white-06">
-              Mailto link / mailto URL
-            </span>
-
-            <button
-              onClick={() =>
-                copy('mailto link', mailtoHref, 'button')
-              }
-              className="rounded-lg border border-white-02 bg-black-2 px-2 py-0.5 text-[11px] text-white-09 hover:bg-black-3 transition-colors"
-            >
-              Copy
-            </button>
-          </div>
-
-          <textarea
-            readOnly
-            rows={3}
-            value={
-              mailtoHref ||
-              'mailto:hello@agency.com?subject=...&body=...'
-            }
-            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-[11px] font-mono text-white-08"
+            className="w-full rounded-xl border border-white-02 bg-black-2 px-3.5 py-2.5 text-sm text-white-9 placeholder:text-white-06 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary-06 resize-none overflow-hidden"
           />
         </div>
       </div>
